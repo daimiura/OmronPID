@@ -1427,7 +1427,7 @@ public:
   
   // getters:
   InsetPlacement insetPlacement(int index) const;
-  Qt::Alignment insetAlignment(int index) const;
+  int insetAlignment(int index) const;
   QRectF insetRect(int index) const;
   
   // setters:
@@ -1732,23 +1732,26 @@ public:
   QCPAxisTickerText();
   
   // getters:
-  QMap<double, QString> &ticks() { return mTicks; }
+  //QMap<double, QString> &ticks() { return mTicks; }
+  QMultiMap<double, QString> &ticks() { return mTicks; }
   int subTickCount() const { return mSubTickCount; }
   
   // setters:
-  void setTicks(const QMap<double, QString> &ticks);
+  //void setTicks(const QMap<double, QString> &ticks);
+  void setTicks(const QMultiMap<double, QString> &ticks);
   void setTicks(const QVector<double> &positions, const QVector<QString> labels);
   void setSubTickCount(int subTicks);
   
   // non-virtual methods:
   void clear();
   void addTick(double position, QString label);
-  void addTicks(const QMap<double, QString> &ticks);
+  //void addTicks(const QMap<double, QString> &ticks);
+  void addTicks(const QMultiMap<double, QString> &ticks);
   void addTicks(const QVector<double> &positions, const QVector<QString> &labels);
   
 protected:
   // property members:
-  QMap<double, QString> mTicks;
+  QMultiMap<double, QString> mTicks;
   int mSubTickCount;
   
   // reimplemented virtual methods:
@@ -4467,13 +4470,13 @@ public:
   
   // getters:
   int levelCount() const { return mLevelCount; }
-  QMap<double, QColor> colorStops() const { return mColorStops; }
+  QMultiMap<double, QColor> colorStops() const { return mColorStops; }
   ColorInterpolation colorInterpolation() const { return mColorInterpolation; }
   bool periodic() const { return mPeriodic; }
   
   // setters:
   void setLevelCount(int n);
-  void setColorStops(const QMap<double, QColor> &colorStops);
+  void setColorStops(const QMultiMap<double, QColor> &colorStops);
   void setColorStopAt(double position, const QColor &color);
   void setColorInterpolation(ColorInterpolation interpolation);
   void setPeriodic(bool enabled);
@@ -4489,7 +4492,7 @@ public:
 protected:
   // property members:
   int mLevelCount;
-  QMap<double, QColor> mColorStops;
+  QMultiMap<double, QColor> mColorStops;
   ColorInterpolation mColorInterpolation;
   bool mPeriodic;
   

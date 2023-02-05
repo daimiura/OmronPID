@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QString>
 
 const QString DESKTOP_PATH = QStandardPaths::locate(QStandardPaths::DesktopLocation, QString(), QStandardPaths::LocateDirectory);
 const QString DATA_PATH_2 = DESKTOP_PATH + "Temp_Record";
@@ -46,7 +47,8 @@ MainWindow::MainWindow(QWidget *parent) :
     clock = new QTimer(this);
     clock->stop();
     connect(clock, SIGNAL(timeout()), this, SLOT(showTime()));
-    totalElapse.setHMS(0,0,0,0);
+    //totalElapse.setHMS(0,0,0,0);
+    totalElapse.start();
     dayCounter = 0;
     checkDay = false;
     waitTimer = new QTimer(this);
@@ -151,10 +153,10 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->comboBox_Mode->addItem("Fixed rate", 3);
     ui->comboBox_Mode->addItem("Normal + Fixed rate", 4);
 
-    ui->comboBox_Mode->setItemData(0, QBrush(Qt::black), Qt::TextColorRole);
-    ui->comboBox_Mode->setItemData(1, QBrush(Qt::red), Qt::TextColorRole);
-    ui->comboBox_Mode->setItemData(2, QBrush(Qt::blue), Qt::TextColorRole);
-    ui->comboBox_Mode->setItemData(3, QBrush(Qt::darkGreen), Qt::TextColorRole);
+    ui->comboBox_Mode->setItemData(0, QBrush(Qt::black), Qt::ForegroundRole);
+    ui->comboBox_Mode->setItemData(1, QBrush(Qt::red), Qt::ForegroundRole);
+    ui->comboBox_Mode->setItemData(2, QBrush(Qt::blue), Qt::ForegroundRole);
+    ui->comboBox_Mode->setItemData(3, QBrush(Qt::darkGreen), Qt::ForegroundRole);
 
     findSeriesPortDevices();
     omron = NULL;
@@ -243,7 +245,7 @@ void MainWindow::LogMsg(QString str, bool newLine)
         msgCount ++;
         QString dateStr = QDateTime::currentDateTime().toString("HH:mm:ss ");
         QString countStr;
-        countStr.sprintf("[%05d]: ", msgCount);
+        countStr.asprintf("[%05d]: ", msgCount);
         str.insert(0, countStr).insert(0, dateStr);
         ui->textEdit_Log->append(str);
     }
@@ -702,7 +704,8 @@ void MainWindow::on_pushButton_Control_clicked()
         on_comboBox_Mode_currentIndexChanged(ui->comboBox_Mode->currentIndex());
         qDebug()  << "temp control. = " << tempControlOnOff;
         clock->stop();
-        totalElapse.setHMS(0,0,0,0);
+        //totalElapse.setHMS(0,0,0,0);
+        totalElapse.start();
         return;
     }
 
@@ -745,7 +748,7 @@ void MainWindow::on_pushButton_Control_clicked()
         QString boxMsg;
         if( mode == 1){
             LogMsg("======== Stable Mode ==========");
-            boxMsg.sprintf("======== Stable Mode ========== \n"
+            boxMsg.asprintf("======== Stable Mode ========== \n"
                            "Estimated transition time : %6.1f min. \n"
                            "Estimated gradience       : %6.1f min/C \n"
                            "Estimated total time      : %6.1f min = %6.1f hr",
@@ -754,21 +757,21 @@ void MainWindow::on_pushButton_Control_clicked()
                            estTotalTime, estTotalTime/60.);
         }else if(mode == 2){
             LogMsg("======== Fixed Time Mode ==========");
-            boxMsg.sprintf("======== Fixed Time Mode ========== \n"
+            boxMsg.asprintf("======== Fixed Time Mode ========== \n"
                            "Estimated gradience  : %6.1f min/C \n"
                            "Estimated total time : %6.1f min = %6.1f hr",
                            estSlope,
                            estTotalTime, estTotalTime/60.);
         }else if(mode == 3){
             LogMsg("======== Fixed Rate Mode ==========");
-            boxMsg.sprintf("======== Fixed Rate Mode ========== \n"
+            boxMsg.asprintf("======== Fixed Rate Mode ========== \n"
                            "Set-temp Gradience   : %6.1f min/C \n"
                            "Estimated total time : %6.1f min = %6.1f hr",
                            estSlope,
                            estTotalTime, estTotalTime/60.);
         }else if(mode == 4){
             LogMsg("======== Normal + Fixed Rate Mode ==========");
-            boxMsg.sprintf("======== Normal + Fixed Rate Mode ========== \n"
+            boxMsg.asprintf("======== Normal + Fixed Rate Mode ========== \n"
                            "1) Go to %5.1f C using normal mode.\n"
                            "   Time unknown. \n"
                            "2) Fixed rate to go to %5.1f C\n"
@@ -809,7 +812,7 @@ void MainWindow::on_pushButton_Control_clicked()
         QTextStream stream(&outfile);
         QString lineout;
 
-        lineout.sprintf("###%s", startTime.toString("yyyy-MM-dd HH:mm:ss\n").toStdString().c_str());
+        lineout.asprintf("###%s", startTime.toString("yyyy-MM-dd HH:mm:ss\n").toStdString().c_str());
         stream << lineout;
         if( mode == 1){
             lineout = "### Control mode          :  Stable Temperature.\n";
@@ -846,7 +849,7 @@ void MainWindow::on_pushButton_Control_clicked()
             lineout = "### Set-temp change rate    : " + QString::number(tempWaitTime/60./1000.) + " min/C.\n";
             stream << lineout;
         }
-        lineout.sprintf("###%11s,\t%12s,\t%10s,\t%10s,\t%10s\n", "Date", "Date_t", "temp [C]", "SV [C]", "Output [%]");
+        lineout.asprintf("###%11s,\t%12s,\t%10s,\t%10s,\t%10s\n", "Date", "Date_t", "temp [C]", "SV [C]", "Output [%]");
         stream << lineout;
         stream.flush();
 
@@ -892,9 +895,10 @@ void MainWindow::on_pushButton_Control_clicked()
             QDateTime date = QDateTime::currentDateTime();
             fillDataAndPlot(date, temperature, targetValue_2, MV);
 
-            lineout.sprintf("%14s,\t%12d,\t%10.1f,\t%10.1f,\t%10.1f\n",
+            lineout.asprintf("%14s,\t%12d,\t%10.1f,\t%10.1f,\t%10.1f\n",
                             date.toString("MM-dd HH:mm:ss").toStdString().c_str(),
-                            date.toTime_t(),
+                            //date.toTime_t(),
+                             date.toSecsSinceEpoch(),
                             temperature,
                             targetValue_2,
                             MV);
@@ -910,7 +914,7 @@ void MainWindow::on_pushButton_Control_clicked()
                     muteLog = false;
                     LogMsg("Target Set-temp stable. Start fixed rate. Elapse time : " + QString::number(totalElapse.elapsed()/1000./60) + " mins.");
                     muteLog = ui->checkBox_MuteLogMsg->isChecked();
-                    lineout.sprintf("### fixed-rate start.\n");
+                    lineout.asprintf("### fixed-rate start.\n");
                     stream << lineout;
                     stream.flush();
 
@@ -926,7 +930,7 @@ void MainWindow::on_pushButton_Control_clicked()
                 LogMsg("Target Set-temp reached : " + QString::number(targetValue_2) + " C. Elapse time : " + QString::number(totalElapse.elapsed()/1000./60) + " mins.");
                 LogMsg("wait for 10 mins.");
                 muteLog = ui->checkBox_MuteLogMsg->isChecked();
-                lineout.sprintf("### Target Set-temp reached : %5.1f C\n", targetValue_2);
+                lineout.asprintf("### Target Set-temp reached : %5.1f C\n", targetValue_2);
                 stream << lineout;
                 stream.flush();
             }
@@ -1014,9 +1018,9 @@ void MainWindow::on_pushButton_Control_clicked()
                 QDateTime date = QDateTime::currentDateTime();
                 fillDataAndPlot(date, temperature, smallShift, MV);
 
-                lineout.sprintf("%14s,\t%12d,\t%10.1f,\t%10.1f,\t%10.1f\n",
+                lineout.asprintf("%14s,\t%12d,\t%10.1f,\t%10.1f,\t%10.1f\n",
                                 date.toString("MM-dd HH:mm:ss").toStdString().c_str(),
-                                date.toTime_t(),
+                                date.toSecsSinceEpoch(),
                                 temperature,
                                 smallShift,
                                 MV);
@@ -1106,9 +1110,9 @@ void MainWindow::on_pushButton_Control_clicked()
             QDateTime date = QDateTime::currentDateTime();
             fillDataAndPlot(date, temperature, smallShift, MV);
 
-            lineout.sprintf("%14s,\t%12d,\t%10.1f,\t%10.1f,\t%10.1f\n",
+            lineout.asprintf("%14s,\t%12d,\t%10.1f,\t%10.1f,\t%10.1f\n",
                             date.toString("MM-dd HH:mm:ss").toStdString().c_str(),
-                            date.toTime_t(),
+                            date.toSecsSinceEpoch(),
                             temperature,
                             smallShift,
                             MV);
@@ -1164,7 +1168,8 @@ void MainWindow::on_pushButton_RecordTemp_clicked()
         LogMsg("===================== Recording temperature Stopped.");
         ui->pushButton_RecordTemp->setStyleSheet("");
         clock->stop();
-        totalElapse.setHMS(0,0,0,0);
+        //totalElapse.setHMS(0,0,0,0);
+        totalElapse.start();
     }
 
     //plot->graph(1)->data()->clear();
@@ -1196,11 +1201,11 @@ void MainWindow::on_pushButton_RecordTemp_clicked()
         QTextStream stream(&outfile);
         QString lineout;
 
-        lineout.sprintf("###%s", startTime.toString("yyyy-MM-dd HH:mm:ss\n").toStdString().c_str());
+        lineout.asprintf("###%s", startTime.toString("yyyy-MM-dd HH:mm:ss\n").toStdString().c_str());
         stream << lineout;
         lineout = "###Temperature Recording.\n";
         stream << lineout;
-        lineout.sprintf("###%11s,\t%12s,\t%10s,\t%10s,\t%10s\n", "Date", "Date_t", "temp [C]", "SV [C]", "Output [%]");
+        lineout.asprintf("###%11s,\t%12s,\t%10s,\t%10s,\t%10s\n", "Date", "Date_t", "temp [C]", "SV [C]", "Output [%]");
         stream << lineout;
 
         pvData.clear();
@@ -1234,9 +1239,9 @@ void MainWindow::on_pushButton_RecordTemp_clicked()
             QDateTime date = QDateTime::currentDateTime();
             fillDataAndPlot(date, temperature, SV, MV);
 
-            lineout.sprintf("%14s,\t%12d,\t%10.1f,\t%10.1f,\t%10.1f\n",
+            lineout.asprintf("%14s,\t%12d,\t%10.1f,\t%10.1f,\t%10.1f\n",
                             date.toString("MM-dd HH:mm:ss").toStdString().c_str(),
-                            date.toTime_t(),
+                            date.toSecsSinceEpoch(),
                             temperature,
                             (double) SV,
                             (double) MV);
@@ -1525,7 +1530,7 @@ void MainWindow::on_actionOpen_File_triggered()
 void MainWindow::fillDataAndPlot(const QDateTime date, const double PV, const double SV, const double MV)
 {
     QCPGraphData plotdata;
-    plotdata.key = date.toTime_t();
+    plotdata.key = date.toSecsSinceEpoch();
 
     plotdata.value = PV;
     pvData.push_back(plotdata);

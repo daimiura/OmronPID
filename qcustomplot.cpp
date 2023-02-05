@@ -667,7 +667,8 @@ QCPPaintBufferPixmap::~QCPPaintBufferPixmap()
 QCPPainter *QCPPaintBufferPixmap::startPainting()
 {
   QCPPainter *result = new QCPPainter(&mBuffer);
-  result->setRenderHint(QPainter::HighQualityAntialiasing);
+  //result->setRenderHint(QPainter::HighQualityAntialiasing);
+  result->setRenderHint(QPainter::Antialiasing);
   return result;
 }
 
@@ -1105,7 +1106,8 @@ void QCPLayer::setMode(QCPLayer::LayerMode mode)
   {
     mMode = mode;
     if (!mPaintBuffer.isNull())
-      mPaintBuffer.data()->setInvalidated();
+      //mPaintBuffer.toStrongRef()->setInvalidated();
+      mPaintBuffer.toStrongRef()->setInvalidated();
   }
 }
 
@@ -1142,14 +1144,14 @@ void QCPLayer::drawToPaintBuffer()
 {
   if (!mPaintBuffer.isNull())
   {
-    if (QCPPainter *painter = mPaintBuffer.data()->startPainting())
+    if (QCPPainter *painter = mPaintBuffer.toStrongRef()->startPainting())
     {
       if (painter->isActive())
         draw(painter);
       else
         qDebug() << Q_FUNC_INFO << "paint buffer returned inactive painter";
       delete painter;
-      mPaintBuffer.data()->donePainting();
+      mPaintBuffer.toStrongRef()->donePainting();
     } else
       qDebug() << Q_FUNC_INFO << "paint buffer returned zero painter";
   } else
@@ -1175,9 +1177,9 @@ void QCPLayer::replot()
   {
     if (!mPaintBuffer.isNull())
     {
-      mPaintBuffer.data()->clear(Qt::transparent);
+      mPaintBuffer.toStrongRef()->clear(Qt::transparent);
       drawToPaintBuffer();
-      mPaintBuffer.data()->setInvalidated(false);
+      mPaintBuffer.toStrongRef()->setInvalidated(false);
       mParentPlot->update();
     } else
       qDebug() << Q_FUNC_INFO << "no valid paint buffer associated with this layer";
@@ -1204,7 +1206,7 @@ void QCPLayer::addChild(QCPLayerable *layerable, bool prepend)
     else
       mChildren.append(layerable);
     if (!mPaintBuffer.isNull())
-      mPaintBuffer.data()->setInvalidated();
+      mPaintBuffer.toStrongRef()->setInvalidated();
   } else
     qDebug() << Q_FUNC_INFO << "layerable is already child of this layer" << reinterpret_cast<quintptr>(layerable);
 }
@@ -1223,7 +1225,7 @@ void QCPLayer::removeChild(QCPLayerable *layerable)
   if (mChildren.removeOne(layerable))
   {
     if (!mPaintBuffer.isNull())
-      mPaintBuffer.data()->setInvalidated();
+      mPaintBuffer.toStrongRef()->setInvalidated();
   } else
     qDebug() << Q_FUNC_INFO << "layerable is not child of this layer" << reinterpret_cast<quintptr>(layerable);
 }
@@ -4881,7 +4883,7 @@ QCPLayoutInset::InsetPlacement QCPLayoutInset::insetPlacement(int index) const
   Returns the alignment of the element with the specified \a index. The alignment only has a
   meaning, if the inset placement (\ref setInsetPlacement) is \ref ipBorderAligned.
 */
-Qt::Alignment QCPLayoutInset::insetAlignment(int index) const
+QCPLayoutInset::insetAlignment(int index) const
 {
   if (elementAt(index))
     return mInsetAlignment.at(index);
@@ -6519,7 +6521,7 @@ double QCPAxisTickerFixed::getTickStep(const QCPRange &range)
 
 /* start of documentation of inline functions */
 
-/*! \fn QMap<double, QString> &QCPAxisTickerText::ticks()
+/*! \fn QMultiMap<double, QString> &QCPAxisTickerText::ticks()
   
   Returns a non-const reference to the internal map which stores the tick coordinates and their
   labels.
@@ -6549,7 +6551,7 @@ QCPAxisTickerText::QCPAxisTickerText() :
   
   \see addTicks, addTick, clear
 */
-void QCPAxisTickerText::setTicks(const QMap<double, QString> &ticks)
+void QCPAxisTickerText::setTicks(const QMultiMap<double, QString> &ticks)
 {
   mTicks = ticks;
 }
@@ -6615,7 +6617,7 @@ void QCPAxisTickerText::addTick(double position, QString label)
   
   \see addTick, setTicks, clear
 */
-void QCPAxisTickerText::addTicks(const QMap<double, QString> &ticks)
+void QCPAxisTickerText::addTicks(const QMultiMap<double, QString> &ticks)
 {
   mTicks.unite(ticks);
 }
@@ -6691,12 +6693,12 @@ QVector<double> QCPAxisTickerText::createTickVector(double tickStep, const QCPRa
   if (mTicks.isEmpty())
     return result;
   
-  QMap<double, QString>::const_iterator start = mTicks.lowerBound(range.lower);
-  QMap<double, QString>::const_iterator end = mTicks.upperBound(range.upper);
+  QMultiMap<double, QString>::const_iterator start = mTicks.lowerBound(range.lower);
+  QMultiMap<double, QString>::const_iterator end = mTicks.upperBound(range.upper);
   // this method should try to give one tick outside of range so proper subticks can be generated:
   if (start != mTicks.constBegin()) --start;
   if (end != mTicks.constEnd()) ++end;
-  for (QMap<double, QString>::const_iterator it = start; it != end; ++it)
+  for (QMultiMap<double, QString>::const_iterator it = start; it != end; ++it)
     result.append(it.key());
   
   return result;
@@ -8921,9 +8923,10 @@ void QCPAxis::wheelEvent(QWheelEvent *event)
     return;
   }
   
-  const double wheelSteps = event->delta()/120.0; // a single step delta is +/-120 usually
+  const double wheelSteps = event->angleDelta().y()/120.0; // a single step delta is +/-120 usually
   const double factor = qPow(mAxisRect->rangeZoomFactor(orientation()), wheelSteps);
-  scaleRange(factor, pixelToCoord(orientation() == Qt::Horizontal ? event->pos().x() : event->pos().y()));
+  //scaleRange(factor, pixelToCoord(orientation() == Qt::Horizontal ? event->pos().x() : event->pos().y()));
+  scaleRange(factor, pixelToCoord(orientation() == Qt::Horizontal ? event->position().x() : event->position().y()));
   mParentPlot->replot();
 }
 
@@ -11323,12 +11326,14 @@ QCPItemAnchor::QCPItemAnchor(QCustomPlot *parentPlot, QCPAbstractItem *parentIte
 QCPItemAnchor::~QCPItemAnchor()
 {
   // unregister as parent at children:
-  foreach (QCPItemPosition *child, mChildrenX.toList())
+  QList<QCPItemPosition*> xlist = mChildrenX.values();
+  foreach (QCPItemPosition *child, xlist)
   {
     if (child->parentAnchorX() == this)
       child->setParentAnchorX(0); // this acts back on this anchor and child removes itself from mChildrenX
   }
-  foreach (QCPItemPosition *child, mChildrenY.toList())
+  QList<QCPItemPosition*> ylist = mChildrenY.values();
+  foreach (QCPItemPosition *child, ylist)
   {
     if (child->parentAnchorY() == this)
       child->setParentAnchorY(0); // this acts back on this anchor and child removes itself from mChildrenY
@@ -11501,12 +11506,14 @@ QCPItemPosition::~QCPItemPosition()
   // unregister as parent at children:
   // Note: this is done in ~QCPItemAnchor again, but it's important QCPItemPosition does it itself, because only then
   //       the setParentAnchor(0) call the correct QCPItemPosition::pixelPosition function instead of QCPItemAnchor::pixelPosition
-  foreach (QCPItemPosition *child, mChildrenX.toList())
+  QList<QCPItemPosition*> xlist = mChildrenX.values();
+  foreach (QCPItemPosition *child, xlist)
   {
     if (child->parentAnchorX() == this)
       child->setParentAnchorX(0); // this acts back on this anchor and child removes itself from mChildrenX
   }
-  foreach (QCPItemPosition *child, mChildrenY.toList())
+  QList<QCPItemPosition*> ylist = mChildrenY.values();
+  foreach (QCPItemPosition *child, ylist)
   {
     if (child->parentAnchorY() == this)
       child->setParentAnchorY(0); // this acts back on this anchor and child removes itself from mChildrenY
@@ -14123,7 +14130,7 @@ bool QCustomPlot::removeLayer(QCPLayer *layer)
     setCurrentLayer(targetLayer);
   // invalidate the paint buffer that was responsible for this layer:
   if (!layer->mPaintBuffer.isNull())
-    layer->mPaintBuffer.data()->setInvalidated();
+    layer->mPaintBuffer.toStrongRef()->setInvalidated();
   // remove layer:
   delete layer;
   mLayers.removeOne(layer);
@@ -14160,9 +14167,9 @@ bool QCustomPlot::moveLayer(QCPLayer *layer, QCPLayer *otherLayer, QCustomPlot::
   
   // invalidate the paint buffers that are responsible for the layers:
   if (!layer->mPaintBuffer.isNull())
-    layer->mPaintBuffer.data()->setInvalidated();
+    layer->mPaintBuffer.toStrongRef()->setInvalidated();
   if (!otherLayer->mPaintBuffer.isNull())
-    otherLayer->mPaintBuffer.data()->setInvalidated();
+    otherLayer->mPaintBuffer.toStrongRef()->setInvalidated();
   
   updateLayerIndices();
   return true;
@@ -14721,7 +14728,7 @@ void QCustomPlot::paintEvent(QPaintEvent *event)
   QCPPainter painter(this);
   if (painter.isActive())
   {
-    painter.setRenderHint(QPainter::HighQualityAntialiasing); // to make Antialiasing look good if using the OpenGL graphicssystem
+    painter.setRenderHint(QPainter::Antialiasing); // to make Antialiasing look good if using the OpenGL graphicssystem
     if (mBackgroundBrush.style() != Qt::NoBrush)
       painter.fillRect(mViewport, mBackgroundBrush);
     drawBackground(&painter);
@@ -14941,7 +14948,7 @@ void QCustomPlot::wheelEvent(QWheelEvent *event)
 {
   emit mouseWheel(event);
   // forward event to layerable under cursor:
-  QList<QCPLayerable*> candidates = layerableListAt(event->pos(), false);
+  QList<QCPLayerable*> candidates = layerableListAt(event->position(), false);
   for (int i=0; i<candidates.size(); ++i)
   {
     event->accept(); // default impl of QCPLayerable's mouse events ignore the event, in that case propagate to next candidate in list
@@ -15275,7 +15282,7 @@ void QCustomPlot::processRectSelection(QRect rect, QMouseEvent *event)
   
   if (mInteractions.testFlag(QCP::iSelectPlottables))
   {
-    QMap<int, QPair<QCPAbstractPlottable*, QCPDataSelection> > potentialSelections; // map key is number of selected data points, so we have selections sorted by size
+    QMultiMap<int, QPair<QCPAbstractPlottable*, QCPDataSelection> > potentialSelections; // map key is number of selected data points, so we have selections sorted by size
     QRectF rectF(rect.normalized());
     if (QCPAxisRect *affectedAxisRect = axisRectAt(rectF.topLeft()))
     {
@@ -15295,7 +15302,7 @@ void QCustomPlot::processRectSelection(QRect rect, QMouseEvent *event)
         // only leave plottable with most selected points in map, since we will only select a single plottable:
         if (!potentialSelections.isEmpty())
         {
-          QMap<int, QPair<QCPAbstractPlottable*, QCPDataSelection> >::iterator it = potentialSelections.begin();
+          QMultiMap<int, QPair<QCPAbstractPlottable*, QCPDataSelection> >::iterator it = potentialSelections.begin();
           while (it != potentialSelections.end()-1) // erase all except last element
             it = potentialSelections.erase(it);
         }
@@ -15321,7 +15328,7 @@ void QCustomPlot::processRectSelection(QRect rect, QMouseEvent *event)
       }
       
       // go through selections in reverse (largest selection first) and emit select events:
-      QMap<int, QPair<QCPAbstractPlottable*, QCPDataSelection> >::const_iterator it = potentialSelections.constEnd();
+      QMultiMap<int, QPair<QCPAbstractPlottable*, QCPDataSelection> >::const_iterator it = potentialSelections.constEnd();
       while (it != potentialSelections.constBegin())
       {
         --it;
@@ -15816,7 +15823,7 @@ void QCPColorGradient::setLevelCount(int n)
 
 /*!
   Sets at which positions from 0 to 1 which color shall occur. The positions are the keys, the
-  colors are the values of the passed QMap \a colorStops. In between these color stops, the color
+  colors are the values of the passed QMultiMap \a colorStops. In between these color stops, the color
   is interpolated according to \ref setColorInterpolation.
   
   A more convenient way to create a custom gradient may be to clear all color stops with \ref
@@ -15825,7 +15832,7 @@ void QCPColorGradient::setLevelCount(int n)
   
   \see clearColorStops
 */
-void QCPColorGradient::setColorStops(const QMap<double, QColor> &colorStops)
+void QCPColorGradient::setColorStops(const QMultiMap<double, QColor> &colorStops)
 {
   mColorStops = colorStops;
   mColorBufferInvalidated = true;
@@ -16243,7 +16250,7 @@ QCPColorGradient QCPColorGradient::inverted() const
 {
   QCPColorGradient result(*this);
   result.clearColorStops();
-  for (QMap<double, QColor>::const_iterator it=mColorStops.constBegin(); it!=mColorStops.constEnd(); ++it)
+  for (QMultiMap<double, QColor>::const_iterator it=mColorStops.constBegin(); it!=mColorStops.constEnd(); ++it)
     result.setColorStopAt(1.0-it.key(), it.value());
   return result;
 }
@@ -16255,7 +16262,7 @@ QCPColorGradient QCPColorGradient::inverted() const
 */
 bool QCPColorGradient::stopsUseAlpha() const
 {
-  for (QMap<double, QColor>::const_iterator it=mColorStops.constBegin(); it!=mColorStops.constEnd(); ++it)
+  for (QMultiMap<double, QColor>::const_iterator it=mColorStops.constBegin(); it!=mColorStops.constEnd(); ++it)
   {
     if (it.value().alpha() < 255)
       return true;
@@ -16279,7 +16286,7 @@ void QCPColorGradient::updateColorBuffer()
     for (int i=0; i<mLevelCount; ++i)
     {
       double position = i*indexToPosFactor;
-      QMap<double, QColor>::const_iterator it = mColorStops.lowerBound(position);
+      QMultiMap<double, QColor>::const_iterator it = mColorStops.lowerBound(position);
       if (it == mColorStops.constEnd()) // position is on or after last stop, use color of last stop
       {
         mColorBuffer[i] = (it-1).value().rgba();
@@ -16288,8 +16295,8 @@ void QCPColorGradient::updateColorBuffer()
         mColorBuffer[i] = it.value().rgba();
       } else // position is in between stops (or on an intermediate stop), interpolate color
       {
-        QMap<double, QColor>::const_iterator high = it;
-        QMap<double, QColor>::const_iterator low = it-1;
+        QMultiMap<double, QColor>::const_iterator high = it;
+        QMultiMap<double, QColor>::const_iterator low = it-1;
         double t = (position-low.key())/(high.key()-low.key()); // interpolation factor 0..1
         switch (mColorInterpolation)
         {
@@ -17893,14 +17900,14 @@ void QCPAxisRect::wheelEvent(QWheelEvent *event)
     if (mRangeZoom != 0)
     {
       double factor;
-      double wheelSteps = event->delta()/120.0; // a single step delta is +/-120 usually
+      double wheelSteps = event->angleDelta().y()/120.0; // a single step delta is +/-120 usually
       if (mRangeZoom.testFlag(Qt::Horizontal))
       {
         factor = qPow(mRangeZoomFactorHorz, wheelSteps);
         for (int i=0; i<mRangeZoomHorzAxis.size(); ++i)
         {
           if (!mRangeZoomHorzAxis.at(i).isNull())
-            mRangeZoomHorzAxis.at(i)->scaleRange(factor, mRangeZoomHorzAxis.at(i)->pixelToCoord(event->pos().x()));
+            mRangeZoomHorzAxis.at(i)->scaleRange(factor, mRangeZoomHorzAxis.at(i)->pixelToCoord(event->position().x()));
         }
       }
       if (mRangeZoom.testFlag(Qt::Vertical))
@@ -17909,7 +17916,7 @@ void QCPAxisRect::wheelEvent(QWheelEvent *event)
         for (int i=0; i<mRangeZoomVertAxis.size(); ++i)
         {
           if (!mRangeZoomVertAxis.at(i).isNull())
-            mRangeZoomVertAxis.at(i)->scaleRange(factor, mRangeZoomVertAxis.at(i)->pixelToCoord(event->pos().y()));
+            mRangeZoomVertAxis.at(i)->scaleRange(factor, mRangeZoomVertAxis.at(i)->pixelToCoord(event->position().y()));
         }
       }
       mParentPlot->replot();
@@ -19540,7 +19547,7 @@ void QCPColorScale::setRangeDrag(bool enabled)
   if (enabled)
     mAxisRect.data()->setRangeDrag(QCPAxis::orientation(mType));
   else
-    mAxisRect.data()->setRangeDrag(0);
+    mAxisRect.data()->setRangeDrag(Qt::Horizontal|Qt::Vertical);
 }
 
 /*!
@@ -19560,7 +19567,7 @@ void QCPColorScale::setRangeZoom(bool enabled)
   if (enabled)
     mAxisRect.data()->setRangeZoom(QCPAxis::orientation(mType));
   else
-    mAxisRect.data()->setRangeZoom(0);
+    mAxisRect.data()->setRangeZoom(Qt::Horizontal|Qt::Vertical);
 }
 
 /*!
@@ -24067,7 +24074,7 @@ void QCPBars::getVisibleDataBounds(QCPBarsDataContainer::const_iterator &begin, 
     return;
   }
   
-  // get visible data range as QMap iterators
+  // get visible data range as QMultiMap iterators
   begin = mDataContainer->findBegin(mKeyAxis.data()->range().lower);
   end = mDataContainer->findEnd(mKeyAxis.data()->range().upper);
   double lowerPixelBound = mKeyAxis.data()->coordToPixel(mKeyAxis.data()->range().lower);

@@ -2,12 +2,16 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QtSerialPort>
+#include <QSerialPort>
+#include <QSerialPortInfo>
 #include <QModbusClient>
 #include <QModbusDataUnit>
 #include <QModbusRtuSerialMaster>
+//#include <QModbusRtuSerialClient>
 #include <QScrollBar>
 #include <qcustomplot.h>
+#include <QElapsedTimer>
+
 
 namespace Ui {
 class MainWindow;
@@ -104,7 +108,8 @@ private:
 
     QTimer * clock;
     QTimer * waitTimer;
-    QTime totalElapse;
+    //QTime totalElapse;
+    QElapsedTimer totalElapse;
     bool checkDay;
     int dayCounter;
     bool nextSV;
