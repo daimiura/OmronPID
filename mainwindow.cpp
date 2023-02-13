@@ -151,10 +151,11 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->comboBox_Mode->addItem("Fixed rate", 3);
     ui->comboBox_Mode->addItem("Normal + Fixed rate", 4);
 
-    ui->comboBox_Mode->setItemData(0, QBrush(Qt::black), Qt::TextColorRole);
-    ui->comboBox_Mode->setItemData(1, QBrush(Qt::red), Qt::TextColorRole);
-    ui->comboBox_Mode->setItemData(2, QBrush(Qt::blue), Qt::TextColorRole);
-    ui->comboBox_Mode->setItemData(3, QBrush(Qt::darkGreen), Qt::TextColorRole);
+    ui->comboBox_Mode->setItemData(0, QBrush(Qt::black), Qt::ForegroundRole);
+    ui->comboBox_Mode->setItemData(1, QBrush(Qt::red), Qt::ForegroundRole);
+    ui->comboBox_Mode->setItemData(2, QBrush(Qt::blue), Qt::ForegroundRole);
+    ui->comboBox_Mode->setItemData(3, QBrush(Qt::darkGreen), Qt::ForegroundRole);
+
 
     findSeriesPortDevices();
     omron = NULL;
@@ -212,10 +213,12 @@ MainWindow::MainWindow(QWidget *parent) :
 
     comboxEnable = true;
 
+    QObject::connect(&my_thread, SIGNAL(data_update(int)), this, SLOT(periodic_work(int)));
+    //QObject::connect(&my_thread, SIGNAL(data_update(int)), this, SLOT(true_work(int)));
+
     ui->textEdit_Log->setTextColor(QColor(34,139,34,255));
     LogMsg("The AT and RUN/STOP do not get from the device. Please be careful.");
     ui->textEdit_Log->setTextColor(QColor(0,0,0,255));
-
 }
 
 MainWindow::~MainWindow()
@@ -224,6 +227,8 @@ MainWindow::~MainWindow()
 
     clock->stop();
     waitTimer->stop();
+    my_thread.quit();
+    my_thread.wait();
 
     delete waitTimer;
     delete clock;
@@ -243,7 +248,7 @@ void MainWindow::LogMsg(QString str, bool newLine)
         msgCount ++;
         QString dateStr = QDateTime::currentDateTime().toString("HH:mm:ss ");
         QString countStr;
-        countStr.sprintf("[%05d]: ", msgCount);
+        countStr.asprintf("[%05d]: ", msgCount);
         str.insert(0, countStr).insert(0, dateStr);
         ui->textEdit_Log->append(str);
     }
@@ -308,7 +313,6 @@ void MainWindow::panalOnOff(bool IO)
     ui->lineEdit_Cmd->setEnabled(IO);
     ui->lineEdit_SV->setEnabled(IO);
     ui->checkBox_EnableSend->setEnabled(IO);
-    ui->checkBox_RunSop->setEnabled(IO);
     ui->comboBox_Func->setEnabled(IO);
     ui->comboBox_AT->setEnabled(IO);
     ui->pushButton_ReadRH->setEnabled(IO);
@@ -745,7 +749,7 @@ void MainWindow::on_pushButton_Control_clicked()
         QString boxMsg;
         if( mode == 1){
             LogMsg("======== Stable Mode ==========");
-            boxMsg.sprintf("======== Stable Mode ========== \n"
+            boxMsg.asprintf("======== Stable Mode ========== \n"
                            "Estimated transition time : %6.1f min. \n"
                            "Estimated gradience       : %6.1f min/C \n"
                            "Estimated total time      : %6.1f min = %6.1f hr",
@@ -754,21 +758,21 @@ void MainWindow::on_pushButton_Control_clicked()
                            estTotalTime, estTotalTime/60.);
         }else if(mode == 2){
             LogMsg("======== Fixed Time Mode ==========");
-            boxMsg.sprintf("======== Fixed Time Mode ========== \n"
+            boxMsg.asprintf("======== Fixed Time Mode ========== \n"
                            "Estimated gradience  : %6.1f min/C \n"
                            "Estimated total time : %6.1f min = %6.1f hr",
                            estSlope,
                            estTotalTime, estTotalTime/60.);
         }else if(mode == 3){
             LogMsg("======== Fixed Rate Mode ==========");
-            boxMsg.sprintf("======== Fixed Rate Mode ========== \n"
+            boxMsg.asprintf("======== Fixed Rate Mode ========== \n"
                            "Set-temp Gradience   : %6.1f min/C \n"
                            "Estimated total time : %6.1f min = %6.1f hr",
                            estSlope,
                            estTotalTime, estTotalTime/60.);
         }else if(mode == 4){
             LogMsg("======== Normal + Fixed Rate Mode ==========");
-            boxMsg.sprintf("======== Normal + Fixed Rate Mode ========== \n"
+            boxMsg.asprintf("======== Normal + Fixed Rate Mode ========== \n"
                            "1) Go to %5.1f C using normal mode.\n"
                            "   Time unknown. \n"
                            "2) Fixed rate to go to %5.1f C\n"
@@ -809,7 +813,7 @@ void MainWindow::on_pushButton_Control_clicked()
         QTextStream stream(&outfile);
         QString lineout;
 
-        lineout.sprintf("###%s", startTime.toString("yyyy-MM-dd HH:mm:ss\n").toStdString().c_str());
+        lineout.asprintf("###%s", startTime.toString("yyyy-MM-dd HH:mm:ss\n").toStdString().c_str());
         stream << lineout;
         if( mode == 1){
             lineout = "### Control mode          :  Stable Temperature.\n";
@@ -846,7 +850,7 @@ void MainWindow::on_pushButton_Control_clicked()
             lineout = "### Set-temp change rate    : " + QString::number(tempWaitTime/60./1000.) + " min/C.\n";
             stream << lineout;
         }
-        lineout.sprintf("###%11s,\t%12s,\t%10s,\t%10s,\t%10s\n", "Date", "Date_t", "temp [C]", "SV [C]", "Output [%]");
+        lineout.asprintf("###%11s,\t%12s,\t%10s,\t%10s,\t%10s\n", "Date", "Date_t", "temp [C]", "SV [C]", "Output [%]");
         stream << lineout;
         stream.flush();
 
@@ -892,7 +896,7 @@ void MainWindow::on_pushButton_Control_clicked()
             QDateTime date = QDateTime::currentDateTime();
             fillDataAndPlot(date, temperature, targetValue_2, MV);
 
-            lineout.sprintf("%14s,\t%12d,\t%10.1f,\t%10.1f,\t%10.1f\n",
+            lineout.asprintf("%14s,\t%12d,\t%10.1f,\t%10.1f,\t%10.1f\n",
                             date.toString("MM-dd HH:mm:ss").toStdString().c_str(),
                             date.toTime_t(),
                             temperature,
@@ -910,7 +914,7 @@ void MainWindow::on_pushButton_Control_clicked()
                     muteLog = false;
                     LogMsg("Target Set-temp stable. Start fixed rate. Elapse time : " + QString::number(totalElapse.elapsed()/1000./60) + " mins.");
                     muteLog = ui->checkBox_MuteLogMsg->isChecked();
-                    lineout.sprintf("### fixed-rate start.\n");
+                    lineout.asprintf("### fixed-rate start.\n");
                     stream << lineout;
                     stream.flush();
 
@@ -926,7 +930,7 @@ void MainWindow::on_pushButton_Control_clicked()
                 LogMsg("Target Set-temp reached : " + QString::number(targetValue_2) + " C. Elapse time : " + QString::number(totalElapse.elapsed()/1000./60) + " mins.");
                 LogMsg("wait for 10 mins.");
                 muteLog = ui->checkBox_MuteLogMsg->isChecked();
-                lineout.sprintf("### Target Set-temp reached : %5.1f C\n", targetValue_2);
+                lineout.asprintf("### Target Set-temp reached : %5.1f C\n", targetValue_2);
                 stream << lineout;
                 stream.flush();
             }
@@ -1014,7 +1018,7 @@ void MainWindow::on_pushButton_Control_clicked()
                 QDateTime date = QDateTime::currentDateTime();
                 fillDataAndPlot(date, temperature, smallShift, MV);
 
-                lineout.sprintf("%14s,\t%12d,\t%10.1f,\t%10.1f,\t%10.1f\n",
+                lineout.asprintf("%14s,\t%12d,\t%10.1f,\t%10.1f,\t%10.1f\n",
                                 date.toString("MM-dd HH:mm:ss").toStdString().c_str(),
                                 date.toTime_t(),
                                 temperature,
@@ -1106,7 +1110,7 @@ void MainWindow::on_pushButton_Control_clicked()
             QDateTime date = QDateTime::currentDateTime();
             fillDataAndPlot(date, temperature, smallShift, MV);
 
-            lineout.sprintf("%14s,\t%12d,\t%10.1f,\t%10.1f,\t%10.1f\n",
+            lineout.asprintf("%14s,\t%12d,\t%10.1f,\t%10.1f,\t%10.1f\n",
                             date.toString("MM-dd HH:mm:ss").toStdString().c_str(),
                             date.toTime_t(),
                             temperature,
@@ -1132,21 +1136,6 @@ void MainWindow::on_comboBox_AT_currentIndexChanged(int index)
 {
     if(!comboxEnable) return;
     setAT(index);
-}
-
-void MainWindow::on_checkBox_RunSop_clicked()
-{
-    statusBar()->clearMessage();
-    QString cmd;
-    if( ui->checkBox_RunSop->isChecked() ){
-        cmd = "00 00 01 00";
-        LogMsg("Set Run.");
-    }else{
-        cmd = "00 00 01 01";
-        LogMsg("Set Stop.");
-    }
-    QByteArray value = QByteArray::fromHex(cmd.toStdString().c_str());
-    request(QModbusPdu::WriteSingleRegister, value);
 }
 
 void MainWindow::on_pushButton_RecordTemp_clicked()
@@ -1196,11 +1185,11 @@ void MainWindow::on_pushButton_RecordTemp_clicked()
         QTextStream stream(&outfile);
         QString lineout;
 
-        lineout.sprintf("###%s", startTime.toString("yyyy-MM-dd HH:mm:ss\n").toStdString().c_str());
+        lineout.asprintf("###%s", startTime.toString("yyyy-MM-dd HH:mm:ss\n").toStdString().c_str());
         stream << lineout;
         lineout = "###Temperature Recording.\n";
         stream << lineout;
-        lineout.sprintf("###%11s,\t%12s,\t%10s,\t%10s,\t%10s\n", "Date", "Date_t", "temp [C]", "SV [C]", "Output [%]");
+        lineout.asprintf("###%11s,\t%12s,\t%10s,\t%10s,\t%10s\n", "Date", "Date_t", "temp [C]", "SV [C]", "Output [%]");
         stream << lineout;
 
         pvData.clear();
@@ -1234,7 +1223,7 @@ void MainWindow::on_pushButton_RecordTemp_clicked()
             QDateTime date = QDateTime::currentDateTime();
             fillDataAndPlot(date, temperature, SV, MV);
 
-            lineout.sprintf("%14s,\t%12d,\t%10.1f,\t%10.1f,\t%10.1f\n",
+            lineout.asprintf("%14s,\t%12d,\t%10.1f,\t%10.1f,\t%10.1f\n",
                             date.toString("MM-dd HH:mm:ss").toStdString().c_str(),
                             date.toTime_t(),
                             temperature,
@@ -1576,3 +1565,159 @@ void MainWindow::HelpPicNext()
         return;
     }
 }
+
+void MainWindow::on_radioButton_Run_clicked()
+{
+  statusBar()->clearMessage();
+  QString cmd = "00 00 01 00";
+  LogMsg("Set Run.");
+  QByteArray value = QByteArray::fromHex(cmd.toStdString().c_str());
+  request(QModbusPdu::WriteSingleRegister, value);
+  QColor color = QColor(255, 236, 153, 255);
+  QPalette pal = palette();
+  pal.setColor(QPalette::Window, color);
+  this->setAutoFillBackground(true);
+  this->setPalette(pal);
+  this->setAutoFillBackground(false);
+  ui->radioButton_Run->setStyleSheet("background-color:rgb(173, 181, 189);");
+  ui->radioButton_Stop->setStyleSheet("");
+  my_thread.start();
+  LogMsg("Thred start.");
+}
+
+void MainWindow::on_radioButton_Stop_clicked()
+{
+  statusBar()->clearMessage();
+  QString cmd = "00 00 01 01";
+  LogMsg("Set Stop.");
+  QByteArray value = QByteArray::fromHex(cmd.toStdString().c_str());
+  request(QModbusPdu::WriteSingleRegister, value);
+  QColor color = QColor("lightgray");
+  QPalette pal = palette();
+  pal.setColor(QPalette::Window, color);
+  this->setAutoFillBackground(true);
+  this->setPalette(pal);
+  this->setAutoFillBackground(false);
+  my_thread.quit();
+  LogMsg("Thred stop.");
+  ui->radioButton_TempCheck->setChecked(false);
+  ui->radioButton_Run->setStyleSheet("");
+}
+
+
+void MainWindow::Quit()
+{
+  QString cmd = "00 00 01 01";
+  QByteArray value = QByteArray::fromHex(cmd.toStdString().c_str());
+  request(QModbusPdu::WriteSingleRegister, value);
+  QColor color = QColor(252,196,25,255);
+  QPalette pal = palette();
+  pal.setColor(QPalette::Window, color);
+  this->setAutoFillBackground(true);
+  this->setPalette(pal);
+  this->setAutoFillBackground(false);
+  ui->textEdit_Log->setTextColor(QColor(255,0,0,255));
+  LogMsg("Emergency Stop. Check the experimental condition.");
+  my_thread.quit();
+  LogMsg("Thred stop.");
+  ui->radioButton_Stop->setChecked(true);
+  ui->radioButton_Run->setStyleSheet("");
+  ui->textEdit_Log->setTextColor(QColor(0,0,0,255));
+}
+
+
+void MainWindow::on_radioButton_TempCheck_toggled(bool checked){
+  if (checked) CheckTemp();
+}
+
+
+void MainWindow::CheckTemp(){
+ if (ui->radioButton_Stop->isChecked()){
+      my_thread.start();
+      return;
+  }
+  ui->radioButton_TempCheck->setChecked(true);
+  QColor color = QColor(255, 135, 135,255);
+  QPalette pal = palette();
+  pal.setColor(QPalette::Window, color);
+  this->setAutoFillBackground(true);
+  this->setPalette(pal);
+  this->setAutoFillBackground(false);
+  ui->radioButton_TempCheck->setStyleSheet("background-color:rgb(173, 181, 189);");
+  LogMsg("CheckTemp starts.");
+  LogMsg("Check the temperature at intervals.");
+  QTimer getTempTimer;
+  getTempTimer.setSingleShot(true);
+  const int tempGetTime = ui->spinBox_TempRecordTime->value() * 1000; // msec
+  getTempTimer.start(tempGetTime);
+  askTemperature();
+  int i = 0;
+  while(!modbusReady){
+      i++;
+      waitForMSec(timing::modbus);
+      if( i > 10 ) modbusReady = true;
+  }
+  double temp = temperature;
+  QVector<double> vtemp;
+  int size = 10;
+  for(auto i = 0; i < size; i++){
+    LogMsg("The check in " + QString::number(i));
+    QThread::sleep(3);
+    getTempTimer.start(tempGetTime);
+    askTemperature();
+    int j = 0;
+    while(!modbusReady) {
+      j++;
+      waitForMSec(timing::modbus);
+      if( j > 10 )modbusReady = true;
+    }
+    vtemp.push_back(temperature);
+  }
+  double dsum = .0;
+  for (auto i = 0; i < vtemp.size(); i++) {
+      dsum += vtemp[i] - temp;
+    }
+  double vdave = dsum/size;
+  LogMsg("**** The average chnage of temperature ****");
+  LogMsg(QString::number(vdave));
+  if (abs(vdave) > 100.0) {
+      ui->radioButton_TempCheck->setChecked(false);
+      my_thread.start();
+      color = QColor("lightgray");
+      pal = palette();
+      pal.setColor(QPalette::Window, color);
+      this->setAutoFillBackground(true);
+      this->setPalette(pal);
+      this->setAutoFillBackground(false);
+      return;
+    }
+  ui->textEdit_Log->setTextColor(QColor(255, 0, 0,255));
+  LogMsg("Safety conditions is violated.");
+  Quit();
+  ui->radioButton_TempCheck->setChecked(false);
+}
+
+void MainWindow::periodic_work(int i){
+  LogMsg("periodic function works.");
+  askMV();
+  double cMV = MV;
+  double cMVupper = MVupper;
+  if (cMV != cMVupper){
+    LogMsg("Current MVpower is below the upper limit.");
+    return;
+  } else {
+    ui->textEdit_Log->setTextColor(QColor(255,0,0,255));
+    LogMsg("Current MVpower reaches upper limit.");
+    static int flag_run = 0;
+    if (flag_run == 0){
+        flag_run = 1;
+        my_thread.start();
+      }else{
+        flag_run = 0;
+        my_thread.quit();
+      }
+    ui->radioButton_TempCheck->setChecked(true);
+    ui->textEdit_Log->setTextColor(QColor(0,0,0,255));
+  }
+}
+

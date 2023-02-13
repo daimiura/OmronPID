@@ -7,7 +7,9 @@
 #include <QModbusDataUnit>
 #include <QModbusRtuSerialMaster>
 #include <QScrollBar>
+#include <QMutexLocker>
 #include <qcustomplot.h>
+#include "mythread.h"
 
 namespace Ui {
 class MainWindow;
@@ -23,6 +25,14 @@ public:
 
     void LogMsg(QString str, bool newLine = true);
     void findSeriesPortDevices();
+
+    //int value() const;
+    //void setValue(int value);
+
+signals:
+
+public slots:
+  void periodic_work(int i);
 
 private slots:
     void keyPressEvent(QKeyEvent *key);
@@ -61,7 +71,6 @@ private slots:
     void on_comboBox_Mode_currentIndexChanged(int index);
     void on_comboBox_MemAddress_currentTextChanged(const QString &arg1);
 
-    void on_checkBox_RunSop_clicked();
     void on_checkBox_MuteLogMsg_clicked(bool checked);
 
     void on_doubleSpinBox_MVlower_valueChanged(double arg1);
@@ -74,10 +83,19 @@ private slots:
     void on_actionHelp_Page_triggered();
     void HelpPicNext();
 
+    void on_radioButton_Run_clicked();
+    void on_radioButton_Stop_clicked();
+
+    void Quit();
+    void CheckTemp();
+
+    void on_radioButton_TempCheck_toggled(bool checked);
+
 private:
     Ui::MainWindow *ui;
     QCustomPlot * plot;
     QModbusRtuSerialMaster * omron;
+    MyThread my_thread;
 
     QString omronPortName;
     int omronID;
@@ -112,6 +130,7 @@ private:
     QDialog * helpDialog;
     QLabel * HelpLabel;
     int picNumber;
+    QMutex mutex_;
 };
 
 #endif // MAINWINDOW_H
