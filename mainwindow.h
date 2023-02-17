@@ -5,11 +5,19 @@
 #include <QtSerialPort>
 #include <QModbusClient>
 #include <QModbusDataUnit>
-#include <QModbusRtuSerialMaster>
+#include <QModbusRtuSerialMaster> //Qt5
+//#include <QModbusRtuSerialClient> //Qt6
 #include <QScrollBar>
+#include <QMutex>
 #include <QMutexLocker>
 #include <qcustomplot.h>
+#include <QElapsedTimer>
+#include <QApplication>
+#include <QVBoxLayout>
+#include <QHBoxLayout>
 #include "mythread.h"
+#include "myqlineedit.h"
+#include "configuredialog.h"
 
 namespace Ui {
 class MainWindow;
@@ -25,14 +33,11 @@ public:
 
     void LogMsg(QString str, bool newLine = true);
     void findSeriesPortDevices();
-
-    //int value() const;
-    //void setValue(int value);
-
 signals:
 
 public slots:
-  void periodic_work(int i);
+  void periodic_work();
+
 
 private slots:
     void keyPressEvent(QKeyEvent *key);
@@ -77,6 +82,7 @@ private slots:
     void on_doubleSpinBox_MVupper_valueChanged(double arg1);
 
     void on_actionOpen_File_triggered();
+    void on_action_Setting_parameters_for_TempCheck_triggered();
 
     void fillDataAndPlot(const QDateTime date, const double PV, const double SV, const double MV);
 
@@ -91,11 +97,18 @@ private slots:
 
     void on_radioButton_TempCheck_toggled(bool checked);
 
+    void setIntervalAskMV();
+    void setIntervalAskTemp();
+    void setSafeLimit();
+    void setNumbers();
+    void setParametersTempCheck();
+
+
 private:
     Ui::MainWindow *ui;
     QCustomPlot * plot;
     QModbusRtuSerialMaster * omron;
-    MyThread my_thread;
+    MyThread * my_thread_;
 
     QString omronPortName;
     int omronID;
@@ -122,13 +135,14 @@ private:
 
     QTimer * clock;
     QTimer * waitTimer;
-    QTime totalElapse;
+    QElapsedTimer totalElapse;
     bool checkDay;
     int dayCounter;
     bool nextSV;
 
     QDialog * helpDialog;
     QLabel * HelpLabel;
+    ConfigureDialog * configureDialog_;
     int picNumber;
     QMutex mutex_;
 };

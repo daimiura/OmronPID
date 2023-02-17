@@ -10,9 +10,9 @@ class MyThread : public QThread
 public:
     explicit MyThread(QObject *parent = nullptr);
     void run();
-
+    int interval_;
 signals:
-    void data_update(int i);
+    void data_update();
 
 public slots:
 

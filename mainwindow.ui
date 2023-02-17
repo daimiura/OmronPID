@@ -6,43 +6,100 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>832</width>
-    <height>681</height>
+    <width>794</width>
+    <height>843</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Omron E5CC Temp. Control</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <layout class="QGridLayout" name="gridLayout_4" rowstretch="2,2,1" columnstretch="1,2">
-    <item row="2" column="0" colspan="2">
-     <widget class="QGroupBox" name="groupBox">
-      <property name="title">
-       <string>Log Massage</string>
-      </property>
-      <layout class="QGridLayout" name="gridLayout">
-       <item row="0" column="0">
-        <widget class="QTextEdit" name="textEdit_Log"/>
-       </item>
-      </layout>
-     </widget>
-    </item>
-    <item row="1" column="0" colspan="2">
-     <widget class="QCustomPlot" name="plot" native="true"/>
-    </item>
+   <layout class="QGridLayout" name="gridLayout_6">
     <item row="0" column="0">
      <widget class="QGroupBox" name="groupBox_2">
       <property name="title">
        <string>E5CC control</string>
       </property>
-      <layout class="QGridLayout" name="gridLayout_2" columnstretch="1,0,0">
-       <item row="6" column="0" colspan="3">
-        <widget class="QComboBox" name="comboBox_Func"/>
+      <layout class="QGridLayout" name="gridLayout_4">
+       <item row="0" column="0">
+        <widget class="QPushButton" name="pushButton_Connect">
+         <property name="text">
+          <string>Connect</string>
+         </property>
+        </widget>
        </item>
-       <item row="8" column="0">
+       <item row="3" column="0">
+        <widget class="QRadioButton" name="radioButton_Stop">
+         <property name="text">
+          <string>Stop</string>
+         </property>
+         <attribute name="buttonGroup">
+          <string notr="true">buttonGroup</string>
+         </attribute>
+        </widget>
+       </item>
+       <item row="4" column="2">
+        <widget class="QDoubleSpinBox" name="doubleSpinBox_MVupper">
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="maximum">
+          <double>100.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="2">
+        <widget class="QPushButton" name="pushButton_ReadRH">
+         <property name="text">
+          <string>Read From Holding Register</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0" colspan="3">
+        <widget class="QLineEdit" name="lineEdit_Cmd">
+         <property name="font">
+          <font>
+           <family>Courier New</family>
+          </font>
+         </property>
+         <property name="text">
+          <string>&lt;PDU&gt; or &lt;0xYYYY&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0">
         <widget class="QCheckBox" name="checkBox_EnableSend">
          <property name="text">
           <string>Send When Entered</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1" colspan="2">
+        <widget class="QComboBox" name="comboBox_SeriesNumber">
+         <item>
+          <property name="text">
+           <string>FT0875RPA</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="5" column="0" colspan="3">
+        <widget class="QComboBox" name="comboBox_Func"/>
+       </item>
+       <item row="2" column="1">
+        <widget class="QComboBox" name="comboBox_AT">
+         <property name="currentIndex">
+          <number>-1</number>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="label_9">
+         <property name="text">
+          <string>Output Limit [%]:</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
          </property>
         </widget>
        </item>
@@ -62,7 +119,19 @@
          </property>
         </widget>
        </item>
-       <item row="3" column="0">
+       <item row="8" column="0" colspan="2">
+        <widget class="QComboBox" name="comboBox_MemAddress">
+         <property name="font">
+          <font>
+           <family>Courier New</family>
+          </font>
+         </property>
+         <property name="maxVisibleItems">
+          <number>20</number>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
         <widget class="QRadioButton" name="radioButton_Run">
          <property name="text">
           <string>Run</string>
@@ -70,16 +139,6 @@
          <attribute name="buttonGroup">
           <string notr="true">buttonGroup</string>
          </attribute>
-        </widget>
-       </item>
-       <item row="5" column="2">
-        <widget class="QDoubleSpinBox" name="doubleSpinBox_MVupper">
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-         <property name="maximum">
-          <double>100.000000000000000</double>
-         </property>
         </widget>
        </item>
        <item row="1" column="1">
@@ -92,91 +151,10 @@
          </property>
         </widget>
        </item>
-       <item row="7" column="0" colspan="3">
-        <widget class="QLineEdit" name="lineEdit_Cmd">
-         <property name="font">
-          <font>
-           <family>Courier New</family>
-          </font>
-         </property>
-         <property name="text">
-          <string>&lt;PDU&gt; or &lt;0xYYYY&gt;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="0">
-        <widget class="QRadioButton" name="radioButton_Stop">
-         <property name="text">
-          <string>Stop</string>
-         </property>
-         <attribute name="buttonGroup">
-          <string notr="true">buttonGroup</string>
-         </attribute>
-        </widget>
-       </item>
-       <item row="5" column="0">
-        <widget class="QLabel" name="label_9">
-         <property name="text">
-          <string>Output Limit [%]:</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1" colspan="2">
-        <widget class="QComboBox" name="comboBox_SeriesNumber">
-         <item>
-          <property name="text">
-           <string>FT0875RPA</string>
-          </property>
-         </item>
-        </widget>
-       </item>
-       <item row="9" column="0" colspan="3">
-        <widget class="QComboBox" name="comboBox_MemAddress">
-         <property name="font">
-          <font>
-           <family>Courier New</family>
-          </font>
-         </property>
-         <property name="maxVisibleItems">
-          <number>20</number>
-         </property>
-        </widget>
-       </item>
-       <item row="8" column="1" colspan="2">
-        <widget class="QPushButton" name="pushButton_ReadRH">
-         <property name="text">
-          <string>Read From Holding Register</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="1" colspan="2">
-        <widget class="QComboBox" name="comboBox_AT">
-         <property name="currentIndex">
-          <number>-1</number>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="0">
-        <widget class="QPushButton" name="pushButton_Connect">
-         <property name="text">
-          <string>Connect</string>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="1">
+       <item row="4" column="1">
         <widget class="QDoubleSpinBox" name="doubleSpinBox_MVlower">
          <property name="alignment">
           <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="10" column="0">
-        <widget class="QRadioButton" name="radioButton_TempCheck">
-         <property name="text">
-          <string>TempCheck</string>
          </property>
         </widget>
        </item>
@@ -188,7 +166,94 @@
       <property name="title">
        <string>Temp. Control</string>
       </property>
-      <layout class="QGridLayout" name="gridLayout_3" columnstretch="0,2,3,2,2">
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_11">
+         <property name="text">
+          <string>P</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="lineEdit_P">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>Present Temp. :</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="3">
+        <widget class="QLineEdit" name="lineEdit_Temp">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="4">
+        <widget class="QPushButton" name="pushButton_AskStatus">
+         <property name="text">
+          <string>Ask Status</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_12">
+         <property name="text">
+          <string>I</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="lineEdit_I">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QLabel" name="label_4">
+         <property name="text">
+          <string>Present SV :</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="3">
+        <widget class="QLineEdit" name="lineEdit_CurrentSV">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
        <item row="1" column="4">
         <widget class="QCheckBox" name="checkBox_MuteLogMsg">
          <property name="text">
@@ -199,20 +264,10 @@
          </property>
         </widget>
        </item>
-       <item row="8" column="0" colspan="2">
-        <widget class="QComboBox" name="comboBox_Mode"/>
-       </item>
-       <item row="3" column="0" colspan="2">
-        <widget class="QPushButton" name="pushButton_GetPID">
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_13">
          <property name="text">
-          <string>Get PID</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="0">
-        <widget class="QLabel" name="label_11">
-         <property name="text">
-          <string>P</string>
+          <string>D</string>
          </property>
         </widget>
        </item>
@@ -249,49 +304,10 @@
          </property>
         </widget>
        </item>
-       <item row="6" column="4">
-        <widget class="QLabel" name="label_7">
+       <item row="3" column="0" colspan="2">
+        <widget class="QPushButton" name="pushButton_GetPID">
          <property name="text">
-          <string>Temp. Toler. [C]</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="QLineEdit" name="lineEdit_P">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-         <property name="readOnly">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="QLineEdit" name="lineEdit_I">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-         <property name="readOnly">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="2">
-        <widget class="QLabel" name="label_4">
-         <property name="text">
-          <string>Present SV :</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          <string>Get PID</string>
          </property>
         </widget>
        </item>
@@ -305,13 +321,37 @@
          </property>
         </widget>
        </item>
-       <item row="0" column="3">
-        <widget class="QLineEdit" name="lineEdit_Temp">
-         <property name="enabled">
-          <bool>false</bool>
+       <item row="3" column="3">
+        <widget class="QLineEdit" name="lineEdit_SV">
+         <property name="text">
+          <string>30</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="4">
+        <widget class="QPushButton" name="pushButton_SetSV">
+         <property name="text">
+          <string>Apply Set-temp</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0" colspan="2">
+        <widget class="QPushButton" name="pushButton_RecordTemp">
+         <property name="text">
+          <string>Record Temp.</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="2">
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>Record temp. every [s] :</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
          </property>
         </widget>
        </item>
@@ -331,18 +371,50 @@
          </property>
         </widget>
        </item>
-       <item row="0" column="2">
-        <widget class="QLabel" name="label">
+       <item row="4" column="4">
+        <widget class="QLabel" name="label_SV2WaitTime">
          <property name="text">
-          <string>Present Temp. :</string>
+          <string>SV (2) wait time [min]</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0" rowspan="2" colspan="2">
+        <widget class="QGroupBox" name="groupBox_4">
+         <property name="title">
+          <string>Timer</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_5">
+          <item row="0" column="0">
+           <widget class="QLineEdit" name="lineEdit_clock">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="5" column="2">
+        <widget class="QLabel" name="label_SV_2">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="text">
+          <string>SV (2) [C] :</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
          </property>
         </widget>
        </item>
-       <item row="1" column="3">
-        <widget class="QLineEdit" name="lineEdit_CurrentSV">
+       <item row="5" column="3">
+        <widget class="QLineEdit" name="lineEdit_SV2">
          <property name="enabled">
           <bool>false</bool>
          </property>
@@ -351,13 +423,22 @@
          </property>
         </widget>
        </item>
-       <item row="7" column="2">
-        <widget class="QLabel" name="label_8">
-         <property name="text">
-          <string>Temp. step size [C] :</string>
+       <item row="5" column="4">
+        <widget class="QDoubleSpinBox" name="doubleSpinBox_SV2WaitTime">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
          </property>
          <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="maximum">
+          <double>5000.000000000000000</double>
          </property>
         </widget>
        </item>
@@ -383,25 +464,6 @@
          </property>
         </widget>
        </item>
-       <item row="7" column="4">
-        <widget class="QDoubleSpinBox" name="doubleSpinBox_TempTorr">
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-         <property name="decimals">
-          <number>1</number>
-         </property>
-         <property name="maximum">
-          <double>1.000000000000000</double>
-         </property>
-         <property name="singleStep">
-          <double>0.100000000000000</double>
-         </property>
-         <property name="value">
-          <double>0.800000000000000</double>
-         </property>
-        </widget>
-       </item>
        <item row="6" column="3">
         <widget class="QSpinBox" name="spinBox_TempStableTime">
          <property name="alignment">
@@ -415,6 +477,26 @@
          </property>
          <property name="value">
           <number>10</number>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="4">
+        <widget class="QLabel" name="label_7">
+         <property name="text">
+          <string>Temp. Toler. [C]</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="2">
+        <widget class="QLabel" name="label_8">
+         <property name="text">
+          <string>Temp. step size [C] :</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
          </property>
         </widget>
        </item>
@@ -440,140 +522,150 @@
          </property>
         </widget>
        </item>
-       <item row="8" column="2" colspan="3">
+       <item row="7" column="4">
+        <widget class="QDoubleSpinBox" name="doubleSpinBox_TempTorr">
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="decimals">
+          <number>1</number>
+         </property>
+         <property name="maximum">
+          <double>1.000000000000000</double>
+         </property>
+         <property name="singleStep">
+          <double>0.100000000000000</double>
+         </property>
+         <property name="value">
+          <double>0.800000000000000</double>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="0" colspan="2">
+        <widget class="QComboBox" name="comboBox_Mode"/>
+       </item>
+       <item row="8" column="3" colspan="2">
         <widget class="QPushButton" name="pushButton_Control">
          <property name="text">
           <string>Slow Temperature Control</string>
          </property>
         </widget>
        </item>
-       <item row="1" column="0">
-        <widget class="QLabel" name="label_12">
-         <property name="text">
-          <string>I</string>
+      </layout>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QGroupBox" name="groupBox_5">
+      <property name="title">
+       <string>TempCheck</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="5" column="1">
+        <widget class="QLineEdit" name="lineEdit"/>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="lineEdit_SafeLimit">
+         <property name="enabled">
+          <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="2" column="0">
-        <widget class="QLabel" name="label_13">
+        <widget class="QLabel" name="label_14">
          <property name="text">
-          <string>D</string>
+          <string>Interval time Ask Temp in TempCheck</string>
          </property>
         </widget>
        </item>
-       <item row="4" column="2">
-        <widget class="QLabel" name="label_3">
-         <property name="text">
-          <string>Record temp. every [s] :</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="4">
-        <widget class="QPushButton" name="pushButton_AskStatus">
-         <property name="text">
-          <string>Ask Status</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="4">
-        <widget class="QPushButton" name="pushButton_SetSV">
-         <property name="text">
-          <string>Apply Set-temp</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="3">
-        <widget class="QLineEdit" name="lineEdit_SV">
-         <property name="text">
-          <string>30</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="3">
-        <widget class="QLineEdit" name="lineEdit_SV2">
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="lineEdit_IntervalAskTemp">
          <property name="enabled">
           <bool>false</bool>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
          </property>
         </widget>
        </item>
        <item row="5" column="2">
-        <widget class="QLabel" name="label_SV_2">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
+        <widget class="QLineEdit" name="lineEdit_2"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_6">
          <property name="text">
-          <string>SV (2) [C] :</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          <string>Interval time Ask MV (min)</string>
          </property>
         </widget>
        </item>
-       <item row="4" column="0" colspan="2">
-        <widget class="QPushButton" name="pushButton_RecordTemp">
+       <item row="0" column="1" colspan="2">
+        <widget class="QRadioButton" name="radioButton">
          <property name="text">
-          <string>Record Temp.</string>
+          <string>Enable Temperature range to ignor</string>
          </property>
         </widget>
        </item>
-       <item row="5" column="4">
-        <widget class="QDoubleSpinBox" name="doubleSpinBox_SV2WaitTime">
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="lineEdit_IntervalAskMV">
          <property name="enabled">
           <bool>false</bool>
          </property>
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-         <property name="maximum">
-          <double>5000.000000000000000</double>
-         </property>
         </widget>
        </item>
-       <item row="4" column="4">
-        <widget class="QLabel" name="label_SV2WaitTime">
+       <item row="5" column="0">
+        <widget class="QLabel" name="label_17">
          <property name="text">
-          <string>SV (2) wait time [min]</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
+          <string>TextLabel</string>
          </property>
         </widget>
        </item>
-       <item row="5" column="0" rowspan="2" colspan="2">
-        <widget class="QGroupBox" name="groupBox_4">
-         <property name="title">
-          <string>Timer</string>
+       <item row="4" column="1">
+        <widget class="QLineEdit" name="lineEdit_Numbers">
+         <property name="enabled">
+          <bool>false</bool>
          </property>
-         <layout class="QVBoxLayout" name="verticalLayout">
-          <item>
-           <widget class="QLineEdit" name="lineEdit_clock">
-            <property name="enabled">
-             <bool>false</bool>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-           </widget>
-          </item>
-         </layout>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="label_16">
+         <property name="text">
+          <string>Lower limit of temperature change</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QRadioButton" name="radioButton_TempCheck">
+         <property name="text">
+          <string>Working</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="label_15">
+         <property name="text">
+          <string>Number of times to check  temperature</string>
+         </property>
         </widget>
        </item>
       </layout>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QGroupBox" name="groupBox">
+      <property name="title">
+       <string>Log Massage</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="0" column="0">
+        <widget class="QTextEdit" name="textEdit_Log"/>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="2" column="0" colspan="2">
+     <widget class="QCustomPlot" name="plot" native="true">
+      <property name="minimumSize">
+       <size>
+        <width>782</width>
+        <height>281</height>
+       </size>
+      </property>
      </widget>
     </item>
    </layout>
@@ -583,7 +675,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>832</width>
+     <width>794</width>
      <height>17</height>
     </rect>
    </property>
@@ -599,7 +691,14 @@
     </property>
     <addaction name="actionHelp_Page"/>
    </widget>
+   <widget class="QMenu" name="menuConfigure">
+    <property name="title">
+     <string>Configure</string>
+    </property>
+    <addaction name="action_Setting_parameters_for_TempCheck"/>
+   </widget>
    <addaction name="menuFile"/>
+   <addaction name="menuConfigure"/>
    <addaction name="menuHelp"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
@@ -621,6 +720,11 @@
     <string>Help Page</string>
    </property>
   </action>
+  <action name="action_Setting_parameters_for_TempCheck">
+   <property name="text">
+    <string>&amp;Setting_parameters_for_TempCheck</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
@@ -632,7 +736,6 @@
   </customwidget>
  </customwidgets>
  <tabstops>
-  <tabstop>comboBox_Func</tabstop>
   <tabstop>lineEdit_Cmd</tabstop>
   <tabstop>lineEdit_SV</tabstop>
   <tabstop>textEdit_Log</tabstop>

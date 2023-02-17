@@ -40,13 +40,14 @@ MainWindow::MainWindow(QWidget *parent) :
     modbusReady = true;
     spinBoxEnable = false;
     muteLog = false;
-    tempDecimal = 0.1; // for 0.1
+    //tempDecimal = 0.1; // for 0.1
+    tempDecimal = 1.0;
 
     //======= clock
     clock = new QTimer(this);
     clock->stop();
     connect(clock, SIGNAL(timeout()), this, SLOT(showTime()));
-    totalElapse.setHMS(0,0,0,0);
+    totalElapse.start();
     dayCounter = 0;
     checkDay = false;
     waitTimer = new QTimer(this);
@@ -67,8 +68,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QVBoxLayout *mainLayout = new QVBoxLayout(helpDialog);
     mainLayout->addWidget(HelpLabel);
     mainLayout->addWidget(next);
-
-    //Check Temp Directory, is not exist, create
+  //Check Temp Directory, is not exist, create
     QDir myDir;
     myDir.setPath(DATA_PATH);
     // if Z:/triplet/Temp_Record does not exist, make directory on desktop.
@@ -213,8 +213,18 @@ MainWindow::MainWindow(QWidget *parent) :
 
     comboxEnable = true;
 
-    QObject::connect(&my_thread, SIGNAL(data_update(int)), this, SLOT(periodic_work(int)));
-    //QObject::connect(&my_thread, SIGNAL(data_update(int)), this, SLOT(true_work(int)));
+    configureDialog_ = new ConfigureDialog(this);
+    configureDialog_->setWindowTitle("Configure");
+    connect(configureDialog_->pushButton_SetParameters_, SIGNAL(clicked(bool)), this, SLOT(setParametersTempCheck()) );
+    setIntervalAskMV();
+    setIntervalAskTemp();
+    setNumbers();
+    setSafeLimit();
+
+    my_thread_ = new MyThread();
+    my_thread_->interval_ = ui->lineEdit_IntervalAskMV->text().toInt()*1000; //ms to sec.
+    my_thread_->moveToThread(my_thread_);
+    QObject::connect(my_thread_, SIGNAL(data_update()), this, SLOT(periodic_work()));
 
     ui->textEdit_Log->setTextColor(QColor(34,139,34,255));
     LogMsg("The AT and RUN/STOP do not get from the device. Please be careful.");
@@ -227,8 +237,8 @@ MainWindow::~MainWindow()
 
     clock->stop();
     waitTimer->stop();
-    my_thread.quit();
-    my_thread.wait();
+    my_thread_->quit();
+    my_thread_->wait();
 
     delete waitTimer;
     delete clock;
@@ -375,7 +385,6 @@ void MainWindow::on_pushButton_AskStatus_clicked()
             modbusReady = true;
         }
     }
-
     askMV();
     i = 0;
     while(!modbusReady) {
@@ -595,8 +604,6 @@ void MainWindow::getSetting()
             modbusReady = true;
         }
     }
-
-
 }
 
 void MainWindow::setAT(int atFlag)
@@ -706,7 +713,7 @@ void MainWindow::on_pushButton_Control_clicked()
         on_comboBox_Mode_currentIndexChanged(ui->comboBox_Mode->currentIndex());
         qDebug()  << "temp control. = " << tempControlOnOff;
         clock->stop();
-        totalElapse.setHMS(0,0,0,0);
+        totalElapse.start();
         return;
     }
 
@@ -898,7 +905,7 @@ void MainWindow::on_pushButton_Control_clicked()
 
             lineout.asprintf("%14s,\t%12d,\t%10.1f,\t%10.1f,\t%10.1f\n",
                             date.toString("MM-dd HH:mm:ss").toStdString().c_str(),
-                            date.toTime_t(),
+                            date.toSecsSinceEpoch(),
                             temperature,
                             targetValue_2,
                             MV);
@@ -1020,7 +1027,7 @@ void MainWindow::on_pushButton_Control_clicked()
 
                 lineout.asprintf("%14s,\t%12d,\t%10.1f,\t%10.1f,\t%10.1f\n",
                                 date.toString("MM-dd HH:mm:ss").toStdString().c_str(),
-                                date.toTime_t(),
+                                date.toSecsSinceEpoch(),
                                 temperature,
                                 smallShift,
                                 MV);
@@ -1112,7 +1119,7 @@ void MainWindow::on_pushButton_Control_clicked()
 
             lineout.asprintf("%14s,\t%12d,\t%10.1f,\t%10.1f,\t%10.1f\n",
                             date.toString("MM-dd HH:mm:ss").toStdString().c_str(),
-                            date.toTime_t(),
+                            date.toSecsSinceEpoch(),
                             temperature,
                             smallShift,
                             MV);
@@ -1153,7 +1160,7 @@ void MainWindow::on_pushButton_RecordTemp_clicked()
         LogMsg("===================== Recording temperature Stopped.");
         ui->pushButton_RecordTemp->setStyleSheet("");
         clock->stop();
-        totalElapse.setHMS(0,0,0,0);
+        totalElapse.start();
     }
 
     //plot->graph(1)->data()->clear();
@@ -1225,7 +1232,7 @@ void MainWindow::on_pushButton_RecordTemp_clicked()
 
             lineout.asprintf("%14s,\t%12d,\t%10.1f,\t%10.1f,\t%10.1f\n",
                             date.toString("MM-dd HH:mm:ss").toStdString().c_str(),
-                            date.toTime_t(),
+                            date.toSecsSinceEpoch(),
                             temperature,
                             (double) SV,
                             (double) MV);
@@ -1514,7 +1521,7 @@ void MainWindow::on_actionOpen_File_triggered()
 void MainWindow::fillDataAndPlot(const QDateTime date, const double PV, const double SV, const double MV)
 {
     QCPGraphData plotdata;
-    plotdata.key = date.toTime_t();
+    plotdata.key = date.toSecsSinceEpoch();
 
     plotdata.value = PV;
     pvData.push_back(plotdata);
@@ -1566,6 +1573,43 @@ void MainWindow::HelpPicNext()
     }
 }
 
+void MainWindow::on_action_Setting_parameters_for_TempCheck_triggered(){
+  if(configureDialog_->isHidden()) configureDialog_->show();
+}
+
+void MainWindow::setIntervalAskMV(){
+  ui->lineEdit_IntervalAskMV->setEnabled(true);
+  ui->lineEdit_IntervalAskMV->setText(QString::number(configureDialog_->spinBox_IntervalAskMV_->value()));
+  ui->lineEdit_IntervalAskMV->setEnabled(false);
+}
+
+void MainWindow::setIntervalAskTemp(){
+  ui->lineEdit_IntervalAskTemp->setEnabled(true);
+  ui->lineEdit_IntervalAskTemp->setText(QString::number(configureDialog_->spinBox_IntervalAskTemp_->value()));
+  ui->lineEdit_IntervalAskTemp->setEnabled(false);
+}
+
+void MainWindow::setNumbers(){
+  ui->lineEdit_Numbers->setEnabled(true);
+  ui->lineEdit_Numbers->setText(QString::number(configureDialog_->spinBox_Numbers_->value()));
+  ui->lineEdit_Numbers->setEnabled(false);
+
+}
+
+void MainWindow::setSafeLimit(){
+  ui->lineEdit_SafeLimit->setEnabled(true);
+  ui->lineEdit_SafeLimit->setText(QString::number(configureDialog_->spinBox_SafeLimit_->value()));
+  ui->lineEdit_SafeLimit->setEnabled(false);
+}
+
+void MainWindow::setParametersTempCheck(){
+  setIntervalAskMV();
+  setIntervalAskTemp();
+  setNumbers();
+  setSafeLimit();
+}
+
+
 void MainWindow::on_radioButton_Run_clicked()
 {
   statusBar()->clearMessage();
@@ -1573,7 +1617,7 @@ void MainWindow::on_radioButton_Run_clicked()
   LogMsg("Set Run.");
   QByteArray value = QByteArray::fromHex(cmd.toStdString().c_str());
   request(QModbusPdu::WriteSingleRegister, value);
-  QColor color = QColor(255, 236, 153, 255);
+  QColor color = QColor(55,178,77,255);
   QPalette pal = palette();
   pal.setColor(QPalette::Window, color);
   this->setAutoFillBackground(true);
@@ -1581,12 +1625,13 @@ void MainWindow::on_radioButton_Run_clicked()
   this->setAutoFillBackground(false);
   ui->radioButton_Run->setStyleSheet("background-color:rgb(173, 181, 189);");
   ui->radioButton_Stop->setStyleSheet("");
-  my_thread.start();
+  my_thread_->start();
   LogMsg("Thred start.");
 }
 
 void MainWindow::on_radioButton_Stop_clicked()
 {
+   my_thread_->exit();
   statusBar()->clearMessage();
   QString cmd = "00 00 01 01";
   LogMsg("Set Stop.");
@@ -1598,10 +1643,11 @@ void MainWindow::on_radioButton_Stop_clicked()
   this->setAutoFillBackground(true);
   this->setPalette(pal);
   this->setAutoFillBackground(false);
-  my_thread.quit();
+
   LogMsg("Thred stop.");
   ui->radioButton_TempCheck->setChecked(false);
   ui->radioButton_Run->setStyleSheet("");
+  //QCoreApplication::exit(0);
 }
 
 
@@ -1618,11 +1664,12 @@ void MainWindow::Quit()
   this->setAutoFillBackground(false);
   ui->textEdit_Log->setTextColor(QColor(255,0,0,255));
   LogMsg("Emergency Stop. Check the experimental condition.");
-  my_thread.quit();
+  my_thread_->quit();
   LogMsg("Thred stop.");
   ui->radioButton_Stop->setChecked(true);
   ui->radioButton_Run->setStyleSheet("");
   ui->textEdit_Log->setTextColor(QColor(0,0,0,255));
+  //QCoreApplication::exit(0);
 }
 
 
@@ -1633,9 +1680,10 @@ void MainWindow::on_radioButton_TempCheck_toggled(bool checked){
 
 void MainWindow::CheckTemp(){
  if (ui->radioButton_Stop->isChecked()){
-      my_thread.start();
+      my_thread_->quit();
       return;
   }
+  my_thread_->quit();
   ui->radioButton_TempCheck->setChecked(true);
   QColor color = QColor(255, 135, 135,255);
   QPalette pal = palette();
@@ -1659,10 +1707,11 @@ void MainWindow::CheckTemp(){
   }
   double temp = temperature;
   QVector<double> vtemp;
-  int size = 10;
+  int size = ui->lineEdit_Numbers->text().toInt();
   for(auto i = 0; i < size; i++){
     LogMsg("The check in " + QString::number(i));
-    QThread::sleep(3);
+    QThread::sleep(ui->lineEdit_IntervalAskTemp->text().toInt());
+    QApplication::processEvents(QEventLoop::ExcludeUserInputEvents);
     getTempTimer.start(tempGetTime);
     askTemperature();
     int j = 0;
@@ -1672,34 +1721,70 @@ void MainWindow::CheckTemp(){
       if( j > 10 )modbusReady = true;
     }
     vtemp.push_back(temperature);
+    const double targetValue = ui->lineEdit_SV->text().toDouble();
+    if (abs(temperature - targetValue) < 3.0){
+        my_thread_->start();
+        LogMsg("Target value is " + QString::number(targetValue));
+        LogMsg("Current temperature is outside the TempCheck mode.");
+        LogMsg("TempCheck mode does not work in the range");
+        return;
+      }
   }
   double dsum = .0;
-  for (auto i = 0; i < vtemp.size(); i++) {
-      dsum += vtemp[i] - temp;
-    }
+  for (auto i = 0; i < vtemp.size(); i++) dsum += vtemp[i] - temp;
   double vdave = dsum/size;
+  const double safelimit = ui->lineEdit_SafeLimit->text().toDouble();
   LogMsg("**** The average chnage of temperature ****");
   LogMsg(QString::number(vdave));
-  if (abs(vdave) > 100.0) {
+  if (abs(vdave) >= safelimit) {
       ui->radioButton_TempCheck->setChecked(false);
-      my_thread.start();
+      my_thread_->start();
       color = QColor("lightgray");
       pal = palette();
       pal.setColor(QPalette::Window, color);
       this->setAutoFillBackground(true);
       this->setPalette(pal);
       this->setAutoFillBackground(false);
+      ui->textEdit_Log->setTextColor(QColor(0,0,255,255));
+      LogMsg("Safety.");
+      LogMsg("Permitted temperature change is " + QString::number(safelimit));
+      LogMsg("Observed temperature change is " + QString::number(vdave));
       return;
     }
-  ui->textEdit_Log->setTextColor(QColor(255, 0, 0,255));
+  ui->textEdit_Log->setTextColor(QColor(255,0,0,255));
   LogMsg("Safety conditions is violated.");
+  LogMsg("Permitted temperature change is " + QString::number(safelimit));
+  LogMsg("Observed temperature change is " + QString::number(vdave));
   Quit();
   ui->radioButton_TempCheck->setChecked(false);
 }
 
-void MainWindow::periodic_work(int i){
+void MainWindow::periodic_work(){
+  if (ui->radioButton_TempCheck->isChecked()){
+      my_thread_->quit();
+      return;
+    }
   LogMsg("periodic function works.");
+  QTimer getTempTimer;
+  getTempTimer.setSingleShot(true);
+  const int tempGetTime = ui->spinBox_TempRecordTime->value() * 1000; // msec
+  getTempTimer.start(tempGetTime);
+  askTemperature();
+  int i = 0;
+  while(!modbusReady) {
+    i++;
+    waitForMSec(timing::modbus);
+    if( i > 10 )modbusReady = true;
+  }
   askMV();
+  i = 0;
+  while(!modbusReady) {
+      i++;
+      waitForMSec(timing::modbus);
+      if( i > 10 ){
+          modbusReady = true;
+      }
+  }
   double cMV = MV;
   double cMVupper = MVupper;
   if (cMV != cMVupper){
@@ -1711,13 +1796,14 @@ void MainWindow::periodic_work(int i){
     static int flag_run = 0;
     if (flag_run == 0){
         flag_run = 1;
-        my_thread.start();
+        my_thread_->start();
       }else{
         flag_run = 0;
-        my_thread.quit();
+        my_thread_->quit();
       }
     ui->radioButton_TempCheck->setChecked(true);
     ui->textEdit_Log->setTextColor(QColor(0,0,0,255));
   }
+
 }
 

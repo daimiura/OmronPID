@@ -26,13 +26,17 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += \
+    configuredialog.cpp \
         main.cpp \
         mainwindow.cpp \
+    myqlineedit.cpp \
     mythread.cpp \
     qcustomplot.cpp
 
 HEADERS += \
+    configuredialog.h \
         mainwindow.h \
+    myqlineedit.h \
     mythread.h \
     qcustomplot.h
 
