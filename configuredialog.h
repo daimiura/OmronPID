@@ -45,13 +45,7 @@ public:
   QDoubleSpinBox * spinBox_IgnoreUpper_;
   QTextBrowser * textBrowser_log_;
   QPushButton * pushButton_SetParameters_;
-  int intervalAskMV_;
-  int intervalAskTemp_;
-  int numbers_;
-  int etime_;
-  double safeLimit_;
-  double ignoreUpper_;
-  double ignoreLower_;
+
 private slots:
   void calcEstimatedTime();
   void setValues();
@@ -65,6 +59,14 @@ private:
   QLabel * label_IgnoreLower_;
   QLabel * label_IgnoreUpper_;
   QLabel * label_ETime_;
+
+  int intervalAskMV_;
+  int intervalAskTemp_;
+  int numbers_;
+  int etime_;
+  double safeLimit_;
+  double ignoreUpper_;
+  double ignoreLower_;
   QMutex mutex_;
 };
 

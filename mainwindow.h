@@ -101,6 +101,7 @@ private slots:
     void setIntervalAskTemp();
     void setSafeLimit();
     void setNumbers();
+    void setIgnoreRange();
     void setParametersTempCheck();
 
 

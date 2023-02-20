@@ -1602,11 +1602,20 @@ void MainWindow::setSafeLimit(){
   ui->lineEdit_SafeLimit->setEnabled(false);
 }
 
+void MainWindow::setIgnoreRange(){
+  ui->lineEdit_IgnoreLower->setEnabled(true);
+  ui->lineEdit_IgnoreUpper->setEnabled(true);
+  ui->lineEdit_IgnoreLower->setText(QString::number(configureDialog_->spinBox_IgnoreLower_->value()));
+  ui->lineEdit_IgnoreUpper->setText(QString::number(configureDialog_->spinBox_IgnoreUpper_->value()));
+  ui->lineEdit_IgnoreLower->setEnabled(false);
+}
+
 void MainWindow::setParametersTempCheck(){
   setIntervalAskMV();
   setIntervalAskTemp();
   setNumbers();
   setSafeLimit();
+  setIgnoreRange();
 }
 
 
