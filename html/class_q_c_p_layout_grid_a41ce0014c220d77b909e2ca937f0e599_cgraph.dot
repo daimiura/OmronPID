@@ -1,0 +1,27 @@
+digraph "QCPLayoutGrid::maximumOuterSizeHint"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [label="QCPLayoutGrid::maximumOuter\lSizeHint",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="steelblue1",style="solid"];
+  Node2 [label="QCPLayoutGrid::columnCount",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_layout_grid.html#a1a2962cbf45011405b64b913afa8e7a2",tooltip=" "];
+  Node1 -> Node3 [color="steelblue1",style="solid"];
+  Node3 [label="QCPLayoutGrid::getMaximum\lRowColSizes",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_layout_grid.html#a9be77011ec5b5dfbe7fbda126659e1eb",tooltip=" "];
+  Node3 -> Node2 [color="steelblue1",style="solid"];
+  Node3 -> Node4 [color="steelblue1",style="solid"];
+  Node4 [label="QCPLayout::getFinalMaximum\lOuterSize",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_layout.html#add49fd6843821a6126914b837ed52e22",tooltip=" "];
+  Node4 -> Node5 [color="steelblue1",style="solid"];
+  Node5 [label="QCPLayoutElement::margins",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_layout_element.html#af4ac9450aa2d60863bf3a8ea0c940c9d",tooltip=" "];
+  Node4 -> Node6 [color="steelblue1",style="solid"];
+  Node6 [label="QCPLayoutElement::maximum\lOuterSizeHint",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_layout_element.html#ad96efb977a26e360e8a64a4c1e56456d",tooltip=" "];
+  Node4 -> Node7 [color="steelblue1",style="solid"];
+  Node7 [label="QCPLayoutElement::maximumSize",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_layout_element.html#afb9503858d4aa0f3b9f1794b084fb40a",tooltip=" "];
+  Node4 -> Node8 [color="steelblue1",style="solid"];
+  Node8 [label="QCPLayoutElement::sizeConstraintRect",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_layout_element.html#a66136f121ee3e1c933b748761203cab4",tooltip=" "];
+  Node3 -> Node9 [color="steelblue1",style="solid"];
+  Node9 [label="QCPLayoutGrid::rowCount",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_layout_grid.html#a19c66fd76cbce58a8e94f33797e0c0aa",tooltip=" "];
+  Node1 -> Node9 [color="steelblue1",style="solid"];
+}

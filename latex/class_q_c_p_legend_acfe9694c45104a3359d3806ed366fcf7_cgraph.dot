@@ -1,0 +1,20 @@
+digraph "QCPLegend::item"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [label="QCPLegend::item",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="steelblue1",style="solid"];
+  Node2 [label="QCPLayoutGrid::elementAt",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_layout_grid.html#a4288f174082555f6bd92021bdedb75dc",tooltip=" "];
+  Node2 -> Node3 [color="steelblue1",style="solid"];
+  Node3 [label="QCPLayoutGrid::elementCount",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_layout_grid.html#a9a8942aface780a02445ebcf14c48513",tooltip=" "];
+  Node2 -> Node4 [color="steelblue1",style="solid"];
+  Node4 [label="QCPLayoutGrid::indexToRowCol",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_layout_grid.html#a577223db920e2acb34bc1091080c76d1",tooltip=" "];
+  Node4 -> Node5 [color="steelblue1",style="solid"];
+  Node5 [label="QCPLayoutGrid::columnCount",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_layout_grid.html#a1a2962cbf45011405b64b913afa8e7a2",tooltip=" "];
+  Node4 -> Node3 [color="steelblue1",style="solid"];
+  Node4 -> Node6 [color="steelblue1",style="solid"];
+  Node6 [label="QCPLayoutGrid::rowCount",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_layout_grid.html#a19c66fd76cbce58a8e94f33797e0c0aa",tooltip=" "];
+}

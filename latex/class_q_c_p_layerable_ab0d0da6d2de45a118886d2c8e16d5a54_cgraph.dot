@@ -1,0 +1,22 @@
+digraph "QCPLayerable::setLayer"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [label="QCPLayerable::setLayer",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="steelblue1",style="solid"];
+  Node2 [label="QCPLayerable::layer",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_layerable.html#a9d4e121a7f1d2314f906fe698209cac9",tooltip=" "];
+  Node1 -> Node3 [color="steelblue1",style="solid"];
+  Node3 [label="QCPLayerable::moveToLayer",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_layerable.html#af94484cfb7cbbddb7de522e9be71d9a4",tooltip=" "];
+  Node3 -> Node4 [color="steelblue1",style="solid"];
+  Node4 [label="QCPLayer::addChild",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_layer.html#a57ce5e49364aa9122276d5df3b4a0ddc",tooltip=" "];
+  Node3 -> Node2 [color="steelblue1",style="solid"];
+  Node3 -> Node5 [color="steelblue1",style="solid"];
+  Node5 [label="QCPLayer::name",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_layer.html#a37806f662b50b588fb1029a14fc5ef50",tooltip=" "];
+  Node3 -> Node6 [color="steelblue1",style="solid"];
+  Node6 [label="QCPLayer::parentPlot",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_layer.html#a923cb87bb467eeb17d649ba2b2fe4f5f",tooltip=" "];
+  Node3 -> Node7 [color="steelblue1",style="solid"];
+  Node7 [label="QCPLayer::removeChild",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_layer.html#ac2f64ac7761650582d968d86670ef362",tooltip=" "];
+}

@@ -1,0 +1,27 @@
+digraph "QCPColorMap::updateMapImage"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [label="QCPColorMap::updateMapImage",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="steelblue1",style="solid"];
+  Node2 [label="QCPColorGradient::colorize",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_color_gradient.html#aaf423ceb943e177b0ed2c48c811d83dc",tooltip=" "];
+  Node2 -> Node3 [color="steelblue1",style="solid"];
+  Node3 [label="QCPRange::size",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_range.html#a62326e7cc4316b96df6a60813230e63f",tooltip=" "];
+  Node2 -> Node4 [color="steelblue1",style="solid"];
+  Node4 [label="QCPColorGradient::update\lColorBuffer",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_color_gradient.html#a353f15ab3ab586eebf1f6b58c3e2707b",tooltip=" "];
+  Node4 -> Node5 [color="steelblue1",style="solid"];
+  Node5 [label="QCPColorGradient::stopsUse\lAlpha",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_color_gradient.html#a137b368ea8829a871974add6e4883c71",tooltip=" "];
+  Node1 -> Node6 [color="steelblue1",style="solid"];
+  Node6 [label="QCPColorMapData::isEmpty",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_color_map_data.html#aea88cc75a76ca571acf29b2ba8ac970d",tooltip=" "];
+  Node1 -> Node7 [color="steelblue1",style="solid"];
+  Node7 [label="QCPAbstractPlottable\l::keyAxis",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_plottable.html#aa6f25b97ee99988fe352f17cb9ed962b",tooltip=" "];
+  Node1 -> Node8 [color="steelblue1",style="solid"];
+  Node8 [label="QCPColorMapData::keySize",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_color_map_data.html#abbda4d28de97aedce1e6e6f008a0a1f7",tooltip=" "];
+  Node1 -> Node9 [color="steelblue1",style="solid"];
+  Node9 [label="QCPAxis::orientation",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_axis.html#ab988ef4538e2655bb77bd138189cd42e",tooltip=" "];
+  Node1 -> Node10 [color="steelblue1",style="solid"];
+  Node10 [label="QCPColorMapData::valueSize",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_color_map_data.html#a8510cafea24645bbb62b5e0bfc43209f",tooltip=" "];
+}

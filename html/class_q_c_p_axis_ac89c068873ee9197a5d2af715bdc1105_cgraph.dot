@@ -1,0 +1,23 @@
+digraph "QCPAxis::mousePressEvent"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [label="QCPAxis::mousePressEvent",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="steelblue1",style="solid"];
+  Node2 [label="QCustomPlot::antialiased\lElements",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_custom_plot.html#a631762eb183aceecee73d30e108641ee",tooltip=" "];
+  Node1 -> Node3 [color="steelblue1",style="solid"];
+  Node3 [label="QCustomPlot::interactions",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_custom_plot.html#a2c78c5fd2943c148ab76652801d3f2dc",tooltip=" "];
+  Node1 -> Node4 [color="steelblue1",style="solid"];
+  Node4 [label="QCustomPlot::noAntialiasing\lOnDrag",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_custom_plot.html#aca3f01f903fb250a3dd27104d92830be",tooltip=" "];
+  Node1 -> Node5 [color="steelblue1",style="solid"];
+  Node5 [label="QCustomPlot::notAntialiased\lElements",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_custom_plot.html#a75571bc5b2167e83def132fc993091b3",tooltip=" "];
+  Node1 -> Node6 [color="steelblue1",style="solid"];
+  Node6 [label="QCPAxis::orientation",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_axis.html#ab988ef4538e2655bb77bd138189cd42e",tooltip=" "];
+  Node1 -> Node7 [color="steelblue1",style="solid"];
+  Node7 [label="QCPAxisRect::rangeDrag",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_axis_rect.html#aa3a84c768ad6edd08fd4c5dec176828f",tooltip=" "];
+  Node1 -> Node8 [color="steelblue1",style="solid"];
+  Node8 [label="QCPAxisRect::rangeDragAxes",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_axis_rect.html#aae5f99a044ca911685a306f01b7ff941",tooltip=" "];
+}

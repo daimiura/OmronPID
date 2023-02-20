@@ -1,0 +1,25 @@
+digraph "QCPColorMapData::keyRange"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [label="QCPColorMapData::keyRange",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="QCPColorMap::draw",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_color_map.html#a6b628014d2939368935efd0a788648c8",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="QCPColorMap::getKeyRange",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_color_map.html#a985861974560f950af6cb7fae8c46267",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="steelblue1",style="solid"];
+  Node4 [label="QCPColorMap::getValueRange",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_color_map.html#a88134493aaf6b297af34eaab65264fff",tooltip=" "];
+  Node1 -> Node5 [dir="back",color="steelblue1",style="solid"];
+  Node5 [label="QCPColorMapData::operator=",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_color_map_data.html#afdf4dd1b2f5714234fe84709b85c2a8d",tooltip=" "];
+  Node1 -> Node6 [dir="back",color="steelblue1",style="solid"];
+  Node6 [label="QCPColorMap::selectTest",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_color_map.html#afb4b843596addf58096082827a9e3450",tooltip=" "];
+  Node1 -> Node7 [dir="back",color="steelblue1",style="solid"];
+  Node7 [label="QCPColorMapData::setKeyRange",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_color_map_data.html#a0738c485f3c9df9ea1241b7a8bb6a86e",tooltip=" "];
+  Node7 -> Node8 [dir="back",color="steelblue1",style="solid"];
+  Node8 [label="QCPColorMapData::setRange",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_color_map_data.html#aad9c1c7c703c1339489fc730517c83d4",tooltip=" "];
+  Node8 -> Node5 [dir="back",color="steelblue1",style="solid"];
+  Node1 -> Node8 [dir="back",color="steelblue1",style="solid"];
+}

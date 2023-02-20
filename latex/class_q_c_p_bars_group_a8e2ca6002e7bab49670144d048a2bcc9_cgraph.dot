@@ -1,0 +1,22 @@
+digraph "QCPBarsGroup::keyPixelOffset"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [label="QCPBarsGroup::keyPixelOffset",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="steelblue1",style="solid"];
+  Node2 [label="QCPBars::barBelow",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_bars.html#a1b58664864b141f45e02044a855b3213",tooltip=" "];
+  Node2 -> Node3 [color="steelblue1",style="solid"];
+  Node3 [label="QCPBars::data",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_bars.html#a7e373a534d82e18ed27b3fafd1f08fae",tooltip=" "];
+  Node1 -> Node4 [color="steelblue1",style="solid"];
+  Node4 [label="QCPBarsGroup::bars",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_bars_group.html#a6e4f4e86abbec6a9342f204ef82abef8",tooltip=" "];
+  Node1 -> Node5 [color="steelblue1",style="solid"];
+  Node5 [label="QCPBarsGroup::getPixelSpacing",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_bars_group.html#a0beccd41bc3841a4c5b284823bc7d2de",tooltip=" "];
+  Node5 -> Node4 [color="steelblue1",style="solid"];
+  Node1 -> Node6 [color="steelblue1",style="solid"];
+  Node6 [label="QCPAbstractPlottable\l::keyAxis",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_plottable.html#aa6f25b97ee99988fe352f17cb9ed962b",tooltip=" "];
+  Node1 -> Node7 [color="steelblue1",style="solid"];
+  Node7 [label="QCPAxis::pixelOrientation",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_axis.html#a45c45bed7e5666683b8d56afa66fa51f",tooltip=" "];
+}

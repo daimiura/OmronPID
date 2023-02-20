@@ -1,0 +1,61 @@
+\hypertarget{configuredialog_8h_source}{}\doxysection{configuredialog.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ CONFIGUREDIALOG\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ CONFIGUREDIALOG\_H}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <QDialog>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <QMutex>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <QMutexLocker>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }QSpinBox;}
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }QDoubleSpinBox;}
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }QTextBrowser;}
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }QLabel;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{namespace\ }Ui\ \{}
+\DoxyCodeLine{00025\ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_configure_dialog}{ConfigureDialog}};}
+\DoxyCodeLine{00026\ \}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_configure_dialog}{ConfigureDialog}}\ :\ \textcolor{keyword}{public}\ QDialog}
+\DoxyCodeLine{00034\ \{}
+\DoxyCodeLine{00035\ \ \ Q\_OBJECT}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00038\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_configure_dialog}{ConfigureDialog}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00039\ \ \ \mbox{\hyperlink{class_configure_dialog}{\string~ConfigureDialog}}();}
+\DoxyCodeLine{00040\ \ \ QSpinBox\ *\ spinBox\_IntervalAskMV\_;}
+\DoxyCodeLine{00041\ \ \ QSpinBox\ *\ spinBox\_IntervalAskTemp\_;}
+\DoxyCodeLine{00042\ \ \ QSpinBox\ *\ spinBox\_Numbers\_;}
+\DoxyCodeLine{00043\ \ \ QDoubleSpinBox\ *\ spinBox\_SafeLimit\_;}
+\DoxyCodeLine{00044\ \ \ QDoubleSpinBox\ *\ spinBox\_IgnoreLower\_;}
+\DoxyCodeLine{00045\ \ \ QDoubleSpinBox\ *\ spinBox\_IgnoreUpper\_;}
+\DoxyCodeLine{00046\ \ \ QTextBrowser\ *\ textBrowser\_log\_;}
+\DoxyCodeLine{00047\ \ \ QPushButton\ *\ pushButton\_SetParameters\_;}
+\DoxyCodeLine{00048\ \ \ \textcolor{keywordtype}{int}\ intervalAskMV\_;}
+\DoxyCodeLine{00049\ \ \ \textcolor{keywordtype}{int}\ intervalAskTemp\_;}
+\DoxyCodeLine{00050\ \ \ \textcolor{keywordtype}{int}\ numbers\_;}
+\DoxyCodeLine{00051\ \ \ \textcolor{keywordtype}{int}\ etime\_;}
+\DoxyCodeLine{00052\ \ \ \textcolor{keywordtype}{double}\ safeLimit\_;}
+\DoxyCodeLine{00053\ \ \ \textcolor{keywordtype}{double}\ ignoreUpper\_;}
+\DoxyCodeLine{00054\ \ \ \textcolor{keywordtype}{double}\ ignoreLower\_;}
+\DoxyCodeLine{00055\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00056\ \ \ \textcolor{keywordtype}{void}\ calcEstimatedTime();}
+\DoxyCodeLine{00057\ \ \ \textcolor{keywordtype}{void}\ setValues();}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00060\ \ \ Ui::ConfigureDialog\ *ui;}
+\DoxyCodeLine{00061\ \ \ QLabel\ *\ labelAskMV\_;}
+\DoxyCodeLine{00062\ \ \ QLabel\ *\ labelAskTemp\_;}
+\DoxyCodeLine{00063\ \ \ QLabel\ *\ labelSize\_;}
+\DoxyCodeLine{00064\ \ \ QLabel\ *\ label\_SafeLimit\_;}
+\DoxyCodeLine{00065\ \ \ QLabel\ *\ label\_IgnoreLower\_;}
+\DoxyCodeLine{00066\ \ \ QLabel\ *\ label\_IgnoreUpper\_;}
+\DoxyCodeLine{00067\ \ \ QLabel\ *\ label\_ETime\_;}
+\DoxyCodeLine{00068\ \ \ QMutex\ mutex\_;}
+\DoxyCodeLine{00069\ \};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CONFIGUREDIALOG\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,17 @@
+digraph "QCPFinancial::drawLegendIcon"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [label="QCPFinancial::drawLegendIcon",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="steelblue1",style="solid"];
+  Node2 [label="QCPPainter::drawLine",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_painter.html#a0b4b1b9bd495e182c731774dc800e6e0",tooltip=" "];
+  Node1 -> Node3 [color="steelblue1",style="solid"];
+  Node3 [label="QCPPainter::setAntialiasing",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_painter.html#aaba1deb9188244d9ea65b035112b4d05",tooltip=" "];
+  Node1 -> Node4 [color="steelblue1",style="solid"];
+  Node4 [label="QCPPainter::setPen",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_painter.html#af9c7a4cd1791403901f8c5b82a150195",tooltip=" "];
+  Node4 -> Node5 [color="steelblue1",style="solid"];
+  Node5 [label="QCPPainter::makeNonCosmetic",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_painter.html#a7e63fbcf47e35c6f2ecd11b8fef7c7d8",tooltip=" "];
+}

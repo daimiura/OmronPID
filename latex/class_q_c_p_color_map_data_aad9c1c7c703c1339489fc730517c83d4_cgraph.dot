@@ -1,0 +1,19 @@
+digraph "QCPColorMapData::setRange"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [label="QCPColorMapData::setRange",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="steelblue1",style="solid"];
+  Node2 [label="QCPColorMapData::keyRange",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_color_map_data.html#a1e43abd20a77b922b7cecfc69bf4dad7",tooltip=" "];
+  Node1 -> Node3 [color="steelblue1",style="solid"];
+  Node3 [label="QCPColorMapData::setKeyRange",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_color_map_data.html#a0738c485f3c9df9ea1241b7a8bb6a86e",tooltip=" "];
+  Node3 -> Node2 [color="steelblue1",style="solid"];
+  Node1 -> Node4 [color="steelblue1",style="solid"];
+  Node4 [label="QCPColorMapData::setValue\lRange",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_color_map_data.html#ada1b2680ba96a5f4175b6d341cf75d23",tooltip=" "];
+  Node4 -> Node5 [color="steelblue1",style="solid"];
+  Node5 [label="QCPColorMapData::valueRange",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_color_map_data.html#a818e4e384aa4e5fad69ac603924394d3",tooltip=" "];
+  Node1 -> Node5 [color="steelblue1",style="solid"];
+}

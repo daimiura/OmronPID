@@ -1,0 +1,13 @@
+digraph "QCPTextElement::deselectEvent"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [label="QCPTextElement::deselect\lEvent",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="steelblue1",style="solid"];
+  Node2 [label="QCPTextElement::setSelected",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_text_element.html#aba5521f9fb22a5f3d2f09ab37d4a1751",tooltip=" "];
+  Node2 -> Node3 [color="steelblue1",style="solid"];
+  Node3 [label="QCPTextElement::selected",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_text_element.html#a135d1ad0aa97a245b4247c3292ff551c",tooltip=" "];
+}

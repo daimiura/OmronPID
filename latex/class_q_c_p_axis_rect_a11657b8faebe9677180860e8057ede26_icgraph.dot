@@ -1,0 +1,34 @@
+digraph "QCPAxisRect::axes"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [label="QCPAxisRect::axes",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="QCPAxisRect::addAxis",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_axis_rect.html#a2dc336092ccc57d44a46194c8a23e4f4",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="QCPAxisRect::addAxes",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_axis_rect.html#a792e1f3d9cb1591fca135bb0de9b81fc",tooltip=" "];
+  Node2 -> Node4 [dir="back",color="steelblue1",style="solid"];
+  Node4 [label="QCPAxisRect::QCPAxisRect",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_axis_rect.html#a60b31dece805462c1b82eea2e69ba042",tooltip=" "];
+  Node2 -> Node5 [dir="back",color="steelblue1",style="solid"];
+  Node5 [label="QCPAxisRect::setupFullAxesBox",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_axis_rect.html#a5fa906175447b14206954f77fc7f1ef4",tooltip=" "];
+  Node1 -> Node6 [dir="back",color="steelblue1",style="solid"];
+  Node6 [label="QCPAxisRect::setRangeDragAxes",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_axis_rect.html#af0fbc510147a2a54b9c8cd296e6df8ac",tooltip=" "];
+  Node1 -> Node7 [dir="back",color="steelblue1",style="solid"];
+  Node7 [label="QCPAxisRect::setRangeZoomAxes",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_axis_rect.html#a89c1ab7ee6d2a14b56c57c9a796ba623",tooltip=" "];
+  Node1 -> Node8 [dir="back",color="steelblue1",style="solid"];
+  Node8 [label="QCPAxisRect::update",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_axis_rect.html#add049d464b9ef2ccdc638adc4ccb4aca",tooltip=" "];
+  Node1 -> Node9 [dir="back",color="steelblue1",style="solid"];
+  Node9 [label="QCPAxisRect::zoom",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_axis_rect.html#a5fc8460564e81dcc2a9343dc8bc1fe67",tooltip=" "];
+  Node9 -> Node10 [dir="back",color="steelblue1",style="solid"];
+  Node10 [label="QCustomPlot::processRectZoom",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_custom_plot.html#a5508a207dcc279f316142f96d984bba3",tooltip=" "];
+  Node10 -> Node11 [dir="back",color="steelblue1",style="solid"];
+  Node11 [label="QCustomPlot::setSelectionRect",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_custom_plot.html#a0c09f96df15faa4799ad7051bb16cf33",tooltip=" "];
+  Node10 -> Node12 [dir="back",color="steelblue1",style="solid"];
+  Node12 [label="QCustomPlot::setSelection\lRectMode",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_custom_plot.html#a810ef958ebe84db661c7288b526c0deb",tooltip=" "];
+  Node9 -> Node9 [dir="back",color="steelblue1",style="solid"];
+  Node1 -> Node13 [dir="back",color="steelblue1",style="solid"];
+  Node13 [label="QCPAxisRect::~QCPAxisRect",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_axis_rect.html#a463c44b1856ddbf82eb3f7b582839cd0",tooltip=" "];
+}

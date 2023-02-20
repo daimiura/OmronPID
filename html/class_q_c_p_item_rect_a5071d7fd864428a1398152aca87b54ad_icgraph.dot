@@ -1,0 +1,16 @@
+digraph "QCPItemRect::brush"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [label="QCPItemRect::brush",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="QCPItemRect::setBrush",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_item_rect.html#abbd4e346a03513ee466afc25d9c75446",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="QCPItemRect::QCPItemRect",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_item_rect.html#a412ad1579f7a1fba453d0fa28c496cbc",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="steelblue1",style="solid"];
+  Node4 [label="QCPItemRect::setSelected\lBrush",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_item_rect.html#abd1792859844118dedee86223cede7af",tooltip=" "];
+  Node4 -> Node3 [dir="back",color="steelblue1",style="solid"];
+}

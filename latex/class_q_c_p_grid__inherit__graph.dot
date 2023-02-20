@@ -1,0 +1,12 @@
+digraph "QCPGrid"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [label="QCPGrid",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Responsible for drawing the grid of a QCPAxis."];
+  Node2 -> Node1 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="QCPLayerable",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_q_c_p_layerable.html",tooltip="Base class for all drawable objects"];
+  Node3 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="QObject",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+}

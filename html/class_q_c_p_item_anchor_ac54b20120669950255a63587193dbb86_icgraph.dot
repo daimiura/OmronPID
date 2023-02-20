@@ -1,0 +1,22 @@
+digraph "QCPItemAnchor::toQCPItemPosition"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [label="QCPItemAnchor::toQCPItem\lPosition",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="QCPItemPosition::setParent\lAnchorX",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_item_position.html#add71461a973927c74e42179480916d9c",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="QCPItemPosition::setParent\lAnchor",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_item_position.html#ac094d67a95d2dceafa0d50b9db3a7e51",tooltip=" "];
+  Node2 -> Node4 [dir="back",color="steelblue1",style="solid"];
+  Node4 [label="QCPItemAnchor::~QCPItemAnchor",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_item_anchor.html#a1868559407600688ee4d1a4621e81ceb",tooltip=" "];
+  Node2 -> Node5 [dir="back",color="steelblue1",style="solid"];
+  Node5 [label="QCPItemPosition::~QCPItem\lPosition",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_item_position.html#ad8a289016f7a62332f9c865c39ab2047",tooltip=" "];
+  Node1 -> Node6 [dir="back",color="steelblue1",style="solid"];
+  Node6 [label="QCPItemPosition::setParent\lAnchorY",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_item_position.html#add5ec1db9d19cec58a3b5c9e0a0c3f9d",tooltip=" "];
+  Node6 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node6 -> Node4 [dir="back",color="steelblue1",style="solid"];
+  Node6 -> Node5 [dir="back",color="steelblue1",style="solid"];
+}

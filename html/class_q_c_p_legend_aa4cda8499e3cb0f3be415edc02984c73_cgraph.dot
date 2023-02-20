@@ -1,0 +1,31 @@
+digraph "QCPLegend::setFont"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [label="QCPLegend::setFont",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="steelblue1",style="solid"];
+  Node2 [label="QCPLegend::font",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_legend.html#ae240104de3c3a4cfc0834dbaffa07ac9",tooltip=" "];
+  Node1 -> Node3 [color="steelblue1",style="solid"];
+  Node3 [label="QCPLegend::item",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_legend.html#acfe9694c45104a3359d3806ed366fcf7",tooltip=" "];
+  Node3 -> Node4 [color="steelblue1",style="solid"];
+  Node4 [label="QCPLayoutGrid::elementAt",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_layout_grid.html#a4288f174082555f6bd92021bdedb75dc",tooltip=" "];
+  Node4 -> Node5 [color="steelblue1",style="solid"];
+  Node5 [label="QCPLayoutGrid::elementCount",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_layout_grid.html#a9a8942aface780a02445ebcf14c48513",tooltip=" "];
+  Node4 -> Node6 [color="steelblue1",style="solid"];
+  Node6 [label="QCPLayoutGrid::indexToRowCol",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_layout_grid.html#a577223db920e2acb34bc1091080c76d1",tooltip=" "];
+  Node6 -> Node7 [color="steelblue1",style="solid"];
+  Node7 [label="QCPLayoutGrid::columnCount",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_layout_grid.html#a1a2962cbf45011405b64b913afa8e7a2",tooltip=" "];
+  Node6 -> Node5 [color="steelblue1",style="solid"];
+  Node6 -> Node8 [color="steelblue1",style="solid"];
+  Node8 [label="QCPLayoutGrid::rowCount",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_layout_grid.html#a19c66fd76cbce58a8e94f33797e0c0aa",tooltip=" "];
+  Node1 -> Node9 [color="steelblue1",style="solid"];
+  Node9 [label="QCPLegend::itemCount",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_legend.html#a57ab86ab8b2a3762d4c1455eb5452c88",tooltip=" "];
+  Node9 -> Node5 [color="steelblue1",style="solid"];
+  Node1 -> Node10 [color="steelblue1",style="solid"];
+  Node10 [label="QCPAbstractLegendItem\l::setFont",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_legend_item.html#a409c53455d8112f71d70c0c43eb10265",tooltip=" "];
+  Node10 -> Node11 [color="steelblue1",style="solid"];
+  Node11 [label="QCPAbstractLegendItem\l::font",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_legend_item.html#a699b18e1d9e70372e51e75f462dbb643",tooltip=" "];
+}

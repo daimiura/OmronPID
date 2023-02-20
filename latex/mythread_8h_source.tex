@@ -1,0 +1,28 @@
+\hypertarget{mythread_8h_source}{}\doxysection{mythread.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MYTHREAD\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MYTHREAD\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QThread>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QTimer>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_my_thread}{MyThread}}\ :\ \textcolor{keyword}{public}\ QThread}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00009\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00010\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_my_thread}{MyThread}}(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{void}\ run();}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{int}\ interval\_;}
+\DoxyCodeLine{00014\ signals:}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{void}\ data\_update();}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ timerHit();}
+\DoxyCodeLine{00021\ \};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MYTHREAD\_H}}
+
+\end{DoxyCode}

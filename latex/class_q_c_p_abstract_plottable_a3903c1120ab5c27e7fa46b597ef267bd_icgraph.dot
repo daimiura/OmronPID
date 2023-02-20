@@ -1,0 +1,21 @@
+digraph "QCPAbstractPlottable::pixelsToCoords"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [label="QCPAbstractPlottable\l::pixelsToCoords",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="QCPFinancial::candlestick\lSelectTest",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_financial.html#a9783e91a33fd08a402b1a3821d43e471",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="QCPFinancial::selectTest",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_financial.html#aac8e91622ac58330fa9ce81cc8fd40ee",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="steelblue1",style="solid"];
+  Node4 [label="QCPAbstractPlottable\l::pixelsToCoords",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_plottable.html#a28d32c0062b9450847851ffdee1c5f69",tooltip=" "];
+  Node1 -> Node5 [dir="back",color="steelblue1",style="solid"];
+  Node5 [label="QCPGraph::pointDistance",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_graph.html#a89acf99c0b52b8eecb2438adf7ec0170",tooltip=" "];
+  Node5 -> Node6 [dir="back",color="steelblue1",style="solid"];
+  Node6 [label="QCPGraph::selectTest",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_graph.html#a6d669d04462d272c6aa0e5f85846d673",tooltip=" "];
+  Node1 -> Node7 [dir="back",color="steelblue1",style="solid"];
+  Node7 [label="QCPColorMap::selectTest",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_color_map.html#afb4b843596addf58096082827a9e3450",tooltip=" "];
+}

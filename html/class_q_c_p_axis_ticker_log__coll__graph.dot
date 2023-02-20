@@ -1,0 +1,10 @@
+digraph "QCPAxisTickerLog"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [label="QCPAxisTickerLog",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Specialized axis ticker suited for logarithmic axes"];
+  Node2 -> Node1 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="QCPAxisTicker",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_q_c_p_axis_ticker.html",tooltip="The base class tick generator used by QCPAxis to create tick positions and tick labels"];
+}

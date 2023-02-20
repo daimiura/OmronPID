@@ -1,0 +1,29 @@
+digraph "QCustomPlot::axisRect"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [label="QCustomPlot::axisRect",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="QCPAxisRect::addAxis",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_axis_rect.html#a2dc336092ccc57d44a46194c8a23e4f4",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="QCPAxisRect::addAxes",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_axis_rect.html#a792e1f3d9cb1591fca135bb0de9b81fc",tooltip=" "];
+  Node2 -> Node4 [dir="back",color="steelblue1",style="solid"];
+  Node4 [label="QCPAxisRect::QCPAxisRect",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_axis_rect.html#a60b31dece805462c1b82eea2e69ba042",tooltip=" "];
+  Node2 -> Node5 [dir="back",color="steelblue1",style="solid"];
+  Node5 [label="QCPAxisRect::setupFullAxesBox",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_axis_rect.html#a5fa906175447b14206954f77fc7f1ef4",tooltip=" "];
+  Node1 -> Node6 [dir="back",color="steelblue1",style="solid"];
+  Node6 [label="QCPAbstractItem::createPosition",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_item.html#a75036d39c4d4e2e1a7dd145fff915d32",tooltip=" "];
+  Node1 -> Node7 [dir="back",color="steelblue1",style="solid"];
+  Node7 [label="QCPAxisRect::layoutChanged",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_axis_rect.html#a575e38ac71a21906dc2d7b3364db2d62",tooltip=" "];
+  Node1 -> Node8 [dir="back",color="steelblue1",style="solid"];
+  Node8 [label="MainWindow::MainWindow",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db",tooltip=" "];
+  Node1 -> Node9 [dir="back",color="steelblue1",style="solid"];
+  Node9 [label="QCustomPlot::processRectZoom",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_custom_plot.html#a5508a207dcc279f316142f96d984bba3",tooltip=" "];
+  Node9 -> Node10 [dir="back",color="steelblue1",style="solid"];
+  Node10 [label="QCustomPlot::setSelectionRect",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_custom_plot.html#a0c09f96df15faa4799ad7051bb16cf33",tooltip=" "];
+  Node9 -> Node11 [dir="back",color="steelblue1",style="solid"];
+  Node11 [label="QCustomPlot::setSelection\lRectMode",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_custom_plot.html#a810ef958ebe84db661c7288b526c0deb",tooltip=" "];
+}

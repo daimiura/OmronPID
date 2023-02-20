@@ -1,0 +1,155 @@
+\hypertarget{mainwindow_8h_source}{}\doxysection{mainwindow.\+h}
+\mbox{\hyperlink{mainwindow_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ MAINWINDOW\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ MAINWINDOW\_H}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <QMainWindow>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <QtSerialPort>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <QModbusClient>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <QModbusDataUnit>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <QModbusRtuSerialMaster>}\ \textcolor{comment}{//Qt5}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//\#include\ <QModbusRtuSerialClient>\ //Qt6}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <QScrollBar>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <QMutex>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <QMutexLocker>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <qcustomplot.h>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <QElapsedTimer>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <QApplication>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <QVBoxLayout>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <QHBoxLayout>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}mythread.h"{}}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}myqlineedit.h"{}}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}configuredialog.h"{}}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{namespace\ }Ui\ \{}
+\DoxyCodeLine{00031\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_main_window}{MainWindow}};}
+\DoxyCodeLine{00032\ \}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_main_window}{MainWindow}}\ :\ \textcolor{keyword}{public}\ QMainWindow}
+\DoxyCodeLine{00035\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_main_window}{MainWindow}}(QWidget\ *parent\ =\ 0);}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{class_main_window}{\string~MainWindow}}();}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ LogMsg(QString\ str,\ \textcolor{keywordtype}{bool}\ newLine\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ findSeriesPortDevices();}
+\DoxyCodeLine{00044\ signals:}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00047\ \ \ \textcolor{keywordtype}{void}\ periodic\_work();}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ keyPressEvent(QKeyEvent\ *key);}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ keyReleaseEvent(QKeyEvent\ *key);}
+\DoxyCodeLine{00053\ \ \ \ \ QString\ formatHex(\textcolor{keywordtype}{int}\ value,\ \textcolor{keywordtype}{int}\ digit);}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ waitForMSec(\textcolor{keywordtype}{int}\ msec);}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ panalOnOff(\textcolor{keywordtype}{bool}\ IO);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ showTime();}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ allowSetNextSV();}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ read(QModbusDataUnit::RegisterType\ type,\ quint16\ adress,\ \textcolor{keywordtype}{int}\ size);}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ readReady();}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ request(QModbusPdu::FunctionCode\ code,\ QByteArray\ cmd);\ \textcolor{comment}{//\ no\ PDU\ reply}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ askTemperature();}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ askSetPoint();}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ askMV();}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ askMVupper();}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ askMVlower();}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ getSetting();}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{void}\ setAT(\textcolor{keywordtype}{int}\ atFlag);}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ setSV(\textcolor{keywordtype}{double}\ SV);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_lineEdit\_Cmd\_returnPressed();}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButton\_Connect\_clicked();}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButton\_AskStatus\_clicked();}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButton\_SetSV\_clicked();}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButton\_GetPID\_clicked();}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButton\_RecordTemp\_clicked();}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButton\_ReadRH\_clicked();}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButton\_Control\_clicked();}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_comboBox\_AT\_currentIndexChanged(\textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_comboBox\_Mode\_currentIndexChanged(\textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_comboBox\_MemAddress\_currentTextChanged(\textcolor{keyword}{const}\ QString\ \&arg1);}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_checkBox\_MuteLogMsg\_clicked(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_doubleSpinBox\_MVlower\_valueChanged(\textcolor{keywordtype}{double}\ arg1);}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_doubleSpinBox\_MVupper\_valueChanged(\textcolor{keywordtype}{double}\ arg1);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_actionOpen\_File\_triggered();}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_action\_Setting\_parameters\_for\_TempCheck\_triggered();}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{void}\ fillDataAndPlot(\textcolor{keyword}{const}\ QDateTime\ date,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ PV,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ SV,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ MV);}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_actionHelp\_Page\_triggered();}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{void}\ HelpPicNext();}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_radioButton\_Run\_clicked();}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_radioButton\_Stop\_clicked();}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{void}\ Quit();}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{void}\ CheckTemp();}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{void}\ setIntervalAskMV();}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{void}\ setIntervalAskTemp();}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{void}\ setSafeLimit();}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{void}\ setNumbers();}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{void}\ setIgnoreRange();}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{void}\ setParametersTempCheck();}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00115\ \ \ \ \ Ui::MainWindow\ *ui;}
+\DoxyCodeLine{00116\ \ \ \ \ \mbox{\hyperlink{class_q_custom_plot}{QCustomPlot}}\ *\ plot;}
+\DoxyCodeLine{00117\ \ \ \ \ QModbusRtuSerialMaster\ *\ omron;}
+\DoxyCodeLine{00118\ \ \ \ \ \mbox{\hyperlink{class_my_thread}{MyThread}}\ *\ my\_thread\_;}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ QString\ omronPortName;}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{int}\ omronID;}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{int}\ msgCount;}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{int}\ respondType;}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{double}\ temperature,\ SV,\ MV;}
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordtype}{double}\ MVupper,\ MVlower;}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{double}\ tempDecimal;}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordtype}{bool}\ tempControlOnOff;}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordtype}{bool}\ tempRecordOnOff;}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{bool}\ modbusReady;}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordtype}{bool}\ comboxEnable;}
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{bool}\ spinBoxEnable;}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordtype}{bool}\ muteLog;}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \ \ \ \ QVector<QCPGraphData>\ pvData;}
+\DoxyCodeLine{00138\ \ \ \ \ QVector<QCPGraphData>\ svData;}
+\DoxyCodeLine{00139\ \ \ \ \ QVector<QCPGraphData>\ mvData;}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordtype}{double}\ pid\_P,\ pid\_I,\ pid\_D;}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \ \ \ \ QTimer\ *\ clock;}
+\DoxyCodeLine{00144\ \ \ \ \ QTimer\ *\ waitTimer;}
+\DoxyCodeLine{00145\ \ \ \ \ QElapsedTimer\ totalElapse;}
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keywordtype}{bool}\ checkDay;}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordtype}{int}\ dayCounter;}
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordtype}{bool}\ nextSV;}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \ \ \ \ QDialog\ *\ helpDialog;}
+\DoxyCodeLine{00151\ \ \ \ \ QLabel\ *\ HelpLabel;}
+\DoxyCodeLine{00152\ \ \ \ \ \mbox{\hyperlink{class_configure_dialog}{ConfigureDialog}}\ *\ configureDialog\_;}
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordtype}{int}\ picNumber;}
+\DoxyCodeLine{00154\ \ \ \ \ QMutex\ mutex\_;}
+\DoxyCodeLine{00155\ \};}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MAINWINDOW\_H}}
+
+\end{DoxyCode}

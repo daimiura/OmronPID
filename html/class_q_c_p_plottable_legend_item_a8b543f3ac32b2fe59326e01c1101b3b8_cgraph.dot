@@ -1,0 +1,17 @@
+digraph "QCPPlottableLegendItem::minimumOuterSizeHint"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [label="QCPPlottableLegendItem\l::minimumOuterSizeHint",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="steelblue1",style="solid"];
+  Node2 [label="QCPPlottableLegendItem\l::getFont",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_plottable_legend_item.html#a77d980f594046226f9ac075fa07244b3",tooltip=" "];
+  Node1 -> Node3 [color="steelblue1",style="solid"];
+  Node3 [label="QCPLegend::iconSize",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_legend.html#ae4f17a186558c82d2ba269f6e7164dda",tooltip=" "];
+  Node1 -> Node4 [color="steelblue1",style="solid"];
+  Node4 [label="QCPLegend::iconTextPadding",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_legend.html#a19668bb7f8fafe20d367cebf96269eaf",tooltip=" "];
+  Node1 -> Node5 [color="steelblue1",style="solid"];
+  Node5 [label="QCPAbstractPlottable\l::name",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_plottable.html#a52c226eefcb1920240eeabae574d28c0",tooltip=" "];
+}

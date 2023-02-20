@@ -1,0 +1,20 @@
+digraph "QCPLayoutElement::update"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [label="QCPLayoutElement::update",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="steelblue1",style="solid"];
+  Node2 [label="QCPLayoutElement::calculate\lAutoMargin",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_layout_element.html#a005c9f0fe84bc1591a2cf2c46fd477b4",tooltip=" "];
+  Node2 -> Node3 [color="steelblue1",style="solid"];
+  Node3 [label="QCP::getMarginValue",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespace_q_c_p.html#a23a2679d3495c444acc26acc61e35b5b",tooltip=" "];
+  Node1 -> Node3 [color="steelblue1",style="solid"];
+  Node1 -> Node4 [color="steelblue1",style="solid"];
+  Node4 [label="QCPLayoutElement::setMargins",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_layout_element.html#a8f450b1f3f992ad576fce2c63d8b79cf",tooltip=" "];
+  Node4 -> Node5 [color="steelblue1",style="solid"];
+  Node5 [label="QCPLayoutElement::margins",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_layout_element.html#af4ac9450aa2d60863bf3a8ea0c940c9d",tooltip=" "];
+  Node1 -> Node6 [color="steelblue1",style="solid"];
+  Node6 [label="QCP::setMarginValue",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespace_q_c_p.html#afbf6e3084c108f2bb4372107945ee82f",tooltip=" "];
+}

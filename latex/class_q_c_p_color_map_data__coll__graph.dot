@@ -1,0 +1,10 @@
+digraph "QCPColorMapData"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [label="QCPColorMapData",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Holds the two-dimensional data of a QCPColorMap plottable."];
+  Node2 -> Node1 [dir="back",color="darkorchid3",style="dashed",label=" mDataBounds\nmKeyRange\nmValueRange" ];
+  Node2 [label="QCPRange",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_q_c_p_range.html",tooltip="Represents the range an axis is encompassing."];
+}
