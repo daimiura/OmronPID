@@ -221,10 +221,15 @@ MainWindow::MainWindow(QWidget *parent) :
     setNumbers();
     setSafeLimit();
 
-    my_thread_ = new MyThread();
-    my_thread_->interval_ = ui->lineEdit_IntervalAskMV->text().toInt()*1000; //ms to sec.
-    my_thread_->moveToThread(my_thread_);
-    QObject::connect(my_thread_, SIGNAL(data_update()), this, SLOT(periodic_work()));
+    threadMVcheck_ = new MyThread();
+    threadMVcheck_->interval_ = ui->lineEdit_IntervalAskMV->text().toInt()*1000; //ms to sec.
+    threadMVcheck_->moveToThread(threadMVcheck_);
+    QObject::connect(threadMVcheck_, SIGNAL(data_update()), this, SLOT(periodic_work()));
+
+    threadLog_ = new MyThread();
+    threadLog_->interval_ = 5000; //ms
+    threadLog_->moveToThread(threadLog_);
+    QObject::connect(threadLog_, SIGNAL(data_update()), this, SLOT(makePlot()));
 
     ui->textEdit_Log->setTextColor(QColor(34,139,34,255));
     LogMsg("The AT and RUN/STOP do not get from the device. Please be careful.");
@@ -237,8 +242,8 @@ MainWindow::~MainWindow()
 
     clock->stop();
     waitTimer->stop();
-    my_thread_->quit();
-    my_thread_->wait();
+    threadMVcheck_->quit();
+    threadMVcheck_->wait();
 
     delete waitTimer;
     delete clock;
@@ -1634,13 +1639,15 @@ void MainWindow::on_radioButton_Run_clicked()
   this->setAutoFillBackground(false);
   ui->radioButton_Run->setStyleSheet("background-color:rgb(173, 181, 189);");
   ui->radioButton_Stop->setStyleSheet("");
-  my_thread_->start();
+  threadMVcheck_->start();
+  threadLog_->start();
   LogMsg("Thred start.");
 }
 
 void MainWindow::on_radioButton_Stop_clicked()
 {
-   my_thread_->exit();
+  threadMVcheck_->exit();
+  threadLog_->exit();
   statusBar()->clearMessage();
   QString cmd = "00 00 01 01";
   LogMsg("Set Stop.");
@@ -1673,7 +1680,7 @@ void MainWindow::Quit()
   this->setAutoFillBackground(false);
   ui->textEdit_Log->setTextColor(QColor(255,0,0,255));
   LogMsg("Emergency Stop. Check the experimental condition.");
-  my_thread_->quit();
+  threadMVcheck_->quit();
   LogMsg("Thred stop.");
   ui->radioButton_Stop->setChecked(true);
   ui->radioButton_Run->setStyleSheet("");
@@ -1689,10 +1696,10 @@ void MainWindow::on_radioButton_TempCheck_toggled(bool checked){
 
 void MainWindow::CheckTemp(){
  if (ui->radioButton_Stop->isChecked()){
-      my_thread_->quit();
+      threadMVcheck_->quit();
       return;
   }
-  my_thread_->quit();
+  threadMVcheck_->quit();
   ui->radioButton_TempCheck->setChecked(true);
   QColor color = QColor(255, 135, 135,255);
   QPalette pal = palette();
@@ -1732,7 +1739,7 @@ void MainWindow::CheckTemp(){
     vtemp.push_back(temperature);
     const double targetValue = ui->lineEdit_SV->text().toDouble();
     if (abs(temperature - targetValue) < 3.0){
-        my_thread_->start();
+        threadMVcheck_->start();
         LogMsg("Target value is " + QString::number(targetValue));
         LogMsg("Current temperature is outside the TempCheck mode.");
         LogMsg("TempCheck mode does not work in the range");
@@ -1747,7 +1754,7 @@ void MainWindow::CheckTemp(){
   LogMsg(QString::number(vdave));
   if (abs(vdave) >= safelimit) {
       ui->radioButton_TempCheck->setChecked(false);
-      my_thread_->start();
+      threadMVcheck_->start();
       color = QColor("lightgray");
       pal = palette();
       pal.setColor(QPalette::Window, color);
@@ -1770,7 +1777,7 @@ void MainWindow::CheckTemp(){
 
 void MainWindow::periodic_work(){
   if (ui->radioButton_TempCheck->isChecked()){
-      my_thread_->quit();
+      threadMVcheck_->quit();
       return;
     }
   LogMsg("periodic function works.");
@@ -1805,14 +1812,49 @@ void MainWindow::periodic_work(){
     static int flag_run = 0;
     if (flag_run == 0){
         flag_run = 1;
-        my_thread_->start();
+        threadMVcheck_->start();
       }else{
         flag_run = 0;
-        my_thread_->quit();
+        threadMVcheck_->quit();
       }
     ui->radioButton_TempCheck->setChecked(true);
     ui->textEdit_Log->setTextColor(QColor(0,0,0,255));
   }
-
 }
+
+  void MainWindow::makePlot(){
+    LogMsg("makePlot works.");
+    QTimer getTempTimer;
+    const int tempGetTime = ui->spinBox_TempRecordTime->value() * 1000; // msec
+    getTempTimer.setSingleShot(true);
+
+    getTempTimer.start(tempGetTime);
+    askTemperature();
+    int i = 0;
+    while(!modbusReady) {
+        i++;
+        waitForMSec(timing::modbus);
+        if( i > 10 ){
+            modbusReady = true;
+        }
+    }
+    askMV();
+    i = 0;
+    while(!modbusReady) {
+        i++;
+        waitForMSec(timing::modbus);
+        if( i > 10 ){
+            modbusReady = true;
+        }
+    }
+  const double targetValue = ui->lineEdit_SV->text().toDouble();
+  QDateTime date = QDateTime::currentDateTime();
+
+  LogMsg("date :" + date.toString("yyyy/MM/dd"));
+  LogMsg("temp :" + QString::number(temperature));
+  LogMsg("SV :" + QString::number(targetValue));
+  LogMsg("MV :" + QString::number(MV));
+
+  fillDataAndPlot(date, temperature, targetValue, MV);
+  }
 

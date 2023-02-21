@@ -2,6 +2,8 @@
 #define MYTHREAD_H
 
 #include <QThread>
+#include <QMutex>
+#include <QMutexLocker>
 #include <QTimer>
 
 class MyThread : public QThread
@@ -15,9 +17,10 @@ signals:
     void data_update();
 
 public slots:
-
 private slots:
     void timerHit();
+private:
+    QMutex mutex_;
 };
 
 #endif // MYTHREAD_H

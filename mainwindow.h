@@ -37,6 +37,7 @@ signals:
 
 public slots:
   void periodic_work();
+  void makePlot();
 
 
 private slots:
@@ -105,11 +106,13 @@ private slots:
     void setParametersTempCheck();
 
 
+
 private:
     Ui::MainWindow *ui;
     QCustomPlot * plot;
     QModbusRtuSerialMaster * omron;
-    MyThread * my_thread_;
+    MyThread * threadMVcheck_;
+    MyThread * threadLog_;
 
     QString omronPortName;
     int omronID;
