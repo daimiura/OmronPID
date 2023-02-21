@@ -110,6 +110,12 @@ MainWindow::MainWindow(QWidget *parent) :
     plot->axisRect()->setRangeDrag(Qt::Vertical);
     plot->axisRect()->setRangeZoom(Qt::Vertical);
     plot->legend->setVisible(true);
+    QCPLayoutGrid *subLayout = new QCPLayoutGrid;
+    plot->plotLayout()->addElement(1, 0, subLayout);
+    subLayout->setMargins(QMargins(5,0,5,5));
+    subLayout->addElement(0, 0, plot->legend);
+    plot->legend->setFillOrder(QCPLegend::foColumnsFirst);
+    plot->plotLayout()->setRowStretchFactor(1, 0.001);
     //set legend position
     //plot->axisRect()->insetLayout()->setInsetAlignment(0, Qt::AlignLeft|Qt::AlignTop);
     plot->axisRect()->setAutoMargins(QCP::msLeft | QCP::msTop | QCP::msBottom);
@@ -247,13 +253,15 @@ MainWindow::MainWindow(QWidget *parent) :
     //QObject::connect(threadLog_, SIGNAL(data_update()), this, SLOT(writeData()));
     threadLog_->setPriority(QThread::HighestPriority);
     QDateTime startTime = QDateTime::currentDateTime();
-    fileName_ = startTime.toString("yyyyMMdd_HHmmss") +
-            "_tempRecord_" + ui->comboBox_SeriesNumber->currentText() +".dat";
+    fileName_ = startTime.toString("yyyyMMdd_HHmmss") + ".dat";
     filePath_ = DATA_PATH_2 + "/" + fileName_;
     QFile output_(filePath_);
+    QTextStream stream(&output_);
     if (output_.exists()) LogMsg("file already exists.");
-    else output_.open(QIODevice::WriteOnly| QIODevice::Text);
-    //"Date", "Date_t", "temp [C]", "SV [C]", "Output [%]"
+    else {
+        output_.open(QIODevice::WriteOnly| QIODevice::Text);
+        stream <<"Date\t"<<"Date_t\t"<<"temp [C]\t"<<"SV [C]\t"<<"Output [%]" <<endl;
+      }
     output_.close();
 
     ui->textEdit_Log->setTextColor(QColor(34,139,34,255));
@@ -1818,8 +1826,6 @@ void MainWindow::TempCheck(){
     }
   else Quit();
 }
-
-
 
 void MainWindow::periodic_work(){
   if (ui->radioButton_TempCheck->isChecked()){
