@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>OMRONPID: configuredialog.h Source File</title>
+<title>OmronPID: configuredialog.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">OMRONPID
+   <div id="projectname">OmronPID
    </div>
   </td>
  </tr>
@@ -72,7 +72,7 @@ $(function() {
   <div class="headertitle"><div class="title">configuredialog.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<a href="configuredialog_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef CONFIGUREDIALOG_H</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define CONFIGUREDIALOG_H</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
@@ -85,7 +85,7 @@ $(function() {
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">class </span>QTextBrowser;</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">class </span>QLabel;</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">namespace </span>Ui {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="namespace_ui.html">   24</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_ui.html">Ui</a> {</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <span class="keyword">class </span><a class="code hl_class" href="class_configure_dialog.html">ConfigureDialog</a>;</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
@@ -95,40 +95,52 @@ $(function() {
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">public</span>:</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="keyword">explicit</span> <a class="code hl_class" href="class_configure_dialog.html">ConfigureDialog</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <a class="code hl_class" href="class_configure_dialog.html">~ConfigureDialog</a>();</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  QSpinBox * spinBox_IntervalAskMV_;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  QSpinBox * spinBox_IntervalAskTemp_;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  QSpinBox * spinBox_Numbers_;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  QDoubleSpinBox * spinBox_SafeLimit_;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  QDoubleSpinBox * spinBox_IgnoreLower_;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  QDoubleSpinBox * spinBox_IgnoreUpper_;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  QTextBrowser * textBrowser_log_;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  QPushButton * pushButton_SetParameters_;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="keywordtype">int</span> intervalAskMV_;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keywordtype">int</span> intervalAskTemp_;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="keywordtype">int</span> numbers_;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keywordtype">int</span> etime_;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="keywordtype">double</span> safeLimit_;</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="keywordtype">double</span> ignoreUpper_;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <span class="keywordtype">double</span> ignoreLower_;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="keyword">private</span> slots:</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="keywordtype">void</span> calcEstimatedTime();</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="keywordtype">void</span> setValues();</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  Ui::ConfigureDialog *ui;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  QLabel * labelAskMV_;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  QLabel * labelAskTemp_;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  QLabel * labelSize_;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  QLabel * label_SafeLimit_;</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  QLabel * label_IgnoreLower_;</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  QLabel * label_IgnoreUpper_;</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  QLabel * label_ETime_;</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  QMutex mutex_;</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>};</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="preprocessor">#endif </span><span class="comment">// CONFIGUREDIALOG_H</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <a class="code hl_function" href="class_configure_dialog.html#a180b402b09b26b7c99712b7172cf7400">~ConfigureDialog</a>();</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="class_configure_dialog.html#aa245108e1576929e4fdaffa1fba54d25">   40</a></span>  QSpinBox * <a class="code hl_variable" href="class_configure_dialog.html#aa245108e1576929e4fdaffa1fba54d25">spinBox_IntervalAskMV_</a>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="class_configure_dialog.html#a70d319033a21d6c8dc5952bcb61eecd6">   41</a></span>  QSpinBox * <a class="code hl_variable" href="class_configure_dialog.html#a70d319033a21d6c8dc5952bcb61eecd6">spinBox_IntervalAskTemp_</a>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="class_configure_dialog.html#a258dae43c683757b3eeb331adbd9a2c6">   42</a></span>  QSpinBox * <a class="code hl_variable" href="class_configure_dialog.html#a258dae43c683757b3eeb331adbd9a2c6">spinBox_Numbers_</a>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="class_configure_dialog.html#ac9b5373674883394f2654a95581b289f">   43</a></span>  QDoubleSpinBox * <a class="code hl_variable" href="class_configure_dialog.html#ac9b5373674883394f2654a95581b289f">spinBox_SafeLimit_</a>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="class_configure_dialog.html#abc7f745e5bb2af3587030bbb0167d67a">   44</a></span>  QDoubleSpinBox * <a class="code hl_variable" href="class_configure_dialog.html#abc7f745e5bb2af3587030bbb0167d67a">spinBox_IgnoreLower_</a>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="class_configure_dialog.html#a9be66f28a3ca26ac68f3ea96339ef846">   45</a></span>  QDoubleSpinBox * <a class="code hl_variable" href="class_configure_dialog.html#a9be66f28a3ca26ac68f3ea96339ef846">spinBox_IgnoreUpper_</a>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="class_configure_dialog.html#aa220eb7a3c3857cc031cc3e73bbba398">   46</a></span>  QTextBrowser * <a class="code hl_variable" href="class_configure_dialog.html#aa220eb7a3c3857cc031cc3e73bbba398">textBrowser_log_</a>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="class_configure_dialog.html#a170fe98507666e1333891b790998ded1">   47</a></span>  QPushButton * <a class="code hl_variable" href="class_configure_dialog.html#a170fe98507666e1333891b790998ded1">pushButton_SetParameters_</a>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">private</span> slots:</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="keywordtype">void</span> calcEstimatedTime();</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keywordtype">void</span> setValues();</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  Ui::ConfigureDialog *ui;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  QLabel * labelAskMV_;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  QLabel * labelAskTemp_;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  QLabel * labelSize_;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  QLabel * label_SafeLimit_;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  QLabel * label_IgnoreLower_;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  QLabel * label_IgnoreUpper_;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  QLabel * label_ETime_;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <span class="keywordtype">int</span> intervalAskMV_;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  <span class="keywordtype">int</span> intervalAskTemp_;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  <span class="keywordtype">int</span> numbers_;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  <span class="keywordtype">int</span> etime_;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  <span class="keywordtype">double</span> safeLimit_;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <span class="keywordtype">double</span> ignoreUpper_;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  <span class="keywordtype">double</span> ignoreLower_;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  QMutex mutex_;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>};</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="preprocessor">#endif </span><span class="comment">// CONFIGUREDIALOG_H</span></div>
 <div class="ttc" id="aclass_configure_dialog_html"><div class="ttname"><a href="class_configure_dialog.html">ConfigureDialog</a></div><div class="ttdoc">configuredialog</div><div class="ttdef"><b>Definition:</b> configuredialog.h:34</div></div>
+<div class="ttc" id="aclass_configure_dialog_html_a170fe98507666e1333891b790998ded1"><div class="ttname"><a href="class_configure_dialog.html#a170fe98507666e1333891b790998ded1">ConfigureDialog::pushButton_SetParameters_</a></div><div class="ttdeci">QPushButton * pushButton_SetParameters_</div><div class="ttdef"><b>Definition:</b> configuredialog.h:47</div></div>
+<div class="ttc" id="aclass_configure_dialog_html_a180b402b09b26b7c99712b7172cf7400"><div class="ttname"><a href="class_configure_dialog.html#a180b402b09b26b7c99712b7172cf7400">ConfigureDialog::~ConfigureDialog</a></div><div class="ttdeci">~ConfigureDialog()</div><div class="ttdef"><b>Definition:</b> configuredialog.cpp:73</div></div>
+<div class="ttc" id="aclass_configure_dialog_html_a258dae43c683757b3eeb331adbd9a2c6"><div class="ttname"><a href="class_configure_dialog.html#a258dae43c683757b3eeb331adbd9a2c6">ConfigureDialog::spinBox_Numbers_</a></div><div class="ttdeci">QSpinBox * spinBox_Numbers_</div><div class="ttdef"><b>Definition:</b> configuredialog.h:42</div></div>
+<div class="ttc" id="aclass_configure_dialog_html_a70d319033a21d6c8dc5952bcb61eecd6"><div class="ttname"><a href="class_configure_dialog.html#a70d319033a21d6c8dc5952bcb61eecd6">ConfigureDialog::spinBox_IntervalAskTemp_</a></div><div class="ttdeci">QSpinBox * spinBox_IntervalAskTemp_</div><div class="ttdef"><b>Definition:</b> configuredialog.h:41</div></div>
+<div class="ttc" id="aclass_configure_dialog_html_a9be66f28a3ca26ac68f3ea96339ef846"><div class="ttname"><a href="class_configure_dialog.html#a9be66f28a3ca26ac68f3ea96339ef846">ConfigureDialog::spinBox_IgnoreUpper_</a></div><div class="ttdeci">QDoubleSpinBox * spinBox_IgnoreUpper_</div><div class="ttdef"><b>Definition:</b> configuredialog.h:45</div></div>
+<div class="ttc" id="aclass_configure_dialog_html_aa220eb7a3c3857cc031cc3e73bbba398"><div class="ttname"><a href="class_configure_dialog.html#aa220eb7a3c3857cc031cc3e73bbba398">ConfigureDialog::textBrowser_log_</a></div><div class="ttdeci">QTextBrowser * textBrowser_log_</div><div class="ttdef"><b>Definition:</b> configuredialog.h:46</div></div>
+<div class="ttc" id="aclass_configure_dialog_html_aa245108e1576929e4fdaffa1fba54d25"><div class="ttname"><a href="class_configure_dialog.html#aa245108e1576929e4fdaffa1fba54d25">ConfigureDialog::spinBox_IntervalAskMV_</a></div><div class="ttdeci">QSpinBox * spinBox_IntervalAskMV_</div><div class="ttdef"><b>Definition:</b> configuredialog.h:40</div></div>
+<div class="ttc" id="aclass_configure_dialog_html_abc7f745e5bb2af3587030bbb0167d67a"><div class="ttname"><a href="class_configure_dialog.html#abc7f745e5bb2af3587030bbb0167d67a">ConfigureDialog::spinBox_IgnoreLower_</a></div><div class="ttdeci">QDoubleSpinBox * spinBox_IgnoreLower_</div><div class="ttdef"><b>Definition:</b> configuredialog.h:44</div></div>
+<div class="ttc" id="aclass_configure_dialog_html_ac9b5373674883394f2654a95581b289f"><div class="ttname"><a href="class_configure_dialog.html#ac9b5373674883394f2654a95581b289f">ConfigureDialog::spinBox_SafeLimit_</a></div><div class="ttdeci">QDoubleSpinBox * spinBox_SafeLimit_</div><div class="ttdef"><b>Definition:</b> configuredialog.h:43</div></div>
+<div class="ttc" id="anamespace_ui_html"><div class="ttname"><a href="namespace_ui.html">Ui</a></div><div class="ttdef"><b>Definition:</b> configuredialog.h:24</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

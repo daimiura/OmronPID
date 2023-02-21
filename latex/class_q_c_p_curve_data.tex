@@ -5,12 +5,16 @@
 Holds the data of one single data point for \mbox{\hyperlink{class_q_c_p_curve}{QCPCurve}}.  
 
 
+
+
+{\ttfamily \#include $<$qcustomplot.\+h$>$}
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_q_c_p_curve_data_a48252779b5198a509d99c69ae223fbf8}{QCPCurve\+Data}} ()
 \item 
-\mbox{\hyperlink{class_q_c_p_curve_data_a3586be0cc6f8db15bcdd0c0d03b0c173}{QCPCurve\+Data}} (double t, double key, double value)
+\mbox{\hyperlink{class_q_c_p_curve_data_a3586be0cc6f8db15bcdd0c0d03b0c173}{QCPCurve\+Data}} (double \mbox{\hyperlink{class_q_c_p_curve_data_aecc395525be28e9178a088793beb3ff3}{t}}, double \mbox{\hyperlink{class_q_c_p_curve_data_a8a4ec5f2b9a396149fd842e309701bd4}{key}}, double \mbox{\hyperlink{class_q_c_p_curve_data_a72b39b8e1dbf7b45382ebd48419b6828}{value}})
 \item 
 double \mbox{\hyperlink{class_q_c_p_curve_data_a583174f2b68e01b4d545f04571f58bd0}{sort\+Key}} () const
 \item 
@@ -30,14 +34,11 @@ static bool \mbox{\hyperlink{class_q_c_p_curve_data_a1b78f228e31ca40a1e69add4453
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_q_c_p_curve_data_aecc395525be28e9178a088793beb3ff3}\label{class_q_c_p_curve_data_aecc395525be28e9178a088793beb3ff3}} 
-double {\bfseries t}
+double \mbox{\hyperlink{class_q_c_p_curve_data_aecc395525be28e9178a088793beb3ff3}{t}}
 \item 
-\mbox{\Hypertarget{class_q_c_p_curve_data_a8a4ec5f2b9a396149fd842e309701bd4}\label{class_q_c_p_curve_data_a8a4ec5f2b9a396149fd842e309701bd4}} 
-double {\bfseries key}
+double \mbox{\hyperlink{class_q_c_p_curve_data_a8a4ec5f2b9a396149fd842e309701bd4}{key}}
 \item 
-\mbox{\Hypertarget{class_q_c_p_curve_data_a72b39b8e1dbf7b45382ebd48419b6828}\label{class_q_c_p_curve_data_a72b39b8e1dbf7b45382ebd48419b6828}} 
-double {\bfseries value}
+double \mbox{\hyperlink{class_q_c_p_curve_data_a72b39b8e1dbf7b45382ebd48419b6828}{value}}
 \end{DoxyCompactItemize}
 
 
@@ -46,10 +47,10 @@ Holds the data of one single data point for \mbox{\hyperlink{class_q_c_p_curve}{
 
 The stored data is\+: \begin{DoxyItemize}
 \item {\itshape t\+:} the free ordering parameter of this curve point, like in the mathematical vector {\itshape (x(t), y(t))}. (This is the {\itshape sort\+Key}) \item {\itshape key\+:} coordinate on the key axis of this curve point (this is the {\itshape main\+Key}) \item {\itshape value\+:} coordinate on the value axis of this curve point (this is the {\itshape main\+Value})\end{DoxyItemize}
-The container for storing multiple data points is QCPCurve\+Data\+Container. It is a typedef for \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}} with \mbox{\hyperlink{class_q_c_p_curve_data}{QCPCurve\+Data}} as the Data\+Type template parameter. See the documentation there for an explanation regarding the data type\textquotesingle{}s generic methods.
+The container for storing multiple data points is \mbox{\hyperlink{qcustomplot_8h_aaeee80d5664ea91beb9d7968790d0e65}{QCPCurve\+Data\+Container}}. It is a typedef for \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}} with \mbox{\hyperlink{class_q_c_p_curve_data}{QCPCurve\+Data}} as the Data\+Type template parameter. See the documentation there for an explanation regarding the data type\textquotesingle{}s generic methods.
 
 \begin{DoxySeeAlso}{See also}
-QCPCurve\+Data\+Container 
+\mbox{\hyperlink{qcustomplot_8h_aaeee80d5664ea91beb9d7968790d0e65}{QCPCurve\+Data\+Container}} 
 \end{DoxySeeAlso}
 
 
@@ -119,7 +120,28 @@ Returns a \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} with both lower and upp
 
 For a general explanation of what this method is good for in the context of the data container, see the documentation of \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}. 
 
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_q_c_p_curve_data_a8a4ec5f2b9a396149fd842e309701bd4}\label{class_q_c_p_curve_data_a8a4ec5f2b9a396149fd842e309701bd4}} 
+\index{QCPCurveData@{QCPCurveData}!key@{key}}
+\index{key@{key}!QCPCurveData@{QCPCurveData}}
+\doxysubsubsection{\texorpdfstring{key}{key}}
+{\footnotesize\ttfamily double QCPCurve\+Data\+::key}
+
+\mbox{\Hypertarget{class_q_c_p_curve_data_aecc395525be28e9178a088793beb3ff3}\label{class_q_c_p_curve_data_aecc395525be28e9178a088793beb3ff3}} 
+\index{QCPCurveData@{QCPCurveData}!t@{t}}
+\index{t@{t}!QCPCurveData@{QCPCurveData}}
+\doxysubsubsection{\texorpdfstring{t}{t}}
+{\footnotesize\ttfamily double QCPCurve\+Data\+::t}
+
+\mbox{\Hypertarget{class_q_c_p_curve_data_a72b39b8e1dbf7b45382ebd48419b6828}\label{class_q_c_p_curve_data_a72b39b8e1dbf7b45382ebd48419b6828}} 
+\index{QCPCurveData@{QCPCurveData}!value@{value}}
+\index{value@{value}!QCPCurveData@{QCPCurveData}}
+\doxysubsubsection{\texorpdfstring{value}{value}}
+{\footnotesize\ttfamily double QCPCurve\+Data\+::value}
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-qcustomplot.\+h\item 
-qcustomplot.\+cpp\end{DoxyCompactItemize}
+\mbox{\hyperlink{qcustomplot_8h}{qcustomplot.\+h}}\item 
+\mbox{\hyperlink{qcustomplot_8cpp}{qcustomplot.\+cpp}}\end{DoxyCompactItemize}

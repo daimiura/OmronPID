@@ -5,6 +5,10 @@
 A paint buffer based on QPixmap, using software raster rendering.  
 
 
+
+
+{\ttfamily \#include $<$qcustomplot.\+h$>$}
+
 Inheritance diagram for QCPPaint\+Buffer\+Pixmap\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -14,31 +18,32 @@ Inheritance diagram for QCPPaint\+Buffer\+Pixmap\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_q_c_p_paint_buffer_pixmap_aef0224e03b9285509391fcd61a8e6844}{QCPPaint\+Buffer\+Pixmap}} (const QSize \&size, double device\+Pixel\+Ratio)
+\mbox{\hyperlink{class_q_c_p_paint_buffer_pixmap_aef0224e03b9285509391fcd61a8e6844}{QCPPaint\+Buffer\+Pixmap}} (const QSize \&\mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_a3ea8284e547985c5d263f26a6adfa11f}{size}}, double \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_aac1b981f8c1744036610ff1a6b9461f9}{device\+Pixel\+Ratio}})
 \item 
-virtual \mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$ \mbox{\hyperlink{class_q_c_p_paint_buffer_pixmap_a357964ef7d28cfa530338be4e5c93234}{start\+Painting}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+virtual \mbox{\hyperlink{class_q_c_p_paint_buffer_pixmap_a52b00bff4a36085b197bd374d5d24450}{$\sim$\+QCPPaint\+Buffer\+Pixmap}} ()
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_paint_buffer_pixmap_af7bfc685e56a0a9329e57cd9a265eb74}{draw}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+virtual \mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$ \mbox{\hyperlink{class_q_c_p_paint_buffer_pixmap_a357964ef7d28cfa530338be4e5c93234}{start\+Painting}} () \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
 \item 
-void \mbox{\hyperlink{class_q_c_p_paint_buffer_pixmap_a14badbd010a3cde6b55817ccb7b65217}{clear}} (const QColor \&color) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+virtual void \mbox{\hyperlink{class_q_c_p_paint_buffer_pixmap_af7bfc685e56a0a9329e57cd9a265eb74}{draw}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+\item 
+void \mbox{\hyperlink{class_q_c_p_paint_buffer_pixmap_a14badbd010a3cde6b55817ccb7b65217}{clear}} (const QColor \&color) \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer}{QCPAbstract\+Paint\+Buffer}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_a3ce532c12f10b81697108835755641e2}{QCPAbstract\+Paint\+Buffer}} (const QSize \&size, double device\+Pixel\+Ratio)
+\mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_a3ce532c12f10b81697108835755641e2}{QCPAbstract\+Paint\+Buffer}} (const QSize \&\mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_a3ea8284e547985c5d263f26a6adfa11f}{size}}, double \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_aac1b981f8c1744036610ff1a6b9461f9}{device\+Pixel\+Ratio}})
 \item 
-\mbox{\Hypertarget{class_q_c_p_abstract_paint_buffer_a3ea8284e547985c5d263f26a6adfa11f}\label{class_q_c_p_abstract_paint_buffer_a3ea8284e547985c5d263f26a6adfa11f}} 
-QSize {\bfseries size} () const
+virtual \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_a50fbb1265814d019a1707f4cb11e20de}{$\sim$\+QCPAbstract\+Paint\+Buffer}} ()
 \item 
-\mbox{\Hypertarget{class_q_c_p_abstract_paint_buffer_a76bf771cda945a6c602cf9b7d365d92b}\label{class_q_c_p_abstract_paint_buffer_a76bf771cda945a6c602cf9b7d365d92b}} 
-bool {\bfseries invalidated} () const
+QSize \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_a3ea8284e547985c5d263f26a6adfa11f}{size}} () const
 \item 
-\mbox{\Hypertarget{class_q_c_p_abstract_paint_buffer_aac1b981f8c1744036610ff1a6b9461f9}\label{class_q_c_p_abstract_paint_buffer_aac1b981f8c1744036610ff1a6b9461f9}} 
-double {\bfseries device\+Pixel\+Ratio} () const
+bool \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_a76bf771cda945a6c602cf9b7d365d92b}{invalidated}} () const
 \item 
-void \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_a8b68c3cd36533f1a4a23b5ce8cd66f01}{set\+Size}} (const QSize \&size)
+double \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_aac1b981f8c1744036610ff1a6b9461f9}{device\+Pixel\+Ratio}} () const
 \item 
-void \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_ae4c7dc70dfc66be2879ce297b2b3d67f}{set\+Invalidated}} (bool invalidated=true)
+void \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_a8b68c3cd36533f1a4a23b5ce8cd66f01}{set\+Size}} (const QSize \&\mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_a3ea8284e547985c5d263f26a6adfa11f}{size}})
+\item 
+void \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_ae4c7dc70dfc66be2879ce297b2b3d67f}{set\+Invalidated}} (bool \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_a76bf771cda945a6c602cf9b7d365d92b}{invalidated}}=true)
 \item 
 void \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_a555eaad5d5c806420ff35602a1bb68fa}{set\+Device\+Pixel\+Ratio}} (double ratio)
 \item 
@@ -53,7 +58,7 @@ virtual void \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_a9e253f4541dfc01
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_paint_buffer_pixmap_ad49f3205ba3463b1c44f8db3cfcc90f0}{reallocate\+Buffer}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+virtual void \mbox{\hyperlink{class_q_c_p_paint_buffer_pixmap_ad49f3205ba3463b1c44f8db3cfcc90f0}{reallocate\+Buffer}} () \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
 \end{DoxyCompactItemize}
 \begin{DoxyCompactItemize}
 \item 
@@ -62,20 +67,16 @@ virtual void \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_aee7506a52bd7e5a
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_q_c_p_paint_buffer_pixmap_a6d7009f45f03e305f2dc00e52a9225f8}\label{class_q_c_p_paint_buffer_pixmap_a6d7009f45f03e305f2dc00e52a9225f8}} 
-QPixmap {\bfseries m\+Buffer}
+QPixmap \mbox{\hyperlink{class_q_c_p_paint_buffer_pixmap_a6d7009f45f03e305f2dc00e52a9225f8}{m\+Buffer}}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer}{QCPAbstract\+Paint\+Buffer}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_q_c_p_abstract_paint_buffer_ae246c426222bfa18d5e8797fab73e3ce}\label{class_q_c_p_abstract_paint_buffer_ae246c426222bfa18d5e8797fab73e3ce}} 
-QSize {\bfseries m\+Size}
+QSize \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_ae246c426222bfa18d5e8797fab73e3ce}{m\+Size}}
 \item 
-\mbox{\Hypertarget{class_q_c_p_abstract_paint_buffer_a33c1fd784478441fcff9ebf3d69af5b2}\label{class_q_c_p_abstract_paint_buffer_a33c1fd784478441fcff9ebf3d69af5b2}} 
-double {\bfseries m\+Device\+Pixel\+Ratio}
+double \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_a33c1fd784478441fcff9ebf3d69af5b2}{m\+Device\+Pixel\+Ratio}}
 \item 
-\mbox{\Hypertarget{class_q_c_p_abstract_paint_buffer_a3bc49cc9cf9daaca3a60977f010c08c9}\label{class_q_c_p_abstract_paint_buffer_a3bc49cc9cf9daaca3a60977f010c08c9}} 
-bool {\bfseries m\+Invalidated}
+bool \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_a3bc49cc9cf9daaca3a60977f010c08c9}{m\+Invalidated}}
 \end{DoxyCompactItemize}
 
 
@@ -91,7 +92,13 @@ This paint buffer is the default and fall-\/back paint buffer which uses softwar
 \doxysubsubsection{\texorpdfstring{QCPPaintBufferPixmap()}{QCPPaintBufferPixmap()}}
 {\footnotesize\ttfamily QCPPaint\+Buffer\+Pixmap\+::\+QCPPaint\+Buffer\+Pixmap (\begin{DoxyParamCaption}\item[{const QSize \&}]{size,  }\item[{double}]{device\+Pixel\+Ratio }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
-Creates a pixmap paint buffer instancen with the specified {\itshape size} and {\itshape device\+Pixel\+Ratio}, if applicable. 
+Creates a pixmap paint buffer instancen with the specified {\itshape size} and {\itshape device\+Pixel\+Ratio}, if applicable. \mbox{\Hypertarget{class_q_c_p_paint_buffer_pixmap_a52b00bff4a36085b197bd374d5d24450}\label{class_q_c_p_paint_buffer_pixmap_a52b00bff4a36085b197bd374d5d24450}} 
+\index{QCPPaintBufferPixmap@{QCPPaintBufferPixmap}!````~QCPPaintBufferPixmap@{$\sim$QCPPaintBufferPixmap}}
+\index{````~QCPPaintBufferPixmap@{$\sim$QCPPaintBufferPixmap}!QCPPaintBufferPixmap@{QCPPaintBufferPixmap}}
+\doxysubsubsection{\texorpdfstring{$\sim$QCPPaintBufferPixmap()}{~QCPPaintBufferPixmap()}}
+{\footnotesize\ttfamily QCPPaint\+Buffer\+Pixmap\+::$\sim$\+QCPPaint\+Buffer\+Pixmap (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_q_c_p_paint_buffer_pixmap_a14badbd010a3cde6b55817ccb7b65217}\label{class_q_c_p_paint_buffer_pixmap_a14badbd010a3cde6b55817ccb7b65217}} 
@@ -149,7 +156,16 @@ Implements \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_a9e9f29b19c033cf02
 
 
 
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_q_c_p_paint_buffer_pixmap_a6d7009f45f03e305f2dc00e52a9225f8}\label{class_q_c_p_paint_buffer_pixmap_a6d7009f45f03e305f2dc00e52a9225f8}} 
+\index{QCPPaintBufferPixmap@{QCPPaintBufferPixmap}!mBuffer@{mBuffer}}
+\index{mBuffer@{mBuffer}!QCPPaintBufferPixmap@{QCPPaintBufferPixmap}}
+\doxysubsubsection{\texorpdfstring{mBuffer}{mBuffer}}
+{\footnotesize\ttfamily QPixmap QCPPaint\+Buffer\+Pixmap\+::m\+Buffer\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-qcustomplot.\+h\item 
-qcustomplot.\+cpp\end{DoxyCompactItemize}
+\mbox{\hyperlink{qcustomplot_8h}{qcustomplot.\+h}}\item 
+\mbox{\hyperlink{qcustomplot_8cpp}{qcustomplot.\+cpp}}\end{DoxyCompactItemize}

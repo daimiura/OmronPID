@@ -5,6 +5,10 @@
 A plottable that adds a set of error bars to other plottables.  
 
 
+
+
+{\ttfamily \#include $<$qcustomplot.\+h$>$}
+
 Inheritance diagram for QCPError\+Bars\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -21,23 +25,21 @@ enum \mbox{\hyperlink{class_q_c_p_error_bars_a95f0220f11a72648b96480a85ce26474}{
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_q_c_p_error_bars_a5cdcc33e5f173780c3d657e96216e5c1}{QCPError\+Bars}} (\mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$key\+Axis, \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$value\+Axis)
+\mbox{\hyperlink{class_q_c_p_error_bars_a5cdcc33e5f173780c3d657e96216e5c1}{QCPError\+Bars}} (\mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$\mbox{\hyperlink{class_q_c_p_abstract_plottable_aa6f25b97ee99988fe352f17cb9ed962b}{key\+Axis}}, \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$\mbox{\hyperlink{class_q_c_p_abstract_plottable_a842b3831660d3e33b73863fd133889dd}{value\+Axis}})
 \item 
-QShared\+Pointer$<$ QCPError\+Bars\+Data\+Container $>$ \mbox{\hyperlink{class_q_c_p_error_bars_aeebd1b14f4c3573565efafd514988813}{data}} () const
+virtual \mbox{\hyperlink{class_q_c_p_error_bars_a7468f8c3dc1cb162d86cf392e938a2e3}{$\sim$\+QCPError\+Bars}} ()
 \item 
-\mbox{\Hypertarget{class_q_c_p_error_bars_a0bc7c198cd8da3e92033433d7d2a42f1}\label{class_q_c_p_error_bars_a0bc7c198cd8da3e92033433d7d2a42f1}} 
-\mbox{\hyperlink{class_q_c_p_abstract_plottable}{QCPAbstract\+Plottable}} $\ast$ {\bfseries data\+Plottable} () const
+QShared\+Pointer$<$ \mbox{\hyperlink{qcustomplot_8h_a8c4472a4da738e0ddbf6b03222c39906}{QCPError\+Bars\+Data\+Container}} $>$ \mbox{\hyperlink{class_q_c_p_error_bars_aeebd1b14f4c3573565efafd514988813}{data}} () const
 \item 
-\mbox{\Hypertarget{class_q_c_p_error_bars_a527e7df83c98709cef22a8447fee4f13}\label{class_q_c_p_error_bars_a527e7df83c98709cef22a8447fee4f13}} 
-\mbox{\hyperlink{class_q_c_p_error_bars_a95f0220f11a72648b96480a85ce26474}{Error\+Type}} {\bfseries error\+Type} () const
+\mbox{\hyperlink{class_q_c_p_abstract_plottable}{QCPAbstract\+Plottable}} $\ast$ \mbox{\hyperlink{class_q_c_p_error_bars_a0bc7c198cd8da3e92033433d7d2a42f1}{data\+Plottable}} () const
 \item 
-\mbox{\Hypertarget{class_q_c_p_error_bars_ae5a292470366ec92b248753f83b8646e}\label{class_q_c_p_error_bars_ae5a292470366ec92b248753f83b8646e}} 
-double {\bfseries whisker\+Width} () const
+\mbox{\hyperlink{class_q_c_p_error_bars_a95f0220f11a72648b96480a85ce26474}{Error\+Type}} \mbox{\hyperlink{class_q_c_p_error_bars_a527e7df83c98709cef22a8447fee4f13}{error\+Type}} () const
 \item 
-\mbox{\Hypertarget{class_q_c_p_error_bars_a2c969749fa0db565a42b80db9da5f388}\label{class_q_c_p_error_bars_a2c969749fa0db565a42b80db9da5f388}} 
-double {\bfseries symbol\+Gap} () const
+double \mbox{\hyperlink{class_q_c_p_error_bars_ae5a292470366ec92b248753f83b8646e}{whisker\+Width}} () const
 \item 
-void \mbox{\hyperlink{class_q_c_p_error_bars_a92b1980003255f5f7c05407a4d92aabc}{set\+Data}} (QShared\+Pointer$<$ QCPError\+Bars\+Data\+Container $>$ \mbox{\hyperlink{class_q_c_p_error_bars_aeebd1b14f4c3573565efafd514988813}{data}})
+double \mbox{\hyperlink{class_q_c_p_error_bars_a2c969749fa0db565a42b80db9da5f388}{symbol\+Gap}} () const
+\item 
+void \mbox{\hyperlink{class_q_c_p_error_bars_a92b1980003255f5f7c05407a4d92aabc}{set\+Data}} (QShared\+Pointer$<$ \mbox{\hyperlink{qcustomplot_8h_a8c4472a4da738e0ddbf6b03222c39906}{QCPError\+Bars\+Data\+Container}} $>$ \mbox{\hyperlink{class_q_c_p_error_bars_aeebd1b14f4c3573565efafd514988813}{data}})
 \item 
 void \mbox{\hyperlink{class_q_c_p_error_bars_a2f33d68a7ec163b09017dce3d9d3abcc}{set\+Data}} (const QVector$<$ double $>$ \&error)
 \item 
@@ -59,58 +61,52 @@ void \mbox{\hyperlink{class_q_c_p_error_bars_a39ef73b0e61941fc4064fd3a5224c72a}{
 \item 
 void \mbox{\hyperlink{class_q_c_p_error_bars_a1833c5de9c2fe2952b977505d9f27cd1}{add\+Data}} (double error\+Minus, double error\+Plus)
 \item 
-virtual int \mbox{\hyperlink{class_q_c_p_error_bars_a18b797c62f2af000b926e52eb46d97c7}{data\+Count}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+virtual int \mbox{\hyperlink{class_q_c_p_error_bars_a18b797c62f2af000b926e52eb46d97c7}{data\+Count}} () const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
 \item 
-virtual double \mbox{\hyperlink{class_q_c_p_error_bars_a7cba420078adc523efa59fb8c6ca23e0}{data\+Main\+Key}} (int index) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+virtual double \mbox{\hyperlink{class_q_c_p_error_bars_a7cba420078adc523efa59fb8c6ca23e0}{data\+Main\+Key}} (int index) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
 \item 
-virtual double \mbox{\hyperlink{class_q_c_p_error_bars_a3000a036124880a90c629d124c1cd1e2}{data\+Sort\+Key}} (int index) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+virtual double \mbox{\hyperlink{class_q_c_p_error_bars_a3000a036124880a90c629d124c1cd1e2}{data\+Sort\+Key}} (int index) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
 \item 
-virtual double \mbox{\hyperlink{class_q_c_p_error_bars_ae9f6c79c03147efb1a67742c55386dc8}{data\+Main\+Value}} (int index) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+virtual double \mbox{\hyperlink{class_q_c_p_error_bars_ae9f6c79c03147efb1a67742c55386dc8}{data\+Main\+Value}} (int index) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
 \item 
-virtual \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \mbox{\hyperlink{class_q_c_p_error_bars_af71af55d929d832daf32e283b21e1f3e}{data\+Value\+Range}} (int index) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+virtual \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \mbox{\hyperlink{class_q_c_p_error_bars_af71af55d929d832daf32e283b21e1f3e}{data\+Value\+Range}} (int index) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
 \item 
-virtual QPointF \mbox{\hyperlink{class_q_c_p_error_bars_ae79fed6566f1912a97344b20b35faac1}{data\+Pixel\+Position}} (int index) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+virtual QPointF \mbox{\hyperlink{class_q_c_p_error_bars_ae79fed6566f1912a97344b20b35faac1}{data\+Pixel\+Position}} (int index) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
 \item 
-virtual bool \mbox{\hyperlink{class_q_c_p_error_bars_af75958b95d9b9c7edfd9851c1d123850}{sort\+Key\+Is\+Main\+Key}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+virtual bool \mbox{\hyperlink{class_q_c_p_error_bars_af75958b95d9b9c7edfd9851c1d123850}{sort\+Key\+Is\+Main\+Key}} () const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
 \item 
-virtual \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} \mbox{\hyperlink{class_q_c_p_error_bars_ad7c727736599dfb173f0952082e1a5b6}{select\+Test\+Rect}} (const QRectF \&rect, bool only\+Selectable) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+virtual \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} \mbox{\hyperlink{class_q_c_p_error_bars_ad7c727736599dfb173f0952082e1a5b6}{select\+Test\+Rect}} (const QRectF \&rect, bool only\+Selectable) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
 \item 
-virtual int \mbox{\hyperlink{class_q_c_p_error_bars_a74c57d6abb8eda3c4c31b72d1df9f568}{find\+Begin}} (double sort\+Key, bool expanded\+Range=true) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+virtual int \mbox{\hyperlink{class_q_c_p_error_bars_a74c57d6abb8eda3c4c31b72d1df9f568}{find\+Begin}} (double sort\+Key, bool expanded\+Range=true) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
 \item 
-virtual int \mbox{\hyperlink{class_q_c_p_error_bars_ad22dd8499c6d45176ad0651751a0b0b0}{find\+End}} (double sort\+Key, bool expanded\+Range=true) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+virtual int \mbox{\hyperlink{class_q_c_p_error_bars_ad22dd8499c6d45176ad0651751a0b0b0}{find\+End}} (double sort\+Key, bool expanded\+Range=true) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
 \item 
-virtual double \mbox{\hyperlink{class_q_c_p_error_bars_ac1b6675ef43e32547a3cbcf7b7ac46ed}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant $\ast$details=0) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+virtual double \mbox{\hyperlink{class_q_c_p_error_bars_ac1b6675ef43e32547a3cbcf7b7ac46ed}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant $\ast$details=0) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
 \item 
-virtual \mbox{\hyperlink{class_q_c_p_plottable_interface1_d}{QCPPlottable\+Interface1D}} $\ast$ \mbox{\hyperlink{class_q_c_p_error_bars_ad8f0bfffcbb3c3bdf9ebe5f7ef2fe0cf}{interface1D}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+virtual \mbox{\hyperlink{class_q_c_p_plottable_interface1_d}{QCPPlottable\+Interface1D}} $\ast$ \mbox{\hyperlink{class_q_c_p_error_bars_ad8f0bfffcbb3c3bdf9ebe5f7ef2fe0cf}{interface1D}} () \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_q_c_p_abstract_plottable}{QCPAbstract\+Plottable}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_q_c_p_abstract_plottable_af78a036e40db6f53a31abadc5323715a}{QCPAbstract\+Plottable}} (\mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$key\+Axis, \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$value\+Axis)
+\mbox{\hyperlink{class_q_c_p_abstract_plottable_af78a036e40db6f53a31abadc5323715a}{QCPAbstract\+Plottable}} (\mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$\mbox{\hyperlink{class_q_c_p_abstract_plottable_aa6f25b97ee99988fe352f17cb9ed962b}{key\+Axis}}, \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$\mbox{\hyperlink{class_q_c_p_abstract_plottable_a842b3831660d3e33b73863fd133889dd}{value\+Axis}})
 \item 
-\mbox{\Hypertarget{class_q_c_p_abstract_plottable_a52c226eefcb1920240eeabae574d28c0}\label{class_q_c_p_abstract_plottable_a52c226eefcb1920240eeabae574d28c0}} 
-QString {\bfseries name} () const
+virtual \mbox{\hyperlink{class_q_c_p_abstract_plottable_a88112bcbe9eb995b1190ad7591f2d0b5}{$\sim$\+QCPAbstract\+Plottable}} ()
 \item 
-\mbox{\Hypertarget{class_q_c_p_abstract_plottable_a022717896dc57b638a7b5a7be7212ba9}\label{class_q_c_p_abstract_plottable_a022717896dc57b638a7b5a7be7212ba9}} 
-bool {\bfseries antialiased\+Fill} () const
+QString \mbox{\hyperlink{class_q_c_p_abstract_plottable_a52c226eefcb1920240eeabae574d28c0}{name}} () const
 \item 
-\mbox{\Hypertarget{class_q_c_p_abstract_plottable_a795370db6b1309de0ab60b633efb5ec2}\label{class_q_c_p_abstract_plottable_a795370db6b1309de0ab60b633efb5ec2}} 
-bool {\bfseries antialiased\+Scatters} () const
+bool \mbox{\hyperlink{class_q_c_p_abstract_plottable_a022717896dc57b638a7b5a7be7212ba9}{antialiased\+Fill}} () const
 \item 
-\mbox{\Hypertarget{class_q_c_p_abstract_plottable_ad5972efc31344e5a7a78ab4f8864b2d3}\label{class_q_c_p_abstract_plottable_ad5972efc31344e5a7a78ab4f8864b2d3}} 
-QPen {\bfseries pen} () const
+bool \mbox{\hyperlink{class_q_c_p_abstract_plottable_a795370db6b1309de0ab60b633efb5ec2}{antialiased\+Scatters}} () const
 \item 
-\mbox{\Hypertarget{class_q_c_p_abstract_plottable_a893b4896dfd92b68b05b2600b80f5826}\label{class_q_c_p_abstract_plottable_a893b4896dfd92b68b05b2600b80f5826}} 
-QBrush {\bfseries brush} () const
+QPen \mbox{\hyperlink{class_q_c_p_abstract_plottable_ad5972efc31344e5a7a78ab4f8864b2d3}{pen}} () const
 \item 
-\mbox{\Hypertarget{class_q_c_p_abstract_plottable_aa6f25b97ee99988fe352f17cb9ed962b}\label{class_q_c_p_abstract_plottable_aa6f25b97ee99988fe352f17cb9ed962b}} 
-\mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$ {\bfseries key\+Axis} () const
+QBrush \mbox{\hyperlink{class_q_c_p_abstract_plottable_a893b4896dfd92b68b05b2600b80f5826}{brush}} () const
 \item 
-\mbox{\Hypertarget{class_q_c_p_abstract_plottable_a842b3831660d3e33b73863fd133889dd}\label{class_q_c_p_abstract_plottable_a842b3831660d3e33b73863fd133889dd}} 
-\mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$ {\bfseries value\+Axis} () const
+\mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$ \mbox{\hyperlink{class_q_c_p_abstract_plottable_aa6f25b97ee99988fe352f17cb9ed962b}{key\+Axis}} () const
 \item 
-\mbox{\Hypertarget{class_q_c_p_abstract_plottable_a016653741033bd332d1d4c3c725cc284}\label{class_q_c_p_abstract_plottable_a016653741033bd332d1d4c3c725cc284}} 
-\mbox{\hyperlink{namespace_q_c_p_ac6cb9db26a564b27feda362a438db038}{QCP\+::\+Selection\+Type}} {\bfseries selectable} () const
+\mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$ \mbox{\hyperlink{class_q_c_p_abstract_plottable_a842b3831660d3e33b73863fd133889dd}{value\+Axis}} () const
+\item 
+\mbox{\hyperlink{namespace_q_c_p_ac6cb9db26a564b27feda362a438db038}{QCP\+::\+Selection\+Type}} \mbox{\hyperlink{class_q_c_p_abstract_plottable_a016653741033bd332d1d4c3c725cc284}{selectable}} () const
 \item 
 bool \mbox{\hyperlink{class_q_c_p_abstract_plottable_a0b3b514474fe93354fc74cfc144184b4}{selected}} () const
 \item 
@@ -118,21 +114,21 @@ bool \mbox{\hyperlink{class_q_c_p_abstract_plottable_a0b3b514474fe93354fc74cfc14
 \item 
 \mbox{\hyperlink{class_q_c_p_selection_decorator}{QCPSelection\+Decorator}} $\ast$ \mbox{\hyperlink{class_q_c_p_abstract_plottable_a7861518e47ca0c6a0c386032c2db075e}{selection\+Decorator}} () const
 \item 
-void \mbox{\hyperlink{class_q_c_p_abstract_plottable_ab79c7ba76bc7fa89a4b3580e12149f1f}{set\+Name}} (const QString \&name)
+void \mbox{\hyperlink{class_q_c_p_abstract_plottable_ab79c7ba76bc7fa89a4b3580e12149f1f}{set\+Name}} (const QString \&\mbox{\hyperlink{class_q_c_p_abstract_plottable_a52c226eefcb1920240eeabae574d28c0}{name}})
 \item 
 void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a089d6b5577120239b55c39ed27c39536}{set\+Antialiased\+Fill}} (bool enabled)
 \item 
 void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a2f03f067ede2ed4da6f7d0e4777a3f02}{set\+Antialiased\+Scatters}} (bool enabled)
 \item 
-void \mbox{\hyperlink{class_q_c_p_abstract_plottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}{set\+Pen}} (const QPen \&pen)
+void \mbox{\hyperlink{class_q_c_p_abstract_plottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}{set\+Pen}} (const QPen \&\mbox{\hyperlink{class_q_c_p_abstract_plottable_ad5972efc31344e5a7a78ab4f8864b2d3}{pen}})
 \item 
-void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a7a4b92144dca6453a1f0f210e27edc74}{set\+Brush}} (const QBrush \&brush)
+void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a7a4b92144dca6453a1f0f210e27edc74}{set\+Brush}} (const QBrush \&\mbox{\hyperlink{class_q_c_p_abstract_plottable_a893b4896dfd92b68b05b2600b80f5826}{brush}})
 \item 
 void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a8524fa2994c63c0913ebd9bb2ffa3920}{set\+Key\+Axis}} (\mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$axis)
 \item 
 void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a71626a07367e241ec62ad2c34baf21cb}{set\+Value\+Axis}} (\mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$axis)
 \item 
-Q\+\_\+\+SLOT void \mbox{\hyperlink{class_q_c_p_abstract_plottable_ac238d6e910f976f1f30d41c2bca44ac3}{set\+Selectable}} (\mbox{\hyperlink{namespace_q_c_p_ac6cb9db26a564b27feda362a438db038}{QCP\+::\+Selection\+Type}} selectable)
+Q\+\_\+\+SLOT void \mbox{\hyperlink{class_q_c_p_abstract_plottable_ac238d6e910f976f1f30d41c2bca44ac3}{set\+Selectable}} (\mbox{\hyperlink{namespace_q_c_p_ac6cb9db26a564b27feda362a438db038}{QCP\+::\+Selection\+Type}} \mbox{\hyperlink{class_q_c_p_abstract_plottable_a016653741033bd332d1d4c3c725cc284}{selectable}})
 \item 
 Q\+\_\+\+SLOT void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a219bc5403a9d85d3129165ec3f5ae436}{set\+Selection}} (\mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} \mbox{\hyperlink{class_q_c_p_abstract_plottable_a040bf09f41d456284cfd39cc37aa068f}{selection}})
 \item 
@@ -173,23 +169,21 @@ bool \mbox{\hyperlink{class_q_c_p_abstract_plottable_ac95fb2604d9106d0852ad9ceb3
 \item 
 \mbox{\hyperlink{class_q_c_p_layerable_a74c0fa237f29bf0e49565013fc5d1ec0}{QCPLayerable}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$plot, QString target\+Layer=QString(), \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}}=0)
 \item 
-\mbox{\Hypertarget{class_q_c_p_layerable_af0297b944b6192b6d67d00bff41b6b70}\label{class_q_c_p_layerable_af0297b944b6192b6d67d00bff41b6b70}} 
-bool {\bfseries visible} () const
+virtual \mbox{\hyperlink{class_q_c_p_layerable_a4231cf5b3601d6d3a5781283e7a9735b}{$\sim$\+QCPLayerable}} ()
 \item 
-\mbox{\Hypertarget{class_q_c_p_layerable_a36ed5b292b90934b524a4e5866a3526c}\label{class_q_c_p_layerable_a36ed5b292b90934b524a4e5866a3526c}} 
-\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$ {\bfseries parent\+Plot} () const
+bool \mbox{\hyperlink{class_q_c_p_layerable_af0297b944b6192b6d67d00bff41b6b70}{visible}} () const
+\item 
+\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$ \mbox{\hyperlink{class_q_c_p_layerable_a36ed5b292b90934b524a4e5866a3526c}{parent\+Plot}} () const
 \item 
 \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $\ast$ \mbox{\hyperlink{class_q_c_p_layerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}} () const
 \item 
-\mbox{\Hypertarget{class_q_c_p_layerable_a9d4e121a7f1d2314f906fe698209cac9}\label{class_q_c_p_layerable_a9d4e121a7f1d2314f906fe698209cac9}} 
-\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$ {\bfseries layer} () const
+\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$ \mbox{\hyperlink{class_q_c_p_layerable_a9d4e121a7f1d2314f906fe698209cac9}{layer}} () const
 \item 
-\mbox{\Hypertarget{class_q_c_p_layerable_a71cbd212fde2703cee076e204a475709}\label{class_q_c_p_layerable_a71cbd212fde2703cee076e204a475709}} 
-bool {\bfseries antialiased} () const
+bool \mbox{\hyperlink{class_q_c_p_layerable_a71cbd212fde2703cee076e204a475709}{antialiased}} () const
 \item 
 void \mbox{\hyperlink{class_q_c_p_layerable_a3bed99ddc396b48ce3ebfdc0418744f8}{set\+Visible}} (bool on)
 \item 
-Q\+\_\+\+SLOT bool \mbox{\hyperlink{class_q_c_p_layerable_ab0d0da6d2de45a118886d2c8e16d5a54}{set\+Layer}} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$layer)
+Q\+\_\+\+SLOT bool \mbox{\hyperlink{class_q_c_p_layerable_ab0d0da6d2de45a118886d2c8e16d5a54}{set\+Layer}} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_a9d4e121a7f1d2314f906fe698209cac9}{layer}})
 \item 
 bool \mbox{\hyperlink{class_q_c_p_layerable_ab25a0e7b897993b44447caee0f142083}{set\+Layer}} (const QString \&layer\+Name)
 \item 
@@ -199,7 +193,10 @@ virtual double \mbox{\hyperlink{class_q_c_p_layerable_a04db8351fefd44cfdb77958e7
 \item 
 bool \mbox{\hyperlink{class_q_c_p_layerable_ab054e88f15d485defcb95e7376f119e7}{real\+Visibility}} () const
 \end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_q_c_p_plottable_interface1_d}{QCPPlottable\+Interface1D}}}
 \begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_q_c_p_plottable_interface1_d_a8829011d62208625f741f2d7e1cb6280}{$\sim$\+QCPPlottable\+Interface1D}} ()
 \item 
 virtual int \mbox{\hyperlink{class_q_c_p_plottable_interface1_d_a058a22c770ef4d5a0e878a7f02183da9}{data\+Count}} () const =0
 \item 
@@ -224,79 +221,63 @@ virtual int \mbox{\hyperlink{class_q_c_p_plottable_interface1_d_a5deced1016bc55a
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_error_bars_a801e85931372abf2a1034bfb2eac5cd2}{draw}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+virtual void \mbox{\hyperlink{class_q_c_p_error_bars_a801e85931372abf2a1034bfb2eac5cd2}{draw}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_error_bars_a20f5d292e66103f26bca00b11ce417b4}{draw\+Legend\+Icon}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter, const QRectF \&rect) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+virtual void \mbox{\hyperlink{class_q_c_p_error_bars_a20f5d292e66103f26bca00b11ce417b4}{draw\+Legend\+Icon}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter, const QRectF \&rect) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
 \item 
-virtual \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \mbox{\hyperlink{class_q_c_p_error_bars_a6cac828a430d66ac77a167549d01d212}{get\+Key\+Range}} (bool \&found\+Range, \mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9}{QCP\+::\+Sign\+Domain}} in\+Sign\+Domain=\mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9aa38352ef02d51ddfa4399d9551566e24}{QCP\+::sd\+Both}}) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+virtual \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \mbox{\hyperlink{class_q_c_p_error_bars_a6cac828a430d66ac77a167549d01d212}{get\+Key\+Range}} (bool \&found\+Range, \mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9}{QCP\+::\+Sign\+Domain}} in\+Sign\+Domain=\mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9aa38352ef02d51ddfa4399d9551566e24}{QCP\+::sd\+Both}}) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
 \item 
-virtual \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \mbox{\hyperlink{class_q_c_p_error_bars_ab76215a186ae4862235821e028685f26}{get\+Value\+Range}} (bool \&found\+Range, \mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9}{QCP\+::\+Sign\+Domain}} in\+Sign\+Domain=\mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9aa38352ef02d51ddfa4399d9551566e24}{QCP\+::sd\+Both}}, const \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \&in\+Key\+Range=\mbox{\hyperlink{class_q_c_p_range}{QCPRange}}()) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+virtual \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \mbox{\hyperlink{class_q_c_p_error_bars_ab76215a186ae4862235821e028685f26}{get\+Value\+Range}} (bool \&found\+Range, \mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9}{QCP\+::\+Sign\+Domain}} in\+Sign\+Domain=\mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9aa38352ef02d51ddfa4399d9551566e24}{QCP\+::sd\+Both}}, const \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \&in\+Key\+Range=\mbox{\hyperlink{class_q_c_p_range}{QCPRange}}()) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
 \item 
-\mbox{\Hypertarget{class_q_c_p_error_bars_abeea5ff0d66732bbfc9b74869d8c552e}\label{class_q_c_p_error_bars_abeea5ff0d66732bbfc9b74869d8c552e}} 
-void {\bfseries get\+Error\+Bar\+Lines} (QCPError\+Bars\+Data\+Container\+::const\+\_\+iterator it, QVector$<$ QLineF $>$ \&backbones, QVector$<$ QLineF $>$ \&whiskers) const
+void \mbox{\hyperlink{class_q_c_p_error_bars_abeea5ff0d66732bbfc9b74869d8c552e}{get\+Error\+Bar\+Lines}} (QCPError\+Bars\+Data\+Container\+::const\+\_\+iterator it, QVector$<$ QLineF $>$ \&backbones, QVector$<$ QLineF $>$ \&whiskers) const
 \item 
-\mbox{\Hypertarget{class_q_c_p_error_bars_aac9ffa98815035d300b2e9a67495ba4c}\label{class_q_c_p_error_bars_aac9ffa98815035d300b2e9a67495ba4c}} 
-void {\bfseries get\+Visible\+Data\+Bounds} (QCPError\+Bars\+Data\+Container\+::const\+\_\+iterator \&begin, QCPError\+Bars\+Data\+Container\+::const\+\_\+iterator \&end, const \mbox{\hyperlink{class_q_c_p_data_range}{QCPData\+Range}} \&range\+Restriction) const
+void \mbox{\hyperlink{class_q_c_p_error_bars_aac9ffa98815035d300b2e9a67495ba4c}{get\+Visible\+Data\+Bounds}} (QCPError\+Bars\+Data\+Container\+::const\+\_\+iterator \&begin, QCPError\+Bars\+Data\+Container\+::const\+\_\+iterator \&end, const \mbox{\hyperlink{class_q_c_p_data_range}{QCPData\+Range}} \&range\+Restriction) const
 \item 
-\mbox{\Hypertarget{class_q_c_p_error_bars_a8e904076bad643f43af28b95f21c1b88}\label{class_q_c_p_error_bars_a8e904076bad643f43af28b95f21c1b88}} 
-double {\bfseries point\+Distance} (const QPointF \&pixel\+Point, QCPError\+Bars\+Data\+Container\+::const\+\_\+iterator \&closest\+Data) const
+double \mbox{\hyperlink{class_q_c_p_error_bars_a8e904076bad643f43af28b95f21c1b88}{point\+Distance}} (const QPointF \&pixel\+Point, QCPError\+Bars\+Data\+Container\+::const\+\_\+iterator \&closest\+Data) const
 \item 
-\mbox{\Hypertarget{class_q_c_p_error_bars_a243e0bb2563fc2e9f08efd77e7175abf}\label{class_q_c_p_error_bars_a243e0bb2563fc2e9f08efd77e7175abf}} 
-void {\bfseries get\+Data\+Segments} (QList$<$ \mbox{\hyperlink{class_q_c_p_data_range}{QCPData\+Range}} $>$ \&selected\+Segments, QList$<$ \mbox{\hyperlink{class_q_c_p_data_range}{QCPData\+Range}} $>$ \&unselected\+Segments) const
+void \mbox{\hyperlink{class_q_c_p_error_bars_a243e0bb2563fc2e9f08efd77e7175abf}{get\+Data\+Segments}} (QList$<$ \mbox{\hyperlink{class_q_c_p_data_range}{QCPData\+Range}} $>$ \&selected\+Segments, QList$<$ \mbox{\hyperlink{class_q_c_p_data_range}{QCPData\+Range}} $>$ \&unselected\+Segments) const
 \item 
-\mbox{\Hypertarget{class_q_c_p_error_bars_a5ad9abccb1be3df25485ad7dc21b3b89}\label{class_q_c_p_error_bars_a5ad9abccb1be3df25485ad7dc21b3b89}} 
-bool {\bfseries error\+Bar\+Visible} (int index) const
+bool \mbox{\hyperlink{class_q_c_p_error_bars_a5ad9abccb1be3df25485ad7dc21b3b89}{error\+Bar\+Visible}} (int index) const
 \item 
-\mbox{\Hypertarget{class_q_c_p_error_bars_aa9b1642567a0aff8a2f6e0556c563633}\label{class_q_c_p_error_bars_aa9b1642567a0aff8a2f6e0556c563633}} 
-bool {\bfseries rect\+Intersects\+Line} (const QRectF \&pixel\+Rect, const QLineF \&line) const
+bool \mbox{\hyperlink{class_q_c_p_error_bars_aa9b1642567a0aff8a2f6e0556c563633}{rect\+Intersects\+Line}} (const QRectF \&pixel\+Rect, const QLineF \&line) const
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_q_c_p_abstract_plottable}{QCPAbstract\+Plottable}}}
 \begin{DoxyCompactItemize}
 \item 
-virtual QRect \mbox{\hyperlink{class_q_c_p_abstract_plottable_a635cee3effc07ad421414c76fd83548c}{clip\+Rect}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+virtual QRect \mbox{\hyperlink{class_q_c_p_abstract_plottable_a635cee3effc07ad421414c76fd83548c}{clip\+Rect}} () const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a453f676a5cee7bf846c5f0fa05ea84b3}{draw}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) Q\+\_\+\+DECL\+\_\+\+OVERRIDE=0
+virtual void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a453f676a5cee7bf846c5f0fa05ea84b3}{draw}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}=0
 \item 
-virtual \mbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037}{QCP\+::\+Interaction}} \mbox{\hyperlink{class_q_c_p_abstract_plottable_af80ad8531642e786b6f4fad551c203c4}{selection\+Category}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+virtual \mbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037}{QCP\+::\+Interaction}} \mbox{\hyperlink{class_q_c_p_abstract_plottable_af80ad8531642e786b6f4fad551c203c4}{selection\+Category}} () const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
 \item 
-void \mbox{\hyperlink{class_q_c_p_abstract_plottable_ac032077fb0db93d6faa3273d02363398}{apply\+Default\+Antialiasing\+Hint}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+void \mbox{\hyperlink{class_q_c_p_abstract_plottable_ac032077fb0db93d6faa3273d02363398}{apply\+Default\+Antialiasing\+Hint}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a2d488568cf16600dd81fa23d7d439829}{select\+Event}} (QMouse\+Event $\ast$event, bool additive, const QVariant \&details, bool $\ast$selection\+State\+Changed) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+virtual void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a2d488568cf16600dd81fa23d7d439829}{select\+Event}} (QMouse\+Event $\ast$event, bool additive, const QVariant \&details, bool $\ast$selection\+State\+Changed) \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a9b104d9da4f38f934363945c313bf82e}{deselect\+Event}} (bool $\ast$selection\+State\+Changed) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+virtual void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a9b104d9da4f38f934363945c313bf82e}{deselect\+Event}} (bool $\ast$selection\+State\+Changed) \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
 \item 
-\mbox{\Hypertarget{class_q_c_p_abstract_plottable_a9a450783fd9ed539e589999fd390cdf7}\label{class_q_c_p_abstract_plottable_a9a450783fd9ed539e589999fd390cdf7}} 
-virtual void {\bfseries draw\+Legend\+Icon} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter, const QRectF \&rect) const =0
+virtual void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a9a450783fd9ed539e589999fd390cdf7}{draw\+Legend\+Icon}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter, const QRectF \&rect) const =0
 \item 
-\mbox{\Hypertarget{class_q_c_p_abstract_plottable_a8d06a59ea23324cce6330ebf2262c0ed}\label{class_q_c_p_abstract_plottable_a8d06a59ea23324cce6330ebf2262c0ed}} 
-void {\bfseries apply\+Fill\+Antialiasing\+Hint} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) const
+void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a8d06a59ea23324cce6330ebf2262c0ed}{apply\+Fill\+Antialiasing\+Hint}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) const
 \item 
-\mbox{\Hypertarget{class_q_c_p_abstract_plottable_ac95f26b15a1e5d9c7bd2c0a46d760fc9}\label{class_q_c_p_abstract_plottable_ac95f26b15a1e5d9c7bd2c0a46d760fc9}} 
-void {\bfseries apply\+Scatters\+Antialiasing\+Hint} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) const
+void \mbox{\hyperlink{class_q_c_p_abstract_plottable_ac95f26b15a1e5d9c7bd2c0a46d760fc9}{apply\+Scatters\+Antialiasing\+Hint}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) const
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_q_c_p_layerable_ab20b7dbd8e0249ed61adb9622c427382}\label{class_q_c_p_layerable_ab20b7dbd8e0249ed61adb9622c427382}} 
-virtual void {\bfseries parent\+Plot\+Initialized} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$parent\+Plot)
+virtual void \mbox{\hyperlink{class_q_c_p_layerable_ab20b7dbd8e0249ed61adb9622c427382}{parent\+Plot\+Initialized}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_a36ed5b292b90934b524a4e5866a3526c}{parent\+Plot}})
 \item 
-\mbox{\Hypertarget{class_q_c_p_layerable_a908c9edda761886f33893be326dab77d}\label{class_q_c_p_layerable_a908c9edda761886f33893be326dab77d}} 
-virtual \mbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037}{QCP\+::\+Interaction}} {\bfseries selection\+Category} () const
+virtual \mbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037}{QCP\+::\+Interaction}} \mbox{\hyperlink{class_q_c_p_layerable_a908c9edda761886f33893be326dab77d}{selection\+Category}} () const
 \item 
-\mbox{\Hypertarget{class_q_c_p_layerable_acbcfc9ecc75433747b1978a77b1864b3}\label{class_q_c_p_layerable_acbcfc9ecc75433747b1978a77b1864b3}} 
-virtual QRect {\bfseries clip\+Rect} () const
+virtual QRect \mbox{\hyperlink{class_q_c_p_layerable_acbcfc9ecc75433747b1978a77b1864b3}{clip\+Rect}} () const
 \item 
-\mbox{\Hypertarget{class_q_c_p_layerable_afdf83ddc6a265cbf4c89fe99d3d93473}\label{class_q_c_p_layerable_afdf83ddc6a265cbf4c89fe99d3d93473}} 
-virtual void {\bfseries apply\+Default\+Antialiasing\+Hint} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) const =0
+virtual void \mbox{\hyperlink{class_q_c_p_layerable_afdf83ddc6a265cbf4c89fe99d3d93473}{apply\+Default\+Antialiasing\+Hint}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) const =0
 \item 
-\mbox{\Hypertarget{class_q_c_p_layerable_aecf2f7087482d4b6a78cb2770e5ed12d}\label{class_q_c_p_layerable_aecf2f7087482d4b6a78cb2770e5ed12d}} 
-virtual void {\bfseries draw} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter)=0
+virtual void \mbox{\hyperlink{class_q_c_p_layerable_aecf2f7087482d4b6a78cb2770e5ed12d}{draw}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter)=0
 \item 
-\mbox{\Hypertarget{class_q_c_p_layerable_a7498c2d0d081cf7cad0fb3bb93aa0e91}\label{class_q_c_p_layerable_a7498c2d0d081cf7cad0fb3bb93aa0e91}} 
-virtual void {\bfseries select\+Event} (QMouse\+Event $\ast$event, bool additive, const QVariant \&details, bool $\ast$selection\+State\+Changed)
+virtual void \mbox{\hyperlink{class_q_c_p_layerable_a7498c2d0d081cf7cad0fb3bb93aa0e91}{select\+Event}} (QMouse\+Event $\ast$event, bool additive, const QVariant \&details, bool $\ast$selection\+State\+Changed)
 \item 
-\mbox{\Hypertarget{class_q_c_p_layerable_ae546370644a5551c76af739afc008bee}\label{class_q_c_p_layerable_ae546370644a5551c76af739afc008bee}} 
-virtual void {\bfseries deselect\+Event} (bool $\ast$selection\+State\+Changed)
+virtual void \mbox{\hyperlink{class_q_c_p_layerable_ae546370644a5551c76af739afc008bee}{deselect\+Event}} (bool $\ast$selection\+State\+Changed)
 \item 
 virtual void \mbox{\hyperlink{class_q_c_p_layerable_af6567604818db90f4fd52822f8bc8376}{mouse\+Press\+Event}} (QMouse\+Event $\ast$event, const QVariant \&details)
 \item 
@@ -308,95 +289,69 @@ virtual void \mbox{\hyperlink{class_q_c_p_layerable_a4171e2e823aca242dd0279f00ed
 \item 
 virtual void \mbox{\hyperlink{class_q_c_p_layerable_a47dfd7b8fd99c08ca54e09c362b6f022}{wheel\+Event}} (QWheel\+Event $\ast$event)
 \item 
-\mbox{\Hypertarget{class_q_c_p_layerable_a8cbe5a0c9a5674249982f5ca5f8e02bc}\label{class_q_c_p_layerable_a8cbe5a0c9a5674249982f5ca5f8e02bc}} 
-void {\bfseries initialize\+Parent\+Plot} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$parent\+Plot)
+void \mbox{\hyperlink{class_q_c_p_layerable_a8cbe5a0c9a5674249982f5ca5f8e02bc}{initialize\+Parent\+Plot}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_a36ed5b292b90934b524a4e5866a3526c}{parent\+Plot}})
 \item 
-\mbox{\Hypertarget{class_q_c_p_layerable_aa23c893671f1f6744ac235cf2204cf3a}\label{class_q_c_p_layerable_aa23c893671f1f6744ac235cf2204cf3a}} 
-void {\bfseries set\+Parent\+Layerable} (\mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}})
+void \mbox{\hyperlink{class_q_c_p_layerable_aa23c893671f1f6744ac235cf2204cf3a}{set\+Parent\+Layerable}} (\mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}})
 \item 
-\mbox{\Hypertarget{class_q_c_p_layerable_af94484cfb7cbbddb7de522e9be71d9a4}\label{class_q_c_p_layerable_af94484cfb7cbbddb7de522e9be71d9a4}} 
-bool {\bfseries move\+To\+Layer} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$layer, bool prepend)
+bool \mbox{\hyperlink{class_q_c_p_layerable_af94484cfb7cbbddb7de522e9be71d9a4}{move\+To\+Layer}} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_a9d4e121a7f1d2314f906fe698209cac9}{layer}}, bool prepend)
 \item 
-\mbox{\Hypertarget{class_q_c_p_layerable_acb663e375d2d36dc5c55021ee5a2119b}\label{class_q_c_p_layerable_acb663e375d2d36dc5c55021ee5a2119b}} 
-void {\bfseries apply\+Antialiasing\+Hint} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter, bool local\+Antialiased, \mbox{\hyperlink{namespace_q_c_p_ae55dbe315d41fe80f29ba88100843a0c}{QCP\+::\+Antialiased\+Element}} override\+Element) const
+void \mbox{\hyperlink{class_q_c_p_layerable_acb663e375d2d36dc5c55021ee5a2119b}{apply\+Antialiasing\+Hint}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter, bool local\+Antialiased, \mbox{\hyperlink{namespace_q_c_p_ae55dbe315d41fe80f29ba88100843a0c}{QCP\+::\+Antialiased\+Element}} override\+Element) const
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_q_c_p_error_bars_a83c7f452d0eebd302a7e4fb3a1957634}\label{class_q_c_p_error_bars_a83c7f452d0eebd302a7e4fb3a1957634}} 
-QShared\+Pointer$<$ QCPError\+Bars\+Data\+Container $>$ {\bfseries m\+Data\+Container}
+QShared\+Pointer$<$ \mbox{\hyperlink{qcustomplot_8h_a8c4472a4da738e0ddbf6b03222c39906}{QCPError\+Bars\+Data\+Container}} $>$ \mbox{\hyperlink{class_q_c_p_error_bars_a83c7f452d0eebd302a7e4fb3a1957634}{m\+Data\+Container}}
 \item 
-\mbox{\Hypertarget{class_q_c_p_error_bars_a14b6a5b49295990da84a05a3a89026bb}\label{class_q_c_p_error_bars_a14b6a5b49295990da84a05a3a89026bb}} 
-QPointer$<$ \mbox{\hyperlink{class_q_c_p_abstract_plottable}{QCPAbstract\+Plottable}} $>$ {\bfseries m\+Data\+Plottable}
+QPointer$<$ \mbox{\hyperlink{class_q_c_p_abstract_plottable}{QCPAbstract\+Plottable}} $>$ \mbox{\hyperlink{class_q_c_p_error_bars_a14b6a5b49295990da84a05a3a89026bb}{m\+Data\+Plottable}}
 \item 
-\mbox{\Hypertarget{class_q_c_p_error_bars_af9fd3117b86aac728c9e8e87c406ed9a}\label{class_q_c_p_error_bars_af9fd3117b86aac728c9e8e87c406ed9a}} 
-\mbox{\hyperlink{class_q_c_p_error_bars_a95f0220f11a72648b96480a85ce26474}{Error\+Type}} {\bfseries m\+Error\+Type}
+\mbox{\hyperlink{class_q_c_p_error_bars_a95f0220f11a72648b96480a85ce26474}{Error\+Type}} \mbox{\hyperlink{class_q_c_p_error_bars_af9fd3117b86aac728c9e8e87c406ed9a}{m\+Error\+Type}}
 \item 
-\mbox{\Hypertarget{class_q_c_p_error_bars_a3873724f7ac3392bdf9d46a47076a1d2}\label{class_q_c_p_error_bars_a3873724f7ac3392bdf9d46a47076a1d2}} 
-double {\bfseries m\+Whisker\+Width}
+double \mbox{\hyperlink{class_q_c_p_error_bars_a3873724f7ac3392bdf9d46a47076a1d2}{m\+Whisker\+Width}}
 \item 
-\mbox{\Hypertarget{class_q_c_p_error_bars_a5cb5628b75e5aff0875710705666ec57}\label{class_q_c_p_error_bars_a5cb5628b75e5aff0875710705666ec57}} 
-double {\bfseries m\+Symbol\+Gap}
+double \mbox{\hyperlink{class_q_c_p_error_bars_a5cb5628b75e5aff0875710705666ec57}{m\+Symbol\+Gap}}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_q_c_p_abstract_plottable}{QCPAbstract\+Plottable}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_q_c_p_abstract_plottable_ac29ffef424e2488675930de18cde612a}\label{class_q_c_p_abstract_plottable_ac29ffef424e2488675930de18cde612a}} 
-QString {\bfseries m\+Name}
+QString \mbox{\hyperlink{class_q_c_p_abstract_plottable_ac29ffef424e2488675930de18cde612a}{m\+Name}}
 \item 
-\mbox{\Hypertarget{class_q_c_p_abstract_plottable_a152ac765bedf927fb240545d11d453ea}\label{class_q_c_p_abstract_plottable_a152ac765bedf927fb240545d11d453ea}} 
-bool {\bfseries m\+Antialiased\+Fill}
+bool \mbox{\hyperlink{class_q_c_p_abstract_plottable_a152ac765bedf927fb240545d11d453ea}{m\+Antialiased\+Fill}}
 \item 
-\mbox{\Hypertarget{class_q_c_p_abstract_plottable_aa115755e525a8e3a86dc683f9cab755b}\label{class_q_c_p_abstract_plottable_aa115755e525a8e3a86dc683f9cab755b}} 
-bool {\bfseries m\+Antialiased\+Scatters}
+bool \mbox{\hyperlink{class_q_c_p_abstract_plottable_aa115755e525a8e3a86dc683f9cab755b}{m\+Antialiased\+Scatters}}
 \item 
-\mbox{\Hypertarget{class_q_c_p_abstract_plottable_a67bc0622fd1b9fa14e54c14922dcec66}\label{class_q_c_p_abstract_plottable_a67bc0622fd1b9fa14e54c14922dcec66}} 
-QPen {\bfseries m\+Pen}
+QPen \mbox{\hyperlink{class_q_c_p_abstract_plottable_a67bc0622fd1b9fa14e54c14922dcec66}{m\+Pen}}
 \item 
-\mbox{\Hypertarget{class_q_c_p_abstract_plottable_a33f00674c0161c13315ab9da0895418e}\label{class_q_c_p_abstract_plottable_a33f00674c0161c13315ab9da0895418e}} 
-QBrush {\bfseries m\+Brush}
+QBrush \mbox{\hyperlink{class_q_c_p_abstract_plottable_a33f00674c0161c13315ab9da0895418e}{m\+Brush}}
 \item 
-\mbox{\Hypertarget{class_q_c_p_abstract_plottable_a426f42e254d0f8ce5436a868c61a6827}\label{class_q_c_p_abstract_plottable_a426f42e254d0f8ce5436a868c61a6827}} 
-QPointer$<$ \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $>$ {\bfseries m\+Key\+Axis}
+QPointer$<$ \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $>$ \mbox{\hyperlink{class_q_c_p_abstract_plottable_a426f42e254d0f8ce5436a868c61a6827}{m\+Key\+Axis}}
 \item 
-\mbox{\Hypertarget{class_q_c_p_abstract_plottable_a2901452ca4aea911a1827717934a4bda}\label{class_q_c_p_abstract_plottable_a2901452ca4aea911a1827717934a4bda}} 
-QPointer$<$ \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $>$ {\bfseries m\+Value\+Axis}
+QPointer$<$ \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $>$ \mbox{\hyperlink{class_q_c_p_abstract_plottable_a2901452ca4aea911a1827717934a4bda}{m\+Value\+Axis}}
 \item 
-\mbox{\Hypertarget{class_q_c_p_abstract_plottable_a3944521f7bec90974737c9d192fc57ba}\label{class_q_c_p_abstract_plottable_a3944521f7bec90974737c9d192fc57ba}} 
-\mbox{\hyperlink{namespace_q_c_p_ac6cb9db26a564b27feda362a438db038}{QCP\+::\+Selection\+Type}} {\bfseries m\+Selectable}
+\mbox{\hyperlink{namespace_q_c_p_ac6cb9db26a564b27feda362a438db038}{QCP\+::\+Selection\+Type}} \mbox{\hyperlink{class_q_c_p_abstract_plottable_a3944521f7bec90974737c9d192fc57ba}{m\+Selectable}}
 \item 
-\mbox{\Hypertarget{class_q_c_p_abstract_plottable_a206aa62c9eba32c82e892b29cdbf6314}\label{class_q_c_p_abstract_plottable_a206aa62c9eba32c82e892b29cdbf6314}} 
-\mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} {\bfseries m\+Selection}
+\mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} \mbox{\hyperlink{class_q_c_p_abstract_plottable_a206aa62c9eba32c82e892b29cdbf6314}{m\+Selection}}
 \item 
-\mbox{\Hypertarget{class_q_c_p_abstract_plottable_a0dbc731cab717f4ff67b4ca100c74046}\label{class_q_c_p_abstract_plottable_a0dbc731cab717f4ff67b4ca100c74046}} 
-\mbox{\hyperlink{class_q_c_p_selection_decorator}{QCPSelection\+Decorator}} $\ast$ {\bfseries m\+Selection\+Decorator}
+\mbox{\hyperlink{class_q_c_p_selection_decorator}{QCPSelection\+Decorator}} $\ast$ \mbox{\hyperlink{class_q_c_p_abstract_plottable_a0dbc731cab717f4ff67b4ca100c74046}{m\+Selection\+Decorator}}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_q_c_p_layerable_a62e3aed8427d6ce3ccf716f285106cb3}\label{class_q_c_p_layerable_a62e3aed8427d6ce3ccf716f285106cb3}} 
-bool {\bfseries m\+Visible}
+bool \mbox{\hyperlink{class_q_c_p_layerable_a62e3aed8427d6ce3ccf716f285106cb3}{m\+Visible}}
 \item 
-\mbox{\Hypertarget{class_q_c_p_layerable_aa2a528433e44db02b8aef23c1f9f90ed}\label{class_q_c_p_layerable_aa2a528433e44db02b8aef23c1f9f90ed}} 
-\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$ {\bfseries m\+Parent\+Plot}
+\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$ \mbox{\hyperlink{class_q_c_p_layerable_aa2a528433e44db02b8aef23c1f9f90ed}{m\+Parent\+Plot}}
 \item 
-\mbox{\Hypertarget{class_q_c_p_layerable_a3291445a980053e2d17a21d15957624e}\label{class_q_c_p_layerable_a3291445a980053e2d17a21d15957624e}} 
-QPointer$<$ \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $>$ {\bfseries m\+Parent\+Layerable}
+QPointer$<$ \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $>$ \mbox{\hyperlink{class_q_c_p_layerable_a3291445a980053e2d17a21d15957624e}{m\+Parent\+Layerable}}
 \item 
-\mbox{\Hypertarget{class_q_c_p_layerable_aa38ec5891aff0f50b36fd63e9372a0cd}\label{class_q_c_p_layerable_aa38ec5891aff0f50b36fd63e9372a0cd}} 
-\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$ {\bfseries m\+Layer}
+\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$ \mbox{\hyperlink{class_q_c_p_layerable_aa38ec5891aff0f50b36fd63e9372a0cd}{m\+Layer}}
 \item 
-\mbox{\Hypertarget{class_q_c_p_layerable_a3ab45a4c76a3333ce42eb217a81733ec}\label{class_q_c_p_layerable_a3ab45a4c76a3333ce42eb217a81733ec}} 
-bool {\bfseries m\+Antialiased}
+bool \mbox{\hyperlink{class_q_c_p_layerable_a3ab45a4c76a3333ce42eb217a81733ec}{m\+Antialiased}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_q_c_p_error_bars_a1cdf9df76adcfae45261690aa0ca2198}\label{class_q_c_p_error_bars_a1cdf9df76adcfae45261690aa0ca2198}} 
-class {\bfseries QCustom\+Plot}
+class \mbox{\hyperlink{class_q_c_p_error_bars_a1cdf9df76adcfae45261690aa0ca2198}{QCustom\+Plot}}
 \item 
-\mbox{\Hypertarget{class_q_c_p_error_bars_a8429035e7adfbd7f05805a6530ad5e3b}\label{class_q_c_p_error_bars_a8429035e7adfbd7f05805a6530ad5e3b}} 
-class {\bfseries QCPLegend}
+class \mbox{\hyperlink{class_q_c_p_error_bars_a8429035e7adfbd7f05805a6530ad5e3b}{QCPLegend}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 \doxysubsubsection*{Signals inherited from \mbox{\hyperlink{class_q_c_p_abstract_plottable}{QCPAbstract\+Plottable}}}
@@ -406,7 +361,7 @@ void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a3af66432b1dca93b28e00e78a8
 \item 
 void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a787a9c39421059006891744b731fa473}{selection\+Changed}} (const \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} \&\mbox{\hyperlink{class_q_c_p_abstract_plottable_a040bf09f41d456284cfd39cc37aa068f}{selection}})
 \item 
-void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a663b1a44123c8340ac041a29d1e2c973}{selectable\+Changed}} (\mbox{\hyperlink{namespace_q_c_p_ac6cb9db26a564b27feda362a438db038}{QCP\+::\+Selection\+Type}} selectable)
+void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a663b1a44123c8340ac041a29d1e2c973}{selectable\+Changed}} (\mbox{\hyperlink{namespace_q_c_p_ac6cb9db26a564b27feda362a438db038}{QCP\+::\+Selection\+Type}} \mbox{\hyperlink{class_q_c_p_abstract_plottable_a016653741033bd332d1d4c3c725cc284}{selectable}})
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Signals inherited from \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}}
 \begin{DoxyCompactItemize}
@@ -464,7 +419,13 @@ Constructs an error bars plottable which uses {\itshape key\+Axis} as its key ax
 
 It is also important that the {\itshape key\+Axis} and {\itshape value\+Axis} are the same for the error bars plottable and the data plottable that the error bars shall be drawn on (\mbox{\hyperlink{class_q_c_p_error_bars_aabb42a964cfbf780cd1c79850c7cd989}{set\+Data\+Plottable}}).
 
-The created \mbox{\hyperlink{class_q_c_p_error_bars}{QCPError\+Bars}} is automatically registered with the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance inferred from {\itshape key\+Axis}. This \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance takes ownership of the \mbox{\hyperlink{class_q_c_p_error_bars}{QCPError\+Bars}}, so do not delete it manually but use \mbox{\hyperlink{class_q_custom_plot_af3dafd56884208474f311d6226513ab2}{QCustom\+Plot\+::remove\+Plottable()}} instead. 
+The created \mbox{\hyperlink{class_q_c_p_error_bars}{QCPError\+Bars}} is automatically registered with the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance inferred from {\itshape key\+Axis}. This \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance takes ownership of the \mbox{\hyperlink{class_q_c_p_error_bars}{QCPError\+Bars}}, so do not delete it manually but use \mbox{\hyperlink{class_q_custom_plot_af3dafd56884208474f311d6226513ab2}{QCustom\+Plot\+::remove\+Plottable()}} instead. \mbox{\Hypertarget{class_q_c_p_error_bars_a7468f8c3dc1cb162d86cf392e938a2e3}\label{class_q_c_p_error_bars_a7468f8c3dc1cb162d86cf392e938a2e3}} 
+\index{QCPErrorBars@{QCPErrorBars}!````~QCPErrorBars@{$\sim$QCPErrorBars}}
+\index{````~QCPErrorBars@{$\sim$QCPErrorBars}!QCPErrorBars@{QCPErrorBars}}
+\doxysubsubsection{\texorpdfstring{$\sim$QCPErrorBars()}{~QCPErrorBars()}}
+{\footnotesize\ttfamily QCPError\+Bars\+::$\sim$\+QCPError\+Bars (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_q_c_p_error_bars_aae296ad9817b3fa418db284af81cecf8}\label{class_q_c_p_error_bars_aae296ad9817b3fa418db284af81cecf8}} 
@@ -531,9 +492,9 @@ You can directly access and manipulate the error bar data via \mbox{\hyperlink{c
 \index{QCPErrorBars@{QCPErrorBars}!data@{data}}
 \index{data@{data}!QCPErrorBars@{QCPErrorBars}}
 \doxysubsubsection{\texorpdfstring{data()}{data()}}
-{\footnotesize\ttfamily QShared\+Pointer$<$ QCPError\+Bars\+Data\+Container $>$ QCPError\+Bars\+::data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily QShared\+Pointer$<$ \mbox{\hyperlink{qcustomplot_8h_a8c4472a4da738e0ddbf6b03222c39906}{QCPError\+Bars\+Data\+Container}} $>$ QCPError\+Bars\+::data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Returns a shared pointer to the internal data storage of type QCPError\+Bars\+Data\+Container. You may use it to directly manipulate the error values, which may be more convenient and faster than using the regular \mbox{\hyperlink{class_q_c_p_error_bars_a92b1980003255f5f7c05407a4d92aabc}{set\+Data}} methods. \mbox{\Hypertarget{class_q_c_p_error_bars_a18b797c62f2af000b926e52eb46d97c7}\label{class_q_c_p_error_bars_a18b797c62f2af000b926e52eb46d97c7}} 
+Returns a shared pointer to the internal data storage of type \mbox{\hyperlink{qcustomplot_8h_a8c4472a4da738e0ddbf6b03222c39906}{QCPError\+Bars\+Data\+Container}}. You may use it to directly manipulate the error values, which may be more convenient and faster than using the regular \mbox{\hyperlink{class_q_c_p_error_bars_a92b1980003255f5f7c05407a4d92aabc}{set\+Data}} methods. \mbox{\Hypertarget{class_q_c_p_error_bars_a18b797c62f2af000b926e52eb46d97c7}\label{class_q_c_p_error_bars_a18b797c62f2af000b926e52eb46d97c7}} 
 \index{QCPErrorBars@{QCPErrorBars}!dataCount@{dataCount}}
 \index{dataCount@{dataCount}!QCPErrorBars@{QCPErrorBars}}
 \doxysubsubsection{\texorpdfstring{dataCount()}{dataCount()}}
@@ -579,6 +540,12 @@ Usually this corresponds to the point of data\+Main\+Key/ data\+Main\+Value, in 
 
 Implements \mbox{\hyperlink{class_q_c_p_plottable_interface1_d_a78911838cfbcfd2d8df9ad2fdbfb8e93}{QCPPlottable\+Interface1D}}.
 
+\mbox{\Hypertarget{class_q_c_p_error_bars_a0bc7c198cd8da3e92033433d7d2a42f1}\label{class_q_c_p_error_bars_a0bc7c198cd8da3e92033433d7d2a42f1}} 
+\index{QCPErrorBars@{QCPErrorBars}!dataPlottable@{dataPlottable}}
+\index{dataPlottable@{dataPlottable}!QCPErrorBars@{QCPErrorBars}}
+\doxysubsubsection{\texorpdfstring{dataPlottable()}{dataPlottable()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_abstract_plottable}{QCPAbstract\+Plottable}} $\ast$ QCPError\+Bars\+::data\+Plottable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
 \mbox{\Hypertarget{class_q_c_p_error_bars_a3000a036124880a90c629d124c1cd1e2}\label{class_q_c_p_error_bars_a3000a036124880a90c629d124c1cd1e2}} 
 \index{QCPErrorBars@{QCPErrorBars}!dataSortKey@{dataSortKey}}
 \index{dataSortKey@{dataSortKey}!QCPErrorBars@{QCPErrorBars}}
@@ -611,7 +578,7 @@ Implements \mbox{\hyperlink{class_q_c_p_plottable_interface1_d_a9ca7fcf14d885a20
 
 
 
-Implements \mbox{\hyperlink{class_q_c_p_abstract_plottable}{QCPAbstract\+Plottable}}.
+Implements \mbox{\hyperlink{class_q_c_p_abstract_plottable_a453f676a5cee7bf846c5f0fa05ea84b3}{QCPAbstract\+Plottable}}.
 
 \mbox{\Hypertarget{class_q_c_p_error_bars_a20f5d292e66103f26bca00b11ce417b4}\label{class_q_c_p_error_bars_a20f5d292e66103f26bca00b11ce417b4}} 
 \index{QCPErrorBars@{QCPErrorBars}!drawLegendIcon@{drawLegendIcon}}
@@ -621,7 +588,19 @@ Implements \mbox{\hyperlink{class_q_c_p_abstract_plottable}{QCPAbstract\+Plottab
 
 
 
-Implements \mbox{\hyperlink{class_q_c_p_abstract_plottable}{QCPAbstract\+Plottable}}.
+Implements \mbox{\hyperlink{class_q_c_p_abstract_plottable_a9a450783fd9ed539e589999fd390cdf7}{QCPAbstract\+Plottable}}.
+
+\mbox{\Hypertarget{class_q_c_p_error_bars_a5ad9abccb1be3df25485ad7dc21b3b89}\label{class_q_c_p_error_bars_a5ad9abccb1be3df25485ad7dc21b3b89}} 
+\index{QCPErrorBars@{QCPErrorBars}!errorBarVisible@{errorBarVisible}}
+\index{errorBarVisible@{errorBarVisible}!QCPErrorBars@{QCPErrorBars}}
+\doxysubsubsection{\texorpdfstring{errorBarVisible()}{errorBarVisible()}}
+{\footnotesize\ttfamily bool QCPError\+Bars\+::error\+Bar\+Visible (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_q_c_p_error_bars_a527e7df83c98709cef22a8447fee4f13}\label{class_q_c_p_error_bars_a527e7df83c98709cef22a8447fee4f13}} 
+\index{QCPErrorBars@{QCPErrorBars}!errorType@{errorType}}
+\index{errorType@{errorType}!QCPErrorBars@{QCPErrorBars}}
+\doxysubsubsection{\texorpdfstring{errorType()}{errorType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_error_bars_a95f0220f11a72648b96480a85ce26474}{Error\+Type}} QCPError\+Bars\+::error\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 \mbox{\Hypertarget{class_q_c_p_error_bars_a74c57d6abb8eda3c4c31b72d1df9f568}\label{class_q_c_p_error_bars_a74c57d6abb8eda3c4c31b72d1df9f568}} 
 \index{QCPErrorBars@{QCPErrorBars}!findBegin@{findBegin}}
@@ -665,6 +644,18 @@ If the container is empty, returns 0.
 
 Implements \mbox{\hyperlink{class_q_c_p_plottable_interface1_d_a5deced1016bc55a41a2339619045b295}{QCPPlottable\+Interface1D}}.
 
+\mbox{\Hypertarget{class_q_c_p_error_bars_a243e0bb2563fc2e9f08efd77e7175abf}\label{class_q_c_p_error_bars_a243e0bb2563fc2e9f08efd77e7175abf}} 
+\index{QCPErrorBars@{QCPErrorBars}!getDataSegments@{getDataSegments}}
+\index{getDataSegments@{getDataSegments}!QCPErrorBars@{QCPErrorBars}}
+\doxysubsubsection{\texorpdfstring{getDataSegments()}{getDataSegments()}}
+{\footnotesize\ttfamily void QCPError\+Bars\+::get\+Data\+Segments (\begin{DoxyParamCaption}\item[{QList$<$ \mbox{\hyperlink{class_q_c_p_data_range}{QCPData\+Range}} $>$ \&}]{selected\+Segments,  }\item[{QList$<$ \mbox{\hyperlink{class_q_c_p_data_range}{QCPData\+Range}} $>$ \&}]{unselected\+Segments }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_q_c_p_error_bars_abeea5ff0d66732bbfc9b74869d8c552e}\label{class_q_c_p_error_bars_abeea5ff0d66732bbfc9b74869d8c552e}} 
+\index{QCPErrorBars@{QCPErrorBars}!getErrorBarLines@{getErrorBarLines}}
+\index{getErrorBarLines@{getErrorBarLines}!QCPErrorBars@{QCPErrorBars}}
+\doxysubsubsection{\texorpdfstring{getErrorBarLines()}{getErrorBarLines()}}
+{\footnotesize\ttfamily void QCPError\+Bars\+::get\+Error\+Bar\+Lines (\begin{DoxyParamCaption}\item[{QCPError\+Bars\+Data\+Container\+::const\+\_\+iterator}]{it,  }\item[{QVector$<$ QLineF $>$ \&}]{backbones,  }\item[{QVector$<$ QLineF $>$ \&}]{whiskers }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
 \mbox{\Hypertarget{class_q_c_p_error_bars_a6cac828a430d66ac77a167549d01d212}\label{class_q_c_p_error_bars_a6cac828a430d66ac77a167549d01d212}} 
 \index{QCPErrorBars@{QCPErrorBars}!getKeyRange@{getKeyRange}}
 \index{getKeyRange@{getKeyRange}!QCPErrorBars@{QCPErrorBars}}
@@ -701,6 +692,12 @@ Note that {\itshape found\+Range} is not the same as \mbox{\hyperlink{class_q_c_
 
 Implements \mbox{\hyperlink{class_q_c_p_abstract_plottable_a4de773988b21ed090fddd27c6a3a3dcb}{QCPAbstract\+Plottable}}.
 
+\mbox{\Hypertarget{class_q_c_p_error_bars_aac9ffa98815035d300b2e9a67495ba4c}\label{class_q_c_p_error_bars_aac9ffa98815035d300b2e9a67495ba4c}} 
+\index{QCPErrorBars@{QCPErrorBars}!getVisibleDataBounds@{getVisibleDataBounds}}
+\index{getVisibleDataBounds@{getVisibleDataBounds}!QCPErrorBars@{QCPErrorBars}}
+\doxysubsubsection{\texorpdfstring{getVisibleDataBounds()}{getVisibleDataBounds()}}
+{\footnotesize\ttfamily void QCPError\+Bars\+::get\+Visible\+Data\+Bounds (\begin{DoxyParamCaption}\item[{QCPError\+Bars\+Data\+Container\+::const\+\_\+iterator \&}]{begin,  }\item[{QCPError\+Bars\+Data\+Container\+::const\+\_\+iterator \&}]{end,  }\item[{const \mbox{\hyperlink{class_q_c_p_data_range}{QCPData\+Range}} \&}]{range\+Restriction }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
 \mbox{\Hypertarget{class_q_c_p_error_bars_ad8f0bfffcbb3c3bdf9ebe5f7ef2fe0cf}\label{class_q_c_p_error_bars_ad8f0bfffcbb3c3bdf9ebe5f7ef2fe0cf}} 
 \index{QCPErrorBars@{QCPErrorBars}!interface1D@{interface1D}}
 \index{interface1D@{interface1D}!QCPErrorBars@{QCPErrorBars}}
@@ -712,6 +709,18 @@ If this plottable is a one-\/dimensional plottable, i.\+e. it implements the \mb
 You can use this method to gain read access to data coordinates while holding a pointer to the abstract base class only. 
 
 Reimplemented from \mbox{\hyperlink{class_q_c_p_abstract_plottable_a81fd9fd5c4f429c074785e2eb238a8e7}{QCPAbstract\+Plottable}}.
+
+\mbox{\Hypertarget{class_q_c_p_error_bars_a8e904076bad643f43af28b95f21c1b88}\label{class_q_c_p_error_bars_a8e904076bad643f43af28b95f21c1b88}} 
+\index{QCPErrorBars@{QCPErrorBars}!pointDistance@{pointDistance}}
+\index{pointDistance@{pointDistance}!QCPErrorBars@{QCPErrorBars}}
+\doxysubsubsection{\texorpdfstring{pointDistance()}{pointDistance()}}
+{\footnotesize\ttfamily double QCPError\+Bars\+::point\+Distance (\begin{DoxyParamCaption}\item[{const QPointF \&}]{pixel\+Point,  }\item[{QCPError\+Bars\+Data\+Container\+::const\+\_\+iterator \&}]{closest\+Data }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_q_c_p_error_bars_aa9b1642567a0aff8a2f6e0556c563633}\label{class_q_c_p_error_bars_aa9b1642567a0aff8a2f6e0556c563633}} 
+\index{QCPErrorBars@{QCPErrorBars}!rectIntersectsLine@{rectIntersectsLine}}
+\index{rectIntersectsLine@{rectIntersectsLine}!QCPErrorBars@{QCPErrorBars}}
+\doxysubsubsection{\texorpdfstring{rectIntersectsLine()}{rectIntersectsLine()}}
+{\footnotesize\ttfamily bool QCPError\+Bars\+::rect\+Intersects\+Line (\begin{DoxyParamCaption}\item[{const QRectF \&}]{pixel\+Rect,  }\item[{const QLineF \&}]{line }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
 
 \mbox{\Hypertarget{class_q_c_p_error_bars_ac1b6675ef43e32547a3cbcf7b7ac46ed}\label{class_q_c_p_error_bars_ac1b6675ef43e32547a3cbcf7b7ac46ed}} 
 \index{QCPErrorBars@{QCPErrorBars}!selectTest@{selectTest}}
@@ -729,12 +738,12 @@ Providing a constant value for area objects allows selecting line objects even w
 
 The actual setting of the selection state is not done by this function. This is handled by the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} when the mouse\+Release\+Event occurs, and the finally selected object is notified via the select\+Event/ deselect\+Event methods.
 
-{\itshape details} is an optional output parameter. Every layerable subclass may place any information in {\itshape details}. This information will be passed to select\+Event when the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} decides on the basis of this select\+Test call, that the object was successfully selected. The subsequent call to select\+Event will carry the {\itshape details}. This is useful for multi-\/part objects (like \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}}). This way, a possibly complex calculation to decide which part was clicked is only done once in \mbox{\hyperlink{class_q_c_p_error_bars_ac1b6675ef43e32547a3cbcf7b7ac46ed}{select\+Test}}. The result (i.\+e. the actually clicked part) can then be placed in {\itshape details}. So in the subsequent select\+Event, the decision which part was selected doesn\textquotesingle{}t have to be done a second time for a single selection operation.
+{\itshape details} is an optional output parameter. Every layerable subclass may place any information in {\itshape details}. This information will be passed to \mbox{\hyperlink{class_q_c_p_abstract_plottable_a2d488568cf16600dd81fa23d7d439829}{select\+Event}} when the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} decides on the basis of this select\+Test call, that the object was successfully selected. The subsequent call to \mbox{\hyperlink{class_q_c_p_abstract_plottable_a2d488568cf16600dd81fa23d7d439829}{select\+Event}} will carry the {\itshape details}. This is useful for multi-\/part objects (like \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}}). This way, a possibly complex calculation to decide which part was clicked is only done once in \mbox{\hyperlink{class_q_c_p_error_bars_ac1b6675ef43e32547a3cbcf7b7ac46ed}{select\+Test}}. The result (i.\+e. the actually clicked part) can then be placed in {\itshape details}. So in the subsequent \mbox{\hyperlink{class_q_c_p_abstract_plottable_a2d488568cf16600dd81fa23d7d439829}{select\+Event}}, the decision which part was selected doesn\textquotesingle{}t have to be done a second time for a single selection operation.
 
 You may pass 0 as {\itshape details} to indicate that you are not interested in those selection details.
 
 \begin{DoxySeeAlso}{See also}
-select\+Event, deselect\+Event, \mbox{\hyperlink{class_q_c_p_layerable_af6567604818db90f4fd52822f8bc8376}{mouse\+Press\+Event}}, \mbox{\hyperlink{class_q_c_p_layerable_a47dfd7b8fd99c08ca54e09c362b6f022}{wheel\+Event}}, \mbox{\hyperlink{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5}{QCustom\+Plot\+::set\+Interactions}} 
+\mbox{\hyperlink{class_q_c_p_abstract_plottable_a2d488568cf16600dd81fa23d7d439829}{select\+Event}}, \mbox{\hyperlink{class_q_c_p_abstract_plottable_a9b104d9da4f38f934363945c313bf82e}{deselect\+Event}}, \mbox{\hyperlink{class_q_c_p_layerable_af6567604818db90f4fd52822f8bc8376}{mouse\+Press\+Event}}, \mbox{\hyperlink{class_q_c_p_layerable_a47dfd7b8fd99c08ca54e09c362b6f022}{wheel\+Event}}, \mbox{\hyperlink{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5}{QCustom\+Plot\+::set\+Interactions}} 
 \end{DoxySeeAlso}
 
 
@@ -795,7 +804,7 @@ You can directly access and manipulate the error bar data via \mbox{\hyperlink{c
 \index{QCPErrorBars@{QCPErrorBars}!setData@{setData}}
 \index{setData@{setData}!QCPErrorBars@{QCPErrorBars}}
 \doxysubsubsection{\texorpdfstring{setData()}{setData()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily void QCPError\+Bars\+::set\+Data (\begin{DoxyParamCaption}\item[{QShared\+Pointer$<$ QCPError\+Bars\+Data\+Container $>$}]{data }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void QCPError\+Bars\+::set\+Data (\begin{DoxyParamCaption}\item[{QShared\+Pointer$<$ \mbox{\hyperlink{qcustomplot_8h_a8c4472a4da738e0ddbf6b03222c39906}{QCPError\+Bars\+Data\+Container}} $>$}]{data }\end{DoxyParamCaption})}
 
 This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
 
@@ -856,9 +865,69 @@ What the sort and main keys are, is defined by the plottable\textquotesingle{}s 
 
 Implements \mbox{\hyperlink{class_q_c_p_plottable_interface1_d_a229e65e7ab968dd6cd0e259fa504b79d}{QCPPlottable\+Interface1D}}.
 
+\mbox{\Hypertarget{class_q_c_p_error_bars_a2c969749fa0db565a42b80db9da5f388}\label{class_q_c_p_error_bars_a2c969749fa0db565a42b80db9da5f388}} 
+\index{QCPErrorBars@{QCPErrorBars}!symbolGap@{symbolGap}}
+\index{symbolGap@{symbolGap}!QCPErrorBars@{QCPErrorBars}}
+\doxysubsubsection{\texorpdfstring{symbolGap()}{symbolGap()}}
+{\footnotesize\ttfamily double QCPError\+Bars\+::symbol\+Gap (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_c_p_error_bars_ae5a292470366ec92b248753f83b8646e}\label{class_q_c_p_error_bars_ae5a292470366ec92b248753f83b8646e}} 
+\index{QCPErrorBars@{QCPErrorBars}!whiskerWidth@{whiskerWidth}}
+\index{whiskerWidth@{whiskerWidth}!QCPErrorBars@{QCPErrorBars}}
+\doxysubsubsection{\texorpdfstring{whiskerWidth()}{whiskerWidth()}}
+{\footnotesize\ttfamily double QCPError\+Bars\+::whisker\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_q_c_p_error_bars_a8429035e7adfbd7f05805a6530ad5e3b}\label{class_q_c_p_error_bars_a8429035e7adfbd7f05805a6530ad5e3b}} 
+\index{QCPErrorBars@{QCPErrorBars}!QCPLegend@{QCPLegend}}
+\index{QCPLegend@{QCPLegend}!QCPErrorBars@{QCPErrorBars}}
+\doxysubsubsection{\texorpdfstring{QCPLegend}{QCPLegend}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{class_q_c_p_legend}{QCPLegend}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{class_q_c_p_error_bars_a1cdf9df76adcfae45261690aa0ca2198}\label{class_q_c_p_error_bars_a1cdf9df76adcfae45261690aa0ca2198}} 
+\index{QCPErrorBars@{QCPErrorBars}!QCustomPlot@{QCustomPlot}}
+\index{QCustomPlot@{QCustomPlot}!QCPErrorBars@{QCPErrorBars}}
+\doxysubsubsection{\texorpdfstring{QCustomPlot}{QCustomPlot}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_q_c_p_error_bars_a83c7f452d0eebd302a7e4fb3a1957634}\label{class_q_c_p_error_bars_a83c7f452d0eebd302a7e4fb3a1957634}} 
+\index{QCPErrorBars@{QCPErrorBars}!mDataContainer@{mDataContainer}}
+\index{mDataContainer@{mDataContainer}!QCPErrorBars@{QCPErrorBars}}
+\doxysubsubsection{\texorpdfstring{mDataContainer}{mDataContainer}}
+{\footnotesize\ttfamily QShared\+Pointer$<$\mbox{\hyperlink{qcustomplot_8h_a8c4472a4da738e0ddbf6b03222c39906}{QCPError\+Bars\+Data\+Container}}$>$ QCPError\+Bars\+::m\+Data\+Container\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_q_c_p_error_bars_a14b6a5b49295990da84a05a3a89026bb}\label{class_q_c_p_error_bars_a14b6a5b49295990da84a05a3a89026bb}} 
+\index{QCPErrorBars@{QCPErrorBars}!mDataPlottable@{mDataPlottable}}
+\index{mDataPlottable@{mDataPlottable}!QCPErrorBars@{QCPErrorBars}}
+\doxysubsubsection{\texorpdfstring{mDataPlottable}{mDataPlottable}}
+{\footnotesize\ttfamily QPointer$<$\mbox{\hyperlink{class_q_c_p_abstract_plottable}{QCPAbstract\+Plottable}}$>$ QCPError\+Bars\+::m\+Data\+Plottable\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_q_c_p_error_bars_af9fd3117b86aac728c9e8e87c406ed9a}\label{class_q_c_p_error_bars_af9fd3117b86aac728c9e8e87c406ed9a}} 
+\index{QCPErrorBars@{QCPErrorBars}!mErrorType@{mErrorType}}
+\index{mErrorType@{mErrorType}!QCPErrorBars@{QCPErrorBars}}
+\doxysubsubsection{\texorpdfstring{mErrorType}{mErrorType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_error_bars_a95f0220f11a72648b96480a85ce26474}{Error\+Type}} QCPError\+Bars\+::m\+Error\+Type\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_q_c_p_error_bars_a5cb5628b75e5aff0875710705666ec57}\label{class_q_c_p_error_bars_a5cb5628b75e5aff0875710705666ec57}} 
+\index{QCPErrorBars@{QCPErrorBars}!mSymbolGap@{mSymbolGap}}
+\index{mSymbolGap@{mSymbolGap}!QCPErrorBars@{QCPErrorBars}}
+\doxysubsubsection{\texorpdfstring{mSymbolGap}{mSymbolGap}}
+{\footnotesize\ttfamily double QCPError\+Bars\+::m\+Symbol\+Gap\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_q_c_p_error_bars_a3873724f7ac3392bdf9d46a47076a1d2}\label{class_q_c_p_error_bars_a3873724f7ac3392bdf9d46a47076a1d2}} 
+\index{QCPErrorBars@{QCPErrorBars}!mWhiskerWidth@{mWhiskerWidth}}
+\index{mWhiskerWidth@{mWhiskerWidth}!QCPErrorBars@{QCPErrorBars}}
+\doxysubsubsection{\texorpdfstring{mWhiskerWidth}{mWhiskerWidth}}
+{\footnotesize\ttfamily double QCPError\+Bars\+::m\+Whisker\+Width\hspace{0.3cm}{\ttfamily [protected]}}
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-qcustomplot.\+h\item 
-qcustomplot.\+cpp\end{DoxyCompactItemize}
+\mbox{\hyperlink{qcustomplot_8h}{qcustomplot.\+h}}\item 
+\mbox{\hyperlink{qcustomplot_8cpp}{qcustomplot.\+cpp}}\end{DoxyCompactItemize}

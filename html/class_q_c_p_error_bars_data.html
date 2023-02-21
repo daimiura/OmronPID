@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>OMRONPID: QCPErrorBarsData Class Reference</title>
+<title>OmronPID: QCPErrorBarsData Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">OMRONPID
+   <div id="projectname">OmronPID
    </div>
   </td>
  </tr>
@@ -79,6 +79,8 @@ $(function() {
 
 <p>Holds the data of one single error bar for <a class="el" href="class_q_c_p_error_bars.html" title="A plottable that adds a set of error bars to other plottables.">QCPErrorBars</a>.  
  <a href="class_q_c_p_error_bars_data.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="qcustomplot_8h_source.html">qcustomplot.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -86,16 +88,14 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ac18bdb46dec56f8df7f3c99d058cc725"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73ebdaa55fa7f0052b70895b28edb444"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_error_bars_data.html#a73ebdaa55fa7f0052b70895b28edb444">QCPErrorBarsData</a> (double error)</td></tr>
 <tr class="separator:a73ebdaa55fa7f0052b70895b28edb444"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c61e42d87aea3312262d5429bc28387"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_error_bars_data.html#a7c61e42d87aea3312262d5429bc28387">QCPErrorBarsData</a> (double errorMinus, double errorPlus)</td></tr>
+<tr class="memitem:a7c61e42d87aea3312262d5429bc28387"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_error_bars_data.html#a7c61e42d87aea3312262d5429bc28387">QCPErrorBarsData</a> (double <a class="el" href="class_q_c_p_error_bars_data.html#af8aaea160e52c14c57836224ee78020b">errorMinus</a>, double <a class="el" href="class_q_c_p_error_bars_data.html#ad1283c99fbfccf37a0226b1df52f0776">errorPlus</a>)</td></tr>
 <tr class="separator:a7c61e42d87aea3312262d5429bc28387"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:af8aaea160e52c14c57836224ee78020b"><td class="memItemLeft" align="right" valign="top"><a id="af8aaea160e52c14c57836224ee78020b" name="af8aaea160e52c14c57836224ee78020b"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>errorMinus</b></td></tr>
+<tr class="memitem:af8aaea160e52c14c57836224ee78020b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_error_bars_data.html#af8aaea160e52c14c57836224ee78020b">errorMinus</a></td></tr>
 <tr class="separator:af8aaea160e52c14c57836224ee78020b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1283c99fbfccf37a0226b1df52f0776"><td class="memItemLeft" align="right" valign="top"><a id="ad1283c99fbfccf37a0226b1df52f0776" name="ad1283c99fbfccf37a0226b1df52f0776"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>errorPlus</b></td></tr>
+<tr class="memitem:ad1283c99fbfccf37a0226b1df52f0776"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_error_bars_data.html#ad1283c99fbfccf37a0226b1df52f0776">errorPlus</a></td></tr>
 <tr class="separator:ad1283c99fbfccf37a0226b1df52f0776"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -104,8 +104,8 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>errorPlus</b></td><
 <li><em>errorMinus:</em> how much the error bar extends towards negative coordinates from the data point position </li>
 <li><em>errorPlus:</em> how much the error bar extends towards positive coordinates from the data point position</li>
 </ul>
-<p>The container for storing the error bar information is QCPErrorBarsDataContainer. It is a typedef for <code>QVector&lt;<a class="el" href="class_q_c_p_error_bars_data.html">QCPErrorBarsData</a>&gt;</code>.</p>
-<dl class="section see"><dt>See also</dt><dd>QCPErrorBarsDataContainer </dd></dl>
+<p>The container for storing the error bar information is <a class="el" href="qcustomplot_8h.html#a8c4472a4da738e0ddbf6b03222c39906">QCPErrorBarsDataContainer</a>. It is a typedef for <code>QVector&lt;<a class="el" href="class_q_c_p_error_bars_data.html">QCPErrorBarsData</a>&gt;</code>.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="qcustomplot_8h.html#a8c4472a4da738e0ddbf6b03222c39906">QCPErrorBarsDataContainer</a> </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ac18bdb46dec56f8df7f3c99d058cc725" name="ac18bdb46dec56f8df7f3c99d058cc725"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac18bdb46dec56f8df7f3c99d058cc725">&#9670;&#160;</a></span>QCPErrorBarsData() <span class="overload">[1/3]</span></h2>
@@ -181,9 +181,38 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>errorPlus</b></td><
 
 </div>
 </div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="af8aaea160e52c14c57836224ee78020b" name="af8aaea160e52c14c57836224ee78020b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8aaea160e52c14c57836224ee78020b">&#9670;&#160;</a></span>errorMinus</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double QCPErrorBarsData::errorMinus</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad1283c99fbfccf37a0226b1df52f0776" name="ad1283c99fbfccf37a0226b1df52f0776"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1283c99fbfccf37a0226b1df52f0776">&#9670;&#160;</a></span>errorPlus</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double QCPErrorBarsData::errorPlus</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="qcustomplot_8h_source.html">qcustomplot.h</a></li>
-<li>qcustomplot.cpp</li>
+<li><a class="el" href="qcustomplot_8cpp.html">qcustomplot.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

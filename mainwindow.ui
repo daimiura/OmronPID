@@ -561,7 +561,11 @@
       </property>
       <layout class="QGridLayout" name="gridLayout_2">
        <item row="5" column="1">
-        <widget class="QLineEdit" name="lineEdit_IgnoreLower"/>
+        <widget class="QLineEdit" name="lineEdit_IgnoreLower">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+        </widget>
        </item>
        <item row="3" column="1">
         <widget class="QLineEdit" name="lineEdit_SafeLimit">
@@ -585,7 +589,11 @@
         </widget>
        </item>
        <item row="5" column="2">
-        <widget class="QLineEdit" name="lineEdit_IgnoreUpper"/>
+        <widget class="QLineEdit" name="lineEdit_IgnoreUpper">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+        </widget>
        </item>
        <item row="1" column="0">
         <widget class="QLabel" name="label_6">
@@ -596,6 +604,9 @@
        </item>
        <item row="0" column="1" colspan="2">
         <widget class="QRadioButton" name="radioButton">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
          <property name="text">
           <string>Enable Temperature range to ignor</string>
          </property>
@@ -631,6 +642,9 @@
        </item>
        <item row="0" column="0">
         <widget class="QRadioButton" name="radioButton_TempCheck">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
          <property name="text">
           <string>Working</string>
          </property>

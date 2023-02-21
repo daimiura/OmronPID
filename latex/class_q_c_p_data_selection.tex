@@ -5,6 +5,10 @@
 Describes a data set by holding multiple \mbox{\hyperlink{class_q_c_p_data_range}{QCPData\+Range}} instances.  
 
 
+
+
+{\ttfamily \#include $<$qcustomplot.\+h$>$}
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -14,8 +18,7 @@ Describes a data set by holding multiple \mbox{\hyperlink{class_q_c_p_data_range
 \item 
 bool \mbox{\hyperlink{class_q_c_p_data_selection_a664fa566569b17148abafd6b1dbbf347}{operator==}} (const \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} \&other) const
 \item 
-\mbox{\Hypertarget{class_q_c_p_data_selection_a8324733cc88660ee4792ee60d6a4520c}\label{class_q_c_p_data_selection_a8324733cc88660ee4792ee60d6a4520c}} 
-bool {\bfseries operator!=} (const \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} \&other) const
+bool \mbox{\hyperlink{class_q_c_p_data_selection_a8324733cc88660ee4792ee60d6a4520c}{operator!=}} (const \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} \&other) const
 \item 
 \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} \& \mbox{\hyperlink{class_q_c_p_data_selection_a4584d4b0ea5c4f095bd7b70f88eb5d9d}{operator+=}} (const \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} \&other)
 \item 
@@ -227,6 +230,12 @@ Returns true if there are no data ranges, and thus no data points, in this \mbox
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_data_selection_abd8869ccb231ab991e8576de931f647d}{data\+Range\+Count}} 
 \end{DoxySeeAlso}
+\mbox{\Hypertarget{class_q_c_p_data_selection_a8324733cc88660ee4792ee60d6a4520c}\label{class_q_c_p_data_selection_a8324733cc88660ee4792ee60d6a4520c}} 
+\index{QCPDataSelection@{QCPDataSelection}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!QCPDataSelection@{QCPDataSelection}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool QCPData\+Selection\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
 \mbox{\Hypertarget{class_q_c_p_data_selection_a17058640d4e6f49984a0e7e42043df1b}\label{class_q_c_p_data_selection_a17058640d4e6f49984a0e7e42043df1b}} 
 \index{QCPDataSelection@{QCPDataSelection}!operator+=@{operator+=}}
 \index{operator+=@{operator+=}!QCPDataSelection@{QCPDataSelection}}
@@ -334,5 +343,5 @@ Prints {\itshape selection} in a human readable format to the q\+Debug output.
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-qcustomplot.\+h\item 
-qcustomplot.\+cpp\end{DoxyCompactItemize}
+\mbox{\hyperlink{qcustomplot_8h}{qcustomplot.\+h}}\item 
+\mbox{\hyperlink{qcustomplot_8cpp}{qcustomplot.\+cpp}}\end{DoxyCompactItemize}

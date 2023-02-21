@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>OMRONPID: QCPBarsData Class Reference</title>
+<title>OmronPID: QCPBarsData Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">OMRONPID
+   <div id="projectname">OmronPID
    </div>
   </td>
  </tr>
@@ -80,12 +80,14 @@ $(function() {
 
 <p>Holds the data of one single data point (one bar) for <a class="el" href="class_q_c_p_bars.html" title="A plottable representing a bar chart in a plot.">QCPBars</a>.  
  <a href="class_q_c_p_bars_data.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="qcustomplot_8h_source.html">qcustomplot.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a800794d4c5fea22eeb8bade20798496b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_bars_data.html#a800794d4c5fea22eeb8bade20798496b">QCPBarsData</a> ()</td></tr>
 <tr class="separator:a800794d4c5fea22eeb8bade20798496b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4158816a69e2c675885f48afa2b5acc9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_bars_data.html#a4158816a69e2c675885f48afa2b5acc9">QCPBarsData</a> (double key, double value)</td></tr>
+<tr class="memitem:a4158816a69e2c675885f48afa2b5acc9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_bars_data.html#a4158816a69e2c675885f48afa2b5acc9">QCPBarsData</a> (double <a class="el" href="class_q_c_p_bars_data.html#a09b492217dc03ee1c0348a2f2e6e0a04">key</a>, double <a class="el" href="class_q_c_p_bars_data.html#ab636644fb40630f3b1b72f44d65ec072">value</a>)</td></tr>
 <tr class="separator:a4158816a69e2c675885f48afa2b5acc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a107d22d84f336bf6e3c3ad0133a5d2f6"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_bars_data.html#a107d22d84f336bf6e3c3ad0133a5d2f6">sortKey</a> () const</td></tr>
 <tr class="separator:a107d22d84f336bf6e3c3ad0133a5d2f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -105,11 +107,9 @@ Static Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a09b492217dc03ee1c0348a2f2e6e0a04"><td class="memItemLeft" align="right" valign="top"><a id="a09b492217dc03ee1c0348a2f2e6e0a04" name="a09b492217dc03ee1c0348a2f2e6e0a04"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>key</b></td></tr>
+<tr class="memitem:a09b492217dc03ee1c0348a2f2e6e0a04"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_bars_data.html#a09b492217dc03ee1c0348a2f2e6e0a04">key</a></td></tr>
 <tr class="separator:a09b492217dc03ee1c0348a2f2e6e0a04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab636644fb40630f3b1b72f44d65ec072"><td class="memItemLeft" align="right" valign="top"><a id="ab636644fb40630f3b1b72f44d65ec072" name="ab636644fb40630f3b1b72f44d65ec072"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>value</b></td></tr>
+<tr class="memitem:ab636644fb40630f3b1b72f44d65ec072"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_bars_data.html#ab636644fb40630f3b1b72f44d65ec072">value</a></td></tr>
 <tr class="separator:ab636644fb40630f3b1b72f44d65ec072"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -118,8 +118,8 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>value</b></td></tr>
 <li><em>key:</em> coordinate on the key axis of this bar (this is the <em>mainKey</em> and the <em>sortKey</em>) </li>
 <li><em>value:</em> height coordinate on the value axis of this bar (this is the <em>mainValue</em>)</li>
 </ul>
-<p>The container for storing multiple data points is QCPBarsDataContainer. It is a typedef for <a class="el" href="class_q_c_p_data_container.html">QCPDataContainer</a> with <a class="el" href="class_q_c_p_bars_data.html">QCPBarsData</a> as the DataType template parameter. See the documentation there for an explanation regarding the data type's generic methods.</p>
-<dl class="section see"><dt>See also</dt><dd>QCPBarsDataContainer </dd></dl>
+<p>The container for storing multiple data points is <a class="el" href="qcustomplot_8h.html#a52bf589c9fce1baa36c1d40d69785d46">QCPBarsDataContainer</a>. It is a typedef for <a class="el" href="class_q_c_p_data_container.html">QCPDataContainer</a> with <a class="el" href="class_q_c_p_bars_data.html">QCPBarsData</a> as the DataType template parameter. See the documentation there for an explanation regarding the data type's generic methods.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="qcustomplot_8h.html#a52bf589c9fce1baa36c1d40d69785d46">QCPBarsDataContainer</a> </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a800794d4c5fea22eeb8bade20798496b" name="a800794d4c5fea22eeb8bade20798496b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a800794d4c5fea22eeb8bade20798496b">&#9670;&#160;</a></span>QCPBarsData() <span class="overload">[1/2]</span></h2>
@@ -332,9 +332,38 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>value</b></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a09b492217dc03ee1c0348a2f2e6e0a04" name="a09b492217dc03ee1c0348a2f2e6e0a04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09b492217dc03ee1c0348a2f2e6e0a04">&#9670;&#160;</a></span>key</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double QCPBarsData::key</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab636644fb40630f3b1b72f44d65ec072" name="ab636644fb40630f3b1b72f44d65ec072"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab636644fb40630f3b1b72f44d65ec072">&#9670;&#160;</a></span>value</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double QCPBarsData::value</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="qcustomplot_8h_source.html">qcustomplot.h</a></li>
-<li>qcustomplot.cpp</li>
+<li><a class="el" href="qcustomplot_8cpp.html">qcustomplot.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

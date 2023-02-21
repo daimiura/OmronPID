@@ -1,15 +1,13 @@
 var searchData=
 [
-  ['limabove_0',['limAbove',['../class_q_custom_plot.html#a75a8afbe6ef333b1f3d47abb25b9add7a062b0b7825650b432a713c0df6742d41',1,'QCustomPlot']]],
-  ['limbelow_1',['limBelow',['../class_q_custom_plot.html#a75a8afbe6ef333b1f3d47abb25b9add7aee39cf650cd24e68552da0b697ce4a93',1,'QCustomPlot']]],
-  ['lmbuffered_2',['lmBuffered',['../class_q_c_p_layer.html#a67dcfc1590be2a1f2227c5a39bb59c7cab581b9fab3007c4c65f057f4185d7538',1,'QCPLayer']]],
-  ['lmlogical_3',['lmLogical',['../class_q_c_p_layer.html#a67dcfc1590be2a1f2227c5a39bb59c7ca02eb5e9a4cb7f1baf1e2b6b99e3b87ce',1,'QCPLayer']]],
-  ['lsimpulse_4',['lsImpulse',['../class_q_c_p_graph.html#ad60175cd9b5cac937c5ee685c32c0859aa3b358b4ae7cca94aceeb8e529c12ebb',1,'QCPGraph']]],
-  ['lsinside_5',['lsInside',['../class_q_c_p_axis.html#a24b13374b9b8f75f47eed2ea78c37db9aae7b027ac2839cf4ad611df30236fc3f',1,'QCPAxis']]],
-  ['lsline_6',['lsLine',['../class_q_c_p_graph.html#ad60175cd9b5cac937c5ee685c32c0859a3c42a27b15aa3c92d399082fad8b7515',1,'QCPGraph::lsLine()'],['../class_q_c_p_curve.html#a2710e9f79302152cff794c6e16cc01f1ade5822ce6fbf131d3df131795c2e1003',1,'QCPCurve::lsLine()']]],
-  ['lsnone_7',['lsNone',['../class_q_c_p_graph.html#ad60175cd9b5cac937c5ee685c32c0859aea9591b933733cc7b20786b71e60fa04',1,'QCPGraph::lsNone()'],['../class_q_c_p_curve.html#a2710e9f79302152cff794c6e16cc01f1aec1601a191cdf0b4e761c4c66092cc48',1,'QCPCurve::lsNone()']]],
-  ['lsoutside_8',['lsOutside',['../class_q_c_p_axis.html#a24b13374b9b8f75f47eed2ea78c37db9a2eadb509fc0c9a8b35b85c86ec9f3c7a',1,'QCPAxis']]],
-  ['lsstepcenter_9',['lsStepCenter',['../class_q_c_p_graph.html#ad60175cd9b5cac937c5ee685c32c0859a5adf7b04da215a40a764c21294ea7366',1,'QCPGraph']]],
-  ['lsstepleft_10',['lsStepLeft',['../class_q_c_p_graph.html#ad60175cd9b5cac937c5ee685c32c0859ae10568bda57836487d9dec5eba1d6c6e',1,'QCPGraph']]],
-  ['lsstepright_11',['lsStepRight',['../class_q_c_p_graph.html#ad60175cd9b5cac937c5ee685c32c0859a9c37951f7d11aa070100fd16f2935c9e',1,'QCPGraph']]]
+  ['imultiselect_0',['iMultiSelect',['../namespace_q_c_p.html#a2ad6bb6281c7c2d593d4277b44c2b037aef673112c5067c3cf4cfddb62da7265d',1,'QCP']]],
+  ['ipborderaligned_1',['ipBorderAligned',['../class_q_c_p_layout_inset.html#a8b9e17d9a2768293d2a7d72f5e298192aa81e7df4a785ddee2229a8f47c46e817',1,'QCPLayoutInset']]],
+  ['ipfree_2',['ipFree',['../class_q_c_p_layout_inset.html#a8b9e17d9a2768293d2a7d72f5e298192aa4802986ea2cea457f932b115acba59e',1,'QCPLayoutInset']]],
+  ['irangedrag_3',['iRangeDrag',['../namespace_q_c_p.html#a2ad6bb6281c7c2d593d4277b44c2b037a2c4432b9aceafb94000be8d1b589ef18',1,'QCP']]],
+  ['irangezoom_4',['iRangeZoom',['../namespace_q_c_p.html#a2ad6bb6281c7c2d593d4277b44c2b037abee1e94353525a636aeaf0ba32b72e14',1,'QCP']]],
+  ['iselectaxes_5',['iSelectAxes',['../namespace_q_c_p.html#a2ad6bb6281c7c2d593d4277b44c2b037ad6644ac55bef621645326e9dd7469caa',1,'QCP']]],
+  ['iselectitems_6',['iSelectItems',['../namespace_q_c_p.html#a2ad6bb6281c7c2d593d4277b44c2b037aea2f7c105d674e76d9b187b02ef29260',1,'QCP']]],
+  ['iselectlegend_7',['iSelectLegend',['../namespace_q_c_p.html#a2ad6bb6281c7c2d593d4277b44c2b037a269c9af298e257d1108edec0432b5513',1,'QCP']]],
+  ['iselectother_8',['iSelectOther',['../namespace_q_c_p.html#a2ad6bb6281c7c2d593d4277b44c2b037af67a50bc26147a13b551b3a625374949',1,'QCP']]],
+  ['iselectplottables_9',['iSelectPlottables',['../namespace_q_c_p.html#a2ad6bb6281c7c2d593d4277b44c2b037a67148c8227b4155eca49135fc274c7ec',1,'QCP']]]
 ];

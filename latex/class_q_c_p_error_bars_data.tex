@@ -5,6 +5,10 @@
 Holds the data of one single error bar for \mbox{\hyperlink{class_q_c_p_error_bars}{QCPError\+Bars}}.  
 
 
+
+
+{\ttfamily \#include $<$qcustomplot.\+h$>$}
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -12,16 +16,14 @@ Holds the data of one single error bar for \mbox{\hyperlink{class_q_c_p_error_ba
 \item 
 \mbox{\hyperlink{class_q_c_p_error_bars_data_a73ebdaa55fa7f0052b70895b28edb444}{QCPError\+Bars\+Data}} (double error)
 \item 
-\mbox{\hyperlink{class_q_c_p_error_bars_data_a7c61e42d87aea3312262d5429bc28387}{QCPError\+Bars\+Data}} (double error\+Minus, double error\+Plus)
+\mbox{\hyperlink{class_q_c_p_error_bars_data_a7c61e42d87aea3312262d5429bc28387}{QCPError\+Bars\+Data}} (double \mbox{\hyperlink{class_q_c_p_error_bars_data_af8aaea160e52c14c57836224ee78020b}{error\+Minus}}, double \mbox{\hyperlink{class_q_c_p_error_bars_data_ad1283c99fbfccf37a0226b1df52f0776}{error\+Plus}})
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_q_c_p_error_bars_data_af8aaea160e52c14c57836224ee78020b}\label{class_q_c_p_error_bars_data_af8aaea160e52c14c57836224ee78020b}} 
-double {\bfseries error\+Minus}
+double \mbox{\hyperlink{class_q_c_p_error_bars_data_af8aaea160e52c14c57836224ee78020b}{error\+Minus}}
 \item 
-\mbox{\Hypertarget{class_q_c_p_error_bars_data_ad1283c99fbfccf37a0226b1df52f0776}\label{class_q_c_p_error_bars_data_ad1283c99fbfccf37a0226b1df52f0776}} 
-double {\bfseries error\+Plus}
+double \mbox{\hyperlink{class_q_c_p_error_bars_data_ad1283c99fbfccf37a0226b1df52f0776}{error\+Plus}}
 \end{DoxyCompactItemize}
 
 
@@ -30,10 +32,10 @@ Holds the data of one single error bar for \mbox{\hyperlink{class_q_c_p_error_ba
 
 The stored data is\+: \begin{DoxyItemize}
 \item {\itshape error\+Minus\+:} how much the error bar extends towards negative coordinates from the data point position \item {\itshape error\+Plus\+:} how much the error bar extends towards positive coordinates from the data point position\end{DoxyItemize}
-The container for storing the error bar information is QCPError\+Bars\+Data\+Container. It is a typedef for {\ttfamily QVector\texorpdfstring{$<$}{<}\mbox{\hyperlink{class_q_c_p_error_bars_data}{QCPError\+Bars\+Data}}\texorpdfstring{$>$}{>}}.
+The container for storing the error bar information is \mbox{\hyperlink{qcustomplot_8h_a8c4472a4da738e0ddbf6b03222c39906}{QCPError\+Bars\+Data\+Container}}. It is a typedef for {\ttfamily QVector\texorpdfstring{$<$}{<}\mbox{\hyperlink{class_q_c_p_error_bars_data}{QCPError\+Bars\+Data}}\texorpdfstring{$>$}{>}}.
 
 \begin{DoxySeeAlso}{See also}
-QCPError\+Bars\+Data\+Container 
+\mbox{\hyperlink{qcustomplot_8h_a8c4472a4da738e0ddbf6b03222c39906}{QCPError\+Bars\+Data\+Container}} 
 \end{DoxySeeAlso}
 
 
@@ -58,7 +60,22 @@ Constructs an error bar with equal {\itshape error} in both negative and positiv
 
 Constructs an error bar with negative and positive errors set to {\itshape error\+Minus} and {\itshape error\+Plus}, respectively. 
 
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_q_c_p_error_bars_data_af8aaea160e52c14c57836224ee78020b}\label{class_q_c_p_error_bars_data_af8aaea160e52c14c57836224ee78020b}} 
+\index{QCPErrorBarsData@{QCPErrorBarsData}!errorMinus@{errorMinus}}
+\index{errorMinus@{errorMinus}!QCPErrorBarsData@{QCPErrorBarsData}}
+\doxysubsubsection{\texorpdfstring{errorMinus}{errorMinus}}
+{\footnotesize\ttfamily double QCPError\+Bars\+Data\+::error\+Minus}
+
+\mbox{\Hypertarget{class_q_c_p_error_bars_data_ad1283c99fbfccf37a0226b1df52f0776}\label{class_q_c_p_error_bars_data_ad1283c99fbfccf37a0226b1df52f0776}} 
+\index{QCPErrorBarsData@{QCPErrorBarsData}!errorPlus@{errorPlus}}
+\index{errorPlus@{errorPlus}!QCPErrorBarsData@{QCPErrorBarsData}}
+\doxysubsubsection{\texorpdfstring{errorPlus}{errorPlus}}
+{\footnotesize\ttfamily double QCPError\+Bars\+Data\+::error\+Plus}
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-qcustomplot.\+h\item 
-qcustomplot.\+cpp\end{DoxyCompactItemize}
+\mbox{\hyperlink{qcustomplot_8h}{qcustomplot.\+h}}\item 
+\mbox{\hyperlink{qcustomplot_8cpp}{qcustomplot.\+cpp}}\end{DoxyCompactItemize}

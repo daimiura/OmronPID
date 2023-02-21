@@ -5,6 +5,10 @@
 Provides rect/rubber-\/band data selection and range zoom interaction.  
 
 
+
+
+{\ttfamily \#include $<$qcustomplot.\+h$>$}
+
 Inheritance diagram for QCPSelection\+Rect\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -16,11 +20,11 @@ Inheritance diagram for QCPSelection\+Rect\+:\begin{figure}[H]
 \item 
 void \mbox{\hyperlink{class_q_c_p_selection_rect_a7b7162d19f4f2174d3644ff1a5d335aa}{started}} (QMouse\+Event $\ast$event)
 \item 
-void \mbox{\hyperlink{class_q_c_p_selection_rect_a1bab11026bca52740c2e6682623e6964}{changed}} (const QRect \&rect, QMouse\+Event $\ast$event)
+void \mbox{\hyperlink{class_q_c_p_selection_rect_a1bab11026bca52740c2e6682623e6964}{changed}} (const QRect \&\mbox{\hyperlink{class_q_c_p_selection_rect_a3812115ae4dfe2855bf1e58331c14805}{rect}}, QMouse\+Event $\ast$event)
 \item 
-void \mbox{\hyperlink{class_q_c_p_selection_rect_aeb82009393c90130102dccf36477b906}{canceled}} (const QRect \&rect, QInput\+Event $\ast$event)
+void \mbox{\hyperlink{class_q_c_p_selection_rect_aeb82009393c90130102dccf36477b906}{canceled}} (const QRect \&\mbox{\hyperlink{class_q_c_p_selection_rect_a3812115ae4dfe2855bf1e58331c14805}{rect}}, QInput\+Event $\ast$event)
 \item 
-void \mbox{\hyperlink{class_q_c_p_selection_rect_a15a43542e1f7b953a44c260b419e6d2c}{accepted}} (const QRect \&rect, QMouse\+Event $\ast$event)
+void \mbox{\hyperlink{class_q_c_p_selection_rect_a15a43542e1f7b953a44c260b419e6d2c}{accepted}} (const QRect \&\mbox{\hyperlink{class_q_c_p_selection_rect_a3812115ae4dfe2855bf1e58331c14805}{rect}}, QMouse\+Event $\ast$event)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Signals inherited from \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}}
 \begin{DoxyCompactItemize}
@@ -30,24 +34,23 @@ void \mbox{\hyperlink{class_q_c_p_layerable_abbf8657cedea73ac1c3499b521c90eba}{l
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_q_c_p_selection_rect_ade6ee59fabcc585a1e281eb527b01867}{QCPSelection\+Rect}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$parent\+Plot)
+\mbox{\hyperlink{class_q_c_p_selection_rect_ade6ee59fabcc585a1e281eb527b01867}{QCPSelection\+Rect}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_a36ed5b292b90934b524a4e5866a3526c}{parent\+Plot}})
 \item 
-\mbox{\Hypertarget{class_q_c_p_selection_rect_a3812115ae4dfe2855bf1e58331c14805}\label{class_q_c_p_selection_rect_a3812115ae4dfe2855bf1e58331c14805}} 
-QRect {\bfseries rect} () const
+virtual \mbox{\hyperlink{class_q_c_p_selection_rect_aded186aabcdc3ee51775b7c5063e199a}{$\sim$\+QCPSelection\+Rect}} ()
+\item 
+QRect \mbox{\hyperlink{class_q_c_p_selection_rect_a3812115ae4dfe2855bf1e58331c14805}{rect}} () const
 \item 
 \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \mbox{\hyperlink{class_q_c_p_selection_rect_a23ab082ffa04be1dbf9afb9e633ab815}{range}} (const \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$axis) const
 \item 
-\mbox{\Hypertarget{class_q_c_p_selection_rect_ab4229f8faeaffba9617d2e6c4779b765}\label{class_q_c_p_selection_rect_ab4229f8faeaffba9617d2e6c4779b765}} 
-QPen {\bfseries pen} () const
+QPen \mbox{\hyperlink{class_q_c_p_selection_rect_ab4229f8faeaffba9617d2e6c4779b765}{pen}} () const
 \item 
-\mbox{\Hypertarget{class_q_c_p_selection_rect_a9669c77c5796dea9dc089a088d50ebfb}\label{class_q_c_p_selection_rect_a9669c77c5796dea9dc089a088d50ebfb}} 
-QBrush {\bfseries brush} () const
+QBrush \mbox{\hyperlink{class_q_c_p_selection_rect_a9669c77c5796dea9dc089a088d50ebfb}{brush}} () const
 \item 
 bool \mbox{\hyperlink{class_q_c_p_selection_rect_ad27c1569c6ea8fa48e24b81e2a302df3}{is\+Active}} () const
 \item 
-void \mbox{\hyperlink{class_q_c_p_selection_rect_ada20b7fb1b2dcbe50523262636b06963}{set\+Pen}} (const QPen \&pen)
+void \mbox{\hyperlink{class_q_c_p_selection_rect_ada20b7fb1b2dcbe50523262636b06963}{set\+Pen}} (const QPen \&\mbox{\hyperlink{class_q_c_p_selection_rect_ab4229f8faeaffba9617d2e6c4779b765}{pen}})
 \item 
-void \mbox{\hyperlink{class_q_c_p_selection_rect_ab0c66f1484418782efa01f4153611080}{set\+Brush}} (const QBrush \&brush)
+void \mbox{\hyperlink{class_q_c_p_selection_rect_ab0c66f1484418782efa01f4153611080}{set\+Brush}} (const QBrush \&\mbox{\hyperlink{class_q_c_p_selection_rect_a9669c77c5796dea9dc089a088d50ebfb}{brush}})
 \item 
 Q\+\_\+\+SLOT void \mbox{\hyperlink{class_q_c_p_selection_rect_af67bc58f4f5ce9a4dc420b9c42de235a}{cancel}} ()
 \end{DoxyCompactItemize}
@@ -56,23 +59,21 @@ Q\+\_\+\+SLOT void \mbox{\hyperlink{class_q_c_p_selection_rect_af67bc58f4f5ce9a4
 \item 
 \mbox{\hyperlink{class_q_c_p_layerable_a74c0fa237f29bf0e49565013fc5d1ec0}{QCPLayerable}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$plot, QString target\+Layer=QString(), \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}}=0)
 \item 
-\mbox{\Hypertarget{class_q_c_p_layerable_af0297b944b6192b6d67d00bff41b6b70}\label{class_q_c_p_layerable_af0297b944b6192b6d67d00bff41b6b70}} 
-bool {\bfseries visible} () const
+virtual \mbox{\hyperlink{class_q_c_p_layerable_a4231cf5b3601d6d3a5781283e7a9735b}{$\sim$\+QCPLayerable}} ()
 \item 
-\mbox{\Hypertarget{class_q_c_p_layerable_a36ed5b292b90934b524a4e5866a3526c}\label{class_q_c_p_layerable_a36ed5b292b90934b524a4e5866a3526c}} 
-\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$ {\bfseries parent\+Plot} () const
+bool \mbox{\hyperlink{class_q_c_p_layerable_af0297b944b6192b6d67d00bff41b6b70}{visible}} () const
+\item 
+\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$ \mbox{\hyperlink{class_q_c_p_layerable_a36ed5b292b90934b524a4e5866a3526c}{parent\+Plot}} () const
 \item 
 \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $\ast$ \mbox{\hyperlink{class_q_c_p_layerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}} () const
 \item 
-\mbox{\Hypertarget{class_q_c_p_layerable_a9d4e121a7f1d2314f906fe698209cac9}\label{class_q_c_p_layerable_a9d4e121a7f1d2314f906fe698209cac9}} 
-\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$ {\bfseries layer} () const
+\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$ \mbox{\hyperlink{class_q_c_p_layerable_a9d4e121a7f1d2314f906fe698209cac9}{layer}} () const
 \item 
-\mbox{\Hypertarget{class_q_c_p_layerable_a71cbd212fde2703cee076e204a475709}\label{class_q_c_p_layerable_a71cbd212fde2703cee076e204a475709}} 
-bool {\bfseries antialiased} () const
+bool \mbox{\hyperlink{class_q_c_p_layerable_a71cbd212fde2703cee076e204a475709}{antialiased}} () const
 \item 
 void \mbox{\hyperlink{class_q_c_p_layerable_a3bed99ddc396b48ce3ebfdc0418744f8}{set\+Visible}} (bool on)
 \item 
-Q\+\_\+\+SLOT bool \mbox{\hyperlink{class_q_c_p_layerable_ab0d0da6d2de45a118886d2c8e16d5a54}{set\+Layer}} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$layer)
+Q\+\_\+\+SLOT bool \mbox{\hyperlink{class_q_c_p_layerable_ab0d0da6d2de45a118886d2c8e16d5a54}{set\+Layer}} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_a9d4e121a7f1d2314f906fe698209cac9}{layer}})
 \item 
 bool \mbox{\hyperlink{class_q_c_p_layerable_ab25a0e7b897993b44447caee0f142083}{set\+Layer}} (const QString \&layer\+Name)
 \item 
@@ -85,45 +86,34 @@ bool \mbox{\hyperlink{class_q_c_p_layerable_ab054e88f15d485defcb95e7376f119e7}{r
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_q_c_p_selection_rect_a271f24cfca8bc50a0e2b4310ff90e227}\label{class_q_c_p_selection_rect_a271f24cfca8bc50a0e2b4310ff90e227}} 
-virtual void {\bfseries start\+Selection} (QMouse\+Event $\ast$event)
+virtual void \mbox{\hyperlink{class_q_c_p_selection_rect_a271f24cfca8bc50a0e2b4310ff90e227}{start\+Selection}} (QMouse\+Event $\ast$event)
 \item 
-\mbox{\Hypertarget{class_q_c_p_selection_rect_a95c3f1700be2a6d7bba0fe56ece5fbb1}\label{class_q_c_p_selection_rect_a95c3f1700be2a6d7bba0fe56ece5fbb1}} 
-virtual void {\bfseries move\+Selection} (QMouse\+Event $\ast$event)
+virtual void \mbox{\hyperlink{class_q_c_p_selection_rect_a95c3f1700be2a6d7bba0fe56ece5fbb1}{move\+Selection}} (QMouse\+Event $\ast$event)
 \item 
-\mbox{\Hypertarget{class_q_c_p_selection_rect_a625bcffd73987f6de6c6559aaf29ab9d}\label{class_q_c_p_selection_rect_a625bcffd73987f6de6c6559aaf29ab9d}} 
-virtual void {\bfseries end\+Selection} (QMouse\+Event $\ast$event)
+virtual void \mbox{\hyperlink{class_q_c_p_selection_rect_a625bcffd73987f6de6c6559aaf29ab9d}{end\+Selection}} (QMouse\+Event $\ast$event)
 \item 
-\mbox{\Hypertarget{class_q_c_p_selection_rect_a1affe764316d6122a26fdb2e9583feb1}\label{class_q_c_p_selection_rect_a1affe764316d6122a26fdb2e9583feb1}} 
-virtual void {\bfseries key\+Press\+Event} (QKey\+Event $\ast$event)
+virtual void \mbox{\hyperlink{class_q_c_p_selection_rect_a1affe764316d6122a26fdb2e9583feb1}{key\+Press\+Event}} (QKey\+Event $\ast$event)
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_selection_rect_aa854697618e16037ba9c73056abfb9bf}{apply\+Default\+Antialiasing\+Hint}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+virtual void \mbox{\hyperlink{class_q_c_p_selection_rect_aa854697618e16037ba9c73056abfb9bf}{apply\+Default\+Antialiasing\+Hint}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_selection_rect_ab0e50ae796508bdcd97ab8c335c593bf}{draw}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+virtual void \mbox{\hyperlink{class_q_c_p_selection_rect_ab0e50ae796508bdcd97ab8c335c593bf}{draw}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_q_c_p_layerable_ab20b7dbd8e0249ed61adb9622c427382}\label{class_q_c_p_layerable_ab20b7dbd8e0249ed61adb9622c427382}} 
-virtual void {\bfseries parent\+Plot\+Initialized} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$parent\+Plot)
+virtual void \mbox{\hyperlink{class_q_c_p_layerable_ab20b7dbd8e0249ed61adb9622c427382}{parent\+Plot\+Initialized}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_a36ed5b292b90934b524a4e5866a3526c}{parent\+Plot}})
 \item 
-\mbox{\Hypertarget{class_q_c_p_layerable_a908c9edda761886f33893be326dab77d}\label{class_q_c_p_layerable_a908c9edda761886f33893be326dab77d}} 
-virtual \mbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037}{QCP\+::\+Interaction}} {\bfseries selection\+Category} () const
+virtual \mbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037}{QCP\+::\+Interaction}} \mbox{\hyperlink{class_q_c_p_layerable_a908c9edda761886f33893be326dab77d}{selection\+Category}} () const
 \item 
-\mbox{\Hypertarget{class_q_c_p_layerable_acbcfc9ecc75433747b1978a77b1864b3}\label{class_q_c_p_layerable_acbcfc9ecc75433747b1978a77b1864b3}} 
-virtual QRect {\bfseries clip\+Rect} () const
+virtual QRect \mbox{\hyperlink{class_q_c_p_layerable_acbcfc9ecc75433747b1978a77b1864b3}{clip\+Rect}} () const
 \item 
-\mbox{\Hypertarget{class_q_c_p_layerable_afdf83ddc6a265cbf4c89fe99d3d93473}\label{class_q_c_p_layerable_afdf83ddc6a265cbf4c89fe99d3d93473}} 
-virtual void {\bfseries apply\+Default\+Antialiasing\+Hint} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) const =0
+virtual void \mbox{\hyperlink{class_q_c_p_layerable_afdf83ddc6a265cbf4c89fe99d3d93473}{apply\+Default\+Antialiasing\+Hint}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) const =0
 \item 
-\mbox{\Hypertarget{class_q_c_p_layerable_aecf2f7087482d4b6a78cb2770e5ed12d}\label{class_q_c_p_layerable_aecf2f7087482d4b6a78cb2770e5ed12d}} 
-virtual void {\bfseries draw} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter)=0
+virtual void \mbox{\hyperlink{class_q_c_p_layerable_aecf2f7087482d4b6a78cb2770e5ed12d}{draw}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter)=0
 \item 
-\mbox{\Hypertarget{class_q_c_p_layerable_a7498c2d0d081cf7cad0fb3bb93aa0e91}\label{class_q_c_p_layerable_a7498c2d0d081cf7cad0fb3bb93aa0e91}} 
-virtual void {\bfseries select\+Event} (QMouse\+Event $\ast$event, bool additive, const QVariant \&details, bool $\ast$selection\+State\+Changed)
+virtual void \mbox{\hyperlink{class_q_c_p_layerable_a7498c2d0d081cf7cad0fb3bb93aa0e91}{select\+Event}} (QMouse\+Event $\ast$event, bool additive, const QVariant \&details, bool $\ast$selection\+State\+Changed)
 \item 
-\mbox{\Hypertarget{class_q_c_p_layerable_ae546370644a5551c76af739afc008bee}\label{class_q_c_p_layerable_ae546370644a5551c76af739afc008bee}} 
-virtual void {\bfseries deselect\+Event} (bool $\ast$selection\+State\+Changed)
+virtual void \mbox{\hyperlink{class_q_c_p_layerable_ae546370644a5551c76af739afc008bee}{deselect\+Event}} (bool $\ast$selection\+State\+Changed)
 \item 
 virtual void \mbox{\hyperlink{class_q_c_p_layerable_af6567604818db90f4fd52822f8bc8376}{mouse\+Press\+Event}} (QMouse\+Event $\ast$event, const QVariant \&details)
 \item 
@@ -135,56 +125,42 @@ virtual void \mbox{\hyperlink{class_q_c_p_layerable_a4171e2e823aca242dd0279f00ed
 \item 
 virtual void \mbox{\hyperlink{class_q_c_p_layerable_a47dfd7b8fd99c08ca54e09c362b6f022}{wheel\+Event}} (QWheel\+Event $\ast$event)
 \item 
-\mbox{\Hypertarget{class_q_c_p_layerable_a8cbe5a0c9a5674249982f5ca5f8e02bc}\label{class_q_c_p_layerable_a8cbe5a0c9a5674249982f5ca5f8e02bc}} 
-void {\bfseries initialize\+Parent\+Plot} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$parent\+Plot)
+void \mbox{\hyperlink{class_q_c_p_layerable_a8cbe5a0c9a5674249982f5ca5f8e02bc}{initialize\+Parent\+Plot}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_a36ed5b292b90934b524a4e5866a3526c}{parent\+Plot}})
 \item 
-\mbox{\Hypertarget{class_q_c_p_layerable_aa23c893671f1f6744ac235cf2204cf3a}\label{class_q_c_p_layerable_aa23c893671f1f6744ac235cf2204cf3a}} 
-void {\bfseries set\+Parent\+Layerable} (\mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}})
+void \mbox{\hyperlink{class_q_c_p_layerable_aa23c893671f1f6744ac235cf2204cf3a}{set\+Parent\+Layerable}} (\mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}})
 \item 
-\mbox{\Hypertarget{class_q_c_p_layerable_af94484cfb7cbbddb7de522e9be71d9a4}\label{class_q_c_p_layerable_af94484cfb7cbbddb7de522e9be71d9a4}} 
-bool {\bfseries move\+To\+Layer} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$layer, bool prepend)
+bool \mbox{\hyperlink{class_q_c_p_layerable_af94484cfb7cbbddb7de522e9be71d9a4}{move\+To\+Layer}} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_a9d4e121a7f1d2314f906fe698209cac9}{layer}}, bool prepend)
 \item 
-\mbox{\Hypertarget{class_q_c_p_layerable_acb663e375d2d36dc5c55021ee5a2119b}\label{class_q_c_p_layerable_acb663e375d2d36dc5c55021ee5a2119b}} 
-void {\bfseries apply\+Antialiasing\+Hint} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter, bool local\+Antialiased, \mbox{\hyperlink{namespace_q_c_p_ae55dbe315d41fe80f29ba88100843a0c}{QCP\+::\+Antialiased\+Element}} override\+Element) const
+void \mbox{\hyperlink{class_q_c_p_layerable_acb663e375d2d36dc5c55021ee5a2119b}{apply\+Antialiasing\+Hint}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter, bool local\+Antialiased, \mbox{\hyperlink{namespace_q_c_p_ae55dbe315d41fe80f29ba88100843a0c}{QCP\+::\+Antialiased\+Element}} override\+Element) const
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_q_c_p_selection_rect_a45a2600ef19c8f7b5ec6134beab036cf}\label{class_q_c_p_selection_rect_a45a2600ef19c8f7b5ec6134beab036cf}} 
-QRect {\bfseries m\+Rect}
+QRect \mbox{\hyperlink{class_q_c_p_selection_rect_a45a2600ef19c8f7b5ec6134beab036cf}{m\+Rect}}
 \item 
-\mbox{\Hypertarget{class_q_c_p_selection_rect_ae255dec12cd531071115bd667f0fd815}\label{class_q_c_p_selection_rect_ae255dec12cd531071115bd667f0fd815}} 
-QPen {\bfseries m\+Pen}
+QPen \mbox{\hyperlink{class_q_c_p_selection_rect_ae255dec12cd531071115bd667f0fd815}{m\+Pen}}
 \item 
-\mbox{\Hypertarget{class_q_c_p_selection_rect_a1bda3f02c2e4da58c856d19695028cbe}\label{class_q_c_p_selection_rect_a1bda3f02c2e4da58c856d19695028cbe}} 
-QBrush {\bfseries m\+Brush}
+QBrush \mbox{\hyperlink{class_q_c_p_selection_rect_a1bda3f02c2e4da58c856d19695028cbe}{m\+Brush}}
 \item 
-\mbox{\Hypertarget{class_q_c_p_selection_rect_a1c167356b0bc59e62691bff8c90f5851}\label{class_q_c_p_selection_rect_a1c167356b0bc59e62691bff8c90f5851}} 
-bool {\bfseries m\+Active}
+bool \mbox{\hyperlink{class_q_c_p_selection_rect_a1c167356b0bc59e62691bff8c90f5851}{m\+Active}}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_q_c_p_layerable_a62e3aed8427d6ce3ccf716f285106cb3}\label{class_q_c_p_layerable_a62e3aed8427d6ce3ccf716f285106cb3}} 
-bool {\bfseries m\+Visible}
+bool \mbox{\hyperlink{class_q_c_p_layerable_a62e3aed8427d6ce3ccf716f285106cb3}{m\+Visible}}
 \item 
-\mbox{\Hypertarget{class_q_c_p_layerable_aa2a528433e44db02b8aef23c1f9f90ed}\label{class_q_c_p_layerable_aa2a528433e44db02b8aef23c1f9f90ed}} 
-\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$ {\bfseries m\+Parent\+Plot}
+\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$ \mbox{\hyperlink{class_q_c_p_layerable_aa2a528433e44db02b8aef23c1f9f90ed}{m\+Parent\+Plot}}
 \item 
-\mbox{\Hypertarget{class_q_c_p_layerable_a3291445a980053e2d17a21d15957624e}\label{class_q_c_p_layerable_a3291445a980053e2d17a21d15957624e}} 
-QPointer$<$ \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $>$ {\bfseries m\+Parent\+Layerable}
+QPointer$<$ \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $>$ \mbox{\hyperlink{class_q_c_p_layerable_a3291445a980053e2d17a21d15957624e}{m\+Parent\+Layerable}}
 \item 
-\mbox{\Hypertarget{class_q_c_p_layerable_aa38ec5891aff0f50b36fd63e9372a0cd}\label{class_q_c_p_layerable_aa38ec5891aff0f50b36fd63e9372a0cd}} 
-\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$ {\bfseries m\+Layer}
+\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$ \mbox{\hyperlink{class_q_c_p_layerable_aa38ec5891aff0f50b36fd63e9372a0cd}{m\+Layer}}
 \item 
-\mbox{\Hypertarget{class_q_c_p_layerable_a3ab45a4c76a3333ce42eb217a81733ec}\label{class_q_c_p_layerable_a3ab45a4c76a3333ce42eb217a81733ec}} 
-bool {\bfseries m\+Antialiased}
+bool \mbox{\hyperlink{class_q_c_p_layerable_a3ab45a4c76a3333ce42eb217a81733ec}{m\+Antialiased}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_q_c_p_selection_rect_a1cdf9df76adcfae45261690aa0ca2198}\label{class_q_c_p_selection_rect_a1cdf9df76adcfae45261690aa0ca2198}} 
-class {\bfseries QCustom\+Plot}
+class \mbox{\hyperlink{class_q_c_p_selection_rect_a1cdf9df76adcfae45261690aa0ca2198}{QCustom\+Plot}}
 \end{DoxyCompactItemize}
 
 
@@ -199,7 +175,7 @@ The \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance connects own 
 
 The appearance of the selection rect can be controlled via \mbox{\hyperlink{class_q_c_p_selection_rect_ada20b7fb1b2dcbe50523262636b06963}{set\+Pen}} and \mbox{\hyperlink{class_q_c_p_selection_rect_ab0c66f1484418782efa01f4153611080}{set\+Brush}}.
 
-If you wish to provide custom behaviour, e.\+g. a different visual representation of the selection rect (QCPSelection\+Rect\+::draw), you can subclass \mbox{\hyperlink{class_q_c_p_selection_rect}{QCPSelection\+Rect}} and pass an instance of your subclass to \mbox{\hyperlink{class_q_custom_plot_a0c09f96df15faa4799ad7051bb16cf33}{QCustom\+Plot\+::set\+Selection\+Rect}}. 
+If you wish to provide custom behaviour, e.\+g. a different visual representation of the selection rect (\mbox{\hyperlink{class_q_c_p_selection_rect_ab0e50ae796508bdcd97ab8c335c593bf}{QCPSelection\+Rect\+::draw}}), you can subclass \mbox{\hyperlink{class_q_c_p_selection_rect}{QCPSelection\+Rect}} and pass an instance of your subclass to \mbox{\hyperlink{class_q_custom_plot_a0c09f96df15faa4799ad7051bb16cf33}{QCustom\+Plot\+::set\+Selection\+Rect}}. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_q_c_p_selection_rect_ade6ee59fabcc585a1e281eb527b01867}\label{class_q_c_p_selection_rect_ade6ee59fabcc585a1e281eb527b01867}} 
@@ -208,7 +184,13 @@ If you wish to provide custom behaviour, e.\+g. a different visual representatio
 \doxysubsubsection{\texorpdfstring{QCPSelectionRect()}{QCPSelectionRect()}}
 {\footnotesize\ttfamily QCPSelection\+Rect\+::\+QCPSelection\+Rect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$}]{parent\+Plot }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
-Creates a new \mbox{\hyperlink{class_q_c_p_selection_rect}{QCPSelection\+Rect}} instance. To make \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} use the selection rect instance, pass it to \mbox{\hyperlink{class_q_custom_plot_a0c09f96df15faa4799ad7051bb16cf33}{QCustom\+Plot\+::set\+Selection\+Rect}}. {\itshape parent\+Plot} should be set to the same \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} widget. 
+Creates a new \mbox{\hyperlink{class_q_c_p_selection_rect}{QCPSelection\+Rect}} instance. To make \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} use the selection rect instance, pass it to \mbox{\hyperlink{class_q_custom_plot_a0c09f96df15faa4799ad7051bb16cf33}{QCustom\+Plot\+::set\+Selection\+Rect}}. {\itshape parent\+Plot} should be set to the same \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} widget. \mbox{\Hypertarget{class_q_c_p_selection_rect_aded186aabcdc3ee51775b7c5063e199a}\label{class_q_c_p_selection_rect_aded186aabcdc3ee51775b7c5063e199a}} 
+\index{QCPSelectionRect@{QCPSelectionRect}!````~QCPSelectionRect@{$\sim$QCPSelectionRect}}
+\index{````~QCPSelectionRect@{$\sim$QCPSelectionRect}!QCPSelectionRect@{QCPSelectionRect}}
+\doxysubsubsection{\texorpdfstring{$\sim$QCPSelectionRect()}{~QCPSelectionRect()}}
+{\footnotesize\ttfamily QCPSelection\+Rect\+::$\sim$\+QCPSelection\+Rect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_q_c_p_selection_rect_a15a43542e1f7b953a44c260b419e6d2c}\label{class_q_c_p_selection_rect_a15a43542e1f7b953a44c260b419e6d2c}} 
@@ -227,7 +209,13 @@ Note that {\itshape rect} may have a negative width or height, if the selection 
 
 
 
-Implements \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}.
+Implements \mbox{\hyperlink{class_q_c_p_layerable_afdf83ddc6a265cbf4c89fe99d3d93473}{QCPLayerable}}.
+
+\mbox{\Hypertarget{class_q_c_p_selection_rect_a9669c77c5796dea9dc089a088d50ebfb}\label{class_q_c_p_selection_rect_a9669c77c5796dea9dc089a088d50ebfb}} 
+\index{QCPSelectionRect@{QCPSelectionRect}!brush@{brush}}
+\index{brush@{brush}!QCPSelectionRect@{QCPSelectionRect}}
+\doxysubsubsection{\texorpdfstring{brush()}{brush()}}
+{\footnotesize\ttfamily QBrush QCPSelection\+Rect\+::brush (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 \mbox{\Hypertarget{class_q_c_p_selection_rect_af67bc58f4f5ce9a4dc420b9c42de235a}\label{class_q_c_p_selection_rect_af67bc58f4f5ce9a4dc420b9c42de235a}} 
 \index{QCPSelectionRect@{QCPSelectionRect}!cancel@{cancel}}
@@ -261,7 +249,13 @@ Note that {\itshape rect} may have a negative width or height, if the selection 
 
 
 
-Implements \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}.
+Implements \mbox{\hyperlink{class_q_c_p_layerable_aecf2f7087482d4b6a78cb2770e5ed12d}{QCPLayerable}}.
+
+\mbox{\Hypertarget{class_q_c_p_selection_rect_a625bcffd73987f6de6c6559aaf29ab9d}\label{class_q_c_p_selection_rect_a625bcffd73987f6de6c6559aaf29ab9d}} 
+\index{QCPSelectionRect@{QCPSelectionRect}!endSelection@{endSelection}}
+\index{endSelection@{endSelection}!QCPSelectionRect@{QCPSelectionRect}}
+\doxysubsubsection{\texorpdfstring{endSelection()}{endSelection()}}
+{\footnotesize\ttfamily void QCPSelection\+Rect\+::end\+Selection (\begin{DoxyParamCaption}\item[{QMouse\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
 
 \mbox{\Hypertarget{class_q_c_p_selection_rect_ad27c1569c6ea8fa48e24b81e2a302df3}\label{class_q_c_p_selection_rect_ad27c1569c6ea8fa48e24b81e2a302df3}} 
 \index{QCPSelectionRect@{QCPSelectionRect}!isActive@{isActive}}
@@ -274,13 +268,37 @@ Returns true if there is currently a selection going on, i.\+e. the user has sta
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_selection_rect_af67bc58f4f5ce9a4dc420b9c42de235a}{cancel}} 
 \end{DoxySeeAlso}
+\mbox{\Hypertarget{class_q_c_p_selection_rect_a1affe764316d6122a26fdb2e9583feb1}\label{class_q_c_p_selection_rect_a1affe764316d6122a26fdb2e9583feb1}} 
+\index{QCPSelectionRect@{QCPSelectionRect}!keyPressEvent@{keyPressEvent}}
+\index{keyPressEvent@{keyPressEvent}!QCPSelectionRect@{QCPSelectionRect}}
+\doxysubsubsection{\texorpdfstring{keyPressEvent()}{keyPressEvent()}}
+{\footnotesize\ttfamily void QCPSelection\+Rect\+::key\+Press\+Event (\begin{DoxyParamCaption}\item[{QKey\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_q_c_p_selection_rect_a95c3f1700be2a6d7bba0fe56ece5fbb1}\label{class_q_c_p_selection_rect_a95c3f1700be2a6d7bba0fe56ece5fbb1}} 
+\index{QCPSelectionRect@{QCPSelectionRect}!moveSelection@{moveSelection}}
+\index{moveSelection@{moveSelection}!QCPSelectionRect@{QCPSelectionRect}}
+\doxysubsubsection{\texorpdfstring{moveSelection()}{moveSelection()}}
+{\footnotesize\ttfamily void QCPSelection\+Rect\+::move\+Selection (\begin{DoxyParamCaption}\item[{QMouse\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_q_c_p_selection_rect_ab4229f8faeaffba9617d2e6c4779b765}\label{class_q_c_p_selection_rect_ab4229f8faeaffba9617d2e6c4779b765}} 
+\index{QCPSelectionRect@{QCPSelectionRect}!pen@{pen}}
+\index{pen@{pen}!QCPSelectionRect@{QCPSelectionRect}}
+\doxysubsubsection{\texorpdfstring{pen()}{pen()}}
+{\footnotesize\ttfamily QPen QCPSelection\+Rect\+::pen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
 \mbox{\Hypertarget{class_q_c_p_selection_rect_a23ab082ffa04be1dbf9afb9e633ab815}\label{class_q_c_p_selection_rect_a23ab082ffa04be1dbf9afb9e633ab815}} 
 \index{QCPSelectionRect@{QCPSelectionRect}!range@{range}}
 \index{range@{range}!QCPSelectionRect@{QCPSelectionRect}}
 \doxysubsubsection{\texorpdfstring{range()}{range()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} QCPSelection\+Rect\+::range (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$}]{axis }\end{DoxyParamCaption}) const}
 
-A convenience function which returns the coordinate range of the provided {\itshape axis}, that this selection rect currently encompasses. \mbox{\Hypertarget{class_q_c_p_selection_rect_ab0c66f1484418782efa01f4153611080}\label{class_q_c_p_selection_rect_ab0c66f1484418782efa01f4153611080}} 
+A convenience function which returns the coordinate range of the provided {\itshape axis}, that this selection rect currently encompasses. \mbox{\Hypertarget{class_q_c_p_selection_rect_a3812115ae4dfe2855bf1e58331c14805}\label{class_q_c_p_selection_rect_a3812115ae4dfe2855bf1e58331c14805}} 
+\index{QCPSelectionRect@{QCPSelectionRect}!rect@{rect}}
+\index{rect@{rect}!QCPSelectionRect@{QCPSelectionRect}}
+\doxysubsubsection{\texorpdfstring{rect()}{rect()}}
+{\footnotesize\ttfamily QRect QCPSelection\+Rect\+::rect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_c_p_selection_rect_ab0c66f1484418782efa01f4153611080}\label{class_q_c_p_selection_rect_ab0c66f1484418782efa01f4153611080}} 
 \index{QCPSelectionRect@{QCPSelectionRect}!setBrush@{setBrush}}
 \index{setBrush@{setBrush}!QCPSelectionRect@{QCPSelectionRect}}
 \doxysubsubsection{\texorpdfstring{setBrush()}{setBrush()}}
@@ -308,9 +326,51 @@ Sets the pen that will be used to draw the selection rect outline.
 \doxysubsubsection{\texorpdfstring{started}{started}}
 {\footnotesize\ttfamily void QCPSelection\+Rect\+::started (\begin{DoxyParamCaption}\item[{QMouse\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
 
-This signal is emitted when a selection rect interaction was initiated, i.\+e. the user just started dragging the selection rect with the mouse. 
+This signal is emitted when a selection rect interaction was initiated, i.\+e. the user just started dragging the selection rect with the mouse. \mbox{\Hypertarget{class_q_c_p_selection_rect_a271f24cfca8bc50a0e2b4310ff90e227}\label{class_q_c_p_selection_rect_a271f24cfca8bc50a0e2b4310ff90e227}} 
+\index{QCPSelectionRect@{QCPSelectionRect}!startSelection@{startSelection}}
+\index{startSelection@{startSelection}!QCPSelectionRect@{QCPSelectionRect}}
+\doxysubsubsection{\texorpdfstring{startSelection()}{startSelection()}}
+{\footnotesize\ttfamily void QCPSelection\+Rect\+::start\+Selection (\begin{DoxyParamCaption}\item[{QMouse\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_q_c_p_selection_rect_a1cdf9df76adcfae45261690aa0ca2198}\label{class_q_c_p_selection_rect_a1cdf9df76adcfae45261690aa0ca2198}} 
+\index{QCPSelectionRect@{QCPSelectionRect}!QCustomPlot@{QCustomPlot}}
+\index{QCustomPlot@{QCustomPlot}!QCPSelectionRect@{QCPSelectionRect}}
+\doxysubsubsection{\texorpdfstring{QCustomPlot}{QCustomPlot}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_q_c_p_selection_rect_a1c167356b0bc59e62691bff8c90f5851}\label{class_q_c_p_selection_rect_a1c167356b0bc59e62691bff8c90f5851}} 
+\index{QCPSelectionRect@{QCPSelectionRect}!mActive@{mActive}}
+\index{mActive@{mActive}!QCPSelectionRect@{QCPSelectionRect}}
+\doxysubsubsection{\texorpdfstring{mActive}{mActive}}
+{\footnotesize\ttfamily bool QCPSelection\+Rect\+::m\+Active\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_q_c_p_selection_rect_a1bda3f02c2e4da58c856d19695028cbe}\label{class_q_c_p_selection_rect_a1bda3f02c2e4da58c856d19695028cbe}} 
+\index{QCPSelectionRect@{QCPSelectionRect}!mBrush@{mBrush}}
+\index{mBrush@{mBrush}!QCPSelectionRect@{QCPSelectionRect}}
+\doxysubsubsection{\texorpdfstring{mBrush}{mBrush}}
+{\footnotesize\ttfamily QBrush QCPSelection\+Rect\+::m\+Brush\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_q_c_p_selection_rect_ae255dec12cd531071115bd667f0fd815}\label{class_q_c_p_selection_rect_ae255dec12cd531071115bd667f0fd815}} 
+\index{QCPSelectionRect@{QCPSelectionRect}!mPen@{mPen}}
+\index{mPen@{mPen}!QCPSelectionRect@{QCPSelectionRect}}
+\doxysubsubsection{\texorpdfstring{mPen}{mPen}}
+{\footnotesize\ttfamily QPen QCPSelection\+Rect\+::m\+Pen\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_q_c_p_selection_rect_a45a2600ef19c8f7b5ec6134beab036cf}\label{class_q_c_p_selection_rect_a45a2600ef19c8f7b5ec6134beab036cf}} 
+\index{QCPSelectionRect@{QCPSelectionRect}!mRect@{mRect}}
+\index{mRect@{mRect}!QCPSelectionRect@{QCPSelectionRect}}
+\doxysubsubsection{\texorpdfstring{mRect}{mRect}}
+{\footnotesize\ttfamily QRect QCPSelection\+Rect\+::m\+Rect\hspace{0.3cm}{\ttfamily [protected]}}
+
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-qcustomplot.\+h\item 
-qcustomplot.\+cpp\end{DoxyCompactItemize}
+\mbox{\hyperlink{qcustomplot_8h}{qcustomplot.\+h}}\item 
+\mbox{\hyperlink{qcustomplot_8cpp}{qcustomplot.\+cpp}}\end{DoxyCompactItemize}

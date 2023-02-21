@@ -5,6 +5,10 @@
 The central class of the library. This is the QWidget which displays the plot and interacts with the user.  
 
 
+
+
+{\ttfamily \#include $<$qcustomplot.\+h$>$}
+
 Inheritance diagram for QCustom\+Plot\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -64,54 +68,41 @@ void \mbox{\hyperlink{class_q_custom_plot_a6f4fa624af060bc5919c5f266cf426a0}{aft
 \item 
 \mbox{\hyperlink{class_q_custom_plot_a45b99626558651a6428b83972b0b34b8}{QCustom\+Plot}} (QWidget $\ast$parent=0)
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_a19842409b18f556b256d05e97fffc670}\label{class_q_custom_plot_a19842409b18f556b256d05e97fffc670}} 
-QRect {\bfseries viewport} () const
+virtual \mbox{\hyperlink{class_q_custom_plot_a75d9b6f599dcae706e45efd425c5499e}{$\sim$\+QCustom\+Plot}} ()
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_a53d35abe0f576f9838cde5d0bee47657}\label{class_q_custom_plot_a53d35abe0f576f9838cde5d0bee47657}} 
-double {\bfseries buffer\+Device\+Pixel\+Ratio} () const
+QRect \mbox{\hyperlink{class_q_custom_plot_a19842409b18f556b256d05e97fffc670}{viewport}} () const
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_a5b9bbc838cb856e31b39c050fad49f9a}\label{class_q_custom_plot_a5b9bbc838cb856e31b39c050fad49f9a}} 
-QPixmap {\bfseries background} () const
+double \mbox{\hyperlink{class_q_custom_plot_a53d35abe0f576f9838cde5d0bee47657}{buffer\+Device\+Pixel\+Ratio}} () const
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_aac96f3a0f5070228ed13602976886b80}\label{class_q_custom_plot_aac96f3a0f5070228ed13602976886b80}} 
-bool {\bfseries background\+Scaled} () const
+QPixmap \mbox{\hyperlink{class_q_custom_plot_a5b9bbc838cb856e31b39c050fad49f9a}{background}} () const
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_af8f1ebfdbf48d7c49f95136475d55b14}\label{class_q_custom_plot_af8f1ebfdbf48d7c49f95136475d55b14}} 
-Qt\+::\+Aspect\+Ratio\+Mode {\bfseries background\+Scaled\+Mode} () const
+bool \mbox{\hyperlink{class_q_custom_plot_aac96f3a0f5070228ed13602976886b80}{background\+Scaled}} () const
+\item 
+Qt\+::\+Aspect\+Ratio\+Mode \mbox{\hyperlink{class_q_custom_plot_af8f1ebfdbf48d7c49f95136475d55b14}{background\+Scaled\+Mode}} () const
 \item 
 \mbox{\hyperlink{class_q_c_p_layout_grid}{QCPLayout\+Grid}} $\ast$ \mbox{\hyperlink{class_q_custom_plot_af1a1f1f571237deb7c2bd34a5e9f018f}{plot\+Layout}} () const
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_a631762eb183aceecee73d30e108641ee}\label{class_q_custom_plot_a631762eb183aceecee73d30e108641ee}} 
-QCP\+::\+Antialiased\+Elements {\bfseries antialiased\+Elements} () const
+QCP\+::\+Antialiased\+Elements \mbox{\hyperlink{class_q_custom_plot_a631762eb183aceecee73d30e108641ee}{antialiased\+Elements}} () const
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_a75571bc5b2167e83def132fc993091b3}\label{class_q_custom_plot_a75571bc5b2167e83def132fc993091b3}} 
-QCP\+::\+Antialiased\+Elements {\bfseries not\+Antialiased\+Elements} () const
+QCP\+::\+Antialiased\+Elements \mbox{\hyperlink{class_q_custom_plot_a75571bc5b2167e83def132fc993091b3}{not\+Antialiased\+Elements}} () const
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_ac4b87de13eaceadc8db5a66654197689}\label{class_q_custom_plot_ac4b87de13eaceadc8db5a66654197689}} 
-bool {\bfseries auto\+Add\+Plottable\+To\+Legend} () const
+bool \mbox{\hyperlink{class_q_custom_plot_ac4b87de13eaceadc8db5a66654197689}{auto\+Add\+Plottable\+To\+Legend}} () const
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_a2c78c5fd2943c148ab76652801d3f2dc}\label{class_q_custom_plot_a2c78c5fd2943c148ab76652801d3f2dc}} 
-const QCP\+::\+Interactions {\bfseries interactions} () const
+const QCP\+::\+Interactions \mbox{\hyperlink{class_q_custom_plot_a2c78c5fd2943c148ab76652801d3f2dc}{interactions}} () const
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_a5441d11013afeaf4b8f2ea06e8624a25}\label{class_q_custom_plot_a5441d11013afeaf4b8f2ea06e8624a25}} 
-int {\bfseries selection\+Tolerance} () const
+int \mbox{\hyperlink{class_q_custom_plot_a5441d11013afeaf4b8f2ea06e8624a25}{selection\+Tolerance}} () const
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_aca3f01f903fb250a3dd27104d92830be}\label{class_q_custom_plot_aca3f01f903fb250a3dd27104d92830be}} 
-bool {\bfseries no\+Antialiasing\+On\+Drag} () const
+bool \mbox{\hyperlink{class_q_custom_plot_aca3f01f903fb250a3dd27104d92830be}{no\+Antialiasing\+On\+Drag}} () const
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_ac724f4075822f74f7b676a790095b877}\label{class_q_custom_plot_ac724f4075822f74f7b676a790095b877}} 
-QCP\+::\+Plotting\+Hints {\bfseries plotting\+Hints} () const
+QCP\+::\+Plotting\+Hints \mbox{\hyperlink{class_q_custom_plot_ac724f4075822f74f7b676a790095b877}{plotting\+Hints}} () const
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_a28182402ed11609c9a429f0788162d18}\label{class_q_custom_plot_a28182402ed11609c9a429f0788162d18}} 
-Qt\+::\+Keyboard\+Modifier {\bfseries multi\+Select\+Modifier} () const
+Qt\+::\+Keyboard\+Modifier \mbox{\hyperlink{class_q_custom_plot_a28182402ed11609c9a429f0788162d18}{multi\+Select\+Modifier}} () const
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_a6e53c402de2770a978dffa5584c05b27}\label{class_q_custom_plot_a6e53c402de2770a978dffa5584c05b27}} 
-\mbox{\hyperlink{namespace_q_c_p_ac9aa4d6d81ac76b094f9af9ad2d3aacf}{QCP\+::\+Selection\+Rect\+Mode}} {\bfseries selection\+Rect\+Mode} () const
+\mbox{\hyperlink{namespace_q_c_p_ac9aa4d6d81ac76b094f9af9ad2d3aacf}{QCP\+::\+Selection\+Rect\+Mode}} \mbox{\hyperlink{class_q_custom_plot_a6e53c402de2770a978dffa5584c05b27}{selection\+Rect\+Mode}} () const
 \item 
 \mbox{\hyperlink{class_q_c_p_selection_rect}{QCPSelection\+Rect}} $\ast$ \mbox{\hyperlink{class_q_custom_plot_ad7df2bcbba307e644db383b449e31efd}{selection\+Rect}} () const
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_abe5556ac80dc0140fd57f2b2f94a1f0e}\label{class_q_custom_plot_abe5556ac80dc0140fd57f2b2f94a1f0e}} 
-bool {\bfseries open\+Gl} () const
+bool \mbox{\hyperlink{class_q_custom_plot_abe5556ac80dc0140fd57f2b2f94a1f0e}{open\+Gl}} () const
 \item 
 void \mbox{\hyperlink{class_q_custom_plot_a3f9bc4b939dd8aaba9339fd09f273fc4}{set\+Viewport}} (const QRect \&rect)
 \item 
@@ -127,17 +118,17 @@ void \mbox{\hyperlink{class_q_custom_plot_a36f0fa1317325dc7b7efea615ee2de1f}{set
 \item 
 void \mbox{\hyperlink{class_q_custom_plot_a4c0eb4865b7949f62e1cb97db04a3de0}{set\+Background\+Scaled\+Mode}} (Qt\+::\+Aspect\+Ratio\+Mode mode)
 \item 
-void \mbox{\hyperlink{class_q_custom_plot_af6f91e5eab1be85f67c556e98c3745e8}{set\+Antialiased\+Elements}} (const QCP\+::\+Antialiased\+Elements \&antialiased\+Elements)
+void \mbox{\hyperlink{class_q_custom_plot_af6f91e5eab1be85f67c556e98c3745e8}{set\+Antialiased\+Elements}} (const QCP\+::\+Antialiased\+Elements \&\mbox{\hyperlink{class_q_custom_plot_a631762eb183aceecee73d30e108641ee}{antialiased\+Elements}})
 \item 
 void \mbox{\hyperlink{class_q_custom_plot_aeef813bcf7efab8e765f9f87ec454691}{set\+Antialiased\+Element}} (\mbox{\hyperlink{namespace_q_c_p_ae55dbe315d41fe80f29ba88100843a0c}{QCP\+::\+Antialiased\+Element}} antialiased\+Element, bool enabled=true)
 \item 
-void \mbox{\hyperlink{class_q_custom_plot_ae10d685b5eabea2999fb8775ca173c24}{set\+Not\+Antialiased\+Elements}} (const QCP\+::\+Antialiased\+Elements \&not\+Antialiased\+Elements)
+void \mbox{\hyperlink{class_q_custom_plot_ae10d685b5eabea2999fb8775ca173c24}{set\+Not\+Antialiased\+Elements}} (const QCP\+::\+Antialiased\+Elements \&\mbox{\hyperlink{class_q_custom_plot_a75571bc5b2167e83def132fc993091b3}{not\+Antialiased\+Elements}})
 \item 
 void \mbox{\hyperlink{class_q_custom_plot_afc657938a707c890e449ae89203a076d}{set\+Not\+Antialiased\+Element}} (\mbox{\hyperlink{namespace_q_c_p_ae55dbe315d41fe80f29ba88100843a0c}{QCP\+::\+Antialiased\+Element}} not\+Antialiased\+Element, bool enabled=true)
 \item 
 void \mbox{\hyperlink{class_q_custom_plot_ad8858410c2db47b7104040a3aa61c3fc}{set\+Auto\+Add\+Plottable\+To\+Legend}} (bool on)
 \item 
-void \mbox{\hyperlink{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5}{set\+Interactions}} (const QCP\+::\+Interactions \&interactions)
+void \mbox{\hyperlink{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5}{set\+Interactions}} (const QCP\+::\+Interactions \&\mbox{\hyperlink{class_q_custom_plot_a2c78c5fd2943c148ab76652801d3f2dc}{interactions}})
 \item 
 void \mbox{\hyperlink{class_q_custom_plot_a422bf1bc6d56dac75a3d805d9a65902c}{set\+Interaction}} (const \mbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037}{QCP\+::\+Interaction}} \&interaction, bool enabled=true)
 \item 
@@ -277,223 +268,153 @@ Q\+\_\+\+SLOT void \mbox{\hyperlink{class_q_custom_plot_aa4bfe7d70dbe67e81d87781
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_a968a01cd4077d63aecde1aef1db057fc}\label{class_q_custom_plot_a968a01cd4077d63aecde1aef1db057fc}} 
-virtual QSize {\bfseries minimum\+Size\+Hint} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+virtual QSize \mbox{\hyperlink{class_q_custom_plot_a968a01cd4077d63aecde1aef1db057fc}{minimum\+Size\+Hint}} () const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_ac9d6fe101e082daf756903b11f6e6213}\label{class_q_custom_plot_ac9d6fe101e082daf756903b11f6e6213}} 
-virtual QSize {\bfseries size\+Hint} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+virtual QSize \mbox{\hyperlink{class_q_custom_plot_ac9d6fe101e082daf756903b11f6e6213}{size\+Hint}} () const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_a8068b368e5813065ee0f4cf7c6d21330}\label{class_q_custom_plot_a8068b368e5813065ee0f4cf7c6d21330}} 
-virtual void {\bfseries paint\+Event} (QPaint\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+virtual void \mbox{\hyperlink{class_q_custom_plot_a8068b368e5813065ee0f4cf7c6d21330}{paint\+Event}} (QPaint\+Event $\ast$event) \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_af5b69dc6a431562ecdd1d0718bcbdf70}\label{class_q_custom_plot_af5b69dc6a431562ecdd1d0718bcbdf70}} 
-virtual void {\bfseries resize\+Event} (QResize\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+virtual void \mbox{\hyperlink{class_q_custom_plot_af5b69dc6a431562ecdd1d0718bcbdf70}{resize\+Event}} (QResize\+Event $\ast$event) \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_a344075e6e80ed6d575c79b81694abb8a}\label{class_q_custom_plot_a344075e6e80ed6d575c79b81694abb8a}} 
-virtual void {\bfseries mouse\+Double\+Click\+Event} (QMouse\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+virtual void \mbox{\hyperlink{class_q_custom_plot_a344075e6e80ed6d575c79b81694abb8a}{mouse\+Double\+Click\+Event}} (QMouse\+Event $\ast$event) \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_aac0a7296a6031dc667c01c1abd4ecc6b}\label{class_q_custom_plot_aac0a7296a6031dc667c01c1abd4ecc6b}} 
-virtual void {\bfseries mouse\+Press\+Event} (QMouse\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+virtual void \mbox{\hyperlink{class_q_custom_plot_aac0a7296a6031dc667c01c1abd4ecc6b}{mouse\+Press\+Event}} (QMouse\+Event $\ast$event) \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_ae7abdc93b26d2ad4632c1ab75ae5b46f}\label{class_q_custom_plot_ae7abdc93b26d2ad4632c1ab75ae5b46f}} 
-virtual void {\bfseries mouse\+Move\+Event} (QMouse\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+virtual void \mbox{\hyperlink{class_q_custom_plot_ae7abdc93b26d2ad4632c1ab75ae5b46f}{mouse\+Move\+Event}} (QMouse\+Event $\ast$event) \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_adc24846f52199e5a9bc35c387a6ce68d}\label{class_q_custom_plot_adc24846f52199e5a9bc35c387a6ce68d}} 
-virtual void {\bfseries mouse\+Release\+Event} (QMouse\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+virtual void \mbox{\hyperlink{class_q_custom_plot_adc24846f52199e5a9bc35c387a6ce68d}{mouse\+Release\+Event}} (QMouse\+Event $\ast$event) \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_a7848c9ac8be60bbd8fcea9b53be543c5}\label{class_q_custom_plot_a7848c9ac8be60bbd8fcea9b53be543c5}} 
-virtual void {\bfseries wheel\+Event} (QWheel\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+virtual void \mbox{\hyperlink{class_q_custom_plot_a7848c9ac8be60bbd8fcea9b53be543c5}{wheel\+Event}} (QWheel\+Event $\ast$event) \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_ad7a7d878bf050f101a43008e7d8fdb52}\label{class_q_custom_plot_ad7a7d878bf050f101a43008e7d8fdb52}} 
-virtual void {\bfseries draw} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter)
+virtual void \mbox{\hyperlink{class_q_custom_plot_ad7a7d878bf050f101a43008e7d8fdb52}{draw}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter)
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_a6e6693e2c249f65437382ffd93405e04}\label{class_q_custom_plot_a6e6693e2c249f65437382ffd93405e04}} 
-virtual void {\bfseries update\+Layout} ()
+virtual void \mbox{\hyperlink{class_q_custom_plot_a6e6693e2c249f65437382ffd93405e04}{update\+Layout}} ()
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_a8b46607021c463c94709d3504951cb47}\label{class_q_custom_plot_a8b46607021c463c94709d3504951cb47}} 
-virtual void {\bfseries axis\+Removed} (\mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$axis)
+virtual void \mbox{\hyperlink{class_q_custom_plot_a8b46607021c463c94709d3504951cb47}{axis\+Removed}} (\mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$axis)
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_a9d173454555021c9ffd4f675c4d9037a}\label{class_q_custom_plot_a9d173454555021c9ffd4f675c4d9037a}} 
-virtual void {\bfseries legend\+Removed} (\mbox{\hyperlink{class_q_c_p_legend}{QCPLegend}} $\ast$\mbox{\hyperlink{class_q_custom_plot_a4eadcd237dc6a09938b68b16877fa6af}{legend}})
+virtual void \mbox{\hyperlink{class_q_custom_plot_a9d173454555021c9ffd4f675c4d9037a}{legend\+Removed}} (\mbox{\hyperlink{class_q_c_p_legend}{QCPLegend}} $\ast$\mbox{\hyperlink{class_q_custom_plot_a4eadcd237dc6a09938b68b16877fa6af}{legend}})
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_ac10849411e1d0e858ea7f29c8ade364c}\label{class_q_custom_plot_ac10849411e1d0e858ea7f29c8ade364c}} 
-virtual Q\+\_\+\+SLOT void {\bfseries process\+Rect\+Selection} (QRect rect, QMouse\+Event $\ast$event)
+virtual Q\+\_\+\+SLOT void \mbox{\hyperlink{class_q_custom_plot_ac10849411e1d0e858ea7f29c8ade364c}{process\+Rect\+Selection}} (QRect rect, QMouse\+Event $\ast$event)
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_a5508a207dcc279f316142f96d984bba3}\label{class_q_custom_plot_a5508a207dcc279f316142f96d984bba3}} 
-virtual Q\+\_\+\+SLOT void {\bfseries process\+Rect\+Zoom} (QRect rect, QMouse\+Event $\ast$event)
+virtual Q\+\_\+\+SLOT void \mbox{\hyperlink{class_q_custom_plot_a5508a207dcc279f316142f96d984bba3}{process\+Rect\+Zoom}} (QRect rect, QMouse\+Event $\ast$event)
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_ac13c10fff6613e3e80e13c787b010838}\label{class_q_custom_plot_ac13c10fff6613e3e80e13c787b010838}} 
-virtual Q\+\_\+\+SLOT void {\bfseries process\+Point\+Selection} (QMouse\+Event $\ast$event)
+virtual Q\+\_\+\+SLOT void \mbox{\hyperlink{class_q_custom_plot_ac13c10fff6613e3e80e13c787b010838}{process\+Point\+Selection}} (QMouse\+Event $\ast$event)
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_aeba7733bb9fadfb5a375b3f40de9e58a}\label{class_q_custom_plot_aeba7733bb9fadfb5a375b3f40de9e58a}} 
-bool {\bfseries register\+Plottable} (\mbox{\hyperlink{class_q_c_p_abstract_plottable}{QCPAbstract\+Plottable}} $\ast$\mbox{\hyperlink{class_q_custom_plot_a32de81ff53e263e785b83b52ecd99d6f}{plottable}})
+bool \mbox{\hyperlink{class_q_custom_plot_aeba7733bb9fadfb5a375b3f40de9e58a}{register\+Plottable}} (\mbox{\hyperlink{class_q_c_p_abstract_plottable}{QCPAbstract\+Plottable}} $\ast$\mbox{\hyperlink{class_q_custom_plot_a32de81ff53e263e785b83b52ecd99d6f}{plottable}})
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_acfc01230bddaea4f1782e4aa7d130af6}\label{class_q_custom_plot_acfc01230bddaea4f1782e4aa7d130af6}} 
-bool {\bfseries register\+Graph} (\mbox{\hyperlink{class_q_c_p_graph}{QCPGraph}} $\ast$\mbox{\hyperlink{class_q_custom_plot_a6ecae130f684b25276fb47bd3a5875c6}{graph}})
+bool \mbox{\hyperlink{class_q_custom_plot_acfc01230bddaea4f1782e4aa7d130af6}{register\+Graph}} (\mbox{\hyperlink{class_q_c_p_graph}{QCPGraph}} $\ast$\mbox{\hyperlink{class_q_custom_plot_a6ecae130f684b25276fb47bd3a5875c6}{graph}})
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_afbd4010b2e3f364c8d512691b2a1640a}\label{class_q_custom_plot_afbd4010b2e3f364c8d512691b2a1640a}} 
-bool {\bfseries register\+Item} (\mbox{\hyperlink{class_q_c_p_abstract_item}{QCPAbstract\+Item}} $\ast$\mbox{\hyperlink{class_q_custom_plot_ac042f2e78edd228ccf2f26b7fe215239}{item}})
+bool \mbox{\hyperlink{class_q_custom_plot_afbd4010b2e3f364c8d512691b2a1640a}{register\+Item}} (\mbox{\hyperlink{class_q_c_p_abstract_item}{QCPAbstract\+Item}} $\ast$\mbox{\hyperlink{class_q_custom_plot_ac042f2e78edd228ccf2f26b7fe215239}{item}})
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_a7f1ca67a66d37b6d260a0b93de08f3bd}\label{class_q_custom_plot_a7f1ca67a66d37b6d260a0b93de08f3bd}} 
-void {\bfseries update\+Layer\+Indices} () const
+void \mbox{\hyperlink{class_q_custom_plot_a7f1ca67a66d37b6d260a0b93de08f3bd}{update\+Layer\+Indices}} () const
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_a12536fa6d5deb34ec620acb5134ca82a}\label{class_q_custom_plot_a12536fa6d5deb34ec620acb5134ca82a}} 
-\mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $\ast$ {\bfseries layerable\+At} (const QPointF \&pos, bool only\+Selectable, QVariant $\ast$selection\+Details=0) const
+\mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $\ast$ \mbox{\hyperlink{class_q_custom_plot_a12536fa6d5deb34ec620acb5134ca82a}{layerable\+At}} (const QPointF \&pos, bool only\+Selectable, QVariant $\ast$selection\+Details=0) const
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_ac9048589e78e7959d27a2c48c253e159}\label{class_q_custom_plot_ac9048589e78e7959d27a2c48c253e159}} 
-QList$<$ \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $\ast$ $>$ {\bfseries layerable\+List\+At} (const QPointF \&pos, bool only\+Selectable, QList$<$ QVariant $>$ $\ast$selection\+Details=0) const
+QList$<$ \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $\ast$ $>$ \mbox{\hyperlink{class_q_custom_plot_ac9048589e78e7959d27a2c48c253e159}{layerable\+List\+At}} (const QPointF \&pos, bool only\+Selectable, QList$<$ QVariant $>$ $\ast$selection\+Details=0) const
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_a05dd52438cee4353b18c1e53a439008d}\label{class_q_custom_plot_a05dd52438cee4353b18c1e53a439008d}} 
-void {\bfseries draw\+Background} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter)
+void \mbox{\hyperlink{class_q_custom_plot_a05dd52438cee4353b18c1e53a439008d}{draw\+Background}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter)
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_a2685341f7242c3882f4cc5e379308d71}\label{class_q_custom_plot_a2685341f7242c3882f4cc5e379308d71}} 
-void {\bfseries setup\+Paint\+Buffers} ()
+void \mbox{\hyperlink{class_q_custom_plot_a2685341f7242c3882f4cc5e379308d71}{setup\+Paint\+Buffers}} ()
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_a943b57596a1adf7f0e75c3b50e407ae6}\label{class_q_custom_plot_a943b57596a1adf7f0e75c3b50e407ae6}} 
-\mbox{\hyperlink{class_q_c_p_abstract_paint_buffer}{QCPAbstract\+Paint\+Buffer}} $\ast$ {\bfseries create\+Paint\+Buffer} ()
+\mbox{\hyperlink{class_q_c_p_abstract_paint_buffer}{QCPAbstract\+Paint\+Buffer}} $\ast$ \mbox{\hyperlink{class_q_custom_plot_a943b57596a1adf7f0e75c3b50e407ae6}{create\+Paint\+Buffer}} ()
 \item 
 bool \mbox{\hyperlink{class_q_custom_plot_ad452b582348c8e99462d83fe1cd0279b}{has\+Invalidated\+Paint\+Buffers}} ()
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_a8954c4667c51070ff4e9b02d858fd190}\label{class_q_custom_plot_a8954c4667c51070ff4e9b02d858fd190}} 
-bool {\bfseries setup\+Open\+Gl} ()
+bool \mbox{\hyperlink{class_q_custom_plot_a8954c4667c51070ff4e9b02d858fd190}{setup\+Open\+Gl}} ()
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_aaa3073362074581a7b5905726b4a0067}\label{class_q_custom_plot_aaa3073362074581a7b5905726b4a0067}} 
-void {\bfseries free\+Open\+Gl} ()
+void \mbox{\hyperlink{class_q_custom_plot_aaa3073362074581a7b5905726b4a0067}{free\+Open\+Gl}} ()
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_ac0a7c38a715526c257cff95774f83ab6}\label{class_q_custom_plot_ac0a7c38a715526c257cff95774f83ab6}} 
-QRect {\bfseries m\+Viewport}
+QRect \mbox{\hyperlink{class_q_custom_plot_ac0a7c38a715526c257cff95774f83ab6}{m\+Viewport}}
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_a63a40c57a2d89eea27b90b62cc4eee1f}\label{class_q_custom_plot_a63a40c57a2d89eea27b90b62cc4eee1f}} 
-double {\bfseries m\+Buffer\+Device\+Pixel\+Ratio}
+double \mbox{\hyperlink{class_q_custom_plot_a63a40c57a2d89eea27b90b62cc4eee1f}{m\+Buffer\+Device\+Pixel\+Ratio}}
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_ac97298756882a0eecd98151679850ac1}\label{class_q_custom_plot_ac97298756882a0eecd98151679850ac1}} 
-\mbox{\hyperlink{class_q_c_p_layout_grid}{QCPLayout\+Grid}} $\ast$ {\bfseries m\+Plot\+Layout}
+\mbox{\hyperlink{class_q_c_p_layout_grid}{QCPLayout\+Grid}} $\ast$ \mbox{\hyperlink{class_q_custom_plot_ac97298756882a0eecd98151679850ac1}{m\+Plot\+Layout}}
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_aaf3ea6a4cb04d35a149cc9a0cdac3394}\label{class_q_custom_plot_aaf3ea6a4cb04d35a149cc9a0cdac3394}} 
-bool {\bfseries m\+Auto\+Add\+Plottable\+To\+Legend}
+bool \mbox{\hyperlink{class_q_custom_plot_aaf3ea6a4cb04d35a149cc9a0cdac3394}{m\+Auto\+Add\+Plottable\+To\+Legend}}
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_a62bf8e4e7f8d23fc1e9301ba0148269f}\label{class_q_custom_plot_a62bf8e4e7f8d23fc1e9301ba0148269f}} 
-QList$<$ \mbox{\hyperlink{class_q_c_p_abstract_plottable}{QCPAbstract\+Plottable}} $\ast$ $>$ {\bfseries m\+Plottables}
+QList$<$ \mbox{\hyperlink{class_q_c_p_abstract_plottable}{QCPAbstract\+Plottable}} $\ast$ $>$ \mbox{\hyperlink{class_q_custom_plot_a62bf8e4e7f8d23fc1e9301ba0148269f}{m\+Plottables}}
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_adaf8d407d72a725169d7dbed2ee386bb}\label{class_q_custom_plot_adaf8d407d72a725169d7dbed2ee386bb}} 
-QList$<$ \mbox{\hyperlink{class_q_c_p_graph}{QCPGraph}} $\ast$ $>$ {\bfseries m\+Graphs}
+QList$<$ \mbox{\hyperlink{class_q_c_p_graph}{QCPGraph}} $\ast$ $>$ \mbox{\hyperlink{class_q_custom_plot_adaf8d407d72a725169d7dbed2ee386bb}{m\+Graphs}}
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_a6a93905372326e31e98d6c3bc8953ec8}\label{class_q_custom_plot_a6a93905372326e31e98d6c3bc8953ec8}} 
-QList$<$ \mbox{\hyperlink{class_q_c_p_abstract_item}{QCPAbstract\+Item}} $\ast$ $>$ {\bfseries m\+Items}
+QList$<$ \mbox{\hyperlink{class_q_c_p_abstract_item}{QCPAbstract\+Item}} $\ast$ $>$ \mbox{\hyperlink{class_q_custom_plot_a6a93905372326e31e98d6c3bc8953ec8}{m\+Items}}
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_a72ee313041b873d76c198793ce7e6c37}\label{class_q_custom_plot_a72ee313041b873d76c198793ce7e6c37}} 
-QList$<$ \mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$ $>$ {\bfseries m\+Layers}
+QList$<$ \mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$ $>$ \mbox{\hyperlink{class_q_custom_plot_a72ee313041b873d76c198793ce7e6c37}{m\+Layers}}
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_aa333200629256830e273873b582a5524}\label{class_q_custom_plot_aa333200629256830e273873b582a5524}} 
-QCP\+::\+Antialiased\+Elements {\bfseries m\+Antialiased\+Elements}
+QCP\+::\+Antialiased\+Elements \mbox{\hyperlink{class_q_custom_plot_aa333200629256830e273873b582a5524}{m\+Antialiased\+Elements}}
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_a2b6ebcad00a90ba07f146cefcd4293da}\label{class_q_custom_plot_a2b6ebcad00a90ba07f146cefcd4293da}} 
-QCP\+::\+Antialiased\+Elements {\bfseries m\+Not\+Antialiased\+Elements}
+QCP\+::\+Antialiased\+Elements \mbox{\hyperlink{class_q_custom_plot_a2b6ebcad00a90ba07f146cefcd4293da}{m\+Not\+Antialiased\+Elements}}
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_ad717377ceba7493b4b32f0bcbbdf1895}\label{class_q_custom_plot_ad717377ceba7493b4b32f0bcbbdf1895}} 
-QCP\+::\+Interactions {\bfseries m\+Interactions}
+QCP\+::\+Interactions \mbox{\hyperlink{class_q_custom_plot_ad717377ceba7493b4b32f0bcbbdf1895}{m\+Interactions}}
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_abc36e12dd0482117ad810a800c847722}\label{class_q_custom_plot_abc36e12dd0482117ad810a800c847722}} 
-int {\bfseries m\+Selection\+Tolerance}
+int \mbox{\hyperlink{class_q_custom_plot_abc36e12dd0482117ad810a800c847722}{m\+Selection\+Tolerance}}
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_ac83df968435f6b8ec79f2993ab9124e8}\label{class_q_custom_plot_ac83df968435f6b8ec79f2993ab9124e8}} 
-bool {\bfseries m\+No\+Antialiasing\+On\+Drag}
+bool \mbox{\hyperlink{class_q_custom_plot_ac83df968435f6b8ec79f2993ab9124e8}{m\+No\+Antialiasing\+On\+Drag}}
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_a3aef5de4ac012178e3293248e9c63737}\label{class_q_custom_plot_a3aef5de4ac012178e3293248e9c63737}} 
-QBrush {\bfseries m\+Background\+Brush}
+QBrush \mbox{\hyperlink{class_q_custom_plot_a3aef5de4ac012178e3293248e9c63737}{m\+Background\+Brush}}
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_ae8f4677399324a78c5f8dbfb95a34f90}\label{class_q_custom_plot_ae8f4677399324a78c5f8dbfb95a34f90}} 
-QPixmap {\bfseries m\+Background\+Pixmap}
+QPixmap \mbox{\hyperlink{class_q_custom_plot_ae8f4677399324a78c5f8dbfb95a34f90}{m\+Background\+Pixmap}}
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_a081bf046501d52642dc6d7e3bdb97d57}\label{class_q_custom_plot_a081bf046501d52642dc6d7e3bdb97d57}} 
-QPixmap {\bfseries m\+Scaled\+Background\+Pixmap}
+QPixmap \mbox{\hyperlink{class_q_custom_plot_a081bf046501d52642dc6d7e3bdb97d57}{m\+Scaled\+Background\+Pixmap}}
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_a62fe584b20680b1b2e1c7efb5c5416a5}\label{class_q_custom_plot_a62fe584b20680b1b2e1c7efb5c5416a5}} 
-bool {\bfseries m\+Background\+Scaled}
+bool \mbox{\hyperlink{class_q_custom_plot_a62fe584b20680b1b2e1c7efb5c5416a5}{m\+Background\+Scaled}}
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_ab82e8a5e3ad6b486f95d6da8bf49e9aa}\label{class_q_custom_plot_ab82e8a5e3ad6b486f95d6da8bf49e9aa}} 
-Qt\+::\+Aspect\+Ratio\+Mode {\bfseries m\+Background\+Scaled\+Mode}
+Qt\+::\+Aspect\+Ratio\+Mode \mbox{\hyperlink{class_q_custom_plot_ab82e8a5e3ad6b486f95d6da8bf49e9aa}{m\+Background\+Scaled\+Mode}}
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_aa27569c92e74395af10151357d268628}\label{class_q_custom_plot_aa27569c92e74395af10151357d268628}} 
-\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$ {\bfseries m\+Current\+Layer}
+\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$ \mbox{\hyperlink{class_q_custom_plot_aa27569c92e74395af10151357d268628}{m\+Current\+Layer}}
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_aa184197a6101a9cc5807469e1d006c9e}\label{class_q_custom_plot_aa184197a6101a9cc5807469e1d006c9e}} 
-QCP\+::\+Plotting\+Hints {\bfseries m\+Plotting\+Hints}
+QCP\+::\+Plotting\+Hints \mbox{\hyperlink{class_q_custom_plot_aa184197a6101a9cc5807469e1d006c9e}{m\+Plotting\+Hints}}
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_a0e97e701c5671e7e463d2ce0211d0f8a}\label{class_q_custom_plot_a0e97e701c5671e7e463d2ce0211d0f8a}} 
-Qt\+::\+Keyboard\+Modifier {\bfseries m\+Multi\+Select\+Modifier}
+Qt\+::\+Keyboard\+Modifier \mbox{\hyperlink{class_q_custom_plot_a0e97e701c5671e7e463d2ce0211d0f8a}{m\+Multi\+Select\+Modifier}}
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_abe04c5def373cc4fede8de20542ca3f2}\label{class_q_custom_plot_abe04c5def373cc4fede8de20542ca3f2}} 
-\mbox{\hyperlink{namespace_q_c_p_ac9aa4d6d81ac76b094f9af9ad2d3aacf}{QCP\+::\+Selection\+Rect\+Mode}} {\bfseries m\+Selection\+Rect\+Mode}
+\mbox{\hyperlink{namespace_q_c_p_ac9aa4d6d81ac76b094f9af9ad2d3aacf}{QCP\+::\+Selection\+Rect\+Mode}} \mbox{\hyperlink{class_q_custom_plot_abe04c5def373cc4fede8de20542ca3f2}{m\+Selection\+Rect\+Mode}}
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_a4827bc84ef5ce52dfbf9ff630ed1b276}\label{class_q_custom_plot_a4827bc84ef5ce52dfbf9ff630ed1b276}} 
-\mbox{\hyperlink{class_q_c_p_selection_rect}{QCPSelection\+Rect}} $\ast$ {\bfseries m\+Selection\+Rect}
+\mbox{\hyperlink{class_q_c_p_selection_rect}{QCPSelection\+Rect}} $\ast$ \mbox{\hyperlink{class_q_custom_plot_a4827bc84ef5ce52dfbf9ff630ed1b276}{m\+Selection\+Rect}}
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_a0841dbea13bd120d20e3f0cc36767ff9}\label{class_q_custom_plot_a0841dbea13bd120d20e3f0cc36767ff9}} 
-bool {\bfseries m\+Open\+Gl}
+bool \mbox{\hyperlink{class_q_custom_plot_a0841dbea13bd120d20e3f0cc36767ff9}{m\+Open\+Gl}}
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_a57b270b1e3990e0d1b9fb39b137d5a5d}\label{class_q_custom_plot_a57b270b1e3990e0d1b9fb39b137d5a5d}} 
-QList$<$ QShared\+Pointer$<$ \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer}{QCPAbstract\+Paint\+Buffer}} $>$ $>$ {\bfseries m\+Paint\+Buffers}
+QList$<$ QShared\+Pointer$<$ \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer}{QCPAbstract\+Paint\+Buffer}} $>$ $>$ \mbox{\hyperlink{class_q_custom_plot_a57b270b1e3990e0d1b9fb39b137d5a5d}{m\+Paint\+Buffers}}
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_ac57090da95056ae4dd67be67adfa85bd}\label{class_q_custom_plot_ac57090da95056ae4dd67be67adfa85bd}} 
-QPoint {\bfseries m\+Mouse\+Press\+Pos}
+QPoint \mbox{\hyperlink{class_q_custom_plot_ac57090da95056ae4dd67be67adfa85bd}{m\+Mouse\+Press\+Pos}}
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_ad2108936f001a8be5974b0b6ff13dae3}\label{class_q_custom_plot_ad2108936f001a8be5974b0b6ff13dae3}} 
-bool {\bfseries m\+Mouse\+Has\+Moved}
+bool \mbox{\hyperlink{class_q_custom_plot_ad2108936f001a8be5974b0b6ff13dae3}{m\+Mouse\+Has\+Moved}}
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_a243867f445d2f4e35e00add2f589e1da}\label{class_q_custom_plot_a243867f445d2f4e35e00add2f589e1da}} 
-QPointer$<$ \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $>$ {\bfseries m\+Mouse\+Event\+Layerable}
+QPointer$<$ \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $>$ \mbox{\hyperlink{class_q_custom_plot_a243867f445d2f4e35e00add2f589e1da}{m\+Mouse\+Event\+Layerable}}
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_adf81640dbf365bd4fa22494e3e504e70}\label{class_q_custom_plot_adf81640dbf365bd4fa22494e3e504e70}} 
-QPointer$<$ \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $>$ {\bfseries m\+Mouse\+Signal\+Layerable}
+QPointer$<$ \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $>$ \mbox{\hyperlink{class_q_custom_plot_adf81640dbf365bd4fa22494e3e504e70}{m\+Mouse\+Signal\+Layerable}}
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_ad604958ef16fc022c474521a08d88a2d}\label{class_q_custom_plot_ad604958ef16fc022c474521a08d88a2d}} 
-QVariant {\bfseries m\+Mouse\+Event\+Layerable\+Details}
+QVariant \mbox{\hyperlink{class_q_custom_plot_ad604958ef16fc022c474521a08d88a2d}{m\+Mouse\+Event\+Layerable\+Details}}
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_a2f313604bb22781633137915f3c100e6}\label{class_q_custom_plot_a2f313604bb22781633137915f3c100e6}} 
-QVariant {\bfseries m\+Mouse\+Signal\+Layerable\+Details}
+QVariant \mbox{\hyperlink{class_q_custom_plot_a2f313604bb22781633137915f3c100e6}{m\+Mouse\+Signal\+Layerable\+Details}}
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_ab30daeca6612c3948afd368dce5f1c39}\label{class_q_custom_plot_ab30daeca6612c3948afd368dce5f1c39}} 
-bool {\bfseries m\+Replotting}
+bool \mbox{\hyperlink{class_q_custom_plot_ab30daeca6612c3948afd368dce5f1c39}{m\+Replotting}}
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_acedeef316dfcde835b8ea0112cec2a77}\label{class_q_custom_plot_acedeef316dfcde835b8ea0112cec2a77}} 
-bool {\bfseries m\+Replot\+Queued}
+bool \mbox{\hyperlink{class_q_custom_plot_acedeef316dfcde835b8ea0112cec2a77}{m\+Replot\+Queued}}
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_aacafac2b2280b6a868a4b734273a394c}\label{class_q_custom_plot_aacafac2b2280b6a868a4b734273a394c}} 
-int {\bfseries m\+Open\+Gl\+Multisamples}
+int \mbox{\hyperlink{class_q_custom_plot_aacafac2b2280b6a868a4b734273a394c}{m\+Open\+Gl\+Multisamples}}
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_adbf005715d5f8550511819a4baf841fb}\label{class_q_custom_plot_adbf005715d5f8550511819a4baf841fb}} 
-QCP\+::\+Antialiased\+Elements {\bfseries m\+Open\+Gl\+Antialiased\+Elements\+Backup}
+QCP\+::\+Antialiased\+Elements \mbox{\hyperlink{class_q_custom_plot_adbf005715d5f8550511819a4baf841fb}{m\+Open\+Gl\+Antialiased\+Elements\+Backup}}
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_ab1692469dde841080fa33719533bf2b7}\label{class_q_custom_plot_ab1692469dde841080fa33719533bf2b7}} 
-bool {\bfseries m\+Open\+Gl\+Cache\+Labels\+Backup}
+bool \mbox{\hyperlink{class_q_custom_plot_ab1692469dde841080fa33719533bf2b7}{m\+Open\+Gl\+Cache\+Labels\+Backup}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_a8429035e7adfbd7f05805a6530ad5e3b}\label{class_q_custom_plot_a8429035e7adfbd7f05805a6530ad5e3b}} 
-class {\bfseries QCPLegend}
+class \mbox{\hyperlink{class_q_custom_plot_a8429035e7adfbd7f05805a6530ad5e3b}{QCPLegend}}
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_af123edeca169ec7a31958a1d714e1a8a}\label{class_q_custom_plot_af123edeca169ec7a31958a1d714e1a8a}} 
-class {\bfseries QCPAxis}
+class \mbox{\hyperlink{class_q_custom_plot_af123edeca169ec7a31958a1d714e1a8a}{QCPAxis}}
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_a5dbf96bf7664c1b6fce49063eeea6eef}\label{class_q_custom_plot_a5dbf96bf7664c1b6fce49063eeea6eef}} 
-class {\bfseries QCPLayer}
+class \mbox{\hyperlink{class_q_custom_plot_a5dbf96bf7664c1b6fce49063eeea6eef}{QCPLayer}}
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_acbf20ecb140f66c5fd1bc64ae0762990}\label{class_q_custom_plot_acbf20ecb140f66c5fd1bc64ae0762990}} 
-class {\bfseries QCPAxis\+Rect}
+class \mbox{\hyperlink{class_q_custom_plot_acbf20ecb140f66c5fd1bc64ae0762990}{QCPAxis\+Rect}}
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_a53cf0e76aca814550c796fed79e345d6}\label{class_q_custom_plot_a53cf0e76aca814550c796fed79e345d6}} 
-class {\bfseries QCPAbstract\+Plottable}
+class \mbox{\hyperlink{class_q_custom_plot_a53cf0e76aca814550c796fed79e345d6}{QCPAbstract\+Plottable}}
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_ad0c52e327d94c699d415fd61f930700a}\label{class_q_custom_plot_ad0c52e327d94c699d415fd61f930700a}} 
-class {\bfseries QCPGraph}
+class \mbox{\hyperlink{class_q_custom_plot_ad0c52e327d94c699d415fd61f930700a}{QCPGraph}}
 \item 
-\mbox{\Hypertarget{class_q_custom_plot_a93e962f2e677e31ecc575bb884e46adf}\label{class_q_custom_plot_a93e962f2e677e31ecc575bb884e46adf}} 
-class {\bfseries QCPAbstract\+Item}
+class \mbox{\hyperlink{class_q_custom_plot_a93e962f2e677e31ecc575bb884e46adf}{QCPAbstract\+Item}}
 \end{DoxyCompactItemize}
 
 
@@ -563,7 +484,13 @@ rp\+Queued\+Replot&Queues the entire replot for the next event loop iteration. T
 \doxysubsubsection{\texorpdfstring{QCustomPlot()}{QCustomPlot()}}
 {\footnotesize\ttfamily QCustom\+Plot\+::\+QCustom\+Plot (\begin{DoxyParamCaption}\item[{QWidget $\ast$}]{parent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
-Constructs a \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} and sets reasonable default values. 
+Constructs a \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} and sets reasonable default values. \mbox{\Hypertarget{class_q_custom_plot_a75d9b6f599dcae706e45efd425c5499e}\label{class_q_custom_plot_a75d9b6f599dcae706e45efd425c5499e}} 
+\index{QCustomPlot@{QCustomPlot}!````~QCustomPlot@{$\sim$QCustomPlot}}
+\index{````~QCustomPlot@{$\sim$QCustomPlot}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{$\sim$QCustomPlot()}{~QCustomPlot()}}
+{\footnotesize\ttfamily QCustom\+Plot\+::$\sim$\+QCustom\+Plot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_q_custom_plot_a6fb2873d35a8a8089842d81a70a54167}\label{class_q_custom_plot_a6fb2873d35a8a8089842d81a70a54167}} 
@@ -611,6 +538,18 @@ It is safe to mutually connect the replot slot with this signal on two QCustom\+
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_custom_plot_aa4bfe7d70dbe67e81d877819b75ab9af}{replot}}, \mbox{\hyperlink{class_q_custom_plot_a0cd30e29b73efd6afe096e44bc5956f5}{before\+Replot}} 
 \end{DoxySeeAlso}
+\mbox{\Hypertarget{class_q_custom_plot_a631762eb183aceecee73d30e108641ee}\label{class_q_custom_plot_a631762eb183aceecee73d30e108641ee}} 
+\index{QCustomPlot@{QCustomPlot}!antialiasedElements@{antialiasedElements}}
+\index{antialiasedElements@{antialiasedElements}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{antialiasedElements()}{antialiasedElements()}}
+{\footnotesize\ttfamily QCP\+::\+Antialiased\+Elements QCustom\+Plot\+::antialiased\+Elements (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_ac4b87de13eaceadc8db5a66654197689}\label{class_q_custom_plot_ac4b87de13eaceadc8db5a66654197689}} 
+\index{QCustomPlot@{QCustomPlot}!autoAddPlottableToLegend@{autoAddPlottableToLegend}}
+\index{autoAddPlottableToLegend@{autoAddPlottableToLegend}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{autoAddPlottableToLegend()}{autoAddPlottableToLegend()}}
+{\footnotesize\ttfamily bool QCustom\+Plot\+::auto\+Add\+Plottable\+To\+Legend (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
 \mbox{\Hypertarget{class_q_custom_plot_abf635f8b56ab5c16d5de9f358543e82b}\label{class_q_custom_plot_abf635f8b56ab5c16d5de9f358543e82b}} 
 \index{QCustomPlot@{QCustomPlot}!axisClick@{axisClick}}
 \index{axisClick@{axisClick}!QCustomPlot@{QCustomPlot}}
@@ -689,6 +628,30 @@ Returns all axis rects in the plot.
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_custom_plot_a8f85940aaac50efb466287d9d2d04ec6}{axis\+Rect\+Count}}, \mbox{\hyperlink{class_q_custom_plot_ae5eefcb5f6ca26689b1fd4f6e25b42f9}{axis\+Rect}} 
 \end{DoxySeeAlso}
+\mbox{\Hypertarget{class_q_custom_plot_a8b46607021c463c94709d3504951cb47}\label{class_q_custom_plot_a8b46607021c463c94709d3504951cb47}} 
+\index{QCustomPlot@{QCustomPlot}!axisRemoved@{axisRemoved}}
+\index{axisRemoved@{axisRemoved}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{axisRemoved()}{axisRemoved()}}
+{\footnotesize\ttfamily void QCustom\+Plot\+::axis\+Removed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$}]{axis }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_a5b9bbc838cb856e31b39c050fad49f9a}\label{class_q_custom_plot_a5b9bbc838cb856e31b39c050fad49f9a}} 
+\index{QCustomPlot@{QCustomPlot}!background@{background}}
+\index{background@{background}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{background()}{background()}}
+{\footnotesize\ttfamily QPixmap QCustom\+Plot\+::background (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_aac96f3a0f5070228ed13602976886b80}\label{class_q_custom_plot_aac96f3a0f5070228ed13602976886b80}} 
+\index{QCustomPlot@{QCustomPlot}!backgroundScaled@{backgroundScaled}}
+\index{backgroundScaled@{backgroundScaled}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{backgroundScaled()}{backgroundScaled()}}
+{\footnotesize\ttfamily bool QCustom\+Plot\+::background\+Scaled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_af8f1ebfdbf48d7c49f95136475d55b14}\label{class_q_custom_plot_af8f1ebfdbf48d7c49f95136475d55b14}} 
+\index{QCustomPlot@{QCustomPlot}!backgroundScaledMode@{backgroundScaledMode}}
+\index{backgroundScaledMode@{backgroundScaledMode}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{backgroundScaledMode()}{backgroundScaledMode()}}
+{\footnotesize\ttfamily Qt\+::\+Aspect\+Ratio\+Mode QCustom\+Plot\+::background\+Scaled\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
 \mbox{\Hypertarget{class_q_custom_plot_a0cd30e29b73efd6afe096e44bc5956f5}\label{class_q_custom_plot_a0cd30e29b73efd6afe096e44bc5956f5}} 
 \index{QCustomPlot@{QCustomPlot}!beforeReplot@{beforeReplot}}
 \index{beforeReplot@{beforeReplot}!QCustomPlot@{QCustomPlot}}
@@ -702,6 +665,12 @@ It is safe to mutually connect the replot slot with this signal on two QCustom\+
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_custom_plot_aa4bfe7d70dbe67e81d877819b75ab9af}{replot}}, \mbox{\hyperlink{class_q_custom_plot_a6f4fa624af060bc5919c5f266cf426a0}{after\+Replot}} 
 \end{DoxySeeAlso}
+\mbox{\Hypertarget{class_q_custom_plot_a53d35abe0f576f9838cde5d0bee47657}\label{class_q_custom_plot_a53d35abe0f576f9838cde5d0bee47657}} 
+\index{QCustomPlot@{QCustomPlot}!bufferDevicePixelRatio@{bufferDevicePixelRatio}}
+\index{bufferDevicePixelRatio@{bufferDevicePixelRatio}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{bufferDevicePixelRatio()}{bufferDevicePixelRatio()}}
+{\footnotesize\ttfamily double QCustom\+Plot\+::buffer\+Device\+Pixel\+Ratio (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
 \mbox{\Hypertarget{class_q_custom_plot_ab0f3abff2d2f7df3668b5836f39207fa}\label{class_q_custom_plot_ab0f3abff2d2f7df3668b5836f39207fa}} 
 \index{QCustomPlot@{QCustomPlot}!clearGraphs@{clearGraphs}}
 \index{clearGraphs@{clearGraphs}!QCustomPlot@{QCustomPlot}}
@@ -741,6 +710,12 @@ Returns the number of plottables removed.
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_custom_plot_af3dafd56884208474f311d6226513ab2}{remove\+Plottable}} 
 \end{DoxySeeAlso}
+\mbox{\Hypertarget{class_q_custom_plot_a943b57596a1adf7f0e75c3b50e407ae6}\label{class_q_custom_plot_a943b57596a1adf7f0e75c3b50e407ae6}} 
+\index{QCustomPlot@{QCustomPlot}!createPaintBuffer@{createPaintBuffer}}
+\index{createPaintBuffer@{createPaintBuffer}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{createPaintBuffer()}{createPaintBuffer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer}{QCPAbstract\+Paint\+Buffer}} $\ast$ QCustom\+Plot\+::create\+Paint\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
 \mbox{\Hypertarget{class_q_custom_plot_a0421d647f420b0b4c57aec1708857af5}\label{class_q_custom_plot_a0421d647f420b0b4c57aec1708857af5}} 
 \index{QCustomPlot@{QCustomPlot}!currentLayer@{currentLayer}}
 \index{currentLayer@{currentLayer}!QCustomPlot@{QCustomPlot}}
@@ -760,6 +735,24 @@ Since calling this function is not a user interaction, this does not emit the \m
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5}{set\+Interactions}}, \mbox{\hyperlink{class_q_custom_plot_a747faaab57c56891e901a1e97fa4359a}{selected\+Plottables}}, \mbox{\hyperlink{class_q_custom_plot_afda487bcf2d6cf1a57173d82495e29ba}{selected\+Items}}, \mbox{\hyperlink{class_q_custom_plot_a7e6b07792b1cb2c31681596582d14dbe}{selected\+Axes}}, \mbox{\hyperlink{class_q_custom_plot_ac87624ddff1cbf4064781a8e8ae321c4}{selected\+Legends}} 
 \end{DoxySeeAlso}
+\mbox{\Hypertarget{class_q_custom_plot_ad7a7d878bf050f101a43008e7d8fdb52}\label{class_q_custom_plot_ad7a7d878bf050f101a43008e7d8fdb52}} 
+\index{QCustomPlot@{QCustomPlot}!draw@{draw}}
+\index{draw@{draw}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void QCustom\+Plot\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$}]{painter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_a05dd52438cee4353b18c1e53a439008d}\label{class_q_custom_plot_a05dd52438cee4353b18c1e53a439008d}} 
+\index{QCustomPlot@{QCustomPlot}!drawBackground@{drawBackground}}
+\index{drawBackground@{drawBackground}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{drawBackground()}{drawBackground()}}
+{\footnotesize\ttfamily void QCustom\+Plot\+::draw\+Background (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$}]{painter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_aaa3073362074581a7b5905726b4a0067}\label{class_q_custom_plot_aaa3073362074581a7b5905726b4a0067}} 
+\index{QCustomPlot@{QCustomPlot}!freeOpenGl@{freeOpenGl}}
+\index{freeOpenGl@{freeOpenGl}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{freeOpenGl()}{freeOpenGl()}}
+{\footnotesize\ttfamily void QCustom\+Plot\+::free\+Open\+Gl (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
 \mbox{\Hypertarget{class_q_custom_plot_aac190865a67f19af3fdf2136774997af}\label{class_q_custom_plot_aac190865a67f19af3fdf2136774997af}} 
 \index{QCustomPlot@{QCustomPlot}!graph@{graph}}
 \index{graph@{graph}!QCustomPlot@{QCustomPlot}}
@@ -827,7 +820,13 @@ Returns whether this \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} conta
 \doxysubsubsection{\texorpdfstring{hasPlottable()}{hasPlottable()}}
 {\footnotesize\ttfamily bool QCustom\+Plot\+::has\+Plottable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_abstract_plottable}{QCPAbstract\+Plottable}} $\ast$}]{plottable }\end{DoxyParamCaption}) const}
 
-Returns whether this \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance contains the {\itshape plottable}. \mbox{\Hypertarget{class_q_custom_plot_a12eb2a283cf10a8a9176c01c0443e83e}\label{class_q_custom_plot_a12eb2a283cf10a8a9176c01c0443e83e}} 
+Returns whether this \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance contains the {\itshape plottable}. \mbox{\Hypertarget{class_q_custom_plot_a2c78c5fd2943c148ab76652801d3f2dc}\label{class_q_custom_plot_a2c78c5fd2943c148ab76652801d3f2dc}} 
+\index{QCustomPlot@{QCustomPlot}!interactions@{interactions}}
+\index{interactions@{interactions}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{interactions()}{interactions()}}
+{\footnotesize\ttfamily const QCP\+::\+Interactions QCustom\+Plot\+::interactions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_a12eb2a283cf10a8a9176c01c0443e83e}\label{class_q_custom_plot_a12eb2a283cf10a8a9176c01c0443e83e}} 
 \index{QCustomPlot@{QCustomPlot}!item@{item}}
 \index{item@{item}!QCustomPlot@{QCustomPlot}}
 \doxysubsubsection{\texorpdfstring{item()}{item()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -931,6 +930,18 @@ Returns the layer by {\itshape index}. If the index is invalid, 0 is returned.
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_custom_plot_ad5255393df078448bb6ac83fa5db5f52}{add\+Layer}}, \mbox{\hyperlink{class_q_custom_plot_ae896140beff19424e9e9e02d6e331104}{move\+Layer}}, \mbox{\hyperlink{class_q_custom_plot_a40f75e342c5eaab6a86066a42a0e2a94}{remove\+Layer}} 
 \end{DoxySeeAlso}
+\mbox{\Hypertarget{class_q_custom_plot_a12536fa6d5deb34ec620acb5134ca82a}\label{class_q_custom_plot_a12536fa6d5deb34ec620acb5134ca82a}} 
+\index{QCustomPlot@{QCustomPlot}!layerableAt@{layerableAt}}
+\index{layerableAt@{layerableAt}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{layerableAt()}{layerableAt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $\ast$ QCustom\+Plot\+::layerable\+At (\begin{DoxyParamCaption}\item[{const QPointF \&}]{pos,  }\item[{bool}]{only\+Selectable,  }\item[{QVariant $\ast$}]{selection\+Details = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_ac9048589e78e7959d27a2c48c253e159}\label{class_q_custom_plot_ac9048589e78e7959d27a2c48c253e159}} 
+\index{QCustomPlot@{QCustomPlot}!layerableListAt@{layerableListAt}}
+\index{layerableListAt@{layerableListAt}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{layerableListAt()}{layerableListAt()}}
+{\footnotesize\ttfamily QList$<$ \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $\ast$ $>$ QCustom\+Plot\+::layerable\+List\+At (\begin{DoxyParamCaption}\item[{const QPointF \&}]{pos,  }\item[{bool}]{only\+Selectable,  }\item[{QList$<$ QVariant $>$ $\ast$}]{selection\+Details = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
 \mbox{\Hypertarget{class_q_custom_plot_afa45d61e65292026f4c58c9c88c2cef0}\label{class_q_custom_plot_afa45d61e65292026f4c58c9c88c2cef0}} 
 \index{QCustomPlot@{QCustomPlot}!layerCount@{layerCount}}
 \index{layerCount@{layerCount}!QCustomPlot@{QCustomPlot}}
@@ -981,13 +992,31 @@ This signal is emitted when a legend (item) is double clicked.
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_custom_plot_a79cff0baafbca10a3aaf694d2d3b9ab3}{legend\+Click}} 
 \end{DoxySeeAlso}
+\mbox{\Hypertarget{class_q_custom_plot_a9d173454555021c9ffd4f675c4d9037a}\label{class_q_custom_plot_a9d173454555021c9ffd4f675c4d9037a}} 
+\index{QCustomPlot@{QCustomPlot}!legendRemoved@{legendRemoved}}
+\index{legendRemoved@{legendRemoved}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{legendRemoved()}{legendRemoved()}}
+{\footnotesize\ttfamily void QCustom\+Plot\+::legend\+Removed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_legend}{QCPLegend}} $\ast$}]{legend }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_a968a01cd4077d63aecde1aef1db057fc}\label{class_q_custom_plot_a968a01cd4077d63aecde1aef1db057fc}} 
+\index{QCustomPlot@{QCustomPlot}!minimumSizeHint@{minimumSizeHint}}
+\index{minimumSizeHint@{minimumSizeHint}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{minimumSizeHint()}{minimumSizeHint()}}
+{\footnotesize\ttfamily QSize QCustom\+Plot\+::minimum\+Size\+Hint (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
 \mbox{\Hypertarget{class_q_custom_plot_a9b232142c64fcf273a953ee08e5b90e9}\label{class_q_custom_plot_a9b232142c64fcf273a953ee08e5b90e9}} 
 \index{QCustomPlot@{QCustomPlot}!mouseDoubleClick@{mouseDoubleClick}}
 \index{mouseDoubleClick@{mouseDoubleClick}!QCustomPlot@{QCustomPlot}}
 \doxysubsubsection{\texorpdfstring{mouseDoubleClick}{mouseDoubleClick}}
 {\footnotesize\ttfamily void QCustom\+Plot\+::mouse\+Double\+Click (\begin{DoxyParamCaption}\item[{QMouse\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
 
-This signal is emitted when the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} receives a mouse double click event. \mbox{\Hypertarget{class_q_custom_plot_a742ca4f94688bed2a685fd8a56ce5704}\label{class_q_custom_plot_a742ca4f94688bed2a685fd8a56ce5704}} 
+This signal is emitted when the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} receives a mouse double click event. \mbox{\Hypertarget{class_q_custom_plot_a344075e6e80ed6d575c79b81694abb8a}\label{class_q_custom_plot_a344075e6e80ed6d575c79b81694abb8a}} 
+\index{QCustomPlot@{QCustomPlot}!mouseDoubleClickEvent@{mouseDoubleClickEvent}}
+\index{mouseDoubleClickEvent@{mouseDoubleClickEvent}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{mouseDoubleClickEvent()}{mouseDoubleClickEvent()}}
+{\footnotesize\ttfamily void QCustom\+Plot\+::mouse\+Double\+Click\+Event (\begin{DoxyParamCaption}\item[{QMouse\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_a742ca4f94688bed2a685fd8a56ce5704}\label{class_q_custom_plot_a742ca4f94688bed2a685fd8a56ce5704}} 
 \index{QCustomPlot@{QCustomPlot}!mouseMove@{mouseMove}}
 \index{mouseMove@{mouseMove}!QCustomPlot@{QCustomPlot}}
 \doxysubsubsection{\texorpdfstring{mouseMove}{mouseMove}}
@@ -1000,6 +1029,12 @@ It is emitted before \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} handl
 \begin{DoxyWarning}{Warning}
 It is discouraged to change the drag-\/axes with \mbox{\hyperlink{class_q_c_p_axis_rect_a648cce336bd99daac4a5ca3e5743775d}{QCPAxis\+Rect\+::set\+Range\+Drag\+Axes}} here, because the dragging starting point was saved the moment the mouse was pressed. Thus it only has a meaning for the range drag axes that were set at that moment. If you want to change the drag axes, consider doing this in the \mbox{\hyperlink{class_q_custom_plot_aca75bf9afb5dd19349c375de2a87a051}{mouse\+Press}} signal instead. 
 \end{DoxyWarning}
+\mbox{\Hypertarget{class_q_custom_plot_ae7abdc93b26d2ad4632c1ab75ae5b46f}\label{class_q_custom_plot_ae7abdc93b26d2ad4632c1ab75ae5b46f}} 
+\index{QCustomPlot@{QCustomPlot}!mouseMoveEvent@{mouseMoveEvent}}
+\index{mouseMoveEvent@{mouseMoveEvent}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{mouseMoveEvent()}{mouseMoveEvent()}}
+{\footnotesize\ttfamily void QCustom\+Plot\+::mouse\+Move\+Event (\begin{DoxyParamCaption}\item[{QMouse\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
 \mbox{\Hypertarget{class_q_custom_plot_aca75bf9afb5dd19349c375de2a87a051}\label{class_q_custom_plot_aca75bf9afb5dd19349c375de2a87a051}} 
 \index{QCustomPlot@{QCustomPlot}!mousePress@{mousePress}}
 \index{mousePress@{mousePress}!QCustomPlot@{QCustomPlot}}
@@ -1008,7 +1043,13 @@ It is discouraged to change the drag-\/axes with \mbox{\hyperlink{class_q_c_p_ax
 
 This signal is emitted when the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} receives a mouse press event.
 
-It is emitted before \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} handles any other mechanism like range dragging. So a slot connected to this signal can still influence the behaviour e.\+g. with \mbox{\hyperlink{class_q_c_p_axis_rect_ae6aef2f7211ba6097c925dcd26008418}{QCPAxis\+Rect\+::set\+Range\+Drag}} or \mbox{\hyperlink{class_q_c_p_axis_rect_a648cce336bd99daac4a5ca3e5743775d}{QCPAxis\+Rect\+::set\+Range\+Drag\+Axes}}. \mbox{\Hypertarget{class_q_custom_plot_ac8dc0ee6bb98e923c00b4ebafbe6134d}\label{class_q_custom_plot_ac8dc0ee6bb98e923c00b4ebafbe6134d}} 
+It is emitted before \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} handles any other mechanism like range dragging. So a slot connected to this signal can still influence the behaviour e.\+g. with \mbox{\hyperlink{class_q_c_p_axis_rect_ae6aef2f7211ba6097c925dcd26008418}{QCPAxis\+Rect\+::set\+Range\+Drag}} or \mbox{\hyperlink{class_q_c_p_axis_rect_a648cce336bd99daac4a5ca3e5743775d}{QCPAxis\+Rect\+::set\+Range\+Drag\+Axes}}. \mbox{\Hypertarget{class_q_custom_plot_aac0a7296a6031dc667c01c1abd4ecc6b}\label{class_q_custom_plot_aac0a7296a6031dc667c01c1abd4ecc6b}} 
+\index{QCustomPlot@{QCustomPlot}!mousePressEvent@{mousePressEvent}}
+\index{mousePressEvent@{mousePressEvent}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{mousePressEvent()}{mousePressEvent()}}
+{\footnotesize\ttfamily void QCustom\+Plot\+::mouse\+Press\+Event (\begin{DoxyParamCaption}\item[{QMouse\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_ac8dc0ee6bb98e923c00b4ebafbe6134d}\label{class_q_custom_plot_ac8dc0ee6bb98e923c00b4ebafbe6134d}} 
 \index{QCustomPlot@{QCustomPlot}!mouseRelease@{mouseRelease}}
 \index{mouseRelease@{mouseRelease}!QCustomPlot@{QCustomPlot}}
 \doxysubsubsection{\texorpdfstring{mouseRelease}{mouseRelease}}
@@ -1016,7 +1057,13 @@ It is emitted before \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} handl
 
 This signal is emitted when the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} receives a mouse release event.
 
-It is emitted before \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} handles any other mechanisms like object selection. So a slot connected to this signal can still influence the behaviour e.\+g. with \mbox{\hyperlink{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5}{set\+Interactions}} or \mbox{\hyperlink{class_q_c_p_abstract_plottable_ac238d6e910f976f1f30d41c2bca44ac3}{QCPAbstract\+Plottable\+::set\+Selectable}}. \mbox{\Hypertarget{class_q_custom_plot_ac80a14206f99304a91d2aa55775ec3ff}\label{class_q_custom_plot_ac80a14206f99304a91d2aa55775ec3ff}} 
+It is emitted before \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} handles any other mechanisms like object selection. So a slot connected to this signal can still influence the behaviour e.\+g. with \mbox{\hyperlink{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5}{set\+Interactions}} or \mbox{\hyperlink{class_q_c_p_abstract_plottable_ac238d6e910f976f1f30d41c2bca44ac3}{QCPAbstract\+Plottable\+::set\+Selectable}}. \mbox{\Hypertarget{class_q_custom_plot_adc24846f52199e5a9bc35c387a6ce68d}\label{class_q_custom_plot_adc24846f52199e5a9bc35c387a6ce68d}} 
+\index{QCustomPlot@{QCustomPlot}!mouseReleaseEvent@{mouseReleaseEvent}}
+\index{mouseReleaseEvent@{mouseReleaseEvent}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{mouseReleaseEvent()}{mouseReleaseEvent()}}
+{\footnotesize\ttfamily void QCustom\+Plot\+::mouse\+Release\+Event (\begin{DoxyParamCaption}\item[{QMouse\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_ac80a14206f99304a91d2aa55775ec3ff}\label{class_q_custom_plot_ac80a14206f99304a91d2aa55775ec3ff}} 
 \index{QCustomPlot@{QCustomPlot}!mouseWheel@{mouseWheel}}
 \index{mouseWheel@{mouseWheel}!QCustomPlot@{QCustomPlot}}
 \doxysubsubsection{\texorpdfstring{mouseWheel}{mouseWheel}}
@@ -1037,6 +1084,36 @@ Returns true on success, i.\+e. when both {\itshape layer} and {\itshape other\+
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_custom_plot_a0a96244e7773b242ef23c32b7bdfb159}{layer}}, \mbox{\hyperlink{class_q_custom_plot_ad5255393df078448bb6ac83fa5db5f52}{add\+Layer}}, \mbox{\hyperlink{class_q_custom_plot_ae896140beff19424e9e9e02d6e331104}{move\+Layer}} 
 \end{DoxySeeAlso}
+\mbox{\Hypertarget{class_q_custom_plot_a28182402ed11609c9a429f0788162d18}\label{class_q_custom_plot_a28182402ed11609c9a429f0788162d18}} 
+\index{QCustomPlot@{QCustomPlot}!multiSelectModifier@{multiSelectModifier}}
+\index{multiSelectModifier@{multiSelectModifier}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{multiSelectModifier()}{multiSelectModifier()}}
+{\footnotesize\ttfamily Qt\+::\+Keyboard\+Modifier QCustom\+Plot\+::multi\+Select\+Modifier (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_aca3f01f903fb250a3dd27104d92830be}\label{class_q_custom_plot_aca3f01f903fb250a3dd27104d92830be}} 
+\index{QCustomPlot@{QCustomPlot}!noAntialiasingOnDrag@{noAntialiasingOnDrag}}
+\index{noAntialiasingOnDrag@{noAntialiasingOnDrag}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{noAntialiasingOnDrag()}{noAntialiasingOnDrag()}}
+{\footnotesize\ttfamily bool QCustom\+Plot\+::no\+Antialiasing\+On\+Drag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_a75571bc5b2167e83def132fc993091b3}\label{class_q_custom_plot_a75571bc5b2167e83def132fc993091b3}} 
+\index{QCustomPlot@{QCustomPlot}!notAntialiasedElements@{notAntialiasedElements}}
+\index{notAntialiasedElements@{notAntialiasedElements}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{notAntialiasedElements()}{notAntialiasedElements()}}
+{\footnotesize\ttfamily QCP\+::\+Antialiased\+Elements QCustom\+Plot\+::not\+Antialiased\+Elements (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_abe5556ac80dc0140fd57f2b2f94a1f0e}\label{class_q_custom_plot_abe5556ac80dc0140fd57f2b2f94a1f0e}} 
+\index{QCustomPlot@{QCustomPlot}!openGl@{openGl}}
+\index{openGl@{openGl}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{openGl()}{openGl()}}
+{\footnotesize\ttfamily bool QCustom\+Plot\+::open\+Gl (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_a8068b368e5813065ee0f4cf7c6d21330}\label{class_q_custom_plot_a8068b368e5813065ee0f4cf7c6d21330}} 
+\index{QCustomPlot@{QCustomPlot}!paintEvent@{paintEvent}}
+\index{paintEvent@{paintEvent}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{paintEvent()}{paintEvent()}}
+{\footnotesize\ttfamily void QCustom\+Plot\+::paint\+Event (\begin{DoxyParamCaption}\item[{QPaint\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
 \mbox{\Hypertarget{class_q_custom_plot_af1a1f1f571237deb7c2bd34a5e9f018f}\label{class_q_custom_plot_af1a1f1f571237deb7c2bd34a5e9f018f}} 
 \index{QCustomPlot@{QCustomPlot}!plotLayout@{plotLayout}}
 \index{plotLayout@{plotLayout}!QCustomPlot@{QCustomPlot}}
@@ -1121,6 +1198,48 @@ This signal is emitted when a plottable is double clicked.
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_custom_plot_af5fe78b8bc9e4e96df921612837fd4fd}{plottable\+Click}} 
 \end{DoxySeeAlso}
+\mbox{\Hypertarget{class_q_custom_plot_ac724f4075822f74f7b676a790095b877}\label{class_q_custom_plot_ac724f4075822f74f7b676a790095b877}} 
+\index{QCustomPlot@{QCustomPlot}!plottingHints@{plottingHints}}
+\index{plottingHints@{plottingHints}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{plottingHints()}{plottingHints()}}
+{\footnotesize\ttfamily QCP\+::\+Plotting\+Hints QCustom\+Plot\+::plotting\+Hints (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_ac13c10fff6613e3e80e13c787b010838}\label{class_q_custom_plot_ac13c10fff6613e3e80e13c787b010838}} 
+\index{QCustomPlot@{QCustomPlot}!processPointSelection@{processPointSelection}}
+\index{processPointSelection@{processPointSelection}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{processPointSelection()}{processPointSelection()}}
+{\footnotesize\ttfamily void QCustom\+Plot\+::process\+Point\+Selection (\begin{DoxyParamCaption}\item[{QMouse\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_ac10849411e1d0e858ea7f29c8ade364c}\label{class_q_custom_plot_ac10849411e1d0e858ea7f29c8ade364c}} 
+\index{QCustomPlot@{QCustomPlot}!processRectSelection@{processRectSelection}}
+\index{processRectSelection@{processRectSelection}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{processRectSelection()}{processRectSelection()}}
+{\footnotesize\ttfamily void QCustom\+Plot\+::process\+Rect\+Selection (\begin{DoxyParamCaption}\item[{QRect}]{rect,  }\item[{QMouse\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_a5508a207dcc279f316142f96d984bba3}\label{class_q_custom_plot_a5508a207dcc279f316142f96d984bba3}} 
+\index{QCustomPlot@{QCustomPlot}!processRectZoom@{processRectZoom}}
+\index{processRectZoom@{processRectZoom}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{processRectZoom()}{processRectZoom()}}
+{\footnotesize\ttfamily void QCustom\+Plot\+::process\+Rect\+Zoom (\begin{DoxyParamCaption}\item[{QRect}]{rect,  }\item[{QMouse\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_acfc01230bddaea4f1782e4aa7d130af6}\label{class_q_custom_plot_acfc01230bddaea4f1782e4aa7d130af6}} 
+\index{QCustomPlot@{QCustomPlot}!registerGraph@{registerGraph}}
+\index{registerGraph@{registerGraph}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{registerGraph()}{registerGraph()}}
+{\footnotesize\ttfamily bool QCustom\+Plot\+::register\+Graph (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_graph}{QCPGraph}} $\ast$}]{graph }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_afbd4010b2e3f364c8d512691b2a1640a}\label{class_q_custom_plot_afbd4010b2e3f364c8d512691b2a1640a}} 
+\index{QCustomPlot@{QCustomPlot}!registerItem@{registerItem}}
+\index{registerItem@{registerItem}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{registerItem()}{registerItem()}}
+{\footnotesize\ttfamily bool QCustom\+Plot\+::register\+Item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_abstract_item}{QCPAbstract\+Item}} $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_aeba7733bb9fadfb5a375b3f40de9e58a}\label{class_q_custom_plot_aeba7733bb9fadfb5a375b3f40de9e58a}} 
+\index{QCustomPlot@{QCustomPlot}!registerPlottable@{registerPlottable}}
+\index{registerPlottable@{registerPlottable}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{registerPlottable()}{registerPlottable()}}
+{\footnotesize\ttfamily bool QCustom\+Plot\+::register\+Plottable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_abstract_plottable}{QCPAbstract\+Plottable}} $\ast$}]{plottable }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
 \mbox{\Hypertarget{class_q_custom_plot_a9554b3d2d5b10c0f884bd4010b6c192c}\label{class_q_custom_plot_a9554b3d2d5b10c0f884bd4010b6c192c}} 
 \index{QCustomPlot@{QCustomPlot}!removeGraph@{removeGraph}}
 \index{removeGraph@{removeGraph}!QCustomPlot@{QCustomPlot}}
@@ -1228,6 +1347,12 @@ if {\itshape only\+Visible\+Plottables} is set to true, only the plottables that
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_abstract_plottable_a1491c4a606bccd2d09e65e11b79eb882}{QCPAbstract\+Plottable\+::rescale\+Axes}}, \mbox{\hyperlink{class_q_c_p_axis_a499345f02ebce4b23d8ccec96e58daa9}{QCPAxis\+::rescale}} 
 \end{DoxySeeAlso}
+\mbox{\Hypertarget{class_q_custom_plot_af5b69dc6a431562ecdd1d0718bcbdf70}\label{class_q_custom_plot_af5b69dc6a431562ecdd1d0718bcbdf70}} 
+\index{QCustomPlot@{QCustomPlot}!resizeEvent@{resizeEvent}}
+\index{resizeEvent@{resizeEvent}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{resizeEvent()}{resizeEvent()}}
+{\footnotesize\ttfamily void QCustom\+Plot\+::resize\+Event (\begin{DoxyParamCaption}\item[{QResize\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
 \mbox{\Hypertarget{class_q_custom_plot_ae3a86ed0795670e50afa21759d4fa13d}\label{class_q_custom_plot_ae3a86ed0795670e50afa21759d4fa13d}} 
 \index{QCustomPlot@{QCustomPlot}!saveBmp@{saveBmp}}
 \index{saveBmp@{saveBmp}!QCustomPlot@{QCustomPlot}}
@@ -1431,6 +1556,18 @@ Allows access to the currently used \mbox{\hyperlink{class_q_c_p_selection_rect}
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_custom_plot_a0c09f96df15faa4799ad7051bb16cf33}{set\+Selection\+Rect}} 
 \end{DoxySeeAlso}
+\mbox{\Hypertarget{class_q_custom_plot_a6e53c402de2770a978dffa5584c05b27}\label{class_q_custom_plot_a6e53c402de2770a978dffa5584c05b27}} 
+\index{QCustomPlot@{QCustomPlot}!selectionRectMode@{selectionRectMode}}
+\index{selectionRectMode@{selectionRectMode}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{selectionRectMode()}{selectionRectMode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_q_c_p_ac9aa4d6d81ac76b094f9af9ad2d3aacf}{QCP\+::\+Selection\+Rect\+Mode}} QCustom\+Plot\+::selection\+Rect\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_a5441d11013afeaf4b8f2ea06e8624a25}\label{class_q_custom_plot_a5441d11013afeaf4b8f2ea06e8624a25}} 
+\index{QCustomPlot@{QCustomPlot}!selectionTolerance@{selectionTolerance}}
+\index{selectionTolerance@{selectionTolerance}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{selectionTolerance()}{selectionTolerance()}}
+{\footnotesize\ttfamily int QCustom\+Plot\+::selection\+Tolerance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
 \mbox{\Hypertarget{class_q_custom_plot_aeef813bcf7efab8e765f9f87ec454691}\label{class_q_custom_plot_aeef813bcf7efab8e765f9f87ec454691}} 
 \index{QCustomPlot@{QCustomPlot}!setAntialiasedElement@{setAntialiasedElement}}
 \index{setAntialiasedElement@{setAntialiasedElement}!QCustomPlot@{QCustomPlot}}
@@ -1604,11 +1741,11 @@ Sets the possible interactions of this \mbox{\hyperlink{class_q_custom_plot}{QCu
 
 {\bfseries{Plottable data selection}} is controlled by \mbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037a67148c8227b4155eca49135fc274c7ec}{QCP\+::i\+Select\+Plottables}}. If \mbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037a67148c8227b4155eca49135fc274c7ec}{QCP\+::i\+Select\+Plottables}} is set, the user may select plottables (graphs, curves, bars,...) and their data by clicking on them or in their vicinity (\mbox{\hyperlink{class_q_custom_plot_a4dc31241d7b09680950e19e5f971ed93}{set\+Selection\+Tolerance}}). Whether the user can actually select a plottable and its data can further be restricted with the \mbox{\hyperlink{class_q_c_p_abstract_plottable_ac238d6e910f976f1f30d41c2bca44ac3}{QCPAbstract\+Plottable\+::set\+Selectable}} method on the specific plottable. For details, see the special page about the data selection mechanism. To retrieve a list of all currently selected plottables, call \mbox{\hyperlink{class_q_custom_plot_a747faaab57c56891e901a1e97fa4359a}{selected\+Plottables}}. If you\textquotesingle{}re only interested in QCPGraphs, you may use the convenience function \mbox{\hyperlink{class_q_custom_plot_ad3547aded026d8a9ae6ef13a69080d06}{selected\+Graphs}}.
 
-{\bfseries{Item selection}} is controlled by \mbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037aea2f7c105d674e76d9b187b02ef29260}{QCP\+::i\+Select\+Items}}. If \mbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037aea2f7c105d674e76d9b187b02ef29260}{QCP\+::i\+Select\+Items}} is set, the user may select items (\mbox{\hyperlink{class_q_c_p_item_line}{QCPItem\+Line}}, \mbox{\hyperlink{class_q_c_p_item_text}{QCPItem\+Text}},...) by clicking on them or in their vicinity. To find out whether a specific item is selected, call QCPAbstract\+Item\+::selected(). To retrieve a list of all currently selected items, call \mbox{\hyperlink{class_q_custom_plot_afda487bcf2d6cf1a57173d82495e29ba}{selected\+Items}}.
+{\bfseries{Item selection}} is controlled by \mbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037aea2f7c105d674e76d9b187b02ef29260}{QCP\+::i\+Select\+Items}}. If \mbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037aea2f7c105d674e76d9b187b02ef29260}{QCP\+::i\+Select\+Items}} is set, the user may select items (\mbox{\hyperlink{class_q_c_p_item_line}{QCPItem\+Line}}, \mbox{\hyperlink{class_q_c_p_item_text}{QCPItem\+Text}},...) by clicking on them or in their vicinity. To find out whether a specific item is selected, call \mbox{\hyperlink{class_q_c_p_abstract_item_aa069fba320a13639f119f82ad29ead96}{QCPAbstract\+Item\+::selected()}}. To retrieve a list of all currently selected items, call \mbox{\hyperlink{class_q_custom_plot_afda487bcf2d6cf1a57173d82495e29ba}{selected\+Items}}.
 
-{\bfseries{Axis selection}} is controlled with \mbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037ad6644ac55bef621645326e9dd7469caa}{QCP\+::i\+Select\+Axes}}. If \mbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037ad6644ac55bef621645326e9dd7469caa}{QCP\+::i\+Select\+Axes}} is set, the user may select parts of the axes by clicking on them. What parts exactly (e.\+g. Axis base line, tick labels, axis label) are selectable can be controlled via \mbox{\hyperlink{class_q_c_p_axis_a513f9b9e326c505d9bec54880031b085}{QCPAxis\+::set\+Selectable\+Parts}} for each axis. To retrieve a list of all axes that currently contain selected parts, call \mbox{\hyperlink{class_q_custom_plot_a7e6b07792b1cb2c31681596582d14dbe}{selected\+Axes}}. Which parts of an axis are selected, can be retrieved with QCPAxis\+::selected\+Parts().
+{\bfseries{Axis selection}} is controlled with \mbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037ad6644ac55bef621645326e9dd7469caa}{QCP\+::i\+Select\+Axes}}. If \mbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037ad6644ac55bef621645326e9dd7469caa}{QCP\+::i\+Select\+Axes}} is set, the user may select parts of the axes by clicking on them. What parts exactly (e.\+g. Axis base line, tick labels, axis label) are selectable can be controlled via \mbox{\hyperlink{class_q_c_p_axis_a513f9b9e326c505d9bec54880031b085}{QCPAxis\+::set\+Selectable\+Parts}} for each axis. To retrieve a list of all axes that currently contain selected parts, call \mbox{\hyperlink{class_q_custom_plot_a7e6b07792b1cb2c31681596582d14dbe}{selected\+Axes}}. Which parts of an axis are selected, can be retrieved with \mbox{\hyperlink{class_q_c_p_axis_a893e8d6cfed9267eb2b793cb1d2b4dce}{QCPAxis\+::selected\+Parts()}}.
 
-{\bfseries{Legend selection}} is controlled with \mbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037a269c9af298e257d1108edec0432b5513}{QCP\+::i\+Select\+Legend}}. If this is set, the user may select the legend itself or individual items by clicking on them. What parts exactly are selectable can be controlled via \mbox{\hyperlink{class_q_c_p_legend_a9ce60aa8bbd89f62ae4fa83ac6c60110}{QCPLegend\+::set\+Selectable\+Parts}}. To find out whether the legend or any of its child items are selected, check the value of QCPLegend\+::selected\+Parts. To find out which child items are selected, call \mbox{\hyperlink{class_q_c_p_legend_ac7d9e567d5c551e09cd9bcc4306c5532}{QCPLegend\+::selected\+Items}}.
+{\bfseries{Legend selection}} is controlled with \mbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037a269c9af298e257d1108edec0432b5513}{QCP\+::i\+Select\+Legend}}. If this is set, the user may select the legend itself or individual items by clicking on them. What parts exactly are selectable can be controlled via \mbox{\hyperlink{class_q_c_p_legend_a9ce60aa8bbd89f62ae4fa83ac6c60110}{QCPLegend\+::set\+Selectable\+Parts}}. To find out whether the legend or any of its child items are selected, check the value of \mbox{\hyperlink{class_q_c_p_legend_a3efbf879f6936ec337690985e567dc6f}{QCPLegend\+::selected\+Parts}}. To find out which child items are selected, call \mbox{\hyperlink{class_q_c_p_legend_ac7d9e567d5c551e09cd9bcc4306c5532}{QCPLegend\+::selected\+Items}}.
 
 {\bfseries{All other selectable elements}} The selection of all other selectable objects (e.\+g. \mbox{\hyperlink{class_q_c_p_text_element}{QCPText\+Element}}, or your own layerable subclasses) is controlled with \mbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037af67a50bc26147a13b551b3a625374949}{QCP\+::i\+Select\+Other}}. If set, the user may select those objects by clicking on them. To find out which are currently selected, you need to check their selected state explicitly.
 
@@ -1691,7 +1828,7 @@ This method allows to enable Open\+GL plot rendering, for increased plotting per
 
 If {\itshape enabled} is set to true, \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} will try to initialize Open\+GL and, if successful, continue plotting with hardware acceleration. The parameter {\itshape multisampling} controls how many samples will be used per pixel, it essentially controls the antialiasing quality. If {\itshape multisampling} is set too high for the current graphics hardware, the maximum allowed value will be used.
 
-You can test whether switching to Open\+GL rendering was successful by checking whether the according getter {\itshape QCustom\+Plot\+::open\+Gl()} returns true. If the Open\+GL initialization fails, rendering continues with the regular software rasterizer, and an according q\+Debug output is generated.
+You can test whether switching to Open\+GL rendering was successful by checking whether the according getter {\itshape \mbox{\hyperlink{class_q_custom_plot_abe5556ac80dc0140fd57f2b2f94a1f0e}{QCustom\+Plot\+::open\+Gl()}}} returns true. If the Open\+GL initialization fails, rendering continues with the regular software rasterizer, and an according q\+Debug output is generated.
 
 If switching to Open\+GL was successful, this method disables label caching (\mbox{\hyperlink{class_q_custom_plot_a3b7c97bb6c16464e9e15190c07abe9a9}{set\+Plotting\+Hint(QCP\+::ph\+Cache\+Labels, false)}}) and turns on \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}\textquotesingle{}s antialiasing override for all elements (\mbox{\hyperlink{class_q_custom_plot_af6f91e5eab1be85f67c556e98c3745e8}{set\+Antialiased\+Elements(QCP\+::ae\+All)}}), leading to a higher quality output. The antialiasing override allows for pixel-\/grid aligned drawing in the Open\+GL paint device. As stated before, in Open\+GL rendering the actual antialiasing of the plot is controlled with {\itshape multisampling}. If {\itshape enabled} is set to false, the antialiasing/label caching settings are restored to what they were before Open\+GL was enabled, if they weren\textquotesingle{}t altered in the meantime.
 
@@ -1765,6 +1902,18 @@ If the user clicks in the vicinity of the line of e.\+g. a \mbox{\hyperlink{clas
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5}{set\+Interactions}}, \mbox{\hyperlink{class_q_c_p_layerable_a04db8351fefd44cfdb77958e75c6288e}{QCPLayerable\+::select\+Test}} 
 \end{DoxySeeAlso}
+\mbox{\Hypertarget{class_q_custom_plot_a8954c4667c51070ff4e9b02d858fd190}\label{class_q_custom_plot_a8954c4667c51070ff4e9b02d858fd190}} 
+\index{QCustomPlot@{QCustomPlot}!setupOpenGl@{setupOpenGl}}
+\index{setupOpenGl@{setupOpenGl}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{setupOpenGl()}{setupOpenGl()}}
+{\footnotesize\ttfamily bool QCustom\+Plot\+::setup\+Open\+Gl (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_a2685341f7242c3882f4cc5e379308d71}\label{class_q_custom_plot_a2685341f7242c3882f4cc5e379308d71}} 
+\index{QCustomPlot@{QCustomPlot}!setupPaintBuffers@{setupPaintBuffers}}
+\index{setupPaintBuffers@{setupPaintBuffers}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{setupPaintBuffers()}{setupPaintBuffers()}}
+{\footnotesize\ttfamily void QCustom\+Plot\+::setup\+Paint\+Buffers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
 \mbox{\Hypertarget{class_q_custom_plot_a3f9bc4b939dd8aaba9339fd09f273fc4}\label{class_q_custom_plot_a3f9bc4b939dd8aaba9339fd09f273fc4}} 
 \index{QCustomPlot@{QCustomPlot}!setViewport@{setViewport}}
 \index{setViewport@{setViewport}!QCustomPlot@{QCustomPlot}}
@@ -1777,7 +1926,13 @@ The viewport is the area in which the plot is drawn. All mechanisms, e.\+g. marg
 
 Don\textquotesingle{}t confuse the viewport with the axis rect (\mbox{\hyperlink{class_q_custom_plot_ae5eefcb5f6ca26689b1fd4f6e25b42f9}{QCustom\+Plot\+::axis\+Rect}}). An axis rect is typically an area enclosed by four axes, where the graphs/plottables are drawn in. The viewport is larger and contains also the axes themselves, their tick numbers, their labels, or even additional axis rects, color scales and other layout elements.
 
-This function is used to allow arbitrary size exports with \mbox{\hyperlink{class_q_custom_plot_aabb974d71ce96c137dc04eb6eab844fe}{to\+Pixmap}}, \mbox{\hyperlink{class_q_custom_plot_ac92cc9256d12f354b40a4be4600b5fb9}{save\+Png}}, \mbox{\hyperlink{class_q_custom_plot_ad5acd34f6b39c3516887d7e54fec2412}{save\+Pdf}}, etc. by temporarily changing the viewport size. \mbox{\Hypertarget{class_q_custom_plot_a1be68d5c0f1e086d6374d1340a193fb9}\label{class_q_custom_plot_a1be68d5c0f1e086d6374d1340a193fb9}} 
+This function is used to allow arbitrary size exports with \mbox{\hyperlink{class_q_custom_plot_aabb974d71ce96c137dc04eb6eab844fe}{to\+Pixmap}}, \mbox{\hyperlink{class_q_custom_plot_ac92cc9256d12f354b40a4be4600b5fb9}{save\+Png}}, \mbox{\hyperlink{class_q_custom_plot_ad5acd34f6b39c3516887d7e54fec2412}{save\+Pdf}}, etc. by temporarily changing the viewport size. \mbox{\Hypertarget{class_q_custom_plot_ac9d6fe101e082daf756903b11f6e6213}\label{class_q_custom_plot_ac9d6fe101e082daf756903b11f6e6213}} 
+\index{QCustomPlot@{QCustomPlot}!sizeHint@{sizeHint}}
+\index{sizeHint@{sizeHint}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{sizeHint()}{sizeHint()}}
+{\footnotesize\ttfamily QSize QCustom\+Plot\+::size\+Hint (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_a1be68d5c0f1e086d6374d1340a193fb9}\label{class_q_custom_plot_a1be68d5c0f1e086d6374d1340a193fb9}} 
 \index{QCustomPlot@{QCustomPlot}!toPainter@{toPainter}}
 \index{toPainter@{toPainter}!QCustomPlot@{QCustomPlot}}
 \doxysubsubsection{\texorpdfstring{toPainter()}{toPainter()}}
@@ -1806,6 +1961,75 @@ The plot is sized to {\itshape width} and {\itshape height} in pixels and scaled
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_custom_plot_a1be68d5c0f1e086d6374d1340a193fb9}{to\+Painter}}, \mbox{\hyperlink{class_q_custom_plot_ad7723ce2edfa270632ef42b03a444352}{save\+Rastered}}, \mbox{\hyperlink{class_q_custom_plot_ae3a86ed0795670e50afa21759d4fa13d}{save\+Bmp}}, \mbox{\hyperlink{class_q_custom_plot_ac92cc9256d12f354b40a4be4600b5fb9}{save\+Png}}, \mbox{\hyperlink{class_q_custom_plot_a76f0d278e630a711fa6f48048cfd83e4}{save\+Jpg}}, \mbox{\hyperlink{class_q_custom_plot_ad5acd34f6b39c3516887d7e54fec2412}{save\+Pdf}} 
 \end{DoxySeeAlso}
+\mbox{\Hypertarget{class_q_custom_plot_a7f1ca67a66d37b6d260a0b93de08f3bd}\label{class_q_custom_plot_a7f1ca67a66d37b6d260a0b93de08f3bd}} 
+\index{QCustomPlot@{QCustomPlot}!updateLayerIndices@{updateLayerIndices}}
+\index{updateLayerIndices@{updateLayerIndices}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{updateLayerIndices()}{updateLayerIndices()}}
+{\footnotesize\ttfamily void QCustom\+Plot\+::update\+Layer\+Indices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_a6e6693e2c249f65437382ffd93405e04}\label{class_q_custom_plot_a6e6693e2c249f65437382ffd93405e04}} 
+\index{QCustomPlot@{QCustomPlot}!updateLayout@{updateLayout}}
+\index{updateLayout@{updateLayout}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{updateLayout()}{updateLayout()}}
+{\footnotesize\ttfamily void QCustom\+Plot\+::update\+Layout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_a19842409b18f556b256d05e97fffc670}\label{class_q_custom_plot_a19842409b18f556b256d05e97fffc670}} 
+\index{QCustomPlot@{QCustomPlot}!viewport@{viewport}}
+\index{viewport@{viewport}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{viewport()}{viewport()}}
+{\footnotesize\ttfamily QRect QCustom\+Plot\+::viewport (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_a7848c9ac8be60bbd8fcea9b53be543c5}\label{class_q_custom_plot_a7848c9ac8be60bbd8fcea9b53be543c5}} 
+\index{QCustomPlot@{QCustomPlot}!wheelEvent@{wheelEvent}}
+\index{wheelEvent@{wheelEvent}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{wheelEvent()}{wheelEvent()}}
+{\footnotesize\ttfamily void QCustom\+Plot\+::wheel\+Event (\begin{DoxyParamCaption}\item[{QWheel\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_q_custom_plot_a93e962f2e677e31ecc575bb884e46adf}\label{class_q_custom_plot_a93e962f2e677e31ecc575bb884e46adf}} 
+\index{QCustomPlot@{QCustomPlot}!QCPAbstractItem@{QCPAbstractItem}}
+\index{QCPAbstractItem@{QCPAbstractItem}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{QCPAbstractItem}{QCPAbstractItem}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{class_q_c_p_abstract_item}{QCPAbstract\+Item}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_a53cf0e76aca814550c796fed79e345d6}\label{class_q_custom_plot_a53cf0e76aca814550c796fed79e345d6}} 
+\index{QCustomPlot@{QCustomPlot}!QCPAbstractPlottable@{QCPAbstractPlottable}}
+\index{QCPAbstractPlottable@{QCPAbstractPlottable}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{QCPAbstractPlottable}{QCPAbstractPlottable}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{class_q_c_p_abstract_plottable}{QCPAbstract\+Plottable}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_af123edeca169ec7a31958a1d714e1a8a}\label{class_q_custom_plot_af123edeca169ec7a31958a1d714e1a8a}} 
+\index{QCustomPlot@{QCustomPlot}!QCPAxis@{QCPAxis}}
+\index{QCPAxis@{QCPAxis}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{QCPAxis}{QCPAxis}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_acbf20ecb140f66c5fd1bc64ae0762990}\label{class_q_custom_plot_acbf20ecb140f66c5fd1bc64ae0762990}} 
+\index{QCustomPlot@{QCustomPlot}!QCPAxisRect@{QCPAxisRect}}
+\index{QCPAxisRect@{QCPAxisRect}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{QCPAxisRect}{QCPAxisRect}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{class_q_c_p_axis_rect}{QCPAxis\+Rect}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_ad0c52e327d94c699d415fd61f930700a}\label{class_q_custom_plot_ad0c52e327d94c699d415fd61f930700a}} 
+\index{QCustomPlot@{QCustomPlot}!QCPGraph@{QCPGraph}}
+\index{QCPGraph@{QCPGraph}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{QCPGraph}{QCPGraph}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{class_q_c_p_graph}{QCPGraph}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_a5dbf96bf7664c1b6fce49063eeea6eef}\label{class_q_custom_plot_a5dbf96bf7664c1b6fce49063eeea6eef}} 
+\index{QCustomPlot@{QCustomPlot}!QCPLayer@{QCPLayer}}
+\index{QCPLayer@{QCPLayer}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{QCPLayer}{QCPLayer}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_a8429035e7adfbd7f05805a6530ad5e3b}\label{class_q_custom_plot_a8429035e7adfbd7f05805a6530ad5e3b}} 
+\index{QCustomPlot@{QCustomPlot}!QCPLegend@{QCPLegend}}
+\index{QCPLegend@{QCPLegend}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{QCPLegend}{QCPLegend}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{class_q_c_p_legend}{QCPLegend}}\hspace{0.3cm}{\ttfamily [friend]}}
+
 
 
 \doxysubsection{Member Data Documentation}
@@ -1819,7 +2043,223 @@ A pointer to the default legend of the main axis rect. The legend is invisible b
 
 \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} offers convenient pointers to the axes (\mbox{\hyperlink{class_q_custom_plot_a9a79cd0158a4c7f30cbc702f0fd800e4}{x\+Axis}}, \mbox{\hyperlink{class_q_custom_plot_af6fea5679725b152c14facd920b19367}{y\+Axis}}, \mbox{\hyperlink{class_q_custom_plot_ada41599f22cad901c030f3dcbdd82fd9}{x\+Axis2}}, \mbox{\hyperlink{class_q_custom_plot_af13fdc5bce7d0fabd640f13ba805c0b7}{y\+Axis2}}) and the \mbox{\hyperlink{class_q_custom_plot_a4eadcd237dc6a09938b68b16877fa6af}{legend}}. They make it very easy working with plots that only have a single axis rect and at most one axis at each axis rect side. If you use \mbox{\hyperlink{}{the layout system}} to add multiple legends to the plot, use the layout system interface to access the new legend. For example, legends can be placed inside an axis rect\textquotesingle{}s \mbox{\hyperlink{class_q_c_p_axis_rect_a949f803466619924c7018df4b511ae10}{inset layout}}, and must then also be accessed via the inset layout. If the default legend is removed due to manipulation of the layout system (e.\+g. by removing the main axis rect), the corresponding pointer becomes 0.
 
-If an axis convenience pointer is currently zero and a new axis rect or a corresponding axis is added in the place of the main axis rect, \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} resets the convenience pointers to the according new axes. Similarly the \mbox{\hyperlink{class_q_custom_plot_a4eadcd237dc6a09938b68b16877fa6af}{legend}} convenience pointer will be reset if a legend is added after the main legend was removed before. \mbox{\Hypertarget{class_q_custom_plot_a9a79cd0158a4c7f30cbc702f0fd800e4}\label{class_q_custom_plot_a9a79cd0158a4c7f30cbc702f0fd800e4}} 
+If an axis convenience pointer is currently zero and a new axis rect or a corresponding axis is added in the place of the main axis rect, \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} resets the convenience pointers to the according new axes. Similarly the \mbox{\hyperlink{class_q_custom_plot_a4eadcd237dc6a09938b68b16877fa6af}{legend}} convenience pointer will be reset if a legend is added after the main legend was removed before. \mbox{\Hypertarget{class_q_custom_plot_aa333200629256830e273873b582a5524}\label{class_q_custom_plot_aa333200629256830e273873b582a5524}} 
+\index{QCustomPlot@{QCustomPlot}!mAntialiasedElements@{mAntialiasedElements}}
+\index{mAntialiasedElements@{mAntialiasedElements}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{mAntialiasedElements}{mAntialiasedElements}}
+{\footnotesize\ttfamily QCP\+::\+Antialiased\+Elements QCustom\+Plot\+::m\+Antialiased\+Elements\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_aaf3ea6a4cb04d35a149cc9a0cdac3394}\label{class_q_custom_plot_aaf3ea6a4cb04d35a149cc9a0cdac3394}} 
+\index{QCustomPlot@{QCustomPlot}!mAutoAddPlottableToLegend@{mAutoAddPlottableToLegend}}
+\index{mAutoAddPlottableToLegend@{mAutoAddPlottableToLegend}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{mAutoAddPlottableToLegend}{mAutoAddPlottableToLegend}}
+{\footnotesize\ttfamily bool QCustom\+Plot\+::m\+Auto\+Add\+Plottable\+To\+Legend\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_a3aef5de4ac012178e3293248e9c63737}\label{class_q_custom_plot_a3aef5de4ac012178e3293248e9c63737}} 
+\index{QCustomPlot@{QCustomPlot}!mBackgroundBrush@{mBackgroundBrush}}
+\index{mBackgroundBrush@{mBackgroundBrush}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{mBackgroundBrush}{mBackgroundBrush}}
+{\footnotesize\ttfamily QBrush QCustom\+Plot\+::m\+Background\+Brush\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_ae8f4677399324a78c5f8dbfb95a34f90}\label{class_q_custom_plot_ae8f4677399324a78c5f8dbfb95a34f90}} 
+\index{QCustomPlot@{QCustomPlot}!mBackgroundPixmap@{mBackgroundPixmap}}
+\index{mBackgroundPixmap@{mBackgroundPixmap}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{mBackgroundPixmap}{mBackgroundPixmap}}
+{\footnotesize\ttfamily QPixmap QCustom\+Plot\+::m\+Background\+Pixmap\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_a62fe584b20680b1b2e1c7efb5c5416a5}\label{class_q_custom_plot_a62fe584b20680b1b2e1c7efb5c5416a5}} 
+\index{QCustomPlot@{QCustomPlot}!mBackgroundScaled@{mBackgroundScaled}}
+\index{mBackgroundScaled@{mBackgroundScaled}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{mBackgroundScaled}{mBackgroundScaled}}
+{\footnotesize\ttfamily bool QCustom\+Plot\+::m\+Background\+Scaled\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_ab82e8a5e3ad6b486f95d6da8bf49e9aa}\label{class_q_custom_plot_ab82e8a5e3ad6b486f95d6da8bf49e9aa}} 
+\index{QCustomPlot@{QCustomPlot}!mBackgroundScaledMode@{mBackgroundScaledMode}}
+\index{mBackgroundScaledMode@{mBackgroundScaledMode}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{mBackgroundScaledMode}{mBackgroundScaledMode}}
+{\footnotesize\ttfamily Qt\+::\+Aspect\+Ratio\+Mode QCustom\+Plot\+::m\+Background\+Scaled\+Mode\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_a63a40c57a2d89eea27b90b62cc4eee1f}\label{class_q_custom_plot_a63a40c57a2d89eea27b90b62cc4eee1f}} 
+\index{QCustomPlot@{QCustomPlot}!mBufferDevicePixelRatio@{mBufferDevicePixelRatio}}
+\index{mBufferDevicePixelRatio@{mBufferDevicePixelRatio}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{mBufferDevicePixelRatio}{mBufferDevicePixelRatio}}
+{\footnotesize\ttfamily double QCustom\+Plot\+::m\+Buffer\+Device\+Pixel\+Ratio\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_aa27569c92e74395af10151357d268628}\label{class_q_custom_plot_aa27569c92e74395af10151357d268628}} 
+\index{QCustomPlot@{QCustomPlot}!mCurrentLayer@{mCurrentLayer}}
+\index{mCurrentLayer@{mCurrentLayer}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{mCurrentLayer}{mCurrentLayer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}}$\ast$ QCustom\+Plot\+::m\+Current\+Layer\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_adaf8d407d72a725169d7dbed2ee386bb}\label{class_q_custom_plot_adaf8d407d72a725169d7dbed2ee386bb}} 
+\index{QCustomPlot@{QCustomPlot}!mGraphs@{mGraphs}}
+\index{mGraphs@{mGraphs}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{mGraphs}{mGraphs}}
+{\footnotesize\ttfamily QList$<$\mbox{\hyperlink{class_q_c_p_graph}{QCPGraph}}$\ast$$>$ QCustom\+Plot\+::m\+Graphs\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_ad717377ceba7493b4b32f0bcbbdf1895}\label{class_q_custom_plot_ad717377ceba7493b4b32f0bcbbdf1895}} 
+\index{QCustomPlot@{QCustomPlot}!mInteractions@{mInteractions}}
+\index{mInteractions@{mInteractions}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{mInteractions}{mInteractions}}
+{\footnotesize\ttfamily QCP\+::\+Interactions QCustom\+Plot\+::m\+Interactions\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_a6a93905372326e31e98d6c3bc8953ec8}\label{class_q_custom_plot_a6a93905372326e31e98d6c3bc8953ec8}} 
+\index{QCustomPlot@{QCustomPlot}!mItems@{mItems}}
+\index{mItems@{mItems}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{mItems}{mItems}}
+{\footnotesize\ttfamily QList$<$\mbox{\hyperlink{class_q_c_p_abstract_item}{QCPAbstract\+Item}}$\ast$$>$ QCustom\+Plot\+::m\+Items\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_a72ee313041b873d76c198793ce7e6c37}\label{class_q_custom_plot_a72ee313041b873d76c198793ce7e6c37}} 
+\index{QCustomPlot@{QCustomPlot}!mLayers@{mLayers}}
+\index{mLayers@{mLayers}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{mLayers}{mLayers}}
+{\footnotesize\ttfamily QList$<$\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}}$\ast$$>$ QCustom\+Plot\+::m\+Layers\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_a243867f445d2f4e35e00add2f589e1da}\label{class_q_custom_plot_a243867f445d2f4e35e00add2f589e1da}} 
+\index{QCustomPlot@{QCustomPlot}!mMouseEventLayerable@{mMouseEventLayerable}}
+\index{mMouseEventLayerable@{mMouseEventLayerable}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{mMouseEventLayerable}{mMouseEventLayerable}}
+{\footnotesize\ttfamily QPointer$<$\mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}$>$ QCustom\+Plot\+::m\+Mouse\+Event\+Layerable\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_ad604958ef16fc022c474521a08d88a2d}\label{class_q_custom_plot_ad604958ef16fc022c474521a08d88a2d}} 
+\index{QCustomPlot@{QCustomPlot}!mMouseEventLayerableDetails@{mMouseEventLayerableDetails}}
+\index{mMouseEventLayerableDetails@{mMouseEventLayerableDetails}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{mMouseEventLayerableDetails}{mMouseEventLayerableDetails}}
+{\footnotesize\ttfamily QVariant QCustom\+Plot\+::m\+Mouse\+Event\+Layerable\+Details\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_ad2108936f001a8be5974b0b6ff13dae3}\label{class_q_custom_plot_ad2108936f001a8be5974b0b6ff13dae3}} 
+\index{QCustomPlot@{QCustomPlot}!mMouseHasMoved@{mMouseHasMoved}}
+\index{mMouseHasMoved@{mMouseHasMoved}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{mMouseHasMoved}{mMouseHasMoved}}
+{\footnotesize\ttfamily bool QCustom\+Plot\+::m\+Mouse\+Has\+Moved\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_ac57090da95056ae4dd67be67adfa85bd}\label{class_q_custom_plot_ac57090da95056ae4dd67be67adfa85bd}} 
+\index{QCustomPlot@{QCustomPlot}!mMousePressPos@{mMousePressPos}}
+\index{mMousePressPos@{mMousePressPos}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{mMousePressPos}{mMousePressPos}}
+{\footnotesize\ttfamily QPoint QCustom\+Plot\+::m\+Mouse\+Press\+Pos\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_adf81640dbf365bd4fa22494e3e504e70}\label{class_q_custom_plot_adf81640dbf365bd4fa22494e3e504e70}} 
+\index{QCustomPlot@{QCustomPlot}!mMouseSignalLayerable@{mMouseSignalLayerable}}
+\index{mMouseSignalLayerable@{mMouseSignalLayerable}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{mMouseSignalLayerable}{mMouseSignalLayerable}}
+{\footnotesize\ttfamily QPointer$<$\mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}$>$ QCustom\+Plot\+::m\+Mouse\+Signal\+Layerable\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_a2f313604bb22781633137915f3c100e6}\label{class_q_custom_plot_a2f313604bb22781633137915f3c100e6}} 
+\index{QCustomPlot@{QCustomPlot}!mMouseSignalLayerableDetails@{mMouseSignalLayerableDetails}}
+\index{mMouseSignalLayerableDetails@{mMouseSignalLayerableDetails}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{mMouseSignalLayerableDetails}{mMouseSignalLayerableDetails}}
+{\footnotesize\ttfamily QVariant QCustom\+Plot\+::m\+Mouse\+Signal\+Layerable\+Details\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_a0e97e701c5671e7e463d2ce0211d0f8a}\label{class_q_custom_plot_a0e97e701c5671e7e463d2ce0211d0f8a}} 
+\index{QCustomPlot@{QCustomPlot}!mMultiSelectModifier@{mMultiSelectModifier}}
+\index{mMultiSelectModifier@{mMultiSelectModifier}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{mMultiSelectModifier}{mMultiSelectModifier}}
+{\footnotesize\ttfamily Qt\+::\+Keyboard\+Modifier QCustom\+Plot\+::m\+Multi\+Select\+Modifier\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_ac83df968435f6b8ec79f2993ab9124e8}\label{class_q_custom_plot_ac83df968435f6b8ec79f2993ab9124e8}} 
+\index{QCustomPlot@{QCustomPlot}!mNoAntialiasingOnDrag@{mNoAntialiasingOnDrag}}
+\index{mNoAntialiasingOnDrag@{mNoAntialiasingOnDrag}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{mNoAntialiasingOnDrag}{mNoAntialiasingOnDrag}}
+{\footnotesize\ttfamily bool QCustom\+Plot\+::m\+No\+Antialiasing\+On\+Drag\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_a2b6ebcad00a90ba07f146cefcd4293da}\label{class_q_custom_plot_a2b6ebcad00a90ba07f146cefcd4293da}} 
+\index{QCustomPlot@{QCustomPlot}!mNotAntialiasedElements@{mNotAntialiasedElements}}
+\index{mNotAntialiasedElements@{mNotAntialiasedElements}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{mNotAntialiasedElements}{mNotAntialiasedElements}}
+{\footnotesize\ttfamily QCP\+::\+Antialiased\+Elements QCustom\+Plot\+::m\+Not\+Antialiased\+Elements\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_a0841dbea13bd120d20e3f0cc36767ff9}\label{class_q_custom_plot_a0841dbea13bd120d20e3f0cc36767ff9}} 
+\index{QCustomPlot@{QCustomPlot}!mOpenGl@{mOpenGl}}
+\index{mOpenGl@{mOpenGl}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{mOpenGl}{mOpenGl}}
+{\footnotesize\ttfamily bool QCustom\+Plot\+::m\+Open\+Gl\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_adbf005715d5f8550511819a4baf841fb}\label{class_q_custom_plot_adbf005715d5f8550511819a4baf841fb}} 
+\index{QCustomPlot@{QCustomPlot}!mOpenGlAntialiasedElementsBackup@{mOpenGlAntialiasedElementsBackup}}
+\index{mOpenGlAntialiasedElementsBackup@{mOpenGlAntialiasedElementsBackup}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{mOpenGlAntialiasedElementsBackup}{mOpenGlAntialiasedElementsBackup}}
+{\footnotesize\ttfamily QCP\+::\+Antialiased\+Elements QCustom\+Plot\+::m\+Open\+Gl\+Antialiased\+Elements\+Backup\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_ab1692469dde841080fa33719533bf2b7}\label{class_q_custom_plot_ab1692469dde841080fa33719533bf2b7}} 
+\index{QCustomPlot@{QCustomPlot}!mOpenGlCacheLabelsBackup@{mOpenGlCacheLabelsBackup}}
+\index{mOpenGlCacheLabelsBackup@{mOpenGlCacheLabelsBackup}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{mOpenGlCacheLabelsBackup}{mOpenGlCacheLabelsBackup}}
+{\footnotesize\ttfamily bool QCustom\+Plot\+::m\+Open\+Gl\+Cache\+Labels\+Backup\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_aacafac2b2280b6a868a4b734273a394c}\label{class_q_custom_plot_aacafac2b2280b6a868a4b734273a394c}} 
+\index{QCustomPlot@{QCustomPlot}!mOpenGlMultisamples@{mOpenGlMultisamples}}
+\index{mOpenGlMultisamples@{mOpenGlMultisamples}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{mOpenGlMultisamples}{mOpenGlMultisamples}}
+{\footnotesize\ttfamily int QCustom\+Plot\+::m\+Open\+Gl\+Multisamples\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_a57b270b1e3990e0d1b9fb39b137d5a5d}\label{class_q_custom_plot_a57b270b1e3990e0d1b9fb39b137d5a5d}} 
+\index{QCustomPlot@{QCustomPlot}!mPaintBuffers@{mPaintBuffers}}
+\index{mPaintBuffers@{mPaintBuffers}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{mPaintBuffers}{mPaintBuffers}}
+{\footnotesize\ttfamily QList$<$QShared\+Pointer$<$\mbox{\hyperlink{class_q_c_p_abstract_paint_buffer}{QCPAbstract\+Paint\+Buffer}}$>$ $>$ QCustom\+Plot\+::m\+Paint\+Buffers\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_ac97298756882a0eecd98151679850ac1}\label{class_q_custom_plot_ac97298756882a0eecd98151679850ac1}} 
+\index{QCustomPlot@{QCustomPlot}!mPlotLayout@{mPlotLayout}}
+\index{mPlotLayout@{mPlotLayout}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{mPlotLayout}{mPlotLayout}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_layout_grid}{QCPLayout\+Grid}}$\ast$ QCustom\+Plot\+::m\+Plot\+Layout\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_a62bf8e4e7f8d23fc1e9301ba0148269f}\label{class_q_custom_plot_a62bf8e4e7f8d23fc1e9301ba0148269f}} 
+\index{QCustomPlot@{QCustomPlot}!mPlottables@{mPlottables}}
+\index{mPlottables@{mPlottables}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{mPlottables}{mPlottables}}
+{\footnotesize\ttfamily QList$<$\mbox{\hyperlink{class_q_c_p_abstract_plottable}{QCPAbstract\+Plottable}}$\ast$$>$ QCustom\+Plot\+::m\+Plottables\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_aa184197a6101a9cc5807469e1d006c9e}\label{class_q_custom_plot_aa184197a6101a9cc5807469e1d006c9e}} 
+\index{QCustomPlot@{QCustomPlot}!mPlottingHints@{mPlottingHints}}
+\index{mPlottingHints@{mPlottingHints}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{mPlottingHints}{mPlottingHints}}
+{\footnotesize\ttfamily QCP\+::\+Plotting\+Hints QCustom\+Plot\+::m\+Plotting\+Hints\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_acedeef316dfcde835b8ea0112cec2a77}\label{class_q_custom_plot_acedeef316dfcde835b8ea0112cec2a77}} 
+\index{QCustomPlot@{QCustomPlot}!mReplotQueued@{mReplotQueued}}
+\index{mReplotQueued@{mReplotQueued}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{mReplotQueued}{mReplotQueued}}
+{\footnotesize\ttfamily bool QCustom\+Plot\+::m\+Replot\+Queued\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_ab30daeca6612c3948afd368dce5f1c39}\label{class_q_custom_plot_ab30daeca6612c3948afd368dce5f1c39}} 
+\index{QCustomPlot@{QCustomPlot}!mReplotting@{mReplotting}}
+\index{mReplotting@{mReplotting}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{mReplotting}{mReplotting}}
+{\footnotesize\ttfamily bool QCustom\+Plot\+::m\+Replotting\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_a081bf046501d52642dc6d7e3bdb97d57}\label{class_q_custom_plot_a081bf046501d52642dc6d7e3bdb97d57}} 
+\index{QCustomPlot@{QCustomPlot}!mScaledBackgroundPixmap@{mScaledBackgroundPixmap}}
+\index{mScaledBackgroundPixmap@{mScaledBackgroundPixmap}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{mScaledBackgroundPixmap}{mScaledBackgroundPixmap}}
+{\footnotesize\ttfamily QPixmap QCustom\+Plot\+::m\+Scaled\+Background\+Pixmap\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_a4827bc84ef5ce52dfbf9ff630ed1b276}\label{class_q_custom_plot_a4827bc84ef5ce52dfbf9ff630ed1b276}} 
+\index{QCustomPlot@{QCustomPlot}!mSelectionRect@{mSelectionRect}}
+\index{mSelectionRect@{mSelectionRect}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{mSelectionRect}{mSelectionRect}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_selection_rect}{QCPSelection\+Rect}}$\ast$ QCustom\+Plot\+::m\+Selection\+Rect\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_abe04c5def373cc4fede8de20542ca3f2}\label{class_q_custom_plot_abe04c5def373cc4fede8de20542ca3f2}} 
+\index{QCustomPlot@{QCustomPlot}!mSelectionRectMode@{mSelectionRectMode}}
+\index{mSelectionRectMode@{mSelectionRectMode}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{mSelectionRectMode}{mSelectionRectMode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_q_c_p_ac9aa4d6d81ac76b094f9af9ad2d3aacf}{QCP\+::\+Selection\+Rect\+Mode}} QCustom\+Plot\+::m\+Selection\+Rect\+Mode\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_abc36e12dd0482117ad810a800c847722}\label{class_q_custom_plot_abc36e12dd0482117ad810a800c847722}} 
+\index{QCustomPlot@{QCustomPlot}!mSelectionTolerance@{mSelectionTolerance}}
+\index{mSelectionTolerance@{mSelectionTolerance}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{mSelectionTolerance}{mSelectionTolerance}}
+{\footnotesize\ttfamily int QCustom\+Plot\+::m\+Selection\+Tolerance\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_ac0a7c38a715526c257cff95774f83ab6}\label{class_q_custom_plot_ac0a7c38a715526c257cff95774f83ab6}} 
+\index{QCustomPlot@{QCustomPlot}!mViewport@{mViewport}}
+\index{mViewport@{mViewport}!QCustomPlot@{QCustomPlot}}
+\doxysubsubsection{\texorpdfstring{mViewport}{mViewport}}
+{\footnotesize\ttfamily QRect QCustom\+Plot\+::m\+Viewport\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_q_custom_plot_a9a79cd0158a4c7f30cbc702f0fd800e4}\label{class_q_custom_plot_a9a79cd0158a4c7f30cbc702f0fd800e4}} 
 \index{QCustomPlot@{QCustomPlot}!xAxis@{xAxis}}
 \index{xAxis@{xAxis}!QCustomPlot@{QCustomPlot}}
 \doxysubsubsection{\texorpdfstring{xAxis}{xAxis}}
@@ -1863,5 +2303,5 @@ If an axis convenience pointer is currently zero and a new axis rect or a corres
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-qcustomplot.\+h\item 
-qcustomplot.\+cpp\end{DoxyCompactItemize}
+\mbox{\hyperlink{qcustomplot_8h}{qcustomplot.\+h}}\item 
+\mbox{\hyperlink{qcustomplot_8cpp}{qcustomplot.\+cpp}}\end{DoxyCompactItemize}

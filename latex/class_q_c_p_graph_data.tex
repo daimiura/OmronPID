@@ -5,12 +5,16 @@
 Holds the data of one single data point for \mbox{\hyperlink{class_q_c_p_graph}{QCPGraph}}.  
 
 
+
+
+{\ttfamily \#include $<$qcustomplot.\+h$>$}
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_q_c_p_graph_data_ac43f7499383d2fa2ffb7a4ad43f76c7c}{QCPGraph\+Data}} ()
 \item 
-\mbox{\hyperlink{class_q_c_p_graph_data_a2c32177f12f902f4e05f712837082bd6}{QCPGraph\+Data}} (double key, double value)
+\mbox{\hyperlink{class_q_c_p_graph_data_a2c32177f12f902f4e05f712837082bd6}{QCPGraph\+Data}} (double \mbox{\hyperlink{class_q_c_p_graph_data_a2fcebdf84af975761c0661237d7e28ec}{key}}, double \mbox{\hyperlink{class_q_c_p_graph_data_ac97e3ddbdcbe0b58d0b4d6f95250d59c}{value}})
 \item 
 double \mbox{\hyperlink{class_q_c_p_graph_data_a5e0f37ea101eeec245d8c32a2206b204}{sort\+Key}} () const
 \item 
@@ -30,11 +34,9 @@ static bool \mbox{\hyperlink{class_q_c_p_graph_data_a1c98dfd21b82321a173db4ff860
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_q_c_p_graph_data_a2fcebdf84af975761c0661237d7e28ec}\label{class_q_c_p_graph_data_a2fcebdf84af975761c0661237d7e28ec}} 
-double {\bfseries key}
+double \mbox{\hyperlink{class_q_c_p_graph_data_a2fcebdf84af975761c0661237d7e28ec}{key}}
 \item 
-\mbox{\Hypertarget{class_q_c_p_graph_data_ac97e3ddbdcbe0b58d0b4d6f95250d59c}\label{class_q_c_p_graph_data_ac97e3ddbdcbe0b58d0b4d6f95250d59c}} 
-double {\bfseries value}
+double \mbox{\hyperlink{class_q_c_p_graph_data_ac97e3ddbdcbe0b58d0b4d6f95250d59c}{value}}
 \end{DoxyCompactItemize}
 
 
@@ -43,10 +45,10 @@ Holds the data of one single data point for \mbox{\hyperlink{class_q_c_p_graph}{
 
 The stored data is\+: \begin{DoxyItemize}
 \item {\itshape key\+:} coordinate on the key axis of this data point (this is the {\itshape main\+Key} and the {\itshape sort\+Key}) \item {\itshape value\+:} coordinate on the value axis of this data point (this is the {\itshape main\+Value})\end{DoxyItemize}
-The container for storing multiple data points is QCPGraph\+Data\+Container. It is a typedef for \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}} with \mbox{\hyperlink{class_q_c_p_graph_data}{QCPGraph\+Data}} as the Data\+Type template parameter. See the documentation there for an explanation regarding the data type\textquotesingle{}s generic methods.
+The container for storing multiple data points is \mbox{\hyperlink{qcustomplot_8h_a2e5583d1ae212f0deb10537cf975a15a}{QCPGraph\+Data\+Container}}. It is a typedef for \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}} with \mbox{\hyperlink{class_q_c_p_graph_data}{QCPGraph\+Data}} as the Data\+Type template parameter. See the documentation there for an explanation regarding the data type\textquotesingle{}s generic methods.
 
 \begin{DoxySeeAlso}{See also}
-QCPGraph\+Data\+Container 
+\mbox{\hyperlink{qcustomplot_8h_a2e5583d1ae212f0deb10537cf975a15a}{QCPGraph\+Data\+Container}} 
 \end{DoxySeeAlso}
 
 
@@ -116,7 +118,22 @@ Returns a \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} with both lower and upp
 
 For a general explanation of what this method is good for in the context of the data container, see the documentation of \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}. 
 
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_q_c_p_graph_data_a2fcebdf84af975761c0661237d7e28ec}\label{class_q_c_p_graph_data_a2fcebdf84af975761c0661237d7e28ec}} 
+\index{QCPGraphData@{QCPGraphData}!key@{key}}
+\index{key@{key}!QCPGraphData@{QCPGraphData}}
+\doxysubsubsection{\texorpdfstring{key}{key}}
+{\footnotesize\ttfamily double QCPGraph\+Data\+::key}
+
+\mbox{\Hypertarget{class_q_c_p_graph_data_ac97e3ddbdcbe0b58d0b4d6f95250d59c}\label{class_q_c_p_graph_data_ac97e3ddbdcbe0b58d0b4d6f95250d59c}} 
+\index{QCPGraphData@{QCPGraphData}!value@{value}}
+\index{value@{value}!QCPGraphData@{QCPGraphData}}
+\doxysubsubsection{\texorpdfstring{value}{value}}
+{\footnotesize\ttfamily double QCPGraph\+Data\+::value}
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-qcustomplot.\+h\item 
-qcustomplot.\+cpp\end{DoxyCompactItemize}
+\mbox{\hyperlink{qcustomplot_8h}{qcustomplot.\+h}}\item 
+\mbox{\hyperlink{qcustomplot_8cpp}{qcustomplot.\+cpp}}\end{DoxyCompactItemize}

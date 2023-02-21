@@ -1,5 +1,9 @@
 \hypertarget{class_main_window}{}\doxysection{Main\+Window Class Reference}
 \label{class_main_window}\index{MainWindow@{MainWindow}}
+
+
+{\ttfamily \#include $<$mainwindow.\+h$>$}
+
 Inheritance diagram for Main\+Window\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,24 +13,78 @@ Inheritance diagram for Main\+Window\+:\begin{figure}[H]
 \doxysubsection*{Public Slots}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_main_window_a5653cd2fbf5e7ed54c75ad6776c5006b}\label{class_main_window_a5653cd2fbf5e7ed54c75ad6776c5006b}} 
-void {\bfseries periodic\+\_\+work} ()
+void \mbox{\hyperlink{class_main_window_a5653cd2fbf5e7ed54c75ad6776c5006b}{periodic\+\_\+work}} ()
+\item 
+void \mbox{\hyperlink{class_main_window_a699115cac96d47fd0f8a2bf359c3203c}{make\+Plot}} ()
+\item 
+void \mbox{\hyperlink{class_main_window_af30ebac87cad0ccff631b6e11bcc50c8}{Temp\+Check}} ()
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_main_window_a8b244be8b7b7db1b08de2a2acb9409db}\label{class_main_window_a8b244be8b7b7db1b08de2a2acb9409db}} 
-{\bfseries Main\+Window} (QWidget $\ast$parent=0)
+\mbox{\hyperlink{class_main_window_a8b244be8b7b7db1b08de2a2acb9409db}{Main\+Window}} (QWidget $\ast$parent=0)
 \item 
-\mbox{\Hypertarget{class_main_window_a44d85ff6240f89bc1aff38ff3dec128e}\label{class_main_window_a44d85ff6240f89bc1aff38ff3dec128e}} 
-void {\bfseries Log\+Msg} (QString str, bool new\+Line=true)
+\mbox{\hyperlink{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}{$\sim$\+Main\+Window}} ()
 \item 
-\mbox{\Hypertarget{class_main_window_a384e4eb100e8c9af82ad207333d13d87}\label{class_main_window_a384e4eb100e8c9af82ad207333d13d87}} 
-void {\bfseries find\+Series\+Port\+Devices} ()
+void \mbox{\hyperlink{class_main_window_a44d85ff6240f89bc1aff38ff3dec128e}{Log\+Msg}} (QString str, bool new\+Line=true)
+\item 
+void \mbox{\hyperlink{class_main_window_a384e4eb100e8c9af82ad207333d13d87}{find\+Series\+Port\+Devices}} ()
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_main_window_a8b244be8b7b7db1b08de2a2acb9409db}\label{class_main_window_a8b244be8b7b7db1b08de2a2acb9409db}} 
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{MainWindow()}{MainWindow()}}
+{\footnotesize\ttfamily Main\+Window\+::\+Main\+Window (\begin{DoxyParamCaption}\item[{QWidget $\ast$}]{parent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Thread for Temp\+Check mode.
+
+Thread for Temp\+Check mode. Priotity is set to QThread\+::\+Time\+Critical\+Priority
+
+Thread for Logging. Priotity is set to QThread\+::\+Highest\+Priority\mbox{\Hypertarget{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}\label{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}} 
+\index{MainWindow@{MainWindow}!````~MainWindow@{$\sim$MainWindow}}
+\index{````~MainWindow@{$\sim$MainWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{$\sim$MainWindow()}{~MainWindow()}}
+{\footnotesize\ttfamily Main\+Window\+::$\sim$\+Main\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_main_window_a384e4eb100e8c9af82ad207333d13d87}\label{class_main_window_a384e4eb100e8c9af82ad207333d13d87}} 
+\index{MainWindow@{MainWindow}!findSeriesPortDevices@{findSeriesPortDevices}}
+\index{findSeriesPortDevices@{findSeriesPortDevices}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{findSeriesPortDevices()}{findSeriesPortDevices()}}
+{\footnotesize\ttfamily void Main\+Window\+::find\+Series\+Port\+Devices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_main_window_a44d85ff6240f89bc1aff38ff3dec128e}\label{class_main_window_a44d85ff6240f89bc1aff38ff3dec128e}} 
+\index{MainWindow@{MainWindow}!LogMsg@{LogMsg}}
+\index{LogMsg@{LogMsg}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{LogMsg()}{LogMsg()}}
+{\footnotesize\ttfamily void Main\+Window\+::\+Log\+Msg (\begin{DoxyParamCaption}\item[{QString}]{str,  }\item[{bool}]{new\+Line = {\ttfamily true} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_main_window_a699115cac96d47fd0f8a2bf359c3203c}\label{class_main_window_a699115cac96d47fd0f8a2bf359c3203c}} 
+\index{MainWindow@{MainWindow}!makePlot@{makePlot}}
+\index{makePlot@{makePlot}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{makePlot}{makePlot}}
+{\footnotesize\ttfamily void Main\+Window\+::make\+Plot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_main_window_a5653cd2fbf5e7ed54c75ad6776c5006b}\label{class_main_window_a5653cd2fbf5e7ed54c75ad6776c5006b}} 
+\index{MainWindow@{MainWindow}!periodic\_work@{periodic\_work}}
+\index{periodic\_work@{periodic\_work}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{periodic\_work}{periodic\_work}}
+{\footnotesize\ttfamily void Main\+Window\+::periodic\+\_\+work (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_main_window_af30ebac87cad0ccff631b6e11bcc50c8}\label{class_main_window_af30ebac87cad0ccff631b6e11bcc50c8}} 
+\index{MainWindow@{MainWindow}!TempCheck@{TempCheck}}
+\index{TempCheck@{TempCheck}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{TempCheck}{TempCheck}}
+{\footnotesize\ttfamily void Main\+Window\+::\+Temp\+Check (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{mainwindow_8h}{mainwindow.\+h}}\item 
-mainwindow.\+cpp\end{DoxyCompactItemize}
+\mbox{\hyperlink{mainwindow_8cpp}{mainwindow.\+cpp}}\end{DoxyCompactItemize}

@@ -38,6 +38,7 @@ signals:
 public slots:
   void periodic_work();
   void makePlot();
+  void TempCheck();
 
 
 private slots:
@@ -94,9 +95,7 @@ private slots:
     void on_radioButton_Stop_clicked();
 
     void Quit();
-    void CheckTemp();
-
-    void on_radioButton_TempCheck_toggled(bool checked);
+    //void CheckTemp();
 
     void setIntervalAskMV();
     void setIntervalAskTemp();
@@ -104,8 +103,9 @@ private slots:
     void setNumbers();
     void setIgnoreRange();
     void setParametersTempCheck();
+    double diffTemp(double ctemp);
 
-
+    void on_radioButton_TempCheck_toggled(bool checked);
 
 private:
     Ui::MainWindow *ui;
@@ -113,6 +113,7 @@ private:
     QModbusRtuSerialMaster * omron;
     MyThread * threadMVcheck_;
     MyThread * threadLog_;
+    MyThread * threadTempCheck_;
 
     QString omronPortName;
     int omronID;
@@ -134,6 +135,8 @@ private:
     QVector<QCPGraphData> pvData;
     QVector<QCPGraphData> svData;
     QVector<QCPGraphData> mvData;
+    QVector<double> vtemp_;
+    QVector<double> vdifftemp_;
 
     double pid_P, pid_I, pid_D;
 
@@ -149,6 +152,8 @@ private:
     ConfigureDialog * configureDialog_;
     int picNumber;
     QMutex mutex_;
+    //! Counter that TempCheck was executed.
+    int countTempCheck_;
 };
 
 #endif // MAINWINDOW_H

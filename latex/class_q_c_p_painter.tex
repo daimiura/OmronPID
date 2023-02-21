@@ -5,6 +5,10 @@
 QPainter subclass used internally.  
 
 
+
+
+{\ttfamily \#include $<$qcustomplot.\+h$>$}
+
 Inheritance diagram for QCPPainter\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -27,17 +31,15 @@ enum \mbox{\hyperlink{class_q_c_p_painter_a156cf16444ff5e0d81a73c615fdb156d}{Pai
 \item 
 \mbox{\hyperlink{class_q_c_p_painter_ae58dbb1795ddc4351ab324dc9898aa22}{QCPPainter}} (QPaint\+Device $\ast$device)
 \item 
-\mbox{\Hypertarget{class_q_c_p_painter_a5aff96296e995f6f35b2596a482aae37}\label{class_q_c_p_painter_a5aff96296e995f6f35b2596a482aae37}} 
-bool {\bfseries antialiasing} () const
+bool \mbox{\hyperlink{class_q_c_p_painter_a5aff96296e995f6f35b2596a482aae37}{antialiasing}} () const
 \item 
-\mbox{\Hypertarget{class_q_c_p_painter_aef102658219b24165f7ee2aad1b9e48f}\label{class_q_c_p_painter_aef102658219b24165f7ee2aad1b9e48f}} 
-Painter\+Modes {\bfseries modes} () const
+Painter\+Modes \mbox{\hyperlink{class_q_c_p_painter_aef102658219b24165f7ee2aad1b9e48f}{modes}} () const
 \item 
 void \mbox{\hyperlink{class_q_c_p_painter_aaba1deb9188244d9ea65b035112b4d05}{set\+Antialiasing}} (bool enabled)
 \item 
 void \mbox{\hyperlink{class_q_c_p_painter_af6b1f7d2bbc548b10aa55d8b6ad49577}{set\+Mode}} (\mbox{\hyperlink{class_q_c_p_painter_a156cf16444ff5e0d81a73c615fdb156d}{Painter\+Mode}} mode, bool enabled=true)
 \item 
-void \mbox{\hyperlink{class_q_c_p_painter_a5fac93adc29c7c4dea9f3e171e9e635e}{set\+Modes}} (Painter\+Modes modes)
+void \mbox{\hyperlink{class_q_c_p_painter_a5fac93adc29c7c4dea9f3e171e9e635e}{set\+Modes}} (Painter\+Modes \mbox{\hyperlink{class_q_c_p_painter_aef102658219b24165f7ee2aad1b9e48f}{modes}})
 \item 
 bool \mbox{\hyperlink{class_q_c_p_painter_a0a41146ccd619dceab6e25ec7b46b044}{begin}} (QPaint\+Device $\ast$device)
 \item 
@@ -49,8 +51,7 @@ void \mbox{\hyperlink{class_q_c_p_painter_a25e76095aae41da0d08035060e5f81ca}{set
 \item 
 void \mbox{\hyperlink{class_q_c_p_painter_a0b4b1b9bd495e182c731774dc800e6e0}{draw\+Line}} (const QLineF \&line)
 \item 
-\mbox{\Hypertarget{class_q_c_p_painter_ad1638db27929491b3f1beb74d6cbad5e}\label{class_q_c_p_painter_ad1638db27929491b3f1beb74d6cbad5e}} 
-void {\bfseries draw\+Line} (const QPointF \&p1, const QPointF \&p2)
+void \mbox{\hyperlink{class_q_c_p_painter_ad1638db27929491b3f1beb74d6cbad5e}{draw\+Line}} (const QPointF \&p1, const QPointF \&p2)
 \item 
 void \mbox{\hyperlink{class_q_c_p_painter_a8fd6821ee6fecbfa04444c9062912abd}{save}} ()
 \item 
@@ -61,14 +62,11 @@ void \mbox{\hyperlink{class_q_c_p_painter_a7e63fbcf47e35c6f2ecd11b8fef7c7d8}{mak
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_q_c_p_painter_af5d1d6e5df0adbc7de5633250fb3396c}\label{class_q_c_p_painter_af5d1d6e5df0adbc7de5633250fb3396c}} 
-Painter\+Modes {\bfseries m\+Modes}
+Painter\+Modes \mbox{\hyperlink{class_q_c_p_painter_af5d1d6e5df0adbc7de5633250fb3396c}{m\+Modes}}
 \item 
-\mbox{\Hypertarget{class_q_c_p_painter_a7055085da176aee0f6b23298f1003d08}\label{class_q_c_p_painter_a7055085da176aee0f6b23298f1003d08}} 
-bool {\bfseries m\+Is\+Antialiasing}
+bool \mbox{\hyperlink{class_q_c_p_painter_a7055085da176aee0f6b23298f1003d08}{m\+Is\+Antialiasing}}
 \item 
-\mbox{\Hypertarget{class_q_c_p_painter_a0189e641bbf7dc31ac15aef7b36501fa}\label{class_q_c_p_painter_a0189e641bbf7dc31ac15aef7b36501fa}} 
-QStack$<$ bool $>$ {\bfseries m\+Antialiasing\+Stack}
+QStack$<$ bool $>$ \mbox{\hyperlink{class_q_c_p_painter_a0189e641bbf7dc31ac15aef7b36501fa}{m\+Antialiasing\+Stack}}
 \end{DoxyCompactItemize}
 
 
@@ -127,6 +125,12 @@ Creates a new \mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} instance on the
 Like \mbox{\hyperlink{class_q_c_p_painter_a0a41146ccd619dceab6e25ec7b46b044}{begin}}, this method sets QPainter\+::\+Non\+Cosmetic\+Default\+Pen in Qt versions before Qt5. 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_q_c_p_painter_a5aff96296e995f6f35b2596a482aae37}\label{class_q_c_p_painter_a5aff96296e995f6f35b2596a482aae37}} 
+\index{QCPPainter@{QCPPainter}!antialiasing@{antialiasing}}
+\index{antialiasing@{antialiasing}!QCPPainter@{QCPPainter}}
+\doxysubsubsection{\texorpdfstring{antialiasing()}{antialiasing()}}
+{\footnotesize\ttfamily bool QCPPainter\+::antialiasing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
 \mbox{\Hypertarget{class_q_c_p_painter_a0a41146ccd619dceab6e25ec7b46b044}\label{class_q_c_p_painter_a0a41146ccd619dceab6e25ec7b46b044}} 
 \index{QCPPainter@{QCPPainter}!begin@{begin}}
 \index{begin@{begin}!QCPPainter@{QCPPainter}}
@@ -143,7 +147,7 @@ this function hides the non-\/virtual base class implementation.
 \mbox{\Hypertarget{class_q_c_p_painter_a0b4b1b9bd495e182c731774dc800e6e0}\label{class_q_c_p_painter_a0b4b1b9bd495e182c731774dc800e6e0}} 
 \index{QCPPainter@{QCPPainter}!drawLine@{drawLine}}
 \index{drawLine@{drawLine}!QCPPainter@{QCPPainter}}
-\doxysubsubsection{\texorpdfstring{drawLine()}{drawLine()}}
+\doxysubsubsection{\texorpdfstring{drawLine()}{drawLine()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily void QCPPainter\+::draw\+Line (\begin{DoxyParamCaption}\item[{const QLineF \&}]{line }\end{DoxyParamCaption})}
 
 This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
@@ -153,13 +157,25 @@ Works around a Qt bug introduced with Qt 4.\+8 which makes drawing QLineF unpred
 \begin{DoxyNote}{Note}
 this function hides the non-\/virtual base class implementation. 
 \end{DoxyNote}
+\mbox{\Hypertarget{class_q_c_p_painter_ad1638db27929491b3f1beb74d6cbad5e}\label{class_q_c_p_painter_ad1638db27929491b3f1beb74d6cbad5e}} 
+\index{QCPPainter@{QCPPainter}!drawLine@{drawLine}}
+\index{drawLine@{drawLine}!QCPPainter@{QCPPainter}}
+\doxysubsubsection{\texorpdfstring{drawLine()}{drawLine()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void QCPPainter\+::draw\+Line (\begin{DoxyParamCaption}\item[{const QPointF \&}]{p1,  }\item[{const QPointF \&}]{p2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
 \mbox{\Hypertarget{class_q_c_p_painter_a7e63fbcf47e35c6f2ecd11b8fef7c7d8}\label{class_q_c_p_painter_a7e63fbcf47e35c6f2ecd11b8fef7c7d8}} 
 \index{QCPPainter@{QCPPainter}!makeNonCosmetic@{makeNonCosmetic}}
 \index{makeNonCosmetic@{makeNonCosmetic}!QCPPainter@{QCPPainter}}
 \doxysubsubsection{\texorpdfstring{makeNonCosmetic()}{makeNonCosmetic()}}
 {\footnotesize\ttfamily void QCPPainter\+::make\+Non\+Cosmetic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Changes the pen width to 1 if it currently is 0. This function is called in the \mbox{\hyperlink{class_q_c_p_painter_af9c7a4cd1791403901f8c5b82a150195}{set\+Pen}} overrides when the \mbox{\hyperlink{class_q_c_p_painter_a156cf16444ff5e0d81a73c615fdb156dac1e481bfaf408f2bd2eaad3ec341f36b}{pm\+Non\+Cosmetic}} mode is set. \mbox{\Hypertarget{class_q_c_p_painter_a64908e6298d5bbd83457dc987cc3a022}\label{class_q_c_p_painter_a64908e6298d5bbd83457dc987cc3a022}} 
+Changes the pen width to 1 if it currently is 0. This function is called in the \mbox{\hyperlink{class_q_c_p_painter_af9c7a4cd1791403901f8c5b82a150195}{set\+Pen}} overrides when the \mbox{\hyperlink{class_q_c_p_painter_a156cf16444ff5e0d81a73c615fdb156dac1e481bfaf408f2bd2eaad3ec341f36b}{pm\+Non\+Cosmetic}} mode is set. \mbox{\Hypertarget{class_q_c_p_painter_aef102658219b24165f7ee2aad1b9e48f}\label{class_q_c_p_painter_aef102658219b24165f7ee2aad1b9e48f}} 
+\index{QCPPainter@{QCPPainter}!modes@{modes}}
+\index{modes@{modes}!QCPPainter@{QCPPainter}}
+\doxysubsubsection{\texorpdfstring{modes()}{modes()}}
+{\footnotesize\ttfamily Painter\+Modes QCPPainter\+::modes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_c_p_painter_a64908e6298d5bbd83457dc987cc3a022}\label{class_q_c_p_painter_a64908e6298d5bbd83457dc987cc3a022}} 
 \index{QCPPainter@{QCPPainter}!restore@{restore}}
 \index{restore@{restore}!QCPPainter@{QCPPainter}}
 \doxysubsubsection{\texorpdfstring{restore()}{restore()}}
@@ -246,7 +262,28 @@ this function hides the non-\/virtual base class implementation.
 \end{DoxyNote}
 
 
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_q_c_p_painter_a0189e641bbf7dc31ac15aef7b36501fa}\label{class_q_c_p_painter_a0189e641bbf7dc31ac15aef7b36501fa}} 
+\index{QCPPainter@{QCPPainter}!mAntialiasingStack@{mAntialiasingStack}}
+\index{mAntialiasingStack@{mAntialiasingStack}!QCPPainter@{QCPPainter}}
+\doxysubsubsection{\texorpdfstring{mAntialiasingStack}{mAntialiasingStack}}
+{\footnotesize\ttfamily QStack$<$bool$>$ QCPPainter\+::m\+Antialiasing\+Stack\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_q_c_p_painter_a7055085da176aee0f6b23298f1003d08}\label{class_q_c_p_painter_a7055085da176aee0f6b23298f1003d08}} 
+\index{QCPPainter@{QCPPainter}!mIsAntialiasing@{mIsAntialiasing}}
+\index{mIsAntialiasing@{mIsAntialiasing}!QCPPainter@{QCPPainter}}
+\doxysubsubsection{\texorpdfstring{mIsAntialiasing}{mIsAntialiasing}}
+{\footnotesize\ttfamily bool QCPPainter\+::m\+Is\+Antialiasing\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_q_c_p_painter_af5d1d6e5df0adbc7de5633250fb3396c}\label{class_q_c_p_painter_af5d1d6e5df0adbc7de5633250fb3396c}} 
+\index{QCPPainter@{QCPPainter}!mModes@{mModes}}
+\index{mModes@{mModes}!QCPPainter@{QCPPainter}}
+\doxysubsubsection{\texorpdfstring{mModes}{mModes}}
+{\footnotesize\ttfamily Painter\+Modes QCPPainter\+::m\+Modes\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-qcustomplot.\+h\item 
-qcustomplot.\+cpp\end{DoxyCompactItemize}
+\mbox{\hyperlink{qcustomplot_8h}{qcustomplot.\+h}}\item 
+\mbox{\hyperlink{qcustomplot_8cpp}{qcustomplot.\+cpp}}\end{DoxyCompactItemize}

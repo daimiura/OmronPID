@@ -5,18 +5,20 @@
 Represents the range an axis is encompassing.  
 
 
+
+
+{\ttfamily \#include $<$qcustomplot.\+h$>$}
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_q_c_p_range_aca158d7e69702cee5d77d10a269b01e2}{QCPRange}} ()
 \item 
-\mbox{\hyperlink{class_q_c_p_range_a1d9d84d084c8f368fdedd42e0978d405}{QCPRange}} (double lower, double upper)
+\mbox{\hyperlink{class_q_c_p_range_a1d9d84d084c8f368fdedd42e0978d405}{QCPRange}} (double \mbox{\hyperlink{class_q_c_p_range_aa3aca3edb14f7ca0c85d912647b91745}{lower}}, double \mbox{\hyperlink{class_q_c_p_range_ae44eb3aafe1d0e2ed34b499b6d2e074f}{upper}})
 \item 
-\mbox{\Hypertarget{class_q_c_p_range_a9f8d1fdcf4b6d19779f1c3d9a14b09c9}\label{class_q_c_p_range_a9f8d1fdcf4b6d19779f1c3d9a14b09c9}} 
-bool {\bfseries operator==} (const \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \&other) const
+bool \mbox{\hyperlink{class_q_c_p_range_a9f8d1fdcf4b6d19779f1c3d9a14b09c9}{operator==}} (const \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \&other) const
 \item 
-\mbox{\Hypertarget{class_q_c_p_range_a4827a37c83b8bb4bf53fcf8f6a257e77}\label{class_q_c_p_range_a4827a37c83b8bb4bf53fcf8f6a257e77}} 
-bool {\bfseries operator!=} (const \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \&other) const
+bool \mbox{\hyperlink{class_q_c_p_range_a4827a37c83b8bb4bf53fcf8f6a257e77}{operator!=}} (const \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \&other) const
 \item 
 \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \& \mbox{\hyperlink{class_q_c_p_range_afea7c1aa7d08f061cd9bd8832f957df8}{operator+=}} (const double \&value)
 \item 
@@ -51,18 +53,16 @@ bool \mbox{\hyperlink{class_q_c_p_range_ae9842b48b6d38dc5e9607358e3083cc8}{conta
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static bool \mbox{\hyperlink{class_q_c_p_range_ab38bd4841c77c7bb86c9eea0f142dcc0}{valid\+Range}} (double lower, double upper)
+static bool \mbox{\hyperlink{class_q_c_p_range_ab38bd4841c77c7bb86c9eea0f142dcc0}{valid\+Range}} (double \mbox{\hyperlink{class_q_c_p_range_aa3aca3edb14f7ca0c85d912647b91745}{lower}}, double \mbox{\hyperlink{class_q_c_p_range_ae44eb3aafe1d0e2ed34b499b6d2e074f}{upper}})
 \item 
 static bool \mbox{\hyperlink{class_q_c_p_range_a801b964752eaad6219be9d8a651ec2b3}{valid\+Range}} (const \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \&range)
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_q_c_p_range_aa3aca3edb14f7ca0c85d912647b91745}\label{class_q_c_p_range_aa3aca3edb14f7ca0c85d912647b91745}} 
-double {\bfseries lower}
+double \mbox{\hyperlink{class_q_c_p_range_aa3aca3edb14f7ca0c85d912647b91745}{lower}}
 \item 
-\mbox{\Hypertarget{class_q_c_p_range_ae44eb3aafe1d0e2ed34b499b6d2e074f}\label{class_q_c_p_range_ae44eb3aafe1d0e2ed34b499b6d2e074f}} 
-double {\bfseries upper}
+double \mbox{\hyperlink{class_q_c_p_range_ae44eb3aafe1d0e2ed34b499b6d2e074f}{upper}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
@@ -213,7 +213,13 @@ If this range contains NaN as lower or upper bound, the returned range\textquote
 \doxysubsubsection{\texorpdfstring{normalize()}{normalize()}}
 {\footnotesize\ttfamily void QCPRange\+::normalize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-Makes sure {\itshape lower} is numerically smaller than {\itshape upper}. If this is not the case, the values are swapped. \mbox{\Hypertarget{class_q_c_p_range_a6876aa9620ff2f0f7f1873f998372cef}\label{class_q_c_p_range_a6876aa9620ff2f0f7f1873f998372cef}} 
+Makes sure {\itshape lower} is numerically smaller than {\itshape upper}. If this is not the case, the values are swapped. \mbox{\Hypertarget{class_q_c_p_range_a4827a37c83b8bb4bf53fcf8f6a257e77}\label{class_q_c_p_range_a4827a37c83b8bb4bf53fcf8f6a257e77}} 
+\index{QCPRange@{QCPRange}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!QCPRange@{QCPRange}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool QCPRange\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_c_p_range_a6876aa9620ff2f0f7f1873f998372cef}\label{class_q_c_p_range_a6876aa9620ff2f0f7f1873f998372cef}} 
 \index{QCPRange@{QCPRange}!operator$\ast$=@{operator$\ast$=}}
 \index{operator$\ast$=@{operator$\ast$=}!QCPRange@{QCPRange}}
 \doxysubsubsection{\texorpdfstring{operator$\ast$=()}{operator*=()}}
@@ -237,7 +243,13 @@ Subtracts {\itshape value} from both boundaries of the range. \mbox{\Hypertarget
 \doxysubsubsection{\texorpdfstring{operator/=()}{operator/=()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \& QCPRange\+::operator/= (\begin{DoxyParamCaption}\item[{const double \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-Divides both boundaries of the range by {\itshape value}. \mbox{\Hypertarget{class_q_c_p_range_a808751fdd9b17ef52327ba011df2e5f1}\label{class_q_c_p_range_a808751fdd9b17ef52327ba011df2e5f1}} 
+Divides both boundaries of the range by {\itshape value}. \mbox{\Hypertarget{class_q_c_p_range_a9f8d1fdcf4b6d19779f1c3d9a14b09c9}\label{class_q_c_p_range_a9f8d1fdcf4b6d19779f1c3d9a14b09c9}} 
+\index{QCPRange@{QCPRange}!operator==@{operator==}}
+\index{operator==@{operator==}!QCPRange@{QCPRange}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool QCPRange\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_c_p_range_a808751fdd9b17ef52327ba011df2e5f1}\label{class_q_c_p_range_a808751fdd9b17ef52327ba011df2e5f1}} 
 \index{QCPRange@{QCPRange}!sanitizedForLinScale@{sanitizedForLinScale}}
 \index{sanitizedForLinScale@{sanitizedForLinScale}!QCPRange@{QCPRange}}
 \doxysubsubsection{\texorpdfstring{sanitizedForLinScale()}{sanitizedForLinScale()}}
@@ -321,6 +333,12 @@ Divides both boundaries of the range by {\itshape value}. \mbox{\Hypertarget{cla
 Prints {\itshape range} in a human readable format to the q\+Debug output. 
 
 \doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_q_c_p_range_aa3aca3edb14f7ca0c85d912647b91745}\label{class_q_c_p_range_aa3aca3edb14f7ca0c85d912647b91745}} 
+\index{QCPRange@{QCPRange}!lower@{lower}}
+\index{lower@{lower}!QCPRange@{QCPRange}}
+\doxysubsubsection{\texorpdfstring{lower}{lower}}
+{\footnotesize\ttfamily double QCPRange\+::lower}
+
 \mbox{\Hypertarget{class_q_c_p_range_a5ca51e7a2dc5dc0d49527ab171fe1f4f}\label{class_q_c_p_range_a5ca51e7a2dc5dc0d49527ab171fe1f4f}} 
 \index{QCPRange@{QCPRange}!maxRange@{maxRange}}
 \index{maxRange@{maxRange}!QCPRange@{QCPRange}}
@@ -349,9 +367,15 @@ Do not use this constant to indicate \char`\"{}arbitrarily small\char`\"{} value
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_range_ab38bd4841c77c7bb86c9eea0f142dcc0}{valid\+Range}}, \mbox{\hyperlink{class_q_c_p_range_a5ca51e7a2dc5dc0d49527ab171fe1f4f}{max\+Range}} 
 \end{DoxySeeAlso}
+\mbox{\Hypertarget{class_q_c_p_range_ae44eb3aafe1d0e2ed34b499b6d2e074f}\label{class_q_c_p_range_ae44eb3aafe1d0e2ed34b499b6d2e074f}} 
+\index{QCPRange@{QCPRange}!upper@{upper}}
+\index{upper@{upper}!QCPRange@{QCPRange}}
+\doxysubsubsection{\texorpdfstring{upper}{upper}}
+{\footnotesize\ttfamily double QCPRange\+::upper}
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-qcustomplot.\+h\item 
-qcustomplot.\+cpp\end{DoxyCompactItemize}
+\mbox{\hyperlink{qcustomplot_8h}{qcustomplot.\+h}}\item 
+\mbox{\hyperlink{qcustomplot_8cpp}{qcustomplot.\+cpp}}\end{DoxyCompactItemize}

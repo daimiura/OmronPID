@@ -1,7 +1,7 @@
 var searchData=
 [
   ['t_0',['t',['../class_q_c_p_curve_data.html#aecc395525be28e9178a088793beb3ff3',1,'QCPCurveData']]],
-  ['textbrowser_5fetime_5f_1',['textBrowser_Etime_',['../class_configure_dialog.html#a70d3314a0739df4f0e1af57510b046bb',1,'ConfigureDialog']]],
+  ['textbrowser_5flog_5f_1',['textBrowser_log_',['../class_configure_dialog.html#aa220eb7a3c3857cc031cc3e73bbba398',1,'ConfigureDialog']]],
   ['ticklabelcolor_2',['tickLabelColor',['../class_q_c_p_axis_painter_private.html#a88032cf15c997e3956b79617b859e8ad',1,'QCPAxisPainterPrivate']]],
   ['ticklabelfont_3',['tickLabelFont',['../class_q_c_p_axis_painter_private.html#a06cb4b185feb1e560e01d65887e4d80d',1,'QCPAxisPainterPrivate']]],
   ['ticklabelpadding_4',['tickLabelPadding',['../class_q_c_p_axis_painter_private.html#a264cfa080e84e536cf2d1ab9c5d5cc5f',1,'QCPAxisPainterPrivate']]],
