@@ -15,6 +15,8 @@
 #include <QApplication>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
+#include <QFile>
+#include <QTextStream>
 #include "mythread.h"
 #include "myqlineedit.h"
 #include "configuredialog.h"
@@ -39,6 +41,7 @@ public slots:
   void periodic_work();
   void makePlot();
   void TempCheck();
+  //void writeData();
 
 
 private slots:
@@ -142,6 +145,9 @@ private:
 
     QTimer * clock;
     QTimer * waitTimer;
+    QString fileName_;
+    QString filePath_;
+    QFile output_;
     QElapsedTimer totalElapse;
     bool checkDay;
     int dayCounter;

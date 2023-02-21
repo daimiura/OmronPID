@@ -3,7 +3,8 @@
 
 const QString DESKTOP_PATH = QStandardPaths::locate(QStandardPaths::DesktopLocation, QString(), QStandardPaths::LocateDirectory);
 const QString DATA_PATH_2 = DESKTOP_PATH + "Temp_Record";
-const QString DATA_PATH = "Z:/triplet/Temp_Record";
+//const QString DATA_PATH = "Z:/triplet/Temp_Record";
+const QString DATA_PATH = "/c/Users/daisuke/OmronPID";
 
 enum E5CC_Address{
     // QByteArray::fromHex(QString::number(E5CC_Address::setPoint, 16).toStdString().c_str()
@@ -243,7 +244,17 @@ MainWindow::MainWindow(QWidget *parent) :
     threadLog_->interval_ = 10000; //ms to sec.;
     threadLog_->moveToThread(threadLog_);
     QObject::connect(threadLog_, SIGNAL(data_update()), this, SLOT(makePlot()));
+    //QObject::connect(threadLog_, SIGNAL(data_update()), this, SLOT(writeData()));
     threadLog_->setPriority(QThread::HighestPriority);
+    QDateTime startTime = QDateTime::currentDateTime();
+    fileName_ = startTime.toString("yyyyMMdd_HHmmss") +
+            "_tempRecord_" + ui->comboBox_SeriesNumber->currentText() +".dat";
+    filePath_ = DATA_PATH_2 + "/" + fileName_;
+    QFile output_(filePath_);
+    if (output_.exists()) LogMsg("file already exists.");
+    else output_.open(QIODevice::WriteOnly| QIODevice::Text);
+    //"Date", "Date_t", "temp [C]", "SV [C]", "Output [%]"
+    output_.close();
 
     ui->textEdit_Log->setTextColor(QColor(34,139,34,255));
     LogMsg("The AT and RUN/STOP do not get from the device. Please be careful.");
@@ -1744,9 +1755,16 @@ void MainWindow::TempCheck(){
     if( i > 10 ) modbusReady = true;
   }
   vtemp_.push_back(temperature);
-  LogMsg("size = " + QString::number((vtemp_.size())));
-  LogMsg("temp = " + QString::number(temperature));
-  double targetValue = ui->lineEdit_SV->text().toDouble();
+  askSetPoint();
+  i = 0;
+  while(!modbusReady) {
+      i++;
+      waitForMSec(timing::modbus);
+      if( i > 10 ){
+          modbusReady = true;
+      }
+  }
+  double targetValue =SV;
   double lower = ui->lineEdit_IgnoreLower->text().toDouble();
   double upper = ui->lineEdit_IgnoreUpper->text().toDouble();
   if (targetValue+lower <= temperature && targetValue+upper >= temperature) {
@@ -1884,6 +1902,28 @@ void MainWindow::periodic_work(){
   const double targetValue = ui->lineEdit_SV->text().toDouble();
   QDateTime date = QDateTime::currentDateTime();
   fillDataAndPlot(date, temperature, targetValue, MV);
+
+  LogMsg("data save to : " + filePath_);
+  QFile output_(filePath_);
+  QTextStream stream(&output_);
+  if (!output_.exists()){
+      output_.open(QIODevice::WriteOnly| QIODevice::Text);
+      LogMsg(filePath_ + " does not be found. New file was be generated.");
+  }
+  output_.open(QIODevice::Append| QIODevice::Text);
+  stream << date.toString("MM-dd HH:mm:ss").toStdString().c_str()
+         << "\t"
+         << date.toSecsSinceEpoch()
+         << "\t"
+         << QString::number(temperature)
+         << "\t"
+         << QString::number(SV)
+         << "\t"
+         << QString::number(MV)
+         << endl;
+  getTempTimer.setSingleShot(true);
+  while(getTempTimer.remainingTime() != -1 ) waitForMSec(timing::getTempTimer);
+  output_.close();
   }
 
 
@@ -1892,4 +1932,6 @@ void MainWindow::on_radioButton_TempCheck_toggled(bool checked)
   //if(checked) TempCheck();
   //else return;
 }
+
+
 
