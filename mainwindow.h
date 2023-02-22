@@ -105,9 +105,8 @@ private slots:
     void setNumbers();
     void setIgnoreRange();
     void setParametersTempCheck();
-    double diffTemp(double ctemp);
+    double diffTemp();
 
-    void on_radioButton_TempCheck_toggled(bool checked);
     void on_checkBox_dataSave_toggled(bool checked);
 
 private:

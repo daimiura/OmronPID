@@ -1,6 +1,8 @@
 #include "configuredialog.h"
 #include "ui_configuredialog.h"
-#include <QtGui>
+//#include <QtGui>
+//#include <QWidget>
+#include <QtWidgets>
 
 /**
  * @brief ConfigureDialog::ConfigureDialog
@@ -17,6 +19,7 @@ ConfigureDialog::ConfigureDialog(QWidget *parent) :
   labelAskTemp_ = new QLabel(tr("Interval time to Ask Temperature (min)."));
   labelSize_ = new QLabel(tr("Number of times to monitor temperature during TempCheck mode."));
   label_SafeLimit_ = new QLabel(tr("Lower limit of temperature change permited in TempCheck mode (C)."));
+  label_IgnoreEnable_ = new QLabel(tr("Enable TempCheck mode to ignore temperature range."));
   label_IgnoreLower_ = new QLabel(tr("Lower limit of temperature to ignore TempCheck mode (C."));
   label_IgnoreUpper_ = new QLabel(tr("Upper limit of temperature to ignore TempCheck mode (C)."));
   label_ETime_ = new QLabel(tr("Log Message"));
@@ -28,6 +31,7 @@ ConfigureDialog::ConfigureDialog(QWidget *parent) :
   spinBox_IgnoreLower_ = new QDoubleSpinBox();
   spinBox_IgnoreUpper_ = new QDoubleSpinBox();
   textBrowser_log_ = new QTextBrowser();
+  checkBox_IgnoreEnable_ = new QCheckBox();
   QVBoxLayout *Layout = new QVBoxLayout(this);
   Layout->addWidget(labelAskMV_);
   Layout->addWidget(spinBox_IntervalAskMV_);
@@ -37,6 +41,8 @@ ConfigureDialog::ConfigureDialog(QWidget *parent) :
   Layout->addWidget(spinBox_Numbers_);
   Layout->addWidget(label_SafeLimit_);
   Layout->addWidget(spinBox_SafeLimit_);
+  Layout->addWidget(label_IgnoreEnable_);
+  Layout->addWidget(checkBox_IgnoreEnable_);
   Layout->addWidget(label_IgnoreLower_);
   Layout->addWidget(spinBox_IgnoreLower_);
   Layout->addWidget(label_IgnoreUpper_);
@@ -52,21 +58,35 @@ ConfigureDialog::ConfigureDialog(QWidget *parent) :
   spinBox_IgnoreLower_->setMaximum(0);
   spinBox_IgnoreLower_->setMinimum(-100);
 
-  spinBox_IntervalAskMV_->setValue(10);
-  spinBox_IntervalAskTemp_->setValue(30);
-  spinBox_Numbers_->setValue(10);
-  spinBox_SafeLimit_->setValue(0.5);
-  spinBox_IgnoreLower_->setValue(-10);
-  spinBox_IgnoreUpper_->setValue(+10);
+  intervalAskMV_ = 10;
+  intervalAskTemp_ = 10;
+  numbers_ = 10;
+  safeLimit_ = 0.5;
+  ignoreLower_ = -10;
+  ignoreUpper_ = +10;
+  ignoreEnable_= true;
+
+  spinBox_IntervalAskMV_->setValue(intervalAskMV_);
+  spinBox_IntervalAskTemp_->setValue(intervalAskTemp_);
+  spinBox_Numbers_->setValue(numbers_);
+  spinBox_SafeLimit_->setValue(safeLimit_);
+  spinBox_IgnoreLower_->setValue(ignoreLower_);
+  spinBox_IgnoreUpper_->setValue(ignoreUpper_);
+  checkBox_IgnoreEnable_->setChecked(ignoreEnable_);
+
 
   spinBox_IntervalAskMV_->setSingleStep(10);
   spinBox_IntervalAskTemp_->setSingleStep(10);
   spinBox_SafeLimit_->setSingleStep(0.1);
 
-  calcEstimatedTime();
-  //setValues();
-  connect(spinBox_IntervalAskTemp_, SIGNAL(valueChanged(int)), this, SLOT(calcEstimatedTime()));
-  connect(spinBox_Numbers_, SIGNAL(valueChanged(int)), this, SLOT(calcEstimatedTime()));
+  setValues();
+  connect(spinBox_IntervalAskTemp_, SIGNAL(valueChanged(int)), this, SLOT(setValues()));
+  connect(spinBox_IntervalAskTemp_, SIGNAL(valueChanged(int)), this, SLOT(setValues()));
+  connect(spinBox_Numbers_, SIGNAL(valueChanged(int)), this, SLOT(setValues()));
+  connect(spinBox_IgnoreLower_, SIGNAL(valueChanged(double)), this, SLOT(setValues()));
+  connect(spinBox_IgnoreUpper_, SIGNAL(valueChanged(double)), this, SLOT(setValues()));
+  connect(spinBox_SafeLimit_, SIGNAL(valueChanged(double)), this, SLOT(setValues()));
+  connect(checkBox_IgnoreEnable_, SIGNAL(stateChanged(int)), this, SLOT(setValues()));
   connect(pushButton_SetParameters_, SIGNAL(clicked(bool)), this, SLOT(setValues()));
 }
 
@@ -75,17 +95,7 @@ ConfigureDialog::~ConfigureDialog()
   delete ui;
 }
 
-/**
-* @brief ConfigureDialog::SetValues
-* @details The function provides time estimation during TempCheck mode.
-*/
-void ConfigureDialog::calcEstimatedTime(){
-  QMutexLocker lock(&mutex_);
-  int number = spinBox_Numbers_->value();
-  int interval = spinBox_IntervalAskTemp_->value();
-  etime_ = number * interval;
-  textBrowser_log_->setText("Estimated time to take while TepCheck mode " + QString::number(etime_));
-}
+
 
 /**
  * @brief ConfigureDialog::SetValues
@@ -99,12 +109,15 @@ void ConfigureDialog::setValues(){
   safeLimit_ = spinBox_SafeLimit_->value();
   ignoreLower_ = spinBox_IgnoreLower_->value();
   ignoreUpper_ = spinBox_IgnoreUpper_->value();
-
+  ignoreEnable_ = checkBox_IgnoreEnable_->isChecked();
+  etime_ = numbers_ * intervalAskTemp_;
   textBrowser_log_->setText("*** Send these parameters ***");
   textBrowser_log_->append("Ask MV with interval :" + QString::number(intervalAskMV_) + " min");
   textBrowser_log_->append("Ask Temp with interval : " + QString::number(intervalAskTemp_) + " min");
   textBrowser_log_->append("Average size : " + QString::number(numbers_));
   textBrowser_log_->append("Safety limit : " + QString::number(safeLimit_) + " C");
+  if (ignoreEnable_) textBrowser_log_->append("Temperature range to ignore mode is <font color=red>enable</font>");
+  else textBrowser_log_->append("Temperature range to ignore mode is <font color=blue>unenable</font>");
   textBrowser_log_->append("Temperature range to ignore : " + QString::number(ignoreLower_) + " =< target value =< " + QString::number(ignoreUpper_));
   textBrowser_log_->append("Estimated time to take while TepCheck mode " + QString::number(etime_));
 }

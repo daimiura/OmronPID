@@ -17,6 +17,7 @@ class QSpinBox;
 class QDoubleSpinBox;
 class QTextBrowser;
 class QLabel;
+class QCheckBox;
 
 /**
 * @namespace UI
@@ -45,9 +46,9 @@ public:
   QDoubleSpinBox * spinBox_IgnoreUpper_;
   QTextBrowser * textBrowser_log_;
   QPushButton * pushButton_SetParameters_;
+  QCheckBox * checkBox_IgnoreEnable_;
 
 private slots:
-  void calcEstimatedTime();
   void setValues();
 
 private:
@@ -56,6 +57,7 @@ private:
   QLabel * labelAskTemp_;
   QLabel * labelSize_;
   QLabel * label_SafeLimit_;
+  QLabel * label_IgnoreEnable_;
   QLabel * label_IgnoreLower_;
   QLabel * label_IgnoreUpper_;
   QLabel * label_ETime_;
@@ -67,6 +69,7 @@ private:
   double safeLimit_;
   double ignoreUpper_;
   double ignoreLower_;
+  bool ignoreEnable_;
   QMutex mutex_;
 };
 

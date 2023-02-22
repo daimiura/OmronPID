@@ -1718,7 +1718,6 @@ void MainWindow::on_radioButton_Run_clicked()
   threadLog_->start();
   threadMVcheck_->setPriority(QThread::TimeCriticalPriority);
   threadLog_->setPriority(QThread::HighestPriority);
-  //threadTempCheck_->start();
   ui->checkBox_dataSave->setChecked(true);
   LogMsg("Thred start.");
 }
@@ -1743,7 +1742,6 @@ void MainWindow::on_radioButton_Stop_clicked()
   LogMsg("Thred stop.");
   ui->radioButton_TempCheck->setChecked(false);
   ui->radioButton_Run->setStyleSheet("");
-  //QCoreApplication::exit(0);
 }
 
 /**
@@ -1777,7 +1775,7 @@ void MainWindow::Quit(){
   ui->textEdit_Log->setTextColor(QColor(0,0,0,255));
 }
 
-double MainWindow::diffTemp(double ctemp){
+double MainWindow::diffTemp(){
   double dsum = .0;
   foreach (const int &i, vdifftemp_) dsum += abs(vdifftemp_.at(i));
   LogMsg("Temperature change is " + QString::number(dsum));
@@ -1851,7 +1849,7 @@ void MainWindow::TempCheck(){
       threadTempCheck_->start();
       return;
     }
-  double dtemp = diffTemp(temperature);
+  double dtemp = diffTemp();
   double safelimit = ui->lineEdit_SafeLimit->text().toDouble();
   if (abs(dtemp) >= safelimit){
       ui->radioButton_TempCheck->setChecked(false);
@@ -2005,20 +2003,8 @@ void MainWindow::writeData(){
          << "\t"
          << QString::number(MV)
          << Qt::endl;
-  //QTimer getTempTimer;
-  //const int tempGetTime = ui->spinBox_TempRecordTime->value() * 1000; // msec
-  //getTempTimer.setSingleShot(true);
-  //getTempTimer.start(tempGetTime);
-  //while(getTempTimer.remainingTime() != -1 ) waitForMSec(timing::getTempTimer);
   output_.close();
 }
-
-void MainWindow::on_radioButton_TempCheck_toggled(bool checked)
-{
-  //if(checked) TempCheck();
-  //else return;
-}
-
 
 /**
  * @brief MainWindow::on_checkBox_dataSave_toggled
