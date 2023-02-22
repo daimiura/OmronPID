@@ -88,12 +88,15 @@ MainWindow::MainWindow(QWidget *parent) :
     plot->addGraph(plot->xAxis, plot->yAxis2);
     plot->graph(0)->setName("Output");
     plot->graph(0)->setPen(QPen(Qt::darkGreen)); // MV
+    plot->graph(0)->setScatterStyle(QCPScatterStyle::ssDisc);
     plot->addGraph();
     plot->graph(1)->setName("Temp.");
     plot->graph(1)->setPen(QPen(Qt::blue)); // PV
+    plot->graph(1)->setScatterStyle(QCPScatterStyle::ssDisc);
     plot->addGraph();
     plot->graph(2)->setName("Set-temp");
     plot->graph(2)->setPen(QPen(Qt::red)); // SV
+    plot->graph(2)->setScatterStyle(QCPScatterStyle::ssDisc);
     QSharedPointer<QCPAxisTickerDateTime> dateTicker(new QCPAxisTickerDateTime);
     dateTicker->setDateTimeFormat("MM/dd HH:mm:ss");
     plot->xAxis->setTicker(dateTicker);
@@ -116,12 +119,8 @@ MainWindow::MainWindow(QWidget *parent) :
     subLayout->addElement(0, 0, plot->legend);
     plot->legend->setFillOrder(QCPLegend::foColumnsFirst);
     plot->plotLayout()->setRowStretchFactor(1, 0.001);
-    //set legend position
-    //plot->axisRect()->insetLayout()->setInsetAlignment(0, Qt::AlignLeft|Qt::AlignTop);
     plot->axisRect()->setAutoMargins(QCP::msLeft | QCP::msTop | QCP::msBottom);
-    plot->axisRect()->setMargins(QMargins(0,0,150,0));
-    plot->axisRect()->insetLayout()->setInsetPlacement(0, QCPLayoutInset::ipFree);
-    plot->axisRect()->insetLayout()->setInsetRect(0, QRectF(1.1,0,0.1,0.1));
+    plot->axisRect()->setMargins(QMargins(0,0,50,0));
 
     plot->replot();
 
@@ -230,8 +229,6 @@ MainWindow::MainWindow(QWidget *parent) :
     setSafeLimit();
     setIgnoreRange();
 
-    countTempCheck_ = 0;
-
     //! Thread for TempCheck mode.
     threadTempCheck_ = new MyThread();
     threadTempCheck_->interval_ = ui->lineEdit_IntervalAskTemp->text().toInt()*1000; //ms to sec.
@@ -242,27 +239,20 @@ MainWindow::MainWindow(QWidget *parent) :
     threadMVcheck_ = new MyThread();
     threadMVcheck_->interval_ = ui->lineEdit_IntervalAskMV->text().toInt()*1000; //ms to sec.
     threadMVcheck_->moveToThread(threadMVcheck_);
-    QObject::connect(threadMVcheck_, SIGNAL(data_update()), this, SLOT(periodic_work()));
-    threadMVcheck_->setPriority(QThread::TimeCriticalPriority);
+    QObject::connect(threadMVcheck_, SIGNAL(data_update()), this, SLOT(periodicWork()));
+
 
     //! Thread for Logging. Priotity is set to QThread::HighestPriority
     threadLog_ = new MyThread();
     threadLog_->interval_ = 10000; //ms to sec.;
     threadLog_->moveToThread(threadLog_);
     QObject::connect(threadLog_, SIGNAL(data_update()), this, SLOT(makePlot()));
-    //QObject::connect(threadLog_, SIGNAL(data_update()), this, SLOT(writeData()));
-    threadLog_->setPriority(QThread::HighestPriority);
-    QDateTime startTime = QDateTime::currentDateTime();
-    fileName_ = startTime.toString("yyyyMMdd_HHmmss") + ".dat";
-    filePath_ = DATA_PATH_2 + "/" + fileName_;
-    QFile output_(filePath_);
-    QTextStream stream(&output_);
-    if (output_.exists()) LogMsg("file already exists.");
-    else {
-        output_.open(QIODevice::WriteOnly| QIODevice::Text);
-        stream <<"Date\t"<<"Date_t\t"<<"temp [C]\t"<<"SV [C]\t"<<"Output [%]" <<endl;
-      }
-    output_.close();
+    QObject::connect(ui->spinBox_TempRecordTime, SIGNAL(valueChanged(int)), this, SLOT(setLogInterval(int)) );
+
+
+
+    //! TempCheck counter is set to be 0.
+    countTempCheck_ = 0;
 
     ui->textEdit_Log->setTextColor(QColor(34,139,34,255));
     LogMsg("The AT and RUN/STOP do not get from the device. Please be careful.");
@@ -529,30 +519,35 @@ void MainWindow::readReady()
 
 void MainWindow::askTemperature()
 {
+    //QMutexLocker lock(&mutex_);
     LogMsg("------ get Temperature.");
     read(QModbusDataUnit::HoldingRegisters, E5CC_Address::PV, 2);
 }
 
 void MainWindow::askSetPoint()
 {
+    //QMutexLocker lock(&mutex_);
     LogMsg("------ get Set Point.");
     read(QModbusDataUnit::HoldingRegisters, E5CC_Address::SV, 2);
 }
 
 void MainWindow::askMV()
 {
+  //QMutexLocker lock(&mutex_);
     LogMsg("------ get MV.");
     read(QModbusDataUnit::HoldingRegisters, E5CC_Address::MV, 2);
 }
 
 void MainWindow::askMVupper()
 {
+    //QMutexLocker lock(&mutex_);
     LogMsg("------ get MV upper.");
     read(QModbusDataUnit::HoldingRegisters, E5CC_Address::MVupper, 2);
 }
 
 void MainWindow::askMVlower()
 {
+    //QMutexLocker lock(&mutex_);
     LogMsg("------ get MV lower.");
     read(QModbusDataUnit::HoldingRegisters, E5CC_Address::MVlower, 2);
 }
@@ -940,7 +935,7 @@ void MainWindow::on_pushButton_Control_clicked()
 
             QDateTime date = QDateTime::currentDateTime();
             fillDataAndPlot(date, temperature, targetValue_2, MV);
-
+/*
             lineout.asprintf("%14s,\t%12d,\t%10.1f,\t%10.1f,\t%10.1f\n",
                             date.toString("MM-dd HH:mm:ss").toStdString().c_str(),
                             date.toSecsSinceEpoch(),
@@ -949,7 +944,17 @@ void MainWindow::on_pushButton_Control_clicked()
                             MV);
             stream << lineout;
             stream.flush();
-
+*/
+            stream << date.toString("MM-dd HH:mm:ss").toStdString().c_str()
+                   << "\t"
+                   << date.toSecsSinceEpoch()
+                   << "\t"
+                   << QString::number(temperature)
+                   << "\t"
+                   << QString::number(SV)
+                   << "\t"
+                   << QString::number(MV)
+                   << Qt::endl;
             while(getTempTimer.remainingTime() > 0 ){
                 waitForMSec(timing::getTempTimer);
 
@@ -1062,7 +1067,7 @@ void MainWindow::on_pushButton_Control_clicked()
 
                 QDateTime date = QDateTime::currentDateTime();
                 fillDataAndPlot(date, temperature, smallShift, MV);
-
+/*
                 lineout.asprintf("%14s,\t%12d,\t%10.1f,\t%10.1f,\t%10.1f\n",
                                 date.toString("MM-dd HH:mm:ss").toStdString().c_str(),
                                 date.toSecsSinceEpoch(),
@@ -1071,7 +1076,17 @@ void MainWindow::on_pushButton_Control_clicked()
                                 MV);
                 stream << lineout;
                 stream.flush();
-
+*/
+                stream << date.toString("MM-dd HH:mm:ss").toStdString().c_str()
+                       << "\t"
+                       << date.toSecsSinceEpoch()
+                       << "\t"
+                       << QString::number(temperature)
+                       << "\t"
+                       << QString::number(SV)
+                       << "\t"
+                       << QString::number(MV)
+                       << Qt::endl;
                 while(getTempTimer.remainingTime() > 0 ){
                     waitForMSec(timing::getTempTimer);
                     if( nextSV == true){
@@ -1079,7 +1094,7 @@ void MainWindow::on_pushButton_Control_clicked()
                     }
                 }
                 muteLog=false;
-                //TODO under friendly display
+                //TODO under friQt::endly display
                 if(waitTimerStarted){
                     LogMsg(" x", false);
                 }else{
@@ -1154,7 +1169,7 @@ void MainWindow::on_pushButton_Control_clicked()
 
             QDateTime date = QDateTime::currentDateTime();
             fillDataAndPlot(date, temperature, smallShift, MV);
-
+/*
             lineout.asprintf("%14s,\t%12d,\t%10.1f,\t%10.1f,\t%10.1f\n",
                             date.toString("MM-dd HH:mm:ss").toStdString().c_str(),
                             date.toSecsSinceEpoch(),
@@ -1163,6 +1178,17 @@ void MainWindow::on_pushButton_Control_clicked()
                             MV);
             stream << lineout;
             stream.flush(); // write to file
+            */
+            stream << date.toString("MM-dd HH:mm:ss").toStdString().c_str()
+                   << "\t"
+                   << date.toSecsSinceEpoch()
+                   << "\t"
+                   << QString::number(temperature)
+                   << "\t"
+                   << QString::number(SV)
+                   << "\t"
+                   << QString::number(MV)
+                   << Qt::endl;
 
             while(getTempTimer.remainingTime() != -1 ){
                 waitForMSec(timing::getTempTimer);
@@ -1230,12 +1256,13 @@ void MainWindow::on_pushButton_RecordTemp_clicked()
         QTextStream stream(&outfile);
         QString lineout;
 
-        lineout.asprintf("###%s", startTime.toString("yyyy-MM-dd HH:mm:ss\n").toStdString().c_str());
-        stream << lineout;
-        lineout = "###Temperature Recording.\n";
-        stream << lineout;
-        lineout.asprintf("###%11s,\t%12s,\t%10s,\t%10s,\t%10s\n", "Date", "Date_t", "temp [C]", "SV [C]", "Output [%]");
-        stream << lineout;
+        //lineout.asprintf("###%s", startTime.toString("yyyy-MM-dd HH:mm:ss\n").toStdString().c_str());
+        stream << startTime.toString("yyyy-MM-dd HH:mm:ss").toStdString().c_str() << Qt::endl;
+        //stream << lineout;
+        //lineout = "###Temperature Recording.\n";
+        stream << "###Temperature Recording.";
+        //lineout.asprintf("###%11s,\t%12s,\t%10s,\t%10s,\t%10s\n", "Date", "Date_t", "temp [C]", "SV [C]", "Output [%]");
+        stream << "Date\t" << "Date_t\t" << "temp [C]\t" << "SV [C]\t" << "Output [%]" << Qt::endl;
 
         pvData.clear();
         svData.clear();
@@ -1267,15 +1294,27 @@ void MainWindow::on_pushButton_RecordTemp_clicked()
 
             QDateTime date = QDateTime::currentDateTime();
             fillDataAndPlot(date, temperature, SV, MV);
-
+/*
             lineout.asprintf("%14s,\t%12d,\t%10.1f,\t%10.1f,\t%10.1f\n",
                             date.toString("MM-dd HH:mm:ss").toStdString().c_str(),
                             date.toSecsSinceEpoch(),
                             temperature,
                             (double) SV,
                             (double) MV);
-            stream << lineout;
-            stream.flush();
+*/
+            stream << date.toString("MM-dd HH:mm:ss").toStdString().c_str()
+                   << "\t"
+                   << date.toSecsSinceEpoch()
+                   << "\t"
+                   << QString::number(temperature)
+                   << "\t"
+                   << QString::number(SV)
+                   << "\t"
+                   << QString::number(MV)
+                   << Qt::endl;
+
+            //stream << lineout;
+            //stream.flush();
 
             while(getTempTimer.remainingTime() != -1 ){
                 waitForMSec(timing::getTempTimer);
@@ -1584,7 +1623,6 @@ void MainWindow::fillDataAndPlot(const QDateTime date, const double PV, const do
     plot->yAxis->setRangeUpper(ymax);
 
     plot->replot();
-
 }
 
 void MainWindow::on_actionHelp_Page_triggered()
@@ -1657,7 +1695,7 @@ void MainWindow::setParametersTempCheck(){
   setIgnoreRange();
   threadMVcheck_->interval_ = ui->lineEdit_IntervalAskMV->text().toInt()*1000; //ms to sec
   threadTempCheck_->interval_ = ui->lineEdit_IntervalAskTemp->text().toInt()*1000; //ms to sec
-  //threadLog_->
+  threadLog_->interval_ = ui->spinBox_TempRecordTime->value()*1000; //ms to sec
 }
 
 
@@ -1678,7 +1716,10 @@ void MainWindow::on_radioButton_Run_clicked()
   ui->radioButton_Stop->setStyleSheet("");
   threadMVcheck_->start();
   threadLog_->start();
+  threadMVcheck_->setPriority(QThread::TimeCriticalPriority);
+  threadLog_->setPriority(QThread::HighestPriority);
   //threadTempCheck_->start();
+  ui->checkBox_dataSave->setChecked(true);
   LogMsg("Thred start.");
 }
 
@@ -1705,9 +1746,16 @@ void MainWindow::on_radioButton_Stop_clicked()
   //QCoreApplication::exit(0);
 }
 
-
-void MainWindow::Quit()
-{
+/**
+ * @brief MainWindow::Quit
+ * @details The function for Emergency stop.
+ * Executed when TempCheck mode results in an unsafe condition.
+ * Interrupted ModBus communication with the device.
+ * Almost thread are terminated excluding threadLog_.
+ * So, the log continue to be taken after emergency stop.
+ * (See TempCheck function for a call to this function.)
+ */
+void MainWindow::Quit(){
   QString cmd = "00 00 01 01";
   QByteArray value = QByteArray::fromHex(cmd.toStdString().c_str());
   request(QModbusPdu::WriteSingleRegister, value);
@@ -1720,7 +1768,6 @@ void MainWindow::Quit()
   ui->textEdit_Log->setTextColor(QColor(255,0,0,255));
   LogMsg("Emergency Stop. Check the experimental condition.");
   threadMVcheck_->quit();
-  //threadLog_->quit();
   if (threadTempCheck_->isRunning()) threadTempCheck_->quit();
   vdifftemp_.clear();
   vtemp_.clear();
@@ -1728,7 +1775,6 @@ void MainWindow::Quit()
   ui->radioButton_Stop->setChecked(true);
   ui->radioButton_Run->setStyleSheet("");
   ui->textEdit_Log->setTextColor(QColor(0,0,0,255));
-  //QCoreApplication::exit(0);
 }
 
 double MainWindow::diffTemp(double ctemp){
@@ -1739,6 +1785,7 @@ double MainWindow::diffTemp(double ctemp){
 }
 
 void MainWindow::TempCheck(){
+  frag_TempCheck_ = 1;
   ui->radioButton_TempCheck->setChecked(true);
   QColor color = QColor(255, 135, 135,255);
   QPalette pal = palette();
@@ -1772,7 +1819,7 @@ void MainWindow::TempCheck(){
           modbusReady = true;
       }
   }
-  double targetValue =SV;
+  double targetValue = SV;
   double lower = ui->lineEdit_IgnoreLower->text().toDouble();
   double upper = ui->lineEdit_IgnoreUpper->text().toDouble();
   if (targetValue+lower <= temperature && targetValue+upper >= temperature) {
@@ -1825,25 +1872,43 @@ void MainWindow::TempCheck(){
       return;
     }
   else Quit();
+  frag_TempCheck_ = 0;
 }
 
-void MainWindow::periodic_work(){
+void MainWindow::periodicWork(){
+  frag_periodicWork_ = 1;
   if (ui->radioButton_TempCheck->isChecked()){
       threadMVcheck_->quit();
       return;
-    }
+   }
+  if(frag_TempCheck_ == 1) QThread::sleep(1);
+  if(frag_makePlot_ == 1) QThread::sleep(1);
   LogMsg("periodic function works.");
   QTimer getTempTimer;
   getTempTimer.setSingleShot(true);
   const int tempGetTime = ui->spinBox_TempRecordTime->value() * 1000; // msec
   getTempTimer.start(tempGetTime);
+
   askTemperature();
   int i = 0;
   while(!modbusReady) {
-    i++;
-    waitForMSec(timing::modbus);
-    if( i > 10 )modbusReady = true;
+      i++;
+      waitForMSec(timing::modbus);
+      if( i > 10 ){
+          modbusReady = true;
+      }
   }
+
+  askSetPoint();
+  i = 0;
+  while(!modbusReady) {
+      i++;
+      waitForMSec(timing::modbus);
+      if( i > 10 ){
+          modbusReady = true;
+      }
+  }
+
   askMV();
   i = 0;
   while(!modbusReady) {
@@ -1862,53 +1927,65 @@ void MainWindow::periodic_work(){
     ui->textEdit_Log->setTextColor(QColor(255,0,0,255));
     LogMsg("Current MVpower reaches upper limit.");
     if (!threadTempCheck_->isRunning()) threadTempCheck_->start();
-    static int flag_run = 0;
-    if (flag_run == 0){
-        flag_run = 1;
-        threadMVcheck_->start();
-      }else{
-        flag_run = 0;
-        threadMVcheck_->quit();
-      }
-    /*
-    if (ui->radioButton_TempCheck->isChecked()){
-        return;
-      }
-      */
+    if (threadMVcheck_->isRunning()) threadMVcheck_->quit();
+    else threadMVcheck_->start();
     ui->radioButton_TempCheck->setChecked(true);
     ui->textEdit_Log->setTextColor(QColor(0,0,0,255));
     TempCheck();
   }
+  frag_periodicWork_ = 0;
 }
 
-  void MainWindow::makePlot(){
-    //LogMsg("makePlot works.");
-    QTimer getTempTimer;
-    const int tempGetTime = ui->spinBox_TempRecordTime->value() * 1000; // msec
-    getTempTimer.setSingleShot(true);
-    getTempTimer.start(tempGetTime);
-    askTemperature();
-    int i = 0;
-    while(!modbusReady) {
-        i++;
-        waitForMSec(timing::modbus);
-        if( i > 10 ){
-            modbusReady = true;
-        }
-    }
-    askMV();
-    i = 0;
-    while(!modbusReady) {
-        i++;
-        waitForMSec(timing::modbus);
-        if( i > 10 ){
-            modbusReady = true;
-        }
-    }
+void MainWindow::makePlot(){
+  //QMutexLocker lock(&mutex_);
+  frag_makePlot_ = 1;
+  if (frag_TempCheck_ == 1) QThread::sleep(1);
+  if (frag_periodicWork_ == 1) QThread::sleep(1);
+  LogMsg("makePlot works.");
+  QTimer getTempTimer;
+  const int tempGetTime = ui->spinBox_TempRecordTime->value() * 1000; // msec
+  getTempTimer.setSingleShot(true);
+  getTempTimer.start(tempGetTime);
+  askTemperature();
+  int i = 0;
+  while(!modbusReady) {
+      i++;
+      waitForMSec(timing::modbus);
+      if( i > 10 ){
+          modbusReady = true;
+      }
+  }
+
+  askSetPoint();
+  i = 0;
+  while(!modbusReady) {
+      i++;
+      waitForMSec(timing::modbus);
+      if( i > 10 ){
+          modbusReady = true;
+      }
+  }
+  askMV();
+  i = 0;
+  while(!modbusReady) {
+      i++;
+      waitForMSec(timing::modbus);
+      if( i > 10 ){
+          modbusReady = true;
+      }
+  }
+
   const double targetValue = ui->lineEdit_SV->text().toDouble();
   QDateTime date = QDateTime::currentDateTime();
   fillDataAndPlot(date, temperature, targetValue, MV);
+  if(ui->checkBox_dataSave->isChecked()) writeData();
+}
 
+/**
+ * @brief MainWindow::writeData
+ * @details The Data is saved to the file generated by on_checkBox_dataSave_toggled.
+ */
+void MainWindow::writeData(){
   LogMsg("data save to : " + filePath_);
   QFile output_(filePath_);
   QTextStream stream(&output_);
@@ -1916,6 +1993,7 @@ void MainWindow::periodic_work(){
       output_.open(QIODevice::WriteOnly| QIODevice::Text);
       LogMsg(filePath_ + " does not be found. New file was be generated.");
   }
+  QDateTime date = QDateTime::currentDateTime();
   output_.open(QIODevice::Append| QIODevice::Text);
   stream << date.toString("MM-dd HH:mm:ss").toStdString().c_str()
          << "\t"
@@ -1926,12 +2004,14 @@ void MainWindow::periodic_work(){
          << QString::number(SV)
          << "\t"
          << QString::number(MV)
-         << endl;
-  getTempTimer.setSingleShot(true);
-  while(getTempTimer.remainingTime() != -1 ) waitForMSec(timing::getTempTimer);
+         << Qt::endl;
+  //QTimer getTempTimer;
+  //const int tempGetTime = ui->spinBox_TempRecordTime->value() * 1000; // msec
+  //getTempTimer.setSingleShot(true);
+  //getTempTimer.start(tempGetTime);
+  //while(getTempTimer.remainingTime() != -1 ) waitForMSec(timing::getTempTimer);
   output_.close();
-  }
-
+}
 
 void MainWindow::on_radioButton_TempCheck_toggled(bool checked)
 {
@@ -1939,5 +2019,26 @@ void MainWindow::on_radioButton_TempCheck_toggled(bool checked)
   //else return;
 }
 
+
+/**
+ * @brief MainWindow::on_checkBox_dataSave_toggled
+ * @param checked
+ * @details File is generated in this checkbos turn to be true (checked).
+ */
+void MainWindow::on_checkBox_dataSave_toggled(bool checked)
+{
+  if(!checked) return;
+  QDateTime startTime = QDateTime::currentDateTime();
+  fileName_ = startTime.toString("yyyyMMdd_HHmmss") + ".dat";
+  filePath_ = DATA_PATH_2 + "/" + fileName_;
+  QFile output_(filePath_);
+  QTextStream stream(&output_);
+  if (output_.exists()) LogMsg("file already exists.");
+  else {
+      output_.open(QIODevice::WriteOnly| QIODevice::Text);
+      stream <<"Date\t"<<"Date_t\t"<<"temp [C]\t"<<"SV [C]\t"<<"Output [%]" <<Qt::endl;
+    }
+  output_.close();
+}
 
 

@@ -103,8 +103,6 @@ Inheritance diagram for QCPPlottableInterface1D:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8829011d62208625f741f2d7e1cb6280"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_plottable_interface1_d.html#a8829011d62208625f741f2d7e1cb6280">~QCPPlottableInterface1D</a> ()</td></tr>
-<tr class="separator:a8829011d62208625f741f2d7e1cb6280"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a058a22c770ef4d5a0e878a7f02183da9"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_plottable_interface1_d.html#a058a22c770ef4d5a0e878a7f02183da9">dataCount</a> () const =0</td></tr>
 <tr class="separator:a058a22c770ef4d5a0e878a7f02183da9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2bd60daaac046945fead558cbd83cf73"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_plottable_interface1_d.html#a2bd60daaac046945fead558cbd83cf73">dataMainKey</a> (int index) const =0</td></tr>
@@ -132,33 +130,7 @@ Public Member Functions</h2></td></tr>
 <p>For example, it is implemented by the template class <a class="el" href="class_q_c_p_abstract_plottable1_d.html">QCPAbstractPlottable1D</a> (the preferred base class for one-dimensional plottables). So if you use that template class as base class of your one-dimensional plottable, you won't have to care about implementing the 1d interface yourself.</p>
 <p>If your plottable doesn't derive from <a class="el" href="class_q_c_p_abstract_plottable1_d.html">QCPAbstractPlottable1D</a> but still wants to provide a 1d interface (e.g. like <a class="el" href="class_q_c_p_error_bars.html">QCPErrorBars</a> does), you should inherit from both <a class="el" href="class_q_c_p_abstract_plottable.html">QCPAbstractPlottable</a> and <a class="el" href="class_q_c_p_plottable_interface1_d.html">QCPPlottableInterface1D</a> and accordingly reimplement the pure virtual methods of the 1d interface, matching your data container. Also, reimplement <a class="el" href="class_q_c_p_abstract_plottable.html#a81fd9fd5c4f429c074785e2eb238a8e7">QCPAbstractPlottable::interface1D</a> to return the <code>this</code> pointer.</p>
 <p>If you have a <a class="el" href="class_q_c_p_abstract_plottable.html">QCPAbstractPlottable</a> pointer, you can check whether it implements this interface by calling <a class="el" href="class_q_c_p_abstract_plottable.html#a81fd9fd5c4f429c074785e2eb238a8e7">QCPAbstractPlottable::interface1D</a> and testing it for a non-zero return value. If it indeed implements this interface, you may use it to access the plottable's data without needing to know the exact type of the plottable or its data point type. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a8829011d62208625f741f2d7e1cb6280" name="a8829011d62208625f741f2d7e1cb6280"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8829011d62208625f741f2d7e1cb6280">&#9670;&#160;</a></span>~QCPPlottableInterface1D()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual QCPPlottableInterface1D::~QCPPlottableInterface1D </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a058a22c770ef4d5a0e878a7f02183da9" name="a058a22c770ef4d5a0e878a7f02183da9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a058a22c770ef4d5a0e878a7f02183da9">&#9670;&#160;</a></span>dataCount()</h2>
 

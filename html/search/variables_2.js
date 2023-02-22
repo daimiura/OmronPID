@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['center_0',['center',['../class_q_c_p_item_ellipse.html#a8b6dd0e854f99239c5806ffdf2f590b3',1,'QCPItemEllipse::center()'],['../class_q_c_p_item_bracket.html#a2dbcabdf5f467f28be12a7b25962ffca',1,'QCPItemBracket::center()']]],
-  ['close_1',['close',['../class_q_c_p_financial_data.html#a45e9b96944c4a08ea6c82a72d3d22df2',1,'QCPFinancialData']]]
+  ['xaxis_0',['xAxis',['../class_q_custom_plot.html#a9a79cd0158a4c7f30cbc702f0fd800e4',1,'QCustomPlot']]],
+  ['xaxis2_1',['xAxis2',['../class_q_custom_plot.html#ada41599f22cad901c030f3dcbdd82fd9',1,'QCustomPlot']]]
 ];

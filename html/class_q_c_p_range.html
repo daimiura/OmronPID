@@ -83,18 +83,18 @@ $(function() {
 
 <p>Represents the range an axis is encompassing.  
  <a href="class_q_c_p_range.html#details">More...</a></p>
-
-<p><code>#include &lt;<a class="el" href="qcustomplot_8h_source.html">qcustomplot.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aca158d7e69702cee5d77d10a269b01e2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_range.html#aca158d7e69702cee5d77d10a269b01e2">QCPRange</a> ()</td></tr>
 <tr class="separator:aca158d7e69702cee5d77d10a269b01e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d9d84d084c8f368fdedd42e0978d405"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_range.html#a1d9d84d084c8f368fdedd42e0978d405">QCPRange</a> (double <a class="el" href="class_q_c_p_range.html#aa3aca3edb14f7ca0c85d912647b91745">lower</a>, double <a class="el" href="class_q_c_p_range.html#ae44eb3aafe1d0e2ed34b499b6d2e074f">upper</a>)</td></tr>
+<tr class="memitem:a1d9d84d084c8f368fdedd42e0978d405"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_range.html#a1d9d84d084c8f368fdedd42e0978d405">QCPRange</a> (double lower, double upper)</td></tr>
 <tr class="separator:a1d9d84d084c8f368fdedd42e0978d405"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f8d1fdcf4b6d19779f1c3d9a14b09c9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_range.html#a9f8d1fdcf4b6d19779f1c3d9a14b09c9">operator==</a> (const <a class="el" href="class_q_c_p_range.html">QCPRange</a> &amp;other) const</td></tr>
+<tr class="memitem:a9f8d1fdcf4b6d19779f1c3d9a14b09c9"><td class="memItemLeft" align="right" valign="top"><a id="a9f8d1fdcf4b6d19779f1c3d9a14b09c9" name="a9f8d1fdcf4b6d19779f1c3d9a14b09c9"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (const <a class="el" href="class_q_c_p_range.html">QCPRange</a> &amp;other) const</td></tr>
 <tr class="separator:a9f8d1fdcf4b6d19779f1c3d9a14b09c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4827a37c83b8bb4bf53fcf8f6a257e77"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_range.html#a4827a37c83b8bb4bf53fcf8f6a257e77">operator!=</a> (const <a class="el" href="class_q_c_p_range.html">QCPRange</a> &amp;other) const</td></tr>
+<tr class="memitem:a4827a37c83b8bb4bf53fcf8f6a257e77"><td class="memItemLeft" align="right" valign="top"><a id="a4827a37c83b8bb4bf53fcf8f6a257e77" name="a4827a37c83b8bb4bf53fcf8f6a257e77"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator!=</b> (const <a class="el" href="class_q_c_p_range.html">QCPRange</a> &amp;other) const</td></tr>
 <tr class="separator:a4827a37c83b8bb4bf53fcf8f6a257e77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afea7c1aa7d08f061cd9bd8832f957df8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_q_c_p_range.html">QCPRange</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_range.html#afea7c1aa7d08f061cd9bd8832f957df8">operator+=</a> (const double &amp;value)</td></tr>
 <tr class="separator:afea7c1aa7d08f061cd9bd8832f957df8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -129,16 +129,18 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ab38bd4841c77c7bb86c9eea0f142dcc0"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_range.html#ab38bd4841c77c7bb86c9eea0f142dcc0">validRange</a> (double <a class="el" href="class_q_c_p_range.html#aa3aca3edb14f7ca0c85d912647b91745">lower</a>, double <a class="el" href="class_q_c_p_range.html#ae44eb3aafe1d0e2ed34b499b6d2e074f">upper</a>)</td></tr>
+<tr class="memitem:ab38bd4841c77c7bb86c9eea0f142dcc0"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_range.html#ab38bd4841c77c7bb86c9eea0f142dcc0">validRange</a> (double lower, double upper)</td></tr>
 <tr class="separator:ab38bd4841c77c7bb86c9eea0f142dcc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a801b964752eaad6219be9d8a651ec2b3"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_range.html#a801b964752eaad6219be9d8a651ec2b3">validRange</a> (const <a class="el" href="class_q_c_p_range.html">QCPRange</a> &amp;range)</td></tr>
 <tr class="separator:a801b964752eaad6219be9d8a651ec2b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:aa3aca3edb14f7ca0c85d912647b91745"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_range.html#aa3aca3edb14f7ca0c85d912647b91745">lower</a></td></tr>
+<tr class="memitem:aa3aca3edb14f7ca0c85d912647b91745"><td class="memItemLeft" align="right" valign="top"><a id="aa3aca3edb14f7ca0c85d912647b91745" name="aa3aca3edb14f7ca0c85d912647b91745"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>lower</b></td></tr>
 <tr class="separator:aa3aca3edb14f7ca0c85d912647b91745"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae44eb3aafe1d0e2ed34b499b6d2e074f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_range.html#ae44eb3aafe1d0e2ed34b499b6d2e074f">upper</a></td></tr>
+<tr class="memitem:ae44eb3aafe1d0e2ed34b499b6d2e074f"><td class="memItemLeft" align="right" valign="top"><a id="ae44eb3aafe1d0e2ed34b499b6d2e074f" name="ae44eb3aafe1d0e2ed34b499b6d2e074f"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>upper</b></td></tr>
 <tr class="separator:ae44eb3aafe1d0e2ed34b499b6d2e074f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
@@ -424,32 +426,6 @@ Related Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a4827a37c83b8bb4bf53fcf8f6a257e77" name="a4827a37c83b8bb4bf53fcf8f6a257e77"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4827a37c83b8bb4bf53fcf8f6a257e77">&#9670;&#160;</a></span>operator!=()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool QCPRange::operator!= </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="class_q_c_p_range.html">QCPRange</a> &amp;&#160;</td>
-          <td class="paramname"><em>other</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a6876aa9620ff2f0f7f1873f998372cef" name="a6876aa9620ff2f0f7f1873f998372cef"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6876aa9620ff2f0f7f1873f998372cef">&#9670;&#160;</a></span>operator*=()</h2>
 
@@ -555,32 +531,6 @@ Related Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Divides both boundaries of the range by <em>value</em>. </p>
-
-</div>
-</div>
-<a id="a9f8d1fdcf4b6d19779f1c3d9a14b09c9" name="a9f8d1fdcf4b6d19779f1c3d9a14b09c9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9f8d1fdcf4b6d19779f1c3d9a14b09c9">&#9670;&#160;</a></span>operator==()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool QCPRange::operator== </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="class_q_c_p_range.html">QCPRange</a> &amp;&#160;</td>
-          <td class="paramname"><em>other</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -980,20 +930,6 @@ Related Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="aa3aca3edb14f7ca0c85d912647b91745" name="aa3aca3edb14f7ca0c85d912647b91745"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa3aca3edb14f7ca0c85d912647b91745">&#9670;&#160;</a></span>lower</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double QCPRange::lower</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a5ca51e7a2dc5dc0d49527ab171fe1f4f" name="a5ca51e7a2dc5dc0d49527ab171fe1f4f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5ca51e7a2dc5dc0d49527ab171fe1f4f">&#9670;&#160;</a></span>maxRange</h2>
 
@@ -1044,23 +980,9 @@ Related Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ae44eb3aafe1d0e2ed34b499b6d2e074f" name="ae44eb3aafe1d0e2ed34b499b6d2e074f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae44eb3aafe1d0e2ed34b499b6d2e074f">&#9670;&#160;</a></span>upper</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double QCPRange::upper</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="qcustomplot_8h_source.html">qcustomplot.h</a></li>
-<li><a class="el" href="qcustomplot_8cpp.html">qcustomplot.cpp</a></li>
+<li>qcustomplot.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

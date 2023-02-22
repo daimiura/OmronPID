@@ -80,14 +80,12 @@ $(function() {
 
 <p>Holds the data of one single data point for <a class="el" href="class_q_c_p_graph.html" title="A plottable representing a graph in a plot.">QCPGraph</a>.  
  <a href="class_q_c_p_graph_data.html#details">More...</a></p>
-
-<p><code>#include &lt;<a class="el" href="qcustomplot_8h_source.html">qcustomplot.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac43f7499383d2fa2ffb7a4ad43f76c7c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_graph_data.html#ac43f7499383d2fa2ffb7a4ad43f76c7c">QCPGraphData</a> ()</td></tr>
 <tr class="separator:ac43f7499383d2fa2ffb7a4ad43f76c7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c32177f12f902f4e05f712837082bd6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_graph_data.html#a2c32177f12f902f4e05f712837082bd6">QCPGraphData</a> (double <a class="el" href="class_q_c_p_graph_data.html#a2fcebdf84af975761c0661237d7e28ec">key</a>, double <a class="el" href="class_q_c_p_graph_data.html#ac97e3ddbdcbe0b58d0b4d6f95250d59c">value</a>)</td></tr>
+<tr class="memitem:a2c32177f12f902f4e05f712837082bd6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_graph_data.html#a2c32177f12f902f4e05f712837082bd6">QCPGraphData</a> (double key, double value)</td></tr>
 <tr class="separator:a2c32177f12f902f4e05f712837082bd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e0f37ea101eeec245d8c32a2206b204"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_graph_data.html#a5e0f37ea101eeec245d8c32a2206b204">sortKey</a> () const</td></tr>
 <tr class="separator:a5e0f37ea101eeec245d8c32a2206b204"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -107,9 +105,11 @@ Static Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a2fcebdf84af975761c0661237d7e28ec"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_graph_data.html#a2fcebdf84af975761c0661237d7e28ec">key</a></td></tr>
+<tr class="memitem:a2fcebdf84af975761c0661237d7e28ec"><td class="memItemLeft" align="right" valign="top"><a id="a2fcebdf84af975761c0661237d7e28ec" name="a2fcebdf84af975761c0661237d7e28ec"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>key</b></td></tr>
 <tr class="separator:a2fcebdf84af975761c0661237d7e28ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac97e3ddbdcbe0b58d0b4d6f95250d59c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_graph_data.html#ac97e3ddbdcbe0b58d0b4d6f95250d59c">value</a></td></tr>
+<tr class="memitem:ac97e3ddbdcbe0b58d0b4d6f95250d59c"><td class="memItemLeft" align="right" valign="top"><a id="ac97e3ddbdcbe0b58d0b4d6f95250d59c" name="ac97e3ddbdcbe0b58d0b4d6f95250d59c"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>value</b></td></tr>
 <tr class="separator:ac97e3ddbdcbe0b58d0b4d6f95250d59c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -118,8 +118,8 @@ Public Attributes</h2></td></tr>
 <li><em>key:</em> coordinate on the key axis of this data point (this is the <em>mainKey</em> and the <em>sortKey</em>) </li>
 <li><em>value:</em> coordinate on the value axis of this data point (this is the <em>mainValue</em>)</li>
 </ul>
-<p>The container for storing multiple data points is <a class="el" href="qcustomplot_8h.html#a2e5583d1ae212f0deb10537cf975a15a">QCPGraphDataContainer</a>. It is a typedef for <a class="el" href="class_q_c_p_data_container.html">QCPDataContainer</a> with <a class="el" href="class_q_c_p_graph_data.html">QCPGraphData</a> as the DataType template parameter. See the documentation there for an explanation regarding the data type's generic methods.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="qcustomplot_8h.html#a2e5583d1ae212f0deb10537cf975a15a">QCPGraphDataContainer</a> </dd></dl>
+<p>The container for storing multiple data points is QCPGraphDataContainer. It is a typedef for <a class="el" href="class_q_c_p_data_container.html">QCPDataContainer</a> with <a class="el" href="class_q_c_p_graph_data.html">QCPGraphData</a> as the DataType template parameter. See the documentation there for an explanation regarding the data type's generic methods.</p>
+<dl class="section see"><dt>See also</dt><dd>QCPGraphDataContainer </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ac43f7499383d2fa2ffb7a4ad43f76c7c" name="ac43f7499383d2fa2ffb7a4ad43f76c7c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac43f7499383d2fa2ffb7a4ad43f76c7c">&#9670;&#160;</a></span>QCPGraphData() <span class="overload">[1/2]</span></h2>
@@ -332,38 +332,9 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a2fcebdf84af975761c0661237d7e28ec" name="a2fcebdf84af975761c0661237d7e28ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2fcebdf84af975761c0661237d7e28ec">&#9670;&#160;</a></span>key</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double QCPGraphData::key</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ac97e3ddbdcbe0b58d0b4d6f95250d59c" name="ac97e3ddbdcbe0b58d0b4d6f95250d59c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac97e3ddbdcbe0b58d0b4d6f95250d59c">&#9670;&#160;</a></span>value</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double QCPGraphData::value</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="qcustomplot_8h_source.html">qcustomplot.h</a></li>
-<li><a class="el" href="qcustomplot_8cpp.html">qcustomplot.cpp</a></li>
+<li>qcustomplot.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

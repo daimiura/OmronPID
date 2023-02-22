@@ -38,11 +38,9 @@ public:
 signals:
 
 public slots:
-  void periodic_work();
+  void periodicWork();
   void makePlot();
   void TempCheck();
-  //void writeData();
-
 
 private slots:
     void keyPressEvent(QKeyEvent *key);
@@ -66,6 +64,7 @@ private slots:
     void getSetting();
     void setAT(int atFlag);
     void setSV(double SV);
+    void writeData();
 
     void on_lineEdit_Cmd_returnPressed();
 
@@ -109,6 +108,7 @@ private slots:
     double diffTemp(double ctemp);
 
     void on_radioButton_TempCheck_toggled(bool checked);
+    void on_checkBox_dataSave_toggled(bool checked);
 
 private:
     Ui::MainWindow *ui;
@@ -160,6 +160,9 @@ private:
     QMutex mutex_;
     //! Counter that TempCheck was executed.
     int countTempCheck_;
+    int frag_TempCheck_;
+    int frag_makePlot_;
+    int frag_periodicWork_;
 };
 
 #endif // MAINWINDOW_H

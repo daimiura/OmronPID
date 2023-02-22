@@ -1,16 +1,13 @@
 var searchData=
 [
-  ['gettemptimer_0',['getTempTimer',['../mainwindow_8cpp.html#ac1950af19aa9eb86a3ba6cf8422caa8faba124b1b9b3e7b2af353a51749fd8ca1',1,'mainwindow.cpp']]],
-  ['gpcandy_1',['gpCandy',['../class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072a9e72663bf6b94b65945f7843f24e0721',1,'QCPColorGradient']]],
-  ['gpcold_2',['gpCold',['../class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072aec8c001f62c0d5cb853db5fd85309557',1,'QCPColorGradient']]],
-  ['gpgeography_3',['gpGeography',['../class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072a382f0b07cec1a59d8a533438aea815d2',1,'QCPColorGradient']]],
-  ['gpgrayscale_4',['gpGrayscale',['../class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072add11ae369a86f3b1b6205ec72e5021fb',1,'QCPColorGradient']]],
-  ['gphot_5',['gpHot',['../class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072a4f42e534cf6cff5a29a5388094d099b5',1,'QCPColorGradient']]],
-  ['gphues_6',['gpHues',['../class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072a30efe58407acfb67939032f70213a130',1,'QCPColorGradient']]],
-  ['gpion_7',['gpIon',['../class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072a4297f4f9e212a819cd65e8e34567182b',1,'QCPColorGradient']]],
-  ['gpjet_8',['gpJet',['../class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072a5f8a9e67b64c17ddfe4f069fe2b9fb02',1,'QCPColorGradient']]],
-  ['gpnight_9',['gpNight',['../class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072a1bb89351b6def7d220973443fe059c62',1,'QCPColorGradient']]],
-  ['gppolar_10',['gpPolar',['../class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072ab7414ce4e36dc3e82e0132a7f0f41b52',1,'QCPColorGradient']]],
-  ['gpspectrum_11',['gpSpectrum',['../class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072ad63adc100ef46f6b4a8a6deacec4642f',1,'QCPColorGradient']]],
-  ['gpthermal_12',['gpThermal',['../class_q_c_p_color_gradient.html#aed6569828fee337023670272910c9072af1676b129f9f458ace453f280c731cf7',1,'QCPColorGradient']]]
+  ['imultiselect_0',['iMultiSelect',['../namespace_q_c_p.html#a2ad6bb6281c7c2d593d4277b44c2b037aef673112c5067c3cf4cfddb62da7265d',1,'QCP']]],
+  ['ipborderaligned_1',['ipBorderAligned',['../class_q_c_p_layout_inset.html#a8b9e17d9a2768293d2a7d72f5e298192aa81e7df4a785ddee2229a8f47c46e817',1,'QCPLayoutInset']]],
+  ['ipfree_2',['ipFree',['../class_q_c_p_layout_inset.html#a8b9e17d9a2768293d2a7d72f5e298192aa4802986ea2cea457f932b115acba59e',1,'QCPLayoutInset']]],
+  ['irangedrag_3',['iRangeDrag',['../namespace_q_c_p.html#a2ad6bb6281c7c2d593d4277b44c2b037a2c4432b9aceafb94000be8d1b589ef18',1,'QCP']]],
+  ['irangezoom_4',['iRangeZoom',['../namespace_q_c_p.html#a2ad6bb6281c7c2d593d4277b44c2b037abee1e94353525a636aeaf0ba32b72e14',1,'QCP']]],
+  ['iselectaxes_5',['iSelectAxes',['../namespace_q_c_p.html#a2ad6bb6281c7c2d593d4277b44c2b037ad6644ac55bef621645326e9dd7469caa',1,'QCP']]],
+  ['iselectitems_6',['iSelectItems',['../namespace_q_c_p.html#a2ad6bb6281c7c2d593d4277b44c2b037aea2f7c105d674e76d9b187b02ef29260',1,'QCP']]],
+  ['iselectlegend_7',['iSelectLegend',['../namespace_q_c_p.html#a2ad6bb6281c7c2d593d4277b44c2b037a269c9af298e257d1108edec0432b5513',1,'QCP']]],
+  ['iselectother_8',['iSelectOther',['../namespace_q_c_p.html#a2ad6bb6281c7c2d593d4277b44c2b037af67a50bc26147a13b551b3a625374949',1,'QCP']]],
+  ['iselectplottables_9',['iSelectPlottables',['../namespace_q_c_p.html#a2ad6bb6281c7c2d593d4277b44c2b037a67148c8227b4155eca49135fc274c7ec',1,'QCP']]]
 ];

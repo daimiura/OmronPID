@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['tickstepstrategy_0',['TickStepStrategy',['../class_q_c_p_axis_ticker.html#ab6d2f9d9477821623ac9bc4b21ddf49a',1,'QCPAxisTicker']]],
-  ['timeunit_1',['TimeUnit',['../class_q_c_p_axis_ticker_time.html#a5c48ded8c6d3a1aca9b68219469fea3e',1,'QCPAxisTickerTime']]],
-  ['timing_2',['timing',['../mainwindow_8cpp.html#ac1950af19aa9eb86a3ba6cf8422caa8f',1,'mainwindow.cpp']]],
-  ['tracerstyle_3',['TracerStyle',['../class_q_c_p_item_tracer.html#a2f05ddb13978036f902ca3ab47076500',1,'QCPItemTracer']]]
+  ['updatephase_0',['UpdatePhase',['../class_q_c_p_layout_element.html#a0d83360e05735735aaf6d7983c56374d',1,'QCPLayoutElement']]]
 ];
