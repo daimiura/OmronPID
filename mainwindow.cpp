@@ -22,7 +22,7 @@ enum E5CC_Address{
 
 enum timing{
     modbus = 100,
-    getTempTimer = 10,
+    getTempTimer = 100,
     clockUpdate = 50,
     timeUp = 1000*60*10,
     timeOut = 700
@@ -120,7 +120,7 @@ MainWindow::MainWindow(QWidget *parent) :
     plot->legend->setFillOrder(QCPLegend::foColumnsFirst);
     plot->plotLayout()->setRowStretchFactor(1, 0.001);
     plot->axisRect()->setAutoMargins(QCP::msLeft | QCP::msTop | QCP::msBottom);
-    plot->axisRect()->setMargins(QMargins(0,0,50,0));
+    plot->axisRect()->setMargins(QMargins(0,0,100,0));
 
     plot->replot();
 
@@ -247,12 +247,14 @@ MainWindow::MainWindow(QWidget *parent) :
     threadLog_->interval_ = 10000; //ms to sec.;
     threadLog_->moveToThread(threadLog_);
     QObject::connect(threadLog_, SIGNAL(data_update()), this, SLOT(makePlot()));
-    QObject::connect(ui->spinBox_TempRecordTime, SIGNAL(valueChanged(int)), this, SLOT(setLogInterval(int)) );
-
-
 
     //! TempCheck counter is set to be 0.
     countTempCheck_ = 0;
+
+    //! frags are set to be false.
+    frag_makePlot_ = false;
+    frag_periodicWork_ = false;
+    frag_TempCheck_ = false;
 
     ui->textEdit_Log->setTextColor(QColor(34,139,34,255));
     LogMsg("The AT and RUN/STOP do not get from the device. Please be careful.");
@@ -517,38 +519,38 @@ void MainWindow::readReady()
     modbusReady = true;
 }
 
-void MainWindow::askTemperature()
+void MainWindow::askTemperature(bool mute)
 {
     //QMutexLocker lock(&mutex_);
-    LogMsg("------ get Temperature.");
-    read(QModbusDataUnit::HoldingRegisters, E5CC_Address::PV, 2);
+  if(!mute) LogMsg("------ get Temperature.");
+  read(QModbusDataUnit::HoldingRegisters, E5CC_Address::PV, 2);
 }
 
-void MainWindow::askSetPoint()
+void MainWindow::askSetPoint(bool mute)
 {
     //QMutexLocker lock(&mutex_);
-    LogMsg("------ get Set Point.");
+    if(!mute) LogMsg("------ get Set Point.");
     read(QModbusDataUnit::HoldingRegisters, E5CC_Address::SV, 2);
 }
 
-void MainWindow::askMV()
+void MainWindow::askMV(bool mute)
 {
   //QMutexLocker lock(&mutex_);
-    LogMsg("------ get MV.");
+    if(!mute)LogMsg("------ get MV.");
     read(QModbusDataUnit::HoldingRegisters, E5CC_Address::MV, 2);
 }
 
-void MainWindow::askMVupper()
+void MainWindow::askMVupper(bool mute)
 {
     //QMutexLocker lock(&mutex_);
-    LogMsg("------ get MV upper.");
+    if(!mute)LogMsg("------ get MV upper.");
     read(QModbusDataUnit::HoldingRegisters, E5CC_Address::MVupper, 2);
 }
 
-void MainWindow::askMVlower()
+void MainWindow::askMVlower(bool mute)
 {
     //QMutexLocker lock(&mutex_);
-    LogMsg("------ get MV lower.");
+    if(!mute)LogMsg("------ get MV lower.");
     read(QModbusDataUnit::HoldingRegisters, E5CC_Address::MVlower, 2);
 }
 
@@ -1254,7 +1256,7 @@ void MainWindow::on_pushButton_RecordTemp_clicked()
 
         outfile.open(QIODevice::WriteOnly| QIODevice::Text);
         QTextStream stream(&outfile);
-        QString lineout;
+       // QString lineout;
 
         //lineout.asprintf("###%s", startTime.toString("yyyy-MM-dd HH:mm:ss\n").toStdString().c_str());
         stream << startTime.toString("yyyy-MM-dd HH:mm:ss").toStdString().c_str() << Qt::endl;
@@ -1655,36 +1657,47 @@ void MainWindow::on_action_Setting_parameters_for_TempCheck_triggered(){
 
 void MainWindow::setIntervalAskMV(){
   ui->lineEdit_IntervalAskMV->setEnabled(true);
-  ui->lineEdit_IntervalAskMV->setText(QString::number(configureDialog_->spinBox_IntervalAskMV_->value()));
+  ui->lineEdit_IntervalAskMV->setText(QString::number(configureDialog_->intervalAskMV_));
   ui->lineEdit_IntervalAskMV->setEnabled(false);
 }
 
 void MainWindow::setIntervalAskTemp(){
   ui->lineEdit_IntervalAskTemp->setEnabled(true);
-  ui->lineEdit_IntervalAskTemp->setText(QString::number(configureDialog_->spinBox_IntervalAskTemp_->value()));
+  ui->lineEdit_IntervalAskTemp->setText(QString::number(configureDialog_->intervalAskTemp_));
   ui->lineEdit_IntervalAskTemp->setEnabled(false);
 }
 
 void MainWindow::setNumbers(){
   ui->lineEdit_Numbers->setEnabled(true);
-  ui->lineEdit_Numbers->setText(QString::number(configureDialog_->spinBox_Numbers_->value()));
+  ui->lineEdit_Numbers->setText(QString::number(configureDialog_->numbers_));
   ui->lineEdit_Numbers->setEnabled(false);
 
 }
 
 void MainWindow::setSafeLimit(){
   ui->lineEdit_SafeLimit->setEnabled(true);
-  ui->lineEdit_SafeLimit->setText(QString::number(configureDialog_->spinBox_SafeLimit_->value()));
+  ui->lineEdit_SafeLimit->setText(QString::number(configureDialog_->safeLimit_));
   ui->lineEdit_SafeLimit->setEnabled(false);
 }
 
 void MainWindow::setIgnoreRange(){
   ui->lineEdit_IgnoreLower->setEnabled(true);
   ui->lineEdit_IgnoreUpper->setEnabled(true);
-  ui->lineEdit_IgnoreLower->setText(QString::number(configureDialog_->spinBox_IgnoreLower_->value()));
-  ui->lineEdit_IgnoreUpper->setText(QString::number(configureDialog_->spinBox_IgnoreUpper_->value()));
+  if(configureDialog_->ignoreEnable_){
+    ui->lineEdit_IgnoreLower->setText(QString::number(configureDialog_->ignoreLower_));
+    ui->lineEdit_IgnoreUpper->setText(QString::number(configureDialog_->ignoreUpper_));
+  } else{
+    ui->lineEdit_IgnoreLower->setText("None.");
+    ui->lineEdit_IgnoreUpper->setText("None.");
+  }
   ui->lineEdit_IgnoreLower->setEnabled(false);
   ui->lineEdit_IgnoreUpper->setEnabled(false);
+}
+
+void MainWindow::setIgnoreEnable(){
+  ui->checkBox_Ignore->setEnabled(true);
+  ui->checkBox_Ignore->setChecked(configureDialog_->ignoreEnable_);
+  ui->checkBox_Ignore->setEnabled(false);
 }
 
 void MainWindow::setParametersTempCheck(){
@@ -1693,6 +1706,7 @@ void MainWindow::setParametersTempCheck(){
   setNumbers();
   setSafeLimit();
   setIgnoreRange();
+  setIgnoreEnable();
   threadMVcheck_->interval_ = ui->lineEdit_IntervalAskMV->text().toInt()*1000; //ms to sec
   threadTempCheck_->interval_ = ui->lineEdit_IntervalAskTemp->text().toInt()*1000; //ms to sec
   threadLog_->interval_ = ui->spinBox_TempRecordTime->value()*1000; //ms to sec
@@ -1718,7 +1732,7 @@ void MainWindow::on_radioButton_Run_clicked()
   threadLog_->start();
   threadMVcheck_->setPriority(QThread::TimeCriticalPriority);
   threadLog_->setPriority(QThread::HighestPriority);
-  ui->checkBox_dataSave->setChecked(true);
+  ui->pushButton_Log->setChecked(true);
   LogMsg("Thred start.");
 }
 
@@ -1735,12 +1749,8 @@ void MainWindow::on_radioButton_Stop_clicked()
   QColor color = QColor("lightgray");
   QPalette pal = palette();
   pal.setColor(QPalette::Window, color);
-  this->setAutoFillBackground(true);
   this->setPalette(pal);
-  this->setAutoFillBackground(false);
-
   LogMsg("Thred stop.");
-  ui->radioButton_TempCheck->setChecked(false);
   ui->radioButton_Run->setStyleSheet("");
 }
 
@@ -1783,23 +1793,20 @@ double MainWindow::diffTemp(){
 }
 
 void MainWindow::TempCheck(){
-  frag_TempCheck_ = 1;
-  ui->radioButton_TempCheck->setChecked(true);
+  frag_TempCheck_ = true;
   QColor color = QColor(255, 135, 135,255);
   QPalette pal = palette();
   pal.setColor(QPalette::Window, color);
   this->setAutoFillBackground(true);
   this->setPalette(pal);
   this->setAutoFillBackground(false);
-  ui->radioButton_TempCheck->setStyleSheet("background-color:rgb(173, 181, 189);");
   LogMsg("CheckTemp starts.");
   LogMsg("Check the temperature every " + ui->lineEdit_IntervalAskTemp->text() + " min.");
   LogMsg("The result in " + QString::number(countTempCheck_));
+  ui->lineEdit_TempCheckCount->setEnabled(true);
+  ui->lineEdit_TempCheckCount->setText(QString::number(countTempCheck_));
+  ui->lineEdit_TempCheckCount->setEnabled(false);
   threadTempCheck_->start();
-  QTimer getTempTimer;
-  getTempTimer.setSingleShot(true);
-  const int tempGetTime = ui->spinBox_TempRecordTime->value() * 1000; // msec
-  getTempTimer.start(tempGetTime);
   askTemperature();
   int i = 0;
   while(!modbusReady){
@@ -1820,31 +1827,28 @@ void MainWindow::TempCheck(){
   double targetValue = SV;
   double lower = ui->lineEdit_IgnoreLower->text().toDouble();
   double upper = ui->lineEdit_IgnoreUpper->text().toDouble();
-  if (targetValue+lower <= temperature && targetValue+upper >= temperature) {
-      ui->radioButton_TempCheck->setChecked(false);
-      QColor color = QColor(55,178,77,255);
-      QPalette pal = palette();
-      pal.setColor(QPalette::Window, color);
-      this->setAutoFillBackground(true);
-      this->setPalette(pal);
-      this->setAutoFillBackground(false);
-      ui->textEdit_Log->setTextColor(QColor(0,0,255,255));
-      LogMsg("Target value is " + QString::number(targetValue));
-      LogMsg("Current temperature is outside the TempCheck mode.");
-      LogMsg("TempCheck mode does not work in the range");
-      ui->radioButton_TempCheck->setChecked(false);
-      ui->radioButton_TempCheck->setStyleSheet("");
-      vtemp_.clear();
-      vdifftemp_.clear();
-      countTempCheck_ = 0;
-      ui->textEdit_Log->setTextColor(QColor(0,0,0,255));
-      threadTempCheck_->start();
-      return;
-    }
-
+  //if (ui->checkBox_Ignore){
+    if (targetValue+lower <= temperature && targetValue+upper >= temperature) {
+        QColor color = QColor(55,178,77,255);
+        QPalette pal = palette();
+        pal.setColor(QPalette::Window, color);
+        this->setAutoFillBackground(true);
+        this->setPalette(pal);
+        this->setAutoFillBackground(false);
+        ui->textEdit_Log->setTextColor(QColor(0,0,255,255));
+        LogMsg("Target value is " + QString::number(targetValue));
+        LogMsg("Current temperature is outside the TempCheck mode.");
+        LogMsg("TempCheck mode does not work in the range");
+        vtemp_.clear();
+        vdifftemp_.clear();
+        countTempCheck_ = 0;
+        ui->textEdit_Log->setTextColor(QColor(0,0,0,255));
+        threadTempCheck_->start();
+        return;
+      }
+  //  }
   if (countTempCheck_ < ui->lineEdit_Numbers->text().toInt()){
       countTempCheck_++;
-      LogMsg(QString::number(countTempCheck_));
       vdifftemp_.push_back(temperature - vtemp_.at(0));
       threadTempCheck_->start();
       return;
@@ -1852,7 +1856,6 @@ void MainWindow::TempCheck(){
   double dtemp = diffTemp();
   double safelimit = ui->lineEdit_SafeLimit->text().toDouble();
   if (abs(dtemp) >= safelimit){
-      ui->radioButton_TempCheck->setChecked(false);
       color = QColor("lightgray");
       pal = palette();
       pal.setColor(QPalette::Window, color);
@@ -1864,30 +1867,29 @@ void MainWindow::TempCheck(){
       LogMsg("Permitted temperature change is " + QString::number(safelimit));
       LogMsg("Observed temperature change is " + QString::number(dtemp));
       threadTempCheck_->start();
-      ui->radioButton_TempCheck->setChecked(false);
-      ui->radioButton_TempCheck->setStyleSheet("");
       countTempCheck_ = 0;
-      return;
+      frag_TempCheck_ = false;
     }
-  else Quit();
-  frag_TempCheck_ = 0;
+  else {
+      QDateTime date = QDateTime::currentDateTime();
+      QString datestr = date.toString("yyyyMMdd_HHmmss");
+      ui->lineEdit_TempCheckCount->setStyleSheet("background-color:yellow; color:red;selection-background-color:red;");
+      ui->lineEdit_TempCheckCount->setText("Emergency Stop at" + datestr);
+      frag_TempCheck_ = false;
+      Quit();
+    }
 }
 
 void MainWindow::periodicWork(){
-  frag_periodicWork_ = 1;
-  if (ui->radioButton_TempCheck->isChecked()){
-      threadMVcheck_->quit();
-      return;
-   }
-  if(frag_TempCheck_ == 1) QThread::sleep(1);
-  if(frag_makePlot_ == 1) QThread::sleep(1);
+  frag_periodicWork_ = true;
+  bool mute = true;
   LogMsg("periodic function works.");
   QTimer getTempTimer;
   getTempTimer.setSingleShot(true);
   const int tempGetTime = ui->spinBox_TempRecordTime->value() * 1000; // msec
   getTempTimer.start(tempGetTime);
 
-  askTemperature();
+  askTemperature(mute);
   int i = 0;
   while(!modbusReady) {
       i++;
@@ -1897,7 +1899,7 @@ void MainWindow::periodicWork(){
       }
   }
 
-  askSetPoint();
+  askSetPoint(mute);
   i = 0;
   while(!modbusReady) {
       i++;
@@ -1907,7 +1909,7 @@ void MainWindow::periodicWork(){
       }
   }
 
-  askMV();
+  askMV(mute);
   i = 0;
   while(!modbusReady) {
       i++;
@@ -1927,24 +1929,21 @@ void MainWindow::periodicWork(){
     if (!threadTempCheck_->isRunning()) threadTempCheck_->start();
     if (threadMVcheck_->isRunning()) threadMVcheck_->quit();
     else threadMVcheck_->start();
-    ui->radioButton_TempCheck->setChecked(true);
     ui->textEdit_Log->setTextColor(QColor(0,0,0,255));
-    TempCheck();
+    if (!isTempCheck())TempCheck();
   }
-  frag_periodicWork_ = 0;
+  frag_periodicWork_ = false;
 }
 
 void MainWindow::makePlot(){
-  //QMutexLocker lock(&mutex_);
-  frag_makePlot_ = 1;
-  if (frag_TempCheck_ == 1) QThread::sleep(1);
-  if (frag_periodicWork_ == 1) QThread::sleep(1);
-  LogMsg("makePlot works.");
+  frag_makePlot_ = true;
+  bool mute = true;
+  //LogMsg("makePlot works.");
   QTimer getTempTimer;
   const int tempGetTime = ui->spinBox_TempRecordTime->value() * 1000; // msec
   getTempTimer.setSingleShot(true);
   getTempTimer.start(tempGetTime);
-  askTemperature();
+  askTemperature(mute);
   int i = 0;
   while(!modbusReady) {
       i++;
@@ -1954,7 +1953,7 @@ void MainWindow::makePlot(){
       }
   }
 
-  askSetPoint();
+  askSetPoint(mute);
   i = 0;
   while(!modbusReady) {
       i++;
@@ -1963,7 +1962,7 @@ void MainWindow::makePlot(){
           modbusReady = true;
       }
   }
-  askMV();
+  askMV(mute);
   i = 0;
   while(!modbusReady) {
       i++;
@@ -1977,6 +1976,7 @@ void MainWindow::makePlot(){
   QDateTime date = QDateTime::currentDateTime();
   fillDataAndPlot(date, temperature, targetValue, MV);
   if(ui->checkBox_dataSave->isChecked()) writeData();
+  frag_makePlot_ = false;
 }
 
 /**
@@ -1984,6 +1984,7 @@ void MainWindow::makePlot(){
  * @details The Data is saved to the file generated by on_checkBox_dataSave_toggled.
  */
 void MainWindow::writeData(){
+  if(!ui->checkBox_dataSave->isChecked()) return;
   LogMsg("data save to : " + filePath_);
   QFile output_(filePath_);
   QTextStream stream(&output_);
@@ -2027,4 +2028,29 @@ void MainWindow::on_checkBox_dataSave_toggled(bool checked)
   output_.close();
 }
 
+
+bool MainWindow::isTempCheck(){
+  return frag_TempCheck_;
+}
+
+bool MainWindow::isMakePlot(){
+  return frag_makePlot_;
+}
+
+bool MainWindow::isPeriodicWork(){
+  return frag_periodicWork_;
+}
+
+void MainWindow::on_pushButton_Log_toggled(bool checked)
+{
+  if(checked) {
+    ui->pushButton_Log->setText("Logging Stop");
+    ui->lineEdit_Log->setText("Loginng every " + QString::number(ui->spinBox_TempRecordTime->value()) + " sec");
+    if(!threadLog_->isRunning()) threadLog_->start();
+  }else {
+    ui->pushButton_Log->setText("Logging Start");
+    ui->lineEdit_Log->setText("Ready");
+    if(threadLog_->isRunning()) threadLog_->quit();
+  }
+}
 

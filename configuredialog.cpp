@@ -94,9 +94,6 @@ ConfigureDialog::~ConfigureDialog()
 {
   delete ui;
 }
-
-
-
 /**
  * @brief ConfigureDialog::SetValues
  * @details The member variables in ConfigureDialog class are set to the values of boxes.

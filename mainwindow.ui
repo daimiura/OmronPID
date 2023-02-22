@@ -21,14 +21,7 @@
        <string>E5CC control</string>
       </property>
       <layout class="QGridLayout" name="gridLayout_4">
-       <item row="0" column="0">
-        <widget class="QPushButton" name="pushButton_Connect">
-         <property name="text">
-          <string>Connect</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="0">
+       <item row="4" column="0">
         <widget class="QRadioButton" name="radioButton_Stop">
          <property name="text">
           <string>Stop</string>
@@ -38,72 +31,17 @@
          </attribute>
         </widget>
        </item>
-       <item row="4" column="2">
-        <widget class="QDoubleSpinBox" name="doubleSpinBox_MVupper">
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-         <property name="maximum">
-          <double>100.000000000000000</double>
-         </property>
-        </widget>
-       </item>
-       <item row="8" column="2">
-        <widget class="QPushButton" name="pushButton_ReadRH">
+       <item row="0" column="0">
+        <widget class="QPushButton" name="pushButton_Connect">
          <property name="text">
-          <string>Read From Holding Register</string>
+          <string>Connect</string>
          </property>
         </widget>
        </item>
        <item row="6" column="0" colspan="3">
-        <widget class="QLineEdit" name="lineEdit_Cmd">
-         <property name="font">
-          <font>
-           <family>Courier New</family>
-          </font>
-         </property>
-         <property name="text">
-          <string>&lt;PDU&gt; or &lt;0xYYYY&gt;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="0">
-        <widget class="QCheckBox" name="checkBox_EnableSend">
-         <property name="text">
-          <string>Send When Entered</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1" colspan="2">
-        <widget class="QComboBox" name="comboBox_SeriesNumber">
-         <item>
-          <property name="text">
-           <string>FT0875RPA</string>
-          </property>
-         </item>
-        </widget>
-       </item>
-       <item row="5" column="0" colspan="3">
         <widget class="QComboBox" name="comboBox_Func"/>
        </item>
-       <item row="2" column="1">
-        <widget class="QComboBox" name="comboBox_AT">
-         <property name="currentIndex">
-          <number>-1</number>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="0">
-        <widget class="QLabel" name="label_9">
-         <property name="text">
-          <string>Output Limit [%]:</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="2">
+       <item row="1" column="1">
         <widget class="QSpinBox" name="spinBox_DeviceAddress">
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -119,7 +57,56 @@
          </property>
         </widget>
        </item>
-       <item row="8" column="0" colspan="2">
+       <item row="9" column="2">
+        <widget class="QPushButton" name="pushButton_ReadRH">
+         <property name="text">
+          <string>Read From Holding Register</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QPushButton" name="pushButton_Log">
+         <property name="text">
+          <string>Logging start</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0" colspan="3">
+        <widget class="QLineEdit" name="lineEdit_Cmd">
+         <property name="font">
+          <font>
+           <family>Courier New</family>
+          </font>
+         </property>
+         <property name="text">
+          <string>&lt;PDU&gt; or &lt;0xYYYY&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="2">
+        <widget class="QLineEdit" name="lineEdit_Log"/>
+       </item>
+       <item row="1" column="2">
+        <widget class="QComboBox" name="comboBox_AT">
+         <property name="currentIndex">
+          <number>-1</number>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QRadioButton" name="radioButton_Run">
+         <property name="text">
+          <string>Run</string>
+         </property>
+         <attribute name="buttonGroup">
+          <string notr="true">buttonGroup</string>
+         </attribute>
+        </widget>
+       </item>
+       <item row="9" column="0" colspan="2">
         <widget class="QComboBox" name="comboBox_MemAddress">
          <property name="font">
           <font>
@@ -131,37 +118,63 @@
          </property>
         </widget>
        </item>
-       <item row="2" column="0">
-        <widget class="QRadioButton" name="radioButton_Run">
+       <item row="5" column="0">
+        <widget class="QLabel" name="label_9">
          <property name="text">
-          <string>Run</string>
-         </property>
-         <attribute name="buttonGroup">
-          <string notr="true">buttonGroup</string>
-         </attribute>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="QLabel" name="label_5">
-         <property name="text">
-          <string>Address :</string>
+          <string>Output Limit [%]:</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
          </property>
         </widget>
        </item>
-       <item row="4" column="1">
+       <item row="0" column="1" colspan="2">
+        <widget class="QComboBox" name="comboBox_SeriesNumber">
+         <item>
+          <property name="text">
+           <string>FT0875RPA</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QCheckBox" name="checkBox_dataSave">
+         <property name="text">
+          <string>Data Save</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
         <widget class="QDoubleSpinBox" name="doubleSpinBox_MVlower">
          <property name="alignment">
           <set>Qt::AlignCenter</set>
          </property>
         </widget>
        </item>
-       <item row="3" column="2">
-        <widget class="QCheckBox" name="checkBox_dataSave">
+       <item row="8" column="0">
+        <widget class="QCheckBox" name="checkBox_EnableSend">
          <property name="text">
-          <string>Data Save</string>
+          <string>Send When Entered</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="2">
+        <widget class="QDoubleSpinBox" name="doubleSpinBox_MVupper">
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="maximum">
+          <double>100.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_5">
+         <property name="text">
+          <string>Address :</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
          </property>
         </widget>
        </item>
@@ -567,10 +580,24 @@
        <string>TempCheck</string>
       </property>
       <layout class="QGridLayout" name="gridLayout_2">
-       <item row="5" column="1">
-        <widget class="QLineEdit" name="lineEdit_IgnoreLower">
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="lineEdit_IntervalAskMV">
          <property name="enabled">
           <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="label_17">
+         <property name="text">
+          <string>Temperature range to ignore</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_6">
+         <property name="text">
+          <string>Interval time Ask MV (min)</string>
          </property>
         </widget>
        </item>
@@ -578,13 +605,6 @@
         <widget class="QLineEdit" name="lineEdit_SafeLimit">
          <property name="enabled">
           <bool>false</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="0">
-        <widget class="QLabel" name="label_14">
-         <property name="text">
-          <string>Interval time Ask Temp in TempCheck</string>
          </property>
         </widget>
        </item>
@@ -602,34 +622,17 @@
          </property>
         </widget>
        </item>
-       <item row="1" column="0">
-        <widget class="QLabel" name="label_6">
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_14">
          <property name="text">
-          <string>Interval time Ask MV (min)</string>
+          <string>Interval time Ask Temp in TempCheck</string>
          </property>
         </widget>
        </item>
-       <item row="0" column="1" colspan="2">
-        <widget class="QRadioButton" name="radioButton">
+       <item row="5" column="1">
+        <widget class="QLineEdit" name="lineEdit_IgnoreLower">
          <property name="enabled">
           <bool>false</bool>
-         </property>
-         <property name="text">
-          <string>Enable Temperature range to ignor</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="QLineEdit" name="lineEdit_IntervalAskMV">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="0">
-        <widget class="QLabel" name="label_17">
-         <property name="text">
-          <string>Temperature range to ignore</string>
          </property>
         </widget>
        </item>
@@ -647,20 +650,37 @@
          </property>
         </widget>
        </item>
-       <item row="0" column="0">
-        <widget class="QRadioButton" name="radioButton_TempCheck">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="text">
-          <string>Working</string>
-         </property>
-        </widget>
-       </item>
        <item row="4" column="0">
         <widget class="QLabel" name="label_15">
          <property name="text">
           <string>Number of times to check  temperature</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QCheckBox" name="checkBox_Ignore">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="text">
+          <string>Enable Temperature range to ignor</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="2">
+        <widget class="QLineEdit" name="lineEdit_TempCheckCount">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="2">
+        <widget class="QLabel" name="label_18">
+         <property name="text">
+          <string>Condition</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
          </property>
         </widget>
        </item>
@@ -697,7 +717,7 @@
      <x>0</x>
      <y>0</y>
      <width>1092</width>
-     <height>25</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">

@@ -38,15 +38,16 @@ class ConfigureDialog : public QDialog
 public:
   explicit ConfigureDialog(QWidget *parent = nullptr);
   ~ConfigureDialog();
-  QSpinBox * spinBox_IntervalAskMV_;
-  QSpinBox * spinBox_IntervalAskTemp_;
-  QSpinBox * spinBox_Numbers_;
-  QDoubleSpinBox * spinBox_SafeLimit_;
-  QDoubleSpinBox * spinBox_IgnoreLower_;
-  QDoubleSpinBox * spinBox_IgnoreUpper_;
-  QTextBrowser * textBrowser_log_;
+
+  bool ignoreEnable_;
+  int intervalAskMV_;
+  int intervalAskTemp_;
+  int numbers_;
+  int etime_;
+  double safeLimit_;
+  double ignoreUpper_;
+  double ignoreLower_;
   QPushButton * pushButton_SetParameters_;
-  QCheckBox * checkBox_IgnoreEnable_;
 
 private slots:
   void setValues();
@@ -62,14 +63,16 @@ private:
   QLabel * label_IgnoreUpper_;
   QLabel * label_ETime_;
 
-  int intervalAskMV_;
-  int intervalAskTemp_;
-  int numbers_;
-  int etime_;
-  double safeLimit_;
-  double ignoreUpper_;
-  double ignoreLower_;
-  bool ignoreEnable_;
+  QSpinBox * spinBox_IntervalAskMV_;
+  QSpinBox * spinBox_IntervalAskTemp_;
+  QSpinBox * spinBox_Numbers_;
+  QDoubleSpinBox * spinBox_SafeLimit_;
+  QDoubleSpinBox * spinBox_IgnoreLower_;
+  QDoubleSpinBox * spinBox_IgnoreUpper_;
+  QTextBrowser * textBrowser_log_;
+
+  QCheckBox * checkBox_IgnoreEnable_;
+
   QMutex mutex_;
 };
 

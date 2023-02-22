@@ -56,11 +56,11 @@ private slots:
     void readReady();
     void request(QModbusPdu::FunctionCode code, QByteArray cmd); // no PDU reply
 
-    void askTemperature();
-    void askSetPoint();
-    void askMV();
-    void askMVupper();
-    void askMVlower();
+    void askTemperature(bool mute = false);
+    void askSetPoint(bool mute = false);
+    void askMV(bool mute = false);
+    void askMVupper(bool mute = false);
+    void askMVlower(bool mute = false);
     void getSetting();
     void setAT(int atFlag);
     void setSV(double SV);
@@ -97,7 +97,6 @@ private slots:
     void on_radioButton_Stop_clicked();
 
     void Quit();
-    //void CheckTemp();
 
     void setIntervalAskMV();
     void setIntervalAskTemp();
@@ -105,9 +104,11 @@ private slots:
     void setNumbers();
     void setIgnoreRange();
     void setParametersTempCheck();
+    void setIgnoreEnable();
     double diffTemp();
 
     void on_checkBox_dataSave_toggled(bool checked);
+    void on_pushButton_Log_toggled(bool checked);
 
 private:
     Ui::MainWindow *ui;
@@ -159,9 +160,13 @@ private:
     QMutex mutex_;
     //! Counter that TempCheck was executed.
     int countTempCheck_;
-    int frag_TempCheck_;
-    int frag_makePlot_;
-    int frag_periodicWork_;
+    bool frag_TempCheck_;
+    bool frag_makePlot_;
+    bool frag_periodicWork_;
+
+    bool isTempCheck();
+    bool isMakePlot();
+    bool isPeriodicWork();
 };
 
 #endif // MAINWINDOW_H
