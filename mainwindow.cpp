@@ -222,6 +222,7 @@ MainWindow::MainWindow(QWidget *parent) :
     configureDialog_ = new ConfigureDialog(this);
     configureDialog_->setWindowTitle("Configure");
     connect(configureDialog_->pushButton_SetParameters_, SIGNAL(clicked(bool)), this, SLOT(setParametersTempCheck()) );
+    //connect(configureDialog_->pu)
 
     setIntervalAskMV();
     setIntervalAskTemp();

@@ -51,13 +51,13 @@ ConfigureDialog::ConfigureDialog(QWidget *parent) :
   Layout->addWidget(textBrowser_log_);
   Layout->addWidget(pushButton_SetParameters_);
 
+  //! configure boxes and set
   spinBox_IntervalAskMV_->setMaximum(1000);
   spinBox_IntervalAskTemp_->setMaximum(1000);
   spinBox_Numbers_->setMaximum(100);
   spinBox_SafeLimit_->setMaximum(1000);
   spinBox_IgnoreLower_->setMaximum(0);
   spinBox_IgnoreLower_->setMinimum(-100);
-
   intervalAskMV_ = 10;
   intervalAskTemp_ = 10;
   numbers_ = 10;
@@ -65,7 +65,6 @@ ConfigureDialog::ConfigureDialog(QWidget *parent) :
   ignoreLower_ = -10;
   ignoreUpper_ = +10;
   ignoreEnable_= true;
-
   spinBox_IntervalAskMV_->setValue(intervalAskMV_);
   spinBox_IntervalAskTemp_->setValue(intervalAskTemp_);
   spinBox_Numbers_->setValue(numbers_);
@@ -73,13 +72,17 @@ ConfigureDialog::ConfigureDialog(QWidget *parent) :
   spinBox_IgnoreLower_->setValue(ignoreLower_);
   spinBox_IgnoreUpper_->setValue(ignoreUpper_);
   checkBox_IgnoreEnable_->setChecked(ignoreEnable_);
-
-
   spinBox_IntervalAskMV_->setSingleStep(10);
   spinBox_IntervalAskTemp_->setSingleStep(10);
   spinBox_SafeLimit_->setSingleStep(0.1);
-
   setValues();
+
+  //! QMessageBox
+  warningMessageBox_.setIcon(QMessageBox::Warning);
+  warningMessageBox_.setText(tr("Are you sure to change the TempCheck parameters?"));
+  warningMessageBox_.setWindowTitle(tr("Warning"));
+  warningMessageBox_.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+
   connect(spinBox_IntervalAskTemp_, SIGNAL(valueChanged(int)), this, SLOT(setValues()));
   connect(spinBox_IntervalAskTemp_, SIGNAL(valueChanged(int)), this, SLOT(setValues()));
   connect(spinBox_Numbers_, SIGNAL(valueChanged(int)), this, SLOT(setValues()));

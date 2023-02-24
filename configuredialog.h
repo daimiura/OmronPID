@@ -12,6 +12,7 @@
 #include <QDialog>
 #include <QMutex>
 #include <QMutexLocker>
+#include <QMessageBox>
 
 class QSpinBox;
 class QDoubleSpinBox;
@@ -48,6 +49,7 @@ public:
   double ignoreUpper_;
   double ignoreLower_;
   QPushButton * pushButton_SetParameters_;
+  QMessageBox warningMessageBox_;
 
 private slots:
   void setValues();
