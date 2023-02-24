@@ -24,6 +24,7 @@ ConfigureDialog::ConfigureDialog(QWidget *parent) :
   label_IgnoreUpper_ = new QLabel(tr("Upper limit of temperature to ignore TempCheck mode (C)."));
   label_ETime_ = new QLabel(tr("Log Message"));
   pushButton_SetParameters_ = new QPushButton(tr("Set Parameters"));
+  pushButton_SetParameters_->setCheckable(true);
   spinBox_IntervalAskMV_ = new QSpinBox();
   spinBox_IntervalAskTemp_ = new QSpinBox();
   spinBox_Numbers_ = new QSpinBox();
@@ -82,6 +83,7 @@ ConfigureDialog::ConfigureDialog(QWidget *parent) :
   warningMessageBox_.setText(tr("Are you sure to change the TempCheck parameters?"));
   warningMessageBox_.setWindowTitle(tr("Warning"));
   warningMessageBox_.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+  warnigcheck_ = false;
 
   connect(spinBox_IntervalAskTemp_, SIGNAL(valueChanged(int)), this, SLOT(setValues()));
   connect(spinBox_IntervalAskTemp_, SIGNAL(valueChanged(int)), this, SLOT(setValues()));
@@ -90,7 +92,7 @@ ConfigureDialog::ConfigureDialog(QWidget *parent) :
   connect(spinBox_IgnoreUpper_, SIGNAL(valueChanged(double)), this, SLOT(setValues()));
   connect(spinBox_SafeLimit_, SIGNAL(valueChanged(double)), this, SLOT(setValues()));
   connect(checkBox_IgnoreEnable_, SIGNAL(stateChanged(int)), this, SLOT(setValues()));
-  connect(pushButton_SetParameters_, SIGNAL(clicked(bool)), this, SLOT(setValues()));
+  connect(pushButton_SetParameters_, SIGNAL(clicked(bool)), this, SLOT(warningShow(bool)));
 }
 
 ConfigureDialog::~ConfigureDialog()
@@ -116,8 +118,27 @@ void ConfigureDialog::setValues(){
   textBrowser_log_->append("Ask Temp with interval : " + QString::number(intervalAskTemp_) + " min");
   textBrowser_log_->append("Average size : " + QString::number(numbers_));
   textBrowser_log_->append("Safety limit : " + QString::number(safeLimit_) + " C");
-  if (ignoreEnable_) textBrowser_log_->append("Temperature range to ignore mode is <font color=red>enable</font>");
-  else textBrowser_log_->append("Temperature range to ignore mode is <font color=blue>unenable</font>");
-  textBrowser_log_->append("Temperature range to ignore : " + QString::number(ignoreLower_) + " =< target value =< " + QString::number(ignoreUpper_));
+  if (ignoreEnable_) {
+    textBrowser_log_->append("Temperature range to ignore mode is <font color=red>enable</font>.");
+    textBrowser_log_->append("Temperature range to ignore : " + QString::number(ignoreLower_) + " =< target value =< " + QString::number(ignoreUpper_));
+  } else {
+    textBrowser_log_->append("Temperature range to ignore mode is <font color=blue>unenable</font>");
+    textBrowser_log_->append("Temperature range to ignore : set to None.");
+    textBrowser_log_->append("<font color=blue>Check the box to enable. </font>");
+  }
   textBrowser_log_->append("Estimated time to take while TepCheck mode " + QString::number(etime_));
+  msg_ = textBrowser_log_->toPlainText();
+}
+
+void ConfigureDialog::warningShow(bool checked){
+  if (!checked) return;
+  warnigcheck_ = false;
+  int res = warningMessageBox_.exec();
+  if (res == QMessageBox::Yes){
+      warnigcheck_ = true;
+      setValues();
+  } else warnigcheck_ = false;
+  pushButton_SetParameters_->setChecked(false);
+  warningMessageBox_.hide();
+  this->hide();
 }

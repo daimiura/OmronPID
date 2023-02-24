@@ -222,7 +222,6 @@ MainWindow::MainWindow(QWidget *parent) :
     configureDialog_ = new ConfigureDialog(this);
     configureDialog_->setWindowTitle("Configure");
     connect(configureDialog_->pushButton_SetParameters_, SIGNAL(clicked(bool)), this, SLOT(setParametersTempCheck()) );
-    //connect(configureDialog_->pu)
 
     setIntervalAskMV();
     setIntervalAskTemp();
@@ -1702,6 +1701,7 @@ void MainWindow::setIgnoreEnable(){
 }
 
 void MainWindow::setParametersTempCheck(){
+  if (!configureDialog_->warnigcheck_) return;
   setIntervalAskMV();
   setIntervalAskTemp();
   setNumbers();
@@ -1711,6 +1711,8 @@ void MainWindow::setParametersTempCheck(){
   threadMVcheck_->interval_ = ui->lineEdit_IntervalAskMV->text().toInt()*1000; //ms to sec
   threadTempCheck_->interval_ = ui->lineEdit_IntervalAskTemp->text().toInt()*1000; //ms to sec
   threadLog_->interval_ = ui->spinBox_TempRecordTime->value()*1000; //ms to sec
+  LogMsg("set to be parameters for TempCheck.");
+  LogMsg(configureDialog_->msg_);
 }
 
 

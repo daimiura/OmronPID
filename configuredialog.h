@@ -48,11 +48,14 @@ public:
   double safeLimit_;
   double ignoreUpper_;
   double ignoreLower_;
-  QPushButton * pushButton_SetParameters_;
+  bool warnigcheck_;
+  QString msg_;
   QMessageBox warningMessageBox_;
+  QPushButton * pushButton_SetParameters_;
 
 private slots:
   void setValues();
+  void warningShow(bool checked);
 
 private:
   Ui::ConfigureDialog *ui;
@@ -74,6 +77,7 @@ private:
   QTextBrowser * textBrowser_log_;
 
   QCheckBox * checkBox_IgnoreEnable_;
+
 
   QMutex mutex_;
 };
