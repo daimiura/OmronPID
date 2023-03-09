@@ -80,7 +80,7 @@ ConfigureDialog::ConfigureDialog(QWidget *parent) :
 
   //! QMessageBox
   warningMessageBox_.setIcon(QMessageBox::Warning);
-  warningMessageBox_.setText(tr("Are you sure to change the TempCheck parameters?"));
+  warningMessageBox_.setText(tr("Are you sure you want to change the TempCheck parameters?"));
   warningMessageBox_.setWindowTitle(tr("Warning"));
   warningMessageBox_.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
   warnigcheck_ = false;

@@ -78,7 +78,6 @@ private:
 
   QCheckBox * checkBox_IgnoreEnable_;
 
-
   QMutex mutex_;
 };
 

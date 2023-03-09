@@ -67,21 +67,21 @@ private slots:
     void writeData();
     bool generateSaveFile();
 
-    void on_lineEdit_Cmd_returnPressed();
+    //void on_lineEdit_Cmd_returnPressed();
 
     void on_pushButton_Connect_clicked();
     void on_pushButton_AskStatus_clicked();
     void on_pushButton_SetSV_clicked();
     void on_pushButton_GetPID_clicked();
     //void on_pushButton_RecordTemp_clicked();
-    void on_pushButton_ReadRH_clicked();
+    //void on_pushButton_ReadRH_clicked();
     void on_pushButton_Control_clicked();
 
     void on_comboBox_AT_currentIndexChanged(int index);
     void on_comboBox_Mode_currentIndexChanged(int index);
     void on_comboBox_MemAddress_currentTextChanged(const QString &arg1);
 
-    void on_checkBox_MuteLogMsg_clicked(bool checked);
+    //void on_checkBox_MuteLogMsg_clicked(bool checked);
 
     void on_doubleSpinBox_MVlower_valueChanged(double arg1);
     void on_doubleSpinBox_MVupper_valueChanged(double arg1);
@@ -119,12 +119,15 @@ private:
     MyThread * threadMVcheck_;
     MyThread * threadLog_;
     MyThread * threadTempCheck_;
+    QMessageBox * LogMsgBox_;
 
     QString omronPortName;
     int omronID;
 
     int msgCount;
     int respondType;
+    QDateTime dateLogStart_;
+    QString dateLogStartStr_;
 
     double temperature, SV, MV;
     double MVupper, MVlower;
