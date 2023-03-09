@@ -178,7 +178,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     panalOnOff(false);
     ui->pushButton_Control->setEnabled(false);
-    ui->pushButton_RecordTemp->setEnabled(false);
+    //ui->pushButton_RecordTemp->setEnabled(false);
 
     //============= some useful addresses
     ui->comboBox_MemAddress->addItem("0x0000 (opt) PV "                     , 0x0000);
@@ -392,7 +392,7 @@ void MainWindow::showTime()
     }
     QTime t(0,0,0,0);
     t = t.addMSecs(totalElapse.elapsed());
-    ui->lineEdit_clock->setText(QString::number(dayCounter) + "/" + t.toString("HH:mm:ss:zzz"));
+    //ui->lineEdit_clock->setText(QString::number(dayCounter) + "/" + t.toString("HH:mm:ss:zzz"));
     //qDebug() << "==========" << t.msec();
 }
 
@@ -744,7 +744,7 @@ void MainWindow::on_pushButton_Control_clicked()
     tempControlOnOff = !tempControlOnOff;
     panalOnOff(!tempControlOnOff);
     ui->actionOpen_File->setEnabled(!tempControlOnOff);
-    ui->pushButton_RecordTemp->setEnabled(!tempControlOnOff);
+    //ui->pushButton_RecordTemp->setEnabled(!tempControlOnOff);
     //muteLog = ui->checkBox_MuteLogMsg->isChecked();
 
     if(tempControlOnOff) {
@@ -844,7 +844,7 @@ void MainWindow::on_pushButton_Control_clicked()
             ui->pushButton_Control->setStyleSheet("");
             panalOnOff(true);
             ui->actionOpen_File->setEnabled(true);
-            ui->pushButton_RecordTemp->setEnabled(true);
+            //ui->pushButton_RecordTemp->setEnabled(true);
             on_comboBox_Mode_currentIndexChanged(ui->comboBox_Mode->currentIndex());
             LogMsg("=============== Slow Temperature control cancelled.======");
             return;
@@ -1219,6 +1219,7 @@ void MainWindow::on_comboBox_AT_currentIndexChanged(int index)
     setAT(index);
 }
 
+/*
 void MainWindow::on_pushButton_RecordTemp_clicked()
 {
     tempRecordOnOff = !tempRecordOnOff;
@@ -1304,14 +1305,6 @@ void MainWindow::on_pushButton_RecordTemp_clicked()
 
             QDateTime date = QDateTime::currentDateTime();
             fillDataAndPlot(date, temperature, SV, MV);
-/*
-            lineout.asprintf("%14s,\t%12d,\t%10.1f,\t%10.1f,\t%10.1f\n",
-                            date.toString("MM-dd HH:mm:ss").toStdString().c_str(),
-                            date.toSecsSinceEpoch(),
-                            temperature,
-                            (double) SV,
-                            (double) MV);
-*/
             stream << date.toString("MM-dd HH:mm:ss").toStdString().c_str()
                    << "\t"
                    << date.toSecsSinceEpoch()
@@ -1339,6 +1332,7 @@ void MainWindow::on_pushButton_RecordTemp_clicked()
 
     clock->stop();
 }
+*/
 
 void MainWindow::on_pushButton_ReadRH_clicked()
 {
@@ -1371,7 +1365,7 @@ void MainWindow::on_pushButton_Connect_clicked()
         ui->pushButton_Connect->setEnabled(false);
         panalOnOff(true);
         ui->pushButton_Control->setEnabled(true);
-        ui->pushButton_RecordTemp->setEnabled(true);
+        //ui->pushButton_RecordTemp->setEnabled(true);
         ui->lineEdit_SV2->setEnabled(false);
         ui->doubleSpinBox_SV2WaitTime->setEnabled(false);
 

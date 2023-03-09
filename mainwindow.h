@@ -73,7 +73,7 @@ private slots:
     void on_pushButton_AskStatus_clicked();
     void on_pushButton_SetSV_clicked();
     void on_pushButton_GetPID_clicked();
-    void on_pushButton_RecordTemp_clicked();
+    //void on_pushButton_RecordTemp_clicked();
     void on_pushButton_ReadRH_clicked();
     void on_pushButton_Control_clicked();
 
