@@ -36,6 +36,9 @@
          <property name="text">
           <string>Connect</string>
          </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
         </widget>
        </item>
        <item row="6" column="0" colspan="3">
@@ -129,13 +132,7 @@
         </widget>
        </item>
        <item row="0" column="1" colspan="2">
-        <widget class="QComboBox" name="comboBox_SeriesNumber">
-         <item>
-          <property name="text">
-           <string>FT0875RPA</string>
-          </property>
-         </item>
-        </widget>
+        <widget class="QComboBox" name="comboBox_SeriesNumber"/>
        </item>
        <item row="3" column="1">
         <widget class="QCheckBox" name="checkBox_dataSave">
@@ -737,6 +734,7 @@
      <string>Configure</string>
     </property>
     <addaction name="action_Setting_parameters_for_TempCheck"/>
+    <addaction name="action_Setting_plot"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuConfigure"/>
@@ -764,6 +762,16 @@
   <action name="action_Setting_parameters_for_TempCheck">
    <property name="text">
     <string>&amp;Setting_parameters_for_TempCheck</string>
+   </property>
+  </action>
+  <action name="action_Plot">
+   <property name="text">
+    <string>Setting_Plot</string>
+   </property>
+  </action>
+  <action name="action_Setting_plot">
+   <property name="text">
+    <string>&amp;Setting_plot</string>
    </property>
   </action>
  </widget>

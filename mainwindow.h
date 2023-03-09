@@ -65,6 +65,7 @@ private slots:
     void setAT(int atFlag);
     void setSV(double SV);
     void writeData();
+    bool generateSaveFile();
 
     void on_lineEdit_Cmd_returnPressed();
 
@@ -87,6 +88,7 @@ private slots:
 
     void on_actionOpen_File_triggered();
     void on_action_Setting_parameters_for_TempCheck_triggered();
+    void on_action_Setting_plot_triggered();
 
     void fillDataAndPlot(const QDateTime date, const double PV, const double SV, const double MV);
 
@@ -155,18 +157,12 @@ private:
 
     QDialog * helpDialog;
     QLabel * HelpLabel;
+    QDialog * plotDialog_;
     ConfigureDialog * configureDialog_;
     int picNumber;
     QMutex mutex_;
     //! Counter that TempCheck was executed.
     int countTempCheck_;
-    bool frag_TempCheck_;
-    bool frag_makePlot_;
-    bool frag_periodicWork_;
-
-    bool isTempCheck();
-    bool isMakePlot();
-    bool isPeriodicWork();
 };
 
 #endif // MAINWINDOW_H
