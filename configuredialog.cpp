@@ -15,8 +15,8 @@ ConfigureDialog::ConfigureDialog(QWidget *parent) :
   ui(new Ui::ConfigureDialog)
 {
   //QMutexLocker lock(&mutex_);
-  labelAskMV_ = new QLabel(tr("Interval time to Ask MV (min)."));
-  labelAskTemp_ = new QLabel(tr("Interval time to Ask Temperature (min)."));
+  labelAskMV_ = new QLabel(tr("Interval time to Ask output power (sec)."));
+  labelAskTemp_ = new QLabel(tr("Interval time to Ask Temperature (sec)."));
   labelSize_ = new QLabel(tr("Number of times to monitor temperature during TempCheck mode."));
   label_SafeLimit_ = new QLabel(tr("Lower limit of temperature change permited in TempCheck mode (C)."));
   label_IgnoreEnable_ = new QLabel(tr("Enable TempCheck mode to ignore temperature range."));

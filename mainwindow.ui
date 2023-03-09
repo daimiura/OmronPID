@@ -123,215 +123,7 @@
       </layout>
      </widget>
     </item>
-    <item row="1" column="0">
-     <widget class="QGroupBox" name="groupBox_3">
-      <property name="title">
-       <string>Periodic functions</string>
-      </property>
-      <layout class="QGridLayout" name="gridLayout_6">
-       <item row="0" column="0">
-        <widget class="QCheckBox" name="checkBox_dataSave">
-         <property name="text">
-          <string>Data Save</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QPushButton" name="pushButton_Log">
-         <property name="text">
-          <string>Logging start</string>
-         </property>
-         <property name="checkable">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1" colspan="2">
-        <widget class="QLineEdit" name="lineEdit_Log"/>
-       </item>
-       <item row="0" column="2">
-        <widget class="QSpinBox" name="spinBox_TempRecordTime">
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-         <property name="minimum">
-          <number>3</number>
-         </property>
-         <property name="maximum">
-          <number>500</number>
-         </property>
-         <property name="value">
-          <number>5</number>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="QLabel" name="label_3">
-         <property name="text">
-          <string>Record temp. every [s] :</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="0">
-        <widget class="QLabel" name="label_6">
-         <property name="text">
-          <string>Ask output power every (sec)</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <widget class="QLineEdit" name="lineEdit_IntervalAskMV">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </item>
-    <item row="3" column="0" colspan="2">
-     <widget class="QCustomPlot" name="plot" native="true">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>782</width>
-        <height>281</height>
-       </size>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="0">
-     <widget class="QGroupBox" name="groupBox_5">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="title">
-       <string>TempCheck</string>
-      </property>
-      <layout class="QGridLayout" name="gridLayout_2">
-       <item row="5" column="1">
-        <widget class="QLineEdit" name="lineEdit_IgnoreLower">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="0">
-        <widget class="QLabel" name="label_17">
-         <property name="text">
-          <string>Temperature range to ignore</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <widget class="QLineEdit" name="lineEdit_IntervalAskTemp">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="0">
-        <widget class="QLabel" name="label_15">
-         <property name="text">
-          <string>Number of times to check  temperature</string>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="1">
-        <widget class="QLineEdit" name="lineEdit_Numbers">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="0">
-        <widget class="QCheckBox" name="checkBox_Ignore">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="text">
-          <string>Enable Temperature range to ignor</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="0">
-        <widget class="QLabel" name="label_14">
-         <property name="text">
-          <string>Ask Temperature every (sec)</string>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="2">
-        <widget class="QLineEdit" name="lineEdit_TempCheckCount">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="2">
-        <widget class="QLabel" name="label_18">
-         <property name="text">
-          <string>Condition</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="2">
-        <widget class="QLineEdit" name="lineEdit_IgnoreUpper">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="1">
-        <widget class="QLineEdit" name="lineEdit_SafeLimit">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="0">
-        <widget class="QLabel" name="label_16">
-         <property name="text">
-          <string>Lower limit of temperature change</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </item>
-    <item row="2" column="1">
-     <widget class="QGroupBox" name="groupBox">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="title">
-       <string>Log Massage</string>
-      </property>
-      <layout class="QGridLayout" name="gridLayout_3">
-       <item row="0" column="0">
-        <widget class="QTextEdit" name="textEdit_Log"/>
-       </item>
-      </layout>
-     </widget>
-    </item>
-    <item row="0" column="1" rowspan="2">
+    <item row="0" column="1" rowspan="3">
      <widget class="QTabWidget" name="tabWidget">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
@@ -340,7 +132,7 @@
        </sizepolicy>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -608,7 +400,7 @@
        <attribute name="title">
         <string>Get PID / communication</string>
        </attribute>
-       <layout class="QFormLayout" name="formLayout">
+       <layout class="QGridLayout" name="gridLayout_5">
         <item row="0" column="0">
          <widget class="QLabel" name="label_11">
           <property name="text">
@@ -616,13 +408,13 @@
           </property>
          </widget>
         </item>
-        <item row="0" column="1">
+        <item row="0" column="1" colspan="2">
          <widget class="QLineEdit" name="lineEdit_P">
           <property name="enabled">
            <bool>false</bool>
           </property>
           <property name="frame">
-           <bool>false</bool>
+           <bool>true</bool>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -639,19 +431,10 @@
           </property>
          </widget>
         </item>
-        <item row="1" column="1">
-         <widget class="QLineEdit" name="lineEdit_I">
-          <property name="enabled">
-           <bool>false</bool>
-          </property>
-          <property name="frame">
-           <bool>false</bool>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="readOnly">
-           <bool>true</bool>
+        <item row="1" column="3">
+         <widget class="QPushButton" name="pushButton_GetPID">
+          <property name="text">
+           <string>Get PID</string>
           </property>
          </widget>
         </item>
@@ -662,37 +445,14 @@
           </property>
          </widget>
         </item>
-        <item row="2" column="1">
-         <widget class="QLineEdit" name="lineEdit_D">
-          <property name="enabled">
-           <bool>false</bool>
-          </property>
-          <property name="frame">
-           <bool>false</bool>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="readOnly">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="1">
-         <widget class="QPushButton" name="pushButton_GetPID">
-          <property name="text">
-           <string>Get PID</string>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="0">
+        <item row="3" column="0">
          <widget class="QLabel" name="label_19">
           <property name="text">
            <string>Commands</string>
           </property>
          </widget>
         </item>
-        <item row="4" column="1">
+        <item row="3" column="1" colspan="3">
          <widget class="QComboBox" name="comboBox_MemAddress">
           <property name="font">
            <font>
@@ -704,8 +464,265 @@
           </property>
          </widget>
         </item>
+        <item row="1" column="1">
+         <widget class="QLineEdit" name="lineEdit_I">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="frame">
+           <bool>true</bool>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QLineEdit" name="lineEdit_D">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="frame">
+           <bool>true</bool>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
        </layout>
       </widget>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QGroupBox" name="groupBox_3">
+      <property name="title">
+       <string>Periodic functions</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_6">
+       <item row="0" column="0">
+        <widget class="QCheckBox" name="checkBox_dataSave">
+         <property name="text">
+          <string>Data Save</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="3">
+        <widget class="QPushButton" name="pushButton_Log">
+         <property name="text">
+          <string>Logging start</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>Record temp. every [s] :</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1" colspan="2">
+        <widget class="QSpinBox" name="spinBox_TempRecordTime">
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="minimum">
+          <number>3</number>
+         </property>
+         <property name="maximum">
+          <number>500</number>
+         </property>
+         <property name="value">
+          <number>30</number>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="3">
+        <widget class="QLabel" name="label_20">
+         <property name="text">
+          <string>Display range (hours)</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="4">
+        <widget class="QSpinBox" name="spinBox_DisplayRange">
+         <property name="minimum">
+          <number>1</number>
+         </property>
+         <property name="maximum">
+          <number>200</number>
+         </property>
+         <property name="value">
+          <number>3</number>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0" colspan="2">
+        <widget class="QLabel" name="label_6">
+         <property name="text">
+          <string>Ask output power every (sec)</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2" colspan="2">
+        <widget class="QLineEdit" name="lineEdit_IntervalAskMV">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="2" column="0" rowspan="2">
+     <widget class="QGroupBox" name="groupBox_5">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="title">
+       <string>TempCheck</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="5" column="0">
+        <widget class="QLabel" name="label_18">
+         <property name="text">
+          <string>Condition</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_16">
+         <property name="text">
+          <string>Lower limit of temperature change</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2">
+        <widget class="QLineEdit" name="lineEdit_Numbers">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="label_17">
+         <property name="text">
+          <string>Temperature range to ignore</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QLineEdit" name="lineEdit_SafeLimit">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="3">
+        <widget class="QLineEdit" name="lineEdit_IgnoreUpper">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0" colspan="2">
+        <widget class="QLabel" name="label_15">
+         <property name="text">
+          <string>Number of times to check  temperature</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1" colspan="3">
+        <widget class="QLineEdit" name="lineEdit_TempCheckCount">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QLineEdit" name="lineEdit_IntervalAskTemp">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="2">
+        <widget class="QLineEdit" name="lineEdit_IgnoreLower">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QCheckBox" name="checkBox_Ignore">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="text">
+          <string>Enable Temperature range to ignor</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_14">
+         <property name="text">
+          <string>Ask Temperature every (sec)</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QGroupBox" name="groupBox">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="title">
+       <string>Log Massage</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="0" column="0">
+        <widget class="QTextEdit" name="textEdit_Log"/>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="4" column="0" colspan="2">
+     <widget class="QCustomPlot" name="plot" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>782</width>
+        <height>281</height>
+       </size>
+      </property>
      </widget>
     </item>
    </layout>

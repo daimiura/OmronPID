@@ -112,6 +112,8 @@ private slots:
     void on_checkBox_dataSave_toggled(bool checked);
     void on_pushButton_Log_toggled(bool checked);
 
+    void on_spinBox_TempRecordTime_valueChanged(int arg1);
+
 private:
     Ui::MainWindow *ui;
     QCustomPlot * plot;
@@ -157,6 +159,8 @@ private:
     bool checkDay;
     int dayCounter;
     bool nextSV;
+
+    const size_t vecSize_ = 1000;
 
     QDialog * helpDialog;
     QLabel * HelpLabel;

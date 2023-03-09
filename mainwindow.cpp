@@ -233,11 +233,12 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
    ui->tabWidget->setStyleSheet("background-color: rgb(215, 214, 213)");
-   QColor color = QColor("Palegray");
+   QColor color = QColor("Lightgray");
    QPalette pal = palette();
    pal.setColor(QPalette::Window, color);
-
-
+   this->setAutoFillBackground(true);
+   this->setPalette(pal);
+   this->setAutoFillBackground(false);
 
     comboxEnable = true;
 
@@ -265,9 +266,10 @@ MainWindow::MainWindow(QWidget *parent) :
 
     //! Thread for Logging. Priotity is set to QThread::HighestPriority
     threadLog_ = new MyThread();
-    threadLog_->interval_ = 10000; //ms to sec.;
+    threadLog_->interval_ = ui->spinBox_TempRecordTime->value() * 1000; //ms to sec.;
     threadLog_->moveToThread(threadLog_);
     QObject::connect(threadLog_, SIGNAL(data_update()), this, SLOT(makePlot()));
+    //connect()
 
     //! TempCheck counter is set to be 0.
     countTempCheck_ = 0;
@@ -281,6 +283,11 @@ MainWindow::MainWindow(QWidget *parent) :
 
     //! LogStart
     LogMsgBox_ = new QMessageBox;
+
+    // Reserved memory size
+    pvData.reserve(vecSize_);
+    svData.reserve(vecSize_);
+    mvData.reserve(vecSize_);
 }
 
 MainWindow::~MainWindow()
@@ -1249,7 +1256,7 @@ void MainWindow::on_pushButton_Connect_clicked()
         LogMsg("Set Stop.");
         QByteArray value = QByteArray::fromHex(cmd.toStdString().c_str());
         request(QModbusPdu::WriteSingleRegister, value);
-        QColor color = QColor("lightgray");
+        QColor color = QColor("palegray");
         QPalette pal = palette();
         pal.setColor(QPalette::Window, color);
 
@@ -1426,6 +1433,7 @@ void MainWindow::on_actionOpen_File_triggered()
     pvData.clear();
     svData.clear();
     mvData.clear();
+
     bool haveSVMVData = false;
     while(stream.readLineInto(&line)){
         if( line.left(3) == "###") {
@@ -1486,6 +1494,11 @@ void MainWindow::fillDataAndPlot(const QDateTime date, const double PV, const do
     QCPGraphData plotdata;
     plotdata.key = date.toSecsSinceEpoch();
 
+    if (pvData.size() >= vecSize_) pvData.erase(pvData.begin());
+    if (svData.size() >= vecSize_) pvData.erase(svData.begin());
+    if (mvData.size() >= vecSize_) pvData.erase(mvData.begin());
+
+
     plotdata.value = PV;
     pvData.push_back(plotdata);
     plotdata.value = SV;
@@ -1506,7 +1519,7 @@ void MainWindow::fillDataAndPlot(const QDateTime date, const double PV, const do
     double ymax = plot->yAxis->range().upper + 2;
 
     int now = QDateTime::currentDateTime().toSecsSinceEpoch();
-    plot->xAxis->setRange(now-3*3600, now);
+    //plot->xAxis->setRange(now-3*3600, now);
     plot->yAxis->setRangeLower(ymin);
     plot->yAxis->setRangeUpper(ymax);
 
@@ -1613,13 +1626,14 @@ void MainWindow::on_radioButton_Run_clicked()
   LogMsg("Set Run.");
   QByteArray value = QByteArray::fromHex(cmd.toStdString().c_str());
   request(QModbusPdu::WriteSingleRegister, value);
-  QColor color = QColor(55,178,77,255);
+  QColor color = QColor(128,195,66,255);
   QPalette pal = palette();
   pal.setColor(QPalette::Window, color);
   this->setAutoFillBackground(true);
   this->setPalette(pal);
   this->setAutoFillBackground(false);
-  ui->radioButton_Run->setStyleSheet("background-color:rgb(28, 195, 66);");
+  ui->tabWidget->setStyleSheet("background-color: rgb(128, 195, 66)");
+  ui->radioButton_Run->setStyleSheet("background-color:rgb(224, 195, 30);");
   ui->radioButton_Stop->setStyleSheet("");
   ui->lineEdit_TempCheckCount->setStyleSheet("");
   threadMVcheck_->start();
@@ -1641,9 +1655,10 @@ void MainWindow::on_radioButton_Stop_clicked()
   LogMsg("Set Stop.");
   QByteArray value = QByteArray::fromHex(cmd.toStdString().c_str());
   request(QModbusPdu::WriteSingleRegister, value);
-  QColor color = QColor("lightgray");
+  QColor color = QColor("Lightgray");
   QPalette pal = palette();
   pal.setColor(QPalette::Window, color);
+  ui->tabWidget->setStyleSheet("background-color: rgb(215, 214, 213)");
   this->setPalette(pal);
   LogMsg("Thred stop.");
   ui->radioButton_Run->setStyleSheet("");
@@ -1665,6 +1680,7 @@ void MainWindow::Quit(){
   QColor color = QColor(255, 135, 135,255);
   QPalette pal = palette();
   pal.setColor(QPalette::Window, color);
+    ui->tabWidget->setStyleSheet("background-color: rgb(255, 135, 135)");
   this->setAutoFillBackground(true);
   this->setPalette(pal);
   this->setAutoFillBackground(false);
@@ -1693,6 +1709,7 @@ void MainWindow::TempCheck(){
   QColor color = QColor(224, 195, 30,255);
   QPalette pal = palette();
   pal.setColor(QPalette::Window, color);
+  ui->tabWidget->setStyleSheet("background-color: rgb(224, 195, 30)");
   this->setAutoFillBackground(true);
   this->setPalette(pal);
   this->setAutoFillBackground(false);
@@ -1832,10 +1849,10 @@ void MainWindow::periodicWork(){
 void MainWindow::makePlot(){
   bool mute = true;
   muteLog = true;
-  QTimer getTempTimer;
-  const int tempGetTime = ui->spinBox_TempRecordTime->value() * 1000; // msec
-  getTempTimer.setSingleShot(true);
-  getTempTimer.start(tempGetTime);
+  //QTimer getTempTimer;
+  //const int tempGetTime = ui->spinBox_TempRecordTime->value() * 1000; // msec
+  //getTempTimer.setSingleShot(true);
+  //getTempTimer.start(tempGetTime);
   askTemperature(mute);
   int i = 0;
   while(!modbusReady) {
@@ -1941,15 +1958,22 @@ void MainWindow::on_pushButton_Log_toggled(bool checked)
   bool connectPID = ui->pushButton_Connect->isChecked();
   if(checked && connectPID){
     ui->pushButton_Log->setText("Logging Stop");
-    ui->lineEdit_Log->setText("Loginng every " + QString::number(ui->spinBox_TempRecordTime->value()) + " sec");
     if(!threadLog_->isRunning()) threadLog_->start();
   }else if (connectPID) {
     ui->pushButton_Log->setText("Logging Start");
-    ui->lineEdit_Log->setText("Ready");
     if(threadLog_->isRunning()) threadLog_->quit();
   } else{
     LogMsg("Not connected. Please check COM PORT etc.");
-    ui->lineEdit_Log->setText("Not connected.");
     if(threadLog_->isRunning()) threadLog_->quit();
     }
 }
+
+
+void MainWindow::on_spinBox_TempRecordTime_valueChanged(int arg1)
+{
+  if(threadLog_->isRunning()) threadLog_->quit();
+  threadLog_->interval_ = arg1 * 1000; //nms to sec
+  threadLog_->start();
+  LogMsg(QString::number(threadLog_->interval_));
+}
+
