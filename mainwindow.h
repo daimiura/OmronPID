@@ -68,39 +68,30 @@ private slots:
     void writeData();
     bool generateSaveFile();
 
-    //void on_lineEdit_Cmd_returnPressed();
-
     void on_pushButton_Connect_clicked();
     void on_pushButton_AskStatus_clicked();
     void on_pushButton_SetSV_clicked();
     void on_pushButton_GetPID_clicked();
-    //void on_pushButton_RecordTemp_clicked();
-    //void on_pushButton_ReadRH_clicked();
     void on_pushButton_Control_clicked();
-
     void on_comboBox_AT_currentIndexChanged(int index);
     void on_comboBox_Mode_currentIndexChanged(int index);
     void on_comboBox_MemAddress_currentTextChanged(const QString &arg1);
-
-    //void on_checkBox_MuteLogMsg_clicked(bool checked);
-
     void on_doubleSpinBox_MVlower_valueChanged(double arg1);
     void on_doubleSpinBox_MVupper_valueChanged(double arg1);
+    void on_radioButton_Run_clicked();
+    void on_radioButton_Stop_clicked();
+    void on_checkBox_dataSave_toggled(bool checked);
+    void on_pushButton_Log_toggled(bool checked);
+    void on_spinBox_TempRecordTime_valueChanged(int arg1);
 
     void on_actionOpen_File_triggered();
     void on_action_Setting_parameters_for_TempCheck_triggered();
     void on_action_Setting_plot_triggered();
-
-    void fillDataAndPlot(const QDateTime date, const double PV, const double SV, const double MV);
-
     void on_actionHelp_Page_triggered();
     void HelpPicNext();
 
-    void on_radioButton_Run_clicked();
-    void on_radioButton_Stop_clicked();
-
+    void fillDataAndPlot(const QDateTime date, const double PV, const double SV, const double MV);
     void Quit();
-
     void setIntervalAskMV();
     void setIntervalAskTemp();
     void setSafeLimit();
@@ -109,11 +100,6 @@ private slots:
     void setParametersTempCheck();
     void setIgnoreEnable();
     double diffTemp();
-
-    void on_checkBox_dataSave_toggled(bool checked);
-    void on_pushButton_Log_toggled(bool checked);
-
-    void on_spinBox_TempRecordTime_valueChanged(int arg1);
 
 private:
     Ui::MainWindow *ui;

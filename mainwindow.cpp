@@ -274,7 +274,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->textEdit_Log->setTextColor(QColor(0,0,0,255));    
 
     dateStart_ = QDateTime::currentDateTime();
-    //dateStartStr_ = dateStart_.toString("yyyyMMdd_HHmmss");
 
     //! LogStart
     LogMsgBox_ = new QMessageBox;
@@ -328,14 +327,6 @@ void MainWindow::findSeriesPortDevices()
     LogMsg("-------------- COM Ports found :");
     const auto infos = QSerialPortInfo::availablePorts();
     for (const QSerialPortInfo &info : infos) {
-        //LogMsg("PortName     ="+info.portName() );
-        //LogMsg("description  ="+(!info.description().isEmpty() ?  info.description() : "") );
-        //LogMsg("manufacturer ="+(!info.manufacturer().isEmpty() ? info.manufacturer() : "") );
-        //LogMsg("serialNumber ="+(!info.serialNumber().isEmpty() ? info.serialNumber() : "") );
-        //LogMsg("Location     ="+info.systemLocation()  );
-        //LogMsg("Vendor       ="+(info.vendorIdentifier() ? QString::number(info.vendorIdentifier(), 16) : "")  );
-        //LogMsg("Identifier   ="+(info.productIdentifier() ? QString::number(info.productIdentifier(), 16) : ""));
-        //LogMsg("=======================");
         LogMsg(info.portName() + ", " + info.serialNumber() + ", " + info.manufacturer());
         ui->comboBox_SeriesNumber->addItem( info.serialNumber(), (QString) info.portName());
     }
@@ -1052,18 +1043,6 @@ void MainWindow::on_pushButton_Control_clicked()
                 QDateTime date = QDateTime::currentDateTime();
                 fillDataAndPlot(date, temperature, smallShift, MV);
                 writeData();
-                /*
-                stream << date.toString("MM-dd HH:mm:ss").toStdString().c_str()
-                       << "\t"
-                       << date.toSecsSinceEpoch()
-                       << "\t"
-                       << QString::number(temperature)
-                       << "\t"
-                       << QString::number(SV)
-                       << "\t"
-                       << QString::number(MV)
-                       << Qt::endl;
-                       */
                 while(getTempTimer.remainingTime() > 0 ){
                     waitForMSec(timing::getTempTimer);
                     if( nextSV == true){
@@ -1077,8 +1056,6 @@ void MainWindow::on_pushButton_Control_clicked()
                 }else{
                     LogMsg(" /", false);
                 }
-                //LogMsg(" - " + QString::number(fixedTime.elapsed()/1000.), false);
-                //muteLog = ui->checkBox_MuteLogMsg->isChecked();
 
                 if( mode == 1){ //========== for stable mode
                     if( qAbs(temperature - smallShift) <= tempTorr){
@@ -1147,25 +1124,12 @@ void MainWindow::on_pushButton_Control_clicked()
             QDateTime date = QDateTime::currentDateTime();
             fillDataAndPlot(date, temperature, smallShift, MV);
             writeData();
-            /*
-            stream << date.toString("MM-dd HH:mm:ss").toStdString().c_str()
-                   << "\t"
-                   << date.toSecsSinceEpoch()
-                   << "\t"
-                   << QString::number(temperature)
-                   << "\t"
-                   << QString::number(SV)
-                   << "\t"
-                   << QString::number(MV)
-                   << Qt::endl;
-            */
             while(getTempTimer.remainingTime() != -1 ){
                 waitForMSec(timing::getTempTimer);
             }
 
         };
         muteLog = false;
-
         stream << "###============ end of file ==============";
         outfile.close();
     }
@@ -1178,14 +1142,7 @@ void MainWindow::on_comboBox_AT_currentIndexChanged(int index)
     setAT(index);
 }
 
-/*
-void MainWindow::on_pushButton_ReadRH_clicked()
-{
-    bool ok = false;
-    //quint16 address = ui->lineEdit_Cmd->text().toUInt(&ok,16);
-    read(QModbusDataUnit::HoldingRegisters, address, 2);
-}
-*/
+
 void MainWindow::on_pushButton_Connect_clicked()
 {
     QString omronPortName = ui->comboBox_SeriesNumber->currentData().toString();
@@ -1204,7 +1161,6 @@ void MainWindow::on_pushButton_Connect_clicked()
         ui->textEdit_Log->setTextColor(QColor(0,0,255,255));
         LogMsg("The Omron temperature control is connected in " + omronPortName + ".");
         ui->textEdit_Log->setTextColor(QColor(0,0,0,255));
-
         ui->comboBox_SeriesNumber->setEnabled(false);
         ui->pushButton_Connect->setStyleSheet("background-color: rgb(255,127,80)");
         ui->pushButton_Connect->setEnabled(false);
@@ -1212,13 +1168,10 @@ void MainWindow::on_pushButton_Connect_clicked()
         ui->pushButton_Control->setEnabled(true);
         ui->lineEdit_SV2->setEnabled(false);
         ui->doubleSpinBox_SV2WaitTime->setEnabled(false);
-
         QString title = this->windowTitle();
         this->setWindowTitle(title + " | " + ui->comboBox_SeriesNumber->currentText());
-
         getSetting();
         ui->lineEdit_SV->setText(QString::number(SV));
-
         QString cmd = "00 00 01 01";
         LogMsg("Set Stop.");
         QByteArray value = QByteArray::fromHex(cmd.toStdString().c_str());
@@ -1226,9 +1179,6 @@ void MainWindow::on_pushButton_Connect_clicked()
         QColor color = QColor("palegray");
         QPalette pal = palette();
         pal.setColor(QPalette::Window, color);
-
-
-
     }else{
         ui->textEdit_Log->setTextColor(QColor(255,0,0,255));
         LogMsg("The Omron temperature control cannot be connected on any COM port.");
@@ -1366,16 +1316,7 @@ void MainWindow::on_comboBox_Mode_currentIndexChanged(int index)
     }
 }
 
-/*
-void MainWindow::on_checkBox_MuteLogMsg_clicked(bool checked)
-{
-    if ( checked ){
-        muteLog = true;
-    }else{
-        muteLog = false;
-    }
-}
-*/
+
 void MainWindow::on_comboBox_MemAddress_currentTextChanged(const QString &arg1)
 {
     if(!comboxEnable) return;
@@ -1389,9 +1330,8 @@ void MainWindow::on_actionOpen_File_triggered()
     QString filePath = QFileDialog::getOpenFileName(this, "Open File", DATA_PATH );
     QFile infile(filePath);
 
-    if(infile.open(QIODevice::ReadOnly | QIODevice::Text)){
-        LogMsg("Open File : %s" + filePath);
-    }else{
+    if(infile.open(QIODevice::ReadOnly | QIODevice::Text)) LogMsg("Open File : %s" + filePath);
+    else{
         LogMsg("Open file failed ");
         return;
     }
@@ -1424,7 +1364,6 @@ void MainWindow::on_actionOpen_File_triggered()
             QString mv = list[4];
             plotdata.value = sv.toDouble();
             svData.push_back(plotdata);
-
             plotdata.value = mv.toDouble();
             mvData.push_back(plotdata);
         }
@@ -1650,7 +1589,7 @@ void MainWindow::Quit(){
   QColor color = QColor(255, 135, 135,255);
   QPalette pal = palette();
   pal.setColor(QPalette::Window, color);
-    ui->tabWidget->setStyleSheet("background-color: rgb(255, 135, 135)");
+  ui->tabWidget->setStyleSheet("background-color: rgb(255, 135, 135)");
   this->setAutoFillBackground(true);
   this->setPalette(pal);
   this->setAutoFillBackground(false);
@@ -1711,8 +1650,7 @@ void MainWindow::TempCheck(){
   double targetValue = SV;
   double lower = ui->lineEdit_IgnoreLower->text().toDouble();
   double upper = ui->lineEdit_IgnoreUpper->text().toDouble();
-  //if (ui->checkBox_Ignore){
-    if (targetValue+lower <= temperature && targetValue+upper >= temperature) {
+  if (targetValue+lower <= temperature && targetValue+upper >= temperature) {
         QColor color = QColor(55,178,77,255);
         QPalette pal = palette();
         pal.setColor(QPalette::Window, color);
@@ -1729,8 +1667,7 @@ void MainWindow::TempCheck(){
         ui->textEdit_Log->setTextColor(QColor(0,0,0,255));
         threadTempCheck_->start();
         return;
-      }
-  //  }
+   }
   if (countTempCheck_ < ui->lineEdit_Numbers->text().toInt()){
       countTempCheck_++;
       vdifftemp_.push_back(temperature - vtemp_.at(0));
@@ -1937,7 +1874,6 @@ void MainWindow::on_pushButton_Log_toggled(bool checked)
     if(threadLog_->isRunning()) threadLog_->quit();
     }
 }
-
 
 void MainWindow::on_spinBox_TempRecordTime_valueChanged(int arg1)
 {
