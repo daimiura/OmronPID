@@ -1,7 +1,5 @@
 #include "configuredialog.h"
 #include "ui_configuredialog.h"
-//#include <QtGui>
-//#include <QWidget>
 #include <QtWidgets>
 
 /**

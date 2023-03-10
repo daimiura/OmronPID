@@ -31,6 +31,7 @@ SOURCES += \
         mainwindow.cpp \
     myqlineedit.cpp \
     mythread.cpp \
+    plotdialog.cpp \
     qcustomplot.cpp
 
 HEADERS += \
@@ -38,6 +39,7 @@ HEADERS += \
         mainwindow.h \
     myqlineedit.h \
     mythread.h \
+    plotdialog.h \
     qcustomplot.h
 
 FORMS += \

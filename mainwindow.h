@@ -20,6 +20,7 @@
 #include "mythread.h"
 #include "myqlineedit.h"
 #include "configuredialog.h"
+#include "plotdialog.h"
 
 namespace Ui {
 class MainWindow;
@@ -164,7 +165,7 @@ private:
 
     QDialog * helpDialog;
     QLabel * HelpLabel;
-    QDialog * plotDialog_;
+    PlotDialog * plotDialog_;
     ConfigureDialog * configureDialog_;
     int picNumber;
     QMutex mutex_;

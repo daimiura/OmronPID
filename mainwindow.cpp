@@ -70,13 +70,8 @@ MainWindow::MainWindow(QWidget *parent) :
     mainLayout->addWidget(next);
 
     //! plotDialog
-    plotDialog_ = new QDialog(this);
+    plotDialog_ = new PlotDialog(this);
     plotDialog_->setWindowTitle("Setting for Plot");
-    QLabel *PDlabel = new QLabel;
-    PDlabel->setText("from");
-    QDoubleSpinBox *PDhour = new QDoubleSpinBox;
-    QVBoxLayout *PDlayout = new QVBoxLayout(plotDialog_);
-    PDlayout->addWidget(PDlabel);
 
   //Check Temp Directory, is not exist, create
     QDir myDir;
@@ -1483,14 +1478,13 @@ void MainWindow::fillDataAndPlot(const QDateTime date, const double PV, const do
     plot->graph(2)->data()->clear();
     plot->graph(2)->data()->add(svData);
 
-    int intDate = date.toSecsSinceEpoch(); //sec to min
-    int diff = abs(date.secsTo(dateStart_)) / 60; // sec to min
-    if (diff < ui->spinBox_DisplayRange->value() *60) plot->xAxis->rescale();
-    else {
-        plot->xAxis->setRange(intDate - ui->spinBox_DisplayRange->value()*60, intDate);
-        LogMsg(QString::number(intDate - ui->spinBox_DisplayRange->value()*60));
-        LogMsg(QString::number(intDate));
-      }
+    int intDate = date.toSecsSinceEpoch();
+    int diff = abs(date.secsTo(dateStart_));
+    int setrange = plotDialog_->displayRange_ * 60;
+    LogMsg(QString::number(diff));
+    LogMsg(QString::number(setrange));
+    if (diff < setrange) plot->xAxis->rescale();
+    else plot->xAxis->setRange(intDate - setrange, intDate);
     plot->yAxis->rescale();
 
     double ymin = plot->yAxis->range().lower - 2;
@@ -1498,9 +1492,7 @@ void MainWindow::fillDataAndPlot(const QDateTime date, const double PV, const do
 
     plot->yAxis->setRangeLower(ymin);
     plot->yAxis->setRangeUpper(ymax);
-
     plot->replot();
-
 }
 
 void MainWindow::on_actionHelp_Page_triggered()
@@ -1529,6 +1521,7 @@ void MainWindow::HelpPicNext()
 
 void MainWindow::on_action_Setting_plot_triggered(){
     if( plotDialog_->isHidden() ) plotDialog_->show();
+    //plotDialog_->displayRange_ =
 }
 
 void MainWindow::on_action_Setting_parameters_for_TempCheck_triggered(){
