@@ -107,7 +107,7 @@ MainWindow::MainWindow(QWidget *parent) :
     plot->graph(2)->setPen(QPen(Qt::red)); // SV
     plot->graph(2)->setScatterStyle(QCPScatterStyle::ssDisc);
     QSharedPointer<QCPAxisTickerDateTime> dateTicker(new QCPAxisTickerDateTime);
-    double now = QDateTime::currentDateTime().toTime_t();
+    double now = QDateTime::currentDateTime().toSecsSinceEpoch();
     dateTicker->setDateTimeFormat("MM/dd HH:mm:ss");
     plot->xAxis->setTicker(dateTicker);
     plot->xAxis2->setVisible(true);
@@ -278,13 +278,16 @@ MainWindow::MainWindow(QWidget *parent) :
     LogMsg("The AT and RUN/STOP do not get from the device. Please be careful.");
     ui->textEdit_Log->setTextColor(QColor(0,0,0,255));    
 
-    dateLogStart_ = QDateTime::currentDateTime();
-    dateLogStartStr_ = dateLogStart_.toString("yyyyMMdd_HHmmss");
+    dateStart_ = QDateTime::currentDateTime();
+    //dateStartStr_ = dateStart_.toString("yyyyMMdd_HHmmss");
 
     //! LogStart
     LogMsgBox_ = new QMessageBox;
 
-    // Reserved memory size
+    pvData.clear();
+    mvData.clear();
+    svData.clear();
+    //! Reserved memory size
     pvData.reserve(vecSize_);
     svData.reserve(vecSize_);
     mvData.reserve(vecSize_);
@@ -379,12 +382,8 @@ void MainWindow::waitForMSec(int msec)
 
 void MainWindow::panalOnOff(bool IO)
 {
-    //ui->lineEdit_Cmd->setEnabled(IO);
     ui->lineEdit_SV->setEnabled(IO);
-    //ui->checkBox_EnableSend->setEnabled(IO);
-    //ui->comboBox_Func->setEnabled(IO);
     ui->comboBox_AT->setEnabled(IO);
-    //ui->pushButton_ReadRH->setEnabled(IO);
     ui->pushButton_AskStatus->setEnabled(IO);
     ui->pushButton_GetPID->setEnabled(IO);
     ui->pushButton_SetSV->setEnabled(IO);
@@ -742,26 +741,10 @@ void MainWindow::request(QModbusPdu::FunctionCode code, QByteArray cmd)
 
 }
 
-/*
-void MainWindow::on_lineEdit_Cmd_returnPressed()
-{
-    statusBar()->clearMessage();
-    //QString input = ui->lineEdit_Cmd->text();
-    QByteArray value = QByteArray::fromHex(input.toStdString().c_str());
-    //QModbusPdu::FunctionCode regType = static_cast<QModbusPdu::FunctionCode> (ui->comboBox_Func->currentData().toInt());
-    LogMsg("(No Send) PDU = 0x " + formatHex( static_cast<int>(regType), 2) + " "+ input);
-    if( ui->checkBox_EnableSend->isChecked()){
-        LogMsg("(Send) PDU = 0x " + formatHex( static_cast<int>(regType), 2) + " "+ input);
-        request(regType, value);
-    }else{
-        LogMsg("(No Send) PDU = 0x " + formatHex( static_cast<int>(regType), 2) + " "+ input);
-    }
-
-}
-*/
 void MainWindow::on_pushButton_SetSV_clicked()
 {
   setSV( ui->lineEdit_SV->text().toDouble());
+  LogMsg("Set Temperature is changed to " + ui->lineEdit_SV->text() + " C.");
 }
 
 void MainWindow::on_pushButton_Control_clicked()
@@ -968,18 +951,6 @@ void MainWindow::on_pushButton_Control_clicked()
             QDateTime date = QDateTime::currentDateTime();
             fillDataAndPlot(date, temperature, targetValue_2, MV);
             writeData();
-            /*
-            stream << date.toString("MM-dd HH:mm:ss").toStdString().c_str()
-                   << "\t"
-                   << date.toSecsSinceEpoch()
-                   << "\t"
-                   << QString::number(temperature)
-                   << "\t"
-                   << QString::number(SV)
-                   << "\t"
-                   << QString::number(MV)
-                   << Qt::endl;
-                   */
             while(getTempTimer.remainingTime() > 0 ){
                 waitForMSec(timing::getTempTimer);
                 if(waitTimer->remainingTime() <= 0 && waitTimerStarted == true){
@@ -1251,6 +1222,7 @@ void MainWindow::on_pushButton_Connect_clicked()
         this->setWindowTitle(title + " | " + ui->comboBox_SeriesNumber->currentText());
 
         getSetting();
+        ui->lineEdit_SV->setText(QString::number(SV));
 
         QString cmd = "00 00 01 01";
         LogMsg("Set Stop.");
@@ -1259,6 +1231,8 @@ void MainWindow::on_pushButton_Connect_clicked()
         QColor color = QColor("palegray");
         QPalette pal = palette();
         pal.setColor(QPalette::Window, color);
+
+
 
     }else{
         ui->textEdit_Log->setTextColor(QColor(255,0,0,255));
@@ -1487,17 +1461,13 @@ void MainWindow::on_actionOpen_File_triggered()
     plot->yAxis2->setRangeUpper(ymax);
 
     plot->replot();
+
 }
 
 void MainWindow::fillDataAndPlot(const QDateTime date, const double PV, const double SV, const double MV)
 {
     QCPGraphData plotdata;
     plotdata.key = date.toSecsSinceEpoch();
-
-    if (pvData.size() >= vecSize_) pvData.erase(pvData.begin());
-    if (svData.size() >= vecSize_) pvData.erase(svData.begin());
-    if (mvData.size() >= vecSize_) pvData.erase(mvData.begin());
-
 
     plotdata.value = PV;
     pvData.push_back(plotdata);
@@ -1512,18 +1482,25 @@ void MainWindow::fillDataAndPlot(const QDateTime date, const double PV, const do
     plot->graph(1)->data()->add(pvData);
     plot->graph(2)->data()->clear();
     plot->graph(2)->data()->add(svData);
+
+    int intDate = date.toSecsSinceEpoch(); //sec to min
+    int diff = abs(date.secsTo(dateStart_)) / 60; // sec to min
+    if (diff < ui->spinBox_DisplayRange->value() *60) plot->xAxis->rescale();
+    else {
+        plot->xAxis->setRange(intDate - ui->spinBox_DisplayRange->value()*60, intDate);
+        LogMsg(QString::number(intDate - ui->spinBox_DisplayRange->value()*60));
+        LogMsg(QString::number(intDate));
+      }
     plot->yAxis->rescale();
-    plot->xAxis->rescale();
 
     double ymin = plot->yAxis->range().lower - 2;
     double ymax = plot->yAxis->range().upper + 2;
 
-    int now = QDateTime::currentDateTime().toSecsSinceEpoch();
-    //plot->xAxis->setRange(now-3*3600, now);
     plot->yAxis->setRangeLower(ymin);
     plot->yAxis->setRangeUpper(ymax);
 
     plot->replot();
+
 }
 
 void MainWindow::on_actionHelp_Page_triggered()
@@ -1848,7 +1825,7 @@ void MainWindow::periodicWork(){
 
 void MainWindow::makePlot(){
   bool mute = true;
-  muteLog = true;
+  muteLog = false;
   //QTimer getTempTimer;
   //const int tempGetTime = ui->spinBox_TempRecordTime->value() * 1000; // msec
   //getTempTimer.setSingleShot(true);
@@ -1886,7 +1863,7 @@ void MainWindow::makePlot(){
   QDateTime date = QDateTime::currentDateTime();
   fillDataAndPlot(date, temperature, targetValue, MV);
   if(ui->checkBox_dataSave->isChecked()) writeData();
-  muteLog = false;
+  //muteLog = false;
 }
 
 /**
@@ -1972,8 +1949,8 @@ void MainWindow::on_pushButton_Log_toggled(bool checked)
 void MainWindow::on_spinBox_TempRecordTime_valueChanged(int arg1)
 {
   if(threadLog_->isRunning()) threadLog_->quit();
-  threadLog_->interval_ = arg1 * 1000; //nms to sec
+  threadLog_->interval_ = arg1 * 1000; //ms to sec
   threadLog_->start();
-  LogMsg(QString::number(threadLog_->interval_));
+  LogMsg("Record Temp Interval set to " + QString::number(threadLog_->interval_ *.001) + " seconds.");
 }
 

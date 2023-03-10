@@ -128,8 +128,8 @@ private:
 
     int msgCount;
     int respondType;
-    QDateTime dateLogStart_;
-    QString dateLogStartStr_;
+    QDateTime dateStart_;
+    QString dateStartStr_;
 
     double temperature, SV, MV;
     double MVupper, MVlower;
