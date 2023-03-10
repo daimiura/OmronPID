@@ -132,7 +132,7 @@
        </sizepolicy>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -193,6 +193,9 @@
          <widget class="QPushButton" name="pushButton_Control">
           <property name="text">
            <string>Slow Temperature Control</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
           </property>
          </widget>
         </item>

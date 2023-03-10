@@ -99,7 +99,7 @@ private slots:
     void setIgnoreRange();
     void setParametersTempCheck();
     void setIgnoreEnable();
-    double diffTemp();
+    double calcMovingAve(QVector<double> vtemp);
 
 private:
     Ui::MainWindow *ui;
@@ -133,7 +133,7 @@ private:
     QVector<QCPGraphData> svData;
     QVector<QCPGraphData> mvData;
     QVector<double> vtemp_;
-    QVector<double> vdifftemp_;
+
 
     double pid_P, pid_I, pid_D;
 

@@ -285,6 +285,7 @@ MainWindow::MainWindow(QWidget *parent) :
     pvData.reserve(vecSize_);
     svData.reserve(vecSize_);
     mvData.reserve(vecSize_);
+    vtemp_.reserve(10);
 }
 
 MainWindow::~MainWindow()
@@ -1420,8 +1421,6 @@ void MainWindow::fillDataAndPlot(const QDateTime date, const double PV, const do
     int intDate = date.toSecsSinceEpoch();
     int diff = abs(date.secsTo(dateStart_));
     int setrange = plotDialog_->displayRange_ * 60;
-    LogMsg(QString::number(diff));
-    LogMsg(QString::number(setrange));
     if (diff < setrange) plot->xAxis->rescale();
     else plot->xAxis->setRange(intDate - setrange, intDate);
     plot->yAxis->rescale();
@@ -1460,7 +1459,6 @@ void MainWindow::HelpPicNext()
 
 void MainWindow::on_action_Setting_plot_triggered(){
     if( plotDialog_->isHidden() ) plotDialog_->show();
-    //plotDialog_->displayRange_ =
 }
 
 void MainWindow::on_action_Setting_parameters_for_TempCheck_triggered(){
@@ -1597,7 +1595,6 @@ void MainWindow::Quit(){
   LogMsg("Emergency Stop. Check the experimental condition.");
   threadMVcheck_->quit();
   if (threadTempCheck_->isRunning()) threadTempCheck_->quit();
-  vdifftemp_.clear();
   vtemp_.clear();
   LogMsg("Thred stop.");
   countTempCheck_ = 0;
@@ -1606,15 +1603,11 @@ void MainWindow::Quit(){
   ui->textEdit_Log->setTextColor(QColor(0,0,0,255));
 }
 
-double MainWindow::diffTemp(){
-  double dsum = .0;
-  foreach (const int &i, vdifftemp_) dsum += abs(vdifftemp_.at(i));
-  LogMsg("Temperature change is " + QString::number(dsum));
-  return dsum;
-}
-
 void MainWindow::TempCheck(){
   if (countTempCheck_ > ui->lineEdit_Numbers->text().toInt()) countTempCheck_ = 0;
+  ui->lineEdit_TempCheckCount->setStyleSheet("background-color:yellow; color:red;selection-background-color:red;");
+  ui->lineEdit_TempCheckCount->setText("!! TempCheck is working !!");
+  ui->lineEdit_TempCheckCount->setStyleSheet("");
   QColor color = QColor(224, 195, 30,255);
   QPalette pal = palette();
   pal.setColor(QPalette::Window, color);
@@ -1625,9 +1618,6 @@ void MainWindow::TempCheck(){
   ui->textEdit_Log->setTextColor(QColor(255,0,0,255));
   LogMsg("*** CheckTemp start ****");
   LogMsg("The result in " + QString::number(countTempCheck_));
-  ui->lineEdit_TempCheckCount->setEnabled(true);
-  ui->lineEdit_TempCheckCount->setText(QString::number(countTempCheck_));
-  ui->lineEdit_TempCheckCount->setEnabled(false);
   ui->textEdit_Log->setTextColor(QColor(0,0,0,255));
   threadTempCheck_->start();
   askTemperature();
@@ -1638,6 +1628,7 @@ void MainWindow::TempCheck(){
     if( i > 10 ) modbusReady = true;
   }
   vtemp_.push_back(temperature);
+  if (temperature >= ui->spinBox_TempUpper->value()) Quit();
   askSetPoint();
   i = 0;
   while(!modbusReady) {
@@ -1647,6 +1638,9 @@ void MainWindow::TempCheck(){
           modbusReady = true;
       }
   }
+  ui->lineEdit_TempCheckCount->setEnabled(true);
+  ui->lineEdit_TempCheckCount->setText("Checking in " + QString::number(countTempCheck_));
+  ui->lineEdit_TempCheckCount->setEnabled(false);
   double targetValue = SV;
   double lower = ui->lineEdit_IgnoreLower->text().toDouble();
   double upper = ui->lineEdit_IgnoreUpper->text().toDouble();
@@ -1662,21 +1656,20 @@ void MainWindow::TempCheck(){
         LogMsg("Current temperature is outside the TempCheck mode.");
         LogMsg("TempCheck mode does not work in the range");
         vtemp_.clear();
-        vdifftemp_.clear();
         countTempCheck_ = 0;
         ui->textEdit_Log->setTextColor(QColor(0,0,0,255));
+        ui->tabWidget->setStyleSheet("background-color: rgb(215, 214, 213)");
         threadTempCheck_->start();
         return;
    }
   if (countTempCheck_ < ui->lineEdit_Numbers->text().toInt()){
       countTempCheck_++;
-      vdifftemp_.push_back(temperature - vtemp_.at(0));
       threadTempCheck_->start();
       return;
     }
-  double dtemp = diffTemp();
   double safelimit = ui->lineEdit_SafeLimit->text().toDouble();
-  if (abs(dtemp) >= safelimit){
+  double dtemp = calcMovingAve(vtemp_);
+  if (dtemp >= safelimit){
       color = QColor("lightgray");
       pal = palette();
       pal.setColor(QPalette::Window, color);
@@ -1689,13 +1682,26 @@ void MainWindow::TempCheck(){
       LogMsg("Observed temperature change is " + QString::number(dtemp));
       ui->textEdit_Log->setTextColor(QColor(0,0,0,255));
       threadTempCheck_->start();
+      if(ui->radioButton_Run->isChecked()){
+          ui->tabWidget->setStyleSheet("background-color: rgb(128, 195, 66)");
+          QColor color = QColor(128,195,66,255);
+          pal = palette();
+          pal.setColor(QPalette::Window, color);
+          this->setAutoFillBackground(true);
+          this->setPalette(pal);
+          this->setAutoFillBackground(false);
+      }else{
+         ui->tabWidget->setStyleSheet("background-color: rgb(215, 214, 213)");
+        }
       countTempCheck_ = 0;
+      vtemp_.clear();
     }
   else {
       QDateTime date = QDateTime::currentDateTime();
       QString datestr = date.toString("yyyyMMdd_HHmmss");
       ui->lineEdit_TempCheckCount->setStyleSheet("background-color:yellow; color:red;selection-background-color:red;");
       ui->lineEdit_TempCheckCount->setText("Emergency Stop at" + datestr);
+      vtemp_.clear();
       Quit();
     }
 }
@@ -1718,6 +1724,7 @@ void MainWindow::periodicWork(){
           modbusReady = true;
       }
   }
+  if (temperature >= ui->spinBox_TempUpper->value()) Quit();
 
   askSetPoint(mute);
   i = 0;
@@ -1756,10 +1763,6 @@ void MainWindow::periodicWork(){
 void MainWindow::makePlot(){
   bool mute = true;
   muteLog = false;
-  //QTimer getTempTimer;
-  //const int tempGetTime = ui->spinBox_TempRecordTime->value() * 1000; // msec
-  //getTempTimer.setSingleShot(true);
-  //getTempTimer.start(tempGetTime);
   askTemperature(mute);
   int i = 0;
   while(!modbusReady) {
@@ -1883,3 +1886,20 @@ void MainWindow::on_spinBox_TempRecordTime_valueChanged(int arg1)
   LogMsg("Record Temp Interval set to " + QString::number(threadLog_->interval_ *.001) + " seconds.");
 }
 
+
+//!
+//! \brief MainWindow::calcMovingAve
+//! \param vtemp
+//! \return double aberage value of Neighborhood average of 3 points
+//!
+double MainWindow::calcMovingAve(QVector<double> vtemp){
+  double mave =.0;
+  int size = 0;
+  for (auto i = 1; i < vtemp.size()-1; i++) {
+      mave += (vtemp.at(i-1) + vtemp.at(i) + vtemp.at(i+1) -3.0*vtemp.at(0))/3.0;
+      size ++;
+    }
+  mave /= size;
+  LogMsg("MovingAve " + QString::number(mave));
+  return mave;
+}
