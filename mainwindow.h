@@ -66,10 +66,10 @@ private slots:
     void setAT(int atFlag);
     void setSV(double SV);
     void writeData();
+    void waitTimming();
     bool generateSaveFile();
-    bool isAskTemp();
-    bool isAskSetPoint();
-    bool isAskMV();
+    bool isIgnore(bool check, double temp);
+    bool isViolate(QVector<double> vtemp);
 
     void on_pushButton_Connect_clicked();
     void on_pushButton_AskStatus_clicked();
@@ -100,8 +100,11 @@ private slots:
     void setSafeLimit();
     void setNumbers();
     void setIgnoreRange();
-    void setParametersTempCheck();
+    void setParametersTempCheck(bool mute = true);
     void setIgnoreEnable();
+
+    void setColor(int colorindex = 0);
+
     double calcMovingAve(QVector<double> vtemp);
 
 private:
@@ -134,6 +137,7 @@ private:
     bool statusAskTemp_;
     bool statusAskMV_;
     bool statusAskSetPoint_;
+    bool statusRun_;
 
     QVector<QCPGraphData> pvData;
     QVector<QCPGraphData> svData;

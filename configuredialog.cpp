@@ -102,7 +102,7 @@ ConfigureDialog::~ConfigureDialog()
  * @details The member variables in ConfigureDialog class are set to the values of boxes.
  */
 void ConfigureDialog::setValues(){
-  QMutexLocker lock(&mutex_);
+  //QMutexLocker lock(&mutex_);
   intervalAskMV_ = spinBox_IntervalAskMV_->value();
   intervalAskTemp_ = spinBox_IntervalAskTemp_->value();
   numbers_ = spinBox_Numbers_->value();
