@@ -67,6 +67,9 @@ private slots:
     void setSV(double SV);
     void writeData();
     bool generateSaveFile();
+    bool isAskTemp();
+    bool isAskSetPoint();
+    bool isAskMV();
 
     void on_pushButton_Connect_clicked();
     void on_pushButton_AskStatus_clicked();
@@ -128,6 +131,9 @@ private:
     bool comboxEnable;
     bool spinBoxEnable;
     bool muteLog;
+    bool statusAskTemp_;
+    bool statusAskMV_;
+    bool statusAskSetPoint_;
 
     QVector<QCPGraphData> pvData;
     QVector<QCPGraphData> svData;

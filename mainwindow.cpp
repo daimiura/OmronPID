@@ -227,13 +227,13 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->comboBox_MemAddress->addItem("0x0E24 (adv) Aux. output 3 Assignment "    , 0x0E24);
 
 
-   ui->tabWidget->setStyleSheet("background-color: rgb(215, 214, 213)");
-   QColor color = QColor("Lightgray");
-   QPalette pal = palette();
-   pal.setColor(QPalette::Window, color);
-   this->setAutoFillBackground(true);
-   this->setPalette(pal);
-   this->setAutoFillBackground(false);
+    ui->tabWidget->setStyleSheet("background-color: rgb(215, 214, 213)");
+    QColor color = QColor("Lightgray");
+    QPalette pal = palette();
+    pal.setColor(QPalette::Window, color);
+    this->setAutoFillBackground(true);
+    this->setPalette(pal);
+    this->setAutoFillBackground(false);
 
     comboxEnable = true;
 
@@ -286,6 +286,10 @@ MainWindow::MainWindow(QWidget *parent) :
     svData.reserve(vecSize_);
     mvData.reserve(vecSize_);
     vtemp_.reserve(10);
+
+    statusAskMV_ = false;
+    statusAskTemp_ = false;
+    statusAskSetPoint_ = false;
 }
 
 MainWindow::~MainWindow()
@@ -534,39 +538,59 @@ void MainWindow::readReady()
     modbusReady = true;
 }
 
-void MainWindow::askTemperature(bool mute)
-{
-    //QMutexLocker lock(&mutex_);
+void MainWindow::askTemperature(bool mute){
+  statusAskTemp_ = true;
   if(!mute) LogMsg("------ get Temperature.");
   read(QModbusDataUnit::HoldingRegisters, E5CC_Address::PV, 2);
+  int i = 0;
+  while(!modbusReady){
+    i++;
+    waitForMSec(timing::modbus);
+    if( i > 10 ) modbusReady = true;
+  }
+  statusAskTemp_ = false;
 }
 
-void MainWindow::askSetPoint(bool mute)
-{
-    //QMutexLocker lock(&mutex_);
-    if(!mute) LogMsg("------ get Set Point.");
-    read(QModbusDataUnit::HoldingRegisters, E5CC_Address::SV, 2);
+void MainWindow::askSetPoint(bool mute){
+  if(!mute) LogMsg("------ get Set Temperature.");
+  read(QModbusDataUnit::HoldingRegisters, E5CC_Address::SV, 2);
+  int i = 0;
+  while(!modbusReady){
+    i++;
+    waitForMSec(timing::modbus);
+    if( i > 10 ) modbusReady = true;
+  }
 }
 
-void MainWindow::askMV(bool mute)
-{
-  //QMutexLocker lock(&mutex_);
-    if(!mute)LogMsg("------ get MV.");
-    read(QModbusDataUnit::HoldingRegisters, E5CC_Address::MV, 2);
+void MainWindow::askMV(bool mute){
+  if(!mute)LogMsg("------ get Output power.");
+  read(QModbusDataUnit::HoldingRegisters, E5CC_Address::MV, 2);
+  int i = 0;
+  while(!modbusReady){
+    i++;
+    waitForMSec(timing::modbus);
+    if( i > 10 ) modbusReady = true;
+  }
 }
 
-void MainWindow::askMVupper(bool mute)
-{
-    //QMutexLocker lock(&mutex_);
-    if(!mute)LogMsg("------ get MV upper.");
-    read(QModbusDataUnit::HoldingRegisters, E5CC_Address::MVupper, 2);
+void MainWindow::askMVupper(bool mute){
+  if(!mute)LogMsg("------ get MV upper.");
+  read(QModbusDataUnit::HoldingRegisters, E5CC_Address::MVupper, 2);
+  while(!modbusReady){
+    i++;
+    waitForMSec(timing::modbus);
+    if( i > 10 ) modbusReady = true;
+  }
 }
 
-void MainWindow::askMVlower(bool mute)
-{
-    //QMutexLocker lock(&mutex_);
-    if(!mute)LogMsg("------ get MV lower.");
-    read(QModbusDataUnit::HoldingRegisters, E5CC_Address::MVlower, 2);
+void MainWindow::askMVlower(bool mute){
+  if(!mute)LogMsg("------ get MV lower.");
+  read(QModbusDataUnit::HoldingRegisters, E5CC_Address::MVlower, 2);
+  while(!modbusReady){
+    i++;
+    waitForMSec(timing::modbus);
+    if( i > 10 ) modbusReady = true;
+  }
 }
 
 void MainWindow::getSetting()
@@ -1716,6 +1740,7 @@ void MainWindow::periodicWork(){
   getTempTimer.start(tempGetTime);
 
   askTemperature(mute);
+  /*
   int i = 0;
   while(!modbusReady) {
       i++;
@@ -1724,10 +1749,11 @@ void MainWindow::periodicWork(){
           modbusReady = true;
       }
   }
+  */
   if (temperature >= ui->spinBox_TempUpper->value()) Quit();
-
+  int i = 0;
   askSetPoint(mute);
-  i = 0;
+  //i = 0;
   while(!modbusReady) {
       i++;
       waitForMSec(timing::modbus);
@@ -1764,6 +1790,7 @@ void MainWindow::makePlot(){
   bool mute = true;
   muteLog = false;
   askTemperature(mute);
+  /*
   int i = 0;
   while(!modbusReady) {
       i++;
@@ -1772,9 +1799,10 @@ void MainWindow::makePlot(){
           modbusReady = true;
       }
   }
+  */
 
   askSetPoint(mute);
-  i = 0;
+  int i = 0;
   while(!modbusReady) {
       i++;
       waitForMSec(timing::modbus);
@@ -1902,4 +1930,16 @@ double MainWindow::calcMovingAve(QVector<double> vtemp){
   mave /= size;
   LogMsg("MovingAve " + QString::number(mave));
   return mave;
+}
+
+bool MainWindow::isAskMV(){
+  return statusAskMV_;
+}
+
+bool MainWindow::isAskSetPoint(){
+  return statusAskSetPoint_;
+}
+
+bool MainWindow::isAskTemp(){
+  return statusAskTemp_;
 }

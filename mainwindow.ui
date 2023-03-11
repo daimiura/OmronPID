@@ -129,7 +129,7 @@
        <string>Periodic functions</string>
       </property>
       <layout class="QGridLayout" name="gridLayout_6">
-       <item row="1" column="1" colspan="2">
+       <item row="3" column="2">
         <widget class="QSpinBox" name="spinBox_TempRecordTime">
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -145,38 +145,35 @@
          </property>
         </widget>
        </item>
-       <item row="2" column="0" colspan="2">
-        <widget class="QLabel" name="label_6">
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_22">
          <property name="text">
-          <string>Ask output power every (sec)</string>
+          <string>Dir path</string>
          </property>
         </widget>
        </item>
-       <item row="2" column="2" colspan="2">
+       <item row="4" column="2" colspan="2">
         <widget class="QLineEdit" name="lineEdit_IntervalAskMV">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
-       <item row="1" column="0">
-        <widget class="QLabel" name="label_3">
-         <property name="text">
-          <string>Record temp. every [s] :</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="0">
+       <item row="0" column="2">
         <widget class="QCheckBox" name="checkBox_dataSave">
          <property name="text">
           <string>Data Save</string>
          </property>
         </widget>
        </item>
-       <item row="1" column="3">
+       <item row="4" column="0" colspan="2">
+        <widget class="QLabel" name="label_6">
+         <property name="text">
+          <string>Ask output power every (sec)</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="3">
         <widget class="QPushButton" name="pushButton_Log">
          <property name="text">
           <string>Logging start</string>
@@ -185,6 +182,32 @@
           <bool>true</bool>
          </property>
         </widget>
+       </item>
+       <item row="0" column="0">
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="3" column="0" colspan="2">
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>Record temp. every [s] :</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2" colspan="2">
+        <widget class="QLineEdit" name="lineEdit"/>
        </item>
       </layout>
      </widget>
@@ -198,37 +221,13 @@
        </sizepolicy>
       </property>
       <property name="title">
-       <string>TempCheck</string>
+       <string>TempCheck (No control)</string>
       </property>
       <layout class="QGridLayout" name="gridLayout_2">
        <item row="1" column="0">
         <widget class="QLabel" name="label_16">
          <property name="text">
           <string>Lower limit of temperature change</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="0">
-        <widget class="QLabel" name="label_17">
-         <property name="text">
-          <string>Temperature range to ignore</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="2">
-        <widget class="QLineEdit" name="lineEdit_IgnoreLower">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="0">
-        <widget class="QCheckBox" name="checkBox_Ignore">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="text">
-          <string>Enable Temperature range to ignor</string>
          </property>
         </widget>
        </item>
@@ -243,13 +242,6 @@
         <widget class="QLabel" name="label_14">
          <property name="text">
           <string>Ask Temperature every (sec)</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="3">
-        <widget class="QLineEdit" name="lineEdit_IgnoreUpper">
-         <property name="enabled">
-          <bool>false</bool>
          </property>
         </widget>
        </item>
@@ -270,6 +262,40 @@
        <item row="1" column="2">
         <widget class="QLineEdit" name="lineEdit_SafeLimit">
          <property name="enabled">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="2">
+        <widget class="QLineEdit" name="lineEdit_IgnoreLower">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="3">
+        <widget class="QLineEdit" name="lineEdit_IgnoreUpper">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="label_17">
+         <property name="text">
+          <string>Temperature range to ignore</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QCheckBox" name="checkBox_Ignore">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="text">
+          <string>Enable Temperature range to ignor</string>
+         </property>
+         <property name="checkable">
           <bool>false</bool>
          </property>
         </widget>
@@ -736,7 +762,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <item row="1" column="2" colspan="2">
      <widget class="QGroupBox" name="groupBox_4">
       <property name="title">
-       <string>Status</string>
+       <string>Status (No control )</string>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
@@ -761,9 +787,23 @@ li.checked::marker { content: &quot;\2612&quot;; }
         </widget>
        </item>
        <item>
+        <widget class="QCheckBox" name="checkBox_6">
+         <property name="text">
+          <string>Temperature Drop</string>
+         </property>
+        </widget>
+       </item>
+       <item>
         <widget class="QCheckBox" name="checkBox_3">
          <property name="text">
           <string>SlowTemperatureControle</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="checkBox_5">
+         <property name="text">
+          <string>Data Recording</string>
          </property>
         </widget>
        </item>
