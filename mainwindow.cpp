@@ -279,6 +279,7 @@ MainWindow::MainWindow(QWidget *parent) :
     pvData.reserve(vecSize_);
     svData.reserve(vecSize_);
     mvData.reserve(vecSize_);
+    vdifftemp_.reserve(vecSize_);
     vtemp_.reserve(10);
 
     statusAskMV_ = false;
@@ -1267,6 +1268,15 @@ void MainWindow::fillDataAndPlot(const QDateTime date, const double PV, const do
     plot->replot();
 }
 
+void MainWindow::fillDifference(const QDateTime date, const double PV){
+  int size = valltemp_.size();
+  if(size < 2) return;
+  double diff = valltemp_.at(size-1) - valltemp_.at(size-2);
+  vdifftemp_.push_back(diff);
+    LogMsg("Difference is " + QString::number(diff));
+  return;
+}
+
 void MainWindow::on_actionHelp_Page_triggered()
 {
     if( helpDialog->isHidden() ){
@@ -1572,11 +1582,16 @@ void MainWindow::makePlot(){
   askSetPoint(mute);
   if (statusAskMV_) waitForMSec(200);
   askMV(mute);
+  muteLog = false;
   const double setTemperature = ui->lineEdit_SV->text().toDouble();
   QDateTime date = QDateTime::currentDateTime();
+  valltemp_.push_back(temperature);
+  int size = valltemp_.size();
+  //LogMsg(QString::number(size));
   fillDataAndPlot(date, temperature, setTemperature, MV);
+  fillDifference(date, temperature);
   if(ui->checkBox_dataSave->isChecked()) writeData();
-  muteLog = false;
+
 }
 
 /**

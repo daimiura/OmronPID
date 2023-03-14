@@ -1,5 +1,5 @@
 #include "configuredialog.h"
-#include "ui_configuredialog.h"
+//#include "ui_configuredialog.h"
 #include <QtWidgets>
 
 /**
@@ -9,8 +9,8 @@
  * Connected signal to slot.
  */
 ConfigureDialog::ConfigureDialog(QWidget *parent) :
-  QDialog(parent),
-  ui(new Ui::ConfigureDialog)
+  QDialog(parent)
+  //ui(new Ui::ConfigureDialog)
 {
   //QMutexLocker lock(&mutex_);
   labelAskMV_ = new QLabel(tr("Interval time to Ask output power (sec)."));
@@ -93,10 +93,12 @@ ConfigureDialog::ConfigureDialog(QWidget *parent) :
   connect(pushButton_SetParameters_, SIGNAL(clicked(bool)), this, SLOT(warningShow(bool)));
 }
 
+/*
 ConfigureDialog::~ConfigureDialog()
 {
   delete ui;
 }
+*/
 /**
  * @brief ConfigureDialog::SetValues
  * @details The member variables in ConfigureDialog class are set to the values of boxes.
@@ -112,8 +114,8 @@ void ConfigureDialog::setValues(){
   ignoreEnable_ = checkBox_IgnoreEnable_->isChecked();
   etime_ = numbers_ * intervalAskTemp_;
   textBrowser_log_->setText("*** Send these parameters ***");
-  textBrowser_log_->append("Ask MV with interval :" + QString::number(intervalAskMV_) + " min");
-  textBrowser_log_->append("Ask Temp with interval : " + QString::number(intervalAskTemp_) + " min");
+  textBrowser_log_->append("Ask Output power every :" + QString::number(intervalAskMV_) + " sec");
+  textBrowser_log_->append("Ask Temp. every : " + QString::number(intervalAskTemp_) + " sec");
   textBrowser_log_->append("Average size : " + QString::number(numbers_));
   textBrowser_log_->append("Safety limit : " + QString::number(safeLimit_) + " C");
   if (ignoreEnable_) {

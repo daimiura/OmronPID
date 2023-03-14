@@ -38,7 +38,7 @@ class ConfigureDialog : public QDialog
 
 public:
   explicit ConfigureDialog(QWidget *parent = nullptr);
-  ~ConfigureDialog();
+  //~ConfigureDialog();
 
   bool ignoreEnable_;
   int intervalAskMV_;

@@ -102,6 +102,7 @@ private slots:
     void setIgnoreRange();
     void setParametersTempCheck(bool mute = true);
     void setIgnoreEnable();
+    void fillDifference(const QDateTime date, const double PV);
 
     void setColor(int colorindex = 0);
 
@@ -143,6 +144,8 @@ private:
     QVector<QCPGraphData> svData;
     QVector<QCPGraphData> mvData;
     QVector<double> vtemp_;
+    QVector<double> valltemp_;
+    QVector<double> vdifftemp_;
 
 
     double pid_P, pid_I, pid_D;
