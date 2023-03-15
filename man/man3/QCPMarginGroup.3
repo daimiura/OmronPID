@@ -1,0 +1,143 @@
+.TH "QCPMarginGroup" 3 "Wed Mar 15 2023" "OmronPID" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QCPMarginGroup \- A margin group allows synchronization of margin sides if working with multiple layout elements\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits QObject\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPMarginGroup\fP (\fBQCustomPlot\fP *parentPlot)"
+.br
+.ti -1c
+.RI "QList< \fBQCPLayoutElement\fP * > \fBelements\fP (\fBQCP::MarginSide\fP side) const"
+.br
+.ti -1c
+.RI "bool \fBisEmpty\fP () const"
+.br
+.ti -1c
+.RI "void \fBclear\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual int \fBcommonMargin\fP (\fBQCP::MarginSide\fP side) const"
+.br
+.ti -1c
+.RI "void \fBaddChild\fP (\fBQCP::MarginSide\fP side, \fBQCPLayoutElement\fP *element)"
+.br
+.ti -1c
+.RI "void \fBremoveChild\fP (\fBQCP::MarginSide\fP side, \fBQCPLayoutElement\fP *element)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBQCustomPlot\fP * \fBmParentPlot\fP"
+.br
+.ti -1c
+.RI "QHash< \fBQCP::MarginSide\fP, QList< \fBQCPLayoutElement\fP * > > \fBmChildren\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBQCPLayoutElement\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+A margin group allows synchronization of margin sides if working with multiple layout elements\&. 
+
+\fBQCPMarginGroup\fP allows you to tie a margin side of two or more layout elements together, such that they will all have the same size, based on the largest required margin in the group\&.
+.PP
+
+.br
+ 
+.br
+ In certain situations it is desirable that margins at specific sides are synchronized across layout elements\&. For example, if one \fBQCPAxisRect\fP is below another one in a grid layout, it will provide a cleaner look to the user if the left and right margins of the two axis rects are of the same size\&. The left axis of the top axis rect will then be at the same horizontal position as the left axis of the lower axis rect, making them appear aligned\&. The same applies for the right axes\&. This is what \fBQCPMarginGroup\fP makes possible\&.
+.PP
+To add/remove a specific side of a layout element to/from a margin group, use the \fBQCPLayoutElement::setMarginGroup\fP method\&. To completely break apart the margin group, either call \fBclear\fP, or just delete the margin group\&.
+.SH "Example"
+.PP
+First create a margin group: 
+.PP
+.nf
+
+.fi
+.PP
+ Then set this group on the layout element sides: 
+.PP
+.nf
+
+.fi
+.PP
+ Here, we've used the first two axis rects of the plot and synchronized their left margins with each other and their right margins with each other\&. 
+.PP
+Definition at line \fB1148\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QCPMarginGroup::QCPMarginGroup (\fBQCustomPlot\fP * parentPlot)\fC [explicit]\fP"
+Creates a new \fBQCPMarginGroup\fP instance in \fIparentPlot\fP\&. 
+.PP
+Definition at line \fB3008\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QCPMarginGroup::~QCPMarginGroup ()\fC [virtual]\fP"
+
+.PP
+Definition at line \fB3018\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void QCPMarginGroup::addChild (\fBQCP::MarginSide\fP side, \fBQCPLayoutElement\fP * element)\fC [protected]\fP"
+
+.PP
+Definition at line \fB3088\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPMarginGroup::clear ()"
+Clears this margin group\&. The synchronization of the margin sides that use this margin group is lifted and they will use their individual margin sizes again\&. 
+.PP
+Definition at line \fB3043\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "int QCPMarginGroup::commonMargin (\fBQCP::MarginSide\fP side) const\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line \fB3066\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QList< \fBQCPLayoutElement\fP * > QCPMarginGroup::elements (\fBQCP::MarginSide\fP side) const\fC [inline]\fP"
+Returns a list of all layout elements that have their margin \fIside\fP associated with this margin group\&. 
+.PP
+Definition at line \fB1156\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "bool QCPMarginGroup::isEmpty () const"
+Returns whether this margin group is empty\&. If this function returns true, no layout elements use this margin group to synchronize margin sides\&. 
+.PP
+Definition at line \fB3027\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPMarginGroup::removeChild (\fBQCP::MarginSide\fP side, \fBQCPLayoutElement\fP * element)\fC [protected]\fP"
+
+.PP
+Definition at line \fB3102\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBQCPLayoutElement\fP\fC [friend]\fP"
+
+.PP
+Definition at line \fB1175\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QHash<\fBQCP::MarginSide\fP, QList<\fBQCPLayoutElement\fP*> > QCPMarginGroup::mChildren\fC [protected]\fP"
+
+.PP
+Definition at line \fB1163\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBQCustomPlot\fP* QCPMarginGroup::mParentPlot\fC [protected]\fP"
+
+.PP
+Definition at line \fB1162\fP of file \fBqcustomplot\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for OmronPID from the source code\&.

@@ -2,34 +2,47 @@
 \label{class_main_window}\index{MainWindow@{MainWindow}}
 
 
-{\ttfamily \#include $<$mainwindow.\+h$>$}
-
-Inheritance diagram for Main\+Window\+:\begin{figure}[H]
+Inheritance diagram for Main\+Window\+:\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{class_main_window}
+\includegraphics[width=160pt]{class_main_window__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Main\+Window\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{class_main_window__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Slots}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{class_main_window_a5653cd2fbf5e7ed54c75ad6776c5006b}{periodic\+\_\+work}} ()
+void \mbox{\hyperlink{class_main_window_ac6bb3fa372c4a2d7a3b9621deac79d4a}{periodic\+Work}} ()
 \item 
 void \mbox{\hyperlink{class_main_window_a699115cac96d47fd0f8a2bf359c3203c}{make\+Plot}} ()
 \item 
 void \mbox{\hyperlink{class_main_window_af30ebac87cad0ccff631b6e11bcc50c8}{Temp\+Check}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_main_window_af30ebac87cad0ccff631b6e11bcc50c8}{Main\+Window\+::\+Temp\+Check}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_main_window_a8b244be8b7b7db1b08de2a2acb9409db}{Main\+Window}} (QWidget $\ast$parent=0)
 \item 
-\mbox{\hyperlink{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}{$\sim$\+Main\+Window}} ()
-\item 
 void \mbox{\hyperlink{class_main_window_a44d85ff6240f89bc1aff38ff3dec128e}{Log\+Msg}} (QString str, bool new\+Line=true)
 \item 
 void \mbox{\hyperlink{class_main_window_a384e4eb100e8c9af82ad207333d13d87}{find\+Series\+Port\+Devices}} ()
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{mainwindow_8h_source_l00029}{29}} of file \mbox{\hyperlink{mainwindow_8h_source}{mainwindow.\+h}}.
+
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -39,15 +52,43 @@ void \mbox{\hyperlink{class_main_window_a384e4eb100e8c9af82ad207333d13d87}{find\
 \doxysubsubsection{\texorpdfstring{MainWindow()}{MainWindow()}}
 {\footnotesize\ttfamily Main\+Window\+::\+Main\+Window (\begin{DoxyParamCaption}\item[{QWidget $\ast$}]{parent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
+help\+Dialog
+
+plot\+Dialog
+
+modified \char`\"{}0x0\+A0\+A -\/$>$ \char`\"{}\char`\"{}0x0\+A00\char`\"{} in part of the first argument in add\+Item function @ 2023/2/27 by Daisuke Miura. This is a display issue on the GUI and has nothing to do with functionality.
+
 Thread for Temp\+Check mode.
 
 Thread for Temp\+Check mode. Priotity is set to QThread\+::\+Time\+Critical\+Priority
 
-Thread for Logging. Priotity is set to QThread\+::\+Highest\+Priority\mbox{\Hypertarget{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}\label{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}} 
+Thread for Logging. Priotity is set to QThread\+::\+Highest\+Priority
+
+Temp\+Check counter is set to be 0.
+
+Log\+Start
+
+Reserved memory size
+
+Definition at line \mbox{\hyperlink{mainwindow_8cpp_source_l00033}{33}} of file \mbox{\hyperlink{mainwindow_8cpp_source}{mainwindow.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_window_a8b244be8b7b7db1b08de2a2acb9409db_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}\label{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}} 
 \index{MainWindow@{MainWindow}!````~MainWindow@{$\sim$MainWindow}}
 \index{````~MainWindow@{$\sim$MainWindow}!MainWindow@{MainWindow}}
 \doxysubsubsection{\texorpdfstring{$\sim$MainWindow()}{~MainWindow()}}
 {\footnotesize\ttfamily Main\+Window\+::$\sim$\+Main\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{mainwindow_8cpp_source_l00290}{290}} of file \mbox{\hyperlink{mainwindow_8cpp_source}{mainwindow.\+cpp}}.
 
 
 
@@ -58,11 +99,19 @@ Thread for Logging. Priotity is set to QThread\+::\+Highest\+Priority\mbox{\Hype
 \doxysubsubsection{\texorpdfstring{findSeriesPortDevices()}{findSeriesPortDevices()}}
 {\footnotesize\ttfamily void Main\+Window\+::find\+Series\+Port\+Devices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Definition at line \mbox{\hyperlink{mainwindow_8cpp_source_l00325}{325}} of file \mbox{\hyperlink{mainwindow_8cpp_source}{mainwindow.\+cpp}}.
+
 \mbox{\Hypertarget{class_main_window_a44d85ff6240f89bc1aff38ff3dec128e}\label{class_main_window_a44d85ff6240f89bc1aff38ff3dec128e}} 
 \index{MainWindow@{MainWindow}!LogMsg@{LogMsg}}
 \index{LogMsg@{LogMsg}!MainWindow@{MainWindow}}
 \doxysubsubsection{\texorpdfstring{LogMsg()}{LogMsg()}}
 {\footnotesize\ttfamily void Main\+Window\+::\+Log\+Msg (\begin{DoxyParamCaption}\item[{QString}]{str,  }\item[{bool}]{new\+Line = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{mainwindow_8cpp_source_l00307}{307}} of file \mbox{\hyperlink{mainwindow_8cpp_source}{mainwindow.\+cpp}}.
 
 \mbox{\Hypertarget{class_main_window_a699115cac96d47fd0f8a2bf359c3203c}\label{class_main_window_a699115cac96d47fd0f8a2bf359c3203c}} 
 \index{MainWindow@{MainWindow}!makePlot@{makePlot}}
@@ -70,11 +119,19 @@ Thread for Logging. Priotity is set to QThread\+::\+Highest\+Priority\mbox{\Hype
 \doxysubsubsection{\texorpdfstring{makePlot}{makePlot}}
 {\footnotesize\ttfamily void Main\+Window\+::make\+Plot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
 
-\mbox{\Hypertarget{class_main_window_a5653cd2fbf5e7ed54c75ad6776c5006b}\label{class_main_window_a5653cd2fbf5e7ed54c75ad6776c5006b}} 
-\index{MainWindow@{MainWindow}!periodic\_work@{periodic\_work}}
-\index{periodic\_work@{periodic\_work}!MainWindow@{MainWindow}}
-\doxysubsubsection{\texorpdfstring{periodic\_work}{periodic\_work}}
-{\footnotesize\ttfamily void Main\+Window\+::periodic\+\_\+work (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+Definition at line \mbox{\hyperlink{mainwindow_8cpp_source_l01608}{1608}} of file \mbox{\hyperlink{mainwindow_8cpp_source}{mainwindow.\+cpp}}.
+
+\mbox{\Hypertarget{class_main_window_ac6bb3fa372c4a2d7a3b9621deac79d4a}\label{class_main_window_ac6bb3fa372c4a2d7a3b9621deac79d4a}} 
+\index{MainWindow@{MainWindow}!periodicWork@{periodicWork}}
+\index{periodicWork@{periodicWork}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{periodicWork}{periodicWork}}
+{\footnotesize\ttfamily void Main\+Window\+::periodic\+Work (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Definition at line \mbox{\hyperlink{mainwindow_8cpp_source_l01579}{1579}} of file \mbox{\hyperlink{mainwindow_8cpp_source}{mainwindow.\+cpp}}.
 
 \mbox{\Hypertarget{class_main_window_af30ebac87cad0ccff631b6e11bcc50c8}\label{class_main_window_af30ebac87cad0ccff631b6e11bcc50c8}} 
 \index{MainWindow@{MainWindow}!TempCheck@{TempCheck}}
@@ -84,7 +141,23 @@ Thread for Logging. Priotity is set to QThread\+::\+Highest\+Priority\mbox{\Hype
 
 
 
+\mbox{\hyperlink{class_main_window_af30ebac87cad0ccff631b6e11bcc50c8}{Main\+Window\+::\+Temp\+Check}}. 
+
+The temperature stores in vtemp\+\_\+ until the given number is reached. A moving average is calculated from these values. If this moving average is smaller than the threshold value, it is assumed that there is no temperature change and the Quit function is executed. If it is greater than the threshold value, set count\+Temp\+Check\+\_\+ to 0 and exit Temp\+Check mode. Note that this function does not work if the temperature is in the ignore range given set\+Paramters function. 
+
+Definition at line \mbox{\hyperlink{mainwindow_8cpp_source_l01528}{1528}} of file \mbox{\hyperlink{mainwindow_8cpp_source}{mainwindow.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_window_af30ebac87cad0ccff631b6e11bcc50c8_icgraph}
+\end{center}
+\end{figure}
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{mainwindow_8h}{mainwindow.\+h}}\item 
-\mbox{\hyperlink{mainwindow_8cpp}{mainwindow.\+cpp}}\end{DoxyCompactItemize}
+mainwindow.\+h\item 
+mainwindow.\+cpp\end{DoxyCompactItemize}

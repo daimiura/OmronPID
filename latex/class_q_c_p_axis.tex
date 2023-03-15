@@ -7,12 +7,20 @@ Manages a single axis inside a \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Pl
 
 
 
-{\ttfamily \#include $<$qcustomplot.\+h$>$}
-
-Inheritance diagram for QCPAxis\+:\begin{figure}[H]
+Inheritance diagram for QCPAxis\+:\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=3.000000cm]{class_q_c_p_axis}
+\includegraphics[width=160pt]{class_q_c_p_axis__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for QCPAxis\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_axis__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Types}
@@ -45,7 +53,7 @@ void \mbox{\hyperlink{class_q_c_p_axis_a0894084e4c16a1736534c4095746f910}{range\
 \item 
 void \mbox{\hyperlink{class_q_c_p_axis_aac8576288e8e31f16186124bc10dd10d}{range\+Changed}} (const \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \&new\+Range, const \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \&old\+Range)
 \item 
-void \mbox{\hyperlink{class_q_c_p_axis_a3505ed8a93bd2e349d858d84996bf767}{scale\+Type\+Changed}} (\mbox{\hyperlink{class_q_c_p_axis_a36d8e8658dbaa179bf2aeb973db2d6f0}{QCPAxis\+::\+Scale\+Type}} \mbox{\hyperlink{class_q_c_p_axis_ad23e9ad97b44e9aeaf4fab8904280098}{scale\+Type}})
+void \mbox{\hyperlink{class_q_c_p_axis_a3505ed8a93bd2e349d858d84996bf767}{scale\+Type\+Changed}} (\mbox{\hyperlink{class_q_c_p_axis_a36d8e8658dbaa179bf2aeb973db2d6f0}{QCPAxis\+::\+Scale\+Type}} scale\+Type)
 \item 
 void \mbox{\hyperlink{class_q_c_p_axis_a62b598abeee7174a05f9d542cc85b1f5}{selection\+Changed}} (const QCPAxis\+::\+Selectable\+Parts \&parts)
 \item 
@@ -60,8 +68,6 @@ void \mbox{\hyperlink{class_q_c_p_layerable_abbf8657cedea73ac1c3499b521c90eba}{l
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_q_c_p_axis_ac62c042968bae0e6d474fcfc57c9b71f}{QCPAxis}} (\mbox{\hyperlink{class_q_c_p_axis_rect}{QCPAxis\+Rect}} $\ast$parent, \mbox{\hyperlink{class_q_c_p_axis_ae2bcc1728b382f10f064612b368bc18a}{Axis\+Type}} type)
-\item 
-virtual \mbox{\hyperlink{class_q_c_p_axis_a7cfa27ea9da0bb1fe0ae995572c0b85d}{$\sim$\+QCPAxis}} ()
 \item 
 \mbox{\hyperlink{class_q_c_p_axis_ae2bcc1728b382f10f064612b368bc18a}{Axis\+Type}} \mbox{\hyperlink{class_q_c_p_axis_aa19679359783c5ecd27757b7e5619976}{axis\+Type}} () const
 \item 
@@ -151,7 +157,7 @@ QPen \mbox{\hyperlink{class_q_c_p_axis_a73c147bb2c5598edbb842adc2da8a7bf}{select
 \item 
 Q\+\_\+\+SLOT void \mbox{\hyperlink{class_q_c_p_axis_adef29cae617af4f519f6c40d1a866ca6}{set\+Scale\+Type}} (\mbox{\hyperlink{class_q_c_p_axis_a36d8e8658dbaa179bf2aeb973db2d6f0}{QCPAxis\+::\+Scale\+Type}} type)
 \item 
-Q\+\_\+\+SLOT void \mbox{\hyperlink{class_q_c_p_axis_aebdfea5d44c3a0ad2b4700cd4d25b641}{set\+Range}} (const \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \&\mbox{\hyperlink{class_q_c_p_axis_ac4058855a81f1a883cf2e754f6a6acb1}{range}})
+Q\+\_\+\+SLOT void \mbox{\hyperlink{class_q_c_p_axis_aebdfea5d44c3a0ad2b4700cd4d25b641}{set\+Range}} (const \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \&range)
 \item 
 void \mbox{\hyperlink{class_q_c_p_axis_a57d6ee9e9009fe88cb19db476ec70bca}{set\+Range}} (double lower, double upper)
 \item 
@@ -169,7 +175,7 @@ void \mbox{\hyperlink{class_q_c_p_axis_ac891409315bc379e3b1abdb162c1a011}{set\+T
 \item 
 void \mbox{\hyperlink{class_q_c_p_axis_a04ba16e1f6f78d70f938519576ed32c8}{set\+Tick\+Labels}} (bool show)
 \item 
-void \mbox{\hyperlink{class_q_c_p_axis_af302c479af9dbc2e9f0e44e07c0012ee}{set\+Tick\+Label\+Padding}} (int \mbox{\hyperlink{class_q_c_p_axis_a07df379d5c017b8f3a4702532eb037b2}{padding}})
+void \mbox{\hyperlink{class_q_c_p_axis_af302c479af9dbc2e9f0e44e07c0012ee}{set\+Tick\+Label\+Padding}} (int padding)
 \item 
 void \mbox{\hyperlink{class_q_c_p_axis_a2b8690c4e8dbc39d9185d2b398ce7a6c}{set\+Tick\+Label\+Font}} (const QFont \&font)
 \item 
@@ -209,11 +215,11 @@ void \mbox{\hyperlink{class_q_c_p_axis_a6c906fe56d75f0122335b9f79b999608}{set\+L
 \item 
 void \mbox{\hyperlink{class_q_c_p_axis_a33bcc382c111c9f31bb0687352a2dea4}{set\+Label}} (const QString \&str)
 \item 
-void \mbox{\hyperlink{class_q_c_p_axis_a4391192a766e5d20cfe5cbc17607a7a2}{set\+Label\+Padding}} (int \mbox{\hyperlink{class_q_c_p_axis_a07df379d5c017b8f3a4702532eb037b2}{padding}})
+void \mbox{\hyperlink{class_q_c_p_axis_a4391192a766e5d20cfe5cbc17607a7a2}{set\+Label\+Padding}} (int padding)
 \item 
-void \mbox{\hyperlink{class_q_c_p_axis_a5691441cb3de9e9844855d339c0db279}{set\+Padding}} (int \mbox{\hyperlink{class_q_c_p_axis_a07df379d5c017b8f3a4702532eb037b2}{padding}})
+void \mbox{\hyperlink{class_q_c_p_axis_a5691441cb3de9e9844855d339c0db279}{set\+Padding}} (int padding)
 \item 
-void \mbox{\hyperlink{class_q_c_p_axis_a04a652603cbe50eba9969ee6d68873c3}{set\+Offset}} (int \mbox{\hyperlink{class_q_c_p_axis_aef66fa16353b4993b1cceabfb644a1a9}{offset}})
+void \mbox{\hyperlink{class_q_c_p_axis_a04a652603cbe50eba9969ee6d68873c3}{set\+Offset}} (int offset)
 \item 
 void \mbox{\hyperlink{class_q_c_p_axis_a845ccb560b7bc5281098a5be494145f6}{set\+Selected\+Tick\+Label\+Font}} (const QFont \&font)
 \item 
@@ -229,15 +235,15 @@ void \mbox{\hyperlink{class_q_c_p_axis_a8360502685eb782edbf04019c9345cdc}{set\+S
 \item 
 void \mbox{\hyperlink{class_q_c_p_axis_a2a00a7166600155eac26843132eb9576}{set\+Selected\+Sub\+Tick\+Pen}} (const QPen \&pen)
 \item 
-Q\+\_\+\+SLOT void \mbox{\hyperlink{class_q_c_p_axis_a513f9b9e326c505d9bec54880031b085}{set\+Selectable\+Parts}} (const QCPAxis\+::\+Selectable\+Parts \&\mbox{\hyperlink{class_q_c_p_axis_a1d12d157756c114f4e57517c62177181}{selectable\+Parts}})
+Q\+\_\+\+SLOT void \mbox{\hyperlink{class_q_c_p_axis_a513f9b9e326c505d9bec54880031b085}{set\+Selectable\+Parts}} (const QCPAxis\+::\+Selectable\+Parts \&selectable\+Parts)
 \item 
-Q\+\_\+\+SLOT void \mbox{\hyperlink{class_q_c_p_axis_ab9d7a69277dcbed9119b3c1f25ca19c3}{set\+Selected\+Parts}} (const QCPAxis\+::\+Selectable\+Parts \&\mbox{\hyperlink{class_q_c_p_axis_a893e8d6cfed9267eb2b793cb1d2b4dce}{selected\+Parts}})
+Q\+\_\+\+SLOT void \mbox{\hyperlink{class_q_c_p_axis_ab9d7a69277dcbed9119b3c1f25ca19c3}{set\+Selected\+Parts}} (const QCPAxis\+::\+Selectable\+Parts \&selected\+Parts)
 \item 
 void \mbox{\hyperlink{class_q_c_p_axis_a08af1c72db9ae4dc8cb8a973d44405ab}{set\+Lower\+Ending}} (const \mbox{\hyperlink{class_q_c_p_line_ending}{QCPLine\+Ending}} \&ending)
 \item 
 void \mbox{\hyperlink{class_q_c_p_axis_a69119b892fc306f651763596685aa377}{set\+Upper\+Ending}} (const \mbox{\hyperlink{class_q_c_p_line_ending}{QCPLine\+Ending}} \&ending)
 \item 
-virtual double \mbox{\hyperlink{class_q_c_p_axis_a63b7103c57fe9acfbce164334ea837f8}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant $\ast$details=0) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual double \mbox{\hyperlink{class_q_c_p_axis_a63b7103c57fe9acfbce164334ea837f8}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant $\ast$details=0) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
 Qt\+::\+Orientation \mbox{\hyperlink{class_q_c_p_axis_ab988ef4538e2655bb77bd138189cd42e}{orientation}} () const
 \item 
@@ -270,8 +276,6 @@ QList$<$ \mbox{\hyperlink{class_q_c_p_abstract_item}{QCPAbstract\+Item}} $\ast$ 
 \item 
 \mbox{\hyperlink{class_q_c_p_layerable_a74c0fa237f29bf0e49565013fc5d1ec0}{QCPLayerable}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$plot, QString target\+Layer=QString(), \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}}=0)
 \item 
-virtual \mbox{\hyperlink{class_q_c_p_layerable_a4231cf5b3601d6d3a5781283e7a9735b}{$\sim$\+QCPLayerable}} ()
-\item 
 bool \mbox{\hyperlink{class_q_c_p_layerable_af0297b944b6192b6d67d00bff41b6b70}{visible}} () const
 \item 
 \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$ \mbox{\hyperlink{class_q_c_p_layerable_a36ed5b292b90934b524a4e5866a3526c}{parent\+Plot}} () const
@@ -284,7 +288,7 @@ bool \mbox{\hyperlink{class_q_c_p_layerable_a71cbd212fde2703cee076e204a475709}{a
 \item 
 void \mbox{\hyperlink{class_q_c_p_layerable_a3bed99ddc396b48ce3ebfdc0418744f8}{set\+Visible}} (bool on)
 \item 
-Q\+\_\+\+SLOT bool \mbox{\hyperlink{class_q_c_p_layerable_ab0d0da6d2de45a118886d2c8e16d5a54}{set\+Layer}} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_a9d4e121a7f1d2314f906fe698209cac9}{layer}})
+Q\+\_\+\+SLOT bool \mbox{\hyperlink{class_q_c_p_layerable_ab0d0da6d2de45a118886d2c8e16d5a54}{set\+Layer}} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$layer)
 \item 
 bool \mbox{\hyperlink{class_q_c_p_layerable_ab25a0e7b897993b44447caee0f142083}{set\+Layer}} (const QString \&layer\+Name)
 \item 
@@ -308,15 +312,15 @@ static \mbox{\hyperlink{class_q_c_p_axis_ae2bcc1728b382f10f064612b368bc18a}{Axis
 \item 
 virtual int \mbox{\hyperlink{class_q_c_p_axis_a47bdb0a55de6759489ee47665199aebb}{calculate\+Margin}} ()
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_axis_adbaeffcdc2707f2bd5dc1bbd11236770}{apply\+Default\+Antialiasing\+Hint}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual void \mbox{\hyperlink{class_q_c_p_axis_adbaeffcdc2707f2bd5dc1bbd11236770}{apply\+Default\+Antialiasing\+Hint}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_axis_ac15ebb4225ca5212d8e5fffae481bc9b}{draw}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual void \mbox{\hyperlink{class_q_c_p_axis_ac15ebb4225ca5212d8e5fffae481bc9b}{draw}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual \mbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037}{QCP\+::\+Interaction}} \mbox{\hyperlink{class_q_c_p_axis_ab751e3e96495716a2f6742ca7d7b3d49}{selection\+Category}} () const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual \mbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037}{QCP\+::\+Interaction}} \mbox{\hyperlink{class_q_c_p_axis_ab751e3e96495716a2f6742ca7d7b3d49}{selection\+Category}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_axis_a50c3ed18e189d48421ec2978f88e4f87}{select\+Event}} (QMouse\+Event $\ast$event, bool additive, const QVariant \&details, bool $\ast$selection\+State\+Changed) \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual void \mbox{\hyperlink{class_q_c_p_axis_a50c3ed18e189d48421ec2978f88e4f87}{select\+Event}} (QMouse\+Event $\ast$event, bool additive, const QVariant \&details, bool $\ast$selection\+State\+Changed) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_axis_a5bc1f8a8d0fbc7658eba70c80279ed31}{deselect\+Event}} (bool $\ast$selection\+State\+Changed) \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual void \mbox{\hyperlink{class_q_c_p_axis_a5bc1f8a8d0fbc7658eba70c80279ed31}{deselect\+Event}} (bool $\ast$selection\+State\+Changed) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
 virtual void \mbox{\hyperlink{class_q_c_p_axis_ac89c068873ee9197a5d2af715bdc1105}{mouse\+Press\+Event}} (QMouse\+Event $\ast$event, const QVariant \&details)
 \item 
@@ -345,15 +349,17 @@ QColor \mbox{\hyperlink{class_q_c_p_axis_ae914abd56afa570cb9f2ab50e59c0f0e}{get\
 \doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}}
 \begin{DoxyCompactItemize}
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_layerable_ab20b7dbd8e0249ed61adb9622c427382}{parent\+Plot\+Initialized}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_a36ed5b292b90934b524a4e5866a3526c}{parent\+Plot}})
+virtual void \mbox{\hyperlink{class_q_c_p_layerable_ab20b7dbd8e0249ed61adb9622c427382}{parent\+Plot\+Initialized}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$parent\+Plot)
 \item 
 virtual \mbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037}{QCP\+::\+Interaction}} \mbox{\hyperlink{class_q_c_p_layerable_a908c9edda761886f33893be326dab77d}{selection\+Category}} () const
 \item 
 virtual QRect \mbox{\hyperlink{class_q_c_p_layerable_acbcfc9ecc75433747b1978a77b1864b3}{clip\+Rect}} () const
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_layerable_afdf83ddc6a265cbf4c89fe99d3d93473}{apply\+Default\+Antialiasing\+Hint}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) const =0
+\mbox{\Hypertarget{class_q_c_p_layerable_afdf83ddc6a265cbf4c89fe99d3d93473}\label{class_q_c_p_layerable_afdf83ddc6a265cbf4c89fe99d3d93473}} 
+virtual void {\bfseries apply\+Default\+Antialiasing\+Hint} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) const =0
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_layerable_aecf2f7087482d4b6a78cb2770e5ed12d}{draw}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter)=0
+\mbox{\Hypertarget{class_q_c_p_layerable_aecf2f7087482d4b6a78cb2770e5ed12d}\label{class_q_c_p_layerable_aecf2f7087482d4b6a78cb2770e5ed12d}} 
+virtual void {\bfseries draw} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter)=0
 \item 
 virtual void \mbox{\hyperlink{class_q_c_p_layerable_a7498c2d0d081cf7cad0fb3bb93aa0e91}{select\+Event}} (QMouse\+Event $\ast$event, bool additive, const QVariant \&details, bool $\ast$selection\+State\+Changed)
 \item 
@@ -369,11 +375,11 @@ virtual void \mbox{\hyperlink{class_q_c_p_layerable_a4171e2e823aca242dd0279f00ed
 \item 
 virtual void \mbox{\hyperlink{class_q_c_p_layerable_a47dfd7b8fd99c08ca54e09c362b6f022}{wheel\+Event}} (QWheel\+Event $\ast$event)
 \item 
-void \mbox{\hyperlink{class_q_c_p_layerable_a8cbe5a0c9a5674249982f5ca5f8e02bc}{initialize\+Parent\+Plot}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_a36ed5b292b90934b524a4e5866a3526c}{parent\+Plot}})
+void \mbox{\hyperlink{class_q_c_p_layerable_a8cbe5a0c9a5674249982f5ca5f8e02bc}{initialize\+Parent\+Plot}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$parent\+Plot)
 \item 
 void \mbox{\hyperlink{class_q_c_p_layerable_aa23c893671f1f6744ac235cf2204cf3a}{set\+Parent\+Layerable}} (\mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}})
 \item 
-bool \mbox{\hyperlink{class_q_c_p_layerable_af94484cfb7cbbddb7de522e9be71d9a4}{move\+To\+Layer}} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_a9d4e121a7f1d2314f906fe698209cac9}{layer}}, bool prepend)
+bool \mbox{\hyperlink{class_q_c_p_layerable_af94484cfb7cbbddb7de522e9be71d9a4}{move\+To\+Layer}} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$layer, bool prepend)
 \item 
 void \mbox{\hyperlink{class_q_c_p_layerable_acb663e375d2d36dc5c55021ee5a2119b}{apply\+Antialiasing\+Hint}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter, bool local\+Antialiased, \mbox{\hyperlink{namespace_q_c_p_ae55dbe315d41fe80f29ba88100843a0c}{QCP\+::\+Antialiased\+Element}} override\+Element) const
 \end{DoxyCompactItemize}
@@ -498,6 +504,10 @@ Axes are always part of an axis rect, see \mbox{\hyperlink{class_q_c_p_axis_rect
 
 Each axis holds an instance of \mbox{\hyperlink{class_q_c_p_axis_ticker}{QCPAxis\+Ticker}} which is used to generate the tick coordinates and tick labels. You can access the currently installed \mbox{\hyperlink{class_q_c_p_axis_a7b7a27151be8235059e1294f73ecf615}{ticker}} or set a new one (possibly one of the specialized subclasses, or your own subclass) via \mbox{\hyperlink{class_q_c_p_axis_a4ee03fcd2c74d05cd1a419b9af5cfbdc}{set\+Ticker}}. For details, see the documentation of \mbox{\hyperlink{class_q_c_p_axis_ticker}{QCPAxis\+Ticker}}. 
 
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01911}{1911}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+
+
 \doxysubsection{Member Enumeration Documentation}
 \mbox{\Hypertarget{class_q_c_p_axis_ae2bcc1728b382f10f064612b368bc18a}\label{class_q_c_p_axis_ae2bcc1728b382f10f064612b368bc18a}} 
 \index{QCPAxis@{QCPAxis}!AxisType@{AxisType}}
@@ -523,6 +533,10 @@ at\+Bottom&{\ttfamily 0x08} Axis is horizontal and on the bottom side of the axi
 \hline
 
 \end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01964}{1964}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_a24b13374b9b8f75f47eed2ea78c37db9}\label{class_q_c_p_axis_a24b13374b9b8f75f47eed2ea78c37db9}} 
 \index{QCPAxis@{QCPAxis}!LabelSide@{LabelSide}}
 \index{LabelSide@{LabelSide}!QCPAxis@{QCPAxis}}
@@ -544,6 +558,10 @@ ls\+Outside&Tick labels will be displayed outside the axis rect. \\
 \hline
 
 \end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01977}{1977}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_a36d8e8658dbaa179bf2aeb973db2d6f0}\label{class_q_c_p_axis_a36d8e8658dbaa179bf2aeb973db2d6f0}} 
 \index{QCPAxis@{QCPAxis}!ScaleType@{ScaleType}}
 \index{ScaleType@{ScaleType}!QCPAxis@{QCPAxis}}
@@ -563,6 +581,10 @@ st\+Logarithmic&Logarithmic scaling with correspondingly transformed axis coordi
 \hline
 
 \end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01985}{1985}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_abee4c7a54c468b1385dfce2c898b115f}\label{class_q_c_p_axis_abee4c7a54c468b1385dfce2c898b115f}} 
 \index{QCPAxis@{QCPAxis}!SelectablePart@{SelectablePart}}
 \index{SelectablePart@{SelectablePart}!QCPAxis@{QCPAxis}}
@@ -592,6 +614,10 @@ sp\+Axis\+Label&The axis label. \\
 \end{DoxyEnumFields}
 
 
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01993}{1993}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_q_c_p_axis_ac62c042968bae0e6d474fcfc57c9b71f}\label{class_q_c_p_axis_ac62c042968bae0e6d474fcfc57c9b71f}} 
 \index{QCPAxis@{QCPAxis}!QCPAxis@{QCPAxis}}
@@ -601,11 +627,27 @@ sp\+Axis\+Label&The axis label. \\
 
 Constructs an Axis instance of Type {\itshape type} for the axis rect {\itshape parent}.
 
-Usually it isn\textquotesingle{}t necessary to instantiate axes directly, because you can let \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} create them for you with \mbox{\hyperlink{class_q_c_p_axis_rect_a2dc336092ccc57d44a46194c8a23e4f4}{QCPAxis\+Rect\+::add\+Axis}}. If you want to use own QCPAxis-\/subclasses however, create them manually and then inject them also via \mbox{\hyperlink{class_q_c_p_axis_rect_a2dc336092ccc57d44a46194c8a23e4f4}{QCPAxis\+Rect\+::add\+Axis}}. \mbox{\Hypertarget{class_q_c_p_axis_a7cfa27ea9da0bb1fe0ae995572c0b85d}\label{class_q_c_p_axis_a7cfa27ea9da0bb1fe0ae995572c0b85d}} 
+Usually it isn\textquotesingle{}t necessary to instantiate axes directly, because you can let \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} create them for you with \mbox{\hyperlink{class_q_c_p_axis_rect_a2dc336092ccc57d44a46194c8a23e4f4}{QCPAxis\+Rect\+::add\+Axis}}. If you want to use own QCPAxis-\/subclasses however, create them manually and then inject them also via \mbox{\hyperlink{class_q_c_p_axis_rect_a2dc336092ccc57d44a46194c8a23e4f4}{QCPAxis\+Rect\+::add\+Axis}}. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l07499}{7499}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_axis_ac62c042968bae0e6d474fcfc57c9b71f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_axis_a7cfa27ea9da0bb1fe0ae995572c0b85d}\label{class_q_c_p_axis_a7cfa27ea9da0bb1fe0ae995572c0b85d}} 
 \index{QCPAxis@{QCPAxis}!````~QCPAxis@{$\sim$QCPAxis}}
 \index{````~QCPAxis@{$\sim$QCPAxis}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{$\sim$QCPAxis()}{~QCPAxis()}}
 {\footnotesize\ttfamily QCPAxis\+::$\sim$\+QCPAxis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l07567}{7567}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 
 
@@ -618,7 +660,11 @@ Usually it isn\textquotesingle{}t necessary to instantiate axes directly, becaus
 
 
 
-Implements \mbox{\hyperlink{class_q_c_p_layerable_afdf83ddc6a265cbf4c89fe99d3d93473}{QCPLayerable}}.
+Implements \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}.
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l08945}{8945}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_a001b4ddefe6ea42d5e75866e235f62e8}\label{class_q_c_p_axis_a001b4ddefe6ea42d5e75866e235f62e8}} 
 \index{QCPAxis@{QCPAxis}!axisRect@{axisRect}}
@@ -626,11 +672,19 @@ Implements \mbox{\hyperlink{class_q_c_p_layerable_afdf83ddc6a265cbf4c89fe99d3d93
 \doxysubsubsection{\texorpdfstring{axisRect()}{axisRect()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_axis_rect}{QCPAxis\+Rect}} $\ast$ QCPAxis\+::axis\+Rect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02007}{2007}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_aa19679359783c5ecd27757b7e5619976}\label{class_q_c_p_axis_aa19679359783c5ecd27757b7e5619976}} 
 \index{QCPAxis@{QCPAxis}!axisType@{axisType}}
 \index{axisType@{axisType}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{axisType()}{axisType()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_axis_ae2bcc1728b382f10f064612b368bc18a}{Axis\+Type}} QCPAxis\+::axis\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02006}{2006}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_a216974be018e73008b3cf6d033c1325d}\label{class_q_c_p_axis_a216974be018e73008b3cf6d033c1325d}} 
 \index{QCPAxis@{QCPAxis}!basePen@{basePen}}
@@ -638,11 +692,19 @@ Implements \mbox{\hyperlink{class_q_c_p_layerable_afdf83ddc6a265cbf4c89fe99d3d93
 \doxysubsubsection{\texorpdfstring{basePen()}{basePen()}}
 {\footnotesize\ttfamily QPen QCPAxis\+::base\+Pen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02028}{2028}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_a47bdb0a55de6759489ee47665199aebb}\label{class_q_c_p_axis_a47bdb0a55de6759489ee47665199aebb}} 
 \index{QCPAxis@{QCPAxis}!calculateMargin@{calculateMargin}}
 \index{calculateMargin@{calculateMargin}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{calculateMargin()}{calculateMargin()}}
 {\footnotesize\ttfamily int QCPAxis\+::calculate\+Margin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l09106}{9106}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_af15d1b3a7f7e9b53d759d3ccff1fe4b4}\label{class_q_c_p_axis_af15d1b3a7f7e9b53d759d3ccff1fe4b4}} 
 \index{QCPAxis@{QCPAxis}!coordToPixel@{coordToPixel}}
@@ -650,7 +712,27 @@ Implements \mbox{\hyperlink{class_q_c_p_layerable_afdf83ddc6a265cbf4c89fe99d3d93
 \doxysubsubsection{\texorpdfstring{coordToPixel()}{coordToPixel()}}
 {\footnotesize\ttfamily double QCPAxis\+::coord\+To\+Pixel (\begin{DoxyParamCaption}\item[{double}]{value }\end{DoxyParamCaption}) const}
 
-Transforms {\itshape value}, in coordinates of the axis, to pixel coordinates of the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} widget. \mbox{\Hypertarget{class_q_c_p_axis_a5bc1f8a8d0fbc7658eba70c80279ed31}\label{class_q_c_p_axis_a5bc1f8a8d0fbc7658eba70c80279ed31}} 
+Transforms {\itshape value}, in coordinates of the axis, to pixel coordinates of the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} widget. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l08593}{8593}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{class_q_c_p_axis_af15d1b3a7f7e9b53d759d3ccff1fe4b4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_axis_af15d1b3a7f7e9b53d759d3ccff1fe4b4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_axis_a5bc1f8a8d0fbc7658eba70c80279ed31}\label{class_q_c_p_axis_a5bc1f8a8d0fbc7658eba70c80279ed31}} 
 \index{QCPAxis@{QCPAxis}!deselectEvent@{deselectEvent}}
 \index{deselectEvent@{deselectEvent}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{deselectEvent()}{deselectEvent()}}
@@ -658,7 +740,11 @@ Transforms {\itshape value}, in coordinates of the axis, to pixel coordinates of
 
 
 
-Reimplemented from \mbox{\hyperlink{class_q_c_p_layerable_ae546370644a5551c76af739afc008bee}{QCPLayerable}}.
+Reimplemented from \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}.
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l08791}{8791}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_ac15ebb4225ca5212d8e5fffae481bc9b}\label{class_q_c_p_axis_ac15ebb4225ca5212d8e5fffae481bc9b}} 
 \index{QCPAxis@{QCPAxis}!draw@{draw}}
@@ -668,7 +754,11 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_layerable_ae546370644a5551c76af7
 
 
 
-Implements \mbox{\hyperlink{class_q_c_p_layerable_aecf2f7087482d4b6a78cb2770e5ed12d}{QCPLayerable}}.
+Implements \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}.
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l08956}{8956}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_a8cd3764c6a4ce9c3d7d913e81cad0a50}\label{class_q_c_p_axis_a8cd3764c6a4ce9c3d7d913e81cad0a50}} 
 \index{QCPAxis@{QCPAxis}!getBasePen@{getBasePen}}
@@ -676,17 +766,29 @@ Implements \mbox{\hyperlink{class_q_c_p_layerable_aecf2f7087482d4b6a78cb2770e5ed
 \doxysubsubsection{\texorpdfstring{getBasePen()}{getBasePen()}}
 {\footnotesize\ttfamily QPen QCPAxis\+::get\+Base\+Pen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l09027}{9027}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_ae914abd56afa570cb9f2ab50e59c0f0e}\label{class_q_c_p_axis_ae914abd56afa570cb9f2ab50e59c0f0e}} 
 \index{QCPAxis@{QCPAxis}!getLabelColor@{getLabelColor}}
 \index{getLabelColor@{getLabelColor}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{getLabelColor()}{getLabelColor()}}
 {\footnotesize\ttfamily QColor QCPAxis\+::get\+Label\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l09087}{9087}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_aeac21c907d2516af9cde9a463043d671}\label{class_q_c_p_axis_aeac21c907d2516af9cde9a463043d671}} 
 \index{QCPAxis@{QCPAxis}!getLabelFont@{getLabelFont}}
 \index{getLabelFont@{getLabelFont}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{getLabelFont()}{getLabelFont()}}
 {\footnotesize\ttfamily QFont QCPAxis\+::get\+Label\+Font (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l09067}{9067}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_a22ab2d71d7341b9b3974c0dd10619af2}\label{class_q_c_p_axis_a22ab2d71d7341b9b3974c0dd10619af2}} 
 \index{QCPAxis@{QCPAxis}!getPartAt@{getPartAt}}
@@ -701,11 +803,27 @@ If the axis is not visible (\mbox{\hyperlink{class_q_c_p_layerable_a3bed99ddc396
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_axis_ab9d7a69277dcbed9119b3c1f25ca19c3}{set\+Selected\+Parts}}, \mbox{\hyperlink{class_q_c_p_axis_a513f9b9e326c505d9bec54880031b085}{set\+Selectable\+Parts}}, \mbox{\hyperlink{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5}{QCustom\+Plot\+::set\+Interactions}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l08651}{8651}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{class_q_c_p_axis_a22ab2d71d7341b9b3974c0dd10619af2_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_axis_aad7739c229b292ddab0b3a43a5676f54}\label{class_q_c_p_axis_aad7739c229b292ddab0b3a43a5676f54}} 
 \index{QCPAxis@{QCPAxis}!getSubTickPen@{getSubTickPen}}
 \index{getSubTickPen@{getSubTickPen}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{getSubTickPen()}{getSubTickPen()}}
 {\footnotesize\ttfamily QPen QCPAxis\+::get\+Sub\+Tick\+Pen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l09047}{9047}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_a8d00d5b78ecfbebbea5a8161bddb9a17}\label{class_q_c_p_axis_a8d00d5b78ecfbebbea5a8161bddb9a17}} 
 \index{QCPAxis@{QCPAxis}!getTickLabelColor@{getTickLabelColor}}
@@ -713,17 +831,29 @@ If the axis is not visible (\mbox{\hyperlink{class_q_c_p_layerable_a3bed99ddc396
 \doxysubsubsection{\texorpdfstring{getTickLabelColor()}{getTickLabelColor()}}
 {\footnotesize\ttfamily QColor QCPAxis\+::get\+Tick\+Label\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l09077}{9077}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_a694ab8b4240f3c90a866372e3dcb364f}\label{class_q_c_p_axis_a694ab8b4240f3c90a866372e3dcb364f}} 
 \index{QCPAxis@{QCPAxis}!getTickLabelFont@{getTickLabelFont}}
 \index{getTickLabelFont@{getTickLabelFont}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{getTickLabelFont()}{getTickLabelFont()}}
 {\footnotesize\ttfamily QFont QCPAxis\+::get\+Tick\+Label\+Font (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l09057}{9057}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_afe7d57415cbbf31e5549a5cc40b6f8d8}\label{class_q_c_p_axis_afe7d57415cbbf31e5549a5cc40b6f8d8}} 
 \index{QCPAxis@{QCPAxis}!getTickPen@{getTickPen}}
 \index{getTickPen@{getTickPen}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{getTickPen()}{getTickPen()}}
 {\footnotesize\ttfamily QPen QCPAxis\+::get\+Tick\+Pen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l09037}{9037}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_ad590c0da223697a2727f97a520870fec}\label{class_q_c_p_axis_ad590c0da223697a2727f97a520870fec}} 
 \index{QCPAxis@{QCPAxis}!graphs@{graphs}}
@@ -736,13 +866,29 @@ Returns a list of all the graphs that have this axis as key or value axis.
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_axis_ac5e0f6f65c75efb5fd32275d6e4ef0d6}{plottables}}, \mbox{\hyperlink{class_q_c_p_axis_a42761bc68e2f3a9f68549d45b73f705b}{items}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l08704}{8704}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_a63f1dd2df663680d2a8d06c19592dd63}\label{class_q_c_p_axis_a63f1dd2df663680d2a8d06c19592dd63}} 
 \index{QCPAxis@{QCPAxis}!grid@{grid}}
 \index{grid@{grid}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{grid()}{grid()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_grid}{QCPGrid}} $\ast$ QCPAxis\+::grid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Returns the \mbox{\hyperlink{class_q_c_p_grid}{QCPGrid}} instance belonging to this axis. Access it to set details about the way the grid is displayed. \mbox{\Hypertarget{class_q_c_p_axis_a42761bc68e2f3a9f68549d45b73f705b}\label{class_q_c_p_axis_a42761bc68e2f3a9f68549d45b73f705b}} 
+Returns the \mbox{\hyperlink{class_q_c_p_grid}{QCPGrid}} instance belonging to this axis. Access it to set details about the way the grid is displayed. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02048}{2048}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_axis_a63f1dd2df663680d2a8d06c19592dd63_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_axis_a42761bc68e2f3a9f68549d45b73f705b}\label{class_q_c_p_axis_a42761bc68e2f3a9f68549d45b73f705b}} 
 \index{QCPAxis@{QCPAxis}!items@{items}}
 \index{items@{items}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{items()}{items()}}
@@ -753,11 +899,19 @@ Returns a list of all the items that are associated with this axis. An item is c
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_axis_ac5e0f6f65c75efb5fd32275d6e4ef0d6}{plottables}}, \mbox{\hyperlink{class_q_c_p_axis_ad590c0da223697a2727f97a520870fec}{graphs}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l08723}{8723}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_a32ba4d3effcddd8af3bc49f405e1d53e}\label{class_q_c_p_axis_a32ba4d3effcddd8af3bc49f405e1d53e}} 
 \index{QCPAxis@{QCPAxis}!label@{label}}
 \index{label@{label}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{label()}{label()}}
 {\footnotesize\ttfamily QString QCPAxis\+::label (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02033}{2033}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_a05794f13d322da7fd9d5554d11186b0e}\label{class_q_c_p_axis_a05794f13d322da7fd9d5554d11186b0e}} 
 \index{QCPAxis@{QCPAxis}!labelColor@{labelColor}}
@@ -765,11 +919,19 @@ Returns a list of all the items that are associated with this axis. An item is c
 \doxysubsubsection{\texorpdfstring{labelColor()}{labelColor()}}
 {\footnotesize\ttfamily QColor QCPAxis\+::label\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02032}{2032}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_aa7b465fe233f1878793954ba5ab9c47e}\label{class_q_c_p_axis_aa7b465fe233f1878793954ba5ab9c47e}} 
 \index{QCPAxis@{QCPAxis}!labelFont@{labelFont}}
 \index{labelFont@{labelFont}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{labelFont()}{labelFont()}}
 {\footnotesize\ttfamily QFont QCPAxis\+::label\+Font (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02031}{2031}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_a6d9a9fe1c7166f209fb1e25686390451}\label{class_q_c_p_axis_a6d9a9fe1c7166f209fb1e25686390451}} 
 \index{QCPAxis@{QCPAxis}!labelPadding@{labelPadding}}
@@ -777,11 +939,19 @@ Returns a list of all the items that are associated with this axis. An item is c
 \doxysubsubsection{\texorpdfstring{labelPadding()}{labelPadding()}}
 {\footnotesize\ttfamily int QCPAxis\+::label\+Padding (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l07630}{7630}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_a0cc60e5694ed4df6a2c3554e53ee6ae7}\label{class_q_c_p_axis_a0cc60e5694ed4df6a2c3554e53ee6ae7}} 
 \index{QCPAxis@{QCPAxis}!lowerEnding@{lowerEnding}}
 \index{lowerEnding@{lowerEnding}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{lowerEnding()}{lowerEnding()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_line_ending}{QCPLine\+Ending}} QCPAxis\+::lower\+Ending (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l07642}{7642}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_ac0a6b77bd52bec6c81cd62d167cfeba6}\label{class_q_c_p_axis_ac0a6b77bd52bec6c81cd62d167cfeba6}} 
 \index{QCPAxis@{QCPAxis}!marginSideToAxisType@{marginSideToAxisType}}
@@ -789,7 +959,11 @@ Returns a list of all the items that are associated with this axis. An item is c
 \doxysubsubsection{\texorpdfstring{marginSideToAxisType()}{marginSideToAxisType()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_axis_ae2bcc1728b382f10f064612b368bc18a}{QCPAxis\+::\+Axis\+Type}} QCPAxis\+::margin\+Side\+To\+Axis\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_q_c_p_a7e487e3e2ccb62ab7771065bab7cae54}{QCP\+::\+Margin\+Side}}}]{side }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-Transforms a margin side to the logically corresponding axis type. (\mbox{\hyperlink{namespace_q_c_p_a7e487e3e2ccb62ab7771065bab7cae54a9500c8bfcc9e80b9dff0a8e00e867f07}{QCP\+::ms\+Left}} to \mbox{\hyperlink{class_q_c_p_axis_ae2bcc1728b382f10f064612b368bc18aaf84aa6cac6fb6099f54a2cbf7546b730}{QCPAxis\+::at\+Left}}, \mbox{\hyperlink{namespace_q_c_p_a7e487e3e2ccb62ab7771065bab7cae54a93c719593bb2b94ed244d52c86d83b65}{QCP\+::ms\+Right}} to \mbox{\hyperlink{class_q_c_p_axis_ae2bcc1728b382f10f064612b368bc18aadf5509f7d29199ef2f263b1dd224b345}{QCPAxis\+::at\+Right}}, etc.) \mbox{\Hypertarget{class_q_c_p_axis_a2a89a13440eec099fc2327c2672be0cd}\label{class_q_c_p_axis_a2a89a13440eec099fc2327c2672be0cd}} 
+Transforms a margin side to the logically corresponding axis type. (\mbox{\hyperlink{namespace_q_c_p_a7e487e3e2ccb62ab7771065bab7cae54a9500c8bfcc9e80b9dff0a8e00e867f07}{QCP\+::ms\+Left}} to \mbox{\hyperlink{class_q_c_p_axis_ae2bcc1728b382f10f064612b368bc18aaf84aa6cac6fb6099f54a2cbf7546b730}{QCPAxis\+::at\+Left}}, \mbox{\hyperlink{namespace_q_c_p_a7e487e3e2ccb62ab7771065bab7cae54a93c719593bb2b94ed244d52c86d83b65}{QCP\+::ms\+Right}} to \mbox{\hyperlink{class_q_c_p_axis_ae2bcc1728b382f10f064612b368bc18aadf5509f7d29199ef2f263b1dd224b345}{QCPAxis\+::at\+Right}}, etc.) 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l08747}{8747}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+\mbox{\Hypertarget{class_q_c_p_axis_a2a89a13440eec099fc2327c2672be0cd}\label{class_q_c_p_axis_a2a89a13440eec099fc2327c2672be0cd}} 
 \index{QCPAxis@{QCPAxis}!mouseMoveEvent@{mouseMoveEvent}}
 \index{mouseMoveEvent@{mouseMoveEvent}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{mouseMoveEvent()}{mouseMoveEvent()}}
@@ -808,6 +982,18 @@ The default implementation does nothing.
 
 Reimplemented from \mbox{\hyperlink{class_q_c_p_layerable_a9eee1ba47fd69be111059ca3881933e4}{QCPLayerable}}.
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l08852}{8852}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_axis_a2a89a13440eec099fc2327c2672be0cd_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_axis_ac89c068873ee9197a5d2af715bdc1105}\label{class_q_c_p_axis_ac89c068873ee9197a5d2af715bdc1105}} 
 \index{QCPAxis@{QCPAxis}!mousePressEvent@{mousePressEvent}}
 \index{mousePressEvent@{mousePressEvent}!QCPAxis@{QCPAxis}}
@@ -831,6 +1017,18 @@ The default implementation does nothing except explicitly ignoring the event wit
 
 Reimplemented from \mbox{\hyperlink{class_q_c_p_layerable_af6567604818db90f4fd52822f8bc8376}{QCPLayerable}}.
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l08814}{8814}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_axis_ac89c068873ee9197a5d2af715bdc1105_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_axis_a35663b938ad83e91c0b8e59dbc8c6b18}\label{class_q_c_p_axis_a35663b938ad83e91c0b8e59dbc8c6b18}} 
 \index{QCPAxis@{QCPAxis}!mouseReleaseEvent@{mouseReleaseEvent}}
 \index{mouseReleaseEvent@{mouseReleaseEvent}!QCPAxis@{QCPAxis}}
@@ -850,6 +1048,18 @@ The default implementation does nothing.
 
 Reimplemented from \mbox{\hyperlink{class_q_c_p_layerable_aa0d79b005686f668622bbe66ac03ba2c}{QCPLayerable}}.
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l08886}{8886}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_axis_a35663b938ad83e91c0b8e59dbc8c6b18_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_axis_a18f3a68f2b691af1fd34b6593c886630}\label{class_q_c_p_axis_a18f3a68f2b691af1fd34b6593c886630}} 
 \index{QCPAxis@{QCPAxis}!moveRange@{moveRange}}
 \index{moveRange@{moveRange}!QCPAxis@{QCPAxis}}
@@ -858,11 +1068,19 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_layerable_aa0d79b005686f668622bb
 
 If the scale type (\mbox{\hyperlink{class_q_c_p_axis_adef29cae617af4f519f6c40d1a866ca6}{set\+Scale\+Type}}) is \mbox{\hyperlink{class_q_c_p_axis_a36d8e8658dbaa179bf2aeb973db2d6f0aff6e30a11a828bc850caffab0ff994f6}{st\+Linear}}, {\itshape diff} is added to the lower and upper bounds of the range. The range is simply moved by {\itshape diff}.
 
-If the scale type is \mbox{\hyperlink{class_q_c_p_axis_a36d8e8658dbaa179bf2aeb973db2d6f0abf5b785ad976618816dc6f79b73216d4}{st\+Logarithmic}}, the range bounds are multiplied by {\itshape diff}. This corresponds to an apparent \char`\"{}linear\char`\"{} move in logarithmic scaling by a distance of log(diff). \mbox{\Hypertarget{class_q_c_p_axis_a20cc29c2f282a0e9efd8f32145e47be6}\label{class_q_c_p_axis_a20cc29c2f282a0e9efd8f32145e47be6}} 
+If the scale type is \mbox{\hyperlink{class_q_c_p_axis_a36d8e8658dbaa179bf2aeb973db2d6f0abf5b785ad976618816dc6f79b73216d4}{st\+Logarithmic}}, the range bounds are multiplied by {\itshape diff}. This corresponds to an apparent \char`\"{}linear\char`\"{} move in logarithmic scaling by a distance of log(diff). 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l08404}{8404}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+\mbox{\Hypertarget{class_q_c_p_axis_a20cc29c2f282a0e9efd8f32145e47be6}\label{class_q_c_p_axis_a20cc29c2f282a0e9efd8f32145e47be6}} 
 \index{QCPAxis@{QCPAxis}!numberFormat@{numberFormat}}
 \index{numberFormat@{numberFormat}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{numberFormat()}{numberFormat()}}
 {\footnotesize\ttfamily QString QCPAxis\+::number\+Format (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l07592}{7592}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_a2562b6f3a4a01c7ed83a388042664998}\label{class_q_c_p_axis_a2562b6f3a4a01c7ed83a388042664998}} 
 \index{QCPAxis@{QCPAxis}!numberPrecision@{numberPrecision}}
@@ -870,11 +1088,19 @@ If the scale type is \mbox{\hyperlink{class_q_c_p_axis_a36d8e8658dbaa179bf2aeb97
 \doxysubsubsection{\texorpdfstring{numberPrecision()}{numberPrecision()}}
 {\footnotesize\ttfamily int QCPAxis\+::number\+Precision (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02020}{2020}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_aef66fa16353b4993b1cceabfb644a1a9}\label{class_q_c_p_axis_aef66fa16353b4993b1cceabfb644a1a9}} 
 \index{QCPAxis@{QCPAxis}!offset@{offset}}
 \index{offset@{offset}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{offset()}{offset()}}
 {\footnotesize\ttfamily int QCPAxis\+::offset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l07636}{7636}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_aa85ba73dfee6483e23825461b725e363}\label{class_q_c_p_axis_aa85ba73dfee6483e23825461b725e363}} 
 \index{QCPAxis@{QCPAxis}!opposite@{opposite}}
@@ -882,7 +1108,11 @@ If the scale type is \mbox{\hyperlink{class_q_c_p_axis_a36d8e8658dbaa179bf2aeb97
 \doxysubsubsection{\texorpdfstring{opposite()}{opposite()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_axis_ae2bcc1728b382f10f064612b368bc18a}{QCPAxis\+::\+Axis\+Type}} QCPAxis\+::opposite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_axis_ae2bcc1728b382f10f064612b368bc18a}{QCPAxis\+::\+Axis\+Type}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-Returns the axis type that describes the opposite axis of an axis with the specified {\itshape type}. \mbox{\Hypertarget{class_q_c_p_axis_ab988ef4538e2655bb77bd138189cd42e}\label{class_q_c_p_axis_ab988ef4538e2655bb77bd138189cd42e}} 
+Returns the axis type that describes the opposite axis of an axis with the specified {\itshape type}. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l08764}{8764}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+\mbox{\Hypertarget{class_q_c_p_axis_ab988ef4538e2655bb77bd138189cd42e}\label{class_q_c_p_axis_ab988ef4538e2655bb77bd138189cd42e}} 
 \index{QCPAxis@{QCPAxis}!orientation@{orientation}}
 \index{orientation@{orientation}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{orientation()}{orientation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -893,6 +1123,18 @@ Returns the orientation of this axis. The axis orientation (horizontal or vertic
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_axis_a9a68b3e45f1b1e33d4d807822342516c}{orientation(\+Axis\+Type type)}}, \mbox{\hyperlink{class_q_c_p_axis_a45c45bed7e5666683b8d56afa66fa51f}{pixel\+Orientation}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02100}{2100}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_axis_ab988ef4538e2655bb77bd138189cd42e_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_axis_a9a68b3e45f1b1e33d4d807822342516c}\label{class_q_c_p_axis_a9a68b3e45f1b1e33d4d807822342516c}} 
 \index{QCPAxis@{QCPAxis}!orientation@{orientation}}
 \index{orientation@{orientation}!QCPAxis@{QCPAxis}}
@@ -904,11 +1146,19 @@ Returns the orientation of the specified axis type
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_axis_ab988ef4538e2655bb77bd138189cd42e}{orientation()}}, \mbox{\hyperlink{class_q_c_p_axis_a45c45bed7e5666683b8d56afa66fa51f}{pixel\+Orientation}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02115}{2115}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_a07df379d5c017b8f3a4702532eb037b2}\label{class_q_c_p_axis_a07df379d5c017b8f3a4702532eb037b2}} 
 \index{QCPAxis@{QCPAxis}!padding@{padding}}
 \index{padding@{padding}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{padding()}{padding()}}
 {\footnotesize\ttfamily int QCPAxis\+::padding (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02035}{2035}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_a45c45bed7e5666683b8d56afa66fa51f}\label{class_q_c_p_axis_a45c45bed7e5666683b8d56afa66fa51f}} 
 \index{QCPAxis@{QCPAxis}!pixelOrientation@{pixelOrientation}}
@@ -929,13 +1179,37 @@ For example, this is useful to easily shift axis coordinates by a certain amount
 \end{DoxyCode}
 
 
-{\itshape new\+Key} will then contain a key that is ten pixels towards higher keys, starting from {\itshape old\+Key}. \mbox{\Hypertarget{class_q_c_p_axis_a536ef8f624cac59b6b6fdcb495723c57}\label{class_q_c_p_axis_a536ef8f624cac59b6b6fdcb495723c57}} 
+{\itshape new\+Key} will then contain a key that is ten pixels towards higher keys, starting from {\itshape old\+Key}. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02101}{2101}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+\mbox{\Hypertarget{class_q_c_p_axis_a536ef8f624cac59b6b6fdcb495723c57}\label{class_q_c_p_axis_a536ef8f624cac59b6b6fdcb495723c57}} 
 \index{QCPAxis@{QCPAxis}!pixelToCoord@{pixelToCoord}}
 \index{pixelToCoord@{pixelToCoord}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{pixelToCoord()}{pixelToCoord()}}
 {\footnotesize\ttfamily double QCPAxis\+::pixel\+To\+Coord (\begin{DoxyParamCaption}\item[{double}]{value }\end{DoxyParamCaption}) const}
 
-Transforms {\itshape value}, in pixel coordinates of the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} widget, to axis coordinates. \mbox{\Hypertarget{class_q_c_p_axis_ac5e0f6f65c75efb5fd32275d6e4ef0d6}\label{class_q_c_p_axis_ac5e0f6f65c75efb5fd32275d6e4ef0d6}} 
+Transforms {\itshape value}, in pixel coordinates of the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} widget, to axis coordinates. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l08555}{8555}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{class_q_c_p_axis_a536ef8f624cac59b6b6fdcb495723c57_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_axis_a536ef8f624cac59b6b6fdcb495723c57_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_axis_ac5e0f6f65c75efb5fd32275d6e4ef0d6}\label{class_q_c_p_axis_ac5e0f6f65c75efb5fd32275d6e4ef0d6}} 
 \index{QCPAxis@{QCPAxis}!plottables@{plottables}}
 \index{plottables@{plottables}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{plottables()}{plottables()}}
@@ -948,11 +1222,27 @@ If you are only interested in plottables of type \mbox{\hyperlink{class_q_c_p_gr
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_axis_ad590c0da223697a2727f97a520870fec}{graphs}}, \mbox{\hyperlink{class_q_c_p_axis_a42761bc68e2f3a9f68549d45b73f705b}{items}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l08686}{8686}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_axis_ac5e0f6f65c75efb5fd32275d6e4ef0d6_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_axis_ac4058855a81f1a883cf2e754f6a6acb1}\label{class_q_c_p_axis_ac4058855a81f1a883cf2e754f6a6acb1}} 
 \index{QCPAxis@{QCPAxis}!range@{range}}
 \index{range@{range}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{range()}{range()}}
 {\footnotesize\ttfamily const \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} QCPAxis\+::range (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02009}{2009}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_a0894084e4c16a1736534c4095746f910}\label{class_q_c_p_axis_a0894084e4c16a1736534c4095746f910}} 
 \index{QCPAxis@{QCPAxis}!rangeChanged@{rangeChanged}}
@@ -967,7 +1257,15 @@ You may also manipulate/correct the range with \mbox{\hyperlink{class_q_c_p_axis
 \DoxyCodeLine{customPlot-\/>xAxis-\/>setRange(newRange.bounded(0,\ 10))}
 
 \end{DoxyCode}
- \mbox{\Hypertarget{class_q_c_p_axis_aac8576288e8e31f16186124bc10dd10d}\label{class_q_c_p_axis_aac8576288e8e31f16186124bc10dd10d}} 
+ Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_axis_a0894084e4c16a1736534c4095746f910_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_axis_aac8576288e8e31f16186124bc10dd10d}\label{class_q_c_p_axis_aac8576288e8e31f16186124bc10dd10d}} 
 \index{QCPAxis@{QCPAxis}!rangeChanged@{rangeChanged}}
 \index{rangeChanged@{rangeChanged}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{rangeChanged}{rangeChanged}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
@@ -981,6 +1279,10 @@ Additionally to the new range, this signal also provides the previous range held
 \doxysubsubsection{\texorpdfstring{rangeReversed()}{rangeReversed()}}
 {\footnotesize\ttfamily bool QCPAxis\+::range\+Reversed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02010}{2010}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_a499345f02ebce4b23d8ccec96e58daa9}\label{class_q_c_p_axis_a499345f02ebce4b23d8ccec96e58daa9}} 
 \index{QCPAxis@{QCPAxis}!rescale@{rescale}}
 \index{rescale@{rescale}!QCPAxis@{QCPAxis}}
@@ -992,6 +1294,26 @@ Changes the axis range such that all plottables associated with this axis are fu
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_abstract_plottable_a1491c4a606bccd2d09e65e11b79eb882}{QCPAbstract\+Plottable\+::rescale\+Axes}}, \mbox{\hyperlink{class_q_custom_plot_ad86528f2cee6c7e446dea4a6e8839935}{QCustom\+Plot\+::rescale\+Axes}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l08506}{8506}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_axis_a499345f02ebce4b23d8ccec96e58daa9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{class_q_c_p_axis_a499345f02ebce4b23d8ccec96e58daa9_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_axis_a31d18ddf3a4f21ceb077db8ae5b69856}\label{class_q_c_p_axis_a31d18ddf3a4f21ceb077db8ae5b69856}} 
 \index{QCPAxis@{QCPAxis}!scaleRange@{scaleRange}}
 \index{scaleRange@{scaleRange}!QCPAxis@{QCPAxis}}
@@ -1000,7 +1322,27 @@ Changes the axis range such that all plottables associated with this axis are fu
 
 Scales the range of this axis by {\itshape factor} around the center of the current axis range. For example, if {\itshape factor} is 2.\+0, then the axis range will double its size, and the point at the axis range center won\textquotesingle{}t have changed its position in the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} widget (i.\+e. coordinates around the center will have moved symmetrically closer).
 
-If you wish to scale around a different coordinate than the current axis range center, use the overload \mbox{\hyperlink{class_q_c_p_axis_a7072ff96fe690148f1bbcdb4f773ea1c}{scale\+Range(double factor, double center)}}. \mbox{\Hypertarget{class_q_c_p_axis_a7072ff96fe690148f1bbcdb4f773ea1c}\label{class_q_c_p_axis_a7072ff96fe690148f1bbcdb4f773ea1c}} 
+If you wish to scale around a different coordinate than the current axis range center, use the overload \mbox{\hyperlink{class_q_c_p_axis_a7072ff96fe690148f1bbcdb4f773ea1c}{scale\+Range(double factor, double center)}}. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l08429}{8429}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{class_q_c_p_axis_a31d18ddf3a4f21ceb077db8ae5b69856_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{class_q_c_p_axis_a31d18ddf3a4f21ceb077db8ae5b69856_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_axis_a7072ff96fe690148f1bbcdb4f773ea1c}\label{class_q_c_p_axis_a7072ff96fe690148f1bbcdb4f773ea1c}} 
 \index{QCPAxis@{QCPAxis}!scaleRange@{scaleRange}}
 \index{scaleRange@{scaleRange}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{scaleRange()}{scaleRange()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
@@ -1013,11 +1355,27 @@ Scales the range of this axis by {\itshape factor} around the coordinate {\itsha
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_axis_a31d18ddf3a4f21ceb077db8ae5b69856}{scale\+Range(double factor)}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l08443}{8443}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_axis_a7072ff96fe690148f1bbcdb4f773ea1c_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_axis_ad23e9ad97b44e9aeaf4fab8904280098}\label{class_q_c_p_axis_ad23e9ad97b44e9aeaf4fab8904280098}} 
 \index{QCPAxis@{QCPAxis}!scaleType@{scaleType}}
 \index{scaleType@{scaleType}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{scaleType()}{scaleType()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_axis_a36d8e8658dbaa179bf2aeb973db2d6f0}{Scale\+Type}} QCPAxis\+::scale\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02008}{2008}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_a3505ed8a93bd2e349d858d84996bf767}\label{class_q_c_p_axis_a3505ed8a93bd2e349d858d84996bf767}} 
 \index{QCPAxis@{QCPAxis}!scaleTypeChanged@{scaleTypeChanged}}
@@ -1025,17 +1383,37 @@ Scales the range of this axis by {\itshape factor} around the coordinate {\itsha
 \doxysubsubsection{\texorpdfstring{scaleTypeChanged}{scaleTypeChanged}}
 {\footnotesize\ttfamily void QCPAxis\+::scale\+Type\+Changed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_axis_a36d8e8658dbaa179bf2aeb973db2d6f0}{QCPAxis\+::\+Scale\+Type}}}]{scale\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
 
-This signal is emitted when the scale type changes, by calls to \mbox{\hyperlink{class_q_c_p_axis_adef29cae617af4f519f6c40d1a866ca6}{set\+Scale\+Type}} \mbox{\Hypertarget{class_q_c_p_axis_aa5ff1fd851139028a3bb4efcb31de9fc}\label{class_q_c_p_axis_aa5ff1fd851139028a3bb4efcb31de9fc}} 
+This signal is emitted when the scale type changes, by calls to \mbox{\hyperlink{class_q_c_p_axis_adef29cae617af4f519f6c40d1a866ca6}{set\+Scale\+Type}} Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_axis_a3505ed8a93bd2e349d858d84996bf767_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_axis_aa5ff1fd851139028a3bb4efcb31de9fc}\label{class_q_c_p_axis_aa5ff1fd851139028a3bb4efcb31de9fc}} 
 \index{QCPAxis@{QCPAxis}!selectableChanged@{selectableChanged}}
 \index{selectableChanged@{selectableChanged}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{selectableChanged}{selectableChanged}}
 {\footnotesize\ttfamily void QCPAxis\+::selectable\+Changed (\begin{DoxyParamCaption}\item[{const QCPAxis\+::\+Selectable\+Parts \&}]{parts }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
 
-This signal is emitted when the selectability changes, by calls to \mbox{\hyperlink{class_q_c_p_axis_a513f9b9e326c505d9bec54880031b085}{set\+Selectable\+Parts}} \mbox{\Hypertarget{class_q_c_p_axis_a1d12d157756c114f4e57517c62177181}\label{class_q_c_p_axis_a1d12d157756c114f4e57517c62177181}} 
+This signal is emitted when the selectability changes, by calls to \mbox{\hyperlink{class_q_c_p_axis_a513f9b9e326c505d9bec54880031b085}{set\+Selectable\+Parts}} Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_axis_aa5ff1fd851139028a3bb4efcb31de9fc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_axis_a1d12d157756c114f4e57517c62177181}\label{class_q_c_p_axis_a1d12d157756c114f4e57517c62177181}} 
 \index{QCPAxis@{QCPAxis}!selectableParts@{selectableParts}}
 \index{selectableParts@{selectableParts}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{selectableParts()}{selectableParts()}}
 {\footnotesize\ttfamily Selectable\+Parts QCPAxis\+::selectable\+Parts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02038}{2038}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_a0d54314ab3053fd0fb77294a0e7f08cb}\label{class_q_c_p_axis_a0d54314ab3053fd0fb77294a0e7f08cb}} 
 \index{QCPAxis@{QCPAxis}!selectedBasePen@{selectedBasePen}}
@@ -1043,11 +1421,19 @@ This signal is emitted when the selectability changes, by calls to \mbox{\hyperl
 \doxysubsubsection{\texorpdfstring{selectedBasePen()}{selectedBasePen()}}
 {\footnotesize\ttfamily QPen QCPAxis\+::selected\+Base\+Pen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02043}{2043}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_a7adea64ef4b715e7a1c519fff2b110b8}\label{class_q_c_p_axis_a7adea64ef4b715e7a1c519fff2b110b8}} 
 \index{QCPAxis@{QCPAxis}!selectedLabelColor@{selectedLabelColor}}
 \index{selectedLabelColor@{selectedLabelColor}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{selectedLabelColor()}{selectedLabelColor()}}
 {\footnotesize\ttfamily QColor QCPAxis\+::selected\+Label\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02042}{2042}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_a1399d614f7c307159bfec938a069203d}\label{class_q_c_p_axis_a1399d614f7c307159bfec938a069203d}} 
 \index{QCPAxis@{QCPAxis}!selectedLabelFont@{selectedLabelFont}}
@@ -1055,11 +1441,19 @@ This signal is emitted when the selectability changes, by calls to \mbox{\hyperl
 \doxysubsubsection{\texorpdfstring{selectedLabelFont()}{selectedLabelFont()}}
 {\footnotesize\ttfamily QFont QCPAxis\+::selected\+Label\+Font (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02040}{2040}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_a893e8d6cfed9267eb2b793cb1d2b4dce}\label{class_q_c_p_axis_a893e8d6cfed9267eb2b793cb1d2b4dce}} 
 \index{QCPAxis@{QCPAxis}!selectedParts@{selectedParts}}
 \index{selectedParts@{selectedParts}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{selectedParts()}{selectedParts()}}
 {\footnotesize\ttfamily Selectable\+Parts QCPAxis\+::selected\+Parts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02037}{2037}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_a73c147bb2c5598edbb842adc2da8a7bf}\label{class_q_c_p_axis_a73c147bb2c5598edbb842adc2da8a7bf}} 
 \index{QCPAxis@{QCPAxis}!selectedSubTickPen@{selectedSubTickPen}}
@@ -1067,11 +1461,19 @@ This signal is emitted when the selectability changes, by calls to \mbox{\hyperl
 \doxysubsubsection{\texorpdfstring{selectedSubTickPen()}{selectedSubTickPen()}}
 {\footnotesize\ttfamily QPen QCPAxis\+::selected\+Sub\+Tick\+Pen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02045}{2045}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_a75f11d3031a11559f3e984e916fcde2c}\label{class_q_c_p_axis_a75f11d3031a11559f3e984e916fcde2c}} 
 \index{QCPAxis@{QCPAxis}!selectedTickLabelColor@{selectedTickLabelColor}}
 \index{selectedTickLabelColor@{selectedTickLabelColor}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{selectedTickLabelColor()}{selectedTickLabelColor()}}
 {\footnotesize\ttfamily QColor QCPAxis\+::selected\+Tick\+Label\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02041}{2041}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_a09817512bef8ddfb669a6828f9c855bc}\label{class_q_c_p_axis_a09817512bef8ddfb669a6828f9c855bc}} 
 \index{QCPAxis@{QCPAxis}!selectedTickLabelFont@{selectedTickLabelFont}}
@@ -1079,11 +1481,19 @@ This signal is emitted when the selectability changes, by calls to \mbox{\hyperl
 \doxysubsubsection{\texorpdfstring{selectedTickLabelFont()}{selectedTickLabelFont()}}
 {\footnotesize\ttfamily QFont QCPAxis\+::selected\+Tick\+Label\+Font (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02039}{2039}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_a76b52a6d824ccf9a95eb024251e1b833}\label{class_q_c_p_axis_a76b52a6d824ccf9a95eb024251e1b833}} 
 \index{QCPAxis@{QCPAxis}!selectedTickPen@{selectedTickPen}}
 \index{selectedTickPen@{selectedTickPen}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{selectedTickPen()}{selectedTickPen()}}
 {\footnotesize\ttfamily QPen QCPAxis\+::selected\+Tick\+Pen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02044}{2044}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_a50c3ed18e189d48421ec2978f88e4f87}\label{class_q_c_p_axis_a50c3ed18e189d48421ec2978f88e4f87}} 
 \index{QCPAxis@{QCPAxis}!selectEvent@{selectEvent}}
@@ -1093,7 +1503,11 @@ This signal is emitted when the selectability changes, by calls to \mbox{\hyperl
 
 
 
-Reimplemented from \mbox{\hyperlink{class_q_c_p_layerable_a7498c2d0d081cf7cad0fb3bb93aa0e91}{QCPLayerable}}.
+Reimplemented from \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}.
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l08777}{8777}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_ab751e3e96495716a2f6742ca7d7b3d49}\label{class_q_c_p_axis_ab751e3e96495716a2f6742ca7d7b3d49}} 
 \index{QCPAxis@{QCPAxis}!selectionCategory@{selectionCategory}}
@@ -1103,7 +1517,11 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_layerable_a7498c2d0d081cf7cad0fb
 
 
 
-Reimplemented from \mbox{\hyperlink{class_q_c_p_layerable_a908c9edda761886f33893be326dab77d}{QCPLayerable}}.
+Reimplemented from \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}.
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l09150}{9150}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_a62b598abeee7174a05f9d542cc85b1f5}\label{class_q_c_p_axis_a62b598abeee7174a05f9d542cc85b1f5}} 
 \index{QCPAxis@{QCPAxis}!selectionChanged@{selectionChanged}}
@@ -1111,7 +1529,15 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_layerable_a908c9edda761886f33893
 \doxysubsubsection{\texorpdfstring{selectionChanged}{selectionChanged}}
 {\footnotesize\ttfamily void QCPAxis\+::selection\+Changed (\begin{DoxyParamCaption}\item[{const QCPAxis\+::\+Selectable\+Parts \&}]{parts }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
 
-This signal is emitted when the selection state of this axis has changed, either by user interaction or by a direct call to \mbox{\hyperlink{class_q_c_p_axis_ab9d7a69277dcbed9119b3c1f25ca19c3}{set\+Selected\+Parts}}. \mbox{\Hypertarget{class_q_c_p_axis_a63b7103c57fe9acfbce164334ea837f8}\label{class_q_c_p_axis_a63b7103c57fe9acfbce164334ea837f8}} 
+This signal is emitted when the selection state of this axis has changed, either by user interaction or by a direct call to \mbox{\hyperlink{class_q_c_p_axis_ab9d7a69277dcbed9119b3c1f25ca19c3}{set\+Selected\+Parts}}. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_axis_a62b598abeee7174a05f9d542cc85b1f5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_axis_a63b7103c57fe9acfbce164334ea837f8}\label{class_q_c_p_axis_a63b7103c57fe9acfbce164334ea837f8}} 
 \index{QCPAxis@{QCPAxis}!selectTest@{selectTest}}
 \index{selectTest@{selectTest}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{selectTest()}{selectTest()}}
@@ -1127,17 +1553,29 @@ Providing a constant value for area objects allows selecting line objects even w
 
 The actual setting of the selection state is not done by this function. This is handled by the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} when the mouse\+Release\+Event occurs, and the finally selected object is notified via the select\+Event/ deselect\+Event methods.
 
-{\itshape details} is an optional output parameter. Every layerable subclass may place any information in {\itshape details}. This information will be passed to \mbox{\hyperlink{class_q_c_p_axis_a50c3ed18e189d48421ec2978f88e4f87}{select\+Event}} when the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} decides on the basis of this select\+Test call, that the object was successfully selected. The subsequent call to \mbox{\hyperlink{class_q_c_p_axis_a50c3ed18e189d48421ec2978f88e4f87}{select\+Event}} will carry the {\itshape details}. This is useful for multi-\/part objects (like \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}}). This way, a possibly complex calculation to decide which part was clicked is only done once in \mbox{\hyperlink{class_q_c_p_axis_a63b7103c57fe9acfbce164334ea837f8}{select\+Test}}. The result (i.\+e. the actually clicked part) can then be placed in {\itshape details}. So in the subsequent \mbox{\hyperlink{class_q_c_p_axis_a50c3ed18e189d48421ec2978f88e4f87}{select\+Event}}, the decision which part was selected doesn\textquotesingle{}t have to be done a second time for a single selection operation.
+{\itshape details} is an optional output parameter. Every layerable subclass may place any information in {\itshape details}. This information will be passed to select\+Event when the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} decides on the basis of this select\+Test call, that the object was successfully selected. The subsequent call to select\+Event will carry the {\itshape details}. This is useful for multi-\/part objects (like \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}}). This way, a possibly complex calculation to decide which part was clicked is only done once in \mbox{\hyperlink{class_q_c_p_axis_a63b7103c57fe9acfbce164334ea837f8}{select\+Test}}. The result (i.\+e. the actually clicked part) can then be placed in {\itshape details}. So in the subsequent select\+Event, the decision which part was selected doesn\textquotesingle{}t have to be done a second time for a single selection operation.
 
 You may pass 0 as {\itshape details} to indicate that you are not interested in those selection details.
 
 \begin{DoxySeeAlso}{See also}
-\mbox{\hyperlink{class_q_c_p_axis_a50c3ed18e189d48421ec2978f88e4f87}{select\+Event}}, \mbox{\hyperlink{class_q_c_p_axis_a5bc1f8a8d0fbc7658eba70c80279ed31}{deselect\+Event}}, \mbox{\hyperlink{class_q_c_p_axis_ac89c068873ee9197a5d2af715bdc1105}{mouse\+Press\+Event}}, \mbox{\hyperlink{class_q_c_p_axis_a71643d27524a843230b5ba68085b3d9b}{wheel\+Event}}, \mbox{\hyperlink{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5}{QCustom\+Plot\+::set\+Interactions}} 
+select\+Event, deselect\+Event, \mbox{\hyperlink{class_q_c_p_axis_ac89c068873ee9197a5d2af715bdc1105}{mouse\+Press\+Event}}, \mbox{\hyperlink{class_q_c_p_axis_a71643d27524a843230b5ba68085b3d9b}{wheel\+Event}}, \mbox{\hyperlink{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5}{QCustom\+Plot\+::set\+Interactions}} 
 \end{DoxySeeAlso}
 
 
 Reimplemented from \mbox{\hyperlink{class_q_c_p_layerable_a04db8351fefd44cfdb77958e75c6288e}{QCPLayerable}}.
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l08667}{8667}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{class_q_c_p_axis_a63b7103c57fe9acfbce164334ea837f8_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_axis_a778d45fb71b3c7ab3bb7079e18b058e4}\label{class_q_c_p_axis_a778d45fb71b3c7ab3bb7079e18b058e4}} 
 \index{QCPAxis@{QCPAxis}!setBasePen@{setBasePen}}
 \index{setBasePen@{setBasePen}!QCPAxis@{QCPAxis}}
@@ -1149,13 +1587,29 @@ Sets the pen, the axis base line is drawn with.
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_axis_ad80923bcc1c5da4c4db602c5325e797e}{set\+Tick\+Pen}}, \mbox{\hyperlink{class_q_c_p_axis_aede4028ae7516bd51a60618a8233f9cf}{set\+Sub\+Tick\+Pen}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l08181}{8181}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_a33bcc382c111c9f31bb0687352a2dea4}\label{class_q_c_p_axis_a33bcc382c111c9f31bb0687352a2dea4}} 
 \index{QCPAxis@{QCPAxis}!setLabel@{setLabel}}
 \index{setLabel@{setLabel}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{setLabel()}{setLabel()}}
 {\footnotesize\ttfamily void QCPAxis\+::set\+Label (\begin{DoxyParamCaption}\item[{const QString \&}]{str }\end{DoxyParamCaption})}
 
-Sets the text of the axis label that will be shown below/above or next to the axis, depending on its orientation. To disable axis labels, pass an empty string as {\itshape str}. \mbox{\Hypertarget{class_q_c_p_axis_a6c906fe56d75f0122335b9f79b999608}\label{class_q_c_p_axis_a6c906fe56d75f0122335b9f79b999608}} 
+Sets the text of the axis label that will be shown below/above or next to the axis, depending on its orientation. To disable axis labels, pass an empty string as {\itshape str}. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l08234}{8234}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_axis_a33bcc382c111c9f31bb0687352a2dea4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_axis_a6c906fe56d75f0122335b9f79b999608}\label{class_q_c_p_axis_a6c906fe56d75f0122335b9f79b999608}} 
 \index{QCPAxis@{QCPAxis}!setLabelColor@{setLabelColor}}
 \index{setLabelColor@{setLabelColor}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{setLabelColor()}{setLabelColor()}}
@@ -1166,6 +1620,10 @@ Sets the color of the axis label.
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_axis_a71ac1a47f7547e490a8c4311d1433cf3}{set\+Label\+Font}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l08225}{8225}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_a71ac1a47f7547e490a8c4311d1433cf3}\label{class_q_c_p_axis_a71ac1a47f7547e490a8c4311d1433cf3}} 
 \index{QCPAxis@{QCPAxis}!setLabelFont@{setLabelFont}}
 \index{setLabelFont@{setLabelFont}!QCPAxis@{QCPAxis}}
@@ -1177,6 +1635,10 @@ Sets the font of the axis label.
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_axis_a6c906fe56d75f0122335b9f79b999608}{set\+Label\+Color}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l08211}{8211}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_a4391192a766e5d20cfe5cbc17607a7a2}\label{class_q_c_p_axis_a4391192a766e5d20cfe5cbc17607a7a2}} 
 \index{QCPAxis@{QCPAxis}!setLabelPadding@{setLabelPadding}}
 \index{setLabelPadding@{setLabelPadding}!QCPAxis@{QCPAxis}}
@@ -1188,6 +1650,18 @@ Sets the distance between the tick labels and the axis label.
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_axis_af302c479af9dbc2e9f0e44e07c0012ee}{set\+Tick\+Label\+Padding}}, \mbox{\hyperlink{class_q_c_p_axis_a5691441cb3de9e9844855d339c0db279}{set\+Padding}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l08248}{8248}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_axis_a4391192a766e5d20cfe5cbc17607a7a2_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_axis_a08af1c72db9ae4dc8cb8a973d44405ab}\label{class_q_c_p_axis_a08af1c72db9ae4dc8cb8a973d44405ab}} 
 \index{QCPAxis@{QCPAxis}!setLowerEnding@{setLowerEnding}}
 \index{setLowerEnding@{setLowerEnding}!QCPAxis@{QCPAxis}}
@@ -1201,6 +1675,18 @@ For horizontal axes, this method refers to the left ending, for vertical axes th
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_axis_a69119b892fc306f651763596685aa377}{set\+Upper\+Ending}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l08377}{8377}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_axis_a08af1c72db9ae4dc8cb8a973d44405ab_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_axis_ae585a54dc2aac662e90a2ca82f002590}\label{class_q_c_p_axis_ae585a54dc2aac662e90a2ca82f002590}} 
 \index{QCPAxis@{QCPAxis}!setNumberFormat@{setNumberFormat}}
 \index{setNumberFormat@{setNumberFormat}!QCPAxis@{QCPAxis}}
@@ -1216,13 +1702,37 @@ If the first char was \textquotesingle{}e\textquotesingle{} or \textquotesingle{
 
 Examples for {\itshape format\+Code\+:} \begin{DoxyItemize}
 \item {\ttfamily g} normal format code behaviour. If number is small, fixed format is used, if number is large, normal scientific format is used \item {\ttfamily gb} If number is small, fixed format is used, if number is large, scientific format is used with beautifully typeset decimal powers and a dot as multiplication sign \item {\ttfamily ebc} All numbers are in scientific format with beautifully typeset decimal power and a cross as multiplication sign \item {\ttfamily fb} illegal format code, since fixed format doesn\textquotesingle{}t support (or need) beautifully typeset decimal powers. Format code will be reduced to \textquotesingle{}f\textquotesingle{}. \item {\ttfamily hello} illegal format code, since first char is not \textquotesingle{}e\textquotesingle{}, \textquotesingle{}E\textquotesingle{}, \textquotesingle{}f\textquotesingle{}, \textquotesingle{}g\textquotesingle{} or \textquotesingle{}G\textquotesingle{}. Current format code will not be changed. \end{DoxyItemize}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l08003}{8003}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_axis_ae585a54dc2aac662e90a2ca82f002590_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_axis_a21dc8023ad7500382ad9574b48137e63}\label{class_q_c_p_axis_a21dc8023ad7500382ad9574b48137e63}} 
 \index{QCPAxis@{QCPAxis}!setNumberPrecision@{setNumberPrecision}}
 \index{setNumberPrecision@{setNumberPrecision}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{setNumberPrecision()}{setNumberPrecision()}}
 {\footnotesize\ttfamily void QCPAxis\+::set\+Number\+Precision (\begin{DoxyParamCaption}\item[{int}]{precision }\end{DoxyParamCaption})}
 
-Sets the precision of the tick label numbers. See QLocale\+::to\+String(double i, char f, int prec) for details. The effect of precisions are most notably for number Formats starting with \textquotesingle{}e\textquotesingle{}, see \mbox{\hyperlink{class_q_c_p_axis_ae585a54dc2aac662e90a2ca82f002590}{set\+Number\+Format}} \mbox{\Hypertarget{class_q_c_p_axis_a04a652603cbe50eba9969ee6d68873c3}\label{class_q_c_p_axis_a04a652603cbe50eba9969ee6d68873c3}} 
+Sets the precision of the tick label numbers. See QLocale\+::to\+String(double i, char f, int prec) for details. The effect of precisions are most notably for number Formats starting with \textquotesingle{}e\textquotesingle{}, see \mbox{\hyperlink{class_q_c_p_axis_ae585a54dc2aac662e90a2ca82f002590}{set\+Number\+Format}} 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l08063}{8063}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_axis_a21dc8023ad7500382ad9574b48137e63_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_axis_a04a652603cbe50eba9969ee6d68873c3}\label{class_q_c_p_axis_a04a652603cbe50eba9969ee6d68873c3}} 
 \index{QCPAxis@{QCPAxis}!setOffset@{setOffset}}
 \index{setOffset@{setOffset}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{setOffset()}{setOffset()}}
@@ -1230,7 +1740,11 @@ Sets the precision of the tick label numbers. See QLocale\+::to\+String(double i
 
 Sets the offset the axis has to its axis rect side.
 
-If an axis rect side has multiple axes and automatic margin calculation is enabled for that side, only the offset of the inner most axis has meaning (even if it is set to be invisible). The offset of the other, outer axes is controlled automatically, to place them at appropriate positions. \mbox{\Hypertarget{class_q_c_p_axis_a5691441cb3de9e9844855d339c0db279}\label{class_q_c_p_axis_a5691441cb3de9e9844855d339c0db279}} 
+If an axis rect side has multiple axes and automatic margin calculation is enabled for that side, only the offset of the inner most axis has meaning (even if it is set to be invisible). The offset of the other, outer axes is controlled automatically, to place them at appropriate positions. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l08284}{8284}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+\mbox{\Hypertarget{class_q_c_p_axis_a5691441cb3de9e9844855d339c0db279}\label{class_q_c_p_axis_a5691441cb3de9e9844855d339c0db279}} 
 \index{QCPAxis@{QCPAxis}!setPadding@{setPadding}}
 \index{setPadding@{setPadding}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{setPadding()}{setPadding()}}
@@ -1245,6 +1759,18 @@ The axis padding has no meaning if \mbox{\hyperlink{class_q_c_p_layout_element_a
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_axis_a4391192a766e5d20cfe5cbc17607a7a2}{set\+Label\+Padding}}, \mbox{\hyperlink{class_q_c_p_axis_af302c479af9dbc2e9f0e44e07c0012ee}{set\+Tick\+Label\+Padding}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l08267}{8267}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_axis_a5691441cb3de9e9844855d339c0db279_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_axis_aebdfea5d44c3a0ad2b4700cd4d25b641}\label{class_q_c_p_axis_aebdfea5d44c3a0ad2b4700cd4d25b641}} 
 \index{QCPAxis@{QCPAxis}!setRange@{setRange}}
 \index{setRange@{setRange}!QCPAxis@{QCPAxis}}
@@ -1255,7 +1781,27 @@ Sets the range of the axis.
 
 This slot may be connected with the \mbox{\hyperlink{class_q_c_p_axis_a0894084e4c16a1736534c4095746f910}{range\+Changed}} signal of another axis so this axis is always synchronized with the other axis range, when it changes.
 
-To invert the direction of an axis, use \mbox{\hyperlink{class_q_c_p_axis_a2172fdb196b1a0dc3f40992fcad8e9e1}{set\+Range\+Reversed}}. \mbox{\Hypertarget{class_q_c_p_axis_a57d6ee9e9009fe88cb19db476ec70bca}\label{class_q_c_p_axis_a57d6ee9e9009fe88cb19db476ec70bca}} 
+To invert the direction of an axis, use \mbox{\hyperlink{class_q_c_p_axis_a2172fdb196b1a0dc3f40992fcad8e9e1}{set\+Range\+Reversed}}. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l07683}{7683}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_axis_aebdfea5d44c3a0ad2b4700cd4d25b641_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_axis_aebdfea5d44c3a0ad2b4700cd4d25b641_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_axis_a57d6ee9e9009fe88cb19db476ec70bca}\label{class_q_c_p_axis_a57d6ee9e9009fe88cb19db476ec70bca}} 
 \index{QCPAxis@{QCPAxis}!setRange@{setRange}}
 \index{setRange@{setRange}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{setRange()}{setRange()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
@@ -1267,7 +1813,19 @@ Sets the lower and upper bound of the axis range.
 
 To invert the direction of an axis, use \mbox{\hyperlink{class_q_c_p_axis_a2172fdb196b1a0dc3f40992fcad8e9e1}{set\+Range\+Reversed}}.
 
-There is also a slot to set a range, see \mbox{\hyperlink{class_q_c_p_axis_aebdfea5d44c3a0ad2b4700cd4d25b641}{set\+Range(const QCPRange \&range)}}. \mbox{\Hypertarget{class_q_c_p_axis_acf60e5b2d631fbc8c4548c3d579cb6d0}\label{class_q_c_p_axis_acf60e5b2d631fbc8c4548c3d579cb6d0}} 
+There is also a slot to set a range, see \mbox{\hyperlink{class_q_c_p_axis_aebdfea5d44c3a0ad2b4700cd4d25b641}{set\+Range(const QCPRange \&range)}}. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l07753}{7753}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_axis_a57d6ee9e9009fe88cb19db476ec70bca_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_axis_acf60e5b2d631fbc8c4548c3d579cb6d0}\label{class_q_c_p_axis_acf60e5b2d631fbc8c4548c3d579cb6d0}} 
 \index{QCPAxis@{QCPAxis}!setRange@{setRange}}
 \index{setRange@{setRange}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{setRange()}{setRange()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
@@ -1277,7 +1835,19 @@ This is an overloaded member function, provided for convenience. It differs from
 
 Sets the range of the axis.
 
-The {\itshape position} coordinate indicates together with the {\itshape alignment} parameter, where the new range will be positioned. {\itshape size} defines the size of the new axis range. {\itshape alignment} may be Qt\+::\+Align\+Left, Qt\+::\+Align\+Right or Qt\+::\+Align\+Center. This will cause the left border, right border, or center of the range to be aligned with {\itshape position}. Any other values of {\itshape alignment} will default to Qt\+::\+Align\+Center. \mbox{\Hypertarget{class_q_c_p_axis_afcf51227d337db28d1a9ce9a4d1bc91a}\label{class_q_c_p_axis_afcf51227d337db28d1a9ce9a4d1bc91a}} 
+The {\itshape position} coordinate indicates together with the {\itshape alignment} parameter, where the new range will be positioned. {\itshape size} defines the size of the new axis range. {\itshape alignment} may be Qt\+::\+Align\+Left, Qt\+::\+Align\+Right or Qt\+::\+Align\+Center. This will cause the left border, right border, or center of the range to be aligned with {\itshape position}. Any other values of {\itshape alignment} will default to Qt\+::\+Align\+Center. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l07784}{7784}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_axis_acf60e5b2d631fbc8c4548c3d579cb6d0_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_axis_afcf51227d337db28d1a9ce9a4d1bc91a}\label{class_q_c_p_axis_afcf51227d337db28d1a9ce9a4d1bc91a}} 
 \index{QCPAxis@{QCPAxis}!setRangeLower@{setRangeLower}}
 \index{setRangeLower@{setRangeLower}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{setRangeLower()}{setRangeLower()}}
@@ -1286,6 +1856,26 @@ The {\itshape position} coordinate indicates together with the {\itshape alignme
 Sets the lower bound of the axis range. The upper bound is not changed. \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_axis_aebdfea5d44c3a0ad2b4700cd4d25b641}{set\+Range}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l07798}{7798}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_axis_afcf51227d337db28d1a9ce9a4d1bc91a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_axis_afcf51227d337db28d1a9ce9a4d1bc91a_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_axis_a2172fdb196b1a0dc3f40992fcad8e9e1}\label{class_q_c_p_axis_a2172fdb196b1a0dc3f40992fcad8e9e1}} 
 \index{QCPAxis@{QCPAxis}!setRangeReversed@{setRangeReversed}}
 \index{setRangeReversed@{setRangeReversed}!QCPAxis@{QCPAxis}}
@@ -1294,7 +1884,19 @@ Sets the lower bound of the axis range. The upper bound is not changed. \begin{D
 
 Sets whether the axis range (direction) is displayed reversed. Normally, the values on horizontal axes increase left to right, on vertical axes bottom to top. When {\itshape reversed} is set to true, the direction of increasing values is inverted.
 
-Note that the range and data interface stays the same for reversed axes, e.\+g. the {\itshape lower} part of the \mbox{\hyperlink{class_q_c_p_axis_aebdfea5d44c3a0ad2b4700cd4d25b641}{set\+Range}} interface will still reference the mathematically smaller number than the {\itshape upper} part. \mbox{\Hypertarget{class_q_c_p_axis_acd3ca1247aa867b540cd5ec30ccd3bef}\label{class_q_c_p_axis_acd3ca1247aa867b540cd5ec30ccd3bef}} 
+Note that the range and data interface stays the same for reversed axes, e.\+g. the {\itshape lower} part of the \mbox{\hyperlink{class_q_c_p_axis_aebdfea5d44c3a0ad2b4700cd4d25b641}{set\+Range}} interface will still reference the mathematically smaller number than the {\itshape upper} part. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l07847}{7847}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_axis_a2172fdb196b1a0dc3f40992fcad8e9e1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_axis_acd3ca1247aa867b540cd5ec30ccd3bef}\label{class_q_c_p_axis_acd3ca1247aa867b540cd5ec30ccd3bef}} 
 \index{QCPAxis@{QCPAxis}!setRangeUpper@{setRangeUpper}}
 \index{setRangeUpper@{setRangeUpper}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{setRangeUpper()}{setRangeUpper()}}
@@ -1303,6 +1905,18 @@ Note that the range and data interface stays the same for reversed axes, e.\+g. 
 Sets the upper bound of the axis range. The lower bound is not changed. \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_axis_aebdfea5d44c3a0ad2b4700cd4d25b641}{set\+Range}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l07820}{7820}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_axis_acd3ca1247aa867b540cd5ec30ccd3bef_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_axis_af4bbd446dcaee5a83ac30ce9bcd6e125}\label{class_q_c_p_axis_af4bbd446dcaee5a83ac30ce9bcd6e125}} 
 \index{QCPAxis@{QCPAxis}!setScaleRatio@{setScaleRatio}}
 \index{setScaleRatio@{setScaleRatio}!QCPAxis@{QCPAxis}}
@@ -1313,7 +1927,19 @@ Scales the range of this axis to have a certain scale {\itshape ratio} to {\itsh
 
 For example, if {\itshape ratio} is 1, this axis is the {\itshape y\+Axis} and {\itshape other\+Axis} is {\itshape x\+Axis}, graphs plotted with those axes will appear in a 1\+:1 aspect ratio, independent of the aspect ratio the axis rect has.
 
-This is an operation that changes the range of this axis once, it doesn\textquotesingle{}t fix the scale ratio indefinitely. Note that calling this function in the constructor of the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}\textquotesingle{}s parent won\textquotesingle{}t have the desired effect, since the widget dimensions aren\textquotesingle{}t defined yet, and a resize\+Event will follow. \mbox{\Hypertarget{class_q_c_p_axis_adef29cae617af4f519f6c40d1a866ca6}\label{class_q_c_p_axis_adef29cae617af4f519f6c40d1a866ca6}} 
+This is an operation that changes the range of this axis once, it doesn\textquotesingle{}t fix the scale ratio indefinitely. Note that calling this function in the constructor of the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}\textquotesingle{}s parent won\textquotesingle{}t have the desired effect, since the widget dimensions aren\textquotesingle{}t defined yet, and a resize\+Event will follow. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l08482}{8482}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_axis_af4bbd446dcaee5a83ac30ce9bcd6e125_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_axis_adef29cae617af4f519f6c40d1a866ca6}\label{class_q_c_p_axis_adef29cae617af4f519f6c40d1a866ca6}} 
 \index{QCPAxis@{QCPAxis}!setScaleType@{setScaleType}}
 \index{setScaleType@{setScaleType}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{setScaleType()}{setScaleType()}}
@@ -1323,7 +1949,27 @@ Sets whether the axis uses a linear scale or a logarithmic scale.
 
 Note that this method controls the coordinate transformation. You will likely also want to use a logarithmic tick spacing and labeling, which can be achieved by setting an instance of \mbox{\hyperlink{class_q_c_p_axis_ticker_log}{QCPAxis\+Ticker\+Log}} via \mbox{\hyperlink{class_q_c_p_axis_a4ee03fcd2c74d05cd1a419b9af5cfbdc}{set\+Ticker}}. See the documentation of \mbox{\hyperlink{class_q_c_p_axis_ticker_log}{QCPAxis\+Ticker\+Log}} about the details of logarithmic axis tick creation.
 
-\mbox{\hyperlink{class_q_c_p_axis_a21dc8023ad7500382ad9574b48137e63}{set\+Number\+Precision}} \mbox{\Hypertarget{class_q_c_p_axis_a513f9b9e326c505d9bec54880031b085}\label{class_q_c_p_axis_a513f9b9e326c505d9bec54880031b085}} 
+\mbox{\hyperlink{class_q_c_p_axis_a21dc8023ad7500382ad9574b48137e63}{set\+Number\+Precision}} 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l07663}{7663}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_axis_adef29cae617af4f519f6c40d1a866ca6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_axis_adef29cae617af4f519f6c40d1a866ca6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_axis_a513f9b9e326c505d9bec54880031b085}\label{class_q_c_p_axis_a513f9b9e326c505d9bec54880031b085}} 
 \index{QCPAxis@{QCPAxis}!setSelectableParts@{setSelectableParts}}
 \index{setSelectableParts@{setSelectableParts}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{setSelectableParts()}{setSelectableParts()}}
@@ -1336,6 +1982,10 @@ However, even when {\itshape selectable} is set to a value not allowing the sele
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_axis_abee4c7a54c468b1385dfce2c898b115f}{Selectable\+Part}}, \mbox{\hyperlink{class_q_c_p_axis_ab9d7a69277dcbed9119b3c1f25ca19c3}{set\+Selected\+Parts}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l07711}{7711}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_aeb917a909215605b95ef2be843de1ee8}\label{class_q_c_p_axis_aeb917a909215605b95ef2be843de1ee8}} 
 \index{QCPAxis@{QCPAxis}!setSelectedBasePen@{setSelectedBasePen}}
 \index{setSelectedBasePen@{setSelectedBasePen}!QCPAxis@{QCPAxis}}
@@ -1347,6 +1997,10 @@ Sets the pen that is used to draw the axis base line when selected.
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_axis_a778d45fb71b3c7ab3bb7079e18b058e4}{set\+Base\+Pen}}, \mbox{\hyperlink{class_q_c_p_axis_a513f9b9e326c505d9bec54880031b085}{set\+Selectable\+Parts}}, \mbox{\hyperlink{class_q_c_p_axis_ab9d7a69277dcbed9119b3c1f25ca19c3}{set\+Selected\+Parts}}, \mbox{\hyperlink{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5}{QCustom\+Plot\+::set\+Interactions}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l08342}{8342}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_a5d502dec597c634f491fdd73d151c72d}\label{class_q_c_p_axis_a5d502dec597c634f491fdd73d151c72d}} 
 \index{QCPAxis@{QCPAxis}!setSelectedLabelColor@{setSelectedLabelColor}}
 \index{setSelectedLabelColor@{setSelectedLabelColor}!QCPAxis@{QCPAxis}}
@@ -1358,6 +2012,10 @@ Sets the color that is used for the axis label when it is selected.
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_axis_a6c906fe56d75f0122335b9f79b999608}{set\+Label\+Color}}, \mbox{\hyperlink{class_q_c_p_axis_a513f9b9e326c505d9bec54880031b085}{set\+Selectable\+Parts}}, \mbox{\hyperlink{class_q_c_p_axis_ab9d7a69277dcbed9119b3c1f25ca19c3}{set\+Selected\+Parts}}, \mbox{\hyperlink{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5}{QCustom\+Plot\+::set\+Interactions}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l08332}{8332}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_a02ec2a75d4d8401eaab834fbc6803d30}\label{class_q_c_p_axis_a02ec2a75d4d8401eaab834fbc6803d30}} 
 \index{QCPAxis@{QCPAxis}!setSelectedLabelFont@{setSelectedLabelFont}}
 \index{setSelectedLabelFont@{setSelectedLabelFont}!QCPAxis@{QCPAxis}}
@@ -1369,6 +2027,10 @@ Sets the font that is used for the axis label when it is selected.
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_axis_a71ac1a47f7547e490a8c4311d1433cf3}{set\+Label\+Font}}, \mbox{\hyperlink{class_q_c_p_axis_a513f9b9e326c505d9bec54880031b085}{set\+Selectable\+Parts}}, \mbox{\hyperlink{class_q_c_p_axis_ab9d7a69277dcbed9119b3c1f25ca19c3}{set\+Selected\+Parts}}, \mbox{\hyperlink{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5}{QCustom\+Plot\+::set\+Interactions}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l08308}{8308}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_ab9d7a69277dcbed9119b3c1f25ca19c3}\label{class_q_c_p_axis_ab9d7a69277dcbed9119b3c1f25ca19c3}} 
 \index{QCPAxis@{QCPAxis}!setSelectedParts@{setSelectedParts}}
 \index{setSelectedParts@{setSelectedParts}!QCPAxis@{QCPAxis}}
@@ -1386,6 +2048,10 @@ emits the \mbox{\hyperlink{class_q_c_p_axis_a62b598abeee7174a05f9d542cc85b1f5}{s
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_axis_abee4c7a54c468b1385dfce2c898b115f}{Selectable\+Part}}, \mbox{\hyperlink{class_q_c_p_axis_a513f9b9e326c505d9bec54880031b085}{set\+Selectable\+Parts}}, \mbox{\hyperlink{class_q_c_p_axis_a63b7103c57fe9acfbce164334ea837f8}{select\+Test}}, \mbox{\hyperlink{class_q_c_p_axis_aeb917a909215605b95ef2be843de1ee8}{set\+Selected\+Base\+Pen}}, \mbox{\hyperlink{class_q_c_p_axis_a8360502685eb782edbf04019c9345cdc}{set\+Selected\+Tick\+Pen}}, \mbox{\hyperlink{class_q_c_p_axis_a2a00a7166600155eac26843132eb9576}{set\+Selected\+Sub\+Tick\+Pen}}, \mbox{\hyperlink{class_q_c_p_axis_a845ccb560b7bc5281098a5be494145f6}{set\+Selected\+Tick\+Label\+Font}}, \mbox{\hyperlink{class_q_c_p_axis_a02ec2a75d4d8401eaab834fbc6803d30}{set\+Selected\+Label\+Font}}, \mbox{\hyperlink{class_q_c_p_axis_a9bdbf5e63ab15187f3a1de9440129227}{set\+Selected\+Tick\+Label\+Color}}, \mbox{\hyperlink{class_q_c_p_axis_a5d502dec597c634f491fdd73d151c72d}{set\+Selected\+Label\+Color}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l07735}{7735}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_a2a00a7166600155eac26843132eb9576}\label{class_q_c_p_axis_a2a00a7166600155eac26843132eb9576}} 
 \index{QCPAxis@{QCPAxis}!setSelectedSubTickPen@{setSelectedSubTickPen}}
 \index{setSelectedSubTickPen@{setSelectedSubTickPen}!QCPAxis@{QCPAxis}}
@@ -1397,6 +2063,10 @@ Sets the pen that is used to draw the subticks when selected.
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_axis_aede4028ae7516bd51a60618a8233f9cf}{set\+Sub\+Tick\+Pen}}, \mbox{\hyperlink{class_q_c_p_axis_a513f9b9e326c505d9bec54880031b085}{set\+Selectable\+Parts}}, \mbox{\hyperlink{class_q_c_p_axis_ab9d7a69277dcbed9119b3c1f25ca19c3}{set\+Selected\+Parts}}, \mbox{\hyperlink{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5}{QCustom\+Plot\+::set\+Interactions}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l08362}{8362}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_a9bdbf5e63ab15187f3a1de9440129227}\label{class_q_c_p_axis_a9bdbf5e63ab15187f3a1de9440129227}} 
 \index{QCPAxis@{QCPAxis}!setSelectedTickLabelColor@{setSelectedTickLabelColor}}
 \index{setSelectedTickLabelColor@{setSelectedTickLabelColor}!QCPAxis@{QCPAxis}}
@@ -1408,6 +2078,10 @@ Sets the color that is used for tick labels when they are selected.
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_axis_a395e445c3fe496b935bee7b911ecfd1c}{set\+Tick\+Label\+Color}}, \mbox{\hyperlink{class_q_c_p_axis_a513f9b9e326c505d9bec54880031b085}{set\+Selectable\+Parts}}, \mbox{\hyperlink{class_q_c_p_axis_ab9d7a69277dcbed9119b3c1f25ca19c3}{set\+Selected\+Parts}}, \mbox{\hyperlink{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5}{QCustom\+Plot\+::set\+Interactions}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l08319}{8319}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_a845ccb560b7bc5281098a5be494145f6}\label{class_q_c_p_axis_a845ccb560b7bc5281098a5be494145f6}} 
 \index{QCPAxis@{QCPAxis}!setSelectedTickLabelFont@{setSelectedTickLabelFont}}
 \index{setSelectedTickLabelFont@{setSelectedTickLabelFont}!QCPAxis@{QCPAxis}}
@@ -1419,6 +2093,10 @@ Sets the font that is used for tick labels when they are selected.
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_axis_a2b8690c4e8dbc39d9185d2b398ce7a6c}{set\+Tick\+Label\+Font}}, \mbox{\hyperlink{class_q_c_p_axis_a513f9b9e326c505d9bec54880031b085}{set\+Selectable\+Parts}}, \mbox{\hyperlink{class_q_c_p_axis_ab9d7a69277dcbed9119b3c1f25ca19c3}{set\+Selected\+Parts}}, \mbox{\hyperlink{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5}{QCustom\+Plot\+::set\+Interactions}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l08294}{8294}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_a8360502685eb782edbf04019c9345cdc}\label{class_q_c_p_axis_a8360502685eb782edbf04019c9345cdc}} 
 \index{QCPAxis@{QCPAxis}!setSelectedTickPen@{setSelectedTickPen}}
 \index{setSelectedTickPen@{setSelectedTickPen}!QCPAxis@{QCPAxis}}
@@ -1430,6 +2108,10 @@ Sets the pen that is used to draw the (major) ticks when selected.
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_axis_ad80923bcc1c5da4c4db602c5325e797e}{set\+Tick\+Pen}}, \mbox{\hyperlink{class_q_c_p_axis_a513f9b9e326c505d9bec54880031b085}{set\+Selectable\+Parts}}, \mbox{\hyperlink{class_q_c_p_axis_ab9d7a69277dcbed9119b3c1f25ca19c3}{set\+Selected\+Parts}}, \mbox{\hyperlink{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5}{QCustom\+Plot\+::set\+Interactions}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l08352}{8352}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_ab702d6fd42fc620607435339a1c2a2e1}\label{class_q_c_p_axis_ab702d6fd42fc620607435339a1c2a2e1}} 
 \index{QCPAxis@{QCPAxis}!setSubTickLength@{setSubTickLength}}
 \index{setSubTickLength@{setSubTickLength}!QCPAxis@{QCPAxis}}
@@ -1441,6 +2123,18 @@ Sets the length of the subticks in pixels. {\itshape inside} is the length the s
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_axis_a62ec40bebe3540e9c1479a8fd2be3b0d}{set\+Tick\+Length}}, \mbox{\hyperlink{class_q_c_p_axis_ac46fa2a993a9f5789540977610acf1de}{set\+Sub\+Tick\+Length\+In}}, \mbox{\hyperlink{class_q_c_p_axis_a4c6dfc3963492ed72a77724012df5f23}{set\+Sub\+Tick\+Length\+Out}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l08140}{8140}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_axis_ab702d6fd42fc620607435339a1c2a2e1_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_axis_ac46fa2a993a9f5789540977610acf1de}\label{class_q_c_p_axis_ac46fa2a993a9f5789540977610acf1de}} 
 \index{QCPAxis@{QCPAxis}!setSubTickLengthIn@{setSubTickLengthIn}}
 \index{setSubTickLengthIn@{setSubTickLengthIn}!QCPAxis@{QCPAxis}}
@@ -1452,6 +2146,18 @@ Sets the length of the inward subticks in pixels. {\itshape inside} is the lengt
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_axis_a4c6dfc3963492ed72a77724012df5f23}{set\+Sub\+Tick\+Length\+Out}}, \mbox{\hyperlink{class_q_c_p_axis_ab702d6fd42fc620607435339a1c2a2e1}{set\+Sub\+Tick\+Length}}, \mbox{\hyperlink{class_q_c_p_axis_a62ec40bebe3540e9c1479a8fd2be3b0d}{set\+Tick\+Length}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l08152}{8152}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_axis_ac46fa2a993a9f5789540977610acf1de_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_axis_a4c6dfc3963492ed72a77724012df5f23}\label{class_q_c_p_axis_a4c6dfc3963492ed72a77724012df5f23}} 
 \index{QCPAxis@{QCPAxis}!setSubTickLengthOut@{setSubTickLengthOut}}
 \index{setSubTickLengthOut@{setSubTickLengthOut}!QCPAxis@{QCPAxis}}
@@ -1463,6 +2169,18 @@ Sets the length of the outward subticks in pixels. {\itshape outside} is the len
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_axis_ac46fa2a993a9f5789540977610acf1de}{set\+Sub\+Tick\+Length\+In}}, \mbox{\hyperlink{class_q_c_p_axis_ab702d6fd42fc620607435339a1c2a2e1}{set\+Sub\+Tick\+Length}}, \mbox{\hyperlink{class_q_c_p_axis_a62ec40bebe3540e9c1479a8fd2be3b0d}{set\+Tick\+Length}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l08167}{8167}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_axis_a4c6dfc3963492ed72a77724012df5f23_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_axis_aede4028ae7516bd51a60618a8233f9cf}\label{class_q_c_p_axis_aede4028ae7516bd51a60618a8233f9cf}} 
 \index{QCPAxis@{QCPAxis}!setSubTickPen@{setSubTickPen}}
 \index{setSubTickPen@{setSubTickPen}!QCPAxis@{QCPAxis}}
@@ -1474,6 +2192,10 @@ Sets the pen, subtick marks will be drawn with.
 \begin{DoxySeeAlso}{See also}
 set\+Sub\+Tick\+Count, \mbox{\hyperlink{class_q_c_p_axis_ab702d6fd42fc620607435339a1c2a2e1}{set\+Sub\+Tick\+Length}}, \mbox{\hyperlink{class_q_c_p_axis_a778d45fb71b3c7ab3bb7079e18b058e4}{set\+Base\+Pen}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l08201}{8201}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_afa0ce8d4d0015ed23dcde01f8bc30106}\label{class_q_c_p_axis_afa0ce8d4d0015ed23dcde01f8bc30106}} 
 \index{QCPAxis@{QCPAxis}!setSubTicks@{setSubTicks}}
 \index{setSubTicks@{setSubTicks}!QCPAxis@{QCPAxis}}
@@ -1487,6 +2209,10 @@ Sub ticks are only potentially visible if (major) ticks are also visible (see \m
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_axis_ac891409315bc379e3b1abdb162c1a011}{set\+Ticks}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l08123}{8123}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_a4ee03fcd2c74d05cd1a419b9af5cfbdc}\label{class_q_c_p_axis_a4ee03fcd2c74d05cd1a419b9af5cfbdc}} 
 \index{QCPAxis@{QCPAxis}!setTicker@{setTicker}}
 \index{setTicker@{setTicker}!QCPAxis@{QCPAxis}}
@@ -1502,6 +2228,26 @@ Since the ticker is stored in the axis as a shared pointer, multiple axes may sh
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_axis_a7b7a27151be8235059e1294f73ecf615}{ticker}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l07865}{7865}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{class_q_c_p_axis_a4ee03fcd2c74d05cd1a419b9af5cfbdc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_axis_a4ee03fcd2c74d05cd1a419b9af5cfbdc_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_axis_a395e445c3fe496b935bee7b911ecfd1c}\label{class_q_c_p_axis_a395e445c3fe496b935bee7b911ecfd1c}} 
 \index{QCPAxis@{QCPAxis}!setTickLabelColor@{setTickLabelColor}}
 \index{setTickLabelColor@{setTickLabelColor}!QCPAxis@{QCPAxis}}
@@ -1513,6 +2259,10 @@ Sets the color of the tick labels.
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_axis_a04ba16e1f6f78d70f938519576ed32c8}{set\+Tick\+Labels}}, \mbox{\hyperlink{class_q_c_p_axis_a2b8690c4e8dbc39d9185d2b398ce7a6c}{set\+Tick\+Label\+Font}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l07937}{7937}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_a2b8690c4e8dbc39d9185d2b398ce7a6c}\label{class_q_c_p_axis_a2b8690c4e8dbc39d9185d2b398ce7a6c}} 
 \index{QCPAxis@{QCPAxis}!setTickLabelFont@{setTickLabelFont}}
 \index{setTickLabelFont@{setTickLabelFont}!QCPAxis@{QCPAxis}}
@@ -1524,6 +2274,10 @@ Sets the font of the tick labels.
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_axis_a04ba16e1f6f78d70f938519576ed32c8}{set\+Tick\+Labels}}, \mbox{\hyperlink{class_q_c_p_axis_a395e445c3fe496b935bee7b911ecfd1c}{set\+Tick\+Label\+Color}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l07923}{7923}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_af302c479af9dbc2e9f0e44e07c0012ee}\label{class_q_c_p_axis_af302c479af9dbc2e9f0e44e07c0012ee}} 
 \index{QCPAxis@{QCPAxis}!setTickLabelPadding@{setTickLabelPadding}}
 \index{setTickLabelPadding@{setTickLabelPadding}!QCPAxis@{QCPAxis}}
@@ -1533,6 +2287,18 @@ Sets the font of the tick labels.
 Sets the distance between the axis base line (including any outward ticks) and the tick labels. \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_axis_a4391192a766e5d20cfe5cbc17607a7a2}{set\+Label\+Padding}}, \mbox{\hyperlink{class_q_c_p_axis_a5691441cb3de9e9844855d339c0db279}{set\+Padding}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l07909}{7909}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_axis_af302c479af9dbc2e9f0e44e07c0012ee_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_axis_a1bddd4413df8a576b7ad4b067fb33375}\label{class_q_c_p_axis_a1bddd4413df8a576b7ad4b067fb33375}} 
 \index{QCPAxis@{QCPAxis}!setTickLabelRotation@{setTickLabelRotation}}
 \index{setTickLabelRotation@{setTickLabelRotation}!QCPAxis@{QCPAxis}}
@@ -1541,13 +2307,29 @@ Sets the distance between the axis base line (including any outward ticks) and t
 
 Sets the rotation of the tick labels. If {\itshape degrees} is zero, the labels are drawn normally. Else, the tick labels are drawn rotated by {\itshape degrees} clockwise. The specified angle is bound to values from -\/90 to 90 degrees.
 
-If {\itshape degrees} is exactly -\/90, 0 or 90, the tick labels are centered on the tick coordinate. For other angles, the label is drawn with an offset such that it seems to point toward or away from the tick mark. \mbox{\Hypertarget{class_q_c_p_axis_a04ba16e1f6f78d70f938519576ed32c8}\label{class_q_c_p_axis_a04ba16e1f6f78d70f938519576ed32c8}} 
+If {\itshape degrees} is exactly -\/90, 0 or 90, the tick labels are centered on the tick coordinate. For other angles, the label is drawn with an offset such that it seems to point toward or away from the tick mark. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l07951}{7951}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+\mbox{\Hypertarget{class_q_c_p_axis_a04ba16e1f6f78d70f938519576ed32c8}\label{class_q_c_p_axis_a04ba16e1f6f78d70f938519576ed32c8}} 
 \index{QCPAxis@{QCPAxis}!setTickLabels@{setTickLabels}}
 \index{setTickLabels@{setTickLabels}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{setTickLabels()}{setTickLabels()}}
 {\footnotesize\ttfamily void QCPAxis\+::set\+Tick\+Labels (\begin{DoxyParamCaption}\item[{bool}]{show }\end{DoxyParamCaption})}
 
-Sets whether tick labels are displayed. Tick labels are the numbers drawn next to tick marks. \mbox{\Hypertarget{class_q_c_p_axis_a13ec644fc6e22715744c92c6dfa4f0fa}\label{class_q_c_p_axis_a13ec644fc6e22715744c92c6dfa4f0fa}} 
+Sets whether tick labels are displayed. Tick labels are the numbers drawn next to tick marks. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l07894}{7894}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_axis_a04ba16e1f6f78d70f938519576ed32c8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_axis_a13ec644fc6e22715744c92c6dfa4f0fa}\label{class_q_c_p_axis_a13ec644fc6e22715744c92c6dfa4f0fa}} 
 \index{QCPAxis@{QCPAxis}!setTickLabelSide@{setTickLabelSide}}
 \index{setTickLabelSide@{setTickLabelSide}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{setTickLabelSide()}{setTickLabelSide()}}
@@ -1555,7 +2337,11 @@ Sets whether tick labels are displayed. Tick labels are the numbers drawn next t
 
 Sets whether the tick labels (numbers) shall appear inside or outside the axis rect.
 
-The usual and default setting is \mbox{\hyperlink{class_q_c_p_axis_a24b13374b9b8f75f47eed2ea78c37db9a2eadb509fc0c9a8b35b85c86ec9f3c7a}{ls\+Outside}}. Very compact plots sometimes require tick labels to be inside the axis rect, to save space. If {\itshape side} is set to \mbox{\hyperlink{class_q_c_p_axis_a24b13374b9b8f75f47eed2ea78c37db9aae7b027ac2839cf4ad611df30236fc3f}{ls\+Inside}}, the tick labels appear on the inside are additionally clipped to the axis rect. \mbox{\Hypertarget{class_q_c_p_axis_a62ec40bebe3540e9c1479a8fd2be3b0d}\label{class_q_c_p_axis_a62ec40bebe3540e9c1479a8fd2be3b0d}} 
+The usual and default setting is \mbox{\hyperlink{class_q_c_p_axis_a24b13374b9b8f75f47eed2ea78c37db9a2eadb509fc0c9a8b35b85c86ec9f3c7a}{ls\+Outside}}. Very compact plots sometimes require tick labels to be inside the axis rect, to save space. If {\itshape side} is set to \mbox{\hyperlink{class_q_c_p_axis_a24b13374b9b8f75f47eed2ea78c37db9aae7b027ac2839cf4ad611df30236fc3f}{ls\+Inside}}, the tick labels appear on the inside are additionally clipped to the axis rect. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l07967}{7967}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+\mbox{\Hypertarget{class_q_c_p_axis_a62ec40bebe3540e9c1479a8fd2be3b0d}\label{class_q_c_p_axis_a62ec40bebe3540e9c1479a8fd2be3b0d}} 
 \index{QCPAxis@{QCPAxis}!setTickLength@{setTickLength}}
 \index{setTickLength@{setTickLength}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{setTickLength()}{setTickLength()}}
@@ -1566,6 +2352,18 @@ Sets the length of the ticks in pixels. {\itshape inside} is the length the tick
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_axis_ab702d6fd42fc620607435339a1c2a2e1}{set\+Sub\+Tick\+Length}}, \mbox{\hyperlink{class_q_c_p_axis_afae1a37a99611366275a51204d991739}{set\+Tick\+Length\+In}}, \mbox{\hyperlink{class_q_c_p_axis_a3b8a0debd1ffedd2c22d0592dfbb4e62}{set\+Tick\+Length\+Out}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l08080}{8080}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_axis_a62ec40bebe3540e9c1479a8fd2be3b0d_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_axis_afae1a37a99611366275a51204d991739}\label{class_q_c_p_axis_afae1a37a99611366275a51204d991739}} 
 \index{QCPAxis@{QCPAxis}!setTickLengthIn@{setTickLengthIn}}
 \index{setTickLengthIn@{setTickLengthIn}!QCPAxis@{QCPAxis}}
@@ -1577,6 +2375,18 @@ Sets the length of the inward ticks in pixels. {\itshape inside} is the length t
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_axis_a3b8a0debd1ffedd2c22d0592dfbb4e62}{set\+Tick\+Length\+Out}}, \mbox{\hyperlink{class_q_c_p_axis_a62ec40bebe3540e9c1479a8fd2be3b0d}{set\+Tick\+Length}}, \mbox{\hyperlink{class_q_c_p_axis_ab702d6fd42fc620607435339a1c2a2e1}{set\+Sub\+Tick\+Length}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l08092}{8092}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_axis_afae1a37a99611366275a51204d991739_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_axis_a3b8a0debd1ffedd2c22d0592dfbb4e62}\label{class_q_c_p_axis_a3b8a0debd1ffedd2c22d0592dfbb4e62}} 
 \index{QCPAxis@{QCPAxis}!setTickLengthOut@{setTickLengthOut}}
 \index{setTickLengthOut@{setTickLengthOut}!QCPAxis@{QCPAxis}}
@@ -1588,6 +2398,18 @@ Sets the length of the outward ticks in pixels. {\itshape outside} is the length
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_axis_afae1a37a99611366275a51204d991739}{set\+Tick\+Length\+In}}, \mbox{\hyperlink{class_q_c_p_axis_a62ec40bebe3540e9c1479a8fd2be3b0d}{set\+Tick\+Length}}, \mbox{\hyperlink{class_q_c_p_axis_ab702d6fd42fc620607435339a1c2a2e1}{set\+Sub\+Tick\+Length}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l08107}{8107}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_axis_a3b8a0debd1ffedd2c22d0592dfbb4e62_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_axis_ad80923bcc1c5da4c4db602c5325e797e}\label{class_q_c_p_axis_ad80923bcc1c5da4c4db602c5325e797e}} 
 \index{QCPAxis@{QCPAxis}!setTickPen@{setTickPen}}
 \index{setTickPen@{setTickPen}!QCPAxis@{QCPAxis}}
@@ -1599,6 +2421,10 @@ Sets the pen, tick marks will be drawn with.
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_axis_a62ec40bebe3540e9c1479a8fd2be3b0d}{set\+Tick\+Length}}, \mbox{\hyperlink{class_q_c_p_axis_a778d45fb71b3c7ab3bb7079e18b058e4}{set\+Base\+Pen}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l08191}{8191}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_ac891409315bc379e3b1abdb162c1a011}\label{class_q_c_p_axis_ac891409315bc379e3b1abdb162c1a011}} 
 \index{QCPAxis@{QCPAxis}!setTicks@{setTicks}}
 \index{setTicks@{setTicks}!QCPAxis@{QCPAxis}}
@@ -1612,6 +2438,18 @@ Note that setting {\itshape show} to false does not imply that tick labels are i
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_axis_afa0ce8d4d0015ed23dcde01f8bc30106}{set\+Sub\+Ticks}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l07882}{7882}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_axis_ac891409315bc379e3b1abdb162c1a011_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_axis_a69119b892fc306f651763596685aa377}\label{class_q_c_p_axis_a69119b892fc306f651763596685aa377}} 
 \index{QCPAxis@{QCPAxis}!setUpperEnding@{setUpperEnding}}
 \index{setUpperEnding@{setUpperEnding}!QCPAxis@{QCPAxis}}
@@ -1625,11 +2463,27 @@ For horizontal axes, this method refers to the right ending, for vertical axes t
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_axis_a08af1c72db9ae4dc8cb8a973d44405ab}{set\+Lower\+Ending}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l08392}{8392}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_axis_a69119b892fc306f651763596685aa377_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_axis_a57d9e961bae7d62f5b4e1f143e660c78}\label{class_q_c_p_axis_a57d9e961bae7d62f5b4e1f143e660c78}} 
 \index{QCPAxis@{QCPAxis}!setupTickVectors@{setupTickVectors}}
 \index{setupTickVectors@{setupTickVectors}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{setupTickVectors()}{setupTickVectors()}}
 {\footnotesize\ttfamily void QCPAxis\+::setup\+Tick\+Vectors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l09012}{9012}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_af907c8ecc4624d1bf4a8f6f702e64fbe}\label{class_q_c_p_axis_af907c8ecc4624d1bf4a8f6f702e64fbe}} 
 \index{QCPAxis@{QCPAxis}!subTickLengthIn@{subTickLengthIn}}
@@ -1637,11 +2491,19 @@ For horizontal axes, this method refers to the right ending, for vertical axes t
 \doxysubsubsection{\texorpdfstring{subTickLengthIn()}{subTickLengthIn()}}
 {\footnotesize\ttfamily int QCPAxis\+::sub\+Tick\+Length\+In (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l07618}{7618}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_ac98c66cae50c98f3ae90e2969382976d}\label{class_q_c_p_axis_ac98c66cae50c98f3ae90e2969382976d}} 
 \index{QCPAxis@{QCPAxis}!subTickLengthOut@{subTickLengthOut}}
 \index{subTickLengthOut@{subTickLengthOut}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{subTickLengthOut()}{subTickLengthOut()}}
 {\footnotesize\ttfamily int QCPAxis\+::sub\+Tick\+Length\+Out (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l07624}{7624}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_a7a89df74ba427fac311bf4cc92fbddca}\label{class_q_c_p_axis_a7a89df74ba427fac311bf4cc92fbddca}} 
 \index{QCPAxis@{QCPAxis}!subTickPen@{subTickPen}}
@@ -1649,11 +2511,19 @@ For horizontal axes, this method refers to the right ending, for vertical axes t
 \doxysubsubsection{\texorpdfstring{subTickPen()}{subTickPen()}}
 {\footnotesize\ttfamily QPen QCPAxis\+::sub\+Tick\+Pen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02030}{2030}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_ad74153c38fd83b54c509cff249370beb}\label{class_q_c_p_axis_ad74153c38fd83b54c509cff249370beb}} 
 \index{QCPAxis@{QCPAxis}!subTicks@{subTicks}}
 \index{subTicks@{subTicks}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{subTicks()}{subTicks()}}
 {\footnotesize\ttfamily bool QCPAxis\+::sub\+Ticks (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02025}{2025}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_a7b7a27151be8235059e1294f73ecf615}\label{class_q_c_p_axis_a7b7a27151be8235059e1294f73ecf615}} 
 \index{QCPAxis@{QCPAxis}!ticker@{ticker}}
@@ -1670,11 +2540,27 @@ Since the ticker is stored in the axis as a shared pointer, multiple axes may sh
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_axis_a4ee03fcd2c74d05cd1a419b9af5cfbdc}{set\+Ticker}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02011}{2011}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_axis_a7b7a27151be8235059e1294f73ecf615_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_axis_a9e21b2326bb2de0b7a8efcd1efc0ce78}\label{class_q_c_p_axis_a9e21b2326bb2de0b7a8efcd1efc0ce78}} 
 \index{QCPAxis@{QCPAxis}!tickLabelColor@{tickLabelColor}}
 \index{tickLabelColor@{tickLabelColor}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{tickLabelColor()}{tickLabelColor()}}
 {\footnotesize\ttfamily QColor QCPAxis\+::tick\+Label\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02016}{2016}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_a09f339b7125cf1094920f86687b88236}\label{class_q_c_p_axis_a09f339b7125cf1094920f86687b88236}} 
 \index{QCPAxis@{QCPAxis}!tickLabelFont@{tickLabelFont}}
@@ -1682,11 +2568,19 @@ Since the ticker is stored in the axis as a shared pointer, multiple axes may sh
 \doxysubsubsection{\texorpdfstring{tickLabelFont()}{tickLabelFont()}}
 {\footnotesize\ttfamily QFont QCPAxis\+::tick\+Label\+Font (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02015}{2015}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_afac7316ca35941e7080f98e0022c1891}\label{class_q_c_p_axis_afac7316ca35941e7080f98e0022c1891}} 
 \index{QCPAxis@{QCPAxis}!tickLabelPadding@{tickLabelPadding}}
 \index{tickLabelPadding@{tickLabelPadding}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{tickLabelPadding()}{tickLabelPadding()}}
 {\footnotesize\ttfamily int QCPAxis\+::tick\+Label\+Padding (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l07574}{7574}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_a5c81e5d550266fdb9e11d96d1dc5713e}\label{class_q_c_p_axis_a5c81e5d550266fdb9e11d96d1dc5713e}} 
 \index{QCPAxis@{QCPAxis}!tickLabelRotation@{tickLabelRotation}}
@@ -1694,11 +2588,19 @@ Since the ticker is stored in the axis as a shared pointer, multiple axes may sh
 \doxysubsubsection{\texorpdfstring{tickLabelRotation()}{tickLabelRotation()}}
 {\footnotesize\ttfamily double QCPAxis\+::tick\+Label\+Rotation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l07580}{7580}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_ae4158bbc52939ee52cdb12b805860a28}\label{class_q_c_p_axis_ae4158bbc52939ee52cdb12b805860a28}} 
 \index{QCPAxis@{QCPAxis}!tickLabels@{tickLabels}}
 \index{tickLabels@{tickLabels}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{tickLabels()}{tickLabels()}}
 {\footnotesize\ttfamily bool QCPAxis\+::tick\+Labels (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02013}{2013}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_a1dc21783965a7c7d9c29c2a75d0a54e1}\label{class_q_c_p_axis_a1dc21783965a7c7d9c29c2a75d0a54e1}} 
 \index{QCPAxis@{QCPAxis}!tickLabelSide@{tickLabelSide}}
@@ -1706,11 +2608,19 @@ Since the ticker is stored in the axis as a shared pointer, multiple axes may sh
 \doxysubsubsection{\texorpdfstring{tickLabelSide()}{tickLabelSide()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_axis_a24b13374b9b8f75f47eed2ea78c37db9}{QCPAxis\+::\+Label\+Side}} QCPAxis\+::tick\+Label\+Side (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l07586}{7586}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_ace2accb350fd3f3f474280f58c1d61c5}\label{class_q_c_p_axis_ace2accb350fd3f3f474280f58c1d61c5}} 
 \index{QCPAxis@{QCPAxis}!tickLengthIn@{tickLengthIn}}
 \index{tickLengthIn@{tickLengthIn}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{tickLengthIn()}{tickLengthIn()}}
 {\footnotesize\ttfamily int QCPAxis\+::tick\+Length\+In (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l07606}{7606}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_ad3ba6614ccddf351f133e0acdd4f021e}\label{class_q_c_p_axis_ad3ba6614ccddf351f133e0acdd4f021e}} 
 \index{QCPAxis@{QCPAxis}!tickLengthOut@{tickLengthOut}}
@@ -1718,11 +2628,19 @@ Since the ticker is stored in the axis as a shared pointer, multiple axes may sh
 \doxysubsubsection{\texorpdfstring{tickLengthOut()}{tickLengthOut()}}
 {\footnotesize\ttfamily int QCPAxis\+::tick\+Length\+Out (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l07612}{7612}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_affd022d4f56dfc575b4ced95ad417860}\label{class_q_c_p_axis_affd022d4f56dfc575b4ced95ad417860}} 
 \index{QCPAxis@{QCPAxis}!tickPen@{tickPen}}
 \index{tickPen@{tickPen}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{tickPen()}{tickPen()}}
 {\footnotesize\ttfamily QPen QCPAxis\+::tick\+Pen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02029}{2029}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_a5c3da767a2dc990f200856a9e27ea06e}\label{class_q_c_p_axis_a5c3da767a2dc990f200856a9e27ea06e}} 
 \index{QCPAxis@{QCPAxis}!ticks@{ticks}}
@@ -1730,11 +2648,19 @@ Since the ticker is stored in the axis as a shared pointer, multiple axes may sh
 \doxysubsubsection{\texorpdfstring{ticks()}{ticks()}}
 {\footnotesize\ttfamily bool QCPAxis\+::ticks (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02012}{2012}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_ae2a807d9e3c7a880934954f7524b3b27}\label{class_q_c_p_axis_ae2a807d9e3c7a880934954f7524b3b27}} 
 \index{QCPAxis@{QCPAxis}!tickVector@{tickVector}}
 \index{tickVector@{tickVector}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{tickVector()}{tickVector()}}
 {\footnotesize\ttfamily QVector$<$ double $>$ QCPAxis\+::tick\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02021}{2021}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_ae192929920597eacd5dd8be910c25f26}\label{class_q_c_p_axis_ae192929920597eacd5dd8be910c25f26}} 
 \index{QCPAxis@{QCPAxis}!tickVectorLabels@{tickVectorLabels}}
@@ -1742,11 +2668,19 @@ Since the ticker is stored in the axis as a shared pointer, multiple axes may sh
 \doxysubsubsection{\texorpdfstring{tickVectorLabels()}{tickVectorLabels()}}
 {\footnotesize\ttfamily QVector$<$ QString $>$ QCPAxis\+::tick\+Vector\+Labels (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02022}{2022}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_a9feaf5f78286693e89221bc205f9389a}\label{class_q_c_p_axis_a9feaf5f78286693e89221bc205f9389a}} 
 \index{QCPAxis@{QCPAxis}!upperEnding@{upperEnding}}
 \index{upperEnding@{upperEnding}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{upperEnding()}{upperEnding()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_line_ending}{QCPLine\+Ending}} QCPAxis\+::upper\+Ending (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l07648}{7648}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_a71643d27524a843230b5ba68085b3d9b}\label{class_q_c_p_axis_a71643d27524a843230b5ba68085b3d9b}} 
 \index{QCPAxis@{QCPAxis}!wheelEvent@{wheelEvent}}
@@ -1771,6 +2705,18 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_layerable_a47dfd7b8fd99c08ca54e0
 
 
 
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l08913}{8913}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_axis_a71643d27524a843230b5ba68085b3d9b_cgraph}
+\end{center}
+\end{figure}
+
+
 \doxysubsection{Friends And Related Function Documentation}
 \mbox{\Hypertarget{class_q_c_p_axis_acbf20ecb140f66c5fd1bc64ae0762990}\label{class_q_c_p_axis_acbf20ecb140f66c5fd1bc64ae0762990}} 
 \index{QCPAxis@{QCPAxis}!QCPAxisRect@{QCPAxisRect}}
@@ -1778,17 +2724,29 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_layerable_a47dfd7b8fd99c08ca54e0
 \doxysubsubsection{\texorpdfstring{QCPAxisRect}{QCPAxisRect}}
 {\footnotesize\ttfamily friend class \mbox{\hyperlink{class_q_c_p_axis_rect}{QCPAxis\+Rect}}\hspace{0.3cm}{\ttfamily [friend]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02206}{2206}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_a061e177f585549fc31f780852e2bd6fe}\label{class_q_c_p_axis_a061e177f585549fc31f780852e2bd6fe}} 
 \index{QCPAxis@{QCPAxis}!QCPGrid@{QCPGrid}}
 \index{QCPGrid@{QCPGrid}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{QCPGrid}{QCPGrid}}
 {\footnotesize\ttfamily friend class \mbox{\hyperlink{class_q_c_p_grid}{QCPGrid}}\hspace{0.3cm}{\ttfamily [friend]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02205}{2205}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_a1cdf9df76adcfae45261690aa0ca2198}\label{class_q_c_p_axis_a1cdf9df76adcfae45261690aa0ca2198}} 
 \index{QCPAxis@{QCPAxis}!QCustomPlot@{QCustomPlot}}
 \index{QCustomPlot@{QCustomPlot}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{QCustomPlot}{QCustomPlot}}
 {\footnotesize\ttfamily friend class \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02204}{2204}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 
 
@@ -1799,11 +2757,19 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_layerable_a47dfd7b8fd99c08ca54e0
 \doxysubsubsection{\texorpdfstring{mAADragBackup}{mAADragBackup}}
 {\footnotesize\ttfamily QCP\+::\+Antialiased\+Elements QCPAxis\+::m\+AADrag\+Backup\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02173}{2173}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_aeeae00935bd2dab82d64f32544a90913}\label{class_q_c_p_axis_aeeae00935bd2dab82d64f32544a90913}} 
 \index{QCPAxis@{QCPAxis}!mAxisPainter@{mAxisPainter}}
 \index{mAxisPainter@{mAxisPainter}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{mAxisPainter}{mAxisPainter}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_axis_painter_private}{QCPAxis\+Painter\+Private}}$\ast$ QCPAxis\+::m\+Axis\+Painter\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02164}{2164}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_a6f150b65a202f32936997960e331dfcb}\label{class_q_c_p_axis_a6f150b65a202f32936997960e331dfcb}} 
 \index{QCPAxis@{QCPAxis}!mAxisRect@{mAxisRect}}
@@ -1811,11 +2777,19 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_layerable_a47dfd7b8fd99c08ca54e0
 \doxysubsubsection{\texorpdfstring{mAxisRect}{mAxisRect}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_axis_rect}{QCPAxis\+Rect}}$\ast$ QCPAxis\+::m\+Axis\+Rect\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02129}{2129}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_ae704bf9f2c2b026f08dd4ccad79c616e}\label{class_q_c_p_axis_ae704bf9f2c2b026f08dd4ccad79c616e}} 
 \index{QCPAxis@{QCPAxis}!mAxisType@{mAxisType}}
 \index{mAxisType@{mAxisType}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{mAxisType}{mAxisType}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_axis_ae2bcc1728b382f10f064612b368bc18a}{Axis\+Type}} QCPAxis\+::m\+Axis\+Type\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02128}{2128}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_ad6b4a0aee9558fb35529e960b8fef72d}\label{class_q_c_p_axis_ad6b4a0aee9558fb35529e960b8fef72d}} 
 \index{QCPAxis@{QCPAxis}!mBasePen@{mBasePen}}
@@ -1823,11 +2797,19 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_layerable_a47dfd7b8fd99c08ca54e0
 \doxysubsubsection{\texorpdfstring{mBasePen}{mBasePen}}
 {\footnotesize\ttfamily QPen QCPAxis\+::m\+Base\+Pen\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02134}{2134}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_a48ace55cbd54f7241e7f1b06fd369b64}\label{class_q_c_p_axis_a48ace55cbd54f7241e7f1b06fd369b64}} 
 \index{QCPAxis@{QCPAxis}!mCachedMargin@{mCachedMargin}}
 \index{mCachedMargin@{mCachedMargin}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{mCachedMargin}{mCachedMargin}}
 {\footnotesize\ttfamily int QCPAxis\+::m\+Cached\+Margin\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02170}{2170}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_a2cde37b6e385f47e11322df4ac1b0e9b}\label{class_q_c_p_axis_a2cde37b6e385f47e11322df4ac1b0e9b}} 
 \index{QCPAxis@{QCPAxis}!mCachedMarginValid@{mCachedMarginValid}}
@@ -1835,11 +2817,19 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_layerable_a47dfd7b8fd99c08ca54e0
 \doxysubsubsection{\texorpdfstring{mCachedMarginValid}{mCachedMarginValid}}
 {\footnotesize\ttfamily bool QCPAxis\+::m\+Cached\+Margin\+Valid\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02169}{2169}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_ad56b9be14ed8ae9b858d84bdb539b1ca}\label{class_q_c_p_axis_ad56b9be14ed8ae9b858d84bdb539b1ca}} 
 \index{QCPAxis@{QCPAxis}!mDragging@{mDragging}}
 \index{mDragging@{mDragging}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{mDragging}{mDragging}}
 {\footnotesize\ttfamily bool QCPAxis\+::m\+Dragging\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02171}{2171}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_a4b665f97d37727f0013b93d727e80bd2}\label{class_q_c_p_axis_a4b665f97d37727f0013b93d727e80bd2}} 
 \index{QCPAxis@{QCPAxis}!mDragStartRange@{mDragStartRange}}
@@ -1847,11 +2837,19 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_layerable_a47dfd7b8fd99c08ca54e0
 \doxysubsubsection{\texorpdfstring{mDragStartRange}{mDragStartRange}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} QCPAxis\+::m\+Drag\+Start\+Range\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02172}{2172}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_a17bffb94aaa40311f259c6ac7bcb5d5f}\label{class_q_c_p_axis_a17bffb94aaa40311f259c6ac7bcb5d5f}} 
 \index{QCPAxis@{QCPAxis}!mGrid@{mGrid}}
 \index{mGrid@{mGrid}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{mGrid}{mGrid}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_grid}{QCPGrid}}$\ast$ QCPAxis\+::m\+Grid\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02163}{2163}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_ae8001dbdfc47685c1cf7b98b044460e6}\label{class_q_c_p_axis_ae8001dbdfc47685c1cf7b98b044460e6}} 
 \index{QCPAxis@{QCPAxis}!mLabel@{mLabel}}
@@ -1859,11 +2857,19 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_layerable_a47dfd7b8fd99c08ca54e0
 \doxysubsubsection{\texorpdfstring{mLabel}{mLabel}}
 {\footnotesize\ttfamily QString QCPAxis\+::m\+Label\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02138}{2138}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_a457a003bb1c2b6ab73e5a173ba7558fd}\label{class_q_c_p_axis_a457a003bb1c2b6ab73e5a173ba7558fd}} 
 \index{QCPAxis@{QCPAxis}!mLabelColor@{mLabelColor}}
 \index{mLabelColor@{mLabelColor}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{mLabelColor}{mLabelColor}}
 {\footnotesize\ttfamily QColor QCPAxis\+::m\+Label\+Color\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02140}{2140}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_a37442d470e30e19b81ecaf979a34d046}\label{class_q_c_p_axis_a37442d470e30e19b81ecaf979a34d046}} 
 \index{QCPAxis@{QCPAxis}!mLabelFont@{mLabelFont}}
@@ -1871,11 +2877,19 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_layerable_a47dfd7b8fd99c08ca54e0
 \doxysubsubsection{\texorpdfstring{mLabelFont}{mLabelFont}}
 {\footnotesize\ttfamily QFont QCPAxis\+::m\+Label\+Font\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02139}{2139}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_a0be1bc05fcbf86bd9916cc8faa55dd78}\label{class_q_c_p_axis_a0be1bc05fcbf86bd9916cc8faa55dd78}} 
 \index{QCPAxis@{QCPAxis}!mNotAADragBackup@{mNotAADragBackup}}
 \index{mNotAADragBackup@{mNotAADragBackup}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{mNotAADragBackup}{mNotAADragBackup}}
 {\footnotesize\ttfamily QCP\+::\+Antialiased\+Elements QCPAxis\+::m\+Not\+AADrag\+Backup\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02173}{2173}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_af03809bee3f3e35fcc38d25b6dd5003b}\label{class_q_c_p_axis_af03809bee3f3e35fcc38d25b6dd5003b}} 
 \index{QCPAxis@{QCPAxis}!mNumberBeautifulPowers@{mNumberBeautifulPowers}}
@@ -1883,11 +2897,19 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_layerable_a47dfd7b8fd99c08ca54e0
 \doxysubsubsection{\texorpdfstring{mNumberBeautifulPowers}{mNumberBeautifulPowers}}
 {\footnotesize\ttfamily bool QCPAxis\+::m\+Number\+Beautiful\+Powers\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02149}{2149}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_a39594313deef458f425bba25cd337a8a}\label{class_q_c_p_axis_a39594313deef458f425bba25cd337a8a}} 
 \index{QCPAxis@{QCPAxis}!mNumberFormatChar@{mNumberFormatChar}}
 \index{mNumberFormatChar@{mNumberFormatChar}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{mNumberFormatChar}{mNumberFormatChar}}
 {\footnotesize\ttfamily QLatin1\+Char QCPAxis\+::m\+Number\+Format\+Char\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02148}{2148}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_acd76e8c783384d99ccc4a13797eec188}\label{class_q_c_p_axis_acd76e8c783384d99ccc4a13797eec188}} 
 \index{QCPAxis@{QCPAxis}!mNumberPrecision@{mNumberPrecision}}
@@ -1895,11 +2917,19 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_layerable_a47dfd7b8fd99c08ca54e0
 \doxysubsubsection{\texorpdfstring{mNumberPrecision}{mNumberPrecision}}
 {\footnotesize\ttfamily int QCPAxis\+::m\+Number\+Precision\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02147}{2147}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_a048e1792fa86f4f86df55200b3f0be36}\label{class_q_c_p_axis_a048e1792fa86f4f86df55200b3f0be36}} 
 \index{QCPAxis@{QCPAxis}!mOrientation@{mOrientation}}
 \index{mOrientation@{mOrientation}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{mOrientation}{mOrientation}}
 {\footnotesize\ttfamily Qt\+::\+Orientation QCPAxis\+::m\+Orientation\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02132}{2132}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_a52a805a4f03231210e0880db7f77e098}\label{class_q_c_p_axis_a52a805a4f03231210e0880db7f77e098}} 
 \index{QCPAxis@{QCPAxis}!mPadding@{mPadding}}
@@ -1907,11 +2937,19 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_layerable_a47dfd7b8fd99c08ca54e0
 \doxysubsubsection{\texorpdfstring{mPadding}{mPadding}}
 {\footnotesize\ttfamily int QCPAxis\+::m\+Padding\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02131}{2131}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_a1ee36773c49062d751560e11f90845f7}\label{class_q_c_p_axis_a1ee36773c49062d751560e11f90845f7}} 
 \index{QCPAxis@{QCPAxis}!mRange@{mRange}}
 \index{mRange@{mRange}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{mRange}{mRange}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} QCPAxis\+::m\+Range\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02158}{2158}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_a5cb034f57aa3d773a9ca55a0931dbf7b}\label{class_q_c_p_axis_a5cb034f57aa3d773a9ca55a0931dbf7b}} 
 \index{QCPAxis@{QCPAxis}!mRangeReversed@{mRangeReversed}}
@@ -1919,11 +2957,19 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_layerable_a47dfd7b8fd99c08ca54e0
 \doxysubsubsection{\texorpdfstring{mRangeReversed}{mRangeReversed}}
 {\footnotesize\ttfamily bool QCPAxis\+::m\+Range\+Reversed\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02159}{2159}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_ad706039549cbbbec5fcb2baf7894e04d}\label{class_q_c_p_axis_ad706039549cbbbec5fcb2baf7894e04d}} 
 \index{QCPAxis@{QCPAxis}!mScaleType@{mScaleType}}
 \index{mScaleType@{mScaleType}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{mScaleType}{mScaleType}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_axis_a36d8e8658dbaa179bf2aeb973db2d6f0}{Scale\+Type}} QCPAxis\+::m\+Scale\+Type\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02160}{2160}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_ab9042d8a095998f27a28b39411d8b9c3}\label{class_q_c_p_axis_ab9042d8a095998f27a28b39411d8b9c3}} 
 \index{QCPAxis@{QCPAxis}!mSelectableParts@{mSelectableParts}}
@@ -1931,11 +2977,19 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_layerable_a47dfd7b8fd99c08ca54e0
 \doxysubsubsection{\texorpdfstring{mSelectableParts}{mSelectableParts}}
 {\footnotesize\ttfamily Selectable\+Parts QCPAxis\+::m\+Selectable\+Parts\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02133}{2133}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_a80baa4e3c16f9b6edf3eccacd2a50fde}\label{class_q_c_p_axis_a80baa4e3c16f9b6edf3eccacd2a50fde}} 
 \index{QCPAxis@{QCPAxis}!mSelectedBasePen@{mSelectedBasePen}}
 \index{mSelectedBasePen@{mSelectedBasePen}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{mSelectedBasePen}{mSelectedBasePen}}
 {\footnotesize\ttfamily QPen QCPAxis\+::m\+Selected\+Base\+Pen\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02134}{2134}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_a94f57de3ba024471ca206d83cf2258dd}\label{class_q_c_p_axis_a94f57de3ba024471ca206d83cf2258dd}} 
 \index{QCPAxis@{QCPAxis}!mSelectedLabelColor@{mSelectedLabelColor}}
@@ -1943,11 +2997,19 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_layerable_a47dfd7b8fd99c08ca54e0
 \doxysubsubsection{\texorpdfstring{mSelectedLabelColor}{mSelectedLabelColor}}
 {\footnotesize\ttfamily QColor QCPAxis\+::m\+Selected\+Label\+Color\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02140}{2140}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_ae48fe3489afadc0b3cd003233e2bf19f}\label{class_q_c_p_axis_ae48fe3489afadc0b3cd003233e2bf19f}} 
 \index{QCPAxis@{QCPAxis}!mSelectedLabelFont@{mSelectedLabelFont}}
 \index{mSelectedLabelFont@{mSelectedLabelFont}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{mSelectedLabelFont}{mSelectedLabelFont}}
 {\footnotesize\ttfamily QFont QCPAxis\+::m\+Selected\+Label\+Font\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02139}{2139}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_a8f1eb0abfe2ae64652aa46b360e841e4}\label{class_q_c_p_axis_a8f1eb0abfe2ae64652aa46b360e841e4}} 
 \index{QCPAxis@{QCPAxis}!mSelectedParts@{mSelectedParts}}
@@ -1955,11 +3017,19 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_layerable_a47dfd7b8fd99c08ca54e0
 \doxysubsubsection{\texorpdfstring{mSelectedParts}{mSelectedParts}}
 {\footnotesize\ttfamily Selectable\+Parts QCPAxis\+::m\+Selected\+Parts\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02133}{2133}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_aa5cc6afc5dc2a365f5abbd36eb04a1dc}\label{class_q_c_p_axis_aa5cc6afc5dc2a365f5abbd36eb04a1dc}} 
 \index{QCPAxis@{QCPAxis}!mSelectedSubTickPen@{mSelectedSubTickPen}}
 \index{mSelectedSubTickPen@{mSelectedSubTickPen}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{mSelectedSubTickPen}{mSelectedSubTickPen}}
 {\footnotesize\ttfamily QPen QCPAxis\+::m\+Selected\+Sub\+Tick\+Pen\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02156}{2156}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_a3bcad40902f45dc4c991a2c3e4d31d70}\label{class_q_c_p_axis_a3bcad40902f45dc4c991a2c3e4d31d70}} 
 \index{QCPAxis@{QCPAxis}!mSelectedTickLabelColor@{mSelectedTickLabelColor}}
@@ -1967,11 +3037,19 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_layerable_a47dfd7b8fd99c08ca54e0
 \doxysubsubsection{\texorpdfstring{mSelectedTickLabelColor}{mSelectedTickLabelColor}}
 {\footnotesize\ttfamily QColor QCPAxis\+::m\+Selected\+Tick\+Label\+Color\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02146}{2146}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_a4f2e4919da9615dac612662c249b1119}\label{class_q_c_p_axis_a4f2e4919da9615dac612662c249b1119}} 
 \index{QCPAxis@{QCPAxis}!mSelectedTickLabelFont@{mSelectedTickLabelFont}}
 \index{mSelectedTickLabelFont@{mSelectedTickLabelFont}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{mSelectedTickLabelFont}{mSelectedTickLabelFont}}
 {\footnotesize\ttfamily QFont QCPAxis\+::m\+Selected\+Tick\+Label\+Font\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02145}{2145}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_a9524593dbc75a5c5b29dbd1cb4b37df5}\label{class_q_c_p_axis_a9524593dbc75a5c5b29dbd1cb4b37df5}} 
 \index{QCPAxis@{QCPAxis}!mSelectedTickPen@{mSelectedTickPen}}
@@ -1979,11 +3057,19 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_layerable_a47dfd7b8fd99c08ca54e0
 \doxysubsubsection{\texorpdfstring{mSelectedTickPen}{mSelectedTickPen}}
 {\footnotesize\ttfamily QPen QCPAxis\+::m\+Selected\+Tick\+Pen\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02155}{2155}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_a32ef56d3a417866720eb12667d27dbd1}\label{class_q_c_p_axis_a32ef56d3a417866720eb12667d27dbd1}} 
 \index{QCPAxis@{QCPAxis}!mSubTickPen@{mSubTickPen}}
 \index{mSubTickPen@{mSubTickPen}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{mSubTickPen}{mSubTickPen}}
 {\footnotesize\ttfamily QPen QCPAxis\+::m\+Sub\+Tick\+Pen\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02156}{2156}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_af16aab9c3effa482fa10e7dd5c3d91f3}\label{class_q_c_p_axis_af16aab9c3effa482fa10e7dd5c3d91f3}} 
 \index{QCPAxis@{QCPAxis}!mSubTicks@{mSubTicks}}
@@ -1991,11 +3077,19 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_layerable_a47dfd7b8fd99c08ca54e0
 \doxysubsubsection{\texorpdfstring{mSubTicks}{mSubTicks}}
 {\footnotesize\ttfamily bool QCPAxis\+::m\+Sub\+Ticks\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02153}{2153}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_a28353081e0ff35c3fe5ced923a287faa}\label{class_q_c_p_axis_a28353081e0ff35c3fe5ced923a287faa}} 
 \index{QCPAxis@{QCPAxis}!mSubTickVector@{mSubTickVector}}
 \index{mSubTickVector@{mSubTickVector}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{mSubTickVector}{mSubTickVector}}
 {\footnotesize\ttfamily QVector$<$double$>$ QCPAxis\+::m\+Sub\+Tick\+Vector\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02168}{2168}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_ad9c3061cbd8bec5b0755d5a0bef3b700}\label{class_q_c_p_axis_ad9c3061cbd8bec5b0755d5a0bef3b700}} 
 \index{QCPAxis@{QCPAxis}!mTicker@{mTicker}}
@@ -2003,11 +3097,19 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_layerable_a47dfd7b8fd99c08ca54e0
 \doxysubsubsection{\texorpdfstring{mTicker}{mTicker}}
 {\footnotesize\ttfamily QShared\+Pointer$<$\mbox{\hyperlink{class_q_c_p_axis_ticker}{QCPAxis\+Ticker}}$>$ QCPAxis\+::m\+Ticker\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02165}{2165}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_a6384a749b3b56a97df081d8082321ab4}\label{class_q_c_p_axis_a6384a749b3b56a97df081d8082321ab4}} 
 \index{QCPAxis@{QCPAxis}!mTickLabelColor@{mTickLabelColor}}
 \index{mTickLabelColor@{mTickLabelColor}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{mTickLabelColor}{mTickLabelColor}}
 {\footnotesize\ttfamily QColor QCPAxis\+::m\+Tick\+Label\+Color\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02146}{2146}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_add79d1e39c4ed65869a1e9cc79043f3f}\label{class_q_c_p_axis_add79d1e39c4ed65869a1e9cc79043f3f}} 
 \index{QCPAxis@{QCPAxis}!mTickLabelFont@{mTickLabelFont}}
@@ -2015,11 +3117,19 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_layerable_a47dfd7b8fd99c08ca54e0
 \doxysubsubsection{\texorpdfstring{mTickLabelFont}{mTickLabelFont}}
 {\footnotesize\ttfamily QFont QCPAxis\+::m\+Tick\+Label\+Font\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02145}{2145}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_a3e4315be072026644e69009557a2fa11}\label{class_q_c_p_axis_a3e4315be072026644e69009557a2fa11}} 
 \index{QCPAxis@{QCPAxis}!mTickLabels@{mTickLabels}}
 \index{mTickLabels@{mTickLabels}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{mTickLabels}{mTickLabels}}
 {\footnotesize\ttfamily bool QCPAxis\+::m\+Tick\+Labels\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02143}{2143}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_a1d52c78c856d8bd1f331d4ec4e63d944}\label{class_q_c_p_axis_a1d52c78c856d8bd1f331d4ec4e63d944}} 
 \index{QCPAxis@{QCPAxis}!mTickPen@{mTickPen}}
@@ -2027,17 +3137,29 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_layerable_a47dfd7b8fd99c08ca54e0
 \doxysubsubsection{\texorpdfstring{mTickPen}{mTickPen}}
 {\footnotesize\ttfamily QPen QCPAxis\+::m\+Tick\+Pen\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02155}{2155}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_ab111e74bba22e06848897c932fc549fe}\label{class_q_c_p_axis_ab111e74bba22e06848897c932fc549fe}} 
 \index{QCPAxis@{QCPAxis}!mTicks@{mTicks}}
 \index{mTicks@{mTicks}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{mTicks}{mTicks}}
 {\footnotesize\ttfamily bool QCPAxis\+::m\+Ticks\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02152}{2152}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_aae0f9b9973b85be601200f00f5825087}\label{class_q_c_p_axis_aae0f9b9973b85be601200f00f5825087}} 
 \index{QCPAxis@{QCPAxis}!mTickVector@{mTickVector}}
 \index{mTickVector@{mTickVector}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{mTickVector}{mTickVector}}
 {\footnotesize\ttfamily QVector$<$double$>$ QCPAxis\+::m\+Tick\+Vector\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02166}{2166}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_aeee4bd0fca3f587eafe33843d1cb4f82}\label{class_q_c_p_axis_aeee4bd0fca3f587eafe33843d1cb4f82}} 
 \index{QCPAxis@{QCPAxis}!mTickVectorLabels@{mTickVectorLabels}}
@@ -2047,7 +3169,11 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_layerable_a47dfd7b8fd99c08ca54e0
 
 
 
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02167}{2167}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{qcustomplot_8h}{qcustomplot.\+h}}\item 
-\mbox{\hyperlink{qcustomplot_8cpp}{qcustomplot.\+cpp}}\end{DoxyCompactItemize}
+qcustomplot.\+h\item 
+qcustomplot.\+cpp\end{DoxyCompactItemize}

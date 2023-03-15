@@ -5,16 +5,12 @@
 Holds the data of one single data point for \mbox{\hyperlink{class_q_c_p_statistical_box}{QCPStatistical\+Box}}.  
 
 
-
-
-{\ttfamily \#include $<$qcustomplot.\+h$>$}
-
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_q_c_p_statistical_box_data_ab96c4b93670a8dcac8a3d4080fd722ee}{QCPStatistical\+Box\+Data}} ()
 \item 
-\mbox{\hyperlink{class_q_c_p_statistical_box_data_a66b0c6d39765d0feb49c286fba4e4ef5}{QCPStatistical\+Box\+Data}} (double \mbox{\hyperlink{class_q_c_p_statistical_box_data_a2d0b5ca5130e8a73294c46b8b2fd77b8}{key}}, double \mbox{\hyperlink{class_q_c_p_statistical_box_data_adc2f4b8cbff9f2e4a676f32bad8a7e3a}{minimum}}, double \mbox{\hyperlink{class_q_c_p_statistical_box_data_af9f478b4ea0789fa6cff7eebb654b5d4}{lower\+Quartile}}, double \mbox{\hyperlink{class_q_c_p_statistical_box_data_a116cd53ae6685979ec3b051cfc7dbba5}{median}}, double \mbox{\hyperlink{class_q_c_p_statistical_box_data_a5604dfe04b103e5ac73ce7895b46303b}{upper\+Quartile}}, double \mbox{\hyperlink{class_q_c_p_statistical_box_data_aa2800abda337decfc4277cb8bf846d6f}{maximum}}, const QVector$<$ double $>$ \&\mbox{\hyperlink{class_q_c_p_statistical_box_data_abaa27539fbd941d3f1eb8169e881e308}{outliers}}=QVector$<$ double $>$())
+\mbox{\hyperlink{class_q_c_p_statistical_box_data_a66b0c6d39765d0feb49c286fba4e4ef5}{QCPStatistical\+Box\+Data}} (double key, double minimum, double lower\+Quartile, double median, double upper\+Quartile, double maximum, const QVector$<$ double $>$ \&outliers=QVector$<$ double $>$())
 \item 
 double \mbox{\hyperlink{class_q_c_p_statistical_box_data_a168100275e85935207deec86216abc88}{sort\+Key}} () const
 \item 
@@ -69,11 +65,15 @@ The stored data is\+:
 \item {\itshape maximum\+:} the position of the upper whisker, typically the maximum measurement of the sample that\textquotesingle{}s not considered an outlier.\end{DoxyItemize}
 \begin{DoxyItemize}
 \item {\itshape outliers\+:} a QVector of outlier values that will be drawn as scatter points at the {\itshape key} coordinate of this data point (see \mbox{\hyperlink{class_q_c_p_statistical_box_ad5241943422eb8e58360a97e99ad6aa7}{QCPStatistical\+Box\+::set\+Outlier\+Style}})\end{DoxyItemize}
-The container for storing multiple data points is \mbox{\hyperlink{qcustomplot_8h_a8b773c0c35f8f924701ced6e9915e4c7}{QCPStatistical\+Box\+Data\+Container}}. It is a typedef for \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}} with \mbox{\hyperlink{class_q_c_p_statistical_box_data}{QCPStatistical\+Box\+Data}} as the Data\+Type template parameter. See the documentation there for an explanation regarding the data type\textquotesingle{}s generic methods.
+The container for storing multiple data points is QCPStatistical\+Box\+Data\+Container. It is a typedef for \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}} with \mbox{\hyperlink{class_q_c_p_statistical_box_data}{QCPStatistical\+Box\+Data}} as the Data\+Type template parameter. See the documentation there for an explanation regarding the data type\textquotesingle{}s generic methods.
 
 \begin{DoxySeeAlso}{See also}
-\mbox{\hyperlink{qcustomplot_8h_a8b773c0c35f8f924701ced6e9915e4c7}{QCPStatistical\+Box\+Data\+Container}} 
+QCPStatistical\+Box\+Data\+Container 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05563}{5563}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -83,13 +83,21 @@ The container for storing multiple data points is \mbox{\hyperlink{qcustomplot_8
 \doxysubsubsection{\texorpdfstring{QCPStatisticalBoxData()}{QCPStatisticalBoxData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily QCPStatistical\+Box\+Data\+::\+QCPStatistical\+Box\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Constructs a data point with key and all values set to zero. \mbox{\Hypertarget{class_q_c_p_statistical_box_data_a66b0c6d39765d0feb49c286fba4e4ef5}\label{class_q_c_p_statistical_box_data_a66b0c6d39765d0feb49c286fba4e4ef5}} 
+Constructs a data point with key and all values set to zero. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l24366}{24366}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+\mbox{\Hypertarget{class_q_c_p_statistical_box_data_a66b0c6d39765d0feb49c286fba4e4ef5}\label{class_q_c_p_statistical_box_data_a66b0c6d39765d0feb49c286fba4e4ef5}} 
 \index{QCPStatisticalBoxData@{QCPStatisticalBoxData}!QCPStatisticalBoxData@{QCPStatisticalBoxData}}
 \index{QCPStatisticalBoxData@{QCPStatisticalBoxData}!QCPStatisticalBoxData@{QCPStatisticalBoxData}}
 \doxysubsubsection{\texorpdfstring{QCPStatisticalBoxData()}{QCPStatisticalBoxData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily QCPStatistical\+Box\+Data\+::\+QCPStatistical\+Box\+Data (\begin{DoxyParamCaption}\item[{double}]{key,  }\item[{double}]{minimum,  }\item[{double}]{lower\+Quartile,  }\item[{double}]{median,  }\item[{double}]{upper\+Quartile,  }\item[{double}]{maximum,  }\item[{const QVector$<$ double $>$ \&}]{outliers = {\ttfamily QVector$<$double$>$()} }\end{DoxyParamCaption})}
 
 Constructs a data point with the specified {\itshape key}, {\itshape minimum}, {\itshape lower\+Quartile}, {\itshape median}, {\itshape upper\+Quartile}, {\itshape maximum} and optionally a number of {\itshape outliers}. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l24380}{24380}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_q_c_p_statistical_box_data_a8c391d5a6c7cebc79b664aad9917b499}\label{class_q_c_p_statistical_box_data_a8c391d5a6c7cebc79b664aad9917b499}} 
@@ -100,7 +108,11 @@ Constructs a data point with the specified {\itshape key}, {\itshape minimum}, {
 
 Returns a data point with the specified {\itshape sort\+Key}. All other members are set to zero.
 
-For a general explanation of what this method is good for in the context of the data container, see the documentation of \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}. \mbox{\Hypertarget{class_q_c_p_statistical_box_data_a4bbbf44f60ac5eca73c5f4135741562e}\label{class_q_c_p_statistical_box_data_a4bbbf44f60ac5eca73c5f4135741562e}} 
+For a general explanation of what this method is good for in the context of the data container, see the documentation of \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05570}{5570}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+\mbox{\Hypertarget{class_q_c_p_statistical_box_data_a4bbbf44f60ac5eca73c5f4135741562e}\label{class_q_c_p_statistical_box_data_a4bbbf44f60ac5eca73c5f4135741562e}} 
 \index{QCPStatisticalBoxData@{QCPStatisticalBoxData}!mainKey@{mainKey}}
 \index{mainKey@{mainKey}!QCPStatisticalBoxData@{QCPStatisticalBoxData}}
 \doxysubsubsection{\texorpdfstring{mainKey()}{mainKey()}}
@@ -108,7 +120,11 @@ For a general explanation of what this method is good for in the context of the 
 
 Returns the {\itshape key} member of this data point.
 
-For a general explanation of what this method is good for in the context of the data container, see the documentation of \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}. \mbox{\Hypertarget{class_q_c_p_statistical_box_data_a0df3cb31cfd6d48decf6173297b81746}\label{class_q_c_p_statistical_box_data_a0df3cb31cfd6d48decf6173297b81746}} 
+For a general explanation of what this method is good for in the context of the data container, see the documentation of \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05573}{5573}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+\mbox{\Hypertarget{class_q_c_p_statistical_box_data_a0df3cb31cfd6d48decf6173297b81746}\label{class_q_c_p_statistical_box_data_a0df3cb31cfd6d48decf6173297b81746}} 
 \index{QCPStatisticalBoxData@{QCPStatisticalBoxData}!mainValue@{mainValue}}
 \index{mainValue@{mainValue}!QCPStatisticalBoxData@{QCPStatisticalBoxData}}
 \doxysubsubsection{\texorpdfstring{mainValue()}{mainValue()}}
@@ -116,7 +132,11 @@ For a general explanation of what this method is good for in the context of the 
 
 Returns the {\itshape median} member of this data point.
 
-For a general explanation of what this method is good for in the context of the data container, see the documentation of \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}. \mbox{\Hypertarget{class_q_c_p_statistical_box_data_a168100275e85935207deec86216abc88}\label{class_q_c_p_statistical_box_data_a168100275e85935207deec86216abc88}} 
+For a general explanation of what this method is good for in the context of the data container, see the documentation of \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05574}{5574}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+\mbox{\Hypertarget{class_q_c_p_statistical_box_data_a168100275e85935207deec86216abc88}\label{class_q_c_p_statistical_box_data_a168100275e85935207deec86216abc88}} 
 \index{QCPStatisticalBoxData@{QCPStatisticalBoxData}!sortKey@{sortKey}}
 \index{sortKey@{sortKey}!QCPStatisticalBoxData@{QCPStatisticalBoxData}}
 \doxysubsubsection{\texorpdfstring{sortKey()}{sortKey()}}
@@ -124,7 +144,11 @@ For a general explanation of what this method is good for in the context of the 
 
 Returns the {\itshape key} member of this data point.
 
-For a general explanation of what this method is good for in the context of the data container, see the documentation of \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}. \mbox{\Hypertarget{class_q_c_p_statistical_box_data_a4710ae44b85d4b34b13c3f9301f28c01}\label{class_q_c_p_statistical_box_data_a4710ae44b85d4b34b13c3f9301f28c01}} 
+For a general explanation of what this method is good for in the context of the data container, see the documentation of \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05569}{5569}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+\mbox{\Hypertarget{class_q_c_p_statistical_box_data_a4710ae44b85d4b34b13c3f9301f28c01}\label{class_q_c_p_statistical_box_data_a4710ae44b85d4b34b13c3f9301f28c01}} 
 \index{QCPStatisticalBoxData@{QCPStatisticalBoxData}!sortKeyIsMainKey@{sortKeyIsMainKey}}
 \index{sortKeyIsMainKey@{sortKeyIsMainKey}!QCPStatisticalBoxData@{QCPStatisticalBoxData}}
 \doxysubsubsection{\texorpdfstring{sortKeyIsMainKey()}{sortKeyIsMainKey()}}
@@ -132,7 +156,11 @@ For a general explanation of what this method is good for in the context of the 
 
 Since the member {\itshape key} is both the data point key coordinate and the data ordering parameter, this method returns true.
 
-For a general explanation of what this method is good for in the context of the data container, see the documentation of \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}. \mbox{\Hypertarget{class_q_c_p_statistical_box_data_a1a2410fcf3d45fa3a1ad09e265b9bcad}\label{class_q_c_p_statistical_box_data_a1a2410fcf3d45fa3a1ad09e265b9bcad}} 
+For a general explanation of what this method is good for in the context of the data container, see the documentation of \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05571}{5571}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+\mbox{\Hypertarget{class_q_c_p_statistical_box_data_a1a2410fcf3d45fa3a1ad09e265b9bcad}\label{class_q_c_p_statistical_box_data_a1a2410fcf3d45fa3a1ad09e265b9bcad}} 
 \index{QCPStatisticalBoxData@{QCPStatisticalBoxData}!valueRange@{valueRange}}
 \index{valueRange@{valueRange}!QCPStatisticalBoxData@{QCPStatisticalBoxData}}
 \doxysubsubsection{\texorpdfstring{valueRange()}{valueRange()}}
@@ -142,6 +170,18 @@ Returns a \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} spanning from the {\its
 
 For a general explanation of what this method is good for in the context of the data container, see the documentation of \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}. 
 
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05576}{5576}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{class_q_c_p_statistical_box_data_a1a2410fcf3d45fa3a1ad09e265b9bcad_cgraph}
+\end{center}
+\end{figure}
+
+
 \doxysubsection{Member Data Documentation}
 \mbox{\Hypertarget{class_q_c_p_statistical_box_data_a2d0b5ca5130e8a73294c46b8b2fd77b8}\label{class_q_c_p_statistical_box_data_a2d0b5ca5130e8a73294c46b8b2fd77b8}} 
 \index{QCPStatisticalBoxData@{QCPStatisticalBoxData}!key@{key}}
@@ -149,11 +189,19 @@ For a general explanation of what this method is good for in the context of the 
 \doxysubsubsection{\texorpdfstring{key}{key}}
 {\footnotesize\ttfamily double QCPStatistical\+Box\+Data\+::key}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05584}{5584}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_statistical_box_data_af9f478b4ea0789fa6cff7eebb654b5d4}\label{class_q_c_p_statistical_box_data_af9f478b4ea0789fa6cff7eebb654b5d4}} 
 \index{QCPStatisticalBoxData@{QCPStatisticalBoxData}!lowerQuartile@{lowerQuartile}}
 \index{lowerQuartile@{lowerQuartile}!QCPStatisticalBoxData@{QCPStatisticalBoxData}}
 \doxysubsubsection{\texorpdfstring{lowerQuartile}{lowerQuartile}}
 {\footnotesize\ttfamily double QCPStatistical\+Box\+Data\+::lower\+Quartile}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05584}{5584}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_statistical_box_data_aa2800abda337decfc4277cb8bf846d6f}\label{class_q_c_p_statistical_box_data_aa2800abda337decfc4277cb8bf846d6f}} 
 \index{QCPStatisticalBoxData@{QCPStatisticalBoxData}!maximum@{maximum}}
@@ -161,11 +209,19 @@ For a general explanation of what this method is good for in the context of the 
 \doxysubsubsection{\texorpdfstring{maximum}{maximum}}
 {\footnotesize\ttfamily double QCPStatistical\+Box\+Data\+::maximum}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05584}{5584}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_statistical_box_data_a116cd53ae6685979ec3b051cfc7dbba5}\label{class_q_c_p_statistical_box_data_a116cd53ae6685979ec3b051cfc7dbba5}} 
 \index{QCPStatisticalBoxData@{QCPStatisticalBoxData}!median@{median}}
 \index{median@{median}!QCPStatisticalBoxData@{QCPStatisticalBoxData}}
 \doxysubsubsection{\texorpdfstring{median}{median}}
 {\footnotesize\ttfamily double QCPStatistical\+Box\+Data\+::median}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05584}{5584}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_statistical_box_data_adc2f4b8cbff9f2e4a676f32bad8a7e3a}\label{class_q_c_p_statistical_box_data_adc2f4b8cbff9f2e4a676f32bad8a7e3a}} 
 \index{QCPStatisticalBoxData@{QCPStatisticalBoxData}!minimum@{minimum}}
@@ -173,11 +229,19 @@ For a general explanation of what this method is good for in the context of the 
 \doxysubsubsection{\texorpdfstring{minimum}{minimum}}
 {\footnotesize\ttfamily double QCPStatistical\+Box\+Data\+::minimum}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05584}{5584}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_statistical_box_data_abaa27539fbd941d3f1eb8169e881e308}\label{class_q_c_p_statistical_box_data_abaa27539fbd941d3f1eb8169e881e308}} 
 \index{QCPStatisticalBoxData@{QCPStatisticalBoxData}!outliers@{outliers}}
 \index{outliers@{outliers}!QCPStatisticalBoxData@{QCPStatisticalBoxData}}
 \doxysubsubsection{\texorpdfstring{outliers}{outliers}}
 {\footnotesize\ttfamily QVector$<$double$>$ QCPStatistical\+Box\+Data\+::outliers}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05585}{5585}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_statistical_box_data_a5604dfe04b103e5ac73ce7895b46303b}\label{class_q_c_p_statistical_box_data_a5604dfe04b103e5ac73ce7895b46303b}} 
 \index{QCPStatisticalBoxData@{QCPStatisticalBoxData}!upperQuartile@{upperQuartile}}
@@ -187,7 +251,11 @@ For a general explanation of what this method is good for in the context of the 
 
 
 
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05584}{5584}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{qcustomplot_8h}{qcustomplot.\+h}}\item 
-\mbox{\hyperlink{qcustomplot_8cpp}{qcustomplot.\+cpp}}\end{DoxyCompactItemize}
+qcustomplot.\+h\item 
+qcustomplot.\+cpp\end{DoxyCompactItemize}

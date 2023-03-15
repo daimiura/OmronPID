@@ -7,12 +7,20 @@ Specialized axis ticker for time spans in units of milliseconds to days.
 
 
 
-{\ttfamily \#include $<$qcustomplot.\+h$>$}
-
-Inheritance diagram for QCPAxis\+Ticker\+Time\+:\begin{figure}[H]
+Inheritance diagram for QCPAxis\+Ticker\+Time\+:\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{class_q_c_p_axis_ticker_time}
+\includegraphics[width=184pt]{class_q_c_p_axis_ticker_time__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for QCPAxis\+Ticker\+Time\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{class_q_c_p_axis_ticker_time__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Types}
@@ -52,8 +60,6 @@ void \mbox{\hyperlink{class_q_c_p_axis_ticker_time_adc13e54fc969be98a5c0e3fa0dba
 \item 
 \mbox{\hyperlink{class_q_c_p_axis_ticker_a8fcf23c79ebd72202fe79253f9f01ea8}{QCPAxis\+Ticker}} ()
 \item 
-virtual \mbox{\hyperlink{class_q_c_p_axis_ticker_a1119d6f09ad720f9c5dfdd2559047161}{$\sim$\+QCPAxis\+Ticker}} ()
-\item 
 \mbox{\hyperlink{class_q_c_p_axis_ticker_ab6d2f9d9477821623ac9bc4b21ddf49a}{Tick\+Step\+Strategy}} \mbox{\hyperlink{class_q_c_p_axis_ticker_a58df76f2ec3eb48401bdd314b0e14ba1}{tick\+Step\+Strategy}} () const
 \item 
 int \mbox{\hyperlink{class_q_c_p_axis_ticker_aaf9edbe4169ce55e216fd067cc139452}{tick\+Count}} () const
@@ -71,11 +77,11 @@ virtual void \mbox{\hyperlink{class_q_c_p_axis_ticker_aefbd11725678ca824add8cf92
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-virtual double \mbox{\hyperlink{class_q_c_p_axis_ticker_time_a5615064642090fe193797caea8b98cb4}{get\+Tick\+Step}} (const \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \&range) \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual double \mbox{\hyperlink{class_q_c_p_axis_ticker_time_a5615064642090fe193797caea8b98cb4}{get\+Tick\+Step}} (const \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \&range) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual int \mbox{\hyperlink{class_q_c_p_axis_ticker_time_acace84c46598176aa53837e147595471}{get\+Sub\+Tick\+Count}} (double tick\+Step) \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual int \mbox{\hyperlink{class_q_c_p_axis_ticker_time_acace84c46598176aa53837e147595471}{get\+Sub\+Tick\+Count}} (double tick\+Step) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual QString \mbox{\hyperlink{class_q_c_p_axis_ticker_time_a046eb771bdf2a959f570db542b3a0be6}{get\+Tick\+Label}} (double tick, const QLocale \&locale, QChar format\+Char, int precision) \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual QString \mbox{\hyperlink{class_q_c_p_axis_ticker_time_a046eb771bdf2a959f570db542b3a0be6}{get\+Tick\+Label}} (double tick, const QLocale \&locale, QChar format\+Char, int precision) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
 void \mbox{\hyperlink{class_q_c_p_axis_ticker_time_a03b6c980be36f2672e3fc31d109a28a0}{replace\+Unit}} (QString \&text, \mbox{\hyperlink{class_q_c_p_axis_ticker_time_a5c48ded8c6d3a1aca9b68219469fea3e}{Time\+Unit}} unit, int value) const
 \end{DoxyCompactItemize}
@@ -158,6 +164,10 @@ If you rather wish to display calendar dates and times, have a look at \mbox{\hy
 \end{DoxyNote}
 
 
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01635}{1635}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+
+
 \doxysubsection{Member Enumeration Documentation}
 \mbox{\Hypertarget{class_q_c_p_axis_ticker_time_a5c48ded8c6d3a1aca9b68219469fea3e}\label{class_q_c_p_axis_ticker_time_a5c48ded8c6d3a1aca9b68219469fea3e}} 
 \index{QCPAxisTickerTime@{QCPAxisTickerTime}!TimeUnit@{TimeUnit}}
@@ -194,6 +204,10 @@ tu\+Days&Days (\%d in \mbox{\hyperlink{class_q_c_p_axis_ticker_time_a2f30b6e5125
 \end{DoxyEnumFields}
 
 
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01644}{1644}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_q_c_p_axis_ticker_time_a5145aac1d2117fdac411d9e8552cc41b}\label{class_q_c_p_axis_ticker_time_a5145aac1d2117fdac411d9e8552cc41b}} 
 \index{QCPAxisTickerTime@{QCPAxisTickerTime}!QCPAxisTickerTime@{QCPAxisTickerTime}}
@@ -203,12 +217,28 @@ tu\+Days&Days (\%d in \mbox{\hyperlink{class_q_c_p_axis_ticker_time_a2f30b6e5125
 
 Constructs the ticker and sets reasonable default values. Axis tickers are commonly created managed by a QShared\+Pointer, which then can be passed to \mbox{\hyperlink{class_q_c_p_axis_a4ee03fcd2c74d05cd1a419b9af5cfbdc}{QCPAxis\+::set\+Ticker}}. 
 
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l06189}{6189}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_axis_ticker_time_a5145aac1d2117fdac411d9e8552cc41b_cgraph}
+\end{center}
+\end{figure}
+
+
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_q_c_p_axis_ticker_time_a6b58a98e4d64c6764aa61a707e4a344d}\label{class_q_c_p_axis_ticker_time_a6b58a98e4d64c6764aa61a707e4a344d}} 
 \index{QCPAxisTickerTime@{QCPAxisTickerTime}!fieldWidth@{fieldWidth}}
 \index{fieldWidth@{fieldWidth}!QCPAxisTickerTime@{QCPAxisTickerTime}}
 \doxysubsubsection{\texorpdfstring{fieldWidth()}{fieldWidth()}}
 {\footnotesize\ttfamily int QCPAxis\+Ticker\+Time\+::field\+Width (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_axis_ticker_time_a5c48ded8c6d3a1aca9b68219469fea3e}{Time\+Unit}}}]{unit }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01656}{1656}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_ticker_time_acace84c46598176aa53837e147595471}\label{class_q_c_p_axis_ticker_time_acace84c46598176aa53837e147595471}} 
 \index{QCPAxisTickerTime@{QCPAxisTickerTime}!getSubTickCount@{getSubTickCount}}
@@ -218,7 +248,11 @@ Constructs the ticker and sets reasonable default values. Axis tickers are commo
 
 
 
-Reimplemented from \mbox{\hyperlink{class_q_c_p_axis_ticker_a4ccc403ced7a1457ce6ba293509933c8}{QCPAxis\+Ticker}}.
+Reimplemented from \mbox{\hyperlink{class_q_c_p_axis_ticker}{QCPAxis\+Ticker}}.
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l06322}{6322}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_ticker_time_a046eb771bdf2a959f570db542b3a0be6}\label{class_q_c_p_axis_ticker_time_a046eb771bdf2a959f570db542b3a0be6}} 
 \index{QCPAxisTickerTime@{QCPAxisTickerTime}!getTickLabel@{getTickLabel}}
@@ -228,7 +262,11 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_axis_ticker_a4ccc403ced7a1457ce6
 
 
 
-Reimplemented from \mbox{\hyperlink{class_q_c_p_axis_ticker_a8201eb4aa8be192bf786b126eb5ee089}{QCPAxis\+Ticker}}.
+Reimplemented from \mbox{\hyperlink{class_q_c_p_axis_ticker}{QCPAxis\+Ticker}}.
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l06348}{6348}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_ticker_time_a5615064642090fe193797caea8b98cb4}\label{class_q_c_p_axis_ticker_time_a5615064642090fe193797caea8b98cb4}} 
 \index{QCPAxisTickerTime@{QCPAxisTickerTime}!getTickStep@{getTickStep}}
@@ -238,13 +276,21 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_axis_ticker_a8201eb4aa8be192bf78
 
 
 
-Reimplemented from \mbox{\hyperlink{class_q_c_p_axis_ticker_a910d69bcec2de37e92d8d4e1ecf201e2}{QCPAxis\+Ticker}}.
+Reimplemented from \mbox{\hyperlink{class_q_c_p_axis_ticker}{QCPAxis\+Ticker}}.
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l06271}{6271}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_ticker_time_a03b6c980be36f2672e3fc31d109a28a0}\label{class_q_c_p_axis_ticker_time_a03b6c980be36f2672e3fc31d109a28a0}} 
 \index{QCPAxisTickerTime@{QCPAxisTickerTime}!replaceUnit@{replaceUnit}}
 \index{replaceUnit@{replaceUnit}!QCPAxisTickerTime@{QCPAxisTickerTime}}
 \doxysubsubsection{\texorpdfstring{replaceUnit()}{replaceUnit()}}
 {\footnotesize\ttfamily void QCPAxis\+Ticker\+Time\+::replace\+Unit (\begin{DoxyParamCaption}\item[{QString \&}]{text,  }\item[{\mbox{\hyperlink{class_q_c_p_axis_ticker_time_a5c48ded8c6d3a1aca9b68219469fea3e}{QCPAxis\+Ticker\+Time\+::\+Time\+Unit}}}]{unit,  }\item[{int}]{value }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l06381}{6381}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_ticker_time_adc13e54fc969be98a5c0e3fa0dbaa293}\label{class_q_c_p_axis_ticker_time_adc13e54fc969be98a5c0e3fa0dbaa293}} 
 \index{QCPAxisTickerTime@{QCPAxisTickerTime}!setFieldWidth@{setFieldWidth}}
@@ -257,6 +303,10 @@ Sets the field widh of the specified {\itshape unit} to be {\itshape width} digi
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_axis_ticker_time_a2f30b6e5125bce4256be9ce3177088ea}{set\+Time\+Format}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l06257}{6257}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_ticker_time_a2f30b6e5125bce4256be9ce3177088ea}\label{class_q_c_p_axis_ticker_time_a2f30b6e5125bce4256be9ce3177088ea}} 
 \index{QCPAxisTickerTime@{QCPAxisTickerTime}!setTimeFormat@{setTimeFormat}}
 \index{setTimeFormat@{setTimeFormat}!QCPAxisTickerTime@{QCPAxisTickerTime}}
@@ -276,11 +326,19 @@ The available patterns are\+:
 
 The field width (zero padding) can be controlled for each unit with \mbox{\hyperlink{class_q_c_p_axis_ticker_time_adc13e54fc969be98a5c0e3fa0dbaa293}{set\+Field\+Width}}.
 
-The largest unit that appears in {\itshape format} will carry all the remaining time of a certain tick coordinate, even if it overflows the natural limit of the unit. For example, if \%m is the largest unit it might become larger than 59 in order to consume larger time values. If on the other hand \%h is available, the minutes will wrap around to zero after 59 and the time will carry to the hour digit. \mbox{\Hypertarget{class_q_c_p_axis_ticker_time_a99ad61dc7434a7fed1850e96bf748834}\label{class_q_c_p_axis_ticker_time_a99ad61dc7434a7fed1850e96bf748834}} 
+The largest unit that appears in {\itshape format} will carry all the remaining time of a certain tick coordinate, even if it overflows the natural limit of the unit. For example, if \%m is the largest unit it might become larger than 59 in order to consume larger time values. If on the other hand \%h is available, the minutes will wrap around to zero after 59 and the time will carry to the hour digit. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l06226}{6226}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+\mbox{\Hypertarget{class_q_c_p_axis_ticker_time_a99ad61dc7434a7fed1850e96bf748834}\label{class_q_c_p_axis_ticker_time_a99ad61dc7434a7fed1850e96bf748834}} 
 \index{QCPAxisTickerTime@{QCPAxisTickerTime}!timeFormat@{timeFormat}}
 \index{timeFormat@{timeFormat}!QCPAxisTickerTime@{QCPAxisTickerTime}}
 \doxysubsubsection{\texorpdfstring{timeFormat()}{timeFormat()}}
 {\footnotesize\ttfamily QString QCPAxis\+Ticker\+Time\+::time\+Format (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01655}{1655}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 
 
@@ -291,11 +349,19 @@ The largest unit that appears in {\itshape format} will carry all the remaining 
 \doxysubsubsection{\texorpdfstring{mBiggestUnit}{mBiggestUnit}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_axis_ticker_time_a5c48ded8c6d3a1aca9b68219469fea3e}{Time\+Unit}} QCPAxis\+Ticker\+Time\+::m\+Biggest\+Unit\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01668}{1668}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_ticker_time_a58305b56f847bcab8b3c852a21bdb91a}\label{class_q_c_p_axis_ticker_time_a58305b56f847bcab8b3c852a21bdb91a}} 
 \index{QCPAxisTickerTime@{QCPAxisTickerTime}!mFieldWidth@{mFieldWidth}}
 \index{mFieldWidth@{mFieldWidth}!QCPAxisTickerTime@{QCPAxisTickerTime}}
 \doxysubsubsection{\texorpdfstring{mFieldWidth}{mFieldWidth}}
 {\footnotesize\ttfamily QHash$<$\mbox{\hyperlink{class_q_c_p_axis_ticker_time_a5c48ded8c6d3a1aca9b68219469fea3e}{Time\+Unit}}, int$>$ QCPAxis\+Ticker\+Time\+::m\+Field\+Width\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01665}{1665}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_ticker_time_adfc8221afbccb99343aa61f75419908d}\label{class_q_c_p_axis_ticker_time_adfc8221afbccb99343aa61f75419908d}} 
 \index{QCPAxisTickerTime@{QCPAxisTickerTime}!mFormatPattern@{mFormatPattern}}
@@ -303,11 +369,19 @@ The largest unit that appears in {\itshape format} will carry all the remaining 
 \doxysubsubsection{\texorpdfstring{mFormatPattern}{mFormatPattern}}
 {\footnotesize\ttfamily QHash$<$\mbox{\hyperlink{class_q_c_p_axis_ticker_time_a5c48ded8c6d3a1aca9b68219469fea3e}{Time\+Unit}}, QString$>$ QCPAxis\+Ticker\+Time\+::m\+Format\+Pattern\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01669}{1669}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_ticker_time_a61033c493cec76a69628d1aaa5b07abf}\label{class_q_c_p_axis_ticker_time_a61033c493cec76a69628d1aaa5b07abf}} 
 \index{QCPAxisTickerTime@{QCPAxisTickerTime}!mSmallestUnit@{mSmallestUnit}}
 \index{mSmallestUnit@{mSmallestUnit}!QCPAxisTickerTime@{QCPAxisTickerTime}}
 \doxysubsubsection{\texorpdfstring{mSmallestUnit}{mSmallestUnit}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_axis_ticker_time_a5c48ded8c6d3a1aca9b68219469fea3e}{Time\+Unit}} QCPAxis\+Ticker\+Time\+::m\+Smallest\+Unit\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01668}{1668}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_ticker_time_a800af3fe0a7c1a8110c043b82169bc9d}\label{class_q_c_p_axis_ticker_time_a800af3fe0a7c1a8110c043b82169bc9d}} 
 \index{QCPAxisTickerTime@{QCPAxisTickerTime}!mTimeFormat@{mTimeFormat}}
@@ -317,7 +391,11 @@ The largest unit that appears in {\itshape format} will carry all the remaining 
 
 
 
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01664}{1664}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{qcustomplot_8h}{qcustomplot.\+h}}\item 
-\mbox{\hyperlink{qcustomplot_8cpp}{qcustomplot.\+cpp}}\end{DoxyCompactItemize}
+qcustomplot.\+h\item 
+qcustomplot.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,337 @@
+.TH "QCPAxisTickerDateTime" 3 "Wed Mar 15 2023" "OmronPID" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QCPAxisTickerDateTime \- Specialized axis ticker for calendar dates and times as axis ticks\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBQCPAxisTicker\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPAxisTickerDateTime\fP ()"
+.br
+.ti -1c
+.RI "QString \fBdateTimeFormat\fP () const"
+.br
+.ti -1c
+.RI "Qt::TimeSpec \fBdateTimeSpec\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetDateTimeFormat\fP (const QString &format)"
+.br
+.ti -1c
+.RI "void \fBsetDateTimeSpec\fP (Qt::TimeSpec spec)"
+.br
+.ti -1c
+.RI "void \fBsetTickOrigin\fP (double origin)"
+.br
+.ti -1c
+.RI "void \fBsetTickOrigin\fP (const QDateTime &origin)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBQCPAxisTicker\fP
+.in +1c
+.ti -1c
+.RI "\fBQCPAxisTicker\fP ()"
+.br
+.ti -1c
+.RI "\fBTickStepStrategy\fP \fBtickStepStrategy\fP () const"
+.br
+.ti -1c
+.RI "int \fBtickCount\fP () const"
+.br
+.ti -1c
+.RI "double \fBtickOrigin\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetTickStepStrategy\fP (\fBTickStepStrategy\fP strategy)"
+.br
+.ti -1c
+.RI "void \fBsetTickCount\fP (int count)"
+.br
+.ti -1c
+.RI "void \fBsetTickOrigin\fP (double origin)"
+.br
+.ti -1c
+.RI "virtual void \fBgenerate\fP (const \fBQCPRange\fP &range, const QLocale &locale, QChar formatChar, int precision, QVector< double > &ticks, QVector< double > *subTicks, QVector< QString > *tickLabels)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static QDateTime \fBkeyToDateTime\fP (double key)"
+.br
+.ti -1c
+.RI "static double \fBdateTimeToKey\fP (const QDateTime dateTime)"
+.br
+.ti -1c
+.RI "static double \fBdateTimeToKey\fP (const QDate date)"
+.br
+.in -1c
+.SS "Protected Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBDateStrategy\fP { \fBdsNone\fP, \fBdsUniformTimeInDay\fP, \fBdsUniformDayInMonth\fP }"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual double \fBgetTickStep\fP (const \fBQCPRange\fP &range) Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual int \fBgetSubTickCount\fP (double tickStep) Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual QString \fBgetTickLabel\fP (double tick, const QLocale &locale, QChar formatChar, int precision) Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual QVector< double > \fBcreateTickVector\fP (double tickStep, const \fBQCPRange\fP &range) Q_DECL_OVERRIDE"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBQCPAxisTicker\fP
+.in +1c
+.ti -1c
+.RI "virtual double \fBgetTickStep\fP (const \fBQCPRange\fP &range)"
+.br
+.ti -1c
+.RI "virtual int \fBgetSubTickCount\fP (double tickStep)"
+.br
+.ti -1c
+.RI "virtual QString \fBgetTickLabel\fP (double tick, const QLocale &locale, QChar formatChar, int precision)"
+.br
+.ti -1c
+.RI "virtual QVector< double > \fBcreateTickVector\fP (double tickStep, const \fBQCPRange\fP &range)"
+.br
+.ti -1c
+.RI "virtual QVector< double > \fBcreateSubTickVector\fP (int subTickCount, const QVector< double > &ticks)"
+.br
+.ti -1c
+.RI "virtual QVector< QString > \fBcreateLabelVector\fP (const QVector< double > &ticks, const QLocale &locale, QChar formatChar, int precision)"
+.br
+.ti -1c
+.RI "void \fBtrimTicks\fP (const \fBQCPRange\fP &range, QVector< double > &ticks, bool keepOneOutlier) const"
+.br
+.ti -1c
+.RI "double \fBpickClosest\fP (double target, const QVector< double > &candidates) const"
+.br
+.ti -1c
+.RI "double \fBgetMantissa\fP (double input, double *magnitude=0) const"
+.br
+.ti -1c
+.RI "double \fBcleanMantissa\fP (double input) const"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "QString \fBmDateTimeFormat\fP"
+.br
+.ti -1c
+.RI "Qt::TimeSpec \fBmDateTimeSpec\fP"
+.br
+.ti -1c
+.RI "enum QCPAxisTickerDateTime::DateStrategy \fBmDateStrategy\fP"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBQCPAxisTicker\fP
+.in +1c
+.ti -1c
+.RI "\fBTickStepStrategy\fP \fBmTickStepStrategy\fP"
+.br
+.ti -1c
+.RI "int \fBmTickCount\fP"
+.br
+.ti -1c
+.RI "double \fBmTickOrigin\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Types inherited from \fBQCPAxisTicker\fP
+.in +1c
+.ti -1c
+.RI "enum \fBTickStepStrategy\fP { \fBtssReadability\fP, \fBtssMeetTickCount\fP }"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Specialized axis ticker for calendar dates and times as axis ticks\&. 
+
+
+.PP
+This \fBQCPAxisTicker\fP subclass generates ticks that correspond to real calendar dates and times\&. The plot axis coordinate is interpreted as Unix Time, so seconds since Epoch (January 1, 1970, 00:00 UTC)\&. This is also used for example by QDateTime in the \fCtoTime_t()/setTime_t()\fP methods with a precision of one second\&. Since Qt 4\&.7, millisecond accuracy can be obtained from QDateTime by using \fCQDateTime::fromMSecsSinceEpoch()/1000\&.0\fP\&. The static methods \fBdateTimeToKey\fP and \fBkeyToDateTime\fP conveniently perform this conversion achieving a precision of one millisecond on all Qt versions\&.
+.PP
+The format of the date/time display in the tick labels is controlled with \fBsetDateTimeFormat\fP\&. If a different time spec (time zone) shall be used, see \fBsetDateTimeSpec\fP\&.
+.PP
+This ticker produces unequal tick spacing in order to provide intuitive date and time-of-day ticks\&. For example, if the axis range spans a few years such that there is one tick per year, ticks will be positioned on 1\&. January of every year\&. This is intuitive but, due to leap years, will result in slightly unequal tick intervals (visually unnoticeable)\&. The same can be seen in the image above: even though the number of days varies month by month, this ticker generates ticks on the same day of each month\&.
+.PP
+If you would like to change the date/time that is used as a (mathematical) starting date for the ticks, use the \fBsetTickOrigin(const QDateTime &origin)\fP method overload, which takes a QDateTime\&. If you pass 15\&. July, 9:45 to this method, the yearly ticks will end up on 15\&. July at 9:45 of every year\&.
+.PP
+The ticker can be created and assigned to an axis like this: 
+.PP
+.nf
+
+.fi
+.PP
+.PP
+\fBNote\fP
+.RS 4
+If you rather wish to display relative times in terms of days, hours, minutes, seconds and milliseconds, and are not interested in the intricacies of real calendar dates with months and (leap) years, have a look at \fBQCPAxisTickerTime\fP instead\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB1594\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum QCPAxisTickerDateTime::DateStrategy\fC [protected]\fP"
+
+.PP
+Definition at line \fB1620\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QCPAxisTickerDateTime::QCPAxisTickerDateTime ()"
+Constructs the ticker and sets reasonable default values\&. Axis tickers are commonly created managed by a QSharedPointer, which then can be passed to \fBQCPAxis::setTicker\fP\&. 
+.PP
+Definition at line \fB5892\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "QVector< double > QCPAxisTickerDateTime::createTickVector (double tickStep, const \fBQCPRange\fP & range)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBQCPAxisTicker\fP\&.
+.PP
+Definition at line \fB6050\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QString QCPAxisTickerDateTime::dateTimeFormat () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB1600\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "Qt::TimeSpec QCPAxisTickerDateTime::dateTimeSpec () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB1601\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double QCPAxisTickerDateTime::dateTimeToKey (const QDate date)\fC [static]\fP"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&.
+.PP
+A convenience method which turns a QDate object into a double value that corresponds to seconds since Epoch (1\&. Jan 1970, 00:00 UTC)\&. This is the format used as axis coordinates by \fBQCPAxisTickerDateTime\fP\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBkeyToDateTime\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB6132\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "double QCPAxisTickerDateTime::dateTimeToKey (const QDateTime dateTime)\fC [static]\fP"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&.
+.PP
+A convenience method which turns a QDateTime object into a double value that corresponds to seconds since Epoch (1\&. Jan 1970, 00:00 UTC)\&. This is the format used as axis coordinates by \fBQCPAxisTickerDateTime\fP\&.
+.PP
+The accuracy achieved by this method is one millisecond, irrespective of the used Qt version (it works around the lack of a QDateTime::toMSecsSinceEpoch in Qt 4\&.6)
+.PP
+\fBSee also\fP
+.RS 4
+\fBkeyToDateTime\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB6115\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "int QCPAxisTickerDateTime::getSubTickCount (double tickStep)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBQCPAxisTicker\fP\&.
+.PP
+Definition at line \fB6001\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QString QCPAxisTickerDateTime::getTickLabel (double tick, const QLocale & locale, QChar formatChar, int precision)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBQCPAxisTicker\fP\&.
+.PP
+Definition at line \fB6036\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "double QCPAxisTickerDateTime::getTickStep (const \fBQCPRange\fP & range)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBQCPAxisTicker\fP\&.
+.PP
+Definition at line \fB5967\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QDateTime QCPAxisTickerDateTime::keyToDateTime (double key)\fC [static]\fP"
+A convenience method which turns \fIkey\fP (in seconds since Epoch 1\&. Jan 1970, 00:00 UTC) into a QDateTime object\&. This can be used to turn axis coordinates to actual QDateTimes\&.
+.PP
+The accuracy achieved by this method is one millisecond, irrespective of the used Qt version (it works around the lack of a QDateTime::fromMSecsSinceEpoch in Qt 4\&.6)
+.PP
+\fBSee also\fP
+.RS 4
+\fBdateTimeToKey\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB6095\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPAxisTickerDateTime::setDateTimeFormat (const QString & format)"
+Sets the format in which dates and times are displayed as tick labels\&. For details about the \fIformat\fP string, see the documentation of QDateTime::toString()\&.
+.PP
+Newlines can be inserted with '\\n'\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetDateTimeSpec\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB5908\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPAxisTickerDateTime::setDateTimeSpec (Qt::TimeSpec spec)"
+Sets the time spec that is used for creating the tick labels from corresponding dates/times\&.
+.PP
+The default value of QDateTime objects (and also \fBQCPAxisTickerDateTime\fP) is \fCQt::LocalTime\fP\&. However, if the date time values passed to \fBQCustomPlot\fP (e\&.g\&. in the form of axis ranges or keys of a plottable) are given in the UTC spec, set \fIspec\fP to \fCQt::UTC\fP to get the correct axis labels\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetDateTimeFormat\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB5923\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPAxisTickerDateTime::setTickOrigin (const QDateTime & origin)"
+Sets the tick origin (see \fBQCPAxisTicker::setTickOrigin\fP) as a QDateTime \fIorigin\fP\&.
+.PP
+This is useful to define the month/day/time recurring at greater tick interval steps\&. For example, If you pass 15\&. July, 9:45 to this method and the tick interval happens to be one tick per year, the ticks will end up on 15\&. July at 9:45 of every year\&. 
+.PP
+Definition at line \fB5949\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPAxisTickerDateTime::setTickOrigin (double origin)"
+Sets the tick origin (see \fBQCPAxisTicker::setTickOrigin\fP) in seconds since Epoch (1\&. Jan 1970, 00:00 UTC)\&. For the date time ticker it might be more intuitive to use the overload which directly takes a QDateTime, see \fBsetTickOrigin(const QDateTime &origin)\fP\&.
+.PP
+This is useful to define the month/day/time recurring at greater tick interval steps\&. For example, If you pass 15\&. July, 9:45 to this method and the tick interval happens to be one tick per year, the ticks will end up on 15\&. July at 9:45 of every year\&. 
+.PP
+Definition at line \fB5937\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QString QCPAxisTickerDateTime::mDateTimeFormat\fC [protected]\fP"
+
+.PP
+Definition at line \fB1616\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "Qt::TimeSpec QCPAxisTickerDateTime::mDateTimeSpec\fC [protected]\fP"
+
+.PP
+Definition at line \fB1617\fP of file \fBqcustomplot\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for OmronPID from the source code\&.

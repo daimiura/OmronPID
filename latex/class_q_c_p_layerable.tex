@@ -7,12 +7,20 @@ Base class for all drawable objects.
 
 
 
-{\ttfamily \#include $<$qcustomplot.\+h$>$}
-
-Inheritance diagram for QCPLayerable\+:\begin{figure}[H]
+Inheritance diagram for QCPLayerable\+:\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=3.106796cm]{class_q_c_p_layerable}
+\includegraphics[width=350pt]{class_q_c_p_layerable__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for QCPLayerable\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_layerable__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Signals}
@@ -24,8 +32,6 @@ void \mbox{\hyperlink{class_q_c_p_layerable_abbf8657cedea73ac1c3499b521c90eba}{l
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_q_c_p_layerable_a74c0fa237f29bf0e49565013fc5d1ec0}{QCPLayerable}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$plot, QString target\+Layer=QString(), \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}}=0)
-\item 
-virtual \mbox{\hyperlink{class_q_c_p_layerable_a4231cf5b3601d6d3a5781283e7a9735b}{$\sim$\+QCPLayerable}} ()
 \item 
 bool \mbox{\hyperlink{class_q_c_p_layerable_af0297b944b6192b6d67d00bff41b6b70}{visible}} () const
 \item 
@@ -39,7 +45,7 @@ bool \mbox{\hyperlink{class_q_c_p_layerable_a71cbd212fde2703cee076e204a475709}{a
 \item 
 void \mbox{\hyperlink{class_q_c_p_layerable_a3bed99ddc396b48ce3ebfdc0418744f8}{set\+Visible}} (bool on)
 \item 
-Q\+\_\+\+SLOT bool \mbox{\hyperlink{class_q_c_p_layerable_ab0d0da6d2de45a118886d2c8e16d5a54}{set\+Layer}} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_a9d4e121a7f1d2314f906fe698209cac9}{layer}})
+Q\+\_\+\+SLOT bool \mbox{\hyperlink{class_q_c_p_layerable_ab0d0da6d2de45a118886d2c8e16d5a54}{set\+Layer}} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$layer)
 \item 
 bool \mbox{\hyperlink{class_q_c_p_layerable_ab25a0e7b897993b44447caee0f142083}{set\+Layer}} (const QString \&layer\+Name)
 \item 
@@ -52,15 +58,17 @@ bool \mbox{\hyperlink{class_q_c_p_layerable_ab054e88f15d485defcb95e7376f119e7}{r
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_layerable_ab20b7dbd8e0249ed61adb9622c427382}{parent\+Plot\+Initialized}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_a36ed5b292b90934b524a4e5866a3526c}{parent\+Plot}})
+virtual void \mbox{\hyperlink{class_q_c_p_layerable_ab20b7dbd8e0249ed61adb9622c427382}{parent\+Plot\+Initialized}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$parent\+Plot)
 \item 
 virtual \mbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037}{QCP\+::\+Interaction}} \mbox{\hyperlink{class_q_c_p_layerable_a908c9edda761886f33893be326dab77d}{selection\+Category}} () const
 \item 
 virtual QRect \mbox{\hyperlink{class_q_c_p_layerable_acbcfc9ecc75433747b1978a77b1864b3}{clip\+Rect}} () const
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_layerable_afdf83ddc6a265cbf4c89fe99d3d93473}{apply\+Default\+Antialiasing\+Hint}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) const =0
+\mbox{\Hypertarget{class_q_c_p_layerable_afdf83ddc6a265cbf4c89fe99d3d93473}\label{class_q_c_p_layerable_afdf83ddc6a265cbf4c89fe99d3d93473}} 
+virtual void {\bfseries apply\+Default\+Antialiasing\+Hint} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) const =0
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_layerable_aecf2f7087482d4b6a78cb2770e5ed12d}{draw}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter)=0
+\mbox{\Hypertarget{class_q_c_p_layerable_aecf2f7087482d4b6a78cb2770e5ed12d}\label{class_q_c_p_layerable_aecf2f7087482d4b6a78cb2770e5ed12d}} 
+virtual void {\bfseries draw} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter)=0
 \item 
 virtual void \mbox{\hyperlink{class_q_c_p_layerable_a7498c2d0d081cf7cad0fb3bb93aa0e91}{select\+Event}} (QMouse\+Event $\ast$event, bool additive, const QVariant \&details, bool $\ast$selection\+State\+Changed)
 \item 
@@ -76,11 +84,11 @@ virtual void \mbox{\hyperlink{class_q_c_p_layerable_a4171e2e823aca242dd0279f00ed
 \item 
 virtual void \mbox{\hyperlink{class_q_c_p_layerable_a47dfd7b8fd99c08ca54e09c362b6f022}{wheel\+Event}} (QWheel\+Event $\ast$event)
 \item 
-void \mbox{\hyperlink{class_q_c_p_layerable_a8cbe5a0c9a5674249982f5ca5f8e02bc}{initialize\+Parent\+Plot}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_a36ed5b292b90934b524a4e5866a3526c}{parent\+Plot}})
+void \mbox{\hyperlink{class_q_c_p_layerable_a8cbe5a0c9a5674249982f5ca5f8e02bc}{initialize\+Parent\+Plot}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$parent\+Plot)
 \item 
 void \mbox{\hyperlink{class_q_c_p_layerable_aa23c893671f1f6744ac235cf2204cf3a}{set\+Parent\+Layerable}} (\mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}})
 \item 
-bool \mbox{\hyperlink{class_q_c_p_layerable_af94484cfb7cbbddb7de522e9be71d9a4}{move\+To\+Layer}} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_a9d4e121a7f1d2314f906fe698209cac9}{layer}}, bool prepend)
+bool \mbox{\hyperlink{class_q_c_p_layerable_af94484cfb7cbbddb7de522e9be71d9a4}{move\+To\+Layer}} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$layer, bool prepend)
 \item 
 void \mbox{\hyperlink{class_q_c_p_layerable_acb663e375d2d36dc5c55021ee5a2119b}{apply\+Antialiasing\+Hint}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter, bool local\+Antialiased, \mbox{\hyperlink{namespace_q_c_p_ae55dbe315d41fe80f29ba88100843a0c}{QCP\+::\+Antialiased\+Element}} override\+Element) const
 \end{DoxyCompactItemize}
@@ -117,6 +125,10 @@ Every layerable is on a layer (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}}) w
 
 For details about the layering mechanism, see the \mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} documentation. 
 
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l00692}{692}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_q_c_p_layerable_a74c0fa237f29bf0e49565013fc5d1ec0}\label{class_q_c_p_layerable_a74c0fa237f29bf0e49565013fc5d1ec0}} 
 \index{QCPLayerable@{QCPLayerable}!QCPLayerable@{QCPLayerable}}
@@ -130,13 +142,29 @@ Since \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} is an abstract base
 
 If {\itshape plot} is provided, it automatically places itself on the layer named {\itshape target\+Layer}. If {\itshape target\+Layer} is an empty string, it places itself on the current layer of the plot (see \mbox{\hyperlink{class_q_custom_plot_a73a6dc47c653bb6f8f030abca5a11852}{QCustom\+Plot\+::set\+Current\+Layer}}).
 
-It is possible to provide 0 as {\itshape plot}. In that case, you should assign a parent plot at a later time with \mbox{\hyperlink{class_q_c_p_layerable_a8cbe5a0c9a5674249982f5ca5f8e02bc}{initialize\+Parent\+Plot}}.
+It is possible to provide 0 as {\itshape plot}. In that case, you should assign a parent plot at a later time with initialize\+Parent\+Plot.
 
-The layerable\textquotesingle{}s parent layerable is set to {\itshape parent\+Layerable}, if provided. Direct layerable parents are mainly used to control visibility in a hierarchy of layerables. This means a layerable is only drawn, if all its ancestor layerables are also visible. Note that {\itshape parent\+Layerable} does not become the QObject-\/parent (for memory management) of this layerable, {\itshape plot} does. It is not uncommon to set the QObject-\/parent to something else in the constructors of \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} subclasses, to guarantee a working destruction hierarchy. \mbox{\Hypertarget{class_q_c_p_layerable_a4231cf5b3601d6d3a5781283e7a9735b}\label{class_q_c_p_layerable_a4231cf5b3601d6d3a5781283e7a9735b}} 
+The layerable\textquotesingle{}s parent layerable is set to {\itshape parent\+Layerable}, if provided. Direct layerable parents are mainly used to control visibility in a hierarchy of layerables. This means a layerable is only drawn, if all its ancestor layerables are also visible. Note that {\itshape parent\+Layerable} does not become the QObject-\/parent (for memory management) of this layerable, {\itshape plot} does. It is not uncommon to set the QObject-\/parent to something else in the constructors of \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} subclasses, to guarantee a working destruction hierarchy. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l01339}{1339}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_layerable_a74c0fa237f29bf0e49565013fc5d1ec0_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_layerable_a4231cf5b3601d6d3a5781283e7a9735b}\label{class_q_c_p_layerable_a4231cf5b3601d6d3a5781283e7a9735b}} 
 \index{QCPLayerable@{QCPLayerable}!````~QCPLayerable@{$\sim$QCPLayerable}}
 \index{````~QCPLayerable@{$\sim$QCPLayerable}!QCPLayerable@{QCPLayerable}}
 \doxysubsubsection{\texorpdfstring{$\sim$QCPLayerable()}{~QCPLayerable()}}
 {\footnotesize\ttfamily QCPLayerable\+::$\sim$\+QCPLayerable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l01356}{1356}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 
 
@@ -147,21 +175,19 @@ The layerable\textquotesingle{}s parent layerable is set to {\itshape parent\+La
 \doxysubsubsection{\texorpdfstring{antialiased()}{antialiased()}}
 {\footnotesize\ttfamily bool QCPLayerable\+::antialiased (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l00711}{711}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_layerable_acb663e375d2d36dc5c55021ee5a2119b}\label{class_q_c_p_layerable_acb663e375d2d36dc5c55021ee5a2119b}} 
 \index{QCPLayerable@{QCPLayerable}!applyAntialiasingHint@{applyAntialiasingHint}}
 \index{applyAntialiasingHint@{applyAntialiasingHint}!QCPLayerable@{QCPLayerable}}
 \doxysubsubsection{\texorpdfstring{applyAntialiasingHint()}{applyAntialiasingHint()}}
 {\footnotesize\ttfamily void QCPLayerable\+::apply\+Antialiasing\+Hint (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$}]{painter,  }\item[{bool}]{local\+Antialiased,  }\item[{\mbox{\hyperlink{namespace_q_c_p_ae55dbe315d41fe80f29ba88100843a0c}{QCP\+::\+Antialiased\+Element}}}]{override\+Element }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
 
-\mbox{\Hypertarget{class_q_c_p_layerable_afdf83ddc6a265cbf4c89fe99d3d93473}\label{class_q_c_p_layerable_afdf83ddc6a265cbf4c89fe99d3d93473}} 
-\index{QCPLayerable@{QCPLayerable}!applyDefaultAntialiasingHint@{applyDefaultAntialiasingHint}}
-\index{applyDefaultAntialiasingHint@{applyDefaultAntialiasingHint}!QCPLayerable@{QCPLayerable}}
-\doxysubsubsection{\texorpdfstring{applyDefaultAntialiasingHint()}{applyDefaultAntialiasingHint()}}
-{\footnotesize\ttfamily void QCPLayerable\+::apply\+Default\+Antialiasing\+Hint (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$}]{painter }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
 
 
-
-Implemented in \mbox{\hyperlink{class_q_c_p_selection_rect_aa854697618e16037ba9c73056abfb9bf}{QCPSelection\+Rect}}, \mbox{\hyperlink{class_q_c_p_layout_element_a0a8f18141bcf46cf40ad4c13324ff346}{QCPLayout\+Element}}, \mbox{\hyperlink{class_q_c_p_grid_a64fa48e16b4629f5df2a5029ab6e761c}{QCPGrid}}, \mbox{\hyperlink{class_q_c_p_axis_adbaeffcdc2707f2bd5dc1bbd11236770}{QCPAxis}}, \mbox{\hyperlink{class_q_c_p_abstract_plottable_ac032077fb0db93d6faa3273d02363398}{QCPAbstract\+Plottable}}, \mbox{\hyperlink{class_q_c_p_abstract_item_a5579ce9ec7cad202499886b042448b10}{QCPAbstract\+Item}}, \mbox{\hyperlink{class_q_c_p_axis_rect_a4a318008e2b7f881a14c3d97186b31f9}{QCPAxis\+Rect}}, \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a6bfbcb9ace779f4f6fe22241c32a67c9}{QCPAbstract\+Legend\+Item}}, \mbox{\hyperlink{class_q_c_p_legend_a817f75c234f82a2e26643dc0de742095}{QCPLegend}}, \mbox{\hyperlink{class_q_c_p_text_element_a91f2e4b4a639d9079e89a0030c7ed352}{QCPText\+Element}}, and \mbox{\hyperlink{class_q_c_p_color_scale_af1b24d24a70f25b65d29f09e413390a8}{QCPColor\+Scale}}.
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l01566}{1566}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_layerable_acbcfc9ecc75433747b1978a77b1864b3}\label{class_q_c_p_layerable_acbcfc9ecc75433747b1978a77b1864b3}} 
 \index{QCPLayerable@{QCPLayerable}!clipRect@{clipRect}}
@@ -171,7 +197,7 @@ Implemented in \mbox{\hyperlink{class_q_c_p_selection_rect_aa854697618e16037ba9c
 
 
 
-Reimplemented in \mbox{\hyperlink{class_q_c_p_abstract_plottable_a635cee3effc07ad421414c76fd83548c}{QCPAbstract\+Plottable}}, \mbox{\hyperlink{class_q_c_p_abstract_item_a6ad60000f29afe11035e1f791dcbd45a}{QCPAbstract\+Item}}, and \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a806fa4d0104bdfc141aa8a36fcc9d51c}{QCPAbstract\+Legend\+Item}}.
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l01622}{1622}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_layerable_ae546370644a5551c76af739afc008bee}\label{class_q_c_p_layerable_ae546370644a5551c76af739afc008bee}} 
 \index{QCPLayerable@{QCPLayerable}!deselectEvent@{deselectEvent}}
@@ -181,17 +207,7 @@ Reimplemented in \mbox{\hyperlink{class_q_c_p_abstract_plottable_a635cee3effc07a
 
 
 
-Reimplemented in \mbox{\hyperlink{class_q_c_p_axis_a5bc1f8a8d0fbc7658eba70c80279ed31}{QCPAxis}}, \mbox{\hyperlink{class_q_c_p_abstract_plottable_a9b104d9da4f38f934363945c313bf82e}{QCPAbstract\+Plottable}}, \mbox{\hyperlink{class_q_c_p_abstract_item_af9093798cb07a861dcc73f93ca16c0c1}{QCPAbstract\+Item}}, \mbox{\hyperlink{class_q_c_p_abstract_legend_item_aa1c0620558cc8e2a2e6fb7ab558f6097}{QCPAbstract\+Legend\+Item}}, \mbox{\hyperlink{class_q_c_p_legend_ac2066837f7ebc32a5b15434cdca5b176}{QCPLegend}}, and \mbox{\hyperlink{class_q_c_p_text_element_a9a631a9deb9d82089a9d52de1744accf}{QCPText\+Element}}.
-
-\mbox{\Hypertarget{class_q_c_p_layerable_aecf2f7087482d4b6a78cb2770e5ed12d}\label{class_q_c_p_layerable_aecf2f7087482d4b6a78cb2770e5ed12d}} 
-\index{QCPLayerable@{QCPLayerable}!draw@{draw}}
-\index{draw@{draw}!QCPLayerable@{QCPLayerable}}
-\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
-{\footnotesize\ttfamily void QCPLayerable\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$}]{painter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
-
-
-
-Implemented in \mbox{\hyperlink{class_q_c_p_selection_rect_ab0e50ae796508bdcd97ab8c335c593bf}{QCPSelection\+Rect}}, \mbox{\hyperlink{class_q_c_p_layout_element_ad1c597b1d608cfdd86e7b76819a94cfb}{QCPLayout\+Element}}, \mbox{\hyperlink{class_q_c_p_grid_aad9a312d998e2d170956334d4cb80be2}{QCPGrid}}, \mbox{\hyperlink{class_q_c_p_axis_ac15ebb4225ca5212d8e5fffae481bc9b}{QCPAxis}}, \mbox{\hyperlink{class_q_c_p_axis_rect_af710c50530e370539a4439d6c4db9090}{QCPAxis\+Rect}}, \mbox{\hyperlink{class_q_c_p_plottable_legend_item_a5838366619200e99680afa6d355d13fa}{QCPPlottable\+Legend\+Item}}, \mbox{\hyperlink{class_q_c_p_legend_a74f93358d2b4a76ec95c3a5d825582a3}{QCPLegend}}, \mbox{\hyperlink{class_q_c_p_text_element_ad1dae61ea77ae74841f3c2fb765fc88e}{QCPText\+Element}}, \mbox{\hyperlink{class_q_c_p_color_scale_axis_rect_private_a52a21c7cbe086cd587c955cfe6e25e3b}{QCPColor\+Scale\+Axis\+Rect\+Private}}, \mbox{\hyperlink{class_q_c_p_graph_a2b0849598f06e834b43ce18cd13bcdc3}{QCPGraph}}, \mbox{\hyperlink{class_q_c_p_curve_ac199d41d23865cd68bd7b598308a4433}{QCPCurve}}, \mbox{\hyperlink{class_q_c_p_bars_aa267c20650d55084c3f47cb2f8fac9dc}{QCPBars}}, \mbox{\hyperlink{class_q_c_p_statistical_box_afcff35fa79728cfe10e80e0702014fea}{QCPStatistical\+Box}}, \mbox{\hyperlink{class_q_c_p_color_map_a6b628014d2939368935efd0a788648c8}{QCPColor\+Map}}, \mbox{\hyperlink{class_q_c_p_financial_a4d62b7a618d609321adb5f5f1e31f446}{QCPFinancial}}, \mbox{\hyperlink{class_q_c_p_error_bars_a801e85931372abf2a1034bfb2eac5cd2}{QCPError\+Bars}}, \mbox{\hyperlink{class_q_c_p_item_straight_line_acbc84ad219bf4845152e4e2202fcaa3c}{QCPItem\+Straight\+Line}}, \mbox{\hyperlink{class_q_c_p_item_line_ae184140b61b2ef5b8edde76304447200}{QCPItem\+Line}}, \mbox{\hyperlink{class_q_c_p_item_curve_a856ae61de18278847ba5e0e357bf68f2}{QCPItem\+Curve}}, \mbox{\hyperlink{class_q_c_p_item_rect_a3c492960d0fc038cf1b60578b62b6cdc}{QCPItem\+Rect}}, \mbox{\hyperlink{class_q_c_p_item_text_a8f8f075da83b6547c2b32e1f64cf0554}{QCPItem\+Text}}, \mbox{\hyperlink{class_q_c_p_item_ellipse_a77eebd67a402fc496082a2e51356928c}{QCPItem\+Ellipse}}, \mbox{\hyperlink{class_q_c_p_item_pixmap_a9538a7d37fe20a4ff4bb2cb5bbbf2b48}{QCPItem\+Pixmap}}, \mbox{\hyperlink{class_q_c_p_item_tracer_a11f187ffea436434f3b5cfc387811967}{QCPItem\+Tracer}}, \mbox{\hyperlink{class_q_c_p_item_bracket_a942a3978aea44a2fc7b4383f2bf6d417}{QCPItem\+Bracket}}, \mbox{\hyperlink{class_q_c_p_abstract_plottable_a453f676a5cee7bf846c5f0fa05ea84b3}{QCPAbstract\+Plottable}}, \mbox{\hyperlink{class_q_c_p_abstract_item_a007fdab79c935a5da5aa04a21d268c18}{QCPAbstract\+Item}}, and \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a14ce0b09f5b814c765a0d790bd838909}{QCPAbstract\+Legend\+Item}}.
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l01678}{1678}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_layerable_a8cbe5a0c9a5674249982f5ca5f8e02bc}\label{class_q_c_p_layerable_a8cbe5a0c9a5674249982f5ca5f8e02bc}} 
 \index{QCPLayerable@{QCPLayerable}!initializeParentPlot@{initializeParentPlot}}
@@ -199,11 +215,19 @@ Implemented in \mbox{\hyperlink{class_q_c_p_selection_rect_ab0e50ae796508bdcd97a
 \doxysubsubsection{\texorpdfstring{initializeParentPlot()}{initializeParentPlot()}}
 {\footnotesize\ttfamily void QCPLayerable\+::initialize\+Parent\+Plot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$}]{parent\+Plot }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l01496}{1496}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_layerable_a9d4e121a7f1d2314f906fe698209cac9}\label{class_q_c_p_layerable_a9d4e121a7f1d2314f906fe698209cac9}} 
 \index{QCPLayerable@{QCPLayerable}!layer@{layer}}
 \index{layer@{layer}!QCPLayerable@{QCPLayerable}}
 \doxysubsubsection{\texorpdfstring{layer()}{layer()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$ QCPLayerable\+::layer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l00710}{710}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_layerable_abbf8657cedea73ac1c3499b521c90eba}\label{class_q_c_p_layerable_abbf8657cedea73ac1c3499b521c90eba}} 
 \index{QCPLayerable@{QCPLayerable}!layerChanged@{layerChanged}}
@@ -216,6 +240,14 @@ This signal is emitted when the layer of this layerable changes, i.\+e. this lay
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_layerable_ab0d0da6d2de45a118886d2c8e16d5a54}{set\+Layer}} 
 \end{DoxySeeAlso}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_layerable_abbf8657cedea73ac1c3499b521c90eba_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_layerable_a4171e2e823aca242dd0279f00ed2de81}\label{class_q_c_p_layerable_a4171e2e823aca242dd0279f00ed2de81}} 
 \index{QCPLayerable@{QCPLayerable}!mouseDoubleClickEvent@{mouseDoubleClickEvent}}
 \index{mouseDoubleClickEvent@{mouseDoubleClickEvent}!QCPLayerable@{QCPLayerable}}
@@ -239,6 +271,10 @@ The default implementation does nothing except explicitly ignoring the event wit
 
 Reimplemented in \mbox{\hyperlink{class_q_c_p_text_element_a2272ff775ab385f612e9fd39773de7c0}{QCPText\+Element}}.
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l01776}{1776}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_layerable_a9eee1ba47fd69be111059ca3881933e4}\label{class_q_c_p_layerable_a9eee1ba47fd69be111059ca3881933e4}} 
 \index{QCPLayerable@{QCPLayerable}!mouseMoveEvent@{mouseMoveEvent}}
 \index{mouseMoveEvent@{mouseMoveEvent}!QCPLayerable@{QCPLayerable}}
@@ -257,6 +293,10 @@ The default implementation does nothing.
 
 
 Reimplemented in \mbox{\hyperlink{class_q_c_p_axis_a2a89a13440eec099fc2327c2672be0cd}{QCPAxis}}, \mbox{\hyperlink{class_q_c_p_axis_rect_a9cd27ad8c5cfb49aefd9dbb30def4beb}{QCPAxis\+Rect}}, \mbox{\hyperlink{class_q_c_p_color_scale_axis_rect_private_a9cd27ad8c5cfb49aefd9dbb30def4beb}{QCPColor\+Scale\+Axis\+Rect\+Private}}, and \mbox{\hyperlink{class_q_c_p_color_scale_a3b2bd79725aefaf2630fc76e90939442}{QCPColor\+Scale}}.
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l01726}{1726}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_layerable_af6567604818db90f4fd52822f8bc8376}\label{class_q_c_p_layerable_af6567604818db90f4fd52822f8bc8376}} 
 \index{QCPLayerable@{QCPLayerable}!mousePressEvent@{mousePressEvent}}
@@ -281,6 +321,10 @@ The default implementation does nothing except explicitly ignoring the event wit
 
 Reimplemented in \mbox{\hyperlink{class_q_c_p_axis_ac89c068873ee9197a5d2af715bdc1105}{QCPAxis}}, \mbox{\hyperlink{class_q_c_p_axis_rect_aa9a7c807eaa4666870ac94aa6abc4dde}{QCPAxis\+Rect}}, \mbox{\hyperlink{class_q_c_p_text_element_ad7b2c98355e3d2f912574b74fcee0574}{QCPText\+Element}}, \mbox{\hyperlink{class_q_c_p_color_scale_axis_rect_private_aa9a7c807eaa4666870ac94aa6abc4dde}{QCPColor\+Scale\+Axis\+Rect\+Private}}, and \mbox{\hyperlink{class_q_c_p_color_scale_a91f633b97ffcd57fdf8cd814974c20e6}{QCPColor\+Scale}}.
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l01708}{1708}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_layerable_aa0d79b005686f668622bbe66ac03ba2c}\label{class_q_c_p_layerable_aa0d79b005686f668622bbe66ac03ba2c}} 
 \index{QCPLayerable@{QCPLayerable}!mouseReleaseEvent@{mouseReleaseEvent}}
 \index{mouseReleaseEvent@{mouseReleaseEvent}!QCPLayerable@{QCPLayerable}}
@@ -300,11 +344,19 @@ The default implementation does nothing.
 
 Reimplemented in \mbox{\hyperlink{class_q_c_p_axis_a35663b938ad83e91c0b8e59dbc8c6b18}{QCPAxis}}, \mbox{\hyperlink{class_q_c_p_axis_rect_a6c89b988d3a0b93c0878f0ebdb5037f4}{QCPAxis\+Rect}}, \mbox{\hyperlink{class_q_c_p_text_element_acfcbaf9b1da18745e72726aafb39c855}{QCPText\+Element}}, \mbox{\hyperlink{class_q_c_p_color_scale_axis_rect_private_a6c89b988d3a0b93c0878f0ebdb5037f4}{QCPColor\+Scale\+Axis\+Rect\+Private}}, and \mbox{\hyperlink{class_q_c_p_color_scale_a6a35dd39ab4e5cb2d7b29ebb4d5b61b0}{QCPColor\+Scale}}.
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l01744}{1744}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_layerable_af94484cfb7cbbddb7de522e9be71d9a4}\label{class_q_c_p_layerable_af94484cfb7cbbddb7de522e9be71d9a4}} 
 \index{QCPLayerable@{QCPLayerable}!moveToLayer@{moveToLayer}}
 \index{moveToLayer@{moveToLayer}!QCPLayerable@{QCPLayerable}}
 \doxysubsubsection{\texorpdfstring{moveToLayer()}{moveToLayer()}}
 {\footnotesize\ttfamily bool QCPLayerable\+::move\+To\+Layer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$}]{layer,  }\item[{bool}]{prepend }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l01535}{1535}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_layerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}\label{class_q_c_p_layerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}} 
 \index{QCPLayerable@{QCPLayerable}!parentLayerable@{parentLayerable}}
@@ -316,11 +368,19 @@ Returns the parent layerable of this layerable. The parent layerable is used to 
 
 Note that a parent layerable is not necessarily also the QObject parent for memory management. Further, a layerable doesn\textquotesingle{}t always have a parent layerable, so this function may return 0.
 
-A parent layerable is set implicitly when placed inside layout elements and doesn\textquotesingle{}t need to be set manually by the user. \mbox{\Hypertarget{class_q_c_p_layerable_a36ed5b292b90934b524a4e5866a3526c}\label{class_q_c_p_layerable_a36ed5b292b90934b524a4e5866a3526c}} 
+A parent layerable is set implicitly when placed inside layout elements and doesn\textquotesingle{}t need to be set manually by the user. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l00709}{709}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+\mbox{\Hypertarget{class_q_c_p_layerable_a36ed5b292b90934b524a4e5866a3526c}\label{class_q_c_p_layerable_a36ed5b292b90934b524a4e5866a3526c}} 
 \index{QCPLayerable@{QCPLayerable}!parentPlot@{parentPlot}}
 \index{parentPlot@{parentPlot}!QCPLayerable@{QCPLayerable}}
 \doxysubsubsection{\texorpdfstring{parentPlot()}{parentPlot()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$ QCPLayerable\+::parent\+Plot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l00708}{708}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_layerable_ab20b7dbd8e0249ed61adb9622c427382}\label{class_q_c_p_layerable_ab20b7dbd8e0249ed61adb9622c427382}} 
 \index{QCPLayerable@{QCPLayerable}!parentPlotInitialized@{parentPlotInitialized}}
@@ -330,7 +390,7 @@ A parent layerable is set implicitly when placed inside layout elements and does
 
 
 
-Reimplemented in \mbox{\hyperlink{class_q_c_p_layout_element_ab4bb5c5a958451f5f153fdce350f13cf}{QCPLayout\+Element}}, and \mbox{\hyperlink{class_q_c_p_legend_a2b225cefb5eb267771e2c7c44fd2b408}{QCPLegend}}.
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l01592}{1592}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_layerable_ab054e88f15d485defcb95e7376f119e7}\label{class_q_c_p_layerable_ab054e88f15d485defcb95e7376f119e7}} 
 \index{QCPLayerable@{QCPLayerable}!realVisibility@{realVisibility}}
@@ -340,7 +400,19 @@ Reimplemented in \mbox{\hyperlink{class_q_c_p_layout_element_ab4bb5c5a958451f5f1
 
 Returns whether this layerable is visible, taking the visibility of the layerable parent and the visibility of this layerable\textquotesingle{}s layer into account. This is the method that is consulted to decide whether a layerable shall be drawn or not.
 
-If this layerable has a direct layerable parent (usually set via hierarchies implemented in subclasses, like in the case of \mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}}), this function returns true only if this layerable has its visibility set to true and the parent layerable\textquotesingle{}s \mbox{\hyperlink{class_q_c_p_layerable_ab054e88f15d485defcb95e7376f119e7}{real\+Visibility}} returns true. \mbox{\Hypertarget{class_q_c_p_layerable_a7498c2d0d081cf7cad0fb3bb93aa0e91}\label{class_q_c_p_layerable_a7498c2d0d081cf7cad0fb3bb93aa0e91}} 
+If this layerable has a direct layerable parent (usually set via hierarchies implemented in subclasses, like in the case of \mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}}), this function returns true only if this layerable has its visibility set to true and the parent layerable\textquotesingle{}s \mbox{\hyperlink{class_q_c_p_layerable_ab054e88f15d485defcb95e7376f119e7}{real\+Visibility}} returns true. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l01432}{1432}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_layerable_ab054e88f15d485defcb95e7376f119e7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_layerable_a7498c2d0d081cf7cad0fb3bb93aa0e91}\label{class_q_c_p_layerable_a7498c2d0d081cf7cad0fb3bb93aa0e91}} 
 \index{QCPLayerable@{QCPLayerable}!selectEvent@{selectEvent}}
 \index{selectEvent@{selectEvent}!QCPLayerable@{QCPLayerable}}
 \doxysubsubsection{\texorpdfstring{selectEvent()}{selectEvent()}}
@@ -348,7 +420,7 @@ If this layerable has a direct layerable parent (usually set via hierarchies imp
 
 
 
-Reimplemented in \mbox{\hyperlink{class_q_c_p_axis_a50c3ed18e189d48421ec2978f88e4f87}{QCPAxis}}, \mbox{\hyperlink{class_q_c_p_abstract_plottable_a2d488568cf16600dd81fa23d7d439829}{QCPAbstract\+Plottable}}, \mbox{\hyperlink{class_q_c_p_abstract_item_aa4b969c58797f39c9c0b6c07c7869d17}{QCPAbstract\+Item}}, \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a0081acfd8c4bb8ac4e9dcfe0f6c49b74}{QCPAbstract\+Legend\+Item}}, \mbox{\hyperlink{class_q_c_p_legend_a71f54a05c3e5b1a1ade1864422cd642e}{QCPLegend}}, and \mbox{\hyperlink{class_q_c_p_text_element_a8d696ea82fa7bf743e01858039c03525}{QCPText\+Element}}.
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l01658}{1658}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_layerable_a908c9edda761886f33893be326dab77d}\label{class_q_c_p_layerable_a908c9edda761886f33893be326dab77d}} 
 \index{QCPLayerable@{QCPLayerable}!selectionCategory@{selectionCategory}}
@@ -358,7 +430,7 @@ Reimplemented in \mbox{\hyperlink{class_q_c_p_axis_a50c3ed18e189d48421ec2978f88e
 
 
 
-Reimplemented in \mbox{\hyperlink{class_q_c_p_axis_ab751e3e96495716a2f6742ca7d7b3d49}{QCPAxis}}, \mbox{\hyperlink{class_q_c_p_abstract_plottable_af80ad8531642e786b6f4fad551c203c4}{QCPAbstract\+Plottable}}, \mbox{\hyperlink{class_q_c_p_abstract_item_aceb5f99c361cf023c7cbe7339ea29571}{QCPAbstract\+Item}}, \mbox{\hyperlink{class_q_c_p_abstract_legend_item_af8eb0fda0e11b0a23e1051b0102c8c6a}{QCPAbstract\+Legend\+Item}}, and \mbox{\hyperlink{class_q_c_p_legend_a1a2075e462984f9ff51d9c75bda3581b}{QCPLegend}}.
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l01608}{1608}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_layerable_a04db8351fefd44cfdb77958e75c6288e}\label{class_q_c_p_layerable_a04db8351fefd44cfdb77958e75c6288e}} 
 \index{QCPLayerable@{QCPLayerable}!selectTest@{selectTest}}
@@ -376,16 +448,20 @@ Providing a constant value for area objects allows selecting line objects even w
 
 The actual setting of the selection state is not done by this function. This is handled by the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} when the mouse\+Release\+Event occurs, and the finally selected object is notified via the select\+Event/ deselect\+Event methods.
 
-{\itshape details} is an optional output parameter. Every layerable subclass may place any information in {\itshape details}. This information will be passed to \mbox{\hyperlink{class_q_c_p_layerable_a7498c2d0d081cf7cad0fb3bb93aa0e91}{select\+Event}} when the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} decides on the basis of this select\+Test call, that the object was successfully selected. The subsequent call to \mbox{\hyperlink{class_q_c_p_layerable_a7498c2d0d081cf7cad0fb3bb93aa0e91}{select\+Event}} will carry the {\itshape details}. This is useful for multi-\/part objects (like \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}}). This way, a possibly complex calculation to decide which part was clicked is only done once in \mbox{\hyperlink{class_q_c_p_layerable_a04db8351fefd44cfdb77958e75c6288e}{select\+Test}}. The result (i.\+e. the actually clicked part) can then be placed in {\itshape details}. So in the subsequent \mbox{\hyperlink{class_q_c_p_layerable_a7498c2d0d081cf7cad0fb3bb93aa0e91}{select\+Event}}, the decision which part was selected doesn\textquotesingle{}t have to be done a second time for a single selection operation.
+{\itshape details} is an optional output parameter. Every layerable subclass may place any information in {\itshape details}. This information will be passed to select\+Event when the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} decides on the basis of this select\+Test call, that the object was successfully selected. The subsequent call to select\+Event will carry the {\itshape details}. This is useful for multi-\/part objects (like \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}}). This way, a possibly complex calculation to decide which part was clicked is only done once in \mbox{\hyperlink{class_q_c_p_layerable_a04db8351fefd44cfdb77958e75c6288e}{select\+Test}}. The result (i.\+e. the actually clicked part) can then be placed in {\itshape details}. So in the subsequent select\+Event, the decision which part was selected doesn\textquotesingle{}t have to be done a second time for a single selection operation.
 
 You may pass 0 as {\itshape details} to indicate that you are not interested in those selection details.
 
 \begin{DoxySeeAlso}{See also}
-\mbox{\hyperlink{class_q_c_p_layerable_a7498c2d0d081cf7cad0fb3bb93aa0e91}{select\+Event}}, \mbox{\hyperlink{class_q_c_p_layerable_ae546370644a5551c76af739afc008bee}{deselect\+Event}}, \mbox{\hyperlink{class_q_c_p_layerable_af6567604818db90f4fd52822f8bc8376}{mouse\+Press\+Event}}, \mbox{\hyperlink{class_q_c_p_layerable_a47dfd7b8fd99c08ca54e09c362b6f022}{wheel\+Event}}, \mbox{\hyperlink{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5}{QCustom\+Plot\+::set\+Interactions}} 
+select\+Event, deselect\+Event, \mbox{\hyperlink{class_q_c_p_layerable_af6567604818db90f4fd52822f8bc8376}{mouse\+Press\+Event}}, \mbox{\hyperlink{class_q_c_p_layerable_a47dfd7b8fd99c08ca54e09c362b6f022}{wheel\+Event}}, \mbox{\hyperlink{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5}{QCustom\+Plot\+::set\+Interactions}} 
 \end{DoxySeeAlso}
 
 
 Reimplemented in \mbox{\hyperlink{class_q_c_p_abstract_plottable_a38efe9641d972992a3d44204bc80ec1d}{QCPAbstract\+Plottable}}, \mbox{\hyperlink{class_q_c_p_layout_element_ae97f483cccedadbf18ea4525ef240ee4}{QCPLayout\+Element}}, \mbox{\hyperlink{class_q_c_p_layout_inset_a2eeef7ea1b8340e7c7c2e2fc229df5ea}{QCPLayout\+Inset}}, \mbox{\hyperlink{class_q_c_p_axis_a63b7103c57fe9acfbce164334ea837f8}{QCPAxis}}, \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a4611b43bcb6441b2154eb4f4e0a33db2}{QCPAbstract\+Plottable1\+D$<$ Data\+Type $>$}}, \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a4611b43bcb6441b2154eb4f4e0a33db2}{QCPAbstract\+Plottable1\+D$<$ QCPBars\+Data $>$}}, \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a4611b43bcb6441b2154eb4f4e0a33db2}{QCPAbstract\+Plottable1\+D$<$ QCPCurve\+Data $>$}}, \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a4611b43bcb6441b2154eb4f4e0a33db2}{QCPAbstract\+Plottable1\+D$<$ QCPFinancial\+Data $>$}}, \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a4611b43bcb6441b2154eb4f4e0a33db2}{QCPAbstract\+Plottable1\+D$<$ QCPGraph\+Data $>$}}, \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a4611b43bcb6441b2154eb4f4e0a33db2}{QCPAbstract\+Plottable1\+D$<$ QCPStatistical\+Box\+Data $>$}}, \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a80ec112a6608fc39dbed56239849b187}{QCPAbstract\+Legend\+Item}}, \mbox{\hyperlink{class_q_c_p_legend_aa53507624491908fb3d1a514b1fc674e}{QCPLegend}}, \mbox{\hyperlink{class_q_c_p_text_element_a1e721bc2994a127ef5a8f0a514a5dbac}{QCPText\+Element}}, \mbox{\hyperlink{class_q_c_p_graph_a6d669d04462d272c6aa0e5f85846d673}{QCPGraph}}, \mbox{\hyperlink{class_q_c_p_curve_a0ed9b7e6b4bc72010d6fcd974af46a8b}{QCPCurve}}, \mbox{\hyperlink{class_q_c_p_bars_a121f899c27af3186fe93dcd0eb98f49b}{QCPBars}}, \mbox{\hyperlink{class_q_c_p_statistical_box_a1607fa92f829c631107c20ccb2d70a6d}{QCPStatistical\+Box}}, \mbox{\hyperlink{class_q_c_p_color_map_afb4b843596addf58096082827a9e3450}{QCPColor\+Map}}, \mbox{\hyperlink{class_q_c_p_financial_aac8e91622ac58330fa9ce81cc8fd40ee}{QCPFinancial}}, \mbox{\hyperlink{class_q_c_p_error_bars_ac1b6675ef43e32547a3cbcf7b7ac46ed}{QCPError\+Bars}}, \mbox{\hyperlink{class_q_c_p_item_straight_line_a2e36c9d4dcc3aeda78a5584f790e39e3}{QCPItem\+Straight\+Line}}, \mbox{\hyperlink{class_q_c_p_item_line_a8e02bfbca04fbcf3dbc375a2bf693229}{QCPItem\+Line}}, \mbox{\hyperlink{class_q_c_p_item_curve_a718fa40140a43c8afbd41a3d85c92d72}{QCPItem\+Curve}}, \mbox{\hyperlink{class_q_c_p_item_rect_a2e68621b75bae4da6ae0ab2cdd0dd733}{QCPItem\+Rect}}, \mbox{\hyperlink{class_q_c_p_item_text_a676aaec10ad3cc4d7d0e4847db04c838}{QCPItem\+Text}}, \mbox{\hyperlink{class_q_c_p_item_ellipse_ab6e2b8a29695c606c7731e498297ca29}{QCPItem\+Ellipse}}, \mbox{\hyperlink{class_q_c_p_item_pixmap_a65d1ede7bb479b90d40186d083071947}{QCPItem\+Pixmap}}, \mbox{\hyperlink{class_q_c_p_item_tracer_a9fd955fea40e977d66f3a9fd5765aec4}{QCPItem\+Tracer}}, \mbox{\hyperlink{class_q_c_p_item_bracket_a49a6b2f41e0a8c2a2e3a2836027a8455}{QCPItem\+Bracket}}, and \mbox{\hyperlink{class_q_c_p_abstract_item_ae41d0349d68bb802c49104afd100ba2a}{QCPAbstract\+Item}}.
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l01471}{1471}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_layerable_a4fd43e89be4a553ead41652565ff0581}\label{class_q_c_p_layerable_a4fd43e89be4a553ead41652565ff0581}} 
 \index{QCPLayerable@{QCPLayerable}!setAntialiased@{setAntialiased}}
@@ -395,7 +471,19 @@ Reimplemented in \mbox{\hyperlink{class_q_c_p_abstract_plottable_a38efe9641d9729
 
 Sets whether this object will be drawn antialiased or not.
 
-Note that antialiasing settings may be overridden by \mbox{\hyperlink{class_q_custom_plot_af6f91e5eab1be85f67c556e98c3745e8}{QCustom\+Plot\+::set\+Antialiased\+Elements}} and \mbox{\hyperlink{class_q_custom_plot_ae10d685b5eabea2999fb8775ca173c24}{QCustom\+Plot\+::set\+Not\+Antialiased\+Elements}}. \mbox{\Hypertarget{class_q_c_p_layerable_ab25a0e7b897993b44447caee0f142083}\label{class_q_c_p_layerable_ab25a0e7b897993b44447caee0f142083}} 
+Note that antialiasing settings may be overridden by \mbox{\hyperlink{class_q_custom_plot_af6f91e5eab1be85f67c556e98c3745e8}{QCustom\+Plot\+::set\+Antialiased\+Elements}} and \mbox{\hyperlink{class_q_custom_plot_ae10d685b5eabea2999fb8775ca173c24}{QCustom\+Plot\+::set\+Not\+Antialiased\+Elements}}. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l01417}{1417}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_layerable_a4fd43e89be4a553ead41652565ff0581_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_layerable_ab25a0e7b897993b44447caee0f142083}\label{class_q_c_p_layerable_ab25a0e7b897993b44447caee0f142083}} 
 \index{QCPLayerable@{QCPLayerable}!setLayer@{setLayer}}
 \index{setLayer@{setLayer}!QCPLayerable@{QCPLayerable}}
 \doxysubsubsection{\texorpdfstring{setLayer()}{setLayer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -403,7 +491,19 @@ Note that antialiasing settings may be overridden by \mbox{\hyperlink{class_q_cu
 
 This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Sets the layer of this layerable object by name
 
-Returns true on success, i.\+e. if {\itshape layer\+Name} is a valid layer name. \mbox{\Hypertarget{class_q_c_p_layerable_ab0d0da6d2de45a118886d2c8e16d5a54}\label{class_q_c_p_layerable_ab0d0da6d2de45a118886d2c8e16d5a54}} 
+Returns true on success, i.\+e. if {\itshape layer\+Name} is a valid layer name. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l01394}{1394}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_layerable_ab25a0e7b897993b44447caee0f142083_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_layerable_ab0d0da6d2de45a118886d2c8e16d5a54}\label{class_q_c_p_layerable_ab0d0da6d2de45a118886d2c8e16d5a54}} 
 \index{QCPLayerable@{QCPLayerable}!setLayer@{setLayer}}
 \index{setLayer@{setLayer}!QCPLayerable@{QCPLayerable}}
 \doxysubsubsection{\texorpdfstring{setLayer()}{setLayer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
@@ -413,11 +513,27 @@ Sets the {\itshape layer} of this layerable object. The object will be placed on
 
 If {\itshape layer} is 0, this layerable will not be on any layer and thus not appear in the plot (or interact/receive events).
 
-Returns true if the layer of this layerable was successfully changed to {\itshape layer}. \mbox{\Hypertarget{class_q_c_p_layerable_aa23c893671f1f6744ac235cf2204cf3a}\label{class_q_c_p_layerable_aa23c893671f1f6744ac235cf2204cf3a}} 
+Returns true if the layer of this layerable was successfully changed to {\itshape layer}. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l01384}{1384}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_layerable_ab0d0da6d2de45a118886d2c8e16d5a54_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_layerable_aa23c893671f1f6744ac235cf2204cf3a}\label{class_q_c_p_layerable_aa23c893671f1f6744ac235cf2204cf3a}} 
 \index{QCPLayerable@{QCPLayerable}!setParentLayerable@{setParentLayerable}}
 \index{setParentLayerable@{setParentLayerable}!QCPLayerable@{QCPLayerable}}
 \doxysubsubsection{\texorpdfstring{setParentLayerable()}{setParentLayerable()}}
 {\footnotesize\ttfamily void QCPLayerable\+::set\+Parent\+Layerable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $\ast$}]{parent\+Layerable }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l01522}{1522}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_layerable_a3bed99ddc396b48ce3ebfdc0418744f8}\label{class_q_c_p_layerable_a3bed99ddc396b48ce3ebfdc0418744f8}} 
 \index{QCPLayerable@{QCPLayerable}!setVisible@{setVisible}}
@@ -425,11 +541,27 @@ Returns true if the layer of this layerable was successfully changed to {\itshap
 \doxysubsubsection{\texorpdfstring{setVisible()}{setVisible()}}
 {\footnotesize\ttfamily void QCPLayerable\+::set\+Visible (\begin{DoxyParamCaption}\item[{bool}]{on }\end{DoxyParamCaption})}
 
-Sets the visibility of this layerable object. If an object is not visible, it will not be drawn on the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} surface, and user interaction with it (e.\+g. click and selection) is not possible. \mbox{\Hypertarget{class_q_c_p_layerable_af0297b944b6192b6d67d00bff41b6b70}\label{class_q_c_p_layerable_af0297b944b6192b6d67d00bff41b6b70}} 
+Sets the visibility of this layerable object. If an object is not visible, it will not be drawn on the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} surface, and user interaction with it (e.\+g. click and selection) is not possible. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l01370}{1370}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_layerable_a3bed99ddc396b48ce3ebfdc0418744f8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_layerable_af0297b944b6192b6d67d00bff41b6b70}\label{class_q_c_p_layerable_af0297b944b6192b6d67d00bff41b6b70}} 
 \index{QCPLayerable@{QCPLayerable}!visible@{visible}}
 \index{visible@{visible}!QCPLayerable@{QCPLayerable}}
 \doxysubsubsection{\texorpdfstring{visible()}{visible()}}
 {\footnotesize\ttfamily bool QCPLayerable\+::visible (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l00707}{707}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_layerable_a47dfd7b8fd99c08ca54e09c362b6f022}\label{class_q_c_p_layerable_a47dfd7b8fd99c08ca54e09c362b6f022}} 
 \index{QCPLayerable@{QCPLayerable}!wheelEvent@{wheelEvent}}
@@ -454,6 +586,10 @@ Reimplemented in \mbox{\hyperlink{class_q_c_p_axis_a71643d27524a843230b5ba68085b
 
 
 
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l01799}{1799}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+
+
 \doxysubsection{Friends And Related Function Documentation}
 \mbox{\Hypertarget{class_q_c_p_layerable_acbf20ecb140f66c5fd1bc64ae0762990}\label{class_q_c_p_layerable_acbf20ecb140f66c5fd1bc64ae0762990}} 
 \index{QCPLayerable@{QCPLayerable}!QCPAxisRect@{QCPAxisRect}}
@@ -461,17 +597,29 @@ Reimplemented in \mbox{\hyperlink{class_q_c_p_axis_a71643d27524a843230b5ba68085b
 \doxysubsubsection{\texorpdfstring{QCPAxisRect}{QCPAxisRect}}
 {\footnotesize\ttfamily friend class \mbox{\hyperlink{class_q_c_p_axis_rect}{QCPAxis\+Rect}}\hspace{0.3cm}{\ttfamily [friend]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l00763}{763}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_layerable_a5dbf96bf7664c1b6fce49063eeea6eef}\label{class_q_c_p_layerable_a5dbf96bf7664c1b6fce49063eeea6eef}} 
 \index{QCPLayerable@{QCPLayerable}!QCPLayer@{QCPLayer}}
 \index{QCPLayer@{QCPLayer}!QCPLayerable@{QCPLayerable}}
 \doxysubsubsection{\texorpdfstring{QCPLayer}{QCPLayer}}
 {\footnotesize\ttfamily friend class \mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}}\hspace{0.3cm}{\ttfamily [friend]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l00762}{762}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_layerable_a1cdf9df76adcfae45261690aa0ca2198}\label{class_q_c_p_layerable_a1cdf9df76adcfae45261690aa0ca2198}} 
 \index{QCPLayerable@{QCPLayerable}!QCustomPlot@{QCustomPlot}}
 \index{QCustomPlot@{QCustomPlot}!QCPLayerable@{QCPLayerable}}
 \doxysubsubsection{\texorpdfstring{QCustomPlot}{QCustomPlot}}
 {\footnotesize\ttfamily friend class \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l00761}{761}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 
 
@@ -482,11 +630,19 @@ Reimplemented in \mbox{\hyperlink{class_q_c_p_axis_a71643d27524a843230b5ba68085b
 \doxysubsubsection{\texorpdfstring{mAntialiased}{mAntialiased}}
 {\footnotesize\ttfamily bool QCPLayerable\+::m\+Antialiased\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l00734}{734}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_layerable_aa38ec5891aff0f50b36fd63e9372a0cd}\label{class_q_c_p_layerable_aa38ec5891aff0f50b36fd63e9372a0cd}} 
 \index{QCPLayerable@{QCPLayerable}!mLayer@{mLayer}}
 \index{mLayer@{mLayer}!QCPLayerable@{QCPLayerable}}
 \doxysubsubsection{\texorpdfstring{mLayer}{mLayer}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}}$\ast$ QCPLayerable\+::m\+Layer\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l00733}{733}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_layerable_a3291445a980053e2d17a21d15957624e}\label{class_q_c_p_layerable_a3291445a980053e2d17a21d15957624e}} 
 \index{QCPLayerable@{QCPLayerable}!mParentLayerable@{mParentLayerable}}
@@ -494,11 +650,19 @@ Reimplemented in \mbox{\hyperlink{class_q_c_p_axis_a71643d27524a843230b5ba68085b
 \doxysubsubsection{\texorpdfstring{mParentLayerable}{mParentLayerable}}
 {\footnotesize\ttfamily QPointer$<$\mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}$>$ QCPLayerable\+::m\+Parent\+Layerable\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l00732}{732}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_layerable_aa2a528433e44db02b8aef23c1f9f90ed}\label{class_q_c_p_layerable_aa2a528433e44db02b8aef23c1f9f90ed}} 
 \index{QCPLayerable@{QCPLayerable}!mParentPlot@{mParentPlot}}
 \index{mParentPlot@{mParentPlot}!QCPLayerable@{QCPLayerable}}
 \doxysubsubsection{\texorpdfstring{mParentPlot}{mParentPlot}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}$\ast$ QCPLayerable\+::m\+Parent\+Plot\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l00731}{731}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_layerable_a62e3aed8427d6ce3ccf716f285106cb3}\label{class_q_c_p_layerable_a62e3aed8427d6ce3ccf716f285106cb3}} 
 \index{QCPLayerable@{QCPLayerable}!mVisible@{mVisible}}
@@ -508,7 +672,11 @@ Reimplemented in \mbox{\hyperlink{class_q_c_p_axis_a71643d27524a843230b5ba68085b
 
 
 
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l00730}{730}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{qcustomplot_8h}{qcustomplot.\+h}}\item 
-\mbox{\hyperlink{qcustomplot_8cpp}{qcustomplot.\+cpp}}\end{DoxyCompactItemize}
+qcustomplot.\+h\item 
+qcustomplot.\+cpp\end{DoxyCompactItemize}

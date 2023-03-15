@@ -1,0 +1,1302 @@
+.TH "QCPAxisRect" 3 "Wed Mar 15 2023" "OmronPID" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QCPAxisRect \- Holds multiple axes and arranges them in a rectangular shape\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBQCPLayoutElement\fP\&.
+.PP
+Inherited by \fBQCPColorScaleAxisRectPrivate\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPAxisRect\fP (\fBQCustomPlot\fP *parentPlot, bool setupDefaultAxes=true)"
+.br
+.ti -1c
+.RI "QPixmap \fBbackground\fP () const"
+.br
+.ti -1c
+.RI "QBrush \fBbackgroundBrush\fP () const"
+.br
+.ti -1c
+.RI "bool \fBbackgroundScaled\fP () const"
+.br
+.ti -1c
+.RI "Qt::AspectRatioMode \fBbackgroundScaledMode\fP () const"
+.br
+.ti -1c
+.RI "Qt::Orientations \fBrangeDrag\fP () const"
+.br
+.ti -1c
+.RI "Qt::Orientations \fBrangeZoom\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPAxis\fP * \fBrangeDragAxis\fP (Qt::Orientation orientation)"
+.br
+.ti -1c
+.RI "\fBQCPAxis\fP * \fBrangeZoomAxis\fP (Qt::Orientation orientation)"
+.br
+.ti -1c
+.RI "QList< \fBQCPAxis\fP * > \fBrangeDragAxes\fP (Qt::Orientation orientation)"
+.br
+.ti -1c
+.RI "QList< \fBQCPAxis\fP * > \fBrangeZoomAxes\fP (Qt::Orientation orientation)"
+.br
+.ti -1c
+.RI "double \fBrangeZoomFactor\fP (Qt::Orientation orientation)"
+.br
+.ti -1c
+.RI "void \fBsetBackground\fP (const QPixmap &pm)"
+.br
+.ti -1c
+.RI "void \fBsetBackground\fP (const QPixmap &pm, bool scaled, Qt::AspectRatioMode mode=Qt::KeepAspectRatioByExpanding)"
+.br
+.ti -1c
+.RI "void \fBsetBackground\fP (const QBrush &brush)"
+.br
+.ti -1c
+.RI "void \fBsetBackgroundScaled\fP (bool scaled)"
+.br
+.ti -1c
+.RI "void \fBsetBackgroundScaledMode\fP (Qt::AspectRatioMode mode)"
+.br
+.ti -1c
+.RI "void \fBsetRangeDrag\fP (Qt::Orientations orientations)"
+.br
+.ti -1c
+.RI "void \fBsetRangeZoom\fP (Qt::Orientations orientations)"
+.br
+.ti -1c
+.RI "void \fBsetRangeDragAxes\fP (\fBQCPAxis\fP *horizontal, \fBQCPAxis\fP *vertical)"
+.br
+.ti -1c
+.RI "void \fBsetRangeDragAxes\fP (QList< \fBQCPAxis\fP * > \fBaxes\fP)"
+.br
+.ti -1c
+.RI "void \fBsetRangeDragAxes\fP (QList< \fBQCPAxis\fP * > horizontal, QList< \fBQCPAxis\fP * > vertical)"
+.br
+.ti -1c
+.RI "void \fBsetRangeZoomAxes\fP (\fBQCPAxis\fP *horizontal, \fBQCPAxis\fP *vertical)"
+.br
+.ti -1c
+.RI "void \fBsetRangeZoomAxes\fP (QList< \fBQCPAxis\fP * > \fBaxes\fP)"
+.br
+.ti -1c
+.RI "void \fBsetRangeZoomAxes\fP (QList< \fBQCPAxis\fP * > horizontal, QList< \fBQCPAxis\fP * > vertical)"
+.br
+.ti -1c
+.RI "void \fBsetRangeZoomFactor\fP (double horizontalFactor, double verticalFactor)"
+.br
+.ti -1c
+.RI "void \fBsetRangeZoomFactor\fP (double factor)"
+.br
+.ti -1c
+.RI "int \fBaxisCount\fP (\fBQCPAxis::AxisType\fP type) const"
+.br
+.ti -1c
+.RI "\fBQCPAxis\fP * \fBaxis\fP (\fBQCPAxis::AxisType\fP type, int index=0) const"
+.br
+.ti -1c
+.RI "QList< \fBQCPAxis\fP * > \fBaxes\fP (QCPAxis::AxisTypes types) const"
+.br
+.ti -1c
+.RI "QList< \fBQCPAxis\fP * > \fBaxes\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPAxis\fP * \fBaddAxis\fP (\fBQCPAxis::AxisType\fP type, \fBQCPAxis\fP *\fBaxis\fP=0)"
+.br
+.ti -1c
+.RI "QList< \fBQCPAxis\fP * > \fBaddAxes\fP (QCPAxis::AxisTypes types)"
+.br
+.ti -1c
+.RI "bool \fBremoveAxis\fP (\fBQCPAxis\fP *\fBaxis\fP)"
+.br
+.ti -1c
+.RI "\fBQCPLayoutInset\fP * \fBinsetLayout\fP () const"
+.br
+.ti -1c
+.RI "void \fBzoom\fP (const QRectF &pixelRect)"
+.br
+.ti -1c
+.RI "void \fBzoom\fP (const QRectF &pixelRect, const QList< \fBQCPAxis\fP * > &affectedAxes)"
+.br
+.ti -1c
+.RI "void \fBsetupFullAxesBox\fP (bool connectRanges=false)"
+.br
+.ti -1c
+.RI "QList< \fBQCPAbstractPlottable\fP * > \fBplottables\fP () const"
+.br
+.ti -1c
+.RI "QList< \fBQCPGraph\fP * > \fBgraphs\fP () const"
+.br
+.ti -1c
+.RI "QList< \fBQCPAbstractItem\fP * > \fBitems\fP () const"
+.br
+.ti -1c
+.RI "int \fBleft\fP () const"
+.br
+.ti -1c
+.RI "int \fBright\fP () const"
+.br
+.ti -1c
+.RI "int \fBtop\fP () const"
+.br
+.ti -1c
+.RI "int \fBbottom\fP () const"
+.br
+.ti -1c
+.RI "int \fBwidth\fP () const"
+.br
+.ti -1c
+.RI "int \fBheight\fP () const"
+.br
+.ti -1c
+.RI "QSize \fBsize\fP () const"
+.br
+.ti -1c
+.RI "QPoint \fBtopLeft\fP () const"
+.br
+.ti -1c
+.RI "QPoint \fBtopRight\fP () const"
+.br
+.ti -1c
+.RI "QPoint \fBbottomLeft\fP () const"
+.br
+.ti -1c
+.RI "QPoint \fBbottomRight\fP () const"
+.br
+.ti -1c
+.RI "QPoint \fBcenter\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBupdate\fP (\fBUpdatePhase\fP phase) Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual QList< \fBQCPLayoutElement\fP * > \fBelements\fP (bool recursive) const Q_DECL_OVERRIDE"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBQCPLayoutElement\fP
+.in +1c
+.ti -1c
+.RI "\fBQCPLayoutElement\fP (\fBQCustomPlot\fP *parentPlot=0)"
+.br
+.ti -1c
+.RI "\fBQCPLayout\fP * \fBlayout\fP () const"
+.br
+.ti -1c
+.RI "QRect \fBrect\fP () const"
+.br
+.ti -1c
+.RI "QRect \fBouterRect\fP () const"
+.br
+.ti -1c
+.RI "QMargins \fBmargins\fP () const"
+.br
+.ti -1c
+.RI "QMargins \fBminimumMargins\fP () const"
+.br
+.ti -1c
+.RI "QCP::MarginSides \fBautoMargins\fP () const"
+.br
+.ti -1c
+.RI "QSize \fBminimumSize\fP () const"
+.br
+.ti -1c
+.RI "QSize \fBmaximumSize\fP () const"
+.br
+.ti -1c
+.RI "\fBSizeConstraintRect\fP \fBsizeConstraintRect\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPMarginGroup\fP * \fBmarginGroup\fP (\fBQCP::MarginSide\fP side) const"
+.br
+.ti -1c
+.RI "QHash< \fBQCP::MarginSide\fP, \fBQCPMarginGroup\fP * > \fBmarginGroups\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetOuterRect\fP (const QRect &\fBrect\fP)"
+.br
+.ti -1c
+.RI "void \fBsetMargins\fP (const QMargins &margins)"
+.br
+.ti -1c
+.RI "void \fBsetMinimumMargins\fP (const QMargins &margins)"
+.br
+.ti -1c
+.RI "void \fBsetAutoMargins\fP (QCP::MarginSides sides)"
+.br
+.ti -1c
+.RI "void \fBsetMinimumSize\fP (const QSize &size)"
+.br
+.ti -1c
+.RI "void \fBsetMinimumSize\fP (int width, int height)"
+.br
+.ti -1c
+.RI "void \fBsetMaximumSize\fP (const QSize &size)"
+.br
+.ti -1c
+.RI "void \fBsetMaximumSize\fP (int width, int height)"
+.br
+.ti -1c
+.RI "void \fBsetSizeConstraintRect\fP (\fBSizeConstraintRect\fP constraintRect)"
+.br
+.ti -1c
+.RI "void \fBsetMarginGroup\fP (QCP::MarginSides sides, \fBQCPMarginGroup\fP *group)"
+.br
+.ti -1c
+.RI "virtual void \fBupdate\fP (\fBUpdatePhase\fP phase)"
+.br
+.ti -1c
+.RI "virtual QSize \fBminimumOuterSizeHint\fP () const"
+.br
+.ti -1c
+.RI "virtual QSize \fBmaximumOuterSizeHint\fP () const"
+.br
+.ti -1c
+.RI "virtual QList< \fBQCPLayoutElement\fP * > \fBelements\fP (bool recursive) const"
+.br
+.ti -1c
+.RI "virtual double \fBselectTest\fP (const QPointF &pos, bool onlySelectable, QVariant *details=0) const Q_DECL_OVERRIDE"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBQCPLayerable\fP
+.in +1c
+.ti -1c
+.RI "\fBQCPLayerable\fP (\fBQCustomPlot\fP *plot, QString targetLayer=QString(), \fBQCPLayerable\fP *\fBparentLayerable\fP=0)"
+.br
+.ti -1c
+.RI "bool \fBvisible\fP () const"
+.br
+.ti -1c
+.RI "\fBQCustomPlot\fP * \fBparentPlot\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPLayerable\fP * \fBparentLayerable\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPLayer\fP * \fBlayer\fP () const"
+.br
+.ti -1c
+.RI "bool \fBantialiased\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetVisible\fP (bool on)"
+.br
+.ti -1c
+.RI "Q_SLOT bool \fBsetLayer\fP (\fBQCPLayer\fP *layer)"
+.br
+.ti -1c
+.RI "bool \fBsetLayer\fP (const QString &layerName)"
+.br
+.ti -1c
+.RI "void \fBsetAntialiased\fP (bool enabled)"
+.br
+.ti -1c
+.RI "virtual double \fBselectTest\fP (const QPointF &pos, bool onlySelectable, QVariant *details=0) const"
+.br
+.ti -1c
+.RI "bool \fBrealVisibility\fP () const"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBapplyDefaultAntialiasingHint\fP (\fBQCPPainter\fP *painter) const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (\fBQCPPainter\fP *painter) Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual int \fBcalculateAutoMargin\fP (\fBQCP::MarginSide\fP side) Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual void \fBlayoutChanged\fP () Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual void \fBmousePressEvent\fP (QMouseEvent *event, const QVariant &details) Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual void \fBmouseMoveEvent\fP (QMouseEvent *event, const QPointF &startPos) Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual void \fBmouseReleaseEvent\fP (QMouseEvent *event, const QPointF &startPos) Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual void \fBwheelEvent\fP (QWheelEvent *event) Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "void \fBdrawBackground\fP (\fBQCPPainter\fP *painter)"
+.br
+.ti -1c
+.RI "void \fBupdateAxesOffset\fP (\fBQCPAxis::AxisType\fP type)"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBQCPLayoutElement\fP
+.in +1c
+.ti -1c
+.RI "virtual int \fBcalculateAutoMargin\fP (\fBQCP::MarginSide\fP side)"
+.br
+.ti -1c
+.RI "virtual void \fBlayoutChanged\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBapplyDefaultAntialiasingHint\fP (\fBQCPPainter\fP *painter) const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (\fBQCPPainter\fP *painter) Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual void \fBparentPlotInitialized\fP (\fBQCustomPlot\fP *parentPlot) Q_DECL_OVERRIDE"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBQCPLayerable\fP
+.in +1c
+.ti -1c
+.RI "virtual void \fBparentPlotInitialized\fP (\fBQCustomPlot\fP *parentPlot)"
+.br
+.ti -1c
+.RI "virtual \fBQCP::Interaction\fP \fBselectionCategory\fP () const"
+.br
+.ti -1c
+.RI "virtual QRect \fBclipRect\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBapplyDefaultAntialiasingHint\fP (\fBQCPPainter\fP *painter) const =0"
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (\fBQCPPainter\fP *painter)=0"
+.br
+.ti -1c
+.RI "virtual void \fBselectEvent\fP (QMouseEvent *event, bool additive, const QVariant &details, bool *selectionStateChanged)"
+.br
+.ti -1c
+.RI "virtual void \fBdeselectEvent\fP (bool *selectionStateChanged)"
+.br
+.ti -1c
+.RI "virtual void \fBmousePressEvent\fP (QMouseEvent *event, const QVariant &details)"
+.br
+.ti -1c
+.RI "virtual void \fBmouseMoveEvent\fP (QMouseEvent *event, const QPointF &startPos)"
+.br
+.ti -1c
+.RI "virtual void \fBmouseReleaseEvent\fP (QMouseEvent *event, const QPointF &startPos)"
+.br
+.ti -1c
+.RI "virtual void \fBmouseDoubleClickEvent\fP (QMouseEvent *event, const QVariant &details)"
+.br
+.ti -1c
+.RI "virtual void \fBwheelEvent\fP (QWheelEvent *event)"
+.br
+.ti -1c
+.RI "void \fBinitializeParentPlot\fP (\fBQCustomPlot\fP *parentPlot)"
+.br
+.ti -1c
+.RI "void \fBsetParentLayerable\fP (\fBQCPLayerable\fP *\fBparentLayerable\fP)"
+.br
+.ti -1c
+.RI "bool \fBmoveToLayer\fP (\fBQCPLayer\fP *layer, bool prepend)"
+.br
+.ti -1c
+.RI "void \fBapplyAntialiasingHint\fP (\fBQCPPainter\fP *painter, bool localAntialiased, \fBQCP::AntialiasedElement\fP overrideElement) const"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "QBrush \fBmBackgroundBrush\fP"
+.br
+.ti -1c
+.RI "QPixmap \fBmBackgroundPixmap\fP"
+.br
+.ti -1c
+.RI "QPixmap \fBmScaledBackgroundPixmap\fP"
+.br
+.ti -1c
+.RI "bool \fBmBackgroundScaled\fP"
+.br
+.ti -1c
+.RI "Qt::AspectRatioMode \fBmBackgroundScaledMode\fP"
+.br
+.ti -1c
+.RI "\fBQCPLayoutInset\fP * \fBmInsetLayout\fP"
+.br
+.ti -1c
+.RI "Qt::Orientations \fBmRangeDrag\fP"
+.br
+.ti -1c
+.RI "Qt::Orientations \fBmRangeZoom\fP"
+.br
+.ti -1c
+.RI "QList< QPointer< \fBQCPAxis\fP > > \fBmRangeDragHorzAxis\fP"
+.br
+.ti -1c
+.RI "QList< QPointer< \fBQCPAxis\fP > > \fBmRangeDragVertAxis\fP"
+.br
+.ti -1c
+.RI "QList< QPointer< \fBQCPAxis\fP > > \fBmRangeZoomHorzAxis\fP"
+.br
+.ti -1c
+.RI "QList< QPointer< \fBQCPAxis\fP > > \fBmRangeZoomVertAxis\fP"
+.br
+.ti -1c
+.RI "double \fBmRangeZoomFactorHorz\fP"
+.br
+.ti -1c
+.RI "double \fBmRangeZoomFactorVert\fP"
+.br
+.ti -1c
+.RI "QList< \fBQCPRange\fP > \fBmDragStartHorzRange\fP"
+.br
+.ti -1c
+.RI "QList< \fBQCPRange\fP > \fBmDragStartVertRange\fP"
+.br
+.ti -1c
+.RI "QCP::AntialiasedElements \fBmAADragBackup\fP"
+.br
+.ti -1c
+.RI "QCP::AntialiasedElements \fBmNotAADragBackup\fP"
+.br
+.ti -1c
+.RI "bool \fBmDragging\fP"
+.br
+.ti -1c
+.RI "QHash< \fBQCPAxis::AxisType\fP, QList< \fBQCPAxis\fP * > > \fBmAxes\fP"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBQCPLayoutElement\fP
+.in +1c
+.ti -1c
+.RI "\fBQCPLayout\fP * \fBmParentLayout\fP"
+.br
+.ti -1c
+.RI "QSize \fBmMinimumSize\fP"
+.br
+.ti -1c
+.RI "QSize \fBmMaximumSize\fP"
+.br
+.ti -1c
+.RI "\fBSizeConstraintRect\fP \fBmSizeConstraintRect\fP"
+.br
+.ti -1c
+.RI "QRect \fBmRect\fP"
+.br
+.ti -1c
+.RI "QRect \fBmOuterRect\fP"
+.br
+.ti -1c
+.RI "QMargins \fBmMargins\fP"
+.br
+.ti -1c
+.RI "QMargins \fBmMinimumMargins\fP"
+.br
+.ti -1c
+.RI "QCP::MarginSides \fBmAutoMargins\fP"
+.br
+.ti -1c
+.RI "QHash< \fBQCP::MarginSide\fP, \fBQCPMarginGroup\fP * > \fBmMarginGroups\fP"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBQCPLayerable\fP
+.in +1c
+.ti -1c
+.RI "bool \fBmVisible\fP"
+.br
+.ti -1c
+.RI "\fBQCustomPlot\fP * \fBmParentPlot\fP"
+.br
+.ti -1c
+.RI "QPointer< \fBQCPLayerable\fP > \fBmParentLayerable\fP"
+.br
+.ti -1c
+.RI "\fBQCPLayer\fP * \fBmLayer\fP"
+.br
+.ti -1c
+.RI "bool \fBmAntialiased\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBQCustomPlot\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Types inherited from \fBQCPLayoutElement\fP
+.in +1c
+.ti -1c
+.RI "enum \fBUpdatePhase\fP { \fBupPreparation\fP, \fBupMargins\fP, \fBupLayout\fP }"
+.br
+.ti -1c
+.RI "enum \fBSizeConstraintRect\fP { \fBscrInnerRect\fP, \fBscrOuterRect\fP }"
+.br
+.in -1c
+
+Signals inherited from \fBQCPLayerable\fP
+.in +1c
+.ti -1c
+.RI "void \fBlayerChanged\fP (\fBQCPLayer\fP *newLayer)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Holds multiple axes and arranges them in a rectangular shape\&. 
+
+This class represents an axis rect, a rectangular area that is bounded on all sides with an arbitrary number of axes\&.
+.PP
+Initially \fBQCustomPlot\fP has one axis rect, accessible via \fBQCustomPlot::axisRect()\fP\&. However, the layout system allows to have multiple axis rects, e\&.g\&. arranged in a grid layout (\fBQCustomPlot::plotLayout\fP)\&.
+.PP
+By default, \fBQCPAxisRect\fP comes with four axes, at bottom, top, left and right\&. They can be accessed via \fBaxis\fP by providing the respective axis type (\fBQCPAxis::AxisType\fP) and index\&. If you need all axes in the axis rect, use \fBaxes\fP\&. The top and right axes are set to be invisible initially (\fBQCPAxis::setVisible\fP)\&. To add more axes to a side, use \fBaddAxis\fP or \fBaddAxes\fP\&. To remove an axis, use \fBremoveAxis\fP\&.
+.PP
+The axis rect layerable itself only draws a background pixmap or color, if specified (\fBsetBackground\fP)\&. It is placed on the 'background' layer initially (see \fBQCPLayer\fP for an explanation of the \fBQCustomPlot\fP layer system)\&. The axes that are held by the axis rect can be placed on other layers, independently of the axis rect\&.
+.PP
+Every axis rect has a child layout of type \fBQCPLayoutInset\fP\&. It is accessible via \fBinsetLayout\fP and can be used to have other layout elements (or even other layouts with multiple elements) hovering inside the axis rect\&.
+.PP
+If an axis rect is clicked and dragged, it processes this by moving certain axis ranges\&. The behaviour can be controlled with \fBsetRangeDrag\fP and \fBsetRangeDragAxes\fP\&. If the mouse wheel is scrolled while the cursor is on the axis rect, certain axes are scaled\&. This is controllable via \fBsetRangeZoom\fP, \fBsetRangeZoomAxes\fP and \fBsetRangeZoomFactor\fP\&. These interactions are only enabled if \fBQCustomPlot::setInteractions\fP contains \fBQCP::iRangeDrag\fP and \fBQCP::iRangeZoom\fP\&.
+.PP
+ Overview of the spacings and paddings that define the geometry of an axis\&. The dashed line on the far left indicates the viewport/widget border\&. 
+.PP
+Definition at line \fB4582\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QCPAxisRect::QCPAxisRect (\fBQCustomPlot\fP * parentPlot, bool setupDefaultAxes = \fCtrue\fP)\fC [explicit]\fP"
+Creates a \fBQCPAxisRect\fP instance and sets default values\&. An axis is added for each of the four sides, the top and right axes are set invisible initially\&. 
+.PP
+Definition at line \fB16780\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QCPAxisRect::~QCPAxisRect ()\fC [virtual]\fP"
+
+.PP
+Definition at line \fB16824\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "QList< \fBQCPAxis\fP * > QCPAxisRect::addAxes (QCPAxis::AxisTypes types)"
+Adds a new axis with \fBaddAxis\fP to each axis rect side specified in \fItypes\fP\&. This may be an \fCor\fP-combination of \fBQCPAxis::AxisType\fP, so axes can be added to multiple sides at once\&.
+.PP
+Returns a list of the added axes\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBaddAxis\fP, \fBsetupFullAxesBox\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB16975\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "\fBQCPAxis\fP * QCPAxisRect::addAxis (\fBQCPAxis::AxisType\fP type, \fBQCPAxis\fP * axis = \fC0\fP)"
+Adds a new axis to the axis rect side specified with \fItype\fP, and returns it\&. If \fIaxis\fP is 0, a new \fBQCPAxis\fP instance is created internally\&. \fBQCustomPlot\fP owns the returned axis, so if you want to remove an axis, use \fBremoveAxis\fP instead of deleting it manually\&.
+.PP
+You may inject \fBQCPAxis\fP instances (or subclasses of \fBQCPAxis\fP) by setting \fIaxis\fP to an axis that was previously created outside \fBQCustomPlot\fP\&. It is important to note that \fBQCustomPlot\fP takes ownership of the axis, so you may not delete it afterwards\&. Further, the \fIaxis\fP must have been created with this axis rect as parent and with the same axis type as specified in \fItype\fP\&. If this is not the case, a debug output is generated, the axis is not added, and the method returns 0\&.
+.PP
+This method can not be used to move \fIaxis\fP between axis rects\&. The same \fIaxis\fP instance must not be added multiple times to the same or different axis rects\&.
+.PP
+If an axis rect side already contains one or more axes, the lower and upper endings of the new axis (\fBQCPAxis::setLowerEnding\fP, \fBQCPAxis::setUpperEnding\fP) are set to \fBQCPLineEnding::esHalfBar\fP\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBaddAxes\fP, \fBsetupFullAxesBox\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB16920\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPAxisRect::applyDefaultAntialiasingHint (\fBQCPPainter\fP * painter) const\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBQCPLayoutElement\fP\&.
+.PP
+Definition at line \fB17257\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QList< \fBQCPAxis\fP * > QCPAxisRect::axes () const"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&.
+.PP
+Returns all axes of this axis rect\&. 
+.PP
+Definition at line \fB16888\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QList< \fBQCPAxis\fP * > QCPAxisRect::axes (QCPAxis::AxisTypes types) const"
+Returns all axes on the axis rect sides specified with \fItypes\fP\&.
+.PP
+\fItypes\fP may be a single \fBQCPAxis::AxisType\fP or an \fCor\fP-combination, to get the axes of multiple sides\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBaxis\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB16870\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "\fBQCPAxis\fP * QCPAxisRect::axis (\fBQCPAxis::AxisType\fP type, int index = \fC0\fP) const"
+Returns the axis with the given \fIindex\fP on the axis rect side specified with \fItype\fP\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBaxisCount\fP, \fBaxes\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB16849\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "int QCPAxisRect::axisCount (\fBQCPAxis::AxisType\fP type) const"
+Returns the number of axes on the axis rect side specified with \fItype\fP\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBaxis\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB16839\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QPixmap QCPAxisRect::background () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB4597\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QBrush QCPAxisRect::backgroundBrush () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB4598\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "bool QCPAxisRect::backgroundScaled () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB4599\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "Qt::AspectRatioMode QCPAxisRect::backgroundScaledMode () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB4600\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "int QCPAxisRect::bottom () const\fC [inline]\fP"
+Returns the pixel position of the bottom border of this axis rect\&. Margins are not taken into account here, so the returned value is with respect to the inner \fBrect\fP\&. 
+.PP
+Definition at line \fB4647\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QPoint QCPAxisRect::bottomLeft () const\fC [inline]\fP"
+Returns the bottom left corner of this axis rect in pixels\&. Margins are not taken into account here, so the returned value is with respect to the inner \fBrect\fP\&. 
+.PP
+Definition at line \fB4653\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QPoint QCPAxisRect::bottomRight () const\fC [inline]\fP"
+Returns the bottom right corner of this axis rect in pixels\&. Margins are not taken into account here, so the returned value is with respect to the inner \fBrect\fP\&. 
+.PP
+Definition at line \fB4654\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "int QCPAxisRect::calculateAutoMargin (\fBQCP::MarginSide\fP side)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBQCPLayoutElement\fP\&.
+.PP
+Definition at line \fB17719\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QPoint QCPAxisRect::center () const\fC [inline]\fP"
+Returns the center of this axis rect in pixels\&. Margins are not taken into account here, so the returned value is with respect to the inner \fBrect\fP\&. 
+.PP
+Definition at line \fB4655\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "void QCPAxisRect::draw (\fBQCPPainter\fP * painter)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBQCPLayoutElement\fP\&.
+.PP
+Definition at line \fB17263\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPAxisRect::drawBackground (\fBQCPPainter\fP * painter)\fC [protected]\fP"
+
+.PP
+Definition at line \fB17664\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QList< \fBQCPLayoutElement\fP * > QCPAxisRect::elements (bool recursive) const\fC [virtual]\fP"
+Returns a list of all child elements in this layout element\&. If \fIrecursive\fP is true, all sub-child elements are included in the list, too\&.
+.PP
+\fBWarning\fP
+.RS 4
+There may be entries with value 0 in the returned list\&. (For example, \fBQCPLayoutGrid\fP may have empty cells which yield 0 at the respective index\&.) 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBQCPLayoutElement\fP\&.
+.PP
+Definition at line \fB17244\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QList< \fBQCPGraph\fP * > QCPAxisRect::graphs () const"
+Returns a list of all the graphs that are associated with this axis rect\&.
+.PP
+A graph is considered associated with an axis rect if its key or value axis (or both) is in this axis rect\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBplottables\fP, \fBitems\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB17159\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "int QCPAxisRect::height () const\fC [inline]\fP"
+Returns the pixel height of this axis rect\&. Margins are not taken into account here, so the returned value is with respect to the inner \fBrect\fP\&. 
+.PP
+Definition at line \fB4649\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBQCPLayoutInset\fP * QCPAxisRect::insetLayout () const\fC [inline]\fP"
+Returns the inset layout of this axis rect\&. It can be used to place other layout elements (or even layouts with multiple other elements) inside/on top of an axis rect\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBQCPLayoutInset\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB4634\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QList< \fBQCPAbstractItem\fP * > QCPAxisRect::items () const"
+Returns a list of all the items that are associated with this axis rect\&.
+.PP
+An item is considered associated with an axis rect if any of its positions has key or value axis set to an axis that is in this axis rect, or if any of its positions has \fBQCPItemPosition::setAxisRect\fP set to the axis rect, or if the clip axis rect (\fBQCPAbstractItem::setClipAxisRect\fP) is set to this axis rect\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBplottables\fP, \fBgraphs\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB17181\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPAxisRect::layoutChanged ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBQCPLayoutElement\fP\&.
+.PP
+Definition at line \fB17744\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "int QCPAxisRect::left () const\fC [inline]\fP"
+Returns the pixel position of the left border of this axis rect\&. Margins are not taken into account here, so the returned value is with respect to the inner \fBrect\fP\&. 
+.PP
+Definition at line \fB4644\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "void QCPAxisRect::mouseMoveEvent (QMouseEvent * event, const QPointF & startPos)\fC [protected]\fP, \fC [virtual]\fP"
+This event gets called when the user moves the mouse while holding a mouse button, after this layerable has become the mouse grabber by accepting the preceding \fBmousePressEvent\fP\&.
+.PP
+The current pixel position of the cursor on the \fBQCustomPlot\fP widget is accessible via \fCevent->pos()\fP\&. The parameter \fIstartPos\fP indicates the position where the initial \fBmousePressEvent\fP occured, that started the mouse interaction\&.
+.PP
+The default implementation does nothing\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBmousePressEvent\fP, \fBmouseReleaseEvent\fP, \fBmouseDoubleClickEvent\fP, \fBwheelEvent\fP 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBQCPLayerable\fP\&.
+.PP
+Reimplemented in \fBQCPColorScaleAxisRectPrivate\fP\&.
+.PP
+Definition at line \fB17802\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPAxisRect::mousePressEvent (QMouseEvent * event, const QVariant & details)\fC [protected]\fP, \fC [virtual]\fP"
+This event gets called when the user presses a mouse button while the cursor is over the layerable\&. Whether a cursor is over the layerable is decided by a preceding call to \fBselectTest\fP\&.
+.PP
+The current pixel position of the cursor on the \fBQCustomPlot\fP widget is accessible via \fCevent->pos()\fP\&. The parameter \fIdetails\fP contains layerable-specific details about the hit, which were generated in the previous call to \fBselectTest\fP\&. For example, One-dimensional plottables like \fBQCPGraph\fP or \fBQCPBars\fP convey the clicked data point in the \fIdetails\fP parameter, as \fBQCPDataSelection\fP packed as QVariant\&. Multi-part objects convey the specific \fCSelectablePart\fP that was hit (e\&.g\&. \fBQCPAxis::SelectablePart\fP in the case of axes)\&.
+.PP
+\fBQCustomPlot\fP uses an event propagation system that works the same as Qt's system\&. If your layerable doesn't reimplement the \fBmousePressEvent\fP or explicitly calls \fCevent->ignore()\fP in its reimplementation, the event will be propagated to the next layerable in the stacking order\&.
+.PP
+Once a layerable has accepted the \fBmousePressEvent\fP, it is considered the mouse grabber and will receive all following calls to \fBmouseMoveEvent\fP or \fBmouseReleaseEvent\fP for this mouse interaction (a 'mouse interaction' in this context ends with the release)\&.
+.PP
+The default implementation does nothing except explicitly ignoring the event with \fCevent->ignore()\fP\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBmouseMoveEvent\fP, \fBmouseReleaseEvent\fP, \fBmouseDoubleClickEvent\fP, \fBwheelEvent\fP 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBQCPLayerable\fP\&.
+.PP
+Reimplemented in \fBQCPColorScaleAxisRectPrivate\fP\&.
+.PP
+Definition at line \fB17770\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPAxisRect::mouseReleaseEvent (QMouseEvent * event, const QPointF & startPos)\fC [protected]\fP, \fC [virtual]\fP"
+This event gets called when the user releases the mouse button, after this layerable has become the mouse grabber by accepting the preceding \fBmousePressEvent\fP\&.
+.PP
+The current pixel position of the cursor on the \fBQCustomPlot\fP widget is accessible via \fCevent->pos()\fP\&. The parameter \fIstartPos\fP indicates the position where the initial \fBmousePressEvent\fP occured, that started the mouse interaction\&.
+.PP
+The default implementation does nothing\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBmousePressEvent\fP, \fBmouseMoveEvent\fP, \fBmouseDoubleClickEvent\fP, \fBwheelEvent\fP 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBQCPLayerable\fP\&.
+.PP
+Reimplemented in \fBQCPColorScaleAxisRectPrivate\fP\&.
+.PP
+Definition at line \fB17862\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QList< \fBQCPAbstractPlottable\fP * > QCPAxisRect::plottables () const"
+Returns a list of all the plottables that are associated with this axis rect\&.
+.PP
+A plottable is considered associated with an axis rect if its key or value axis (or both) is in this axis rect\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBgraphs\fP, \fBitems\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB17139\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "Qt::Orientations QCPAxisRect::rangeDrag () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB4601\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QList< \fBQCPAxis\fP * > QCPAxisRect::rangeDragAxes (Qt::Orientation orientation)"
+Returns all range drag axes of the \fIorientation\fP provided\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBrangeZoomAxis\fP, \fBsetRangeZoomAxes\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB17380\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "\fBQCPAxis\fP * QCPAxisRect::rangeDragAxis (Qt::Orientation orientation)"
+Returns the range drag axis of the \fIorientation\fP provided\&. If multiple axes were set, returns the first one (use \fBrangeDragAxes\fP to retrieve a list with all set axes)\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetRangeDragAxes\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB17353\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "Qt::Orientations QCPAxisRect::rangeZoom () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB4602\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QList< \fBQCPAxis\fP * > QCPAxisRect::rangeZoomAxes (Qt::Orientation orientation)"
+Returns all range zoom axes of the \fIorientation\fP provided\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBrangeDragAxis\fP, \fBsetRangeDragAxes\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB17406\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "\fBQCPAxis\fP * QCPAxisRect::rangeZoomAxis (Qt::Orientation orientation)"
+Returns the range zoom axis of the \fIorientation\fP provided\&. If multiple axes were set, returns the first one (use \fBrangeZoomAxes\fP to retrieve a list with all set axes)\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetRangeZoomAxes\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB17367\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "double QCPAxisRect::rangeZoomFactor (Qt::Orientation orientation)"
+Returns the range zoom factor of the \fIorientation\fP provided\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetRangeZoomFactor\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB17432\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "bool QCPAxisRect::removeAxis (\fBQCPAxis\fP * axis)"
+Removes the specified \fIaxis\fP from the axis rect and deletes it\&.
+.PP
+Returns true on success, i\&.e\&. if \fIaxis\fP was a valid axis in this axis rect\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBaddAxis\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB16996\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "int QCPAxisRect::right () const\fC [inline]\fP"
+Returns the pixel position of the right border of this axis rect\&. Margins are not taken into account here, so the returned value is with respect to the inner \fBrect\fP\&. 
+.PP
+Definition at line \fB4645\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "void QCPAxisRect::setBackground (const QBrush & brush)"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&.
+.PP
+Sets \fIbrush\fP as the background brush\&. The axis rect background will be filled with this brush\&. Since axis rects place themselves on the 'background' layer by default, the axis rect backgrounds are usually drawn below everything else\&.
+.PP
+The brush will be drawn before (under) any background pixmap, which may be specified with \fBsetBackground(const QPixmap &pm)\fP\&.
+.PP
+To disable drawing of a background brush, set \fIbrush\fP to Qt::NoBrush\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetBackground(const QPixmap &pm)\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB17302\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPAxisRect::setBackground (const QPixmap & pm)"
+Sets \fIpm\fP as the axis background pixmap\&. The axis background pixmap will be drawn inside the axis rect\&. Since axis rects place themselves on the 'background' layer by default, the axis rect backgrounds are usually drawn below everything else\&.
+.PP
+For cases where the provided pixmap doesn't have the same size as the axis rect, scaling can be enabled with \fBsetBackgroundScaled\fP and the scaling mode (i\&.e\&. whether and how the aspect ratio is preserved) can be set with \fBsetBackgroundScaledMode\fP\&. To set all these options in one call, consider using the overloaded version of this function\&.
+.PP
+Below the pixmap, the axis rect may be optionally filled with a brush, if specified with \fBsetBackground(const QBrush &brush)\fP\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetBackgroundScaled\fP, \fBsetBackgroundScaledMode\fP, \fBsetBackground(const QBrush &brush)\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB17283\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPAxisRect::setBackground (const QPixmap & pm, bool scaled, Qt::AspectRatioMode mode = \fCQt::KeepAspectRatioByExpanding\fP)"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&.
+.PP
+Allows setting the background pixmap of the axis rect, whether it shall be scaled and how it shall be scaled in one call\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetBackground(const QPixmap &pm)\fP, \fBsetBackgroundScaled\fP, \fBsetBackgroundScaledMode\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB17314\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPAxisRect::setBackgroundScaled (bool scaled)"
+Sets whether the axis background pixmap shall be scaled to fit the axis rect or not\&. If \fIscaled\fP is set to true, you may control whether and how the aspect ratio of the original pixmap is preserved with \fBsetBackgroundScaledMode\fP\&.
+.PP
+Note that the scaled version of the original pixmap is buffered, so there is no performance penalty on replots\&. (Except when the axis rect dimensions are changed continuously\&.)
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetBackground\fP, \fBsetBackgroundScaledMode\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB17332\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPAxisRect::setBackgroundScaledMode (Qt::AspectRatioMode mode)"
+If scaling of the axis background pixmap is enabled (\fBsetBackgroundScaled\fP), use this function to define whether and how the aspect ratio of the original pixmap passed to \fBsetBackground\fP is preserved\&. 
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetBackground\fP, \fBsetBackgroundScaled\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB17342\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPAxisRect::setRangeDrag (Qt::Orientations orientations)"
+Sets which axis orientation may be range dragged by the user with mouse interaction\&. What orientation corresponds to which specific axis can be set with \fBsetRangeDragAxes(QCPAxis *horizontal, QCPAxis *vertical)\fP\&. By default, the horizontal axis is the bottom axis (xAxis) and the vertical axis is the left axis (yAxis)\&.
+.PP
+To disable range dragging entirely, pass 0 as \fIorientations\fP or remove \fBQCP::iRangeDrag\fP from \fBQCustomPlot::setInteractions\fP\&. To enable range dragging for both directions, pass \fCQt::Horizontal | Qt::Vertical\fP as \fIorientations\fP\&.
+.PP
+In addition to setting \fIorientations\fP to a non-zero value, make sure \fBQCustomPlot::setInteractions\fP contains \fBQCP::iRangeDrag\fP to enable the range dragging interaction\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetRangeZoom\fP, \fBsetRangeDragAxes\fP, \fBQCustomPlot::setNoAntialiasingOnDrag\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB17453\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPAxisRect::setRangeDragAxes (\fBQCPAxis\fP * horizontal, \fBQCPAxis\fP * vertical)"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&.
+.PP
+Sets the axes whose range will be dragged when \fBsetRangeDrag\fP enables mouse range dragging on the \fBQCustomPlot\fP widget\&. Pass 0 if no axis shall be dragged in the respective orientation\&.
+.PP
+Use the overload taking a list of axes, if multiple axes (more than one per orientation) shall react to dragging interactions\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetRangeZoomAxes\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB17488\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPAxisRect::setRangeDragAxes (QList< \fBQCPAxis\fP * > axes)"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&.
+.PP
+This method allows to set up multiple axes to react to horizontal and vertical dragging\&. The drag orientation that the respective axis will react to is deduced from its orientation (\fBQCPAxis::orientation\fP)\&.
+.PP
+In the unusual case that you wish to e\&.g\&. drag a vertically oriented axis with a horizontal drag motion, use the overload taking two separate lists for horizontal and vertical dragging\&. 
+.PP
+Definition at line \fB17507\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPAxisRect::setRangeDragAxes (QList< \fBQCPAxis\fP * > horizontal, QList< \fBQCPAxis\fP * > vertical)"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&.
+.PP
+This method allows to set multiple axes up to react to horizontal and vertical dragging, and define specifically which axis reacts to which drag orientation (irrespective of the axis orientation)\&. 
+.PP
+Definition at line \fB17526\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPAxisRect::setRangeZoom (Qt::Orientations orientations)"
+Sets which axis orientation may be zoomed by the user with the mouse wheel\&. What orientation corresponds to which specific axis can be set with \fBsetRangeZoomAxes(QCPAxis *horizontal,
+QCPAxis *vertical)\fP\&. By default, the horizontal axis is the bottom axis (xAxis) and the vertical axis is the left axis (yAxis)\&.
+.PP
+To disable range zooming entirely, pass 0 as \fIorientations\fP or remove \fBQCP::iRangeZoom\fP from \fBQCustomPlot::setInteractions\fP\&. To enable range zooming for both directions, pass \fCQt::Horizontal | Qt::Vertical\fP as \fIorientations\fP\&.
+.PP
+In addition to setting \fIorientations\fP to a non-zero value, make sure \fBQCustomPlot::setInteractions\fP contains \fBQCP::iRangeZoom\fP to enable the range zooming interaction\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetRangeZoomFactor\fP, \fBsetRangeZoomAxes\fP, \fBsetRangeDrag\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB17473\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPAxisRect::setRangeZoomAxes (\fBQCPAxis\fP * horizontal, \fBQCPAxis\fP * vertical)"
+Sets the axes whose range will be zoomed when \fBsetRangeZoom\fP enables mouse wheel zooming on the \fBQCustomPlot\fP widget\&. Pass 0 if no axis shall be zoomed in the respective orientation\&.
+.PP
+The two axes can be zoomed with different strengths, when different factors are passed to \fBsetRangeZoomFactor(double horizontalFactor, double verticalFactor)\fP\&.
+.PP
+Use the overload taking a list of axes, if multiple axes (more than one per orientation) shall react to zooming interactions\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetRangeDragAxes\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB17560\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPAxisRect::setRangeZoomAxes (QList< \fBQCPAxis\fP * > axes)"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&.
+.PP
+This method allows to set up multiple axes to react to horizontal and vertical range zooming\&. The zoom orientation that the respective axis will react to is deduced from its orientation (\fBQCPAxis::orientation\fP)\&.
+.PP
+In the unusual case that you wish to e\&.g\&. zoom a vertically oriented axis with a horizontal zoom interaction, use the overload taking two separate lists for horizontal and vertical zooming\&. 
+.PP
+Definition at line \fB17579\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPAxisRect::setRangeZoomAxes (QList< \fBQCPAxis\fP * > horizontal, QList< \fBQCPAxis\fP * > vertical)"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&.
+.PP
+This method allows to set multiple axes up to react to horizontal and vertical zooming, and define specifically which axis reacts to which zoom orientation (irrespective of the axis orientation)\&. 
+.PP
+Definition at line \fB17598\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPAxisRect::setRangeZoomFactor (double factor)"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&.
+.PP
+Sets both the horizontal and vertical zoom \fIfactor\fP\&. 
+.PP
+Definition at line \fB17640\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPAxisRect::setRangeZoomFactor (double horizontalFactor, double verticalFactor)"
+Sets how strong one rotation step of the mouse wheel zooms, when range zoom was activated with \fBsetRangeZoom\fP\&. The two parameters \fIhorizontalFactor\fP and \fIverticalFactor\fP provide a way to let the horizontal axis zoom at different rates than the vertical axis\&. Which axis is horizontal and which is vertical, can be set with \fBsetRangeZoomAxes\fP\&.
+.PP
+When the zoom factor is greater than one, scrolling the mouse wheel backwards (towards the user) will zoom in (make the currently visible range smaller)\&. For zoom factors smaller than one, the same scrolling direction will zoom out\&. 
+.PP
+Definition at line \fB17630\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPAxisRect::setupFullAxesBox (bool connectRanges = \fCfalse\fP)"
+Convenience function to create an axis on each side that doesn't have any axes yet and set their visibility to true\&. Further, the top/right axes are assigned the following properties of the bottom/left axes:
+.PP
+.PD 0
+.IP "\(bu" 2
+range (\fBQCPAxis::setRange\fP) 
+.IP "\(bu" 2
+range reversed (\fBQCPAxis::setRangeReversed\fP) 
+.IP "\(bu" 2
+scale type (\fBQCPAxis::setScaleType\fP) 
+.IP "\(bu" 2
+tick visibility (\fBQCPAxis::setTicks\fP) 
+.IP "\(bu" 2
+number format (\fBQCPAxis::setNumberFormat\fP) 
+.IP "\(bu" 2
+number precision (\fBQCPAxis::setNumberPrecision\fP) 
+.IP "\(bu" 2
+tick count of ticker (\fBQCPAxisTicker::setTickCount\fP) 
+.IP "\(bu" 2
+tick origin of ticker (\fBQCPAxisTicker::setTickOrigin\fP)
+.PP
+Tick label visibility (\fBQCPAxis::setTickLabels\fP) of the right and top axes are set to false\&.
+.PP
+If \fIconnectRanges\fP is true, the \fBrangeChanged\fP signals of the bottom and left axes are connected to the \fBQCPAxis::setRange\fP slots of the top and right axes\&. 
+.PP
+Definition at line \fB17076\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QSize QCPAxisRect::size () const\fC [inline]\fP"
+Returns the pixel size of this axis rect\&. Margins are not taken into account here, so the returned value is with respect to the inner \fBrect\fP\&. 
+.PP
+Definition at line \fB4650\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "int QCPAxisRect::top () const\fC [inline]\fP"
+Returns the pixel position of the top border of this axis rect\&. Margins are not taken into account here, so the returned value is with respect to the inner \fBrect\fP\&. 
+.PP
+Definition at line \fB4646\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QPoint QCPAxisRect::topLeft () const\fC [inline]\fP"
+Returns the top left corner of this axis rect in pixels\&. Margins are not taken into account here, so the returned value is with respect to the inner \fBrect\fP\&. 
+.PP
+Definition at line \fB4651\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QPoint QCPAxisRect::topRight () const\fC [inline]\fP"
+Returns the top right corner of this axis rect in pixels\&. Margins are not taken into account here, so the returned value is with respect to the inner \fBrect\fP\&. 
+.PP
+Definition at line \fB4652\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "void QCPAxisRect::update (\fBUpdatePhase\fP phase)\fC [virtual]\fP"
+This method is called automatically upon replot and doesn't need to be called by users of \fBQCPAxisRect\fP\&.
+.PP
+Calls the base class implementation to update the margins (see \fBQCPLayoutElement::update\fP), and finally passes the \fBrect\fP to the inset layout (\fBinsetLayout\fP) and calls its QCPInsetLayout::update function\&.
+.PP
+\\seebaseclassmethod 
+.PP
+Reimplemented from \fBQCPLayoutElement\fP\&.
+.PP
+Reimplemented in \fBQCPColorScaleAxisRectPrivate\fP\&.
+.PP
+Definition at line \fB17218\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPAxisRect::updateAxesOffset (\fBQCPAxis::AxisType\fP type)\fC [protected]\fP"
+
+.PP
+Definition at line \fB17698\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPAxisRect::wheelEvent (QWheelEvent * event)\fC [protected]\fP, \fC [virtual]\fP"
+This event gets called when the user turns the mouse scroll wheel while the cursor is over the layerable\&. Whether a cursor is over the layerable is decided by a preceding call to \fBselectTest\fP\&.
+.PP
+The current pixel position of the cursor on the \fBQCustomPlot\fP widget is accessible via \fCevent->pos()\fP\&.
+.PP
+The \fCevent->delta()\fP indicates how far the mouse wheel was turned, which is usually +/- 120 for single rotation steps\&. However, if the mouse wheel is turned rapidly, multiple steps may accumulate to one event, making \fCevent->delta()\fP larger\&. On the other hand, if the wheel has very smooth steps or none at all, the delta may be smaller\&.
+.PP
+The default implementation does nothing\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBmousePressEvent\fP, \fBmouseMoveEvent\fP, \fBmouseReleaseEvent\fP, \fBmouseDoubleClickEvent\fP 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBQCPLayerable\fP\&.
+.PP
+Reimplemented in \fBQCPColorScaleAxisRectPrivate\fP\&.
+.PP
+Definition at line \fB17888\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "int QCPAxisRect::width () const\fC [inline]\fP"
+Returns the pixel width of this axis rect\&. Margins are not taken into account here, so the returned value is with respect to the inner \fBrect\fP\&. 
+.PP
+Definition at line \fB4648\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "void QCPAxisRect::zoom (const QRectF & pixelRect)"
+Zooms in (or out) to the passed rectangular region \fIpixelRect\fP, given in pixel coordinates\&.
+.PP
+All axes of this axis rect will have their range zoomed accordingly\&. If you only wish to zoom specific axes, use the overloaded version of this method\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBQCustomPlot::setSelectionRectMode\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB17026\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPAxisRect::zoom (const QRectF & pixelRect, const QList< \fBQCPAxis\fP * > & affectedAxes)"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&.
+.PP
+Zooms in (or out) to the passed rectangular region \fIpixelRect\fP, given in pixel coordinates\&.
+.PP
+Only the axes passed in \fIaffectedAxes\fP will have their ranges zoomed accordingly\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBQCustomPlot::setSelectionRectMode\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB17039\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBQCustomPlot\fP\fC [friend]\fP"
+
+.PP
+Definition at line \fB4698\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QCP::AntialiasedElements QCPAxisRect::mAADragBackup\fC [protected]\fP"
+
+.PP
+Definition at line \fB4676\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QHash<\fBQCPAxis::AxisType\fP, QList<\fBQCPAxis\fP*> > QCPAxisRect::mAxes\fC [protected]\fP"
+
+.PP
+Definition at line \fB4678\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QBrush QCPAxisRect::mBackgroundBrush\fC [protected]\fP"
+
+.PP
+Definition at line \fB4663\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QPixmap QCPAxisRect::mBackgroundPixmap\fC [protected]\fP"
+
+.PP
+Definition at line \fB4664\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "bool QCPAxisRect::mBackgroundScaled\fC [protected]\fP"
+
+.PP
+Definition at line \fB4666\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "Qt::AspectRatioMode QCPAxisRect::mBackgroundScaledMode\fC [protected]\fP"
+
+.PP
+Definition at line \fB4667\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "bool QCPAxisRect::mDragging\fC [protected]\fP"
+
+.PP
+Definition at line \fB4677\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QList<\fBQCPRange\fP> QCPAxisRect::mDragStartHorzRange\fC [protected]\fP"
+
+.PP
+Definition at line \fB4675\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QList<\fBQCPRange\fP> QCPAxisRect::mDragStartVertRange\fC [protected]\fP"
+
+.PP
+Definition at line \fB4675\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBQCPLayoutInset\fP* QCPAxisRect::mInsetLayout\fC [protected]\fP"
+
+.PP
+Definition at line \fB4668\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QCP::AntialiasedElements QCPAxisRect::mNotAADragBackup\fC [protected]\fP"
+
+.PP
+Definition at line \fB4676\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "Qt::Orientations QCPAxisRect::mRangeDrag\fC [protected]\fP"
+
+.PP
+Definition at line \fB4669\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QList<QPointer<\fBQCPAxis\fP> > QCPAxisRect::mRangeDragHorzAxis\fC [protected]\fP"
+
+.PP
+Definition at line \fB4670\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QList<QPointer<\fBQCPAxis\fP> > QCPAxisRect::mRangeDragVertAxis\fC [protected]\fP"
+
+.PP
+Definition at line \fB4670\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "Qt::Orientations QCPAxisRect::mRangeZoom\fC [protected]\fP"
+
+.PP
+Definition at line \fB4669\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double QCPAxisRect::mRangeZoomFactorHorz\fC [protected]\fP"
+
+.PP
+Definition at line \fB4672\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double QCPAxisRect::mRangeZoomFactorVert\fC [protected]\fP"
+
+.PP
+Definition at line \fB4672\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QList<QPointer<\fBQCPAxis\fP> > QCPAxisRect::mRangeZoomHorzAxis\fC [protected]\fP"
+
+.PP
+Definition at line \fB4671\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QList<QPointer<\fBQCPAxis\fP> > QCPAxisRect::mRangeZoomVertAxis\fC [protected]\fP"
+
+.PP
+Definition at line \fB4671\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QPixmap QCPAxisRect::mScaledBackgroundPixmap\fC [protected]\fP"
+
+.PP
+Definition at line \fB4665\fP of file \fBqcustomplot\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for OmronPID from the source code\&.

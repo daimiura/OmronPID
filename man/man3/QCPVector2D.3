@@ -1,0 +1,350 @@
+.TH "QCPVector2D" 3 "Wed Mar 15 2023" "OmronPID" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QCPVector2D \- Represents two doubles as a mathematical 2D vector\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPVector2D\fP ()"
+.br
+.ti -1c
+.RI "\fBQCPVector2D\fP (double x, double y)"
+.br
+.ti -1c
+.RI "\fBQCPVector2D\fP (const QPoint &point)"
+.br
+.ti -1c
+.RI "\fBQCPVector2D\fP (const QPointF &point)"
+.br
+.ti -1c
+.RI "double \fBx\fP () const"
+.br
+.ti -1c
+.RI "double \fBy\fP () const"
+.br
+.ti -1c
+.RI "double & \fBrx\fP ()"
+.br
+.ti -1c
+.RI "double & \fBry\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetX\fP (double x)"
+.br
+.ti -1c
+.RI "void \fBsetY\fP (double y)"
+.br
+.ti -1c
+.RI "double \fBlength\fP () const"
+.br
+.ti -1c
+.RI "double \fBlengthSquared\fP () const"
+.br
+.ti -1c
+.RI "QPoint \fBtoPoint\fP () const"
+.br
+.ti -1c
+.RI "QPointF \fBtoPointF\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisNull\fP () const"
+.br
+.ti -1c
+.RI "void \fBnormalize\fP ()"
+.br
+.ti -1c
+.RI "\fBQCPVector2D\fP \fBnormalized\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPVector2D\fP \fBperpendicular\fP () const"
+.br
+.ti -1c
+.RI "double \fBdot\fP (const \fBQCPVector2D\fP &vec) const"
+.br
+.ti -1c
+.RI "double \fBdistanceSquaredToLine\fP (const \fBQCPVector2D\fP &start, const \fBQCPVector2D\fP &end) const"
+.br
+.ti -1c
+.RI "double \fBdistanceSquaredToLine\fP (const QLineF &line) const"
+.br
+.ti -1c
+.RI "double \fBdistanceToStraightLine\fP (const \fBQCPVector2D\fP &base, const \fBQCPVector2D\fP &direction) const"
+.br
+.ti -1c
+.RI "\fBQCPVector2D\fP & \fBoperator*=\fP (double factor)"
+.br
+.ti -1c
+.RI "\fBQCPVector2D\fP & \fBoperator/=\fP (double divisor)"
+.br
+.ti -1c
+.RI "\fBQCPVector2D\fP & \fBoperator+=\fP (const \fBQCPVector2D\fP &vector)"
+.br
+.ti -1c
+.RI "\fBQCPVector2D\fP & \fBoperator\-=\fP (const \fBQCPVector2D\fP &vector)"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "const \fBQCPVector2D\fP \fBoperator*\fP (double factor, const \fBQCPVector2D\fP &vec)"
+.br
+.ti -1c
+.RI "const \fBQCPVector2D\fP \fBoperator*\fP (const \fBQCPVector2D\fP &vec, double factor)"
+.br
+.ti -1c
+.RI "const \fBQCPVector2D\fP \fBoperator/\fP (const \fBQCPVector2D\fP &vec, double divisor)"
+.br
+.ti -1c
+.RI "const \fBQCPVector2D\fP \fBoperator+\fP (const \fBQCPVector2D\fP &vec1, const \fBQCPVector2D\fP &vec2)"
+.br
+.ti -1c
+.RI "const \fBQCPVector2D\fP \fBoperator\-\fP (const \fBQCPVector2D\fP &vec1, const \fBQCPVector2D\fP &vec2)"
+.br
+.ti -1c
+.RI "const \fBQCPVector2D\fP \fBoperator\-\fP (const \fBQCPVector2D\fP &vec)"
+.br
+.in -1c
+.SS "Related Functions"
+(Note that these are not member functions\&.) 
+.in +1c
+.ti -1c
+.RI "QDebug \fBoperator<<\fP (QDebug d, const \fBQCPVector2D\fP &vec)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents two doubles as a mathematical 2D vector\&. 
+
+This class acts as a replacement for QVector2D with the advantage of double precision instead of single, and some convenience methods tailored for the \fBQCustomPlot\fP library\&. 
+.PP
+Definition at line \fB382\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QCPVector2D::QCPVector2D ()"
+Creates a \fBQCPVector2D\fP object and initializes the x and y coordinates to 0\&. 
+.PP
+Definition at line \fB111\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QCPVector2D::QCPVector2D (double x, double y)"
+Creates a \fBQCPVector2D\fP object and initializes the \fIx\fP and \fIy\fP coordinates with the specified values\&. 
+.PP
+Definition at line \fB121\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QCPVector2D::QCPVector2D (const QPoint & point)"
+Creates a \fBQCPVector2D\fP object and initializes the x and y coordinates respective coordinates of the specified \fIpoint\fP\&. 
+.PP
+Definition at line \fB131\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QCPVector2D::QCPVector2D (const QPointF & point)"
+Creates a \fBQCPVector2D\fP object and initializes the x and y coordinates respective coordinates of the specified \fIpoint\fP\&. 
+.PP
+Definition at line \fB141\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "double QCPVector2D::distanceSquaredToLine (const \fBQCPVector2D\fP & start, const \fBQCPVector2D\fP & end) const"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&.
+.PP
+Returns the squared shortest distance of this vector (interpreted as a point) to the finite line segment given by \fIstart\fP and \fIend\fP\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBdistanceToStraightLine\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB178\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "double QCPVector2D::distanceSquaredToLine (const QLineF & line) const"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&.
+.PP
+Returns the squared shortest distance of this vector (interpreted as a point) to the finite line segment given by \fIline\fP\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBdistanceToStraightLine\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB202\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "double QCPVector2D::distanceToStraightLine (const \fBQCPVector2D\fP & base, const \fBQCPVector2D\fP & direction) const"
+Returns the shortest distance of this vector (interpreted as a point) to the infinite straight line given by a \fIbase\fP point and a \fIdirection\fP vector\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBdistanceSquaredToLine\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB213\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "double QCPVector2D::dot (const \fBQCPVector2D\fP & vec) const\fC [inline]\fP"
+Returns the dot/scalar product of this vector with the specified vector \fIvec\fP\&. 
+.PP
+Definition at line \fB410\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "bool QCPVector2D::isNull () const\fC [inline]\fP"
+Returns whether this vector is null\&. A vector is null if \fCqIsNull\fP returns true for both x and y coordinates, i\&.e\&. if both are binary equal to 0\&. 
+.PP
+Definition at line \fB406\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double QCPVector2D::length () const\fC [inline]\fP"
+Returns the length of this vector\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBlengthSquared\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB401\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double QCPVector2D::lengthSquared () const\fC [inline]\fP"
+Returns the squared length of this vector\&. In some situations, e\&.g\&. when just trying to find the shortest vector of a group, this is faster than calculating \fBlength\fP, because it avoids calculation of a square root\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBlength\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB402\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "void QCPVector2D::normalize ()"
+Normalizes this vector\&. After this operation, the length of the vector is equal to 1\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBnormalized\fP, \fBlength\fP, \fBlengthSquared\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB152\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "\fBQCPVector2D\fP QCPVector2D::normalized () const"
+Returns a normalized version of this vector\&. The length of the returned vector is equal to 1\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBnormalize\fP, \fBlength\fP, \fBlengthSquared\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB164\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "\fBQCPVector2D\fP & QCPVector2D::operator*= (double factor)"
+Scales this vector by the given \fIfactor\fP, i\&.e\&. the x and y components are multiplied by \fIfactor\fP\&. 
+.PP
+Definition at line \fB222\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "\fBQCPVector2D\fP & QCPVector2D::operator+= (const \fBQCPVector2D\fP & vector)"
+Adds the given \fIvector\fP to this vector component-wise\&. 
+.PP
+Definition at line \fB243\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "\fBQCPVector2D\fP & QCPVector2D::operator\-= (const \fBQCPVector2D\fP & vector)"
+subtracts the given \fIvector\fP from this vector component-wise\&. 
+.PP
+Definition at line \fB253\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "\fBQCPVector2D\fP & QCPVector2D::operator/= (double divisor)"
+Scales this vector by the given \fIdivisor\fP, i\&.e\&. the x and y components are divided by \fIdivisor\fP\&. 
+.PP
+Definition at line \fB233\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "\fBQCPVector2D\fP QCPVector2D::perpendicular () const\fC [inline]\fP"
+Returns a vector perpendicular to this vector, with the same length\&. 
+.PP
+Definition at line \fB409\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double & QCPVector2D::rx ()\fC [inline]\fP"
+
+.PP
+Definition at line \fB393\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double & QCPVector2D::ry ()\fC [inline]\fP"
+
+.PP
+Definition at line \fB394\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "void QCPVector2D::setX (double x)\fC [inline]\fP"
+Sets the x coordinate of this vector to \fIx\fP\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetY\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB397\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "void QCPVector2D::setY (double y)\fC [inline]\fP"
+Sets the y coordinate of this vector to \fIy\fP\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetX\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB398\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QPoint QCPVector2D::toPoint () const\fC [inline]\fP"
+Returns a QPoint which has the x and y coordinates of this vector, truncating any floating point information\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBtoPointF\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB403\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QPointF QCPVector2D::toPointF () const\fC [inline]\fP"
+Returns a QPointF which has the x and y coordinates of this vector\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBtoPoint\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB404\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double QCPVector2D::x () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB391\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double QCPVector2D::y () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB392\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "const \fBQCPVector2D\fP operator* (const \fBQCPVector2D\fP & vec, double factor)\fC [friend]\fP"
+
+.PP
+Definition at line \fB434\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "const \fBQCPVector2D\fP operator* (double factor, const \fBQCPVector2D\fP & vec)\fC [friend]\fP"
+
+.PP
+Definition at line \fB433\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "const \fBQCPVector2D\fP operator+ (const \fBQCPVector2D\fP & vec1, const \fBQCPVector2D\fP & vec2)\fC [friend]\fP"
+
+.PP
+Definition at line \fB436\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "const \fBQCPVector2D\fP operator\- (const \fBQCPVector2D\fP & vec)\fC [friend]\fP"
+
+.PP
+Definition at line \fB438\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "const \fBQCPVector2D\fP operator\- (const \fBQCPVector2D\fP & vec1, const \fBQCPVector2D\fP & vec2)\fC [friend]\fP"
+
+.PP
+Definition at line \fB437\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "const \fBQCPVector2D\fP operator/ (const \fBQCPVector2D\fP & vec, double divisor)\fC [friend]\fP"
+
+.PP
+Definition at line \fB435\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QDebug operator<< (QDebug d, const \fBQCPVector2D\fP & vec)\fC [related]\fP"
+Prints \fIvec\fP in a human readable format to the qDebug output\&. 
+.PP
+Definition at line \fB444\fP of file \fBqcustomplot\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for OmronPID from the source code\&.

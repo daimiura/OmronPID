@@ -1,0 +1,1030 @@
+.TH "QCPFinancial" 3 "Wed Mar 15 2023" "OmronPID" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QCPFinancial \- A plottable representing a financial stock chart\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBQCPAbstractPlottable1D< QCPFinancialData >\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBWidthType\fP { \fBwtAbsolute\fP, \fBwtAxisRectRatio\fP, \fBwtPlotCoords\fP }"
+.br
+.ti -1c
+.RI "enum \fBChartStyle\fP { \fBcsOhlc\fP, \fBcsCandlestick\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPFinancial\fP (\fBQCPAxis\fP *keyAxis, \fBQCPAxis\fP *valueAxis)"
+.br
+.ti -1c
+.RI "QSharedPointer< \fBQCPFinancialDataContainer\fP > \fBdata\fP () const"
+.br
+.ti -1c
+.RI "\fBChartStyle\fP \fBchartStyle\fP () const"
+.br
+.ti -1c
+.RI "double \fBwidth\fP () const"
+.br
+.ti -1c
+.RI "\fBWidthType\fP \fBwidthType\fP () const"
+.br
+.ti -1c
+.RI "bool \fBtwoColored\fP () const"
+.br
+.ti -1c
+.RI "QBrush \fBbrushPositive\fP () const"
+.br
+.ti -1c
+.RI "QBrush \fBbrushNegative\fP () const"
+.br
+.ti -1c
+.RI "QPen \fBpenPositive\fP () const"
+.br
+.ti -1c
+.RI "QPen \fBpenNegative\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetData\fP (QSharedPointer< \fBQCPFinancialDataContainer\fP > \fBdata\fP)"
+.br
+.ti -1c
+.RI "void \fBsetData\fP (const QVector< double > &keys, const QVector< double > &open, const QVector< double > &high, const QVector< double > &low, const QVector< double > &close, bool alreadySorted=false)"
+.br
+.ti -1c
+.RI "void \fBsetChartStyle\fP (\fBChartStyle\fP style)"
+.br
+.ti -1c
+.RI "void \fBsetWidth\fP (double width)"
+.br
+.ti -1c
+.RI "void \fBsetWidthType\fP (\fBWidthType\fP widthType)"
+.br
+.ti -1c
+.RI "void \fBsetTwoColored\fP (bool twoColored)"
+.br
+.ti -1c
+.RI "void \fBsetBrushPositive\fP (const QBrush &brush)"
+.br
+.ti -1c
+.RI "void \fBsetBrushNegative\fP (const QBrush &brush)"
+.br
+.ti -1c
+.RI "void \fBsetPenPositive\fP (const QPen &pen)"
+.br
+.ti -1c
+.RI "void \fBsetPenNegative\fP (const QPen &pen)"
+.br
+.ti -1c
+.RI "void \fBaddData\fP (const QVector< double > &keys, const QVector< double > &open, const QVector< double > &high, const QVector< double > &low, const QVector< double > &close, bool alreadySorted=false)"
+.br
+.ti -1c
+.RI "void \fBaddData\fP (double key, double open, double high, double low, double close)"
+.br
+.ti -1c
+.RI "virtual \fBQCPDataSelection\fP \fBselectTestRect\fP (const QRectF &rect, bool onlySelectable) const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual double \fBselectTest\fP (const QPointF &pos, bool onlySelectable, QVariant *details=0) const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual \fBQCPRange\fP \fBgetKeyRange\fP (bool &foundRange, \fBQCP::SignDomain\fP inSignDomain=\fBQCP::sdBoth\fP) const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual \fBQCPRange\fP \fBgetValueRange\fP (bool &foundRange, \fBQCP::SignDomain\fP inSignDomain=\fBQCP::sdBoth\fP, const \fBQCPRange\fP &inKeyRange=\fBQCPRange\fP()) const Q_DECL_OVERRIDE"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBQCPAbstractPlottable1D< QCPFinancialData >\fP
+.in +1c
+.ti -1c
+.RI "\fBQCPAbstractPlottable1D\fP (\fBQCPAxis\fP *keyAxis, \fBQCPAxis\fP *valueAxis)"
+.br
+.ti -1c
+.RI "virtual int \fBdataCount\fP () const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual double \fBdataMainKey\fP (int index) const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual double \fBdataSortKey\fP (int index) const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual double \fBdataMainValue\fP (int index) const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual \fBQCPRange\fP \fBdataValueRange\fP (int index) const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual QPointF \fBdataPixelPosition\fP (int index) const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual bool \fBsortKeyIsMainKey\fP () const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual \fBQCPDataSelection\fP \fBselectTestRect\fP (const QRectF &rect, bool onlySelectable) const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual int \fBfindBegin\fP (double sortKey, bool expandedRange=true) const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual int \fBfindEnd\fP (double sortKey, bool expandedRange=true) const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual double \fBselectTest\fP (const QPointF &pos, bool onlySelectable, QVariant *details=0) const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual \fBQCPPlottableInterface1D\fP * \fBinterface1D\fP () Q_DECL_OVERRIDE"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBQCPAbstractPlottable\fP
+.in +1c
+.ti -1c
+.RI "\fBQCPAbstractPlottable\fP (\fBQCPAxis\fP *keyAxis, \fBQCPAxis\fP *valueAxis)"
+.br
+.ti -1c
+.RI "QString \fBname\fP () const"
+.br
+.ti -1c
+.RI "bool \fBantialiasedFill\fP () const"
+.br
+.ti -1c
+.RI "bool \fBantialiasedScatters\fP () const"
+.br
+.ti -1c
+.RI "QPen \fBpen\fP () const"
+.br
+.ti -1c
+.RI "QBrush \fBbrush\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPAxis\fP * \fBkeyAxis\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPAxis\fP * \fBvalueAxis\fP () const"
+.br
+.ti -1c
+.RI "\fBQCP::SelectionType\fP \fBselectable\fP () const"
+.br
+.ti -1c
+.RI "bool \fBselected\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPDataSelection\fP \fBselection\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPSelectionDecorator\fP * \fBselectionDecorator\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetName\fP (const QString &name)"
+.br
+.ti -1c
+.RI "void \fBsetAntialiasedFill\fP (bool enabled)"
+.br
+.ti -1c
+.RI "void \fBsetAntialiasedScatters\fP (bool enabled)"
+.br
+.ti -1c
+.RI "void \fBsetPen\fP (const QPen &pen)"
+.br
+.ti -1c
+.RI "void \fBsetBrush\fP (const QBrush &brush)"
+.br
+.ti -1c
+.RI "void \fBsetKeyAxis\fP (\fBQCPAxis\fP *axis)"
+.br
+.ti -1c
+.RI "void \fBsetValueAxis\fP (\fBQCPAxis\fP *axis)"
+.br
+.ti -1c
+.RI "Q_SLOT void \fBsetSelectable\fP (\fBQCP::SelectionType\fP selectable)"
+.br
+.ti -1c
+.RI "Q_SLOT void \fBsetSelection\fP (\fBQCPDataSelection\fP \fBselection\fP)"
+.br
+.ti -1c
+.RI "void \fBsetSelectionDecorator\fP (\fBQCPSelectionDecorator\fP *decorator)"
+.br
+.ti -1c
+.RI "virtual double \fBselectTest\fP (const QPointF &pos, bool onlySelectable, QVariant *details=0) const =0"
+.br
+.ti -1c
+.RI "virtual \fBQCPPlottableInterface1D\fP * \fBinterface1D\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBQCPRange\fP \fBgetKeyRange\fP (bool &foundRange, \fBQCP::SignDomain\fP inSignDomain=\fBQCP::sdBoth\fP) const =0"
+.br
+.ti -1c
+.RI "virtual \fBQCPRange\fP \fBgetValueRange\fP (bool &foundRange, \fBQCP::SignDomain\fP inSignDomain=\fBQCP::sdBoth\fP, const \fBQCPRange\fP &inKeyRange=\fBQCPRange\fP()) const =0"
+.br
+.ti -1c
+.RI "void \fBcoordsToPixels\fP (double key, double value, double &x, double &y) const"
+.br
+.ti -1c
+.RI "const QPointF \fBcoordsToPixels\fP (double key, double value) const"
+.br
+.ti -1c
+.RI "void \fBpixelsToCoords\fP (double x, double y, double &key, double &value) const"
+.br
+.ti -1c
+.RI "void \fBpixelsToCoords\fP (const QPointF &pixelPos, double &key, double &value) const"
+.br
+.ti -1c
+.RI "void \fBrescaleAxes\fP (bool onlyEnlarge=false) const"
+.br
+.ti -1c
+.RI "void \fBrescaleKeyAxis\fP (bool onlyEnlarge=false) const"
+.br
+.ti -1c
+.RI "void \fBrescaleValueAxis\fP (bool onlyEnlarge=false, bool inKeyRange=false) const"
+.br
+.ti -1c
+.RI "bool \fBaddToLegend\fP (\fBQCPLegend\fP *legend)"
+.br
+.ti -1c
+.RI "bool \fBaddToLegend\fP ()"
+.br
+.ti -1c
+.RI "bool \fBremoveFromLegend\fP (\fBQCPLegend\fP *legend) const"
+.br
+.ti -1c
+.RI "bool \fBremoveFromLegend\fP () const"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBQCPLayerable\fP
+.in +1c
+.ti -1c
+.RI "\fBQCPLayerable\fP (\fBQCustomPlot\fP *plot, QString targetLayer=QString(), \fBQCPLayerable\fP *\fBparentLayerable\fP=0)"
+.br
+.ti -1c
+.RI "bool \fBvisible\fP () const"
+.br
+.ti -1c
+.RI "\fBQCustomPlot\fP * \fBparentPlot\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPLayerable\fP * \fBparentLayerable\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPLayer\fP * \fBlayer\fP () const"
+.br
+.ti -1c
+.RI "bool \fBantialiased\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetVisible\fP (bool on)"
+.br
+.ti -1c
+.RI "Q_SLOT bool \fBsetLayer\fP (\fBQCPLayer\fP *layer)"
+.br
+.ti -1c
+.RI "bool \fBsetLayer\fP (const QString &layerName)"
+.br
+.ti -1c
+.RI "void \fBsetAntialiased\fP (bool enabled)"
+.br
+.ti -1c
+.RI "virtual double \fBselectTest\fP (const QPointF &pos, bool onlySelectable, QVariant *details=0) const"
+.br
+.ti -1c
+.RI "bool \fBrealVisibility\fP () const"
+.br
+.in -1c
+.in +1c
+.ti -1c
+.RI "virtual int \fBdataCount\fP () const =0"
+.br
+.ti -1c
+.RI "virtual double \fBdataMainKey\fP (int index) const =0"
+.br
+.ti -1c
+.RI "virtual double \fBdataSortKey\fP (int index) const =0"
+.br
+.ti -1c
+.RI "virtual double \fBdataMainValue\fP (int index) const =0"
+.br
+.ti -1c
+.RI "virtual \fBQCPRange\fP \fBdataValueRange\fP (int index) const =0"
+.br
+.ti -1c
+.RI "virtual QPointF \fBdataPixelPosition\fP (int index) const =0"
+.br
+.ti -1c
+.RI "virtual bool \fBsortKeyIsMainKey\fP () const =0"
+.br
+.ti -1c
+.RI "virtual \fBQCPDataSelection\fP \fBselectTestRect\fP (const QRectF &rect, bool onlySelectable) const =0"
+.br
+.ti -1c
+.RI "virtual int \fBfindBegin\fP (double sortKey, bool expandedRange=true) const =0"
+.br
+.ti -1c
+.RI "virtual int \fBfindEnd\fP (double sortKey, bool expandedRange=true) const =0"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBQCPFinancialDataContainer\fP \fBtimeSeriesToOhlc\fP (const QVector< double > &time, const QVector< double > &value, double timeBinSize, double timeBinOffset=0)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBdraw\fP (\fBQCPPainter\fP *painter) Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual void \fBdrawLegendIcon\fP (\fBQCPPainter\fP *painter, const QRectF &rect) const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "void \fBdrawOhlcPlot\fP (\fBQCPPainter\fP *painter, const QCPFinancialDataContainer::const_iterator &begin, const QCPFinancialDataContainer::const_iterator &end, bool isSelected)"
+.br
+.ti -1c
+.RI "void \fBdrawCandlestickPlot\fP (\fBQCPPainter\fP *painter, const QCPFinancialDataContainer::const_iterator &begin, const QCPFinancialDataContainer::const_iterator &end, bool isSelected)"
+.br
+.ti -1c
+.RI "double \fBgetPixelWidth\fP (double key, double keyPixel) const"
+.br
+.ti -1c
+.RI "double \fBohlcSelectTest\fP (const QPointF &pos, const QCPFinancialDataContainer::const_iterator &begin, const QCPFinancialDataContainer::const_iterator &end, QCPFinancialDataContainer::const_iterator &closestDataPoint) const"
+.br
+.ti -1c
+.RI "double \fBcandlestickSelectTest\fP (const QPointF &pos, const QCPFinancialDataContainer::const_iterator &begin, const QCPFinancialDataContainer::const_iterator &end, QCPFinancialDataContainer::const_iterator &closestDataPoint) const"
+.br
+.ti -1c
+.RI "void \fBgetVisibleDataBounds\fP (QCPFinancialDataContainer::const_iterator &begin, QCPFinancialDataContainer::const_iterator &end) const"
+.br
+.ti -1c
+.RI "QRectF \fBselectionHitBox\fP (QCPFinancialDataContainer::const_iterator it) const"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBQCPAbstractPlottable1D< QCPFinancialData >\fP
+.in +1c
+.ti -1c
+.RI "void \fBgetDataSegments\fP (QList< \fBQCPDataRange\fP > &selectedSegments, QList< \fBQCPDataRange\fP > &unselectedSegments) const"
+.br
+.ti -1c
+.RI "void \fBdrawPolyline\fP (\fBQCPPainter\fP *painter, const QVector< QPointF > &lineData) const"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBQCPAbstractPlottable\fP
+.in +1c
+.ti -1c
+.RI "virtual QRect \fBclipRect\fP () const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (\fBQCPPainter\fP *painter) Q_DECL_OVERRIDE=0"
+.br
+.ti -1c
+.RI "virtual \fBQCP::Interaction\fP \fBselectionCategory\fP () const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "void \fBapplyDefaultAntialiasingHint\fP (\fBQCPPainter\fP *painter) const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual void \fBselectEvent\fP (QMouseEvent *event, bool additive, const QVariant &details, bool *selectionStateChanged) Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual void \fBdeselectEvent\fP (bool *selectionStateChanged) Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual void \fBdrawLegendIcon\fP (\fBQCPPainter\fP *painter, const QRectF &rect) const =0"
+.br
+.ti -1c
+.RI "void \fBapplyFillAntialiasingHint\fP (\fBQCPPainter\fP *painter) const"
+.br
+.ti -1c
+.RI "void \fBapplyScattersAntialiasingHint\fP (\fBQCPPainter\fP *painter) const"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBQCPLayerable\fP
+.in +1c
+.ti -1c
+.RI "virtual void \fBparentPlotInitialized\fP (\fBQCustomPlot\fP *parentPlot)"
+.br
+.ti -1c
+.RI "virtual \fBQCP::Interaction\fP \fBselectionCategory\fP () const"
+.br
+.ti -1c
+.RI "virtual QRect \fBclipRect\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBapplyDefaultAntialiasingHint\fP (\fBQCPPainter\fP *painter) const =0"
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (\fBQCPPainter\fP *painter)=0"
+.br
+.ti -1c
+.RI "virtual void \fBselectEvent\fP (QMouseEvent *event, bool additive, const QVariant &details, bool *selectionStateChanged)"
+.br
+.ti -1c
+.RI "virtual void \fBdeselectEvent\fP (bool *selectionStateChanged)"
+.br
+.ti -1c
+.RI "virtual void \fBmousePressEvent\fP (QMouseEvent *event, const QVariant &details)"
+.br
+.ti -1c
+.RI "virtual void \fBmouseMoveEvent\fP (QMouseEvent *event, const QPointF &startPos)"
+.br
+.ti -1c
+.RI "virtual void \fBmouseReleaseEvent\fP (QMouseEvent *event, const QPointF &startPos)"
+.br
+.ti -1c
+.RI "virtual void \fBmouseDoubleClickEvent\fP (QMouseEvent *event, const QVariant &details)"
+.br
+.ti -1c
+.RI "virtual void \fBwheelEvent\fP (QWheelEvent *event)"
+.br
+.ti -1c
+.RI "void \fBinitializeParentPlot\fP (\fBQCustomPlot\fP *parentPlot)"
+.br
+.ti -1c
+.RI "void \fBsetParentLayerable\fP (\fBQCPLayerable\fP *\fBparentLayerable\fP)"
+.br
+.ti -1c
+.RI "bool \fBmoveToLayer\fP (\fBQCPLayer\fP *layer, bool prepend)"
+.br
+.ti -1c
+.RI "void \fBapplyAntialiasingHint\fP (\fBQCPPainter\fP *painter, bool localAntialiased, \fBQCP::AntialiasedElement\fP overrideElement) const"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBChartStyle\fP \fBmChartStyle\fP"
+.br
+.ti -1c
+.RI "double \fBmWidth\fP"
+.br
+.ti -1c
+.RI "\fBWidthType\fP \fBmWidthType\fP"
+.br
+.ti -1c
+.RI "bool \fBmTwoColored\fP"
+.br
+.ti -1c
+.RI "QBrush \fBmBrushPositive\fP"
+.br
+.ti -1c
+.RI "QBrush \fBmBrushNegative\fP"
+.br
+.ti -1c
+.RI "QPen \fBmPenPositive\fP"
+.br
+.ti -1c
+.RI "QPen \fBmPenNegative\fP"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBQCPAbstractPlottable1D< QCPFinancialData >\fP
+.in +1c
+.ti -1c
+.RI "QSharedPointer< \fBQCPDataContainer\fP< \fBQCPFinancialData\fP > > \fBmDataContainer\fP"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBQCPAbstractPlottable\fP
+.in +1c
+.ti -1c
+.RI "QString \fBmName\fP"
+.br
+.ti -1c
+.RI "bool \fBmAntialiasedFill\fP"
+.br
+.ti -1c
+.RI "bool \fBmAntialiasedScatters\fP"
+.br
+.ti -1c
+.RI "QPen \fBmPen\fP"
+.br
+.ti -1c
+.RI "QBrush \fBmBrush\fP"
+.br
+.ti -1c
+.RI "QPointer< \fBQCPAxis\fP > \fBmKeyAxis\fP"
+.br
+.ti -1c
+.RI "QPointer< \fBQCPAxis\fP > \fBmValueAxis\fP"
+.br
+.ti -1c
+.RI "\fBQCP::SelectionType\fP \fBmSelectable\fP"
+.br
+.ti -1c
+.RI "\fBQCPDataSelection\fP \fBmSelection\fP"
+.br
+.ti -1c
+.RI "\fBQCPSelectionDecorator\fP * \fBmSelectionDecorator\fP"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBQCPLayerable\fP
+.in +1c
+.ti -1c
+.RI "bool \fBmVisible\fP"
+.br
+.ti -1c
+.RI "\fBQCustomPlot\fP * \fBmParentPlot\fP"
+.br
+.ti -1c
+.RI "QPointer< \fBQCPLayerable\fP > \fBmParentLayerable\fP"
+.br
+.ti -1c
+.RI "\fBQCPLayer\fP * \fBmLayer\fP"
+.br
+.ti -1c
+.RI "bool \fBmAntialiased\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBQCustomPlot\fP"
+.br
+.ti -1c
+.RI "class \fBQCPLegend\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Signals inherited from \fBQCPAbstractPlottable\fP
+.in +1c
+.ti -1c
+.RI "void \fBselectionChanged\fP (bool \fBselected\fP)"
+.br
+.ti -1c
+.RI "void \fBselectionChanged\fP (const \fBQCPDataSelection\fP &\fBselection\fP)"
+.br
+.ti -1c
+.RI "void \fBselectableChanged\fP (\fBQCP::SelectionType\fP selectable)"
+.br
+.in -1c
+
+Signals inherited from \fBQCPLayerable\fP
+.in +1c
+.ti -1c
+.RI "void \fBlayerChanged\fP (\fBQCPLayer\fP *newLayer)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+A plottable representing a financial stock chart\&. 
+
+
+.PP
+This plottable represents time series data binned to certain intervals, mainly used for stock charts\&. The two common representations OHLC (Open-High-Low-Close) bars and Candlesticks can be set via \fBsetChartStyle\fP\&.
+.PP
+The data is passed via \fBsetData\fP as a set of open/high/low/close values at certain keys (typically times)\&. This means the data must be already binned appropriately\&. If data is only available as a series of values (e\&.g\&. \fIprice\fP against \fItime\fP), you can use the static convenience function \fBtimeSeriesToOhlc\fP to generate binned OHLC-data which can then be passed to \fBsetData\fP\&.
+.PP
+The width of the OHLC bars/candlesticks can be controlled with \fBsetWidth\fP and \fBsetWidthType\fP\&. A typical choice is to set the width type to \fBwtPlotCoords\fP (the default) and the width to (or slightly less than) one time bin interval width\&.
+.SH "Changing the appearance"
+.PP
+Charts can be either single- or two-colored (\fBsetTwoColored\fP)\&. If set to be single-colored, lines are drawn with the plottable's pen (\fBsetPen\fP) and fills with the brush (\fBsetBrush\fP)\&.
+.PP
+If set to two-colored, positive changes of the value during an interval (\fIclose\fP >= \fIopen\fP) are represented with a different pen and brush than negative changes (\fIclose\fP < \fIopen\fP)\&. These can be configured with \fBsetPenPositive\fP, \fBsetPenNegative\fP, \fBsetBrushPositive\fP, and \fBsetBrushNegative\fP\&. In two-colored mode, the normal plottable pen/brush is ignored\&. Upon selection however, the normal selected pen/brush (provided by the \fBselectionDecorator\fP) is used, irrespective of whether the chart is single- or two-colored\&.
+.SH "Usage"
+.PP
+Like all data representing objects in \fBQCustomPlot\fP, the \fBQCPFinancial\fP is a plottable (\fBQCPAbstractPlottable\fP)\&. So the plottable-interface of \fBQCustomPlot\fP applies (\fBQCustomPlot::plottable\fP, \fBQCustomPlot::removePlottable\fP, etc\&.)
+.PP
+Usually, you first create an instance:
+.PP
+.PP
+.nf
+.fi
+.PP
+ which registers it with the \fBQCustomPlot\fP instance of the passed axes\&. Note that this \fBQCustomPlot\fP instance takes ownership of the plottable, so do not delete it manually but use \fBQCustomPlot::removePlottable()\fP instead\&. The newly created plottable can be modified, e\&.g\&.:
+.PP
+.PP
+.nf
+.fi
+.PP
+ Here we have used the static helper method \fBtimeSeriesToOhlc\fP, to turn a time-price data series into a 24-hour binned open-high-low-close data series as \fBQCPFinancial\fP uses\&. 
+.PP
+Definition at line \fB5847\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBQCPFinancial::ChartStyle\fP"
+Defines the possible representations of OHLC data in the plot\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetChartStyle\fP 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIcsOhlc \fP\fP
+Open-High-Low-Close bar representation\&. 
+.TP
+\fB\fIcsCandlestick \fP\fP
+Candlestick representation\&. 
+.PP
+Definition at line \fB5878\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "enum \fBQCPFinancial::WidthType\fP"
+Defines the ways the width of the financial bar can be specified\&. Thus it defines what the number passed to \fBsetWidth\fP actually means\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetWidthType\fP, \fBsetWidth\fP 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIwtAbsolute \fP\fP
+width is in absolute pixels 
+.TP
+\fB\fIwtAxisRectRatio \fP\fP
+width is given by a fraction of the axis rect size 
+.TP
+\fB\fIwtPlotCoords \fP\fP
+width is in key coordinates and thus scales with the key axis range 
+.PP
+Definition at line \fB5867\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QCPFinancial::QCPFinancial (\fBQCPAxis\fP * keyAxis, \fBQCPAxis\fP * valueAxis)\fC [explicit]\fP"
+Constructs a financial chart which uses \fIkeyAxis\fP as its key axis ('x') and \fIvalueAxis\fP as its value axis ('y')\&. \fIkeyAxis\fP and \fIvalueAxis\fP must reside in the same \fBQCustomPlot\fP instance and not have the same orientation\&. If either of these restrictions is violated, a corresponding message is printed to the debug output (qDebug), the construction is not aborted, though\&.
+.PP
+The created \fBQCPFinancial\fP is automatically registered with the \fBQCustomPlot\fP instance inferred from \fIkeyAxis\fP\&. This \fBQCustomPlot\fP instance takes ownership of the \fBQCPFinancial\fP, so do not delete it manually but use \fBQCustomPlot::removePlottable()\fP instead\&. 
+.PP
+Definition at line \fB26232\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QCPFinancial::~QCPFinancial ()\fC [virtual]\fP"
+
+.PP
+Definition at line \fB26246\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void QCPFinancial::addData (const QVector< double > & keys, const QVector< double > & open, const QVector< double > & high, const QVector< double > & low, const QVector< double > & close, bool alreadySorted = \fCfalse\fP)"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&.
+.PP
+Adds the provided points in \fIkeys\fP, \fIopen\fP, \fIhigh\fP, \fIlow\fP and \fIclose\fP to the current data\&. The provided vectors should have equal length\&. Else, the number of added points will be the size of the smallest vector\&.
+.PP
+If you can guarantee that the passed data points are sorted by \fIkeys\fP in ascending order, you can set \fIalreadySorted\fP to true, to improve performance by saving a sorting run\&.
+.PP
+Alternatively, you can also access and modify the data directly via the \fBdata\fP method, which returns a pointer to the internal data container\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBtimeSeriesToOhlc\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB26402\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPFinancial::addData (double key, double open, double high, double low, double close)"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&.
+.PP
+Adds the provided data point as \fIkey\fP, \fIopen\fP, \fIhigh\fP, \fIlow\fP and \fIclose\fP to the current data\&.
+.PP
+Alternatively, you can also access and modify the data directly via the \fBdata\fP method, which returns a pointer to the internal data container\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBtimeSeriesToOhlc\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB26434\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QBrush QCPFinancial::brushNegative () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB5893\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QBrush QCPFinancial::brushPositive () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB5892\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double QCPFinancial::candlestickSelectTest (const QPointF & pos, const QCPFinancialDataContainer::const_iterator & begin, const QCPFinancialDataContainer::const_iterator & end, QCPFinancialDataContainer::const_iterator & closestDataPoint) const\fC [protected]\fP"
+
+.PP
+Definition at line \fB26895\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "\fBChartStyle\fP QCPFinancial::chartStyle () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB5888\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBQCPFinancialDataContainer\fP * QCPFinancial::data () const\fC [inline]\fP"
+Returns a pointer to the internal data storage of type \fBQCPFinancialDataContainer\fP\&. You may use it to directly manipulate the data, which may be more convenient and faster than using the regular \fBsetData\fP or \fBaddData\fP methods, in certain situations\&. 
+.PP
+Definition at line \fB5887\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "void QCPFinancial::draw (\fBQCPPainter\fP * painter)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBQCPAbstractPlottable\fP\&.
+.PP
+Definition at line \fB26572\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPFinancial::drawCandlestickPlot (\fBQCPPainter\fP * painter, const QCPFinancialDataContainer::const_iterator & begin, const QCPFinancialDataContainer::const_iterator & end, bool isSelected)\fC [protected]\fP"
+
+.PP
+Definition at line \fB26728\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPFinancial::drawLegendIcon (\fBQCPPainter\fP * painter, const QRectF & rect) const\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBQCPAbstractPlottable\fP\&.
+.PP
+Definition at line \fB26607\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPFinancial::drawOhlcPlot (\fBQCPPainter\fP * painter, const QCPFinancialDataContainer::const_iterator & begin, const QCPFinancialDataContainer::const_iterator & end, bool isSelected)\fC [protected]\fP"
+
+.PP
+Definition at line \fB26671\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "\fBQCPRange\fP QCPFinancial::getKeyRange (bool & foundRange, \fBQCP::SignDomain\fP inSignDomain = \fC\fBQCP::sdBoth\fP\fP) const\fC [virtual]\fP"
+Returns the coordinate range that all data in this plottable span in the key axis dimension\&. For logarithmic plots, one can set \fIinSignDomain\fP to either \fBQCP::sdNegative\fP or \fBQCP::sdPositive\fP in order to restrict the returned range to that sign domain\&. E\&.g\&. when only negative range is wanted, set \fIinSignDomain\fP to \fBQCP::sdNegative\fP and all positive points will be ignored for range calculation\&. For no restriction, just set \fIinSignDomain\fP to \fBQCP::sdBoth\fP (default)\&. \fIfoundRange\fP is an output parameter that indicates whether a range could be found or not\&. If this is false, you shouldn't use the returned range (e\&.g\&. no points in data)\&.
+.PP
+Note that \fIfoundRange\fP is not the same as \fBQCPRange::validRange\fP, since the range returned by this function may have size zero (e\&.g\&. when there is only one data point)\&. In this case \fIfoundRange\fP would return true, but the returned range is not a valid range in terms of \fBQCPRange::validRange\fP\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBrescaleAxes\fP, \fBgetValueRange\fP 
+.RE
+.PP
+
+.PP
+Implements \fBQCPAbstractPlottable\fP\&.
+.PP
+Definition at line \fB26498\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "double QCPFinancial::getPixelWidth (double key, double keyPixel) const\fC [protected]\fP"
+
+.PP
+Definition at line \fB26805\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "\fBQCPRange\fP QCPFinancial::getValueRange (bool & foundRange, \fBQCP::SignDomain\fP inSignDomain = \fC\fBQCP::sdBoth\fP\fP, const \fBQCPRange\fP & inKeyRange = \fC\fBQCPRange\fP()\fP) const\fC [virtual]\fP"
+Returns the coordinate range that the data points in the specified key range (\fIinKeyRange\fP) span in the value axis dimension\&. For logarithmic plots, one can set \fIinSignDomain\fP to either \fBQCP::sdNegative\fP or \fBQCP::sdPositive\fP in order to restrict the returned range to that sign domain\&. E\&.g\&. when only negative range is wanted, set \fIinSignDomain\fP to \fBQCP::sdNegative\fP and all positive points will be ignored for range calculation\&. For no restriction, just set \fIinSignDomain\fP to \fBQCP::sdBoth\fP (default)\&. \fIfoundRange\fP is an output parameter that indicates whether a range could be found or not\&. If this is false, you shouldn't use the returned range (e\&.g\&. no points in data)\&.
+.PP
+If \fIinKeyRange\fP has both lower and upper bound set to zero (is equal to \fC\fBQCPRange()\fP\fP), all data points are considered, without any restriction on the keys\&.
+.PP
+Note that \fIfoundRange\fP is not the same as \fBQCPRange::validRange\fP, since the range returned by this function may have size zero (e\&.g\&. when there is only one data point)\&. In this case \fIfoundRange\fP would return true, but the returned range is not a valid range in terms of \fBQCPRange::validRange\fP\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBrescaleAxes\fP, \fBgetKeyRange\fP 
+.RE
+.PP
+
+.PP
+Implements \fBQCPAbstractPlottable\fP\&.
+.PP
+Definition at line \fB26513\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPFinancial::getVisibleDataBounds (QCPFinancialDataContainer::const_iterator & begin, QCPFinancialDataContainer::const_iterator & end) const\fC [protected]\fP"
+
+.PP
+Definition at line \fB26975\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "double QCPFinancial::ohlcSelectTest (const QPointF & pos, const QCPFinancialDataContainer::const_iterator & begin, const QCPFinancialDataContainer::const_iterator & end, QCPFinancialDataContainer::const_iterator & closestDataPoint) const\fC [protected]\fP"
+
+.PP
+Definition at line \fB26848\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QPen QCPFinancial::penNegative () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB5895\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QPen QCPFinancial::penPositive () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB5894\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QRectF QCPFinancial::selectionHitBox (QCPFinancialDataContainer::const_iterator it) const\fC [protected]\fP"
+
+.PP
+Definition at line \fB26993\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "double QCPFinancial::selectTest (const QPointF & pos, bool onlySelectable, QVariant * details = \fC0\fP) const\fC [virtual]\fP"
+Implements a point-selection algorithm assuming the data (accessed via the 1D data interface) is point-like\&. Most subclasses will want to reimplement this method again, to provide a more accurate hit test based on the true data visualization geometry\&.
+.PP
+\\seebaseclassmethod 
+.PP
+Reimplemented from \fBQCPAbstractPlottable1D< QCPFinancialData >\fP\&.
+.PP
+Definition at line \fB26463\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "\fBQCPDataSelection\fP QCPFinancial::selectTestRect (const QRectF & rect, bool onlySelectable) const\fC [virtual]\fP"
+
+.PP
+Returns a data selection containing all the data points of this plottable which are contained (or hit by) \fIrect\fP\&. This is used mainly in the selection rect interaction for data selection (\fBdata selection mechanism\fP)\&.
+.PP
+If \fIonlySelectable\fP is true, an empty \fBQCPDataSelection\fP is returned if this plottable is not selectable (i\&.e\&. if \fBQCPAbstractPlottable::setSelectable\fP is \fBQCP::stNone\fP)\&.
+.PP
+\fBNote\fP
+.RS 4
+\fIrect\fP must be a normalized rect (positive or zero width and height)\&. This is especially important when using the rect of \fBQCPSelectionRect::accepted\fP, which is not necessarily normalized\&. Use \fCQRect::normalized()\fP when passing a rect which might not be normalized\&.   
+.RE
+.PP
+
+.PP
+Reimplemented from \fBQCPAbstractPlottable1D< QCPFinancialData >\fP\&.
+.PP
+Definition at line \fB26442\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPFinancial::setBrushNegative (const QBrush & brush)"
+If \fBsetTwoColored\fP is set to true, this function controls the brush that is used to draw fills of data points with a negative trend (i\&.e\&. bars/candlesticks with close < open)\&.
+.PP
+If \fItwoColored\fP is false, the normal plottable's pen and brush are used (\fBsetPen\fP, \fBsetBrush\fP)\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetBrushPositive\fP, \fBsetPenNegative\fP, \fBsetPenPositive\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB26355\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPFinancial::setBrushPositive (const QBrush & brush)"
+If \fBsetTwoColored\fP is set to true, this function controls the brush that is used to draw fills of data points with a positive trend (i\&.e\&. bars/candlesticks with close >= open)\&.
+.PP
+If \fItwoColored\fP is false, the normal plottable's pen and brush are used (\fBsetPen\fP, \fBsetBrush\fP)\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetBrushNegative\fP, \fBsetPenPositive\fP, \fBsetPenNegative\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB26341\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPFinancial::setChartStyle (\fBQCPFinancial::ChartStyle\fP style)"
+Sets which representation style shall be used to display the OHLC data\&. 
+.PP
+Definition at line \fB26290\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPFinancial::setData (const QVector< double > & keys, const QVector< double > & open, const QVector< double > & high, const QVector< double > & low, const QVector< double > & close, bool alreadySorted = \fCfalse\fP)"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&.
+.PP
+Replaces the current data with the provided points in \fIkeys\fP, \fIopen\fP, \fIhigh\fP, \fIlow\fP and \fIclose\fP\&. The provided vectors should have equal length\&. Else, the number of added points will be the size of the smallest vector\&.
+.PP
+If you can guarantee that the passed data points are sorted by \fIkeys\fP in ascending order, you can set \fIalreadySorted\fP to true, to improve performance by saving a sorting run\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBaddData\fP, \fBtimeSeriesToOhlc\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB26281\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPFinancial::setData (QSharedPointer< \fBQCPFinancialDataContainer\fP > data)"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&.
+.PP
+Replaces the current data container with the provided \fIdata\fP container\&.
+.PP
+Since a QSharedPointer is used, multiple QCPFinancials may share the same data container safely\&. Modifying the data in the container will then affect all financials that share the container\&. Sharing can be achieved by simply exchanging the data containers wrapped in shared pointers: 
+.PP
+.nf
+
+.fi
+.PP
+.PP
+If you do not wish to share containers, but create a copy from an existing container, rather use the \fBQCPDataContainer<DataType>::set\fP method on the financial's data container directly: 
+.PP
+.nf
+
+.fi
+.PP
+.PP
+\fBSee also\fP
+.RS 4
+\fBaddData\fP, \fBtimeSeriesToOhlc\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB26265\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPFinancial::setPenNegative (const QPen & pen)"
+If \fBsetTwoColored\fP is set to true, this function controls the pen that is used to draw outlines of data points with a negative trend (i\&.e\&. bars/candlesticks with close < open)\&.
+.PP
+If \fItwoColored\fP is false, the normal plottable's pen and brush are used (\fBsetPen\fP, \fBsetBrush\fP)\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetPenPositive\fP, \fBsetBrushNegative\fP, \fBsetBrushPositive\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB26383\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPFinancial::setPenPositive (const QPen & pen)"
+If \fBsetTwoColored\fP is set to true, this function controls the pen that is used to draw outlines of data points with a positive trend (i\&.e\&. bars/candlesticks with close >= open)\&.
+.PP
+If \fItwoColored\fP is false, the normal plottable's pen and brush are used (\fBsetPen\fP, \fBsetBrush\fP)\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetPenNegative\fP, \fBsetBrushPositive\fP, \fBsetBrushNegative\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB26369\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPFinancial::setTwoColored (bool twoColored)"
+Sets whether this chart shall contrast positive from negative trends per data point by using two separate colors to draw the respective bars/candlesticks\&.
+.PP
+If \fItwoColored\fP is false, the normal plottable's pen and brush are used (\fBsetPen\fP, \fBsetBrush\fP)\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetPenPositive\fP, \fBsetPenNegative\fP, \fBsetBrushPositive\fP, \fBsetBrushNegative\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB26327\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPFinancial::setWidth (double width)"
+Sets the width of the individual bars/candlesticks to \fIwidth\fP in plot key coordinates\&.
+.PP
+A typical choice is to set it to (or slightly less than) one bin interval width\&. 
+.PP
+Definition at line \fB26300\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPFinancial::setWidthType (\fBQCPFinancial::WidthType\fP widthType)"
+Sets how the width of the financial bars is defined\&. See the documentation of \fBWidthType\fP for an explanation of the possible values for \fIwidthType\fP\&.
+.PP
+The default value is \fBwtPlotCoords\fP\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetWidth\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB26313\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "\fBQCPFinancialDataContainer\fP QCPFinancial::timeSeriesToOhlc (const QVector< double > & time, const QVector< double > & value, double timeBinSize, double timeBinOffset = \fC0\fP)\fC [static]\fP"
+A convenience function that converts time series data (\fIvalue\fP against \fItime\fP) to OHLC binned data points\&. The return value can then be passed on to \fBQCPFinancialDataContainer::set(const
+QCPFinancialDataContainer&)\fP\&.
+.PP
+The size of the bins can be controlled with \fItimeBinSize\fP in the same units as \fItime\fP is given\&. For example, if the unit of \fItime\fP is seconds and single OHLC/Candlesticks should span an hour each, set \fItimeBinSize\fP to 3600\&.
+.PP
+\fItimeBinOffset\fP allows to control precisely at what \fItime\fP coordinate a bin should start\&. The value passed as \fItimeBinOffset\fP doesn't need to be in the range encompassed by the \fItime\fP keys\&. It merely defines the mathematical offset/phase of the bins that will be used to process the data\&. 
+.PP
+Definition at line \fB26532\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "bool QCPFinancial::twoColored () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB5891\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double QCPFinancial::width () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB5889\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBWidthType\fP QCPFinancial::widthType () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB5890\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBQCPLegend\fP\fC [friend]\fP"
+
+.PP
+Definition at line \fB5945\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "friend class \fBQCustomPlot\fP\fC [friend]\fP"
+
+.PP
+Definition at line \fB5944\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QBrush QCPFinancial::mBrushNegative\fC [protected]\fP"
+
+.PP
+Definition at line \fB5928\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QBrush QCPFinancial::mBrushPositive\fC [protected]\fP"
+
+.PP
+Definition at line \fB5928\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBChartStyle\fP QCPFinancial::mChartStyle\fC [protected]\fP"
+
+.PP
+Definition at line \fB5924\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QPen QCPFinancial::mPenNegative\fC [protected]\fP"
+
+.PP
+Definition at line \fB5929\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QPen QCPFinancial::mPenPositive\fC [protected]\fP"
+
+.PP
+Definition at line \fB5929\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "bool QCPFinancial::mTwoColored\fC [protected]\fP"
+
+.PP
+Definition at line \fB5927\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double QCPFinancial::mWidth\fC [protected]\fP"
+
+.PP
+Definition at line \fB5925\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBWidthType\fP QCPFinancial::mWidthType\fC [protected]\fP"
+
+.PP
+Definition at line \fB5926\fP of file \fBqcustomplot\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for OmronPID from the source code\&.

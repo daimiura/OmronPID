@@ -1,0 +1,529 @@
+.TH "QCPItemBracket" 3 "Wed Mar 15 2023" "OmronPID" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QCPItemBracket \- A bracket for referencing/highlighting certain parts in the plot\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBQCPAbstractItem\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBBracketStyle\fP { \fBbsSquare\fP, \fBbsRound\fP, \fBbsCurly\fP, \fBbsCalligraphic\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPItemBracket\fP (\fBQCustomPlot\fP *parentPlot)"
+.br
+.ti -1c
+.RI "QPen \fBpen\fP () const"
+.br
+.ti -1c
+.RI "QPen \fBselectedPen\fP () const"
+.br
+.ti -1c
+.RI "double \fBlength\fP () const"
+.br
+.ti -1c
+.RI "\fBBracketStyle\fP \fBstyle\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetPen\fP (const QPen &pen)"
+.br
+.ti -1c
+.RI "void \fBsetSelectedPen\fP (const QPen &pen)"
+.br
+.ti -1c
+.RI "void \fBsetLength\fP (double length)"
+.br
+.ti -1c
+.RI "void \fBsetStyle\fP (\fBBracketStyle\fP style)"
+.br
+.ti -1c
+.RI "virtual double \fBselectTest\fP (const QPointF &pos, bool onlySelectable, QVariant *details=0) const Q_DECL_OVERRIDE"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBQCPAbstractItem\fP
+.in +1c
+.ti -1c
+.RI "\fBQCPAbstractItem\fP (\fBQCustomPlot\fP *parentPlot)"
+.br
+.ti -1c
+.RI "bool \fBclipToAxisRect\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPAxisRect\fP * \fBclipAxisRect\fP () const"
+.br
+.ti -1c
+.RI "bool \fBselectable\fP () const"
+.br
+.ti -1c
+.RI "bool \fBselected\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetClipToAxisRect\fP (bool clip)"
+.br
+.ti -1c
+.RI "void \fBsetClipAxisRect\fP (\fBQCPAxisRect\fP *rect)"
+.br
+.ti -1c
+.RI "Q_SLOT void \fBsetSelectable\fP (bool selectable)"
+.br
+.ti -1c
+.RI "Q_SLOT void \fBsetSelected\fP (bool selected)"
+.br
+.ti -1c
+.RI "virtual double \fBselectTest\fP (const QPointF &pos, bool onlySelectable, QVariant *details=0) const Q_DECL_OVERRIDE=0"
+.br
+.ti -1c
+.RI "QList< \fBQCPItemPosition\fP * > \fBpositions\fP () const"
+.br
+.ti -1c
+.RI "QList< \fBQCPItemAnchor\fP * > \fBanchors\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPItemPosition\fP * \fBposition\fP (const QString &name) const"
+.br
+.ti -1c
+.RI "\fBQCPItemAnchor\fP * \fBanchor\fP (const QString &name) const"
+.br
+.ti -1c
+.RI "bool \fBhasAnchor\fP (const QString &name) const"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBQCPLayerable\fP
+.in +1c
+.ti -1c
+.RI "\fBQCPLayerable\fP (\fBQCustomPlot\fP *plot, QString targetLayer=QString(), \fBQCPLayerable\fP *\fBparentLayerable\fP=0)"
+.br
+.ti -1c
+.RI "bool \fBvisible\fP () const"
+.br
+.ti -1c
+.RI "\fBQCustomPlot\fP * \fBparentPlot\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPLayerable\fP * \fBparentLayerable\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPLayer\fP * \fBlayer\fP () const"
+.br
+.ti -1c
+.RI "bool \fBantialiased\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetVisible\fP (bool on)"
+.br
+.ti -1c
+.RI "Q_SLOT bool \fBsetLayer\fP (\fBQCPLayer\fP *layer)"
+.br
+.ti -1c
+.RI "bool \fBsetLayer\fP (const QString &layerName)"
+.br
+.ti -1c
+.RI "void \fBsetAntialiased\fP (bool enabled)"
+.br
+.ti -1c
+.RI "virtual double \fBselectTest\fP (const QPointF &pos, bool onlySelectable, QVariant *details=0) const"
+.br
+.ti -1c
+.RI "bool \fBrealVisibility\fP () const"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPItemPosition\fP *const \fBleft\fP"
+.br
+.ti -1c
+.RI "\fBQCPItemPosition\fP *const \fBright\fP"
+.br
+.ti -1c
+.RI "\fBQCPItemAnchor\fP *const \fBcenter\fP"
+.br
+.in -1c
+.SS "Protected Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBAnchorIndex\fP { \fBaiCenter\fP }"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBdraw\fP (\fBQCPPainter\fP *painter) Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual QPointF \fBanchorPixelPosition\fP (int anchorId) const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "QPen \fBmainPen\fP () const"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBQCPAbstractItem\fP
+.in +1c
+.ti -1c
+.RI "virtual \fBQCP::Interaction\fP \fBselectionCategory\fP () const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual QRect \fBclipRect\fP () const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual void \fBapplyDefaultAntialiasingHint\fP (\fBQCPPainter\fP *painter) const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (\fBQCPPainter\fP *painter) Q_DECL_OVERRIDE=0"
+.br
+.ti -1c
+.RI "virtual void \fBselectEvent\fP (QMouseEvent *event, bool additive, const QVariant &details, bool *selectionStateChanged) Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual void \fBdeselectEvent\fP (bool *selectionStateChanged) Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual QPointF \fBanchorPixelPosition\fP (int anchorId) const"
+.br
+.ti -1c
+.RI "double \fBrectDistance\fP (const QRectF &rect, const QPointF &pos, bool filledRect) const"
+.br
+.ti -1c
+.RI "\fBQCPItemPosition\fP * \fBcreatePosition\fP (const QString &name)"
+.br
+.ti -1c
+.RI "\fBQCPItemAnchor\fP * \fBcreateAnchor\fP (const QString &name, int anchorId)"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBQCPLayerable\fP
+.in +1c
+.ti -1c
+.RI "virtual void \fBparentPlotInitialized\fP (\fBQCustomPlot\fP *parentPlot)"
+.br
+.ti -1c
+.RI "virtual \fBQCP::Interaction\fP \fBselectionCategory\fP () const"
+.br
+.ti -1c
+.RI "virtual QRect \fBclipRect\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBapplyDefaultAntialiasingHint\fP (\fBQCPPainter\fP *painter) const =0"
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (\fBQCPPainter\fP *painter)=0"
+.br
+.ti -1c
+.RI "virtual void \fBselectEvent\fP (QMouseEvent *event, bool additive, const QVariant &details, bool *selectionStateChanged)"
+.br
+.ti -1c
+.RI "virtual void \fBdeselectEvent\fP (bool *selectionStateChanged)"
+.br
+.ti -1c
+.RI "virtual void \fBmousePressEvent\fP (QMouseEvent *event, const QVariant &details)"
+.br
+.ti -1c
+.RI "virtual void \fBmouseMoveEvent\fP (QMouseEvent *event, const QPointF &startPos)"
+.br
+.ti -1c
+.RI "virtual void \fBmouseReleaseEvent\fP (QMouseEvent *event, const QPointF &startPos)"
+.br
+.ti -1c
+.RI "virtual void \fBmouseDoubleClickEvent\fP (QMouseEvent *event, const QVariant &details)"
+.br
+.ti -1c
+.RI "virtual void \fBwheelEvent\fP (QWheelEvent *event)"
+.br
+.ti -1c
+.RI "void \fBinitializeParentPlot\fP (\fBQCustomPlot\fP *parentPlot)"
+.br
+.ti -1c
+.RI "void \fBsetParentLayerable\fP (\fBQCPLayerable\fP *\fBparentLayerable\fP)"
+.br
+.ti -1c
+.RI "bool \fBmoveToLayer\fP (\fBQCPLayer\fP *layer, bool prepend)"
+.br
+.ti -1c
+.RI "void \fBapplyAntialiasingHint\fP (\fBQCPPainter\fP *painter, bool localAntialiased, \fBQCP::AntialiasedElement\fP overrideElement) const"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "QPen \fBmPen\fP"
+.br
+.ti -1c
+.RI "QPen \fBmSelectedPen\fP"
+.br
+.ti -1c
+.RI "double \fBmLength\fP"
+.br
+.ti -1c
+.RI "\fBBracketStyle\fP \fBmStyle\fP"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBQCPAbstractItem\fP
+.in +1c
+.ti -1c
+.RI "bool \fBmClipToAxisRect\fP"
+.br
+.ti -1c
+.RI "QPointer< \fBQCPAxisRect\fP > \fBmClipAxisRect\fP"
+.br
+.ti -1c
+.RI "QList< \fBQCPItemPosition\fP * > \fBmPositions\fP"
+.br
+.ti -1c
+.RI "QList< \fBQCPItemAnchor\fP * > \fBmAnchors\fP"
+.br
+.ti -1c
+.RI "bool \fBmSelectable\fP"
+.br
+.ti -1c
+.RI "bool \fBmSelected\fP"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBQCPLayerable\fP
+.in +1c
+.ti -1c
+.RI "bool \fBmVisible\fP"
+.br
+.ti -1c
+.RI "\fBQCustomPlot\fP * \fBmParentPlot\fP"
+.br
+.ti -1c
+.RI "QPointer< \fBQCPLayerable\fP > \fBmParentLayerable\fP"
+.br
+.ti -1c
+.RI "\fBQCPLayer\fP * \fBmLayer\fP"
+.br
+.ti -1c
+.RI "bool \fBmAntialiased\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Signals inherited from \fBQCPAbstractItem\fP
+.in +1c
+.ti -1c
+.RI "void \fBselectionChanged\fP (bool selected)"
+.br
+.ti -1c
+.RI "void \fBselectableChanged\fP (bool selectable)"
+.br
+.in -1c
+
+Signals inherited from \fBQCPLayerable\fP
+.in +1c
+.ti -1c
+.RI "void \fBlayerChanged\fP (\fBQCPLayer\fP *newLayer)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+A bracket for referencing/highlighting certain parts in the plot\&. 
+
+
+.PP
+It has two positions, \fIleft\fP and \fIright\fP, which define the span of the bracket\&. If \fIleft\fP is actually farther to the left than \fIright\fP, the bracket is opened to the bottom, as shown in the example image\&.
+.PP
+The bracket supports multiple styles via \fBsetStyle\fP\&. The length, i\&.e\&. how far the bracket stretches away from the embraced span, can be controlled with \fBsetLength\fP\&.
+.PP
+ Demonstrating the effect of different values for \fBsetLength\fP, for styles \fBbsCalligraphic\fP and \fBbsSquare\fP\&. Anchors and positions are displayed for reference\&.
+.PP
+It provides an anchor \fIcenter\fP, to allow connection of other items, e\&.g\&. an arrow (\fBQCPItemLine\fP or \fBQCPItemCurve\fP) or a text label (\fBQCPItemText\fP), to the bracket\&. 
+.PP
+Definition at line \fB6597\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum QCPItemBracket::AnchorIndex\fC [protected]\fP"
+
+.PP
+Definition at line \fB6644\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "enum \fBQCPItemBracket::BracketStyle\fP"
+Defines the various visual shapes of the bracket item\&. The appearance can be further modified by \fBsetLength\fP and \fBsetPen\fP\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetStyle\fP 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIbsSquare \fP\fP
+A brace with angled edges\&. 
+.TP
+\fB\fIbsRound \fP\fP
+A brace with round edges\&. 
+.TP
+\fB\fIbsCurly \fP\fP
+A curly brace\&. 
+.TP
+\fB\fIbsCalligraphic \fP\fP
+A curly brace with varying stroke width giving a calligraphic impression\&. 
+.PP
+Definition at line \fB6613\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QCPItemBracket::QCPItemBracket (\fBQCustomPlot\fP * parentPlot)\fC [explicit]\fP"
+Creates a bracket item and sets default values\&.
+.PP
+The created item is automatically registered with \fIparentPlot\fP\&. This \fBQCustomPlot\fP instance takes ownership of the item, so do not delete it manually but use \fBQCustomPlot::removeItem()\fP instead\&. 
+.PP
+Definition at line \fB29915\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QCPItemBracket::~QCPItemBracket ()\fC [virtual]\fP"
+
+.PP
+Definition at line \fB29930\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "QPointF QCPItemBracket::anchorPixelPosition (int anchorId) const\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBQCPAbstractItem\fP\&.
+.PP
+Definition at line \fB30090\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPItemBracket::draw (\fBQCPPainter\fP * painter)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBQCPAbstractItem\fP\&.
+.PP
+Definition at line \fB30022\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "double QCPItemBracket::length () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB6626\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QPen QCPItemBracket::mainPen () const\fC [protected]\fP"
+
+.PP
+Definition at line \fB30115\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QPen QCPItemBracket::pen () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB6624\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QPen QCPItemBracket::selectedPen () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB6625\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double QCPItemBracket::selectTest (const QPointF & pos, bool onlySelectable, QVariant * details = \fC0\fP) const\fC [virtual]\fP"
+This function is used to decide whether a click hits a layerable object or not\&.
+.PP
+\fIpos\fP is a point in pixel coordinates on the \fBQCustomPlot\fP surface\&. This function returns the shortest pixel distance of this point to the object\&. If the object is either invisible or the distance couldn't be determined, -1\&.0 is returned\&. Further, if \fIonlySelectable\fP is true and the object is not selectable, -1\&.0 is returned, too\&.
+.PP
+If the object is represented not by single lines but by an area like a \fBQCPItemText\fP or the bars of a \fBQCPBars\fP plottable, a click inside the area should also be considered a hit\&. In these cases this function thus returns a constant value greater zero but still below the parent plot's selection tolerance\&. (typically the selectionTolerance multiplied by 0\&.99)\&.
+.PP
+Providing a constant value for area objects allows selecting line objects even when they are obscured by such area objects, by clicking close to the lines (i\&.e\&. closer than 0\&.99*selectionTolerance)\&.
+.PP
+The actual setting of the selection state is not done by this function\&. This is handled by the parent \fBQCustomPlot\fP when the mouseReleaseEvent occurs, and the finally selected object is notified via the \fBselectEvent/\fP deselectEvent methods\&.
+.PP
+\fIdetails\fP is an optional output parameter\&. Every layerable subclass may place any information in \fIdetails\fP\&. This information will be passed to \fBselectEvent\fP when the parent \fBQCustomPlot\fP decides on the basis of this selectTest call, that the object was successfully selected\&. The subsequent call to \fBselectEvent\fP will carry the \fIdetails\fP\&. This is useful for multi-part objects (like \fBQCPAxis\fP)\&. This way, a possibly complex calculation to decide which part was clicked is only done once in \fBselectTest\fP\&. The result (i\&.e\&. the actually clicked part) can then be placed in \fIdetails\fP\&. So in the subsequent \fBselectEvent\fP, the decision which part was selected doesn't have to be done a second time for a single selection operation\&.
+.PP
+You may pass 0 as \fIdetails\fP to indicate that you are not interested in those selection details\&.
+.PP
+\fBSee also\fP
+.RS 4
+selectEvent, deselectEvent, \fBmousePressEvent\fP, \fBwheelEvent\fP, \fBQCustomPlot::setInteractions\fP 
+.RE
+.PP
+
+.PP
+Implements \fBQCPAbstractItem\fP\&.
+.PP
+Definition at line \fB29982\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPItemBracket::setLength (double length)"
+Sets the \fIlength\fP in pixels how far the bracket extends in the direction towards the embraced span of the bracket (i\&.e\&. perpendicular to the \fIleft\fP-\fIright\fP-direction)
+.PP
+ Demonstrating the effect of different values for \fBsetLength\fP, for styles \fBbsCalligraphic\fP and \fBbsSquare\fP\&. Anchors and positions are displayed for reference\&. 
+.PP
+Definition at line \fB29966\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPItemBracket::setPen (const QPen & pen)"
+Sets the pen that will be used to draw the bracket\&.
+.PP
+Note that when the style is \fBbsCalligraphic\fP, only the color will be taken from the pen, the stroke and width are ignored\&. To change the apparent stroke width of a calligraphic bracket, use \fBsetLength\fP, which has a similar effect\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetSelectedPen\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB29943\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPItemBracket::setSelectedPen (const QPen & pen)"
+Sets the pen that will be used to draw the bracket when selected
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetPen\fP, \fBsetSelected\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB29953\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPItemBracket::setStyle (\fBQCPItemBracket::BracketStyle\fP style)"
+Sets the style of the bracket, i\&.e\&. the shape/visual appearance\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetPen\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB29976\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "\fBBracketStyle\fP QCPItemBracket::style () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB6627\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBQCPItemAnchor\fP* const QCPItemBracket::center"
+
+.PP
+Definition at line \fB6640\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBQCPItemPosition\fP* const QCPItemBracket::left"
+
+.PP
+Definition at line \fB6638\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double QCPItemBracket::mLength\fC [protected]\fP"
+
+.PP
+Definition at line \fB6646\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QPen QCPItemBracket::mPen\fC [protected]\fP"
+
+.PP
+Definition at line \fB6645\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QPen QCPItemBracket::mSelectedPen\fC [protected]\fP"
+
+.PP
+Definition at line \fB6645\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBBracketStyle\fP QCPItemBracket::mStyle\fC [protected]\fP"
+
+.PP
+Definition at line \fB6647\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBQCPItemPosition\fP* const QCPItemBracket::right"
+
+.PP
+Definition at line \fB6639\fP of file \fBqcustomplot\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for OmronPID from the source code\&.

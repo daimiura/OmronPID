@@ -1,0 +1,248 @@
+.TH "QCPLineEnding" 3 "Wed Mar 15 2023" "OmronPID" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QCPLineEnding \- Handles the different ending decorations for line-like items\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBEndingStyle\fP { \fBesNone\fP, \fBesFlatArrow\fP, \fBesSpikeArrow\fP, \fBesLineArrow\fP, \fBesDisc\fP, \fBesSquare\fP, \fBesDiamond\fP, \fBesBar\fP, \fBesHalfBar\fP, \fBesSkewedBar\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPLineEnding\fP ()"
+.br
+.ti -1c
+.RI "\fBQCPLineEnding\fP (\fBEndingStyle\fP style, double width=8, double length=10, bool inverted=false)"
+.br
+.ti -1c
+.RI "\fBEndingStyle\fP \fBstyle\fP () const"
+.br
+.ti -1c
+.RI "double \fBwidth\fP () const"
+.br
+.ti -1c
+.RI "double \fBlength\fP () const"
+.br
+.ti -1c
+.RI "bool \fBinverted\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetStyle\fP (\fBEndingStyle\fP style)"
+.br
+.ti -1c
+.RI "void \fBsetWidth\fP (double width)"
+.br
+.ti -1c
+.RI "void \fBsetLength\fP (double length)"
+.br
+.ti -1c
+.RI "void \fBsetInverted\fP (bool inverted)"
+.br
+.ti -1c
+.RI "double \fBboundingDistance\fP () const"
+.br
+.ti -1c
+.RI "double \fBrealLength\fP () const"
+.br
+.ti -1c
+.RI "void \fBdraw\fP (\fBQCPPainter\fP *painter, const \fBQCPVector2D\fP &pos, const \fBQCPVector2D\fP &dir) const"
+.br
+.ti -1c
+.RI "void \fBdraw\fP (\fBQCPPainter\fP *painter, const \fBQCPVector2D\fP &pos, double angle) const"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBEndingStyle\fP \fBmStyle\fP"
+.br
+.ti -1c
+.RI "double \fBmWidth\fP"
+.br
+.ti -1c
+.RI "double \fBmLength\fP"
+.br
+.ti -1c
+.RI "bool \fBmInverted\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Handles the different ending decorations for line-like items\&. 
+
+
+.PP
+For every ending a line-like item has, an instance of this class exists\&. For example, \fBQCPItemLine\fP has two endings which can be set with \fBQCPItemLine::setHead\fP and \fBQCPItemLine::setTail\fP\&.
+.PP
+The styles themselves are defined via the enum \fBQCPLineEnding::EndingStyle\fP\&. Most decorations can be modified regarding width and length, see \fBsetWidth\fP and \fBsetLength\fP\&. The direction of the ending decoration (e\&.g\&. direction an arrow is pointing) is controlled by the line-like item\&. For example, when both endings of a \fBQCPItemLine\fP are set to be arrows, they will point to opposite directions, e\&.g\&. 'outward'\&. This can be changed by \fBsetInverted\fP, which would make the respective arrow point inward\&.
+.PP
+Note that due to the overloaded \fBQCPLineEnding\fP constructor, you may directly specify a \fBQCPLineEnding::EndingStyle\fP where actually a \fBQCPLineEnding\fP is expected, e\&.g\&. 
+.PP
+.nf
+
+.fi
+.PP
+ 
+.PP
+Definition at line \fB1469\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBQCPLineEnding::EndingStyle\fP"
+Defines the type of ending decoration for line-like items, e\&.g\&. an arrow\&.
+.PP
+.PP
+The width and length of these decorations can be controlled with the functions \fBsetWidth\fP and \fBsetLength\fP\&. Some decorations like \fBesDisc\fP, \fBesSquare\fP, \fBesDiamond\fP and \fBesBar\fP only support a width, the length property is ignored\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBQCPItemLine::setHead\fP, \fBQCPItemLine::setTail\fP, \fBQCPItemCurve::setHead\fP, \fBQCPItemCurve::setTail\fP, \fBQCPAxis::setLowerEnding\fP, \fBQCPAxis::setUpperEnding\fP 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIesNone \fP\fP
+No ending decoration\&. 
+.TP
+\fB\fIesFlatArrow \fP\fP
+A filled arrow head with a straight/flat back (a triangle) 
+.TP
+\fB\fIesSpikeArrow \fP\fP
+A filled arrow head with an indented back\&. 
+.TP
+\fB\fIesLineArrow \fP\fP
+A non-filled arrow head with open back\&. 
+.TP
+\fB\fIesDisc \fP\fP
+A filled circle\&. 
+.TP
+\fB\fIesSquare \fP\fP
+A filled square\&. 
+.TP
+\fB\fIesDiamond \fP\fP
+A filled diamond (45 degrees rotated square) 
+.TP
+\fB\fIesBar \fP\fP
+A bar perpendicular to the line\&. 
+.TP
+\fB\fIesHalfBar \fP\fP
+A bar perpendicular to the line, pointing out to only one side (to which side can be changed with \fBsetInverted\fP) 
+.TP
+\fB\fIesSkewedBar \fP\fP
+A bar that is skewed (skew controllable via \fBsetLength\fP) 
+.PP
+Definition at line \fB1484\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QCPLineEnding::QCPLineEnding ()"
+Creates a \fBQCPLineEnding\fP instance with default values (style \fBesNone\fP)\&. 
+.PP
+Definition at line \fB5157\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QCPLineEnding::QCPLineEnding (\fBQCPLineEnding::EndingStyle\fP style, double width = \fC8\fP, double length = \fC10\fP, bool inverted = \fCfalse\fP)"
+Creates a \fBQCPLineEnding\fP instance with the specified values\&. 
+.PP
+Definition at line \fB5168\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "double QCPLineEnding::boundingDistance () const"
+
+.PP
+Definition at line \fB5228\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPLineEnding::draw (\fBQCPPainter\fP * painter, const \fBQCPVector2D\fP & pos, const \fBQCPVector2D\fP & dir) const"
+
+.PP
+Definition at line \fB5293\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPLineEnding::draw (\fBQCPPainter\fP * painter, const \fBQCPVector2D\fP & pos, double angle) const"
+
+.PP
+Definition at line \fB5419\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "bool QCPLineEnding::inverted () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB1504\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double QCPLineEnding::length () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB1503\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double QCPLineEnding::realLength () const"
+Starting from the origin of this line ending (which is style specific), returns the length covered by the line ending symbol, in backward direction\&.
+.PP
+For example, the \fBesSpikeArrow\fP has a shorter real length than a \fBesFlatArrow\fP, even if both have the same \fBsetLength\fP value, because the spike arrow has an inward curved back, which reduces the length along its center axis (the drawing origin for arrows is at the tip)\&.
+.PP
+This function is used for precise, style specific placement of line endings, for example in QCPAxes\&. 
+.PP
+Definition at line \fB5263\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPLineEnding::setInverted (bool inverted)"
+Sets whether the ending decoration shall be inverted\&. For example, an arrow decoration will point inward when \fIinverted\fP is set to true\&.
+.PP
+Note that also the \fIwidth\fP direction is inverted\&. For symmetrical ending styles like arrows or discs, this doesn't make a difference\&. However, asymmetric styles like \fBesHalfBar\fP are affected by it, which can be used to control to which side the half bar points to\&. 
+.PP
+Definition at line \fB5214\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPLineEnding::setLength (double length)"
+Sets the length of the ending decoration, if the style supports it\&. On arrows, for example, the length defines the size in pointing direction\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetWidth\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB5201\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPLineEnding::setStyle (\fBQCPLineEnding::EndingStyle\fP style)"
+Sets the style of the ending decoration\&. 
+.PP
+Definition at line \fB5179\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPLineEnding::setWidth (double width)"
+Sets the width of the ending decoration, if the style supports it\&. On arrows, for example, the width defines the size perpendicular to the arrow's pointing direction\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetLength\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB5190\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "\fBEndingStyle\fP QCPLineEnding::style () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB1501\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double QCPLineEnding::width () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB1502\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "bool QCPLineEnding::mInverted\fC [protected]\fP"
+
+.PP
+Definition at line \fB1522\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double QCPLineEnding::mLength\fC [protected]\fP"
+
+.PP
+Definition at line \fB1521\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBEndingStyle\fP QCPLineEnding::mStyle\fC [protected]\fP"
+
+.PP
+Definition at line \fB1520\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double QCPLineEnding::mWidth\fC [protected]\fP"
+
+.PP
+Definition at line \fB1521\fP of file \fBqcustomplot\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for OmronPID from the source code\&.

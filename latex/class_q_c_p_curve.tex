@@ -7,12 +7,20 @@ A plottable representing a parametric curve in a plot.
 
 
 
-{\ttfamily \#include $<$qcustomplot.\+h$>$}
-
-Inheritance diagram for QCPCurve\+:\begin{figure}[H]
+Inheritance diagram for QCPCurve\+:\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=5.000000cm]{class_q_c_p_curve}
+\includegraphics[width=336pt]{class_q_c_p_curve__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for QCPCurve\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_curve__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Types}
@@ -25,11 +33,9 @@ enum \mbox{\hyperlink{class_q_c_p_curve_a2710e9f79302152cff794c6e16cc01f1}{Line\
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_q_c_p_curve_a36de58e2652b3fa47bdf9187d421d3ce}{QCPCurve}} (\mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$\mbox{\hyperlink{class_q_c_p_abstract_plottable_aa6f25b97ee99988fe352f17cb9ed962b}{key\+Axis}}, \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$\mbox{\hyperlink{class_q_c_p_abstract_plottable_a842b3831660d3e33b73863fd133889dd}{value\+Axis}})
+\mbox{\hyperlink{class_q_c_p_curve_a36de58e2652b3fa47bdf9187d421d3ce}{QCPCurve}} (\mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$key\+Axis, \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$value\+Axis)
 \item 
-virtual \mbox{\hyperlink{class_q_c_p_curve_a99ee5136754884a220cc0bcacfe419a3}{$\sim$\+QCPCurve}} ()
-\item 
-QShared\+Pointer$<$ \mbox{\hyperlink{qcustomplot_8h_aaeee80d5664ea91beb9d7968790d0e65}{QCPCurve\+Data\+Container}} $>$ \mbox{\hyperlink{class_q_c_p_curve_a761492fd00b1ab7cb18ce23c118c6c60}{data}} () const
+QShared\+Pointer$<$ \mbox{\hyperlink{class_q_c_p_data_container}{QCPCurve\+Data\+Container}} $>$ \mbox{\hyperlink{class_q_c_p_curve_a761492fd00b1ab7cb18ce23c118c6c60}{data}} () const
 \item 
 \mbox{\hyperlink{class_q_c_p_scatter_style}{QCPScatter\+Style}} \mbox{\hyperlink{class_q_c_p_curve_afa6bd72a3a331a5ed45d3e0c5843b592}{scatter\+Style}} () const
 \item 
@@ -37,7 +43,7 @@ int \mbox{\hyperlink{class_q_c_p_curve_a09b33217172aedf6c62c441b4ff66166}{scatte
 \item 
 \mbox{\hyperlink{class_q_c_p_curve_a2710e9f79302152cff794c6e16cc01f1}{Line\+Style}} \mbox{\hyperlink{class_q_c_p_curve_a06e3cf3f8f1add689254b3cda66e040e}{line\+Style}} () const
 \item 
-void \mbox{\hyperlink{class_q_c_p_curve_a41246850d2e080bc57183ca19cd4135e}{set\+Data}} (QShared\+Pointer$<$ \mbox{\hyperlink{qcustomplot_8h_aaeee80d5664ea91beb9d7968790d0e65}{QCPCurve\+Data\+Container}} $>$ \mbox{\hyperlink{class_q_c_p_curve_a761492fd00b1ab7cb18ce23c118c6c60}{data}})
+void \mbox{\hyperlink{class_q_c_p_curve_a41246850d2e080bc57183ca19cd4135e}{set\+Data}} (QShared\+Pointer$<$ \mbox{\hyperlink{class_q_c_p_data_container}{QCPCurve\+Data\+Container}} $>$ \mbox{\hyperlink{class_q_c_p_curve_a761492fd00b1ab7cb18ce23c118c6c60}{data}})
 \item 
 void \mbox{\hyperlink{class_q_c_p_curve_a0768af2c33c8dcffa3cf5bdeb53923a6}{set\+Data}} (const QVector$<$ double $>$ \&t, const QVector$<$ double $>$ \&keys, const QVector$<$ double $>$ \&values, bool already\+Sorted=false)
 \item 
@@ -57,49 +63,45 @@ void \mbox{\hyperlink{class_q_c_p_curve_a13398b236f6926014e404eeb5b9f415c}{add\+
 \item 
 void \mbox{\hyperlink{class_q_c_p_curve_ada4762e793cd5707b33f35b8a4b0f8fb}{add\+Data}} (double key, double value)
 \item 
-virtual double \mbox{\hyperlink{class_q_c_p_curve_a0ed9b7e6b4bc72010d6fcd974af46a8b}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant $\ast$details=0) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual double \mbox{\hyperlink{class_q_c_p_curve_a0ed9b7e6b4bc72010d6fcd974af46a8b}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant $\ast$details=0) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \mbox{\hyperlink{class_q_c_p_curve_a22d09087f78f254731197cc0b8783299}{get\+Key\+Range}} (bool \&found\+Range, \mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9}{QCP\+::\+Sign\+Domain}} in\+Sign\+Domain=\mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9aa38352ef02d51ddfa4399d9551566e24}{QCP\+::sd\+Both}}) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \mbox{\hyperlink{class_q_c_p_curve_a22d09087f78f254731197cc0b8783299}{get\+Key\+Range}} (bool \&found\+Range, \mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9}{QCP\+::\+Sign\+Domain}} in\+Sign\+Domain=\mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9aa38352ef02d51ddfa4399d9551566e24}{QCP\+::sd\+Both}}) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \mbox{\hyperlink{class_q_c_p_curve_a8bb8e3b9085f15921dc40483fb025ab2}{get\+Value\+Range}} (bool \&found\+Range, \mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9}{QCP\+::\+Sign\+Domain}} in\+Sign\+Domain=\mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9aa38352ef02d51ddfa4399d9551566e24}{QCP\+::sd\+Both}}, const \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \&in\+Key\+Range=\mbox{\hyperlink{class_q_c_p_range}{QCPRange}}()) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \mbox{\hyperlink{class_q_c_p_curve_a8bb8e3b9085f15921dc40483fb025ab2}{get\+Value\+Range}} (bool \&found\+Range, \mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9}{QCP\+::\+Sign\+Domain}} in\+Sign\+Domain=\mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9aa38352ef02d51ddfa4399d9551566e24}{QCP\+::sd\+Both}}, const \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \&in\+Key\+Range=\mbox{\hyperlink{class_q_c_p_range}{QCPRange}}()) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d}{QCPAbstract\+Plottable1\+D$<$ QCPCurve\+Data $>$}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a30b2e50ab0afce65f104ea7a95440315}{QCPAbstract\+Plottable1D}} (\mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$\mbox{\hyperlink{class_q_c_p_abstract_plottable_aa6f25b97ee99988fe352f17cb9ed962b}{key\+Axis}}, \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$\mbox{\hyperlink{class_q_c_p_abstract_plottable_a842b3831660d3e33b73863fd133889dd}{value\+Axis}})
+\mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a30b2e50ab0afce65f104ea7a95440315}{QCPAbstract\+Plottable1D}} (\mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$key\+Axis, \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$value\+Axis)
 \item 
-virtual \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_afa6d5d2c971fed63bff4f4a79989a3f8}{$\sim$\+QCPAbstract\+Plottable1D}} ()
+virtual int \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_ab5dd99e4f1621e7dbd63438e0b02984e}{data\+Count}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual int \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_ab5dd99e4f1621e7dbd63438e0b02984e}{data\+Count}} () const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual double \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_aeb156ebf5d3c8de906b428be30733ad8}{data\+Main\+Key}} (int index) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual double \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_aeb156ebf5d3c8de906b428be30733ad8}{data\+Main\+Key}} (int index) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual double \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_aa8277da921b009bce474437d50b4a2d8}{data\+Sort\+Key}} (int index) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual double \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_aa8277da921b009bce474437d50b4a2d8}{data\+Sort\+Key}} (int index) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual double \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a6be0f657ba85a1688336d76ad649ecf2}{data\+Main\+Value}} (int index) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual double \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a6be0f657ba85a1688336d76ad649ecf2}{data\+Main\+Value}} (int index) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a55f937ba6a63e56e57f0b1a6e85a333a}{data\+Value\+Range}} (int index) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a55f937ba6a63e56e57f0b1a6e85a333a}{data\+Value\+Range}} (int index) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual QPointF \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a6ca0699a6af5f25a7565de7c50ce13b2}{data\+Pixel\+Position}} (int index) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual QPointF \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a6ca0699a6af5f25a7565de7c50ce13b2}{data\+Pixel\+Position}} (int index) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual bool \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_afe0d56e39cc076032922f059b304c092}{sort\+Key\+Is\+Main\+Key}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual bool \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_afe0d56e39cc076032922f059b304c092}{sort\+Key\+Is\+Main\+Key}} () const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a22377bf6e57ab7eedbc9e489250c6ded}{select\+Test\+Rect}} (const QRectF \&rect, bool only\+Selectable) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a22377bf6e57ab7eedbc9e489250c6ded}{select\+Test\+Rect}} (const QRectF \&rect, bool only\+Selectable) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual int \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_ad0b46d25cde3d035b180fb8f10c056e6}{find\+Begin}} (double sort\+Key, bool expanded\+Range=true) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual int \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_ad0b46d25cde3d035b180fb8f10c056e6}{find\+Begin}} (double sort\+Key, bool expanded\+Range=true) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual int \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a6e3ba20c9160d7361e58070390d10b1a}{find\+End}} (double sort\+Key, bool expanded\+Range=true) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual int \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a6e3ba20c9160d7361e58070390d10b1a}{find\+End}} (double sort\+Key, bool expanded\+Range=true) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual double \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a4611b43bcb6441b2154eb4f4e0a33db2}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant $\ast$details=0) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual double \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a4611b43bcb6441b2154eb4f4e0a33db2}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant $\ast$details=0) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
-\item 
-virtual \mbox{\hyperlink{class_q_c_p_plottable_interface1_d}{QCPPlottable\+Interface1D}} $\ast$ \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_ac58fb47bfe330f6931ed8e64326387d7}{interface1D}} () \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual \mbox{\hyperlink{class_q_c_p_plottable_interface1_d}{QCPPlottable\+Interface1D}} $\ast$ \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_ac58fb47bfe330f6931ed8e64326387d7}{interface1D}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_q_c_p_abstract_plottable}{QCPAbstract\+Plottable}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_q_c_p_abstract_plottable_af78a036e40db6f53a31abadc5323715a}{QCPAbstract\+Plottable}} (\mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$\mbox{\hyperlink{class_q_c_p_abstract_plottable_aa6f25b97ee99988fe352f17cb9ed962b}{key\+Axis}}, \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$\mbox{\hyperlink{class_q_c_p_abstract_plottable_a842b3831660d3e33b73863fd133889dd}{value\+Axis}})
-\item 
-virtual \mbox{\hyperlink{class_q_c_p_abstract_plottable_a88112bcbe9eb995b1190ad7591f2d0b5}{$\sim$\+QCPAbstract\+Plottable}} ()
+\mbox{\hyperlink{class_q_c_p_abstract_plottable_af78a036e40db6f53a31abadc5323715a}{QCPAbstract\+Plottable}} (\mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$key\+Axis, \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$value\+Axis)
 \item 
 QString \mbox{\hyperlink{class_q_c_p_abstract_plottable_a52c226eefcb1920240eeabae574d28c0}{name}} () const
 \item 
@@ -123,21 +125,21 @@ bool \mbox{\hyperlink{class_q_c_p_abstract_plottable_a0b3b514474fe93354fc74cfc14
 \item 
 \mbox{\hyperlink{class_q_c_p_selection_decorator}{QCPSelection\+Decorator}} $\ast$ \mbox{\hyperlink{class_q_c_p_abstract_plottable_a7861518e47ca0c6a0c386032c2db075e}{selection\+Decorator}} () const
 \item 
-void \mbox{\hyperlink{class_q_c_p_abstract_plottable_ab79c7ba76bc7fa89a4b3580e12149f1f}{set\+Name}} (const QString \&\mbox{\hyperlink{class_q_c_p_abstract_plottable_a52c226eefcb1920240eeabae574d28c0}{name}})
+void \mbox{\hyperlink{class_q_c_p_abstract_plottable_ab79c7ba76bc7fa89a4b3580e12149f1f}{set\+Name}} (const QString \&name)
 \item 
 void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a089d6b5577120239b55c39ed27c39536}{set\+Antialiased\+Fill}} (bool enabled)
 \item 
 void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a2f03f067ede2ed4da6f7d0e4777a3f02}{set\+Antialiased\+Scatters}} (bool enabled)
 \item 
-void \mbox{\hyperlink{class_q_c_p_abstract_plottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}{set\+Pen}} (const QPen \&\mbox{\hyperlink{class_q_c_p_abstract_plottable_ad5972efc31344e5a7a78ab4f8864b2d3}{pen}})
+void \mbox{\hyperlink{class_q_c_p_abstract_plottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}{set\+Pen}} (const QPen \&pen)
 \item 
-void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a7a4b92144dca6453a1f0f210e27edc74}{set\+Brush}} (const QBrush \&\mbox{\hyperlink{class_q_c_p_abstract_plottable_a893b4896dfd92b68b05b2600b80f5826}{brush}})
+void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a7a4b92144dca6453a1f0f210e27edc74}{set\+Brush}} (const QBrush \&brush)
 \item 
 void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a8524fa2994c63c0913ebd9bb2ffa3920}{set\+Key\+Axis}} (\mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$axis)
 \item 
 void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a71626a07367e241ec62ad2c34baf21cb}{set\+Value\+Axis}} (\mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$axis)
 \item 
-Q\+\_\+\+SLOT void \mbox{\hyperlink{class_q_c_p_abstract_plottable_ac238d6e910f976f1f30d41c2bca44ac3}{set\+Selectable}} (\mbox{\hyperlink{namespace_q_c_p_ac6cb9db26a564b27feda362a438db038}{QCP\+::\+Selection\+Type}} \mbox{\hyperlink{class_q_c_p_abstract_plottable_a016653741033bd332d1d4c3c725cc284}{selectable}})
+Q\+\_\+\+SLOT void \mbox{\hyperlink{class_q_c_p_abstract_plottable_ac238d6e910f976f1f30d41c2bca44ac3}{set\+Selectable}} (\mbox{\hyperlink{namespace_q_c_p_ac6cb9db26a564b27feda362a438db038}{QCP\+::\+Selection\+Type}} selectable)
 \item 
 Q\+\_\+\+SLOT void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a219bc5403a9d85d3129165ec3f5ae436}{set\+Selection}} (\mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} \mbox{\hyperlink{class_q_c_p_abstract_plottable_a040bf09f41d456284cfd39cc37aa068f}{selection}})
 \item 
@@ -178,8 +180,6 @@ bool \mbox{\hyperlink{class_q_c_p_abstract_plottable_ac95fb2604d9106d0852ad9ceb3
 \item 
 \mbox{\hyperlink{class_q_c_p_layerable_a74c0fa237f29bf0e49565013fc5d1ec0}{QCPLayerable}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$plot, QString target\+Layer=QString(), \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}}=0)
 \item 
-virtual \mbox{\hyperlink{class_q_c_p_layerable_a4231cf5b3601d6d3a5781283e7a9735b}{$\sim$\+QCPLayerable}} ()
-\item 
 bool \mbox{\hyperlink{class_q_c_p_layerable_af0297b944b6192b6d67d00bff41b6b70}{visible}} () const
 \item 
 \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$ \mbox{\hyperlink{class_q_c_p_layerable_a36ed5b292b90934b524a4e5866a3526c}{parent\+Plot}} () const
@@ -192,7 +192,7 @@ bool \mbox{\hyperlink{class_q_c_p_layerable_a71cbd212fde2703cee076e204a475709}{a
 \item 
 void \mbox{\hyperlink{class_q_c_p_layerable_a3bed99ddc396b48ce3ebfdc0418744f8}{set\+Visible}} (bool on)
 \item 
-Q\+\_\+\+SLOT bool \mbox{\hyperlink{class_q_c_p_layerable_ab0d0da6d2de45a118886d2c8e16d5a54}{set\+Layer}} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_a9d4e121a7f1d2314f906fe698209cac9}{layer}})
+Q\+\_\+\+SLOT bool \mbox{\hyperlink{class_q_c_p_layerable_ab0d0da6d2de45a118886d2c8e16d5a54}{set\+Layer}} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$layer)
 \item 
 bool \mbox{\hyperlink{class_q_c_p_layerable_ab25a0e7b897993b44447caee0f142083}{set\+Layer}} (const QString \&layer\+Name)
 \item 
@@ -202,10 +202,7 @@ virtual double \mbox{\hyperlink{class_q_c_p_layerable_a04db8351fefd44cfdb77958e7
 \item 
 bool \mbox{\hyperlink{class_q_c_p_layerable_ab054e88f15d485defcb95e7376f119e7}{real\+Visibility}} () const
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_q_c_p_plottable_interface1_d}{QCPPlottable\+Interface1D}}}
 \begin{DoxyCompactItemize}
-\item 
-virtual \mbox{\hyperlink{class_q_c_p_plottable_interface1_d_a8829011d62208625f741f2d7e1cb6280}{$\sim$\+QCPPlottable\+Interface1D}} ()
 \item 
 virtual int \mbox{\hyperlink{class_q_c_p_plottable_interface1_d_a058a22c770ef4d5a0e878a7f02183da9}{data\+Count}} () const =0
 \item 
@@ -230,9 +227,9 @@ virtual int \mbox{\hyperlink{class_q_c_p_plottable_interface1_d_a5deced1016bc55a
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_curve_ac199d41d23865cd68bd7b598308a4433}{draw}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual void \mbox{\hyperlink{class_q_c_p_curve_ac199d41d23865cd68bd7b598308a4433}{draw}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_curve_aac6e94afbce4002d2cd7793250154e84}{draw\+Legend\+Icon}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter, const QRectF \&rect) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual void \mbox{\hyperlink{class_q_c_p_curve_aac6e94afbce4002d2cd7793250154e84}{draw\+Legend\+Icon}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter, const QRectF \&rect) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
 virtual void \mbox{\hyperlink{class_q_c_p_curve_aa4d7415f7c69eb7820263941f7d88e2c}{draw\+Curve\+Line}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter, const QVector$<$ QPointF $>$ \&lines) const
 \item 
@@ -254,7 +251,7 @@ bool \mbox{\hyperlink{class_q_c_p_curve_afc5367ef0369d7a88ebba6eacf55f14f}{get\+
 \item 
 void \mbox{\hyperlink{class_q_c_p_curve_a55e24387fd97a2cad0def8a40809e9ec}{get\+Traverse\+Corner\+Points}} (int prev\+Region, int current\+Region, double key\+Min, double value\+Max, double key\+Max, double value\+Min, QVector$<$ QPointF $>$ \&before\+Traverse, QVector$<$ QPointF $>$ \&after\+Traverse) const
 \item 
-double \mbox{\hyperlink{class_q_c_p_curve_aa2c9c9c0e57f11f18a5cb7e47927157c}{point\+Distance}} (const QPointF \&pixel\+Point, \mbox{\hyperlink{class_q_c_p_data_container_ae40a91f5cb0bcac61d727427449b7d15}{QCPCurve\+Data\+Container\+::const\+\_\+iterator}} \&closest\+Data) const
+double \mbox{\hyperlink{class_q_c_p_curve_aa2c9c9c0e57f11f18a5cb7e47927157c}{point\+Distance}} (const QPointF \&pixel\+Point, QCPCurve\+Data\+Container\+::const\+\_\+iterator \&closest\+Data) const
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d}{QCPAbstract\+Plottable1\+D$<$ QCPCurve\+Data $>$}}}
 \begin{DoxyCompactItemize}
@@ -266,19 +263,20 @@ void \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a7adc6c3cccebb5341f11e0c
 \doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_q_c_p_abstract_plottable}{QCPAbstract\+Plottable}}}
 \begin{DoxyCompactItemize}
 \item 
-virtual QRect \mbox{\hyperlink{class_q_c_p_abstract_plottable_a635cee3effc07ad421414c76fd83548c}{clip\+Rect}} () const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual QRect \mbox{\hyperlink{class_q_c_p_abstract_plottable_a635cee3effc07ad421414c76fd83548c}{clip\+Rect}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a453f676a5cee7bf846c5f0fa05ea84b3}{draw}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}=0
+virtual void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a453f676a5cee7bf846c5f0fa05ea84b3}{draw}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) Q\+\_\+\+DECL\+\_\+\+OVERRIDE=0
 \item 
-virtual \mbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037}{QCP\+::\+Interaction}} \mbox{\hyperlink{class_q_c_p_abstract_plottable_af80ad8531642e786b6f4fad551c203c4}{selection\+Category}} () const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual \mbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037}{QCP\+::\+Interaction}} \mbox{\hyperlink{class_q_c_p_abstract_plottable_af80ad8531642e786b6f4fad551c203c4}{selection\+Category}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-void \mbox{\hyperlink{class_q_c_p_abstract_plottable_ac032077fb0db93d6faa3273d02363398}{apply\+Default\+Antialiasing\+Hint}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+void \mbox{\hyperlink{class_q_c_p_abstract_plottable_ac032077fb0db93d6faa3273d02363398}{apply\+Default\+Antialiasing\+Hint}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a2d488568cf16600dd81fa23d7d439829}{select\+Event}} (QMouse\+Event $\ast$event, bool additive, const QVariant \&details, bool $\ast$selection\+State\+Changed) \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a2d488568cf16600dd81fa23d7d439829}{select\+Event}} (QMouse\+Event $\ast$event, bool additive, const QVariant \&details, bool $\ast$selection\+State\+Changed) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a9b104d9da4f38f934363945c313bf82e}{deselect\+Event}} (bool $\ast$selection\+State\+Changed) \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a9b104d9da4f38f934363945c313bf82e}{deselect\+Event}} (bool $\ast$selection\+State\+Changed) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a9a450783fd9ed539e589999fd390cdf7}{draw\+Legend\+Icon}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter, const QRectF \&rect) const =0
+\mbox{\Hypertarget{class_q_c_p_abstract_plottable_a9a450783fd9ed539e589999fd390cdf7}\label{class_q_c_p_abstract_plottable_a9a450783fd9ed539e589999fd390cdf7}} 
+virtual void {\bfseries draw\+Legend\+Icon} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter, const QRectF \&rect) const =0
 \item 
 void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a8d06a59ea23324cce6330ebf2262c0ed}{apply\+Fill\+Antialiasing\+Hint}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) const
 \item 
@@ -287,15 +285,17 @@ void \mbox{\hyperlink{class_q_c_p_abstract_plottable_ac95f26b15a1e5d9c7bd2c0a46d
 \doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}}
 \begin{DoxyCompactItemize}
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_layerable_ab20b7dbd8e0249ed61adb9622c427382}{parent\+Plot\+Initialized}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_a36ed5b292b90934b524a4e5866a3526c}{parent\+Plot}})
+virtual void \mbox{\hyperlink{class_q_c_p_layerable_ab20b7dbd8e0249ed61adb9622c427382}{parent\+Plot\+Initialized}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$parent\+Plot)
 \item 
 virtual \mbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037}{QCP\+::\+Interaction}} \mbox{\hyperlink{class_q_c_p_layerable_a908c9edda761886f33893be326dab77d}{selection\+Category}} () const
 \item 
 virtual QRect \mbox{\hyperlink{class_q_c_p_layerable_acbcfc9ecc75433747b1978a77b1864b3}{clip\+Rect}} () const
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_layerable_afdf83ddc6a265cbf4c89fe99d3d93473}{apply\+Default\+Antialiasing\+Hint}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) const =0
+\mbox{\Hypertarget{class_q_c_p_layerable_afdf83ddc6a265cbf4c89fe99d3d93473}\label{class_q_c_p_layerable_afdf83ddc6a265cbf4c89fe99d3d93473}} 
+virtual void {\bfseries apply\+Default\+Antialiasing\+Hint} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) const =0
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_layerable_aecf2f7087482d4b6a78cb2770e5ed12d}{draw}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter)=0
+\mbox{\Hypertarget{class_q_c_p_layerable_aecf2f7087482d4b6a78cb2770e5ed12d}\label{class_q_c_p_layerable_aecf2f7087482d4b6a78cb2770e5ed12d}} 
+virtual void {\bfseries draw} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter)=0
 \item 
 virtual void \mbox{\hyperlink{class_q_c_p_layerable_a7498c2d0d081cf7cad0fb3bb93aa0e91}{select\+Event}} (QMouse\+Event $\ast$event, bool additive, const QVariant \&details, bool $\ast$selection\+State\+Changed)
 \item 
@@ -311,11 +311,11 @@ virtual void \mbox{\hyperlink{class_q_c_p_layerable_a4171e2e823aca242dd0279f00ed
 \item 
 virtual void \mbox{\hyperlink{class_q_c_p_layerable_a47dfd7b8fd99c08ca54e09c362b6f022}{wheel\+Event}} (QWheel\+Event $\ast$event)
 \item 
-void \mbox{\hyperlink{class_q_c_p_layerable_a8cbe5a0c9a5674249982f5ca5f8e02bc}{initialize\+Parent\+Plot}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_a36ed5b292b90934b524a4e5866a3526c}{parent\+Plot}})
+void \mbox{\hyperlink{class_q_c_p_layerable_a8cbe5a0c9a5674249982f5ca5f8e02bc}{initialize\+Parent\+Plot}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$parent\+Plot)
 \item 
 void \mbox{\hyperlink{class_q_c_p_layerable_aa23c893671f1f6744ac235cf2204cf3a}{set\+Parent\+Layerable}} (\mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}})
 \item 
-bool \mbox{\hyperlink{class_q_c_p_layerable_af94484cfb7cbbddb7de522e9be71d9a4}{move\+To\+Layer}} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_a9d4e121a7f1d2314f906fe698209cac9}{layer}}, bool prepend)
+bool \mbox{\hyperlink{class_q_c_p_layerable_af94484cfb7cbbddb7de522e9be71d9a4}{move\+To\+Layer}} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$layer, bool prepend)
 \item 
 void \mbox{\hyperlink{class_q_c_p_layerable_acb663e375d2d36dc5c55021ee5a2119b}{apply\+Antialiasing\+Hint}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter, bool local\+Antialiased, \mbox{\hyperlink{namespace_q_c_p_ae55dbe315d41fe80f29ba88100843a0c}{QCP\+::\+Antialiased\+Element}} override\+Element) const
 \end{DoxyCompactItemize}
@@ -384,7 +384,7 @@ void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a3af66432b1dca93b28e00e78a8
 \item 
 void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a787a9c39421059006891744b731fa473}{selection\+Changed}} (const \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} \&\mbox{\hyperlink{class_q_c_p_abstract_plottable_a040bf09f41d456284cfd39cc37aa068f}{selection}})
 \item 
-void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a663b1a44123c8340ac041a29d1e2c973}{selectable\+Changed}} (\mbox{\hyperlink{namespace_q_c_p_ac6cb9db26a564b27feda362a438db038}{QCP\+::\+Selection\+Type}} \mbox{\hyperlink{class_q_c_p_abstract_plottable_a016653741033bd332d1d4c3c725cc284}{selectable}})
+void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a663b1a44123c8340ac041a29d1e2c973}{selectable\+Changed}} (\mbox{\hyperlink{namespace_q_c_p_ac6cb9db26a564b27feda362a438db038}{QCP\+::\+Selection\+Type}} selectable)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Signals inherited from \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}}
 \begin{DoxyCompactItemize}
@@ -400,7 +400,7 @@ A plottable representing a parametric curve in a plot.
 
 Unlike \mbox{\hyperlink{class_q_c_p_graph}{QCPGraph}}, plottables of this type may have multiple points with the same key coordinate, so their visual representation can have {\itshape loops}. This is realized by introducing a third coordinate {\itshape t}, which defines the order of the points described by the other two coordinates {\itshape x} and {\itshape y}.
 
-To plot data, assign it with the \mbox{\hyperlink{class_q_c_p_curve_a41246850d2e080bc57183ca19cd4135e}{set\+Data}} or \mbox{\hyperlink{class_q_c_p_curve_a73edf394b94f3f24f07518e30565a07f}{add\+Data}} functions. Alternatively, you can also access and modify the curve\textquotesingle{}s data via the \mbox{\hyperlink{class_q_c_p_curve_a761492fd00b1ab7cb18ce23c118c6c60}{data}} method, which returns a pointer to the internal \mbox{\hyperlink{qcustomplot_8h_aaeee80d5664ea91beb9d7968790d0e65}{QCPCurve\+Data\+Container}}.
+To plot data, assign it with the \mbox{\hyperlink{class_q_c_p_curve_a41246850d2e080bc57183ca19cd4135e}{set\+Data}} or \mbox{\hyperlink{class_q_c_p_curve_a73edf394b94f3f24f07518e30565a07f}{add\+Data}} functions. Alternatively, you can also access and modify the curve\textquotesingle{}s data via the \mbox{\hyperlink{class_q_c_p_curve_a761492fd00b1ab7cb18ce23c118c6c60}{data}} method, which returns a pointer to the internal QCPCurve\+Data\+Container.
 
 Gaps in the curve can be created by adding data points with NaN as key and value ({\ttfamily q\+QNa\+N()} or {\ttfamily std\+::numeric\+\_\+limits$<$double$>$\+::quiet\+\_\+\+Na\+N()}) in between the two data points that shall be separated.\hypertarget{class_q_c_p_curve_qcpcurve-appearance}{}\doxysubsection{Changing the appearance}\label{class_q_c_p_curve_qcpcurve-appearance}
 The appearance of the curve is determined by the pen and the brush (\mbox{\hyperlink{class_q_c_p_abstract_plottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}{set\+Pen}}, \mbox{\hyperlink{class_q_c_p_abstract_plottable_a7a4b92144dca6453a1f0f210e27edc74}{set\+Brush}}).\hypertarget{class_q_c_p_curve_qcpcurve-usage}{}\doxysubsection{Usage}\label{class_q_c_p_curve_qcpcurve-usage}
@@ -415,6 +415,10 @@ Usually, you first create an instance\+:
 
 \end{DoxyCodeInclude}
  
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05292}{5292}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+
 
 \doxysubsection{Member Enumeration Documentation}
 \mbox{\Hypertarget{class_q_c_p_curve_a2710e9f79302152cff794c6e16cc01f1}\label{class_q_c_p_curve_a2710e9f79302152cff794c6e16cc01f1}} 
@@ -438,6 +442,10 @@ ls\+Line&Data points are connected with a straight line. \\
 \end{DoxyEnumFields}
 
 
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05306}{5306}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_q_c_p_curve_a36de58e2652b3fa47bdf9187d421d3ce}\label{class_q_c_p_curve_a36de58e2652b3fa47bdf9187d421d3ce}} 
 \index{QCPCurve@{QCPCurve}!QCPCurve@{QCPCurve}}
@@ -447,11 +455,27 @@ ls\+Line&Data points are connected with a straight line. \\
 
 Constructs a curve which uses {\itshape key\+Axis} as its key axis (\char`\"{}x\char`\"{}) and {\itshape value\+Axis} as its value axis (\char`\"{}y\char`\"{}). {\itshape key\+Axis} and {\itshape value\+Axis} must reside in the same \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance and not have the same orientation. If either of these restrictions is violated, a corresponding message is printed to the debug output (q\+Debug), the construction is not aborted, though.
 
-The created \mbox{\hyperlink{class_q_c_p_curve}{QCPCurve}} is automatically registered with the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance inferred from {\itshape key\+Axis}. This \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance takes ownership of the \mbox{\hyperlink{class_q_c_p_curve}{QCPCurve}}, so do not delete it manually but use \mbox{\hyperlink{class_q_custom_plot_af3dafd56884208474f311d6226513ab2}{QCustom\+Plot\+::remove\+Plottable()}} instead. \mbox{\Hypertarget{class_q_c_p_curve_a99ee5136754884a220cc0bcacfe419a3}\label{class_q_c_p_curve_a99ee5136754884a220cc0bcacfe419a3}} 
+The created \mbox{\hyperlink{class_q_c_p_curve}{QCPCurve}} is automatically registered with the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance inferred from {\itshape key\+Axis}. This \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance takes ownership of the \mbox{\hyperlink{class_q_c_p_curve}{QCPCurve}}, so do not delete it manually but use \mbox{\hyperlink{class_q_custom_plot_af3dafd56884208474f311d6226513ab2}{QCustom\+Plot\+::remove\+Plottable()}} instead. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l21808}{21808}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_curve_a36de58e2652b3fa47bdf9187d421d3ce_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_curve_a99ee5136754884a220cc0bcacfe419a3}\label{class_q_c_p_curve_a99ee5136754884a220cc0bcacfe419a3}} 
 \index{QCPCurve@{QCPCurve}!````~QCPCurve@{$\sim$QCPCurve}}
 \index{````~QCPCurve@{$\sim$QCPCurve}!QCPCurve@{QCPCurve}}
 \doxysubsubsection{\texorpdfstring{$\sim$QCPCurve()}{~QCPCurve()}}
 {\footnotesize\ttfamily QCPCurve\+::$\sim$\+QCPCurve (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l21820}{21820}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 
 
@@ -468,7 +492,11 @@ Adds the provided points in {\itshape keys} and {\itshape values} to the current
 
 The t parameter of each data point will be set to the integer index of the respective key/value pair.
 
-Alternatively, you can also access and modify the data directly via the \mbox{\hyperlink{class_q_c_p_curve_a761492fd00b1ab7cb18ce23c118c6c60}{data}} method, which returns a pointer to the internal data container. \mbox{\Hypertarget{class_q_c_p_curve_a73edf394b94f3f24f07518e30565a07f}\label{class_q_c_p_curve_a73edf394b94f3f24f07518e30565a07f}} 
+Alternatively, you can also access and modify the data directly via the \mbox{\hyperlink{class_q_c_p_curve_a761492fd00b1ab7cb18ce23c118c6c60}{data}} method, which returns a pointer to the internal data container. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l21963}{21963}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+\mbox{\Hypertarget{class_q_c_p_curve_a73edf394b94f3f24f07518e30565a07f}\label{class_q_c_p_curve_a73edf394b94f3f24f07518e30565a07f}} 
 \index{QCPCurve@{QCPCurve}!addData@{addData}}
 \index{addData@{addData}!QCPCurve@{QCPCurve}}
 \doxysubsubsection{\texorpdfstring{addData()}{addData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
@@ -480,7 +508,19 @@ Adds the provided points in {\itshape t}, {\itshape keys} and {\itshape values} 
 
 If you can guarantee that the passed data points are sorted by {\itshape keys} in ascending order, you can set {\itshape already\+Sorted} to true, to improve performance by saving a sorting run.
 
-Alternatively, you can also access and modify the data directly via the \mbox{\hyperlink{class_q_c_p_curve_a761492fd00b1ab7cb18ce23c118c6c60}{data}} method, which returns a pointer to the internal data container. \mbox{\Hypertarget{class_q_c_p_curve_ada4762e793cd5707b33f35b8a4b0f8fb}\label{class_q_c_p_curve_ada4762e793cd5707b33f35b8a4b0f8fb}} 
+Alternatively, you can also access and modify the data directly via the \mbox{\hyperlink{class_q_c_p_curve_a761492fd00b1ab7cb18ce23c118c6c60}{data}} method, which returns a pointer to the internal data container. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l21931}{21931}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{class_q_c_p_curve_a73edf394b94f3f24f07518e30565a07f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_curve_ada4762e793cd5707b33f35b8a4b0f8fb}\label{class_q_c_p_curve_ada4762e793cd5707b33f35b8a4b0f8fb}} 
 \index{QCPCurve@{QCPCurve}!addData@{addData}}
 \index{addData@{addData}!QCPCurve@{QCPCurve}}
 \doxysubsubsection{\texorpdfstring{addData()}{addData()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
@@ -492,7 +532,11 @@ Adds the provided data point as {\itshape key} and {\itshape value} to the curre
 
 The t parameter is generated automatically by increments of 1 for each point, starting at the highest t of previously existing data or 0, if the curve data is empty.
 
-Alternatively, you can also access and modify the data directly via the \mbox{\hyperlink{class_q_c_p_curve_a761492fd00b1ab7cb18ce23c118c6c60}{data}} method, which returns a pointer to the internal data container. \mbox{\Hypertarget{class_q_c_p_curve_a13398b236f6926014e404eeb5b9f415c}\label{class_q_c_p_curve_a13398b236f6926014e404eeb5b9f415c}} 
+Alternatively, you can also access and modify the data directly via the \mbox{\hyperlink{class_q_c_p_curve_a761492fd00b1ab7cb18ce23c118c6c60}{data}} method, which returns a pointer to the internal data container. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l22009}{22009}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+\mbox{\Hypertarget{class_q_c_p_curve_a13398b236f6926014e404eeb5b9f415c}\label{class_q_c_p_curve_a13398b236f6926014e404eeb5b9f415c}} 
 \index{QCPCurve@{QCPCurve}!addData@{addData}}
 \index{addData@{addData}!QCPCurve@{QCPCurve}}
 \doxysubsubsection{\texorpdfstring{addData()}{addData()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
@@ -500,13 +544,29 @@ Alternatively, you can also access and modify the data directly via the \mbox{\h
 
 This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Adds the provided data point as {\itshape t}, {\itshape key} and {\itshape value} to the current data.
 
-Alternatively, you can also access and modify the data directly via the \mbox{\hyperlink{class_q_c_p_curve_a761492fd00b1ab7cb18ce23c118c6c60}{data}} method, which returns a pointer to the internal data container. \mbox{\Hypertarget{class_q_c_p_curve_a761492fd00b1ab7cb18ce23c118c6c60}\label{class_q_c_p_curve_a761492fd00b1ab7cb18ce23c118c6c60}} 
+Alternatively, you can also access and modify the data directly via the \mbox{\hyperlink{class_q_c_p_curve_a761492fd00b1ab7cb18ce23c118c6c60}{data}} method, which returns a pointer to the internal data container. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l21994}{21994}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+\mbox{\Hypertarget{class_q_c_p_curve_a761492fd00b1ab7cb18ce23c118c6c60}\label{class_q_c_p_curve_a761492fd00b1ab7cb18ce23c118c6c60}} 
 \index{QCPCurve@{QCPCurve}!data@{data}}
 \index{data@{data}!QCPCurve@{QCPCurve}}
 \doxysubsubsection{\texorpdfstring{data()}{data()}}
-{\footnotesize\ttfamily QShared\+Pointer$<$ \mbox{\hyperlink{qcustomplot_8h_aaeee80d5664ea91beb9d7968790d0e65}{QCPCurve\+Data\+Container}} $>$ QCPCurve\+::data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily QShared\+Pointer$<$ \mbox{\hyperlink{class_q_c_p_data_container}{QCPCurve\+Data\+Container}} $>$ QCPCurve\+::data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Returns a shared pointer to the internal data storage of type \mbox{\hyperlink{qcustomplot_8h_aaeee80d5664ea91beb9d7968790d0e65}{QCPCurve\+Data\+Container}}. You may use it to directly manipulate the data, which may be more convenient and faster than using the regular \mbox{\hyperlink{class_q_c_p_curve_a41246850d2e080bc57183ca19cd4135e}{set\+Data}} or \mbox{\hyperlink{class_q_c_p_curve_a73edf394b94f3f24f07518e30565a07f}{add\+Data}} methods. \mbox{\Hypertarget{class_q_c_p_curve_ac199d41d23865cd68bd7b598308a4433}\label{class_q_c_p_curve_ac199d41d23865cd68bd7b598308a4433}} 
+Returns a shared pointer to the internal data storage of type QCPCurve\+Data\+Container. You may use it to directly manipulate the data, which may be more convenient and faster than using the regular \mbox{\hyperlink{class_q_c_p_curve_a41246850d2e080bc57183ca19cd4135e}{set\+Data}} or \mbox{\hyperlink{class_q_c_p_curve_a73edf394b94f3f24f07518e30565a07f}{add\+Data}} methods. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05315}{5315}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=303pt]{class_q_c_p_curve_a761492fd00b1ab7cb18ce23c118c6c60_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_curve_ac199d41d23865cd68bd7b598308a4433}\label{class_q_c_p_curve_ac199d41d23865cd68bd7b598308a4433}} 
 \index{QCPCurve@{QCPCurve}!draw@{draw}}
 \index{draw@{draw}!QCPCurve@{QCPCurve}}
 \doxysubsubsection{\texorpdfstring{draw()}{draw()}}
@@ -514,13 +574,21 @@ Returns a shared pointer to the internal data storage of type \mbox{\hyperlink{q
 
 
 
-Implements \mbox{\hyperlink{class_q_c_p_abstract_plottable_a453f676a5cee7bf846c5f0fa05ea84b3}{QCPAbstract\+Plottable}}.
+Implements \mbox{\hyperlink{class_q_c_p_abstract_plottable}{QCPAbstract\+Plottable}}.
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l22052}{22052}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_curve_aa4d7415f7c69eb7820263941f7d88e2c}\label{class_q_c_p_curve_aa4d7415f7c69eb7820263941f7d88e2c}} 
 \index{QCPCurve@{QCPCurve}!drawCurveLine@{drawCurveLine}}
 \index{drawCurveLine@{drawCurveLine}!QCPCurve@{QCPCurve}}
 \doxysubsubsection{\texorpdfstring{drawCurveLine()}{drawCurveLine()}}
 {\footnotesize\ttfamily void QCPCurve\+::draw\+Curve\+Line (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$}]{painter,  }\item[{const QVector$<$ QPointF $>$ \&}]{lines }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l22160}{22160}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_curve_aac6e94afbce4002d2cd7793250154e84}\label{class_q_c_p_curve_aac6e94afbce4002d2cd7793250154e84}} 
 \index{QCPCurve@{QCPCurve}!drawLegendIcon@{drawLegendIcon}}
@@ -530,7 +598,11 @@ Implements \mbox{\hyperlink{class_q_c_p_abstract_plottable_a453f676a5cee7bf846c5
 
 
 
-Implements \mbox{\hyperlink{class_q_c_p_abstract_plottable_a9a450783fd9ed539e589999fd390cdf7}{QCPAbstract\+Plottable}}.
+Implements \mbox{\hyperlink{class_q_c_p_abstract_plottable}{QCPAbstract\+Plottable}}.
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l22120}{22120}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_curve_a0bea811373c5ee8c67c9c2b4d74ad866}\label{class_q_c_p_curve_a0bea811373c5ee8c67c9c2b4d74ad866}} 
 \index{QCPCurve@{QCPCurve}!drawScatterPlot@{drawScatterPlot}}
@@ -538,11 +610,19 @@ Implements \mbox{\hyperlink{class_q_c_p_abstract_plottable_a9a450783fd9ed539e589
 \doxysubsubsection{\texorpdfstring{drawScatterPlot()}{drawScatterPlot()}}
 {\footnotesize\ttfamily void QCPCurve\+::draw\+Scatter\+Plot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$}]{painter,  }\item[{const QVector$<$ QPointF $>$ \&}]{points,  }\item[{const \mbox{\hyperlink{class_q_c_p_scatter_style}{QCPScatter\+Style}} \&}]{style }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l22176}{22176}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_curve_aefca1e5127fae2d7ff65b9e921637c58}\label{class_q_c_p_curve_aefca1e5127fae2d7ff65b9e921637c58}} 
 \index{QCPCurve@{QCPCurve}!getCurveLines@{getCurveLines}}
 \index{getCurveLines@{getCurveLines}!QCPCurve@{QCPCurve}}
 \doxysubsubsection{\texorpdfstring{getCurveLines()}{getCurveLines()}}
 {\footnotesize\ttfamily void QCPCurve\+::get\+Curve\+Lines (\begin{DoxyParamCaption}\item[{QVector$<$ QPointF $>$ $\ast$}]{lines,  }\item[{const \mbox{\hyperlink{class_q_c_p_data_range}{QCPData\+Range}} \&}]{data\+Range,  }\item[{double}]{pen\+Width }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l22214}{22214}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_curve_a22d09087f78f254731197cc0b8783299}\label{class_q_c_p_curve_a22d09087f78f254731197cc0b8783299}} 
 \index{QCPCurve@{QCPCurve}!getKeyRange@{getKeyRange}}
@@ -561,11 +641,19 @@ Note that {\itshape found\+Range} is not the same as \mbox{\hyperlink{class_q_c_
 
 Implements \mbox{\hyperlink{class_q_c_p_abstract_plottable_a4da16d3cd4b509e1104a9b0275623c96}{QCPAbstract\+Plottable}}.
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l22040}{22040}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_curve_a66bff7933dac149c4577ad63a27da924}\label{class_q_c_p_curve_a66bff7933dac149c4577ad63a27da924}} 
 \index{QCPCurve@{QCPCurve}!getOptimizedCornerPoints@{getOptimizedCornerPoints}}
 \index{getOptimizedCornerPoints@{getOptimizedCornerPoints}!QCPCurve@{QCPCurve}}
 \doxysubsubsection{\texorpdfstring{getOptimizedCornerPoints()}{getOptimizedCornerPoints()}}
 {\footnotesize\ttfamily QVector$<$ QPointF $>$ QCPCurve\+::get\+Optimized\+Corner\+Points (\begin{DoxyParamCaption}\item[{int}]{prev\+Region,  }\item[{int}]{current\+Region,  }\item[{double}]{prev\+Key,  }\item[{double}]{prev\+Value,  }\item[{double}]{key,  }\item[{double}]{value,  }\item[{double}]{key\+Min,  }\item[{double}]{value\+Max,  }\item[{double}]{key\+Max,  }\item[{double}]{value\+Min }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l22575}{22575}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_curve_a1d4530a81f718a2085df03d6a059d5d8}\label{class_q_c_p_curve_a1d4530a81f718a2085df03d6a059d5d8}} 
 \index{QCPCurve@{QCPCurve}!getOptimizedPoint@{getOptimizedPoint}}
@@ -573,11 +661,19 @@ Implements \mbox{\hyperlink{class_q_c_p_abstract_plottable_a4da16d3cd4b509e1104a
 \doxysubsubsection{\texorpdfstring{getOptimizedPoint()}{getOptimizedPoint()}}
 {\footnotesize\ttfamily QPointF QCPCurve\+::get\+Optimized\+Point (\begin{DoxyParamCaption}\item[{int}]{prev\+Region,  }\item[{double}]{prev\+Key,  }\item[{double}]{prev\+Value,  }\item[{double}]{key,  }\item[{double}]{value,  }\item[{double}]{key\+Min,  }\item[{double}]{value\+Max,  }\item[{double}]{key\+Max,  }\item[{double}]{value\+Min }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l22459}{22459}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_curve_a77c89253397c4754b40d4bc8d3e789bf}\label{class_q_c_p_curve_a77c89253397c4754b40d4bc8d3e789bf}} 
 \index{QCPCurve@{QCPCurve}!getRegion@{getRegion}}
 \index{getRegion@{getRegion}!QCPCurve@{QCPCurve}}
 \doxysubsubsection{\texorpdfstring{getRegion()}{getRegion()}}
 {\footnotesize\ttfamily int QCPCurve\+::get\+Region (\begin{DoxyParamCaption}\item[{double}]{key,  }\item[{double}]{value,  }\item[{double}]{key\+Min,  }\item[{double}]{value\+Max,  }\item[{double}]{key\+Max,  }\item[{double}]{value\+Min }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l22415}{22415}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_curve_a564c5fdc8409e3532b1322389a8434b8}\label{class_q_c_p_curve_a564c5fdc8409e3532b1322389a8434b8}} 
 \index{QCPCurve@{QCPCurve}!getScatters@{getScatters}}
@@ -585,17 +681,29 @@ Implements \mbox{\hyperlink{class_q_c_p_abstract_plottable_a4da16d3cd4b509e1104a
 \doxysubsubsection{\texorpdfstring{getScatters()}{getScatters()}}
 {\footnotesize\ttfamily void QCPCurve\+::get\+Scatters (\begin{DoxyParamCaption}\item[{QVector$<$ QPointF $>$ $\ast$}]{scatters,  }\item[{const \mbox{\hyperlink{class_q_c_p_data_range}{QCPData\+Range}} \&}]{data\+Range,  }\item[{double}]{scatter\+Width }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l22317}{22317}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_curve_afc5367ef0369d7a88ebba6eacf55f14f}\label{class_q_c_p_curve_afc5367ef0369d7a88ebba6eacf55f14f}} 
 \index{QCPCurve@{QCPCurve}!getTraverse@{getTraverse}}
 \index{getTraverse@{getTraverse}!QCPCurve@{QCPCurve}}
 \doxysubsubsection{\texorpdfstring{getTraverse()}{getTraverse()}}
 {\footnotesize\ttfamily bool QCPCurve\+::get\+Traverse (\begin{DoxyParamCaption}\item[{double}]{prev\+Key,  }\item[{double}]{prev\+Value,  }\item[{double}]{key,  }\item[{double}]{value,  }\item[{double}]{key\+Min,  }\item[{double}]{value\+Max,  }\item[{double}]{key\+Max,  }\item[{double}]{value\+Min,  }\item[{QPointF \&}]{crossA,  }\item[{QPointF \&}]{crossB }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l22842}{22842}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_curve_a55e24387fd97a2cad0def8a40809e9ec}\label{class_q_c_p_curve_a55e24387fd97a2cad0def8a40809e9ec}} 
 \index{QCPCurve@{QCPCurve}!getTraverseCornerPoints@{getTraverseCornerPoints}}
 \index{getTraverseCornerPoints@{getTraverseCornerPoints}!QCPCurve@{QCPCurve}}
 \doxysubsubsection{\texorpdfstring{getTraverseCornerPoints()}{getTraverseCornerPoints()}}
 {\footnotesize\ttfamily void QCPCurve\+::get\+Traverse\+Corner\+Points (\begin{DoxyParamCaption}\item[{int}]{prev\+Region,  }\item[{int}]{current\+Region,  }\item[{double}]{key\+Min,  }\item[{double}]{value\+Max,  }\item[{double}]{key\+Max,  }\item[{double}]{value\+Min,  }\item[{QVector$<$ QPointF $>$ \&}]{before\+Traverse,  }\item[{QVector$<$ QPointF $>$ \&}]{after\+Traverse }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l22955}{22955}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_curve_a8bb8e3b9085f15921dc40483fb025ab2}\label{class_q_c_p_curve_a8bb8e3b9085f15921dc40483fb025ab2}} 
 \index{QCPCurve@{QCPCurve}!getValueRange@{getValueRange}}
@@ -616,11 +724,19 @@ Note that {\itshape found\+Range} is not the same as \mbox{\hyperlink{class_q_c_
 
 Implements \mbox{\hyperlink{class_q_c_p_abstract_plottable_a4de773988b21ed090fddd27c6a3a3dcb}{QCPAbstract\+Plottable}}.
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l22046}{22046}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_curve_a06e3cf3f8f1add689254b3cda66e040e}\label{class_q_c_p_curve_a06e3cf3f8f1add689254b3cda66e040e}} 
 \index{QCPCurve@{QCPCurve}!lineStyle@{lineStyle}}
 \index{lineStyle@{lineStyle}!QCPCurve@{QCPCurve}}
 \doxysubsubsection{\texorpdfstring{lineStyle()}{lineStyle()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_curve_a2710e9f79302152cff794c6e16cc01f1}{Line\+Style}} QCPCurve\+::line\+Style (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05318}{5318}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_curve_af5df2560b30333fe662ec676bd355415}\label{class_q_c_p_curve_af5df2560b30333fe662ec676bd355415}} 
 \index{QCPCurve@{QCPCurve}!mayTraverse@{mayTraverse}}
@@ -628,11 +744,19 @@ Implements \mbox{\hyperlink{class_q_c_p_abstract_plottable_a4de773988b21ed090fdd
 \doxysubsubsection{\texorpdfstring{mayTraverse()}{mayTraverse()}}
 {\footnotesize\ttfamily bool QCPCurve\+::may\+Traverse (\begin{DoxyParamCaption}\item[{int}]{prev\+Region,  }\item[{int}]{current\+Region }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l22739}{22739}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_curve_aa2c9c9c0e57f11f18a5cb7e47927157c}\label{class_q_c_p_curve_aa2c9c9c0e57f11f18a5cb7e47927157c}} 
 \index{QCPCurve@{QCPCurve}!pointDistance@{pointDistance}}
 \index{pointDistance@{pointDistance}!QCPCurve@{QCPCurve}}
 \doxysubsubsection{\texorpdfstring{pointDistance()}{pointDistance()}}
-{\footnotesize\ttfamily double QCPCurve\+::point\+Distance (\begin{DoxyParamCaption}\item[{const QPointF \&}]{pixel\+Point,  }\item[{\mbox{\hyperlink{class_q_c_p_data_container_ae40a91f5cb0bcac61d727427449b7d15}{QCPCurve\+Data\+Container\+::const\+\_\+iterator}} \&}]{closest\+Data }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily double QCPCurve\+::point\+Distance (\begin{DoxyParamCaption}\item[{const QPointF \&}]{pixel\+Point,  }\item[{QCPCurve\+Data\+Container\+::const\+\_\+iterator \&}]{closest\+Data }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l23051}{23051}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_curve_a09b33217172aedf6c62c441b4ff66166}\label{class_q_c_p_curve_a09b33217172aedf6c62c441b4ff66166}} 
 \index{QCPCurve@{QCPCurve}!scatterSkip@{scatterSkip}}
@@ -640,11 +764,19 @@ Implements \mbox{\hyperlink{class_q_c_p_abstract_plottable_a4de773988b21ed090fdd
 \doxysubsubsection{\texorpdfstring{scatterSkip()}{scatterSkip()}}
 {\footnotesize\ttfamily int QCPCurve\+::scatter\+Skip (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05317}{5317}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_curve_afa6bd72a3a331a5ed45d3e0c5843b592}\label{class_q_c_p_curve_afa6bd72a3a331a5ed45d3e0c5843b592}} 
 \index{QCPCurve@{QCPCurve}!scatterStyle@{scatterStyle}}
 \index{scatterStyle@{scatterStyle}!QCPCurve@{QCPCurve}}
 \doxysubsubsection{\texorpdfstring{scatterStyle()}{scatterStyle()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_scatter_style}{QCPScatter\+Style}} QCPCurve\+::scatter\+Style (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05316}{5316}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_curve_a0ed9b7e6b4bc72010d6fcd974af46a8b}\label{class_q_c_p_curve_a0ed9b7e6b4bc72010d6fcd974af46a8b}} 
 \index{QCPCurve@{QCPCurve}!selectTest@{selectTest}}
@@ -657,6 +789,10 @@ Implements a point-\/selection algorithm assuming the data (accessed via the 1D 
 \textbackslash{}seebaseclassmethod 
 
 Reimplemented from \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a4611b43bcb6441b2154eb4f4e0a33db2}{QCPAbstract\+Plottable1\+D$<$ QCPCurve\+Data $>$}}.
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l22018}{22018}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_curve_a9d3245d43304226e013240c94802f7f6}\label{class_q_c_p_curve_a9d3245d43304226e013240c94802f7f6}} 
 \index{QCPCurve@{QCPCurve}!setData@{setData}}
@@ -673,6 +809,18 @@ The t parameter of each data point will be set to the integer index of the respe
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_curve_a73edf394b94f3f24f07518e30565a07f}{add\+Data}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l21873}{21873}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{class_q_c_p_curve_a9d3245d43304226e013240c94802f7f6_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_curve_a0768af2c33c8dcffa3cf5bdeb53923a6}\label{class_q_c_p_curve_a0768af2c33c8dcffa3cf5bdeb53923a6}} 
 \index{QCPCurve@{QCPCurve}!setData@{setData}}
 \index{setData@{setData}!QCPCurve@{QCPCurve}}
@@ -688,11 +836,23 @@ If you can guarantee that the passed data points are sorted by {\itshape t} in a
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_curve_a73edf394b94f3f24f07518e30565a07f}{add\+Data}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l21855}{21855}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{class_q_c_p_curve_a0768af2c33c8dcffa3cf5bdeb53923a6_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_curve_a41246850d2e080bc57183ca19cd4135e}\label{class_q_c_p_curve_a41246850d2e080bc57183ca19cd4135e}} 
 \index{QCPCurve@{QCPCurve}!setData@{setData}}
 \index{setData@{setData}!QCPCurve@{QCPCurve}}
 \doxysubsubsection{\texorpdfstring{setData()}{setData()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily void QCPCurve\+::set\+Data (\begin{DoxyParamCaption}\item[{QShared\+Pointer$<$ \mbox{\hyperlink{qcustomplot_8h_aaeee80d5664ea91beb9d7968790d0e65}{QCPCurve\+Data\+Container}} $>$}]{data }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void QCPCurve\+::set\+Data (\begin{DoxyParamCaption}\item[{QShared\+Pointer$<$ \mbox{\hyperlink{class_q_c_p_data_container}{QCPCurve\+Data\+Container}} $>$}]{data }\end{DoxyParamCaption})}
 
 This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
 
@@ -713,6 +873,18 @@ If you do not wish to share containers, but create a copy from an existing conta
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_curve_a73edf394b94f3f24f07518e30565a07f}{add\+Data}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l21839}{21839}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=303pt]{class_q_c_p_curve_a41246850d2e080bc57183ca19cd4135e_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_curve_a4a377ec863ff81a1875c3094a6177c19}\label{class_q_c_p_curve_a4a377ec863ff81a1875c3094a6177c19}} 
 \index{QCPCurve@{QCPCurve}!setLineStyle@{setLineStyle}}
 \index{setLineStyle@{setLineStyle}!QCPCurve@{QCPCurve}}
@@ -724,6 +896,18 @@ Sets how the single data points are connected in the plot or how they are repres
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_curve_a55e43b44709bf50a35500644988aa706}{set\+Scatter\+Style}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l21914}{21914}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_curve_a4a377ec863ff81a1875c3094a6177c19_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_curve_a97dbfecd497e972d5f2162615e6da5be}\label{class_q_c_p_curve_a97dbfecd497e972d5f2162615e6da5be}} 
 \index{QCPCurve@{QCPCurve}!setScatterSkip@{setScatterSkip}}
 \index{setScatterSkip@{setScatterSkip}!QCPCurve@{QCPCurve}}
@@ -739,6 +923,18 @@ If {\itshape skip} is set to 0 (default), all scatter points are drawn.
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_curve_a55e43b44709bf50a35500644988aa706}{set\+Scatter\+Style}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l21902}{21902}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_curve_a97dbfecd497e972d5f2162615e6da5be_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_curve_a55e43b44709bf50a35500644988aa706}\label{class_q_c_p_curve_a55e43b44709bf50a35500644988aa706}} 
 \index{QCPCurve@{QCPCurve}!setScatterStyle@{setScatterStyle}}
 \index{setScatterStyle@{setScatterStyle}!QCPCurve@{QCPCurve}}
@@ -752,6 +948,18 @@ Sets the visual appearance of single data points in the plot. If set to \mbox{\h
 \end{DoxySeeAlso}
 
 
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l21886}{21886}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_curve_a55e43b44709bf50a35500644988aa706_icgraph}
+\end{center}
+\end{figure}
+
+
 \doxysubsection{Friends And Related Function Documentation}
 \mbox{\Hypertarget{class_q_c_p_curve_a8429035e7adfbd7f05805a6530ad5e3b}\label{class_q_c_p_curve_a8429035e7adfbd7f05805a6530ad5e3b}} 
 \index{QCPCurve@{QCPCurve}!QCPLegend@{QCPLegend}}
@@ -759,11 +967,19 @@ Sets the visual appearance of single data points in the plot. If set to \mbox{\h
 \doxysubsubsection{\texorpdfstring{QCPLegend}{QCPLegend}}
 {\footnotesize\ttfamily friend class \mbox{\hyperlink{class_q_c_p_legend}{QCPLegend}}\hspace{0.3cm}{\ttfamily [friend]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05365}{5365}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_curve_a1cdf9df76adcfae45261690aa0ca2198}\label{class_q_c_p_curve_a1cdf9df76adcfae45261690aa0ca2198}} 
 \index{QCPCurve@{QCPCurve}!QCustomPlot@{QCustomPlot}}
 \index{QCustomPlot@{QCustomPlot}!QCPCurve@{QCPCurve}}
 \doxysubsubsection{\texorpdfstring{QCustomPlot}{QCustomPlot}}
 {\footnotesize\ttfamily friend class \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05364}{5364}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 
 
@@ -774,11 +990,19 @@ Sets the visual appearance of single data points in the plot. If set to \mbox{\h
 \doxysubsubsection{\texorpdfstring{mLineStyle}{mLineStyle}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_curve_a2710e9f79302152cff794c6e16cc01f1}{Line\+Style}} QCPCurve\+::m\+Line\+Style\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05343}{5343}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_curve_a990bd5fdeb474459f3f6f5ad0a7b945c}\label{class_q_c_p_curve_a990bd5fdeb474459f3f6f5ad0a7b945c}} 
 \index{QCPCurve@{QCPCurve}!mScatterSkip@{mScatterSkip}}
 \index{mScatterSkip@{mScatterSkip}!QCPCurve@{QCPCurve}}
 \doxysubsubsection{\texorpdfstring{mScatterSkip}{mScatterSkip}}
 {\footnotesize\ttfamily int QCPCurve\+::m\+Scatter\+Skip\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05342}{5342}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_curve_a08f803b4a30b01bbd7a1eab15d0f864f}\label{class_q_c_p_curve_a08f803b4a30b01bbd7a1eab15d0f864f}} 
 \index{QCPCurve@{QCPCurve}!mScatterStyle@{mScatterStyle}}
@@ -788,7 +1012,11 @@ Sets the visual appearance of single data points in the plot. If set to \mbox{\h
 
 
 
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05341}{5341}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{qcustomplot_8h}{qcustomplot.\+h}}\item 
-\mbox{\hyperlink{qcustomplot_8cpp}{qcustomplot.\+cpp}}\end{DoxyCompactItemize}
+qcustomplot.\+h\item 
+qcustomplot.\+cpp\end{DoxyCompactItemize}

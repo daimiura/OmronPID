@@ -1,0 +1,162 @@
+.TH "QCPFinancialData" 3 "Wed Mar 15 2023" "OmronPID" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QCPFinancialData \- Holds the data of one single data point for \fBQCPFinancial\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPFinancialData\fP ()"
+.br
+.ti -1c
+.RI "\fBQCPFinancialData\fP (double key, double open, double high, double low, double close)"
+.br
+.ti -1c
+.RI "double \fBsortKey\fP () const"
+.br
+.ti -1c
+.RI "double \fBmainKey\fP () const"
+.br
+.ti -1c
+.RI "double \fBmainValue\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPRange\fP \fBvalueRange\fP () const"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBQCPFinancialData\fP \fBfromSortKey\fP (double \fBsortKey\fP)"
+.br
+.ti -1c
+.RI "static bool \fBsortKeyIsMainKey\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBkey\fP"
+.br
+.ti -1c
+.RI "double \fBopen\fP"
+.br
+.ti -1c
+.RI "double \fBhigh\fP"
+.br
+.ti -1c
+.RI "double \fBlow\fP"
+.br
+.ti -1c
+.RI "double \fBclose\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Holds the data of one single data point for \fBQCPFinancial\fP\&. 
+
+The stored data is: 
+.PD 0
+
+.IP "\(bu" 2
+\fIkey:\fP coordinate on the key axis of this data point (this is the \fImainKey\fP and the \fIsortKey\fP) 
+.IP "\(bu" 2
+\fIopen:\fP The opening value at the data point (this is the \fImainValue\fP) 
+.IP "\(bu" 2
+\fIhigh:\fP The high/maximum value at the data point 
+.IP "\(bu" 2
+\fIlow:\fP The low/minimum value at the data point 
+.IP "\(bu" 2
+\fIclose:\fP The closing value at the data point
+.PP
+The container for storing multiple data points is \fBQCPFinancialDataContainer\fP\&. It is a typedef for \fBQCPDataContainer\fP with \fBQCPFinancialData\fP as the DataType template parameter\&. See the documentation there for an explanation regarding the data type's generic methods\&.
+.PP
+\fBSee also\fP
+.RS 4
+QCPFinancialDataContainer 
+.RE
+.PP
+
+.PP
+Definition at line \fB5816\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QCPFinancialData::QCPFinancialData ()"
+Constructs a data point with key and all values set to zero\&. 
+.PP
+Definition at line \fB26136\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QCPFinancialData::QCPFinancialData (double key, double open, double high, double low, double close)"
+Constructs a data point with the specified \fIkey\fP and OHLC values\&. 
+.PP
+Definition at line \fB26148\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "static \fBQCPFinancialData\fP QCPFinancialData::fromSortKey (double sortKey)\fC [inline]\fP, \fC [static]\fP"
+Returns a data point with the specified \fIsortKey\fP\&. All other members are set to zero\&.
+.PP
+For a general explanation of what this method is good for in the context of the data container, see the documentation of \fBQCPDataContainer\fP\&. 
+.PP
+Definition at line \fB5823\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double QCPFinancialData::mainKey () const\fC [inline]\fP"
+Returns the \fIkey\fP member of this data point\&.
+.PP
+For a general explanation of what this method is good for in the context of the data container, see the documentation of \fBQCPDataContainer\fP\&. 
+.PP
+Definition at line \fB5826\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double QCPFinancialData::mainValue () const\fC [inline]\fP"
+Returns the \fIopen\fP member of this data point\&.
+.PP
+For a general explanation of what this method is good for in the context of the data container, see the documentation of \fBQCPDataContainer\fP\&. 
+.PP
+Definition at line \fB5827\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double QCPFinancialData::sortKey () const\fC [inline]\fP"
+Returns the \fIkey\fP member of this data point\&.
+.PP
+For a general explanation of what this method is good for in the context of the data container, see the documentation of \fBQCPDataContainer\fP\&. 
+.PP
+Definition at line \fB5822\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "static static bool QCPFinancialData::sortKeyIsMainKey ()\fC [inline]\fP, \fC [static]\fP"
+Since the member \fIkey\fP is both the data point key coordinate and the data ordering parameter, this method returns true\&.
+.PP
+For a general explanation of what this method is good for in the context of the data container, see the documentation of \fBQCPDataContainer\fP\&. 
+.PP
+Definition at line \fB5824\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBQCPRange\fP QCPFinancialData::valueRange () const\fC [inline]\fP"
+Returns a \fBQCPRange\fP spanning from the \fIlow\fP to the \fIhigh\fP value of this data point\&.
+.PP
+For a general explanation of what this method is good for in the context of the data container, see the documentation of \fBQCPDataContainer\fP\&. 
+.PP
+Definition at line \fB5829\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "double QCPFinancialData::close"
+
+.PP
+Definition at line \fB5831\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double QCPFinancialData::high"
+
+.PP
+Definition at line \fB5831\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double QCPFinancialData::key"
+
+.PP
+Definition at line \fB5831\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double QCPFinancialData::low"
+
+.PP
+Definition at line \fB5831\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double QCPFinancialData::open"
+
+.PP
+Definition at line \fB5831\fP of file \fBqcustomplot\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for OmronPID from the source code\&.

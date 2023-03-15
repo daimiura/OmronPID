@@ -1,0 +1,230 @@
+.TH "QCPAxisTickerFixed" 3 "Wed Mar 15 2023" "OmronPID" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QCPAxisTickerFixed \- Specialized axis ticker with a fixed tick step\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBQCPAxisTicker\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBScaleStrategy\fP { \fBssNone\fP, \fBssMultiples\fP, \fBssPowers\fP }"
+.br
+.in -1c
+
+Public Types inherited from \fBQCPAxisTicker\fP
+.in +1c
+.ti -1c
+.RI "enum \fBTickStepStrategy\fP { \fBtssReadability\fP, \fBtssMeetTickCount\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPAxisTickerFixed\fP ()"
+.br
+.ti -1c
+.RI "double \fBtickStep\fP () const"
+.br
+.ti -1c
+.RI "\fBScaleStrategy\fP \fBscaleStrategy\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetTickStep\fP (double step)"
+.br
+.ti -1c
+.RI "void \fBsetScaleStrategy\fP (\fBScaleStrategy\fP strategy)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBQCPAxisTicker\fP
+.in +1c
+.ti -1c
+.RI "\fBQCPAxisTicker\fP ()"
+.br
+.ti -1c
+.RI "\fBTickStepStrategy\fP \fBtickStepStrategy\fP () const"
+.br
+.ti -1c
+.RI "int \fBtickCount\fP () const"
+.br
+.ti -1c
+.RI "double \fBtickOrigin\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetTickStepStrategy\fP (\fBTickStepStrategy\fP strategy)"
+.br
+.ti -1c
+.RI "void \fBsetTickCount\fP (int count)"
+.br
+.ti -1c
+.RI "void \fBsetTickOrigin\fP (double origin)"
+.br
+.ti -1c
+.RI "virtual void \fBgenerate\fP (const \fBQCPRange\fP &range, const QLocale &locale, QChar formatChar, int precision, QVector< double > &ticks, QVector< double > *subTicks, QVector< QString > *tickLabels)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual double \fBgetTickStep\fP (const \fBQCPRange\fP &range) Q_DECL_OVERRIDE"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBQCPAxisTicker\fP
+.in +1c
+.ti -1c
+.RI "virtual double \fBgetTickStep\fP (const \fBQCPRange\fP &range)"
+.br
+.ti -1c
+.RI "virtual int \fBgetSubTickCount\fP (double tickStep)"
+.br
+.ti -1c
+.RI "virtual QString \fBgetTickLabel\fP (double tick, const QLocale &locale, QChar formatChar, int precision)"
+.br
+.ti -1c
+.RI "virtual QVector< double > \fBcreateTickVector\fP (double tickStep, const \fBQCPRange\fP &range)"
+.br
+.ti -1c
+.RI "virtual QVector< double > \fBcreateSubTickVector\fP (int subTickCount, const QVector< double > &ticks)"
+.br
+.ti -1c
+.RI "virtual QVector< QString > \fBcreateLabelVector\fP (const QVector< double > &ticks, const QLocale &locale, QChar formatChar, int precision)"
+.br
+.ti -1c
+.RI "void \fBtrimTicks\fP (const \fBQCPRange\fP &range, QVector< double > &ticks, bool keepOneOutlier) const"
+.br
+.ti -1c
+.RI "double \fBpickClosest\fP (double target, const QVector< double > &candidates) const"
+.br
+.ti -1c
+.RI "double \fBgetMantissa\fP (double input, double *magnitude=0) const"
+.br
+.ti -1c
+.RI "double \fBcleanMantissa\fP (double input) const"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBmTickStep\fP"
+.br
+.ti -1c
+.RI "\fBScaleStrategy\fP \fBmScaleStrategy\fP"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBQCPAxisTicker\fP
+.in +1c
+.ti -1c
+.RI "\fBTickStepStrategy\fP \fBmTickStepStrategy\fP"
+.br
+.ti -1c
+.RI "int \fBmTickCount\fP"
+.br
+.ti -1c
+.RI "double \fBmTickOrigin\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Specialized axis ticker with a fixed tick step\&. 
+
+
+.PP
+This \fBQCPAxisTicker\fP subclass generates ticks with a fixed tick step set with \fBsetTickStep\fP\&. It is also possible to allow integer multiples and integer powers of the specified tick step with \fBsetScaleStrategy\fP\&.
+.PP
+A typical application of this ticker is to make an axis only display integers, by setting the tick step of the ticker to 1\&.0 and the scale strategy to \fBssMultiples\fP\&.
+.PP
+Another case is when a certain number has a special meaning and axis ticks should only appear at multiples of that value\&. In this case you might also want to consider \fBQCPAxisTickerPi\fP because despite the name it is not limited to only pi symbols/values\&.
+.PP
+The ticker can be created and assigned to an axis like this: 
+.PP
+.nf
+
+.fi
+.PP
+ 
+.PP
+Definition at line \fB1687\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBQCPAxisTickerFixed::ScaleStrategy\fP"
+Defines how the axis ticker may modify the specified tick step (\fBsetTickStep\fP) in order to control the number of ticks in the axis range\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetScaleStrategy\fP 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIssNone \fP\fP
+Modifications are not allowed, the specified tick step is absolutely fixed\&. This might cause a high tick density and overlapping labels if the axis range is zoomed out\&. 
+.TP
+\fB\fIssMultiples \fP\fP
+An integer multiple of the specified tick step is allowed\&. The used factor follows the base class properties of \fBsetTickStepStrategy\fP and \fBsetTickCount\fP\&. 
+.TP
+\fB\fIssPowers \fP\fP
+An integer power of the specified tick step is allowed\&. 
+.PP
+Definition at line \fB1697\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QCPAxisTickerFixed::QCPAxisTickerFixed ()"
+Constructs the ticker and sets reasonable default values\&. Axis tickers are commonly created managed by a QSharedPointer, which then can be passed to \fBQCPAxis::setTicker\fP\&. 
+.PP
+Definition at line \fB6422\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "double QCPAxisTickerFixed::getTickStep (const \fBQCPRange\fP & range)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBQCPAxisTicker\fP\&.
+.PP
+Definition at line \fB6467\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "\fBScaleStrategy\fP QCPAxisTickerFixed::scaleStrategy () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB1707\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "void QCPAxisTickerFixed::setScaleStrategy (\fBQCPAxisTickerFixed::ScaleStrategy\fP strategy)"
+Sets whether the specified tick step (\fBsetTickStep\fP) is absolutely fixed or whether modifications may be applied to it before calculating the finally used tick step, such as permitting multiples or powers\&. See \fBScaleStrategy\fP for details\&.
+.PP
+The default strategy is \fBssNone\fP, which means the tick step is absolutely fixed\&. 
+.PP
+Definition at line \fB6452\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPAxisTickerFixed::setTickStep (double step)"
+Sets the fixed tick interval to \fIstep\fP\&.
+.PP
+The axis ticker will only use this tick step when generating axis ticks\&. This might cause a very high tick density and overlapping labels if the axis range is zoomed out\&. Using \fBsetScaleStrategy\fP it is possible to relax the fixed step and also allow multiples or powers of \fIstep\fP\&. This will enable the ticker to reduce the number of ticks to a reasonable amount (see \fBsetTickCount\fP)\&. 
+.PP
+Definition at line \fB6437\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "double QCPAxisTickerFixed::tickStep () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB1706\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBScaleStrategy\fP QCPAxisTickerFixed::mScaleStrategy\fC [protected]\fP"
+
+.PP
+Definition at line \fB1716\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double QCPAxisTickerFixed::mTickStep\fC [protected]\fP"
+
+.PP
+Definition at line \fB1715\fP of file \fBqcustomplot\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for OmronPID from the source code\&.

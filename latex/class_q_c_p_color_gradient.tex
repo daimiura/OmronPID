@@ -5,10 +5,6 @@
 Defines a color gradient for use with e.\+g. \mbox{\hyperlink{class_q_c_p_color_map}{QCPColor\+Map}}.  
 
 
-
-
-{\ttfamily \#include $<$qcustomplot.\+h$>$}
-
 \doxysubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
@@ -54,9 +50,9 @@ bool \mbox{\hyperlink{class_q_c_p_color_gradient_a22a1d2b17f203caf0dcec833507fb9
 \item 
 void \mbox{\hyperlink{class_q_c_p_color_gradient_a18da587eb4f7fc788ea28ba15b6a12de}{set\+Level\+Count}} (int n)
 \item 
-void \mbox{\hyperlink{class_q_c_p_color_gradient_a724e828aa6f0ba5011a9392477c35d3a}{set\+Color\+Stops}} (const QMap$<$ double, QColor $>$ \&\mbox{\hyperlink{class_q_c_p_color_gradient_a62e423a8012169dfe1234df1f7463bd1}{color\+Stops}})
+void \mbox{\hyperlink{class_q_c_p_color_gradient_a724e828aa6f0ba5011a9392477c35d3a}{set\+Color\+Stops}} (const QMap$<$ double, QColor $>$ \&color\+Stops)
 \item 
-void \mbox{\hyperlink{class_q_c_p_color_gradient_a3b48be5e78079db1bb2a1188a4c3390e}{set\+Color\+Stop\+At}} (double position, const QColor \&\mbox{\hyperlink{class_q_c_p_color_gradient_a0599545c859268b025d2060dea741cea}{color}})
+void \mbox{\hyperlink{class_q_c_p_color_gradient_a3b48be5e78079db1bb2a1188a4c3390e}{set\+Color\+Stop\+At}} (double position, const QColor \&color)
 \item 
 void \mbox{\hyperlink{class_q_c_p_color_gradient_aa13fda86406e1d896a465a409ae63b38}{set\+Color\+Interpolation}} (\mbox{\hyperlink{class_q_c_p_color_gradient_ac5dca17cc24336e6ca176610e7f77fc1}{Color\+Interpolation}} interpolation)
 \item 
@@ -117,6 +113,10 @@ The \mbox{\hyperlink{class_q_c_p_color_gradient_a4e570b4004fd60bd135e52d685ed2b6
 
 The total number of levels used in the gradient can be set with \mbox{\hyperlink{class_q_c_p_color_gradient_a18da587eb4f7fc788ea28ba15b6a12de}{set\+Level\+Count}}. Whether the color gradient shall be applied periodically (wrapping around) to data values that lie outside the data range specified on the plottable instance can be controlled with \mbox{\hyperlink{class_q_c_p_color_gradient_a39d6448155fc00a219f239220d14bb39}{set\+Periodic}}. 
 
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l04430}{4430}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+
+
 \doxysubsection{Member Enumeration Documentation}
 \mbox{\Hypertarget{class_q_c_p_color_gradient_ac5dca17cc24336e6ca176610e7f77fc1}\label{class_q_c_p_color_gradient_ac5dca17cc24336e6ca176610e7f77fc1}} 
 \index{QCPColorGradient@{QCPColorGradient}!ColorInterpolation@{ColorInterpolation}}
@@ -139,6 +139,10 @@ ci\+HSV&Color channels hue, saturation and value are linearly interpolated (The 
 \hline
 
 \end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l04439}{4439}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_color_gradient_aed6569828fee337023670272910c9072}\label{class_q_c_p_color_gradient_aed6569828fee337023670272910c9072}} 
 \index{QCPColorGradient@{QCPColorGradient}!GradientPreset@{GradientPreset}}
 \index{GradientPreset@{GradientPreset}!QCPColorGradient@{QCPColorGradient}}
@@ -197,6 +201,10 @@ gp\+Hues&Full hue cycle, with highest and lowest color red (suitable for periodi
 \end{DoxyEnumFields}
 
 
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l04448}{4448}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_q_c_p_color_gradient_a96bcc490ff9dc32b22941ce00800bce0}\label{class_q_c_p_color_gradient_a96bcc490ff9dc32b22941ce00800bce0}} 
 \index{QCPColorGradient@{QCPColorGradient}!QCPColorGradient@{QCPColorGradient}}
@@ -206,7 +214,11 @@ gp\+Hues&Full hue cycle, with highest and lowest color red (suitable for periodi
 
 Constructs a new, empty \mbox{\hyperlink{class_q_c_p_color_gradient}{QCPColor\+Gradient}} with no predefined color stops. You can add own color stops with \mbox{\hyperlink{class_q_c_p_color_gradient_a3b48be5e78079db1bb2a1188a4c3390e}{set\+Color\+Stop\+At}}.
 
-The color level count is initialized to 350. \mbox{\Hypertarget{class_q_c_p_color_gradient_a4e570b4004fd60bd135e52d685ed2b66}\label{class_q_c_p_color_gradient_a4e570b4004fd60bd135e52d685ed2b66}} 
+The color level count is initialized to 350. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l15763}{15763}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+\mbox{\Hypertarget{class_q_c_p_color_gradient_a4e570b4004fd60bd135e52d685ed2b66}\label{class_q_c_p_color_gradient_a4e570b4004fd60bd135e52d685ed2b66}} 
 \index{QCPColorGradient@{QCPColorGradient}!QCPColorGradient@{QCPColorGradient}}
 \index{QCPColorGradient@{QCPColorGradient}!QCPColorGradient@{QCPColorGradient}}
 \doxysubsubsection{\texorpdfstring{QCPColorGradient()}{QCPColorGradient()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
@@ -215,6 +227,18 @@ The color level count is initialized to 350. \mbox{\Hypertarget{class_q_c_p_colo
 Constructs a new \mbox{\hyperlink{class_q_c_p_color_gradient}{QCPColor\+Gradient}} initialized with the colors and color interpolation according to {\itshape preset}.
 
 The color level count is initialized to 350. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l15778}{15778}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_color_gradient_a4e570b4004fd60bd135e52d685ed2b66_cgraph}
+\end{center}
+\end{figure}
+
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_q_c_p_color_gradient_a939213e85f0d1279519d555c5fcfb6ad}\label{class_q_c_p_color_gradient_a939213e85f0d1279519d555c5fcfb6ad}} 
@@ -228,17 +252,37 @@ Clears all color stops.
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_color_gradient_a724e828aa6f0ba5011a9392477c35d3a}{set\+Color\+Stops}}, \mbox{\hyperlink{class_q_c_p_color_gradient_a3b48be5e78079db1bb2a1188a4c3390e}{set\+Color\+Stop\+At}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l16230}{16230}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_color_gradient_a939213e85f0d1279519d555c5fcfb6ad_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_color_gradient_a0599545c859268b025d2060dea741cea}\label{class_q_c_p_color_gradient_a0599545c859268b025d2060dea741cea}} 
 \index{QCPColorGradient@{QCPColorGradient}!color@{color}}
 \index{color@{color}!QCPColorGradient@{QCPColorGradient}}
 \doxysubsubsection{\texorpdfstring{color()}{color()}}
 {\footnotesize\ttfamily QRgb QCPColor\+Gradient\+::color (\begin{DoxyParamCaption}\item[{double}]{position,  }\item[{const \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \&}]{range,  }\item[{bool}]{logarithmic = {\ttfamily false} }\end{DoxyParamCaption})}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l16089}{16089}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_color_gradient_abad5002858db8cf75ecb045200881de6}\label{class_q_c_p_color_gradient_abad5002858db8cf75ecb045200881de6}} 
 \index{QCPColorGradient@{QCPColorGradient}!colorInterpolation@{colorInterpolation}}
 \index{colorInterpolation@{colorInterpolation}!QCPColorGradient@{QCPColorGradient}}
 \doxysubsubsection{\texorpdfstring{colorInterpolation()}{colorInterpolation()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_color_gradient_ac5dca17cc24336e6ca176610e7f77fc1}{Color\+Interpolation}} QCPColor\+Gradient\+::color\+Interpolation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l04471}{4471}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_color_gradient_aaf423ceb943e177b0ed2c48c811d83dc}\label{class_q_c_p_color_gradient_aaf423ceb943e177b0ed2c48c811d83dc}} 
 \index{QCPColorGradient@{QCPColorGradient}!colorize@{colorize}}
@@ -254,7 +298,19 @@ if {\itshape data} actually contains 2D-\/data linearized via {\ttfamily \mbox{[
 
 Use the overloaded method to additionally provide alpha map data.
 
-The QRgb values that are placed in {\itshape scan\+Line} have their r, g and b components premultiplied with alpha (see QImage\+::\+Format\+\_\+\+ARGB32\+\_\+\+Premultiplied). \mbox{\Hypertarget{class_q_c_p_color_gradient_acf0cc7fba83ef21f7b8d5d5258519db3}\label{class_q_c_p_color_gradient_acf0cc7fba83ef21f7b8d5d5258519db3}} 
+The QRgb values that are placed in {\itshape scan\+Line} have their r, g and b components premultiplied with alpha (see QImage\+::\+Format\+\_\+\+ARGB32\+\_\+\+Premultiplied). 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l15900}{15900}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{class_q_c_p_color_gradient_aaf423ceb943e177b0ed2c48c811d83dc_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_color_gradient_acf0cc7fba83ef21f7b8d5d5258519db3}\label{class_q_c_p_color_gradient_acf0cc7fba83ef21f7b8d5d5258519db3}} 
 \index{QCPColorGradient@{QCPColorGradient}!colorize@{colorize}}
 \index{colorize@{colorize}!QCPColorGradient@{QCPColorGradient}}
 \doxysubsubsection{\texorpdfstring{colorize()}{colorize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
@@ -264,11 +320,27 @@ This is an overloaded member function, provided for convenience. It differs from
 
 Additionally to the other overload of \mbox{\hyperlink{class_q_c_p_color_gradient_aaf423ceb943e177b0ed2c48c811d83dc}{colorize}}, this method takes the array {\itshape alpha}, which has the same size and structure as {\itshape data} and encodes the alpha information per data point.
 
-The QRgb values that are placed in {\itshape scan\+Line} have their r, g and b components premultiplied with alpha (see QImage\+::\+Format\+\_\+\+ARGB32\+\_\+\+Premultiplied). \mbox{\Hypertarget{class_q_c_p_color_gradient_a62e423a8012169dfe1234df1f7463bd1}\label{class_q_c_p_color_gradient_a62e423a8012169dfe1234df1f7463bd1}} 
+The QRgb values that are placed in {\itshape scan\+Line} have their r, g and b components premultiplied with alpha (see QImage\+::\+Format\+\_\+\+ARGB32\+\_\+\+Premultiplied). 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l15974}{15974}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{class_q_c_p_color_gradient_acf0cc7fba83ef21f7b8d5d5258519db3_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_color_gradient_a62e423a8012169dfe1234df1f7463bd1}\label{class_q_c_p_color_gradient_a62e423a8012169dfe1234df1f7463bd1}} 
 \index{QCPColorGradient@{QCPColorGradient}!colorStops@{colorStops}}
 \index{colorStops@{colorStops}!QCPColorGradient@{QCPColorGradient}}
 \doxysubsubsection{\texorpdfstring{colorStops()}{colorStops()}}
 {\footnotesize\ttfamily QMap$<$ double, QColor $>$ QCPColor\+Gradient\+::color\+Stops (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l04470}{4470}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_color_gradient_a9f72f501de429829ec446333316decda}\label{class_q_c_p_color_gradient_a9f72f501de429829ec446333316decda}} 
 \index{QCPColorGradient@{QCPColorGradient}!inverted@{inverted}}
@@ -281,11 +353,27 @@ Returns an inverted gradient. The inverted gradient has all properties as this \
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_color_gradient_a724e828aa6f0ba5011a9392477c35d3a}{set\+Color\+Stops}}, \mbox{\hyperlink{class_q_c_p_color_gradient_a3b48be5e78079db1bb2a1188a4c3390e}{set\+Color\+Stop\+At}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l16242}{16242}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_color_gradient_a9f72f501de429829ec446333316decda_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_color_gradient_ac4b9d7034fc3b6c76318b05075367090}\label{class_q_c_p_color_gradient_ac4b9d7034fc3b6c76318b05075367090}} 
 \index{QCPColorGradient@{QCPColorGradient}!levelCount@{levelCount}}
 \index{levelCount@{levelCount}!QCPColorGradient@{QCPColorGradient}}
 \doxysubsubsection{\texorpdfstring{levelCount()}{levelCount()}}
 {\footnotesize\ttfamily int QCPColor\+Gradient\+::level\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l04469}{4469}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_color_gradient_aa0aeec1528241728b9671bf8e60b1622}\label{class_q_c_p_color_gradient_aa0aeec1528241728b9671bf8e60b1622}} 
 \index{QCPColorGradient@{QCPColorGradient}!loadPreset@{loadPreset}}
@@ -295,11 +383,35 @@ Returns an inverted gradient. The inverted gradient has all properties as this \
 
 Clears the current color stops and loads the specified {\itshape preset}. A preset consists of predefined color stops and the corresponding color interpolation method.
 
-The available presets are\+:  \mbox{\Hypertarget{class_q_c_p_color_gradient_ad26a10e3beaef4fc6f2553d1a9756087}\label{class_q_c_p_color_gradient_ad26a10e3beaef4fc6f2553d1a9756087}} 
+The available presets are\+:  
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l16121}{16121}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_color_gradient_aa0aeec1528241728b9671bf8e60b1622_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_color_gradient_aa0aeec1528241728b9671bf8e60b1622_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_color_gradient_ad26a10e3beaef4fc6f2553d1a9756087}\label{class_q_c_p_color_gradient_ad26a10e3beaef4fc6f2553d1a9756087}} 
 \index{QCPColorGradient@{QCPColorGradient}!operator"!=@{operator"!=}}
 \index{operator"!=@{operator"!=}!QCPColorGradient@{QCPColorGradient}}
 \doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
 {\footnotesize\ttfamily bool QCPColor\+Gradient\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_c_p_color_gradient}{QCPColor\+Gradient}} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l04466}{4466}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_color_gradient_a7f3478c33c59aa3c03b9ea1f809877fa}\label{class_q_c_p_color_gradient_a7f3478c33c59aa3c03b9ea1f809877fa}} 
 \index{QCPColorGradient@{QCPColorGradient}!operator==@{operator==}}
@@ -307,11 +419,19 @@ The available presets are\+:  \mbox{\Hypertarget{class_q_c_p_color_gradient_ad26
 \doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
 {\footnotesize\ttfamily bool QCPColor\+Gradient\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_c_p_color_gradient}{QCPColor\+Gradient}} \&}]{other }\end{DoxyParamCaption}) const}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l15789}{15789}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_color_gradient_a22a1d2b17f203caf0dcec833507fb9e0}\label{class_q_c_p_color_gradient_a22a1d2b17f203caf0dcec833507fb9e0}} 
 \index{QCPColorGradient@{QCPColorGradient}!periodic@{periodic}}
 \index{periodic@{periodic}!QCPColorGradient@{QCPColorGradient}}
 \doxysubsubsection{\texorpdfstring{periodic()}{periodic()}}
 {\footnotesize\ttfamily bool QCPColor\+Gradient\+::periodic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l04472}{4472}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_color_gradient_aa13fda86406e1d896a465a409ae63b38}\label{class_q_c_p_color_gradient_aa13fda86406e1d896a465a409ae63b38}} 
 \index{QCPColorGradient@{QCPColorGradient}!setColorInterpolation@{setColorInterpolation}}
@@ -321,7 +441,19 @@ The available presets are\+:  \mbox{\Hypertarget{class_q_c_p_color_gradient_ad26
 
 Sets whether the colors in between the configured color stops (see \mbox{\hyperlink{class_q_c_p_color_gradient_a3b48be5e78079db1bb2a1188a4c3390e}{set\+Color\+Stop\+At}}) shall be interpolated linearly in RGB or in HSV color space.
 
-For example, a sweep in RGB space from red to green will have a muddy brown intermediate color, whereas in HSV space the intermediate color is yellow. \mbox{\Hypertarget{class_q_c_p_color_gradient_a3b48be5e78079db1bb2a1188a4c3390e}\label{class_q_c_p_color_gradient_a3b48be5e78079db1bb2a1188a4c3390e}} 
+For example, a sweep in RGB space from red to green will have a muddy brown intermediate color, whereas in HSV space the intermediate color is yellow. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l15853}{15853}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_color_gradient_aa13fda86406e1d896a465a409ae63b38_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_color_gradient_a3b48be5e78079db1bb2a1188a4c3390e}\label{class_q_c_p_color_gradient_a3b48be5e78079db1bb2a1188a4c3390e}} 
 \index{QCPColorGradient@{QCPColorGradient}!setColorStopAt@{setColorStopAt}}
 \index{setColorStopAt@{setColorStopAt}!QCPColorGradient@{QCPColorGradient}}
 \doxysubsubsection{\texorpdfstring{setColorStopAt()}{setColorStopAt()}}
@@ -332,6 +464,18 @@ Sets the {\itshape color} the gradient will have at the specified {\itshape posi
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_color_gradient_a724e828aa6f0ba5011a9392477c35d3a}{set\+Color\+Stops}}, \mbox{\hyperlink{class_q_c_p_color_gradient_a939213e85f0d1279519d555c5fcfb6ad}{clear\+Color\+Stops}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l15840}{15840}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_color_gradient_a3b48be5e78079db1bb2a1188a4c3390e_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_color_gradient_a724e828aa6f0ba5011a9392477c35d3a}\label{class_q_c_p_color_gradient_a724e828aa6f0ba5011a9392477c35d3a}} 
 \index{QCPColorGradient@{QCPColorGradient}!setColorStops@{setColorStops}}
 \index{setColorStops@{setColorStops}!QCPColorGradient@{QCPColorGradient}}
@@ -345,6 +489,10 @@ A more convenient way to create a custom gradient may be to clear all color stop
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_color_gradient_a939213e85f0d1279519d555c5fcfb6ad}{clear\+Color\+Stops}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l15828}{15828}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_color_gradient_a18da587eb4f7fc788ea28ba15b6a12de}\label{class_q_c_p_color_gradient_a18da587eb4f7fc788ea28ba15b6a12de}} 
 \index{QCPColorGradient@{QCPColorGradient}!setLevelCount@{setLevelCount}}
 \index{setLevelCount@{setLevelCount}!QCPColorGradient@{QCPColorGradient}}
@@ -353,7 +501,11 @@ A more convenient way to create a custom gradient may be to clear all color stop
 
 Sets the number of discretization levels of the color gradient to {\itshape n}. The default is 350 which is typically enough to create a smooth appearance. The minimum number of levels is 2.
 
- \mbox{\Hypertarget{class_q_c_p_color_gradient_a39d6448155fc00a219f239220d14bb39}\label{class_q_c_p_color_gradient_a39d6448155fc00a219f239220d14bb39}} 
+ 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l15803}{15803}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+\mbox{\Hypertarget{class_q_c_p_color_gradient_a39d6448155fc00a219f239220d14bb39}\label{class_q_c_p_color_gradient_a39d6448155fc00a219f239220d14bb39}} 
 \index{QCPColorGradient@{QCPColorGradient}!setPeriodic@{setPeriodic}}
 \index{setPeriodic@{setPeriodic}!QCPColorGradient@{QCPColorGradient}}
 \doxysubsubsection{\texorpdfstring{setPeriodic()}{setPeriodic()}}
@@ -365,17 +517,29 @@ Sets whether data points that are outside the configured data range (e.\+g. \mbo
 
 As shown in the image above, gradients that have the same start and end color are especially suitable for a periodic gradient mapping, since they produce smooth color transitions throughout the color map. A preset that has this property is \mbox{\hyperlink{class_q_c_p_color_gradient_aed6569828fee337023670272910c9072a30efe58407acfb67939032f70213a130}{gp\+Hues}}.
 
-In practice, using periodic color gradients makes sense when the data corresponds to a periodic dimension, such as an angle or a phase. If this is not the case, the color encoding might become ambiguous, because multiple different data values are shown as the same color. \mbox{\Hypertarget{class_q_c_p_color_gradient_a137b368ea8829a871974add6e4883c71}\label{class_q_c_p_color_gradient_a137b368ea8829a871974add6e4883c71}} 
+In practice, using periodic color gradients makes sense when the data corresponds to a periodic dimension, such as an angle or a phase. If this is not the case, the color encoding might become ambiguous, because multiple different data values are shown as the same color. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l15877}{15877}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+\mbox{\Hypertarget{class_q_c_p_color_gradient_a137b368ea8829a871974add6e4883c71}\label{class_q_c_p_color_gradient_a137b368ea8829a871974add6e4883c71}} 
 \index{QCPColorGradient@{QCPColorGradient}!stopsUseAlpha@{stopsUseAlpha}}
 \index{stopsUseAlpha@{stopsUseAlpha}!QCPColorGradient@{QCPColorGradient}}
 \doxysubsubsection{\texorpdfstring{stopsUseAlpha()}{stopsUseAlpha()}}
 {\footnotesize\ttfamily bool QCPColor\+Gradient\+::stops\+Use\+Alpha (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l16256}{16256}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_color_gradient_a353f15ab3ab586eebf1f6b58c3e2707b}\label{class_q_c_p_color_gradient_a353f15ab3ab586eebf1f6b58c3e2707b}} 
 \index{QCPColorGradient@{QCPColorGradient}!updateColorBuffer@{updateColorBuffer}}
 \index{updateColorBuffer@{updateColorBuffer}!QCPColorGradient@{QCPColorGradient}}
 \doxysubsubsection{\texorpdfstring{updateColorBuffer()}{updateColorBuffer()}}
 {\footnotesize\ttfamily void QCPColor\+Gradient\+::update\+Color\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l16271}{16271}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 
 
@@ -386,11 +550,19 @@ In practice, using periodic color gradients makes sense when the data correspond
 \doxysubsubsection{\texorpdfstring{mColorBuffer}{mColorBuffer}}
 {\footnotesize\ttfamily QVector$<$QRgb$>$ QCPColor\+Gradient\+::m\+Color\+Buffer\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l04497}{4497}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_color_gradient_abacf55e11f67d6722a687af1bb2687bd}\label{class_q_c_p_color_gradient_abacf55e11f67d6722a687af1bb2687bd}} 
 \index{QCPColorGradient@{QCPColorGradient}!mColorBufferInvalidated@{mColorBufferInvalidated}}
 \index{mColorBufferInvalidated@{mColorBufferInvalidated}!QCPColorGradient@{QCPColorGradient}}
 \doxysubsubsection{\texorpdfstring{mColorBufferInvalidated}{mColorBufferInvalidated}}
 {\footnotesize\ttfamily bool QCPColor\+Gradient\+::m\+Color\+Buffer\+Invalidated\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l04498}{4498}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_color_gradient_a028cef73d863800a9ee93ffd641cce01}\label{class_q_c_p_color_gradient_a028cef73d863800a9ee93ffd641cce01}} 
 \index{QCPColorGradient@{QCPColorGradient}!mColorInterpolation@{mColorInterpolation}}
@@ -398,17 +570,29 @@ In practice, using periodic color gradients makes sense when the data correspond
 \doxysubsubsection{\texorpdfstring{mColorInterpolation}{mColorInterpolation}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_color_gradient_ac5dca17cc24336e6ca176610e7f77fc1}{Color\+Interpolation}} QCPColor\+Gradient\+::m\+Color\+Interpolation\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l04493}{4493}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_color_gradient_a9e11a2b0974ef289d12c324822bc3a3e}\label{class_q_c_p_color_gradient_a9e11a2b0974ef289d12c324822bc3a3e}} 
 \index{QCPColorGradient@{QCPColorGradient}!mColorStops@{mColorStops}}
 \index{mColorStops@{mColorStops}!QCPColorGradient@{QCPColorGradient}}
 \doxysubsubsection{\texorpdfstring{mColorStops}{mColorStops}}
 {\footnotesize\ttfamily QMap$<$double, QColor$>$ QCPColor\+Gradient\+::m\+Color\+Stops\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l04492}{4492}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_color_gradient_a98fb68e359904b2c991fcae3e38a211a}\label{class_q_c_p_color_gradient_a98fb68e359904b2c991fcae3e38a211a}} 
 \index{QCPColorGradient@{QCPColorGradient}!mLevelCount@{mLevelCount}}
 \index{mLevelCount@{mLevelCount}!QCPColorGradient@{QCPColorGradient}}
 \doxysubsubsection{\texorpdfstring{mLevelCount}{mLevelCount}}
 {\footnotesize\ttfamily int QCPColor\+Gradient\+::m\+Level\+Count\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l04491}{4491}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_color_gradient_a4b07deeb20ca1ee2d5ea7e01bf0420af}\label{class_q_c_p_color_gradient_a4b07deeb20ca1ee2d5ea7e01bf0420af}} 
 \index{QCPColorGradient@{QCPColorGradient}!mPeriodic@{mPeriodic}}
@@ -418,7 +602,11 @@ In practice, using periodic color gradients makes sense when the data correspond
 
 
 
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l04494}{4494}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{qcustomplot_8h}{qcustomplot.\+h}}\item 
-\mbox{\hyperlink{qcustomplot_8cpp}{qcustomplot.\+cpp}}\end{DoxyCompactItemize}
+qcustomplot.\+h\item 
+qcustomplot.\+cpp\end{DoxyCompactItemize}

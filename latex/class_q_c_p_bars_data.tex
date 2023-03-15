@@ -5,16 +5,12 @@
 Holds the data of one single data point (one bar) for \mbox{\hyperlink{class_q_c_p_bars}{QCPBars}}.  
 
 
-
-
-{\ttfamily \#include $<$qcustomplot.\+h$>$}
-
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_q_c_p_bars_data_a800794d4c5fea22eeb8bade20798496b}{QCPBars\+Data}} ()
 \item 
-\mbox{\hyperlink{class_q_c_p_bars_data_a4158816a69e2c675885f48afa2b5acc9}{QCPBars\+Data}} (double \mbox{\hyperlink{class_q_c_p_bars_data_a09b492217dc03ee1c0348a2f2e6e0a04}{key}}, double \mbox{\hyperlink{class_q_c_p_bars_data_ab636644fb40630f3b1b72f44d65ec072}{value}})
+\mbox{\hyperlink{class_q_c_p_bars_data_a4158816a69e2c675885f48afa2b5acc9}{QCPBars\+Data}} (double key, double value)
 \item 
 double \mbox{\hyperlink{class_q_c_p_bars_data_a107d22d84f336bf6e3c3ad0133a5d2f6}{sort\+Key}} () const
 \item 
@@ -45,11 +41,15 @@ Holds the data of one single data point (one bar) for \mbox{\hyperlink{class_q_c
 
 The stored data is\+: \begin{DoxyItemize}
 \item {\itshape key\+:} coordinate on the key axis of this bar (this is the {\itshape main\+Key} and the {\itshape sort\+Key}) \item {\itshape value\+:} height coordinate on the value axis of this bar (this is the {\itshape main\+Value})\end{DoxyItemize}
-The container for storing multiple data points is \mbox{\hyperlink{qcustomplot_8h_a52bf589c9fce1baa36c1d40d69785d46}{QCPBars\+Data\+Container}}. It is a typedef for \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}} with \mbox{\hyperlink{class_q_c_p_bars_data}{QCPBars\+Data}} as the Data\+Type template parameter. See the documentation there for an explanation regarding the data type\textquotesingle{}s generic methods.
+The container for storing multiple data points is QCPBars\+Data\+Container. It is a typedef for \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}} with \mbox{\hyperlink{class_q_c_p_bars_data}{QCPBars\+Data}} as the Data\+Type template parameter. See the documentation there for an explanation regarding the data type\textquotesingle{}s generic methods.
 
 \begin{DoxySeeAlso}{See also}
-\mbox{\hyperlink{qcustomplot_8h_a52bf589c9fce1baa36c1d40d69785d46}{QCPBars\+Data\+Container}} 
+QCPBars\+Data\+Container 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05440}{5440}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -59,13 +59,21 @@ The container for storing multiple data points is \mbox{\hyperlink{qcustomplot_8
 \doxysubsubsection{\texorpdfstring{QCPBarsData()}{QCPBarsData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily QCPBars\+Data\+::\+QCPBars\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Constructs a bar data point with key and value set to zero. \mbox{\Hypertarget{class_q_c_p_bars_data_a4158816a69e2c675885f48afa2b5acc9}\label{class_q_c_p_bars_data_a4158816a69e2c675885f48afa2b5acc9}} 
+Constructs a bar data point with key and value set to zero. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l23498}{23498}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+\mbox{\Hypertarget{class_q_c_p_bars_data_a4158816a69e2c675885f48afa2b5acc9}\label{class_q_c_p_bars_data_a4158816a69e2c675885f48afa2b5acc9}} 
 \index{QCPBarsData@{QCPBarsData}!QCPBarsData@{QCPBarsData}}
 \index{QCPBarsData@{QCPBarsData}!QCPBarsData@{QCPBarsData}}
 \doxysubsubsection{\texorpdfstring{QCPBarsData()}{QCPBarsData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily QCPBars\+Data\+::\+QCPBars\+Data (\begin{DoxyParamCaption}\item[{double}]{key,  }\item[{double}]{value }\end{DoxyParamCaption})}
 
 Constructs a bar data point with the specified {\itshape key} and {\itshape value}. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l23507}{23507}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_q_c_p_bars_data_ad170d4e90498005ec319338910252ba8}\label{class_q_c_p_bars_data_ad170d4e90498005ec319338910252ba8}} 
@@ -76,7 +84,11 @@ Constructs a bar data point with the specified {\itshape key} and {\itshape valu
 
 Returns a data point with the specified {\itshape sort\+Key}. All other members are set to zero.
 
-For a general explanation of what this method is good for in the context of the data container, see the documentation of \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}. \mbox{\Hypertarget{class_q_c_p_bars_data_a8c1d09e63b0e90a6c1fba56ddeaa8964}\label{class_q_c_p_bars_data_a8c1d09e63b0e90a6c1fba56ddeaa8964}} 
+For a general explanation of what this method is good for in the context of the data container, see the documentation of \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05447}{5447}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+\mbox{\Hypertarget{class_q_c_p_bars_data_a8c1d09e63b0e90a6c1fba56ddeaa8964}\label{class_q_c_p_bars_data_a8c1d09e63b0e90a6c1fba56ddeaa8964}} 
 \index{QCPBarsData@{QCPBarsData}!mainKey@{mainKey}}
 \index{mainKey@{mainKey}!QCPBarsData@{QCPBarsData}}
 \doxysubsubsection{\texorpdfstring{mainKey()}{mainKey()}}
@@ -84,7 +96,11 @@ For a general explanation of what this method is good for in the context of the 
 
 Returns the {\itshape key} member of this data point.
 
-For a general explanation of what this method is good for in the context of the data container, see the documentation of \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}. \mbox{\Hypertarget{class_q_c_p_bars_data_a360d975e587f9e84259aaec172efb10b}\label{class_q_c_p_bars_data_a360d975e587f9e84259aaec172efb10b}} 
+For a general explanation of what this method is good for in the context of the data container, see the documentation of \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05450}{5450}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+\mbox{\Hypertarget{class_q_c_p_bars_data_a360d975e587f9e84259aaec172efb10b}\label{class_q_c_p_bars_data_a360d975e587f9e84259aaec172efb10b}} 
 \index{QCPBarsData@{QCPBarsData}!mainValue@{mainValue}}
 \index{mainValue@{mainValue}!QCPBarsData@{QCPBarsData}}
 \doxysubsubsection{\texorpdfstring{mainValue()}{mainValue()}}
@@ -92,7 +108,11 @@ For a general explanation of what this method is good for in the context of the 
 
 Returns the {\itshape value} member of this data point.
 
-For a general explanation of what this method is good for in the context of the data container, see the documentation of \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}. \mbox{\Hypertarget{class_q_c_p_bars_data_a107d22d84f336bf6e3c3ad0133a5d2f6}\label{class_q_c_p_bars_data_a107d22d84f336bf6e3c3ad0133a5d2f6}} 
+For a general explanation of what this method is good for in the context of the data container, see the documentation of \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05451}{5451}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+\mbox{\Hypertarget{class_q_c_p_bars_data_a107d22d84f336bf6e3c3ad0133a5d2f6}\label{class_q_c_p_bars_data_a107d22d84f336bf6e3c3ad0133a5d2f6}} 
 \index{QCPBarsData@{QCPBarsData}!sortKey@{sortKey}}
 \index{sortKey@{sortKey}!QCPBarsData@{QCPBarsData}}
 \doxysubsubsection{\texorpdfstring{sortKey()}{sortKey()}}
@@ -100,7 +120,11 @@ For a general explanation of what this method is good for in the context of the 
 
 Returns the {\itshape key} member of this data point.
 
-For a general explanation of what this method is good for in the context of the data container, see the documentation of \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}. \mbox{\Hypertarget{class_q_c_p_bars_data_aebaabda335bd4c9f81bd585d16b63aa8}\label{class_q_c_p_bars_data_aebaabda335bd4c9f81bd585d16b63aa8}} 
+For a general explanation of what this method is good for in the context of the data container, see the documentation of \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05446}{5446}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+\mbox{\Hypertarget{class_q_c_p_bars_data_aebaabda335bd4c9f81bd585d16b63aa8}\label{class_q_c_p_bars_data_aebaabda335bd4c9f81bd585d16b63aa8}} 
 \index{QCPBarsData@{QCPBarsData}!sortKeyIsMainKey@{sortKeyIsMainKey}}
 \index{sortKeyIsMainKey@{sortKeyIsMainKey}!QCPBarsData@{QCPBarsData}}
 \doxysubsubsection{\texorpdfstring{sortKeyIsMainKey()}{sortKeyIsMainKey()}}
@@ -108,7 +132,11 @@ For a general explanation of what this method is good for in the context of the 
 
 Since the member {\itshape key} is both the data point key coordinate and the data ordering parameter, this method returns true.
 
-For a general explanation of what this method is good for in the context of the data container, see the documentation of \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}. \mbox{\Hypertarget{class_q_c_p_bars_data_acf3e6479dacacd6c81eebe7d4cd62185}\label{class_q_c_p_bars_data_acf3e6479dacacd6c81eebe7d4cd62185}} 
+For a general explanation of what this method is good for in the context of the data container, see the documentation of \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05448}{5448}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+\mbox{\Hypertarget{class_q_c_p_bars_data_acf3e6479dacacd6c81eebe7d4cd62185}\label{class_q_c_p_bars_data_acf3e6479dacacd6c81eebe7d4cd62185}} 
 \index{QCPBarsData@{QCPBarsData}!valueRange@{valueRange}}
 \index{valueRange@{valueRange}!QCPBarsData@{QCPBarsData}}
 \doxysubsubsection{\texorpdfstring{valueRange()}{valueRange()}}
@@ -118,12 +146,20 @@ Returns a \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} with both lower and upp
 
 For a general explanation of what this method is good for in the context of the data container, see the documentation of \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}. 
 
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05453}{5453}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+
+
 \doxysubsection{Member Data Documentation}
 \mbox{\Hypertarget{class_q_c_p_bars_data_a09b492217dc03ee1c0348a2f2e6e0a04}\label{class_q_c_p_bars_data_a09b492217dc03ee1c0348a2f2e6e0a04}} 
 \index{QCPBarsData@{QCPBarsData}!key@{key}}
 \index{key@{key}!QCPBarsData@{QCPBarsData}}
 \doxysubsubsection{\texorpdfstring{key}{key}}
 {\footnotesize\ttfamily double QCPBars\+Data\+::key}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05455}{5455}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_bars_data_ab636644fb40630f3b1b72f44d65ec072}\label{class_q_c_p_bars_data_ab636644fb40630f3b1b72f44d65ec072}} 
 \index{QCPBarsData@{QCPBarsData}!value@{value}}
@@ -133,7 +169,11 @@ For a general explanation of what this method is good for in the context of the 
 
 
 
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05455}{5455}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{qcustomplot_8h}{qcustomplot.\+h}}\item 
-\mbox{\hyperlink{qcustomplot_8cpp}{qcustomplot.\+cpp}}\end{DoxyCompactItemize}
+qcustomplot.\+h\item 
+qcustomplot.\+cpp\end{DoxyCompactItemize}

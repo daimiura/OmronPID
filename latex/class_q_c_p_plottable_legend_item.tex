@@ -7,18 +7,26 @@ A legend item representing a plottable with an icon and the plottable name.
 
 
 
-{\ttfamily \#include $<$qcustomplot.\+h$>$}
-
-Inheritance diagram for QCPPlottable\+Legend\+Item\+:\begin{figure}[H]
+Inheritance diagram for QCPPlottable\+Legend\+Item\+:\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=5.000000cm]{class_q_c_p_plottable_legend_item}
+\includegraphics[width=206pt]{class_q_c_p_plottable_legend_item__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for QCPPlottable\+Legend\+Item\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_plottable_legend_item__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_q_c_p_plottable_legend_item_ac1072591fe409d3dabad51b23ee4d6c5}{QCPPlottable\+Legend\+Item}} (\mbox{\hyperlink{class_q_c_p_legend}{QCPLegend}} $\ast$parent, \mbox{\hyperlink{class_q_c_p_abstract_plottable}{QCPAbstract\+Plottable}} $\ast$\mbox{\hyperlink{class_q_c_p_plottable_legend_item_abeaabdcfd9de2e0020c94321716e36ab}{plottable}})
+\mbox{\hyperlink{class_q_c_p_plottable_legend_item_ac1072591fe409d3dabad51b23ee4d6c5}{QCPPlottable\+Legend\+Item}} (\mbox{\hyperlink{class_q_c_p_legend}{QCPLegend}} $\ast$parent, \mbox{\hyperlink{class_q_c_p_abstract_plottable}{QCPAbstract\+Plottable}} $\ast$plottable)
 \item 
 \mbox{\hyperlink{class_q_c_p_abstract_plottable}{QCPAbstract\+Plottable}} $\ast$ \mbox{\hyperlink{class_q_c_p_plottable_legend_item_abeaabdcfd9de2e0020c94321716e36ab}{plottable}} ()
 \end{DoxyCompactItemize}
@@ -41,26 +49,24 @@ bool \mbox{\hyperlink{class_q_c_p_abstract_legend_item_af054a668038bcd7e35a35a07
 \item 
 bool \mbox{\hyperlink{class_q_c_p_abstract_legend_item_adf427dbb05d5f1a8e84c6abcb05becdf}{selected}} () const
 \item 
-void \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a409c53455d8112f71d70c0c43eb10265}{set\+Font}} (const QFont \&\mbox{\hyperlink{class_q_c_p_abstract_legend_item_a699b18e1d9e70372e51e75f462dbb643}{font}})
+void \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a409c53455d8112f71d70c0c43eb10265}{set\+Font}} (const QFont \&font)
 \item 
 void \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a6ebace6aaffaedcdab2d74e88acc2d1e}{set\+Text\+Color}} (const QColor \&color)
 \item 
-void \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a91db5aee48617a9d3206e61376807365}{set\+Selected\+Font}} (const QFont \&\mbox{\hyperlink{class_q_c_p_abstract_legend_item_a699b18e1d9e70372e51e75f462dbb643}{font}})
+void \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a91db5aee48617a9d3206e61376807365}{set\+Selected\+Font}} (const QFont \&font)
 \item 
 void \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a4d01d008ee1a5bfe9905b0397a421936}{set\+Selected\+Text\+Color}} (const QColor \&color)
 \item 
-Q\+\_\+\+SLOT void \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a9913ef48730551b696e7f98a2391c599}{set\+Selectable}} (bool \mbox{\hyperlink{class_q_c_p_abstract_legend_item_af054a668038bcd7e35a35a07d1e79a23}{selectable}})
+Q\+\_\+\+SLOT void \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a9913ef48730551b696e7f98a2391c599}{set\+Selectable}} (bool selectable)
 \item 
-Q\+\_\+\+SLOT void \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a6eed93b0ab99cb3eabb043fb08179c2b}{set\+Selected}} (bool \mbox{\hyperlink{class_q_c_p_abstract_legend_item_adf427dbb05d5f1a8e84c6abcb05becdf}{selected}})
+Q\+\_\+\+SLOT void \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a6eed93b0ab99cb3eabb043fb08179c2b}{set\+Selected}} (bool selected)
 \item 
-virtual double \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a80ec112a6608fc39dbed56239849b187}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant $\ast$details=0) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual double \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a80ec112a6608fc39dbed56239849b187}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant $\ast$details=0) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_q_c_p_layout_element_a8947f0ada17e672aaba3d424cbbb67e3}{QCPLayout\+Element}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_a36ed5b292b90934b524a4e5866a3526c}{parent\+Plot}}=0)
-\item 
-virtual \mbox{\hyperlink{class_q_c_p_layout_element_a0dc52343920011b3e72d61fc94ed3400}{$\sim$\+QCPLayout\+Element}} ()
+\mbox{\hyperlink{class_q_c_p_layout_element_a8947f0ada17e672aaba3d424cbbb67e3}{QCPLayout\+Element}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$parent\+Plot=0)
 \item 
 \mbox{\hyperlink{class_q_c_p_layout}{QCPLayout}} $\ast$ \mbox{\hyperlink{class_q_c_p_layout_element_a4efdcbde9d28f410e5ef166c9d691deb}{layout}} () const
 \item 
@@ -86,9 +92,9 @@ QHash$<$ \mbox{\hyperlink{namespace_q_c_p_a7e487e3e2ccb62ab7771065bab7cae54}{QCP
 \item 
 void \mbox{\hyperlink{class_q_c_p_layout_element_a38975ea13e36de8e53391ce41d94bc0f}{set\+Outer\+Rect}} (const QRect \&\mbox{\hyperlink{class_q_c_p_layout_element_a208effccfe2cca4a0eaf9393e60f2dd4}{rect}})
 \item 
-void \mbox{\hyperlink{class_q_c_p_layout_element_a8f450b1f3f992ad576fce2c63d8b79cf}{set\+Margins}} (const QMargins \&\mbox{\hyperlink{class_q_c_p_layout_element_af4ac9450aa2d60863bf3a8ea0c940c9d}{margins}})
+void \mbox{\hyperlink{class_q_c_p_layout_element_a8f450b1f3f992ad576fce2c63d8b79cf}{set\+Margins}} (const QMargins \&margins)
 \item 
-void \mbox{\hyperlink{class_q_c_p_layout_element_a0a8a17abc16b7923159fcc7608f94673}{set\+Minimum\+Margins}} (const QMargins \&\mbox{\hyperlink{class_q_c_p_layout_element_af4ac9450aa2d60863bf3a8ea0c940c9d}{margins}})
+void \mbox{\hyperlink{class_q_c_p_layout_element_a0a8a17abc16b7923159fcc7608f94673}{set\+Minimum\+Margins}} (const QMargins \&margins)
 \item 
 void \mbox{\hyperlink{class_q_c_p_layout_element_accfda49994e3e6d51ed14504abf9d27d}{set\+Auto\+Margins}} (QCP\+::\+Margin\+Sides sides)
 \item 
@@ -112,14 +118,12 @@ virtual QSize \mbox{\hyperlink{class_q_c_p_layout_element_ad96efb977a26e360e8a64
 \item 
 virtual QList$<$ \mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}} $\ast$ $>$ \mbox{\hyperlink{class_q_c_p_layout_element_a76dec8cb31e498994a944d7647a43309}{elements}} (bool recursive) const
 \item 
-virtual double \mbox{\hyperlink{class_q_c_p_layout_element_ae97f483cccedadbf18ea4525ef240ee4}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant $\ast$details=0) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual double \mbox{\hyperlink{class_q_c_p_layout_element_ae97f483cccedadbf18ea4525ef240ee4}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant $\ast$details=0) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_q_c_p_layerable_a74c0fa237f29bf0e49565013fc5d1ec0}{QCPLayerable}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$plot, QString target\+Layer=QString(), \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}}=0)
-\item 
-virtual \mbox{\hyperlink{class_q_c_p_layerable_a4231cf5b3601d6d3a5781283e7a9735b}{$\sim$\+QCPLayerable}} ()
 \item 
 bool \mbox{\hyperlink{class_q_c_p_layerable_af0297b944b6192b6d67d00bff41b6b70}{visible}} () const
 \item 
@@ -133,7 +137,7 @@ bool \mbox{\hyperlink{class_q_c_p_layerable_a71cbd212fde2703cee076e204a475709}{a
 \item 
 void \mbox{\hyperlink{class_q_c_p_layerable_a3bed99ddc396b48ce3ebfdc0418744f8}{set\+Visible}} (bool on)
 \item 
-Q\+\_\+\+SLOT bool \mbox{\hyperlink{class_q_c_p_layerable_ab0d0da6d2de45a118886d2c8e16d5a54}{set\+Layer}} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_a9d4e121a7f1d2314f906fe698209cac9}{layer}})
+Q\+\_\+\+SLOT bool \mbox{\hyperlink{class_q_c_p_layerable_ab0d0da6d2de45a118886d2c8e16d5a54}{set\+Layer}} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$layer)
 \item 
 bool \mbox{\hyperlink{class_q_c_p_layerable_ab25a0e7b897993b44447caee0f142083}{set\+Layer}} (const QString \&layer\+Name)
 \item 
@@ -146,9 +150,9 @@ bool \mbox{\hyperlink{class_q_c_p_layerable_ab054e88f15d485defcb95e7376f119e7}{r
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_plottable_legend_item_a5838366619200e99680afa6d355d13fa}{draw}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual void \mbox{\hyperlink{class_q_c_p_plottable_legend_item_a5838366619200e99680afa6d355d13fa}{draw}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual QSize \mbox{\hyperlink{class_q_c_p_plottable_legend_item_a8b543f3ac32b2fe59326e01c1101b3b8}{minimum\+Outer\+Size\+Hint}} () const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual QSize \mbox{\hyperlink{class_q_c_p_plottable_legend_item_a8b543f3ac32b2fe59326e01c1101b3b8}{minimum\+Outer\+Size\+Hint}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
 QPen \mbox{\hyperlink{class_q_c_p_plottable_legend_item_afa81a8bd4434ec249efbbfc2a030a752}{get\+Icon\+Border\+Pen}} () const
 \item 
@@ -159,17 +163,17 @@ QFont \mbox{\hyperlink{class_q_c_p_plottable_legend_item_a77d980f594046226f9ac07
 \doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_q_c_p_abstract_legend_item}{QCPAbstract\+Legend\+Item}}}
 \begin{DoxyCompactItemize}
 \item 
-virtual \mbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037}{QCP\+::\+Interaction}} \mbox{\hyperlink{class_q_c_p_abstract_legend_item_af8eb0fda0e11b0a23e1051b0102c8c6a}{selection\+Category}} () const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual \mbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037}{QCP\+::\+Interaction}} \mbox{\hyperlink{class_q_c_p_abstract_legend_item_af8eb0fda0e11b0a23e1051b0102c8c6a}{selection\+Category}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a6bfbcb9ace779f4f6fe22241c32a67c9}{apply\+Default\+Antialiasing\+Hint}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual void \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a6bfbcb9ace779f4f6fe22241c32a67c9}{apply\+Default\+Antialiasing\+Hint}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual QRect \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a806fa4d0104bdfc141aa8a36fcc9d51c}{clip\+Rect}} () const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual QRect \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a806fa4d0104bdfc141aa8a36fcc9d51c}{clip\+Rect}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a14ce0b09f5b814c765a0d790bd838909}{draw}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}=0
+virtual void \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a14ce0b09f5b814c765a0d790bd838909}{draw}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) Q\+\_\+\+DECL\+\_\+\+OVERRIDE=0
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a0081acfd8c4bb8ac4e9dcfe0f6c49b74}{select\+Event}} (QMouse\+Event $\ast$event, bool additive, const QVariant \&details, bool $\ast$selection\+State\+Changed) \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual void \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a0081acfd8c4bb8ac4e9dcfe0f6c49b74}{select\+Event}} (QMouse\+Event $\ast$event, bool additive, const QVariant \&details, bool $\ast$selection\+State\+Changed) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_abstract_legend_item_aa1c0620558cc8e2a2e6fb7ab558f6097}{deselect\+Event}} (bool $\ast$selection\+State\+Changed) \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual void \mbox{\hyperlink{class_q_c_p_abstract_legend_item_aa1c0620558cc8e2a2e6fb7ab558f6097}{deselect\+Event}} (bool $\ast$selection\+State\+Changed) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}}}
 \begin{DoxyCompactItemize}
@@ -178,24 +182,26 @@ virtual int \mbox{\hyperlink{class_q_c_p_layout_element_a005c9f0fe84bc1591a2cf2c
 \item 
 virtual void \mbox{\hyperlink{class_q_c_p_layout_element_a765f041a73af0c2de41b41a5a03e31a4}{layout\+Changed}} ()
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_layout_element_a0a8f18141bcf46cf40ad4c13324ff346}{apply\+Default\+Antialiasing\+Hint}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual void \mbox{\hyperlink{class_q_c_p_layout_element_a0a8f18141bcf46cf40ad4c13324ff346}{apply\+Default\+Antialiasing\+Hint}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_layout_element_ad1c597b1d608cfdd86e7b76819a94cfb}{draw}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual void \mbox{\hyperlink{class_q_c_p_layout_element_ad1c597b1d608cfdd86e7b76819a94cfb}{draw}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_layout_element_ab4bb5c5a958451f5f153fdce350f13cf}{parent\+Plot\+Initialized}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_a36ed5b292b90934b524a4e5866a3526c}{parent\+Plot}}) \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual void \mbox{\hyperlink{class_q_c_p_layout_element_ab4bb5c5a958451f5f153fdce350f13cf}{parent\+Plot\+Initialized}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$parent\+Plot) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}}
 \begin{DoxyCompactItemize}
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_layerable_ab20b7dbd8e0249ed61adb9622c427382}{parent\+Plot\+Initialized}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_a36ed5b292b90934b524a4e5866a3526c}{parent\+Plot}})
+virtual void \mbox{\hyperlink{class_q_c_p_layerable_ab20b7dbd8e0249ed61adb9622c427382}{parent\+Plot\+Initialized}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$parent\+Plot)
 \item 
 virtual \mbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037}{QCP\+::\+Interaction}} \mbox{\hyperlink{class_q_c_p_layerable_a908c9edda761886f33893be326dab77d}{selection\+Category}} () const
 \item 
 virtual QRect \mbox{\hyperlink{class_q_c_p_layerable_acbcfc9ecc75433747b1978a77b1864b3}{clip\+Rect}} () const
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_layerable_afdf83ddc6a265cbf4c89fe99d3d93473}{apply\+Default\+Antialiasing\+Hint}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) const =0
+\mbox{\Hypertarget{class_q_c_p_layerable_afdf83ddc6a265cbf4c89fe99d3d93473}\label{class_q_c_p_layerable_afdf83ddc6a265cbf4c89fe99d3d93473}} 
+virtual void {\bfseries apply\+Default\+Antialiasing\+Hint} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) const =0
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_layerable_aecf2f7087482d4b6a78cb2770e5ed12d}{draw}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter)=0
+\mbox{\Hypertarget{class_q_c_p_layerable_aecf2f7087482d4b6a78cb2770e5ed12d}\label{class_q_c_p_layerable_aecf2f7087482d4b6a78cb2770e5ed12d}} 
+virtual void {\bfseries draw} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter)=0
 \item 
 virtual void \mbox{\hyperlink{class_q_c_p_layerable_a7498c2d0d081cf7cad0fb3bb93aa0e91}{select\+Event}} (QMouse\+Event $\ast$event, bool additive, const QVariant \&details, bool $\ast$selection\+State\+Changed)
 \item 
@@ -211,11 +217,11 @@ virtual void \mbox{\hyperlink{class_q_c_p_layerable_a4171e2e823aca242dd0279f00ed
 \item 
 virtual void \mbox{\hyperlink{class_q_c_p_layerable_a47dfd7b8fd99c08ca54e09c362b6f022}{wheel\+Event}} (QWheel\+Event $\ast$event)
 \item 
-void \mbox{\hyperlink{class_q_c_p_layerable_a8cbe5a0c9a5674249982f5ca5f8e02bc}{initialize\+Parent\+Plot}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_a36ed5b292b90934b524a4e5866a3526c}{parent\+Plot}})
+void \mbox{\hyperlink{class_q_c_p_layerable_a8cbe5a0c9a5674249982f5ca5f8e02bc}{initialize\+Parent\+Plot}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$parent\+Plot)
 \item 
 void \mbox{\hyperlink{class_q_c_p_layerable_aa23c893671f1f6744ac235cf2204cf3a}{set\+Parent\+Layerable}} (\mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}})
 \item 
-bool \mbox{\hyperlink{class_q_c_p_layerable_af94484cfb7cbbddb7de522e9be71d9a4}{move\+To\+Layer}} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_a9d4e121a7f1d2314f906fe698209cac9}{layer}}, bool prepend)
+bool \mbox{\hyperlink{class_q_c_p_layerable_af94484cfb7cbbddb7de522e9be71d9a4}{move\+To\+Layer}} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$layer, bool prepend)
 \item 
 void \mbox{\hyperlink{class_q_c_p_layerable_acb663e375d2d36dc5c55021ee5a2119b}{apply\+Antialiasing\+Hint}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter, bool local\+Antialiased, \mbox{\hyperlink{namespace_q_c_p_ae55dbe315d41fe80f29ba88100843a0c}{QCP\+::\+Antialiased\+Element}} override\+Element) const
 \end{DoxyCompactItemize}
@@ -293,9 +299,10 @@ enum \mbox{\hyperlink{class_q_c_p_layout_element_a0afb3e5773529e4bd20e448f81be4d
 \doxysubsubsection*{Signals inherited from \mbox{\hyperlink{class_q_c_p_abstract_legend_item}{QCPAbstract\+Legend\+Item}}}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a7cb61fdfbaf69c590bacb8f9e7099d9e}{selection\+Changed}} (bool \mbox{\hyperlink{class_q_c_p_abstract_legend_item_adf427dbb05d5f1a8e84c6abcb05becdf}{selected}})
+void \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a7cb61fdfbaf69c590bacb8f9e7099d9e}{selection\+Changed}} (bool selected)
 \item 
-void \mbox{\hyperlink{class_q_c_p_abstract_legend_item_abc4d779b938cc9235f9196737dbaa6bd}{selectable\+Changed}} (bool \mbox{\hyperlink{class_q_c_p_abstract_legend_item_af054a668038bcd7e35a35a07d1e79a23}{selectable}})
+\mbox{\Hypertarget{class_q_c_p_abstract_legend_item_abc4d779b938cc9235f9196737dbaa6bd}\label{class_q_c_p_abstract_legend_item_abc4d779b938cc9235f9196737dbaa6bd}} 
+void {\bfseries selectable\+Changed} (bool selectable)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Signals inherited from \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}}
 \begin{DoxyCompactItemize}
@@ -307,13 +314,17 @@ void \mbox{\hyperlink{class_q_c_p_layerable_abbf8657cedea73ac1c3499b521c90eba}{l
 \doxysubsection{Detailed Description}
 A legend item representing a plottable with an icon and the plottable name. 
 
-This is the standard legend item for plottables. It displays an icon of the plottable next to the plottable name. The icon is drawn by the respective plottable itself (\mbox{\hyperlink{class_q_c_p_abstract_plottable_a9a450783fd9ed539e589999fd390cdf7}{QCPAbstract\+Plottable\+::draw\+Legend\+Icon}}), and tries to give an intuitive symbol for the plottable. For example, the \mbox{\hyperlink{class_q_c_p_graph}{QCPGraph}} draws a centered horizontal line and/or a single scatter point in the middle.
+This is the standard legend item for plottables. It displays an icon of the plottable next to the plottable name. The icon is drawn by the respective plottable itself (QCPAbstract\+Plottable\+::draw\+Legend\+Icon), and tries to give an intuitive symbol for the plottable. For example, the \mbox{\hyperlink{class_q_c_p_graph}{QCPGraph}} draws a centered horizontal line and/or a single scatter point in the middle.
 
-Legend items of this type are always associated with one plottable (retrievable via the \mbox{\hyperlink{class_q_c_p_plottable_legend_item_abeaabdcfd9de2e0020c94321716e36ab}{plottable()}} function and settable with the constructor). You may change the font of the plottable name with \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a409c53455d8112f71d70c0c43eb10265}{set\+Font}}. Icon padding and border pen is taken from the parent \mbox{\hyperlink{class_q_c_p_legend}{QCPLegend}}, see \mbox{\hyperlink{class_q_c_p_legend_a2f2c93d18a651f4ff294bb3f026f49b8}{QCPLegend\+::set\+Icon\+Border\+Pen}} and \mbox{\hyperlink{class_q_c_p_legend_a62973bd69d5155e8ea3141366e8968f6}{QCPLegend\+::set\+Icon\+Text\+Padding}}.
+Legend items of this type are always associated with one plottable (retrievable via the plottable() function and settable with the constructor). You may change the font of the plottable name with \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a409c53455d8112f71d70c0c43eb10265}{set\+Font}}. Icon padding and border pen is taken from the parent \mbox{\hyperlink{class_q_c_p_legend}{QCPLegend}}, see \mbox{\hyperlink{class_q_c_p_legend_a2f2c93d18a651f4ff294bb3f026f49b8}{QCPLegend\+::set\+Icon\+Border\+Pen}} and \mbox{\hyperlink{class_q_c_p_legend_a62973bd69d5155e8ea3141366e8968f6}{QCPLegend\+::set\+Icon\+Text\+Padding}}.
 
 The function QCPAbstract\+Plottable\+::add\+To\+Legend/ \mbox{\hyperlink{class_q_c_p_abstract_plottable_a3cc235007e2343a65ad4f463767e0e20}{QCPAbstract\+Plottable\+::remove\+From\+Legend}} creates/removes legend items of this type.
 
 Since \mbox{\hyperlink{class_q_c_p_legend}{QCPLegend}} is based on \mbox{\hyperlink{class_q_c_p_layout_grid}{QCPLayout\+Grid}}, a legend item itself is just a subclass of \mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}}. While it could be added to a legend (or any other layout) via the normal layout interface, \mbox{\hyperlink{class_q_c_p_legend}{QCPLegend}} has specialized functions for handling legend items conveniently, see the documentation of \mbox{\hyperlink{class_q_c_p_legend}{QCPLegend}}. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l04772}{4772}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_q_c_p_plottable_legend_item_ac1072591fe409d3dabad51b23ee4d6c5}\label{class_q_c_p_plottable_legend_item_ac1072591fe409d3dabad51b23ee4d6c5}} 
@@ -328,6 +339,18 @@ Once it\textquotesingle{}s created, it can be added to the legend via \mbox{\hyp
 
 A more convenient way of adding/removing a plottable to/from the legend is via the functions \mbox{\hyperlink{class_q_c_p_abstract_plottable_aa64e93cb5b606d8110d2cc0a349bb30f}{QCPAbstract\+Plottable\+::add\+To\+Legend}} and \mbox{\hyperlink{class_q_c_p_abstract_plottable_a3cc235007e2343a65ad4f463767e0e20}{QCPAbstract\+Plottable\+::remove\+From\+Legend}}. 
 
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l18141}{18141}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_plottable_legend_item_ac1072591fe409d3dabad51b23ee4d6c5_cgraph}
+\end{center}
+\end{figure}
+
+
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_q_c_p_plottable_legend_item_a5838366619200e99680afa6d355d13fa}\label{class_q_c_p_plottable_legend_item_a5838366619200e99680afa6d355d13fa}} 
 \index{QCPPlottableLegendItem@{QCPPlottableLegendItem}!draw@{draw}}
@@ -337,7 +360,11 @@ A more convenient way of adding/removing a plottable to/from the legend is via t
 
 
 
-Implements \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a14ce0b09f5b814c765a0d790bd838909}{QCPAbstract\+Legend\+Item}}.
+Implements \mbox{\hyperlink{class_q_c_p_abstract_legend_item}{QCPAbstract\+Legend\+Item}}.
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l18184}{18184}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_plottable_legend_item_a77d980f594046226f9ac075fa07244b3}\label{class_q_c_p_plottable_legend_item_a77d980f594046226f9ac075fa07244b3}} 
 \index{QCPPlottableLegendItem@{QCPPlottableLegendItem}!getFont@{getFont}}
@@ -345,17 +372,29 @@ Implements \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a14ce0b09f5b814c765
 \doxysubsubsection{\texorpdfstring{getFont()}{getFont()}}
 {\footnotesize\ttfamily QFont QCPPlottable\+Legend\+Item\+::get\+Font (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l18173}{18173}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_plottable_legend_item_afa81a8bd4434ec249efbbfc2a030a752}\label{class_q_c_p_plottable_legend_item_afa81a8bd4434ec249efbbfc2a030a752}} 
 \index{QCPPlottableLegendItem@{QCPPlottableLegendItem}!getIconBorderPen@{getIconBorderPen}}
 \index{getIconBorderPen@{getIconBorderPen}!QCPPlottableLegendItem@{QCPPlottableLegendItem}}
 \doxysubsubsection{\texorpdfstring{getIconBorderPen()}{getIconBorderPen()}}
 {\footnotesize\ttfamily QPen QCPPlottable\+Legend\+Item\+::get\+Icon\+Border\+Pen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l18153}{18153}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_plottable_legend_item_a55daaffee35326765deebf8271efe210}\label{class_q_c_p_plottable_legend_item_a55daaffee35326765deebf8271efe210}} 
 \index{QCPPlottableLegendItem@{QCPPlottableLegendItem}!getTextColor@{getTextColor}}
 \index{getTextColor@{getTextColor}!QCPPlottableLegendItem@{QCPPlottableLegendItem}}
 \doxysubsubsection{\texorpdfstring{getTextColor()}{getTextColor()}}
 {\footnotesize\ttfamily QColor QCPPlottable\+Legend\+Item\+::get\+Text\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l18163}{18163}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_plottable_legend_item_a8b543f3ac32b2fe59326e01c1101b3b8}\label{class_q_c_p_plottable_legend_item_a8b543f3ac32b2fe59326e01c1101b3b8}} 
 \index{QCPPlottableLegendItem@{QCPPlottableLegendItem}!minimumOuterSizeHint@{minimumOuterSizeHint}}
@@ -365,7 +404,7 @@ Implements \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a14ce0b09f5b814c765
 
 Returns the suggested minimum size this layout element (the \mbox{\hyperlink{class_q_c_p_layout_element_a2a32a12a6161c9dffbadeb9cc585510c}{outer\+Rect}}) may be compressed to, if no manual minimum size is set.
 
-if a minimum size (\mbox{\hyperlink{class_q_c_p_layout_element_a5dd29a3c8bc88440c97c06b67be7886b}{set\+Minimum\+Size}}) was not set manually, parent layouts use the returned size (usually indirectly through \mbox{\hyperlink{class_q_c_p_layout_a864fddc84721f186663faf3683f1fa70}{QCPLayout\+::get\+Final\+Minimum\+Outer\+Size}}) to determine the minimum allowed size of this layout element.
+if a minimum size (\mbox{\hyperlink{class_q_c_p_layout_element_a5dd29a3c8bc88440c97c06b67be7886b}{set\+Minimum\+Size}}) was not set manually, parent layouts use the returned size (usually indirectly through QCPLayout\+::get\+Final\+Minimum\+Outer\+Size) to determine the minimum allowed size of this layout element.
 
 A manual minimum size is considered set if it is non-\/zero.
 
@@ -373,11 +412,19 @@ The default implementation simply returns the sum of the horizontal margins for 
 
 Reimplemented from \mbox{\hyperlink{class_q_c_p_layout_element_a46789036c4fcb190fa374f91321d7c09}{QCPLayout\+Element}}.
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l18217}{18217}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_plottable_legend_item_abeaabdcfd9de2e0020c94321716e36ab}\label{class_q_c_p_plottable_legend_item_abeaabdcfd9de2e0020c94321716e36ab}} 
 \index{QCPPlottableLegendItem@{QCPPlottableLegendItem}!plottable@{plottable}}
 \index{plottable@{plottable}!QCPPlottableLegendItem@{QCPPlottableLegendItem}}
 \doxysubsubsection{\texorpdfstring{plottable()}{plottable()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_abstract_plottable}{QCPAbstract\+Plottable}} $\ast$ QCPPlottable\+Legend\+Item\+::plottable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l04779}{4779}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 
 
@@ -390,7 +437,11 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_layout_element_a46789036c4fcb190
 
 
 
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l04783}{4783}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{qcustomplot_8h}{qcustomplot.\+h}}\item 
-\mbox{\hyperlink{qcustomplot_8cpp}{qcustomplot.\+cpp}}\end{DoxyCompactItemize}
+qcustomplot.\+h\item 
+qcustomplot.\+cpp\end{DoxyCompactItemize}

@@ -7,12 +7,20 @@ Specialized axis ticker to display ticks in units of an arbitrary constant, for 
 
 
 
-{\ttfamily \#include $<$qcustomplot.\+h$>$}
-
-Inheritance diagram for QCPAxis\+Ticker\+Pi\+:\begin{figure}[H]
+Inheritance diagram for QCPAxis\+Ticker\+Pi\+:\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{class_q_c_p_axis_ticker_pi}
+\includegraphics[width=172pt]{class_q_c_p_axis_ticker_pi__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for QCPAxis\+Ticker\+Pi\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{class_q_c_p_axis_ticker_pi__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Types}
@@ -56,8 +64,6 @@ void \mbox{\hyperlink{class_q_c_p_axis_ticker_pi_a760c8af6ca68178e607556c4e5049d
 \item 
 \mbox{\hyperlink{class_q_c_p_axis_ticker_a8fcf23c79ebd72202fe79253f9f01ea8}{QCPAxis\+Ticker}} ()
 \item 
-virtual \mbox{\hyperlink{class_q_c_p_axis_ticker_a1119d6f09ad720f9c5dfdd2559047161}{$\sim$\+QCPAxis\+Ticker}} ()
-\item 
 \mbox{\hyperlink{class_q_c_p_axis_ticker_ab6d2f9d9477821623ac9bc4b21ddf49a}{Tick\+Step\+Strategy}} \mbox{\hyperlink{class_q_c_p_axis_ticker_a58df76f2ec3eb48401bdd314b0e14ba1}{tick\+Step\+Strategy}} () const
 \item 
 int \mbox{\hyperlink{class_q_c_p_axis_ticker_aaf9edbe4169ce55e216fd067cc139452}{tick\+Count}} () const
@@ -75,11 +81,11 @@ virtual void \mbox{\hyperlink{class_q_c_p_axis_ticker_aefbd11725678ca824add8cf92
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-virtual double \mbox{\hyperlink{class_q_c_p_axis_ticker_pi_a55301f0072983bd2d7c131a24e1779e7}{get\+Tick\+Step}} (const \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \&range) \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual double \mbox{\hyperlink{class_q_c_p_axis_ticker_pi_a55301f0072983bd2d7c131a24e1779e7}{get\+Tick\+Step}} (const \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \&range) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual int \mbox{\hyperlink{class_q_c_p_axis_ticker_pi_a56c90f870da97c8670cfae4d04ff3ac7}{get\+Sub\+Tick\+Count}} (double tick\+Step) \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual int \mbox{\hyperlink{class_q_c_p_axis_ticker_pi_a56c90f870da97c8670cfae4d04ff3ac7}{get\+Sub\+Tick\+Count}} (double tick\+Step) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual QString \mbox{\hyperlink{class_q_c_p_axis_ticker_pi_a9a087d931d4344b8a91d5cecceff7109}{get\+Tick\+Label}} (double tick, const QLocale \&locale, QChar format\+Char, int precision) \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual QString \mbox{\hyperlink{class_q_c_p_axis_ticker_pi_a9a087d931d4344b8a91d5cecceff7109}{get\+Tick\+Label}} (double tick, const QLocale \&locale, QChar format\+Char, int precision) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
 void \mbox{\hyperlink{class_q_c_p_axis_ticker_pi_a0e30609aed5025d331cb61671f0115d0}{simplify\+Fraction}} (int \&numerator, int \&denominator) const
 \item 
@@ -153,6 +159,10 @@ The ticker can be created and assigned to an axis like this\+:
 \end{DoxyCodeInclude}
  
 
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01768}{1768}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+
+
 \doxysubsection{Member Enumeration Documentation}
 \mbox{\Hypertarget{class_q_c_p_axis_ticker_pi_a262f1534c7f0c79a7d5237f5d1e2c54c}\label{class_q_c_p_axis_ticker_pi_a262f1534c7f0c79a7d5237f5d1e2c54c}} 
 \index{QCPAxisTickerPi@{QCPAxisTickerPi}!FractionStyle@{FractionStyle}}
@@ -181,6 +191,10 @@ fs\+Unicode\+Fractions&Fractions are written using sub-\/ and superscript UTF-\/
 \end{DoxyEnumFields}
 
 
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01777}{1777}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_q_c_p_axis_ticker_pi_aa0d7b7034055927c0f0077a2d713d7d0}\label{class_q_c_p_axis_ticker_pi_aa0d7b7034055927c0f0077a2d713d7d0}} 
 \index{QCPAxisTickerPi@{QCPAxisTickerPi}!QCPAxisTickerPi@{QCPAxisTickerPi}}
@@ -190,6 +204,18 @@ fs\+Unicode\+Fractions&Fractions are written using sub-\/ and superscript UTF-\/
 
 Constructs the ticker and sets reasonable default values. Axis tickers are commonly created managed by a QShared\+Pointer, which then can be passed to \mbox{\hyperlink{class_q_c_p_axis_a4ee03fcd2c74d05cd1a419b9af5cfbdc}{QCPAxis\+::set\+Ticker}}. 
 
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l06733}{6733}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_axis_ticker_pi_aa0d7b7034055927c0f0077a2d713d7d0_cgraph}
+\end{center}
+\end{figure}
+
+
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_q_c_p_axis_ticker_pi_ab532d5e838168a8a5bbafea4eafc94be}\label{class_q_c_p_axis_ticker_pi_ab532d5e838168a8a5bbafea4eafc94be}} 
 \index{QCPAxisTickerPi@{QCPAxisTickerPi}!fractionStyle@{fractionStyle}}
@@ -197,11 +223,19 @@ Constructs the ticker and sets reasonable default values. Axis tickers are commo
 \doxysubsubsection{\texorpdfstring{fractionStyle()}{fractionStyle()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_axis_ticker_pi_a262f1534c7f0c79a7d5237f5d1e2c54c}{Fraction\+Style}} QCPAxis\+Ticker\+Pi\+::fraction\+Style (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01789}{1789}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_ticker_pi_afb59d434358173eb5b58e41255bea904}\label{class_q_c_p_axis_ticker_pi_afb59d434358173eb5b58e41255bea904}} 
 \index{QCPAxisTickerPi@{QCPAxisTickerPi}!fractionToString@{fractionToString}}
 \index{fractionToString@{fractionToString}!QCPAxisTickerPi@{QCPAxisTickerPi}}
 \doxysubsubsection{\texorpdfstring{fractionToString()}{fractionToString()}}
 {\footnotesize\ttfamily QString QCPAxis\+Ticker\+Pi\+::fraction\+To\+String (\begin{DoxyParamCaption}\item[{int}]{numerator,  }\item[{int}]{denominator }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l06886}{6886}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_ticker_pi_a56c90f870da97c8670cfae4d04ff3ac7}\label{class_q_c_p_axis_ticker_pi_a56c90f870da97c8670cfae4d04ff3ac7}} 
 \index{QCPAxisTickerPi@{QCPAxisTickerPi}!getSubTickCount@{getSubTickCount}}
@@ -211,7 +245,11 @@ Constructs the ticker and sets reasonable default values. Axis tickers are commo
 
 
 
-Reimplemented from \mbox{\hyperlink{class_q_c_p_axis_ticker_a4ccc403ced7a1457ce6ba293509933c8}{QCPAxis\+Ticker}}.
+Reimplemented from \mbox{\hyperlink{class_q_c_p_axis_ticker}{QCPAxis\+Ticker}}.
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l06811}{6811}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_ticker_pi_a9a087d931d4344b8a91d5cecceff7109}\label{class_q_c_p_axis_ticker_pi_a9a087d931d4344b8a91d5cecceff7109}} 
 \index{QCPAxisTickerPi@{QCPAxisTickerPi}!getTickLabel@{getTickLabel}}
@@ -221,7 +259,11 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_axis_ticker_a4ccc403ced7a1457ce6
 
 
 
-Reimplemented from \mbox{\hyperlink{class_q_c_p_axis_ticker_a8201eb4aa8be192bf786b126eb5ee089}{QCPAxis\+Ticker}}.
+Reimplemented from \mbox{\hyperlink{class_q_c_p_axis_ticker}{QCPAxis\+Ticker}}.
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l06824}{6824}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_ticker_pi_a55301f0072983bd2d7c131a24e1779e7}\label{class_q_c_p_axis_ticker_pi_a55301f0072983bd2d7c131a24e1779e7}} 
 \index{QCPAxisTickerPi@{QCPAxisTickerPi}!getTickStep@{getTickStep}}
@@ -231,7 +273,11 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_axis_ticker_a8201eb4aa8be192bf78
 
 
 
-Reimplemented from \mbox{\hyperlink{class_q_c_p_axis_ticker_a910d69bcec2de37e92d8d4e1ecf201e2}{QCPAxis\+Ticker}}.
+Reimplemented from \mbox{\hyperlink{class_q_c_p_axis_ticker}{QCPAxis\+Ticker}}.
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l06796}{6796}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_ticker_pi_aa320edf0a30386ce6a63c18050fbdfd8}\label{class_q_c_p_axis_ticker_pi_aa320edf0a30386ce6a63c18050fbdfd8}} 
 \index{QCPAxisTickerPi@{QCPAxisTickerPi}!periodicity@{periodicity}}
@@ -239,11 +285,19 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_axis_ticker_a910d69bcec2de37e92d
 \doxysubsubsection{\texorpdfstring{periodicity()}{periodicity()}}
 {\footnotesize\ttfamily bool QCPAxis\+Ticker\+Pi\+::periodicity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01788}{1788}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_ticker_pi_a2fd785cd66a6f4f969ac2eca1b08e0f2}\label{class_q_c_p_axis_ticker_pi_a2fd785cd66a6f4f969ac2eca1b08e0f2}} 
 \index{QCPAxisTickerPi@{QCPAxisTickerPi}!piSymbol@{piSymbol}}
 \index{piSymbol@{piSymbol}!QCPAxisTickerPi@{QCPAxisTickerPi}}
 \doxysubsubsection{\texorpdfstring{piSymbol()}{piSymbol()}}
 {\footnotesize\ttfamily QString QCPAxis\+Ticker\+Pi\+::pi\+Symbol (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01786}{1786}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_ticker_pi_abddc18799caa4ae6c721e1e5e229b3a4}\label{class_q_c_p_axis_ticker_pi_abddc18799caa4ae6c721e1e5e229b3a4}} 
 \index{QCPAxisTickerPi@{QCPAxisTickerPi}!piValue@{piValue}}
@@ -251,13 +305,21 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_axis_ticker_a910d69bcec2de37e92d
 \doxysubsubsection{\texorpdfstring{piValue()}{piValue()}}
 {\footnotesize\ttfamily double QCPAxis\+Ticker\+Pi\+::pi\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01787}{1787}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_ticker_pi_a760c8af6ca68178e607556c4e5049d71}\label{class_q_c_p_axis_ticker_pi_a760c8af6ca68178e607556c4e5049d71}} 
 \index{QCPAxisTickerPi@{QCPAxisTickerPi}!setFractionStyle@{setFractionStyle}}
 \index{setFractionStyle@{setFractionStyle}!QCPAxisTickerPi@{QCPAxisTickerPi}}
 \doxysubsubsection{\texorpdfstring{setFractionStyle()}{setFractionStyle()}}
 {\footnotesize\ttfamily void QCPAxis\+Ticker\+Pi\+::set\+Fraction\+Style (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_axis_ticker_pi_a262f1534c7f0c79a7d5237f5d1e2c54c}{QCPAxis\+Ticker\+Pi\+::\+Fraction\+Style}}}]{style }\end{DoxyParamCaption})}
 
-Sets how the numerical/fractional part preceding the symbolic constant is displayed in tick labels. See \mbox{\hyperlink{class_q_c_p_axis_ticker_pi_a262f1534c7f0c79a7d5237f5d1e2c54c}{Fraction\+Style}} for the various options. \mbox{\Hypertarget{class_q_c_p_axis_ticker_pi_a58f538dc01860fb56e46970e28a87f03}\label{class_q_c_p_axis_ticker_pi_a58f538dc01860fb56e46970e28a87f03}} 
+Sets how the numerical/fractional part preceding the symbolic constant is displayed in tick labels. See \mbox{\hyperlink{class_q_c_p_axis_ticker_pi_a262f1534c7f0c79a7d5237f5d1e2c54c}{Fraction\+Style}} for the various options. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l06783}{6783}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+\mbox{\Hypertarget{class_q_c_p_axis_ticker_pi_a58f538dc01860fb56e46970e28a87f03}\label{class_q_c_p_axis_ticker_pi_a58f538dc01860fb56e46970e28a87f03}} 
 \index{QCPAxisTickerPi@{QCPAxisTickerPi}!setPeriodicity@{setPeriodicity}}
 \index{setPeriodicity@{setPeriodicity}!QCPAxisTickerPi@{QCPAxisTickerPi}}
 \doxysubsubsection{\texorpdfstring{setPeriodicity()}{setPeriodicity()}}
@@ -267,7 +329,11 @@ Sets whether the axis labels shall appear periodicly and if so, at which multipl
 
 To disable periodicity, set {\itshape multiples\+Of\+Pi} to zero.
 
-For example, an axis that identifies 0 with 2pi would set {\itshape multiples\+Of\+Pi} to two. \mbox{\Hypertarget{class_q_c_p_axis_ticker_pi_acfdcd4758a393bde4be12a50fb2017b5}\label{class_q_c_p_axis_ticker_pi_acfdcd4758a393bde4be12a50fb2017b5}} 
+For example, an axis that identifies 0 with 2pi would set {\itshape multiples\+Of\+Pi} to two. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l06774}{6774}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+\mbox{\Hypertarget{class_q_c_p_axis_ticker_pi_acfdcd4758a393bde4be12a50fb2017b5}\label{class_q_c_p_axis_ticker_pi_acfdcd4758a393bde4be12a50fb2017b5}} 
 \index{QCPAxisTickerPi@{QCPAxisTickerPi}!setPiSymbol@{setPiSymbol}}
 \index{setPiSymbol@{setPiSymbol}!QCPAxisTickerPi@{QCPAxisTickerPi}}
 \doxysubsubsection{\texorpdfstring{setPiSymbol()}{setPiSymbol()}}
@@ -275,7 +341,11 @@ For example, an axis that identifies 0 with 2pi would set {\itshape multiples\+O
 
 Sets how the symbol part (which is always a suffix to the number) shall appear in the axis tick label.
 
-If a space shall appear between the number and the symbol, make sure the space is contained in {\itshape symbol}. \mbox{\Hypertarget{class_q_c_p_axis_ticker_pi_a36ce0651d2ec92edd36feac1619c2468}\label{class_q_c_p_axis_ticker_pi_a36ce0651d2ec92edd36feac1619c2468}} 
+If a space shall appear between the number and the symbol, make sure the space is contained in {\itshape symbol}. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l06750}{6750}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+\mbox{\Hypertarget{class_q_c_p_axis_ticker_pi_a36ce0651d2ec92edd36feac1619c2468}\label{class_q_c_p_axis_ticker_pi_a36ce0651d2ec92edd36feac1619c2468}} 
 \index{QCPAxisTickerPi@{QCPAxisTickerPi}!setPiValue@{setPiValue}}
 \index{setPiValue@{setPiValue}!QCPAxisTickerPi@{QCPAxisTickerPi}}
 \doxysubsubsection{\texorpdfstring{setPiValue()}{setPiValue()}}
@@ -283,11 +353,19 @@ If a space shall appear between the number and the symbol, make sure the space i
 
 Sets the numerical value that the symbolic constant has.
 
-This will be used to place the appropriate fractions of the symbol at the respective axis coordinates. \mbox{\Hypertarget{class_q_c_p_axis_ticker_pi_a0e30609aed5025d331cb61671f0115d0}\label{class_q_c_p_axis_ticker_pi_a0e30609aed5025d331cb61671f0115d0}} 
+This will be used to place the appropriate fractions of the symbol at the respective axis coordinates. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l06761}{6761}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+\mbox{\Hypertarget{class_q_c_p_axis_ticker_pi_a0e30609aed5025d331cb61671f0115d0}\label{class_q_c_p_axis_ticker_pi_a0e30609aed5025d331cb61671f0115d0}} 
 \index{QCPAxisTickerPi@{QCPAxisTickerPi}!simplifyFraction@{simplifyFraction}}
 \index{simplifyFraction@{simplifyFraction}!QCPAxisTickerPi@{QCPAxisTickerPi}}
 \doxysubsubsection{\texorpdfstring{simplifyFraction()}{simplifyFraction()}}
 {\footnotesize\ttfamily void QCPAxis\+Ticker\+Pi\+::simplify\+Fraction (\begin{DoxyParamCaption}\item[{int \&}]{numerator,  }\item[{int \&}]{denominator }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l06859}{6859}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_ticker_pi_ade6f7e49238e986e9aed74178a78d8d3}\label{class_q_c_p_axis_ticker_pi_ade6f7e49238e986e9aed74178a78d8d3}} 
 \index{QCPAxisTickerPi@{QCPAxisTickerPi}!unicodeFraction@{unicodeFraction}}
@@ -295,17 +373,29 @@ This will be used to place the appropriate fractions of the symbol at the respec
 \doxysubsubsection{\texorpdfstring{unicodeFraction()}{unicodeFraction()}}
 {\footnotesize\ttfamily QString QCPAxis\+Ticker\+Pi\+::unicode\+Fraction (\begin{DoxyParamCaption}\item[{int}]{numerator,  }\item[{int}]{denominator }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l06942}{6942}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_ticker_pi_a5b3bb340adb888a30a96225e1ca23c7a}\label{class_q_c_p_axis_ticker_pi_a5b3bb340adb888a30a96225e1ca23c7a}} 
 \index{QCPAxisTickerPi@{QCPAxisTickerPi}!unicodeSubscript@{unicodeSubscript}}
 \index{unicodeSubscript@{unicodeSubscript}!QCPAxisTickerPi@{QCPAxisTickerPi}}
 \doxysubsubsection{\texorpdfstring{unicodeSubscript()}{unicodeSubscript()}}
 {\footnotesize\ttfamily QString QCPAxis\+Ticker\+Pi\+::unicode\+Subscript (\begin{DoxyParamCaption}\item[{int}]{number }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l06978}{6978}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_ticker_pi_a34798972670b3760d649ccfe0d0ee9a5}\label{class_q_c_p_axis_ticker_pi_a34798972670b3760d649ccfe0d0ee9a5}} 
 \index{QCPAxisTickerPi@{QCPAxisTickerPi}!unicodeSuperscript@{unicodeSuperscript}}
 \index{unicodeSuperscript@{unicodeSuperscript}!QCPAxisTickerPi@{QCPAxisTickerPi}}
 \doxysubsubsection{\texorpdfstring{unicodeSuperscript()}{unicodeSuperscript()}}
 {\footnotesize\ttfamily QString QCPAxis\+Ticker\+Pi\+::unicode\+Superscript (\begin{DoxyParamCaption}\item[{int}]{number }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l06952}{6952}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 
 
@@ -316,11 +406,19 @@ This will be used to place the appropriate fractions of the symbol at the respec
 \doxysubsubsection{\texorpdfstring{mFractionStyle}{mFractionStyle}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_axis_ticker_pi_a262f1534c7f0c79a7d5237f5d1e2c54c}{Fraction\+Style}} QCPAxis\+Ticker\+Pi\+::m\+Fraction\+Style\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01802}{1802}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_ticker_pi_af5372570aa91ef3b0586939d91c119db}\label{class_q_c_p_axis_ticker_pi_af5372570aa91ef3b0586939d91c119db}} 
 \index{QCPAxisTickerPi@{QCPAxisTickerPi}!mPeriodicity@{mPeriodicity}}
 \index{mPeriodicity@{mPeriodicity}!QCPAxisTickerPi@{QCPAxisTickerPi}}
 \doxysubsubsection{\texorpdfstring{mPeriodicity}{mPeriodicity}}
 {\footnotesize\ttfamily int QCPAxis\+Ticker\+Pi\+::m\+Periodicity\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01801}{1801}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_ticker_pi_a0962084571116e4d98e4dccc2e68f5ea}\label{class_q_c_p_axis_ticker_pi_a0962084571116e4d98e4dccc2e68f5ea}} 
 \index{QCPAxisTickerPi@{QCPAxisTickerPi}!mPiSymbol@{mPiSymbol}}
@@ -328,11 +426,19 @@ This will be used to place the appropriate fractions of the symbol at the respec
 \doxysubsubsection{\texorpdfstring{mPiSymbol}{mPiSymbol}}
 {\footnotesize\ttfamily QString QCPAxis\+Ticker\+Pi\+::m\+Pi\+Symbol\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01799}{1799}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_axis_ticker_pi_a943706b7796d778c62915498864bbeb8}\label{class_q_c_p_axis_ticker_pi_a943706b7796d778c62915498864bbeb8}} 
 \index{QCPAxisTickerPi@{QCPAxisTickerPi}!mPiTickStep@{mPiTickStep}}
 \index{mPiTickStep@{mPiTickStep}!QCPAxisTickerPi@{QCPAxisTickerPi}}
 \doxysubsubsection{\texorpdfstring{mPiTickStep}{mPiTickStep}}
 {\footnotesize\ttfamily double QCPAxis\+Ticker\+Pi\+::m\+Pi\+Tick\+Step\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01805}{1805}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_axis_ticker_pi_ab3e899a3d23ada89eb48b465204b09ea}\label{class_q_c_p_axis_ticker_pi_ab3e899a3d23ada89eb48b465204b09ea}} 
 \index{QCPAxisTickerPi@{QCPAxisTickerPi}!mPiValue@{mPiValue}}
@@ -342,7 +448,11 @@ This will be used to place the appropriate fractions of the symbol at the respec
 
 
 
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01800}{1800}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{qcustomplot_8h}{qcustomplot.\+h}}\item 
-\mbox{\hyperlink{qcustomplot_8cpp}{qcustomplot.\+cpp}}\end{DoxyCompactItemize}
+qcustomplot.\+h\item 
+qcustomplot.\+cpp\end{DoxyCompactItemize}

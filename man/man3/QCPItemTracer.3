@@ -1,0 +1,660 @@
+.TH "QCPItemTracer" 3 "Wed Mar 15 2023" "OmronPID" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QCPItemTracer \- Item that sticks to \fBQCPGraph\fP data points\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBQCPAbstractItem\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBTracerStyle\fP { \fBtsNone\fP, \fBtsPlus\fP, \fBtsCrosshair\fP, \fBtsCircle\fP, \fBtsSquare\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPItemTracer\fP (\fBQCustomPlot\fP *parentPlot)"
+.br
+.ti -1c
+.RI "QPen \fBpen\fP () const"
+.br
+.ti -1c
+.RI "QPen \fBselectedPen\fP () const"
+.br
+.ti -1c
+.RI "QBrush \fBbrush\fP () const"
+.br
+.ti -1c
+.RI "QBrush \fBselectedBrush\fP () const"
+.br
+.ti -1c
+.RI "double \fBsize\fP () const"
+.br
+.ti -1c
+.RI "\fBTracerStyle\fP \fBstyle\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPGraph\fP * \fBgraph\fP () const"
+.br
+.ti -1c
+.RI "double \fBgraphKey\fP () const"
+.br
+.ti -1c
+.RI "bool \fBinterpolating\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetPen\fP (const QPen &pen)"
+.br
+.ti -1c
+.RI "void \fBsetSelectedPen\fP (const QPen &pen)"
+.br
+.ti -1c
+.RI "void \fBsetBrush\fP (const QBrush &brush)"
+.br
+.ti -1c
+.RI "void \fBsetSelectedBrush\fP (const QBrush &brush)"
+.br
+.ti -1c
+.RI "void \fBsetSize\fP (double size)"
+.br
+.ti -1c
+.RI "void \fBsetStyle\fP (\fBTracerStyle\fP style)"
+.br
+.ti -1c
+.RI "void \fBsetGraph\fP (\fBQCPGraph\fP *graph)"
+.br
+.ti -1c
+.RI "void \fBsetGraphKey\fP (double key)"
+.br
+.ti -1c
+.RI "void \fBsetInterpolating\fP (bool enabled)"
+.br
+.ti -1c
+.RI "virtual double \fBselectTest\fP (const QPointF &pos, bool onlySelectable, QVariant *details=0) const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "void \fBupdatePosition\fP ()"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBQCPAbstractItem\fP
+.in +1c
+.ti -1c
+.RI "\fBQCPAbstractItem\fP (\fBQCustomPlot\fP *parentPlot)"
+.br
+.ti -1c
+.RI "bool \fBclipToAxisRect\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPAxisRect\fP * \fBclipAxisRect\fP () const"
+.br
+.ti -1c
+.RI "bool \fBselectable\fP () const"
+.br
+.ti -1c
+.RI "bool \fBselected\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetClipToAxisRect\fP (bool clip)"
+.br
+.ti -1c
+.RI "void \fBsetClipAxisRect\fP (\fBQCPAxisRect\fP *rect)"
+.br
+.ti -1c
+.RI "Q_SLOT void \fBsetSelectable\fP (bool selectable)"
+.br
+.ti -1c
+.RI "Q_SLOT void \fBsetSelected\fP (bool selected)"
+.br
+.ti -1c
+.RI "virtual double \fBselectTest\fP (const QPointF &pos, bool onlySelectable, QVariant *details=0) const Q_DECL_OVERRIDE=0"
+.br
+.ti -1c
+.RI "QList< \fBQCPItemPosition\fP * > \fBpositions\fP () const"
+.br
+.ti -1c
+.RI "QList< \fBQCPItemAnchor\fP * > \fBanchors\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPItemPosition\fP * \fBposition\fP (const QString &name) const"
+.br
+.ti -1c
+.RI "\fBQCPItemAnchor\fP * \fBanchor\fP (const QString &name) const"
+.br
+.ti -1c
+.RI "bool \fBhasAnchor\fP (const QString &name) const"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBQCPLayerable\fP
+.in +1c
+.ti -1c
+.RI "\fBQCPLayerable\fP (\fBQCustomPlot\fP *plot, QString targetLayer=QString(), \fBQCPLayerable\fP *\fBparentLayerable\fP=0)"
+.br
+.ti -1c
+.RI "bool \fBvisible\fP () const"
+.br
+.ti -1c
+.RI "\fBQCustomPlot\fP * \fBparentPlot\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPLayerable\fP * \fBparentLayerable\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPLayer\fP * \fBlayer\fP () const"
+.br
+.ti -1c
+.RI "bool \fBantialiased\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetVisible\fP (bool on)"
+.br
+.ti -1c
+.RI "Q_SLOT bool \fBsetLayer\fP (\fBQCPLayer\fP *layer)"
+.br
+.ti -1c
+.RI "bool \fBsetLayer\fP (const QString &layerName)"
+.br
+.ti -1c
+.RI "void \fBsetAntialiased\fP (bool enabled)"
+.br
+.ti -1c
+.RI "virtual double \fBselectTest\fP (const QPointF &pos, bool onlySelectable, QVariant *details=0) const"
+.br
+.ti -1c
+.RI "bool \fBrealVisibility\fP () const"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPItemPosition\fP *const \fBposition\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBdraw\fP (\fBQCPPainter\fP *painter) Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "QPen \fBmainPen\fP () const"
+.br
+.ti -1c
+.RI "QBrush \fBmainBrush\fP () const"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBQCPAbstractItem\fP
+.in +1c
+.ti -1c
+.RI "virtual \fBQCP::Interaction\fP \fBselectionCategory\fP () const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual QRect \fBclipRect\fP () const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual void \fBapplyDefaultAntialiasingHint\fP (\fBQCPPainter\fP *painter) const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (\fBQCPPainter\fP *painter) Q_DECL_OVERRIDE=0"
+.br
+.ti -1c
+.RI "virtual void \fBselectEvent\fP (QMouseEvent *event, bool additive, const QVariant &details, bool *selectionStateChanged) Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual void \fBdeselectEvent\fP (bool *selectionStateChanged) Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual QPointF \fBanchorPixelPosition\fP (int anchorId) const"
+.br
+.ti -1c
+.RI "double \fBrectDistance\fP (const QRectF &rect, const QPointF &pos, bool filledRect) const"
+.br
+.ti -1c
+.RI "\fBQCPItemPosition\fP * \fBcreatePosition\fP (const QString &name)"
+.br
+.ti -1c
+.RI "\fBQCPItemAnchor\fP * \fBcreateAnchor\fP (const QString &name, int anchorId)"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBQCPLayerable\fP
+.in +1c
+.ti -1c
+.RI "virtual void \fBparentPlotInitialized\fP (\fBQCustomPlot\fP *parentPlot)"
+.br
+.ti -1c
+.RI "virtual \fBQCP::Interaction\fP \fBselectionCategory\fP () const"
+.br
+.ti -1c
+.RI "virtual QRect \fBclipRect\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBapplyDefaultAntialiasingHint\fP (\fBQCPPainter\fP *painter) const =0"
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (\fBQCPPainter\fP *painter)=0"
+.br
+.ti -1c
+.RI "virtual void \fBselectEvent\fP (QMouseEvent *event, bool additive, const QVariant &details, bool *selectionStateChanged)"
+.br
+.ti -1c
+.RI "virtual void \fBdeselectEvent\fP (bool *selectionStateChanged)"
+.br
+.ti -1c
+.RI "virtual void \fBmousePressEvent\fP (QMouseEvent *event, const QVariant &details)"
+.br
+.ti -1c
+.RI "virtual void \fBmouseMoveEvent\fP (QMouseEvent *event, const QPointF &startPos)"
+.br
+.ti -1c
+.RI "virtual void \fBmouseReleaseEvent\fP (QMouseEvent *event, const QPointF &startPos)"
+.br
+.ti -1c
+.RI "virtual void \fBmouseDoubleClickEvent\fP (QMouseEvent *event, const QVariant &details)"
+.br
+.ti -1c
+.RI "virtual void \fBwheelEvent\fP (QWheelEvent *event)"
+.br
+.ti -1c
+.RI "void \fBinitializeParentPlot\fP (\fBQCustomPlot\fP *parentPlot)"
+.br
+.ti -1c
+.RI "void \fBsetParentLayerable\fP (\fBQCPLayerable\fP *\fBparentLayerable\fP)"
+.br
+.ti -1c
+.RI "bool \fBmoveToLayer\fP (\fBQCPLayer\fP *layer, bool prepend)"
+.br
+.ti -1c
+.RI "void \fBapplyAntialiasingHint\fP (\fBQCPPainter\fP *painter, bool localAntialiased, \fBQCP::AntialiasedElement\fP overrideElement) const"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "QPen \fBmPen\fP"
+.br
+.ti -1c
+.RI "QPen \fBmSelectedPen\fP"
+.br
+.ti -1c
+.RI "QBrush \fBmBrush\fP"
+.br
+.ti -1c
+.RI "QBrush \fBmSelectedBrush\fP"
+.br
+.ti -1c
+.RI "double \fBmSize\fP"
+.br
+.ti -1c
+.RI "\fBTracerStyle\fP \fBmStyle\fP"
+.br
+.ti -1c
+.RI "\fBQCPGraph\fP * \fBmGraph\fP"
+.br
+.ti -1c
+.RI "double \fBmGraphKey\fP"
+.br
+.ti -1c
+.RI "bool \fBmInterpolating\fP"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBQCPAbstractItem\fP
+.in +1c
+.ti -1c
+.RI "bool \fBmClipToAxisRect\fP"
+.br
+.ti -1c
+.RI "QPointer< \fBQCPAxisRect\fP > \fBmClipAxisRect\fP"
+.br
+.ti -1c
+.RI "QList< \fBQCPItemPosition\fP * > \fBmPositions\fP"
+.br
+.ti -1c
+.RI "QList< \fBQCPItemAnchor\fP * > \fBmAnchors\fP"
+.br
+.ti -1c
+.RI "bool \fBmSelectable\fP"
+.br
+.ti -1c
+.RI "bool \fBmSelected\fP"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBQCPLayerable\fP
+.in +1c
+.ti -1c
+.RI "bool \fBmVisible\fP"
+.br
+.ti -1c
+.RI "\fBQCustomPlot\fP * \fBmParentPlot\fP"
+.br
+.ti -1c
+.RI "QPointer< \fBQCPLayerable\fP > \fBmParentLayerable\fP"
+.br
+.ti -1c
+.RI "\fBQCPLayer\fP * \fBmLayer\fP"
+.br
+.ti -1c
+.RI "bool \fBmAntialiased\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Signals inherited from \fBQCPAbstractItem\fP
+.in +1c
+.ti -1c
+.RI "void \fBselectionChanged\fP (bool selected)"
+.br
+.ti -1c
+.RI "void \fBselectableChanged\fP (bool selectable)"
+.br
+.in -1c
+
+Signals inherited from \fBQCPLayerable\fP
+.in +1c
+.ti -1c
+.RI "void \fBlayerChanged\fP (\fBQCPLayer\fP *newLayer)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Item that sticks to \fBQCPGraph\fP data points\&. 
+
+
+.PP
+The tracer can be connected with a \fBQCPGraph\fP via \fBsetGraph\fP\&. Then it will automatically adopt the coordinate axes of the graph and update its \fIposition\fP to be on the graph's data\&. This means the key stays controllable via \fBsetGraphKey\fP, but the value will follow the graph data\&. If a \fBQCPGraph\fP is connected, note that setting the coordinates of the tracer item directly via \fIposition\fP will have no effect because they will be overriden in the next redraw (this is when the coordinate update happens)\&.
+.PP
+If the specified key in \fBsetGraphKey\fP is outside the key bounds of the graph, the tracer will stay at the corresponding end of the graph\&.
+.PP
+With \fBsetInterpolating\fP you may specify whether the tracer may only stay exactly on data points or whether it interpolates data points linearly, if given a key that lies between two data points of the graph\&.
+.PP
+The tracer has different visual styles, see \fBsetStyle\fP\&. It is also possible to make the tracer have no own visual appearance (set the style to \fBtsNone\fP), and just connect other item positions to the tracer \fIposition\fP (used as an anchor) via \fBQCPItemPosition::setParentAnchor\fP\&.
+.PP
+\fBNote\fP
+.RS 4
+The tracer position is only automatically updated upon redraws\&. So when the data of the graph changes and immediately afterwards (without a redraw) the position coordinates of the tracer are retrieved, they will not reflect the updated data of the graph\&. In this case \fBupdatePosition\fP must be called manually, prior to reading the tracer coordinates\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB6511\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBQCPItemTracer::TracerStyle\fP"
+The different visual appearances a tracer item can have\&. Some styles size may be controlled with \fBsetSize\fP\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetStyle\fP 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fItsNone \fP\fP
+The tracer is not visible\&. 
+.TP
+\fB\fItsPlus \fP\fP
+A plus shaped crosshair with limited size\&. 
+.TP
+\fB\fItsCrosshair \fP\fP
+A plus shaped crosshair which spans the complete axis rect\&. 
+.TP
+\fB\fItsCircle \fP\fP
+A circle\&. 
+.TP
+\fB\fItsSquare \fP\fP
+A square\&. 
+.PP
+Definition at line \fB6531\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QCPItemTracer::QCPItemTracer (\fBQCustomPlot\fP * parentPlot)\fC [explicit]\fP"
+Creates a tracer item and sets default values\&.
+.PP
+The created item is automatically registered with \fIparentPlot\fP\&. This \fBQCustomPlot\fP instance takes ownership of the item, so do not delete it manually but use \fBQCustomPlot::removeItem()\fP instead\&. 
+.PP
+Definition at line \fB29555\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QCPItemTracer::~QCPItemTracer ()\fC [virtual]\fP"
+
+.PP
+Definition at line \fB29572\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "QBrush QCPItemTracer::brush () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB6545\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "void QCPItemTracer::draw (\fBQCPPainter\fP * painter)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBQCPAbstractItem\fP\&.
+.PP
+Definition at line \fB29752\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "\fBQCPGraph\fP * QCPItemTracer::graph () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB6549\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double QCPItemTracer::graphKey () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB6550\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "bool QCPItemTracer::interpolating () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB6551\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QBrush QCPItemTracer::mainBrush () const\fC [protected]\fP"
+
+.PP
+Definition at line \fB29875\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QPen QCPItemTracer::mainPen () const\fC [protected]\fP"
+
+.PP
+Definition at line \fB29865\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QPen QCPItemTracer::pen () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB6543\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QBrush QCPItemTracer::selectedBrush () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB6546\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QPen QCPItemTracer::selectedPen () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB6544\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double QCPItemTracer::selectTest (const QPointF & pos, bool onlySelectable, QVariant * details = \fC0\fP) const\fC [virtual]\fP"
+This function is used to decide whether a click hits a layerable object or not\&.
+.PP
+\fIpos\fP is a point in pixel coordinates on the \fBQCustomPlot\fP surface\&. This function returns the shortest pixel distance of this point to the object\&. If the object is either invisible or the distance couldn't be determined, -1\&.0 is returned\&. Further, if \fIonlySelectable\fP is true and the object is not selectable, -1\&.0 is returned, too\&.
+.PP
+If the object is represented not by single lines but by an area like a \fBQCPItemText\fP or the bars of a \fBQCPBars\fP plottable, a click inside the area should also be considered a hit\&. In these cases this function thus returns a constant value greater zero but still below the parent plot's selection tolerance\&. (typically the selectionTolerance multiplied by 0\&.99)\&.
+.PP
+Providing a constant value for area objects allows selecting line objects even when they are obscured by such area objects, by clicking close to the lines (i\&.e\&. closer than 0\&.99*selectionTolerance)\&.
+.PP
+The actual setting of the selection state is not done by this function\&. This is handled by the parent \fBQCustomPlot\fP when the mouseReleaseEvent occurs, and the finally selected object is notified via the \fBselectEvent/\fP deselectEvent methods\&.
+.PP
+\fIdetails\fP is an optional output parameter\&. Every layerable subclass may place any information in \fIdetails\fP\&. This information will be passed to \fBselectEvent\fP when the parent \fBQCustomPlot\fP decides on the basis of this selectTest call, that the object was successfully selected\&. The subsequent call to \fBselectEvent\fP will carry the \fIdetails\fP\&. This is useful for multi-part objects (like \fBQCPAxis\fP)\&. This way, a possibly complex calculation to decide which part was clicked is only done once in \fBselectTest\fP\&. The result (i\&.e\&. the actually clicked part) can then be placed in \fIdetails\fP\&. So in the subsequent \fBselectEvent\fP, the decision which part was selected doesn't have to be done a second time for a single selection operation\&.
+.PP
+You may pass 0 as \fIdetails\fP to indicate that you are not interested in those selection details\&.
+.PP
+\fBSee also\fP
+.RS 4
+selectEvent, deselectEvent, \fBmousePressEvent\fP, \fBwheelEvent\fP, \fBQCustomPlot::setInteractions\fP 
+.RE
+.PP
+
+.PP
+Implements \fBQCPAbstractItem\fP\&.
+.PP
+Definition at line \fB29695\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPItemTracer::setBrush (const QBrush & brush)"
+Sets the brush that will be used to draw any fills of the tracer
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetSelectedBrush\fP, \fBsetPen\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB29601\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPItemTracer::setGraph (\fBQCPGraph\fP * graph)"
+Sets the \fBQCPGraph\fP this tracer sticks to\&. The tracer \fIposition\fP will be set to type \fBQCPItemPosition::ptPlotCoords\fP and the axes will be set to the axes of \fIgraph\fP\&.
+.PP
+To free the tracer from any graph, set \fIgraph\fP to 0\&. The tracer \fIposition\fP can then be placed freely like any other item position\&. This is the state the tracer will assume when its graph gets deleted while still attached to it\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetGraphKey\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB29646\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPItemTracer::setGraphKey (double key)"
+Sets the key of the graph's data point the tracer will be positioned at\&. This is the only free coordinate of a tracer when attached to a graph\&.
+.PP
+Depending on \fBsetInterpolating\fP, the tracer will be either positioned on the data point closest to \fIkey\fP, or will stay exactly at \fIkey\fP and interpolate the value linearly\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetGraph\fP, \fBsetInterpolating\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB29673\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPItemTracer::setInterpolating (bool enabled)"
+Sets whether the value of the graph's data points shall be interpolated, when positioning the tracer\&.
+.PP
+If \fIenabled\fP is set to false and a key is given with \fBsetGraphKey\fP, the tracer is placed on the data point of the graph which is closest to the key, but which is not necessarily exactly there\&. If \fIenabled\fP is true, the tracer will be positioned exactly at the specified key, and the appropriate value will be interpolated from the graph's data points linearly\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetGraph\fP, \fBsetGraphKey\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB29689\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPItemTracer::setPen (const QPen & pen)"
+Sets the pen that will be used to draw the line of the tracer
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetSelectedPen\fP, \fBsetBrush\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB29581\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPItemTracer::setSelectedBrush (const QBrush & brush)"
+Sets the brush that will be used to draw any fills of the tracer, when selected\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetBrush\fP, \fBsetSelected\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB29611\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPItemTracer::setSelectedPen (const QPen & pen)"
+Sets the pen that will be used to draw the line of the tracer when selected
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetPen\fP, \fBsetSelected\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB29591\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPItemTracer::setSize (double size)"
+Sets the size of the tracer in pixels, if the style supports setting a size (e\&.g\&. \fBtsSquare\fP does, \fBtsCrosshair\fP does not)\&. 
+.PP
+Definition at line \fB29620\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPItemTracer::setStyle (\fBQCPItemTracer::TracerStyle\fP style)"
+Sets the style/visual appearance of the tracer\&.
+.PP
+If you only want to use the tracer \fIposition\fP as an anchor for other items, set \fIstyle\fP to \fBtsNone\fP\&. 
+.PP
+Definition at line \fB29631\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "double QCPItemTracer::size () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB6547\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBTracerStyle\fP QCPItemTracer::style () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB6548\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "void QCPItemTracer::updatePosition ()"
+If the tracer is connected with a graph (\fBsetGraph\fP), this function updates the tracer's \fIposition\fP to reside on the graph data, depending on the configured key (\fBsetGraphKey\fP)\&.
+.PP
+It is called automatically on every redraw and normally doesn't need to be called manually\&. One exception is when you want to read the tracer coordinates via \fIposition\fP and are not sure that the graph's data (or the tracer key with \fBsetGraphKey\fP) hasn't changed since the last redraw\&. In that situation, call this function before accessing \fIposition\fP, to make sure you don't get out-of-date coordinates\&.
+.PP
+If there is no graph set on this tracer, this function does nothing\&. 
+.PP
+Definition at line \fB29810\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QBrush QCPItemTracer::mBrush\fC [protected]\fP"
+
+.PP
+Definition at line \fB6575\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBQCPGraph\fP* QCPItemTracer::mGraph\fC [protected]\fP"
+
+.PP
+Definition at line \fB6578\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double QCPItemTracer::mGraphKey\fC [protected]\fP"
+
+.PP
+Definition at line \fB6579\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "bool QCPItemTracer::mInterpolating\fC [protected]\fP"
+
+.PP
+Definition at line \fB6580\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QPen QCPItemTracer::mPen\fC [protected]\fP"
+
+.PP
+Definition at line \fB6574\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QBrush QCPItemTracer::mSelectedBrush\fC [protected]\fP"
+
+.PP
+Definition at line \fB6575\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QPen QCPItemTracer::mSelectedPen\fC [protected]\fP"
+
+.PP
+Definition at line \fB6574\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double QCPItemTracer::mSize\fC [protected]\fP"
+
+.PP
+Definition at line \fB6576\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBTracerStyle\fP QCPItemTracer::mStyle\fC [protected]\fP"
+
+.PP
+Definition at line \fB6577\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBQCPItemPosition\fP* const QCPItemTracer::position"
+
+.PP
+Definition at line \fB6570\fP of file \fBqcustomplot\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for OmronPID from the source code\&.

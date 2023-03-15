@@ -70,6 +70,7 @@ private slots:
     bool generateSaveFile();
     bool isIgnore(bool check, double temp);
     bool isViolate(QVector<double> vtemp);
+    bool isDrop(double diff);
 
     void on_pushButton_Connect_clicked();
     void on_pushButton_AskStatus_clicked();
@@ -104,7 +105,7 @@ private slots:
     void setIgnoreRange();
     void setParametersTempCheck(bool mute = true);
     void setIgnoreEnable();
-    void fillDifference(const QDateTime date);
+    double fillDifference(bool mute = true);
 
     void setColor(int colorindex = 0);
 
@@ -172,6 +173,7 @@ private:
     QMutex mutex_;
     //! Counter that TempCheck was executed.
     int countTempCheck_;
+    int countDropCheck_;
 };
 
 #endif // MAINWINDOW_H

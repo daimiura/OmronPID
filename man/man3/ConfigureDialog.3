@@ -1,0 +1,139 @@
+.TH "ConfigureDialog" 3 "Wed Mar 15 2023" "OmronPID" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ConfigureDialog \- configuredialog  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <configuredialog\&.h>\fP
+.PP
+Inherits QDialog\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBConfigureDialog\fP (QWidget *parent=nullptr)"
+.br
+.RI "\fBConfigureDialog::ConfigureDialog\fP\&. "
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool \fBignoreEnable_\fP"
+.br
+.ti -1c
+.RI "int \fBintervalAskMV_\fP"
+.br
+.ti -1c
+.RI "int \fBintervalAskTemp_\fP"
+.br
+.ti -1c
+.RI "int \fBnumbers_\fP"
+.br
+.ti -1c
+.RI "int \fBetime_\fP"
+.br
+.ti -1c
+.RI "double \fBsafeLimit_\fP"
+.br
+.ti -1c
+.RI "double \fBignoreUpper_\fP"
+.br
+.ti -1c
+.RI "double \fBignoreLower_\fP"
+.br
+.ti -1c
+.RI "bool \fBwarnigcheck_\fP"
+.br
+.ti -1c
+.RI "QString \fBmsg_\fP"
+.br
+.ti -1c
+.RI "QMessageBox \fBwarningMessageBox_\fP"
+.br
+.ti -1c
+.RI "QPushButton * \fBpushButton_SetParameters_\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+configuredialog 
+
+Boxes, buttons, and labels are defined\&. As slot, calcEstimatedTime and setValues are defined\&. 
+.PP
+Definition at line \fB35\fP of file \fBconfiguredialog\&.h\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ConfigureDialog::ConfigureDialog (QWidget * parent = \fCnullptr\fP)\fC [explicit]\fP"
+
+.PP
+\fBConfigureDialog::ConfigureDialog\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIparent\fP 
+.RE
+.PP
+Generate and layput labels, butoons, and etc\&.\&.\&. Connected signal to slot\&. configure boxes and set
+.PP
+QMessageBox
+.PP
+Definition at line \fB11\fP of file \fBconfiguredialog\&.cpp\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "int ConfigureDialog::etime_"
+
+.PP
+Definition at line \fB47\fP of file \fBconfiguredialog\&.h\fP\&.
+.SS "bool ConfigureDialog::ignoreEnable_"
+
+.PP
+Definition at line \fB43\fP of file \fBconfiguredialog\&.h\fP\&.
+.SS "double ConfigureDialog::ignoreLower_"
+
+.PP
+Definition at line \fB50\fP of file \fBconfiguredialog\&.h\fP\&.
+.SS "double ConfigureDialog::ignoreUpper_"
+
+.PP
+Definition at line \fB49\fP of file \fBconfiguredialog\&.h\fP\&.
+.SS "int ConfigureDialog::intervalAskMV_"
+
+.PP
+Definition at line \fB44\fP of file \fBconfiguredialog\&.h\fP\&.
+.SS "int ConfigureDialog::intervalAskTemp_"
+
+.PP
+Definition at line \fB45\fP of file \fBconfiguredialog\&.h\fP\&.
+.SS "QString ConfigureDialog::msg_"
+
+.PP
+Definition at line \fB52\fP of file \fBconfiguredialog\&.h\fP\&.
+.SS "int ConfigureDialog::numbers_"
+
+.PP
+Definition at line \fB46\fP of file \fBconfiguredialog\&.h\fP\&.
+.SS "QPushButton* ConfigureDialog::pushButton_SetParameters_"
+
+.PP
+Definition at line \fB54\fP of file \fBconfiguredialog\&.h\fP\&.
+.SS "double ConfigureDialog::safeLimit_"
+
+.PP
+Definition at line \fB48\fP of file \fBconfiguredialog\&.h\fP\&.
+.SS "bool ConfigureDialog::warnigcheck_"
+
+.PP
+Definition at line \fB51\fP of file \fBconfiguredialog\&.h\fP\&.
+.SS "QMessageBox ConfigureDialog::warningMessageBox_"
+
+.PP
+Definition at line \fB53\fP of file \fBconfiguredialog\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for OmronPID from the source code\&.

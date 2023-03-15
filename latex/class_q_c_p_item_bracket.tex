@@ -7,12 +7,20 @@ A bracket for referencing/highlighting certain parts in the plot.
 
 
 
-{\ttfamily \#include $<$qcustomplot.\+h$>$}
-
-Inheritance diagram for QCPItem\+Bracket\+:\begin{figure}[H]
+Inheritance diagram for QCPItem\+Bracket\+:\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=4.000000cm]{class_q_c_p_item_bracket}
+\includegraphics[width=173pt]{class_q_c_p_item_bracket__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for QCPItem\+Bracket\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_item_bracket__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Types}
@@ -27,9 +35,7 @@ enum \mbox{\hyperlink{class_q_c_p_item_bracket_a7ac3afd0b24a607054e7212047d59dbd
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_q_c_p_item_bracket_a44ecfa37a76de5e3549e2d61f9d8ee56}{QCPItem\+Bracket}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_a36ed5b292b90934b524a4e5866a3526c}{parent\+Plot}})
-\item 
-virtual \mbox{\hyperlink{class_q_c_p_item_bracket_ad773c3e8e09868d6f8caeb92c54919f4}{$\sim$\+QCPItem\+Bracket}} ()
+\mbox{\hyperlink{class_q_c_p_item_bracket_a44ecfa37a76de5e3549e2d61f9d8ee56}{QCPItem\+Bracket}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$parent\+Plot)
 \item 
 QPen \mbox{\hyperlink{class_q_c_p_item_bracket_a6013b3f83aab7bc82b485ee5447ecb1b}{pen}} () const
 \item 
@@ -39,22 +45,20 @@ double \mbox{\hyperlink{class_q_c_p_item_bracket_af69dbe7ca5847f36403e1fb502e8e5
 \item 
 \mbox{\hyperlink{class_q_c_p_item_bracket_a7ac3afd0b24a607054e7212047d59dbd}{Bracket\+Style}} \mbox{\hyperlink{class_q_c_p_item_bracket_a600ad8c0a3193cc2f335db6039f2932d}{style}} () const
 \item 
-void \mbox{\hyperlink{class_q_c_p_item_bracket_ab13001d9cc5d8f9e56ea15bdda682acb}{set\+Pen}} (const QPen \&\mbox{\hyperlink{class_q_c_p_item_bracket_a6013b3f83aab7bc82b485ee5447ecb1b}{pen}})
+void \mbox{\hyperlink{class_q_c_p_item_bracket_ab13001d9cc5d8f9e56ea15bdda682acb}{set\+Pen}} (const QPen \&pen)
 \item 
-void \mbox{\hyperlink{class_q_c_p_item_bracket_a349785c31122778a520c64891fa204c5}{set\+Selected\+Pen}} (const QPen \&\mbox{\hyperlink{class_q_c_p_item_bracket_a6013b3f83aab7bc82b485ee5447ecb1b}{pen}})
+void \mbox{\hyperlink{class_q_c_p_item_bracket_a349785c31122778a520c64891fa204c5}{set\+Selected\+Pen}} (const QPen \&pen)
 \item 
-void \mbox{\hyperlink{class_q_c_p_item_bracket_ac7cfc3da7da9b5c5ac5dfbe4f0351b2a}{set\+Length}} (double \mbox{\hyperlink{class_q_c_p_item_bracket_af69dbe7ca5847f36403e1fb502e8e59d}{length}})
+void \mbox{\hyperlink{class_q_c_p_item_bracket_ac7cfc3da7da9b5c5ac5dfbe4f0351b2a}{set\+Length}} (double length)
 \item 
-void \mbox{\hyperlink{class_q_c_p_item_bracket_a612dffa2373422eef8754d690add3703}{set\+Style}} (\mbox{\hyperlink{class_q_c_p_item_bracket_a7ac3afd0b24a607054e7212047d59dbd}{Bracket\+Style}} \mbox{\hyperlink{class_q_c_p_item_bracket_a600ad8c0a3193cc2f335db6039f2932d}{style}})
+void \mbox{\hyperlink{class_q_c_p_item_bracket_a612dffa2373422eef8754d690add3703}{set\+Style}} (\mbox{\hyperlink{class_q_c_p_item_bracket_a7ac3afd0b24a607054e7212047d59dbd}{Bracket\+Style}} style)
 \item 
-virtual double \mbox{\hyperlink{class_q_c_p_item_bracket_a49a6b2f41e0a8c2a2e3a2836027a8455}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant $\ast$details=0) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual double \mbox{\hyperlink{class_q_c_p_item_bracket_a49a6b2f41e0a8c2a2e3a2836027a8455}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant $\ast$details=0) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_q_c_p_abstract_item}{QCPAbstract\+Item}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_q_c_p_abstract_item_a9922507d8b4503a1fe1ed0b1030e23b6}{QCPAbstract\+Item}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_a36ed5b292b90934b524a4e5866a3526c}{parent\+Plot}})
-\item 
-virtual \mbox{\hyperlink{class_q_c_p_abstract_item_a375bd1b7d3218b04a6ff7ff06fff917c}{$\sim$\+QCPAbstract\+Item}} ()
+\mbox{\hyperlink{class_q_c_p_abstract_item_a9922507d8b4503a1fe1ed0b1030e23b6}{QCPAbstract\+Item}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$parent\+Plot)
 \item 
 bool \mbox{\hyperlink{class_q_c_p_abstract_item_a42715ad5f3d7fca6854025fa5636f436}{clip\+To\+Axis\+Rect}} () const
 \item 
@@ -68,11 +72,11 @@ void \mbox{\hyperlink{class_q_c_p_abstract_item_a39e05b9d4176b9accafc746d16ca6a0
 \item 
 void \mbox{\hyperlink{class_q_c_p_abstract_item_a7dc75fcbcd10206fe0b75d757ea7a347}{set\+Clip\+Axis\+Rect}} (\mbox{\hyperlink{class_q_c_p_axis_rect}{QCPAxis\+Rect}} $\ast$rect)
 \item 
-Q\+\_\+\+SLOT void \mbox{\hyperlink{class_q_c_p_abstract_item_a8a8e32a55bc478b849756a78c2d87fd2}{set\+Selectable}} (bool \mbox{\hyperlink{class_q_c_p_abstract_item_ae29aa489767352b40c4aaa7ea50c5582}{selectable}})
+Q\+\_\+\+SLOT void \mbox{\hyperlink{class_q_c_p_abstract_item_a8a8e32a55bc478b849756a78c2d87fd2}{set\+Selectable}} (bool selectable)
 \item 
-Q\+\_\+\+SLOT void \mbox{\hyperlink{class_q_c_p_abstract_item_a203de94ad586cc44d16c9565f49d3378}{set\+Selected}} (bool \mbox{\hyperlink{class_q_c_p_abstract_item_aa069fba320a13639f119f82ad29ead96}{selected}})
+Q\+\_\+\+SLOT void \mbox{\hyperlink{class_q_c_p_abstract_item_a203de94ad586cc44d16c9565f49d3378}{set\+Selected}} (bool selected)
 \item 
-virtual double \mbox{\hyperlink{class_q_c_p_abstract_item_ae41d0349d68bb802c49104afd100ba2a}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant $\ast$details=0) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}=0
+virtual double \mbox{\hyperlink{class_q_c_p_abstract_item_ae41d0349d68bb802c49104afd100ba2a}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant $\ast$details=0) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE=0
 \item 
 QList$<$ \mbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}} $\ast$ $>$ \mbox{\hyperlink{class_q_c_p_abstract_item_a709f655ac3f7f22d452714134662b454}{positions}} () const
 \item 
@@ -89,8 +93,6 @@ bool \mbox{\hyperlink{class_q_c_p_abstract_item_a84914f4516f9b38ef0bd89eafe3dbda
 \item 
 \mbox{\hyperlink{class_q_c_p_layerable_a74c0fa237f29bf0e49565013fc5d1ec0}{QCPLayerable}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$plot, QString target\+Layer=QString(), \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}}=0)
 \item 
-virtual \mbox{\hyperlink{class_q_c_p_layerable_a4231cf5b3601d6d3a5781283e7a9735b}{$\sim$\+QCPLayerable}} ()
-\item 
 bool \mbox{\hyperlink{class_q_c_p_layerable_af0297b944b6192b6d67d00bff41b6b70}{visible}} () const
 \item 
 \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$ \mbox{\hyperlink{class_q_c_p_layerable_a36ed5b292b90934b524a4e5866a3526c}{parent\+Plot}} () const
@@ -103,7 +105,7 @@ bool \mbox{\hyperlink{class_q_c_p_layerable_a71cbd212fde2703cee076e204a475709}{a
 \item 
 void \mbox{\hyperlink{class_q_c_p_layerable_a3bed99ddc396b48ce3ebfdc0418744f8}{set\+Visible}} (bool on)
 \item 
-Q\+\_\+\+SLOT bool \mbox{\hyperlink{class_q_c_p_layerable_ab0d0da6d2de45a118886d2c8e16d5a54}{set\+Layer}} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_a9d4e121a7f1d2314f906fe698209cac9}{layer}})
+Q\+\_\+\+SLOT bool \mbox{\hyperlink{class_q_c_p_layerable_ab0d0da6d2de45a118886d2c8e16d5a54}{set\+Layer}} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$layer)
 \item 
 bool \mbox{\hyperlink{class_q_c_p_layerable_ab25a0e7b897993b44447caee0f142083}{set\+Layer}} (const QString \&layer\+Name)
 \item 
@@ -125,32 +127,32 @@ bool \mbox{\hyperlink{class_q_c_p_layerable_ab054e88f15d485defcb95e7376f119e7}{r
 \doxysubsection*{Protected Types}
 \begin{DoxyCompactItemize}
 \item 
-enum \mbox{\hyperlink{class_q_c_p_item_bracket_a7f3a6a56d67f71219ed220553f3dd861}{Anchor\+Index}} \{ \mbox{\hyperlink{class_q_c_p_item_bracket_a7f3a6a56d67f71219ed220553f3dd861a17b57ef34cc05eadfe9becd1ad5b5242}{ai\+Center}}
+enum {\bfseries Anchor\+Index} \{ {\bfseries ai\+Center}
  \}
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_item_bracket_a942a3978aea44a2fc7b4383f2bf6d417}{draw}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual void \mbox{\hyperlink{class_q_c_p_item_bracket_a942a3978aea44a2fc7b4383f2bf6d417}{draw}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual QPointF \mbox{\hyperlink{class_q_c_p_item_bracket_a008d87325d26b6616d368cec06027cce}{anchor\+Pixel\+Position}} (int anchor\+Id) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual QPointF \mbox{\hyperlink{class_q_c_p_item_bracket_a008d87325d26b6616d368cec06027cce}{anchor\+Pixel\+Position}} (int anchor\+Id) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
 QPen \mbox{\hyperlink{class_q_c_p_item_bracket_af1c445df1a574bddc8a40efcd76dd2e1}{main\+Pen}} () const
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_q_c_p_abstract_item}{QCPAbstract\+Item}}}
 \begin{DoxyCompactItemize}
 \item 
-virtual \mbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037}{QCP\+::\+Interaction}} \mbox{\hyperlink{class_q_c_p_abstract_item_aceb5f99c361cf023c7cbe7339ea29571}{selection\+Category}} () const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual \mbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037}{QCP\+::\+Interaction}} \mbox{\hyperlink{class_q_c_p_abstract_item_aceb5f99c361cf023c7cbe7339ea29571}{selection\+Category}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual QRect \mbox{\hyperlink{class_q_c_p_abstract_item_a6ad60000f29afe11035e1f791dcbd45a}{clip\+Rect}} () const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual QRect \mbox{\hyperlink{class_q_c_p_abstract_item_a6ad60000f29afe11035e1f791dcbd45a}{clip\+Rect}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_abstract_item_a5579ce9ec7cad202499886b042448b10}{apply\+Default\+Antialiasing\+Hint}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual void \mbox{\hyperlink{class_q_c_p_abstract_item_a5579ce9ec7cad202499886b042448b10}{apply\+Default\+Antialiasing\+Hint}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_abstract_item_a007fdab79c935a5da5aa04a21d268c18}{draw}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}=0
+virtual void \mbox{\hyperlink{class_q_c_p_abstract_item_a007fdab79c935a5da5aa04a21d268c18}{draw}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) Q\+\_\+\+DECL\+\_\+\+OVERRIDE=0
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_abstract_item_aa4b969c58797f39c9c0b6c07c7869d17}{select\+Event}} (QMouse\+Event $\ast$event, bool additive, const QVariant \&details, bool $\ast$selection\+State\+Changed) \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual void \mbox{\hyperlink{class_q_c_p_abstract_item_aa4b969c58797f39c9c0b6c07c7869d17}{select\+Event}} (QMouse\+Event $\ast$event, bool additive, const QVariant \&details, bool $\ast$selection\+State\+Changed) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_abstract_item_af9093798cb07a861dcc73f93ca16c0c1}{deselect\+Event}} (bool $\ast$selection\+State\+Changed) \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual void \mbox{\hyperlink{class_q_c_p_abstract_item_af9093798cb07a861dcc73f93ca16c0c1}{deselect\+Event}} (bool $\ast$selection\+State\+Changed) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
 virtual QPointF \mbox{\hyperlink{class_q_c_p_abstract_item_ada5bad4e1196c4fc0d0d12328e24b8f2}{anchor\+Pixel\+Position}} (int anchor\+Id) const
 \item 
@@ -163,15 +165,17 @@ double \mbox{\hyperlink{class_q_c_p_abstract_item_a7dfc2007e36d09b8b5c988a9f06d6
 \doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}}
 \begin{DoxyCompactItemize}
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_layerable_ab20b7dbd8e0249ed61adb9622c427382}{parent\+Plot\+Initialized}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_a36ed5b292b90934b524a4e5866a3526c}{parent\+Plot}})
+virtual void \mbox{\hyperlink{class_q_c_p_layerable_ab20b7dbd8e0249ed61adb9622c427382}{parent\+Plot\+Initialized}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$parent\+Plot)
 \item 
 virtual \mbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037}{QCP\+::\+Interaction}} \mbox{\hyperlink{class_q_c_p_layerable_a908c9edda761886f33893be326dab77d}{selection\+Category}} () const
 \item 
 virtual QRect \mbox{\hyperlink{class_q_c_p_layerable_acbcfc9ecc75433747b1978a77b1864b3}{clip\+Rect}} () const
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_layerable_afdf83ddc6a265cbf4c89fe99d3d93473}{apply\+Default\+Antialiasing\+Hint}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) const =0
+\mbox{\Hypertarget{class_q_c_p_layerable_afdf83ddc6a265cbf4c89fe99d3d93473}\label{class_q_c_p_layerable_afdf83ddc6a265cbf4c89fe99d3d93473}} 
+virtual void {\bfseries apply\+Default\+Antialiasing\+Hint} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) const =0
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_layerable_aecf2f7087482d4b6a78cb2770e5ed12d}{draw}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter)=0
+\mbox{\Hypertarget{class_q_c_p_layerable_aecf2f7087482d4b6a78cb2770e5ed12d}\label{class_q_c_p_layerable_aecf2f7087482d4b6a78cb2770e5ed12d}} 
+virtual void {\bfseries draw} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter)=0
 \item 
 virtual void \mbox{\hyperlink{class_q_c_p_layerable_a7498c2d0d081cf7cad0fb3bb93aa0e91}{select\+Event}} (QMouse\+Event $\ast$event, bool additive, const QVariant \&details, bool $\ast$selection\+State\+Changed)
 \item 
@@ -187,11 +191,11 @@ virtual void \mbox{\hyperlink{class_q_c_p_layerable_a4171e2e823aca242dd0279f00ed
 \item 
 virtual void \mbox{\hyperlink{class_q_c_p_layerable_a47dfd7b8fd99c08ca54e09c362b6f022}{wheel\+Event}} (QWheel\+Event $\ast$event)
 \item 
-void \mbox{\hyperlink{class_q_c_p_layerable_a8cbe5a0c9a5674249982f5ca5f8e02bc}{initialize\+Parent\+Plot}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_a36ed5b292b90934b524a4e5866a3526c}{parent\+Plot}})
+void \mbox{\hyperlink{class_q_c_p_layerable_a8cbe5a0c9a5674249982f5ca5f8e02bc}{initialize\+Parent\+Plot}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$parent\+Plot)
 \item 
 void \mbox{\hyperlink{class_q_c_p_layerable_aa23c893671f1f6744ac235cf2204cf3a}{set\+Parent\+Layerable}} (\mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}})
 \item 
-bool \mbox{\hyperlink{class_q_c_p_layerable_af94484cfb7cbbddb7de522e9be71d9a4}{move\+To\+Layer}} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_a9d4e121a7f1d2314f906fe698209cac9}{layer}}, bool prepend)
+bool \mbox{\hyperlink{class_q_c_p_layerable_af94484cfb7cbbddb7de522e9be71d9a4}{move\+To\+Layer}} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$layer, bool prepend)
 \item 
 void \mbox{\hyperlink{class_q_c_p_layerable_acb663e375d2d36dc5c55021ee5a2119b}{apply\+Antialiasing\+Hint}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter, bool local\+Antialiased, \mbox{\hyperlink{namespace_q_c_p_ae55dbe315d41fe80f29ba88100843a0c}{QCP\+::\+Antialiased\+Element}} override\+Element) const
 \end{DoxyCompactItemize}
@@ -238,9 +242,10 @@ bool \mbox{\hyperlink{class_q_c_p_layerable_a3ab45a4c76a3333ce42eb217a81733ec}{m
 \doxysubsubsection*{Signals inherited from \mbox{\hyperlink{class_q_c_p_abstract_item}{QCPAbstract\+Item}}}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{class_q_c_p_abstract_item_aa5cffb034fc65dbb91c77e02c1c14251}{selection\+Changed}} (bool \mbox{\hyperlink{class_q_c_p_abstract_item_aa069fba320a13639f119f82ad29ead96}{selected}})
+void \mbox{\hyperlink{class_q_c_p_abstract_item_aa5cffb034fc65dbb91c77e02c1c14251}{selection\+Changed}} (bool selected)
 \item 
-void \mbox{\hyperlink{class_q_c_p_abstract_item_a5b266c11aac61cb511901f3911dac2a3}{selectable\+Changed}} (bool \mbox{\hyperlink{class_q_c_p_abstract_item_ae29aa489767352b40c4aaa7ea50c5582}{selectable}})
+\mbox{\Hypertarget{class_q_c_p_abstract_item_a5b266c11aac61cb511901f3911dac2a3}\label{class_q_c_p_abstract_item_a5b266c11aac61cb511901f3911dac2a3}} 
+void {\bfseries selectable\+Changed} (bool selectable)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Signals inherited from \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}}
 \begin{DoxyCompactItemize}
@@ -262,19 +267,21 @@ The bracket supports multiple styles via \mbox{\hyperlink{class_q_c_p_item_brack
 
 It provides an anchor {\itshape center}, to allow connection of other items, e.\+g. an arrow (\mbox{\hyperlink{class_q_c_p_item_line}{QCPItem\+Line}} or \mbox{\hyperlink{class_q_c_p_item_curve}{QCPItem\+Curve}}) or a text label (\mbox{\hyperlink{class_q_c_p_item_text}{QCPItem\+Text}}), to the bracket. 
 
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l06597}{6597}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+
+
 \doxysubsection{Member Enumeration Documentation}
 \mbox{\Hypertarget{class_q_c_p_item_bracket_a7f3a6a56d67f71219ed220553f3dd861}\label{class_q_c_p_item_bracket_a7f3a6a56d67f71219ed220553f3dd861}} 
 \index{QCPItemBracket@{QCPItemBracket}!AnchorIndex@{AnchorIndex}}
 \index{AnchorIndex@{AnchorIndex}!QCPItemBracket@{QCPItemBracket}}
 \doxysubsubsection{\texorpdfstring{AnchorIndex}{AnchorIndex}}
-{\footnotesize\ttfamily enum \mbox{\hyperlink{class_q_c_p_item_bracket_a7f3a6a56d67f71219ed220553f3dd861}{QCPItem\+Bracket\+::\+Anchor\+Index}}\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily enum QCPItem\+Bracket\+::\+Anchor\+Index\hspace{0.3cm}{\ttfamily [protected]}}
 
-\begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{aiCenter@{aiCenter}!QCPItemBracket@{QCPItemBracket}}\index{QCPItemBracket@{QCPItemBracket}!aiCenter@{aiCenter}}}\mbox{\Hypertarget{class_q_c_p_item_bracket_a7f3a6a56d67f71219ed220553f3dd861a17b57ef34cc05eadfe9becd1ad5b5242}\label{class_q_c_p_item_bracket_a7f3a6a56d67f71219ed220553f3dd861a17b57ef34cc05eadfe9becd1ad5b5242}} 
-ai\+Center&\\
-\hline
 
-\end{DoxyEnumFields}
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l06644}{6644}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_item_bracket_a7ac3afd0b24a607054e7212047d59dbd}\label{class_q_c_p_item_bracket_a7ac3afd0b24a607054e7212047d59dbd}} 
 \index{QCPItemBracket@{QCPItemBracket}!BracketStyle@{BracketStyle}}
 \index{BracketStyle@{BracketStyle}!QCPItemBracket@{QCPItemBracket}}
@@ -306,6 +313,10 @@ bs\+Calligraphic&A curly brace with varying stroke width giving a calligraphic i
 \end{DoxyEnumFields}
 
 
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l06613}{6613}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_q_c_p_item_bracket_a44ecfa37a76de5e3549e2d61f9d8ee56}\label{class_q_c_p_item_bracket_a44ecfa37a76de5e3549e2d61f9d8ee56}} 
 \index{QCPItemBracket@{QCPItemBracket}!QCPItemBracket@{QCPItemBracket}}
@@ -315,11 +326,27 @@ bs\+Calligraphic&A curly brace with varying stroke width giving a calligraphic i
 
 Creates a bracket item and sets default values.
 
-The created item is automatically registered with {\itshape parent\+Plot}. This \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance takes ownership of the item, so do not delete it manually but use \mbox{\hyperlink{class_q_custom_plot_ae04446557292551e8fb6e2c106e1848d}{QCustom\+Plot\+::remove\+Item()}} instead. \mbox{\Hypertarget{class_q_c_p_item_bracket_ad773c3e8e09868d6f8caeb92c54919f4}\label{class_q_c_p_item_bracket_ad773c3e8e09868d6f8caeb92c54919f4}} 
+The created item is automatically registered with {\itshape parent\+Plot}. This \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance takes ownership of the item, so do not delete it manually but use \mbox{\hyperlink{class_q_custom_plot_ae04446557292551e8fb6e2c106e1848d}{QCustom\+Plot\+::remove\+Item()}} instead. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l29915}{29915}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_item_bracket_a44ecfa37a76de5e3549e2d61f9d8ee56_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_item_bracket_ad773c3e8e09868d6f8caeb92c54919f4}\label{class_q_c_p_item_bracket_ad773c3e8e09868d6f8caeb92c54919f4}} 
 \index{QCPItemBracket@{QCPItemBracket}!````~QCPItemBracket@{$\sim$QCPItemBracket}}
 \index{````~QCPItemBracket@{$\sim$QCPItemBracket}!QCPItemBracket@{QCPItemBracket}}
 \doxysubsubsection{\texorpdfstring{$\sim$QCPItemBracket()}{~QCPItemBracket()}}
 {\footnotesize\ttfamily QCPItem\+Bracket\+::$\sim$\+QCPItem\+Bracket (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l29930}{29930}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 
 
@@ -332,7 +359,11 @@ The created item is automatically registered with {\itshape parent\+Plot}. This 
 
 
 
-Reimplemented from \mbox{\hyperlink{class_q_c_p_abstract_item_ada5bad4e1196c4fc0d0d12328e24b8f2}{QCPAbstract\+Item}}.
+Reimplemented from \mbox{\hyperlink{class_q_c_p_abstract_item}{QCPAbstract\+Item}}.
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l30090}{30090}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_item_bracket_a942a3978aea44a2fc7b4383f2bf6d417}\label{class_q_c_p_item_bracket_a942a3978aea44a2fc7b4383f2bf6d417}} 
 \index{QCPItemBracket@{QCPItemBracket}!draw@{draw}}
@@ -342,7 +373,11 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_abstract_item_ada5bad4e1196c4fc0
 
 
 
-Implements \mbox{\hyperlink{class_q_c_p_abstract_item_a007fdab79c935a5da5aa04a21d268c18}{QCPAbstract\+Item}}.
+Implements \mbox{\hyperlink{class_q_c_p_abstract_item}{QCPAbstract\+Item}}.
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l30022}{30022}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_item_bracket_af69dbe7ca5847f36403e1fb502e8e59d}\label{class_q_c_p_item_bracket_af69dbe7ca5847f36403e1fb502e8e59d}} 
 \index{QCPItemBracket@{QCPItemBracket}!length@{length}}
@@ -350,11 +385,19 @@ Implements \mbox{\hyperlink{class_q_c_p_abstract_item_a007fdab79c935a5da5aa04a21
 \doxysubsubsection{\texorpdfstring{length()}{length()}}
 {\footnotesize\ttfamily double QCPItem\+Bracket\+::length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l06626}{6626}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_item_bracket_af1c445df1a574bddc8a40efcd76dd2e1}\label{class_q_c_p_item_bracket_af1c445df1a574bddc8a40efcd76dd2e1}} 
 \index{QCPItemBracket@{QCPItemBracket}!mainPen@{mainPen}}
 \index{mainPen@{mainPen}!QCPItemBracket@{QCPItemBracket}}
 \doxysubsubsection{\texorpdfstring{mainPen()}{mainPen()}}
 {\footnotesize\ttfamily QPen QCPItem\+Bracket\+::main\+Pen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l30115}{30115}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_item_bracket_a6013b3f83aab7bc82b485ee5447ecb1b}\label{class_q_c_p_item_bracket_a6013b3f83aab7bc82b485ee5447ecb1b}} 
 \index{QCPItemBracket@{QCPItemBracket}!pen@{pen}}
@@ -362,11 +405,19 @@ Implements \mbox{\hyperlink{class_q_c_p_abstract_item_a007fdab79c935a5da5aa04a21
 \doxysubsubsection{\texorpdfstring{pen()}{pen()}}
 {\footnotesize\ttfamily QPen QCPItem\+Bracket\+::pen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l06624}{6624}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_item_bracket_aff5318a5415b87d9753c84752c65dd14}\label{class_q_c_p_item_bracket_aff5318a5415b87d9753c84752c65dd14}} 
 \index{QCPItemBracket@{QCPItemBracket}!selectedPen@{selectedPen}}
 \index{selectedPen@{selectedPen}!QCPItemBracket@{QCPItemBracket}}
 \doxysubsubsection{\texorpdfstring{selectedPen()}{selectedPen()}}
 {\footnotesize\ttfamily QPen QCPItem\+Bracket\+::selected\+Pen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l06625}{6625}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_item_bracket_a49a6b2f41e0a8c2a2e3a2836027a8455}\label{class_q_c_p_item_bracket_a49a6b2f41e0a8c2a2e3a2836027a8455}} 
 \index{QCPItemBracket@{QCPItemBracket}!selectTest@{selectTest}}
@@ -384,17 +435,29 @@ Providing a constant value for area objects allows selecting line objects even w
 
 The actual setting of the selection state is not done by this function. This is handled by the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} when the mouse\+Release\+Event occurs, and the finally selected object is notified via the select\+Event/ deselect\+Event methods.
 
-{\itshape details} is an optional output parameter. Every layerable subclass may place any information in {\itshape details}. This information will be passed to \mbox{\hyperlink{class_q_c_p_abstract_item_aa4b969c58797f39c9c0b6c07c7869d17}{select\+Event}} when the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} decides on the basis of this select\+Test call, that the object was successfully selected. The subsequent call to \mbox{\hyperlink{class_q_c_p_abstract_item_aa4b969c58797f39c9c0b6c07c7869d17}{select\+Event}} will carry the {\itshape details}. This is useful for multi-\/part objects (like \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}}). This way, a possibly complex calculation to decide which part was clicked is only done once in \mbox{\hyperlink{class_q_c_p_item_bracket_a49a6b2f41e0a8c2a2e3a2836027a8455}{select\+Test}}. The result (i.\+e. the actually clicked part) can then be placed in {\itshape details}. So in the subsequent \mbox{\hyperlink{class_q_c_p_abstract_item_aa4b969c58797f39c9c0b6c07c7869d17}{select\+Event}}, the decision which part was selected doesn\textquotesingle{}t have to be done a second time for a single selection operation.
+{\itshape details} is an optional output parameter. Every layerable subclass may place any information in {\itshape details}. This information will be passed to select\+Event when the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} decides on the basis of this select\+Test call, that the object was successfully selected. The subsequent call to select\+Event will carry the {\itshape details}. This is useful for multi-\/part objects (like \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}}). This way, a possibly complex calculation to decide which part was clicked is only done once in \mbox{\hyperlink{class_q_c_p_item_bracket_a49a6b2f41e0a8c2a2e3a2836027a8455}{select\+Test}}. The result (i.\+e. the actually clicked part) can then be placed in {\itshape details}. So in the subsequent select\+Event, the decision which part was selected doesn\textquotesingle{}t have to be done a second time for a single selection operation.
 
 You may pass 0 as {\itshape details} to indicate that you are not interested in those selection details.
 
 \begin{DoxySeeAlso}{See also}
-\mbox{\hyperlink{class_q_c_p_abstract_item_aa4b969c58797f39c9c0b6c07c7869d17}{select\+Event}}, \mbox{\hyperlink{class_q_c_p_abstract_item_af9093798cb07a861dcc73f93ca16c0c1}{deselect\+Event}}, \mbox{\hyperlink{class_q_c_p_layerable_af6567604818db90f4fd52822f8bc8376}{mouse\+Press\+Event}}, \mbox{\hyperlink{class_q_c_p_layerable_a47dfd7b8fd99c08ca54e09c362b6f022}{wheel\+Event}}, \mbox{\hyperlink{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5}{QCustom\+Plot\+::set\+Interactions}} 
+select\+Event, deselect\+Event, \mbox{\hyperlink{class_q_c_p_layerable_af6567604818db90f4fd52822f8bc8376}{mouse\+Press\+Event}}, \mbox{\hyperlink{class_q_c_p_layerable_a47dfd7b8fd99c08ca54e09c362b6f022}{wheel\+Event}}, \mbox{\hyperlink{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5}{QCustom\+Plot\+::set\+Interactions}} 
 \end{DoxySeeAlso}
 
 
 Implements \mbox{\hyperlink{class_q_c_p_abstract_item_ae41d0349d68bb802c49104afd100ba2a}{QCPAbstract\+Item}}.
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l29982}{29982}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_item_bracket_a49a6b2f41e0a8c2a2e3a2836027a8455_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_item_bracket_ac7cfc3da7da9b5c5ac5dfbe4f0351b2a}\label{class_q_c_p_item_bracket_ac7cfc3da7da9b5c5ac5dfbe4f0351b2a}} 
 \index{QCPItemBracket@{QCPItemBracket}!setLength@{setLength}}
 \index{setLength@{setLength}!QCPItemBracket@{QCPItemBracket}}
@@ -403,7 +466,11 @@ Implements \mbox{\hyperlink{class_q_c_p_abstract_item_ae41d0349d68bb802c49104afd
 
 Sets the {\itshape length} in pixels how far the bracket extends in the direction towards the embraced span of the bracket (i.\+e. perpendicular to the {\itshape left}-\/{\itshape right}-\/direction)
 
- \begin{center}Demonstrating the effect of different values for \mbox{\hyperlink{class_q_c_p_item_bracket_ac7cfc3da7da9b5c5ac5dfbe4f0351b2a}{set\+Length}}, for styles \mbox{\hyperlink{class_q_c_p_item_bracket_a7ac3afd0b24a607054e7212047d59dbda8f29f5ef754e2dc9a9efdedb2face0f3}{bs\+Calligraphic}} and \mbox{\hyperlink{class_q_c_p_item_bracket_a7ac3afd0b24a607054e7212047d59dbda7f9df4a7359bfe3dac1dbe4ccf5d220c}{bs\+Square}}. Anchors and positions are displayed for reference.\end{center}  \mbox{\Hypertarget{class_q_c_p_item_bracket_ab13001d9cc5d8f9e56ea15bdda682acb}\label{class_q_c_p_item_bracket_ab13001d9cc5d8f9e56ea15bdda682acb}} 
+ \begin{center}Demonstrating the effect of different values for \mbox{\hyperlink{class_q_c_p_item_bracket_ac7cfc3da7da9b5c5ac5dfbe4f0351b2a}{set\+Length}}, for styles \mbox{\hyperlink{class_q_c_p_item_bracket_a7ac3afd0b24a607054e7212047d59dbda8f29f5ef754e2dc9a9efdedb2face0f3}{bs\+Calligraphic}} and \mbox{\hyperlink{class_q_c_p_item_bracket_a7ac3afd0b24a607054e7212047d59dbda7f9df4a7359bfe3dac1dbe4ccf5d220c}{bs\+Square}}. Anchors and positions are displayed for reference.\end{center}  
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l29966}{29966}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+\mbox{\Hypertarget{class_q_c_p_item_bracket_ab13001d9cc5d8f9e56ea15bdda682acb}\label{class_q_c_p_item_bracket_ab13001d9cc5d8f9e56ea15bdda682acb}} 
 \index{QCPItemBracket@{QCPItemBracket}!setPen@{setPen}}
 \index{setPen@{setPen}!QCPItemBracket@{QCPItemBracket}}
 \doxysubsubsection{\texorpdfstring{setPen()}{setPen()}}
@@ -416,6 +483,18 @@ Note that when the style is \mbox{\hyperlink{class_q_c_p_item_bracket_a7ac3afd0b
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_item_bracket_a349785c31122778a520c64891fa204c5}{set\+Selected\+Pen}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l29943}{29943}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_item_bracket_ab13001d9cc5d8f9e56ea15bdda682acb_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_item_bracket_a349785c31122778a520c64891fa204c5}\label{class_q_c_p_item_bracket_a349785c31122778a520c64891fa204c5}} 
 \index{QCPItemBracket@{QCPItemBracket}!setSelectedPen@{setSelectedPen}}
 \index{setSelectedPen@{setSelectedPen}!QCPItemBracket@{QCPItemBracket}}
@@ -427,6 +506,18 @@ Sets the pen that will be used to draw the bracket when selected
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_item_bracket_ab13001d9cc5d8f9e56ea15bdda682acb}{set\+Pen}}, \mbox{\hyperlink{class_q_c_p_abstract_item_a203de94ad586cc44d16c9565f49d3378}{set\+Selected}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l29953}{29953}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_item_bracket_a349785c31122778a520c64891fa204c5_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_item_bracket_a612dffa2373422eef8754d690add3703}\label{class_q_c_p_item_bracket_a612dffa2373422eef8754d690add3703}} 
 \index{QCPItemBracket@{QCPItemBracket}!setStyle@{setStyle}}
 \index{setStyle@{setStyle}!QCPItemBracket@{QCPItemBracket}}
@@ -438,11 +529,19 @@ Sets the style of the bracket, i.\+e. the shape/visual appearance.
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_item_bracket_ab13001d9cc5d8f9e56ea15bdda682acb}{set\+Pen}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l29976}{29976}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_item_bracket_a600ad8c0a3193cc2f335db6039f2932d}\label{class_q_c_p_item_bracket_a600ad8c0a3193cc2f335db6039f2932d}} 
 \index{QCPItemBracket@{QCPItemBracket}!style@{style}}
 \index{style@{style}!QCPItemBracket@{QCPItemBracket}}
 \doxysubsubsection{\texorpdfstring{style()}{style()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_item_bracket_a7ac3afd0b24a607054e7212047d59dbd}{Bracket\+Style}} QCPItem\+Bracket\+::style (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l06627}{6627}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 
 
@@ -453,11 +552,19 @@ Sets the style of the bracket, i.\+e. the shape/visual appearance.
 \doxysubsubsection{\texorpdfstring{center}{center}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_item_anchor}{QCPItem\+Anchor}}$\ast$ const QCPItem\+Bracket\+::center}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l06640}{6640}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_item_bracket_af6cc6d27d96171778c6927d6edce48b0}\label{class_q_c_p_item_bracket_af6cc6d27d96171778c6927d6edce48b0}} 
 \index{QCPItemBracket@{QCPItemBracket}!left@{left}}
 \index{left@{left}!QCPItemBracket@{QCPItemBracket}}
 \doxysubsubsection{\texorpdfstring{left}{left}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}}$\ast$ const QCPItem\+Bracket\+::left}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l06638}{6638}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_item_bracket_ab3d99bba8da18eb4d0e0cb23dded33b2}\label{class_q_c_p_item_bracket_ab3d99bba8da18eb4d0e0cb23dded33b2}} 
 \index{QCPItemBracket@{QCPItemBracket}!mLength@{mLength}}
@@ -465,11 +572,19 @@ Sets the style of the bracket, i.\+e. the shape/visual appearance.
 \doxysubsubsection{\texorpdfstring{mLength}{mLength}}
 {\footnotesize\ttfamily double QCPItem\+Bracket\+::m\+Length\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l06646}{6646}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_item_bracket_a350c864a5853b04343719f5a8be6b675}\label{class_q_c_p_item_bracket_a350c864a5853b04343719f5a8be6b675}} 
 \index{QCPItemBracket@{QCPItemBracket}!mPen@{mPen}}
 \index{mPen@{mPen}!QCPItemBracket@{QCPItemBracket}}
 \doxysubsubsection{\texorpdfstring{mPen}{mPen}}
 {\footnotesize\ttfamily QPen QCPItem\+Bracket\+::m\+Pen\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l06645}{6645}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_item_bracket_adcfb53602d1802d00e2de4fd6df6b291}\label{class_q_c_p_item_bracket_adcfb53602d1802d00e2de4fd6df6b291}} 
 \index{QCPItemBracket@{QCPItemBracket}!mSelectedPen@{mSelectedPen}}
@@ -477,11 +592,19 @@ Sets the style of the bracket, i.\+e. the shape/visual appearance.
 \doxysubsubsection{\texorpdfstring{mSelectedPen}{mSelectedPen}}
 {\footnotesize\ttfamily QPen QCPItem\+Bracket\+::m\+Selected\+Pen\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l06645}{6645}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_item_bracket_ac911907184c824d621f274f8e0990080}\label{class_q_c_p_item_bracket_ac911907184c824d621f274f8e0990080}} 
 \index{QCPItemBracket@{QCPItemBracket}!mStyle@{mStyle}}
 \index{mStyle@{mStyle}!QCPItemBracket@{QCPItemBracket}}
 \doxysubsubsection{\texorpdfstring{mStyle}{mStyle}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_item_bracket_a7ac3afd0b24a607054e7212047d59dbd}{Bracket\+Style}} QCPItem\+Bracket\+::m\+Style\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l06647}{6647}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_item_bracket_afa6c1360b05a50c4e0df37b3cebab6be}\label{class_q_c_p_item_bracket_afa6c1360b05a50c4e0df37b3cebab6be}} 
 \index{QCPItemBracket@{QCPItemBracket}!right@{right}}
@@ -491,7 +614,11 @@ Sets the style of the bracket, i.\+e. the shape/visual appearance.
 
 
 
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l06639}{6639}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{qcustomplot_8h}{qcustomplot.\+h}}\item 
-\mbox{\hyperlink{qcustomplot_8cpp}{qcustomplot.\+cpp}}\end{DoxyCompactItemize}
+qcustomplot.\+h\item 
+qcustomplot.\+cpp\end{DoxyCompactItemize}

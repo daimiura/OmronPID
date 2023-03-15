@@ -1,0 +1,601 @@
+.TH "QCPAbstractLegendItem" 3 "Wed Mar 15 2023" "OmronPID" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QCPAbstractLegendItem \- The abstract base class for all entries in a \fBQCPLegend\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBQCPLayoutElement\fP\&.
+.PP
+Inherited by \fBQCPPlottableLegendItem\fP\&.
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBselectionChanged\fP (bool selected)"
+.br
+.ti -1c
+.RI "void \fBselectableChanged\fP (bool selectable)"
+.br
+.in -1c
+
+Signals inherited from \fBQCPLayerable\fP
+.in +1c
+.ti -1c
+.RI "void \fBlayerChanged\fP (\fBQCPLayer\fP *newLayer)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPAbstractLegendItem\fP (\fBQCPLegend\fP *parent)"
+.br
+.ti -1c
+.RI "\fBQCPLegend\fP * \fBparentLegend\fP () const"
+.br
+.ti -1c
+.RI "QFont \fBfont\fP () const"
+.br
+.ti -1c
+.RI "QColor \fBtextColor\fP () const"
+.br
+.ti -1c
+.RI "QFont \fBselectedFont\fP () const"
+.br
+.ti -1c
+.RI "QColor \fBselectedTextColor\fP () const"
+.br
+.ti -1c
+.RI "bool \fBselectable\fP () const"
+.br
+.ti -1c
+.RI "bool \fBselected\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetFont\fP (const QFont &font)"
+.br
+.ti -1c
+.RI "void \fBsetTextColor\fP (const QColor &color)"
+.br
+.ti -1c
+.RI "void \fBsetSelectedFont\fP (const QFont &font)"
+.br
+.ti -1c
+.RI "void \fBsetSelectedTextColor\fP (const QColor &color)"
+.br
+.ti -1c
+.RI "Q_SLOT void \fBsetSelectable\fP (bool selectable)"
+.br
+.ti -1c
+.RI "Q_SLOT void \fBsetSelected\fP (bool selected)"
+.br
+.ti -1c
+.RI "virtual double \fBselectTest\fP (const QPointF &pos, bool onlySelectable, QVariant *details=0) const Q_DECL_OVERRIDE"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBQCPLayoutElement\fP
+.in +1c
+.ti -1c
+.RI "\fBQCPLayoutElement\fP (\fBQCustomPlot\fP *parentPlot=0)"
+.br
+.ti -1c
+.RI "\fBQCPLayout\fP * \fBlayout\fP () const"
+.br
+.ti -1c
+.RI "QRect \fBrect\fP () const"
+.br
+.ti -1c
+.RI "QRect \fBouterRect\fP () const"
+.br
+.ti -1c
+.RI "QMargins \fBmargins\fP () const"
+.br
+.ti -1c
+.RI "QMargins \fBminimumMargins\fP () const"
+.br
+.ti -1c
+.RI "QCP::MarginSides \fBautoMargins\fP () const"
+.br
+.ti -1c
+.RI "QSize \fBminimumSize\fP () const"
+.br
+.ti -1c
+.RI "QSize \fBmaximumSize\fP () const"
+.br
+.ti -1c
+.RI "\fBSizeConstraintRect\fP \fBsizeConstraintRect\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPMarginGroup\fP * \fBmarginGroup\fP (\fBQCP::MarginSide\fP side) const"
+.br
+.ti -1c
+.RI "QHash< \fBQCP::MarginSide\fP, \fBQCPMarginGroup\fP * > \fBmarginGroups\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetOuterRect\fP (const QRect &\fBrect\fP)"
+.br
+.ti -1c
+.RI "void \fBsetMargins\fP (const QMargins &margins)"
+.br
+.ti -1c
+.RI "void \fBsetMinimumMargins\fP (const QMargins &margins)"
+.br
+.ti -1c
+.RI "void \fBsetAutoMargins\fP (QCP::MarginSides sides)"
+.br
+.ti -1c
+.RI "void \fBsetMinimumSize\fP (const QSize &size)"
+.br
+.ti -1c
+.RI "void \fBsetMinimumSize\fP (int width, int height)"
+.br
+.ti -1c
+.RI "void \fBsetMaximumSize\fP (const QSize &size)"
+.br
+.ti -1c
+.RI "void \fBsetMaximumSize\fP (int width, int height)"
+.br
+.ti -1c
+.RI "void \fBsetSizeConstraintRect\fP (\fBSizeConstraintRect\fP constraintRect)"
+.br
+.ti -1c
+.RI "void \fBsetMarginGroup\fP (QCP::MarginSides sides, \fBQCPMarginGroup\fP *group)"
+.br
+.ti -1c
+.RI "virtual void \fBupdate\fP (\fBUpdatePhase\fP phase)"
+.br
+.ti -1c
+.RI "virtual QSize \fBminimumOuterSizeHint\fP () const"
+.br
+.ti -1c
+.RI "virtual QSize \fBmaximumOuterSizeHint\fP () const"
+.br
+.ti -1c
+.RI "virtual QList< \fBQCPLayoutElement\fP * > \fBelements\fP (bool recursive) const"
+.br
+.ti -1c
+.RI "virtual double \fBselectTest\fP (const QPointF &pos, bool onlySelectable, QVariant *details=0) const Q_DECL_OVERRIDE"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBQCPLayerable\fP
+.in +1c
+.ti -1c
+.RI "\fBQCPLayerable\fP (\fBQCustomPlot\fP *plot, QString targetLayer=QString(), \fBQCPLayerable\fP *\fBparentLayerable\fP=0)"
+.br
+.ti -1c
+.RI "bool \fBvisible\fP () const"
+.br
+.ti -1c
+.RI "\fBQCustomPlot\fP * \fBparentPlot\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPLayerable\fP * \fBparentLayerable\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPLayer\fP * \fBlayer\fP () const"
+.br
+.ti -1c
+.RI "bool \fBantialiased\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetVisible\fP (bool on)"
+.br
+.ti -1c
+.RI "Q_SLOT bool \fBsetLayer\fP (\fBQCPLayer\fP *layer)"
+.br
+.ti -1c
+.RI "bool \fBsetLayer\fP (const QString &layerName)"
+.br
+.ti -1c
+.RI "void \fBsetAntialiased\fP (bool enabled)"
+.br
+.ti -1c
+.RI "virtual double \fBselectTest\fP (const QPointF &pos, bool onlySelectable, QVariant *details=0) const"
+.br
+.ti -1c
+.RI "bool \fBrealVisibility\fP () const"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fBQCP::Interaction\fP \fBselectionCategory\fP () const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual void \fBapplyDefaultAntialiasingHint\fP (\fBQCPPainter\fP *painter) const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual QRect \fBclipRect\fP () const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (\fBQCPPainter\fP *painter) Q_DECL_OVERRIDE=0"
+.br
+.ti -1c
+.RI "virtual void \fBselectEvent\fP (QMouseEvent *event, bool additive, const QVariant &details, bool *selectionStateChanged) Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual void \fBdeselectEvent\fP (bool *selectionStateChanged) Q_DECL_OVERRIDE"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBQCPLayoutElement\fP
+.in +1c
+.ti -1c
+.RI "virtual int \fBcalculateAutoMargin\fP (\fBQCP::MarginSide\fP side)"
+.br
+.ti -1c
+.RI "virtual void \fBlayoutChanged\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBapplyDefaultAntialiasingHint\fP (\fBQCPPainter\fP *painter) const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (\fBQCPPainter\fP *painter) Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual void \fBparentPlotInitialized\fP (\fBQCustomPlot\fP *parentPlot) Q_DECL_OVERRIDE"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBQCPLayerable\fP
+.in +1c
+.ti -1c
+.RI "virtual void \fBparentPlotInitialized\fP (\fBQCustomPlot\fP *parentPlot)"
+.br
+.ti -1c
+.RI "virtual \fBQCP::Interaction\fP \fBselectionCategory\fP () const"
+.br
+.ti -1c
+.RI "virtual QRect \fBclipRect\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBapplyDefaultAntialiasingHint\fP (\fBQCPPainter\fP *painter) const =0"
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (\fBQCPPainter\fP *painter)=0"
+.br
+.ti -1c
+.RI "virtual void \fBselectEvent\fP (QMouseEvent *event, bool additive, const QVariant &details, bool *selectionStateChanged)"
+.br
+.ti -1c
+.RI "virtual void \fBdeselectEvent\fP (bool *selectionStateChanged)"
+.br
+.ti -1c
+.RI "virtual void \fBmousePressEvent\fP (QMouseEvent *event, const QVariant &details)"
+.br
+.ti -1c
+.RI "virtual void \fBmouseMoveEvent\fP (QMouseEvent *event, const QPointF &startPos)"
+.br
+.ti -1c
+.RI "virtual void \fBmouseReleaseEvent\fP (QMouseEvent *event, const QPointF &startPos)"
+.br
+.ti -1c
+.RI "virtual void \fBmouseDoubleClickEvent\fP (QMouseEvent *event, const QVariant &details)"
+.br
+.ti -1c
+.RI "virtual void \fBwheelEvent\fP (QWheelEvent *event)"
+.br
+.ti -1c
+.RI "void \fBinitializeParentPlot\fP (\fBQCustomPlot\fP *parentPlot)"
+.br
+.ti -1c
+.RI "void \fBsetParentLayerable\fP (\fBQCPLayerable\fP *\fBparentLayerable\fP)"
+.br
+.ti -1c
+.RI "bool \fBmoveToLayer\fP (\fBQCPLayer\fP *layer, bool prepend)"
+.br
+.ti -1c
+.RI "void \fBapplyAntialiasingHint\fP (\fBQCPPainter\fP *painter, bool localAntialiased, \fBQCP::AntialiasedElement\fP overrideElement) const"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPLegend\fP * \fBmParentLegend\fP"
+.br
+.ti -1c
+.RI "QFont \fBmFont\fP"
+.br
+.ti -1c
+.RI "QColor \fBmTextColor\fP"
+.br
+.ti -1c
+.RI "QFont \fBmSelectedFont\fP"
+.br
+.ti -1c
+.RI "QColor \fBmSelectedTextColor\fP"
+.br
+.ti -1c
+.RI "bool \fBmSelectable\fP"
+.br
+.ti -1c
+.RI "bool \fBmSelected\fP"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBQCPLayoutElement\fP
+.in +1c
+.ti -1c
+.RI "\fBQCPLayout\fP * \fBmParentLayout\fP"
+.br
+.ti -1c
+.RI "QSize \fBmMinimumSize\fP"
+.br
+.ti -1c
+.RI "QSize \fBmMaximumSize\fP"
+.br
+.ti -1c
+.RI "\fBSizeConstraintRect\fP \fBmSizeConstraintRect\fP"
+.br
+.ti -1c
+.RI "QRect \fBmRect\fP"
+.br
+.ti -1c
+.RI "QRect \fBmOuterRect\fP"
+.br
+.ti -1c
+.RI "QMargins \fBmMargins\fP"
+.br
+.ti -1c
+.RI "QMargins \fBmMinimumMargins\fP"
+.br
+.ti -1c
+.RI "QCP::MarginSides \fBmAutoMargins\fP"
+.br
+.ti -1c
+.RI "QHash< \fBQCP::MarginSide\fP, \fBQCPMarginGroup\fP * > \fBmMarginGroups\fP"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBQCPLayerable\fP
+.in +1c
+.ti -1c
+.RI "bool \fBmVisible\fP"
+.br
+.ti -1c
+.RI "\fBQCustomPlot\fP * \fBmParentPlot\fP"
+.br
+.ti -1c
+.RI "QPointer< \fBQCPLayerable\fP > \fBmParentLayerable\fP"
+.br
+.ti -1c
+.RI "\fBQCPLayer\fP * \fBmLayer\fP"
+.br
+.ti -1c
+.RI "bool \fBmAntialiased\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBQCPLegend\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Types inherited from \fBQCPLayoutElement\fP
+.in +1c
+.ti -1c
+.RI "enum \fBUpdatePhase\fP { \fBupPreparation\fP, \fBupMargins\fP, \fBupLayout\fP }"
+.br
+.ti -1c
+.RI "enum \fBSizeConstraintRect\fP { \fBscrInnerRect\fP, \fBscrOuterRect\fP }"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The abstract base class for all entries in a \fBQCPLegend\fP\&. 
+
+It defines a very basic interface for entries in a \fBQCPLegend\fP\&. For representing plottables in the legend, the subclass \fBQCPPlottableLegendItem\fP is more suitable\&.
+.PP
+Only derive directly from this class when you need absolute freedom (e\&.g\&. a custom legend entry that's not even associated with a plottable)\&.
+.PP
+You must implement the following pure virtual functions: 
+.PD 0
+
+.IP "\(bu" 2
+\fBdraw\fP (from \fBQCPLayerable\fP)
+.PP
+You inherit the following members you may use: \fBQCPLegend\fP *\fBmParentLegend\fP  A pointer to the parent \fBQCPLegend\fP\&. QFont \fBmFont\fP  The generic font of the item\&. You should use this font for all or at least the most prominent text of the item\&.  
+.PP
+Definition at line \fB4708\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QCPAbstractLegendItem::QCPAbstractLegendItem (\fBQCPLegend\fP * parent)\fC [explicit]\fP"
+Constructs a \fBQCPAbstractLegendItem\fP and associates it with the \fBQCPLegend\fP \fIparent\fP\&. This does not cause the item to be added to \fIparent\fP, so \fBQCPLegend::addItem\fP must be called separately\&. 
+.PP
+Definition at line \fB17967\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void QCPAbstractLegendItem::applyDefaultAntialiasingHint (\fBQCPPainter\fP * painter) const\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBQCPLayoutElement\fP\&.
+.PP
+Definition at line \fB18069\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QRect QCPAbstractLegendItem::clipRect () const\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBQCPLayerable\fP\&.
+.PP
+Definition at line \fB18075\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPAbstractLegendItem::deselectEvent (bool * selectionStateChanged)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBQCPLayerable\fP\&.
+.PP
+Definition at line \fB18095\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "virtual void QCPAbstractLegendItem::draw (\fBQCPPainter\fP * painter)\fC [protected]\fP, \fC [pure virtual]\fP"
+
+.PP
+Reimplemented from \fBQCPLayoutElement\fP\&.
+.SS "QFont QCPAbstractLegendItem::font () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB4725\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBQCPLegend\fP * QCPAbstractLegendItem::parentLegend () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB4724\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "bool QCPAbstractLegendItem::selectable () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB4729\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "bool QCPAbstractLegendItem::selected () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB4730\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QFont QCPAbstractLegendItem::selectedFont () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB4727\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QColor QCPAbstractLegendItem::selectedTextColor () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB4728\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "void QCPAbstractLegendItem::selectEvent (QMouseEvent * event, bool additive, const QVariant & details, bool * selectionStateChanged)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBQCPLayerable\fP\&.
+.PP
+Definition at line \fB18081\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "\fBQCP::Interaction\fP QCPAbstractLegendItem::selectionCategory () const\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBQCPLayerable\fP\&.
+.PP
+Definition at line \fB18824\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPAbstractLegendItem::selectionChanged (bool selected)\fC [signal]\fP"
+This signal is emitted when the selection state of this legend item has changed, either by user interaction or by a direct call to \fBsetSelected\fP\&. 
+.SS "double QCPAbstractLegendItem::selectTest (const QPointF & pos, bool onlySelectable, QVariant * details = \fC0\fP) const\fC [virtual]\fP"
+Layout elements are sensitive to events inside their outer rect\&. If \fIpos\fP is within the outer rect, this method returns a value corresponding to 0\&.99 times the parent plot's selection tolerance\&. However, layout elements are not selectable by default\&. So if \fIonlySelectable\fP is true, -1\&.0 is returned\&.
+.PP
+See \fBQCPLayerable::selectTest\fP for a general explanation of this virtual method\&.
+.PP
+\fBQCPLayoutElement\fP subclasses may reimplement this method to provide more specific selection test behaviour\&. 
+.PP
+Reimplemented from \fBQCPLayoutElement\fP\&.
+.PP
+Definition at line \fB18055\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPAbstractLegendItem::setFont (const QFont & font)"
+Sets the default font of this specific legend item to \fIfont\fP\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetTextColor\fP, \fBQCPLegend::setFont\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB17986\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPAbstractLegendItem::setSelectable (bool selectable)"
+Sets whether this specific legend item is selectable\&.
+.PP
+\fBSee also\fP
+.RS 4
+setSelectedParts, \fBQCustomPlot::setInteractions\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB18028\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPAbstractLegendItem::setSelected (bool selected)"
+Sets whether this specific legend item is selected\&.
+.PP
+It is possible to set the selection state of this item by calling this function directly, even if setSelectable is set to false\&.
+.PP
+\fBSee also\fP
+.RS 4
+setSelectableParts, \fBQCustomPlot::setInteractions\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB18045\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPAbstractLegendItem::setSelectedFont (const QFont & font)"
+When this legend item is selected, \fIfont\fP is used to draw generic text, instead of the normal font set with \fBsetFont\fP\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetFont\fP, \fBQCPLegend::setSelectedFont\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB18007\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPAbstractLegendItem::setSelectedTextColor (const QColor & color)"
+When this legend item is selected, \fIcolor\fP is used to draw generic text, instead of the normal color set with \fBsetTextColor\fP\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetTextColor\fP, \fBQCPLegend::setSelectedTextColor\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB18018\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPAbstractLegendItem::setTextColor (const QColor & color)"
+Sets the default text color of this specific legend item to \fIcolor\fP\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetFont\fP, \fBQCPLegend::setTextColor\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB17996\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QColor QCPAbstractLegendItem::textColor () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB4726\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBQCPLegend\fP\fC [friend]\fP"
+
+.PP
+Definition at line \fB4768\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QFont QCPAbstractLegendItem::mFont\fC [protected]\fP"
+
+.PP
+Definition at line \fB4750\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBQCPLegend\fP* QCPAbstractLegendItem::mParentLegend\fC [protected]\fP"
+
+.PP
+Definition at line \fB4749\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "bool QCPAbstractLegendItem::mSelectable\fC [protected]\fP"
+
+.PP
+Definition at line \fB4754\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "bool QCPAbstractLegendItem::mSelected\fC [protected]\fP"
+
+.PP
+Definition at line \fB4754\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QFont QCPAbstractLegendItem::mSelectedFont\fC [protected]\fP"
+
+.PP
+Definition at line \fB4752\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QColor QCPAbstractLegendItem::mSelectedTextColor\fC [protected]\fP"
+
+.PP
+Definition at line \fB4753\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QColor QCPAbstractLegendItem::mTextColor\fC [protected]\fP"
+
+.PP
+Definition at line \fB4751\fP of file \fBqcustomplot\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for OmronPID from the source code\&.

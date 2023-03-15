@@ -7,20 +7,17 @@ The abstract base class for paint buffers, which define the rendering backend.
 
 
 
-{\ttfamily \#include $<$qcustomplot.\+h$>$}
-
-Inheritance diagram for QCPAbstract\+Paint\+Buffer\+:\begin{figure}[H]
+Inheritance diagram for QCPAbstract\+Paint\+Buffer\+:\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{class_q_c_p_abstract_paint_buffer}
+\includegraphics[width=202pt]{class_q_c_p_abstract_paint_buffer__inherit__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_a3ce532c12f10b81697108835755641e2}{QCPAbstract\+Paint\+Buffer}} (const QSize \&\mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_a3ea8284e547985c5d263f26a6adfa11f}{size}}, double \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_aac1b981f8c1744036610ff1a6b9461f9}{device\+Pixel\+Ratio}})
-\item 
-virtual \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_a50fbb1265814d019a1707f4cb11e20de}{$\sim$\+QCPAbstract\+Paint\+Buffer}} ()
+\mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_a3ce532c12f10b81697108835755641e2}{QCPAbstract\+Paint\+Buffer}} (const QSize \&size, double device\+Pixel\+Ratio)
 \item 
 QSize \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_a3ea8284e547985c5d263f26a6adfa11f}{size}} () const
 \item 
@@ -28,9 +25,9 @@ bool \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_a76bf771cda945a6c602cf9b
 \item 
 double \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_aac1b981f8c1744036610ff1a6b9461f9}{device\+Pixel\+Ratio}} () const
 \item 
-void \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_a8b68c3cd36533f1a4a23b5ce8cd66f01}{set\+Size}} (const QSize \&\mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_a3ea8284e547985c5d263f26a6adfa11f}{size}})
+void \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_a8b68c3cd36533f1a4a23b5ce8cd66f01}{set\+Size}} (const QSize \&size)
 \item 
-void \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_ae4c7dc70dfc66be2879ce297b2b3d67f}{set\+Invalidated}} (bool \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_a76bf771cda945a6c602cf9b7d365d92b}{invalidated}}=true)
+void \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_ae4c7dc70dfc66be2879ce297b2b3d67f}{set\+Invalidated}} (bool invalidated=true)
 \item 
 void \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_a555eaad5d5c806420ff35602a1bb68fa}{set\+Device\+Pixel\+Ratio}} (double ratio)
 \item 
@@ -67,6 +64,10 @@ A paint buffer manages both a surface to draw onto, and the matching paint devic
 
 The simplest paint buffer implementation is \mbox{\hyperlink{class_q_c_p_paint_buffer_pixmap}{QCPPaint\+Buffer\+Pixmap}} which allows regular software rendering via the raster engine. Hardware accelerated rendering via pixel buffers and frame buffer objects is provided by QCPPaint\+Buffer\+Gl\+Pbuffer and QCPPaint\+Buffer\+Gl\+Fbo. They are used automatically if \mbox{\hyperlink{class_q_custom_plot_a7db1adc09016329f3aef7c60da935789}{QCustom\+Plot\+::set\+Open\+Gl}} is enabled. 
 
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l00515}{515}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_q_c_p_abstract_paint_buffer_a3ce532c12f10b81697108835755641e2}\label{class_q_c_p_abstract_paint_buffer_a3ce532c12f10b81697108835755641e2}} 
 \index{QCPAbstractPaintBuffer@{QCPAbstractPaintBuffer}!QCPAbstractPaintBuffer@{QCPAbstractPaintBuffer}}
@@ -76,11 +77,19 @@ The simplest paint buffer implementation is \mbox{\hyperlink{class_q_c_p_paint_b
 
 Creates a paint buffer and initializes it with the provided {\itshape size} and {\itshape device\+Pixel\+Ratio}.
 
-Subclasses must call their \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_aee7506a52bd7e5a07c2af27935eb13e7}{reallocate\+Buffer}} implementation in their respective constructors. \mbox{\Hypertarget{class_q_c_p_abstract_paint_buffer_a50fbb1265814d019a1707f4cb11e20de}\label{class_q_c_p_abstract_paint_buffer_a50fbb1265814d019a1707f4cb11e20de}} 
+Subclasses must call their \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_aee7506a52bd7e5a07c2af27935eb13e7}{reallocate\+Buffer}} implementation in their respective constructors. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l00570}{570}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+\mbox{\Hypertarget{class_q_c_p_abstract_paint_buffer_a50fbb1265814d019a1707f4cb11e20de}\label{class_q_c_p_abstract_paint_buffer_a50fbb1265814d019a1707f4cb11e20de}} 
 \index{QCPAbstractPaintBuffer@{QCPAbstractPaintBuffer}!````~QCPAbstractPaintBuffer@{$\sim$QCPAbstractPaintBuffer}}
 \index{````~QCPAbstractPaintBuffer@{$\sim$QCPAbstractPaintBuffer}!QCPAbstractPaintBuffer@{QCPAbstractPaintBuffer}}
 \doxysubsubsection{\texorpdfstring{$\sim$QCPAbstractPaintBuffer()}{~QCPAbstractPaintBuffer()}}
 {\footnotesize\ttfamily QCPAbstract\+Paint\+Buffer\+::$\sim$\+QCPAbstract\+Paint\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l00577}{577}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 
 
@@ -103,6 +112,10 @@ Implemented in \mbox{\hyperlink{class_q_c_p_paint_buffer_pixmap_a14badbd010a3cde
 \doxysubsubsection{\texorpdfstring{devicePixelRatio()}{devicePixelRatio()}}
 {\footnotesize\ttfamily double QCPAbstract\+Paint\+Buffer\+::device\+Pixel\+Ratio (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l00524}{524}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_abstract_paint_buffer_a41b0dc6e7744f19fae09f8532c207dc1}\label{class_q_c_p_abstract_paint_buffer_a41b0dc6e7744f19fae09f8532c207dc1}} 
 \index{QCPAbstractPaintBuffer@{QCPAbstractPaintBuffer}!donePainting@{donePainting}}
 \index{donePainting@{donePainting}!QCPAbstractPaintBuffer@{QCPAbstractPaintBuffer}}
@@ -111,7 +124,11 @@ Implemented in \mbox{\hyperlink{class_q_c_p_paint_buffer_pixmap_a14badbd010a3cde
 
 If you have acquired a \mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} to paint onto this paint buffer via \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_a9e9f29b19c033cf02fb96f1a148463f3}{start\+Painting}}, call this method as soon as you are done with the painting operations and have deleted the painter.
 
-paint buffer subclasses may use this method to perform any type of cleanup that is necessary. The default implementation does nothing. \mbox{\Hypertarget{class_q_c_p_abstract_paint_buffer_afb998c7525e3ae37d9d2d46c7aaf461a}\label{class_q_c_p_abstract_paint_buffer_afb998c7525e3ae37d9d2d46c7aaf461a}} 
+paint buffer subclasses may use this method to perform any type of cleanup that is necessary. The default implementation does nothing. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l00533}{533}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+\mbox{\Hypertarget{class_q_c_p_abstract_paint_buffer_afb998c7525e3ae37d9d2d46c7aaf461a}\label{class_q_c_p_abstract_paint_buffer_afb998c7525e3ae37d9d2d46c7aaf461a}} 
 \index{QCPAbstractPaintBuffer@{QCPAbstractPaintBuffer}!draw@{draw}}
 \index{draw@{draw}!QCPAbstractPaintBuffer@{QCPAbstractPaintBuffer}}
 \doxysubsubsection{\texorpdfstring{draw()}{draw()}}
@@ -126,6 +143,10 @@ Implemented in \mbox{\hyperlink{class_q_c_p_paint_buffer_pixmap_af7bfc685e56a0a9
 \index{invalidated@{invalidated}!QCPAbstractPaintBuffer@{QCPAbstractPaintBuffer}}
 \doxysubsubsection{\texorpdfstring{invalidated()}{invalidated()}}
 {\footnotesize\ttfamily bool QCPAbstract\+Paint\+Buffer\+::invalidated (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l00523}{523}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_abstract_paint_buffer_aee7506a52bd7e5a07c2af27935eb13e7}\label{class_q_c_p_abstract_paint_buffer_aee7506a52bd7e5a07c2af27935eb13e7}} 
 \index{QCPAbstractPaintBuffer@{QCPAbstractPaintBuffer}!reallocateBuffer@{reallocateBuffer}}
@@ -142,6 +163,14 @@ Subclasses of \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer}{QCPAbstract\+P
 
 Implemented in \mbox{\hyperlink{class_q_c_p_paint_buffer_pixmap_ad49f3205ba3463b1c44f8db3cfcc90f0}{QCPPaint\+Buffer\+Pixmap}}.
 
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_abstract_paint_buffer_aee7506a52bd7e5a07c2af27935eb13e7_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_abstract_paint_buffer_a555eaad5d5c806420ff35602a1bb68fa}\label{class_q_c_p_abstract_paint_buffer_a555eaad5d5c806420ff35602a1bb68fa}} 
 \index{QCPAbstractPaintBuffer@{QCPAbstractPaintBuffer}!setDevicePixelRatio@{setDevicePixelRatio}}
 \index{setDevicePixelRatio@{setDevicePixelRatio}!QCPAbstractPaintBuffer@{QCPAbstractPaintBuffer}}
@@ -155,6 +184,18 @@ The buffer is reallocated (by calling \mbox{\hyperlink{class_q_c_p_abstract_pain
 \begin{DoxyNote}{Note}
 This method is only available for Qt versions 5.\+4 and higher. 
 \end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l00627}{627}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_abstract_paint_buffer_a555eaad5d5c806420ff35602a1bb68fa_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_abstract_paint_buffer_ae4c7dc70dfc66be2879ce297b2b3d67f}\label{class_q_c_p_abstract_paint_buffer_ae4c7dc70dfc66be2879ce297b2b3d67f}} 
 \index{QCPAbstractPaintBuffer@{QCPAbstractPaintBuffer}!setInvalidated@{setInvalidated}}
 \index{setInvalidated@{setInvalidated}!QCPAbstractPaintBuffer@{QCPAbstractPaintBuffer}}
@@ -167,7 +208,19 @@ This mechanism is used internally in conjunction with isolated replotting of \mb
 
 The invalidated flag is set to true when \mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} association has changed, i.\+e. if layers were added or removed from this buffer, or if they were reordered. It is set to false as soon as all associated \mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} instances are drawn onto the buffer.
 
-Under normal circumstances, it is not necessary to manually call this method. \mbox{\Hypertarget{class_q_c_p_abstract_paint_buffer_a8b68c3cd36533f1a4a23b5ce8cd66f01}\label{class_q_c_p_abstract_paint_buffer_a8b68c3cd36533f1a4a23b5ce8cd66f01}} 
+Under normal circumstances, it is not necessary to manually call this method. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l00613}{613}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_abstract_paint_buffer_ae4c7dc70dfc66be2879ce297b2b3d67f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_abstract_paint_buffer_a8b68c3cd36533f1a4a23b5ce8cd66f01}\label{class_q_c_p_abstract_paint_buffer_a8b68c3cd36533f1a4a23b5ce8cd66f01}} 
 \index{QCPAbstractPaintBuffer@{QCPAbstractPaintBuffer}!setSize@{setSize}}
 \index{setSize@{setSize}!QCPAbstractPaintBuffer@{QCPAbstractPaintBuffer}}
 \doxysubsubsection{\texorpdfstring{setSize()}{setSize()}}
@@ -177,11 +230,27 @@ Sets the paint buffer size.
 
 The buffer is reallocated (by calling \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_aee7506a52bd7e5a07c2af27935eb13e7}{reallocate\+Buffer}}), so any painters that were obtained by \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_a9e9f29b19c033cf02fb96f1a148463f3}{start\+Painting}} are invalidated and must not be used after calling this method.
 
-If {\itshape size} is already the current buffer size, this method does nothing. \mbox{\Hypertarget{class_q_c_p_abstract_paint_buffer_a3ea8284e547985c5d263f26a6adfa11f}\label{class_q_c_p_abstract_paint_buffer_a3ea8284e547985c5d263f26a6adfa11f}} 
+If {\itshape size} is already the current buffer size, this method does nothing. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l00589}{589}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_abstract_paint_buffer_a8b68c3cd36533f1a4a23b5ce8cd66f01_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_abstract_paint_buffer_a3ea8284e547985c5d263f26a6adfa11f}\label{class_q_c_p_abstract_paint_buffer_a3ea8284e547985c5d263f26a6adfa11f}} 
 \index{QCPAbstractPaintBuffer@{QCPAbstractPaintBuffer}!size@{size}}
 \index{size@{size}!QCPAbstractPaintBuffer@{QCPAbstractPaintBuffer}}
 \doxysubsubsection{\texorpdfstring{size()}{size()}}
 {\footnotesize\ttfamily QSize QCPAbstract\+Paint\+Buffer\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l00522}{522}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_abstract_paint_buffer_a9e9f29b19c033cf02fb96f1a148463f3}\label{class_q_c_p_abstract_paint_buffer_a9e9f29b19c033cf02fb96f1a148463f3}} 
 \index{QCPAbstractPaintBuffer@{QCPAbstractPaintBuffer}!startPainting@{startPainting}}
@@ -208,11 +277,19 @@ Implemented in \mbox{\hyperlink{class_q_c_p_paint_buffer_pixmap_a357964ef7d28cfa
 \doxysubsubsection{\texorpdfstring{mDevicePixelRatio}{mDevicePixelRatio}}
 {\footnotesize\ttfamily double QCPAbstract\+Paint\+Buffer\+::m\+Device\+Pixel\+Ratio\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l00540}{540}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_abstract_paint_buffer_a3bc49cc9cf9daaca3a60977f010c08c9}\label{class_q_c_p_abstract_paint_buffer_a3bc49cc9cf9daaca3a60977f010c08c9}} 
 \index{QCPAbstractPaintBuffer@{QCPAbstractPaintBuffer}!mInvalidated@{mInvalidated}}
 \index{mInvalidated@{mInvalidated}!QCPAbstractPaintBuffer@{QCPAbstractPaintBuffer}}
 \doxysubsubsection{\texorpdfstring{mInvalidated}{mInvalidated}}
 {\footnotesize\ttfamily bool QCPAbstract\+Paint\+Buffer\+::m\+Invalidated\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l00543}{543}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_abstract_paint_buffer_ae246c426222bfa18d5e8797fab73e3ce}\label{class_q_c_p_abstract_paint_buffer_ae246c426222bfa18d5e8797fab73e3ce}} 
 \index{QCPAbstractPaintBuffer@{QCPAbstractPaintBuffer}!mSize@{mSize}}
@@ -222,7 +299,11 @@ Implemented in \mbox{\hyperlink{class_q_c_p_paint_buffer_pixmap_a357964ef7d28cfa
 
 
 
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l00539}{539}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{qcustomplot_8h}{qcustomplot.\+h}}\item 
-\mbox{\hyperlink{qcustomplot_8cpp}{qcustomplot.\+cpp}}\end{DoxyCompactItemize}
+qcustomplot.\+h\item 
+qcustomplot.\+cpp\end{DoxyCompactItemize}

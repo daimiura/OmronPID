@@ -7,12 +7,20 @@ QPainter subclass used internally.
 
 
 
-{\ttfamily \#include $<$qcustomplot.\+h$>$}
-
-Inheritance diagram for QCPPainter\+:\begin{figure}[H]
+Inheritance diagram for QCPPainter\+:\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{class_q_c_p_painter}
+\includegraphics[width=148pt]{class_q_c_p_painter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for QCPPainter\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=148pt]{class_q_c_p_painter__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Types}
@@ -39,7 +47,7 @@ void \mbox{\hyperlink{class_q_c_p_painter_aaba1deb9188244d9ea65b035112b4d05}{set
 \item 
 void \mbox{\hyperlink{class_q_c_p_painter_af6b1f7d2bbc548b10aa55d8b6ad49577}{set\+Mode}} (\mbox{\hyperlink{class_q_c_p_painter_a156cf16444ff5e0d81a73c615fdb156d}{Painter\+Mode}} mode, bool enabled=true)
 \item 
-void \mbox{\hyperlink{class_q_c_p_painter_a5fac93adc29c7c4dea9f3e171e9e635e}{set\+Modes}} (Painter\+Modes \mbox{\hyperlink{class_q_c_p_painter_aef102658219b24165f7ee2aad1b9e48f}{modes}})
+void \mbox{\hyperlink{class_q_c_p_painter_a5fac93adc29c7c4dea9f3e171e9e635e}{set\+Modes}} (Painter\+Modes modes)
 \item 
 bool \mbox{\hyperlink{class_q_c_p_painter_a0a41146ccd619dceab6e25ec7b46b044}{begin}} (QPaint\+Device $\ast$device)
 \item 
@@ -80,6 +88,10 @@ This class intentionally hides non-\/virtual functions of QPainter, e.\+g. set\+
 \end{DoxyWarning}
 
 
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l00456}{456}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+
+
 \doxysubsection{Member Enumeration Documentation}
 \mbox{\Hypertarget{class_q_c_p_painter_a156cf16444ff5e0d81a73c615fdb156d}\label{class_q_c_p_painter_a156cf16444ff5e0d81a73c615fdb156d}} 
 \index{QCPPainter@{QCPPainter}!PainterMode@{PainterMode}}
@@ -107,6 +119,10 @@ pm\+Non\+Cosmetic&{\ttfamily 0x04} Turns pen widths 0 to 1, i.\+e. disables cosm
 \end{DoxyEnumFields}
 
 
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l00464}{464}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_q_c_p_painter_a3c52cb0f43f34573d29bea487da28fe8}\label{class_q_c_p_painter_a3c52cb0f43f34573d29bea487da28fe8}} 
 \index{QCPPainter@{QCPPainter}!QCPPainter@{QCPPainter}}
@@ -114,7 +130,11 @@ pm\+Non\+Cosmetic&{\ttfamily 0x04} Turns pen widths 0 to 1, i.\+e. disables cosm
 \doxysubsubsection{\texorpdfstring{QCPPainter()}{QCPPainter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily QCPPainter\+::\+QCPPainter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Creates a new \mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} instance and sets default values \mbox{\Hypertarget{class_q_c_p_painter_ae58dbb1795ddc4351ab324dc9898aa22}\label{class_q_c_p_painter_ae58dbb1795ddc4351ab324dc9898aa22}} 
+Creates a new \mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} instance and sets default values 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l00285}{285}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+\mbox{\Hypertarget{class_q_c_p_painter_ae58dbb1795ddc4351ab324dc9898aa22}\label{class_q_c_p_painter_ae58dbb1795ddc4351ab324dc9898aa22}} 
 \index{QCPPainter@{QCPPainter}!QCPPainter@{QCPPainter}}
 \index{QCPPainter@{QCPPainter}!QCPPainter@{QCPPainter}}
 \doxysubsubsection{\texorpdfstring{QCPPainter()}{QCPPainter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
@@ -124,12 +144,20 @@ Creates a new \mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} instance on the
 
 Like \mbox{\hyperlink{class_q_c_p_painter_a0a41146ccd619dceab6e25ec7b46b044}{begin}}, this method sets QPainter\+::\+Non\+Cosmetic\+Default\+Pen in Qt versions before Qt5. 
 
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l00300}{300}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+
+
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_q_c_p_painter_a5aff96296e995f6f35b2596a482aae37}\label{class_q_c_p_painter_a5aff96296e995f6f35b2596a482aae37}} 
 \index{QCPPainter@{QCPPainter}!antialiasing@{antialiasing}}
 \index{antialiasing@{antialiasing}!QCPPainter@{QCPPainter}}
 \doxysubsubsection{\texorpdfstring{antialiasing()}{antialiasing()}}
 {\footnotesize\ttfamily bool QCPPainter\+::antialiasing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l00477}{477}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_painter_a0a41146ccd619dceab6e25ec7b46b044}\label{class_q_c_p_painter_a0a41146ccd619dceab6e25ec7b46b044}} 
 \index{QCPPainter@{QCPPainter}!begin@{begin}}
@@ -144,6 +172,18 @@ The Constructor \mbox{\hyperlink{class_q_c_p_painter_ae58dbb1795ddc4351ab324dc98
 \begin{DoxyNote}{Note}
 this function hides the non-\/virtual base class implementation. 
 \end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l00410}{410}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_painter_a0a41146ccd619dceab6e25ec7b46b044_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_painter_a0b4b1b9bd495e182c731774dc800e6e0}\label{class_q_c_p_painter_a0b4b1b9bd495e182c731774dc800e6e0}} 
 \index{QCPPainter@{QCPPainter}!drawLine@{drawLine}}
 \index{drawLine@{drawLine}!QCPPainter@{QCPPainter}}
@@ -157,11 +197,27 @@ Works around a Qt bug introduced with Qt 4.\+8 which makes drawing QLineF unpred
 \begin{DoxyNote}{Note}
 this function hides the non-\/virtual base class implementation. 
 \end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l00360}{360}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_painter_a0b4b1b9bd495e182c731774dc800e6e0_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_painter_ad1638db27929491b3f1beb74d6cbad5e}\label{class_q_c_p_painter_ad1638db27929491b3f1beb74d6cbad5e}} 
 \index{QCPPainter@{QCPPainter}!drawLine@{drawLine}}
 \index{drawLine@{drawLine}!QCPPainter@{QCPPainter}}
 \doxysubsubsection{\texorpdfstring{drawLine()}{drawLine()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily void QCPPainter\+::draw\+Line (\begin{DoxyParamCaption}\item[{const QPointF \&}]{p1,  }\item[{const QPointF \&}]{p2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l00491}{491}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_painter_a7e63fbcf47e35c6f2ecd11b8fef7c7d8}\label{class_q_c_p_painter_a7e63fbcf47e35c6f2ecd11b8fef7c7d8}} 
 \index{QCPPainter@{QCPPainter}!makeNonCosmetic@{makeNonCosmetic}}
@@ -169,11 +225,27 @@ this function hides the non-\/virtual base class implementation.
 \doxysubsubsection{\texorpdfstring{makeNonCosmetic()}{makeNonCosmetic()}}
 {\footnotesize\ttfamily void QCPPainter\+::make\+Non\+Cosmetic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Changes the pen width to 1 if it currently is 0. This function is called in the \mbox{\hyperlink{class_q_c_p_painter_af9c7a4cd1791403901f8c5b82a150195}{set\+Pen}} overrides when the \mbox{\hyperlink{class_q_c_p_painter_a156cf16444ff5e0d81a73c615fdb156dac1e481bfaf408f2bd2eaad3ec341f36b}{pm\+Non\+Cosmetic}} mode is set. \mbox{\Hypertarget{class_q_c_p_painter_aef102658219b24165f7ee2aad1b9e48f}\label{class_q_c_p_painter_aef102658219b24165f7ee2aad1b9e48f}} 
+Changes the pen width to 1 if it currently is 0. This function is called in the \mbox{\hyperlink{class_q_c_p_painter_af9c7a4cd1791403901f8c5b82a150195}{set\+Pen}} overrides when the \mbox{\hyperlink{class_q_c_p_painter_a156cf16444ff5e0d81a73c615fdb156dac1e481bfaf408f2bd2eaad3ec341f36b}{pm\+Non\+Cosmetic}} mode is set. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l00468}{468}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_painter_a7e63fbcf47e35c6f2ecd11b8fef7c7d8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_painter_aef102658219b24165f7ee2aad1b9e48f}\label{class_q_c_p_painter_aef102658219b24165f7ee2aad1b9e48f}} 
 \index{QCPPainter@{QCPPainter}!modes@{modes}}
 \index{modes@{modes}!QCPPainter@{QCPPainter}}
 \doxysubsubsection{\texorpdfstring{modes()}{modes()}}
 {\footnotesize\ttfamily Painter\+Modes QCPPainter\+::modes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l00478}{478}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_painter_a64908e6298d5bbd83457dc987cc3a022}\label{class_q_c_p_painter_a64908e6298d5bbd83457dc987cc3a022}} 
 \index{QCPPainter@{QCPPainter}!restore@{restore}}
@@ -189,6 +261,18 @@ this function hides the non-\/virtual base class implementation.
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_painter_a8fd6821ee6fecbfa04444c9062912abd}{save}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l00455}{455}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{class_q_c_p_painter_a64908e6298d5bbd83457dc987cc3a022_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_painter_a8fd6821ee6fecbfa04444c9062912abd}\label{class_q_c_p_painter_a8fd6821ee6fecbfa04444c9062912abd}} 
 \index{QCPPainter@{QCPPainter}!save@{save}}
 \index{save@{save}!QCPPainter@{QCPPainter}}
@@ -203,13 +287,29 @@ this function hides the non-\/virtual base class implementation.
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_painter_a64908e6298d5bbd83457dc987cc3a022}{restore}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l00441}{441}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{class_q_c_p_painter_a8fd6821ee6fecbfa04444c9062912abd_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_painter_aaba1deb9188244d9ea65b035112b4d05}\label{class_q_c_p_painter_aaba1deb9188244d9ea65b035112b4d05}} 
 \index{QCPPainter@{QCPPainter}!setAntialiasing@{setAntialiasing}}
 \index{setAntialiasing@{setAntialiasing}!QCPPainter@{QCPPainter}}
 \doxysubsubsection{\texorpdfstring{setAntialiasing()}{setAntialiasing()}}
 {\footnotesize\ttfamily void QCPPainter\+::set\+Antialiasing (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})}
 
-Sets whether painting uses antialiasing or not. Use this method instead of using set\+Render\+Hint with QPainter\+::\+Antialiasing directly, as it allows \mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} to regain pixel exactness between antialiased and non-\/antialiased painting (Since Qt \texorpdfstring{$<$}{<} 5.\+0 uses slightly different coordinate systems for AA/\+Non-\/\+AA painting). \mbox{\Hypertarget{class_q_c_p_painter_af6b1f7d2bbc548b10aa55d8b6ad49577}\label{class_q_c_p_painter_af6b1f7d2bbc548b10aa55d8b6ad49577}} 
+Sets whether painting uses antialiasing or not. Use this method instead of using set\+Render\+Hint with QPainter\+::\+Antialiasing directly, as it allows \mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} to regain pixel exactness between antialiased and non-\/antialiased painting (Since Qt \texorpdfstring{$<$}{<} 5.\+0 uses slightly different coordinate systems for AA/\+Non-\/\+AA painting). 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l00374}{374}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+\mbox{\Hypertarget{class_q_c_p_painter_af6b1f7d2bbc548b10aa55d8b6ad49577}\label{class_q_c_p_painter_af6b1f7d2bbc548b10aa55d8b6ad49577}} 
 \index{QCPPainter@{QCPPainter}!setMode@{setMode}}
 \index{setMode@{setMode}!QCPPainter@{QCPPainter}}
 \doxysubsubsection{\texorpdfstring{setMode()}{setMode()}}
@@ -217,13 +317,29 @@ Sets whether painting uses antialiasing or not. Use this method instead of using
 
 This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
 
-Sets the mode of the painter. This controls whether the painter shall adjust its fixes/workarounds optimized for certain output devices. \mbox{\Hypertarget{class_q_c_p_painter_a5fac93adc29c7c4dea9f3e171e9e635e}\label{class_q_c_p_painter_a5fac93adc29c7c4dea9f3e171e9e635e}} 
+Sets the mode of the painter. This controls whether the painter shall adjust its fixes/workarounds optimized for certain output devices. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l00425}{425}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_painter_af6b1f7d2bbc548b10aa55d8b6ad49577_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_painter_a5fac93adc29c7c4dea9f3e171e9e635e}\label{class_q_c_p_painter_a5fac93adc29c7c4dea9f3e171e9e635e}} 
 \index{QCPPainter@{QCPPainter}!setModes@{setModes}}
 \index{setModes@{setModes}!QCPPainter@{QCPPainter}}
 \doxysubsubsection{\texorpdfstring{setModes()}{setModes()}}
 {\footnotesize\ttfamily void QCPPainter\+::set\+Modes (\begin{DoxyParamCaption}\item[{Painter\+Modes}]{modes }\end{DoxyParamCaption})}
 
-Sets the mode of the painter. This controls whether the painter shall adjust its fixes/workarounds optimized for certain output devices. \mbox{\Hypertarget{class_q_c_p_painter_a5c4d88f21564e156e88ef807f7cf0003}\label{class_q_c_p_painter_a5c4d88f21564e156e88ef807f7cf0003}} 
+Sets the mode of the painter. This controls whether the painter shall adjust its fixes/workarounds optimized for certain output devices. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l00394}{394}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+\mbox{\Hypertarget{class_q_c_p_painter_a5c4d88f21564e156e88ef807f7cf0003}\label{class_q_c_p_painter_a5c4d88f21564e156e88ef807f7cf0003}} 
 \index{QCPPainter@{QCPPainter}!setPen@{setPen}}
 \index{setPen@{setPen}!QCPPainter@{QCPPainter}}
 \doxysubsubsection{\texorpdfstring{setPen()}{setPen()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
@@ -236,6 +352,18 @@ Sets the pen (by color) of the painter and applies certain fixes to it, dependin
 \begin{DoxyNote}{Note}
 this function hides the non-\/virtual base class implementation. 
 \end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l00331}{331}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_painter_a5c4d88f21564e156e88ef807f7cf0003_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_painter_af9c7a4cd1791403901f8c5b82a150195}\label{class_q_c_p_painter_af9c7a4cd1791403901f8c5b82a150195}} 
 \index{QCPPainter@{QCPPainter}!setPen@{setPen}}
 \index{setPen@{setPen}!QCPPainter@{QCPPainter}}
@@ -247,6 +375,26 @@ Sets the pen of the painter and applies certain fixes to it, depending on the mo
 \begin{DoxyNote}{Note}
 this function hides the non-\/virtual base class implementation. 
 \end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l00317}{317}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_painter_af9c7a4cd1791403901f8c5b82a150195_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_painter_af9c7a4cd1791403901f8c5b82a150195_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_painter_a25e76095aae41da0d08035060e5f81ca}\label{class_q_c_p_painter_a25e76095aae41da0d08035060e5f81ca}} 
 \index{QCPPainter@{QCPPainter}!setPen@{setPen}}
 \index{setPen@{setPen}!QCPPainter@{QCPPainter}}
@@ -262,6 +410,18 @@ this function hides the non-\/virtual base class implementation.
 \end{DoxyNote}
 
 
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l00345}{345}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_painter_a25e76095aae41da0d08035060e5f81ca_cgraph}
+\end{center}
+\end{figure}
+
+
 \doxysubsection{Member Data Documentation}
 \mbox{\Hypertarget{class_q_c_p_painter_a0189e641bbf7dc31ac15aef7b36501fa}\label{class_q_c_p_painter_a0189e641bbf7dc31ac15aef7b36501fa}} 
 \index{QCPPainter@{QCPPainter}!mAntialiasingStack@{mAntialiasingStack}}
@@ -269,11 +429,19 @@ this function hides the non-\/virtual base class implementation.
 \doxysubsubsection{\texorpdfstring{mAntialiasingStack}{mAntialiasingStack}}
 {\footnotesize\ttfamily QStack$<$bool$>$ QCPPainter\+::m\+Antialiasing\+Stack\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l00504}{504}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_painter_a7055085da176aee0f6b23298f1003d08}\label{class_q_c_p_painter_a7055085da176aee0f6b23298f1003d08}} 
 \index{QCPPainter@{QCPPainter}!mIsAntialiasing@{mIsAntialiasing}}
 \index{mIsAntialiasing@{mIsAntialiasing}!QCPPainter@{QCPPainter}}
 \doxysubsubsection{\texorpdfstring{mIsAntialiasing}{mIsAntialiasing}}
 {\footnotesize\ttfamily bool QCPPainter\+::m\+Is\+Antialiasing\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l00501}{501}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_painter_af5d1d6e5df0adbc7de5633250fb3396c}\label{class_q_c_p_painter_af5d1d6e5df0adbc7de5633250fb3396c}} 
 \index{QCPPainter@{QCPPainter}!mModes@{mModes}}
@@ -283,7 +451,11 @@ this function hides the non-\/virtual base class implementation.
 
 
 
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l00500}{500}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{qcustomplot_8h}{qcustomplot.\+h}}\item 
-\mbox{\hyperlink{qcustomplot_8cpp}{qcustomplot.\+cpp}}\end{DoxyCompactItemize}
+qcustomplot.\+h\item 
+qcustomplot.\+cpp\end{DoxyCompactItemize}

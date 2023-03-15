@@ -5,10 +5,6 @@
 Describes a data set by holding multiple \mbox{\hyperlink{class_q_c_p_data_range}{QCPData\+Range}} instances.  
 
 
-
-
-{\ttfamily \#include $<$qcustomplot.\+h$>$}
-
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -102,6 +98,10 @@ As an example, the following code snippet calculates the average value of a grap
 \end{DoxyCodeInclude}
  
 
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l00927}{927}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_q_c_p_data_selection_a0e0b7faaec7df1a7c77dd6f4883cdf0d}\label{class_q_c_p_data_selection_a0e0b7faaec7df1a7c77dd6f4883cdf0d}} 
 \index{QCPDataSelection@{QCPDataSelection}!QCPDataSelection@{QCPDataSelection}}
@@ -109,13 +109,29 @@ As an example, the following code snippet calculates the average value of a grap
 \doxysubsubsection{\texorpdfstring{QCPDataSelection()}{QCPDataSelection()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily QCPData\+Selection\+::\+QCPData\+Selection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
-Creates an empty \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}}. \mbox{\Hypertarget{class_q_c_p_data_selection_a738dfb4f5718c5df5ed35ea33ac37818}\label{class_q_c_p_data_selection_a738dfb4f5718c5df5ed35ea33ac37818}} 
+Creates an empty \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}}. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l02383}{2383}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_data_selection_a0e0b7faaec7df1a7c77dd6f4883cdf0d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_data_selection_a738dfb4f5718c5df5ed35ea33ac37818}\label{class_q_c_p_data_selection_a738dfb4f5718c5df5ed35ea33ac37818}} 
 \index{QCPDataSelection@{QCPDataSelection}!QCPDataSelection@{QCPDataSelection}}
 \index{QCPDataSelection@{QCPDataSelection}!QCPDataSelection@{QCPDataSelection}}
 \doxysubsubsection{\texorpdfstring{QCPDataSelection()}{QCPDataSelection()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily QCPData\+Selection\+::\+QCPData\+Selection (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_c_p_data_range}{QCPData\+Range}} \&}]{range }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
 Creates a \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} containing the provided {\itshape range}. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l02390}{2390}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_q_c_p_data_selection_a46740c5aa7b80ae9b2abf6985d61b74f}\label{class_q_c_p_data_selection_a46740c5aa7b80ae9b2abf6985d61b74f}} 
@@ -124,7 +140,27 @@ Creates a \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} cont
 \doxysubsubsection{\texorpdfstring{addDataRange()}{addDataRange()}}
 {\footnotesize\ttfamily void QCPData\+Selection\+::add\+Data\+Range (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_c_p_data_range}{QCPData\+Range}} \&}]{data\+Range,  }\item[{bool}]{simplify = {\ttfamily true} }\end{DoxyParamCaption})}
 
-Adds the given {\itshape data\+Range} to this data selection. This is equivalent to the += operator but allows disabling immediate simplification by setting {\itshape simplify} to false. This can improve performance if adding a very large amount of data ranges successively. In this case, make sure to call \mbox{\hyperlink{class_q_c_p_data_selection_a4a2fbad1a6e4d1dd26fdfdf88956f2a4}{simplify}} manually, after the operation. \mbox{\Hypertarget{class_q_c_p_data_selection_a385dd665e6690d39afb8bbd727b1e00b}\label{class_q_c_p_data_selection_a385dd665e6690d39afb8bbd727b1e00b}} 
+Adds the given {\itshape data\+Range} to this data selection. This is equivalent to the += operator but allows disabling immediate simplification by setting {\itshape simplify} to false. This can improve performance if adding a very large amount of data ranges successively. In this case, make sure to call \mbox{\hyperlink{class_q_c_p_data_selection_a4a2fbad1a6e4d1dd26fdfdf88956f2a4}{simplify}} manually, after the operation. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l02542}{2542}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_data_selection_a46740c5aa7b80ae9b2abf6985d61b74f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_data_selection_a46740c5aa7b80ae9b2abf6985d61b74f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_data_selection_a385dd665e6690d39afb8bbd727b1e00b}\label{class_q_c_p_data_selection_a385dd665e6690d39afb8bbd727b1e00b}} 
 \index{QCPDataSelection@{QCPDataSelection}!clear@{clear}}
 \index{clear@{clear}!QCPDataSelection@{QCPDataSelection}}
 \doxysubsubsection{\texorpdfstring{clear()}{clear()}}
@@ -132,7 +168,11 @@ Adds the given {\itshape data\+Range} to this data selection. This is equivalent
 
 Removes all data ranges. The data selection then contains no data points.
 
-\mbox{\hyperlink{class_q_c_p_data_selection_a7f7526b475998dc0c3d6c376b24736c9}{is\+Empty}} \mbox{\Hypertarget{class_q_c_p_data_selection_ab1ad3d5bbb55749c3f7ab1e45429c932}\label{class_q_c_p_data_selection_ab1ad3d5bbb55749c3f7ab1e45429c932}} 
+\mbox{\hyperlink{class_q_c_p_data_selection_a7f7526b475998dc0c3d6c376b24736c9}{is\+Empty}} 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l02554}{2554}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+\mbox{\Hypertarget{class_q_c_p_data_selection_ab1ad3d5bbb55749c3f7ab1e45429c932}\label{class_q_c_p_data_selection_ab1ad3d5bbb55749c3f7ab1e45429c932}} 
 \index{QCPDataSelection@{QCPDataSelection}!contains@{contains}}
 \index{contains@{contains}!QCPDataSelection@{QCPDataSelection}}
 \doxysubsubsection{\texorpdfstring{contains()}{contains()}}
@@ -143,13 +183,29 @@ Returns true if the data selection {\itshape other} is contained entirely in thi
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_data_range_a13ca398776374a3160aa85433718b812}{QCPData\+Range\+::contains}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l02651}{2651}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_data_selection_ab1ad3d5bbb55749c3f7ab1e45429c932_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_data_selection_ac9e74dd294778aa799216c3435c9c4f0}\label{class_q_c_p_data_selection_ac9e74dd294778aa799216c3435c9c4f0}} 
 \index{QCPDataSelection@{QCPDataSelection}!dataPointCount@{dataPointCount}}
 \index{dataPointCount@{dataPointCount}!QCPDataSelection@{QCPDataSelection}}
 \doxysubsubsection{\texorpdfstring{dataPointCount()}{dataPointCount()}}
 {\footnotesize\ttfamily int QCPData\+Selection\+::data\+Point\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-Returns the total number of data points contained in all data ranges that make up this data selection. \mbox{\Hypertarget{class_q_c_p_data_selection_a6956acf6a9a49a353b4f9b58608978ad}\label{class_q_c_p_data_selection_a6956acf6a9a49a353b4f9b58608978ad}} 
+Returns the total number of data points contained in all data ranges that make up this data selection. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l02496}{2496}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+\mbox{\Hypertarget{class_q_c_p_data_selection_a6956acf6a9a49a353b4f9b58608978ad}\label{class_q_c_p_data_selection_a6956acf6a9a49a353b4f9b58608978ad}} 
 \index{QCPDataSelection@{QCPDataSelection}!dataRange@{dataRange}}
 \index{dataRange@{dataRange}!QCPDataSelection@{QCPDataSelection}}
 \doxysubsubsection{\texorpdfstring{dataRange()}{dataRange()}}
@@ -162,6 +218,18 @@ If the data selection is simplified (the usual state of the selection, see \mbox
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_data_selection_abd8869ccb231ab991e8576de931f647d}{data\+Range\+Count}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l02512}{2512}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_data_selection_a6956acf6a9a49a353b4f9b58608978ad_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_data_selection_abd8869ccb231ab991e8576de931f647d}\label{class_q_c_p_data_selection_abd8869ccb231ab991e8576de931f647d}} 
 \index{QCPDataSelection@{QCPDataSelection}!dataRangeCount@{dataRangeCount}}
 \index{dataRangeCount@{dataRangeCount}!QCPDataSelection@{QCPDataSelection}}
@@ -173,6 +241,18 @@ Returns the number of ranges that make up the data selection. The ranges can be 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_data_selection_a6956acf6a9a49a353b4f9b58608978ad}{data\+Range}}, \mbox{\hyperlink{class_q_c_p_data_selection_ac9e74dd294778aa799216c3435c9c4f0}{data\+Point\+Count}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l00949}{949}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_data_selection_abd8869ccb231ab991e8576de931f647d_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_data_selection_ac3b1c5e7713d380cd9e447f4556b94da}\label{class_q_c_p_data_selection_ac3b1c5e7713d380cd9e447f4556b94da}} 
 \index{QCPDataSelection@{QCPDataSelection}!dataRanges@{dataRanges}}
 \index{dataRanges@{dataRanges}!QCPDataSelection@{QCPDataSelection}}
@@ -184,6 +264,18 @@ Returns all data ranges that make up the data selection. If the data selection i
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_data_selection_a6956acf6a9a49a353b4f9b58608978ad}{data\+Range}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l00952}{952}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_data_selection_ac3b1c5e7713d380cd9e447f4556b94da_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_data_selection_a17b84d852911531d229f4a76aa239a75}\label{class_q_c_p_data_selection_a17b84d852911531d229f4a76aa239a75}} 
 \index{QCPDataSelection@{QCPDataSelection}!enforceType@{enforceType}}
 \index{enforceType@{enforceType}!QCPDataSelection@{QCPDataSelection}}
@@ -197,6 +289,26 @@ Depending on {\itshape type}, enforcing means adding new data points that were p
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{namespace_q_c_p_ac6cb9db26a564b27feda362a438db038}{QCP\+::\+Selection\+Type}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l02605}{2605}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_data_selection_a17b84d852911531d229f4a76aa239a75_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_data_selection_a17b84d852911531d229f4a76aa239a75_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_data_selection_af5267ced53687561367105ee77b874ab}\label{class_q_c_p_data_selection_af5267ced53687561367105ee77b874ab}} 
 \index{QCPDataSelection@{QCPDataSelection}!intersection@{intersection}}
 \index{intersection@{intersection}!QCPDataSelection@{QCPDataSelection}}
@@ -205,13 +317,45 @@ Depending on {\itshape type}, enforcing means adding new data points that were p
 
 Returns a data selection containing the points which are both in this data selection and in the data range {\itshape other}.
 
-A common use case is to limit an unknown data selection to the valid range of a data container, using \mbox{\hyperlink{class_q_c_p_data_container_aece90eeb2ba8d3c46d3d94023630fbc7}{QCPData\+Container\+::data\+Range}} as {\itshape other}. One can then safely iterate over the returned data selection without exceeding the data container\textquotesingle{}s bounds. \mbox{\Hypertarget{class_q_c_p_data_selection_af296ec5a948656c1d1ecb7b2970d2a24}\label{class_q_c_p_data_selection_af296ec5a948656c1d1ecb7b2970d2a24}} 
+A common use case is to limit an unknown data selection to the valid range of a data container, using \mbox{\hyperlink{class_q_c_p_data_container_aece90eeb2ba8d3c46d3d94023630fbc7}{QCPData\+Container\+::data\+Range}} as {\itshape other}. One can then safely iterate over the returned data selection without exceeding the data container\textquotesingle{}s bounds. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l02675}{2675}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_data_selection_af5267ced53687561367105ee77b874ab_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_data_selection_af5267ced53687561367105ee77b874ab_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_data_selection_af296ec5a948656c1d1ecb7b2970d2a24}\label{class_q_c_p_data_selection_af296ec5a948656c1d1ecb7b2970d2a24}} 
 \index{QCPDataSelection@{QCPDataSelection}!intersection@{intersection}}
 \index{intersection@{intersection}!QCPDataSelection@{QCPDataSelection}}
 \doxysubsubsection{\texorpdfstring{intersection()}{intersection()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} QCPData\+Selection\+::intersection (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} \&}]{other }\end{DoxyParamCaption}) const}
 
-Returns a data selection containing the points which are both in this data selection and in the data selection {\itshape other}. \mbox{\Hypertarget{class_q_c_p_data_selection_ae8097f4e4ffee7b1b5df27c93eb365db}\label{class_q_c_p_data_selection_ae8097f4e4ffee7b1b5df27c93eb365db}} 
+Returns a data selection containing the points which are both in this data selection and in the data selection {\itshape other}. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l02688}{2688}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_data_selection_af296ec5a948656c1d1ecb7b2970d2a24_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_data_selection_ae8097f4e4ffee7b1b5df27c93eb365db}\label{class_q_c_p_data_selection_ae8097f4e4ffee7b1b5df27c93eb365db}} 
 \index{QCPDataSelection@{QCPDataSelection}!inverse@{inverse}}
 \index{inverse@{inverse}!QCPDataSelection@{QCPDataSelection}}
 \doxysubsubsection{\texorpdfstring{inverse()}{inverse()}}
@@ -219,7 +363,27 @@ Returns a data selection containing the points which are both in this data selec
 
 Returns a data selection which is the exact inverse of this data selection, with {\itshape outer\+Range} defining the base range on which to invert. If {\itshape outer\+Range} is smaller than the \mbox{\hyperlink{class_q_c_p_data_selection_a890f9291e0b7f065747040de5d68ff7d}{span}} of this data selection, it is expanded accordingly.
 
-For example, this method can be used to retrieve all unselected segments by setting {\itshape outer\+Range} to the full data range of the plottable, and calling this method on a data selection holding the selected segments. \mbox{\Hypertarget{class_q_c_p_data_selection_a7f7526b475998dc0c3d6c376b24736c9}\label{class_q_c_p_data_selection_a7f7526b475998dc0c3d6c376b24736c9}} 
+For example, this method can be used to retrieve all unselected segments by setting {\itshape outer\+Range} to the full data range of the plottable, and calling this method on a data selection holding the selected segments. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l02706}{2706}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_data_selection_ae8097f4e4ffee7b1b5df27c93eb365db_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_data_selection_ae8097f4e4ffee7b1b5df27c93eb365db_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_data_selection_a7f7526b475998dc0c3d6c376b24736c9}\label{class_q_c_p_data_selection_a7f7526b475998dc0c3d6c376b24736c9}} 
 \index{QCPDataSelection@{QCPDataSelection}!isEmpty@{isEmpty}}
 \index{isEmpty@{isEmpty}!QCPDataSelection@{QCPDataSelection}}
 \doxysubsubsection{\texorpdfstring{isEmpty()}{isEmpty()}}
@@ -230,11 +394,27 @@ Returns true if there are no data ranges, and thus no data points, in this \mbox
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_data_selection_abd8869ccb231ab991e8576de931f647d}{data\+Range\+Count}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l00958}{958}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_data_selection_a7f7526b475998dc0c3d6c376b24736c9_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_data_selection_a8324733cc88660ee4792ee60d6a4520c}\label{class_q_c_p_data_selection_a8324733cc88660ee4792ee60d6a4520c}} 
 \index{QCPDataSelection@{QCPDataSelection}!operator"!=@{operator"!=}}
 \index{operator"!=@{operator"!=}!QCPDataSelection@{QCPDataSelection}}
 \doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
 {\footnotesize\ttfamily bool QCPData\+Selection\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l00934}{934}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_data_selection_a17058640d4e6f49984a0e7e42043df1b}\label{class_q_c_p_data_selection_a17058640d4e6f49984a0e7e42043df1b}} 
 \index{QCPDataSelection@{QCPDataSelection}!operator+=@{operator+=}}
@@ -242,25 +422,73 @@ Returns true if there are no data ranges, and thus no data points, in this \mbox
 \doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} \& QCPData\+Selection\+::operator+= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_c_p_data_range}{QCPData\+Range}} \&}]{other }\end{DoxyParamCaption})}
 
-Adds the data range {\itshape other} to this data selection, and then simplifies this data selection (see \mbox{\hyperlink{class_q_c_p_data_selection_a4a2fbad1a6e4d1dd26fdfdf88956f2a4}{simplify}}). \mbox{\Hypertarget{class_q_c_p_data_selection_a4584d4b0ea5c4f095bd7b70f88eb5d9d}\label{class_q_c_p_data_selection_a4584d4b0ea5c4f095bd7b70f88eb5d9d}} 
+Adds the data range {\itshape other} to this data selection, and then simplifies this data selection (see \mbox{\hyperlink{class_q_c_p_data_selection_a4a2fbad1a6e4d1dd26fdfdf88956f2a4}{simplify}}). 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l02429}{2429}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_data_selection_a17058640d4e6f49984a0e7e42043df1b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_data_selection_a4584d4b0ea5c4f095bd7b70f88eb5d9d}\label{class_q_c_p_data_selection_a4584d4b0ea5c4f095bd7b70f88eb5d9d}} 
 \index{QCPDataSelection@{QCPDataSelection}!operator+=@{operator+=}}
 \index{operator+=@{operator+=}!QCPDataSelection@{QCPDataSelection}}
 \doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} \& QCPData\+Selection\+::operator+= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} \&}]{other }\end{DoxyParamCaption})}
 
-Adds the data selection of {\itshape other} to this data selection, and then simplifies this data selection (see \mbox{\hyperlink{class_q_c_p_data_selection_a4a2fbad1a6e4d1dd26fdfdf88956f2a4}{simplify}}). \mbox{\Hypertarget{class_q_c_p_data_selection_a8d18b20d20dde737eefc10967e31cf73}\label{class_q_c_p_data_selection_a8d18b20d20dde737eefc10967e31cf73}} 
+Adds the data selection of {\itshape other} to this data selection, and then simplifies this data selection (see \mbox{\hyperlink{class_q_c_p_data_selection_a4a2fbad1a6e4d1dd26fdfdf88956f2a4}{simplify}}). 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l02418}{2418}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_data_selection_a4584d4b0ea5c4f095bd7b70f88eb5d9d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_data_selection_a8d18b20d20dde737eefc10967e31cf73}\label{class_q_c_p_data_selection_a8d18b20d20dde737eefc10967e31cf73}} 
 \index{QCPDataSelection@{QCPDataSelection}!operator-\/=@{operator-\/=}}
 \index{operator-\/=@{operator-\/=}!QCPDataSelection@{QCPDataSelection}}
 \doxysubsubsection{\texorpdfstring{operator-\/=()}{operator-=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} \& QCPData\+Selection\+::operator-\/= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_c_p_data_range}{QCPData\+Range}} \&}]{other }\end{DoxyParamCaption})}
 
-Removes all data point indices that are described by {\itshape other} from this data selection. \mbox{\Hypertarget{class_q_c_p_data_selection_a66f9fab70b026baa64bf8e52fe5de07e}\label{class_q_c_p_data_selection_a66f9fab70b026baa64bf8e52fe5de07e}} 
+Removes all data point indices that are described by {\itshape other} from this data selection. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l02449}{2449}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_data_selection_a8d18b20d20dde737eefc10967e31cf73_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_data_selection_a66f9fab70b026baa64bf8e52fe5de07e}\label{class_q_c_p_data_selection_a66f9fab70b026baa64bf8e52fe5de07e}} 
 \index{QCPDataSelection@{QCPDataSelection}!operator-\/=@{operator-\/=}}
 \index{operator-\/=@{operator-\/=}!QCPDataSelection@{QCPDataSelection}}
 \doxysubsubsection{\texorpdfstring{operator-\/=()}{operator-=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} \& QCPData\+Selection\+::operator-\/= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} \&}]{other }\end{DoxyParamCaption})}
 
-Removes all data point indices that are described by {\itshape other} from this data selection. \mbox{\Hypertarget{class_q_c_p_data_selection_a664fa566569b17148abafd6b1dbbf347}\label{class_q_c_p_data_selection_a664fa566569b17148abafd6b1dbbf347}} 
+Removes all data point indices that are described by {\itshape other} from this data selection. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l02438}{2438}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_data_selection_a66f9fab70b026baa64bf8e52fe5de07e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_data_selection_a664fa566569b17148abafd6b1dbbf347}\label{class_q_c_p_data_selection_a664fa566569b17148abafd6b1dbbf347}} 
 \index{QCPDataSelection@{QCPDataSelection}!operator==@{operator==}}
 \index{operator==@{operator==}!QCPDataSelection@{QCPDataSelection}}
 \doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
@@ -268,7 +496,11 @@ Removes all data point indices that are described by {\itshape other} from this 
 
 Returns true if this selection is identical (contains the same data ranges with the same begin and end indices) to {\itshape other}.
 
-Note that both data selections must be in simplified state (the usual state of the selection, see \mbox{\hyperlink{class_q_c_p_data_selection_a4a2fbad1a6e4d1dd26fdfdf88956f2a4}{simplify}}) for this operator to return correct results. \mbox{\Hypertarget{class_q_c_p_data_selection_a4a2fbad1a6e4d1dd26fdfdf88956f2a4}\label{class_q_c_p_data_selection_a4a2fbad1a6e4d1dd26fdfdf88956f2a4}} 
+Note that both data selections must be in simplified state (the usual state of the selection, see \mbox{\hyperlink{class_q_c_p_data_selection_a4a2fbad1a6e4d1dd26fdfdf88956f2a4}{simplify}}) for this operator to return correct results. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l02402}{2402}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+\mbox{\Hypertarget{class_q_c_p_data_selection_a4a2fbad1a6e4d1dd26fdfdf88956f2a4}\label{class_q_c_p_data_selection_a4a2fbad1a6e4d1dd26fdfdf88956f2a4}} 
 \index{QCPDataSelection@{QCPDataSelection}!simplify@{simplify}}
 \index{simplify@{simplify}!QCPDataSelection@{QCPDataSelection}}
 \doxysubsubsection{\texorpdfstring{simplify()}{simplify()}}
@@ -276,13 +508,45 @@ Note that both data selections must be in simplified state (the usual state of t
 
 Sorts all data ranges by range begin index in ascending order, and then joins directly adjacent or overlapping ranges. This can reduce the number of individual data ranges in the selection, and prevents possible double-\/counting when iterating over the data points held by the data ranges.
 
-This method is automatically called when using the addition/subtraction operators. The only case when \mbox{\hyperlink{class_q_c_p_data_selection_a4a2fbad1a6e4d1dd26fdfdf88956f2a4}{simplify}} is left to the user, is when calling \mbox{\hyperlink{class_q_c_p_data_selection_a46740c5aa7b80ae9b2abf6985d61b74f}{add\+Data\+Range}}, with the parameter {\itshape simplify} explicitly set to false. \mbox{\Hypertarget{class_q_c_p_data_selection_a890f9291e0b7f065747040de5d68ff7d}\label{class_q_c_p_data_selection_a890f9291e0b7f065747040de5d68ff7d}} 
+This method is automatically called when using the addition/subtraction operators. The only case when \mbox{\hyperlink{class_q_c_p_data_selection_a4a2fbad1a6e4d1dd26fdfdf88956f2a4}{simplify}} is left to the user, is when calling \mbox{\hyperlink{class_q_c_p_data_selection_a46740c5aa7b80ae9b2abf6985d61b74f}{add\+Data\+Range}}, with the parameter {\itshape simplify} explicitly set to false. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l02568}{2568}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_data_selection_a4a2fbad1a6e4d1dd26fdfdf88956f2a4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_data_selection_a890f9291e0b7f065747040de5d68ff7d}\label{class_q_c_p_data_selection_a890f9291e0b7f065747040de5d68ff7d}} 
 \index{QCPDataSelection@{QCPDataSelection}!span@{span}}
 \index{span@{span}!QCPDataSelection@{QCPDataSelection}}
 \doxysubsubsection{\texorpdfstring{span()}{span()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_data_range}{QCPData\+Range}} QCPData\+Selection\+::span (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 Returns a \mbox{\hyperlink{class_q_c_p_data_range}{QCPData\+Range}} which spans the entire data selection, including possible intermediate segments which are not part of the original data selection. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l02528}{2528}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_data_selection_a890f9291e0b7f065747040de5d68ff7d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_data_selection_a890f9291e0b7f065747040de5d68ff7d_icgraph}
+\end{center}
+\end{figure}
+
 
 \doxysubsection{Friends And Related Function Documentation}
 \mbox{\Hypertarget{class_q_c_p_data_selection_a0822e3133b80b5dedfc8050a19c1e0c5}\label{class_q_c_p_data_selection_a0822e3133b80b5dedfc8050a19c1e0c5}} 
@@ -291,49 +555,81 @@ Returns a \mbox{\hyperlink{class_q_c_p_data_range}{QCPData\+Range}} which spans 
 \doxysubsubsection{\texorpdfstring{operator+}{operator+}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
 {\footnotesize\ttfamily const \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_c_p_data_range}{QCPData\+Range}} \&}]{a,  }\item[{const \mbox{\hyperlink{class_q_c_p_data_range}{QCPData\+Range}} \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
 
-Return a \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} with the data points in {\itshape a} joined with the data points in {\itshape b}. The resulting data selection is already simplified (see \mbox{\hyperlink{class_q_c_p_data_selection_a4a2fbad1a6e4d1dd26fdfdf88956f2a4}{QCPData\+Selection\+::simplify}}). \mbox{\Hypertarget{class_q_c_p_data_selection_a5feed9419bd3df5cb4d4a761580545cc}\label{class_q_c_p_data_selection_a5feed9419bd3df5cb4d4a761580545cc}} 
+Return a \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} with the data points in {\itshape a} joined with the data points in {\itshape b}. The resulting data selection is already simplified (see \mbox{\hyperlink{class_q_c_p_data_selection_a4a2fbad1a6e4d1dd26fdfdf88956f2a4}{QCPData\+Selection\+::simplify}}). 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01012}{1012}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+\mbox{\Hypertarget{class_q_c_p_data_selection_a5feed9419bd3df5cb4d4a761580545cc}\label{class_q_c_p_data_selection_a5feed9419bd3df5cb4d4a761580545cc}} 
 \index{QCPDataSelection@{QCPDataSelection}!operator+@{operator+}}
 \index{operator+@{operator+}!QCPDataSelection@{QCPDataSelection}}
 \doxysubsubsection{\texorpdfstring{operator+}{operator+}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
 {\footnotesize\ttfamily const \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_c_p_data_range}{QCPData\+Range}} \&}]{a,  }\item[{const \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
 
-Return a \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} with the data points in {\itshape a} joined with the data points in {\itshape b}. The resulting data selection is already simplified (see \mbox{\hyperlink{class_q_c_p_data_selection_a4a2fbad1a6e4d1dd26fdfdf88956f2a4}{QCPData\+Selection\+::simplify}}). \mbox{\Hypertarget{class_q_c_p_data_selection_aa574f51a74d6998e9be95e252e6be287}\label{class_q_c_p_data_selection_aa574f51a74d6998e9be95e252e6be287}} 
+Return a \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} with the data points in {\itshape a} joined with the data points in {\itshape b}. The resulting data selection is already simplified (see \mbox{\hyperlink{class_q_c_p_data_selection_a4a2fbad1a6e4d1dd26fdfdf88956f2a4}{QCPData\+Selection\+::simplify}}). 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l00990}{990}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+\mbox{\Hypertarget{class_q_c_p_data_selection_aa574f51a74d6998e9be95e252e6be287}\label{class_q_c_p_data_selection_aa574f51a74d6998e9be95e252e6be287}} 
 \index{QCPDataSelection@{QCPDataSelection}!operator+@{operator+}}
 \index{operator+@{operator+}!QCPDataSelection@{QCPDataSelection}}
 \doxysubsubsection{\texorpdfstring{operator+}{operator+}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
 {\footnotesize\ttfamily const \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} \&}]{a,  }\item[{const \mbox{\hyperlink{class_q_c_p_data_range}{QCPData\+Range}} \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
 
-Return a \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} with the data points in {\itshape a} joined with the data points in {\itshape b}. The resulting data selection is already simplified (see \mbox{\hyperlink{class_q_c_p_data_selection_a4a2fbad1a6e4d1dd26fdfdf88956f2a4}{QCPData\+Selection\+::simplify}}). \mbox{\Hypertarget{class_q_c_p_data_selection_a49c0217af248959d59abfdd29401b678}\label{class_q_c_p_data_selection_a49c0217af248959d59abfdd29401b678}} 
+Return a \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} with the data points in {\itshape a} joined with the data points in {\itshape b}. The resulting data selection is already simplified (see \mbox{\hyperlink{class_q_c_p_data_selection_a4a2fbad1a6e4d1dd26fdfdf88956f2a4}{QCPData\+Selection\+::simplify}}). 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01001}{1001}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+\mbox{\Hypertarget{class_q_c_p_data_selection_a49c0217af248959d59abfdd29401b678}\label{class_q_c_p_data_selection_a49c0217af248959d59abfdd29401b678}} 
 \index{QCPDataSelection@{QCPDataSelection}!operator+@{operator+}}
 \index{operator+@{operator+}!QCPDataSelection@{QCPDataSelection}}
 \doxysubsubsection{\texorpdfstring{operator+}{operator+}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
 {\footnotesize\ttfamily const \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} \&}]{a,  }\item[{const \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
 
-Return a \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} with the data points in {\itshape a} joined with the data points in {\itshape b}. The resulting data selection is already simplified (see \mbox{\hyperlink{class_q_c_p_data_selection_a4a2fbad1a6e4d1dd26fdfdf88956f2a4}{QCPData\+Selection\+::simplify}}). \mbox{\Hypertarget{class_q_c_p_data_selection_ad62dd67b505c1fa9c02d1aafabcb9acf}\label{class_q_c_p_data_selection_ad62dd67b505c1fa9c02d1aafabcb9acf}} 
+Return a \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} with the data points in {\itshape a} joined with the data points in {\itshape b}. The resulting data selection is already simplified (see \mbox{\hyperlink{class_q_c_p_data_selection_a4a2fbad1a6e4d1dd26fdfdf88956f2a4}{QCPData\+Selection\+::simplify}}). 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l00979}{979}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+\mbox{\Hypertarget{class_q_c_p_data_selection_ad62dd67b505c1fa9c02d1aafabcb9acf}\label{class_q_c_p_data_selection_ad62dd67b505c1fa9c02d1aafabcb9acf}} 
 \index{QCPDataSelection@{QCPDataSelection}!operator-\/@{operator-\/}}
 \index{operator-\/@{operator-\/}!QCPDataSelection@{QCPDataSelection}}
 \doxysubsubsection{\texorpdfstring{operator-\/}{operator-}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
 {\footnotesize\ttfamily const \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_c_p_data_range}{QCPData\+Range}} \&}]{a,  }\item[{const \mbox{\hyperlink{class_q_c_p_data_range}{QCPData\+Range}} \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
 
-Return a \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} with the data points which are in {\itshape a} but not in {\itshape b}. \mbox{\Hypertarget{class_q_c_p_data_selection_a726652cb9ed840e3025435cc2c266468}\label{class_q_c_p_data_selection_a726652cb9ed840e3025435cc2c266468}} 
+Return a \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} with the data points which are in {\itshape a} but not in {\itshape b}. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01052}{1052}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+\mbox{\Hypertarget{class_q_c_p_data_selection_a726652cb9ed840e3025435cc2c266468}\label{class_q_c_p_data_selection_a726652cb9ed840e3025435cc2c266468}} 
 \index{QCPDataSelection@{QCPDataSelection}!operator-\/@{operator-\/}}
 \index{operator-\/@{operator-\/}!QCPDataSelection@{QCPDataSelection}}
 \doxysubsubsection{\texorpdfstring{operator-\/}{operator-}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
 {\footnotesize\ttfamily const \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_c_p_data_range}{QCPData\+Range}} \&}]{a,  }\item[{const \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
 
-Return a \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} with the data points which are in {\itshape a} but not in {\itshape b}. \mbox{\Hypertarget{class_q_c_p_data_selection_a32c5784ac70946f09a09b2dd19816b78}\label{class_q_c_p_data_selection_a32c5784ac70946f09a09b2dd19816b78}} 
+Return a \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} with the data points which are in {\itshape a} but not in {\itshape b}. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01032}{1032}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+\mbox{\Hypertarget{class_q_c_p_data_selection_a32c5784ac70946f09a09b2dd19816b78}\label{class_q_c_p_data_selection_a32c5784ac70946f09a09b2dd19816b78}} 
 \index{QCPDataSelection@{QCPDataSelection}!operator-\/@{operator-\/}}
 \index{operator-\/@{operator-\/}!QCPDataSelection@{QCPDataSelection}}
 \doxysubsubsection{\texorpdfstring{operator-\/}{operator-}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
 {\footnotesize\ttfamily const \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} \&}]{a,  }\item[{const \mbox{\hyperlink{class_q_c_p_data_range}{QCPData\+Range}} \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
 
-Return a \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} with the data points which are in {\itshape a} but not in {\itshape b}. \mbox{\Hypertarget{class_q_c_p_data_selection_a41147ef7d6303c746e398278b7b624d1}\label{class_q_c_p_data_selection_a41147ef7d6303c746e398278b7b624d1}} 
+Return a \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} with the data points which are in {\itshape a} but not in {\itshape b}. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01042}{1042}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+\mbox{\Hypertarget{class_q_c_p_data_selection_a41147ef7d6303c746e398278b7b624d1}\label{class_q_c_p_data_selection_a41147ef7d6303c746e398278b7b624d1}} 
 \index{QCPDataSelection@{QCPDataSelection}!operator-\/@{operator-\/}}
 \index{operator-\/@{operator-\/}!QCPDataSelection@{QCPDataSelection}}
 \doxysubsubsection{\texorpdfstring{operator-\/}{operator-}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
 {\footnotesize\ttfamily const \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} \&}]{a,  }\item[{const \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
 
-Return a \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} with the data points which are in {\itshape a} but not in {\itshape b}. \mbox{\Hypertarget{class_q_c_p_data_selection_aed65b8988afe6b03adeadf5edf663670}\label{class_q_c_p_data_selection_aed65b8988afe6b03adeadf5edf663670}} 
+Return a \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} with the data points which are in {\itshape a} but not in {\itshape b}. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01022}{1022}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+\mbox{\Hypertarget{class_q_c_p_data_selection_aed65b8988afe6b03adeadf5edf663670}\label{class_q_c_p_data_selection_aed65b8988afe6b03adeadf5edf663670}} 
 \index{QCPDataSelection@{QCPDataSelection}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!QCPDataSelection@{QCPDataSelection}}
 \doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
@@ -341,7 +637,19 @@ Return a \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} with 
 
 Prints {\itshape selection} in a human readable format to the q\+Debug output. 
 
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01073}{1073}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_data_selection_aed65b8988afe6b03adeadf5edf663670_cgraph}
+\end{center}
+\end{figure}
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{qcustomplot_8h}{qcustomplot.\+h}}\item 
-\mbox{\hyperlink{qcustomplot_8cpp}{qcustomplot.\+cpp}}\end{DoxyCompactItemize}
+qcustomplot.\+h\item 
+qcustomplot.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,358 @@
+.TH "QCPGrid" 3 "Wed Mar 15 2023" "OmronPID" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QCPGrid \- Responsible for drawing the grid of a \fBQCPAxis\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBQCPLayerable\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPGrid\fP (\fBQCPAxis\fP *parentAxis)"
+.br
+.ti -1c
+.RI "bool \fBsubGridVisible\fP () const"
+.br
+.ti -1c
+.RI "bool \fBantialiasedSubGrid\fP () const"
+.br
+.ti -1c
+.RI "bool \fBantialiasedZeroLine\fP () const"
+.br
+.ti -1c
+.RI "QPen \fBpen\fP () const"
+.br
+.ti -1c
+.RI "QPen \fBsubGridPen\fP () const"
+.br
+.ti -1c
+.RI "QPen \fBzeroLinePen\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetSubGridVisible\fP (bool visible)"
+.br
+.ti -1c
+.RI "void \fBsetAntialiasedSubGrid\fP (bool enabled)"
+.br
+.ti -1c
+.RI "void \fBsetAntialiasedZeroLine\fP (bool enabled)"
+.br
+.ti -1c
+.RI "void \fBsetPen\fP (const QPen &pen)"
+.br
+.ti -1c
+.RI "void \fBsetSubGridPen\fP (const QPen &pen)"
+.br
+.ti -1c
+.RI "void \fBsetZeroLinePen\fP (const QPen &pen)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBQCPLayerable\fP
+.in +1c
+.ti -1c
+.RI "\fBQCPLayerable\fP (\fBQCustomPlot\fP *plot, QString targetLayer=QString(), \fBQCPLayerable\fP *\fBparentLayerable\fP=0)"
+.br
+.ti -1c
+.RI "bool \fBvisible\fP () const"
+.br
+.ti -1c
+.RI "\fBQCustomPlot\fP * \fBparentPlot\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPLayerable\fP * \fBparentLayerable\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPLayer\fP * \fBlayer\fP () const"
+.br
+.ti -1c
+.RI "bool \fBantialiased\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetVisible\fP (bool on)"
+.br
+.ti -1c
+.RI "Q_SLOT bool \fBsetLayer\fP (\fBQCPLayer\fP *layer)"
+.br
+.ti -1c
+.RI "bool \fBsetLayer\fP (const QString &layerName)"
+.br
+.ti -1c
+.RI "void \fBsetAntialiased\fP (bool enabled)"
+.br
+.ti -1c
+.RI "virtual double \fBselectTest\fP (const QPointF &pos, bool onlySelectable, QVariant *details=0) const"
+.br
+.ti -1c
+.RI "bool \fBrealVisibility\fP () const"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBapplyDefaultAntialiasingHint\fP (\fBQCPPainter\fP *painter) const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (\fBQCPPainter\fP *painter) Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "void \fBdrawGridLines\fP (\fBQCPPainter\fP *painter) const"
+.br
+.ti -1c
+.RI "void \fBdrawSubGridLines\fP (\fBQCPPainter\fP *painter) const"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBQCPLayerable\fP
+.in +1c
+.ti -1c
+.RI "virtual void \fBparentPlotInitialized\fP (\fBQCustomPlot\fP *parentPlot)"
+.br
+.ti -1c
+.RI "virtual \fBQCP::Interaction\fP \fBselectionCategory\fP () const"
+.br
+.ti -1c
+.RI "virtual QRect \fBclipRect\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBapplyDefaultAntialiasingHint\fP (\fBQCPPainter\fP *painter) const =0"
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (\fBQCPPainter\fP *painter)=0"
+.br
+.ti -1c
+.RI "virtual void \fBselectEvent\fP (QMouseEvent *event, bool additive, const QVariant &details, bool *selectionStateChanged)"
+.br
+.ti -1c
+.RI "virtual void \fBdeselectEvent\fP (bool *selectionStateChanged)"
+.br
+.ti -1c
+.RI "virtual void \fBmousePressEvent\fP (QMouseEvent *event, const QVariant &details)"
+.br
+.ti -1c
+.RI "virtual void \fBmouseMoveEvent\fP (QMouseEvent *event, const QPointF &startPos)"
+.br
+.ti -1c
+.RI "virtual void \fBmouseReleaseEvent\fP (QMouseEvent *event, const QPointF &startPos)"
+.br
+.ti -1c
+.RI "virtual void \fBmouseDoubleClickEvent\fP (QMouseEvent *event, const QVariant &details)"
+.br
+.ti -1c
+.RI "virtual void \fBwheelEvent\fP (QWheelEvent *event)"
+.br
+.ti -1c
+.RI "void \fBinitializeParentPlot\fP (\fBQCustomPlot\fP *parentPlot)"
+.br
+.ti -1c
+.RI "void \fBsetParentLayerable\fP (\fBQCPLayerable\fP *\fBparentLayerable\fP)"
+.br
+.ti -1c
+.RI "bool \fBmoveToLayer\fP (\fBQCPLayer\fP *layer, bool prepend)"
+.br
+.ti -1c
+.RI "void \fBapplyAntialiasingHint\fP (\fBQCPPainter\fP *painter, bool localAntialiased, \fBQCP::AntialiasedElement\fP overrideElement) const"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool \fBmSubGridVisible\fP"
+.br
+.ti -1c
+.RI "bool \fBmAntialiasedSubGrid\fP"
+.br
+.ti -1c
+.RI "bool \fBmAntialiasedZeroLine\fP"
+.br
+.ti -1c
+.RI "QPen \fBmPen\fP"
+.br
+.ti -1c
+.RI "QPen \fBmSubGridPen\fP"
+.br
+.ti -1c
+.RI "QPen \fBmZeroLinePen\fP"
+.br
+.ti -1c
+.RI "\fBQCPAxis\fP * \fBmParentAxis\fP"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBQCPLayerable\fP
+.in +1c
+.ti -1c
+.RI "bool \fBmVisible\fP"
+.br
+.ti -1c
+.RI "\fBQCustomPlot\fP * \fBmParentPlot\fP"
+.br
+.ti -1c
+.RI "QPointer< \fBQCPLayerable\fP > \fBmParentLayerable\fP"
+.br
+.ti -1c
+.RI "\fBQCPLayer\fP * \fBmLayer\fP"
+.br
+.ti -1c
+.RI "bool \fBmAntialiased\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBQCPAxis\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Signals inherited from \fBQCPLayerable\fP
+.in +1c
+.ti -1c
+.RI "void \fBlayerChanged\fP (\fBQCPLayer\fP *newLayer)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Responsible for drawing the grid of a \fBQCPAxis\fP\&. 
+
+This class is tightly bound to \fBQCPAxis\fP\&. Every axis owns a grid instance and uses it to draw the grid lines, sub grid lines and zero-line\&. You can interact with the grid of an axis via \fBQCPAxis::grid\fP\&. Normally, you don't need to create an instance of \fBQCPGrid\fP yourself\&.
+.PP
+The axis and grid drawing was split into two classes to allow them to be placed on different layers (both \fBQCPAxis\fP and \fBQCPGrid\fP inherit from \fBQCPLayerable\fP)\&. Thus it is possible to have the grid in the background and the axes in the foreground, and any plottables/items in between\&. This described situation is the default setup, see the \fBQCPLayer\fP documentation\&. 
+.PP
+Definition at line \fB1860\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QCPGrid::QCPGrid (\fBQCPAxis\fP * parentAxis)\fC [explicit]\fP"
+Creates a \fBQCPGrid\fP instance and sets default values\&.
+.PP
+You shouldn't instantiate grids on their own, since every \fBQCPAxis\fP brings its own \fBQCPGrid\fP\&. 
+.PP
+Definition at line \fB7161\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool QCPGrid::antialiasedSubGrid () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB1876\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "bool QCPGrid::antialiasedZeroLine () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB1877\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "void QCPGrid::applyDefaultAntialiasingHint (\fBQCPPainter\fP * painter) const\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBQCPLayerable\fP\&.
+.PP
+Definition at line \fB7242\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPGrid::draw (\fBQCPPainter\fP * painter)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBQCPLayerable\fP\&.
+.PP
+Definition at line \fB7252\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPGrid::drawGridLines (\fBQCPPainter\fP * painter) const\fC [protected]\fP"
+
+.PP
+Definition at line \fB7267\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPGrid::drawSubGridLines (\fBQCPPainter\fP * painter) const\fC [protected]\fP"
+
+.PP
+Definition at line \fB7340\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QPen QCPGrid::pen () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB1878\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "void QCPGrid::setAntialiasedSubGrid (bool enabled)"
+Sets whether sub grid lines are drawn antialiased\&. 
+.PP
+Definition at line \fB7189\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPGrid::setAntialiasedZeroLine (bool enabled)"
+Sets whether zero lines are drawn antialiased\&. 
+.PP
+Definition at line \fB7197\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPGrid::setPen (const QPen & pen)"
+Sets the pen with which (major) grid lines are drawn\&. 
+.PP
+Definition at line \fB7205\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPGrid::setSubGridPen (const QPen & pen)"
+Sets the pen with which sub grid lines are drawn\&. 
+.PP
+Definition at line \fB7213\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPGrid::setSubGridVisible (bool visible)"
+Sets whether grid lines at sub tick marks are drawn\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetSubGridPen\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB7181\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPGrid::setZeroLinePen (const QPen & pen)"
+Sets the pen with which zero lines are drawn\&.
+.PP
+Zero lines are lines at value coordinate 0 which may be drawn with a different pen than other grid lines\&. To disable zero lines and just draw normal grid lines at zero, set \fIpen\fP to Qt::NoPen\&. 
+.PP
+Definition at line \fB7224\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QPen QCPGrid::subGridPen () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB1879\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "bool QCPGrid::subGridVisible () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB1875\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QPen QCPGrid::zeroLinePen () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB1880\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBQCPAxis\fP\fC [friend]\fP"
+
+.PP
+Definition at line \fB1907\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "bool QCPGrid::mAntialiasedSubGrid\fC [protected]\fP"
+
+.PP
+Definition at line \fB1893\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "bool QCPGrid::mAntialiasedZeroLine\fC [protected]\fP"
+
+.PP
+Definition at line \fB1893\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBQCPAxis\fP* QCPGrid::mParentAxis\fC [protected]\fP"
+
+.PP
+Definition at line \fB1897\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QPen QCPGrid::mPen\fC [protected]\fP"
+
+.PP
+Definition at line \fB1894\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QPen QCPGrid::mSubGridPen\fC [protected]\fP"
+
+.PP
+Definition at line \fB1894\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "bool QCPGrid::mSubGridVisible\fC [protected]\fP"
+
+.PP
+Definition at line \fB1892\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QPen QCPGrid::mZeroLinePen\fC [protected]\fP"
+
+.PP
+Definition at line \fB1894\fP of file \fBqcustomplot\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for OmronPID from the source code\&.

@@ -9,35 +9,53 @@ configuredialog
 
 {\ttfamily \#include $<$configuredialog.\+h$>$}
 
-Inheritance diagram for Configure\+Dialog\+:\begin{figure}[H]
+
+
+Inheritance diagram for Configure\+Dialog\+:\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{class_configure_dialog}
+\includegraphics[width=164pt]{class_configure_dialog__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Configure\+Dialog\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=164pt]{class_configure_dialog__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_configure_dialog_ad52f7d77aa9b7b2a546d2a05889ae7f6}{Configure\+Dialog}} (QWidget $\ast$parent=nullptr)
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_configure_dialog_ad52f7d77aa9b7b2a546d2a05889ae7f6}{Configure\+Dialog\+::\+Configure\+Dialog}}. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_configure_dialog_a180b402b09b26b7c99712b7172cf7400}{$\sim$\+Configure\+Dialog}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_configure_dialog_ad52f7d77aa9b7b2a546d2a05889ae7f6}{Configure\+Dialog\+::\+Configure\+Dialog}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-QSpin\+Box $\ast$ \mbox{\hyperlink{class_configure_dialog_aa245108e1576929e4fdaffa1fba54d25}{spin\+Box\+\_\+\+Interval\+Ask\+MV\+\_\+}}
+bool \mbox{\hyperlink{class_configure_dialog_af87a61b203c06abf1c2a13b43405bd03}{ignore\+Enable\+\_\+}}
 \item 
-QSpin\+Box $\ast$ \mbox{\hyperlink{class_configure_dialog_a70d319033a21d6c8dc5952bcb61eecd6}{spin\+Box\+\_\+\+Interval\+Ask\+Temp\+\_\+}}
+int \mbox{\hyperlink{class_configure_dialog_abea8ab436380446d823d4a05aa8c4e63}{interval\+Ask\+MV\+\_\+}}
 \item 
-QSpin\+Box $\ast$ \mbox{\hyperlink{class_configure_dialog_a258dae43c683757b3eeb331adbd9a2c6}{spin\+Box\+\_\+\+Numbers\+\_\+}}
+int \mbox{\hyperlink{class_configure_dialog_adb7d36fa0b707b6908c9dbff3f55a1fd}{interval\+Ask\+Temp\+\_\+}}
 \item 
-QDouble\+Spin\+Box $\ast$ \mbox{\hyperlink{class_configure_dialog_ac9b5373674883394f2654a95581b289f}{spin\+Box\+\_\+\+Safe\+Limit\+\_\+}}
+int \mbox{\hyperlink{class_configure_dialog_a27a70f10b9cf5ccc7de5d2935ff08b90}{numbers\+\_\+}}
 \item 
-QDouble\+Spin\+Box $\ast$ \mbox{\hyperlink{class_configure_dialog_abc7f745e5bb2af3587030bbb0167d67a}{spin\+Box\+\_\+\+Ignore\+Lower\+\_\+}}
+int \mbox{\hyperlink{class_configure_dialog_abcf14b7e91bd14fa244dcfd50d28d42b}{etime\+\_\+}}
 \item 
-QDouble\+Spin\+Box $\ast$ \mbox{\hyperlink{class_configure_dialog_a9be66f28a3ca26ac68f3ea96339ef846}{spin\+Box\+\_\+\+Ignore\+Upper\+\_\+}}
+double \mbox{\hyperlink{class_configure_dialog_a9aa82b9ee55fbbc18d048f9665d51d34}{safe\+Limit\+\_\+}}
 \item 
-QText\+Browser $\ast$ \mbox{\hyperlink{class_configure_dialog_aa220eb7a3c3857cc031cc3e73bbba398}{text\+Browser\+\_\+log\+\_\+}}
+double \mbox{\hyperlink{class_configure_dialog_a212be23f84c5bdf1e4b6f0042168ce41}{ignore\+Upper\+\_\+}}
+\item 
+double \mbox{\hyperlink{class_configure_dialog_aa26778a97484efc88d2a092ec434c371}{ignore\+Lower\+\_\+}}
+\item 
+bool \mbox{\hyperlink{class_configure_dialog_ab5721c4d7e4422d89c2a27040e863554}{warnigcheck\+\_\+}}
+\item 
+QString \mbox{\hyperlink{class_configure_dialog_adff87c7ab741bd9190483ac84dc769a0}{msg\+\_\+}}
+\item 
+QMessage\+Box \mbox{\hyperlink{class_configure_dialog_acdecbd88c33eabd774e64054c00ee8a2}{warning\+Message\+Box\+\_\+}}
 \item 
 QPush\+Button $\ast$ \mbox{\hyperlink{class_configure_dialog_a170fe98507666e1333891b790998ded1}{push\+Button\+\_\+\+Set\+Parameters\+\_\+}}
 \end{DoxyCompactItemize}
@@ -47,6 +65,10 @@ QPush\+Button $\ast$ \mbox{\hyperlink{class_configure_dialog_a170fe98507666e1333
 configuredialog 
 
 Boxes, buttons, and labels are defined. As slot, calc\+Estimated\+Time and set\+Values are defined. 
+
+Definition at line \mbox{\hyperlink{configuredialog_8h_source_l00035}{35}} of file \mbox{\hyperlink{configuredialog_8h_source}{configuredialog.\+h}}.
+
+
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_configure_dialog_ad52f7d77aa9b7b2a546d2a05889ae7f6}\label{class_configure_dialog_ad52f7d77aa9b7b2a546d2a05889ae7f6}} 
@@ -64,66 +86,138 @@ Boxes, buttons, and labels are defined. As slot, calc\+Estimated\+Time and set\+
 {\em parent} & \\
 \hline
 \end{DoxyParams}
-Generate and layput labels, butoons, and etc... Connected signal to slot. \mbox{\Hypertarget{class_configure_dialog_a180b402b09b26b7c99712b7172cf7400}\label{class_configure_dialog_a180b402b09b26b7c99712b7172cf7400}} 
-\index{ConfigureDialog@{ConfigureDialog}!````~ConfigureDialog@{$\sim$ConfigureDialog}}
-\index{````~ConfigureDialog@{$\sim$ConfigureDialog}!ConfigureDialog@{ConfigureDialog}}
-\doxysubsubsection{\texorpdfstring{$\sim$ConfigureDialog()}{~ConfigureDialog()}}
-{\footnotesize\ttfamily Configure\+Dialog\+::$\sim$\+Configure\+Dialog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+Generate and layput labels, butoons, and etc... Connected signal to slot. configure boxes and set
+
+QMessage\+Box
+
+Definition at line \mbox{\hyperlink{configuredialog_8cpp_source_l00011}{11}} of file \mbox{\hyperlink{configuredialog_8cpp_source}{configuredialog.\+cpp}}.
 
 
 
 \doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_configure_dialog_abcf14b7e91bd14fa244dcfd50d28d42b}\label{class_configure_dialog_abcf14b7e91bd14fa244dcfd50d28d42b}} 
+\index{ConfigureDialog@{ConfigureDialog}!etime\_@{etime\_}}
+\index{etime\_@{etime\_}!ConfigureDialog@{ConfigureDialog}}
+\doxysubsubsection{\texorpdfstring{etime\_}{etime\_}}
+{\footnotesize\ttfamily int Configure\+Dialog\+::etime\+\_\+}
+
+
+
+Definition at line \mbox{\hyperlink{configuredialog_8h_source_l00047}{47}} of file \mbox{\hyperlink{configuredialog_8h_source}{configuredialog.\+h}}.
+
+\mbox{\Hypertarget{class_configure_dialog_af87a61b203c06abf1c2a13b43405bd03}\label{class_configure_dialog_af87a61b203c06abf1c2a13b43405bd03}} 
+\index{ConfigureDialog@{ConfigureDialog}!ignoreEnable\_@{ignoreEnable\_}}
+\index{ignoreEnable\_@{ignoreEnable\_}!ConfigureDialog@{ConfigureDialog}}
+\doxysubsubsection{\texorpdfstring{ignoreEnable\_}{ignoreEnable\_}}
+{\footnotesize\ttfamily bool Configure\+Dialog\+::ignore\+Enable\+\_\+}
+
+
+
+Definition at line \mbox{\hyperlink{configuredialog_8h_source_l00043}{43}} of file \mbox{\hyperlink{configuredialog_8h_source}{configuredialog.\+h}}.
+
+\mbox{\Hypertarget{class_configure_dialog_aa26778a97484efc88d2a092ec434c371}\label{class_configure_dialog_aa26778a97484efc88d2a092ec434c371}} 
+\index{ConfigureDialog@{ConfigureDialog}!ignoreLower\_@{ignoreLower\_}}
+\index{ignoreLower\_@{ignoreLower\_}!ConfigureDialog@{ConfigureDialog}}
+\doxysubsubsection{\texorpdfstring{ignoreLower\_}{ignoreLower\_}}
+{\footnotesize\ttfamily double Configure\+Dialog\+::ignore\+Lower\+\_\+}
+
+
+
+Definition at line \mbox{\hyperlink{configuredialog_8h_source_l00050}{50}} of file \mbox{\hyperlink{configuredialog_8h_source}{configuredialog.\+h}}.
+
+\mbox{\Hypertarget{class_configure_dialog_a212be23f84c5bdf1e4b6f0042168ce41}\label{class_configure_dialog_a212be23f84c5bdf1e4b6f0042168ce41}} 
+\index{ConfigureDialog@{ConfigureDialog}!ignoreUpper\_@{ignoreUpper\_}}
+\index{ignoreUpper\_@{ignoreUpper\_}!ConfigureDialog@{ConfigureDialog}}
+\doxysubsubsection{\texorpdfstring{ignoreUpper\_}{ignoreUpper\_}}
+{\footnotesize\ttfamily double Configure\+Dialog\+::ignore\+Upper\+\_\+}
+
+
+
+Definition at line \mbox{\hyperlink{configuredialog_8h_source_l00049}{49}} of file \mbox{\hyperlink{configuredialog_8h_source}{configuredialog.\+h}}.
+
+\mbox{\Hypertarget{class_configure_dialog_abea8ab436380446d823d4a05aa8c4e63}\label{class_configure_dialog_abea8ab436380446d823d4a05aa8c4e63}} 
+\index{ConfigureDialog@{ConfigureDialog}!intervalAskMV\_@{intervalAskMV\_}}
+\index{intervalAskMV\_@{intervalAskMV\_}!ConfigureDialog@{ConfigureDialog}}
+\doxysubsubsection{\texorpdfstring{intervalAskMV\_}{intervalAskMV\_}}
+{\footnotesize\ttfamily int Configure\+Dialog\+::interval\+Ask\+MV\+\_\+}
+
+
+
+Definition at line \mbox{\hyperlink{configuredialog_8h_source_l00044}{44}} of file \mbox{\hyperlink{configuredialog_8h_source}{configuredialog.\+h}}.
+
+\mbox{\Hypertarget{class_configure_dialog_adb7d36fa0b707b6908c9dbff3f55a1fd}\label{class_configure_dialog_adb7d36fa0b707b6908c9dbff3f55a1fd}} 
+\index{ConfigureDialog@{ConfigureDialog}!intervalAskTemp\_@{intervalAskTemp\_}}
+\index{intervalAskTemp\_@{intervalAskTemp\_}!ConfigureDialog@{ConfigureDialog}}
+\doxysubsubsection{\texorpdfstring{intervalAskTemp\_}{intervalAskTemp\_}}
+{\footnotesize\ttfamily int Configure\+Dialog\+::interval\+Ask\+Temp\+\_\+}
+
+
+
+Definition at line \mbox{\hyperlink{configuredialog_8h_source_l00045}{45}} of file \mbox{\hyperlink{configuredialog_8h_source}{configuredialog.\+h}}.
+
+\mbox{\Hypertarget{class_configure_dialog_adff87c7ab741bd9190483ac84dc769a0}\label{class_configure_dialog_adff87c7ab741bd9190483ac84dc769a0}} 
+\index{ConfigureDialog@{ConfigureDialog}!msg\_@{msg\_}}
+\index{msg\_@{msg\_}!ConfigureDialog@{ConfigureDialog}}
+\doxysubsubsection{\texorpdfstring{msg\_}{msg\_}}
+{\footnotesize\ttfamily QString Configure\+Dialog\+::msg\+\_\+}
+
+
+
+Definition at line \mbox{\hyperlink{configuredialog_8h_source_l00052}{52}} of file \mbox{\hyperlink{configuredialog_8h_source}{configuredialog.\+h}}.
+
+\mbox{\Hypertarget{class_configure_dialog_a27a70f10b9cf5ccc7de5d2935ff08b90}\label{class_configure_dialog_a27a70f10b9cf5ccc7de5d2935ff08b90}} 
+\index{ConfigureDialog@{ConfigureDialog}!numbers\_@{numbers\_}}
+\index{numbers\_@{numbers\_}!ConfigureDialog@{ConfigureDialog}}
+\doxysubsubsection{\texorpdfstring{numbers\_}{numbers\_}}
+{\footnotesize\ttfamily int Configure\+Dialog\+::numbers\+\_\+}
+
+
+
+Definition at line \mbox{\hyperlink{configuredialog_8h_source_l00046}{46}} of file \mbox{\hyperlink{configuredialog_8h_source}{configuredialog.\+h}}.
+
 \mbox{\Hypertarget{class_configure_dialog_a170fe98507666e1333891b790998ded1}\label{class_configure_dialog_a170fe98507666e1333891b790998ded1}} 
 \index{ConfigureDialog@{ConfigureDialog}!pushButton\_SetParameters\_@{pushButton\_SetParameters\_}}
 \index{pushButton\_SetParameters\_@{pushButton\_SetParameters\_}!ConfigureDialog@{ConfigureDialog}}
 \doxysubsubsection{\texorpdfstring{pushButton\_SetParameters\_}{pushButton\_SetParameters\_}}
 {\footnotesize\ttfamily QPush\+Button$\ast$ Configure\+Dialog\+::push\+Button\+\_\+\+Set\+Parameters\+\_\+}
 
-\mbox{\Hypertarget{class_configure_dialog_abc7f745e5bb2af3587030bbb0167d67a}\label{class_configure_dialog_abc7f745e5bb2af3587030bbb0167d67a}} 
-\index{ConfigureDialog@{ConfigureDialog}!spinBox\_IgnoreLower\_@{spinBox\_IgnoreLower\_}}
-\index{spinBox\_IgnoreLower\_@{spinBox\_IgnoreLower\_}!ConfigureDialog@{ConfigureDialog}}
-\doxysubsubsection{\texorpdfstring{spinBox\_IgnoreLower\_}{spinBox\_IgnoreLower\_}}
-{\footnotesize\ttfamily QDouble\+Spin\+Box$\ast$ Configure\+Dialog\+::spin\+Box\+\_\+\+Ignore\+Lower\+\_\+}
 
-\mbox{\Hypertarget{class_configure_dialog_a9be66f28a3ca26ac68f3ea96339ef846}\label{class_configure_dialog_a9be66f28a3ca26ac68f3ea96339ef846}} 
-\index{ConfigureDialog@{ConfigureDialog}!spinBox\_IgnoreUpper\_@{spinBox\_IgnoreUpper\_}}
-\index{spinBox\_IgnoreUpper\_@{spinBox\_IgnoreUpper\_}!ConfigureDialog@{ConfigureDialog}}
-\doxysubsubsection{\texorpdfstring{spinBox\_IgnoreUpper\_}{spinBox\_IgnoreUpper\_}}
-{\footnotesize\ttfamily QDouble\+Spin\+Box$\ast$ Configure\+Dialog\+::spin\+Box\+\_\+\+Ignore\+Upper\+\_\+}
 
-\mbox{\Hypertarget{class_configure_dialog_aa245108e1576929e4fdaffa1fba54d25}\label{class_configure_dialog_aa245108e1576929e4fdaffa1fba54d25}} 
-\index{ConfigureDialog@{ConfigureDialog}!spinBox\_IntervalAskMV\_@{spinBox\_IntervalAskMV\_}}
-\index{spinBox\_IntervalAskMV\_@{spinBox\_IntervalAskMV\_}!ConfigureDialog@{ConfigureDialog}}
-\doxysubsubsection{\texorpdfstring{spinBox\_IntervalAskMV\_}{spinBox\_IntervalAskMV\_}}
-{\footnotesize\ttfamily QSpin\+Box$\ast$ Configure\+Dialog\+::spin\+Box\+\_\+\+Interval\+Ask\+MV\+\_\+}
+Definition at line \mbox{\hyperlink{configuredialog_8h_source_l00054}{54}} of file \mbox{\hyperlink{configuredialog_8h_source}{configuredialog.\+h}}.
 
-\mbox{\Hypertarget{class_configure_dialog_a70d319033a21d6c8dc5952bcb61eecd6}\label{class_configure_dialog_a70d319033a21d6c8dc5952bcb61eecd6}} 
-\index{ConfigureDialog@{ConfigureDialog}!spinBox\_IntervalAskTemp\_@{spinBox\_IntervalAskTemp\_}}
-\index{spinBox\_IntervalAskTemp\_@{spinBox\_IntervalAskTemp\_}!ConfigureDialog@{ConfigureDialog}}
-\doxysubsubsection{\texorpdfstring{spinBox\_IntervalAskTemp\_}{spinBox\_IntervalAskTemp\_}}
-{\footnotesize\ttfamily QSpin\+Box$\ast$ Configure\+Dialog\+::spin\+Box\+\_\+\+Interval\+Ask\+Temp\+\_\+}
+\mbox{\Hypertarget{class_configure_dialog_a9aa82b9ee55fbbc18d048f9665d51d34}\label{class_configure_dialog_a9aa82b9ee55fbbc18d048f9665d51d34}} 
+\index{ConfigureDialog@{ConfigureDialog}!safeLimit\_@{safeLimit\_}}
+\index{safeLimit\_@{safeLimit\_}!ConfigureDialog@{ConfigureDialog}}
+\doxysubsubsection{\texorpdfstring{safeLimit\_}{safeLimit\_}}
+{\footnotesize\ttfamily double Configure\+Dialog\+::safe\+Limit\+\_\+}
 
-\mbox{\Hypertarget{class_configure_dialog_a258dae43c683757b3eeb331adbd9a2c6}\label{class_configure_dialog_a258dae43c683757b3eeb331adbd9a2c6}} 
-\index{ConfigureDialog@{ConfigureDialog}!spinBox\_Numbers\_@{spinBox\_Numbers\_}}
-\index{spinBox\_Numbers\_@{spinBox\_Numbers\_}!ConfigureDialog@{ConfigureDialog}}
-\doxysubsubsection{\texorpdfstring{spinBox\_Numbers\_}{spinBox\_Numbers\_}}
-{\footnotesize\ttfamily QSpin\+Box$\ast$ Configure\+Dialog\+::spin\+Box\+\_\+\+Numbers\+\_\+}
 
-\mbox{\Hypertarget{class_configure_dialog_ac9b5373674883394f2654a95581b289f}\label{class_configure_dialog_ac9b5373674883394f2654a95581b289f}} 
-\index{ConfigureDialog@{ConfigureDialog}!spinBox\_SafeLimit\_@{spinBox\_SafeLimit\_}}
-\index{spinBox\_SafeLimit\_@{spinBox\_SafeLimit\_}!ConfigureDialog@{ConfigureDialog}}
-\doxysubsubsection{\texorpdfstring{spinBox\_SafeLimit\_}{spinBox\_SafeLimit\_}}
-{\footnotesize\ttfamily QDouble\+Spin\+Box$\ast$ Configure\+Dialog\+::spin\+Box\+\_\+\+Safe\+Limit\+\_\+}
 
-\mbox{\Hypertarget{class_configure_dialog_aa220eb7a3c3857cc031cc3e73bbba398}\label{class_configure_dialog_aa220eb7a3c3857cc031cc3e73bbba398}} 
-\index{ConfigureDialog@{ConfigureDialog}!textBrowser\_log\_@{textBrowser\_log\_}}
-\index{textBrowser\_log\_@{textBrowser\_log\_}!ConfigureDialog@{ConfigureDialog}}
-\doxysubsubsection{\texorpdfstring{textBrowser\_log\_}{textBrowser\_log\_}}
-{\footnotesize\ttfamily QText\+Browser$\ast$ Configure\+Dialog\+::text\+Browser\+\_\+log\+\_\+}
+Definition at line \mbox{\hyperlink{configuredialog_8h_source_l00048}{48}} of file \mbox{\hyperlink{configuredialog_8h_source}{configuredialog.\+h}}.
+
+\mbox{\Hypertarget{class_configure_dialog_ab5721c4d7e4422d89c2a27040e863554}\label{class_configure_dialog_ab5721c4d7e4422d89c2a27040e863554}} 
+\index{ConfigureDialog@{ConfigureDialog}!warnigcheck\_@{warnigcheck\_}}
+\index{warnigcheck\_@{warnigcheck\_}!ConfigureDialog@{ConfigureDialog}}
+\doxysubsubsection{\texorpdfstring{warnigcheck\_}{warnigcheck\_}}
+{\footnotesize\ttfamily bool Configure\+Dialog\+::warnigcheck\+\_\+}
+
+
+
+Definition at line \mbox{\hyperlink{configuredialog_8h_source_l00051}{51}} of file \mbox{\hyperlink{configuredialog_8h_source}{configuredialog.\+h}}.
+
+\mbox{\Hypertarget{class_configure_dialog_acdecbd88c33eabd774e64054c00ee8a2}\label{class_configure_dialog_acdecbd88c33eabd774e64054c00ee8a2}} 
+\index{ConfigureDialog@{ConfigureDialog}!warningMessageBox\_@{warningMessageBox\_}}
+\index{warningMessageBox\_@{warningMessageBox\_}!ConfigureDialog@{ConfigureDialog}}
+\doxysubsubsection{\texorpdfstring{warningMessageBox\_}{warningMessageBox\_}}
+{\footnotesize\ttfamily QMessage\+Box Configure\+Dialog\+::warning\+Message\+Box\+\_\+}
+
+
+
+Definition at line \mbox{\hyperlink{configuredialog_8h_source_l00053}{53}} of file \mbox{\hyperlink{configuredialog_8h_source}{configuredialog.\+h}}.
 
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{configuredialog_8h}{configuredialog.\+h}}\item 
-\mbox{\hyperlink{configuredialog_8cpp}{configuredialog.\+cpp}}\end{DoxyCompactItemize}
+configuredialog.\+h\item 
+configuredialog.\+cpp\end{DoxyCompactItemize}

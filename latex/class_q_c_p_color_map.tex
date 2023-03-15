@@ -7,12 +7,20 @@ A plottable representing a two-\/dimensional color map in a plot.
 
 
 
-{\ttfamily \#include $<$qcustomplot.\+h$>$}
-
-Inheritance diagram for QCPColor\+Map\+:\begin{figure}[H]
+Inheritance diagram for QCPColor\+Map\+:\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=4.000000cm]{class_q_c_p_color_map}
+\includegraphics[width=193pt]{class_q_c_p_color_map__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for QCPColor\+Map\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_color_map__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Signals}
@@ -31,7 +39,7 @@ void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a3af66432b1dca93b28e00e78a8
 \item 
 void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a787a9c39421059006891744b731fa473}{selection\+Changed}} (const \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} \&\mbox{\hyperlink{class_q_c_p_abstract_plottable_a040bf09f41d456284cfd39cc37aa068f}{selection}})
 \item 
-void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a663b1a44123c8340ac041a29d1e2c973}{selectable\+Changed}} (\mbox{\hyperlink{namespace_q_c_p_ac6cb9db26a564b27feda362a438db038}{QCP\+::\+Selection\+Type}} \mbox{\hyperlink{class_q_c_p_abstract_plottable_a016653741033bd332d1d4c3c725cc284}{selectable}})
+void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a663b1a44123c8340ac041a29d1e2c973}{selectable\+Changed}} (\mbox{\hyperlink{namespace_q_c_p_ac6cb9db26a564b27feda362a438db038}{QCP\+::\+Selection\+Type}} selectable)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Signals inherited from \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}}
 \begin{DoxyCompactItemize}
@@ -41,9 +49,7 @@ void \mbox{\hyperlink{class_q_c_p_layerable_abbf8657cedea73ac1c3499b521c90eba}{l
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_q_c_p_color_map_aa37e976d2ee1e2be6c4cd88a64b36215}{QCPColor\+Map}} (\mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$\mbox{\hyperlink{class_q_c_p_abstract_plottable_aa6f25b97ee99988fe352f17cb9ed962b}{key\+Axis}}, \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$\mbox{\hyperlink{class_q_c_p_abstract_plottable_a842b3831660d3e33b73863fd133889dd}{value\+Axis}})
-\item 
-virtual \mbox{\hyperlink{class_q_c_p_color_map_ac8a952a40fed62dcee33405b0f4d47ad}{$\sim$\+QCPColor\+Map}} ()
+\mbox{\hyperlink{class_q_c_p_color_map_aa37e976d2ee1e2be6c4cd88a64b36215}{QCPColor\+Map}} (\mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$key\+Axis, \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$value\+Axis)
 \item 
 \mbox{\hyperlink{class_q_c_p_color_map_data}{QCPColor\+Map\+Data}} $\ast$ \mbox{\hyperlink{class_q_c_p_color_map_a047d7eb3ae657f93f2f39b5e68b79451}{data}} () const
 \item 
@@ -61,34 +67,32 @@ bool \mbox{\hyperlink{class_q_c_p_color_map_a53b5d26b28d6027af0fc863f057965db}{t
 \item 
 void \mbox{\hyperlink{class_q_c_p_color_map_a5a23e133a20c4ccad35fd32e6c0f9809}{set\+Data}} (\mbox{\hyperlink{class_q_c_p_color_map_data}{QCPColor\+Map\+Data}} $\ast$\mbox{\hyperlink{class_q_c_p_color_map_a047d7eb3ae657f93f2f39b5e68b79451}{data}}, bool copy=false)
 \item 
-Q\+\_\+\+SLOT void \mbox{\hyperlink{class_q_c_p_color_map_a980b42837821159786a85b4b7dcb8774}{set\+Data\+Range}} (const \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \&\mbox{\hyperlink{class_q_c_p_color_map_ae478f0a5a016420d66c70cc33d6cda1d}{data\+Range}})
+Q\+\_\+\+SLOT void \mbox{\hyperlink{class_q_c_p_color_map_a980b42837821159786a85b4b7dcb8774}{set\+Data\+Range}} (const \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \&data\+Range)
 \item 
 Q\+\_\+\+SLOT void \mbox{\hyperlink{class_q_c_p_color_map_a9d20aa08e3c1f20f22908c45b9c06511}{set\+Data\+Scale\+Type}} (\mbox{\hyperlink{class_q_c_p_axis_a36d8e8658dbaa179bf2aeb973db2d6f0}{QCPAxis\+::\+Scale\+Type}} scale\+Type)
 \item 
-Q\+\_\+\+SLOT void \mbox{\hyperlink{class_q_c_p_color_map_a7313c78360471cead3576341a2c50377}{set\+Gradient}} (const \mbox{\hyperlink{class_q_c_p_color_gradient}{QCPColor\+Gradient}} \&\mbox{\hyperlink{class_q_c_p_color_map_acc4bb87c903607b96c08d2bc34bc24cd}{gradient}})
+Q\+\_\+\+SLOT void \mbox{\hyperlink{class_q_c_p_color_map_a7313c78360471cead3576341a2c50377}{set\+Gradient}} (const \mbox{\hyperlink{class_q_c_p_color_gradient}{QCPColor\+Gradient}} \&gradient)
 \item 
 void \mbox{\hyperlink{class_q_c_p_color_map_a484eaa8a5065cfc386b15375bf98b964}{set\+Interpolate}} (bool enabled)
 \item 
 void \mbox{\hyperlink{class_q_c_p_color_map_ad03221cc285e5f562a0b13d684b5576d}{set\+Tight\+Boundary}} (bool enabled)
 \item 
-void \mbox{\hyperlink{class_q_c_p_color_map_aa828921db364fe3c6af4619580ab85fd}{set\+Color\+Scale}} (\mbox{\hyperlink{class_q_c_p_color_scale}{QCPColor\+Scale}} $\ast$\mbox{\hyperlink{class_q_c_p_color_map_a067e7c6765460381f880c581e4d43fab}{color\+Scale}})
+void \mbox{\hyperlink{class_q_c_p_color_map_aa828921db364fe3c6af4619580ab85fd}{set\+Color\+Scale}} (\mbox{\hyperlink{class_q_c_p_color_scale}{QCPColor\+Scale}} $\ast$color\+Scale)
 \item 
 void \mbox{\hyperlink{class_q_c_p_color_map_a856608fa3dd1cc290bcd5f29a5575774}{rescale\+Data\+Range}} (bool recalculate\+Data\+Bounds=false)
 \item 
 Q\+\_\+\+SLOT void \mbox{\hyperlink{class_q_c_p_color_map_a5d8158b62d55fcfeaabcb68ce0083e87}{update\+Legend\+Icon}} (Qt\+::\+Transformation\+Mode transform\+Mode=Qt\+::\+Smooth\+Transformation, const QSize \&thumb\+Size=QSize(32, 18))
 \item 
-virtual double \mbox{\hyperlink{class_q_c_p_color_map_afb4b843596addf58096082827a9e3450}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant $\ast$details=0) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual double \mbox{\hyperlink{class_q_c_p_color_map_afb4b843596addf58096082827a9e3450}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant $\ast$details=0) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \mbox{\hyperlink{class_q_c_p_color_map_a985861974560f950af6cb7fae8c46267}{get\+Key\+Range}} (bool \&found\+Range, \mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9}{QCP\+::\+Sign\+Domain}} in\+Sign\+Domain=\mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9aa38352ef02d51ddfa4399d9551566e24}{QCP\+::sd\+Both}}) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \mbox{\hyperlink{class_q_c_p_color_map_a985861974560f950af6cb7fae8c46267}{get\+Key\+Range}} (bool \&found\+Range, \mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9}{QCP\+::\+Sign\+Domain}} in\+Sign\+Domain=\mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9aa38352ef02d51ddfa4399d9551566e24}{QCP\+::sd\+Both}}) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \mbox{\hyperlink{class_q_c_p_color_map_a88134493aaf6b297af34eaab65264fff}{get\+Value\+Range}} (bool \&found\+Range, \mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9}{QCP\+::\+Sign\+Domain}} in\+Sign\+Domain=\mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9aa38352ef02d51ddfa4399d9551566e24}{QCP\+::sd\+Both}}, const \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \&in\+Key\+Range=\mbox{\hyperlink{class_q_c_p_range}{QCPRange}}()) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \mbox{\hyperlink{class_q_c_p_color_map_a88134493aaf6b297af34eaab65264fff}{get\+Value\+Range}} (bool \&found\+Range, \mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9}{QCP\+::\+Sign\+Domain}} in\+Sign\+Domain=\mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9aa38352ef02d51ddfa4399d9551566e24}{QCP\+::sd\+Both}}, const \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \&in\+Key\+Range=\mbox{\hyperlink{class_q_c_p_range}{QCPRange}}()) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_q_c_p_abstract_plottable}{QCPAbstract\+Plottable}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_q_c_p_abstract_plottable_af78a036e40db6f53a31abadc5323715a}{QCPAbstract\+Plottable}} (\mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$\mbox{\hyperlink{class_q_c_p_abstract_plottable_aa6f25b97ee99988fe352f17cb9ed962b}{key\+Axis}}, \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$\mbox{\hyperlink{class_q_c_p_abstract_plottable_a842b3831660d3e33b73863fd133889dd}{value\+Axis}})
-\item 
-virtual \mbox{\hyperlink{class_q_c_p_abstract_plottable_a88112bcbe9eb995b1190ad7591f2d0b5}{$\sim$\+QCPAbstract\+Plottable}} ()
+\mbox{\hyperlink{class_q_c_p_abstract_plottable_af78a036e40db6f53a31abadc5323715a}{QCPAbstract\+Plottable}} (\mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$key\+Axis, \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$value\+Axis)
 \item 
 QString \mbox{\hyperlink{class_q_c_p_abstract_plottable_a52c226eefcb1920240eeabae574d28c0}{name}} () const
 \item 
@@ -112,21 +116,21 @@ bool \mbox{\hyperlink{class_q_c_p_abstract_plottable_a0b3b514474fe93354fc74cfc14
 \item 
 \mbox{\hyperlink{class_q_c_p_selection_decorator}{QCPSelection\+Decorator}} $\ast$ \mbox{\hyperlink{class_q_c_p_abstract_plottable_a7861518e47ca0c6a0c386032c2db075e}{selection\+Decorator}} () const
 \item 
-void \mbox{\hyperlink{class_q_c_p_abstract_plottable_ab79c7ba76bc7fa89a4b3580e12149f1f}{set\+Name}} (const QString \&\mbox{\hyperlink{class_q_c_p_abstract_plottable_a52c226eefcb1920240eeabae574d28c0}{name}})
+void \mbox{\hyperlink{class_q_c_p_abstract_plottable_ab79c7ba76bc7fa89a4b3580e12149f1f}{set\+Name}} (const QString \&name)
 \item 
 void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a089d6b5577120239b55c39ed27c39536}{set\+Antialiased\+Fill}} (bool enabled)
 \item 
 void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a2f03f067ede2ed4da6f7d0e4777a3f02}{set\+Antialiased\+Scatters}} (bool enabled)
 \item 
-void \mbox{\hyperlink{class_q_c_p_abstract_plottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}{set\+Pen}} (const QPen \&\mbox{\hyperlink{class_q_c_p_abstract_plottable_ad5972efc31344e5a7a78ab4f8864b2d3}{pen}})
+void \mbox{\hyperlink{class_q_c_p_abstract_plottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}{set\+Pen}} (const QPen \&pen)
 \item 
-void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a7a4b92144dca6453a1f0f210e27edc74}{set\+Brush}} (const QBrush \&\mbox{\hyperlink{class_q_c_p_abstract_plottable_a893b4896dfd92b68b05b2600b80f5826}{brush}})
+void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a7a4b92144dca6453a1f0f210e27edc74}{set\+Brush}} (const QBrush \&brush)
 \item 
 void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a8524fa2994c63c0913ebd9bb2ffa3920}{set\+Key\+Axis}} (\mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$axis)
 \item 
 void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a71626a07367e241ec62ad2c34baf21cb}{set\+Value\+Axis}} (\mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$axis)
 \item 
-Q\+\_\+\+SLOT void \mbox{\hyperlink{class_q_c_p_abstract_plottable_ac238d6e910f976f1f30d41c2bca44ac3}{set\+Selectable}} (\mbox{\hyperlink{namespace_q_c_p_ac6cb9db26a564b27feda362a438db038}{QCP\+::\+Selection\+Type}} \mbox{\hyperlink{class_q_c_p_abstract_plottable_a016653741033bd332d1d4c3c725cc284}{selectable}})
+Q\+\_\+\+SLOT void \mbox{\hyperlink{class_q_c_p_abstract_plottable_ac238d6e910f976f1f30d41c2bca44ac3}{set\+Selectable}} (\mbox{\hyperlink{namespace_q_c_p_ac6cb9db26a564b27feda362a438db038}{QCP\+::\+Selection\+Type}} selectable)
 \item 
 Q\+\_\+\+SLOT void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a219bc5403a9d85d3129165ec3f5ae436}{set\+Selection}} (\mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} \mbox{\hyperlink{class_q_c_p_abstract_plottable_a040bf09f41d456284cfd39cc37aa068f}{selection}})
 \item 
@@ -167,8 +171,6 @@ bool \mbox{\hyperlink{class_q_c_p_abstract_plottable_ac95fb2604d9106d0852ad9ceb3
 \item 
 \mbox{\hyperlink{class_q_c_p_layerable_a74c0fa237f29bf0e49565013fc5d1ec0}{QCPLayerable}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$plot, QString target\+Layer=QString(), \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}}=0)
 \item 
-virtual \mbox{\hyperlink{class_q_c_p_layerable_a4231cf5b3601d6d3a5781283e7a9735b}{$\sim$\+QCPLayerable}} ()
-\item 
 bool \mbox{\hyperlink{class_q_c_p_layerable_af0297b944b6192b6d67d00bff41b6b70}{visible}} () const
 \item 
 \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$ \mbox{\hyperlink{class_q_c_p_layerable_a36ed5b292b90934b524a4e5866a3526c}{parent\+Plot}} () const
@@ -181,7 +183,7 @@ bool \mbox{\hyperlink{class_q_c_p_layerable_a71cbd212fde2703cee076e204a475709}{a
 \item 
 void \mbox{\hyperlink{class_q_c_p_layerable_a3bed99ddc396b48ce3ebfdc0418744f8}{set\+Visible}} (bool on)
 \item 
-Q\+\_\+\+SLOT bool \mbox{\hyperlink{class_q_c_p_layerable_ab0d0da6d2de45a118886d2c8e16d5a54}{set\+Layer}} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_a9d4e121a7f1d2314f906fe698209cac9}{layer}})
+Q\+\_\+\+SLOT bool \mbox{\hyperlink{class_q_c_p_layerable_ab0d0da6d2de45a118886d2c8e16d5a54}{set\+Layer}} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$layer)
 \item 
 bool \mbox{\hyperlink{class_q_c_p_layerable_ab25a0e7b897993b44447caee0f142083}{set\+Layer}} (const QString \&layer\+Name)
 \item 
@@ -196,26 +198,27 @@ bool \mbox{\hyperlink{class_q_c_p_layerable_ab054e88f15d485defcb95e7376f119e7}{r
 \item 
 virtual void \mbox{\hyperlink{class_q_c_p_color_map_a5efcea591bb5486d968af520a4d43c3a}{update\+Map\+Image}} ()
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_color_map_a6b628014d2939368935efd0a788648c8}{draw}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual void \mbox{\hyperlink{class_q_c_p_color_map_a6b628014d2939368935efd0a788648c8}{draw}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_color_map_adeaa5e262a03b7f021bd1aa6f1e60ce9}{draw\+Legend\+Icon}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter, const QRectF \&rect) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual void \mbox{\hyperlink{class_q_c_p_color_map_adeaa5e262a03b7f021bd1aa6f1e60ce9}{draw\+Legend\+Icon}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter, const QRectF \&rect) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_q_c_p_abstract_plottable}{QCPAbstract\+Plottable}}}
 \begin{DoxyCompactItemize}
 \item 
-virtual QRect \mbox{\hyperlink{class_q_c_p_abstract_plottable_a635cee3effc07ad421414c76fd83548c}{clip\+Rect}} () const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual QRect \mbox{\hyperlink{class_q_c_p_abstract_plottable_a635cee3effc07ad421414c76fd83548c}{clip\+Rect}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a453f676a5cee7bf846c5f0fa05ea84b3}{draw}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}=0
+virtual void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a453f676a5cee7bf846c5f0fa05ea84b3}{draw}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) Q\+\_\+\+DECL\+\_\+\+OVERRIDE=0
 \item 
-virtual \mbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037}{QCP\+::\+Interaction}} \mbox{\hyperlink{class_q_c_p_abstract_plottable_af80ad8531642e786b6f4fad551c203c4}{selection\+Category}} () const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual \mbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037}{QCP\+::\+Interaction}} \mbox{\hyperlink{class_q_c_p_abstract_plottable_af80ad8531642e786b6f4fad551c203c4}{selection\+Category}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-void \mbox{\hyperlink{class_q_c_p_abstract_plottable_ac032077fb0db93d6faa3273d02363398}{apply\+Default\+Antialiasing\+Hint}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+void \mbox{\hyperlink{class_q_c_p_abstract_plottable_ac032077fb0db93d6faa3273d02363398}{apply\+Default\+Antialiasing\+Hint}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a2d488568cf16600dd81fa23d7d439829}{select\+Event}} (QMouse\+Event $\ast$event, bool additive, const QVariant \&details, bool $\ast$selection\+State\+Changed) \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a2d488568cf16600dd81fa23d7d439829}{select\+Event}} (QMouse\+Event $\ast$event, bool additive, const QVariant \&details, bool $\ast$selection\+State\+Changed) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a9b104d9da4f38f934363945c313bf82e}{deselect\+Event}} (bool $\ast$selection\+State\+Changed) \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a9b104d9da4f38f934363945c313bf82e}{deselect\+Event}} (bool $\ast$selection\+State\+Changed) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a9a450783fd9ed539e589999fd390cdf7}{draw\+Legend\+Icon}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter, const QRectF \&rect) const =0
+\mbox{\Hypertarget{class_q_c_p_abstract_plottable_a9a450783fd9ed539e589999fd390cdf7}\label{class_q_c_p_abstract_plottable_a9a450783fd9ed539e589999fd390cdf7}} 
+virtual void {\bfseries draw\+Legend\+Icon} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter, const QRectF \&rect) const =0
 \item 
 void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a8d06a59ea23324cce6330ebf2262c0ed}{apply\+Fill\+Antialiasing\+Hint}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) const
 \item 
@@ -224,15 +227,17 @@ void \mbox{\hyperlink{class_q_c_p_abstract_plottable_ac95f26b15a1e5d9c7bd2c0a46d
 \doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}}
 \begin{DoxyCompactItemize}
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_layerable_ab20b7dbd8e0249ed61adb9622c427382}{parent\+Plot\+Initialized}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_a36ed5b292b90934b524a4e5866a3526c}{parent\+Plot}})
+virtual void \mbox{\hyperlink{class_q_c_p_layerable_ab20b7dbd8e0249ed61adb9622c427382}{parent\+Plot\+Initialized}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$parent\+Plot)
 \item 
 virtual \mbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037}{QCP\+::\+Interaction}} \mbox{\hyperlink{class_q_c_p_layerable_a908c9edda761886f33893be326dab77d}{selection\+Category}} () const
 \item 
 virtual QRect \mbox{\hyperlink{class_q_c_p_layerable_acbcfc9ecc75433747b1978a77b1864b3}{clip\+Rect}} () const
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_layerable_afdf83ddc6a265cbf4c89fe99d3d93473}{apply\+Default\+Antialiasing\+Hint}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) const =0
+\mbox{\Hypertarget{class_q_c_p_layerable_afdf83ddc6a265cbf4c89fe99d3d93473}\label{class_q_c_p_layerable_afdf83ddc6a265cbf4c89fe99d3d93473}} 
+virtual void {\bfseries apply\+Default\+Antialiasing\+Hint} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) const =0
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_layerable_aecf2f7087482d4b6a78cb2770e5ed12d}{draw}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter)=0
+\mbox{\Hypertarget{class_q_c_p_layerable_aecf2f7087482d4b6a78cb2770e5ed12d}\label{class_q_c_p_layerable_aecf2f7087482d4b6a78cb2770e5ed12d}} 
+virtual void {\bfseries draw} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter)=0
 \item 
 virtual void \mbox{\hyperlink{class_q_c_p_layerable_a7498c2d0d081cf7cad0fb3bb93aa0e91}{select\+Event}} (QMouse\+Event $\ast$event, bool additive, const QVariant \&details, bool $\ast$selection\+State\+Changed)
 \item 
@@ -248,11 +253,11 @@ virtual void \mbox{\hyperlink{class_q_c_p_layerable_a4171e2e823aca242dd0279f00ed
 \item 
 virtual void \mbox{\hyperlink{class_q_c_p_layerable_a47dfd7b8fd99c08ca54e09c362b6f022}{wheel\+Event}} (QWheel\+Event $\ast$event)
 \item 
-void \mbox{\hyperlink{class_q_c_p_layerable_a8cbe5a0c9a5674249982f5ca5f8e02bc}{initialize\+Parent\+Plot}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_a36ed5b292b90934b524a4e5866a3526c}{parent\+Plot}})
+void \mbox{\hyperlink{class_q_c_p_layerable_a8cbe5a0c9a5674249982f5ca5f8e02bc}{initialize\+Parent\+Plot}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$parent\+Plot)
 \item 
 void \mbox{\hyperlink{class_q_c_p_layerable_aa23c893671f1f6744ac235cf2204cf3a}{set\+Parent\+Layerable}} (\mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}})
 \item 
-bool \mbox{\hyperlink{class_q_c_p_layerable_af94484cfb7cbbddb7de522e9be71d9a4}{move\+To\+Layer}} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_a9d4e121a7f1d2314f906fe698209cac9}{layer}}, bool prepend)
+bool \mbox{\hyperlink{class_q_c_p_layerable_af94484cfb7cbbddb7de522e9be71d9a4}{move\+To\+Layer}} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$layer, bool prepend)
 \item 
 void \mbox{\hyperlink{class_q_c_p_layerable_acb663e375d2d36dc5c55021ee5a2119b}{apply\+Antialiasing\+Hint}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter, bool local\+Antialiased, \mbox{\hyperlink{namespace_q_c_p_ae55dbe315d41fe80f29ba88100843a0c}{QCP\+::\+Antialiased\+Element}} override\+Element) const
 \end{DoxyCompactItemize}
@@ -365,6 +370,10 @@ The \mbox{\hyperlink{class_q_c_p_color_map}{QCPColor\+Map}} always displays the 
 \end{DoxyNote}
 
 
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05737}{5737}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_q_c_p_color_map_aa37e976d2ee1e2be6c4cd88a64b36215}\label{class_q_c_p_color_map_aa37e976d2ee1e2be6c4cd88a64b36215}} 
 \index{QCPColorMap@{QCPColorMap}!QCPColorMap@{QCPColorMap}}
@@ -374,11 +383,19 @@ The \mbox{\hyperlink{class_q_c_p_color_map}{QCPColor\+Map}} always displays the 
 
 Constructs a color map with the specified {\itshape key\+Axis} and {\itshape value\+Axis}.
 
-The created \mbox{\hyperlink{class_q_c_p_color_map}{QCPColor\+Map}} is automatically registered with the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance inferred from {\itshape key\+Axis}. This \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance takes ownership of the \mbox{\hyperlink{class_q_c_p_color_map}{QCPColor\+Map}}, so do not delete it manually but use \mbox{\hyperlink{class_q_custom_plot_af3dafd56884208474f311d6226513ab2}{QCustom\+Plot\+::remove\+Plottable()}} instead. \mbox{\Hypertarget{class_q_c_p_color_map_ac8a952a40fed62dcee33405b0f4d47ad}\label{class_q_c_p_color_map_ac8a952a40fed62dcee33405b0f4d47ad}} 
+The created \mbox{\hyperlink{class_q_c_p_color_map}{QCPColor\+Map}} is automatically registered with the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance inferred from {\itshape key\+Axis}. This \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance takes ownership of the \mbox{\hyperlink{class_q_c_p_color_map}{QCPColor\+Map}}, so do not delete it manually but use \mbox{\hyperlink{class_q_custom_plot_af3dafd56884208474f311d6226513ab2}{QCustom\+Plot\+::remove\+Plottable()}} instead. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l25575}{25575}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+\mbox{\Hypertarget{class_q_c_p_color_map_ac8a952a40fed62dcee33405b0f4d47ad}\label{class_q_c_p_color_map_ac8a952a40fed62dcee33405b0f4d47ad}} 
 \index{QCPColorMap@{QCPColorMap}!````~QCPColorMap@{$\sim$QCPColorMap}}
 \index{````~QCPColorMap@{$\sim$QCPColorMap}!QCPColorMap@{QCPColorMap}}
 \doxysubsubsection{\texorpdfstring{$\sim$QCPColorMap()}{~QCPColorMap()}}
 {\footnotesize\ttfamily QCPColor\+Map\+::$\sim$\+QCPColor\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l25586}{25586}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 
 
@@ -388,6 +405,10 @@ The created \mbox{\hyperlink{class_q_c_p_color_map}{QCPColor\+Map}} is automatic
 \index{colorScale@{colorScale}!QCPColorMap@{QCPColorMap}}
 \doxysubsubsection{\texorpdfstring{colorScale()}{colorScale()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_color_scale}{QCPColor\+Scale}} $\ast$ QCPColor\+Map\+::color\+Scale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05759}{5759}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_color_map_a047d7eb3ae657f93f2f39b5e68b79451}\label{class_q_c_p_color_map_a047d7eb3ae657f93f2f39b5e68b79451}} 
 \index{QCPColorMap@{QCPColorMap}!data@{data}}
@@ -400,11 +421,27 @@ Returns a pointer to the internal data storage of type \mbox{\hyperlink{class_q_
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_color_map_a5a23e133a20c4ccad35fd32e6c0f9809}{set\+Data}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05753}{5753}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_color_map_a047d7eb3ae657f93f2f39b5e68b79451_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_color_map_ae478f0a5a016420d66c70cc33d6cda1d}\label{class_q_c_p_color_map_ae478f0a5a016420d66c70cc33d6cda1d}} 
 \index{QCPColorMap@{QCPColorMap}!dataRange@{dataRange}}
 \index{dataRange@{dataRange}!QCPColorMap@{QCPColorMap}}
 \doxysubsubsection{\texorpdfstring{dataRange()}{dataRange()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} QCPColor\+Map\+::data\+Range (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05754}{5754}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_color_map_a83ae5be3903da493f732e1a5c14fd807}\label{class_q_c_p_color_map_a83ae5be3903da493f732e1a5c14fd807}} 
 \index{QCPColorMap@{QCPColorMap}!dataRangeChanged@{dataRangeChanged}}
@@ -417,11 +454,23 @@ This signal is emitted when the data range changes.
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_color_map_a980b42837821159786a85b4b7dcb8774}{set\+Data\+Range}} 
 \end{DoxySeeAlso}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_color_map_a83ae5be3903da493f732e1a5c14fd807_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_color_map_ab796f2dccc90fb7a354b6732c33ec9be}\label{class_q_c_p_color_map_ab796f2dccc90fb7a354b6732c33ec9be}} 
 \index{QCPColorMap@{QCPColorMap}!dataScaleType@{dataScaleType}}
 \index{dataScaleType@{dataScaleType}!QCPColorMap@{QCPColorMap}}
 \doxysubsubsection{\texorpdfstring{dataScaleType()}{dataScaleType()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_axis_a36d8e8658dbaa179bf2aeb973db2d6f0}{QCPAxis\+::\+Scale\+Type}} QCPColor\+Map\+::data\+Scale\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05755}{5755}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_color_map_a978d5d5c9f68cffef8c902b855c04490}\label{class_q_c_p_color_map_a978d5d5c9f68cffef8c902b855c04490}} 
 \index{QCPColorMap@{QCPColorMap}!dataScaleTypeChanged@{dataScaleTypeChanged}}
@@ -434,6 +483,14 @@ This signal is emitted when the data scale type changes.
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_color_map_a9d20aa08e3c1f20f22908c45b9c06511}{set\+Data\+Scale\+Type}} 
 \end{DoxySeeAlso}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_color_map_a978d5d5c9f68cffef8c902b855c04490_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_color_map_a6b628014d2939368935efd0a788648c8}\label{class_q_c_p_color_map_a6b628014d2939368935efd0a788648c8}} 
 \index{QCPColorMap@{QCPColorMap}!draw@{draw}}
 \index{draw@{draw}!QCPColorMap@{QCPColorMap}}
@@ -442,7 +499,11 @@ This signal is emitted when the data scale type changes.
 
 
 
-Implements \mbox{\hyperlink{class_q_c_p_abstract_plottable_a453f676a5cee7bf846c5f0fa05ea84b3}{QCPAbstract\+Plottable}}.
+Implements \mbox{\hyperlink{class_q_c_p_abstract_plottable}{QCPAbstract\+Plottable}}.
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l25966}{25966}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_color_map_adeaa5e262a03b7f021bd1aa6f1e60ce9}\label{class_q_c_p_color_map_adeaa5e262a03b7f021bd1aa6f1e60ce9}} 
 \index{QCPColorMap@{QCPColorMap}!drawLegendIcon@{drawLegendIcon}}
@@ -452,7 +513,11 @@ Implements \mbox{\hyperlink{class_q_c_p_abstract_plottable_a453f676a5cee7bf846c5
 
 
 
-Implements \mbox{\hyperlink{class_q_c_p_abstract_plottable_a9a450783fd9ed539e589999fd390cdf7}{QCPAbstract\+Plottable}}.
+Implements \mbox{\hyperlink{class_q_c_p_abstract_plottable}{QCPAbstract\+Plottable}}.
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l26035}{26035}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_color_map_a985861974560f950af6cb7fae8c46267}\label{class_q_c_p_color_map_a985861974560f950af6cb7fae8c46267}} 
 \index{QCPColorMap@{QCPColorMap}!getKeyRange@{getKeyRange}}
@@ -471,6 +536,18 @@ Note that {\itshape found\+Range} is not the same as \mbox{\hyperlink{class_q_c_
 
 Implements \mbox{\hyperlink{class_q_c_p_abstract_plottable_a4da16d3cd4b509e1104a9b0275623c96}{QCPAbstract\+Plottable}}.
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l25822}{25822}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_color_map_a985861974560f950af6cb7fae8c46267_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_color_map_a88134493aaf6b297af34eaab65264fff}\label{class_q_c_p_color_map_a88134493aaf6b297af34eaab65264fff}} 
 \index{QCPColorMap@{QCPColorMap}!getValueRange@{getValueRange}}
 \index{getValueRange@{getValueRange}!QCPColorMap@{QCPColorMap}}
@@ -490,11 +567,27 @@ Note that {\itshape found\+Range} is not the same as \mbox{\hyperlink{class_q_c_
 
 Implements \mbox{\hyperlink{class_q_c_p_abstract_plottable_a4de773988b21ed090fddd27c6a3a3dcb}{QCPAbstract\+Plottable}}.
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l25844}{25844}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_color_map_a88134493aaf6b297af34eaab65264fff_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_color_map_acc4bb87c903607b96c08d2bc34bc24cd}\label{class_q_c_p_color_map_acc4bb87c903607b96c08d2bc34bc24cd}} 
 \index{QCPColorMap@{QCPColorMap}!gradient@{gradient}}
 \index{gradient@{gradient}!QCPColorMap@{QCPColorMap}}
 \doxysubsubsection{\texorpdfstring{gradient()}{gradient()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_color_gradient}{QCPColor\+Gradient}} QCPColor\+Map\+::gradient (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05758}{5758}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_color_map_a31a12726736b1ac274e7b1d8dfb67468}\label{class_q_c_p_color_map_a31a12726736b1ac274e7b1d8dfb67468}} 
 \index{QCPColorMap@{QCPColorMap}!gradientChanged@{gradientChanged}}
@@ -507,11 +600,23 @@ This signal is emitted when the gradient changes.
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_color_map_a7313c78360471cead3576341a2c50377}{set\+Gradient}} 
 \end{DoxySeeAlso}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_color_map_a31a12726736b1ac274e7b1d8dfb67468_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_color_map_a15d1877883fa463d44bfcbfd6840d4ca}\label{class_q_c_p_color_map_a15d1877883fa463d44bfcbfd6840d4ca}} 
 \index{QCPColorMap@{QCPColorMap}!interpolate@{interpolate}}
 \index{interpolate@{interpolate}!QCPColorMap@{QCPColorMap}}
 \doxysubsubsection{\texorpdfstring{interpolate()}{interpolate()}}
 {\footnotesize\ttfamily bool QCPColor\+Map\+::interpolate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05756}{5756}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_color_map_a856608fa3dd1cc290bcd5f29a5575774}\label{class_q_c_p_color_map_a856608fa3dd1cc290bcd5f29a5575774}} 
 \index{QCPColorMap@{QCPColorMap}!rescaleDataRange@{rescaleDataRange}}
@@ -526,6 +631,18 @@ The minimum and maximum values of the data set are buffered in the internal \mbo
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_color_map_a980b42837821159786a85b4b7dcb8774}{set\+Data\+Range}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l25764}{25764}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_color_map_a856608fa3dd1cc290bcd5f29a5575774_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_color_map_afb4b843596addf58096082827a9e3450}\label{class_q_c_p_color_map_afb4b843596addf58096082827a9e3450}} 
 \index{QCPColorMap@{QCPColorMap}!selectTest@{selectTest}}
 \index{selectTest@{selectTest}!QCPColorMap@{QCPColorMap}}
@@ -542,17 +659,29 @@ Providing a constant value for area objects allows selecting line objects even w
 
 The actual setting of the selection state is not done by this function. This is handled by the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} when the mouse\+Release\+Event occurs, and the finally selected object is notified via the select\+Event/ deselect\+Event methods.
 
-{\itshape details} is an optional output parameter. Every layerable subclass may place any information in {\itshape details}. This information will be passed to \mbox{\hyperlink{class_q_c_p_abstract_plottable_a2d488568cf16600dd81fa23d7d439829}{select\+Event}} when the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} decides on the basis of this select\+Test call, that the object was successfully selected. The subsequent call to \mbox{\hyperlink{class_q_c_p_abstract_plottable_a2d488568cf16600dd81fa23d7d439829}{select\+Event}} will carry the {\itshape details}. This is useful for multi-\/part objects (like \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}}). This way, a possibly complex calculation to decide which part was clicked is only done once in \mbox{\hyperlink{class_q_c_p_color_map_afb4b843596addf58096082827a9e3450}{select\+Test}}. The result (i.\+e. the actually clicked part) can then be placed in {\itshape details}. So in the subsequent \mbox{\hyperlink{class_q_c_p_abstract_plottable_a2d488568cf16600dd81fa23d7d439829}{select\+Event}}, the decision which part was selected doesn\textquotesingle{}t have to be done a second time for a single selection operation.
+{\itshape details} is an optional output parameter. Every layerable subclass may place any information in {\itshape details}. This information will be passed to select\+Event when the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} decides on the basis of this select\+Test call, that the object was successfully selected. The subsequent call to select\+Event will carry the {\itshape details}. This is useful for multi-\/part objects (like \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}}). This way, a possibly complex calculation to decide which part was clicked is only done once in \mbox{\hyperlink{class_q_c_p_color_map_afb4b843596addf58096082827a9e3450}{select\+Test}}. The result (i.\+e. the actually clicked part) can then be placed in {\itshape details}. So in the subsequent select\+Event, the decision which part was selected doesn\textquotesingle{}t have to be done a second time for a single selection operation.
 
 You may pass 0 as {\itshape details} to indicate that you are not interested in those selection details.
 
 \begin{DoxySeeAlso}{See also}
-\mbox{\hyperlink{class_q_c_p_abstract_plottable_a2d488568cf16600dd81fa23d7d439829}{select\+Event}}, \mbox{\hyperlink{class_q_c_p_abstract_plottable_a9b104d9da4f38f934363945c313bf82e}{deselect\+Event}}, \mbox{\hyperlink{class_q_c_p_layerable_af6567604818db90f4fd52822f8bc8376}{mouse\+Press\+Event}}, \mbox{\hyperlink{class_q_c_p_layerable_a47dfd7b8fd99c08ca54e09c362b6f022}{wheel\+Event}}, \mbox{\hyperlink{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5}{QCustom\+Plot\+::set\+Interactions}} 
+select\+Event, deselect\+Event, \mbox{\hyperlink{class_q_c_p_layerable_af6567604818db90f4fd52822f8bc8376}{mouse\+Press\+Event}}, \mbox{\hyperlink{class_q_c_p_layerable_a47dfd7b8fd99c08ca54e09c362b6f022}{wheel\+Event}}, \mbox{\hyperlink{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5}{QCustom\+Plot\+::set\+Interactions}} 
 \end{DoxySeeAlso}
 
 
 Implements \mbox{\hyperlink{class_q_c_p_abstract_plottable_a38efe9641d972992a3d44204bc80ec1d}{QCPAbstract\+Plottable}}.
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l25799}{25799}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_color_map_afb4b843596addf58096082827a9e3450_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_color_map_aa828921db364fe3c6af4619580ab85fd}\label{class_q_c_p_color_map_aa828921db364fe3c6af4619580ab85fd}} 
 \index{QCPColorMap@{QCPColorMap}!setColorScale@{setColorScale}}
 \index{setColorScale@{setColorScale}!QCPColorMap@{QCPColorMap}}
@@ -565,7 +694,19 @@ This means that both the color scale and the color map synchronize their gradien
 
 This function causes the color map to adopt the current color gradient, data range and data scale type of {\itshape color\+Scale}. After this call, you may change these properties at either the color map or the color scale, and the setting will be applied to both.
 
-Pass 0 as {\itshape color\+Scale} to disconnect the color scale from this color map again. \mbox{\Hypertarget{class_q_c_p_color_map_a5a23e133a20c4ccad35fd32e6c0f9809}\label{class_q_c_p_color_map_a5a23e133a20c4ccad35fd32e6c0f9809}} 
+Pass 0 as {\itshape color\+Scale} to disconnect the color scale from this color map again. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l25718}{25718}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_color_map_aa828921db364fe3c6af4619580ab85fd_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_color_map_a5a23e133a20c4ccad35fd32e6c0f9809}\label{class_q_c_p_color_map_a5a23e133a20c4ccad35fd32e6c0f9809}} 
 \index{QCPColorMap@{QCPColorMap}!setData@{setData}}
 \index{setData@{setData}!QCPColorMap@{QCPColorMap}}
 \doxysubsubsection{\texorpdfstring{setData()}{setData()}}
@@ -573,7 +714,19 @@ Pass 0 as {\itshape color\+Scale} to disconnect the color scale from this color 
 
 Replaces the current \mbox{\hyperlink{class_q_c_p_color_map_a047d7eb3ae657f93f2f39b5e68b79451}{data}} with the provided {\itshape data}.
 
-If {\itshape copy} is set to true, the {\itshape data} object will only be copied. if false, the color map takes ownership of the passed data and replaces the internal data pointer with it. This is significantly faster than copying for large datasets. \mbox{\Hypertarget{class_q_c_p_color_map_a980b42837821159786a85b4b7dcb8774}\label{class_q_c_p_color_map_a980b42837821159786a85b4b7dcb8774}} 
+If {\itshape copy} is set to true, the {\itshape data} object will only be copied. if false, the color map takes ownership of the passed data and replaces the internal data pointer with it. This is significantly faster than copying for large datasets. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l25598}{25598}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{class_q_c_p_color_map_a5a23e133a20c4ccad35fd32e6c0f9809_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_color_map_a980b42837821159786a85b4b7dcb8774}\label{class_q_c_p_color_map_a980b42837821159786a85b4b7dcb8774}} 
 \index{QCPColorMap@{QCPColorMap}!setDataRange@{setDataRange}}
 \index{setDataRange@{setDataRange}!QCPColorMap@{QCPColorMap}}
 \doxysubsubsection{\texorpdfstring{setDataRange()}{setDataRange()}}
@@ -586,6 +739,26 @@ To make the data range span the full range of the data set, use \mbox{\hyperlink
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_color_scale_abe88633003a26d1e756aa74984587fef}{QCPColor\+Scale\+::set\+Data\+Range}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l25624}{25624}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_color_map_a980b42837821159786a85b4b7dcb8774_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_color_map_a980b42837821159786a85b4b7dcb8774_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_color_map_a9d20aa08e3c1f20f22908c45b9c06511}\label{class_q_c_p_color_map_a9d20aa08e3c1f20f22908c45b9c06511}} 
 \index{QCPColorMap@{QCPColorMap}!setDataScaleType@{setDataScaleType}}
 \index{setDataScaleType@{setDataScaleType}!QCPColorMap@{QCPColorMap}}
@@ -597,6 +770,26 @@ Sets whether the data is correlated with the color gradient linearly or logarith
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_color_scale_aeb6107d67dd7325145b2498abae67fc3}{QCPColor\+Scale\+::set\+Data\+Scale\+Type}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l25643}{25643}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_color_map_a9d20aa08e3c1f20f22908c45b9c06511_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_color_map_a9d20aa08e3c1f20f22908c45b9c06511_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_color_map_a7313c78360471cead3576341a2c50377}\label{class_q_c_p_color_map_a7313c78360471cead3576341a2c50377}} 
 \index{QCPColorMap@{QCPColorMap}!setGradient@{setGradient}}
 \index{setGradient@{setGradient}!QCPColorMap@{QCPColorMap}}
@@ -610,6 +803,18 @@ The colors defined by the gradient will be used to represent data values in the 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_color_scale_a1f29583bb6f1e7f473b62fb712be3940}{QCPColor\+Scale\+::set\+Gradient}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l25666}{25666}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_color_map_a7313c78360471cead3576341a2c50377_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_color_map_a484eaa8a5065cfc386b15375bf98b964}\label{class_q_c_p_color_map_a484eaa8a5065cfc386b15375bf98b964}} 
 \index{QCPColorMap@{QCPColorMap}!setInterpolate@{setInterpolate}}
 \index{setInterpolate@{setInterpolate}!QCPColorMap@{QCPColorMap}}
@@ -618,7 +823,11 @@ The colors defined by the gradient will be used to represent data values in the 
 
 Sets whether the color map image shall use bicubic interpolation when displaying the color map shrinked or expanded, and not at a 1\+:1 pixel-\/to-\/data scale.
 
- \mbox{\Hypertarget{class_q_c_p_color_map_ad03221cc285e5f562a0b13d684b5576d}\label{class_q_c_p_color_map_ad03221cc285e5f562a0b13d684b5576d}} 
+ 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l25682}{25682}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+\mbox{\Hypertarget{class_q_c_p_color_map_ad03221cc285e5f562a0b13d684b5576d}\label{class_q_c_p_color_map_ad03221cc285e5f562a0b13d684b5576d}} 
 \index{QCPColorMap@{QCPColorMap}!setTightBoundary@{setTightBoundary}}
 \index{setTightBoundary@{setTightBoundary}!QCPColorMap@{QCPColorMap}}
 \doxysubsubsection{\texorpdfstring{setTightBoundary()}{setTightBoundary()}}
@@ -628,11 +837,19 @@ Sets whether the outer most data rows and columns are clipped to the specified k
 
 if {\itshape enabled} is set to false, the data points at the border of the color map are drawn with the same width and height as all other data points. Since the data points are represented by rectangles of one color centered on the data coordinate, this means that the shown color map extends by half a data point over the specified key/value range in each direction.
 
- \mbox{\Hypertarget{class_q_c_p_color_map_a53b5d26b28d6027af0fc863f057965db}\label{class_q_c_p_color_map_a53b5d26b28d6027af0fc863f057965db}} 
+ 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l25699}{25699}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+\mbox{\Hypertarget{class_q_c_p_color_map_a53b5d26b28d6027af0fc863f057965db}\label{class_q_c_p_color_map_a53b5d26b28d6027af0fc863f057965db}} 
 \index{QCPColorMap@{QCPColorMap}!tightBoundary@{tightBoundary}}
 \index{tightBoundary@{tightBoundary}!QCPColorMap@{QCPColorMap}}
 \doxysubsubsection{\texorpdfstring{tightBoundary()}{tightBoundary()}}
 {\footnotesize\ttfamily bool QCPColor\+Map\+::tight\+Boundary (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05757}{5757}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_color_map_a5d8158b62d55fcfeaabcb68ce0083e87}\label{class_q_c_p_color_map_a5d8158b62d55fcfeaabcb68ce0083e87}} 
 \index{QCPColorMap@{QCPColorMap}!updateLegendIcon@{updateLegendIcon}}
@@ -649,11 +866,27 @@ The current color map appearance is scaled down to {\itshape thumb\+Size}. Ideal
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_color_map_a980b42837821159786a85b4b7dcb8774}{set\+Data\+Range}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l25785}{25785}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_color_map_a5d8158b62d55fcfeaabcb68ce0083e87_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_color_map_a5efcea591bb5486d968af520a4d43c3a}\label{class_q_c_p_color_map_a5efcea591bb5486d968af520a4d43c3a}} 
 \index{QCPColorMap@{QCPColorMap}!updateMapImage@{updateMapImage}}
 \index{updateMapImage@{updateMapImage}!QCPColorMap@{QCPColorMap}}
 \doxysubsubsection{\texorpdfstring{updateMapImage()}{updateMapImage()}}
 {\footnotesize\ttfamily void QCPColor\+Map\+::update\+Map\+Image (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l25888}{25888}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 
 
@@ -664,11 +897,19 @@ The current color map appearance is scaled down to {\itshape thumb\+Size}. Ideal
 \doxysubsubsection{\texorpdfstring{QCPLegend}{QCPLegend}}
 {\footnotesize\ttfamily friend class \mbox{\hyperlink{class_q_c_p_legend}{QCPLegend}}\hspace{0.3cm}{\ttfamily [friend]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05807}{5807}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_color_map_a1cdf9df76adcfae45261690aa0ca2198}\label{class_q_c_p_color_map_a1cdf9df76adcfae45261690aa0ca2198}} 
 \index{QCPColorMap@{QCPColorMap}!QCustomPlot@{QCustomPlot}}
 \index{QCustomPlot@{QCustomPlot}!QCPColorMap@{QCPColorMap}}
 \doxysubsubsection{\texorpdfstring{QCustomPlot}{QCustomPlot}}
 {\footnotesize\ttfamily friend class \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05806}{5806}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 
 
@@ -679,11 +920,19 @@ The current color map appearance is scaled down to {\itshape thumb\+Size}. Ideal
 \doxysubsubsection{\texorpdfstring{mColorScale}{mColorScale}}
 {\footnotesize\ttfamily QPointer$<$\mbox{\hyperlink{class_q_c_p_color_scale}{QCPColor\+Scale}}$>$ QCPColor\+Map\+::m\+Color\+Scale\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05792}{5792}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_color_map_ab87609621d16cd3e9d52ad070b327b08}\label{class_q_c_p_color_map_ab87609621d16cd3e9d52ad070b327b08}} 
 \index{QCPColorMap@{QCPColorMap}!mDataRange@{mDataRange}}
 \index{mDataRange@{mDataRange}!QCPColorMap@{QCPColorMap}}
 \doxysubsubsection{\texorpdfstring{mDataRange}{mDataRange}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} QCPColor\+Map\+::m\+Data\+Range\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05786}{5786}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_color_map_ab28a4b2def408f83b9818799d5f18446}\label{class_q_c_p_color_map_ab28a4b2def408f83b9818799d5f18446}} 
 \index{QCPColorMap@{QCPColorMap}!mDataScaleType@{mDataScaleType}}
@@ -691,11 +940,19 @@ The current color map appearance is scaled down to {\itshape thumb\+Size}. Ideal
 \doxysubsubsection{\texorpdfstring{mDataScaleType}{mDataScaleType}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_axis_a36d8e8658dbaa179bf2aeb973db2d6f0}{QCPAxis\+::\+Scale\+Type}} QCPColor\+Map\+::m\+Data\+Scale\+Type\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05787}{5787}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_color_map_aab77fe9a8df6f0486ab3507cc5f278fa}\label{class_q_c_p_color_map_aab77fe9a8df6f0486ab3507cc5f278fa}} 
 \index{QCPColorMap@{QCPColorMap}!mGradient@{mGradient}}
 \index{mGradient@{mGradient}!QCPColorMap@{QCPColorMap}}
 \doxysubsubsection{\texorpdfstring{mGradient}{mGradient}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_color_gradient}{QCPColor\+Gradient}} QCPColor\+Map\+::m\+Gradient\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05789}{5789}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_color_map_af77e5eba9a844592648edeb6fbe834f1}\label{class_q_c_p_color_map_af77e5eba9a844592648edeb6fbe834f1}} 
 \index{QCPColorMap@{QCPColorMap}!mInterpolate@{mInterpolate}}
@@ -703,11 +960,19 @@ The current color map appearance is scaled down to {\itshape thumb\+Size}. Ideal
 \doxysubsubsection{\texorpdfstring{mInterpolate}{mInterpolate}}
 {\footnotesize\ttfamily bool QCPColor\+Map\+::m\+Interpolate\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05790}{5790}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_color_map_ada522988db02cb531767d38c5029ef60}\label{class_q_c_p_color_map_ada522988db02cb531767d38c5029ef60}} 
 \index{QCPColorMap@{QCPColorMap}!mLegendIcon@{mLegendIcon}}
 \index{mLegendIcon@{mLegendIcon}!QCPColorMap@{QCPColorMap}}
 \doxysubsubsection{\texorpdfstring{mLegendIcon}{mLegendIcon}}
 {\footnotesize\ttfamily QPixmap QCPColor\+Map\+::m\+Legend\+Icon\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05796}{5796}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_color_map_a8709272aa8f0be3ca111bf3866806f8b}\label{class_q_c_p_color_map_a8709272aa8f0be3ca111bf3866806f8b}} 
 \index{QCPColorMap@{QCPColorMap}!mMapData@{mMapData}}
@@ -715,11 +980,19 @@ The current color map appearance is scaled down to {\itshape thumb\+Size}. Ideal
 \doxysubsubsection{\texorpdfstring{mMapData}{mMapData}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_color_map_data}{QCPColor\+Map\+Data}}$\ast$ QCPColor\+Map\+::m\+Map\+Data\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05788}{5788}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_color_map_a66110813b42eca78b64095b2a1f285a0}\label{class_q_c_p_color_map_a66110813b42eca78b64095b2a1f285a0}} 
 \index{QCPColorMap@{QCPColorMap}!mMapImage@{mMapImage}}
 \index{mMapImage@{mMapImage}!QCPColorMap@{QCPColorMap}}
 \doxysubsubsection{\texorpdfstring{mMapImage}{mMapImage}}
 {\footnotesize\ttfamily QImage QCPColor\+Map\+::m\+Map\+Image\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05795}{5795}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_color_map_ac9aea6a5c193d7fa866bc7b26e79ef2c}\label{class_q_c_p_color_map_ac9aea6a5c193d7fa866bc7b26e79ef2c}} 
 \index{QCPColorMap@{QCPColorMap}!mMapImageInvalidated@{mMapImageInvalidated}}
@@ -727,11 +1000,19 @@ The current color map appearance is scaled down to {\itshape thumb\+Size}. Ideal
 \doxysubsubsection{\texorpdfstring{mMapImageInvalidated}{mMapImageInvalidated}}
 {\footnotesize\ttfamily bool QCPColor\+Map\+::m\+Map\+Image\+Invalidated\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05797}{5797}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_color_map_ac2e9425fe4381b496726e1c09f978302}\label{class_q_c_p_color_map_ac2e9425fe4381b496726e1c09f978302}} 
 \index{QCPColorMap@{QCPColorMap}!mTightBoundary@{mTightBoundary}}
 \index{mTightBoundary@{mTightBoundary}!QCPColorMap@{QCPColorMap}}
 \doxysubsubsection{\texorpdfstring{mTightBoundary}{mTightBoundary}}
 {\footnotesize\ttfamily bool QCPColor\+Map\+::m\+Tight\+Boundary\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05791}{5791}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_color_map_acad3d52f3572436d5f2e4057911ea8d3}\label{class_q_c_p_color_map_acad3d52f3572436d5f2e4057911ea8d3}} 
 \index{QCPColorMap@{QCPColorMap}!mUndersampledMapImage@{mUndersampledMapImage}}
@@ -741,7 +1022,11 @@ The current color map appearance is scaled down to {\itshape thumb\+Size}. Ideal
 
 
 
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05795}{5795}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{qcustomplot_8h}{qcustomplot.\+h}}\item 
-\mbox{\hyperlink{qcustomplot_8cpp}{qcustomplot.\+cpp}}\end{DoxyCompactItemize}
+qcustomplot.\+h\item 
+qcustomplot.\+cpp\end{DoxyCompactItemize}

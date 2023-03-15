@@ -7,12 +7,20 @@ The abstract base class for layouts.
 
 
 
-{\ttfamily \#include $<$qcustomplot.\+h$>$}
-
-Inheritance diagram for QCPLayout\+:\begin{figure}[H]
+Inheritance diagram for QCPLayout\+:\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=6.000000cm]{class_q_c_p_layout}
+\includegraphics[width=272pt]{class_q_c_p_layout__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for QCPLayout\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_layout__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
@@ -20,9 +28,9 @@ Inheritance diagram for QCPLayout\+:\begin{figure}[H]
 \item 
 \mbox{\hyperlink{class_q_c_p_layout_a04222e6e1361fd802d48f1a25b7020d4}{QCPLayout}} ()
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_layout_a48ecc9c98ea90b547c3e27a931a8f7bd}{update}} (\mbox{\hyperlink{class_q_c_p_layout_element_a0d83360e05735735aaf6d7983c56374d}{Update\+Phase}} phase) \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual void \mbox{\hyperlink{class_q_c_p_layout_a48ecc9c98ea90b547c3e27a931a8f7bd}{update}} (\mbox{\hyperlink{class_q_c_p_layout_element_a0d83360e05735735aaf6d7983c56374d}{Update\+Phase}} phase) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual QList$<$ \mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}} $\ast$ $>$ \mbox{\hyperlink{class_q_c_p_layout_aca129722c019f91d3367046f80abfa77}{elements}} (bool recursive) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual QList$<$ \mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}} $\ast$ $>$ \mbox{\hyperlink{class_q_c_p_layout_aca129722c019f91d3367046f80abfa77}{elements}} (bool recursive) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
 virtual int \mbox{\hyperlink{class_q_c_p_layout_a39d3e9ef5d9b82ab1885ba1cb9597e56}{element\+Count}} () const =0
 \item 
@@ -43,9 +51,7 @@ void \mbox{\hyperlink{class_q_c_p_layout_a02883bdf2769b5b227f0232dba1ac4ee}{clea
 \doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_q_c_p_layout_element_a8947f0ada17e672aaba3d424cbbb67e3}{QCPLayout\+Element}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_a36ed5b292b90934b524a4e5866a3526c}{parent\+Plot}}=0)
-\item 
-virtual \mbox{\hyperlink{class_q_c_p_layout_element_a0dc52343920011b3e72d61fc94ed3400}{$\sim$\+QCPLayout\+Element}} ()
+\mbox{\hyperlink{class_q_c_p_layout_element_a8947f0ada17e672aaba3d424cbbb67e3}{QCPLayout\+Element}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$parent\+Plot=0)
 \item 
 \mbox{\hyperlink{class_q_c_p_layout}{QCPLayout}} $\ast$ \mbox{\hyperlink{class_q_c_p_layout_element_a4efdcbde9d28f410e5ef166c9d691deb}{layout}} () const
 \item 
@@ -71,9 +77,9 @@ QHash$<$ \mbox{\hyperlink{namespace_q_c_p_a7e487e3e2ccb62ab7771065bab7cae54}{QCP
 \item 
 void \mbox{\hyperlink{class_q_c_p_layout_element_a38975ea13e36de8e53391ce41d94bc0f}{set\+Outer\+Rect}} (const QRect \&\mbox{\hyperlink{class_q_c_p_layout_element_a208effccfe2cca4a0eaf9393e60f2dd4}{rect}})
 \item 
-void \mbox{\hyperlink{class_q_c_p_layout_element_a8f450b1f3f992ad576fce2c63d8b79cf}{set\+Margins}} (const QMargins \&\mbox{\hyperlink{class_q_c_p_layout_element_af4ac9450aa2d60863bf3a8ea0c940c9d}{margins}})
+void \mbox{\hyperlink{class_q_c_p_layout_element_a8f450b1f3f992ad576fce2c63d8b79cf}{set\+Margins}} (const QMargins \&margins)
 \item 
-void \mbox{\hyperlink{class_q_c_p_layout_element_a0a8a17abc16b7923159fcc7608f94673}{set\+Minimum\+Margins}} (const QMargins \&\mbox{\hyperlink{class_q_c_p_layout_element_af4ac9450aa2d60863bf3a8ea0c940c9d}{margins}})
+void \mbox{\hyperlink{class_q_c_p_layout_element_a0a8a17abc16b7923159fcc7608f94673}{set\+Minimum\+Margins}} (const QMargins \&margins)
 \item 
 void \mbox{\hyperlink{class_q_c_p_layout_element_accfda49994e3e6d51ed14504abf9d27d}{set\+Auto\+Margins}} (QCP\+::\+Margin\+Sides sides)
 \item 
@@ -97,14 +103,12 @@ virtual QSize \mbox{\hyperlink{class_q_c_p_layout_element_ad96efb977a26e360e8a64
 \item 
 virtual QList$<$ \mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}} $\ast$ $>$ \mbox{\hyperlink{class_q_c_p_layout_element_a76dec8cb31e498994a944d7647a43309}{elements}} (bool recursive) const
 \item 
-virtual double \mbox{\hyperlink{class_q_c_p_layout_element_ae97f483cccedadbf18ea4525ef240ee4}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant $\ast$details=0) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual double \mbox{\hyperlink{class_q_c_p_layout_element_ae97f483cccedadbf18ea4525ef240ee4}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant $\ast$details=0) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_q_c_p_layerable_a74c0fa237f29bf0e49565013fc5d1ec0}{QCPLayerable}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$plot, QString target\+Layer=QString(), \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}}=0)
-\item 
-virtual \mbox{\hyperlink{class_q_c_p_layerable_a4231cf5b3601d6d3a5781283e7a9735b}{$\sim$\+QCPLayerable}} ()
 \item 
 bool \mbox{\hyperlink{class_q_c_p_layerable_af0297b944b6192b6d67d00bff41b6b70}{visible}} () const
 \item 
@@ -118,7 +122,7 @@ bool \mbox{\hyperlink{class_q_c_p_layerable_a71cbd212fde2703cee076e204a475709}{a
 \item 
 void \mbox{\hyperlink{class_q_c_p_layerable_a3bed99ddc396b48ce3ebfdc0418744f8}{set\+Visible}} (bool on)
 \item 
-Q\+\_\+\+SLOT bool \mbox{\hyperlink{class_q_c_p_layerable_ab0d0da6d2de45a118886d2c8e16d5a54}{set\+Layer}} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_a9d4e121a7f1d2314f906fe698209cac9}{layer}})
+Q\+\_\+\+SLOT bool \mbox{\hyperlink{class_q_c_p_layerable_ab0d0da6d2de45a118886d2c8e16d5a54}{set\+Layer}} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$layer)
 \item 
 bool \mbox{\hyperlink{class_q_c_p_layerable_ab25a0e7b897993b44447caee0f142083}{set\+Layer}} (const QString \&layer\+Name)
 \item 
@@ -148,24 +152,26 @@ virtual int \mbox{\hyperlink{class_q_c_p_layout_element_a005c9f0fe84bc1591a2cf2c
 \item 
 virtual void \mbox{\hyperlink{class_q_c_p_layout_element_a765f041a73af0c2de41b41a5a03e31a4}{layout\+Changed}} ()
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_layout_element_a0a8f18141bcf46cf40ad4c13324ff346}{apply\+Default\+Antialiasing\+Hint}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual void \mbox{\hyperlink{class_q_c_p_layout_element_a0a8f18141bcf46cf40ad4c13324ff346}{apply\+Default\+Antialiasing\+Hint}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_layout_element_ad1c597b1d608cfdd86e7b76819a94cfb}{draw}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual void \mbox{\hyperlink{class_q_c_p_layout_element_ad1c597b1d608cfdd86e7b76819a94cfb}{draw}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_layout_element_ab4bb5c5a958451f5f153fdce350f13cf}{parent\+Plot\+Initialized}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_a36ed5b292b90934b524a4e5866a3526c}{parent\+Plot}}) \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual void \mbox{\hyperlink{class_q_c_p_layout_element_ab4bb5c5a958451f5f153fdce350f13cf}{parent\+Plot\+Initialized}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$parent\+Plot) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}}
 \begin{DoxyCompactItemize}
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_layerable_ab20b7dbd8e0249ed61adb9622c427382}{parent\+Plot\+Initialized}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_a36ed5b292b90934b524a4e5866a3526c}{parent\+Plot}})
+virtual void \mbox{\hyperlink{class_q_c_p_layerable_ab20b7dbd8e0249ed61adb9622c427382}{parent\+Plot\+Initialized}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$parent\+Plot)
 \item 
 virtual \mbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037}{QCP\+::\+Interaction}} \mbox{\hyperlink{class_q_c_p_layerable_a908c9edda761886f33893be326dab77d}{selection\+Category}} () const
 \item 
 virtual QRect \mbox{\hyperlink{class_q_c_p_layerable_acbcfc9ecc75433747b1978a77b1864b3}{clip\+Rect}} () const
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_layerable_afdf83ddc6a265cbf4c89fe99d3d93473}{apply\+Default\+Antialiasing\+Hint}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) const =0
+\mbox{\Hypertarget{class_q_c_p_layerable_afdf83ddc6a265cbf4c89fe99d3d93473}\label{class_q_c_p_layerable_afdf83ddc6a265cbf4c89fe99d3d93473}} 
+virtual void {\bfseries apply\+Default\+Antialiasing\+Hint} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) const =0
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_layerable_aecf2f7087482d4b6a78cb2770e5ed12d}{draw}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter)=0
+\mbox{\Hypertarget{class_q_c_p_layerable_aecf2f7087482d4b6a78cb2770e5ed12d}\label{class_q_c_p_layerable_aecf2f7087482d4b6a78cb2770e5ed12d}} 
+virtual void {\bfseries draw} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter)=0
 \item 
 virtual void \mbox{\hyperlink{class_q_c_p_layerable_a7498c2d0d081cf7cad0fb3bb93aa0e91}{select\+Event}} (QMouse\+Event $\ast$event, bool additive, const QVariant \&details, bool $\ast$selection\+State\+Changed)
 \item 
@@ -181,11 +187,11 @@ virtual void \mbox{\hyperlink{class_q_c_p_layerable_a4171e2e823aca242dd0279f00ed
 \item 
 virtual void \mbox{\hyperlink{class_q_c_p_layerable_a47dfd7b8fd99c08ca54e09c362b6f022}{wheel\+Event}} (QWheel\+Event $\ast$event)
 \item 
-void \mbox{\hyperlink{class_q_c_p_layerable_a8cbe5a0c9a5674249982f5ca5f8e02bc}{initialize\+Parent\+Plot}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_a36ed5b292b90934b524a4e5866a3526c}{parent\+Plot}})
+void \mbox{\hyperlink{class_q_c_p_layerable_a8cbe5a0c9a5674249982f5ca5f8e02bc}{initialize\+Parent\+Plot}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$parent\+Plot)
 \item 
 void \mbox{\hyperlink{class_q_c_p_layerable_aa23c893671f1f6744ac235cf2204cf3a}{set\+Parent\+Layerable}} (\mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}})
 \item 
-bool \mbox{\hyperlink{class_q_c_p_layerable_af94484cfb7cbbddb7de522e9be71d9a4}{move\+To\+Layer}} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_a9d4e121a7f1d2314f906fe698209cac9}{layer}}, bool prepend)
+bool \mbox{\hyperlink{class_q_c_p_layerable_af94484cfb7cbbddb7de522e9be71d9a4}{move\+To\+Layer}} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$layer, bool prepend)
 \item 
 void \mbox{\hyperlink{class_q_c_p_layerable_acb663e375d2d36dc5c55021ee5a2119b}{apply\+Antialiasing\+Hint}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter, bool local\+Antialiased, \mbox{\hyperlink{namespace_q_c_p_ae55dbe315d41fe80f29ba88100843a0c}{QCP\+::\+Antialiased\+Element}} override\+Element) const
 \end{DoxyCompactItemize}
@@ -270,6 +276,10 @@ Since this is an abstract base class, you can\textquotesingle{}t instantiate it 
 
 For a general introduction to the layout system, see the dedicated documentation page The Layout System. 
 
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01282}{1282}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_q_c_p_layout_a04222e6e1361fd802d48f1a25b7020d4}\label{class_q_c_p_layout_a04222e6e1361fd802d48f1a25b7020d4}} 
 \index{QCPLayout@{QCPLayout}!QCPLayout@{QCPLayout}}
@@ -279,12 +289,20 @@ For a general introduction to the layout system, see the dedicated documentation
 
 Creates an instance of \mbox{\hyperlink{class_q_c_p_layout}{QCPLayout}} and sets default values. Note that since \mbox{\hyperlink{class_q_c_p_layout}{QCPLayout}} is an abstract base class, it can\textquotesingle{}t be instantiated directly. 
 
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l03634}{3634}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+
+
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_q_c_p_layout_af6dbbc24156a808da29cd1ec031729a3}\label{class_q_c_p_layout_af6dbbc24156a808da29cd1ec031729a3}} 
 \index{QCPLayout@{QCPLayout}!adoptElement@{adoptElement}}
 \index{adoptElement@{adoptElement}!QCPLayout@{QCPLayout}}
 \doxysubsubsection{\texorpdfstring{adoptElement()}{adoptElement()}}
 {\footnotesize\ttfamily void QCPLayout\+::adopt\+Element (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}} $\ast$}]{el }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l03799}{3799}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_layout_a02883bdf2769b5b227f0232dba1ac4ee}\label{class_q_c_p_layout_a02883bdf2769b5b227f0232dba1ac4ee}} 
 \index{QCPLayout@{QCPLayout}!clear@{clear}}
@@ -297,6 +315,18 @@ Removes and deletes all layout elements in this layout. Finally calls \mbox{\hyp
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_layout_a6c58f537d8086f352576ab7c5b15d0bc}{remove}}, \mbox{\hyperlink{class_q_c_p_layout_a2403f684fee3ce47132faaeed00bb066}{remove\+At}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l03744}{3744}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_layout_a02883bdf2769b5b227f0232dba1ac4ee_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_layout_afa73ca7d859f8a3ee5c73c9b353d2a56}\label{class_q_c_p_layout_afa73ca7d859f8a3ee5c73c9b353d2a56}} 
 \index{QCPLayout@{QCPLayout}!elementAt@{elementAt}}
 \index{elementAt@{elementAt}!QCPLayout@{QCPLayout}}
@@ -314,6 +344,14 @@ Note that even if {\itshape index} is valid, the respective cell may be empty in
 
 Implemented in \mbox{\hyperlink{class_q_c_p_layout_grid_a4288f174082555f6bd92021bdedb75dc}{QCPLayout\+Grid}}, and \mbox{\hyperlink{class_q_c_p_layout_inset_a881ca205605bae9c034733b808f93a02}{QCPLayout\+Inset}}.
 
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_layout_afa73ca7d859f8a3ee5c73c9b353d2a56_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_layout_a39d3e9ef5d9b82ab1885ba1cb9597e56}\label{class_q_c_p_layout_a39d3e9ef5d9b82ab1885ba1cb9597e56}} 
 \index{QCPLayout@{QCPLayout}!elementCount@{elementCount}}
 \index{elementCount@{elementCount}!QCPLayout@{QCPLayout}}
@@ -329,6 +367,14 @@ Returns the number of elements/cells in the layout.
 
 Implemented in \mbox{\hyperlink{class_q_c_p_layout_grid_a9a8942aface780a02445ebcf14c48513}{QCPLayout\+Grid}}, and \mbox{\hyperlink{class_q_c_p_layout_inset_a7f5aa4d48a2e844cfe6dd7ed8f0861df}{QCPLayout\+Inset}}.
 
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_layout_a39d3e9ef5d9b82ab1885ba1cb9597e56_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_layout_aca129722c019f91d3367046f80abfa77}\label{class_q_c_p_layout_aca129722c019f91d3367046f80abfa77}} 
 \index{QCPLayout@{QCPLayout}!elements@{elements}}
 \index{elements@{elements}!QCPLayout@{QCPLayout}}
@@ -348,11 +394,35 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_layout_element_a76dec8cb31e49899
 
 Reimplemented in \mbox{\hyperlink{class_q_c_p_layout_grid_a7d5b968b4cf57393e9e387976d91f8f7}{QCPLayout\+Grid}}.
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l03665}{3665}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_layout_aca129722c019f91d3367046f80abfa77_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_layout_aca129722c019f91d3367046f80abfa77_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_layout_add49fd6843821a6126914b837ed52e22}\label{class_q_c_p_layout_add49fd6843821a6126914b837ed52e22}} 
 \index{QCPLayout@{QCPLayout}!getFinalMaximumOuterSize@{getFinalMaximumOuterSize}}
 \index{getFinalMaximumOuterSize@{getFinalMaximumOuterSize}!QCPLayout@{QCPLayout}}
 \doxysubsubsection{\texorpdfstring{getFinalMaximumOuterSize()}{getFinalMaximumOuterSize()}}
 {\footnotesize\ttfamily QSize QCPLayout\+::get\+Final\+Maximum\+Outer\+Size (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}} $\ast$}]{el }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l04014}{4014}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_layout_a864fddc84721f186663faf3683f1fa70}\label{class_q_c_p_layout_a864fddc84721f186663faf3683f1fa70}} 
 \index{QCPLayout@{QCPLayout}!getFinalMinimumOuterSize@{getFinalMinimumOuterSize}}
@@ -360,17 +430,29 @@ Reimplemented in \mbox{\hyperlink{class_q_c_p_layout_grid_a7d5b968b4cf57393e9e38
 \doxysubsubsection{\texorpdfstring{getFinalMinimumOuterSize()}{getFinalMinimumOuterSize()}}
 {\footnotesize\ttfamily QSize QCPLayout\+::get\+Final\+Minimum\+Outer\+Size (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}} $\ast$}]{el }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l03989}{3989}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_layout_a3e77be8006d39f2aafc1313d6e8fc3fd}\label{class_q_c_p_layout_a3e77be8006d39f2aafc1313d6e8fc3fd}} 
 \index{QCPLayout@{QCPLayout}!getSectionSizes@{getSectionSizes}}
 \index{getSectionSizes@{getSectionSizes}!QCPLayout@{QCPLayout}}
 \doxysubsubsection{\texorpdfstring{getSectionSizes()}{getSectionSizes()}}
 {\footnotesize\ttfamily QVector$<$ int $>$ QCPLayout\+::get\+Section\+Sizes (\begin{DoxyParamCaption}\item[{QVector$<$ int $>$}]{max\+Sizes,  }\item[{QVector$<$ int $>$}]{min\+Sizes,  }\item[{QVector$<$ double $>$}]{stretch\+Factors,  }\item[{int}]{total\+Size }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l03864}{3864}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_layout_a4afbb4bef0071f72f91afdac4433a18e}\label{class_q_c_p_layout_a4afbb4bef0071f72f91afdac4433a18e}} 
 \index{QCPLayout@{QCPLayout}!releaseElement@{releaseElement}}
 \index{releaseElement@{releaseElement}!QCPLayout@{QCPLayout}}
 \doxysubsubsection{\texorpdfstring{releaseElement()}{releaseElement()}}
 {\footnotesize\ttfamily void QCPLayout\+::release\+Element (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}} $\ast$}]{el }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l03823}{3823}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_layout_a6c58f537d8086f352576ab7c5b15d0bc}\label{class_q_c_p_layout_a6c58f537d8086f352576ab7c5b15d0bc}} 
 \index{QCPLayout@{QCPLayout}!remove@{remove}}
@@ -385,6 +467,26 @@ This function internally uses \mbox{\hyperlink{class_q_c_p_layout_a5a79621fa0a6e
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_layout_a2403f684fee3ce47132faaeed00bb066}{remove\+At}}, \mbox{\hyperlink{class_q_c_p_layout_ada26cd17e56472b0b4d7fbbc96873e4c}{take}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l03728}{3728}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{class_q_c_p_layout_a6c58f537d8086f352576ab7c5b15d0bc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_layout_a6c58f537d8086f352576ab7c5b15d0bc_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_layout_a2403f684fee3ce47132faaeed00bb066}\label{class_q_c_p_layout_a2403f684fee3ce47132faaeed00bb066}} 
 \index{QCPLayout@{QCPLayout}!removeAt@{removeAt}}
 \index{removeAt@{removeAt}!QCPLayout@{QCPLayout}}
@@ -398,6 +500,26 @@ This function internally uses \mbox{\hyperlink{class_q_c_p_layout_a5a79621fa0a6e
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_layout_a6c58f537d8086f352576ab7c5b15d0bc}{remove}}, \mbox{\hyperlink{class_q_c_p_layout_a5a79621fa0a6eabb8b520cfc04fb601a}{take\+At}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l03707}{3707}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{class_q_c_p_layout_a2403f684fee3ce47132faaeed00bb066_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{class_q_c_p_layout_a2403f684fee3ce47132faaeed00bb066_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_layout_a41e6ac049143866e8f8b4964efab01b2}\label{class_q_c_p_layout_a41e6ac049143866e8f8b4964efab01b2}} 
 \index{QCPLayout@{QCPLayout}!simplify@{simplify}}
 \index{simplify@{simplify}!QCPLayout@{QCPLayout}}
@@ -410,6 +532,18 @@ Not all layouts need simplification. For example, \mbox{\hyperlink{class_q_c_p_l
 
 Reimplemented in \mbox{\hyperlink{class_q_c_p_layout_grid_a38621ca7aa633b6a9a88617df7f08672}{QCPLayout\+Grid}}, and \mbox{\hyperlink{class_q_c_p_layout_inset_a18b7d508f0baa60cc5dcb1343cf7f32a}{QCPLayout\+Inset}}.
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l03692}{3692}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{class_q_c_p_layout_a41e6ac049143866e8f8b4964efab01b2_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_layout_aeac66a292f65cf7f8adf94eb92345b3e}\label{class_q_c_p_layout_aeac66a292f65cf7f8adf94eb92345b3e}} 
 \index{QCPLayout@{QCPLayout}!sizeConstraintsChanged@{sizeConstraintsChanged}}
 \index{sizeConstraintsChanged@{sizeConstraintsChanged}!QCPLayout@{QCPLayout}}
@@ -418,7 +552,19 @@ Reimplemented in \mbox{\hyperlink{class_q_c_p_layout_grid_a38621ca7aa633b6a9a886
 
 Subclasses call this method to report changed (minimum/maximum) size constraints.
 
-If the parent of this layout is again a \mbox{\hyperlink{class_q_c_p_layout}{QCPLayout}}, forwards the call to the parent\textquotesingle{}s \mbox{\hyperlink{class_q_c_p_layout_aeac66a292f65cf7f8adf94eb92345b3e}{size\+Constraints\+Changed}}. If the parent is a QWidget (i.\+e. is the \mbox{\hyperlink{class_q_custom_plot_af1a1f1f571237deb7c2bd34a5e9f018f}{QCustom\+Plot\+::plot\+Layout}} of \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}), calls QWidget\+::update\+Geometry, so if the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} widget is inside a Qt QLayout, it may update itself and resize cells accordingly. \mbox{\Hypertarget{class_q_c_p_layout_ada26cd17e56472b0b4d7fbbc96873e4c}\label{class_q_c_p_layout_ada26cd17e56472b0b4d7fbbc96873e4c}} 
+If the parent of this layout is again a \mbox{\hyperlink{class_q_c_p_layout}{QCPLayout}}, forwards the call to the parent\textquotesingle{}s \mbox{\hyperlink{class_q_c_p_layout_aeac66a292f65cf7f8adf94eb92345b3e}{size\+Constraints\+Changed}}. If the parent is a QWidget (i.\+e. is the \mbox{\hyperlink{class_q_custom_plot_af1a1f1f571237deb7c2bd34a5e9f018f}{QCustom\+Plot\+::plot\+Layout}} of \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}), calls QWidget\+::update\+Geometry, so if the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} widget is inside a Qt QLayout, it may update itself and resize cells accordingly. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l03762}{3762}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_layout_aeac66a292f65cf7f8adf94eb92345b3e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_layout_ada26cd17e56472b0b4d7fbbc96873e4c}\label{class_q_c_p_layout_ada26cd17e56472b0b4d7fbbc96873e4c}} 
 \index{QCPLayout@{QCPLayout}!take@{take}}
 \index{take@{take}!QCPLayout@{QCPLayout}}
 \doxysubsubsection{\texorpdfstring{take()}{take()}}
@@ -437,6 +583,14 @@ Note that some layouts don\textquotesingle{}t remove the respective cell right a
 
 Implemented in \mbox{\hyperlink{class_q_c_p_layout_grid_aee961c2eb6cf8a85dcbc5a7d7b6c1a00}{QCPLayout\+Grid}}, and \mbox{\hyperlink{class_q_c_p_layout_inset_af7f13cc369f8190b5e7e17d5f39dfe1c}{QCPLayout\+Inset}}.
 
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_layout_ada26cd17e56472b0b4d7fbbc96873e4c_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_layout_a5a79621fa0a6eabb8b520cfc04fb601a}\label{class_q_c_p_layout_a5a79621fa0a6eabb8b520cfc04fb601a}} 
 \index{QCPLayout@{QCPLayout}!takeAt@{takeAt}}
 \index{takeAt@{takeAt}!QCPLayout@{QCPLayout}}
@@ -456,13 +610,21 @@ Note that some layouts don\textquotesingle{}t remove the respective cell right a
 
 Implemented in \mbox{\hyperlink{class_q_c_p_layout_grid_a17dd220234d1bbf8835abcc666384d45}{QCPLayout\+Grid}}, and \mbox{\hyperlink{class_q_c_p_layout_inset_abf2e8233f5b7051220907e62ded490a2}{QCPLayout\+Inset}}.
 
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_layout_a5a79621fa0a6eabb8b520cfc04fb601a_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_layout_a48ecc9c98ea90b547c3e27a931a8f7bd}\label{class_q_c_p_layout_a48ecc9c98ea90b547c3e27a931a8f7bd}} 
 \index{QCPLayout@{QCPLayout}!update@{update}}
 \index{update@{update}!QCPLayout@{QCPLayout}}
 \doxysubsubsection{\texorpdfstring{update()}{update()}}
 {\footnotesize\ttfamily void QCPLayout\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_layout_element_a0d83360e05735735aaf6d7983c56374d}{Update\+Phase}}}]{phase }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
-If {\itshape phase} is \mbox{\hyperlink{class_q_c_p_layout_element_a0d83360e05735735aaf6d7983c56374da5d1ccf5d79967c232c3c511796860045}{up\+Layout}}, calls \mbox{\hyperlink{class_q_c_p_layout_a165c77f6287ac92e8d03017ad913378b}{update\+Layout}}, which subclasses may reimplement to reposition and resize their cells.
+If {\itshape phase} is \mbox{\hyperlink{class_q_c_p_layout_element_a0d83360e05735735aaf6d7983c56374da5d1ccf5d79967c232c3c511796860045}{up\+Layout}}, calls update\+Layout, which subclasses may reimplement to reposition and resize their cells.
 
 Finally, the call is propagated down to all child \mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Elements}}.
 
@@ -470,6 +632,26 @@ For details about this method and the update phases, see the documentation of \m
 
 Reimplemented from \mbox{\hyperlink{class_q_c_p_layout_element_a929c2ec62e0e0e1d8418eaa802e2af9b}{QCPLayout\+Element}}.
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l03647}{3647}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_layout_a48ecc9c98ea90b547c3e27a931a8f7bd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{class_q_c_p_layout_a48ecc9c98ea90b547c3e27a931a8f7bd_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_layout_a165c77f6287ac92e8d03017ad913378b}\label{class_q_c_p_layout_a165c77f6287ac92e8d03017ad913378b}} 
 \index{QCPLayout@{QCPLayout}!updateLayout@{updateLayout}}
 \index{updateLayout@{updateLayout}!QCPLayout@{QCPLayout}}
@@ -478,7 +660,7 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_layout_element_a929c2ec62e0e0e1d
 
 
 
-Reimplemented in \mbox{\hyperlink{class_q_c_p_layout_grid_a6cf43f14d3fa335fd8758561ccf1f78c}{QCPLayout\+Grid}}, and \mbox{\hyperlink{class_q_c_p_layout_inset_a493526b922ea66a75c45ef1842446988}{QCPLayout\+Inset}}.
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l03782}{3782}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 
 
@@ -491,7 +673,11 @@ Reimplemented in \mbox{\hyperlink{class_q_c_p_layout_grid_a6cf43f14d3fa335fd8758
 
 
 
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01318}{1318}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{qcustomplot_8h}{qcustomplot.\+h}}\item 
-\mbox{\hyperlink{qcustomplot_8cpp}{qcustomplot.\+cpp}}\end{DoxyCompactItemize}
+qcustomplot.\+h\item 
+qcustomplot.\+cpp\end{DoxyCompactItemize}

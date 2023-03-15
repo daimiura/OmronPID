@@ -7,20 +7,28 @@ A plottable representing a single statistical box in a plot.
 
 
 
-{\ttfamily \#include $<$qcustomplot.\+h$>$}
-
-Inheritance diagram for QCPStatistical\+Box\+:\begin{figure}[H]
+Inheritance diagram for QCPStatistical\+Box\+:\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=4.530744cm]{class_q_c_p_statistical_box}
+\includegraphics[width=336pt]{class_q_c_p_statistical_box__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for QCPStatistical\+Box\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_statistical_box__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_q_c_p_statistical_box_a75c2b3e7fcd0741cc981693a2ba63b27}{QCPStatistical\+Box}} (\mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$\mbox{\hyperlink{class_q_c_p_abstract_plottable_aa6f25b97ee99988fe352f17cb9ed962b}{key\+Axis}}, \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$\mbox{\hyperlink{class_q_c_p_abstract_plottable_a842b3831660d3e33b73863fd133889dd}{value\+Axis}})
+\mbox{\hyperlink{class_q_c_p_statistical_box_a75c2b3e7fcd0741cc981693a2ba63b27}{QCPStatistical\+Box}} (\mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$key\+Axis, \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$value\+Axis)
 \item 
-QShared\+Pointer$<$ \mbox{\hyperlink{qcustomplot_8h_a8b773c0c35f8f924701ced6e9915e4c7}{QCPStatistical\+Box\+Data\+Container}} $>$ \mbox{\hyperlink{class_q_c_p_statistical_box_a728e501413eaf191544014173d52dfbc}{data}} () const
+QShared\+Pointer$<$ \mbox{\hyperlink{class_q_c_p_data_container}{QCPStatistical\+Box\+Data\+Container}} $>$ \mbox{\hyperlink{class_q_c_p_statistical_box_a728e501413eaf191544014173d52dfbc}{data}} () const
 \item 
 double \mbox{\hyperlink{class_q_c_p_statistical_box_ae589b7481dec6ef8e50ebb6492d296f1}{width}} () const
 \item 
@@ -36,21 +44,21 @@ QPen \mbox{\hyperlink{class_q_c_p_statistical_box_af767bc7b6b477d005535314b35aca
 \item 
 \mbox{\hyperlink{class_q_c_p_scatter_style}{QCPScatter\+Style}} \mbox{\hyperlink{class_q_c_p_statistical_box_aef92e38fcb8e5041a44c2e01886e3b66}{outlier\+Style}} () const
 \item 
-void \mbox{\hyperlink{class_q_c_p_statistical_box_a08a6da55822bad825ee25a8069b9b52f}{set\+Data}} (QShared\+Pointer$<$ \mbox{\hyperlink{qcustomplot_8h_a8b773c0c35f8f924701ced6e9915e4c7}{QCPStatistical\+Box\+Data\+Container}} $>$ \mbox{\hyperlink{class_q_c_p_statistical_box_a728e501413eaf191544014173d52dfbc}{data}})
+void \mbox{\hyperlink{class_q_c_p_statistical_box_a08a6da55822bad825ee25a8069b9b52f}{set\+Data}} (QShared\+Pointer$<$ \mbox{\hyperlink{class_q_c_p_data_container}{QCPStatistical\+Box\+Data\+Container}} $>$ \mbox{\hyperlink{class_q_c_p_statistical_box_a728e501413eaf191544014173d52dfbc}{data}})
 \item 
 void \mbox{\hyperlink{class_q_c_p_statistical_box_a4ae198e66243d8cc57ad8893c37bf9d4}{set\+Data}} (const QVector$<$ double $>$ \&keys, const QVector$<$ double $>$ \&minimum, const QVector$<$ double $>$ \&lower\+Quartile, const QVector$<$ double $>$ \&median, const QVector$<$ double $>$ \&upper\+Quartile, const QVector$<$ double $>$ \&maximum, bool already\+Sorted=false)
 \item 
-void \mbox{\hyperlink{class_q_c_p_statistical_box_a0b62775bd67301b1eba5c785f2b26f14}{set\+Width}} (double \mbox{\hyperlink{class_q_c_p_statistical_box_ae589b7481dec6ef8e50ebb6492d296f1}{width}})
+void \mbox{\hyperlink{class_q_c_p_statistical_box_a0b62775bd67301b1eba5c785f2b26f14}{set\+Width}} (double width)
 \item 
-void \mbox{\hyperlink{class_q_c_p_statistical_box_adf378812446bd66f34d1f7f293d991cd}{set\+Whisker\+Width}} (double \mbox{\hyperlink{class_q_c_p_statistical_box_ae589b7481dec6ef8e50ebb6492d296f1}{width}})
+void \mbox{\hyperlink{class_q_c_p_statistical_box_adf378812446bd66f34d1f7f293d991cd}{set\+Whisker\+Width}} (double width)
 \item 
-void \mbox{\hyperlink{class_q_c_p_statistical_box_a4a5034cb3b9b040444df05ab1684620b}{set\+Whisker\+Pen}} (const QPen \&\mbox{\hyperlink{class_q_c_p_abstract_plottable_ad5972efc31344e5a7a78ab4f8864b2d3}{pen}})
+void \mbox{\hyperlink{class_q_c_p_statistical_box_a4a5034cb3b9b040444df05ab1684620b}{set\+Whisker\+Pen}} (const QPen \&pen)
 \item 
-void \mbox{\hyperlink{class_q_c_p_statistical_box_aa8d3e503897788e1abf68dc74b5f147f}{set\+Whisker\+Bar\+Pen}} (const QPen \&\mbox{\hyperlink{class_q_c_p_abstract_plottable_ad5972efc31344e5a7a78ab4f8864b2d3}{pen}})
+void \mbox{\hyperlink{class_q_c_p_statistical_box_aa8d3e503897788e1abf68dc74b5f147f}{set\+Whisker\+Bar\+Pen}} (const QPen \&pen)
 \item 
 void \mbox{\hyperlink{class_q_c_p_statistical_box_a61bcd458fba002f72304d11319051843}{set\+Whisker\+Antialiased}} (bool enabled)
 \item 
-void \mbox{\hyperlink{class_q_c_p_statistical_box_a7260ac55b669f5d0a74f16d5ca84c52c}{set\+Median\+Pen}} (const QPen \&\mbox{\hyperlink{class_q_c_p_abstract_plottable_ad5972efc31344e5a7a78ab4f8864b2d3}{pen}})
+void \mbox{\hyperlink{class_q_c_p_statistical_box_a7260ac55b669f5d0a74f16d5ca84c52c}{set\+Median\+Pen}} (const QPen \&pen)
 \item 
 void \mbox{\hyperlink{class_q_c_p_statistical_box_ad5241943422eb8e58360a97e99ad6aa7}{set\+Outlier\+Style}} (const \mbox{\hyperlink{class_q_c_p_scatter_style}{QCPScatter\+Style}} \&style)
 \item 
@@ -58,51 +66,47 @@ void \mbox{\hyperlink{class_q_c_p_statistical_box_a9a8739c5b8291db8fd839e892fc8f
 \item 
 void \mbox{\hyperlink{class_q_c_p_statistical_box_a026f2790b530d6f29312254ecb1e7c1e}{add\+Data}} (double key, double minimum, double lower\+Quartile, double median, double upper\+Quartile, double maximum, const QVector$<$ double $>$ \&outliers=QVector$<$ double $>$())
 \item 
-virtual \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} \mbox{\hyperlink{class_q_c_p_statistical_box_a42febad6ad5e924a151434cc434b4ffc}{select\+Test\+Rect}} (const QRectF \&rect, bool only\+Selectable) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} \mbox{\hyperlink{class_q_c_p_statistical_box_a42febad6ad5e924a151434cc434b4ffc}{select\+Test\+Rect}} (const QRectF \&rect, bool only\+Selectable) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual double \mbox{\hyperlink{class_q_c_p_statistical_box_a1607fa92f829c631107c20ccb2d70a6d}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant $\ast$details=0) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual double \mbox{\hyperlink{class_q_c_p_statistical_box_a1607fa92f829c631107c20ccb2d70a6d}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant $\ast$details=0) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \mbox{\hyperlink{class_q_c_p_statistical_box_a77d2d13301dfe60c13adfaa17fc1802f}{get\+Key\+Range}} (bool \&found\+Range, \mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9}{QCP\+::\+Sign\+Domain}} in\+Sign\+Domain=\mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9aa38352ef02d51ddfa4399d9551566e24}{QCP\+::sd\+Both}}) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \mbox{\hyperlink{class_q_c_p_statistical_box_a77d2d13301dfe60c13adfaa17fc1802f}{get\+Key\+Range}} (bool \&found\+Range, \mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9}{QCP\+::\+Sign\+Domain}} in\+Sign\+Domain=\mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9aa38352ef02d51ddfa4399d9551566e24}{QCP\+::sd\+Both}}) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \mbox{\hyperlink{class_q_c_p_statistical_box_ab3388a21d0c2e86fbc0cba9c06ceb49b}{get\+Value\+Range}} (bool \&found\+Range, \mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9}{QCP\+::\+Sign\+Domain}} in\+Sign\+Domain=\mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9aa38352ef02d51ddfa4399d9551566e24}{QCP\+::sd\+Both}}, const \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \&in\+Key\+Range=\mbox{\hyperlink{class_q_c_p_range}{QCPRange}}()) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \mbox{\hyperlink{class_q_c_p_statistical_box_ab3388a21d0c2e86fbc0cba9c06ceb49b}{get\+Value\+Range}} (bool \&found\+Range, \mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9}{QCP\+::\+Sign\+Domain}} in\+Sign\+Domain=\mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9aa38352ef02d51ddfa4399d9551566e24}{QCP\+::sd\+Both}}, const \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \&in\+Key\+Range=\mbox{\hyperlink{class_q_c_p_range}{QCPRange}}()) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d}{QCPAbstract\+Plottable1\+D$<$ QCPStatistical\+Box\+Data $>$}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a30b2e50ab0afce65f104ea7a95440315}{QCPAbstract\+Plottable1D}} (\mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$\mbox{\hyperlink{class_q_c_p_abstract_plottable_aa6f25b97ee99988fe352f17cb9ed962b}{key\+Axis}}, \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$\mbox{\hyperlink{class_q_c_p_abstract_plottable_a842b3831660d3e33b73863fd133889dd}{value\+Axis}})
+\mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a30b2e50ab0afce65f104ea7a95440315}{QCPAbstract\+Plottable1D}} (\mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$key\+Axis, \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$value\+Axis)
 \item 
-virtual \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_afa6d5d2c971fed63bff4f4a79989a3f8}{$\sim$\+QCPAbstract\+Plottable1D}} ()
+virtual int \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_ab5dd99e4f1621e7dbd63438e0b02984e}{data\+Count}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual int \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_ab5dd99e4f1621e7dbd63438e0b02984e}{data\+Count}} () const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual double \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_aeb156ebf5d3c8de906b428be30733ad8}{data\+Main\+Key}} (int index) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual double \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_aeb156ebf5d3c8de906b428be30733ad8}{data\+Main\+Key}} (int index) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual double \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_aa8277da921b009bce474437d50b4a2d8}{data\+Sort\+Key}} (int index) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual double \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_aa8277da921b009bce474437d50b4a2d8}{data\+Sort\+Key}} (int index) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual double \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a6be0f657ba85a1688336d76ad649ecf2}{data\+Main\+Value}} (int index) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual double \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a6be0f657ba85a1688336d76ad649ecf2}{data\+Main\+Value}} (int index) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a55f937ba6a63e56e57f0b1a6e85a333a}{data\+Value\+Range}} (int index) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a55f937ba6a63e56e57f0b1a6e85a333a}{data\+Value\+Range}} (int index) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual QPointF \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a6ca0699a6af5f25a7565de7c50ce13b2}{data\+Pixel\+Position}} (int index) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual QPointF \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a6ca0699a6af5f25a7565de7c50ce13b2}{data\+Pixel\+Position}} (int index) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual bool \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_afe0d56e39cc076032922f059b304c092}{sort\+Key\+Is\+Main\+Key}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual bool \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_afe0d56e39cc076032922f059b304c092}{sort\+Key\+Is\+Main\+Key}} () const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a22377bf6e57ab7eedbc9e489250c6ded}{select\+Test\+Rect}} (const QRectF \&rect, bool only\+Selectable) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a22377bf6e57ab7eedbc9e489250c6ded}{select\+Test\+Rect}} (const QRectF \&rect, bool only\+Selectable) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual int \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_ad0b46d25cde3d035b180fb8f10c056e6}{find\+Begin}} (double sort\+Key, bool expanded\+Range=true) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual int \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_ad0b46d25cde3d035b180fb8f10c056e6}{find\+Begin}} (double sort\+Key, bool expanded\+Range=true) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual int \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a6e3ba20c9160d7361e58070390d10b1a}{find\+End}} (double sort\+Key, bool expanded\+Range=true) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual int \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a6e3ba20c9160d7361e58070390d10b1a}{find\+End}} (double sort\+Key, bool expanded\+Range=true) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual double \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a4611b43bcb6441b2154eb4f4e0a33db2}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant $\ast$details=0) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual double \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a4611b43bcb6441b2154eb4f4e0a33db2}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant $\ast$details=0) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
-\item 
-virtual \mbox{\hyperlink{class_q_c_p_plottable_interface1_d}{QCPPlottable\+Interface1D}} $\ast$ \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_ac58fb47bfe330f6931ed8e64326387d7}{interface1D}} () \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual \mbox{\hyperlink{class_q_c_p_plottable_interface1_d}{QCPPlottable\+Interface1D}} $\ast$ \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_ac58fb47bfe330f6931ed8e64326387d7}{interface1D}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_q_c_p_abstract_plottable}{QCPAbstract\+Plottable}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_q_c_p_abstract_plottable_af78a036e40db6f53a31abadc5323715a}{QCPAbstract\+Plottable}} (\mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$\mbox{\hyperlink{class_q_c_p_abstract_plottable_aa6f25b97ee99988fe352f17cb9ed962b}{key\+Axis}}, \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$\mbox{\hyperlink{class_q_c_p_abstract_plottable_a842b3831660d3e33b73863fd133889dd}{value\+Axis}})
-\item 
-virtual \mbox{\hyperlink{class_q_c_p_abstract_plottable_a88112bcbe9eb995b1190ad7591f2d0b5}{$\sim$\+QCPAbstract\+Plottable}} ()
+\mbox{\hyperlink{class_q_c_p_abstract_plottable_af78a036e40db6f53a31abadc5323715a}{QCPAbstract\+Plottable}} (\mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$key\+Axis, \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$value\+Axis)
 \item 
 QString \mbox{\hyperlink{class_q_c_p_abstract_plottable_a52c226eefcb1920240eeabae574d28c0}{name}} () const
 \item 
@@ -126,21 +130,21 @@ bool \mbox{\hyperlink{class_q_c_p_abstract_plottable_a0b3b514474fe93354fc74cfc14
 \item 
 \mbox{\hyperlink{class_q_c_p_selection_decorator}{QCPSelection\+Decorator}} $\ast$ \mbox{\hyperlink{class_q_c_p_abstract_plottable_a7861518e47ca0c6a0c386032c2db075e}{selection\+Decorator}} () const
 \item 
-void \mbox{\hyperlink{class_q_c_p_abstract_plottable_ab79c7ba76bc7fa89a4b3580e12149f1f}{set\+Name}} (const QString \&\mbox{\hyperlink{class_q_c_p_abstract_plottable_a52c226eefcb1920240eeabae574d28c0}{name}})
+void \mbox{\hyperlink{class_q_c_p_abstract_plottable_ab79c7ba76bc7fa89a4b3580e12149f1f}{set\+Name}} (const QString \&name)
 \item 
 void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a089d6b5577120239b55c39ed27c39536}{set\+Antialiased\+Fill}} (bool enabled)
 \item 
 void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a2f03f067ede2ed4da6f7d0e4777a3f02}{set\+Antialiased\+Scatters}} (bool enabled)
 \item 
-void \mbox{\hyperlink{class_q_c_p_abstract_plottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}{set\+Pen}} (const QPen \&\mbox{\hyperlink{class_q_c_p_abstract_plottable_ad5972efc31344e5a7a78ab4f8864b2d3}{pen}})
+void \mbox{\hyperlink{class_q_c_p_abstract_plottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}{set\+Pen}} (const QPen \&pen)
 \item 
-void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a7a4b92144dca6453a1f0f210e27edc74}{set\+Brush}} (const QBrush \&\mbox{\hyperlink{class_q_c_p_abstract_plottable_a893b4896dfd92b68b05b2600b80f5826}{brush}})
+void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a7a4b92144dca6453a1f0f210e27edc74}{set\+Brush}} (const QBrush \&brush)
 \item 
 void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a8524fa2994c63c0913ebd9bb2ffa3920}{set\+Key\+Axis}} (\mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$axis)
 \item 
 void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a71626a07367e241ec62ad2c34baf21cb}{set\+Value\+Axis}} (\mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$axis)
 \item 
-Q\+\_\+\+SLOT void \mbox{\hyperlink{class_q_c_p_abstract_plottable_ac238d6e910f976f1f30d41c2bca44ac3}{set\+Selectable}} (\mbox{\hyperlink{namespace_q_c_p_ac6cb9db26a564b27feda362a438db038}{QCP\+::\+Selection\+Type}} \mbox{\hyperlink{class_q_c_p_abstract_plottable_a016653741033bd332d1d4c3c725cc284}{selectable}})
+Q\+\_\+\+SLOT void \mbox{\hyperlink{class_q_c_p_abstract_plottable_ac238d6e910f976f1f30d41c2bca44ac3}{set\+Selectable}} (\mbox{\hyperlink{namespace_q_c_p_ac6cb9db26a564b27feda362a438db038}{QCP\+::\+Selection\+Type}} selectable)
 \item 
 Q\+\_\+\+SLOT void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a219bc5403a9d85d3129165ec3f5ae436}{set\+Selection}} (\mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} \mbox{\hyperlink{class_q_c_p_abstract_plottable_a040bf09f41d456284cfd39cc37aa068f}{selection}})
 \item 
@@ -181,8 +185,6 @@ bool \mbox{\hyperlink{class_q_c_p_abstract_plottable_ac95fb2604d9106d0852ad9ceb3
 \item 
 \mbox{\hyperlink{class_q_c_p_layerable_a74c0fa237f29bf0e49565013fc5d1ec0}{QCPLayerable}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$plot, QString target\+Layer=QString(), \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}}=0)
 \item 
-virtual \mbox{\hyperlink{class_q_c_p_layerable_a4231cf5b3601d6d3a5781283e7a9735b}{$\sim$\+QCPLayerable}} ()
-\item 
 bool \mbox{\hyperlink{class_q_c_p_layerable_af0297b944b6192b6d67d00bff41b6b70}{visible}} () const
 \item 
 \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$ \mbox{\hyperlink{class_q_c_p_layerable_a36ed5b292b90934b524a4e5866a3526c}{parent\+Plot}} () const
@@ -195,7 +197,7 @@ bool \mbox{\hyperlink{class_q_c_p_layerable_a71cbd212fde2703cee076e204a475709}{a
 \item 
 void \mbox{\hyperlink{class_q_c_p_layerable_a3bed99ddc396b48ce3ebfdc0418744f8}{set\+Visible}} (bool on)
 \item 
-Q\+\_\+\+SLOT bool \mbox{\hyperlink{class_q_c_p_layerable_ab0d0da6d2de45a118886d2c8e16d5a54}{set\+Layer}} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_a9d4e121a7f1d2314f906fe698209cac9}{layer}})
+Q\+\_\+\+SLOT bool \mbox{\hyperlink{class_q_c_p_layerable_ab0d0da6d2de45a118886d2c8e16d5a54}{set\+Layer}} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$layer)
 \item 
 bool \mbox{\hyperlink{class_q_c_p_layerable_ab25a0e7b897993b44447caee0f142083}{set\+Layer}} (const QString \&layer\+Name)
 \item 
@@ -205,10 +207,7 @@ virtual double \mbox{\hyperlink{class_q_c_p_layerable_a04db8351fefd44cfdb77958e7
 \item 
 bool \mbox{\hyperlink{class_q_c_p_layerable_ab054e88f15d485defcb95e7376f119e7}{real\+Visibility}} () const
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_q_c_p_plottable_interface1_d}{QCPPlottable\+Interface1D}}}
 \begin{DoxyCompactItemize}
-\item 
-virtual \mbox{\hyperlink{class_q_c_p_plottable_interface1_d_a8829011d62208625f741f2d7e1cb6280}{$\sim$\+QCPPlottable\+Interface1D}} ()
 \item 
 virtual int \mbox{\hyperlink{class_q_c_p_plottable_interface1_d_a058a22c770ef4d5a0e878a7f02183da9}{data\+Count}} () const =0
 \item 
@@ -233,19 +232,19 @@ virtual int \mbox{\hyperlink{class_q_c_p_plottable_interface1_d_a5deced1016bc55a
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_statistical_box_afcff35fa79728cfe10e80e0702014fea}{draw}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual void \mbox{\hyperlink{class_q_c_p_statistical_box_afcff35fa79728cfe10e80e0702014fea}{draw}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_statistical_box_ad286c63a79c21d5231a4b6c6fdbb914f}{draw\+Legend\+Icon}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter, const QRectF \&rect) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual void \mbox{\hyperlink{class_q_c_p_statistical_box_ad286c63a79c21d5231a4b6c6fdbb914f}{draw\+Legend\+Icon}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter, const QRectF \&rect) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_statistical_box_a02dc6b561be8203d460d7263da74b8a9}{draw\+Statistical\+Box}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter, \mbox{\hyperlink{class_q_c_p_data_container_ae40a91f5cb0bcac61d727427449b7d15}{QCPStatistical\+Box\+Data\+Container\+::const\+\_\+iterator}} it, const \mbox{\hyperlink{class_q_c_p_scatter_style}{QCPScatter\+Style}} \&\mbox{\hyperlink{class_q_c_p_statistical_box_aef92e38fcb8e5041a44c2e01886e3b66}{outlier\+Style}}) const
+virtual void \mbox{\hyperlink{class_q_c_p_statistical_box_a02dc6b561be8203d460d7263da74b8a9}{draw\+Statistical\+Box}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter, QCPStatistical\+Box\+Data\+Container\+::const\+\_\+iterator it, const \mbox{\hyperlink{class_q_c_p_scatter_style}{QCPScatter\+Style}} \&outlier\+Style) const
 \item 
-void \mbox{\hyperlink{class_q_c_p_statistical_box_a1c24e86384a4aced91d5216fce86b175}{get\+Visible\+Data\+Bounds}} (\mbox{\hyperlink{class_q_c_p_data_container_ae40a91f5cb0bcac61d727427449b7d15}{QCPStatistical\+Box\+Data\+Container\+::const\+\_\+iterator}} \&begin, \mbox{\hyperlink{class_q_c_p_data_container_ae40a91f5cb0bcac61d727427449b7d15}{QCPStatistical\+Box\+Data\+Container\+::const\+\_\+iterator}} \&end) const
+void \mbox{\hyperlink{class_q_c_p_statistical_box_a1c24e86384a4aced91d5216fce86b175}{get\+Visible\+Data\+Bounds}} (QCPStatistical\+Box\+Data\+Container\+::const\+\_\+iterator \&begin, QCPStatistical\+Box\+Data\+Container\+::const\+\_\+iterator \&end) const
 \item 
-QRectF \mbox{\hyperlink{class_q_c_p_statistical_box_aa44482bf991ceca74602294dd9977243}{get\+Quartile\+Box}} (\mbox{\hyperlink{class_q_c_p_data_container_ae40a91f5cb0bcac61d727427449b7d15}{QCPStatistical\+Box\+Data\+Container\+::const\+\_\+iterator}} it) const
+QRectF \mbox{\hyperlink{class_q_c_p_statistical_box_aa44482bf991ceca74602294dd9977243}{get\+Quartile\+Box}} (QCPStatistical\+Box\+Data\+Container\+::const\+\_\+iterator it) const
 \item 
-QVector$<$ QLineF $>$ \mbox{\hyperlink{class_q_c_p_statistical_box_a233c28f8c2464ed104a4d580eedd4c64}{get\+Whisker\+Backbone\+Lines}} (\mbox{\hyperlink{class_q_c_p_data_container_ae40a91f5cb0bcac61d727427449b7d15}{QCPStatistical\+Box\+Data\+Container\+::const\+\_\+iterator}} it) const
+QVector$<$ QLineF $>$ \mbox{\hyperlink{class_q_c_p_statistical_box_a233c28f8c2464ed104a4d580eedd4c64}{get\+Whisker\+Backbone\+Lines}} (QCPStatistical\+Box\+Data\+Container\+::const\+\_\+iterator it) const
 \item 
-QVector$<$ QLineF $>$ \mbox{\hyperlink{class_q_c_p_statistical_box_af478f6e8a5e9ca2f1bbac10a6b73319a}{get\+Whisker\+Bar\+Lines}} (\mbox{\hyperlink{class_q_c_p_data_container_ae40a91f5cb0bcac61d727427449b7d15}{QCPStatistical\+Box\+Data\+Container\+::const\+\_\+iterator}} it) const
+QVector$<$ QLineF $>$ \mbox{\hyperlink{class_q_c_p_statistical_box_af478f6e8a5e9ca2f1bbac10a6b73319a}{get\+Whisker\+Bar\+Lines}} (QCPStatistical\+Box\+Data\+Container\+::const\+\_\+iterator it) const
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d}{QCPAbstract\+Plottable1\+D$<$ QCPStatistical\+Box\+Data $>$}}}
 \begin{DoxyCompactItemize}
@@ -257,19 +256,20 @@ void \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a7adc6c3cccebb5341f11e0c
 \doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_q_c_p_abstract_plottable}{QCPAbstract\+Plottable}}}
 \begin{DoxyCompactItemize}
 \item 
-virtual QRect \mbox{\hyperlink{class_q_c_p_abstract_plottable_a635cee3effc07ad421414c76fd83548c}{clip\+Rect}} () const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual QRect \mbox{\hyperlink{class_q_c_p_abstract_plottable_a635cee3effc07ad421414c76fd83548c}{clip\+Rect}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a453f676a5cee7bf846c5f0fa05ea84b3}{draw}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}=0
+virtual void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a453f676a5cee7bf846c5f0fa05ea84b3}{draw}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) Q\+\_\+\+DECL\+\_\+\+OVERRIDE=0
 \item 
-virtual \mbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037}{QCP\+::\+Interaction}} \mbox{\hyperlink{class_q_c_p_abstract_plottable_af80ad8531642e786b6f4fad551c203c4}{selection\+Category}} () const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual \mbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037}{QCP\+::\+Interaction}} \mbox{\hyperlink{class_q_c_p_abstract_plottable_af80ad8531642e786b6f4fad551c203c4}{selection\+Category}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-void \mbox{\hyperlink{class_q_c_p_abstract_plottable_ac032077fb0db93d6faa3273d02363398}{apply\+Default\+Antialiasing\+Hint}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+void \mbox{\hyperlink{class_q_c_p_abstract_plottable_ac032077fb0db93d6faa3273d02363398}{apply\+Default\+Antialiasing\+Hint}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a2d488568cf16600dd81fa23d7d439829}{select\+Event}} (QMouse\+Event $\ast$event, bool additive, const QVariant \&details, bool $\ast$selection\+State\+Changed) \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a2d488568cf16600dd81fa23d7d439829}{select\+Event}} (QMouse\+Event $\ast$event, bool additive, const QVariant \&details, bool $\ast$selection\+State\+Changed) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a9b104d9da4f38f934363945c313bf82e}{deselect\+Event}} (bool $\ast$selection\+State\+Changed) \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a9b104d9da4f38f934363945c313bf82e}{deselect\+Event}} (bool $\ast$selection\+State\+Changed) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a9a450783fd9ed539e589999fd390cdf7}{draw\+Legend\+Icon}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter, const QRectF \&rect) const =0
+\mbox{\Hypertarget{class_q_c_p_abstract_plottable_a9a450783fd9ed539e589999fd390cdf7}\label{class_q_c_p_abstract_plottable_a9a450783fd9ed539e589999fd390cdf7}} 
+virtual void {\bfseries draw\+Legend\+Icon} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter, const QRectF \&rect) const =0
 \item 
 void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a8d06a59ea23324cce6330ebf2262c0ed}{apply\+Fill\+Antialiasing\+Hint}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) const
 \item 
@@ -278,15 +278,17 @@ void \mbox{\hyperlink{class_q_c_p_abstract_plottable_ac95f26b15a1e5d9c7bd2c0a46d
 \doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}}
 \begin{DoxyCompactItemize}
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_layerable_ab20b7dbd8e0249ed61adb9622c427382}{parent\+Plot\+Initialized}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_a36ed5b292b90934b524a4e5866a3526c}{parent\+Plot}})
+virtual void \mbox{\hyperlink{class_q_c_p_layerable_ab20b7dbd8e0249ed61adb9622c427382}{parent\+Plot\+Initialized}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$parent\+Plot)
 \item 
 virtual \mbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037}{QCP\+::\+Interaction}} \mbox{\hyperlink{class_q_c_p_layerable_a908c9edda761886f33893be326dab77d}{selection\+Category}} () const
 \item 
 virtual QRect \mbox{\hyperlink{class_q_c_p_layerable_acbcfc9ecc75433747b1978a77b1864b3}{clip\+Rect}} () const
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_layerable_afdf83ddc6a265cbf4c89fe99d3d93473}{apply\+Default\+Antialiasing\+Hint}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) const =0
+\mbox{\Hypertarget{class_q_c_p_layerable_afdf83ddc6a265cbf4c89fe99d3d93473}\label{class_q_c_p_layerable_afdf83ddc6a265cbf4c89fe99d3d93473}} 
+virtual void {\bfseries apply\+Default\+Antialiasing\+Hint} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) const =0
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_layerable_aecf2f7087482d4b6a78cb2770e5ed12d}{draw}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter)=0
+\mbox{\Hypertarget{class_q_c_p_layerable_aecf2f7087482d4b6a78cb2770e5ed12d}\label{class_q_c_p_layerable_aecf2f7087482d4b6a78cb2770e5ed12d}} 
+virtual void {\bfseries draw} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter)=0
 \item 
 virtual void \mbox{\hyperlink{class_q_c_p_layerable_a7498c2d0d081cf7cad0fb3bb93aa0e91}{select\+Event}} (QMouse\+Event $\ast$event, bool additive, const QVariant \&details, bool $\ast$selection\+State\+Changed)
 \item 
@@ -302,11 +304,11 @@ virtual void \mbox{\hyperlink{class_q_c_p_layerable_a4171e2e823aca242dd0279f00ed
 \item 
 virtual void \mbox{\hyperlink{class_q_c_p_layerable_a47dfd7b8fd99c08ca54e09c362b6f022}{wheel\+Event}} (QWheel\+Event $\ast$event)
 \item 
-void \mbox{\hyperlink{class_q_c_p_layerable_a8cbe5a0c9a5674249982f5ca5f8e02bc}{initialize\+Parent\+Plot}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_a36ed5b292b90934b524a4e5866a3526c}{parent\+Plot}})
+void \mbox{\hyperlink{class_q_c_p_layerable_a8cbe5a0c9a5674249982f5ca5f8e02bc}{initialize\+Parent\+Plot}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$parent\+Plot)
 \item 
 void \mbox{\hyperlink{class_q_c_p_layerable_aa23c893671f1f6744ac235cf2204cf3a}{set\+Parent\+Layerable}} (\mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}})
 \item 
-bool \mbox{\hyperlink{class_q_c_p_layerable_af94484cfb7cbbddb7de522e9be71d9a4}{move\+To\+Layer}} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_a9d4e121a7f1d2314f906fe698209cac9}{layer}}, bool prepend)
+bool \mbox{\hyperlink{class_q_c_p_layerable_af94484cfb7cbbddb7de522e9be71d9a4}{move\+To\+Layer}} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$layer, bool prepend)
 \item 
 void \mbox{\hyperlink{class_q_c_p_layerable_acb663e375d2d36dc5c55021ee5a2119b}{apply\+Antialiasing\+Hint}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter, bool local\+Antialiased, \mbox{\hyperlink{namespace_q_c_p_ae55dbe315d41fe80f29ba88100843a0c}{QCP\+::\+Antialiased\+Element}} override\+Element) const
 \end{DoxyCompactItemize}
@@ -383,7 +385,7 @@ void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a3af66432b1dca93b28e00e78a8
 \item 
 void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a787a9c39421059006891744b731fa473}{selection\+Changed}} (const \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} \&\mbox{\hyperlink{class_q_c_p_abstract_plottable_a040bf09f41d456284cfd39cc37aa068f}{selection}})
 \item 
-void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a663b1a44123c8340ac041a29d1e2c973}{selectable\+Changed}} (\mbox{\hyperlink{namespace_q_c_p_ac6cb9db26a564b27feda362a438db038}{QCP\+::\+Selection\+Type}} \mbox{\hyperlink{class_q_c_p_abstract_plottable_a016653741033bd332d1d4c3c725cc284}{selectable}})
+void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a663b1a44123c8340ac041a29d1e2c973}{selectable\+Changed}} (\mbox{\hyperlink{namespace_q_c_p_ac6cb9db26a564b27feda362a438db038}{QCP\+::\+Selection\+Type}} selectable)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Signals inherited from \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}}
 \begin{DoxyCompactItemize}
@@ -397,7 +399,7 @@ A plottable representing a single statistical box in a plot.
 
 
 
-To plot data, assign it with the \mbox{\hyperlink{class_q_c_p_statistical_box_a08a6da55822bad825ee25a8069b9b52f}{set\+Data}} or \mbox{\hyperlink{class_q_c_p_statistical_box_a9a8739c5b8291db8fd839e892fc8f478}{add\+Data}} functions. Alternatively, you can also access and modify the data via the \mbox{\hyperlink{class_q_c_p_statistical_box_a728e501413eaf191544014173d52dfbc}{data}} method, which returns a pointer to the internal \mbox{\hyperlink{qcustomplot_8h_a8b773c0c35f8f924701ced6e9915e4c7}{QCPStatistical\+Box\+Data\+Container}}.
+To plot data, assign it with the \mbox{\hyperlink{class_q_c_p_statistical_box_a08a6da55822bad825ee25a8069b9b52f}{set\+Data}} or \mbox{\hyperlink{class_q_c_p_statistical_box_a9a8739c5b8291db8fd839e892fc8f478}{add\+Data}} functions. Alternatively, you can also access and modify the data via the \mbox{\hyperlink{class_q_c_p_statistical_box_a728e501413eaf191544014173d52dfbc}{data}} method, which returns a pointer to the internal QCPStatistical\+Box\+Data\+Container.
 
 Additionally each data point can itself have a list of outliers, drawn as scatter points at the key coordinate of the respective statistical box data point. They can either be set by using the respective \mbox{\hyperlink{class_q_c_p_statistical_box_a026f2790b530d6f29312254ecb1e7c1e}{add\+Data}} method or accessing the individual data points through \mbox{\hyperlink{class_q_c_p_statistical_box_a728e501413eaf191544014173d52dfbc}{data}}, and setting the {\ttfamily QVector$<$double$>$ outliers} of the data points directly.\hypertarget{class_q_c_p_statistical_box_qcpstatisticalbox-appearance}{}\doxysubsection{Changing the appearance}\label{class_q_c_p_statistical_box_qcpstatisticalbox-appearance}
 The appearance of each data point box, ranging from the lower to the upper quartile, is controlled via \mbox{\hyperlink{class_q_c_p_abstract_plottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}{set\+Pen}} and \mbox{\hyperlink{class_q_c_p_abstract_plottable_a7a4b92144dca6453a1f0f210e27edc74}{set\+Brush}}. You may change the width of the boxes with \mbox{\hyperlink{class_q_c_p_statistical_box_a0b62775bd67301b1eba5c785f2b26f14}{set\+Width}} in plot coordinates.
@@ -419,6 +421,10 @@ Usually, you first create an instance\+:
 \end{DoxyCodeInclude}
  
 
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05602}{5602}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_q_c_p_statistical_box_a75c2b3e7fcd0741cc981693a2ba63b27}\label{class_q_c_p_statistical_box_a75c2b3e7fcd0741cc981693a2ba63b27}} 
 \index{QCPStatisticalBox@{QCPStatisticalBox}!QCPStatisticalBox@{QCPStatisticalBox}}
@@ -429,6 +435,18 @@ Usually, you first create an instance\+:
 Constructs a statistical box which uses {\itshape key\+Axis} as its key axis (\char`\"{}x\char`\"{}) and {\itshape value\+Axis} as its value axis (\char`\"{}y\char`\"{}). {\itshape key\+Axis} and {\itshape value\+Axis} must reside in the same \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance and not have the same orientation. If either of these restrictions is violated, a corresponding message is printed to the debug output (q\+Debug), the construction is not aborted, though.
 
 The created \mbox{\hyperlink{class_q_c_p_statistical_box}{QCPStatistical\+Box}} is automatically registered with the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance inferred from {\itshape key\+Axis}. This \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance takes ownership of the \mbox{\hyperlink{class_q_c_p_statistical_box}{QCPStatistical\+Box}}, so do not delete it manually but use \mbox{\hyperlink{class_q_custom_plot_af3dafd56884208474f311d6226513ab2}{QCustom\+Plot\+::remove\+Plottable()}} instead. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l24465}{24465}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{class_q_c_p_statistical_box_a75c2b3e7fcd0741cc981693a2ba63b27_cgraph}
+\end{center}
+\end{figure}
+
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_q_c_p_statistical_box_a9a8739c5b8291db8fd839e892fc8f478}\label{class_q_c_p_statistical_box_a9a8739c5b8291db8fd839e892fc8f478}} 
@@ -443,7 +461,19 @@ Adds the provided points in {\itshape keys}, {\itshape minimum}, {\itshape lower
 
 If you can guarantee that the passed data points are sorted by {\itshape keys} in ascending order, you can set {\itshape already\+Sorted} to true, to improve performance by saving a sorting run.
 
-Alternatively, you can also access and modify the data directly via the \mbox{\hyperlink{class_q_c_p_statistical_box_a728e501413eaf191544014173d52dfbc}{data}} method, which returns a pointer to the internal data container. \mbox{\Hypertarget{class_q_c_p_statistical_box_a026f2790b530d6f29312254ecb1e7c1e}\label{class_q_c_p_statistical_box_a026f2790b530d6f29312254ecb1e7c1e}} 
+Alternatively, you can also access and modify the data directly via the \mbox{\hyperlink{class_q_c_p_statistical_box_a728e501413eaf191544014173d52dfbc}{data}} method, which returns a pointer to the internal data container. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l24611}{24611}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{class_q_c_p_statistical_box_a9a8739c5b8291db8fd839e892fc8f478_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_statistical_box_a026f2790b530d6f29312254ecb1e7c1e}\label{class_q_c_p_statistical_box_a026f2790b530d6f29312254ecb1e7c1e}} 
 \index{QCPStatisticalBox@{QCPStatisticalBox}!addData@{addData}}
 \index{addData@{addData}!QCPStatisticalBox@{QCPStatisticalBox}}
 \doxysubsubsection{\texorpdfstring{addData()}{addData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
@@ -453,13 +483,29 @@ This is an overloaded member function, provided for convenience. It differs from
 
 Adds the provided data point as {\itshape key}, {\itshape minimum}, {\itshape lower\+Quartile}, {\itshape median}, {\itshape upper\+Quartile} and {\itshape maximum} to the current data.
 
-Alternatively, you can also access and modify the data directly via the \mbox{\hyperlink{class_q_c_p_statistical_box_a728e501413eaf191544014173d52dfbc}{data}} method, which returns a pointer to the internal data container. \mbox{\Hypertarget{class_q_c_p_statistical_box_a728e501413eaf191544014173d52dfbc}\label{class_q_c_p_statistical_box_a728e501413eaf191544014173d52dfbc}} 
+Alternatively, you can also access and modify the data directly via the \mbox{\hyperlink{class_q_c_p_statistical_box_a728e501413eaf191544014173d52dfbc}{data}} method, which returns a pointer to the internal data container. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l24644}{24644}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+\mbox{\Hypertarget{class_q_c_p_statistical_box_a728e501413eaf191544014173d52dfbc}\label{class_q_c_p_statistical_box_a728e501413eaf191544014173d52dfbc}} 
 \index{QCPStatisticalBox@{QCPStatisticalBox}!data@{data}}
 \index{data@{data}!QCPStatisticalBox@{QCPStatisticalBox}}
 \doxysubsubsection{\texorpdfstring{data()}{data()}}
-{\footnotesize\ttfamily QShared\+Pointer$<$ \mbox{\hyperlink{qcustomplot_8h_a8b773c0c35f8f924701ced6e9915e4c7}{QCPStatistical\+Box\+Data\+Container}} $>$ QCPStatistical\+Box\+::data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily QShared\+Pointer$<$ \mbox{\hyperlink{class_q_c_p_data_container}{QCPStatistical\+Box\+Data\+Container}} $>$ QCPStatistical\+Box\+::data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Returns a shared pointer to the internal data storage of type \mbox{\hyperlink{qcustomplot_8h_a8b773c0c35f8f924701ced6e9915e4c7}{QCPStatistical\+Box\+Data\+Container}}. You may use it to directly manipulate the data, which may be more convenient and faster than using the regular \mbox{\hyperlink{class_q_c_p_statistical_box_a08a6da55822bad825ee25a8069b9b52f}{set\+Data}} or \mbox{\hyperlink{class_q_c_p_statistical_box_a9a8739c5b8291db8fd839e892fc8f478}{add\+Data}} methods. \mbox{\Hypertarget{class_q_c_p_statistical_box_afcff35fa79728cfe10e80e0702014fea}\label{class_q_c_p_statistical_box_afcff35fa79728cfe10e80e0702014fea}} 
+Returns a shared pointer to the internal data storage of type QCPStatistical\+Box\+Data\+Container. You may use it to directly manipulate the data, which may be more convenient and faster than using the regular \mbox{\hyperlink{class_q_c_p_statistical_box_a08a6da55822bad825ee25a8069b9b52f}{set\+Data}} or \mbox{\hyperlink{class_q_c_p_statistical_box_a9a8739c5b8291db8fd839e892fc8f478}{add\+Data}} methods. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05618}{5618}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{class_q_c_p_statistical_box_a728e501413eaf191544014173d52dfbc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_statistical_box_afcff35fa79728cfe10e80e0702014fea}\label{class_q_c_p_statistical_box_afcff35fa79728cfe10e80e0702014fea}} 
 \index{QCPStatisticalBox@{QCPStatisticalBox}!draw@{draw}}
 \index{draw@{draw}!QCPStatisticalBox@{QCPStatisticalBox}}
 \doxysubsubsection{\texorpdfstring{draw()}{draw()}}
@@ -467,7 +513,11 @@ Returns a shared pointer to the internal data storage of type \mbox{\hyperlink{q
 
 
 
-Implements \mbox{\hyperlink{class_q_c_p_abstract_plottable_a453f676a5cee7bf846c5f0fa05ea84b3}{QCPAbstract\+Plottable}}.
+Implements \mbox{\hyperlink{class_q_c_p_abstract_plottable}{QCPAbstract\+Plottable}}.
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l24744}{24744}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_statistical_box_ad286c63a79c21d5231a4b6c6fdbb914f}\label{class_q_c_p_statistical_box_ad286c63a79c21d5231a4b6c6fdbb914f}} 
 \index{QCPStatisticalBox@{QCPStatisticalBox}!drawLegendIcon@{drawLegendIcon}}
@@ -477,21 +527,37 @@ Implements \mbox{\hyperlink{class_q_c_p_abstract_plottable_a453f676a5cee7bf846c5
 
 
 
-Implements \mbox{\hyperlink{class_q_c_p_abstract_plottable_a9a450783fd9ed539e589999fd390cdf7}{QCPAbstract\+Plottable}}.
+Implements \mbox{\hyperlink{class_q_c_p_abstract_plottable}{QCPAbstract\+Plottable}}.
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l24802}{24802}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_statistical_box_a02dc6b561be8203d460d7263da74b8a9}\label{class_q_c_p_statistical_box_a02dc6b561be8203d460d7263da74b8a9}} 
 \index{QCPStatisticalBox@{QCPStatisticalBox}!drawStatisticalBox@{drawStatisticalBox}}
 \index{drawStatisticalBox@{drawStatisticalBox}!QCPStatisticalBox@{QCPStatisticalBox}}
 \doxysubsubsection{\texorpdfstring{drawStatisticalBox()}{drawStatisticalBox()}}
-{\footnotesize\ttfamily void QCPStatistical\+Box\+::draw\+Statistical\+Box (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$}]{painter,  }\item[{\mbox{\hyperlink{class_q_c_p_data_container_ae40a91f5cb0bcac61d727427449b7d15}{QCPStatistical\+Box\+Data\+Container\+::const\+\_\+iterator}}}]{it,  }\item[{const \mbox{\hyperlink{class_q_c_p_scatter_style}{QCPScatter\+Style}} \&}]{outlier\+Style }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily void QCPStatistical\+Box\+::draw\+Statistical\+Box (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$}]{painter,  }\item[{QCPStatistical\+Box\+Data\+Container\+::const\+\_\+iterator}]{it,  }\item[{const \mbox{\hyperlink{class_q_c_p_scatter_style}{QCPScatter\+Style}} \&}]{outlier\+Style }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
 
 Draws the graphical representation of a single statistical box with the data given by the iterator {\itshape it} with the provided {\itshape painter}.
 
 If the statistical box has a set of outlier data points, they are drawn with {\itshape outlier\+Style}.
 
 \begin{DoxySeeAlso}{See also}
-\mbox{\hyperlink{class_q_c_p_statistical_box_aa44482bf991ceca74602294dd9977243}{get\+Quartile\+Box}}, \mbox{\hyperlink{class_q_c_p_statistical_box_a233c28f8c2464ed104a4d580eedd4c64}{get\+Whisker\+Backbone\+Lines}}, \mbox{\hyperlink{class_q_c_p_statistical_box_af478f6e8a5e9ca2f1bbac10a6b73319a}{get\+Whisker\+Bar\+Lines}} 
+get\+Quartile\+Box, get\+Whisker\+Backbone\+Lines, get\+Whisker\+Bar\+Lines 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l24821}{24821}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_statistical_box_a02dc6b561be8203d460d7263da74b8a9_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_statistical_box_a77d2d13301dfe60c13adfaa17fc1802f}\label{class_q_c_p_statistical_box_a77d2d13301dfe60c13adfaa17fc1802f}} 
 \index{QCPStatisticalBox@{QCPStatisticalBox}!getKeyRange@{getKeyRange}}
 \index{getKeyRange@{getKeyRange}!QCPStatisticalBox@{QCPStatisticalBox}}
@@ -509,11 +575,19 @@ Note that {\itshape found\+Range} is not the same as \mbox{\hyperlink{class_q_c_
 
 Implements \mbox{\hyperlink{class_q_c_p_abstract_plottable_a4da16d3cd4b509e1104a9b0275623c96}{QCPAbstract\+Plottable}}.
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l24723}{24723}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_statistical_box_aa44482bf991ceca74602294dd9977243}\label{class_q_c_p_statistical_box_aa44482bf991ceca74602294dd9977243}} 
 \index{QCPStatisticalBox@{QCPStatisticalBox}!getQuartileBox@{getQuartileBox}}
 \index{getQuartileBox@{getQuartileBox}!QCPStatisticalBox@{QCPStatisticalBox}}
 \doxysubsubsection{\texorpdfstring{getQuartileBox()}{getQuartileBox()}}
-{\footnotesize\ttfamily QRectF QCPStatistical\+Box\+::get\+Quartile\+Box (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_data_container_ae40a91f5cb0bcac61d727427449b7d15}{QCPStatistical\+Box\+Data\+Container\+::const\+\_\+iterator}}}]{it }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily QRectF QCPStatistical\+Box\+::get\+Quartile\+Box (\begin{DoxyParamCaption}\item[{QCPStatistical\+Box\+Data\+Container\+::const\+\_\+iterator}]{it }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l24880}{24880}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_statistical_box_ab3388a21d0c2e86fbc0cba9c06ceb49b}\label{class_q_c_p_statistical_box_ab3388a21d0c2e86fbc0cba9c06ceb49b}} 
 \index{QCPStatisticalBox@{QCPStatisticalBox}!getValueRange@{getValueRange}}
@@ -534,23 +608,39 @@ Note that {\itshape found\+Range} is not the same as \mbox{\hyperlink{class_q_c_
 
 Implements \mbox{\hyperlink{class_q_c_p_abstract_plottable_a4de773988b21ed090fddd27c6a3a3dcb}{QCPAbstract\+Plottable}}.
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l24738}{24738}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_statistical_box_a1c24e86384a4aced91d5216fce86b175}\label{class_q_c_p_statistical_box_a1c24e86384a4aced91d5216fce86b175}} 
 \index{QCPStatisticalBox@{QCPStatisticalBox}!getVisibleDataBounds@{getVisibleDataBounds}}
 \index{getVisibleDataBounds@{getVisibleDataBounds}!QCPStatisticalBox@{QCPStatisticalBox}}
 \doxysubsubsection{\texorpdfstring{getVisibleDataBounds()}{getVisibleDataBounds()}}
-{\footnotesize\ttfamily void QCPStatistical\+Box\+::get\+Visible\+Data\+Bounds (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_data_container_ae40a91f5cb0bcac61d727427449b7d15}{QCPStatistical\+Box\+Data\+Container\+::const\+\_\+iterator}} \&}]{begin,  }\item[{\mbox{\hyperlink{class_q_c_p_data_container_ae40a91f5cb0bcac61d727427449b7d15}{QCPStatistical\+Box\+Data\+Container\+::const\+\_\+iterator}} \&}]{end }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily void QCPStatistical\+Box\+::get\+Visible\+Data\+Bounds (\begin{DoxyParamCaption}\item[{QCPStatistical\+Box\+Data\+Container\+::const\+\_\+iterator \&}]{begin,  }\item[{QCPStatistical\+Box\+Data\+Container\+::const\+\_\+iterator \&}]{end }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l24860}{24860}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_statistical_box_a233c28f8c2464ed104a4d580eedd4c64}\label{class_q_c_p_statistical_box_a233c28f8c2464ed104a4d580eedd4c64}} 
 \index{QCPStatisticalBox@{QCPStatisticalBox}!getWhiskerBackboneLines@{getWhiskerBackboneLines}}
 \index{getWhiskerBackboneLines@{getWhiskerBackboneLines}!QCPStatisticalBox@{QCPStatisticalBox}}
 \doxysubsubsection{\texorpdfstring{getWhiskerBackboneLines()}{getWhiskerBackboneLines()}}
-{\footnotesize\ttfamily QVector$<$ QLineF $>$ QCPStatistical\+Box\+::get\+Whisker\+Backbone\+Lines (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_data_container_ae40a91f5cb0bcac61d727427449b7d15}{QCPStatistical\+Box\+Data\+Container\+::const\+\_\+iterator}}}]{it }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily QVector$<$ QLineF $>$ QCPStatistical\+Box\+::get\+Whisker\+Backbone\+Lines (\begin{DoxyParamCaption}\item[{QCPStatistical\+Box\+Data\+Container\+::const\+\_\+iterator}]{it }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l24896}{24896}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_statistical_box_af478f6e8a5e9ca2f1bbac10a6b73319a}\label{class_q_c_p_statistical_box_af478f6e8a5e9ca2f1bbac10a6b73319a}} 
 \index{QCPStatisticalBox@{QCPStatisticalBox}!getWhiskerBarLines@{getWhiskerBarLines}}
 \index{getWhiskerBarLines@{getWhiskerBarLines}!QCPStatisticalBox@{QCPStatisticalBox}}
 \doxysubsubsection{\texorpdfstring{getWhiskerBarLines()}{getWhiskerBarLines()}}
-{\footnotesize\ttfamily QVector$<$ QLineF $>$ QCPStatistical\+Box\+::get\+Whisker\+Bar\+Lines (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_data_container_ae40a91f5cb0bcac61d727427449b7d15}{QCPStatistical\+Box\+Data\+Container\+::const\+\_\+iterator}}}]{it }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily QVector$<$ QLineF $>$ QCPStatistical\+Box\+::get\+Whisker\+Bar\+Lines (\begin{DoxyParamCaption}\item[{QCPStatistical\+Box\+Data\+Container\+::const\+\_\+iterator}]{it }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l24911}{24911}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_statistical_box_af767bc7b6b477d005535314b35aca683}\label{class_q_c_p_statistical_box_af767bc7b6b477d005535314b35aca683}} 
 \index{QCPStatisticalBox@{QCPStatisticalBox}!medianPen@{medianPen}}
@@ -558,11 +648,19 @@ Implements \mbox{\hyperlink{class_q_c_p_abstract_plottable_a4de773988b21ed090fdd
 \doxysubsubsection{\texorpdfstring{medianPen()}{medianPen()}}
 {\footnotesize\ttfamily QPen QCPStatistical\+Box\+::median\+Pen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05624}{5624}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_statistical_box_aef92e38fcb8e5041a44c2e01886e3b66}\label{class_q_c_p_statistical_box_aef92e38fcb8e5041a44c2e01886e3b66}} 
 \index{QCPStatisticalBox@{QCPStatisticalBox}!outlierStyle@{outlierStyle}}
 \index{outlierStyle@{outlierStyle}!QCPStatisticalBox@{QCPStatisticalBox}}
 \doxysubsubsection{\texorpdfstring{outlierStyle()}{outlierStyle()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_scatter_style}{QCPScatter\+Style}} QCPStatistical\+Box\+::outlier\+Style (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05625}{5625}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_statistical_box_a1607fa92f829c631107c20ccb2d70a6d}\label{class_q_c_p_statistical_box_a1607fa92f829c631107c20ccb2d70a6d}} 
 \index{QCPStatisticalBox@{QCPStatisticalBox}!selectTest@{selectTest}}
@@ -576,6 +674,18 @@ Implements a point-\/selection algorithm assuming the data (accessed via the 1D 
 
 Reimplemented from \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a4611b43bcb6441b2154eb4f4e0a33db2}{QCPAbstract\+Plottable1\+D$<$ QCPStatistical\+Box\+Data $>$}}.
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l24673}{24673}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_statistical_box_a1607fa92f829c631107c20ccb2d70a6d_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_statistical_box_a42febad6ad5e924a151434cc434b4ffc}\label{class_q_c_p_statistical_box_a42febad6ad5e924a151434cc434b4ffc}} 
 \index{QCPStatisticalBox@{QCPStatisticalBox}!selectTestRect@{selectTestRect}}
 \index{selectTestRect@{selectTestRect}!QCPStatisticalBox@{QCPStatisticalBox}}
@@ -597,6 +707,18 @@ If {\itshape only\+Selectable} is true, an empty \mbox{\hyperlink{class_q_c_p_da
 
 Reimplemented from \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a22377bf6e57ab7eedbc9e489250c6ded}{QCPAbstract\+Plottable1\+D$<$ QCPStatistical\+Box\+Data $>$}}.
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l24652}{24652}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_statistical_box_a42febad6ad5e924a151434cc434b4ffc_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_statistical_box_a4ae198e66243d8cc57ad8893c37bf9d4}\label{class_q_c_p_statistical_box_a4ae198e66243d8cc57ad8893c37bf9d4}} 
 \index{QCPStatisticalBox@{QCPStatisticalBox}!setData@{setData}}
 \index{setData@{setData}!QCPStatisticalBox@{QCPStatisticalBox}}
@@ -612,11 +734,23 @@ If you can guarantee that the passed data points are sorted by {\itshape keys} i
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_statistical_box_a9a8739c5b8291db8fd839e892fc8f478}{add\+Data}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l24510}{24510}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{class_q_c_p_statistical_box_a4ae198e66243d8cc57ad8893c37bf9d4_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_statistical_box_a08a6da55822bad825ee25a8069b9b52f}\label{class_q_c_p_statistical_box_a08a6da55822bad825ee25a8069b9b52f}} 
 \index{QCPStatisticalBox@{QCPStatisticalBox}!setData@{setData}}
 \index{setData@{setData}!QCPStatisticalBox@{QCPStatisticalBox}}
 \doxysubsubsection{\texorpdfstring{setData()}{setData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily void QCPStatistical\+Box\+::set\+Data (\begin{DoxyParamCaption}\item[{QShared\+Pointer$<$ \mbox{\hyperlink{qcustomplot_8h_a8b773c0c35f8f924701ced6e9915e4c7}{QCPStatistical\+Box\+Data\+Container}} $>$}]{data }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void QCPStatistical\+Box\+::set\+Data (\begin{DoxyParamCaption}\item[{QShared\+Pointer$<$ \mbox{\hyperlink{class_q_c_p_data_container}{QCPStatistical\+Box\+Data\+Container}} $>$}]{data }\end{DoxyParamCaption})}
 
 This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
 
@@ -637,13 +771,29 @@ If you do not wish to share containers, but create a copy from an existing conta
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_statistical_box_a9a8739c5b8291db8fd839e892fc8f478}{add\+Data}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l24495}{24495}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{class_q_c_p_statistical_box_a08a6da55822bad825ee25a8069b9b52f_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_statistical_box_a7260ac55b669f5d0a74f16d5ca84c52c}\label{class_q_c_p_statistical_box_a7260ac55b669f5d0a74f16d5ca84c52c}} 
 \index{QCPStatisticalBox@{QCPStatisticalBox}!setMedianPen@{setMedianPen}}
 \index{setMedianPen@{setMedianPen}!QCPStatisticalBox@{QCPStatisticalBox}}
 \doxysubsubsection{\texorpdfstring{setMedianPen()}{setMedianPen()}}
 {\footnotesize\ttfamily void QCPStatistical\+Box\+::set\+Median\+Pen (\begin{DoxyParamCaption}\item[{const QPen \&}]{pen }\end{DoxyParamCaption})}
 
-Sets the pen used for drawing the median indicator line inside the statistical boxes. \mbox{\Hypertarget{class_q_c_p_statistical_box_ad5241943422eb8e58360a97e99ad6aa7}\label{class_q_c_p_statistical_box_ad5241943422eb8e58360a97e99ad6aa7}} 
+Sets the pen used for drawing the median indicator line inside the statistical boxes. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l24583}{24583}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+\mbox{\Hypertarget{class_q_c_p_statistical_box_ad5241943422eb8e58360a97e99ad6aa7}\label{class_q_c_p_statistical_box_ad5241943422eb8e58360a97e99ad6aa7}} 
 \index{QCPStatisticalBox@{QCPStatisticalBox}!setOutlierStyle@{setOutlierStyle}}
 \index{setOutlierStyle@{setOutlierStyle}!QCPStatisticalBox@{QCPStatisticalBox}}
 \doxysubsubsection{\texorpdfstring{setOutlierStyle()}{setOutlierStyle()}}
@@ -651,7 +801,11 @@ Sets the pen used for drawing the median indicator line inside the statistical b
 
 Sets the appearance of the outlier data points.
 
-Outliers can be specified with the method \mbox{\hyperlink{class_q_c_p_statistical_box_a026f2790b530d6f29312254ecb1e7c1e}{add\+Data(double key, double minimum, double lower\+Quartile, double median, double upper\+Quartile, double maximum, const QVector$<$double$>$ \&outliers)}} \mbox{\Hypertarget{class_q_c_p_statistical_box_a61bcd458fba002f72304d11319051843}\label{class_q_c_p_statistical_box_a61bcd458fba002f72304d11319051843}} 
+Outliers can be specified with the method \mbox{\hyperlink{class_q_c_p_statistical_box_a026f2790b530d6f29312254ecb1e7c1e}{add\+Data(double key, double minimum, double lower\+Quartile, double median, double upper\+Quartile, double maximum, const QVector$<$double$>$ \&outliers)}} 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l24594}{24594}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+\mbox{\Hypertarget{class_q_c_p_statistical_box_a61bcd458fba002f72304d11319051843}\label{class_q_c_p_statistical_box_a61bcd458fba002f72304d11319051843}} 
 \index{QCPStatisticalBox@{QCPStatisticalBox}!setWhiskerAntialiased@{setWhiskerAntialiased}}
 \index{setWhiskerAntialiased@{setWhiskerAntialiased}!QCPStatisticalBox@{QCPStatisticalBox}}
 \doxysubsubsection{\texorpdfstring{setWhiskerAntialiased()}{setWhiskerAntialiased()}}
@@ -659,7 +813,11 @@ Outliers can be specified with the method \mbox{\hyperlink{class_q_c_p_statistic
 
 Sets whether the statistical boxes whiskers are drawn with antialiasing or not.
 
-Note that antialiasing settings may be overridden by \mbox{\hyperlink{class_q_custom_plot_af6f91e5eab1be85f67c556e98c3745e8}{QCustom\+Plot\+::set\+Antialiased\+Elements}} and \mbox{\hyperlink{class_q_custom_plot_ae10d685b5eabea2999fb8775ca173c24}{QCustom\+Plot\+::set\+Not\+Antialiased\+Elements}}. \mbox{\Hypertarget{class_q_c_p_statistical_box_aa8d3e503897788e1abf68dc74b5f147f}\label{class_q_c_p_statistical_box_aa8d3e503897788e1abf68dc74b5f147f}} 
+Note that antialiasing settings may be overridden by \mbox{\hyperlink{class_q_custom_plot_af6f91e5eab1be85f67c556e98c3745e8}{QCustom\+Plot\+::set\+Antialiased\+Elements}} and \mbox{\hyperlink{class_q_custom_plot_ae10d685b5eabea2999fb8775ca173c24}{QCustom\+Plot\+::set\+Not\+Antialiased\+Elements}}. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l24575}{24575}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+\mbox{\Hypertarget{class_q_c_p_statistical_box_aa8d3e503897788e1abf68dc74b5f147f}\label{class_q_c_p_statistical_box_aa8d3e503897788e1abf68dc74b5f147f}} 
 \index{QCPStatisticalBox@{QCPStatisticalBox}!setWhiskerBarPen@{setWhiskerBarPen}}
 \index{setWhiskerBarPen@{setWhiskerBarPen}!QCPStatisticalBox@{QCPStatisticalBox}}
 \doxysubsubsection{\texorpdfstring{setWhiskerBarPen()}{setWhiskerBarPen()}}
@@ -672,6 +830,10 @@ Whiskers are the lines which reach from the upper quartile to the maximum, and f
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_statistical_box_a4a5034cb3b9b040444df05ab1684620b}{set\+Whisker\+Pen}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l24564}{24564}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_statistical_box_a4a5034cb3b9b040444df05ab1684620b}\label{class_q_c_p_statistical_box_a4a5034cb3b9b040444df05ab1684620b}} 
 \index{QCPStatisticalBox@{QCPStatisticalBox}!setWhiskerPen@{setWhiskerPen}}
 \index{setWhiskerPen@{setWhiskerPen}!QCPStatisticalBox@{QCPStatisticalBox}}
@@ -687,6 +849,10 @@ Make sure to set the {\ttfamily cap\+Style} of the passed {\itshape pen} to {\tt
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_statistical_box_aa8d3e503897788e1abf68dc74b5f147f}{set\+Whisker\+Bar\+Pen}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l24550}{24550}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_statistical_box_adf378812446bd66f34d1f7f293d991cd}\label{class_q_c_p_statistical_box_adf378812446bd66f34d1f7f293d991cd}} 
 \index{QCPStatisticalBox@{QCPStatisticalBox}!setWhiskerWidth@{setWhiskerWidth}}
 \index{setWhiskerWidth@{setWhiskerWidth}!QCPStatisticalBox@{QCPStatisticalBox}}
@@ -700,6 +866,10 @@ Whiskers are the lines which reach from the upper quartile to the maximum, and f
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_statistical_box_a0b62775bd67301b1eba5c785f2b26f14}{set\+Width}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l24534}{24534}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_statistical_box_a0b62775bd67301b1eba5c785f2b26f14}\label{class_q_c_p_statistical_box_a0b62775bd67301b1eba5c785f2b26f14}} 
 \index{QCPStatisticalBox@{QCPStatisticalBox}!setWidth@{setWidth}}
 \index{setWidth@{setWidth}!QCPStatisticalBox@{QCPStatisticalBox}}
@@ -711,11 +881,19 @@ Sets the width of the boxes in key coordinates.
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_statistical_box_adf378812446bd66f34d1f7f293d991cd}{set\+Whisker\+Width}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l24521}{24521}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_statistical_box_a2015a8ea758cf65a41d4a6c52a20696b}\label{class_q_c_p_statistical_box_a2015a8ea758cf65a41d4a6c52a20696b}} 
 \index{QCPStatisticalBox@{QCPStatisticalBox}!whiskerAntialiased@{whiskerAntialiased}}
 \index{whiskerAntialiased@{whiskerAntialiased}!QCPStatisticalBox@{QCPStatisticalBox}}
 \doxysubsubsection{\texorpdfstring{whiskerAntialiased()}{whiskerAntialiased()}}
 {\footnotesize\ttfamily bool QCPStatistical\+Box\+::whisker\+Antialiased (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05623}{5623}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_statistical_box_a47ed9ad9d2ca65640319a2f071982ed4}\label{class_q_c_p_statistical_box_a47ed9ad9d2ca65640319a2f071982ed4}} 
 \index{QCPStatisticalBox@{QCPStatisticalBox}!whiskerBarPen@{whiskerBarPen}}
@@ -723,11 +901,19 @@ Sets the width of the boxes in key coordinates.
 \doxysubsubsection{\texorpdfstring{whiskerBarPen()}{whiskerBarPen()}}
 {\footnotesize\ttfamily QPen QCPStatistical\+Box\+::whisker\+Bar\+Pen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05622}{5622}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_statistical_box_a67e5144f07645fe25c31001c460817fc}\label{class_q_c_p_statistical_box_a67e5144f07645fe25c31001c460817fc}} 
 \index{QCPStatisticalBox@{QCPStatisticalBox}!whiskerPen@{whiskerPen}}
 \index{whiskerPen@{whiskerPen}!QCPStatisticalBox@{QCPStatisticalBox}}
 \doxysubsubsection{\texorpdfstring{whiskerPen()}{whiskerPen()}}
 {\footnotesize\ttfamily QPen QCPStatistical\+Box\+::whisker\+Pen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05621}{5621}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_statistical_box_aacfa6686c7cf4af18794ec02354f4782}\label{class_q_c_p_statistical_box_aacfa6686c7cf4af18794ec02354f4782}} 
 \index{QCPStatisticalBox@{QCPStatisticalBox}!whiskerWidth@{whiskerWidth}}
@@ -735,11 +921,19 @@ Sets the width of the boxes in key coordinates.
 \doxysubsubsection{\texorpdfstring{whiskerWidth()}{whiskerWidth()}}
 {\footnotesize\ttfamily double QCPStatistical\+Box\+::whisker\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05620}{5620}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_statistical_box_ae589b7481dec6ef8e50ebb6492d296f1}\label{class_q_c_p_statistical_box_ae589b7481dec6ef8e50ebb6492d296f1}} 
 \index{QCPStatisticalBox@{QCPStatisticalBox}!width@{width}}
 \index{width@{width}!QCPStatisticalBox@{QCPStatisticalBox}}
 \doxysubsubsection{\texorpdfstring{width()}{width()}}
 {\footnotesize\ttfamily double QCPStatistical\+Box\+::width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05619}{5619}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 
 
@@ -750,11 +944,19 @@ Sets the width of the boxes in key coordinates.
 \doxysubsubsection{\texorpdfstring{QCPLegend}{QCPLegend}}
 {\footnotesize\ttfamily friend class \mbox{\hyperlink{class_q_c_p_legend}{QCPLegend}}\hspace{0.3cm}{\ttfamily [friend]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05671}{5671}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_statistical_box_a1cdf9df76adcfae45261690aa0ca2198}\label{class_q_c_p_statistical_box_a1cdf9df76adcfae45261690aa0ca2198}} 
 \index{QCPStatisticalBox@{QCPStatisticalBox}!QCustomPlot@{QCustomPlot}}
 \index{QCustomPlot@{QCustomPlot}!QCPStatisticalBox@{QCPStatisticalBox}}
 \doxysubsubsection{\texorpdfstring{QCustomPlot}{QCustomPlot}}
 {\footnotesize\ttfamily friend class \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05670}{5670}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 
 
@@ -765,11 +967,19 @@ Sets the width of the boxes in key coordinates.
 \doxysubsubsection{\texorpdfstring{mMedianPen}{mMedianPen}}
 {\footnotesize\ttfamily QPen QCPStatistical\+Box\+::m\+Median\+Pen\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05654}{5654}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_statistical_box_ae102e4187e1e6ba1f2df0f622b5171a4}\label{class_q_c_p_statistical_box_ae102e4187e1e6ba1f2df0f622b5171a4}} 
 \index{QCPStatisticalBox@{QCPStatisticalBox}!mOutlierStyle@{mOutlierStyle}}
 \index{mOutlierStyle@{mOutlierStyle}!QCPStatisticalBox@{QCPStatisticalBox}}
 \doxysubsubsection{\texorpdfstring{mOutlierStyle}{mOutlierStyle}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_scatter_style}{QCPScatter\+Style}} QCPStatistical\+Box\+::m\+Outlier\+Style\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05655}{5655}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_statistical_box_a714bb91efb423c7b7ec3a6a50c2910b9}\label{class_q_c_p_statistical_box_a714bb91efb423c7b7ec3a6a50c2910b9}} 
 \index{QCPStatisticalBox@{QCPStatisticalBox}!mWhiskerAntialiased@{mWhiskerAntialiased}}
@@ -777,11 +987,19 @@ Sets the width of the boxes in key coordinates.
 \doxysubsubsection{\texorpdfstring{mWhiskerAntialiased}{mWhiskerAntialiased}}
 {\footnotesize\ttfamily bool QCPStatistical\+Box\+::m\+Whisker\+Antialiased\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05653}{5653}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_statistical_box_aa719b1d722a9f82364df1497a6dc1da8}\label{class_q_c_p_statistical_box_aa719b1d722a9f82364df1497a6dc1da8}} 
 \index{QCPStatisticalBox@{QCPStatisticalBox}!mWhiskerBarPen@{mWhiskerBarPen}}
 \index{mWhiskerBarPen@{mWhiskerBarPen}!QCPStatisticalBox@{QCPStatisticalBox}}
 \doxysubsubsection{\texorpdfstring{mWhiskerBarPen}{mWhiskerBarPen}}
 {\footnotesize\ttfamily QPen QCPStatistical\+Box\+::m\+Whisker\+Bar\+Pen\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05652}{5652}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_statistical_box_a25b7552499f0f090fcff02858b2265a5}\label{class_q_c_p_statistical_box_a25b7552499f0f090fcff02858b2265a5}} 
 \index{QCPStatisticalBox@{QCPStatisticalBox}!mWhiskerPen@{mWhiskerPen}}
@@ -789,11 +1007,19 @@ Sets the width of the boxes in key coordinates.
 \doxysubsubsection{\texorpdfstring{mWhiskerPen}{mWhiskerPen}}
 {\footnotesize\ttfamily QPen QCPStatistical\+Box\+::m\+Whisker\+Pen\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05652}{5652}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_statistical_box_a4d166474f845d5db626e8b11a0815a6f}\label{class_q_c_p_statistical_box_a4d166474f845d5db626e8b11a0815a6f}} 
 \index{QCPStatisticalBox@{QCPStatisticalBox}!mWhiskerWidth@{mWhiskerWidth}}
 \index{mWhiskerWidth@{mWhiskerWidth}!QCPStatisticalBox@{QCPStatisticalBox}}
 \doxysubsubsection{\texorpdfstring{mWhiskerWidth}{mWhiskerWidth}}
 {\footnotesize\ttfamily double QCPStatistical\+Box\+::m\+Whisker\+Width\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05651}{5651}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_statistical_box_af365e40b0f706c3d76f857c7957f629d}\label{class_q_c_p_statistical_box_af365e40b0f706c3d76f857c7957f629d}} 
 \index{QCPStatisticalBox@{QCPStatisticalBox}!mWidth@{mWidth}}
@@ -803,7 +1029,11 @@ Sets the width of the boxes in key coordinates.
 
 
 
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l05650}{5650}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{qcustomplot_8h}{qcustomplot.\+h}}\item 
-\mbox{\hyperlink{qcustomplot_8cpp}{qcustomplot.\+cpp}}\end{DoxyCompactItemize}
+qcustomplot.\+h\item 
+qcustomplot.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,1015 @@
+.TH "QCPGraph" 3 "Wed Mar 15 2023" "OmronPID" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QCPGraph \- A plottable representing a graph in a plot\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBQCPAbstractPlottable1D< QCPGraphData >\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBLineStyle\fP { \fBlsNone\fP, \fBlsLine\fP, \fBlsStepLeft\fP, \fBlsStepRight\fP, \fBlsStepCenter\fP, \fBlsImpulse\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPGraph\fP (\fBQCPAxis\fP *keyAxis, \fBQCPAxis\fP *valueAxis)"
+.br
+.ti -1c
+.RI "QSharedPointer< \fBQCPGraphDataContainer\fP > \fBdata\fP () const"
+.br
+.ti -1c
+.RI "\fBLineStyle\fP \fBlineStyle\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPScatterStyle\fP \fBscatterStyle\fP () const"
+.br
+.ti -1c
+.RI "int \fBscatterSkip\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPGraph\fP * \fBchannelFillGraph\fP () const"
+.br
+.ti -1c
+.RI "bool \fBadaptiveSampling\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetData\fP (QSharedPointer< \fBQCPGraphDataContainer\fP > \fBdata\fP)"
+.br
+.ti -1c
+.RI "void \fBsetData\fP (const QVector< double > &keys, const QVector< double > &values, bool alreadySorted=false)"
+.br
+.ti -1c
+.RI "void \fBsetLineStyle\fP (\fBLineStyle\fP ls)"
+.br
+.ti -1c
+.RI "void \fBsetScatterStyle\fP (const \fBQCPScatterStyle\fP &style)"
+.br
+.ti -1c
+.RI "void \fBsetScatterSkip\fP (int skip)"
+.br
+.ti -1c
+.RI "void \fBsetChannelFillGraph\fP (\fBQCPGraph\fP *targetGraph)"
+.br
+.ti -1c
+.RI "void \fBsetAdaptiveSampling\fP (bool enabled)"
+.br
+.ti -1c
+.RI "void \fBaddData\fP (const QVector< double > &keys, const QVector< double > &values, bool alreadySorted=false)"
+.br
+.ti -1c
+.RI "void \fBaddData\fP (double key, double value)"
+.br
+.ti -1c
+.RI "virtual double \fBselectTest\fP (const QPointF &pos, bool onlySelectable, QVariant *details=0) const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual \fBQCPRange\fP \fBgetKeyRange\fP (bool &foundRange, \fBQCP::SignDomain\fP inSignDomain=\fBQCP::sdBoth\fP) const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual \fBQCPRange\fP \fBgetValueRange\fP (bool &foundRange, \fBQCP::SignDomain\fP inSignDomain=\fBQCP::sdBoth\fP, const \fBQCPRange\fP &inKeyRange=\fBQCPRange\fP()) const Q_DECL_OVERRIDE"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBQCPAbstractPlottable1D< QCPGraphData >\fP
+.in +1c
+.ti -1c
+.RI "\fBQCPAbstractPlottable1D\fP (\fBQCPAxis\fP *keyAxis, \fBQCPAxis\fP *valueAxis)"
+.br
+.ti -1c
+.RI "virtual int \fBdataCount\fP () const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual double \fBdataMainKey\fP (int index) const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual double \fBdataSortKey\fP (int index) const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual double \fBdataMainValue\fP (int index) const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual \fBQCPRange\fP \fBdataValueRange\fP (int index) const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual QPointF \fBdataPixelPosition\fP (int index) const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual bool \fBsortKeyIsMainKey\fP () const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual \fBQCPDataSelection\fP \fBselectTestRect\fP (const QRectF &rect, bool onlySelectable) const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual int \fBfindBegin\fP (double sortKey, bool expandedRange=true) const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual int \fBfindEnd\fP (double sortKey, bool expandedRange=true) const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual double \fBselectTest\fP (const QPointF &pos, bool onlySelectable, QVariant *details=0) const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual \fBQCPPlottableInterface1D\fP * \fBinterface1D\fP () Q_DECL_OVERRIDE"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBQCPAbstractPlottable\fP
+.in +1c
+.ti -1c
+.RI "\fBQCPAbstractPlottable\fP (\fBQCPAxis\fP *keyAxis, \fBQCPAxis\fP *valueAxis)"
+.br
+.ti -1c
+.RI "QString \fBname\fP () const"
+.br
+.ti -1c
+.RI "bool \fBantialiasedFill\fP () const"
+.br
+.ti -1c
+.RI "bool \fBantialiasedScatters\fP () const"
+.br
+.ti -1c
+.RI "QPen \fBpen\fP () const"
+.br
+.ti -1c
+.RI "QBrush \fBbrush\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPAxis\fP * \fBkeyAxis\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPAxis\fP * \fBvalueAxis\fP () const"
+.br
+.ti -1c
+.RI "\fBQCP::SelectionType\fP \fBselectable\fP () const"
+.br
+.ti -1c
+.RI "bool \fBselected\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPDataSelection\fP \fBselection\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPSelectionDecorator\fP * \fBselectionDecorator\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetName\fP (const QString &name)"
+.br
+.ti -1c
+.RI "void \fBsetAntialiasedFill\fP (bool enabled)"
+.br
+.ti -1c
+.RI "void \fBsetAntialiasedScatters\fP (bool enabled)"
+.br
+.ti -1c
+.RI "void \fBsetPen\fP (const QPen &pen)"
+.br
+.ti -1c
+.RI "void \fBsetBrush\fP (const QBrush &brush)"
+.br
+.ti -1c
+.RI "void \fBsetKeyAxis\fP (\fBQCPAxis\fP *axis)"
+.br
+.ti -1c
+.RI "void \fBsetValueAxis\fP (\fBQCPAxis\fP *axis)"
+.br
+.ti -1c
+.RI "Q_SLOT void \fBsetSelectable\fP (\fBQCP::SelectionType\fP selectable)"
+.br
+.ti -1c
+.RI "Q_SLOT void \fBsetSelection\fP (\fBQCPDataSelection\fP \fBselection\fP)"
+.br
+.ti -1c
+.RI "void \fBsetSelectionDecorator\fP (\fBQCPSelectionDecorator\fP *decorator)"
+.br
+.ti -1c
+.RI "virtual double \fBselectTest\fP (const QPointF &pos, bool onlySelectable, QVariant *details=0) const =0"
+.br
+.ti -1c
+.RI "virtual \fBQCPPlottableInterface1D\fP * \fBinterface1D\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBQCPRange\fP \fBgetKeyRange\fP (bool &foundRange, \fBQCP::SignDomain\fP inSignDomain=\fBQCP::sdBoth\fP) const =0"
+.br
+.ti -1c
+.RI "virtual \fBQCPRange\fP \fBgetValueRange\fP (bool &foundRange, \fBQCP::SignDomain\fP inSignDomain=\fBQCP::sdBoth\fP, const \fBQCPRange\fP &inKeyRange=\fBQCPRange\fP()) const =0"
+.br
+.ti -1c
+.RI "void \fBcoordsToPixels\fP (double key, double value, double &x, double &y) const"
+.br
+.ti -1c
+.RI "const QPointF \fBcoordsToPixels\fP (double key, double value) const"
+.br
+.ti -1c
+.RI "void \fBpixelsToCoords\fP (double x, double y, double &key, double &value) const"
+.br
+.ti -1c
+.RI "void \fBpixelsToCoords\fP (const QPointF &pixelPos, double &key, double &value) const"
+.br
+.ti -1c
+.RI "void \fBrescaleAxes\fP (bool onlyEnlarge=false) const"
+.br
+.ti -1c
+.RI "void \fBrescaleKeyAxis\fP (bool onlyEnlarge=false) const"
+.br
+.ti -1c
+.RI "void \fBrescaleValueAxis\fP (bool onlyEnlarge=false, bool inKeyRange=false) const"
+.br
+.ti -1c
+.RI "bool \fBaddToLegend\fP (\fBQCPLegend\fP *legend)"
+.br
+.ti -1c
+.RI "bool \fBaddToLegend\fP ()"
+.br
+.ti -1c
+.RI "bool \fBremoveFromLegend\fP (\fBQCPLegend\fP *legend) const"
+.br
+.ti -1c
+.RI "bool \fBremoveFromLegend\fP () const"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBQCPLayerable\fP
+.in +1c
+.ti -1c
+.RI "\fBQCPLayerable\fP (\fBQCustomPlot\fP *plot, QString targetLayer=QString(), \fBQCPLayerable\fP *\fBparentLayerable\fP=0)"
+.br
+.ti -1c
+.RI "bool \fBvisible\fP () const"
+.br
+.ti -1c
+.RI "\fBQCustomPlot\fP * \fBparentPlot\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPLayerable\fP * \fBparentLayerable\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPLayer\fP * \fBlayer\fP () const"
+.br
+.ti -1c
+.RI "bool \fBantialiased\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetVisible\fP (bool on)"
+.br
+.ti -1c
+.RI "Q_SLOT bool \fBsetLayer\fP (\fBQCPLayer\fP *layer)"
+.br
+.ti -1c
+.RI "bool \fBsetLayer\fP (const QString &layerName)"
+.br
+.ti -1c
+.RI "void \fBsetAntialiased\fP (bool enabled)"
+.br
+.ti -1c
+.RI "virtual double \fBselectTest\fP (const QPointF &pos, bool onlySelectable, QVariant *details=0) const"
+.br
+.ti -1c
+.RI "bool \fBrealVisibility\fP () const"
+.br
+.in -1c
+.in +1c
+.ti -1c
+.RI "virtual int \fBdataCount\fP () const =0"
+.br
+.ti -1c
+.RI "virtual double \fBdataMainKey\fP (int index) const =0"
+.br
+.ti -1c
+.RI "virtual double \fBdataSortKey\fP (int index) const =0"
+.br
+.ti -1c
+.RI "virtual double \fBdataMainValue\fP (int index) const =0"
+.br
+.ti -1c
+.RI "virtual \fBQCPRange\fP \fBdataValueRange\fP (int index) const =0"
+.br
+.ti -1c
+.RI "virtual QPointF \fBdataPixelPosition\fP (int index) const =0"
+.br
+.ti -1c
+.RI "virtual bool \fBsortKeyIsMainKey\fP () const =0"
+.br
+.ti -1c
+.RI "virtual \fBQCPDataSelection\fP \fBselectTestRect\fP (const QRectF &rect, bool onlySelectable) const =0"
+.br
+.ti -1c
+.RI "virtual int \fBfindBegin\fP (double sortKey, bool expandedRange=true) const =0"
+.br
+.ti -1c
+.RI "virtual int \fBfindEnd\fP (double sortKey, bool expandedRange=true) const =0"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBdraw\fP (\fBQCPPainter\fP *painter) Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual void \fBdrawLegendIcon\fP (\fBQCPPainter\fP *painter, const QRectF &rect) const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual void \fBdrawFill\fP (\fBQCPPainter\fP *painter, QVector< QPointF > *lines) const"
+.br
+.ti -1c
+.RI "virtual void \fBdrawScatterPlot\fP (\fBQCPPainter\fP *painter, const QVector< QPointF > &scatters, const \fBQCPScatterStyle\fP &style) const"
+.br
+.ti -1c
+.RI "virtual void \fBdrawLinePlot\fP (\fBQCPPainter\fP *painter, const QVector< QPointF > &lines) const"
+.br
+.ti -1c
+.RI "virtual void \fBdrawImpulsePlot\fP (\fBQCPPainter\fP *painter, const QVector< QPointF > &lines) const"
+.br
+.ti -1c
+.RI "virtual void \fBgetOptimizedLineData\fP (QVector< \fBQCPGraphData\fP > *lineData, const QCPGraphDataContainer::const_iterator &begin, const QCPGraphDataContainer::const_iterator &end) const"
+.br
+.ti -1c
+.RI "virtual void \fBgetOptimizedScatterData\fP (QVector< \fBQCPGraphData\fP > *scatterData, QCPGraphDataContainer::const_iterator begin, QCPGraphDataContainer::const_iterator end) const"
+.br
+.ti -1c
+.RI "void \fBgetVisibleDataBounds\fP (QCPGraphDataContainer::const_iterator &begin, QCPGraphDataContainer::const_iterator &end, const \fBQCPDataRange\fP &rangeRestriction) const"
+.br
+.ti -1c
+.RI "void \fBgetLines\fP (QVector< QPointF > *lines, const \fBQCPDataRange\fP &dataRange) const"
+.br
+.ti -1c
+.RI "void \fBgetScatters\fP (QVector< QPointF > *scatters, const \fBQCPDataRange\fP &dataRange) const"
+.br
+.ti -1c
+.RI "QVector< QPointF > \fBdataToLines\fP (const QVector< \fBQCPGraphData\fP > &\fBdata\fP) const"
+.br
+.ti -1c
+.RI "QVector< QPointF > \fBdataToStepLeftLines\fP (const QVector< \fBQCPGraphData\fP > &\fBdata\fP) const"
+.br
+.ti -1c
+.RI "QVector< QPointF > \fBdataToStepRightLines\fP (const QVector< \fBQCPGraphData\fP > &\fBdata\fP) const"
+.br
+.ti -1c
+.RI "QVector< QPointF > \fBdataToStepCenterLines\fP (const QVector< \fBQCPGraphData\fP > &\fBdata\fP) const"
+.br
+.ti -1c
+.RI "QVector< QPointF > \fBdataToImpulseLines\fP (const QVector< \fBQCPGraphData\fP > &\fBdata\fP) const"
+.br
+.ti -1c
+.RI "QVector< \fBQCPDataRange\fP > \fBgetNonNanSegments\fP (const QVector< QPointF > *lineData, Qt::Orientation keyOrientation) const"
+.br
+.ti -1c
+.RI "QVector< QPair< \fBQCPDataRange\fP, \fBQCPDataRange\fP > > \fBgetOverlappingSegments\fP (QVector< \fBQCPDataRange\fP > thisSegments, const QVector< QPointF > *thisData, QVector< \fBQCPDataRange\fP > otherSegments, const QVector< QPointF > *otherData) const"
+.br
+.ti -1c
+.RI "bool \fBsegmentsIntersect\fP (double aLower, double aUpper, double bLower, double bUpper, int &bPrecedence) const"
+.br
+.ti -1c
+.RI "QPointF \fBgetFillBasePoint\fP (QPointF matchingDataPoint) const"
+.br
+.ti -1c
+.RI "const QPolygonF \fBgetFillPolygon\fP (const QVector< QPointF > *lineData, \fBQCPDataRange\fP segment) const"
+.br
+.ti -1c
+.RI "const QPolygonF \fBgetChannelFillPolygon\fP (const QVector< QPointF > *lineData, \fBQCPDataRange\fP thisSegment, const QVector< QPointF > *otherData, \fBQCPDataRange\fP otherSegment) const"
+.br
+.ti -1c
+.RI "int \fBfindIndexBelowX\fP (const QVector< QPointF > *\fBdata\fP, double x) const"
+.br
+.ti -1c
+.RI "int \fBfindIndexAboveX\fP (const QVector< QPointF > *\fBdata\fP, double x) const"
+.br
+.ti -1c
+.RI "int \fBfindIndexBelowY\fP (const QVector< QPointF > *\fBdata\fP, double y) const"
+.br
+.ti -1c
+.RI "int \fBfindIndexAboveY\fP (const QVector< QPointF > *\fBdata\fP, double y) const"
+.br
+.ti -1c
+.RI "double \fBpointDistance\fP (const QPointF &pixelPoint, QCPGraphDataContainer::const_iterator &closestData) const"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBQCPAbstractPlottable1D< QCPGraphData >\fP
+.in +1c
+.ti -1c
+.RI "void \fBgetDataSegments\fP (QList< \fBQCPDataRange\fP > &selectedSegments, QList< \fBQCPDataRange\fP > &unselectedSegments) const"
+.br
+.ti -1c
+.RI "void \fBdrawPolyline\fP (\fBQCPPainter\fP *painter, const QVector< QPointF > &lineData) const"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBQCPAbstractPlottable\fP
+.in +1c
+.ti -1c
+.RI "virtual QRect \fBclipRect\fP () const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (\fBQCPPainter\fP *painter) Q_DECL_OVERRIDE=0"
+.br
+.ti -1c
+.RI "virtual \fBQCP::Interaction\fP \fBselectionCategory\fP () const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "void \fBapplyDefaultAntialiasingHint\fP (\fBQCPPainter\fP *painter) const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual void \fBselectEvent\fP (QMouseEvent *event, bool additive, const QVariant &details, bool *selectionStateChanged) Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual void \fBdeselectEvent\fP (bool *selectionStateChanged) Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual void \fBdrawLegendIcon\fP (\fBQCPPainter\fP *painter, const QRectF &rect) const =0"
+.br
+.ti -1c
+.RI "void \fBapplyFillAntialiasingHint\fP (\fBQCPPainter\fP *painter) const"
+.br
+.ti -1c
+.RI "void \fBapplyScattersAntialiasingHint\fP (\fBQCPPainter\fP *painter) const"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBQCPLayerable\fP
+.in +1c
+.ti -1c
+.RI "virtual void \fBparentPlotInitialized\fP (\fBQCustomPlot\fP *parentPlot)"
+.br
+.ti -1c
+.RI "virtual \fBQCP::Interaction\fP \fBselectionCategory\fP () const"
+.br
+.ti -1c
+.RI "virtual QRect \fBclipRect\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBapplyDefaultAntialiasingHint\fP (\fBQCPPainter\fP *painter) const =0"
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (\fBQCPPainter\fP *painter)=0"
+.br
+.ti -1c
+.RI "virtual void \fBselectEvent\fP (QMouseEvent *event, bool additive, const QVariant &details, bool *selectionStateChanged)"
+.br
+.ti -1c
+.RI "virtual void \fBdeselectEvent\fP (bool *selectionStateChanged)"
+.br
+.ti -1c
+.RI "virtual void \fBmousePressEvent\fP (QMouseEvent *event, const QVariant &details)"
+.br
+.ti -1c
+.RI "virtual void \fBmouseMoveEvent\fP (QMouseEvent *event, const QPointF &startPos)"
+.br
+.ti -1c
+.RI "virtual void \fBmouseReleaseEvent\fP (QMouseEvent *event, const QPointF &startPos)"
+.br
+.ti -1c
+.RI "virtual void \fBmouseDoubleClickEvent\fP (QMouseEvent *event, const QVariant &details)"
+.br
+.ti -1c
+.RI "virtual void \fBwheelEvent\fP (QWheelEvent *event)"
+.br
+.ti -1c
+.RI "void \fBinitializeParentPlot\fP (\fBQCustomPlot\fP *parentPlot)"
+.br
+.ti -1c
+.RI "void \fBsetParentLayerable\fP (\fBQCPLayerable\fP *\fBparentLayerable\fP)"
+.br
+.ti -1c
+.RI "bool \fBmoveToLayer\fP (\fBQCPLayer\fP *layer, bool prepend)"
+.br
+.ti -1c
+.RI "void \fBapplyAntialiasingHint\fP (\fBQCPPainter\fP *painter, bool localAntialiased, \fBQCP::AntialiasedElement\fP overrideElement) const"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBLineStyle\fP \fBmLineStyle\fP"
+.br
+.ti -1c
+.RI "\fBQCPScatterStyle\fP \fBmScatterStyle\fP"
+.br
+.ti -1c
+.RI "int \fBmScatterSkip\fP"
+.br
+.ti -1c
+.RI "QPointer< \fBQCPGraph\fP > \fBmChannelFillGraph\fP"
+.br
+.ti -1c
+.RI "bool \fBmAdaptiveSampling\fP"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBQCPAbstractPlottable1D< QCPGraphData >\fP
+.in +1c
+.ti -1c
+.RI "QSharedPointer< \fBQCPDataContainer\fP< \fBQCPGraphData\fP > > \fBmDataContainer\fP"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBQCPAbstractPlottable\fP
+.in +1c
+.ti -1c
+.RI "QString \fBmName\fP"
+.br
+.ti -1c
+.RI "bool \fBmAntialiasedFill\fP"
+.br
+.ti -1c
+.RI "bool \fBmAntialiasedScatters\fP"
+.br
+.ti -1c
+.RI "QPen \fBmPen\fP"
+.br
+.ti -1c
+.RI "QBrush \fBmBrush\fP"
+.br
+.ti -1c
+.RI "QPointer< \fBQCPAxis\fP > \fBmKeyAxis\fP"
+.br
+.ti -1c
+.RI "QPointer< \fBQCPAxis\fP > \fBmValueAxis\fP"
+.br
+.ti -1c
+.RI "\fBQCP::SelectionType\fP \fBmSelectable\fP"
+.br
+.ti -1c
+.RI "\fBQCPDataSelection\fP \fBmSelection\fP"
+.br
+.ti -1c
+.RI "\fBQCPSelectionDecorator\fP * \fBmSelectionDecorator\fP"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBQCPLayerable\fP
+.in +1c
+.ti -1c
+.RI "bool \fBmVisible\fP"
+.br
+.ti -1c
+.RI "\fBQCustomPlot\fP * \fBmParentPlot\fP"
+.br
+.ti -1c
+.RI "QPointer< \fBQCPLayerable\fP > \fBmParentLayerable\fP"
+.br
+.ti -1c
+.RI "\fBQCPLayer\fP * \fBmLayer\fP"
+.br
+.ti -1c
+.RI "bool \fBmAntialiased\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBQCustomPlot\fP"
+.br
+.ti -1c
+.RI "class \fBQCPLegend\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Signals inherited from \fBQCPAbstractPlottable\fP
+.in +1c
+.ti -1c
+.RI "void \fBselectionChanged\fP (bool \fBselected\fP)"
+.br
+.ti -1c
+.RI "void \fBselectionChanged\fP (const \fBQCPDataSelection\fP &\fBselection\fP)"
+.br
+.ti -1c
+.RI "void \fBselectableChanged\fP (\fBQCP::SelectionType\fP selectable)"
+.br
+.in -1c
+
+Signals inherited from \fBQCPLayerable\fP
+.in +1c
+.ti -1c
+.RI "void \fBlayerChanged\fP (\fBQCPLayer\fP *newLayer)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+A plottable representing a graph in a plot\&. 
+
+
+.PP
+Usually you create new graphs by calling \fBQCustomPlot::addGraph\fP\&. The resulting instance can be accessed via \fBQCustomPlot::graph\fP\&.
+.PP
+To plot data, assign it with the \fBsetData\fP or \fBaddData\fP functions\&. Alternatively, you can also access and modify the data via the \fBdata\fP method, which returns a pointer to the internal \fBQCPGraphDataContainer\fP\&.
+.PP
+Graphs are used to display single-valued data\&. Single-valued means that there should only be one data point per unique key coordinate\&. In other words, the graph can't have \fIloops\fP\&. If you do want to plot non-single-valued curves, rather use the \fBQCPCurve\fP plottable\&.
+.PP
+Gaps in the graph line can be created by adding data points with NaN as value (\fCqQNaN()\fP or \fCstd::numeric_limits<double>::quiet_NaN()\fP) in between the two data points that shall be separated\&.
+.SH "Changing the appearance"
+.PP
+The appearance of the graph is mainly determined by the line style, scatter style, brush and pen of the graph (\fBsetLineStyle\fP, \fBsetScatterStyle\fP, \fBsetBrush\fP, \fBsetPen\fP)\&.
+.SS "Filling under or between graphs"
+\fBQCPGraph\fP knows two types of fills: Normal graph fills towards the zero-value-line parallel to the key axis of the graph, and fills between two graphs, called channel fills\&. To enable a fill, just set a brush with \fBsetBrush\fP which is neither Qt::NoBrush nor fully transparent\&.
+.PP
+By default, a normal fill towards the zero-value-line will be drawn\&. To set up a channel fill between this graph and another one, call \fBsetChannelFillGraph\fP with the other graph as parameter\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBQCustomPlot::addGraph\fP, \fBQCustomPlot::graph\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB5152\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBQCPGraph::LineStyle\fP"
+Defines how the graph's line is represented visually in the plot\&. The line is drawn with the current pen of the graph (\fBsetPen\fP)\&. 
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetLineStyle\fP 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIlsNone \fP\fP
+data points are not connected with any lines (e\&.g\&. data only represented with symbols according to the scatter style, see \fBsetScatterStyle\fP) 
+.TP
+\fB\fIlsLine \fP\fP
+data points are connected by a straight line 
+.TP
+\fB\fIlsStepLeft \fP\fP
+line is drawn as steps where the step height is the value of the left data point 
+.TP
+\fB\fIlsStepRight \fP\fP
+line is drawn as steps where the step height is the value of the right data point 
+.TP
+\fB\fIlsStepCenter \fP\fP
+line is drawn as steps where the step is in between two data points 
+.TP
+\fB\fIlsImpulse \fP\fP
+each data point is represented by a line parallel to the value axis, which reaches from the data point to the zero-value-line 
+.PP
+Definition at line \fB5168\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QCPGraph::QCPGraph (\fBQCPAxis\fP * keyAxis, \fBQCPAxis\fP * valueAxis)\fC [explicit]\fP"
+Constructs a graph which uses \fIkeyAxis\fP as its key axis ('x') and \fIvalueAxis\fP as its value axis ('y')\&. \fIkeyAxis\fP and \fIvalueAxis\fP must reside in the same \fBQCustomPlot\fP instance and not have the same orientation\&. If either of these restrictions is violated, a corresponding message is printed to the debug output (qDebug), the construction is not aborted, though\&.
+.PP
+The created \fBQCPGraph\fP is automatically registered with the \fBQCustomPlot\fP instance inferred from \fIkeyAxis\fP\&. This \fBQCustomPlot\fP instance takes ownership of the \fBQCPGraph\fP, so do not delete it manually but use \fBQCustomPlot::removePlottable()\fP instead\&.
+.PP
+To directly create a graph inside a plot, you can also use the simpler \fBQCustomPlot::addGraph\fP function\&. 
+.PP
+Definition at line \fB20060\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QCPGraph::~QCPGraph ()\fC [virtual]\fP"
+
+.PP
+Definition at line \fB20075\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool QCPGraph::adaptiveSampling () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB5187\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "void QCPGraph::addData (const QVector< double > & keys, const QVector< double > & values, bool alreadySorted = \fCfalse\fP)"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&.
+.PP
+Adds the provided points in \fIkeys\fP and \fIvalues\fP to the current data\&. The provided vectors should have equal length\&. Else, the number of added points will be the size of the smallest vector\&.
+.PP
+If you can guarantee that the passed data points are sorted by \fIkeys\fP in ascending order, you can set \fIalreadySorted\fP to true, to improve performance by saving a sorting run\&.
+.PP
+Alternatively, you can also access and modify the data directly via the \fBdata\fP method, which returns a pointer to the internal data container\&. 
+.PP
+Definition at line \fB20231\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPGraph::addData (double key, double value)"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&.
+.PP
+Adds the provided data point as \fIkey\fP and \fIvalue\fP to the current data\&.
+.PP
+Alternatively, you can also access and modify the data directly via the \fBdata\fP method, which returns a pointer to the internal data container\&. 
+.PP
+Definition at line \fB20257\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "\fBQCPGraph\fP * QCPGraph::channelFillGraph () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB5186\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QSharedPointer< \fBQCPGraphDataContainer\fP > QCPGraph::data () const\fC [inline]\fP"
+Returns a shared pointer to the internal data storage of type \fBQCPGraphDataContainer\fP\&. You may use it to directly manipulate the data, which may be more convenient and faster than using the regular \fBsetData\fP or \fBaddData\fP methods\&. 
+.PP
+Definition at line \fB5182\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QVector< QPointF > QCPGraph::dataToImpulseLines (const QVector< \fBQCPGraphData\fP > & data) const\fC [protected]\fP"
+
+.PP
+Definition at line \fB20709\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QVector< QPointF > QCPGraph::dataToLines (const QVector< \fBQCPGraphData\fP > & data) const\fC [protected]\fP"
+
+.PP
+Definition at line \fB20515\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QVector< QPointF > QCPGraph::dataToStepCenterLines (const QVector< \fBQCPGraphData\fP > & data) const\fC [protected]\fP"
+
+.PP
+Definition at line \fB20649\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QVector< QPointF > QCPGraph::dataToStepLeftLines (const QVector< \fBQCPGraphData\fP > & data) const\fC [protected]\fP"
+
+.PP
+Definition at line \fB20553\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QVector< QPointF > QCPGraph::dataToStepRightLines (const QVector< \fBQCPGraphData\fP > & data) const\fC [protected]\fP"
+
+.PP
+Definition at line \fB20601\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPGraph::draw (\fBQCPPainter\fP * painter)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBQCPAbstractPlottable\fP\&.
+.PP
+Definition at line \fB20297\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPGraph::drawFill (\fBQCPPainter\fP * painter, QVector< QPointF > * lines) const\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line \fB20760\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPGraph::drawImpulsePlot (\fBQCPPainter\fP * painter, const QVector< QPointF > & lines) const\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line \fB20825\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPGraph::drawLegendIcon (\fBQCPPainter\fP * painter, const QRectF & rect) const\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBQCPAbstractPlottable\fP\&.
+.PP
+Definition at line \fB20365\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPGraph::drawLinePlot (\fBQCPPainter\fP * painter, const QVector< QPointF > & lines) const\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line \fB20808\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPGraph::drawScatterPlot (\fBQCPPainter\fP * painter, const QVector< QPointF > & scatters, const \fBQCPScatterStyle\fP & style) const\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line \fB20794\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "int QCPGraph::findIndexAboveX (const QVector< QPointF > * data, double x) const\fC [protected]\fP"
+
+.PP
+Definition at line \fB21505\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "int QCPGraph::findIndexAboveY (const QVector< QPointF > * data, double y) const\fC [protected]\fP"
+
+.PP
+Definition at line \fB21551\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "int QCPGraph::findIndexBelowX (const QVector< QPointF > * data, double x) const\fC [protected]\fP"
+
+.PP
+Definition at line \fB21528\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "int QCPGraph::findIndexBelowY (const QVector< QPointF > * data, double y) const\fC [protected]\fP"
+
+.PP
+Definition at line \fB21633\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "const QPolygonF QCPGraph::getChannelFillPolygon (const QVector< QPointF > * lineData, \fBQCPDataRange\fP thisSegment, const QVector< QPointF > * otherData, \fBQCPDataRange\fP otherSegment) const\fC [protected]\fP"
+
+.PP
+Definition at line \fB21398\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QPointF QCPGraph::getFillBasePoint (QPointF matchingDataPoint) const\fC [protected]\fP"
+
+.PP
+Definition at line \fB21308\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "const QPolygonF QCPGraph::getFillPolygon (const QVector< QPointF > * lineData, \fBQCPDataRange\fP segment) const\fC [protected]\fP"
+
+.PP
+Definition at line \fB21367\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "\fBQCPRange\fP QCPGraph::getKeyRange (bool & foundRange, \fBQCP::SignDomain\fP inSignDomain = \fC\fBQCP::sdBoth\fP\fP) const\fC [virtual]\fP"
+Returns the coordinate range that all data in this plottable span in the key axis dimension\&. For logarithmic plots, one can set \fIinSignDomain\fP to either \fBQCP::sdNegative\fP or \fBQCP::sdPositive\fP in order to restrict the returned range to that sign domain\&. E\&.g\&. when only negative range is wanted, set \fIinSignDomain\fP to \fBQCP::sdNegative\fP and all positive points will be ignored for range calculation\&. For no restriction, just set \fIinSignDomain\fP to \fBQCP::sdBoth\fP (default)\&. \fIfoundRange\fP is an output parameter that indicates whether a range could be found or not\&. If this is false, you shouldn't use the returned range (e\&.g\&. no points in data)\&.
+.PP
+Note that \fIfoundRange\fP is not the same as \fBQCPRange::validRange\fP, since the range returned by this function may have size zero (e\&.g\&. when there is only one data point)\&. In this case \fIfoundRange\fP would return true, but the returned range is not a valid range in terms of \fBQCPRange::validRange\fP\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBrescaleAxes\fP, \fBgetValueRange\fP 
+.RE
+.PP
+
+.PP
+Implements \fBQCPAbstractPlottable\fP\&.
+.PP
+Definition at line \fB20285\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPGraph::getLines (QVector< QPointF > * lines, const \fBQCPDataRange\fP & dataRange) const\fC [protected]\fP"
+
+.PP
+Definition at line \fB20419\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QVector< \fBQCPDataRange\fP > QCPGraph::getNonNanSegments (const QVector< QPointF > * lineData, Qt::Orientation keyOrientation) const\fC [protected]\fP"
+
+.PP
+Definition at line \fB21154\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPGraph::getOptimizedLineData (QVector< \fBQCPGraphData\fP > * lineData, const QCPGraphDataContainer::const_iterator & begin, const QCPGraphDataContainer::const_iterator & end) const\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line \fB20851\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPGraph::getOptimizedScatterData (QVector< \fBQCPGraphData\fP > * scatterData, QCPGraphDataContainer::const_iterator begin, QCPGraphDataContainer::const_iterator end) const\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line \fB20943\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QVector< QPair< \fBQCPDataRange\fP, \fBQCPDataRange\fP > > QCPGraph::getOverlappingSegments (QVector< \fBQCPDataRange\fP > thisSegments, const QVector< QPointF > * thisData, QVector< \fBQCPDataRange\fP > otherSegments, const QVector< QPointF > * otherData) const\fC [protected]\fP"
+
+.PP
+Definition at line \fB21212\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPGraph::getScatters (QVector< QPointF > * scatters, const \fBQCPDataRange\fP & dataRange) const\fC [protected]\fP"
+
+.PP
+Definition at line \fB20460\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "\fBQCPRange\fP QCPGraph::getValueRange (bool & foundRange, \fBQCP::SignDomain\fP inSignDomain = \fC\fBQCP::sdBoth\fP\fP, const \fBQCPRange\fP & inKeyRange = \fC\fBQCPRange\fP()\fP) const\fC [virtual]\fP"
+Returns the coordinate range that the data points in the specified key range (\fIinKeyRange\fP) span in the value axis dimension\&. For logarithmic plots, one can set \fIinSignDomain\fP to either \fBQCP::sdNegative\fP or \fBQCP::sdPositive\fP in order to restrict the returned range to that sign domain\&. E\&.g\&. when only negative range is wanted, set \fIinSignDomain\fP to \fBQCP::sdNegative\fP and all positive points will be ignored for range calculation\&. For no restriction, just set \fIinSignDomain\fP to \fBQCP::sdBoth\fP (default)\&. \fIfoundRange\fP is an output parameter that indicates whether a range could be found or not\&. If this is false, you shouldn't use the returned range (e\&.g\&. no points in data)\&.
+.PP
+If \fIinKeyRange\fP has both lower and upper bound set to zero (is equal to \fC\fBQCPRange()\fP\fP), all data points are considered, without any restriction on the keys\&.
+.PP
+Note that \fIfoundRange\fP is not the same as \fBQCPRange::validRange\fP, since the range returned by this function may have size zero (e\&.g\&. when there is only one data point)\&. In this case \fIfoundRange\fP would return true, but the returned range is not a valid range in terms of \fBQCPRange::validRange\fP\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBrescaleAxes\fP, \fBgetKeyRange\fP 
+.RE
+.PP
+
+.PP
+Implements \fBQCPAbstractPlottable\fP\&.
+.PP
+Definition at line \fB20291\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPGraph::getVisibleDataBounds (QCPGraphDataContainer::const_iterator & begin, QCPGraphDataContainer::const_iterator & end, const \fBQCPDataRange\fP & rangeRestriction) const\fC [protected]\fP"
+This method outputs the currently visible data range via \fIbegin\fP and \fIend\fP\&. The returned range will also never exceed \fIrangeRestriction\fP\&.
+.PP
+This method takes into account that the drawing of data lines at the axis rect border always requires the points just outside the visible axis range\&. So \fIbegin\fP and \fIend\fP may actually indicate a range that contains one additional data point to the left and right of the visible axis range\&. 
+.PP
+Definition at line \fB21124\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "\fBLineStyle\fP QCPGraph::lineStyle () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB5183\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double QCPGraph::pointDistance (const QPointF & pixelPoint, QCPGraphDataContainer::const_iterator & closestData) const\fC [protected]\fP"
+
+.PP
+Definition at line \fB21577\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "int QCPGraph::scatterSkip () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB5185\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBQCPScatterStyle\fP QCPGraph::scatterStyle () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB5184\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "bool QCPGraph::segmentsIntersect (double aLower, double aUpper, double bLower, double bUpper, int & bPrecedence) const\fC [protected]\fP"
+
+.PP
+Definition at line \fB21275\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "double QCPGraph::selectTest (const QPointF & pos, bool onlySelectable, QVariant * details = \fC0\fP) const\fC [virtual]\fP"
+Implements a point-selection algorithm assuming the data (accessed via the 1D data interface) is point-like\&. Most subclasses will want to reimplement this method again, to provide a more accurate hit test based on the true data visualization geometry\&.
+.PP
+\\seebaseclassmethod 
+.PP
+Reimplemented from \fBQCPAbstractPlottable1D< QCPGraphData >\fP\&.
+.PP
+Definition at line \fB20263\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPGraph::setAdaptiveSampling (bool enabled)"
+Sets whether adaptive sampling shall be used when plotting this graph\&. \fBQCustomPlot\fP's adaptive sampling technique can drastically improve the replot performance for graphs with a larger number of points (e\&.g\&. above 10,000), without notably changing the appearance of the graph\&.
+.PP
+By default, adaptive sampling is enabled\&. Even if enabled, \fBQCustomPlot\fP decides whether adaptive sampling shall actually be used on a per-graph basis\&. So leaving adaptive sampling enabled has no disadvantage in almost all cases\&.
+.PP
+.PP
+As can be seen, line plots experience no visual degradation from adaptive sampling\&. Outliers are reproduced reliably, as well as the overall shape of the data set\&. The replot time reduces dramatically though\&. This allows \fBQCustomPlot\fP to display large amounts of data in realtime\&.
+.PP
+.PP
+Care must be taken when using high-density scatter plots in combination with adaptive sampling\&. The adaptive sampling algorithm treats scatter plots more carefully than line plots which still gives a significant reduction of replot times, but not quite as much as for line plots\&. This is because scatter plots inherently need more data points to be preserved in order to still resemble the original, non-adaptive-sampling plot\&. As shown above, the results still aren't quite identical, as banding occurs for the outer data points\&. This is in fact intentional, such that the boundaries of the data cloud stay visible to the viewer\&. How strong the banding appears, depends on the point density, i\&.e\&. the number of points in the plot\&.
+.PP
+For some situations with scatter plots it might thus be desirable to manually turn adaptive sampling off\&. For example, when saving the plot to disk\&. This can be achieved by setting \fIenabled\fP to false before issuing a command like \fBQCustomPlot::savePng\fP, and setting \fIenabled\fP back to true afterwards\&. 
+.PP
+Definition at line \fB20214\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPGraph::setChannelFillGraph (\fBQCPGraph\fP * targetGraph)"
+Sets the target graph for filling the area between this graph and \fItargetGraph\fP with the current brush (\fBsetBrush\fP)\&.
+.PP
+When \fItargetGraph\fP is set to 0, a normal graph fill to the zero-value-line will be shown\&. To disable any filling, set the brush to Qt::NoBrush\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetBrush\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB20163\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPGraph::setData (const QVector< double > & keys, const QVector< double > & values, bool alreadySorted = \fCfalse\fP)"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&.
+.PP
+Replaces the current data with the provided points in \fIkeys\fP and \fIvalues\fP\&. The provided vectors should have equal length\&. Else, the number of added points will be the size of the smallest vector\&.
+.PP
+If you can guarantee that the passed data points are sorted by \fIkeys\fP in ascending order, you can set \fIalreadySorted\fP to true, to improve performance by saving a sorting run\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBaddData\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB20110\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPGraph::setData (QSharedPointer< \fBQCPGraphDataContainer\fP > data)"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&.
+.PP
+Replaces the current data container with the provided \fIdata\fP container\&.
+.PP
+Since a QSharedPointer is used, multiple QCPGraphs may share the same data container safely\&. Modifying the data in the container will then affect all graphs that share the container\&. Sharing can be achieved by simply exchanging the data containers wrapped in shared pointers: 
+.PP
+.nf
+
+.fi
+.PP
+.PP
+If you do not wish to share containers, but create a copy from an existing container, rather use the \fBQCPDataContainer<DataType>::set\fP method on the graph's data container directly: 
+.PP
+.nf
+
+.fi
+.PP
+.PP
+\fBSee also\fP
+.RS 4
+\fBaddData\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB20094\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPGraph::setLineStyle (\fBLineStyle\fP ls)"
+Sets how the single data points are connected in the plot\&. For scatter-only plots, set \fIls\fP to \fBlsNone\fP and \fBsetScatterStyle\fP to the desired scatter style\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetScatterStyle\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB20122\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPGraph::setScatterSkip (int skip)"
+If scatters are displayed (scatter style not \fBQCPScatterStyle::ssNone\fP), \fIskip\fP number of scatter points are skipped/not drawn after every drawn scatter point\&.
+.PP
+This can be used to make the data appear sparser while for example still having a smooth line, and to improve performance for very high density plots\&.
+.PP
+If \fIskip\fP is set to 0 (default), all scatter points are drawn\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetScatterStyle\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB20149\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPGraph::setScatterStyle (const \fBQCPScatterStyle\fP & style)"
+Sets the visual appearance of single data points in the plot\&. If set to \fBQCPScatterStyle::ssNone\fP, no scatter points are drawn (e\&.g\&. for line-only-plots with appropriate line style)\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBQCPScatterStyle\fP, \fBsetLineStyle\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB20133\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBQCPLegend\fP\fC [friend]\fP"
+
+.PP
+Definition at line \fB5250\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "friend class \fBQCustomPlot\fP\fC [friend]\fP"
+
+.PP
+Definition at line \fB5249\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "bool QCPGraph::mAdaptiveSampling\fC [protected]\fP"
+
+.PP
+Definition at line \fB5213\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QPointer<\fBQCPGraph\fP> QCPGraph::mChannelFillGraph\fC [protected]\fP"
+
+.PP
+Definition at line \fB5212\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBLineStyle\fP QCPGraph::mLineStyle\fC [protected]\fP"
+
+.PP
+Definition at line \fB5209\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "int QCPGraph::mScatterSkip\fC [protected]\fP"
+
+.PP
+Definition at line \fB5211\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBQCPScatterStyle\fP QCPGraph::mScatterStyle\fC [protected]\fP"
+
+.PP
+Definition at line \fB5210\fP of file \fBqcustomplot\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for OmronPID from the source code\&.

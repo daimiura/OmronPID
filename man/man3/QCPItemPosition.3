@@ -1,0 +1,499 @@
+.TH "QCPItemPosition" 3 "Wed Mar 15 2023" "OmronPID" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QCPItemPosition \- Manages the position of an item\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBQCPItemAnchor\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBPositionType\fP { \fBptAbsolute\fP, \fBptViewportRatio\fP, \fBptAxisRectRatio\fP, \fBptPlotCoords\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPItemPosition\fP (\fBQCustomPlot\fP *parentPlot, \fBQCPAbstractItem\fP *parentItem, const QString &name)"
+.br
+.ti -1c
+.RI "\fBPositionType\fP \fBtype\fP () const"
+.br
+.ti -1c
+.RI "\fBPositionType\fP \fBtypeX\fP () const"
+.br
+.ti -1c
+.RI "\fBPositionType\fP \fBtypeY\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPItemAnchor\fP * \fBparentAnchor\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPItemAnchor\fP * \fBparentAnchorX\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPItemAnchor\fP * \fBparentAnchorY\fP () const"
+.br
+.ti -1c
+.RI "double \fBkey\fP () const"
+.br
+.ti -1c
+.RI "double \fBvalue\fP () const"
+.br
+.ti -1c
+.RI "QPointF \fBcoords\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPAxis\fP * \fBkeyAxis\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPAxis\fP * \fBvalueAxis\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPAxisRect\fP * \fBaxisRect\fP () const"
+.br
+.ti -1c
+.RI "virtual QPointF \fBpixelPosition\fP () const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "void \fBsetType\fP (\fBPositionType\fP \fBtype\fP)"
+.br
+.ti -1c
+.RI "void \fBsetTypeX\fP (\fBPositionType\fP \fBtype\fP)"
+.br
+.ti -1c
+.RI "void \fBsetTypeY\fP (\fBPositionType\fP \fBtype\fP)"
+.br
+.ti -1c
+.RI "bool \fBsetParentAnchor\fP (\fBQCPItemAnchor\fP *\fBparentAnchor\fP, bool keepPixelPosition=false)"
+.br
+.ti -1c
+.RI "bool \fBsetParentAnchorX\fP (\fBQCPItemAnchor\fP *\fBparentAnchor\fP, bool keepPixelPosition=false)"
+.br
+.ti -1c
+.RI "bool \fBsetParentAnchorY\fP (\fBQCPItemAnchor\fP *\fBparentAnchor\fP, bool keepPixelPosition=false)"
+.br
+.ti -1c
+.RI "void \fBsetCoords\fP (double key, double value)"
+.br
+.ti -1c
+.RI "void \fBsetCoords\fP (const QPointF &coords)"
+.br
+.ti -1c
+.RI "void \fBsetAxes\fP (\fBQCPAxis\fP *keyAxis, \fBQCPAxis\fP *valueAxis)"
+.br
+.ti -1c
+.RI "void \fBsetAxisRect\fP (\fBQCPAxisRect\fP *axisRect)"
+.br
+.ti -1c
+.RI "void \fBsetPixelPosition\fP (const QPointF &\fBpixelPosition\fP)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBQCPItemAnchor\fP
+.in +1c
+.ti -1c
+.RI "\fBQCPItemAnchor\fP (\fBQCustomPlot\fP *parentPlot, \fBQCPAbstractItem\fP *parentItem, const QString &name, int anchorId=\-1)"
+.br
+.ti -1c
+.RI "QString \fBname\fP () const"
+.br
+.ti -1c
+.RI "virtual QPointF \fBpixelPosition\fP () const"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fBQCPItemPosition\fP * \fBtoQCPItemPosition\fP () Q_DECL_OVERRIDE"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBQCPItemAnchor\fP
+.in +1c
+.ti -1c
+.RI "virtual \fBQCPItemPosition\fP * \fBtoQCPItemPosition\fP ()"
+.br
+.ti -1c
+.RI "void \fBaddChildX\fP (\fBQCPItemPosition\fP *pos)"
+.br
+.ti -1c
+.RI "void \fBremoveChildX\fP (\fBQCPItemPosition\fP *pos)"
+.br
+.ti -1c
+.RI "void \fBaddChildY\fP (\fBQCPItemPosition\fP *pos)"
+.br
+.ti -1c
+.RI "void \fBremoveChildY\fP (\fBQCPItemPosition\fP *pos)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBPositionType\fP \fBmPositionTypeX\fP"
+.br
+.ti -1c
+.RI "\fBPositionType\fP \fBmPositionTypeY\fP"
+.br
+.ti -1c
+.RI "QPointer< \fBQCPAxis\fP > \fBmKeyAxis\fP"
+.br
+.ti -1c
+.RI "QPointer< \fBQCPAxis\fP > \fBmValueAxis\fP"
+.br
+.ti -1c
+.RI "QPointer< \fBQCPAxisRect\fP > \fBmAxisRect\fP"
+.br
+.ti -1c
+.RI "double \fBmKey\fP"
+.br
+.ti -1c
+.RI "double \fBmValue\fP"
+.br
+.ti -1c
+.RI "\fBQCPItemAnchor\fP * \fBmParentAnchorX\fP"
+.br
+.ti -1c
+.RI "\fBQCPItemAnchor\fP * \fBmParentAnchorY\fP"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBQCPItemAnchor\fP
+.in +1c
+.ti -1c
+.RI "QString \fBmName\fP"
+.br
+.ti -1c
+.RI "\fBQCustomPlot\fP * \fBmParentPlot\fP"
+.br
+.ti -1c
+.RI "\fBQCPAbstractItem\fP * \fBmParentItem\fP"
+.br
+.ti -1c
+.RI "int \fBmAnchorId\fP"
+.br
+.ti -1c
+.RI "QSet< \fBQCPItemPosition\fP * > \fBmChildrenX\fP"
+.br
+.ti -1c
+.RI "QSet< \fBQCPItemPosition\fP * > \fBmChildrenY\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Manages the position of an item\&. 
+
+Every item has at least one public \fBQCPItemPosition\fP member pointer which provides ways to position the item on the \fBQCustomPlot\fP surface\&. Some items have multiple positions, for example \fBQCPItemRect\fP has two: \fItopLeft\fP and \fIbottomRight\fP\&.
+.PP
+\fBQCPItemPosition\fP has a type (\fBPositionType\fP) that can be set with \fBsetType\fP\&. This type defines how coordinates passed to \fBsetCoords\fP are to be interpreted, e\&.g\&. as absolute pixel coordinates, as plot coordinates of certain axes, etc\&. For more advanced plots it is also possible to assign different types per X/Y coordinate of the position (see \fBsetTypeX\fP, \fBsetTypeY\fP)\&. This way an item could be positioned at a fixed pixel distance from the top in the Y direction, while following a plot coordinate in the X direction\&.
+.PP
+A \fBQCPItemPosition\fP may have a parent \fBQCPItemAnchor\fP, see \fBsetParentAnchor\fP\&. This way you can tie multiple items together\&. If the \fBQCPItemPosition\fP has a parent, its coordinates (\fBsetCoords\fP) are considered to be absolute pixels in the reference frame of the parent anchor, where (0, 0) means directly ontop of the parent anchor\&. For example, You could attach the \fIstart\fP position of a \fBQCPItemLine\fP to the \fIbottom\fP anchor of a \fBQCPItemText\fP to make the starting point of the line always be centered under the text label, no matter where the text is moved to\&. For more advanced plots, it is possible to assign different parent anchors per X/Y coordinate of the position, see \fBsetParentAnchorX\fP, \fBsetParentAnchorY\fP\&. This way an item could follow another item in the X direction but stay at a fixed position in the Y direction\&. Or even follow item A in X, and item B in Y\&.
+.PP
+Note that every \fBQCPItemPosition\fP inherits from \fBQCPItemAnchor\fP and thus can itself be used as parent anchor for other positions\&.
+.PP
+To set the apparent pixel position on the \fBQCustomPlot\fP surface directly, use \fBsetPixelPosition\fP\&. This works no matter what type this \fBQCPItemPosition\fP is or what parent-child situation it is in, as \fBsetPixelPosition\fP transforms the coordinates appropriately, to make the position appear at the specified pixel values\&. 
+.PP
+Definition at line \fB3435\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBQCPItemPosition::PositionType\fP"
+Defines the ways an item position can be specified\&. Thus it defines what the numbers passed to \fBsetCoords\fP actually mean\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetType\fP 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIptAbsolute \fP\fP
+Static positioning in pixels, starting from the top left corner of the viewport/widget\&. 
+.TP
+\fB\fIptViewportRatio \fP\fP
+Static positioning given by a fraction of the viewport size\&. For example, if you call setCoords(0, 0), the position will be at the top left corner of the viewport/widget\&. setCoords(1, 1) will be at the bottom right corner, setCoords(0\&.5, 0) will be horizontally centered and vertically at the top of the viewport/widget, etc\&. 
+.TP
+\fB\fIptAxisRectRatio \fP\fP
+Static positioning given by a fraction of the axis rect size (see \fBsetAxisRect\fP)\&. For example, if you call setCoords(0, 0), the position will be at the top left corner of the axis rect\&. setCoords(1, 1) will be at the bottom right corner, setCoords(0\&.5, 0) will be horizontally centered and vertically at the top of the axis rect, etc\&. You can also go beyond the axis rect by providing negative coordinates or coordinates larger than 1\&. 
+.TP
+\fB\fIptPlotCoords \fP\fP
+Dynamic positioning at a plot coordinate defined by two axes (see \fBsetAxes\fP)\&. 
+.PP
+Definition at line \fB3445\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QCPItemPosition::QCPItemPosition (\fBQCustomPlot\fP * parentPlot, \fBQCPAbstractItem\fP * parentItem, const QString & name)"
+Creates a new \fBQCPItemPosition\fP\&. You shouldn't create \fBQCPItemPosition\fP instances directly, even if you want to make a new item subclass\&. Use \fBQCPAbstractItem::createPosition\fP instead, as explained in the subclassing section of the \fBQCPAbstractItem\fP documentation\&. 
+.PP
+Definition at line \fB11488\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QCPItemPosition::~QCPItemPosition ()\fC [virtual]\fP"
+
+.PP
+Definition at line \fB11499\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBQCPAxisRect\fP * QCPItemPosition::axisRect () const"
+
+.PP
+Definition at line \fB11522\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QPointF QCPItemPosition::coords () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB3468\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double QCPItemPosition::key () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB3466\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBQCPAxis\fP * QCPItemPosition::keyAxis () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB3469\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBQCPItemAnchor\fP * QCPItemPosition::parentAnchor () const\fC [inline]\fP"
+Returns the current parent anchor\&.
+.PP
+If different parent anchors were set for X and Y (\fBsetParentAnchorX\fP, \fBsetParentAnchorY\fP), this method returns the parent anchor of the Y coordinate\&. In that case rather use \fIparentAnchorX()\fP and \fIparentAnchorY()\fP\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetParentAnchor\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB3463\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBQCPItemAnchor\fP * QCPItemPosition::parentAnchorX () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB3464\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBQCPItemAnchor\fP * QCPItemPosition::parentAnchorY () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB3465\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QPointF QCPItemPosition::pixelPosition () const\fC [virtual]\fP"
+Returns the final absolute pixel position of the \fBQCPItemPosition\fP on the \fBQCustomPlot\fP surface\&. It includes all effects of type (\fBsetType\fP) and possible parent anchors (\fBsetParentAnchor\fP)\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetPixelPosition\fP 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBQCPItemAnchor\fP\&.
+.PP
+Definition at line \fB11812\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPItemPosition::setAxes (\fBQCPAxis\fP * keyAxis, \fBQCPAxis\fP * valueAxis)"
+When \fBsetType\fP is \fBptPlotCoords\fP, this function may be used to specify the axes the coordinates set with \fBsetCoords\fP relate to\&. By default they are set to the initial xAxis and yAxis of the \fBQCustomPlot\fP\&. 
+.PP
+Definition at line \fB11912\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPItemPosition::setAxisRect (\fBQCPAxisRect\fP * axisRect)"
+When \fBsetType\fP is \fBptAxisRectRatio\fP, this function may be used to specify the axis rect the coordinates set with \fBsetCoords\fP relate to\&. By default this is set to the main axis rect of the \fBQCustomPlot\fP\&. 
+.PP
+Definition at line \fB11923\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPItemPosition::setCoords (const QPointF & pos)"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&.
+.PP
+Sets the coordinates as a QPointF \fIpos\fP where pos\&.x has the meaning of \fIkey\fP and pos\&.y the meaning of \fIvalue\fP of the \fBsetCoords(double key, double value)\fP method\&. 
+.PP
+Definition at line \fB11801\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPItemPosition::setCoords (double key, double value)"
+Sets the coordinates of this \fBQCPItemPosition\fP\&. What the coordinates mean, is defined by the type (\fBsetType\fP, \fBsetTypeX\fP, \fBsetTypeY\fP)\&.
+.PP
+For example, if the type is \fBptAbsolute\fP, \fIkey\fP and \fIvalue\fP mean the x and y pixel position on the \fBQCustomPlot\fP surface\&. In that case the origin (0, 0) is in the top left corner of the \fBQCustomPlot\fP viewport\&. If the type is \fBptPlotCoords\fP, \fIkey\fP and \fIvalue\fP mean a point in the plot coordinate system defined by the axes set by \fBsetAxes\fP\&. By default those are the \fBQCustomPlot\fP's xAxis and yAxis\&. See the documentation of \fBsetType\fP for other available coordinate types and their meaning\&.
+.PP
+If different types were configured for X and Y (\fBsetTypeX\fP, \fBsetTypeY\fP), \fIkey\fP and \fIvalue\fP must also be provided in the different coordinate systems\&. Here, the X type refers to \fIkey\fP, and the Y type refers to \fIvalue\fP\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetPixelPosition\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB11790\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "bool QCPItemPosition::setParentAnchor (\fBQCPItemAnchor\fP * parentAnchor, bool keepPixelPosition = \fCfalse\fP)"
+Sets the parent of this \fBQCPItemPosition\fP to \fIparentAnchor\fP\&. This means the position will now follow any position changes of the anchor\&. The local coordinate system of positions with a parent anchor always is absolute pixels, with (0, 0) being exactly on top of the parent anchor\&. (Hence the type shouldn't be set to \fBptPlotCoords\fP for positions with parent anchors\&.)
+.PP
+if \fIkeepPixelPosition\fP is true, the current pixel position of the \fBQCPItemPosition\fP is preserved during reparenting\&. If it's set to false, the coordinates are set to (0, 0), i\&.e\&. the position will be exactly on top of the parent anchor\&.
+.PP
+To remove this \fBQCPItemPosition\fP from any parent anchor, set \fIparentAnchor\fP to 0\&.
+.PP
+If the \fBQCPItemPosition\fP previously had no parent and the type is \fBptPlotCoords\fP, the type is set to \fBptAbsolute\fP, to keep the position in a valid state\&.
+.PP
+This method sets the parent anchor for both X and Y directions\&. It is also possible to set different parents for X and Y, see \fBsetParentAnchorX\fP, \fBsetParentAnchorY\fP\&. 
+.PP
+Definition at line \fB11636\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "bool QCPItemPosition::setParentAnchorX (\fBQCPItemAnchor\fP * parentAnchor, bool keepPixelPosition = \fCfalse\fP)"
+This method sets the parent anchor of the X coordinate to \fIparentAnchor\fP\&.
+.PP
+For a detailed description of what a parent anchor is, see the documentation of \fBsetParentAnchor\fP\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetParentAnchor\fP, \fBsetParentAnchorY\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB11650\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "bool QCPItemPosition::setParentAnchorY (\fBQCPItemAnchor\fP * parentAnchor, bool keepPixelPosition = \fCfalse\fP)"
+This method sets the parent anchor of the Y coordinate to \fIparentAnchor\fP\&.
+.PP
+For a detailed description of what a parent anchor is, see the documentation of \fBsetParentAnchor\fP\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetParentAnchor\fP, \fBsetParentAnchorX\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB11715\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPItemPosition::setPixelPosition (const QPointF & pixelPosition)"
+Sets the apparent pixel position\&. This works no matter what type (\fBsetType\fP) this \fBQCPItemPosition\fP is or what parent-child situation it is in, as coordinates are transformed appropriately, to make the position finally appear at the specified pixel values\&.
+.PP
+Only if the type is \fBptAbsolute\fP and no parent anchor is set, this function's effect is identical to that of \fBsetCoords\fP\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBpixelPosition\fP, \fBsetCoords\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB11938\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPItemPosition::setType (\fBQCPItemPosition::PositionType\fP type)"
+Sets the type of the position\&. The type defines how the coordinates passed to \fBsetCoords\fP should be handled and how the \fBQCPItemPosition\fP should behave in the plot\&.
+.PP
+The possible values for \fItype\fP can be separated in two main categories:
+.PP
+.PD 0
+.IP "\(bu" 2
+The position is regarded as a point in plot coordinates\&. This corresponds to \fBptPlotCoords\fP and requires two axes that define the plot coordinate system\&. They can be specified with \fBsetAxes\fP\&. By default, the \fBQCustomPlot\fP's x- and yAxis are used\&.
+.PP
+.PD 0
+.IP "\(bu" 2
+The position is fixed on the \fBQCustomPlot\fP surface, i\&.e\&. independent of axis ranges\&. This corresponds to all other types, i\&.e\&. \fBptAbsolute\fP, \fBptViewportRatio\fP and \fBptAxisRectRatio\fP\&. They differ only in the way the absolute position is described, see the documentation of \fBPositionType\fP for details\&. For \fBptAxisRectRatio\fP, note that you can specify the axis rect with \fBsetAxisRect\fP\&. By default this is set to the main axis rect\&.
+.PP
+Note that the position type \fBptPlotCoords\fP is only available (and sensible) when the position has no parent anchor (\fBsetParentAnchor\fP)\&.
+.PP
+If the type is changed, the apparent pixel position on the plot is preserved\&. This means the coordinates as retrieved with coords() and set with \fBsetCoords\fP may change in the process\&.
+.PP
+This method sets the type for both X and Y directions\&. It is also possible to set different types for X and Y, see \fBsetTypeX\fP, \fBsetTypeY\fP\&. 
+.PP
+Definition at line \fB11552\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPItemPosition::setTypeX (\fBQCPItemPosition::PositionType\fP type)"
+This method sets the position type of the X coordinate to \fItype\fP\&.
+.PP
+For a detailed description of what a position type is, see the documentation of \fBsetType\fP\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetType\fP, \fBsetTypeY\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB11565\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPItemPosition::setTypeY (\fBQCPItemPosition::PositionType\fP type)"
+This method sets the position type of the Y coordinate to \fItype\fP\&.
+.PP
+For a detailed description of what a position type is, see the documentation of \fBsetType\fP\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetType\fP, \fBsetTypeX\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB11595\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "virtual \fBQCPItemPosition\fP * QCPItemPosition::toQCPItemPosition ()\fC [inline]\fP, \fC [protected]\fP, \fC [virtual]\fP"
+Returns 0 if this instance is merely a \fBQCPItemAnchor\fP, and a valid pointer of type QCPItemPosition* if it actually is a \fBQCPItemPosition\fP (which is a subclass of \fBQCPItemAnchor\fP)\&.
+.PP
+This safe downcast functionality could also be achieved with a dynamic_cast\&. However, \fBQCustomPlot\fP avoids dynamic_cast to work with projects that don't have RTTI support enabled (e\&.g\&. -fno-rtti flag with gcc compiler)\&. 
+.PP
+Reimplemented from \fBQCPItemAnchor\fP\&.
+.PP
+Definition at line \fB3496\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBQCPItemPosition::PositionType\fP * QCPItemPosition::type () const\fC [inline]\fP"
+Returns the current position type\&.
+.PP
+If different types were set for X and Y (\fBsetTypeX\fP, \fBsetTypeY\fP), this method returns the type of the X coordinate\&. In that case rather use \fItypeX()\fP and \fItypeY()\fP\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetType\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB3460\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBPositionType\fP QCPItemPosition::typeX () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB3461\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBPositionType\fP QCPItemPosition::typeY () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB3462\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double QCPItemPosition::value () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB3467\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBQCPAxis\fP * QCPItemPosition::valueAxis () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB3470\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QPointer<\fBQCPAxisRect\fP> QCPItemPosition::mAxisRect\fC [protected]\fP"
+
+.PP
+Definition at line \fB3491\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double QCPItemPosition::mKey\fC [protected]\fP"
+
+.PP
+Definition at line \fB3492\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QPointer<\fBQCPAxis\fP> QCPItemPosition::mKeyAxis\fC [protected]\fP"
+
+.PP
+Definition at line \fB3490\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBQCPItemAnchor\fP* QCPItemPosition::mParentAnchorX\fC [protected]\fP"
+
+.PP
+Definition at line \fB3493\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBQCPItemAnchor\fP * QCPItemPosition::mParentAnchorY\fC [protected]\fP"
+
+.PP
+Definition at line \fB3493\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBPositionType\fP QCPItemPosition::mPositionTypeX\fC [protected]\fP"
+
+.PP
+Definition at line \fB3489\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBPositionType\fP QCPItemPosition::mPositionTypeY\fC [protected]\fP"
+
+.PP
+Definition at line \fB3489\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double QCPItemPosition::mValue\fC [protected]\fP"
+
+.PP
+Definition at line \fB3492\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QPointer<\fBQCPAxis\fP> QCPItemPosition::mValueAxis\fC [protected]\fP"
+
+.PP
+Definition at line \fB3490\fP of file \fBqcustomplot\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for OmronPID from the source code\&.

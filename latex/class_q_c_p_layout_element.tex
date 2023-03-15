@@ -7,12 +7,20 @@ The abstract base class for all objects that form the layout system.
 
 
 
-{\ttfamily \#include $<$qcustomplot.\+h$>$}
-
-Inheritance diagram for QCPLayout\+Element\+:\begin{figure}[H]
+Inheritance diagram for QCPLayout\+Element\+:\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=3.376884cm]{class_q_c_p_layout_element}
+\includegraphics[width=350pt]{class_q_c_p_layout_element__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for QCPLayout\+Element\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_layout_element__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Types}
@@ -30,9 +38,7 @@ enum \mbox{\hyperlink{class_q_c_p_layout_element_a0afb3e5773529e4bd20e448f81be4d
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_q_c_p_layout_element_a8947f0ada17e672aaba3d424cbbb67e3}{QCPLayout\+Element}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_a36ed5b292b90934b524a4e5866a3526c}{parent\+Plot}}=0)
-\item 
-virtual \mbox{\hyperlink{class_q_c_p_layout_element_a0dc52343920011b3e72d61fc94ed3400}{$\sim$\+QCPLayout\+Element}} ()
+\mbox{\hyperlink{class_q_c_p_layout_element_a8947f0ada17e672aaba3d424cbbb67e3}{QCPLayout\+Element}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$parent\+Plot=0)
 \item 
 \mbox{\hyperlink{class_q_c_p_layout}{QCPLayout}} $\ast$ \mbox{\hyperlink{class_q_c_p_layout_element_a4efdcbde9d28f410e5ef166c9d691deb}{layout}} () const
 \item 
@@ -58,9 +64,9 @@ QHash$<$ \mbox{\hyperlink{namespace_q_c_p_a7e487e3e2ccb62ab7771065bab7cae54}{QCP
 \item 
 void \mbox{\hyperlink{class_q_c_p_layout_element_a38975ea13e36de8e53391ce41d94bc0f}{set\+Outer\+Rect}} (const QRect \&\mbox{\hyperlink{class_q_c_p_layout_element_a208effccfe2cca4a0eaf9393e60f2dd4}{rect}})
 \item 
-void \mbox{\hyperlink{class_q_c_p_layout_element_a8f450b1f3f992ad576fce2c63d8b79cf}{set\+Margins}} (const QMargins \&\mbox{\hyperlink{class_q_c_p_layout_element_af4ac9450aa2d60863bf3a8ea0c940c9d}{margins}})
+void \mbox{\hyperlink{class_q_c_p_layout_element_a8f450b1f3f992ad576fce2c63d8b79cf}{set\+Margins}} (const QMargins \&margins)
 \item 
-void \mbox{\hyperlink{class_q_c_p_layout_element_a0a8a17abc16b7923159fcc7608f94673}{set\+Minimum\+Margins}} (const QMargins \&\mbox{\hyperlink{class_q_c_p_layout_element_af4ac9450aa2d60863bf3a8ea0c940c9d}{margins}})
+void \mbox{\hyperlink{class_q_c_p_layout_element_a0a8a17abc16b7923159fcc7608f94673}{set\+Minimum\+Margins}} (const QMargins \&margins)
 \item 
 void \mbox{\hyperlink{class_q_c_p_layout_element_accfda49994e3e6d51ed14504abf9d27d}{set\+Auto\+Margins}} (QCP\+::\+Margin\+Sides sides)
 \item 
@@ -84,14 +90,12 @@ virtual QSize \mbox{\hyperlink{class_q_c_p_layout_element_ad96efb977a26e360e8a64
 \item 
 virtual QList$<$ \mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}} $\ast$ $>$ \mbox{\hyperlink{class_q_c_p_layout_element_a76dec8cb31e498994a944d7647a43309}{elements}} (bool recursive) const
 \item 
-virtual double \mbox{\hyperlink{class_q_c_p_layout_element_ae97f483cccedadbf18ea4525ef240ee4}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant $\ast$details=0) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual double \mbox{\hyperlink{class_q_c_p_layout_element_ae97f483cccedadbf18ea4525ef240ee4}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant $\ast$details=0) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_q_c_p_layerable_a74c0fa237f29bf0e49565013fc5d1ec0}{QCPLayerable}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$plot, QString target\+Layer=QString(), \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}}=0)
-\item 
-virtual \mbox{\hyperlink{class_q_c_p_layerable_a4231cf5b3601d6d3a5781283e7a9735b}{$\sim$\+QCPLayerable}} ()
 \item 
 bool \mbox{\hyperlink{class_q_c_p_layerable_af0297b944b6192b6d67d00bff41b6b70}{visible}} () const
 \item 
@@ -105,7 +109,7 @@ bool \mbox{\hyperlink{class_q_c_p_layerable_a71cbd212fde2703cee076e204a475709}{a
 \item 
 void \mbox{\hyperlink{class_q_c_p_layerable_a3bed99ddc396b48ce3ebfdc0418744f8}{set\+Visible}} (bool on)
 \item 
-Q\+\_\+\+SLOT bool \mbox{\hyperlink{class_q_c_p_layerable_ab0d0da6d2de45a118886d2c8e16d5a54}{set\+Layer}} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_a9d4e121a7f1d2314f906fe698209cac9}{layer}})
+Q\+\_\+\+SLOT bool \mbox{\hyperlink{class_q_c_p_layerable_ab0d0da6d2de45a118886d2c8e16d5a54}{set\+Layer}} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$layer)
 \item 
 bool \mbox{\hyperlink{class_q_c_p_layerable_ab25a0e7b897993b44447caee0f142083}{set\+Layer}} (const QString \&layer\+Name)
 \item 
@@ -122,24 +126,26 @@ virtual int \mbox{\hyperlink{class_q_c_p_layout_element_a005c9f0fe84bc1591a2cf2c
 \item 
 virtual void \mbox{\hyperlink{class_q_c_p_layout_element_a765f041a73af0c2de41b41a5a03e31a4}{layout\+Changed}} ()
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_layout_element_a0a8f18141bcf46cf40ad4c13324ff346}{apply\+Default\+Antialiasing\+Hint}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) const \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual void \mbox{\hyperlink{class_q_c_p_layout_element_a0a8f18141bcf46cf40ad4c13324ff346}{apply\+Default\+Antialiasing\+Hint}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_layout_element_ad1c597b1d608cfdd86e7b76819a94cfb}{draw}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual void \mbox{\hyperlink{class_q_c_p_layout_element_ad1c597b1d608cfdd86e7b76819a94cfb}{draw}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_layout_element_ab4bb5c5a958451f5f153fdce350f13cf}{parent\+Plot\+Initialized}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_a36ed5b292b90934b524a4e5866a3526c}{parent\+Plot}}) \mbox{\hyperlink{qcustomplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+virtual void \mbox{\hyperlink{class_q_c_p_layout_element_ab4bb5c5a958451f5f153fdce350f13cf}{parent\+Plot\+Initialized}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$parent\+Plot) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}}
 \begin{DoxyCompactItemize}
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_layerable_ab20b7dbd8e0249ed61adb9622c427382}{parent\+Plot\+Initialized}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_a36ed5b292b90934b524a4e5866a3526c}{parent\+Plot}})
+virtual void \mbox{\hyperlink{class_q_c_p_layerable_ab20b7dbd8e0249ed61adb9622c427382}{parent\+Plot\+Initialized}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$parent\+Plot)
 \item 
 virtual \mbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037}{QCP\+::\+Interaction}} \mbox{\hyperlink{class_q_c_p_layerable_a908c9edda761886f33893be326dab77d}{selection\+Category}} () const
 \item 
 virtual QRect \mbox{\hyperlink{class_q_c_p_layerable_acbcfc9ecc75433747b1978a77b1864b3}{clip\+Rect}} () const
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_layerable_afdf83ddc6a265cbf4c89fe99d3d93473}{apply\+Default\+Antialiasing\+Hint}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) const =0
+\mbox{\Hypertarget{class_q_c_p_layerable_afdf83ddc6a265cbf4c89fe99d3d93473}\label{class_q_c_p_layerable_afdf83ddc6a265cbf4c89fe99d3d93473}} 
+virtual void {\bfseries apply\+Default\+Antialiasing\+Hint} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter) const =0
 \item 
-virtual void \mbox{\hyperlink{class_q_c_p_layerable_aecf2f7087482d4b6a78cb2770e5ed12d}{draw}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter)=0
+\mbox{\Hypertarget{class_q_c_p_layerable_aecf2f7087482d4b6a78cb2770e5ed12d}\label{class_q_c_p_layerable_aecf2f7087482d4b6a78cb2770e5ed12d}} 
+virtual void {\bfseries draw} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter)=0
 \item 
 virtual void \mbox{\hyperlink{class_q_c_p_layerable_a7498c2d0d081cf7cad0fb3bb93aa0e91}{select\+Event}} (QMouse\+Event $\ast$event, bool additive, const QVariant \&details, bool $\ast$selection\+State\+Changed)
 \item 
@@ -155,11 +161,11 @@ virtual void \mbox{\hyperlink{class_q_c_p_layerable_a4171e2e823aca242dd0279f00ed
 \item 
 virtual void \mbox{\hyperlink{class_q_c_p_layerable_a47dfd7b8fd99c08ca54e09c362b6f022}{wheel\+Event}} (QWheel\+Event $\ast$event)
 \item 
-void \mbox{\hyperlink{class_q_c_p_layerable_a8cbe5a0c9a5674249982f5ca5f8e02bc}{initialize\+Parent\+Plot}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_a36ed5b292b90934b524a4e5866a3526c}{parent\+Plot}})
+void \mbox{\hyperlink{class_q_c_p_layerable_a8cbe5a0c9a5674249982f5ca5f8e02bc}{initialize\+Parent\+Plot}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$parent\+Plot)
 \item 
 void \mbox{\hyperlink{class_q_c_p_layerable_aa23c893671f1f6744ac235cf2204cf3a}{set\+Parent\+Layerable}} (\mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}})
 \item 
-bool \mbox{\hyperlink{class_q_c_p_layerable_af94484cfb7cbbddb7de522e9be71d9a4}{move\+To\+Layer}} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_a9d4e121a7f1d2314f906fe698209cac9}{layer}}, bool prepend)
+bool \mbox{\hyperlink{class_q_c_p_layerable_af94484cfb7cbbddb7de522e9be71d9a4}{move\+To\+Layer}} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$layer, bool prepend)
 \item 
 void \mbox{\hyperlink{class_q_c_p_layerable_acb663e375d2d36dc5c55021ee5a2119b}{apply\+Antialiasing\+Hint}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter, bool local\+Antialiased, \mbox{\hyperlink{namespace_q_c_p_ae55dbe315d41fe80f29ba88100843a0c}{QCP\+::\+Antialiased\+Element}} override\+Element) const
 \end{DoxyCompactItemize}
@@ -221,11 +227,15 @@ The abstract base class for all objects that form the layout system.
 
 This is an abstract base class. As such, it can\textquotesingle{}t be instantiated directly, rather use one of its subclasses.
 
-A Layout element is a rectangular object which can be placed in layouts. It has an outer rect (\mbox{\hyperlink{class_q_c_p_layout_element_a2a32a12a6161c9dffbadeb9cc585510c}{QCPLayout\+Element\+::outer\+Rect}}) and an inner rect (\mbox{\hyperlink{class_q_c_p_layout_element_a208effccfe2cca4a0eaf9393e60f2dd4}{QCPLayout\+Element\+::rect}}). The difference between outer and inner rect is called its margin. The margin can either be set to automatic or manual (\mbox{\hyperlink{class_q_c_p_layout_element_accfda49994e3e6d51ed14504abf9d27d}{set\+Auto\+Margins}}) on a per-\/side basis. If a side is set to manual, that margin can be set explicitly with \mbox{\hyperlink{class_q_c_p_layout_element_a8f450b1f3f992ad576fce2c63d8b79cf}{set\+Margins}} and will stay fixed at that value. If it\textquotesingle{}s set to automatic, the layout element subclass will control the value itself (via \mbox{\hyperlink{class_q_c_p_layout_element_a005c9f0fe84bc1591a2cf2c46fd477b4}{calculate\+Auto\+Margin}}).
+A Layout element is a rectangular object which can be placed in layouts. It has an outer rect (\mbox{\hyperlink{class_q_c_p_layout_element_a2a32a12a6161c9dffbadeb9cc585510c}{QCPLayout\+Element\+::outer\+Rect}}) and an inner rect (\mbox{\hyperlink{class_q_c_p_layout_element_a208effccfe2cca4a0eaf9393e60f2dd4}{QCPLayout\+Element\+::rect}}). The difference between outer and inner rect is called its margin. The margin can either be set to automatic or manual (\mbox{\hyperlink{class_q_c_p_layout_element_accfda49994e3e6d51ed14504abf9d27d}{set\+Auto\+Margins}}) on a per-\/side basis. If a side is set to manual, that margin can be set explicitly with \mbox{\hyperlink{class_q_c_p_layout_element_a8f450b1f3f992ad576fce2c63d8b79cf}{set\+Margins}} and will stay fixed at that value. If it\textquotesingle{}s set to automatic, the layout element subclass will control the value itself (via calculate\+Auto\+Margin).
 
 Layout elements can be placed in layouts (base class \mbox{\hyperlink{class_q_c_p_layout}{QCPLayout}}) like \mbox{\hyperlink{class_q_c_p_layout_grid}{QCPLayout\+Grid}}. The top level layout is reachable via \mbox{\hyperlink{class_q_custom_plot_af1a1f1f571237deb7c2bd34a5e9f018f}{QCustom\+Plot\+::plot\+Layout}}, and is a \mbox{\hyperlink{class_q_c_p_layout_grid}{QCPLayout\+Grid}}. Since \mbox{\hyperlink{class_q_c_p_layout}{QCPLayout}} itself derives from \mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}}, layouts can be nested.
 
 Thus in \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} one can divide layout elements into two categories\+: The ones that are invisible by themselves, because they don\textquotesingle{}t draw anything. Their only purpose is to manage the position and size of other layout elements. This category of layout elements usually use \mbox{\hyperlink{class_q_c_p_layout}{QCPLayout}} as base class. Then there is the category of layout elements which actually draw something. For example, \mbox{\hyperlink{class_q_c_p_axis_rect}{QCPAxis\+Rect}}, \mbox{\hyperlink{class_q_c_p_legend}{QCPLegend}} and \mbox{\hyperlink{class_q_c_p_text_element}{QCPText\+Element}} are of this category. This does not necessarily mean that the latter category can\textquotesingle{}t have child layout elements. \mbox{\hyperlink{class_q_c_p_legend}{QCPLegend}} for instance, actually derives from \mbox{\hyperlink{class_q_c_p_layout_grid}{QCPLayout\+Grid}} and the individual legend items are child layout elements in the grid layout. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01179}{1179}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+
 
 \doxysubsection{Member Enumeration Documentation}
 \mbox{\Hypertarget{class_q_c_p_layout_element_a0afb3e5773529e4bd20e448f81be4d2a}\label{class_q_c_p_layout_element_a0afb3e5773529e4bd20e448f81be4d2a}} 
@@ -249,6 +259,10 @@ scr\+Outer\+Rect&Minimum/\+Maximum size constraints apply to outer rect, thus in
 \hline
 
 \end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01211}{1211}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_layout_element_a0d83360e05735735aaf6d7983c56374d}\label{class_q_c_p_layout_element_a0d83360e05735735aaf6d7983c56374d}} 
 \index{QCPLayoutElement@{QCPLayoutElement}!UpdatePhase@{UpdatePhase}}
 \index{UpdatePhase@{UpdatePhase}!QCPLayoutElement@{QCPLayoutElement}}
@@ -271,6 +285,10 @@ up\+Layout&Final phase in which the layout system places the rects of the elemen
 \end{DoxyEnumFields}
 
 
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01197}{1197}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_q_c_p_layout_element_a8947f0ada17e672aaba3d424cbbb67e3}\label{class_q_c_p_layout_element_a8947f0ada17e672aaba3d424cbbb67e3}} 
 \index{QCPLayoutElement@{QCPLayoutElement}!QCPLayoutElement@{QCPLayoutElement}}
@@ -278,11 +296,19 @@ up\+Layout&Final phase in which the layout system places the rects of the elemen
 \doxysubsubsection{\texorpdfstring{QCPLayoutElement()}{QCPLayoutElement()}}
 {\footnotesize\ttfamily QCPLayout\+Element\+::\+QCPLayout\+Element (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$}]{parent\+Plot = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
-Creates an instance of \mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}} and sets default values. \mbox{\Hypertarget{class_q_c_p_layout_element_a0dc52343920011b3e72d61fc94ed3400}\label{class_q_c_p_layout_element_a0dc52343920011b3e72d61fc94ed3400}} 
+Creates an instance of \mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}} and sets default values. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l03175}{3175}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+\mbox{\Hypertarget{class_q_c_p_layout_element_a0dc52343920011b3e72d61fc94ed3400}\label{class_q_c_p_layout_element_a0dc52343920011b3e72d61fc94ed3400}} 
 \index{QCPLayoutElement@{QCPLayoutElement}!````~QCPLayoutElement@{$\sim$QCPLayoutElement}}
 \index{````~QCPLayoutElement@{$\sim$QCPLayoutElement}!QCPLayoutElement@{QCPLayoutElement}}
 \doxysubsubsection{\texorpdfstring{$\sim$QCPLayoutElement()}{~QCPLayoutElement()}}
 {\footnotesize\ttfamily QCPLayout\+Element\+::$\sim$\+QCPLayout\+Element (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l03189}{3189}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 
 
@@ -295,17 +321,21 @@ Creates an instance of \mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+E
 
 
 
-Implements \mbox{\hyperlink{class_q_c_p_layerable_afdf83ddc6a265cbf4c89fe99d3d93473}{QCPLayerable}}.
+Implements \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}.
 
 
 
-Reimplemented in \mbox{\hyperlink{class_q_c_p_axis_rect_a4a318008e2b7f881a14c3d97186b31f9}{QCPAxis\+Rect}}, \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a6bfbcb9ace779f4f6fe22241c32a67c9}{QCPAbstract\+Legend\+Item}}, \mbox{\hyperlink{class_q_c_p_legend_a817f75c234f82a2e26643dc0de742095}{QCPLegend}}, \mbox{\hyperlink{class_q_c_p_text_element_a91f2e4b4a639d9079e89a0030c7ed352}{QCPText\+Element}}, and \mbox{\hyperlink{class_q_c_p_color_scale_af1b24d24a70f25b65d29f09e413390a8}{QCPColor\+Scale}}.
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01268}{1268}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_layout_element_a2585bc8c5cc70ee712909751a2fc8909}\label{class_q_c_p_layout_element_a2585bc8c5cc70ee712909751a2fc8909}} 
 \index{QCPLayoutElement@{QCPLayoutElement}!autoMargins@{autoMargins}}
 \index{autoMargins@{autoMargins}!QCPLayoutElement@{QCPLayoutElement}}
 \doxysubsubsection{\texorpdfstring{autoMargins()}{autoMargins()}}
 {\footnotesize\ttfamily QCP\+::\+Margin\+Sides QCPLayout\+Element\+::auto\+Margins (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01225}{1225}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_layout_element_a005c9f0fe84bc1591a2cf2c46fd477b4}\label{class_q_c_p_layout_element_a005c9f0fe84bc1591a2cf2c46fd477b4}} 
 \index{QCPLayoutElement@{QCPLayoutElement}!calculateAutoMargin@{calculateAutoMargin}}
@@ -315,7 +345,7 @@ Reimplemented in \mbox{\hyperlink{class_q_c_p_axis_rect_a4a318008e2b7f881a14c3d9
 
 
 
-Reimplemented in \mbox{\hyperlink{class_q_c_p_axis_rect_ac51055d83f5f414b6d013d3a24b0a941}{QCPAxis\+Rect}}, and \mbox{\hyperlink{class_q_c_p_color_scale_axis_rect_private_ac51055d83f5f414b6d013d3a24b0a941}{QCPColor\+Scale\+Axis\+Rect\+Private}}.
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l03537}{3537}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_layout_element_ad1c597b1d608cfdd86e7b76819a94cfb}\label{class_q_c_p_layout_element_ad1c597b1d608cfdd86e7b76819a94cfb}} 
 \index{QCPLayoutElement@{QCPLayoutElement}!draw@{draw}}
@@ -325,11 +355,11 @@ Reimplemented in \mbox{\hyperlink{class_q_c_p_axis_rect_ac51055d83f5f414b6d013d3
 
 
 
-Implements \mbox{\hyperlink{class_q_c_p_layerable_aecf2f7087482d4b6a78cb2770e5ed12d}{QCPLayerable}}.
+Implements \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}.
 
 
 
-Reimplemented in \mbox{\hyperlink{class_q_c_p_axis_rect_af710c50530e370539a4439d6c4db9090}{QCPAxis\+Rect}}, \mbox{\hyperlink{class_q_c_p_plottable_legend_item_a5838366619200e99680afa6d355d13fa}{QCPPlottable\+Legend\+Item}}, \mbox{\hyperlink{class_q_c_p_legend_a74f93358d2b4a76ec95c3a5d825582a3}{QCPLegend}}, \mbox{\hyperlink{class_q_c_p_text_element_ad1dae61ea77ae74841f3c2fb765fc88e}{QCPText\+Element}}, \mbox{\hyperlink{class_q_c_p_color_scale_axis_rect_private_a52a21c7cbe086cd587c955cfe6e25e3b}{QCPColor\+Scale\+Axis\+Rect\+Private}}, and \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a14ce0b09f5b814c765a0d790bd838909}{QCPAbstract\+Legend\+Item}}.
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01269}{1269}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_layout_element_a76dec8cb31e498994a944d7647a43309}\label{class_q_c_p_layout_element_a76dec8cb31e498994a944d7647a43309}} 
 \index{QCPLayoutElement@{QCPLayoutElement}!elements@{elements}}
@@ -346,13 +376,37 @@ There may be entries with value 0 in the returned list. (For example, \mbox{\hyp
 
 Reimplemented in \mbox{\hyperlink{class_q_c_p_layout_aca129722c019f91d3367046f80abfa77}{QCPLayout}}, \mbox{\hyperlink{class_q_c_p_layout_grid_a7d5b968b4cf57393e9e387976d91f8f7}{QCPLayout\+Grid}}, and \mbox{\hyperlink{class_q_c_p_axis_rect_a3aee067fd105f2fa8de9eb8024435ac5}{QCPAxis\+Rect}}.
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l03477}{3477}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_layout_element_a76dec8cb31e498994a944d7647a43309_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_layout_element_a4efdcbde9d28f410e5ef166c9d691deb}\label{class_q_c_p_layout_element_a4efdcbde9d28f410e5ef166c9d691deb}} 
 \index{QCPLayoutElement@{QCPLayoutElement}!layout@{layout}}
 \index{layout@{layout}!QCPLayoutElement@{QCPLayoutElement}}
 \doxysubsubsection{\texorpdfstring{layout()}{layout()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_layout}{QCPLayout}} $\ast$ QCPLayout\+Element\+::layout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Returns the parent layout of this layout element. \mbox{\Hypertarget{class_q_c_p_layout_element_a765f041a73af0c2de41b41a5a03e31a4}\label{class_q_c_p_layout_element_a765f041a73af0c2de41b41a5a03e31a4}} 
+Returns the parent layout of this layout element. 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01220}{1220}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_layout_element_a4efdcbde9d28f410e5ef166c9d691deb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_layout_element_a765f041a73af0c2de41b41a5a03e31a4}\label{class_q_c_p_layout_element_a765f041a73af0c2de41b41a5a03e31a4}} 
 \index{QCPLayoutElement@{QCPLayoutElement}!layoutChanged@{layoutChanged}}
 \index{layoutChanged@{layoutChanged}!QCPLayoutElement@{QCPLayoutElement}}
 \doxysubsubsection{\texorpdfstring{layoutChanged()}{layoutChanged()}}
@@ -360,7 +414,7 @@ Returns the parent layout of this layout element. \mbox{\Hypertarget{class_q_c_p
 
 
 
-Reimplemented in \mbox{\hyperlink{class_q_c_p_axis_rect_a575e38ac71a21906dc2d7b3364db2d62}{QCPAxis\+Rect}}.
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l03553}{3553}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_layout_element_aa5513622910f31d9309f87886bee597a}\label{class_q_c_p_layout_element_aa5513622910f31d9309f87886bee597a}} 
 \index{QCPLayoutElement@{QCPLayoutElement}!marginGroup@{marginGroup}}
@@ -368,17 +422,29 @@ Reimplemented in \mbox{\hyperlink{class_q_c_p_axis_rect_a575e38ac71a21906dc2d7b3
 \doxysubsubsection{\texorpdfstring{marginGroup()}{marginGroup()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_margin_group}{QCPMargin\+Group}} $\ast$ QCPLayout\+Element\+::margin\+Group (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_q_c_p_a7e487e3e2ccb62ab7771065bab7cae54}{QCP\+::\+Margin\+Side}}}]{side }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01229}{1229}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_layout_element_acdd2c6b2ffb1c712e3bb3014fdec2e1b}\label{class_q_c_p_layout_element_acdd2c6b2ffb1c712e3bb3014fdec2e1b}} 
 \index{QCPLayoutElement@{QCPLayoutElement}!marginGroups@{marginGroups}}
 \index{marginGroups@{marginGroups}!QCPLayoutElement@{QCPLayoutElement}}
 \doxysubsubsection{\texorpdfstring{marginGroups()}{marginGroups()}}
 {\footnotesize\ttfamily QHash$<$ \mbox{\hyperlink{namespace_q_c_p_a7e487e3e2ccb62ab7771065bab7cae54}{QCP\+::\+Margin\+Side}}, \mbox{\hyperlink{class_q_c_p_margin_group}{QCPMargin\+Group}} $\ast$ $>$ QCPLayout\+Element\+::margin\+Groups (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01230}{1230}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_layout_element_af4ac9450aa2d60863bf3a8ea0c940c9d}\label{class_q_c_p_layout_element_af4ac9450aa2d60863bf3a8ea0c940c9d}} 
 \index{QCPLayoutElement@{QCPLayoutElement}!margins@{margins}}
 \index{margins@{margins}!QCPLayoutElement@{QCPLayoutElement}}
 \doxysubsubsection{\texorpdfstring{margins()}{margins()}}
 {\footnotesize\ttfamily QMargins QCPLayout\+Element\+::margins (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01223}{1223}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_layout_element_ad96efb977a26e360e8a64a4c1e56456d}\label{class_q_c_p_layout_element_ad96efb977a26e360e8a64a4c1e56456d}} 
 \index{QCPLayoutElement@{QCPLayoutElement}!maximumOuterSizeHint@{maximumOuterSizeHint}}
@@ -388,7 +454,7 @@ Reimplemented in \mbox{\hyperlink{class_q_c_p_axis_rect_a575e38ac71a21906dc2d7b3
 
 Returns the suggested maximum size this layout element (the \mbox{\hyperlink{class_q_c_p_layout_element_a2a32a12a6161c9dffbadeb9cc585510c}{outer\+Rect}}) may be expanded to, if no manual maximum size is set.
 
-if a maximum size (\mbox{\hyperlink{class_q_c_p_layout_element_a74eb5280a737ab44833d506db65efd95}{set\+Maximum\+Size}}) was not set manually, parent layouts use the returned size (usually indirectly through \mbox{\hyperlink{class_q_c_p_layout_add49fd6843821a6126914b837ed52e22}{QCPLayout\+::get\+Final\+Maximum\+Outer\+Size}}) to determine the maximum allowed size of this layout element.
+if a maximum size (\mbox{\hyperlink{class_q_c_p_layout_element_a74eb5280a737ab44833d506db65efd95}{set\+Maximum\+Size}}) was not set manually, parent layouts use the returned size (usually indirectly through QCPLayout\+::get\+Final\+Maximum\+Outer\+Size) to determine the maximum allowed size of this layout element.
 
 A manual maximum size is considered set if it is smaller than Qt\textquotesingle{}s {\ttfamily QWIDGETSIZE\+\_\+\+MAX}.
 
@@ -396,17 +462,29 @@ The default implementation simply returns {\ttfamily QWIDGETSIZE\+\_\+\+MAX} for
 
 Reimplemented in \mbox{\hyperlink{class_q_c_p_layout_grid_a41ce0014c220d77b909e2ca937f0e599}{QCPLayout\+Grid}}, and \mbox{\hyperlink{class_q_c_p_text_element_ae82475b50c10a5b3314d996d50ae536b}{QCPText\+Element}}.
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l03465}{3465}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_layout_element_afb9503858d4aa0f3b9f1794b084fb40a}\label{class_q_c_p_layout_element_afb9503858d4aa0f3b9f1794b084fb40a}} 
 \index{QCPLayoutElement@{QCPLayoutElement}!maximumSize@{maximumSize}}
 \index{maximumSize@{maximumSize}!QCPLayoutElement@{QCPLayoutElement}}
 \doxysubsubsection{\texorpdfstring{maximumSize()}{maximumSize()}}
 {\footnotesize\ttfamily QSize QCPLayout\+Element\+::maximum\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01227}{1227}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_layout_element_a5eae30e28f28d73fd1c56409c011393e}\label{class_q_c_p_layout_element_a5eae30e28f28d73fd1c56409c011393e}} 
 \index{QCPLayoutElement@{QCPLayoutElement}!minimumMargins@{minimumMargins}}
 \index{minimumMargins@{minimumMargins}!QCPLayoutElement@{QCPLayoutElement}}
 \doxysubsubsection{\texorpdfstring{minimumMargins()}{minimumMargins()}}
 {\footnotesize\ttfamily QMargins QCPLayout\+Element\+::minimum\+Margins (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01224}{1224}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_layout_element_a46789036c4fcb190fa374f91321d7c09}\label{class_q_c_p_layout_element_a46789036c4fcb190fa374f91321d7c09}} 
 \index{QCPLayoutElement@{QCPLayoutElement}!minimumOuterSizeHint@{minimumOuterSizeHint}}
@@ -416,7 +494,7 @@ Reimplemented in \mbox{\hyperlink{class_q_c_p_layout_grid_a41ce0014c220d77b909e2
 
 Returns the suggested minimum size this layout element (the \mbox{\hyperlink{class_q_c_p_layout_element_a2a32a12a6161c9dffbadeb9cc585510c}{outer\+Rect}}) may be compressed to, if no manual minimum size is set.
 
-if a minimum size (\mbox{\hyperlink{class_q_c_p_layout_element_a5dd29a3c8bc88440c97c06b67be7886b}{set\+Minimum\+Size}}) was not set manually, parent layouts use the returned size (usually indirectly through \mbox{\hyperlink{class_q_c_p_layout_a864fddc84721f186663faf3683f1fa70}{QCPLayout\+::get\+Final\+Minimum\+Outer\+Size}}) to determine the minimum allowed size of this layout element.
+if a minimum size (\mbox{\hyperlink{class_q_c_p_layout_element_a5dd29a3c8bc88440c97c06b67be7886b}{set\+Minimum\+Size}}) was not set manually, parent layouts use the returned size (usually indirectly through QCPLayout\+::get\+Final\+Minimum\+Outer\+Size) to determine the minimum allowed size of this layout element.
 
 A manual minimum size is considered set if it is non-\/zero.
 
@@ -424,11 +502,19 @@ The default implementation simply returns the sum of the horizontal margins for 
 
 Reimplemented in \mbox{\hyperlink{class_q_c_p_layout_grid_a0438bc58b4d3894d01db95b08d4268df}{QCPLayout\+Grid}}, \mbox{\hyperlink{class_q_c_p_plottable_legend_item_a8b543f3ac32b2fe59326e01c1101b3b8}{QCPPlottable\+Legend\+Item}}, and \mbox{\hyperlink{class_q_c_p_text_element_a47b8541f55ff520c557e0f27461f109e}{QCPText\+Element}}.
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l03446}{3446}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_layout_element_a60d4295468a2b57fe91f6f68e20c3993}\label{class_q_c_p_layout_element_a60d4295468a2b57fe91f6f68e20c3993}} 
 \index{QCPLayoutElement@{QCPLayoutElement}!minimumSize@{minimumSize}}
 \index{minimumSize@{minimumSize}!QCPLayoutElement@{QCPLayoutElement}}
 \doxysubsubsection{\texorpdfstring{minimumSize()}{minimumSize()}}
 {\footnotesize\ttfamily QSize QCPLayout\+Element\+::minimum\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01226}{1226}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_layout_element_a2a32a12a6161c9dffbadeb9cc585510c}\label{class_q_c_p_layout_element_a2a32a12a6161c9dffbadeb9cc585510c}} 
 \index{QCPLayoutElement@{QCPLayoutElement}!outerRect@{outerRect}}
@@ -441,6 +527,10 @@ Returns the outer rect of this layout element. The outer rect is the inner rect 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_layout_element_a208effccfe2cca4a0eaf9393e60f2dd4}{rect}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01222}{1222}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_layout_element_ab4bb5c5a958451f5f153fdce350f13cf}\label{class_q_c_p_layout_element_ab4bb5c5a958451f5f153fdce350f13cf}} 
 \index{QCPLayoutElement@{QCPLayoutElement}!parentPlotInitialized@{parentPlotInitialized}}
 \index{parentPlotInitialized@{parentPlotInitialized}!QCPLayoutElement@{QCPLayoutElement}}
@@ -449,11 +539,11 @@ Returns the outer rect of this layout element. The outer rect is the inner rect 
 
 
 
-Reimplemented from \mbox{\hyperlink{class_q_c_p_layerable_ab20b7dbd8e0249ed61adb9622c427382}{QCPLayerable}}.
+Reimplemented from \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}.
 
 
 
-Reimplemented in \mbox{\hyperlink{class_q_c_p_legend_a2b225cefb5eb267771e2c7c44fd2b408}{QCPLegend}}.
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l03519}{3519}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
 
 \mbox{\Hypertarget{class_q_c_p_layout_element_a208effccfe2cca4a0eaf9393e60f2dd4}\label{class_q_c_p_layout_element_a208effccfe2cca4a0eaf9393e60f2dd4}} 
 \index{QCPLayoutElement@{QCPLayoutElement}!rect@{rect}}
@@ -468,6 +558,18 @@ In some cases, the area between outer and inner rect is left blank. In other cas
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_layout_element_a2a32a12a6161c9dffbadeb9cc585510c}{outer\+Rect}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01221}{1221}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_layout_element_a208effccfe2cca4a0eaf9393e60f2dd4_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_layout_element_ae97f483cccedadbf18ea4525ef240ee4}\label{class_q_c_p_layout_element_ae97f483cccedadbf18ea4525ef240ee4}} 
 \index{QCPLayoutElement@{QCPLayoutElement}!selectTest@{selectTest}}
 \index{selectTest@{selectTest}!QCPLayoutElement@{QCPLayoutElement}}
@@ -486,6 +588,18 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_layerable_a04db8351fefd44cfdb779
 
 Reimplemented in \mbox{\hyperlink{class_q_c_p_layout_inset_a2eeef7ea1b8340e7c7c2e2fc229df5ea}{QCPLayout\+Inset}}, \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a80ec112a6608fc39dbed56239849b187}{QCPAbstract\+Legend\+Item}}, \mbox{\hyperlink{class_q_c_p_legend_aa53507624491908fb3d1a514b1fc674e}{QCPLegend}}, and \mbox{\hyperlink{class_q_c_p_text_element_a1e721bc2994a127ef5a8f0a514a5dbac}{QCPText\+Element}}.
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l03494}{3494}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_layout_element_ae97f483cccedadbf18ea4525ef240ee4_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_layout_element_accfda49994e3e6d51ed14504abf9d27d}\label{class_q_c_p_layout_element_accfda49994e3e6d51ed14504abf9d27d}} 
 \index{QCPLayoutElement@{QCPLayoutElement}!setAutoMargins@{setAutoMargins}}
 \index{setAutoMargins@{setAutoMargins}!QCPLayoutElement@{QCPLayoutElement}}
@@ -499,6 +613,18 @@ Margin sides that are under automatic control may participate in a \mbox{\hyperl
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_layout_element_a0a8a17abc16b7923159fcc7608f94673}{set\+Minimum\+Margins}}, \mbox{\hyperlink{class_q_c_p_layout_element_a8f450b1f3f992ad576fce2c63d8b79cf}{set\+Margins}}, \mbox{\hyperlink{namespace_q_c_p_a7e487e3e2ccb62ab7771065bab7cae54}{QCP\+::\+Margin\+Side}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l03264}{3264}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_layout_element_accfda49994e3e6d51ed14504abf9d27d_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_layout_element_a516e56f76b6bc100e8e71d329866847d}\label{class_q_c_p_layout_element_a516e56f76b6bc100e8e71d329866847d}} 
 \index{QCPLayoutElement@{QCPLayoutElement}!setMarginGroup@{setMarginGroup}}
 \index{setMarginGroup@{setMarginGroup}!QCPLayoutElement@{QCPLayoutElement}}
@@ -516,6 +642,10 @@ Note that margin groups only work for margin sides that are set to automatic (\m
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{namespace_q_c_p_a7e487e3e2ccb62ab7771065bab7cae54}{QCP\+::\+Margin\+Side}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l03364}{3364}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
 \mbox{\Hypertarget{class_q_c_p_layout_element_a8f450b1f3f992ad576fce2c63d8b79cf}\label{class_q_c_p_layout_element_a8f450b1f3f992ad576fce2c63d8b79cf}} 
 \index{QCPLayoutElement@{QCPLayoutElement}!setMargins@{setMargins}}
 \index{setMargins@{setMargins}!QCPLayoutElement@{QCPLayoutElement}}
@@ -529,6 +659,18 @@ The margin is the distance between the outer rect (controlled by the parent layo
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_layout_element_accfda49994e3e6d51ed14504abf9d27d}{set\+Auto\+Margins}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l03228}{3228}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_layout_element_a8f450b1f3f992ad576fce2c63d8b79cf_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_layout_element_a74eb5280a737ab44833d506db65efd95}\label{class_q_c_p_layout_element_a74eb5280a737ab44833d506db65efd95}} 
 \index{QCPLayoutElement@{QCPLayoutElement}!setMaximumSize@{setMaximumSize}}
 \index{setMaximumSize@{setMaximumSize}!QCPLayoutElement@{QCPLayoutElement}}
@@ -537,7 +679,27 @@ The margin is the distance between the outer rect (controlled by the parent layo
 
 Sets the maximum size of this layout element. A parent layout tries to respect the {\itshape size} here by changing row/column sizes in the layout accordingly.
 
-Whether this constraint applies to the inner or the outer rect can be specified with \mbox{\hyperlink{class_q_c_p_layout_element_a361666cdcc6fbfd37344cc44be746b0f}{set\+Size\+Constraint\+Rect}} (see \mbox{\hyperlink{class_q_c_p_layout_element_a208effccfe2cca4a0eaf9393e60f2dd4}{rect}} and \mbox{\hyperlink{class_q_c_p_layout_element_a2a32a12a6161c9dffbadeb9cc585510c}{outer\+Rect}}). \mbox{\Hypertarget{class_q_c_p_layout_element_a03e0e9c48f230217c529b0819f832d84}\label{class_q_c_p_layout_element_a03e0e9c48f230217c529b0819f832d84}} 
+Whether this constraint applies to the inner or the outer rect can be specified with \mbox{\hyperlink{class_q_c_p_layout_element_a361666cdcc6fbfd37344cc44be746b0f}{set\+Size\+Constraint\+Rect}} (see \mbox{\hyperlink{class_q_c_p_layout_element_a208effccfe2cca4a0eaf9393e60f2dd4}{rect}} and \mbox{\hyperlink{class_q_c_p_layout_element_a2a32a12a6161c9dffbadeb9cc585510c}{outer\+Rect}}). 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l03310}{3310}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_layout_element_a74eb5280a737ab44833d506db65efd95_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_layout_element_a74eb5280a737ab44833d506db65efd95_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_layout_element_a03e0e9c48f230217c529b0819f832d84}\label{class_q_c_p_layout_element_a03e0e9c48f230217c529b0819f832d84}} 
 \index{QCPLayoutElement@{QCPLayoutElement}!setMaximumSize@{setMaximumSize}}
 \index{setMaximumSize@{setMaximumSize}!QCPLayoutElement@{QCPLayoutElement}}
 \doxysubsubsection{\texorpdfstring{setMaximumSize()}{setMaximumSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
@@ -547,7 +709,19 @@ This is an overloaded member function, provided for convenience. It differs from
 
 Sets the maximum size of this layout element.
 
-Whether this constraint applies to the inner or the outer rect can be specified with \mbox{\hyperlink{class_q_c_p_layout_element_a361666cdcc6fbfd37344cc44be746b0f}{set\+Size\+Constraint\+Rect}} (see \mbox{\hyperlink{class_q_c_p_layout_element_a208effccfe2cca4a0eaf9393e60f2dd4}{rect}} and \mbox{\hyperlink{class_q_c_p_layout_element_a2a32a12a6161c9dffbadeb9cc585510c}{outer\+Rect}}). \mbox{\Hypertarget{class_q_c_p_layout_element_a0a8a17abc16b7923159fcc7608f94673}\label{class_q_c_p_layout_element_a0a8a17abc16b7923159fcc7608f94673}} 
+Whether this constraint applies to the inner or the outer rect can be specified with \mbox{\hyperlink{class_q_c_p_layout_element_a361666cdcc6fbfd37344cc44be746b0f}{set\+Size\+Constraint\+Rect}} (see \mbox{\hyperlink{class_q_c_p_layout_element_a208effccfe2cca4a0eaf9393e60f2dd4}{rect}} and \mbox{\hyperlink{class_q_c_p_layout_element_a2a32a12a6161c9dffbadeb9cc585510c}{outer\+Rect}}). 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l03327}{3327}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_layout_element_a03e0e9c48f230217c529b0819f832d84_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_layout_element_a0a8a17abc16b7923159fcc7608f94673}\label{class_q_c_p_layout_element_a0a8a17abc16b7923159fcc7608f94673}} 
 \index{QCPLayoutElement@{QCPLayoutElement}!setMinimumMargins@{setMinimumMargins}}
 \index{setMinimumMargins@{setMinimumMargins}!QCPLayoutElement@{QCPLayoutElement}}
 \doxysubsubsection{\texorpdfstring{setMinimumMargins()}{setMinimumMargins()}}
@@ -560,6 +734,18 @@ The minimum values are not enforced on margin sides that were set to be under ma
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_layout_element_accfda49994e3e6d51ed14504abf9d27d}{set\+Auto\+Margins}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l03246}{3246}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_layout_element_a0a8a17abc16b7923159fcc7608f94673_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_layout_element_a5dd29a3c8bc88440c97c06b67be7886b}\label{class_q_c_p_layout_element_a5dd29a3c8bc88440c97c06b67be7886b}} 
 \index{QCPLayoutElement@{QCPLayoutElement}!setMinimumSize@{setMinimumSize}}
 \index{setMinimumSize@{setMinimumSize}!QCPLayoutElement@{QCPLayoutElement}}
@@ -570,7 +756,27 @@ Sets the minimum size of this layout element. A parent layout tries to respect t
 
 If the parent layout size is not sufficient to satisfy all minimum size constraints of its child layout elements, the layout may set a size that is actually smaller than {\itshape size}. \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} propagates the layout\textquotesingle{}s size constraints to the outside by setting its own minimum QWidget size accordingly, so violations of {\itshape size} should be exceptions.
 
-Whether this constraint applies to the inner or the outer rect can be specified with \mbox{\hyperlink{class_q_c_p_layout_element_a361666cdcc6fbfd37344cc44be746b0f}{set\+Size\+Constraint\+Rect}} (see \mbox{\hyperlink{class_q_c_p_layout_element_a208effccfe2cca4a0eaf9393e60f2dd4}{rect}} and \mbox{\hyperlink{class_q_c_p_layout_element_a2a32a12a6161c9dffbadeb9cc585510c}{outer\+Rect}}). \mbox{\Hypertarget{class_q_c_p_layout_element_a8e0447614a0bf92de9a7304588c6b96e}\label{class_q_c_p_layout_element_a8e0447614a0bf92de9a7304588c6b96e}} 
+Whether this constraint applies to the inner or the outer rect can be specified with \mbox{\hyperlink{class_q_c_p_layout_element_a361666cdcc6fbfd37344cc44be746b0f}{set\+Size\+Constraint\+Rect}} (see \mbox{\hyperlink{class_q_c_p_layout_element_a208effccfe2cca4a0eaf9393e60f2dd4}{rect}} and \mbox{\hyperlink{class_q_c_p_layout_element_a2a32a12a6161c9dffbadeb9cc585510c}{outer\+Rect}}). 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l03281}{3281}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_layout_element_a5dd29a3c8bc88440c97c06b67be7886b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_layout_element_a5dd29a3c8bc88440c97c06b67be7886b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_layout_element_a8e0447614a0bf92de9a7304588c6b96e}\label{class_q_c_p_layout_element_a8e0447614a0bf92de9a7304588c6b96e}} 
 \index{QCPLayoutElement@{QCPLayoutElement}!setMinimumSize@{setMinimumSize}}
 \index{setMinimumSize@{setMinimumSize}!QCPLayoutElement@{QCPLayoutElement}}
 \doxysubsubsection{\texorpdfstring{setMinimumSize()}{setMinimumSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
@@ -580,7 +786,19 @@ This is an overloaded member function, provided for convenience. It differs from
 
 Sets the minimum size of this layout element.
 
-Whether this constraint applies to the inner or the outer rect can be specified with \mbox{\hyperlink{class_q_c_p_layout_element_a361666cdcc6fbfd37344cc44be746b0f}{set\+Size\+Constraint\+Rect}} (see \mbox{\hyperlink{class_q_c_p_layout_element_a208effccfe2cca4a0eaf9393e60f2dd4}{rect}} and \mbox{\hyperlink{class_q_c_p_layout_element_a2a32a12a6161c9dffbadeb9cc585510c}{outer\+Rect}}). \mbox{\Hypertarget{class_q_c_p_layout_element_a38975ea13e36de8e53391ce41d94bc0f}\label{class_q_c_p_layout_element_a38975ea13e36de8e53391ce41d94bc0f}} 
+Whether this constraint applies to the inner or the outer rect can be specified with \mbox{\hyperlink{class_q_c_p_layout_element_a361666cdcc6fbfd37344cc44be746b0f}{set\+Size\+Constraint\+Rect}} (see \mbox{\hyperlink{class_q_c_p_layout_element_a208effccfe2cca4a0eaf9393e60f2dd4}{rect}} and \mbox{\hyperlink{class_q_c_p_layout_element_a2a32a12a6161c9dffbadeb9cc585510c}{outer\+Rect}}). 
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l03298}{3298}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_layout_element_a8e0447614a0bf92de9a7304588c6b96e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_q_c_p_layout_element_a38975ea13e36de8e53391ce41d94bc0f}\label{class_q_c_p_layout_element_a38975ea13e36de8e53391ce41d94bc0f}} 
 \index{QCPLayoutElement@{QCPLayoutElement}!setOuterRect@{setOuterRect}}
 \index{setOuterRect@{setOuterRect}!QCPLayoutElement@{QCPLayoutElement}}
 \doxysubsubsection{\texorpdfstring{setOuterRect()}{setOuterRect()}}
@@ -595,6 +813,26 @@ The layout element will adapt its inner \mbox{\hyperlink{class_q_c_p_layout_elem
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_layout_element_a208effccfe2cca4a0eaf9393e60f2dd4}{rect}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l03208}{3208}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_layout_element_a38975ea13e36de8e53391ce41d94bc0f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_layout_element_a38975ea13e36de8e53391ce41d94bc0f_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_layout_element_a361666cdcc6fbfd37344cc44be746b0f}\label{class_q_c_p_layout_element_a361666cdcc6fbfd37344cc44be746b0f}} 
 \index{QCPLayoutElement@{QCPLayoutElement}!setSizeConstraintRect@{setSizeConstraintRect}}
 \index{setSizeConstraintRect@{setSizeConstraintRect}!QCPLayoutElement@{QCPLayoutElement}}
@@ -608,11 +846,27 @@ The outer rect (\mbox{\hyperlink{class_q_c_p_layout_element_a2a32a12a6161c9dffba
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_layout_element_a5dd29a3c8bc88440c97c06b67be7886b}{set\+Minimum\+Size}}, \mbox{\hyperlink{class_q_c_p_layout_element_a74eb5280a737ab44833d506db65efd95}{set\+Maximum\+Size}} 
 \end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l03341}{3341}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_layout_element_a361666cdcc6fbfd37344cc44be746b0f_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_q_c_p_layout_element_a66136f121ee3e1c933b748761203cab4}\label{class_q_c_p_layout_element_a66136f121ee3e1c933b748761203cab4}} 
 \index{QCPLayoutElement@{QCPLayoutElement}!sizeConstraintRect@{sizeConstraintRect}}
 \index{sizeConstraintRect@{sizeConstraintRect}!QCPLayoutElement@{QCPLayoutElement}}
 \doxysubsubsection{\texorpdfstring{sizeConstraintRect()}{sizeConstraintRect()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_layout_element_a0afb3e5773529e4bd20e448f81be4d2a}{Size\+Constraint\+Rect}} QCPLayout\+Element\+::size\+Constraint\+Rect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01228}{1228}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_layout_element_a929c2ec62e0e0e1d8418eaa802e2af9b}\label{class_q_c_p_layout_element_a929c2ec62e0e0e1d8418eaa802e2af9b}} 
 \index{QCPLayoutElement@{QCPLayoutElement}!update@{update}}
@@ -630,6 +884,26 @@ Reimplemented in \mbox{\hyperlink{class_q_c_p_layout_a48ecc9c98ea90b547c3e27a931
 
 
 
+Definition at line \mbox{\hyperlink{qcustomplot_8cpp_source_l03405}{3405}} of file \mbox{\hyperlink{qcustomplot_8cpp_source}{qcustomplot.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_layout_element_a929c2ec62e0e0e1d8418eaa802e2af9b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_q_c_p_layout_element_a929c2ec62e0e0e1d8418eaa802e2af9b_icgraph}
+\end{center}
+\end{figure}
+
+
 \doxysubsection{Friends And Related Function Documentation}
 \mbox{\Hypertarget{class_q_c_p_layout_element_a588aac0a0d721f6c5f10126d8596a20f}\label{class_q_c_p_layout_element_a588aac0a0d721f6c5f10126d8596a20f}} 
 \index{QCPLayoutElement@{QCPLayoutElement}!QCPLayout@{QCPLayout}}
@@ -637,17 +911,29 @@ Reimplemented in \mbox{\hyperlink{class_q_c_p_layout_a48ecc9c98ea90b547c3e27a931
 \doxysubsubsection{\texorpdfstring{QCPLayout}{QCPLayout}}
 {\footnotesize\ttfamily friend class \mbox{\hyperlink{class_q_c_p_layout}{QCPLayout}}\hspace{0.3cm}{\ttfamily [friend]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01276}{1276}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_layout_element_ad077a686e85ab6fa03dcb2fd37fc499a}\label{class_q_c_p_layout_element_ad077a686e85ab6fa03dcb2fd37fc499a}} 
 \index{QCPLayoutElement@{QCPLayoutElement}!QCPMarginGroup@{QCPMarginGroup}}
 \index{QCPMarginGroup@{QCPMarginGroup}!QCPLayoutElement@{QCPLayoutElement}}
 \doxysubsubsection{\texorpdfstring{QCPMarginGroup}{QCPMarginGroup}}
 {\footnotesize\ttfamily friend class \mbox{\hyperlink{class_q_c_p_margin_group}{QCPMargin\+Group}}\hspace{0.3cm}{\ttfamily [friend]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01277}{1277}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_layout_element_a1cdf9df76adcfae45261690aa0ca2198}\label{class_q_c_p_layout_element_a1cdf9df76adcfae45261690aa0ca2198}} 
 \index{QCPLayoutElement@{QCPLayoutElement}!QCustomPlot@{QCustomPlot}}
 \index{QCustomPlot@{QCustomPlot}!QCPLayoutElement@{QCPLayoutElement}}
 \doxysubsubsection{\texorpdfstring{QCustomPlot}{QCustomPlot}}
 {\footnotesize\ttfamily friend class \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01275}{1275}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 
 
@@ -658,11 +944,19 @@ Reimplemented in \mbox{\hyperlink{class_q_c_p_layout_a48ecc9c98ea90b547c3e27a931
 \doxysubsubsection{\texorpdfstring{mAutoMargins}{mAutoMargins}}
 {\footnotesize\ttfamily QCP\+::\+Margin\+Sides QCPLayout\+Element\+::m\+Auto\+Margins\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01260}{1260}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_layout_element_aeafbbc1130e02eee663c5326761fc963}\label{class_q_c_p_layout_element_aeafbbc1130e02eee663c5326761fc963}} 
 \index{QCPLayoutElement@{QCPLayoutElement}!mMarginGroups@{mMarginGroups}}
 \index{mMarginGroups@{mMarginGroups}!QCPLayoutElement@{QCPLayoutElement}}
 \doxysubsubsection{\texorpdfstring{mMarginGroups}{mMarginGroups}}
 {\footnotesize\ttfamily QHash$<$\mbox{\hyperlink{namespace_q_c_p_a7e487e3e2ccb62ab7771065bab7cae54}{QCP\+::\+Margin\+Side}}, \mbox{\hyperlink{class_q_c_p_margin_group}{QCPMargin\+Group}}$\ast$$>$ QCPLayout\+Element\+::m\+Margin\+Groups\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01261}{1261}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_layout_element_ac2a32b99ee527ca5dfff9da03628fe94}\label{class_q_c_p_layout_element_ac2a32b99ee527ca5dfff9da03628fe94}} 
 \index{QCPLayoutElement@{QCPLayoutElement}!mMargins@{mMargins}}
@@ -670,11 +964,19 @@ Reimplemented in \mbox{\hyperlink{class_q_c_p_layout_a48ecc9c98ea90b547c3e27a931
 \doxysubsubsection{\texorpdfstring{mMargins}{mMargins}}
 {\footnotesize\ttfamily QMargins QCPLayout\+Element\+::m\+Margins\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01259}{1259}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_layout_element_a64a387973fd4addac842028c89088998}\label{class_q_c_p_layout_element_a64a387973fd4addac842028c89088998}} 
 \index{QCPLayoutElement@{QCPLayoutElement}!mMaximumSize@{mMaximumSize}}
 \index{mMaximumSize@{mMaximumSize}!QCPLayoutElement@{QCPLayoutElement}}
 \doxysubsubsection{\texorpdfstring{mMaximumSize}{mMaximumSize}}
 {\footnotesize\ttfamily QSize QCPLayout\+Element\+::m\+Maximum\+Size\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01256}{1256}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_layout_element_a5ba71f25d1af4bb092b28df618538e63}\label{class_q_c_p_layout_element_a5ba71f25d1af4bb092b28df618538e63}} 
 \index{QCPLayoutElement@{QCPLayoutElement}!mMinimumMargins@{mMinimumMargins}}
@@ -682,11 +984,19 @@ Reimplemented in \mbox{\hyperlink{class_q_c_p_layout_a48ecc9c98ea90b547c3e27a931
 \doxysubsubsection{\texorpdfstring{mMinimumMargins}{mMinimumMargins}}
 {\footnotesize\ttfamily QMargins QCPLayout\+Element\+::m\+Minimum\+Margins\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01259}{1259}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_layout_element_affef747c81632de33f08483b7fd10d01}\label{class_q_c_p_layout_element_affef747c81632de33f08483b7fd10d01}} 
 \index{QCPLayoutElement@{QCPLayoutElement}!mMinimumSize@{mMinimumSize}}
 \index{mMinimumSize@{mMinimumSize}!QCPLayoutElement@{QCPLayoutElement}}
 \doxysubsubsection{\texorpdfstring{mMinimumSize}{mMinimumSize}}
 {\footnotesize\ttfamily QSize QCPLayout\+Element\+::m\+Minimum\+Size\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01256}{1256}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_layout_element_a07bb4973379e75cb0fa5b032c1d24afd}\label{class_q_c_p_layout_element_a07bb4973379e75cb0fa5b032c1d24afd}} 
 \index{QCPLayoutElement@{QCPLayoutElement}!mOuterRect@{mOuterRect}}
@@ -694,17 +1004,29 @@ Reimplemented in \mbox{\hyperlink{class_q_c_p_layout_a48ecc9c98ea90b547c3e27a931
 \doxysubsubsection{\texorpdfstring{mOuterRect}{mOuterRect}}
 {\footnotesize\ttfamily QRect QCPLayout\+Element\+::m\+Outer\+Rect\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01258}{1258}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_layout_element_ae7c75c25549608bd688bdb65d4c38066}\label{class_q_c_p_layout_element_ae7c75c25549608bd688bdb65d4c38066}} 
 \index{QCPLayoutElement@{QCPLayoutElement}!mParentLayout@{mParentLayout}}
 \index{mParentLayout@{mParentLayout}!QCPLayoutElement@{QCPLayoutElement}}
 \doxysubsubsection{\texorpdfstring{mParentLayout}{mParentLayout}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_layout}{QCPLayout}}$\ast$ QCPLayout\+Element\+::m\+Parent\+Layout\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01255}{1255}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
 \mbox{\Hypertarget{class_q_c_p_layout_element_ad8896f05550389f7b9e92c9e6cdf6e01}\label{class_q_c_p_layout_element_ad8896f05550389f7b9e92c9e6cdf6e01}} 
 \index{QCPLayoutElement@{QCPLayoutElement}!mRect@{mRect}}
 \index{mRect@{mRect}!QCPLayoutElement@{QCPLayoutElement}}
 \doxysubsubsection{\texorpdfstring{mRect}{mRect}}
 {\footnotesize\ttfamily QRect QCPLayout\+Element\+::m\+Rect\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01258}{1258}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
 
 \mbox{\Hypertarget{class_q_c_p_layout_element_acc012635b1ae178ff3c4da8a3af303a2}\label{class_q_c_p_layout_element_acc012635b1ae178ff3c4da8a3af303a2}} 
 \index{QCPLayoutElement@{QCPLayoutElement}!mSizeConstraintRect@{mSizeConstraintRect}}
@@ -714,7 +1036,11 @@ Reimplemented in \mbox{\hyperlink{class_q_c_p_layout_a48ecc9c98ea90b547c3e27a931
 
 
 
+Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l01257}{1257}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{qcustomplot_8h}{qcustomplot.\+h}}\item 
-\mbox{\hyperlink{qcustomplot_8cpp}{qcustomplot.\+cpp}}\end{DoxyCompactItemize}
+qcustomplot.\+h\item 
+qcustomplot.\+cpp\end{DoxyCompactItemize}
