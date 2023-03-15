@@ -81,11 +81,11 @@ private slots:
     void on_comboBox_MemAddress_currentTextChanged(const QString &arg1);
     void on_doubleSpinBox_MVlower_valueChanged(double arg1);
     void on_doubleSpinBox_MVupper_valueChanged(double arg1);
-    void on_radioButton_Run_clicked();
-    void on_radioButton_Stop_clicked();
+
     void on_checkBox_dataSave_toggled(bool checked);
     void on_pushButton_Log_toggled(bool checked);
     void on_spinBox_TempRecordTime_valueChanged(int arg1);
+    void on_pushButton_RunStop_toggled(bool checked);
 
     void on_actionOpen_File_triggered();
     void on_action_Setting_parameters_for_TempCheck_triggered();
@@ -94,6 +94,8 @@ private slots:
     void HelpPicNext();
 
     void fillDataAndPlot(const QDateTime date, const double PV, const double SV, const double MV);
+    void Run();
+    void Stop();
     void Quit();
     void setIntervalAskMV();
     void setIntervalAskTemp();
@@ -102,7 +104,7 @@ private slots:
     void setIgnoreRange();
     void setParametersTempCheck(bool mute = true);
     void setIgnoreEnable();
-    void fillDifference(const QDateTime date, const double PV);
+    void fillDifference(const QDateTime date);
 
     void setColor(int colorindex = 0);
 

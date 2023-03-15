@@ -177,6 +177,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     panalOnOff(false);
     ui->pushButton_Control->setEnabled(false);
+    ui-> pushButton_RunStop->setEnabled(false);
     //ui->pushButton_RecordTemp->setEnabled(false);
 
     //============= some useful addresses
@@ -286,7 +287,6 @@ MainWindow::MainWindow(QWidget *parent) :
     statusAskTemp_ = false;
     statusAskSetPoint_ = false;
 }
-
 MainWindow::~MainWindow()
 {
     if (omron) omron->disconnectDevice();
@@ -373,6 +373,7 @@ void MainWindow::panalOnOff(bool IO)
     ui->pushButton_AskStatus->setEnabled(IO);
     ui->pushButton_GetPID->setEnabled(IO);
     ui->pushButton_SetSV->setEnabled(IO);
+    ui->pushButton_RunStop->setEnabled(IO);
     ui->spinBox_TempRecordTime->setEnabled(IO);
     ui->spinBox_TempStableTime->setEnabled(IO);
     ui->spinBox_DeviceAddress->setEnabled(IO);
@@ -653,7 +654,6 @@ void MainWindow::on_pushButton_Control_clicked()
     panalOnOff(!tempControlOnOff);
     ui->actionOpen_File->setEnabled(!tempControlOnOff);
     ui->checkBoxStatusSTC->setChecked(true);
-
     if(tempControlOnOff) {
         LogMsg("================ Temperature control =====");
         ui->pushButton_Control->setStyleSheet("background-color: rgb(50,137,48)");
@@ -666,7 +666,6 @@ void MainWindow::on_pushButton_Control_clicked()
         totalElapse.start();
         return;
     }
-
     double iniTemp = 0;
     if(tempControlOnOff){
         on_pushButton_AskStatus_clicked();
@@ -1268,13 +1267,14 @@ void MainWindow::fillDataAndPlot(const QDateTime date, const double PV, const do
     plot->replot();
 }
 
-void MainWindow::fillDifference(const QDateTime date, const double PV){
+double MainWindow::fillDifference(const QDateTime date, bool mute){
   int size = valltemp_.size();
   if(size < 2) return;
   double diff = valltemp_.at(size-1) - valltemp_.at(size-2);
   vdifftemp_.push_back(diff);
-    LogMsg("Difference is " + QString::number(diff));
-  return;
+  ui->lineEdit_CurrentTempDiff->setText(QString::number(diff) + " C");
+  if (!mute) LogMsg("Difference is " + QString::number(diff));
+  return diff;
 }
 
 void MainWindow::on_actionHelp_Page_triggered()
@@ -1325,7 +1325,6 @@ void MainWindow::setNumbers(){
   ui->lineEdit_Numbers->setEnabled(true);
   ui->lineEdit_Numbers->setText(QString::number(configureDialog_->numbers_));
   ui->lineEdit_Numbers->setEnabled(false);
-
 }
 
 void MainWindow::setSafeLimit(){
@@ -1356,52 +1355,67 @@ void MainWindow::setIgnoreEnable(){
 
 void MainWindow::setParametersTempCheck(bool mute){
   if (!configureDialog_->warnigcheck_) return;
+  if (threadMVcheck_->isRunning()) threadMVcheck_->quit();
+  if (threadTempCheck_->isRunning()) threadTempCheck_->quit();
+  //threadMVcheck_ = new MyThread;
+  //threadTempCheck_ = new MyThread;
   setIntervalAskMV();
   setIntervalAskTemp();
   setNumbers();
   setSafeLimit();
   setIgnoreRange();
   setIgnoreEnable();
-  if (threadMVcheck_->isRunning()) threadMVcheck_->quit();
-  if (threadTempCheck_->isRunning()) threadTempCheck_->quit();
-  if (threadLog_->isRunning()) threadLog_->quit();
   threadMVcheck_->interval_ = ui->lineEdit_IntervalAskMV->text().toInt()*1000; //ms to sec
   threadTempCheck_->interval_ = ui->lineEdit_IntervalAskTemp->text().toInt()*1000; //ms to sec
-  threadLog_->interval_ = ui->spinBox_TempRecordTime->value()*1000; //ms to sec
+  //threadLog_->interval_ = ui->spinBox_TempRecordTime->value()*1000; //ms to sec
   if (!mute){
     LogMsg("set to be parameters for TempCheck.");
     LogMsg(configureDialog_->msg_);
   }
   threadMVcheck_->start();
   threadTempCheck_->start();
-  threadLog_->start();
+  //threadLog_->start();
+}
+
+void MainWindow::on_pushButton_RunStop_toggled(bool checked)
+{
+  bool connectPID = ui->pushButton_Connect->isChecked();
+  if(checked && connectPID){
+    ui->pushButton_RunStop->setText("Stop");
+    Run();
+  }else if (connectPID) {
+    ui->pushButton_RunStop->setText("Run");
+    Stop();
+  } else {
+    LogMsg("Not connected. Please check COM PORT etc.");
+    if(threadLog_->isRunning()) threadLog_->quit();
+    ui->checkBoxStatusRun->setChecked(false);
+  }
 }
 
 
-void MainWindow::on_radioButton_Run_clicked()
-{
+
+void MainWindow::Run(){
   statusBar()->clearMessage();
   QString cmd = "00 00 01 00";
   LogMsg("Set Run.");
+  if (threadLog_->isRunning()) threadLog_->quit();
+  if (threadMVcheck_->isRunning()) threadMVcheck_->quit();
+  if (threadTempCheck_->isRunning()) threadTempCheck_->quit();
   QByteArray value = QByteArray::fromHex(cmd.toStdString().c_str());
   request(QModbusPdu::WriteSingleRegister, value);
   setColor(1);
-  ui->radioButton_Run->setStyleSheet("background-color:rgb(224, 195, 30);");
-  ui->radioButton_Stop->setStyleSheet("");
   ui->lineEdit_TempCheckCount->setStyleSheet("");
   threadMVcheck_->start();
   threadLog_->start();
-  //threadMVcheck_->setPriority(QThread::TimeCriticalPriority);
-  //threadLog_->setPriority(QThread::HighestPriority);
   ui->pushButton_Log->setChecked(true);
   ui->checkBoxStatusRun->setChecked(true);
   ui->checkBoxStatusPeriodic->setCheckable(true);
+  //ui->action_Setting_parameters_for_TempCheck->setEnabled(false);
   statusRun_ = true;
-  LogMsg("Thred start.");
 }
 
-void MainWindow::on_radioButton_Stop_clicked()
-{
+void MainWindow::Stop(){
   threadMVcheck_->quit();
   threadLog_->quit();
   threadTempCheck_->quit();
@@ -1412,13 +1426,14 @@ void MainWindow::on_radioButton_Stop_clicked()
   QByteArray value = QByteArray::fromHex(cmd.toStdString().c_str());
   request(QModbusPdu::WriteSingleRegister, value);
   setColor(0);
-  LogMsg("Thred stop.");
-  ui->radioButton_Run->setStyleSheet("");
   ui->checkBoxStatusRun->setChecked(false);
   ui->checkBoxStatusPeriodic->setChecked(false);
   ui->checkBoxStatusTempDrop->setChecked(false);
   ui->checkBoxStautsTempCheck->setChecked(false);
   ui->checkBoxStatusSTC->setChecked(false);
+  ui->action_Setting_parameters_for_TempCheck->setEnabled(true);
+  ui->lineEdit_TempCheckCount->clear();
+  ui->lineEdit_TempCheckCount->setStyleSheet("");
   statusRun_ = false;
 }
 
@@ -1443,8 +1458,6 @@ void MainWindow::Quit(){
   vtemp_.clear();
   LogMsg("Thred stop.");
   countTempCheck_ = 0;
-  ui->radioButton_Stop->setChecked(true);
-  ui->radioButton_Run->setStyleSheet("");
   ui->textEdit_Log->setTextColor(QColor(0,0,0,255));
   ui->checkBoxStatusRun->setChecked(false);
   ui->checkBoxStatusPeriodic->setChecked(false);
@@ -1463,9 +1476,11 @@ bool MainWindow::isIgnore(bool check, double temp){
     LogMsg("Set Temperature is " + QString::number(temp));
     LogMsg("Current temperature is outside the TempCheck mode.");
     LogMsg("TempCheck mode does not work in the range");
+    ui->textEdit_Log->setTextColor(QColor(0,0,0,255));
     vtemp_.clear();
     countTempCheck_ = 0;
-    ui->textEdit_Log->setTextColor(QColor(0,0,0,255));
+    ui->lineEdit_TempCheckCount->clear();
+    ui->lineEdit_TempCheckCount->setStyleSheet("");
     ui->checkBoxStautsTempCheck->setChecked(false);
     threadTempCheck_->start();
     if (statusRun_) setColor(1);
@@ -1493,7 +1508,6 @@ bool MainWindow::isViolate(QVector<double> vtemp){
 
 void MainWindow::TempCheck(){
   if (countTempCheck_ > ui->lineEdit_Numbers->text().toInt()) countTempCheck_ = 0;
-  threadTempCheck_->start();
   if (statusAskTemp_) waitForMSec(200);
   askTemperature();
   vtemp_.push_back(temperature);
@@ -1503,9 +1517,9 @@ void MainWindow::TempCheck(){
     }
   if (statusAskSetPoint_) waitForMSec(200);
   askSetPoint();
-  setParametersTempCheck(true);
+  //setParametersTempCheck(true);
   double targetvalue = SV;
-  bool continue0 = isIgnore(ui->checkBox_Ignore, targetvalue);
+  bool continue0 = isIgnore(ui->checkBox_Ignore->isChecked(), targetvalue);
   if (!continue0) return;
   ui->checkBoxStautsTempCheck->setChecked(true);
   ui->lineEdit_TempCheckCount->setStyleSheet("background-color:yellow; color:red;selection-background-color:red;");
@@ -1586,10 +1600,10 @@ void MainWindow::makePlot(){
   const double setTemperature = ui->lineEdit_SV->text().toDouble();
   QDateTime date = QDateTime::currentDateTime();
   valltemp_.push_back(temperature);
-  int size = valltemp_.size();
+  //int size = valltemp_.size();
   //LogMsg(QString::number(size));
   fillDataAndPlot(date, temperature, setTemperature, MV);
-  fillDifference(date, temperature);
+  //fillDifference(date);
   if(ui->checkBox_dataSave->isChecked()) writeData();
 
 }
@@ -1660,8 +1674,7 @@ bool MainWindow::generateSaveFile(){
   }
 }
 
-void MainWindow::on_pushButton_Log_toggled(bool checked)
-{
+void MainWindow::on_pushButton_Log_toggled(bool checked){
   bool connectPID = ui->pushButton_Connect->isChecked();
   if(checked && connectPID){
     ui->pushButton_Log->setText("Logging Stop");
@@ -1678,8 +1691,7 @@ void MainWindow::on_pushButton_Log_toggled(bool checked)
   }
 }
 
-void MainWindow::on_spinBox_TempRecordTime_valueChanged(int arg1)
-{
+void MainWindow::on_spinBox_TempRecordTime_valueChanged(int arg1){
   if(threadLog_->isRunning()) threadLog_->quit();
   threadLog_->interval_ = arg1 * 1000; //ms to sec
   threadLog_->start();
@@ -1723,36 +1735,33 @@ void MainWindow::setColor(int colorindex){
   int index = colorindex;
   QColor color = QColor(215, 214, 213, 255);
   switch (index) {
-    case 1:
-      ui->tabWidget->setStyleSheet("background-color: rgb(128, 195, 66)");
-      color = QColor(128, 195, 66, 255);
+    case 1: //green
+      ui->tabWidget->setStyleSheet("background-color: rgb(143, 188, 143)");
+      color = QColor(143, 188, 143, 255);
       pal.setColor(QPalette::Window, color);
       this->setAutoFillBackground(true);
       this->setPalette(pal);
       this->setAutoFillBackground(false);
       break;
-    case 2:
+    case 2: //yellow
       ui->tabWidget->setStyleSheet("background-color: rgb(224, 195, 30)");
       color = QColor(224, 195, 30, 255);
-      //pal = palette();
       pal.setColor(QPalette::Window, color);
       this->setAutoFillBackground(true);
       this->setPalette(pal);
       this->setAutoFillBackground(false);
       break;
-    case 3:
-      ui->tabWidget->setStyleSheet("background-color: rgb(255, 135, 135)");
-      color = QColor(255, 135, 135, 255);
-      //pal = palette();
+    case 3: //red
+      ui->tabWidget->setStyleSheet("background-color: rgb(205, 92, 92)");
+      color = QColor(205, 92, 92, 255);
       pal.setColor(QPalette::Window, color);
       this->setAutoFillBackground(true);
       this->setPalette(pal);
       this->setAutoFillBackground(false);
       break;
-    default:
+    default: //gray
       ui->tabWidget->setStyleSheet("background-color: rgb(215, 214, 213)");
       color = QColor(215, 214, 213, 255);
-      //pal = palette();
       pal.setColor(QPalette::Window, color);
       this->setAutoFillBackground(true);
       this->setPalette(pal);
