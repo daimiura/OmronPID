@@ -1,3 +1,13 @@
+//!
+//! \file mainwindow.h
+//! \brief mainwindow for connection to the E5CC
+//! \author Daisuke Miura (Original source code xxxxx)
+//! \date 2023/3/15
+//! \details The original source code did not include safety measures.
+//! To improve safety, functions were added to check if the temperature was rising and to detect unexpected sudden temperature drops.
+//! The GUI was also modified to set the necessary parameters for these functions.
+//!
+
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
@@ -18,14 +28,20 @@
 #include <QFile>
 #include <QTextStream>
 #include "mythread.h"
-#include "myqlineedit.h"
 #include "configuredialog.h"
 #include "plotdialog.h"
 
+//!
+//! \namespace Ui
+//!
 namespace Ui {
 class MainWindow;
 }
 
+
+//!
+//! \brief The MainWindow class
+//!
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
