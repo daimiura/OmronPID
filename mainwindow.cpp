@@ -15,18 +15,18 @@ const QString DATA_PATH_2 = DESKTOP_PATH + "Temp_Record";
 //const QString DATA_PATH = "Z:/triplet/Temp_Record";
 const QString DATA_PATH = "/c/Users/daisuke/OmronPID";
 
+/** enum E5CC_Address */
 enum E5CC_Address{
     // QByteArray::fromHex(QString::number(E5CC_Address::setPoint, 16).toStdString().c_str()
-    PV = 0x0000,
-    MV= 0x0008,
-    SV = 0x0106,
+    PV = 0x0000, /** Get Temperature */
+    MV= 0x0008, /** Get output power */
+    SV = 0x0106,/** Get set value */
+    MVupper = 0x0A0A, /** Get putput upper */
+    MVlower = 0x0A0C, /** Get output lower */
 
-    MVupper = 0x0A0A,
-    MVlower = 0x0A0C,
-
-    PID_P=0x0A00,
-    PID_I=0x0A02,
-    PID_D=0x0A04
+    PID_P=0x0A00, /** Get Proportional */
+    PID_I=0x0A02, /** Get Integration */
+    PID_D=0x0A04 /** Get Difference */
 };
 
 enum timing{
