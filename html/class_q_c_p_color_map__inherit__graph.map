@@ -1,0 +1,6 @@
+<map id="QCPColorMap" name="QCPColorMap">
+<area shape="rect" id="node1" title="A plottable representing a two&#45;dimensional color map in a plot." alt="" coords="28,225,133,251"/>
+<area shape="rect" id="node2" href="$class_q_c_p_abstract_plottable.html" title="The abstract base class for all data representing objects in a plot." alt="" coords="5,152,156,177"/>
+<area shape="rect" id="node3" href="$class_q_c_p_layerable.html" title="Base class for all drawable objects." alt="" coords="27,79,134,104"/>
+<area shape="rect" id="node4" title=" " alt="" coords="45,5,116,31"/>
+</map>

@@ -1,0 +1,275 @@
+.TH "QCPPainter" 3 "Wed Mar 15 2023" "OmronPID" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QCPPainter \- QPainter subclass used internally\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits QPainter\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBPainterMode\fP { \fBpmDefault\fP = 0x00, \fBpmVectorized\fP = 0x01, \fBpmNoCaching\fP = 0x02, \fBpmNonCosmetic\fP = 0x04 }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPPainter\fP ()"
+.br
+.ti -1c
+.RI "\fBQCPPainter\fP (QPaintDevice *device)"
+.br
+.ti -1c
+.RI "bool \fBantialiasing\fP () const"
+.br
+.ti -1c
+.RI "PainterModes \fBmodes\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetAntialiasing\fP (bool enabled)"
+.br
+.ti -1c
+.RI "void \fBsetMode\fP (\fBPainterMode\fP mode, bool enabled=true)"
+.br
+.ti -1c
+.RI "void \fBsetModes\fP (PainterModes modes)"
+.br
+.ti -1c
+.RI "bool \fBbegin\fP (QPaintDevice *device)"
+.br
+.ti -1c
+.RI "void \fBsetPen\fP (const QPen &pen)"
+.br
+.ti -1c
+.RI "void \fBsetPen\fP (const QColor &color)"
+.br
+.ti -1c
+.RI "void \fBsetPen\fP (Qt::PenStyle penStyle)"
+.br
+.ti -1c
+.RI "void \fBdrawLine\fP (const QLineF &line)"
+.br
+.ti -1c
+.RI "void \fBdrawLine\fP (const QPointF &p1, const QPointF &p2)"
+.br
+.ti -1c
+.RI "void \fBsave\fP ()"
+.br
+.ti -1c
+.RI "void \fBrestore\fP ()"
+.br
+.ti -1c
+.RI "void \fBmakeNonCosmetic\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "PainterModes \fBmModes\fP"
+.br
+.ti -1c
+.RI "bool \fBmIsAntialiasing\fP"
+.br
+.ti -1c
+.RI "QStack< bool > \fBmAntialiasingStack\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+QPainter subclass used internally\&. 
+
+This QPainter subclass is used to provide some extended functionality e\&.g\&. for tweaking position consistency between antialiased and non-antialiased painting\&. Further it provides workarounds for QPainter quirks\&.
+.PP
+\fBWarning\fP
+.RS 4
+This class intentionally hides non-virtual functions of QPainter, e\&.g\&. setPen, save and restore\&. So while it is possible to pass a \fBQCPPainter\fP instance to a function that expects a QPainter pointer, some of the workarounds and tweaks will be unavailable to the function (because it will call the base class implementations of the functions actually hidden by \fBQCPPainter\fP)\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB456\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBQCPPainter::PainterMode\fP"
+Defines special modes the painter can operate in\&. They disable or enable certain subsets of features/fixes/workarounds, depending on whether they are wanted on the respective output device\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIpmDefault \fP\fP
+\fC0x00\fP Default mode for painting on screen devices 
+.TP
+\fB\fIpmVectorized \fP\fP
+\fC0x01\fP Mode for vectorized painting (e\&.g\&. PDF export)\&. For example, this prevents some antialiasing fixes\&. 
+.TP
+\fB\fIpmNoCaching \fP\fP
+\fC0x02\fP Mode for all sorts of exports (e\&.g\&. PNG, PDF,\&.\&.\&.)\&. For example, this prevents using cached pixmap labels 
+.TP
+\fB\fIpmNonCosmetic \fP\fP
+\fC0x04\fP Turns pen widths 0 to 1, i\&.e\&. disables cosmetic pens\&. (A cosmetic pen is always drawn with width 1 pixel in the vector image/pdf viewer, independent of zoom\&.) 
+.PP
+Definition at line \fB464\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QCPPainter::QCPPainter ()"
+Creates a new \fBQCPPainter\fP instance and sets default values 
+.PP
+Definition at line \fB285\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QCPPainter::QCPPainter (QPaintDevice * device)\fC [explicit]\fP"
+Creates a new \fBQCPPainter\fP instance on the specified paint \fIdevice\fP and sets default values\&. Just like the analogous QPainter constructor, begins painting on \fIdevice\fP immediately\&.
+.PP
+Like \fBbegin\fP, this method sets QPainter::NonCosmeticDefaultPen in Qt versions before Qt5\&. 
+.PP
+Definition at line \fB300\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool QCPPainter::antialiasing () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB477\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "bool QCPPainter::begin (QPaintDevice * device)"
+Sets the QPainter::NonCosmeticDefaultPen in Qt versions before Qt5 after beginning painting on \fIdevice\fP\&. This is necessary to get cosmetic pen consistency across Qt versions, because since Qt5, all pens are non-cosmetic by default, and in Qt4 this render hint must be set to get that behaviour\&.
+.PP
+The Constructor \fBQCPPainter(QPaintDevice *device)\fP which directly starts painting also sets the render hint as appropriate\&.
+.PP
+\fBNote\fP
+.RS 4
+this function hides the non-virtual base class implementation\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB410\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPPainter::drawLine (const QLineF & line)"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&.
+.PP
+Works around a Qt bug introduced with Qt 4\&.8 which makes drawing QLineF unpredictable when antialiasing is disabled\&. Thus when antialiasing is disabled, it rounds the \fIline\fP to integer coordinates and then passes it to the original drawLine\&.
+.PP
+\fBNote\fP
+.RS 4
+this function hides the non-virtual base class implementation\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB360\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPPainter::drawLine (const QPointF & p1, const QPointF & p2)\fC [inline]\fP"
+
+.PP
+Definition at line \fB491\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "void QCPPainter::makeNonCosmetic ()"
+Changes the pen width to 1 if it currently is 0\&. This function is called in the \fBsetPen\fP overrides when the \fBpmNonCosmetic\fP mode is set\&. 
+.PP
+Definition at line \fB468\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "PainterModes QCPPainter::modes () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB478\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "void QCPPainter::restore ()"
+Restores the painter (see QPainter::restore)\&. Since \fBQCPPainter\fP adds some new internal state to QPainter, the save/restore functions are reimplemented to also save/restore those members\&.
+.PP
+\fBNote\fP
+.RS 4
+this function hides the non-virtual base class implementation\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBsave\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB455\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPPainter::save ()"
+Saves the painter (see QPainter::save)\&. Since \fBQCPPainter\fP adds some new internal state to QPainter, the save/restore functions are reimplemented to also save/restore those members\&.
+.PP
+\fBNote\fP
+.RS 4
+this function hides the non-virtual base class implementation\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBrestore\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB441\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPPainter::setAntialiasing (bool enabled)"
+Sets whether painting uses antialiasing or not\&. Use this method instead of using setRenderHint with QPainter::Antialiasing directly, as it allows \fBQCPPainter\fP to regain pixel exactness between antialiased and non-antialiased painting (Since Qt < 5\&.0 uses slightly different coordinate systems for AA/Non-AA painting)\&. 
+.PP
+Definition at line \fB374\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPPainter::setMode (\fBQCPPainter::PainterMode\fP mode, bool enabled = \fCtrue\fP)"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&.
+.PP
+Sets the mode of the painter\&. This controls whether the painter shall adjust its fixes/workarounds optimized for certain output devices\&. 
+.PP
+Definition at line \fB425\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPPainter::setModes (PainterModes modes)"
+Sets the mode of the painter\&. This controls whether the painter shall adjust its fixes/workarounds optimized for certain output devices\&. 
+.PP
+Definition at line \fB394\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPPainter::setPen (const QColor & color)"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&.
+.PP
+Sets the pen (by color) of the painter and applies certain fixes to it, depending on the mode of this \fBQCPPainter\fP\&.
+.PP
+\fBNote\fP
+.RS 4
+this function hides the non-virtual base class implementation\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB331\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPPainter::setPen (const QPen & pen)"
+Sets the pen of the painter and applies certain fixes to it, depending on the mode of this \fBQCPPainter\fP\&.
+.PP
+\fBNote\fP
+.RS 4
+this function hides the non-virtual base class implementation\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB317\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPPainter::setPen (Qt::PenStyle penStyle)"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&.
+.PP
+Sets the pen (by style) of the painter and applies certain fixes to it, depending on the mode of this \fBQCPPainter\fP\&.
+.PP
+\fBNote\fP
+.RS 4
+this function hides the non-virtual base class implementation\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB345\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QStack<bool> QCPPainter::mAntialiasingStack\fC [protected]\fP"
+
+.PP
+Definition at line \fB504\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "bool QCPPainter::mIsAntialiasing\fC [protected]\fP"
+
+.PP
+Definition at line \fB501\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "PainterModes QCPPainter::mModes\fC [protected]\fP"
+
+.PP
+Definition at line \fB500\fP of file \fBqcustomplot\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for OmronPID from the source code\&.

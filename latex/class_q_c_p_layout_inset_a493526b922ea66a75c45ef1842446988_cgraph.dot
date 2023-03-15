@@ -1,0 +1,33 @@
+digraph "QCPLayoutInset::updateLayout"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [label="QCPLayoutInset::updateLayout",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="steelblue1",style="solid"];
+  Node2 [label="QCPLayout::getFinalMaximum\lOuterSize",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_layout.html#add49fd6843821a6126914b837ed52e22",tooltip=" "];
+  Node2 -> Node3 [color="steelblue1",style="solid"];
+  Node3 [label="QCPLayoutElement::margins",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_layout_element.html#af4ac9450aa2d60863bf3a8ea0c940c9d",tooltip=" "];
+  Node2 -> Node4 [color="steelblue1",style="solid"];
+  Node4 [label="QCPLayoutElement::maximum\lOuterSizeHint",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_layout_element.html#ad96efb977a26e360e8a64a4c1e56456d",tooltip=" "];
+  Node2 -> Node5 [color="steelblue1",style="solid"];
+  Node5 [label="QCPLayoutElement::maximumSize",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_layout_element.html#afb9503858d4aa0f3b9f1794b084fb40a",tooltip=" "];
+  Node2 -> Node6 [color="steelblue1",style="solid"];
+  Node6 [label="QCPLayoutElement::sizeConstraintRect",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_layout_element.html#a66136f121ee3e1c933b748761203cab4",tooltip=" "];
+  Node1 -> Node7 [color="steelblue1",style="solid"];
+  Node7 [label="QCPLayout::getFinalMinimum\lOuterSize",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_layout.html#a864fddc84721f186663faf3683f1fa70",tooltip=" "];
+  Node7 -> Node3 [color="steelblue1",style="solid"];
+  Node7 -> Node8 [color="steelblue1",style="solid"];
+  Node8 [label="QCPLayoutElement::minimum\lOuterSizeHint",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_layout_element.html#a46789036c4fcb190fa374f91321d7c09",tooltip=" "];
+  Node7 -> Node9 [color="steelblue1",style="solid"];
+  Node9 [label="QCPLayoutElement::minimumSize",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_layout_element.html#a60d4295468a2b57fe91f6f68e20c3993",tooltip=" "];
+  Node7 -> Node6 [color="steelblue1",style="solid"];
+  Node1 -> Node10 [color="steelblue1",style="solid"];
+  Node10 [label="QCPLayoutInset::insetRect",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_layout_inset.html#ab23099a46af17c31f4c40668f13c9de1",tooltip=" "];
+  Node10 -> Node11 [color="steelblue1",style="solid"];
+  Node11 [label="QCPLayoutInset::elementAt",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_layout_inset.html#a881ca205605bae9c034733b808f93a02",tooltip=" "];
+  Node1 -> Node12 [color="steelblue1",style="solid"];
+  Node12 [label="QCPLayoutElement::rect",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_layout_element.html#a208effccfe2cca4a0eaf9393e60f2dd4",tooltip=" "];
+}

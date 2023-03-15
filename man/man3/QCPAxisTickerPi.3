@@ -1,0 +1,334 @@
+.TH "QCPAxisTickerPi" 3 "Wed Mar 15 2023" "OmronPID" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QCPAxisTickerPi \- Specialized axis ticker to display ticks in units of an arbitrary constant, for example pi\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBQCPAxisTicker\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBFractionStyle\fP { \fBfsFloatingPoint\fP, \fBfsAsciiFractions\fP, \fBfsUnicodeFractions\fP }"
+.br
+.in -1c
+
+Public Types inherited from \fBQCPAxisTicker\fP
+.in +1c
+.ti -1c
+.RI "enum \fBTickStepStrategy\fP { \fBtssReadability\fP, \fBtssMeetTickCount\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPAxisTickerPi\fP ()"
+.br
+.ti -1c
+.RI "QString \fBpiSymbol\fP () const"
+.br
+.ti -1c
+.RI "double \fBpiValue\fP () const"
+.br
+.ti -1c
+.RI "bool \fBperiodicity\fP () const"
+.br
+.ti -1c
+.RI "\fBFractionStyle\fP \fBfractionStyle\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetPiSymbol\fP (QString symbol)"
+.br
+.ti -1c
+.RI "void \fBsetPiValue\fP (double pi)"
+.br
+.ti -1c
+.RI "void \fBsetPeriodicity\fP (int multiplesOfPi)"
+.br
+.ti -1c
+.RI "void \fBsetFractionStyle\fP (\fBFractionStyle\fP style)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBQCPAxisTicker\fP
+.in +1c
+.ti -1c
+.RI "\fBQCPAxisTicker\fP ()"
+.br
+.ti -1c
+.RI "\fBTickStepStrategy\fP \fBtickStepStrategy\fP () const"
+.br
+.ti -1c
+.RI "int \fBtickCount\fP () const"
+.br
+.ti -1c
+.RI "double \fBtickOrigin\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetTickStepStrategy\fP (\fBTickStepStrategy\fP strategy)"
+.br
+.ti -1c
+.RI "void \fBsetTickCount\fP (int count)"
+.br
+.ti -1c
+.RI "void \fBsetTickOrigin\fP (double origin)"
+.br
+.ti -1c
+.RI "virtual void \fBgenerate\fP (const \fBQCPRange\fP &range, const QLocale &locale, QChar formatChar, int precision, QVector< double > &ticks, QVector< double > *subTicks, QVector< QString > *tickLabels)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual double \fBgetTickStep\fP (const \fBQCPRange\fP &range) Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual int \fBgetSubTickCount\fP (double tickStep) Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual QString \fBgetTickLabel\fP (double tick, const QLocale &locale, QChar formatChar, int precision) Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "void \fBsimplifyFraction\fP (int &numerator, int &denominator) const"
+.br
+.ti -1c
+.RI "QString \fBfractionToString\fP (int numerator, int denominator) const"
+.br
+.ti -1c
+.RI "QString \fBunicodeFraction\fP (int numerator, int denominator) const"
+.br
+.ti -1c
+.RI "QString \fBunicodeSuperscript\fP (int number) const"
+.br
+.ti -1c
+.RI "QString \fBunicodeSubscript\fP (int number) const"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBQCPAxisTicker\fP
+.in +1c
+.ti -1c
+.RI "virtual double \fBgetTickStep\fP (const \fBQCPRange\fP &range)"
+.br
+.ti -1c
+.RI "virtual int \fBgetSubTickCount\fP (double tickStep)"
+.br
+.ti -1c
+.RI "virtual QString \fBgetTickLabel\fP (double tick, const QLocale &locale, QChar formatChar, int precision)"
+.br
+.ti -1c
+.RI "virtual QVector< double > \fBcreateTickVector\fP (double tickStep, const \fBQCPRange\fP &range)"
+.br
+.ti -1c
+.RI "virtual QVector< double > \fBcreateSubTickVector\fP (int subTickCount, const QVector< double > &ticks)"
+.br
+.ti -1c
+.RI "virtual QVector< QString > \fBcreateLabelVector\fP (const QVector< double > &ticks, const QLocale &locale, QChar formatChar, int precision)"
+.br
+.ti -1c
+.RI "void \fBtrimTicks\fP (const \fBQCPRange\fP &range, QVector< double > &ticks, bool keepOneOutlier) const"
+.br
+.ti -1c
+.RI "double \fBpickClosest\fP (double target, const QVector< double > &candidates) const"
+.br
+.ti -1c
+.RI "double \fBgetMantissa\fP (double input, double *magnitude=0) const"
+.br
+.ti -1c
+.RI "double \fBcleanMantissa\fP (double input) const"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "QString \fBmPiSymbol\fP"
+.br
+.ti -1c
+.RI "double \fBmPiValue\fP"
+.br
+.ti -1c
+.RI "int \fBmPeriodicity\fP"
+.br
+.ti -1c
+.RI "\fBFractionStyle\fP \fBmFractionStyle\fP"
+.br
+.ti -1c
+.RI "double \fBmPiTickStep\fP"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBQCPAxisTicker\fP
+.in +1c
+.ti -1c
+.RI "\fBTickStepStrategy\fP \fBmTickStepStrategy\fP"
+.br
+.ti -1c
+.RI "int \fBmTickCount\fP"
+.br
+.ti -1c
+.RI "double \fBmTickOrigin\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Specialized axis ticker to display ticks in units of an arbitrary constant, for example pi\&. 
+
+
+.PP
+This \fBQCPAxisTicker\fP subclass generates ticks that are expressed with respect to a given symbolic constant with a numerical value specified with \fBsetPiValue\fP and an appearance in the tick labels specified with \fBsetPiSymbol\fP\&.
+.PP
+Ticks may be generated at fractions of the symbolic constant\&. How these fractions appear in the tick label can be configured with \fBsetFractionStyle\fP\&.
+.PP
+The ticker can be created and assigned to an axis like this: 
+.PP
+.nf
+
+.fi
+.PP
+ 
+.PP
+Definition at line \fB1768\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBQCPAxisTickerPi::FractionStyle\fP"
+Defines how fractions should be displayed in tick labels\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetFractionStyle\fP 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIfsFloatingPoint \fP\fP
+Fractions are displayed as regular decimal floating point numbers, e\&.g\&. '0\&.25' or '0\&.125'\&. 
+.TP
+\fB\fIfsAsciiFractions \fP\fP
+Fractions are written as rationals using ASCII characters only, e\&.g\&. '1/4' or '1/8'\&. 
+.TP
+\fB\fIfsUnicodeFractions \fP\fP
+Fractions are written using sub- and superscript UTF-8 digits and the fraction symbol\&. 
+.PP
+Definition at line \fB1777\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QCPAxisTickerPi::QCPAxisTickerPi ()"
+Constructs the ticker and sets reasonable default values\&. Axis tickers are commonly created managed by a QSharedPointer, which then can be passed to \fBQCPAxis::setTicker\fP\&. 
+.PP
+Definition at line \fB6733\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBFractionStyle\fP QCPAxisTickerPi::fractionStyle () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB1789\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QString QCPAxisTickerPi::fractionToString (int numerator, int denominator) const\fC [protected]\fP"
+
+.PP
+Definition at line \fB6886\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "int QCPAxisTickerPi::getSubTickCount (double tickStep)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBQCPAxisTicker\fP\&.
+.PP
+Definition at line \fB6811\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QString QCPAxisTickerPi::getTickLabel (double tick, const QLocale & locale, QChar formatChar, int precision)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBQCPAxisTicker\fP\&.
+.PP
+Definition at line \fB6824\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "double QCPAxisTickerPi::getTickStep (const \fBQCPRange\fP & range)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBQCPAxisTicker\fP\&.
+.PP
+Definition at line \fB6796\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "bool QCPAxisTickerPi::periodicity () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB1788\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QString QCPAxisTickerPi::piSymbol () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB1786\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double QCPAxisTickerPi::piValue () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB1787\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "void QCPAxisTickerPi::setFractionStyle (\fBQCPAxisTickerPi::FractionStyle\fP style)"
+Sets how the numerical/fractional part preceding the symbolic constant is displayed in tick labels\&. See \fBFractionStyle\fP for the various options\&. 
+.PP
+Definition at line \fB6783\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPAxisTickerPi::setPeriodicity (int multiplesOfPi)"
+Sets whether the axis labels shall appear periodicly and if so, at which multiplicity of the symbolic constant\&.
+.PP
+To disable periodicity, set \fImultiplesOfPi\fP to zero\&.
+.PP
+For example, an axis that identifies 0 with 2pi would set \fImultiplesOfPi\fP to two\&. 
+.PP
+Definition at line \fB6774\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPAxisTickerPi::setPiSymbol (QString symbol)"
+Sets how the symbol part (which is always a suffix to the number) shall appear in the axis tick label\&.
+.PP
+If a space shall appear between the number and the symbol, make sure the space is contained in \fIsymbol\fP\&. 
+.PP
+Definition at line \fB6750\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPAxisTickerPi::setPiValue (double pi)"
+Sets the numerical value that the symbolic constant has\&.
+.PP
+This will be used to place the appropriate fractions of the symbol at the respective axis coordinates\&. 
+.PP
+Definition at line \fB6761\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPAxisTickerPi::simplifyFraction (int & numerator, int & denominator) const\fC [protected]\fP"
+
+.PP
+Definition at line \fB6859\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QString QCPAxisTickerPi::unicodeFraction (int numerator, int denominator) const\fC [protected]\fP"
+
+.PP
+Definition at line \fB6942\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QString QCPAxisTickerPi::unicodeSubscript (int number) const\fC [protected]\fP"
+
+.PP
+Definition at line \fB6978\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QString QCPAxisTickerPi::unicodeSuperscript (int number) const\fC [protected]\fP"
+
+.PP
+Definition at line \fB6952\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBFractionStyle\fP QCPAxisTickerPi::mFractionStyle\fC [protected]\fP"
+
+.PP
+Definition at line \fB1802\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "int QCPAxisTickerPi::mPeriodicity\fC [protected]\fP"
+
+.PP
+Definition at line \fB1801\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QString QCPAxisTickerPi::mPiSymbol\fC [protected]\fP"
+
+.PP
+Definition at line \fB1799\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double QCPAxisTickerPi::mPiTickStep\fC [protected]\fP"
+
+.PP
+Definition at line \fB1805\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double QCPAxisTickerPi::mPiValue\fC [protected]\fP"
+
+.PP
+Definition at line \fB1800\fP of file \fBqcustomplot\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for OmronPID from the source code\&.

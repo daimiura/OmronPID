@@ -1,0 +1,676 @@
+.TH "QCPLayoutElement" 3 "Wed Mar 15 2023" "OmronPID" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QCPLayoutElement \- The abstract base class for all objects that form \fBthe layout system\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBQCPLayerable\fP\&.
+.PP
+Inherited by \fBQCPAbstractLegendItem\fP, \fBQCPAxisRect\fP, \fBQCPColorScale\fP, \fBQCPLayout\fP, and \fBQCPTextElement\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBUpdatePhase\fP { \fBupPreparation\fP, \fBupMargins\fP, \fBupLayout\fP }"
+.br
+.ti -1c
+.RI "enum \fBSizeConstraintRect\fP { \fBscrInnerRect\fP, \fBscrOuterRect\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPLayoutElement\fP (\fBQCustomPlot\fP *parentPlot=0)"
+.br
+.ti -1c
+.RI "\fBQCPLayout\fP * \fBlayout\fP () const"
+.br
+.ti -1c
+.RI "QRect \fBrect\fP () const"
+.br
+.ti -1c
+.RI "QRect \fBouterRect\fP () const"
+.br
+.ti -1c
+.RI "QMargins \fBmargins\fP () const"
+.br
+.ti -1c
+.RI "QMargins \fBminimumMargins\fP () const"
+.br
+.ti -1c
+.RI "QCP::MarginSides \fBautoMargins\fP () const"
+.br
+.ti -1c
+.RI "QSize \fBminimumSize\fP () const"
+.br
+.ti -1c
+.RI "QSize \fBmaximumSize\fP () const"
+.br
+.ti -1c
+.RI "\fBSizeConstraintRect\fP \fBsizeConstraintRect\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPMarginGroup\fP * \fBmarginGroup\fP (\fBQCP::MarginSide\fP side) const"
+.br
+.ti -1c
+.RI "QHash< \fBQCP::MarginSide\fP, \fBQCPMarginGroup\fP * > \fBmarginGroups\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetOuterRect\fP (const QRect &\fBrect\fP)"
+.br
+.ti -1c
+.RI "void \fBsetMargins\fP (const QMargins &margins)"
+.br
+.ti -1c
+.RI "void \fBsetMinimumMargins\fP (const QMargins &margins)"
+.br
+.ti -1c
+.RI "void \fBsetAutoMargins\fP (QCP::MarginSides sides)"
+.br
+.ti -1c
+.RI "void \fBsetMinimumSize\fP (const QSize &size)"
+.br
+.ti -1c
+.RI "void \fBsetMinimumSize\fP (int width, int height)"
+.br
+.ti -1c
+.RI "void \fBsetMaximumSize\fP (const QSize &size)"
+.br
+.ti -1c
+.RI "void \fBsetMaximumSize\fP (int width, int height)"
+.br
+.ti -1c
+.RI "void \fBsetSizeConstraintRect\fP (\fBSizeConstraintRect\fP constraintRect)"
+.br
+.ti -1c
+.RI "void \fBsetMarginGroup\fP (QCP::MarginSides sides, \fBQCPMarginGroup\fP *group)"
+.br
+.ti -1c
+.RI "virtual void \fBupdate\fP (\fBUpdatePhase\fP phase)"
+.br
+.ti -1c
+.RI "virtual QSize \fBminimumOuterSizeHint\fP () const"
+.br
+.ti -1c
+.RI "virtual QSize \fBmaximumOuterSizeHint\fP () const"
+.br
+.ti -1c
+.RI "virtual QList< \fBQCPLayoutElement\fP * > \fBelements\fP (bool recursive) const"
+.br
+.ti -1c
+.RI "virtual double \fBselectTest\fP (const QPointF &pos, bool onlySelectable, QVariant *details=0) const Q_DECL_OVERRIDE"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBQCPLayerable\fP
+.in +1c
+.ti -1c
+.RI "\fBQCPLayerable\fP (\fBQCustomPlot\fP *plot, QString targetLayer=QString(), \fBQCPLayerable\fP *\fBparentLayerable\fP=0)"
+.br
+.ti -1c
+.RI "bool \fBvisible\fP () const"
+.br
+.ti -1c
+.RI "\fBQCustomPlot\fP * \fBparentPlot\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPLayerable\fP * \fBparentLayerable\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPLayer\fP * \fBlayer\fP () const"
+.br
+.ti -1c
+.RI "bool \fBantialiased\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetVisible\fP (bool on)"
+.br
+.ti -1c
+.RI "Q_SLOT bool \fBsetLayer\fP (\fBQCPLayer\fP *layer)"
+.br
+.ti -1c
+.RI "bool \fBsetLayer\fP (const QString &layerName)"
+.br
+.ti -1c
+.RI "void \fBsetAntialiased\fP (bool enabled)"
+.br
+.ti -1c
+.RI "virtual double \fBselectTest\fP (const QPointF &pos, bool onlySelectable, QVariant *details=0) const"
+.br
+.ti -1c
+.RI "bool \fBrealVisibility\fP () const"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual int \fBcalculateAutoMargin\fP (\fBQCP::MarginSide\fP side)"
+.br
+.ti -1c
+.RI "virtual void \fBlayoutChanged\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBapplyDefaultAntialiasingHint\fP (\fBQCPPainter\fP *painter) const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (\fBQCPPainter\fP *painter) Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual void \fBparentPlotInitialized\fP (\fBQCustomPlot\fP *parentPlot) Q_DECL_OVERRIDE"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBQCPLayerable\fP
+.in +1c
+.ti -1c
+.RI "virtual void \fBparentPlotInitialized\fP (\fBQCustomPlot\fP *parentPlot)"
+.br
+.ti -1c
+.RI "virtual \fBQCP::Interaction\fP \fBselectionCategory\fP () const"
+.br
+.ti -1c
+.RI "virtual QRect \fBclipRect\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBapplyDefaultAntialiasingHint\fP (\fBQCPPainter\fP *painter) const =0"
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (\fBQCPPainter\fP *painter)=0"
+.br
+.ti -1c
+.RI "virtual void \fBselectEvent\fP (QMouseEvent *event, bool additive, const QVariant &details, bool *selectionStateChanged)"
+.br
+.ti -1c
+.RI "virtual void \fBdeselectEvent\fP (bool *selectionStateChanged)"
+.br
+.ti -1c
+.RI "virtual void \fBmousePressEvent\fP (QMouseEvent *event, const QVariant &details)"
+.br
+.ti -1c
+.RI "virtual void \fBmouseMoveEvent\fP (QMouseEvent *event, const QPointF &startPos)"
+.br
+.ti -1c
+.RI "virtual void \fBmouseReleaseEvent\fP (QMouseEvent *event, const QPointF &startPos)"
+.br
+.ti -1c
+.RI "virtual void \fBmouseDoubleClickEvent\fP (QMouseEvent *event, const QVariant &details)"
+.br
+.ti -1c
+.RI "virtual void \fBwheelEvent\fP (QWheelEvent *event)"
+.br
+.ti -1c
+.RI "void \fBinitializeParentPlot\fP (\fBQCustomPlot\fP *parentPlot)"
+.br
+.ti -1c
+.RI "void \fBsetParentLayerable\fP (\fBQCPLayerable\fP *\fBparentLayerable\fP)"
+.br
+.ti -1c
+.RI "bool \fBmoveToLayer\fP (\fBQCPLayer\fP *layer, bool prepend)"
+.br
+.ti -1c
+.RI "void \fBapplyAntialiasingHint\fP (\fBQCPPainter\fP *painter, bool localAntialiased, \fBQCP::AntialiasedElement\fP overrideElement) const"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPLayout\fP * \fBmParentLayout\fP"
+.br
+.ti -1c
+.RI "QSize \fBmMinimumSize\fP"
+.br
+.ti -1c
+.RI "QSize \fBmMaximumSize\fP"
+.br
+.ti -1c
+.RI "\fBSizeConstraintRect\fP \fBmSizeConstraintRect\fP"
+.br
+.ti -1c
+.RI "QRect \fBmRect\fP"
+.br
+.ti -1c
+.RI "QRect \fBmOuterRect\fP"
+.br
+.ti -1c
+.RI "QMargins \fBmMargins\fP"
+.br
+.ti -1c
+.RI "QMargins \fBmMinimumMargins\fP"
+.br
+.ti -1c
+.RI "QCP::MarginSides \fBmAutoMargins\fP"
+.br
+.ti -1c
+.RI "QHash< \fBQCP::MarginSide\fP, \fBQCPMarginGroup\fP * > \fBmMarginGroups\fP"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBQCPLayerable\fP
+.in +1c
+.ti -1c
+.RI "bool \fBmVisible\fP"
+.br
+.ti -1c
+.RI "\fBQCustomPlot\fP * \fBmParentPlot\fP"
+.br
+.ti -1c
+.RI "QPointer< \fBQCPLayerable\fP > \fBmParentLayerable\fP"
+.br
+.ti -1c
+.RI "\fBQCPLayer\fP * \fBmLayer\fP"
+.br
+.ti -1c
+.RI "bool \fBmAntialiased\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBQCustomPlot\fP"
+.br
+.ti -1c
+.RI "class \fBQCPLayout\fP"
+.br
+.ti -1c
+.RI "class \fBQCPMarginGroup\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Signals inherited from \fBQCPLayerable\fP
+.in +1c
+.ti -1c
+.RI "void \fBlayerChanged\fP (\fBQCPLayer\fP *newLayer)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The abstract base class for all objects that form \fBthe layout system\fP\&. 
+
+This is an abstract base class\&. As such, it can't be instantiated directly, rather use one of its subclasses\&.
+.PP
+A Layout element is a rectangular object which can be placed in layouts\&. It has an outer rect (\fBQCPLayoutElement::outerRect\fP) and an inner rect (\fBQCPLayoutElement::rect\fP)\&. The difference between outer and inner rect is called its margin\&. The margin can either be set to automatic or manual (\fBsetAutoMargins\fP) on a per-side basis\&. If a side is set to manual, that margin can be set explicitly with \fBsetMargins\fP and will stay fixed at that value\&. If it's set to automatic, the layout element subclass will control the value itself (via \fBcalculateAutoMargin\fP)\&.
+.PP
+Layout elements can be placed in layouts (base class \fBQCPLayout\fP) like \fBQCPLayoutGrid\fP\&. The top level layout is reachable via \fBQCustomPlot::plotLayout\fP, and is a \fBQCPLayoutGrid\fP\&. Since \fBQCPLayout\fP itself derives from \fBQCPLayoutElement\fP, layouts can be nested\&.
+.PP
+Thus in \fBQCustomPlot\fP one can divide layout elements into two categories: The ones that are invisible by themselves, because they don't draw anything\&. Their only purpose is to manage the position and size of other layout elements\&. This category of layout elements usually use \fBQCPLayout\fP as base class\&. Then there is the category of layout elements which actually draw something\&. For example, \fBQCPAxisRect\fP, \fBQCPLegend\fP and \fBQCPTextElement\fP are of this category\&. This does not necessarily mean that the latter category can't have child layout elements\&. \fBQCPLegend\fP for instance, actually derives from \fBQCPLayoutGrid\fP and the individual legend items are child layout elements in the grid layout\&. 
+.PP
+Definition at line \fB1179\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBQCPLayoutElement::SizeConstraintRect\fP"
+Defines to which rect of a layout element the size constraints that can be set via \fBsetMinimumSize\fP and \fBsetMaximumSize\fP apply\&. The outer rect (\fBouterRect\fP) includes the margins (e\&.g\&. in the case of a \fBQCPAxisRect\fP the axis labels), whereas the inner rect (\fBrect\fP) does not\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetSizeConstraintRect\fP 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIscrInnerRect \fP\fP
+Minimum/Maximum size constraints apply to inner rect\&. 
+.TP
+\fB\fIscrOuterRect \fP\fP
+Minimum/Maximum size constraints apply to outer rect, thus include layout element margins\&. 
+.PP
+Definition at line \fB1211\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "enum \fBQCPLayoutElement::UpdatePhase\fP"
+Defines the phases of the update process, that happens just before a replot\&. At each phase, \fBupdate\fP is called with the according UpdatePhase value\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIupPreparation \fP\fP
+Phase used for any type of preparation that needs to be done before margin calculation and layout\&. 
+.TP
+\fB\fIupMargins \fP\fP
+Phase in which the margins are calculated and set\&. 
+.TP
+\fB\fIupLayout \fP\fP
+Final phase in which the layout system places the rects of the elements\&. 
+.PP
+Definition at line \fB1197\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QCPLayoutElement::QCPLayoutElement (\fBQCustomPlot\fP * parentPlot = \fC0\fP)\fC [explicit]\fP"
+Creates an instance of \fBQCPLayoutElement\fP and sets default values\&. 
+.PP
+Definition at line \fB3175\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QCPLayoutElement::~QCPLayoutElement ()\fC [virtual]\fP"
+
+.PP
+Definition at line \fB3189\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void QCPLayoutElement::applyDefaultAntialiasingHint (\fBQCPPainter\fP * painter) const\fC [inline]\fP, \fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBQCPLayerable\fP\&.
+.PP
+Definition at line \fB1268\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QCP::MarginSides QCPLayoutElement::autoMargins () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB1225\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "int QCPLayoutElement::calculateAutoMargin (\fBQCP::MarginSide\fP side)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line \fB3537\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "virtual void QCPLayoutElement::draw (\fBQCPPainter\fP * painter)\fC [inline]\fP, \fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBQCPLayerable\fP\&.
+.PP
+Definition at line \fB1269\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QList< \fBQCPLayoutElement\fP * > QCPLayoutElement::elements (bool recursive) const\fC [virtual]\fP"
+Returns a list of all child elements in this layout element\&. If \fIrecursive\fP is true, all sub-child elements are included in the list, too\&.
+.PP
+\fBWarning\fP
+.RS 4
+There may be entries with value 0 in the returned list\&. (For example, \fBQCPLayoutGrid\fP may have empty cells which yield 0 at the respective index\&.) 
+.RE
+.PP
+
+.PP
+Reimplemented in \fBQCPLayout\fP, \fBQCPLayoutGrid\fP, and \fBQCPAxisRect\fP\&.
+.PP
+Definition at line \fB3477\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "\fBQCPLayout\fP * QCPLayoutElement::layout () const\fC [inline]\fP"
+Returns the parent layout of this layout element\&. 
+.PP
+Definition at line \fB1220\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "void QCPLayoutElement::layoutChanged ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line \fB3553\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "\fBQCPMarginGroup\fP * QCPLayoutElement::marginGroup (\fBQCP::MarginSide\fP side) const\fC [inline]\fP"
+
+.PP
+Definition at line \fB1229\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QHash< \fBQCP::MarginSide\fP, \fBQCPMarginGroup\fP * > QCPLayoutElement::marginGroups () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB1230\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QMargins QCPLayoutElement::margins () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB1223\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QSize QCPLayoutElement::maximumOuterSizeHint () const\fC [virtual]\fP"
+Returns the suggested maximum size this layout element (the \fBouterRect\fP) may be expanded to, if no manual maximum size is set\&.
+.PP
+if a maximum size (\fBsetMaximumSize\fP) was not set manually, parent layouts use the returned size (usually indirectly through \fBQCPLayout::getFinalMaximumOuterSize\fP) to determine the maximum allowed size of this layout element\&.
+.PP
+A manual maximum size is considered set if it is smaller than Qt's \fCQWIDGETSIZE_MAX\fP\&.
+.PP
+The default implementation simply returns \fCQWIDGETSIZE_MAX\fP for both width and height, implying no suggested maximum size\&. Reimplementations may use their detailed knowledge about the layout element's content to provide size hints\&. 
+.PP
+Reimplemented in \fBQCPLayoutGrid\fP, and \fBQCPTextElement\fP\&.
+.PP
+Definition at line \fB3465\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QSize QCPLayoutElement::maximumSize () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB1227\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QMargins QCPLayoutElement::minimumMargins () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB1224\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QSize QCPLayoutElement::minimumOuterSizeHint () const\fC [virtual]\fP"
+Returns the suggested minimum size this layout element (the \fBouterRect\fP) may be compressed to, if no manual minimum size is set\&.
+.PP
+if a minimum size (\fBsetMinimumSize\fP) was not set manually, parent layouts use the returned size (usually indirectly through \fBQCPLayout::getFinalMinimumOuterSize\fP) to determine the minimum allowed size of this layout element\&.
+.PP
+A manual minimum size is considered set if it is non-zero\&.
+.PP
+The default implementation simply returns the sum of the horizontal margins for the width and the sum of the vertical margins for the height\&. Reimplementations may use their detailed knowledge about the layout element's content to provide size hints\&. 
+.PP
+Reimplemented in \fBQCPLayoutGrid\fP, \fBQCPPlottableLegendItem\fP, and \fBQCPTextElement\fP\&.
+.PP
+Definition at line \fB3446\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QSize QCPLayoutElement::minimumSize () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB1226\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QRect QCPLayoutElement::outerRect () const\fC [inline]\fP"
+Returns the outer rect of this layout element\&. The outer rect is the inner rect expanded by the margins (\fBsetMargins\fP, \fBsetAutoMargins\fP)\&. The outer rect is used (and set via \fBsetOuterRect\fP) by the parent \fBQCPLayout\fP to control the size of this layout element\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBrect\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB1222\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "void QCPLayoutElement::parentPlotInitialized (\fBQCustomPlot\fP * parentPlot)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBQCPLayerable\fP\&.
+.PP
+Definition at line \fB3519\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QRect QCPLayoutElement::rect () const\fC [inline]\fP"
+Returns the inner rect of this layout element\&. The inner rect is the outer rect (\fBouterRect\fP, \fBsetOuterRect\fP) shrinked by the margins (\fBsetMargins\fP, \fBsetAutoMargins\fP)\&.
+.PP
+In some cases, the area between outer and inner rect is left blank\&. In other cases the margin area is used to display peripheral graphics while the main content is in the inner rect\&. This is where automatic margin calculation becomes interesting because it allows the layout element to adapt the margins to the peripheral graphics it wants to draw\&. For example, \fBQCPAxisRect\fP draws the axis labels and tick labels in the margin area, thus needs to adjust the margins (if \fBsetAutoMargins\fP is enabled) according to the space required by the labels of the axes\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBouterRect\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB1221\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double QCPLayoutElement::selectTest (const QPointF & pos, bool onlySelectable, QVariant * details = \fC0\fP) const\fC [virtual]\fP"
+Layout elements are sensitive to events inside their outer rect\&. If \fIpos\fP is within the outer rect, this method returns a value corresponding to 0\&.99 times the parent plot's selection tolerance\&. However, layout elements are not selectable by default\&. So if \fIonlySelectable\fP is true, -1\&.0 is returned\&.
+.PP
+See \fBQCPLayerable::selectTest\fP for a general explanation of this virtual method\&.
+.PP
+\fBQCPLayoutElement\fP subclasses may reimplement this method to provide more specific selection test behaviour\&. 
+.PP
+Reimplemented from \fBQCPLayerable\fP\&.
+.PP
+Reimplemented in \fBQCPLayoutInset\fP, \fBQCPAbstractLegendItem\fP, \fBQCPLegend\fP, and \fBQCPTextElement\fP\&.
+.PP
+Definition at line \fB3494\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPLayoutElement::setAutoMargins (QCP::MarginSides sides)"
+Sets on which sides the margin shall be calculated automatically\&. If a side is calculated automatically, a minimum margin value may be provided with \fBsetMinimumMargins\fP\&. If a side is set to be controlled manually, the value may be specified with \fBsetMargins\fP\&.
+.PP
+Margin sides that are under automatic control may participate in a \fBQCPMarginGroup\fP (see \fBsetMarginGroup\fP), to synchronize (align) it with other layout elements in the plot\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetMinimumMargins\fP, \fBsetMargins\fP, \fBQCP::MarginSide\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB3264\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPLayoutElement::setMarginGroup (QCP::MarginSides sides, \fBQCPMarginGroup\fP * group)"
+Sets the margin \fIgroup\fP of the specified margin \fIsides\fP\&.
+.PP
+Margin groups allow synchronizing specified margins across layout elements, see the documentation of \fBQCPMarginGroup\fP\&.
+.PP
+To unset the margin group of \fIsides\fP, set \fIgroup\fP to 0\&.
+.PP
+Note that margin groups only work for margin sides that are set to automatic (\fBsetAutoMargins\fP)\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBQCP::MarginSide\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB3364\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPLayoutElement::setMargins (const QMargins & margins)"
+Sets the margins of this layout element\&. If \fBsetAutoMargins\fP is disabled for some or all sides, this function is used to manually set the margin on those sides\&. Sides that are still set to be handled automatically are ignored and may have any value in \fImargins\fP\&.
+.PP
+The margin is the distance between the outer rect (controlled by the parent layout via \fBsetOuterRect\fP) and the inner \fBrect\fP (which usually contains the main content of this layout element)\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetAutoMargins\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB3228\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPLayoutElement::setMaximumSize (const QSize & size)"
+Sets the maximum size of this layout element\&. A parent layout tries to respect the \fIsize\fP here by changing row/column sizes in the layout accordingly\&.
+.PP
+Whether this constraint applies to the inner or the outer rect can be specified with \fBsetSizeConstraintRect\fP (see \fBrect\fP and \fBouterRect\fP)\&. 
+.PP
+Definition at line \fB3310\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPLayoutElement::setMaximumSize (int width, int height)"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&.
+.PP
+Sets the maximum size of this layout element\&.
+.PP
+Whether this constraint applies to the inner or the outer rect can be specified with \fBsetSizeConstraintRect\fP (see \fBrect\fP and \fBouterRect\fP)\&. 
+.PP
+Definition at line \fB3327\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPLayoutElement::setMinimumMargins (const QMargins & margins)"
+If \fBsetAutoMargins\fP is enabled on some or all margins, this function is used to provide minimum values for those margins\&.
+.PP
+The minimum values are not enforced on margin sides that were set to be under manual control via \fBsetAutoMargins\fP\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetAutoMargins\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB3246\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPLayoutElement::setMinimumSize (const QSize & size)"
+Sets the minimum size of this layout element\&. A parent layout tries to respect the \fIsize\fP here by changing row/column sizes in the layout accordingly\&.
+.PP
+If the parent layout size is not sufficient to satisfy all minimum size constraints of its child layout elements, the layout may set a size that is actually smaller than \fIsize\fP\&. \fBQCustomPlot\fP propagates the layout's size constraints to the outside by setting its own minimum QWidget size accordingly, so violations of \fIsize\fP should be exceptions\&.
+.PP
+Whether this constraint applies to the inner or the outer rect can be specified with \fBsetSizeConstraintRect\fP (see \fBrect\fP and \fBouterRect\fP)\&. 
+.PP
+Definition at line \fB3281\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPLayoutElement::setMinimumSize (int width, int height)"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&.
+.PP
+Sets the minimum size of this layout element\&.
+.PP
+Whether this constraint applies to the inner or the outer rect can be specified with \fBsetSizeConstraintRect\fP (see \fBrect\fP and \fBouterRect\fP)\&. 
+.PP
+Definition at line \fB3298\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPLayoutElement::setOuterRect (const QRect & rect)"
+Sets the outer rect of this layout element\&. If the layout element is inside a layout, the layout sets the position and size of this layout element using this function\&.
+.PP
+Calling this function externally has no effect, since the layout will overwrite any changes to the outer rect upon the next replot\&.
+.PP
+The layout element will adapt its inner \fBrect\fP by applying the margins inward to the outer rect\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBrect\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB3208\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPLayoutElement::setSizeConstraintRect (\fBSizeConstraintRect\fP constraintRect)"
+Sets to which rect of a layout element the size constraints apply\&. Size constraints can be set via \fBsetMinimumSize\fP and \fBsetMaximumSize\fP\&.
+.PP
+The outer rect (\fBouterRect\fP) includes the margins (e\&.g\&. in the case of a \fBQCPAxisRect\fP the axis labels), whereas the inner rect (\fBrect\fP) does not\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetMinimumSize\fP, \fBsetMaximumSize\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB3341\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "\fBSizeConstraintRect\fP QCPLayoutElement::sizeConstraintRect () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB1228\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "void QCPLayoutElement::update (\fBUpdatePhase\fP phase)\fC [virtual]\fP"
+Updates the layout element and sub-elements\&. This function is automatically called before every replot by the parent layout element\&. It is called multiple times, once for every \fBUpdatePhase\fP\&. The phases are run through in the order of the enum values\&. For details about what happens at the different phases, see the documentation of \fBUpdatePhase\fP\&.
+.PP
+Layout elements that have child elements should call the \fBupdate\fP method of their child elements, and pass the current \fIphase\fP unchanged\&.
+.PP
+The default implementation executes the automatic margin mechanism in the \fBupMargins\fP phase\&. Subclasses should make sure to call the base class implementation\&. 
+.PP
+Reimplemented in \fBQCPLayout\fP, \fBQCPAxisRect\fP, \fBQCPColorScaleAxisRectPrivate\fP, and \fBQCPColorScale\fP\&.
+.PP
+Definition at line \fB3405\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBQCPLayout\fP\fC [friend]\fP"
+
+.PP
+Definition at line \fB1276\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "friend class \fBQCPMarginGroup\fP\fC [friend]\fP"
+
+.PP
+Definition at line \fB1277\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "friend class \fBQCustomPlot\fP\fC [friend]\fP"
+
+.PP
+Definition at line \fB1275\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QCP::MarginSides QCPLayoutElement::mAutoMargins\fC [protected]\fP"
+
+.PP
+Definition at line \fB1260\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QHash<\fBQCP::MarginSide\fP, \fBQCPMarginGroup\fP*> QCPLayoutElement::mMarginGroups\fC [protected]\fP"
+
+.PP
+Definition at line \fB1261\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QMargins QCPLayoutElement::mMargins\fC [protected]\fP"
+
+.PP
+Definition at line \fB1259\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QSize QCPLayoutElement::mMaximumSize\fC [protected]\fP"
+
+.PP
+Definition at line \fB1256\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QMargins QCPLayoutElement::mMinimumMargins\fC [protected]\fP"
+
+.PP
+Definition at line \fB1259\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QSize QCPLayoutElement::mMinimumSize\fC [protected]\fP"
+
+.PP
+Definition at line \fB1256\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QRect QCPLayoutElement::mOuterRect\fC [protected]\fP"
+
+.PP
+Definition at line \fB1258\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBQCPLayout\fP* QCPLayoutElement::mParentLayout\fC [protected]\fP"
+
+.PP
+Definition at line \fB1255\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QRect QCPLayoutElement::mRect\fC [protected]\fP"
+
+.PP
+Definition at line \fB1258\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBSizeConstraintRect\fP QCPLayoutElement::mSizeConstraintRect\fC [protected]\fP"
+
+.PP
+Definition at line \fB1257\fP of file \fBqcustomplot\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for OmronPID from the source code\&.

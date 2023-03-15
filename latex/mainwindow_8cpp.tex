@@ -1,0 +1,129 @@
+\hypertarget{mainwindow_8cpp}{}\doxysection{mainwindow.\+cpp File Reference}
+\label{mainwindow_8cpp}\index{mainwindow.cpp@{mainwindow.cpp}}
+{\ttfamily \#include \char`\"{}mainwindow.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ui\+\_\+mainwindow.\+h\char`\"{}}\newline
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{mainwindow_8cpp_a0937c7458a740f3febe48f677e5f405e}{E5\+CC\+\_\+\+Address}} \{ \newline
+\mbox{\hyperlink{mainwindow_8cpp_a0937c7458a740f3febe48f677e5f405ea94a88bc2d8d3518fd7403669def8d155}{PV}} = 0x0000
+, \mbox{\hyperlink{mainwindow_8cpp_a0937c7458a740f3febe48f677e5f405eab4802cfc1a9ec7ea1ce64553919d0e88}{MV}} = 0x0008
+, \mbox{\hyperlink{mainwindow_8cpp_a0937c7458a740f3febe48f677e5f405ea6eabb7287a6d7dc68f0fad83edf5c7cc}{SV}} = 0x0106
+, \mbox{\hyperlink{mainwindow_8cpp_a0937c7458a740f3febe48f677e5f405eafe70a50ccf1b0ec4ed920b6d0a3f9221}{MVupper}} = 0x0\+A0A
+, \newline
+\mbox{\hyperlink{mainwindow_8cpp_a0937c7458a740f3febe48f677e5f405eaed4bb71e4d5f275506b808276d909b56}{MVlower}} = 0x0\+A0C
+, \mbox{\hyperlink{mainwindow_8cpp_a0937c7458a740f3febe48f677e5f405ea6bffd2397fda7caefa2e16c2450ec0de}{PID\+\_\+P}} =0x0\+A00
+, \mbox{\hyperlink{mainwindow_8cpp_a0937c7458a740f3febe48f677e5f405ead6c843008c17d20cf46ec24bc3d64550}{PID\+\_\+I}} =0x0\+A02
+, \mbox{\hyperlink{mainwindow_8cpp_a0937c7458a740f3febe48f677e5f405ea09fbc6169af8d5f6f28c6dfdfd86cf0e}{PID\+\_\+D}} =0x0\+A04
+ \}
+\item 
+enum \mbox{\hyperlink{mainwindow_8cpp_ac1950af19aa9eb86a3ba6cf8422caa8f}{timing}} \{ \newline
+\mbox{\hyperlink{mainwindow_8cpp_ac1950af19aa9eb86a3ba6cf8422caa8fad826b6660f3405a1e38e29a31a0ea522}{modbus}} = 100
+, \mbox{\hyperlink{mainwindow_8cpp_ac1950af19aa9eb86a3ba6cf8422caa8faba124b1b9b3e7b2af353a51749fd8ca1}{get\+Temp\+Timer}} = 10
+, \mbox{\hyperlink{mainwindow_8cpp_ac1950af19aa9eb86a3ba6cf8422caa8fa4d2032b88781fa7165e207aed77c9b5c}{clock\+Update}} = 50
+, \mbox{\hyperlink{mainwindow_8cpp_ac1950af19aa9eb86a3ba6cf8422caa8fac74d7d0e94eb35b73dc5a5b0e5a630eb}{time\+Up}} = 1000$\ast$60$\ast$10
+, \newline
+\mbox{\hyperlink{mainwindow_8cpp_ac1950af19aa9eb86a3ba6cf8422caa8fa84b020e34aed370083c0b79b916cda11}{time\+Out}} = 700
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const QString \mbox{\hyperlink{mainwindow_8cpp_a709cb9021410ffce1615996c392171bd}{DESKTOP\+\_\+\+PATH}} = QStandard\+Paths\+::locate(QStandard\+Paths\+::\+Desktop\+Location, QString(), QStandard\+Paths\+::\+Locate\+Directory)
+\item 
+const QString \mbox{\hyperlink{mainwindow_8cpp_af2076f852583dbe328b9cded02d7adf6}{DATA\+\_\+\+PATH\+\_\+2}} = \mbox{\hyperlink{mainwindow_8cpp_a709cb9021410ffce1615996c392171bd}{DESKTOP\+\_\+\+PATH}} + \char`\"{}Temp\+\_\+\+Record\char`\"{}
+\item 
+const QString \mbox{\hyperlink{mainwindow_8cpp_acf91cc33c5480e911ade8091442ada54}{DATA\+\_\+\+PATH}} = \char`\"{}Z\+:/triplet/Temp\+\_\+\+Record\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{mainwindow_8cpp_a0937c7458a740f3febe48f677e5f405e}\label{mainwindow_8cpp_a0937c7458a740f3febe48f677e5f405e}} 
+\index{mainwindow.cpp@{mainwindow.cpp}!E5CC\_Address@{E5CC\_Address}}
+\index{E5CC\_Address@{E5CC\_Address}!mainwindow.cpp@{mainwindow.cpp}}
+\doxysubsubsection{\texorpdfstring{E5CC\_Address}{E5CC\_Address}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{mainwindow_8cpp_a0937c7458a740f3febe48f677e5f405e}{E5\+CC\+\_\+\+Address}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PV@{PV}!mainwindow.cpp@{mainwindow.cpp}}\index{mainwindow.cpp@{mainwindow.cpp}!PV@{PV}}}\mbox{\Hypertarget{mainwindow_8cpp_a0937c7458a740f3febe48f677e5f405ea94a88bc2d8d3518fd7403669def8d155}\label{mainwindow_8cpp_a0937c7458a740f3febe48f677e5f405ea94a88bc2d8d3518fd7403669def8d155}} 
+PV&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MV@{MV}!mainwindow.cpp@{mainwindow.cpp}}\index{mainwindow.cpp@{mainwindow.cpp}!MV@{MV}}}\mbox{\Hypertarget{mainwindow_8cpp_a0937c7458a740f3febe48f677e5f405eab4802cfc1a9ec7ea1ce64553919d0e88}\label{mainwindow_8cpp_a0937c7458a740f3febe48f677e5f405eab4802cfc1a9ec7ea1ce64553919d0e88}} 
+MV&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SV@{SV}!mainwindow.cpp@{mainwindow.cpp}}\index{mainwindow.cpp@{mainwindow.cpp}!SV@{SV}}}\mbox{\Hypertarget{mainwindow_8cpp_a0937c7458a740f3febe48f677e5f405ea6eabb7287a6d7dc68f0fad83edf5c7cc}\label{mainwindow_8cpp_a0937c7458a740f3febe48f677e5f405ea6eabb7287a6d7dc68f0fad83edf5c7cc}} 
+SV&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MVupper@{MVupper}!mainwindow.cpp@{mainwindow.cpp}}\index{mainwindow.cpp@{mainwindow.cpp}!MVupper@{MVupper}}}\mbox{\Hypertarget{mainwindow_8cpp_a0937c7458a740f3febe48f677e5f405eafe70a50ccf1b0ec4ed920b6d0a3f9221}\label{mainwindow_8cpp_a0937c7458a740f3febe48f677e5f405eafe70a50ccf1b0ec4ed920b6d0a3f9221}} 
+MVupper&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MVlower@{MVlower}!mainwindow.cpp@{mainwindow.cpp}}\index{mainwindow.cpp@{mainwindow.cpp}!MVlower@{MVlower}}}\mbox{\Hypertarget{mainwindow_8cpp_a0937c7458a740f3febe48f677e5f405eaed4bb71e4d5f275506b808276d909b56}\label{mainwindow_8cpp_a0937c7458a740f3febe48f677e5f405eaed4bb71e4d5f275506b808276d909b56}} 
+MVlower&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PID\_P@{PID\_P}!mainwindow.cpp@{mainwindow.cpp}}\index{mainwindow.cpp@{mainwindow.cpp}!PID\_P@{PID\_P}}}\mbox{\Hypertarget{mainwindow_8cpp_a0937c7458a740f3febe48f677e5f405ea6bffd2397fda7caefa2e16c2450ec0de}\label{mainwindow_8cpp_a0937c7458a740f3febe48f677e5f405ea6bffd2397fda7caefa2e16c2450ec0de}} 
+PID\+\_\+P&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PID\_I@{PID\_I}!mainwindow.cpp@{mainwindow.cpp}}\index{mainwindow.cpp@{mainwindow.cpp}!PID\_I@{PID\_I}}}\mbox{\Hypertarget{mainwindow_8cpp_a0937c7458a740f3febe48f677e5f405ead6c843008c17d20cf46ec24bc3d64550}\label{mainwindow_8cpp_a0937c7458a740f3febe48f677e5f405ead6c843008c17d20cf46ec24bc3d64550}} 
+PID\+\_\+I&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PID\_D@{PID\_D}!mainwindow.cpp@{mainwindow.cpp}}\index{mainwindow.cpp@{mainwindow.cpp}!PID\_D@{PID\_D}}}\mbox{\Hypertarget{mainwindow_8cpp_a0937c7458a740f3febe48f677e5f405ea09fbc6169af8d5f6f28c6dfdfd86cf0e}\label{mainwindow_8cpp_a0937c7458a740f3febe48f677e5f405ea09fbc6169af8d5f6f28c6dfdfd86cf0e}} 
+PID\+\_\+D&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{mainwindow_8cpp_ac1950af19aa9eb86a3ba6cf8422caa8f}\label{mainwindow_8cpp_ac1950af19aa9eb86a3ba6cf8422caa8f}} 
+\index{mainwindow.cpp@{mainwindow.cpp}!timing@{timing}}
+\index{timing@{timing}!mainwindow.cpp@{mainwindow.cpp}}
+\doxysubsubsection{\texorpdfstring{timing}{timing}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{mainwindow_8cpp_ac1950af19aa9eb86a3ba6cf8422caa8f}{timing}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{modbus@{modbus}!mainwindow.cpp@{mainwindow.cpp}}\index{mainwindow.cpp@{mainwindow.cpp}!modbus@{modbus}}}\mbox{\Hypertarget{mainwindow_8cpp_ac1950af19aa9eb86a3ba6cf8422caa8fad826b6660f3405a1e38e29a31a0ea522}\label{mainwindow_8cpp_ac1950af19aa9eb86a3ba6cf8422caa8fad826b6660f3405a1e38e29a31a0ea522}} 
+modbus&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{getTempTimer@{getTempTimer}!mainwindow.cpp@{mainwindow.cpp}}\index{mainwindow.cpp@{mainwindow.cpp}!getTempTimer@{getTempTimer}}}\mbox{\Hypertarget{mainwindow_8cpp_ac1950af19aa9eb86a3ba6cf8422caa8faba124b1b9b3e7b2af353a51749fd8ca1}\label{mainwindow_8cpp_ac1950af19aa9eb86a3ba6cf8422caa8faba124b1b9b3e7b2af353a51749fd8ca1}} 
+get\+Temp\+Timer&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{clockUpdate@{clockUpdate}!mainwindow.cpp@{mainwindow.cpp}}\index{mainwindow.cpp@{mainwindow.cpp}!clockUpdate@{clockUpdate}}}\mbox{\Hypertarget{mainwindow_8cpp_ac1950af19aa9eb86a3ba6cf8422caa8fa4d2032b88781fa7165e207aed77c9b5c}\label{mainwindow_8cpp_ac1950af19aa9eb86a3ba6cf8422caa8fa4d2032b88781fa7165e207aed77c9b5c}} 
+clock\+Update&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{timeUp@{timeUp}!mainwindow.cpp@{mainwindow.cpp}}\index{mainwindow.cpp@{mainwindow.cpp}!timeUp@{timeUp}}}\mbox{\Hypertarget{mainwindow_8cpp_ac1950af19aa9eb86a3ba6cf8422caa8fac74d7d0e94eb35b73dc5a5b0e5a630eb}\label{mainwindow_8cpp_ac1950af19aa9eb86a3ba6cf8422caa8fac74d7d0e94eb35b73dc5a5b0e5a630eb}} 
+time\+Up&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{timeOut@{timeOut}!mainwindow.cpp@{mainwindow.cpp}}\index{mainwindow.cpp@{mainwindow.cpp}!timeOut@{timeOut}}}\mbox{\Hypertarget{mainwindow_8cpp_ac1950af19aa9eb86a3ba6cf8422caa8fa84b020e34aed370083c0b79b916cda11}\label{mainwindow_8cpp_ac1950af19aa9eb86a3ba6cf8422caa8fa84b020e34aed370083c0b79b916cda11}} 
+time\+Out&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{mainwindow_8cpp_acf91cc33c5480e911ade8091442ada54}\label{mainwindow_8cpp_acf91cc33c5480e911ade8091442ada54}} 
+\index{mainwindow.cpp@{mainwindow.cpp}!DATA\_PATH@{DATA\_PATH}}
+\index{DATA\_PATH@{DATA\_PATH}!mainwindow.cpp@{mainwindow.cpp}}
+\doxysubsubsection{\texorpdfstring{DATA\_PATH}{DATA\_PATH}}
+{\footnotesize\ttfamily const QString DATA\+\_\+\+PATH = \char`\"{}Z\+:/triplet/Temp\+\_\+\+Record\char`\"{}}
+
+\mbox{\Hypertarget{mainwindow_8cpp_af2076f852583dbe328b9cded02d7adf6}\label{mainwindow_8cpp_af2076f852583dbe328b9cded02d7adf6}} 
+\index{mainwindow.cpp@{mainwindow.cpp}!DATA\_PATH\_2@{DATA\_PATH\_2}}
+\index{DATA\_PATH\_2@{DATA\_PATH\_2}!mainwindow.cpp@{mainwindow.cpp}}
+\doxysubsubsection{\texorpdfstring{DATA\_PATH\_2}{DATA\_PATH\_2}}
+{\footnotesize\ttfamily const QString DATA\+\_\+\+PATH\+\_\+2 = \mbox{\hyperlink{mainwindow_8cpp_a709cb9021410ffce1615996c392171bd}{DESKTOP\+\_\+\+PATH}} + \char`\"{}Temp\+\_\+\+Record\char`\"{}}
+
+\mbox{\Hypertarget{mainwindow_8cpp_a709cb9021410ffce1615996c392171bd}\label{mainwindow_8cpp_a709cb9021410ffce1615996c392171bd}} 
+\index{mainwindow.cpp@{mainwindow.cpp}!DESKTOP\_PATH@{DESKTOP\_PATH}}
+\index{DESKTOP\_PATH@{DESKTOP\_PATH}!mainwindow.cpp@{mainwindow.cpp}}
+\doxysubsubsection{\texorpdfstring{DESKTOP\_PATH}{DESKTOP\_PATH}}
+{\footnotesize\ttfamily const QString DESKTOP\+\_\+\+PATH = QStandard\+Paths\+::locate(QStandard\+Paths\+::\+Desktop\+Location, QString(), QStandard\+Paths\+::\+Locate\+Directory)}
+

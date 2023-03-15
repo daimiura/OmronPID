@@ -1,0 +1,135 @@
+.TH "QCPBarsData" 3 "Wed Mar 15 2023" "OmronPID" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QCPBarsData \- Holds the data of one single data point (one bar) for \fBQCPBars\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPBarsData\fP ()"
+.br
+.ti -1c
+.RI "\fBQCPBarsData\fP (double key, double value)"
+.br
+.ti -1c
+.RI "double \fBsortKey\fP () const"
+.br
+.ti -1c
+.RI "double \fBmainKey\fP () const"
+.br
+.ti -1c
+.RI "double \fBmainValue\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPRange\fP \fBvalueRange\fP () const"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBQCPBarsData\fP \fBfromSortKey\fP (double \fBsortKey\fP)"
+.br
+.ti -1c
+.RI "static bool \fBsortKeyIsMainKey\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBkey\fP"
+.br
+.ti -1c
+.RI "double \fBvalue\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Holds the data of one single data point (one bar) for \fBQCPBars\fP\&. 
+
+The stored data is: 
+.PD 0
+
+.IP "\(bu" 2
+\fIkey:\fP coordinate on the key axis of this bar (this is the \fImainKey\fP and the \fIsortKey\fP) 
+.IP "\(bu" 2
+\fIvalue:\fP height coordinate on the value axis of this bar (this is the \fImainValue\fP)
+.PP
+The container for storing multiple data points is \fBQCPBarsDataContainer\fP\&. It is a typedef for \fBQCPDataContainer\fP with \fBQCPBarsData\fP as the DataType template parameter\&. See the documentation there for an explanation regarding the data type's generic methods\&.
+.PP
+\fBSee also\fP
+.RS 4
+QCPBarsDataContainer 
+.RE
+.PP
+
+.PP
+Definition at line \fB5440\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QCPBarsData::QCPBarsData ()"
+Constructs a bar data point with key and value set to zero\&. 
+.PP
+Definition at line \fB23498\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QCPBarsData::QCPBarsData (double key, double value)"
+Constructs a bar data point with the specified \fIkey\fP and \fIvalue\fP\&. 
+.PP
+Definition at line \fB23507\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "static \fBQCPBarsData\fP QCPBarsData::fromSortKey (double sortKey)\fC [inline]\fP, \fC [static]\fP"
+Returns a data point with the specified \fIsortKey\fP\&. All other members are set to zero\&.
+.PP
+For a general explanation of what this method is good for in the context of the data container, see the documentation of \fBQCPDataContainer\fP\&. 
+.PP
+Definition at line \fB5447\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double QCPBarsData::mainKey () const\fC [inline]\fP"
+Returns the \fIkey\fP member of this data point\&.
+.PP
+For a general explanation of what this method is good for in the context of the data container, see the documentation of \fBQCPDataContainer\fP\&. 
+.PP
+Definition at line \fB5450\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double QCPBarsData::mainValue () const\fC [inline]\fP"
+Returns the \fIvalue\fP member of this data point\&.
+.PP
+For a general explanation of what this method is good for in the context of the data container, see the documentation of \fBQCPDataContainer\fP\&. 
+.PP
+Definition at line \fB5451\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double QCPBarsData::sortKey () const\fC [inline]\fP"
+Returns the \fIkey\fP member of this data point\&.
+.PP
+For a general explanation of what this method is good for in the context of the data container, see the documentation of \fBQCPDataContainer\fP\&. 
+.PP
+Definition at line \fB5446\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "static static bool QCPBarsData::sortKeyIsMainKey ()\fC [inline]\fP, \fC [static]\fP"
+Since the member \fIkey\fP is both the data point key coordinate and the data ordering parameter, this method returns true\&.
+.PP
+For a general explanation of what this method is good for in the context of the data container, see the documentation of \fBQCPDataContainer\fP\&. 
+.PP
+Definition at line \fB5448\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBQCPRange\fP QCPBarsData::valueRange () const\fC [inline]\fP"
+Returns a \fBQCPRange\fP with both lower and upper boundary set to \fIvalue\fP of this data point\&.
+.PP
+For a general explanation of what this method is good for in the context of the data container, see the documentation of \fBQCPDataContainer\fP\&. 
+.PP
+Definition at line \fB5453\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "double QCPBarsData::key"
+
+.PP
+Definition at line \fB5455\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double QCPBarsData::value"
+
+.PP
+Definition at line \fB5455\fP of file \fBqcustomplot\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for OmronPID from the source code\&.

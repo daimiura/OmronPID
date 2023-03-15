@@ -1,0 +1,253 @@
+.TH "QCPAxisTicker" 3 "Wed Mar 15 2023" "OmronPID" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QCPAxisTicker \- The base class tick generator used by \fBQCPAxis\fP to create tick positions and tick labels\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBQCPAxisTickerDateTime\fP, \fBQCPAxisTickerFixed\fP, \fBQCPAxisTickerLog\fP, \fBQCPAxisTickerPi\fP, \fBQCPAxisTickerText\fP, and \fBQCPAxisTickerTime\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBTickStepStrategy\fP { \fBtssReadability\fP, \fBtssMeetTickCount\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPAxisTicker\fP ()"
+.br
+.ti -1c
+.RI "\fBTickStepStrategy\fP \fBtickStepStrategy\fP () const"
+.br
+.ti -1c
+.RI "int \fBtickCount\fP () const"
+.br
+.ti -1c
+.RI "double \fBtickOrigin\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetTickStepStrategy\fP (\fBTickStepStrategy\fP strategy)"
+.br
+.ti -1c
+.RI "void \fBsetTickCount\fP (int count)"
+.br
+.ti -1c
+.RI "void \fBsetTickOrigin\fP (double origin)"
+.br
+.ti -1c
+.RI "virtual void \fBgenerate\fP (const \fBQCPRange\fP &range, const QLocale &locale, QChar formatChar, int precision, QVector< double > &ticks, QVector< double > *subTicks, QVector< QString > *tickLabels)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual double \fBgetTickStep\fP (const \fBQCPRange\fP &range)"
+.br
+.ti -1c
+.RI "virtual int \fBgetSubTickCount\fP (double tickStep)"
+.br
+.ti -1c
+.RI "virtual QString \fBgetTickLabel\fP (double tick, const QLocale &locale, QChar formatChar, int precision)"
+.br
+.ti -1c
+.RI "virtual QVector< double > \fBcreateTickVector\fP (double tickStep, const \fBQCPRange\fP &range)"
+.br
+.ti -1c
+.RI "virtual QVector< double > \fBcreateSubTickVector\fP (int subTickCount, const QVector< double > &ticks)"
+.br
+.ti -1c
+.RI "virtual QVector< QString > \fBcreateLabelVector\fP (const QVector< double > &ticks, const QLocale &locale, QChar formatChar, int precision)"
+.br
+.ti -1c
+.RI "void \fBtrimTicks\fP (const \fBQCPRange\fP &range, QVector< double > &ticks, bool keepOneOutlier) const"
+.br
+.ti -1c
+.RI "double \fBpickClosest\fP (double target, const QVector< double > &candidates) const"
+.br
+.ti -1c
+.RI "double \fBgetMantissa\fP (double input, double *magnitude=0) const"
+.br
+.ti -1c
+.RI "double \fBcleanMantissa\fP (double input) const"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBTickStepStrategy\fP \fBmTickStepStrategy\fP"
+.br
+.ti -1c
+.RI "int \fBmTickCount\fP"
+.br
+.ti -1c
+.RI "double \fBmTickOrigin\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The base class tick generator used by \fBQCPAxis\fP to create tick positions and tick labels\&. 
+
+Each \fBQCPAxis\fP has an internal \fBQCPAxisTicker\fP (or a subclass) in order to generate tick positions and tick labels for the current axis range\&. The ticker of an axis can be set via \fBQCPAxis::setTicker\fP\&. Since that method takes a \fCQSharedPointer<QCPAxisTicker>\fP, multiple axes can share the same ticker instance\&.
+.PP
+This base class generates normal tick coordinates and numeric labels for linear axes\&. It picks a reasonable tick step (the separation between ticks) which results in readable tick labels\&. The number of ticks that should be approximately generated can be set via \fBsetTickCount\fP\&. Depending on the current tick step strategy (\fBsetTickStepStrategy\fP), the algorithm either sacrifices readability to better match the specified tick count (\fBQCPAxisTicker::tssMeetTickCount\fP) or relaxes the tick count in favor of better tick steps (\fBQCPAxisTicker::tssReadability\fP), which is the default\&.
+.PP
+The following more specialized axis ticker subclasses are available, see details in the respective class documentation:
+.PP
+ \fBQCPAxisTickerFixed\fPtd \fBQCPAxisTickerLog\fPtd \fBQCPAxisTickerPi\fPtd \fBQCPAxisTickerText\fPtd \fBQCPAxisTickerDateTime\fPtd \fBQCPAxisTickerTime\fP td 
+.SH "Creating own axis tickers"
+.PP
+Creating own axis tickers can be achieved very easily by sublassing \fBQCPAxisTicker\fP and reimplementing some or all of the available virtual methods\&.
+.PP
+In the simplest case you might wish to just generate different tick steps than the other tickers, so you only reimplement the method \fBgetTickStep\fP\&. If you additionally want control over the string that will be shown as tick label, reimplement \fBgetTickLabel\fP\&.
+.PP
+If you wish to have complete control, you can generate the tick vectors and tick label vectors yourself by reimplementing \fBcreateTickVector\fP and \fBcreateLabelVector\fP\&. The default implementations use the previously mentioned virtual methods \fBgetTickStep\fP and \fBgetTickLabel\fP, but your reimplementations don't necessarily need to do so\&. For example in the case of unequal tick steps, the method \fBgetTickStep\fP loses its usefulness and can be ignored\&.
+.PP
+The sub tick count between major ticks can be controlled with \fBgetSubTickCount\fP\&. Full sub tick placement control is obtained by reimplementing \fBcreateSubTickVector\fP\&.
+.PP
+See the documentation of all these virtual methods in \fBQCPAxisTicker\fP for detailed information about the parameters and expected return values\&. 
+.PP
+Definition at line \fB1533\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBQCPAxisTicker::TickStepStrategy\fP"
+Defines the strategies that the axis ticker may follow when choosing the size of the tick step\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetTickStepStrategy\fP 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fItssReadability \fP\fP
+A nicely readable tick step is prioritized over matching the requested number of ticks (see \fBsetTickCount\fP) 
+.TP
+\fB\fItssMeetTickCount \fP\fP
+Less readable tick steps are allowed which in turn facilitates getting closer to the requested tick count\&. 
+.PP
+Definition at line \fB1542\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QCPAxisTicker::QCPAxisTicker ()"
+Constructs the ticker and sets reasonable default values\&. Axis tickers are commonly created managed by a QSharedPointer, which then can be passed to \fBQCPAxis::setTicker\fP\&. 
+.PP
+Definition at line \fB5489\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QCPAxisTicker::~QCPAxisTicker ()\fC [virtual]\fP"
+
+.PP
+Definition at line \fB5496\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "double QCPAxisTicker::cleanMantissa (double input) const\fC [protected]\fP"
+
+.PP
+Definition at line \fB5822\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QVector< QString > QCPAxisTicker::createLabelVector (const QVector< double > & ticks, const QLocale & locale, QChar formatChar, int precision)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line \fB5731\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QVector< double > QCPAxisTicker::createSubTickVector (int subTickCount, const QVector< double > & ticks)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line \fB5677\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QVector< double > QCPAxisTicker::createTickVector (double tickStep, const \fBQCPRange\fP & range)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented in \fBQCPAxisTickerText\fP\&.
+.PP
+Definition at line \fB5708\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPAxisTicker::generate (const \fBQCPRange\fP & range, const QLocale & locale, QChar formatChar, int precision, QVector< double > & ticks, QVector< double > * subTicks, QVector< QString > * tickLabels)\fC [virtual]\fP"
+This is the method called by \fBQCPAxis\fP in order to actually generate tick coordinates (\fIticks\fP), tick label strings (\fItickLabels\fP) and sub tick coordinates (\fIsubTicks\fP)\&.
+.PP
+The ticks are generated for the specified \fIrange\fP\&. The generated labels typically follow the specified \fIlocale\fP, \fIformatChar\fP and number \fIprecision\fP, however this might be different (or even irrelevant) for certain \fBQCPAxisTicker\fP subclasses\&.
+.PP
+The output parameter \fIticks\fP is filled with the generated tick positions in axis coordinates\&. The output parameters \fIsubTicks\fP and \fItickLabels\fP are optional (set them to 0 if not needed) and are respectively filled with sub tick coordinates, and tick label strings belonging to \fIticks\fP by index\&. 
+.PP
+Definition at line \fB5552\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "double QCPAxisTicker::getMantissa (double input, double * magnitude = \fC0\fP) const\fC [protected]\fP"
+
+.PP
+Definition at line \fB5809\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "int QCPAxisTicker::getSubTickCount (double tickStep)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented in \fBQCPAxisTickerText\fP\&.
+.PP
+Definition at line \fB5600\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QString QCPAxisTicker::getTickLabel (double tick, const QLocale & locale, QChar formatChar, int precision)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented in \fBQCPAxisTickerText\fP\&.
+.PP
+Definition at line \fB5663\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "double QCPAxisTicker::getTickStep (const \fBQCPRange\fP & range)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented in \fBQCPAxisTickerText\fP\&.
+.PP
+Definition at line \fB5587\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "double QCPAxisTicker::pickClosest (double target, const QVector< double > & candidates) const\fC [protected]\fP"
+
+.PP
+Definition at line \fB5789\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPAxisTicker::setTickCount (int count)"
+Sets how many ticks this ticker shall aim to generate across the axis range\&. Note that \fIcount\fP is not guaranteed to be matched exactly, as generating readable tick intervals may conflict with the requested number of ticks\&.
+.PP
+Whether the readability has priority over meeting the requested \fIcount\fP can be specified with \fBsetTickStepStrategy\fP\&. 
+.PP
+Definition at line \fB5518\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPAxisTicker::setTickOrigin (double origin)"
+Sets the mathematical coordinate (or 'offset') of the zeroth tick\&. This tick coordinate is just a concept and doesn't need to be inside the currently visible axis range\&.
+.PP
+By default \fIorigin\fP is zero, which for example yields ticks {-5, 0, 5, 10, 15,\&.\&.\&.} when the tick step is five\&. If \fIorigin\fP is now set to 1 instead, the correspondingly generated ticks would be {-4, 1, 6, 11, 16,\&.\&.\&.}\&. 
+.PP
+Definition at line \fB5534\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPAxisTicker::setTickStepStrategy (\fBQCPAxisTicker::TickStepStrategy\fP strategy)"
+Sets which strategy the axis ticker follows when choosing the size of the tick step\&. For the available strategies, see \fBTickStepStrategy\fP\&. 
+.PP
+Definition at line \fB5505\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "int QCPAxisTicker::tickCount () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB1554\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double QCPAxisTicker::tickOrigin () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB1555\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBTickStepStrategy\fP QCPAxisTicker::tickStepStrategy () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB1553\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "void QCPAxisTicker::trimTicks (const \fBQCPRange\fP & range, QVector< double > & ticks, bool keepOneOutlier) const\fC [protected]\fP"
+
+.PP
+Definition at line \fB5747\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "int QCPAxisTicker::mTickCount\fC [protected]\fP"
+
+.PP
+Definition at line \fB1568\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double QCPAxisTicker::mTickOrigin\fC [protected]\fP"
+
+.PP
+Definition at line \fB1569\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBTickStepStrategy\fP QCPAxisTicker::mTickStepStrategy\fC [protected]\fP"
+
+.PP
+Definition at line \fB1567\fP of file \fBqcustomplot\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for OmronPID from the source code\&.

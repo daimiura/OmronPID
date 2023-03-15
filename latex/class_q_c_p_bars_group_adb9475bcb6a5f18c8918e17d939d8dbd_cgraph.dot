@@ -1,0 +1,13 @@
+digraph "QCPBarsGroup::~QCPBarsGroup"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [label="QCPBarsGroup::~QCPBarsGroup",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="steelblue1",style="solid"];
+  Node2 [label="QCPBarsGroup::clear",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_bars_group.html#a3ddf23928c6cd89530bd34ab7ba7b177",tooltip=" "];
+  Node2 -> Node3 [color="steelblue1",style="solid"];
+  Node3 [label="QCPBarsGroup::bars",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_bars_group.html#a6e4f4e86abbec6a9342f204ef82abef8",tooltip=" "];
+}

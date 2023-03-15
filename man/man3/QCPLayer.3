@@ -1,0 +1,296 @@
+.TH "QCPLayer" 3 "Wed Mar 15 2023" "OmronPID" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QCPLayer \- A layer that may contain objects, to control the rendering order\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits QObject\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBLayerMode\fP { \fBlmLogical\fP, \fBlmBuffered\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPLayer\fP (\fBQCustomPlot\fP *parentPlot, const QString &layerName)"
+.br
+.ti -1c
+.RI "\fBQCustomPlot\fP * \fBparentPlot\fP () const"
+.br
+.ti -1c
+.RI "QString \fBname\fP () const"
+.br
+.ti -1c
+.RI "int \fBindex\fP () const"
+.br
+.ti -1c
+.RI "QList< \fBQCPLayerable\fP * > \fBchildren\fP () const"
+.br
+.ti -1c
+.RI "bool \fBvisible\fP () const"
+.br
+.ti -1c
+.RI "\fBLayerMode\fP \fBmode\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetVisible\fP (bool visible)"
+.br
+.ti -1c
+.RI "void \fBsetMode\fP (\fBLayerMode\fP mode)"
+.br
+.ti -1c
+.RI "void \fBreplot\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBdraw\fP (\fBQCPPainter\fP *painter)"
+.br
+.ti -1c
+.RI "void \fBdrawToPaintBuffer\fP ()"
+.br
+.ti -1c
+.RI "void \fBaddChild\fP (\fBQCPLayerable\fP *layerable, bool prepend)"
+.br
+.ti -1c
+.RI "void \fBremoveChild\fP (\fBQCPLayerable\fP *layerable)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBQCustomPlot\fP * \fBmParentPlot\fP"
+.br
+.ti -1c
+.RI "QString \fBmName\fP"
+.br
+.ti -1c
+.RI "int \fBmIndex\fP"
+.br
+.ti -1c
+.RI "QList< \fBQCPLayerable\fP * > \fBmChildren\fP"
+.br
+.ti -1c
+.RI "bool \fBmVisible\fP"
+.br
+.ti -1c
+.RI "\fBLayerMode\fP \fBmMode\fP"
+.br
+.ti -1c
+.RI "QWeakPointer< \fBQCPAbstractPaintBuffer\fP > \fBmPaintBuffer\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBQCustomPlot\fP"
+.br
+.ti -1c
+.RI "class \fBQCPLayerable\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+A layer that may contain objects, to control the rendering order\&. 
+
+The Layering system of \fBQCustomPlot\fP is the mechanism to control the rendering order of the elements inside the plot\&.
+.PP
+It is based on the two classes \fBQCPLayer\fP and \fBQCPLayerable\fP\&. \fBQCustomPlot\fP holds an ordered list of one or more instances of \fBQCPLayer\fP (see \fBQCustomPlot::addLayer\fP, \fBQCustomPlot::layer\fP, \fBQCustomPlot::moveLayer\fP, etc\&.)\&. When replotting, \fBQCustomPlot\fP goes through the list of layers bottom to top and successively draws the layerables of the layers into the paint buffer(s)\&.
+.PP
+A \fBQCPLayer\fP contains an ordered list of \fBQCPLayerable\fP instances\&. \fBQCPLayerable\fP is an abstract base class from which almost all visible objects derive, like axes, grids, graphs, items, etc\&.
+.SH "Default layers"
+.PP
+Initially, \fBQCustomPlot\fP has six layers: 'background', 'grid', 'main', 'axes', 'legend' and 'overlay' (in that order)\&. On top is the 'overlay' layer, which only contains the \fBQCustomPlot\fP's selection rect (\fBQCustomPlot::selectionRect\fP)\&. The next two layers 'axes' and 'legend' contain the default axes and legend, so they will be drawn above plottables\&. In the middle, there is the 'main' layer\&. It is initially empty and set as the current layer (see \fBQCustomPlot::setCurrentLayer\fP)\&. This means, all new plottables, items etc\&. are created on this layer by default\&. Then comes the 'grid' layer which contains the \fBQCPGrid\fP instances (which belong tightly to \fBQCPAxis\fP, see \fBQCPAxis::grid\fP)\&. The Axis rect background shall be drawn behind everything else, thus the default \fBQCPAxisRect\fP instance is placed on the 'background' layer\&. Of course, the layer affiliation of the individual objects can be changed as required (\fBQCPLayerable::setLayer\fP)\&.
+.SH "Controlling the rendering order via layers"
+.PP
+Controlling the ordering of layerables in the plot is easy: Create a new layer in the position you want the layerable to be in, e\&.g\&. above 'main', with \fBQCustomPlot::addLayer\fP\&. Then set the current layer with \fBQCustomPlot::setCurrentLayer\fP to that new layer and finally create the objects normally\&. They will be placed on the new layer automatically, due to the current layer setting\&. Alternatively you could have also ignored the current layer setting and just moved the objects with \fBQCPLayerable::setLayer\fP to the desired layer after creating them\&.
+.PP
+It is also possible to move whole layers\&. For example, If you want the grid to be shown in front of all plottables/items on the 'main' layer, just move it above 'main' with \fBQCustomPlot::moveLayer\fP\&.
+.PP
+The rendering order within one layer is simply by order of creation or insertion\&. The item created last (or added last to the layer), is drawn on top of all other objects on that layer\&.
+.PP
+When a layer is deleted, the objects on it are not deleted with it, but fall on the layer below the deleted layer, see \fBQCustomPlot::removeLayer\fP\&.
+.SH "Replotting only a specific layer"
+.PP
+If the layer mode (\fBsetMode\fP) is set to \fBlmBuffered\fP, you can replot only this specific layer by calling \fBreplot\fP\&. In certain situations this can provide better replot performance, compared with a full replot of all layers\&. Upon creation of a new layer, the layer mode is initialized to \fBlmLogical\fP\&. The only layer that is set to \fBlmBuffered\fP in a new \fBQCustomPlot\fP instance is the 'overlay' layer, containing the selection rect\&. 
+.PP
+Definition at line \fB623\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBQCPLayer::LayerMode\fP"
+Defines the different rendering modes of a layer\&. Depending on the mode, certain layers can be replotted individually, without the need to replot (possibly complex) layerables on other layers\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetMode\fP 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIlmLogical \fP\fP
+Layer is used only for rendering order, and shares paint buffer with all other adjacent logical layers\&. 
+.TP
+\fB\fIlmBuffered \fP\fP
+Layer has its own paint buffer and may be replotted individually (see \fBreplot\fP)\&. 
+.PP
+Definition at line \fB643\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QCPLayer::QCPLayer (\fBQCustomPlot\fP * parentPlot, const QString & layerName)"
+Creates a new \fBQCPLayer\fP instance\&.
+.PP
+Normally you shouldn't directly instantiate layers, use \fBQCustomPlot::addLayer\fP instead\&.
+.PP
+\fBWarning\fP
+.RS 4
+It is not checked that \fIlayerName\fP is actually a unique layer name in \fIparentPlot\fP\&. This check is only performed by \fBQCustomPlot::addLayer\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB1042\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QCPLayer::~QCPLayer ()\fC [virtual]\fP"
+
+.PP
+Definition at line \fB1054\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void QCPLayer::addChild (\fBQCPLayerable\fP * layerable, bool prepend)\fC [protected]\fP"
+
+.PP
+Definition at line \fB1198\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QList< \fBQCPLayerable\fP * > QCPLayer::children () const\fC [inline]\fP"
+Returns a list of all layerables on this layer\&. The order corresponds to the rendering order: layerables with higher indices are drawn above layerables with lower indices\&. 
+.PP
+Definition at line \fB655\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "void QCPLayer::draw (\fBQCPPainter\fP * painter)\fC [protected]\fP"
+
+.PP
+Definition at line \fB1118\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPLayer::drawToPaintBuffer ()\fC [protected]\fP"
+
+.PP
+Definition at line \fB1141\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "int QCPLayer::index () const\fC [inline]\fP"
+Returns the index this layer has in the \fBQCustomPlot\fP\&. The index is the integer number by which this layer can be accessed via \fBQCustomPlot::layer\fP\&.
+.PP
+Layers with higher indices will be drawn above layers with lower indices\&. 
+.PP
+Definition at line \fB654\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBLayerMode\fP QCPLayer::mode () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB657\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QString QCPLayer::name () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB653\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBQCustomPlot\fP * QCPLayer::parentPlot () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB652\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "void QCPLayer::removeChild (\fBQCPLayerable\fP * layerable)\fC [protected]\fP"
+
+.PP
+Definition at line \fB1221\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPLayer::replot ()"
+If the layer mode (\fBsetMode\fP) is set to \fBlmBuffered\fP, this method allows replotting only the layerables on this specific layer, without the need to replot all other layers (as a call to \fBQCustomPlot::replot\fP would do)\&.
+.PP
+If the layer mode is \fBlmLogical\fP however, this method simply calls \fBQCustomPlot::replot\fP on the parent \fBQCustomPlot\fP instance\&.
+.PP
+\fBQCustomPlot\fP also makes sure to replot all layers instead of only this one, if the layer ordering has changed since the last full replot and the other paint buffers were thus invalidated\&.
+.PP
+\fBSee also\fP
+.RS 4
+draw 
+.RE
+.PP
+
+.PP
+Definition at line \fB1172\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPLayer::setMode (\fBQCPLayer::LayerMode\fP mode)"
+Sets the rendering mode of this layer\&.
+.PP
+If \fImode\fP is set to \fBlmBuffered\fP for a layer, it will be given a dedicated paint buffer by the parent \fBQCustomPlot\fP instance\&. This means it may be replotted individually by calling \fBQCPLayer::replot\fP, without needing to replot all other layers\&.
+.PP
+Layers which are set to \fBlmLogical\fP (the default) are used only to define the rendering order and can't be replotted individually\&.
+.PP
+Note that each layer which is set to \fBlmBuffered\fP requires additional paint buffers for the layers below, above and for the layer itself\&. This increases the memory consumption and (slightly) decreases the repainting speed because multiple paint buffers need to be joined\&. So you should carefully choose which layers benefit from having their own paint buffer\&. A typical example would be a layer which contains certain layerables (e\&.g\&. items) that need to be changed and thus replotted regularly, while all other layerables on other layers stay static\&. By default, only the topmost layer called 'overlay' is in mode \fBlmBuffered\fP, and contains the selection rect\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBreplot\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB1102\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPLayer::setVisible (bool visible)"
+Sets whether this layer is visible or not\&. If \fIvisible\fP is set to false, all layerables on this layer will be invisible\&.
+.PP
+This function doesn't change the visibility property of the layerables (\fBQCPLayerable::setVisible\fP), but the \fBQCPLayerable::realVisibility\fP of each layerable takes the visibility of the parent layer into account\&. 
+.PP
+Definition at line \fB1076\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "bool QCPLayer::visible () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB656\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBQCPLayerable\fP\fC [friend]\fP"
+
+.PP
+Definition at line \fB688\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "friend class \fBQCustomPlot\fP\fC [friend]\fP"
+
+.PP
+Definition at line \fB687\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QList<\fBQCPLayerable\fP*> QCPLayer::mChildren\fC [protected]\fP"
+
+.PP
+Definition at line \fB671\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "int QCPLayer::mIndex\fC [protected]\fP"
+
+.PP
+Definition at line \fB670\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBLayerMode\fP QCPLayer::mMode\fC [protected]\fP"
+
+.PP
+Definition at line \fB673\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QString QCPLayer::mName\fC [protected]\fP"
+
+.PP
+Definition at line \fB669\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QWeakPointer<\fBQCPAbstractPaintBuffer\fP> QCPLayer::mPaintBuffer\fC [protected]\fP"
+
+.PP
+Definition at line \fB676\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBQCustomPlot\fP* QCPLayer::mParentPlot\fC [protected]\fP"
+
+.PP
+Definition at line \fB668\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "bool QCPLayer::mVisible\fC [protected]\fP"
+
+.PP
+Definition at line \fB672\fP of file \fBqcustomplot\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for OmronPID from the source code\&.

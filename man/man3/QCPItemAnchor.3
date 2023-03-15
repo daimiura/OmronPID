@@ -1,0 +1,169 @@
+.TH "QCPItemAnchor" 3 "Wed Mar 15 2023" "OmronPID" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QCPItemAnchor \- An anchor of an item to which positions can be attached to\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBQCPItemPosition\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPItemAnchor\fP (\fBQCustomPlot\fP *parentPlot, \fBQCPAbstractItem\fP *parentItem, const QString &name, int anchorId=\-1)"
+.br
+.ti -1c
+.RI "QString \fBname\fP () const"
+.br
+.ti -1c
+.RI "virtual QPointF \fBpixelPosition\fP () const"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fBQCPItemPosition\fP * \fBtoQCPItemPosition\fP ()"
+.br
+.ti -1c
+.RI "void \fBaddChildX\fP (\fBQCPItemPosition\fP *pos)"
+.br
+.ti -1c
+.RI "void \fBremoveChildX\fP (\fBQCPItemPosition\fP *pos)"
+.br
+.ti -1c
+.RI "void \fBaddChildY\fP (\fBQCPItemPosition\fP *pos)"
+.br
+.ti -1c
+.RI "void \fBremoveChildY\fP (\fBQCPItemPosition\fP *pos)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "QString \fBmName\fP"
+.br
+.ti -1c
+.RI "\fBQCustomPlot\fP * \fBmParentPlot\fP"
+.br
+.ti -1c
+.RI "\fBQCPAbstractItem\fP * \fBmParentItem\fP"
+.br
+.ti -1c
+.RI "int \fBmAnchorId\fP"
+.br
+.ti -1c
+.RI "QSet< \fBQCPItemPosition\fP * > \fBmChildrenX\fP"
+.br
+.ti -1c
+.RI "QSet< \fBQCPItemPosition\fP * > \fBmChildrenY\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBQCPItemPosition\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+An anchor of an item to which positions can be attached to\&. 
+
+An item (\fBQCPAbstractItem\fP) may have one or more anchors\&. Unlike \fBQCPItemPosition\fP, an anchor doesn't control anything on its item, but provides a way to tie other items via their positions to the anchor\&.
+.PP
+For example, a \fBQCPItemRect\fP is defined by its positions \fItopLeft\fP and \fIbottomRight\fP\&. Additionally it has various anchors like \fItop\fP, \fItopRight\fP or \fIbottomLeft\fP etc\&. So you can attach the \fIstart\fP (which is a \fBQCPItemPosition\fP) of a \fBQCPItemLine\fP to one of the anchors by calling \fBQCPItemPosition::setParentAnchor\fP on \fIstart\fP, passing the wanted anchor of the \fBQCPItemRect\fP\&. This way the start of the line will now always follow the respective anchor location on the rect item\&.
+.PP
+Note that \fBQCPItemPosition\fP derives from \fBQCPItemAnchor\fP, so every position can also serve as an anchor to other positions\&.
+.PP
+To learn how to provide anchors in your own item subclasses, see the subclassing section of the \fBQCPAbstractItem\fP documentation\&. 
+.PP
+Definition at line \fB3397\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QCPItemAnchor::QCPItemAnchor (\fBQCustomPlot\fP * parentPlot, \fBQCPAbstractItem\fP * parentItem, const QString & name, int anchorId = \fC\-1\fP)"
+Creates a new \fBQCPItemAnchor\fP\&. You shouldn't create \fBQCPItemAnchor\fP instances directly, even if you want to make a new item subclass\&. Use \fBQCPAbstractItem::createAnchor\fP instead, as explained in the subclassing section of the \fBQCPAbstractItem\fP documentation\&. 
+.PP
+Definition at line \fB11315\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QCPItemAnchor::~QCPItemAnchor ()\fC [virtual]\fP"
+
+.PP
+Definition at line \fB11323\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void QCPItemAnchor::addChildX (\fBQCPItemPosition\fP * pos)\fC [protected]\fP"
+
+.PP
+Definition at line \fB11371\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPItemAnchor::addChildY (\fBQCPItemPosition\fP * pos)\fC [protected]\fP"
+
+.PP
+Definition at line \fB11399\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QString QCPItemAnchor::name () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB3405\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QPointF QCPItemAnchor::pixelPosition () const\fC [virtual]\fP"
+Returns the final absolute pixel position of the \fBQCPItemAnchor\fP on the \fBQCustomPlot\fP surface\&.
+.PP
+The pixel information is internally retrieved via QCPAbstractItem::anchorPixelPosition of the parent item, \fBQCPItemAnchor\fP is just an intermediary\&. 
+.PP
+Reimplemented in \fBQCPItemPosition\fP\&.
+.PP
+Definition at line \fB11344\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPItemAnchor::removeChildX (\fBQCPItemPosition\fP * pos)\fC [protected]\fP"
+
+.PP
+Definition at line \fB11385\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPItemAnchor::removeChildY (\fBQCPItemPosition\fP * pos)\fC [protected]\fP"
+
+.PP
+Definition at line \fB11413\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "\fBQCPItemPosition\fP * QCPItemAnchor::toQCPItemPosition ()\fC [inline]\fP, \fC [protected]\fP, \fC [virtual]\fP"
+Returns 0 if this instance is merely a \fBQCPItemAnchor\fP, and a valid pointer of type QCPItemPosition* if it actually is a \fBQCPItemPosition\fP (which is a subclass of \fBQCPItemAnchor\fP)\&.
+.PP
+This safe downcast functionality could also be achieved with a dynamic_cast\&. However, \fBQCustomPlot\fP avoids dynamic_cast to work with projects that don't have RTTI support enabled (e\&.g\&. -fno-rtti flag with gcc compiler)\&. 
+.PP
+Reimplemented in \fBQCPItemPosition\fP\&.
+.PP
+Definition at line \fB3419\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBQCPItemPosition\fP\fC [friend]\fP"
+
+.PP
+Definition at line \fB3430\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "int QCPItemAnchor::mAnchorId\fC [protected]\fP"
+
+.PP
+Definition at line \fB3415\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QSet<\fBQCPItemPosition\fP*> QCPItemAnchor::mChildrenX\fC [protected]\fP"
+
+.PP
+Definition at line \fB3416\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QSet<\fBQCPItemPosition\fP*> QCPItemAnchor::mChildrenY\fC [protected]\fP"
+
+.PP
+Definition at line \fB3416\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QString QCPItemAnchor::mName\fC [protected]\fP"
+
+.PP
+Definition at line \fB3410\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBQCPAbstractItem\fP* QCPItemAnchor::mParentItem\fC [protected]\fP"
+
+.PP
+Definition at line \fB3414\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBQCustomPlot\fP* QCPItemAnchor::mParentPlot\fC [protected]\fP"
+
+.PP
+Definition at line \fB3413\fP of file \fBqcustomplot\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for OmronPID from the source code\&.

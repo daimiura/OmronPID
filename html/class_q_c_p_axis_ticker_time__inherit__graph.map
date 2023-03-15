@@ -1,0 +1,4 @@
+<map id="QCPAxisTickerTime" name="QCPAxisTickerTime">
+<area shape="rect" id="node1" title="Specialized axis ticker for time spans in units of milliseconds to days." alt="" coords="5,79,144,104"/>
+<area shape="rect" id="node2" href="$class_q_c_p_axis_ticker.html" title="The base class tick generator used by QCPAxis to create tick positions and tick labels." alt="" coords="19,5,130,31"/>
+</map>

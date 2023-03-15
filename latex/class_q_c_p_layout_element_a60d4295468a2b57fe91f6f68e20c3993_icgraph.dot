@@ -1,0 +1,23 @@
+digraph "QCPLayoutElement::minimumSize"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [label="QCPLayoutElement::minimumSize",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="QCPLayout::getFinalMinimum\lOuterSize",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_layout.html#a864fddc84721f186663faf3683f1fa70",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="QCPLayoutGrid::getMinimum\lRowColSizes",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_layout_grid.html#a4b9a251919936f127a63fc1b9911cd4e",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="steelblue1",style="solid"];
+  Node4 [label="QCPLayoutGrid::minimumOuter\lSizeHint",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_layout_grid.html#a0438bc58b4d3894d01db95b08d4268df",tooltip=" "];
+  Node4 -> Node5 [dir="back",color="steelblue1",style="solid"];
+  Node5 [label="QCustomPlot::minimumSizeHint",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_custom_plot.html#a968a01cd4077d63aecde1aef1db057fc",tooltip=" "];
+  Node4 -> Node6 [dir="back",color="steelblue1",style="solid"];
+  Node6 [label="QCustomPlot::sizeHint",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_custom_plot.html#ac9d6fe101e082daf756903b11f6e6213",tooltip=" "];
+  Node3 -> Node7 [dir="back",color="steelblue1",style="solid"];
+  Node7 [label="QCPLayoutGrid::updateLayout",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_layout_grid.html#a6cf43f14d3fa335fd8758561ccf1f78c",tooltip=" "];
+  Node2 -> Node8 [dir="back",color="steelblue1",style="solid"];
+  Node8 [label="QCPLayoutInset::updateLayout",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_layout_inset.html#a493526b922ea66a75c45ef1842446988",tooltip=" "];
+}

@@ -1,0 +1,19 @@
+digraph "QCPLegend::selectedParts"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [label="QCPLegend::selectedParts",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="QCPLegend::deselectEvent",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_legend.html#ac2066837f7ebc32a5b15434cdca5b176",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="QCPLegend::selectEvent",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_legend.html#a71f54a05c3e5b1a1ade1864422cd642e",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="steelblue1",style="solid"];
+  Node4 [label="QCPLegend::setSelectedParts",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_legend.html#a2aee309bb5c2a794b1987f3fc97f8ad8",tooltip=" "];
+  Node4 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node4 -> Node5 [dir="back",color="steelblue1",style="solid"];
+  Node5 [label="QCPLegend::QCPLegend",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_legend.html#a0001a456989bd07ea378883651fabd72",tooltip=" "];
+  Node4 -> Node3 [dir="back",color="steelblue1",style="solid"];
+}

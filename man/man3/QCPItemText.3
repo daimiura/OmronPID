@@ -1,0 +1,789 @@
+.TH "QCPItemText" 3 "Wed Mar 15 2023" "OmronPID" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QCPItemText \- A text label\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBQCPAbstractItem\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPItemText\fP (\fBQCustomPlot\fP *parentPlot)"
+.br
+.ti -1c
+.RI "QColor \fBcolor\fP () const"
+.br
+.ti -1c
+.RI "QColor \fBselectedColor\fP () const"
+.br
+.ti -1c
+.RI "QPen \fBpen\fP () const"
+.br
+.ti -1c
+.RI "QPen \fBselectedPen\fP () const"
+.br
+.ti -1c
+.RI "QBrush \fBbrush\fP () const"
+.br
+.ti -1c
+.RI "QBrush \fBselectedBrush\fP () const"
+.br
+.ti -1c
+.RI "QFont \fBfont\fP () const"
+.br
+.ti -1c
+.RI "QFont \fBselectedFont\fP () const"
+.br
+.ti -1c
+.RI "QString \fBtext\fP () const"
+.br
+.ti -1c
+.RI "Qt::Alignment \fBpositionAlignment\fP () const"
+.br
+.ti -1c
+.RI "Qt::Alignment \fBtextAlignment\fP () const"
+.br
+.ti -1c
+.RI "double \fBrotation\fP () const"
+.br
+.ti -1c
+.RI "QMargins \fBpadding\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetColor\fP (const QColor &color)"
+.br
+.ti -1c
+.RI "void \fBsetSelectedColor\fP (const QColor &color)"
+.br
+.ti -1c
+.RI "void \fBsetPen\fP (const QPen &pen)"
+.br
+.ti -1c
+.RI "void \fBsetSelectedPen\fP (const QPen &pen)"
+.br
+.ti -1c
+.RI "void \fBsetBrush\fP (const QBrush &brush)"
+.br
+.ti -1c
+.RI "void \fBsetSelectedBrush\fP (const QBrush &brush)"
+.br
+.ti -1c
+.RI "void \fBsetFont\fP (const QFont &font)"
+.br
+.ti -1c
+.RI "void \fBsetSelectedFont\fP (const QFont &font)"
+.br
+.ti -1c
+.RI "void \fBsetText\fP (const QString &text)"
+.br
+.ti -1c
+.RI "void \fBsetPositionAlignment\fP (Qt::Alignment alignment)"
+.br
+.ti -1c
+.RI "void \fBsetTextAlignment\fP (Qt::Alignment alignment)"
+.br
+.ti -1c
+.RI "void \fBsetRotation\fP (double degrees)"
+.br
+.ti -1c
+.RI "void \fBsetPadding\fP (const QMargins &padding)"
+.br
+.ti -1c
+.RI "virtual double \fBselectTest\fP (const QPointF &pos, bool onlySelectable, QVariant *details=0) const Q_DECL_OVERRIDE"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBQCPAbstractItem\fP
+.in +1c
+.ti -1c
+.RI "\fBQCPAbstractItem\fP (\fBQCustomPlot\fP *parentPlot)"
+.br
+.ti -1c
+.RI "bool \fBclipToAxisRect\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPAxisRect\fP * \fBclipAxisRect\fP () const"
+.br
+.ti -1c
+.RI "bool \fBselectable\fP () const"
+.br
+.ti -1c
+.RI "bool \fBselected\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetClipToAxisRect\fP (bool clip)"
+.br
+.ti -1c
+.RI "void \fBsetClipAxisRect\fP (\fBQCPAxisRect\fP *rect)"
+.br
+.ti -1c
+.RI "Q_SLOT void \fBsetSelectable\fP (bool selectable)"
+.br
+.ti -1c
+.RI "Q_SLOT void \fBsetSelected\fP (bool selected)"
+.br
+.ti -1c
+.RI "virtual double \fBselectTest\fP (const QPointF &pos, bool onlySelectable, QVariant *details=0) const Q_DECL_OVERRIDE=0"
+.br
+.ti -1c
+.RI "QList< \fBQCPItemPosition\fP * > \fBpositions\fP () const"
+.br
+.ti -1c
+.RI "QList< \fBQCPItemAnchor\fP * > \fBanchors\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPItemPosition\fP * \fBposition\fP (const QString &name) const"
+.br
+.ti -1c
+.RI "\fBQCPItemAnchor\fP * \fBanchor\fP (const QString &name) const"
+.br
+.ti -1c
+.RI "bool \fBhasAnchor\fP (const QString &name) const"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBQCPLayerable\fP
+.in +1c
+.ti -1c
+.RI "\fBQCPLayerable\fP (\fBQCustomPlot\fP *plot, QString targetLayer=QString(), \fBQCPLayerable\fP *\fBparentLayerable\fP=0)"
+.br
+.ti -1c
+.RI "bool \fBvisible\fP () const"
+.br
+.ti -1c
+.RI "\fBQCustomPlot\fP * \fBparentPlot\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPLayerable\fP * \fBparentLayerable\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPLayer\fP * \fBlayer\fP () const"
+.br
+.ti -1c
+.RI "bool \fBantialiased\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetVisible\fP (bool on)"
+.br
+.ti -1c
+.RI "Q_SLOT bool \fBsetLayer\fP (\fBQCPLayer\fP *layer)"
+.br
+.ti -1c
+.RI "bool \fBsetLayer\fP (const QString &layerName)"
+.br
+.ti -1c
+.RI "void \fBsetAntialiased\fP (bool enabled)"
+.br
+.ti -1c
+.RI "virtual double \fBselectTest\fP (const QPointF &pos, bool onlySelectable, QVariant *details=0) const"
+.br
+.ti -1c
+.RI "bool \fBrealVisibility\fP () const"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPItemPosition\fP *const \fBposition\fP"
+.br
+.ti -1c
+.RI "\fBQCPItemAnchor\fP *const \fBtopLeft\fP"
+.br
+.ti -1c
+.RI "\fBQCPItemAnchor\fP *const \fBtop\fP"
+.br
+.ti -1c
+.RI "\fBQCPItemAnchor\fP *const \fBtopRight\fP"
+.br
+.ti -1c
+.RI "\fBQCPItemAnchor\fP *const \fBright\fP"
+.br
+.ti -1c
+.RI "\fBQCPItemAnchor\fP *const \fBbottomRight\fP"
+.br
+.ti -1c
+.RI "\fBQCPItemAnchor\fP *const \fBbottom\fP"
+.br
+.ti -1c
+.RI "\fBQCPItemAnchor\fP *const \fBbottomLeft\fP"
+.br
+.ti -1c
+.RI "\fBQCPItemAnchor\fP *const \fBleft\fP"
+.br
+.in -1c
+.SS "Protected Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBAnchorIndex\fP { \fBaiTopLeft\fP, \fBaiTop\fP, \fBaiTopRight\fP, \fBaiRight\fP, \fBaiBottomRight\fP, \fBaiBottom\fP, \fBaiBottomLeft\fP, \fBaiLeft\fP }"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBdraw\fP (\fBQCPPainter\fP *painter) Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual QPointF \fBanchorPixelPosition\fP (int anchorId) const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "QPointF \fBgetTextDrawPoint\fP (const QPointF &pos, const QRectF &rect, Qt::Alignment positionAlignment) const"
+.br
+.ti -1c
+.RI "QFont \fBmainFont\fP () const"
+.br
+.ti -1c
+.RI "QColor \fBmainColor\fP () const"
+.br
+.ti -1c
+.RI "QPen \fBmainPen\fP () const"
+.br
+.ti -1c
+.RI "QBrush \fBmainBrush\fP () const"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBQCPAbstractItem\fP
+.in +1c
+.ti -1c
+.RI "virtual \fBQCP::Interaction\fP \fBselectionCategory\fP () const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual QRect \fBclipRect\fP () const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual void \fBapplyDefaultAntialiasingHint\fP (\fBQCPPainter\fP *painter) const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (\fBQCPPainter\fP *painter) Q_DECL_OVERRIDE=0"
+.br
+.ti -1c
+.RI "virtual void \fBselectEvent\fP (QMouseEvent *event, bool additive, const QVariant &details, bool *selectionStateChanged) Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual void \fBdeselectEvent\fP (bool *selectionStateChanged) Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual QPointF \fBanchorPixelPosition\fP (int anchorId) const"
+.br
+.ti -1c
+.RI "double \fBrectDistance\fP (const QRectF &rect, const QPointF &pos, bool filledRect) const"
+.br
+.ti -1c
+.RI "\fBQCPItemPosition\fP * \fBcreatePosition\fP (const QString &name)"
+.br
+.ti -1c
+.RI "\fBQCPItemAnchor\fP * \fBcreateAnchor\fP (const QString &name, int anchorId)"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBQCPLayerable\fP
+.in +1c
+.ti -1c
+.RI "virtual void \fBparentPlotInitialized\fP (\fBQCustomPlot\fP *parentPlot)"
+.br
+.ti -1c
+.RI "virtual \fBQCP::Interaction\fP \fBselectionCategory\fP () const"
+.br
+.ti -1c
+.RI "virtual QRect \fBclipRect\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBapplyDefaultAntialiasingHint\fP (\fBQCPPainter\fP *painter) const =0"
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (\fBQCPPainter\fP *painter)=0"
+.br
+.ti -1c
+.RI "virtual void \fBselectEvent\fP (QMouseEvent *event, bool additive, const QVariant &details, bool *selectionStateChanged)"
+.br
+.ti -1c
+.RI "virtual void \fBdeselectEvent\fP (bool *selectionStateChanged)"
+.br
+.ti -1c
+.RI "virtual void \fBmousePressEvent\fP (QMouseEvent *event, const QVariant &details)"
+.br
+.ti -1c
+.RI "virtual void \fBmouseMoveEvent\fP (QMouseEvent *event, const QPointF &startPos)"
+.br
+.ti -1c
+.RI "virtual void \fBmouseReleaseEvent\fP (QMouseEvent *event, const QPointF &startPos)"
+.br
+.ti -1c
+.RI "virtual void \fBmouseDoubleClickEvent\fP (QMouseEvent *event, const QVariant &details)"
+.br
+.ti -1c
+.RI "virtual void \fBwheelEvent\fP (QWheelEvent *event)"
+.br
+.ti -1c
+.RI "void \fBinitializeParentPlot\fP (\fBQCustomPlot\fP *parentPlot)"
+.br
+.ti -1c
+.RI "void \fBsetParentLayerable\fP (\fBQCPLayerable\fP *\fBparentLayerable\fP)"
+.br
+.ti -1c
+.RI "bool \fBmoveToLayer\fP (\fBQCPLayer\fP *layer, bool prepend)"
+.br
+.ti -1c
+.RI "void \fBapplyAntialiasingHint\fP (\fBQCPPainter\fP *painter, bool localAntialiased, \fBQCP::AntialiasedElement\fP overrideElement) const"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "QColor \fBmColor\fP"
+.br
+.ti -1c
+.RI "QColor \fBmSelectedColor\fP"
+.br
+.ti -1c
+.RI "QPen \fBmPen\fP"
+.br
+.ti -1c
+.RI "QPen \fBmSelectedPen\fP"
+.br
+.ti -1c
+.RI "QBrush \fBmBrush\fP"
+.br
+.ti -1c
+.RI "QBrush \fBmSelectedBrush\fP"
+.br
+.ti -1c
+.RI "QFont \fBmFont\fP"
+.br
+.ti -1c
+.RI "QFont \fBmSelectedFont\fP"
+.br
+.ti -1c
+.RI "QString \fBmText\fP"
+.br
+.ti -1c
+.RI "Qt::Alignment \fBmPositionAlignment\fP"
+.br
+.ti -1c
+.RI "Qt::Alignment \fBmTextAlignment\fP"
+.br
+.ti -1c
+.RI "double \fBmRotation\fP"
+.br
+.ti -1c
+.RI "QMargins \fBmPadding\fP"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBQCPAbstractItem\fP
+.in +1c
+.ti -1c
+.RI "bool \fBmClipToAxisRect\fP"
+.br
+.ti -1c
+.RI "QPointer< \fBQCPAxisRect\fP > \fBmClipAxisRect\fP"
+.br
+.ti -1c
+.RI "QList< \fBQCPItemPosition\fP * > \fBmPositions\fP"
+.br
+.ti -1c
+.RI "QList< \fBQCPItemAnchor\fP * > \fBmAnchors\fP"
+.br
+.ti -1c
+.RI "bool \fBmSelectable\fP"
+.br
+.ti -1c
+.RI "bool \fBmSelected\fP"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBQCPLayerable\fP
+.in +1c
+.ti -1c
+.RI "bool \fBmVisible\fP"
+.br
+.ti -1c
+.RI "\fBQCustomPlot\fP * \fBmParentPlot\fP"
+.br
+.ti -1c
+.RI "QPointer< \fBQCPLayerable\fP > \fBmParentLayerable\fP"
+.br
+.ti -1c
+.RI "\fBQCPLayer\fP * \fBmLayer\fP"
+.br
+.ti -1c
+.RI "bool \fBmAntialiased\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Signals inherited from \fBQCPAbstractItem\fP
+.in +1c
+.ti -1c
+.RI "void \fBselectionChanged\fP (bool selected)"
+.br
+.ti -1c
+.RI "void \fBselectableChanged\fP (bool selectable)"
+.br
+.in -1c
+
+Signals inherited from \fBQCPLayerable\fP
+.in +1c
+.ti -1c
+.RI "void \fBlayerChanged\fP (\fBQCPLayer\fP *newLayer)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+A text label\&. 
+
+
+.PP
+Its position is defined by the member \fIposition\fP and the setting of \fBsetPositionAlignment\fP\&. The latter controls which part of the text rect shall be aligned with \fIposition\fP\&.
+.PP
+The text alignment itself (i\&.e\&. left, center, right) can be controlled with \fBsetTextAlignment\fP\&.
+.PP
+The text may be rotated around the \fIposition\fP point with \fBsetRotation\fP\&. 
+.PP
+Definition at line \fB6283\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum QCPItemText::AnchorIndex\fC [protected]\fP"
+
+.PP
+Definition at line \fB6349\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QCPItemText::QCPItemText (\fBQCustomPlot\fP * parentPlot)\fC [explicit]\fP"
+Creates a text item and sets default values\&.
+.PP
+The created item is automatically registered with \fIparentPlot\fP\&. This \fBQCustomPlot\fP instance takes ownership of the item, so do not delete it manually but use \fBQCustomPlot::removeItem()\fP instead\&. 
+.PP
+Definition at line \fB28733\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QCPItemText::~QCPItemText ()\fC [virtual]\fP"
+
+.PP
+Definition at line \fB28759\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "QPointF QCPItemText::anchorPixelPosition (int anchorId) const\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBQCPAbstractItem\fP\&.
+.PP
+Definition at line \fB28954\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QBrush QCPItemText::brush () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB6310\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QColor QCPItemText::color () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB6306\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "void QCPItemText::draw (\fBQCPPainter\fP * painter)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBQCPAbstractItem\fP\&.
+.PP
+Definition at line \fB28922\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QFont QCPItemText::font () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB6312\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QPointF QCPItemText::getTextDrawPoint (const QPointF & pos, const QRectF & rect, Qt::Alignment positionAlignment) const\fC [protected]\fP"
+
+.PP
+Definition at line \fB28995\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QBrush QCPItemText::mainBrush () const\fC [protected]\fP"
+
+.PP
+Definition at line \fB29047\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QColor QCPItemText::mainColor () const\fC [protected]\fP"
+
+.PP
+Definition at line \fB29027\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QFont QCPItemText::mainFont () const\fC [protected]\fP"
+
+.PP
+Definition at line \fB29017\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QPen QCPItemText::mainPen () const\fC [protected]\fP"
+
+.PP
+Definition at line \fB29037\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QMargins QCPItemText::padding () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB6318\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QPen QCPItemText::pen () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB6308\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "Qt::Alignment QCPItemText::positionAlignment () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB6315\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double QCPItemText::rotation () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB6317\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QBrush QCPItemText::selectedBrush () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB6311\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QColor QCPItemText::selectedColor () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB6307\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QFont QCPItemText::selectedFont () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB6313\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QPen QCPItemText::selectedPen () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB6309\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double QCPItemText::selectTest (const QPointF & pos, bool onlySelectable, QVariant * details = \fC0\fP) const\fC [virtual]\fP"
+This function is used to decide whether a click hits a layerable object or not\&.
+.PP
+\fIpos\fP is a point in pixel coordinates on the \fBQCustomPlot\fP surface\&. This function returns the shortest pixel distance of this point to the object\&. If the object is either invisible or the distance couldn't be determined, -1\&.0 is returned\&. Further, if \fIonlySelectable\fP is true and the object is not selectable, -1\&.0 is returned, too\&.
+.PP
+If the object is represented not by single lines but by an area like a \fBQCPItemText\fP or the bars of a \fBQCPBars\fP plottable, a click inside the area should also be considered a hit\&. In these cases this function thus returns a constant value greater zero but still below the parent plot's selection tolerance\&. (typically the selectionTolerance multiplied by 0\&.99)\&.
+.PP
+Providing a constant value for area objects allows selecting line objects even when they are obscured by such area objects, by clicking close to the lines (i\&.e\&. closer than 0\&.99*selectionTolerance)\&.
+.PP
+The actual setting of the selection state is not done by this function\&. This is handled by the parent \fBQCustomPlot\fP when the mouseReleaseEvent occurs, and the finally selected object is notified via the \fBselectEvent/\fP deselectEvent methods\&.
+.PP
+\fIdetails\fP is an optional output parameter\&. Every layerable subclass may place any information in \fIdetails\fP\&. This information will be passed to \fBselectEvent\fP when the parent \fBQCustomPlot\fP decides on the basis of this selectTest call, that the object was successfully selected\&. The subsequent call to \fBselectEvent\fP will carry the \fIdetails\fP\&. This is useful for multi-part objects (like \fBQCPAxis\fP)\&. This way, a possibly complex calculation to decide which part was clicked is only done once in \fBselectTest\fP\&. The result (i\&.e\&. the actually clicked part) can then be placed in \fIdetails\fP\&. So in the subsequent \fBselectEvent\fP, the decision which part was selected doesn't have to be done a second time for a single selection operation\&.
+.PP
+You may pass 0 as \fIdetails\fP to indicate that you are not interested in those selection details\&.
+.PP
+\fBSee also\fP
+.RS 4
+selectEvent, deselectEvent, \fBmousePressEvent\fP, \fBwheelEvent\fP, \fBQCustomPlot::setInteractions\fP 
+.RE
+.PP
+
+.PP
+Implements \fBQCPAbstractItem\fP\&.
+.PP
+Definition at line \fB28898\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPItemText::setBrush (const QBrush & brush)"
+Sets the brush that will be used do fill the background of the text\&. To disable the background, set \fIbrush\fP to Qt::NoBrush\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetSelectedBrush\fP, \fBsetPen\fP, \fBsetPadding\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB28807\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPItemText::setColor (const QColor & color)"
+Sets the color of the text\&. 
+.PP
+Definition at line \fB28766\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPItemText::setFont (const QFont & font)"
+Sets the font of the text\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetSelectedFont\fP, \fBsetColor\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB28828\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPItemText::setPadding (const QMargins & padding)"
+Sets the distance between the border of the text rectangle and the text\&. The appearance (and visibility) of the text rectangle can be controlled with \fBsetPen\fP and \fBsetBrush\fP\&. 
+.PP
+Definition at line \fB28892\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPItemText::setPen (const QPen & pen)"
+Sets the pen that will be used do draw a rectangular border around the text\&. To disable the border, set \fIpen\fP to Qt::NoPen\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetSelectedPen\fP, \fBsetBrush\fP, \fBsetPadding\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB28785\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPItemText::setPositionAlignment (Qt::Alignment alignment)"
+Sets which point of the text rect shall be aligned with \fIposition\fP\&.
+.PP
+Examples: 
+.PD 0
+
+.IP "\(bu" 2
+If \fIalignment\fP is \fCQt::AlignHCenter | Qt::AlignTop\fP, the text will be positioned such that the top of the text rect will be horizontally centered on \fIposition\fP\&. 
+.IP "\(bu" 2
+If \fIalignment\fP is \fCQt::AlignLeft | Qt::AlignBottom\fP, \fIposition\fP will indicate the bottom left corner of the text rect\&.
+.PP
+If you want to control the alignment of (multi-lined) text within the text rect, use \fBsetTextAlignment\fP\&. 
+.PP
+Definition at line \fB28866\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPItemText::setRotation (double degrees)"
+Sets the angle in degrees by which the text (and the text rectangle, if visible) will be rotated around \fIposition\fP\&. 
+.PP
+Definition at line \fB28883\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPItemText::setSelectedBrush (const QBrush & brush)"
+Sets the brush that will be used do fill the background of the text, when the item is selected\&. To disable the background, set \fIbrush\fP to Qt::NoBrush\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetBrush\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB28818\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPItemText::setSelectedColor (const QColor & color)"
+Sets the color of the text that will be used when the item is selected\&. 
+.PP
+Definition at line \fB28774\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPItemText::setSelectedFont (const QFont & font)"
+Sets the font of the text that will be used when the item is selected\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetFont\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB28838\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPItemText::setSelectedPen (const QPen & pen)"
+Sets the pen that will be used do draw a rectangular border around the text, when the item is selected\&. To disable the border, set \fIpen\fP to Qt::NoPen\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetPen\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB28796\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPItemText::setText (const QString & text)"
+Sets the text that will be displayed\&. Multi-line texts are supported by inserting a line break character, e\&.g\&. '
+.br
+'\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetFont\fP, \fBsetColor\fP, \fBsetTextAlignment\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB28849\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPItemText::setTextAlignment (Qt::Alignment alignment)"
+Controls how (multi-lined) text is aligned inside the text rect (typically Qt::AlignLeft, Qt::AlignCenter or Qt::AlignRight)\&. 
+.PP
+Definition at line \fB28874\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QString QCPItemText::text () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB6314\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "Qt::Alignment QCPItemText::textAlignment () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB6316\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBQCPItemAnchor\fP* const QCPItemText::bottom"
+
+.PP
+Definition at line \fB6344\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBQCPItemAnchor\fP* const QCPItemText::bottomLeft"
+
+.PP
+Definition at line \fB6345\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBQCPItemAnchor\fP* const QCPItemText::bottomRight"
+
+.PP
+Definition at line \fB6343\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBQCPItemAnchor\fP* const QCPItemText::left"
+
+.PP
+Definition at line \fB6346\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QBrush QCPItemText::mBrush\fC [protected]\fP"
+
+.PP
+Definition at line \fB6354\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QColor QCPItemText::mColor\fC [protected]\fP"
+
+.PP
+Definition at line \fB6352\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QFont QCPItemText::mFont\fC [protected]\fP"
+
+.PP
+Definition at line \fB6355\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QMargins QCPItemText::mPadding\fC [protected]\fP"
+
+.PP
+Definition at line \fB6360\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QPen QCPItemText::mPen\fC [protected]\fP"
+
+.PP
+Definition at line \fB6353\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "Qt::Alignment QCPItemText::mPositionAlignment\fC [protected]\fP"
+
+.PP
+Definition at line \fB6357\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double QCPItemText::mRotation\fC [protected]\fP"
+
+.PP
+Definition at line \fB6359\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QBrush QCPItemText::mSelectedBrush\fC [protected]\fP"
+
+.PP
+Definition at line \fB6354\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QColor QCPItemText::mSelectedColor\fC [protected]\fP"
+
+.PP
+Definition at line \fB6352\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QFont QCPItemText::mSelectedFont\fC [protected]\fP"
+
+.PP
+Definition at line \fB6355\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QPen QCPItemText::mSelectedPen\fC [protected]\fP"
+
+.PP
+Definition at line \fB6353\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QString QCPItemText::mText\fC [protected]\fP"
+
+.PP
+Definition at line \fB6356\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "Qt::Alignment QCPItemText::mTextAlignment\fC [protected]\fP"
+
+.PP
+Definition at line \fB6358\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBQCPItemPosition\fP* const QCPItemText::position"
+
+.PP
+Definition at line \fB6338\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBQCPItemAnchor\fP* const QCPItemText::right"
+
+.PP
+Definition at line \fB6342\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBQCPItemAnchor\fP* const QCPItemText::top"
+
+.PP
+Definition at line \fB6340\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBQCPItemAnchor\fP* const QCPItemText::topLeft"
+
+.PP
+Definition at line \fB6339\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBQCPItemAnchor\fP* const QCPItemText::topRight"
+
+.PP
+Definition at line \fB6341\fP of file \fBqcustomplot\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for OmronPID from the source code\&.

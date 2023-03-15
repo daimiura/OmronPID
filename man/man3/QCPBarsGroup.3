@@ -1,0 +1,336 @@
+.TH "QCPBarsGroup" 3 "Wed Mar 15 2023" "OmronPID" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QCPBarsGroup \- Groups multiple \fBQCPBars\fP together so they appear side by side\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits QObject\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBSpacingType\fP { \fBstAbsolute\fP, \fBstAxisRectRatio\fP, \fBstPlotCoords\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPBarsGroup\fP (\fBQCustomPlot\fP *parentPlot)"
+.br
+.ti -1c
+.RI "\fBSpacingType\fP \fBspacingType\fP () const"
+.br
+.ti -1c
+.RI "double \fBspacing\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetSpacingType\fP (\fBSpacingType\fP spacingType)"
+.br
+.ti -1c
+.RI "void \fBsetSpacing\fP (double spacing)"
+.br
+.ti -1c
+.RI "QList< \fBQCPBars\fP * > \fBbars\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPBars\fP * \fBbars\fP (int index) const"
+.br
+.ti -1c
+.RI "int \fBsize\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisEmpty\fP () const"
+.br
+.ti -1c
+.RI "void \fBclear\fP ()"
+.br
+.ti -1c
+.RI "bool \fBcontains\fP (\fBQCPBars\fP *\fBbars\fP) const"
+.br
+.ti -1c
+.RI "void \fBappend\fP (\fBQCPBars\fP *\fBbars\fP)"
+.br
+.ti -1c
+.RI "void \fBinsert\fP (int i, \fBQCPBars\fP *\fBbars\fP)"
+.br
+.ti -1c
+.RI "void \fBremove\fP (\fBQCPBars\fP *\fBbars\fP)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBregisterBars\fP (\fBQCPBars\fP *\fBbars\fP)"
+.br
+.ti -1c
+.RI "void \fBunregisterBars\fP (\fBQCPBars\fP *\fBbars\fP)"
+.br
+.ti -1c
+.RI "double \fBkeyPixelOffset\fP (const \fBQCPBars\fP *\fBbars\fP, double keyCoord)"
+.br
+.ti -1c
+.RI "double \fBgetPixelSpacing\fP (const \fBQCPBars\fP *\fBbars\fP, double keyCoord)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBQCustomPlot\fP * \fBmParentPlot\fP"
+.br
+.ti -1c
+.RI "\fBSpacingType\fP \fBmSpacingType\fP"
+.br
+.ti -1c
+.RI "double \fBmSpacing\fP"
+.br
+.ti -1c
+.RI "QList< \fBQCPBars\fP * > \fBmBars\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBQCPBars\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Groups multiple \fBQCPBars\fP together so they appear side by side\&. 
+
+
+.PP
+When showing multiple \fBQCPBars\fP in one plot which have bars at identical keys, it may be desirable to have them appearing next to each other at each key\&. This is what adding the respective \fBQCPBars\fP plottables to a \fBQCPBarsGroup\fP achieves\&. (An alternative approach is to stack them on top of each other, see \fBQCPBars::moveAbove\fP\&.)
+.SH "Usage"
+.PP
+To add a \fBQCPBars\fP plottable to the group, create a new group and then add the respective bars intances: 
+.PP
+.nf
+
+.fi
+.PP
+ Alternatively to appending to the group like shown above, you can also set the group on the \fBQCPBars\fP plottable via \fBQCPBars::setBarsGroup\fP\&.
+.PP
+The spacing between the bars can be configured via \fBsetSpacingType\fP and \fBsetSpacing\fP\&. The bars in this group appear in the plot in the order they were appended\&. To insert a bars plottable at a certain index position, or to reposition a bars plottable which is already in the group, use \fBinsert\fP\&.
+.PP
+To remove specific bars from the group, use either \fBremove\fP or call \fBQCPBars::setBarsGroup(0)\fP on the respective bars plottable\&.
+.PP
+To clear the entire group, call \fBclear\fP, or simply delete the group\&.
+.SH "Example"
+.PP
+The image above is generated with the following code: 
+.PP
+.nf
+
+.fi
+.PP
+ 
+.PP
+Definition at line \fB5375\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBQCPBarsGroup::SpacingType\fP"
+Defines the ways the spacing between bars in the group can be specified\&. Thus it defines what the number passed to \fBsetSpacing\fP actually means\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetSpacingType\fP, \fBsetSpacing\fP 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIstAbsolute \fP\fP
+Bar spacing is in absolute pixels\&. 
+.TP
+\fB\fIstAxisRectRatio \fP\fP
+Bar spacing is given by a fraction of the axis rect size\&. 
+.TP
+\fB\fIstPlotCoords \fP\fP
+Bar spacing is in key coordinates and thus scales with the key axis range\&. 
+.PP
+Definition at line \fB5389\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QCPBarsGroup::QCPBarsGroup (\fBQCustomPlot\fP * parentPlot)"
+Constructs a new bars group for the specified \fBQCustomPlot\fP instance\&. 
+.PP
+Definition at line \fB23174\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QCPBarsGroup::~QCPBarsGroup ()\fC [virtual]\fP"
+
+.PP
+Definition at line \fB23182\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void QCPBarsGroup::append (\fBQCPBars\fP * bars)"
+Adds the specified \fIbars\fP plottable to this group\&. Alternatively, you can also use \fBQCPBars::setBarsGroup\fP on the \fIbars\fP instance\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBinsert\fP, \fBremove\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB23245\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QList< \fBQCPBars\fP * > QCPBarsGroup::bars () const\fC [inline]\fP"
+Returns all bars currently in this group\&.
+.PP
+\fBSee also\fP
+.RS 4
+bars(int index) 
+.RE
+.PP
+
+.PP
+Definition at line \fB5407\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBQCPBars\fP * QCPBarsGroup::bars (int index) const"
+Returns the \fBQCPBars\fP instance with the specified \fIindex\fP in this group\&. If no such \fBQCPBars\fP exists, returns 0\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBbars()\fP, \fBsize\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB23216\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPBarsGroup::clear ()"
+Removes all \fBQCPBars\fP plottables from this group\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBisEmpty\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB23233\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "bool QCPBarsGroup::contains (\fBQCPBars\fP * bars) const\fC [inline]\fP"
+Returns whether the specified \fIbars\fP plottable is part of this group\&. 
+.PP
+Definition at line \fB5412\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double QCPBarsGroup::getPixelSpacing (const \fBQCPBars\fP * bars, double keyCoord)\fC [protected]\fP"
+
+.PP
+Definition at line \fB23399\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPBarsGroup::insert (int i, \fBQCPBars\fP * bars)"
+Inserts the specified \fIbars\fP plottable into this group at the specified index position \fIi\fP\&. This gives you full control over the ordering of the bars\&.
+.PP
+\fIbars\fP may already be part of this group\&. In that case, \fIbars\fP is just moved to the new index position\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBappend\fP, \fBremove\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB23268\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "bool QCPBarsGroup::isEmpty () const\fC [inline]\fP"
+Returns whether this bars group is empty\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsize\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB5410\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double QCPBarsGroup::keyPixelOffset (const \fBQCPBars\fP * bars, double keyCoord)\fC [protected]\fP"
+
+.PP
+Definition at line \fB23333\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPBarsGroup::registerBars (\fBQCPBars\fP * bars)\fC [protected]\fP"
+
+.PP
+Definition at line \fB23309\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPBarsGroup::remove (\fBQCPBars\fP * bars)"
+Removes the specified \fIbars\fP plottable from this group\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBcontains\fP, \fBclear\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB23288\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPBarsGroup::setSpacing (double spacing)"
+Sets the spacing between adjacent bars\&. What the number passed as \fIspacing\fP actually means, is defined by the current \fBSpacingType\fP, which can be set with \fBsetSpacingType\fP\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetSpacingType\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB23205\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPBarsGroup::setSpacingType (\fBSpacingType\fP spacingType)"
+Sets how the spacing between adjacent bars is interpreted\&. See \fBSpacingType\fP\&.
+.PP
+The actual spacing can then be specified with \fBsetSpacing\fP\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetSpacing\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB23194\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "int QCPBarsGroup::size () const\fC [inline]\fP"
+Returns the number of \fBQCPBars\fP plottables that are part of this group\&. 
+.PP
+Definition at line \fB5409\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double QCPBarsGroup::spacing () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB5400\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBSpacingType\fP QCPBarsGroup::spacingType () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB5399\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "void QCPBarsGroup::unregisterBars (\fBQCPBars\fP * bars)\fC [protected]\fP"
+
+.PP
+Definition at line \fB23322\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBQCPBars\fP\fC [friend]\fP"
+
+.PP
+Definition at line \fB5435\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QList<\fBQCPBars\fP*> QCPBarsGroup::mBars\fC [protected]\fP"
+
+.PP
+Definition at line \fB5422\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBQCustomPlot\fP* QCPBarsGroup::mParentPlot\fC [protected]\fP"
+
+.PP
+Definition at line \fB5419\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double QCPBarsGroup::mSpacing\fC [protected]\fP"
+
+.PP
+Definition at line \fB5421\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBSpacingType\fP QCPBarsGroup::mSpacingType\fC [protected]\fP"
+
+.PP
+Definition at line \fB5420\fP of file \fBqcustomplot\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for OmronPID from the source code\&.

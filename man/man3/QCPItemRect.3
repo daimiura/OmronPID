@@ -1,0 +1,535 @@
+.TH "QCPItemRect" 3 "Wed Mar 15 2023" "OmronPID" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QCPItemRect \- A rectangle\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBQCPAbstractItem\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPItemRect\fP (\fBQCustomPlot\fP *parentPlot)"
+.br
+.ti -1c
+.RI "QPen \fBpen\fP () const"
+.br
+.ti -1c
+.RI "QPen \fBselectedPen\fP () const"
+.br
+.ti -1c
+.RI "QBrush \fBbrush\fP () const"
+.br
+.ti -1c
+.RI "QBrush \fBselectedBrush\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetPen\fP (const QPen &pen)"
+.br
+.ti -1c
+.RI "void \fBsetSelectedPen\fP (const QPen &pen)"
+.br
+.ti -1c
+.RI "void \fBsetBrush\fP (const QBrush &brush)"
+.br
+.ti -1c
+.RI "void \fBsetSelectedBrush\fP (const QBrush &brush)"
+.br
+.ti -1c
+.RI "virtual double \fBselectTest\fP (const QPointF &pos, bool onlySelectable, QVariant *details=0) const Q_DECL_OVERRIDE"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBQCPAbstractItem\fP
+.in +1c
+.ti -1c
+.RI "\fBQCPAbstractItem\fP (\fBQCustomPlot\fP *parentPlot)"
+.br
+.ti -1c
+.RI "bool \fBclipToAxisRect\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPAxisRect\fP * \fBclipAxisRect\fP () const"
+.br
+.ti -1c
+.RI "bool \fBselectable\fP () const"
+.br
+.ti -1c
+.RI "bool \fBselected\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetClipToAxisRect\fP (bool clip)"
+.br
+.ti -1c
+.RI "void \fBsetClipAxisRect\fP (\fBQCPAxisRect\fP *rect)"
+.br
+.ti -1c
+.RI "Q_SLOT void \fBsetSelectable\fP (bool selectable)"
+.br
+.ti -1c
+.RI "Q_SLOT void \fBsetSelected\fP (bool selected)"
+.br
+.ti -1c
+.RI "virtual double \fBselectTest\fP (const QPointF &pos, bool onlySelectable, QVariant *details=0) const Q_DECL_OVERRIDE=0"
+.br
+.ti -1c
+.RI "QList< \fBQCPItemPosition\fP * > \fBpositions\fP () const"
+.br
+.ti -1c
+.RI "QList< \fBQCPItemAnchor\fP * > \fBanchors\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPItemPosition\fP * \fBposition\fP (const QString &name) const"
+.br
+.ti -1c
+.RI "\fBQCPItemAnchor\fP * \fBanchor\fP (const QString &name) const"
+.br
+.ti -1c
+.RI "bool \fBhasAnchor\fP (const QString &name) const"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBQCPLayerable\fP
+.in +1c
+.ti -1c
+.RI "\fBQCPLayerable\fP (\fBQCustomPlot\fP *plot, QString targetLayer=QString(), \fBQCPLayerable\fP *\fBparentLayerable\fP=0)"
+.br
+.ti -1c
+.RI "bool \fBvisible\fP () const"
+.br
+.ti -1c
+.RI "\fBQCustomPlot\fP * \fBparentPlot\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPLayerable\fP * \fBparentLayerable\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPLayer\fP * \fBlayer\fP () const"
+.br
+.ti -1c
+.RI "bool \fBantialiased\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetVisible\fP (bool on)"
+.br
+.ti -1c
+.RI "Q_SLOT bool \fBsetLayer\fP (\fBQCPLayer\fP *layer)"
+.br
+.ti -1c
+.RI "bool \fBsetLayer\fP (const QString &layerName)"
+.br
+.ti -1c
+.RI "void \fBsetAntialiased\fP (bool enabled)"
+.br
+.ti -1c
+.RI "virtual double \fBselectTest\fP (const QPointF &pos, bool onlySelectable, QVariant *details=0) const"
+.br
+.ti -1c
+.RI "bool \fBrealVisibility\fP () const"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPItemPosition\fP *const \fBtopLeft\fP"
+.br
+.ti -1c
+.RI "\fBQCPItemPosition\fP *const \fBbottomRight\fP"
+.br
+.ti -1c
+.RI "\fBQCPItemAnchor\fP *const \fBtop\fP"
+.br
+.ti -1c
+.RI "\fBQCPItemAnchor\fP *const \fBtopRight\fP"
+.br
+.ti -1c
+.RI "\fBQCPItemAnchor\fP *const \fBright\fP"
+.br
+.ti -1c
+.RI "\fBQCPItemAnchor\fP *const \fBbottom\fP"
+.br
+.ti -1c
+.RI "\fBQCPItemAnchor\fP *const \fBbottomLeft\fP"
+.br
+.ti -1c
+.RI "\fBQCPItemAnchor\fP *const \fBleft\fP"
+.br
+.in -1c
+.SS "Protected Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBAnchorIndex\fP { \fBaiTop\fP, \fBaiTopRight\fP, \fBaiRight\fP, \fBaiBottom\fP, \fBaiBottomLeft\fP, \fBaiLeft\fP }"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBdraw\fP (\fBQCPPainter\fP *painter) Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual QPointF \fBanchorPixelPosition\fP (int anchorId) const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "QPen \fBmainPen\fP () const"
+.br
+.ti -1c
+.RI "QBrush \fBmainBrush\fP () const"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBQCPAbstractItem\fP
+.in +1c
+.ti -1c
+.RI "virtual \fBQCP::Interaction\fP \fBselectionCategory\fP () const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual QRect \fBclipRect\fP () const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual void \fBapplyDefaultAntialiasingHint\fP (\fBQCPPainter\fP *painter) const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (\fBQCPPainter\fP *painter) Q_DECL_OVERRIDE=0"
+.br
+.ti -1c
+.RI "virtual void \fBselectEvent\fP (QMouseEvent *event, bool additive, const QVariant &details, bool *selectionStateChanged) Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual void \fBdeselectEvent\fP (bool *selectionStateChanged) Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual QPointF \fBanchorPixelPosition\fP (int anchorId) const"
+.br
+.ti -1c
+.RI "double \fBrectDistance\fP (const QRectF &rect, const QPointF &pos, bool filledRect) const"
+.br
+.ti -1c
+.RI "\fBQCPItemPosition\fP * \fBcreatePosition\fP (const QString &name)"
+.br
+.ti -1c
+.RI "\fBQCPItemAnchor\fP * \fBcreateAnchor\fP (const QString &name, int anchorId)"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBQCPLayerable\fP
+.in +1c
+.ti -1c
+.RI "virtual void \fBparentPlotInitialized\fP (\fBQCustomPlot\fP *parentPlot)"
+.br
+.ti -1c
+.RI "virtual \fBQCP::Interaction\fP \fBselectionCategory\fP () const"
+.br
+.ti -1c
+.RI "virtual QRect \fBclipRect\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBapplyDefaultAntialiasingHint\fP (\fBQCPPainter\fP *painter) const =0"
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (\fBQCPPainter\fP *painter)=0"
+.br
+.ti -1c
+.RI "virtual void \fBselectEvent\fP (QMouseEvent *event, bool additive, const QVariant &details, bool *selectionStateChanged)"
+.br
+.ti -1c
+.RI "virtual void \fBdeselectEvent\fP (bool *selectionStateChanged)"
+.br
+.ti -1c
+.RI "virtual void \fBmousePressEvent\fP (QMouseEvent *event, const QVariant &details)"
+.br
+.ti -1c
+.RI "virtual void \fBmouseMoveEvent\fP (QMouseEvent *event, const QPointF &startPos)"
+.br
+.ti -1c
+.RI "virtual void \fBmouseReleaseEvent\fP (QMouseEvent *event, const QPointF &startPos)"
+.br
+.ti -1c
+.RI "virtual void \fBmouseDoubleClickEvent\fP (QMouseEvent *event, const QVariant &details)"
+.br
+.ti -1c
+.RI "virtual void \fBwheelEvent\fP (QWheelEvent *event)"
+.br
+.ti -1c
+.RI "void \fBinitializeParentPlot\fP (\fBQCustomPlot\fP *parentPlot)"
+.br
+.ti -1c
+.RI "void \fBsetParentLayerable\fP (\fBQCPLayerable\fP *\fBparentLayerable\fP)"
+.br
+.ti -1c
+.RI "bool \fBmoveToLayer\fP (\fBQCPLayer\fP *layer, bool prepend)"
+.br
+.ti -1c
+.RI "void \fBapplyAntialiasingHint\fP (\fBQCPPainter\fP *painter, bool localAntialiased, \fBQCP::AntialiasedElement\fP overrideElement) const"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "QPen \fBmPen\fP"
+.br
+.ti -1c
+.RI "QPen \fBmSelectedPen\fP"
+.br
+.ti -1c
+.RI "QBrush \fBmBrush\fP"
+.br
+.ti -1c
+.RI "QBrush \fBmSelectedBrush\fP"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBQCPAbstractItem\fP
+.in +1c
+.ti -1c
+.RI "bool \fBmClipToAxisRect\fP"
+.br
+.ti -1c
+.RI "QPointer< \fBQCPAxisRect\fP > \fBmClipAxisRect\fP"
+.br
+.ti -1c
+.RI "QList< \fBQCPItemPosition\fP * > \fBmPositions\fP"
+.br
+.ti -1c
+.RI "QList< \fBQCPItemAnchor\fP * > \fBmAnchors\fP"
+.br
+.ti -1c
+.RI "bool \fBmSelectable\fP"
+.br
+.ti -1c
+.RI "bool \fBmSelected\fP"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBQCPLayerable\fP
+.in +1c
+.ti -1c
+.RI "bool \fBmVisible\fP"
+.br
+.ti -1c
+.RI "\fBQCustomPlot\fP * \fBmParentPlot\fP"
+.br
+.ti -1c
+.RI "QPointer< \fBQCPLayerable\fP > \fBmParentLayerable\fP"
+.br
+.ti -1c
+.RI "\fBQCPLayer\fP * \fBmLayer\fP"
+.br
+.ti -1c
+.RI "bool \fBmAntialiased\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Signals inherited from \fBQCPAbstractItem\fP
+.in +1c
+.ti -1c
+.RI "void \fBselectionChanged\fP (bool selected)"
+.br
+.ti -1c
+.RI "void \fBselectableChanged\fP (bool selectable)"
+.br
+.in -1c
+
+Signals inherited from \fBQCPLayerable\fP
+.in +1c
+.ti -1c
+.RI "void \fBlayerChanged\fP (\fBQCPLayer\fP *newLayer)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+A rectangle\&. 
+
+
+.PP
+It has two positions, \fItopLeft\fP and \fIbottomRight\fP, which define the rectangle\&. 
+.PP
+Definition at line \fB6224\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum QCPItemRect::AnchorIndex\fC [protected]\fP"
+
+.PP
+Definition at line \fB6262\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QCPItemRect::QCPItemRect (\fBQCustomPlot\fP * parentPlot)\fC [explicit]\fP"
+Creates a rectangle item and sets default values\&.
+.PP
+The created item is automatically registered with \fIparentPlot\fP\&. This \fBQCustomPlot\fP instance takes ownership of the item, so do not delete it manually but use \fBQCustomPlot::removeItem()\fP instead\&. 
+.PP
+Definition at line \fB28570\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QCPItemRect::~QCPItemRect ()\fC [virtual]\fP"
+
+.PP
+Definition at line \fB28590\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "QPointF QCPItemRect::anchorPixelPosition (int anchorId) const\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBQCPAbstractItem\fP\&.
+.PP
+Definition at line \fB28667\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QBrush QCPItemRect::brush () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB6240\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "void QCPItemRect::draw (\fBQCPPainter\fP * painter)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBQCPAbstractItem\fP\&.
+.PP
+Definition at line \fB28649\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QBrush QCPItemRect::mainBrush () const\fC [protected]\fP"
+
+.PP
+Definition at line \fB28699\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QPen QCPItemRect::mainPen () const\fC [protected]\fP"
+
+.PP
+Definition at line \fB28689\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QPen QCPItemRect::pen () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB6238\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QBrush QCPItemRect::selectedBrush () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB6241\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QPen QCPItemRect::selectedPen () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB6239\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double QCPItemRect::selectTest (const QPointF & pos, bool onlySelectable, QVariant * details = \fC0\fP) const\fC [virtual]\fP"
+This function is used to decide whether a click hits a layerable object or not\&.
+.PP
+\fIpos\fP is a point in pixel coordinates on the \fBQCustomPlot\fP surface\&. This function returns the shortest pixel distance of this point to the object\&. If the object is either invisible or the distance couldn't be determined, -1\&.0 is returned\&. Further, if \fIonlySelectable\fP is true and the object is not selectable, -1\&.0 is returned, too\&.
+.PP
+If the object is represented not by single lines but by an area like a \fBQCPItemText\fP or the bars of a \fBQCPBars\fP plottable, a click inside the area should also be considered a hit\&. In these cases this function thus returns a constant value greater zero but still below the parent plot's selection tolerance\&. (typically the selectionTolerance multiplied by 0\&.99)\&.
+.PP
+Providing a constant value for area objects allows selecting line objects even when they are obscured by such area objects, by clicking close to the lines (i\&.e\&. closer than 0\&.99*selectionTolerance)\&.
+.PP
+The actual setting of the selection state is not done by this function\&. This is handled by the parent \fBQCustomPlot\fP when the mouseReleaseEvent occurs, and the finally selected object is notified via the \fBselectEvent/\fP deselectEvent methods\&.
+.PP
+\fIdetails\fP is an optional output parameter\&. Every layerable subclass may place any information in \fIdetails\fP\&. This information will be passed to \fBselectEvent\fP when the parent \fBQCustomPlot\fP decides on the basis of this selectTest call, that the object was successfully selected\&. The subsequent call to \fBselectEvent\fP will carry the \fIdetails\fP\&. This is useful for multi-part objects (like \fBQCPAxis\fP)\&. This way, a possibly complex calculation to decide which part was clicked is only done once in \fBselectTest\fP\&. The result (i\&.e\&. the actually clicked part) can then be placed in \fIdetails\fP\&. So in the subsequent \fBselectEvent\fP, the decision which part was selected doesn't have to be done a second time for a single selection operation\&.
+.PP
+You may pass 0 as \fIdetails\fP to indicate that you are not interested in those selection details\&.
+.PP
+\fBSee also\fP
+.RS 4
+selectEvent, deselectEvent, \fBmousePressEvent\fP, \fBwheelEvent\fP, \fBQCustomPlot::setInteractions\fP 
+.RE
+.PP
+
+.PP
+Implements \fBQCPAbstractItem\fP\&.
+.PP
+Definition at line \fB28637\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPItemRect::setBrush (const QBrush & brush)"
+Sets the brush that will be used to fill the rectangle\&. To disable filling, set \fIbrush\fP to Qt::NoBrush\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetSelectedBrush\fP, \fBsetPen\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB28620\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPItemRect::setPen (const QPen & pen)"
+Sets the pen that will be used to draw the line of the rectangle
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetSelectedPen\fP, \fBsetBrush\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB28599\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPItemRect::setSelectedBrush (const QBrush & brush)"
+Sets the brush that will be used to fill the rectangle when selected\&. To disable filling, set \fIbrush\fP to Qt::NoBrush\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetBrush\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB28631\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPItemRect::setSelectedPen (const QPen & pen)"
+Sets the pen that will be used to draw the line of the rectangle when selected
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetPen\fP, \fBsetSelected\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB28609\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBQCPItemAnchor\fP* const QCPItemRect::bottom"
+
+.PP
+Definition at line \fB6257\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBQCPItemAnchor\fP* const QCPItemRect::bottomLeft"
+
+.PP
+Definition at line \fB6258\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBQCPItemPosition\fP* const QCPItemRect::bottomRight"
+
+.PP
+Definition at line \fB6253\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBQCPItemAnchor\fP* const QCPItemRect::left"
+
+.PP
+Definition at line \fB6259\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QBrush QCPItemRect::mBrush\fC [protected]\fP"
+
+.PP
+Definition at line \fB6266\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QPen QCPItemRect::mPen\fC [protected]\fP"
+
+.PP
+Definition at line \fB6265\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QBrush QCPItemRect::mSelectedBrush\fC [protected]\fP"
+
+.PP
+Definition at line \fB6266\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QPen QCPItemRect::mSelectedPen\fC [protected]\fP"
+
+.PP
+Definition at line \fB6265\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBQCPItemAnchor\fP* const QCPItemRect::right"
+
+.PP
+Definition at line \fB6256\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBQCPItemAnchor\fP* const QCPItemRect::top"
+
+.PP
+Definition at line \fB6254\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBQCPItemPosition\fP* const QCPItemRect::topLeft"
+
+.PP
+Definition at line \fB6252\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBQCPItemAnchor\fP* const QCPItemRect::topRight"
+
+.PP
+Definition at line \fB6255\fP of file \fBqcustomplot\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for OmronPID from the source code\&.

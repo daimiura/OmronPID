@@ -1,0 +1,356 @@
+.TH "QCPSelectionDecoratorBracket" 3 "Wed Mar 15 2023" "OmronPID" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QCPSelectionDecoratorBracket \- A selection decorator which draws brackets around each selected data segment\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBQCPSelectionDecorator\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBBracketStyle\fP { \fBbsSquareBracket\fP, \fBbsHalfEllipse\fP, \fBbsEllipse\fP, \fBbsPlus\fP, \fBbsUserStyle\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPSelectionDecoratorBracket\fP ()"
+.br
+.ti -1c
+.RI "QPen \fBbracketPen\fP () const"
+.br
+.ti -1c
+.RI "QBrush \fBbracketBrush\fP () const"
+.br
+.ti -1c
+.RI "int \fBbracketWidth\fP () const"
+.br
+.ti -1c
+.RI "int \fBbracketHeight\fP () const"
+.br
+.ti -1c
+.RI "\fBBracketStyle\fP \fBbracketStyle\fP () const"
+.br
+.ti -1c
+.RI "bool \fBtangentToData\fP () const"
+.br
+.ti -1c
+.RI "int \fBtangentAverage\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetBracketPen\fP (const QPen &pen)"
+.br
+.ti -1c
+.RI "void \fBsetBracketBrush\fP (const QBrush &brush)"
+.br
+.ti -1c
+.RI "void \fBsetBracketWidth\fP (int width)"
+.br
+.ti -1c
+.RI "void \fBsetBracketHeight\fP (int height)"
+.br
+.ti -1c
+.RI "void \fBsetBracketStyle\fP (\fBBracketStyle\fP style)"
+.br
+.ti -1c
+.RI "void \fBsetTangentToData\fP (bool enabled)"
+.br
+.ti -1c
+.RI "void \fBsetTangentAverage\fP (int pointCount)"
+.br
+.ti -1c
+.RI "virtual void \fBdrawBracket\fP (\fBQCPPainter\fP *painter, int direction) const"
+.br
+.ti -1c
+.RI "virtual void \fBdrawDecoration\fP (\fBQCPPainter\fP *painter, \fBQCPDataSelection\fP selection) Q_DECL_OVERRIDE"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBQCPSelectionDecorator\fP
+.in +1c
+.ti -1c
+.RI "\fBQCPSelectionDecorator\fP ()"
+.br
+.ti -1c
+.RI "QPen \fBpen\fP () const"
+.br
+.ti -1c
+.RI "QBrush \fBbrush\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPScatterStyle\fP \fBscatterStyle\fP () const"
+.br
+.ti -1c
+.RI "QCPScatterStyle::ScatterProperties \fBusedScatterProperties\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetPen\fP (const QPen &pen)"
+.br
+.ti -1c
+.RI "void \fBsetBrush\fP (const QBrush &brush)"
+.br
+.ti -1c
+.RI "void \fBsetScatterStyle\fP (const \fBQCPScatterStyle\fP &scatterStyle, QCPScatterStyle::ScatterProperties usedProperties=\fBQCPScatterStyle::spPen\fP)"
+.br
+.ti -1c
+.RI "void \fBsetUsedScatterProperties\fP (const QCPScatterStyle::ScatterProperties &properties)"
+.br
+.ti -1c
+.RI "void \fBapplyPen\fP (\fBQCPPainter\fP *painter) const"
+.br
+.ti -1c
+.RI "void \fBapplyBrush\fP (\fBQCPPainter\fP *painter) const"
+.br
+.ti -1c
+.RI "\fBQCPScatterStyle\fP \fBgetFinalScatterStyle\fP (const \fBQCPScatterStyle\fP &unselectedStyle) const"
+.br
+.ti -1c
+.RI "virtual void \fBcopyFrom\fP (const \fBQCPSelectionDecorator\fP *other)"
+.br
+.ti -1c
+.RI "virtual void \fBdrawDecoration\fP (\fBQCPPainter\fP *painter, \fBQCPDataSelection\fP selection)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "double \fBgetTangentAngle\fP (const \fBQCPPlottableInterface1D\fP *interface1d, int dataIndex, int direction) const"
+.br
+.ti -1c
+.RI "QPointF \fBgetPixelCoordinates\fP (const \fBQCPPlottableInterface1D\fP *interface1d, int dataIndex) const"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBQCPSelectionDecorator\fP
+.in +1c
+.ti -1c
+.RI "virtual bool \fBregisterWithPlottable\fP (\fBQCPAbstractPlottable\fP *plottable)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "QPen \fBmBracketPen\fP"
+.br
+.ti -1c
+.RI "QBrush \fBmBracketBrush\fP"
+.br
+.ti -1c
+.RI "int \fBmBracketWidth\fP"
+.br
+.ti -1c
+.RI "int \fBmBracketHeight\fP"
+.br
+.ti -1c
+.RI "\fBBracketStyle\fP \fBmBracketStyle\fP"
+.br
+.ti -1c
+.RI "bool \fBmTangentToData\fP"
+.br
+.ti -1c
+.RI "int \fBmTangentAverage\fP"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBQCPSelectionDecorator\fP
+.in +1c
+.ti -1c
+.RI "QPen \fBmPen\fP"
+.br
+.ti -1c
+.RI "QBrush \fBmBrush\fP"
+.br
+.ti -1c
+.RI "\fBQCPScatterStyle\fP \fBmScatterStyle\fP"
+.br
+.ti -1c
+.RI "QCPScatterStyle::ScatterProperties \fBmUsedScatterProperties\fP"
+.br
+.ti -1c
+.RI "\fBQCPAbstractPlottable\fP * \fBmPlottable\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+A selection decorator which draws brackets around each selected data segment\&. 
+
+Additionally to the regular highlighting of selected segments via color, fill and scatter style, this \fBQCPSelectionDecorator\fP subclass draws markers at the begin and end of each selected data segment of the plottable\&.
+.PP
+The shape of the markers can be controlled with \fBsetBracketStyle\fP, \fBsetBracketWidth\fP and \fBsetBracketHeight\fP\&. The color/fill can be controlled with \fBsetBracketPen\fP and \fBsetBracketBrush\fP\&.
+.PP
+To introduce custom bracket styles, it is only necessary to sublcass \fBQCPSelectionDecoratorBracket\fP and reimplement \fBdrawBracket\fP\&. The rest will be managed by the base class\&. 
+.PP
+Definition at line \fB4513\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBQCPSelectionDecoratorBracket::BracketStyle\fP"
+Defines which shape is drawn at the boundaries of selected data ranges\&.
+.PP
+Some of the bracket styles further allow specifying a height and/or width, see \fBsetBracketHeight\fP and \fBsetBracketWidth\fP\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIbsSquareBracket \fP\fP
+A square bracket is drawn\&. 
+.TP
+\fB\fIbsHalfEllipse \fP\fP
+A half ellipse is drawn\&. The size of the ellipse is given by the bracket width/height properties\&. 
+.TP
+\fB\fIbsEllipse \fP\fP
+An ellipse is drawn\&. The size of the ellipse is given by the bracket width/height properties\&. 
+.TP
+\fB\fIbsPlus \fP\fP
+A plus is drawn\&. 
+.TP
+\fB\fIbsUserStyle \fP\fP
+Start custom bracket styles at this index when subclassing and reimplementing \fBdrawBracket\fP\&. 
+.PP
+Definition at line \fB4524\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QCPSelectionDecoratorBracket::QCPSelectionDecoratorBracket ()"
+Creates a new \fBQCPSelectionDecoratorBracket\fP instance with default values\&. 
+.PP
+Definition at line \fB16387\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QCPSelectionDecoratorBracket::~QCPSelectionDecoratorBracket ()\fC [virtual]\fP"
+
+.PP
+Definition at line \fB16399\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "QBrush QCPSelectionDecoratorBracket::bracketBrush () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB4537\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "int QCPSelectionDecoratorBracket::bracketHeight () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB4539\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QPen QCPSelectionDecoratorBracket::bracketPen () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB4536\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBBracketStyle\fP QCPSelectionDecoratorBracket::bracketStyle () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB4540\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "int QCPSelectionDecoratorBracket::bracketWidth () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB4538\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "void QCPSelectionDecoratorBracket::drawBracket (\fBQCPPainter\fP * painter, int direction) const\fC [virtual]\fP"
+Draws the bracket shape with \fIpainter\fP\&. The parameter \fIdirection\fP is either -1 or 1 and indicates whether the bracket shall point to the left or the right (i\&.e\&. is a closing or opening bracket, respectively)\&.
+.PP
+The passed \fIpainter\fP already contains all transformations that are necessary to position and rotate the bracket appropriately\&. Painting operations can be performed as if drawing upright brackets on flat data with horizontal key axis, with (0, 0) being the center of the bracket\&.
+.PP
+If you wish to sublcass \fBQCPSelectionDecoratorBracket\fP in order to provide custom bracket shapes (see \fBQCPSelectionDecoratorBracket::bsUserStyle\fP), this is the method you should reimplement\&. 
+.PP
+Definition at line \fB16491\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPSelectionDecoratorBracket::drawDecoration (\fBQCPPainter\fP * painter, \fBQCPDataSelection\fP selection)\fC [virtual]\fP"
+Draws the bracket decoration on the data points at the begin and end of each selected data segment given in \fIseletion\fP\&.
+.PP
+It uses the method \fBdrawBracket\fP to actually draw the shapes\&.
+.PP
+\\seebaseclassmethod 
+.PP
+Reimplemented from \fBQCPSelectionDecorator\fP\&.
+.PP
+Definition at line \fB16534\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QPointF QCPSelectionDecoratorBracket::getPixelCoordinates (const \fBQCPPlottableInterface1D\fP * interface1d, int dataIndex) const\fC [protected]\fP"
+
+.PP
+Definition at line \fB16633\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "double QCPSelectionDecoratorBracket::getTangentAngle (const \fBQCPPlottableInterface1D\fP * interface1d, int dataIndex, int direction) const\fC [protected]\fP"
+
+.PP
+Definition at line \fB16586\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPSelectionDecoratorBracket::setBracketBrush (const QBrush & brush)"
+Sets the brush that will be used to draw the brackets at the beginning and end of each selected data segment\&. 
+.PP
+Definition at line \fB16416\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPSelectionDecoratorBracket::setBracketHeight (int height)"
+Sets the height of the drawn bracket\&. The height dimension is always perpendicular to the key axis of the data, or the tangent direction of the current data slope, if \fBsetTangentToData\fP is enabled\&. 
+.PP
+Definition at line \fB16436\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPSelectionDecoratorBracket::setBracketPen (const QPen & pen)"
+Sets the pen that will be used to draw the brackets at the beginning and end of each selected data segment\&. 
+.PP
+Definition at line \fB16407\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPSelectionDecoratorBracket::setBracketStyle (\fBQCPSelectionDecoratorBracket::BracketStyle\fP style)"
+Sets the shape that the bracket/marker will have\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetBracketWidth\fP, \fBsetBracketHeight\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB16446\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPSelectionDecoratorBracket::setBracketWidth (int width)"
+Sets the width of the drawn bracket\&. The width dimension is always parallel to the key axis of the data, or the tangent direction of the current data slope, if \fBsetTangentToData\fP is enabled\&. 
+.PP
+Definition at line \fB16426\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPSelectionDecoratorBracket::setTangentAverage (int pointCount)"
+Controls over how many data points the slope shall be averaged, when brackets shall be aligned with the data (if \fBsetTangentToData\fP is true)\&.
+.PP
+From the position of the bracket, \fIpointCount\fP points towards the selected data range will be taken into account\&. The smallest value of \fIpointCount\fP is 1, which is effectively equivalent to disabling \fBsetTangentToData\fP\&. 
+.PP
+Definition at line \fB16471\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPSelectionDecoratorBracket::setTangentToData (bool enabled)"
+Sets whether the brackets will be rotated such that they align with the slope of the data at the position that they appear in\&.
+.PP
+For noisy data, it might be more visually appealing to average the slope over multiple data points\&. This can be configured via \fBsetTangentAverage\fP\&. 
+.PP
+Definition at line \fB16458\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "int QCPSelectionDecoratorBracket::tangentAverage () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB4542\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "bool QCPSelectionDecoratorBracket::tangentToData () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB4541\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QBrush QCPSelectionDecoratorBracket::mBracketBrush\fC [protected]\fP"
+
+.PP
+Definition at line \fB4562\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "int QCPSelectionDecoratorBracket::mBracketHeight\fC [protected]\fP"
+
+.PP
+Definition at line \fB4564\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QPen QCPSelectionDecoratorBracket::mBracketPen\fC [protected]\fP"
+
+.PP
+Definition at line \fB4561\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBBracketStyle\fP QCPSelectionDecoratorBracket::mBracketStyle\fC [protected]\fP"
+
+.PP
+Definition at line \fB4565\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "int QCPSelectionDecoratorBracket::mBracketWidth\fC [protected]\fP"
+
+.PP
+Definition at line \fB4563\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "int QCPSelectionDecoratorBracket::mTangentAverage\fC [protected]\fP"
+
+.PP
+Definition at line \fB4567\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "bool QCPSelectionDecoratorBracket::mTangentToData\fC [protected]\fP"
+
+.PP
+Definition at line \fB4566\fP of file \fBqcustomplot\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for OmronPID from the source code\&.

@@ -1,0 +1,31 @@
+\hypertarget{mythread_8h_source}{}\doxysection{mythread.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{mythread_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ MYTHREAD\_H}}
+\DoxyCodeLine{\Hypertarget{mythread_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ MYTHREAD\_H}}
+\DoxyCodeLine{\Hypertarget{mythread_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{mythread_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <QThread>}}
+\DoxyCodeLine{\Hypertarget{mythread_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <QMutex>}}
+\DoxyCodeLine{\Hypertarget{mythread_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <QMutexLocker>}}
+\DoxyCodeLine{\Hypertarget{mythread_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <QTimer>}}
+\DoxyCodeLine{\Hypertarget{mythread_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{mythread_8h_source_l00009}\mbox{\hyperlink{class_my_thread}{00009}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_my_thread}{MyThread}}\ :\ \textcolor{keyword}{public}\ QThread}
+\DoxyCodeLine{\Hypertarget{mythread_8h_source_l00010}00010\ \{}
+\DoxyCodeLine{\Hypertarget{mythread_8h_source_l00011}00011\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{\Hypertarget{mythread_8h_source_l00012}00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{mythread_8h_source_l00013}00013\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_my_thread}{MyThread}}(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{mythread_8h_source_l00014}00014\ \ \ \ \ \textcolor{keywordtype}{void}\ run();}
+\DoxyCodeLine{\Hypertarget{mythread_8h_source_l00015}00015\ \ \ \ \ \textcolor{keywordtype}{int}\ interval\_;}
+\DoxyCodeLine{\Hypertarget{mythread_8h_source_l00016}00016\ signals:}
+\DoxyCodeLine{\Hypertarget{mythread_8h_source_l00017}00017\ \ \ \ \ \textcolor{keywordtype}{void}\ data\_update();}
+\DoxyCodeLine{\Hypertarget{mythread_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{mythread_8h_source_l00019}00019\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{\Hypertarget{mythread_8h_source_l00020}00020\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{\Hypertarget{mythread_8h_source_l00021}00021\ \ \ \ \ \textcolor{keywordtype}{void}\ timerHit();}
+\DoxyCodeLine{\Hypertarget{mythread_8h_source_l00022}00022\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{mythread_8h_source_l00023}00023\ \ \ \ \ QMutex\ mutex\_;}
+\DoxyCodeLine{\Hypertarget{mythread_8h_source_l00024}00024\ \};}
+\DoxyCodeLine{\Hypertarget{mythread_8h_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{mythread_8h_source_l00026}00026\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MYTHREAD\_H}}
+
+\end{DoxyCode}

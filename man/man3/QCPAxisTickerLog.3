@@ -1,0 +1,222 @@
+.TH "QCPAxisTickerLog" 3 "Wed Mar 15 2023" "OmronPID" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QCPAxisTickerLog \- Specialized axis ticker suited for logarithmic axes\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBQCPAxisTicker\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPAxisTickerLog\fP ()"
+.br
+.ti -1c
+.RI "double \fBlogBase\fP () const"
+.br
+.ti -1c
+.RI "int \fBsubTickCount\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetLogBase\fP (double base)"
+.br
+.ti -1c
+.RI "void \fBsetSubTickCount\fP (int subTicks)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBQCPAxisTicker\fP
+.in +1c
+.ti -1c
+.RI "\fBQCPAxisTicker\fP ()"
+.br
+.ti -1c
+.RI "\fBTickStepStrategy\fP \fBtickStepStrategy\fP () const"
+.br
+.ti -1c
+.RI "int \fBtickCount\fP () const"
+.br
+.ti -1c
+.RI "double \fBtickOrigin\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetTickStepStrategy\fP (\fBTickStepStrategy\fP strategy)"
+.br
+.ti -1c
+.RI "void \fBsetTickCount\fP (int count)"
+.br
+.ti -1c
+.RI "void \fBsetTickOrigin\fP (double origin)"
+.br
+.ti -1c
+.RI "virtual void \fBgenerate\fP (const \fBQCPRange\fP &range, const QLocale &locale, QChar formatChar, int precision, QVector< double > &ticks, QVector< double > *subTicks, QVector< QString > *tickLabels)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual double \fBgetTickStep\fP (const \fBQCPRange\fP &range) Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual int \fBgetSubTickCount\fP (double tickStep) Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual QVector< double > \fBcreateTickVector\fP (double tickStep, const \fBQCPRange\fP &range) Q_DECL_OVERRIDE"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBQCPAxisTicker\fP
+.in +1c
+.ti -1c
+.RI "virtual double \fBgetTickStep\fP (const \fBQCPRange\fP &range)"
+.br
+.ti -1c
+.RI "virtual int \fBgetSubTickCount\fP (double tickStep)"
+.br
+.ti -1c
+.RI "virtual QString \fBgetTickLabel\fP (double tick, const QLocale &locale, QChar formatChar, int precision)"
+.br
+.ti -1c
+.RI "virtual QVector< double > \fBcreateTickVector\fP (double tickStep, const \fBQCPRange\fP &range)"
+.br
+.ti -1c
+.RI "virtual QVector< double > \fBcreateSubTickVector\fP (int subTickCount, const QVector< double > &ticks)"
+.br
+.ti -1c
+.RI "virtual QVector< QString > \fBcreateLabelVector\fP (const QVector< double > &ticks, const QLocale &locale, QChar formatChar, int precision)"
+.br
+.ti -1c
+.RI "void \fBtrimTicks\fP (const \fBQCPRange\fP &range, QVector< double > &ticks, bool keepOneOutlier) const"
+.br
+.ti -1c
+.RI "double \fBpickClosest\fP (double target, const QVector< double > &candidates) const"
+.br
+.ti -1c
+.RI "double \fBgetMantissa\fP (double input, double *magnitude=0) const"
+.br
+.ti -1c
+.RI "double \fBcleanMantissa\fP (double input) const"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBmLogBase\fP"
+.br
+.ti -1c
+.RI "int \fBmSubTickCount\fP"
+.br
+.ti -1c
+.RI "double \fBmLogBaseLnInv\fP"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBQCPAxisTicker\fP
+.in +1c
+.ti -1c
+.RI "\fBTickStepStrategy\fP \fBmTickStepStrategy\fP"
+.br
+.ti -1c
+.RI "int \fBmTickCount\fP"
+.br
+.ti -1c
+.RI "double \fBmTickOrigin\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Public Types inherited from \fBQCPAxisTicker\fP
+.in +1c
+.ti -1c
+.RI "enum \fBTickStepStrategy\fP { \fBtssReadability\fP, \fBtssMeetTickCount\fP }"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Specialized axis ticker suited for logarithmic axes\&. 
+
+
+.PP
+This \fBQCPAxisTicker\fP subclass generates ticks with unequal tick intervals suited for logarithmic axis scales\&. The ticks are placed at powers of the specified log base (\fBsetLogBase\fP)\&.
+.PP
+Especially in the case of a log base equal to 10 (the default), it might be desirable to have tick labels in the form of powers of ten without mantissa display\&. To achieve this, set the number precision (\fBQCPAxis::setNumberPrecision\fP) to zero and the number format (\fBQCPAxis::setNumberFormat\fP) to scientific (exponential) display with beautifully typeset decimal powers, so a format string of \fC'eb'\fP\&. This will result in the following axis tick labels:
+.PP
+.PP
+The ticker can be created and assigned to an axis like this: 
+.PP
+.nf
+
+.fi
+.PP
+ 
+.PP
+Definition at line \fB1827\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QCPAxisTickerLog::QCPAxisTickerLog ()"
+Constructs the ticker and sets reasonable default values\&. Axis tickers are commonly created managed by a QSharedPointer, which then can be passed to \fBQCPAxis::setTicker\fP\&. 
+.PP
+Definition at line \fB7024\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "QVector< double > QCPAxisTickerLog::createTickVector (double tickStep, const \fBQCPRange\fP & range)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBQCPAxisTicker\fP\&.
+.PP
+Definition at line \fB7099\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "int QCPAxisTickerLog::getSubTickCount (double tickStep)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBQCPAxisTicker\fP\&.
+.PP
+Definition at line \fB7084\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "double QCPAxisTickerLog::getTickStep (const \fBQCPRange\fP & range)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBQCPAxisTicker\fP\&.
+.PP
+Definition at line \fB7070\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "double QCPAxisTickerLog::logBase () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB1833\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "void QCPAxisTickerLog::setLogBase (double base)"
+Sets the logarithm base used for tick coordinate generation\&. The ticks will be placed at integer powers of \fIbase\fP\&. 
+.PP
+Definition at line \fB7035\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPAxisTickerLog::setSubTickCount (int subTicks)"
+Sets the number of sub ticks in a tick interval\&. Within each interval, the sub ticks are spaced linearly to provide a better visual guide, so the sub tick density increases toward the higher tick\&.
+.PP
+Note that \fIsubTicks\fP is the number of sub ticks (not sub intervals) in one tick interval\&. So in the case of logarithm base 10 an intuitive sub tick spacing would be achieved with eight sub ticks (the default)\&. This means e\&.g\&. between the ticks 10 and 100 there will be eight ticks, namely at 20, 30, 40, 50, 60, 70, 80 and 90\&. 
+.PP
+Definition at line \fB7055\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "int QCPAxisTickerLog::subTickCount () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB1834\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "double QCPAxisTickerLog::mLogBase\fC [protected]\fP"
+
+.PP
+Definition at line \fB1842\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "double QCPAxisTickerLog::mLogBaseLnInv\fC [protected]\fP"
+
+.PP
+Definition at line \fB1846\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "int QCPAxisTickerLog::mSubTickCount\fC [protected]\fP"
+
+.PP
+Definition at line \fB1843\fP of file \fBqcustomplot\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for OmronPID from the source code\&.

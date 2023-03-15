@@ -1,0 +1,373 @@
+.TH "QCPSelectionRect" 3 "Wed Mar 15 2023" "OmronPID" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QCPSelectionRect \- Provides rect/rubber-band data selection and range zoom interaction\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBQCPLayerable\fP\&.
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBstarted\fP (QMouseEvent *event)"
+.br
+.ti -1c
+.RI "void \fBchanged\fP (const QRect &rect, QMouseEvent *event)"
+.br
+.ti -1c
+.RI "void \fBcanceled\fP (const QRect &rect, QInputEvent *event)"
+.br
+.ti -1c
+.RI "void \fBaccepted\fP (const QRect &rect, QMouseEvent *event)"
+.br
+.in -1c
+
+Signals inherited from \fBQCPLayerable\fP
+.in +1c
+.ti -1c
+.RI "void \fBlayerChanged\fP (\fBQCPLayer\fP *newLayer)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPSelectionRect\fP (\fBQCustomPlot\fP *parentPlot)"
+.br
+.ti -1c
+.RI "QRect \fBrect\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPRange\fP \fBrange\fP (const \fBQCPAxis\fP *axis) const"
+.br
+.ti -1c
+.RI "QPen \fBpen\fP () const"
+.br
+.ti -1c
+.RI "QBrush \fBbrush\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisActive\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetPen\fP (const QPen &pen)"
+.br
+.ti -1c
+.RI "void \fBsetBrush\fP (const QBrush &brush)"
+.br
+.ti -1c
+.RI "Q_SLOT void \fBcancel\fP ()"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBQCPLayerable\fP
+.in +1c
+.ti -1c
+.RI "\fBQCPLayerable\fP (\fBQCustomPlot\fP *plot, QString targetLayer=QString(), \fBQCPLayerable\fP *\fBparentLayerable\fP=0)"
+.br
+.ti -1c
+.RI "bool \fBvisible\fP () const"
+.br
+.ti -1c
+.RI "\fBQCustomPlot\fP * \fBparentPlot\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPLayerable\fP * \fBparentLayerable\fP () const"
+.br
+.ti -1c
+.RI "\fBQCPLayer\fP * \fBlayer\fP () const"
+.br
+.ti -1c
+.RI "bool \fBantialiased\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetVisible\fP (bool on)"
+.br
+.ti -1c
+.RI "Q_SLOT bool \fBsetLayer\fP (\fBQCPLayer\fP *layer)"
+.br
+.ti -1c
+.RI "bool \fBsetLayer\fP (const QString &layerName)"
+.br
+.ti -1c
+.RI "void \fBsetAntialiased\fP (bool enabled)"
+.br
+.ti -1c
+.RI "virtual double \fBselectTest\fP (const QPointF &pos, bool onlySelectable, QVariant *details=0) const"
+.br
+.ti -1c
+.RI "bool \fBrealVisibility\fP () const"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBstartSelection\fP (QMouseEvent *event)"
+.br
+.ti -1c
+.RI "virtual void \fBmoveSelection\fP (QMouseEvent *event)"
+.br
+.ti -1c
+.RI "virtual void \fBendSelection\fP (QMouseEvent *event)"
+.br
+.ti -1c
+.RI "virtual void \fBkeyPressEvent\fP (QKeyEvent *event)"
+.br
+.ti -1c
+.RI "virtual void \fBapplyDefaultAntialiasingHint\fP (\fBQCPPainter\fP *painter) const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (\fBQCPPainter\fP *painter) Q_DECL_OVERRIDE"
+.br
+.in -1c
+
+Protected Member Functions inherited from \fBQCPLayerable\fP
+.in +1c
+.ti -1c
+.RI "virtual void \fBparentPlotInitialized\fP (\fBQCustomPlot\fP *parentPlot)"
+.br
+.ti -1c
+.RI "virtual \fBQCP::Interaction\fP \fBselectionCategory\fP () const"
+.br
+.ti -1c
+.RI "virtual QRect \fBclipRect\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBapplyDefaultAntialiasingHint\fP (\fBQCPPainter\fP *painter) const =0"
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (\fBQCPPainter\fP *painter)=0"
+.br
+.ti -1c
+.RI "virtual void \fBselectEvent\fP (QMouseEvent *event, bool additive, const QVariant &details, bool *selectionStateChanged)"
+.br
+.ti -1c
+.RI "virtual void \fBdeselectEvent\fP (bool *selectionStateChanged)"
+.br
+.ti -1c
+.RI "virtual void \fBmousePressEvent\fP (QMouseEvent *event, const QVariant &details)"
+.br
+.ti -1c
+.RI "virtual void \fBmouseMoveEvent\fP (QMouseEvent *event, const QPointF &startPos)"
+.br
+.ti -1c
+.RI "virtual void \fBmouseReleaseEvent\fP (QMouseEvent *event, const QPointF &startPos)"
+.br
+.ti -1c
+.RI "virtual void \fBmouseDoubleClickEvent\fP (QMouseEvent *event, const QVariant &details)"
+.br
+.ti -1c
+.RI "virtual void \fBwheelEvent\fP (QWheelEvent *event)"
+.br
+.ti -1c
+.RI "void \fBinitializeParentPlot\fP (\fBQCustomPlot\fP *parentPlot)"
+.br
+.ti -1c
+.RI "void \fBsetParentLayerable\fP (\fBQCPLayerable\fP *\fBparentLayerable\fP)"
+.br
+.ti -1c
+.RI "bool \fBmoveToLayer\fP (\fBQCPLayer\fP *layer, bool prepend)"
+.br
+.ti -1c
+.RI "void \fBapplyAntialiasingHint\fP (\fBQCPPainter\fP *painter, bool localAntialiased, \fBQCP::AntialiasedElement\fP overrideElement) const"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "QRect \fBmRect\fP"
+.br
+.ti -1c
+.RI "QPen \fBmPen\fP"
+.br
+.ti -1c
+.RI "QBrush \fBmBrush\fP"
+.br
+.ti -1c
+.RI "bool \fBmActive\fP"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBQCPLayerable\fP
+.in +1c
+.ti -1c
+.RI "bool \fBmVisible\fP"
+.br
+.ti -1c
+.RI "\fBQCustomPlot\fP * \fBmParentPlot\fP"
+.br
+.ti -1c
+.RI "QPointer< \fBQCPLayerable\fP > \fBmParentLayerable\fP"
+.br
+.ti -1c
+.RI "\fBQCPLayer\fP * \fBmLayer\fP"
+.br
+.ti -1c
+.RI "bool \fBmAntialiased\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBQCustomPlot\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Provides rect/rubber-band data selection and range zoom interaction\&. 
+
+\fBQCPSelectionRect\fP is used by \fBQCustomPlot\fP when the \fBQCustomPlot::setSelectionRectMode\fP is not \fBQCP::srmNone\fP\&. When the user drags the mouse across the plot, the current selection rect instance (\fBQCustomPlot::setSelectionRect\fP) is forwarded these events and makes sure an according rect shape is drawn\&. At the begin, during, and after completion of the interaction, it emits the corresponding signals \fBstarted\fP, \fBchanged\fP, \fBcanceled\fP, and \fBaccepted\fP\&.
+.PP
+The \fBQCustomPlot\fP instance connects own slots to the current selection rect instance, in order to react to an accepted selection rect interaction accordingly\&.
+.PP
+\fBisActive\fP can be used to check whether the selection rect is currently active\&. An ongoing selection interaction can be cancelled programmatically via calling \fBcancel\fP at any time\&.
+.PP
+The appearance of the selection rect can be controlled via \fBsetPen\fP and \fBsetBrush\fP\&.
+.PP
+If you wish to provide custom behaviour, e\&.g\&. a different visual representation of the selection rect (\fBQCPSelectionRect::draw\fP), you can subclass \fBQCPSelectionRect\fP and pass an instance of your subclass to \fBQCustomPlot::setSelectionRect\fP\&. 
+.PP
+Definition at line \fB1094\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QCPSelectionRect::QCPSelectionRect (\fBQCustomPlot\fP * parentPlot)\fC [explicit]\fP"
+Creates a new \fBQCPSelectionRect\fP instance\&. To make \fBQCustomPlot\fP use the selection rect instance, pass it to \fBQCustomPlot::setSelectionRect\fP\&. \fIparentPlot\fP should be set to the same \fBQCustomPlot\fP widget\&. 
+.PP
+Definition at line \fB2813\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QCPSelectionRect::~QCPSelectionRect ()\fC [virtual]\fP"
+
+.PP
+Definition at line \fB2821\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void QCPSelectionRect::accepted (const QRect & rect, QMouseEvent * event)\fC [signal]\fP"
+This signal is emitted when the selection interaction was completed by the user releasing the mouse button\&.
+.PP
+Note that \fIrect\fP may have a negative width or height, if the selection is being dragged to the upper or left side of the selection rect origin\&. 
+.SS "void QCPSelectionRect::applyDefaultAntialiasingHint (\fBQCPPainter\fP * painter) const\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBQCPLayerable\fP\&.
+.PP
+Definition at line \fB2934\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QBrush QCPSelectionRect::brush () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB1105\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "void QCPSelectionRect::cancel ()"
+If there is currently a selection interaction going on (\fBisActive\fP), the interaction is canceled\&. The selection rect will emit the \fBcanceled\fP signal\&. 
+.PP
+Definition at line \fB2870\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPSelectionRect::canceled (const QRect & rect, QInputEvent * event)\fC [signal]\fP"
+This signal is emitted when the selection interaction was cancelled\&. Note that \fIevent\fP is 0 if the selection interaction was cancelled programmatically, by a call to \fBcancel\fP\&.
+.PP
+The user may cancel the selection interaction by pressing the escape key\&. In this case, \fIevent\fP holds the respective input event\&.
+.PP
+Note that \fIrect\fP may have a negative width or height, if the selection is being dragged to the upper or left side of the selection rect origin\&. 
+.SS "void QCPSelectionRect::changed (const QRect & rect, QMouseEvent * event)\fC [signal]\fP"
+This signal is emitted while the selection rect interaction is ongoing and the \fIrect\fP has changed its size due to the user moving the mouse\&.
+.PP
+Note that \fIrect\fP may have a negative width or height, if the selection is being dragged to the upper or left side of the selection rect origin\&. 
+.SS "void QCPSelectionRect::draw (\fBQCPPainter\fP * painter)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBQCPLayerable\fP\&.
+.PP
+Definition at line \fB2945\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPSelectionRect::endSelection (QMouseEvent * event)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line \fB2911\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "bool QCPSelectionRect::isActive () const\fC [inline]\fP"
+Returns true if there is currently a selection going on, i\&.e\&. the user has started dragging a selection rect, but hasn't released the mouse button yet\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBcancel\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB1106\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "void QCPSelectionRect::keyPressEvent (QKeyEvent * event)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line \fB2924\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPSelectionRect::moveSelection (QMouseEvent * event)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line \fB2898\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QPen QCPSelectionRect::pen () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB1104\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "\fBQCPRange\fP QCPSelectionRect::range (const \fBQCPAxis\fP * axis) const"
+A convenience function which returns the coordinate range of the provided \fIaxis\fP, that this selection rect currently encompasses\&. 
+.PP
+Definition at line \fB2830\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QRect QCPSelectionRect::rect () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB1102\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "void QCPSelectionRect::setBrush (const QBrush & brush)"
+Sets the brush that will be used to fill the selection rect\&. By default the selection rect is not filled, i\&.e\&. \fIbrush\fP is \fCQt::NoBrush\fP\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetPen\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB2861\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPSelectionRect::setPen (const QPen & pen)"
+Sets the pen that will be used to draw the selection rect outline\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBsetBrush\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB2850\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPSelectionRect::started (QMouseEvent * event)\fC [signal]\fP"
+This signal is emitted when a selection rect interaction was initiated, i\&.e\&. the user just started dragging the selection rect with the mouse\&. 
+.SS "void QCPSelectionRect::startSelection (QMouseEvent * event)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line \fB2885\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBQCustomPlot\fP\fC [friend]\fP"
+
+.PP
+Definition at line \fB1139\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "bool QCPSelectionRect::mActive\fC [protected]\fP"
+
+.PP
+Definition at line \fB1127\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QBrush QCPSelectionRect::mBrush\fC [protected]\fP"
+
+.PP
+Definition at line \fB1125\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QPen QCPSelectionRect::mPen\fC [protected]\fP"
+
+.PP
+Definition at line \fB1124\fP of file \fBqcustomplot\&.h\fP\&.
+.SS "QRect QCPSelectionRect::mRect\fC [protected]\fP"
+
+.PP
+Definition at line \fB1123\fP of file \fBqcustomplot\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for OmronPID from the source code\&.

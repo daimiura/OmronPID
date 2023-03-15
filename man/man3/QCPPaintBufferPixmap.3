@@ -1,0 +1,164 @@
+.TH "QCPPaintBufferPixmap" 3 "Wed Mar 15 2023" "OmronPID" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QCPPaintBufferPixmap \- A paint buffer based on QPixmap, using software raster rendering\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBQCPAbstractPaintBuffer\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQCPPaintBufferPixmap\fP (const QSize &size, double devicePixelRatio)"
+.br
+.ti -1c
+.RI "virtual \fBQCPPainter\fP * \fBstartPainting\fP () Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (\fBQCPPainter\fP *painter) const Q_DECL_OVERRIDE"
+.br
+.ti -1c
+.RI "void \fBclear\fP (const QColor &color) Q_DECL_OVERRIDE"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBQCPAbstractPaintBuffer\fP
+.in +1c
+.ti -1c
+.RI "\fBQCPAbstractPaintBuffer\fP (const QSize &size, double devicePixelRatio)"
+.br
+.ti -1c
+.RI "QSize \fBsize\fP () const"
+.br
+.ti -1c
+.RI "bool \fBinvalidated\fP () const"
+.br
+.ti -1c
+.RI "double \fBdevicePixelRatio\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetSize\fP (const QSize &size)"
+.br
+.ti -1c
+.RI "void \fBsetInvalidated\fP (bool invalidated=true)"
+.br
+.ti -1c
+.RI "void \fBsetDevicePixelRatio\fP (double ratio)"
+.br
+.ti -1c
+.RI "virtual \fBQCPPainter\fP * \fBstartPainting\fP ()=0"
+.br
+.ti -1c
+.RI "virtual void \fBdonePainting\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (\fBQCPPainter\fP *painter) const =0"
+.br
+.ti -1c
+.RI "virtual void \fBclear\fP (const QColor &color)=0"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBreallocateBuffer\fP () Q_DECL_OVERRIDE"
+.br
+.in -1c
+.in +1c
+.ti -1c
+.RI "virtual void \fBreallocateBuffer\fP ()=0"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "QPixmap \fBmBuffer\fP"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBQCPAbstractPaintBuffer\fP
+.in +1c
+.ti -1c
+.RI "QSize \fBmSize\fP"
+.br
+.ti -1c
+.RI "double \fBmDevicePixelRatio\fP"
+.br
+.ti -1c
+.RI "bool \fBmInvalidated\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+A paint buffer based on QPixmap, using software raster rendering\&. 
+
+This paint buffer is the default and fall-back paint buffer which uses software rendering and QPixmap as internal buffer\&. It is used if \fBQCustomPlot::setOpenGl\fP is false\&. 
+.PP
+Definition at line \fB550\fP of file \fBqcustomplot\&.h\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QCPPaintBufferPixmap::QCPPaintBufferPixmap (const QSize & size, double devicePixelRatio)\fC [explicit]\fP"
+Creates a pixmap paint buffer instancen with the specified \fIsize\fP and \fIdevicePixelRatio\fP, if applicable\&. 
+.PP
+Definition at line \fB656\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "QCPPaintBufferPixmap::~QCPPaintBufferPixmap ()\fC [virtual]\fP"
+
+.PP
+Definition at line \fB662\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void QCPPaintBufferPixmap::clear (const QColor & color)\fC [virtual]\fP"
+Fills the entire buffer with the provided \fIcolor\fP\&. To have an empty transparent buffer, use the named color \fCQt::transparent\fP\&.
+.PP
+This method must not be called if there is currently a painter (acquired with \fBstartPainting\fP) active\&. 
+.PP
+Implements \fBQCPAbstractPaintBuffer\fP\&.
+.PP
+Definition at line \fB684\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPPaintBufferPixmap::draw (\fBQCPPainter\fP * painter) const\fC [virtual]\fP"
+Draws the contents of this buffer with the provided \fIpainter\fP\&. This is the method that is used to finally join all paint buffers and draw them onto the screen\&. 
+.PP
+Implements \fBQCPAbstractPaintBuffer\fP\&.
+.PP
+Definition at line \fB675\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "void QCPPaintBufferPixmap::reallocateBuffer ()\fC [protected]\fP, \fC [virtual]\fP"
+Reallocates the internal buffer with the currently configured size (\fBsetSize\fP) and device pixel ratio, if applicable (\fBsetDevicePixelRatio\fP)\&. It is called as soon as any of those properties are changed on this paint buffer\&.
+.PP
+\fBNote\fP
+.RS 4
+Subclasses of \fBQCPAbstractPaintBuffer\fP must call their reimplementation of this method in their constructor, to perform the first allocation (this can not be done by the base class because calling pure virtual methods in base class constructors is not possible)\&. 
+.RE
+.PP
+
+.PP
+Implements \fBQCPAbstractPaintBuffer\fP\&.
+.PP
+Definition at line \fB690\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SS "\fBQCPPainter\fP * QCPPaintBufferPixmap::startPainting ()\fC [virtual]\fP"
+Returns a \fBQCPPainter\fP which is ready to draw to this buffer\&. The ownership and thus the responsibility to delete the painter after the painting operations are complete is given to the caller of this method\&.
+.PP
+Once you are done using the painter, delete the painter and call \fBdonePainting\fP\&.
+.PP
+While a painter generated with this method is active, you must not call \fBsetSize\fP, \fBsetDevicePixelRatio\fP or \fBclear\fP\&.
+.PP
+This method may return 0, if a painter couldn't be activated on the buffer\&. This usually indicates a problem with the respective painting backend\&. 
+.PP
+Implements \fBQCPAbstractPaintBuffer\fP\&.
+.PP
+Definition at line \fB667\fP of file \fBqcustomplot\&.cpp\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QPixmap QCPPaintBufferPixmap::mBuffer\fC [protected]\fP"
+
+.PP
+Definition at line \fB563\fP of file \fBqcustomplot\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for OmronPID from the source code\&.

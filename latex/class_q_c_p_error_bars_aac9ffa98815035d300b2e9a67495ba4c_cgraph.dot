@@ -1,0 +1,33 @@
+digraph "QCPErrorBars::getVisibleDataBounds"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [label="QCPErrorBars::getVisible\lDataBounds",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="steelblue1",style="solid"];
+  Node2 [label="QCPDataRange::begin",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_data_range.html#ae76d7eba9defdfafcd0fc41096793129",tooltip=" "];
+  Node1 -> Node3 [color="steelblue1",style="solid"];
+  Node3 [label="QCPDataRange::bounded",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_data_range.html#a93529421d12fdd3a8bdb2b8061936352",tooltip=" "];
+  Node3 -> Node4 [color="steelblue1",style="solid"];
+  Node4 [label="QCPDataRange::intersection",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_data_range.html#a84e1e03129dd52528efb4bac18d30183",tooltip=" "];
+  Node4 -> Node5 [color="steelblue1",style="solid"];
+  Node5 [label="QCPDataRange::isValid",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_data_range.html#aae53a37472212dca0a7939963e20dba0",tooltip=" "];
+  Node4 -> Node6 [color="steelblue1",style="solid"];
+  Node6 [label="QCPDataRange::QCPDataRange",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_data_range.html#a49e72fd9bace1da9d875136dcc04c986",tooltip=" "];
+  Node3 -> Node7 [color="steelblue1",style="solid"];
+  Node7 [label="QCPDataRange::isEmpty",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_data_range.html#ac32e53fc05d6cd2eac96b96a7265d3b8",tooltip=" "];
+  Node3 -> Node6 [color="steelblue1",style="solid"];
+  Node1 -> Node8 [color="steelblue1",style="solid"];
+  Node8 [label="QCPDataRange::end",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_data_range.html#aee1b20fb045929c3753ee2ce14af7630",tooltip=" "];
+  Node1 -> Node9 [color="steelblue1",style="solid"];
+  Node9 [label="QCPErrorBars::errorBarVisible",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_error_bars.html#a5ad9abccb1be3df25485ad7dc21b3b89",tooltip=" "];
+  Node1 -> Node7 [color="steelblue1",style="solid"];
+  Node1 -> Node10 [color="steelblue1",style="solid"];
+  Node10 [label="QCPAbstractPlottable\l::keyAxis",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_plottable.html#aa6f25b97ee99988fe352f17cb9ed962b",tooltip=" "];
+  Node1 -> Node11 [color="steelblue1",style="solid"];
+  Node11 [label="QCPAxis::range",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_axis.html#ac4058855a81f1a883cf2e754f6a6acb1",tooltip=" "];
+  Node1 -> Node12 [color="steelblue1",style="solid"];
+  Node12 [label="QCPAbstractPlottable\l::valueAxis",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_plottable.html#a842b3831660d3e33b73863fd133889dd",tooltip=" "];
+}

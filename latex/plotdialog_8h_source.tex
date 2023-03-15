@@ -1,0 +1,33 @@
+\hypertarget{plotdialog_8h_source}{}\doxysection{plotdialog.\+h}
+\mbox{\hyperlink{plotdialog_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{plotdialog_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{plotdialog_8h_source_l00009}00009\ \textcolor{preprocessor}{\#ifndef\ PLOTDIALOG\_H}}
+\DoxyCodeLine{\Hypertarget{plotdialog_8h_source_l00010}00010\ \textcolor{preprocessor}{\#define\ PLOTDIALOG\_H}}
+\DoxyCodeLine{\Hypertarget{plotdialog_8h_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{plotdialog_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <QDialog>}}
+\DoxyCodeLine{\Hypertarget{plotdialog_8h_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <QMutex>}}
+\DoxyCodeLine{\Hypertarget{plotdialog_8h_source_l00014}00014\ \textcolor{keyword}{class\ }QSpinBox;}
+\DoxyCodeLine{\Hypertarget{plotdialog_8h_source_l00015}00015\ \textcolor{keyword}{class\ }QTextBrowser;}
+\DoxyCodeLine{\Hypertarget{plotdialog_8h_source_l00016}00016\ \textcolor{keyword}{class\ }QLabel;}
+\DoxyCodeLine{\Hypertarget{plotdialog_8h_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{plotdialog_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{plotdialog_8h_source_l00022}\mbox{\hyperlink{class_plot_dialog}{00022}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_plot_dialog}{PlotDialog}}\ :\ \textcolor{keyword}{public}\ QDialog}
+\DoxyCodeLine{\Hypertarget{plotdialog_8h_source_l00023}00023\ \{}
+\DoxyCodeLine{\Hypertarget{plotdialog_8h_source_l00024}00024\ \ \ Q\_OBJECT}
+\DoxyCodeLine{\Hypertarget{plotdialog_8h_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{plotdialog_8h_source_l00026}00026\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{plotdialog_8h_source_l00027}00027\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_plot_dialog}{PlotDialog}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{plotdialog_8h_source_l00028}00028\ \ \ \textcolor{keywordtype}{int}\ displayRange\_;}
+\DoxyCodeLine{\Hypertarget{plotdialog_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{plotdialog_8h_source_l00030}00030\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{\Hypertarget{plotdialog_8h_source_l00031}00031\ \ \ \textcolor{keywordtype}{void}\ setValues();}
+\DoxyCodeLine{\Hypertarget{plotdialog_8h_source_l00032}00032\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{plotdialog_8h_source_l00033}00033\ \ \ QLabel\ *labelRange\_;}
+\DoxyCodeLine{\Hypertarget{plotdialog_8h_source_l00034}00034\ \ \ QSpinBox\ *\ spinBoxDisplayRange\_;}
+\DoxyCodeLine{\Hypertarget{plotdialog_8h_source_l00035}00035\ \ \ QTextBrowser\ *browser\_;}
+\DoxyCodeLine{\Hypertarget{plotdialog_8h_source_l00036}00036\ \};}
+\DoxyCodeLine{\Hypertarget{plotdialog_8h_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{plotdialog_8h_source_l00038}00038\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ PLOTDIALOG\_H}}
+
+\end{DoxyCode}

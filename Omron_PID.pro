@@ -24,12 +24,20 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    configuredialog.cpp \
         main.cpp \
         mainwindow.cpp \
+    myqlineedit.cpp \
+    mythread.cpp \
+    plotdialog.cpp \
     qcustomplot.cpp
 
 HEADERS += \
+    configuredialog.h \
         mainwindow.h \
+    myqlineedit.h \
+    mythread.h \
+    plotdialog.h \
     qcustomplot.h
 
 FORMS += \
