@@ -1,5 +1,10 @@
 \hypertarget{mainwindow_8h}{}\doxysection{mainwindow.\+h File Reference}
 \label{mainwindow_8h}\index{mainwindow.h@{mainwindow.h}}
+
+
+mainwindow for connection to the E5\+CC  
+
+
 {\ttfamily \#include $<$QMain\+Window$>$}\newline
 {\ttfamily \#include $<$Qt\+Serial\+Port$>$}\newline
 {\ttfamily \#include $<$QModbus\+Client$>$}\newline
@@ -13,16 +18,39 @@
 {\ttfamily \#include $<$QApplication$>$}\newline
 {\ttfamily \#include $<$QVBox\+Layout$>$}\newline
 {\ttfamily \#include $<$QHBox\+Layout$>$}\newline
+{\ttfamily \#include $<$QFile$>$}\newline
+{\ttfamily \#include $<$QText\+Stream$>$}\newline
 {\ttfamily \#include \char`\"{}mythread.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}myqlineedit.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}configuredialog.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}plotdialog.\+h\char`\"{}}\newline
+Include dependency graph for mainwindow.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mainwindow_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=168pt]{mainwindow_8h__dep__incl}
+\end{center}
+\end{figure}
 \doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{class_main_window}{Main\+Window}}
-\end{DoxyCompactItemize}
-\doxysubsection*{Namespaces}
-\begin{DoxyCompactItemize}
-\item 
-namespace \mbox{\hyperlink{namespace_ui}{Ui}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{class_main_window}{Main\+Window}} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+mainwindow for connection to the E5\+CC 
+
+\begin{DoxyAuthor}{Author}
+Daisuke Miura (Original source code xxxxx) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2023/3/15
+\end{DoxyDate}
+The original source code did not include safety measures. To improve safety, functions were added to check if the temperature was rising and to detect unexpected sudden temperature drops. The GUI was also modified to set the necessary parameters for these functions. 

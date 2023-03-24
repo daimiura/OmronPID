@@ -2,6 +2,15 @@
 \label{class_main_window}\index{MainWindow@{MainWindow}}
 
 
+The \mbox{\hyperlink{class_main_window}{Main\+Window}} class.  
+
+
+
+
+{\ttfamily \#include $<$mainwindow.\+h$>$}
+
+
+
 Inheritance diagram for Main\+Window\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -15,16 +24,16 @@ Collaboration diagram for Main\+Window\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=160pt]{class_main_window__coll__graph}
+\includegraphics[width=350pt]{class_main_window__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Slots}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_main_window_ac6bb3fa372c4a2d7a3b9621deac79d4a}{periodic\+Work}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_main_window_ac6bb3fa372c4a2d7a3b9621deac79d4a}{Main\+Window\+::periodic\+Work}}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_main_window_a699115cac96d47fd0f8a2bf359c3203c}{make\+Plot}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_main_window_a699115cac96d47fd0f8a2bf359c3203c}{Main\+Window\+::make\+Plot}}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_main_window_af30ebac87cad0ccff631b6e11bcc50c8}{Temp\+Check}} ()
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_main_window_af30ebac87cad0ccff631b6e11bcc50c8}{Main\+Window\+::\+Temp\+Check}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
@@ -32,18 +41,348 @@ void \mbox{\hyperlink{class_main_window_af30ebac87cad0ccff631b6e11bcc50c8}{Temp\
 \item 
 \mbox{\hyperlink{class_main_window_a8b244be8b7b7db1b08de2a2acb9409db}{Main\+Window}} (QWidget $\ast$parent=0)
 \item 
-void \mbox{\hyperlink{class_main_window_a44d85ff6240f89bc1aff38ff3dec128e}{Log\+Msg}} (QString str, bool new\+Line=true)
+\mbox{\Hypertarget{class_main_window_a44d85ff6240f89bc1aff38ff3dec128e}\label{class_main_window_a44d85ff6240f89bc1aff38ff3dec128e}} 
+void {\bfseries Log\+Msg} (QString str, bool new\+Line=true)
 \item 
-void \mbox{\hyperlink{class_main_window_a384e4eb100e8c9af82ad207333d13d87}{find\+Series\+Port\+Devices}} ()
+\mbox{\Hypertarget{class_main_window_a384e4eb100e8c9af82ad207333d13d87}\label{class_main_window_a384e4eb100e8c9af82ad207333d13d87}} 
+void {\bfseries find\+Series\+Port\+Devices} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_main_window_aaeaabe6c0ce404c8a3ef79045a59417e}\label{class_main_window_aaeaabe6c0ce404c8a3ef79045a59417e}} 
+void {\bfseries key\+Press\+Event} (QKey\+Event $\ast$key)
+\item 
+\mbox{\Hypertarget{class_main_window_aa0145f20e4b068f4674ab778b85857d0}\label{class_main_window_aa0145f20e4b068f4674ab778b85857d0}} 
+void {\bfseries key\+Release\+Event} (QKey\+Event $\ast$key)
+\item 
+\mbox{\Hypertarget{class_main_window_a5720ca6b0bbfe4436bc96899986f2fbe}\label{class_main_window_a5720ca6b0bbfe4436bc96899986f2fbe}} 
+QString {\bfseries format\+Hex} (int value, int digit)
+\item 
+\mbox{\Hypertarget{class_main_window_afcecca8384b500fd31a49642fa5def99}\label{class_main_window_afcecca8384b500fd31a49642fa5def99}} 
+void {\bfseries wait\+For\+MSec} (int msec)
+\item 
+\mbox{\Hypertarget{class_main_window_aa0f5e396dcca5f1df779190a034e9277}\label{class_main_window_aa0f5e396dcca5f1df779190a034e9277}} 
+void {\bfseries panal\+On\+Off} (bool IO)
+\item 
+\mbox{\Hypertarget{class_main_window_abb90d8cf7c197970c9fe616f6080514f}\label{class_main_window_abb90d8cf7c197970c9fe616f6080514f}} 
+void {\bfseries show\+Time} ()
+\item 
+\mbox{\Hypertarget{class_main_window_ac98716736c7a35e511b33159eeab7ab6}\label{class_main_window_ac98716736c7a35e511b33159eeab7ab6}} 
+void {\bfseries allow\+Set\+Next\+SV} ()
+\item 
+\mbox{\Hypertarget{class_main_window_ab2ca7aeae5c141f431190bb8fd6b04b6}\label{class_main_window_ab2ca7aeae5c141f431190bb8fd6b04b6}} 
+void {\bfseries read} (QModbus\+Data\+Unit\+::\+Register\+Type type, quint16 adress, int size)
+\item 
+\mbox{\Hypertarget{class_main_window_a17ff0ad149d3536310eb861ecadee8a5}\label{class_main_window_a17ff0ad149d3536310eb861ecadee8a5}} 
+void {\bfseries read\+Ready} ()
+\item 
+\mbox{\Hypertarget{class_main_window_a3703606013e0bb5b2f1042f27005e45d}\label{class_main_window_a3703606013e0bb5b2f1042f27005e45d}} 
+void {\bfseries request} (QModbus\+Pdu\+::\+Function\+Code code, QByte\+Array cmd)
+\item 
+\mbox{\Hypertarget{class_main_window_adab1131b6436483de775433d8fda0bf3}\label{class_main_window_adab1131b6436483de775433d8fda0bf3}} 
+void {\bfseries ask\+Temperature} (bool mute=false)
+\item 
+\mbox{\Hypertarget{class_main_window_a028ed4f3bfa8d0df29c7b443e3b7757b}\label{class_main_window_a028ed4f3bfa8d0df29c7b443e3b7757b}} 
+void {\bfseries ask\+Set\+Point} (bool mute=false)
+\item 
+\mbox{\Hypertarget{class_main_window_af30f80b7af8c2c38d6f01ae55d880638}\label{class_main_window_af30f80b7af8c2c38d6f01ae55d880638}} 
+void {\bfseries ask\+MV} (bool mute=false)
+\item 
+\mbox{\Hypertarget{class_main_window_a4bda601b238a2eafdbaec1e30d4ea432}\label{class_main_window_a4bda601b238a2eafdbaec1e30d4ea432}} 
+void {\bfseries ask\+MVupper} (bool mute=false)
+\item 
+\mbox{\Hypertarget{class_main_window_a8d3c86bcbdd52bd67ef569af3b38533e}\label{class_main_window_a8d3c86bcbdd52bd67ef569af3b38533e}} 
+void {\bfseries ask\+MVlower} (bool mute=false)
+\item 
+\mbox{\Hypertarget{class_main_window_a053c4a480f9dee2f3effbbebaab36449}\label{class_main_window_a053c4a480f9dee2f3effbbebaab36449}} 
+void {\bfseries get\+Setting} ()
+\item 
+\mbox{\Hypertarget{class_main_window_a51d1425b75f3a1c30c1506e9359fad29}\label{class_main_window_a51d1425b75f3a1c30c1506e9359fad29}} 
+void {\bfseries set\+AT} (int at\+Flag)
+\item 
+\mbox{\Hypertarget{class_main_window_a66ebd1857540f6ff950349371504be09}\label{class_main_window_a66ebd1857540f6ff950349371504be09}} 
+void {\bfseries set\+SV} (double SV)
+\item 
+void \mbox{\hyperlink{class_main_window_a1fda2bd644e0a288533d7cf6839b17f7}{write\+Data}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_main_window_a1fda2bd644e0a288533d7cf6839b17f7}{Main\+Window\+::write\+Data}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a8b161b2d289156f35bbc77d1728406f1}{wait\+Timming}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_main_window_a8b161b2d289156f35bbc77d1728406f1}{Main\+Window\+::wait\+Timming}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_main_window_aabb57a5fe49fae4fe0910dea1f853420}{generate\+Save\+File}} ()
+\begin{DoxyCompactList}\small\item\em Main\+Window\+::generate\+Savefile. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_main_window_ad6b588b48ecc503aa0aea612026afd20}{is\+Ignore}} (bool check, double temp)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_main_window_ad6b588b48ecc503aa0aea612026afd20}{Main\+Window\+::is\+Ignore}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_main_window_ad059de114f9aa3d3fba9dd72f498db07}{is\+Violate}} (QVector$<$ double $>$ vtemp)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_main_window_ad059de114f9aa3d3fba9dd72f498db07}{Main\+Window\+::is\+Violate}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_main_window_a2e057a2ed5081cd84ac03fae724472ef}{is\+Drop}} (double diff)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_main_window_a2e057a2ed5081cd84ac03fae724472ef}{Main\+Window\+::is\+Drop}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_main_window_ad998fe87e9eea4891fa6d38723f5d8f7}\label{class_main_window_ad998fe87e9eea4891fa6d38723f5d8f7}} 
+void {\bfseries on\+\_\+push\+Button\+\_\+\+Connect\+\_\+clicked} ()
+\item 
+\mbox{\Hypertarget{class_main_window_a2fe882091fdb31740c27cca490894fa3}\label{class_main_window_a2fe882091fdb31740c27cca490894fa3}} 
+void {\bfseries on\+\_\+push\+Button\+\_\+\+Ask\+Status\+\_\+clicked} ()
+\item 
+\mbox{\Hypertarget{class_main_window_a85a28e7c9e401330b314e9e464b6aa26}\label{class_main_window_a85a28e7c9e401330b314e9e464b6aa26}} 
+void {\bfseries on\+\_\+push\+Button\+\_\+\+Set\+SV\+\_\+clicked} ()
+\item 
+\mbox{\Hypertarget{class_main_window_aa8b4d0b4c7093178b29b66de04f8d9be}\label{class_main_window_aa8b4d0b4c7093178b29b66de04f8d9be}} 
+void {\bfseries on\+\_\+push\+Button\+\_\+\+Get\+PID\+\_\+clicked} ()
+\item 
+\mbox{\Hypertarget{class_main_window_a5e709768795f53ad53cd1f3bf36780a6}\label{class_main_window_a5e709768795f53ad53cd1f3bf36780a6}} 
+void {\bfseries on\+\_\+push\+Button\+\_\+\+Control\+\_\+clicked} ()
+\item 
+\mbox{\Hypertarget{class_main_window_abb0f2c41919e475fe4352d8eb3a340fe}\label{class_main_window_abb0f2c41919e475fe4352d8eb3a340fe}} 
+void {\bfseries on\+\_\+combo\+Box\+\_\+\+AT\+\_\+current\+Index\+Changed} (int index)
+\item 
+\mbox{\Hypertarget{class_main_window_a160af0e3ae6575d2e22402b9b5dbc3f3}\label{class_main_window_a160af0e3ae6575d2e22402b9b5dbc3f3}} 
+void {\bfseries on\+\_\+combo\+Box\+\_\+\+Mode\+\_\+current\+Index\+Changed} (int index)
+\item 
+\mbox{\Hypertarget{class_main_window_aef3eabe4802575fa53c8291a8a0369f0}\label{class_main_window_aef3eabe4802575fa53c8291a8a0369f0}} 
+void {\bfseries on\+\_\+combo\+Box\+\_\+\+Mem\+Address\+\_\+current\+Text\+Changed} (const QString \&arg1)
+\item 
+\mbox{\Hypertarget{class_main_window_a87a3f0bb63e3fdcb49f167e573aba3e4}\label{class_main_window_a87a3f0bb63e3fdcb49f167e573aba3e4}} 
+void {\bfseries on\+\_\+double\+Spin\+Box\+\_\+\+MVlower\+\_\+value\+Changed} (double arg1)
+\item 
+\mbox{\Hypertarget{class_main_window_ad5653eca43daf28af8f9fd85128ee98f}\label{class_main_window_ad5653eca43daf28af8f9fd85128ee98f}} 
+void {\bfseries on\+\_\+double\+Spin\+Box\+\_\+\+MVupper\+\_\+value\+Changed} (double arg1)
+\item 
+void \mbox{\hyperlink{class_main_window_ae638f022d599b7e1133c94f32c748610}{on\+\_\+check\+Box\+\_\+data\+Save\+\_\+toggled}} (bool checked)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_main_window_ae638f022d599b7e1133c94f32c748610}{Main\+Window\+::on\+\_\+check\+Box\+\_\+data\+Save\+\_\+toggled}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_main_window_a810e838f2bed2457c54833d6deeac09f}\label{class_main_window_a810e838f2bed2457c54833d6deeac09f}} 
+void {\bfseries on\+\_\+push\+Button\+\_\+\+Log\+\_\+toggled} (bool checked)
+\item 
+\mbox{\Hypertarget{class_main_window_ad03bb50e9729daa36bc9dd6a3a5a750f}\label{class_main_window_ad03bb50e9729daa36bc9dd6a3a5a750f}} 
+void {\bfseries on\+\_\+spin\+Box\+\_\+\+Temp\+Record\+Time\+\_\+value\+Changed} (int arg1)
+\item 
+\mbox{\Hypertarget{class_main_window_aa7f2e809116cc505b59574e9094f9514}\label{class_main_window_aa7f2e809116cc505b59574e9094f9514}} 
+void {\bfseries on\+\_\+push\+Button\+\_\+\+Run\+Stop\+\_\+toggled} (bool checked)
+\item 
+\mbox{\Hypertarget{class_main_window_a3a4866823ec0a9148c03ade962e65cf3}\label{class_main_window_a3a4866823ec0a9148c03ade962e65cf3}} 
+void {\bfseries on\+\_\+action\+Open\+\_\+\+File\+\_\+triggered} ()
+\item 
+\mbox{\Hypertarget{class_main_window_aca38ecfe280ef377f8ef2321f21d27f9}\label{class_main_window_aca38ecfe280ef377f8ef2321f21d27f9}} 
+void {\bfseries on\+\_\+action\+\_\+\+Setting\+\_\+parameters\+\_\+for\+\_\+\+Temp\+Check\+\_\+triggered} ()
+\item 
+\mbox{\Hypertarget{class_main_window_a2866043b2f1e56983b4b30dfe7b1fef0}\label{class_main_window_a2866043b2f1e56983b4b30dfe7b1fef0}} 
+void {\bfseries on\+\_\+action\+\_\+\+Setting\+\_\+plot\+\_\+triggered} ()
+\item 
+\mbox{\Hypertarget{class_main_window_a6bca77b2712d34f4caabc74197c70b64}\label{class_main_window_a6bca77b2712d34f4caabc74197c70b64}} 
+void {\bfseries on\+\_\+action\+Help\+\_\+\+Page\+\_\+triggered} ()
+\item 
+\mbox{\Hypertarget{class_main_window_ab8a32bdcf40bd8778e14b142ac19556d}\label{class_main_window_ab8a32bdcf40bd8778e14b142ac19556d}} 
+void {\bfseries Help\+Pic\+Next} ()
+\item 
+\mbox{\Hypertarget{class_main_window_a64febdd30f2b738982c6418ddcd5304f}\label{class_main_window_a64febdd30f2b738982c6418ddcd5304f}} 
+void {\bfseries fill\+Data\+And\+Plot} (const QDate\+Time date, const double PV, const double SV, const double MV)
+\item 
+void \mbox{\hyperlink{class_main_window_a199c0e31444d0ec7d7a2186380cc8386}{Run}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_main_window_a199c0e31444d0ec7d7a2186380cc8386}{Main\+Window\+::\+Run}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a59f30670d379a9bd2e90608c8a6950b2}{Stop}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_main_window_a59f30670d379a9bd2e90608c8a6950b2}{Main\+Window\+::\+Stop}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a44e502225c153db20de1bb67d7b7513e}{Quit}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_main_window_a44e502225c153db20de1bb67d7b7513e}{Main\+Window\+::\+Quit}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_main_window_adae0a21c282ffbd8d2838e0ecdcdd836}\label{class_main_window_adae0a21c282ffbd8d2838e0ecdcdd836}} 
+void {\bfseries set\+Interval\+Ask\+MV} ()
+\item 
+\mbox{\Hypertarget{class_main_window_ada767bdc7f92562508cfb2fe7b3c6738}\label{class_main_window_ada767bdc7f92562508cfb2fe7b3c6738}} 
+void {\bfseries set\+Interval\+Ask\+Temp} ()
+\item 
+\mbox{\Hypertarget{class_main_window_a46b83ff092f3efb8338cfe557c506a37}\label{class_main_window_a46b83ff092f3efb8338cfe557c506a37}} 
+void {\bfseries set\+Safe\+Limit} ()
+\item 
+\mbox{\Hypertarget{class_main_window_a9a5ebed6faabe28a7fd8ee13b15d1f90}\label{class_main_window_a9a5ebed6faabe28a7fd8ee13b15d1f90}} 
+void {\bfseries set\+Numbers} ()
+\item 
+\mbox{\Hypertarget{class_main_window_a8cd204e2742f851caa8d1228009cffba}\label{class_main_window_a8cd204e2742f851caa8d1228009cffba}} 
+void {\bfseries set\+Ignore\+Range} ()
+\item 
+\mbox{\Hypertarget{class_main_window_aa0da264c928f59248893b4a47e6b5b21}\label{class_main_window_aa0da264c928f59248893b4a47e6b5b21}} 
+void {\bfseries set\+Parameters\+Temp\+Check} (bool mute=true)
+\item 
+\mbox{\Hypertarget{class_main_window_a5f4b9afa8da2fee13e50f3b2e0509776}\label{class_main_window_a5f4b9afa8da2fee13e50f3b2e0509776}} 
+void {\bfseries set\+Ignore\+Enable} ()
+\item 
+double \mbox{\hyperlink{class_main_window_a77f4ed0ba1af0d2ee7201df0a3ddef7c}{fill\+Difference}} (bool mute=true)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_main_window_a77f4ed0ba1af0d2ee7201df0a3ddef7c}{Main\+Window\+::fill\+Difference}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_aea8f18dcb9c96afb6ac71ad91b3053a0}{set\+Color}} (int colorindex=0)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_main_window_aea8f18dcb9c96afb6ac71ad91b3053a0}{Main\+Window\+::set\+Color}}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_main_window_a562db5a27f6904df8b5ca7aa2845b2b6}{calc\+Moving\+Ave}} (QVector$<$ double $>$ vtemp)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_main_window_a562db5a27f6904df8b5ca7aa2845b2b6}{Main\+Window\+::calc\+Moving\+Ave}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_main_window_a35466a70ed47252a0191168126a352a5}\label{class_main_window_a35466a70ed47252a0191168126a352a5}} 
+Ui\+::\+Main\+Window $\ast$ {\bfseries ui}
+\item 
+\mbox{\Hypertarget{class_main_window_a3f536a2c8d5e9d02cdf4c44b1453a4f6}\label{class_main_window_a3f536a2c8d5e9d02cdf4c44b1453a4f6}} 
+\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$ {\bfseries plot}
+\item 
+\mbox{\Hypertarget{class_main_window_a3c4bf5af2082fa56f4ce13c413bc079d}\label{class_main_window_a3c4bf5af2082fa56f4ce13c413bc079d}} 
+QModbus\+Rtu\+Serial\+Master $\ast$ {\bfseries omron}
+\item 
+\mbox{\Hypertarget{class_main_window_a03cb3c1946736e94ebc73b0dcaeed1d8}\label{class_main_window_a03cb3c1946736e94ebc73b0dcaeed1d8}} 
+\mbox{\hyperlink{class_my_thread}{My\+Thread}} $\ast$ {\bfseries thread\+MVcheck\+\_\+}
+\item 
+\mbox{\Hypertarget{class_main_window_aaeb9437bc1e55628706b3f0bd0a8942b}\label{class_main_window_aaeb9437bc1e55628706b3f0bd0a8942b}} 
+\mbox{\hyperlink{class_my_thread}{My\+Thread}} $\ast$ {\bfseries thread\+Log\+\_\+}
+\item 
+\mbox{\Hypertarget{class_main_window_a8c7a8bbb17e182c5bb32a0d6de586062}\label{class_main_window_a8c7a8bbb17e182c5bb32a0d6de586062}} 
+\mbox{\hyperlink{class_my_thread}{My\+Thread}} $\ast$ {\bfseries thread\+Temp\+Check\+\_\+}
+\item 
+\mbox{\Hypertarget{class_main_window_a6116c1db1aff64306d48814aef8a0b05}\label{class_main_window_a6116c1db1aff64306d48814aef8a0b05}} 
+QMessage\+Box $\ast$ {\bfseries Log\+Msg\+Box\+\_\+}
+\item 
+\mbox{\Hypertarget{class_main_window_aa4ffb59c2a2b2a2a280fea32152e5ae3}\label{class_main_window_aa4ffb59c2a2b2a2a280fea32152e5ae3}} 
+QString {\bfseries omron\+Port\+Name}
+\item 
+\mbox{\Hypertarget{class_main_window_a72bac38ffab3321a3c53deae46441cfa}\label{class_main_window_a72bac38ffab3321a3c53deae46441cfa}} 
+int {\bfseries omron\+ID}
+\item 
+\mbox{\Hypertarget{class_main_window_a44e7ead32571238c2a38b9552a0ea7cd}\label{class_main_window_a44e7ead32571238c2a38b9552a0ea7cd}} 
+int {\bfseries msg\+Count}
+\item 
+\mbox{\Hypertarget{class_main_window_a98320c31f5c8f2e3583c0f93023635d0}\label{class_main_window_a98320c31f5c8f2e3583c0f93023635d0}} 
+int {\bfseries respond\+Type}
+\item 
+\mbox{\Hypertarget{class_main_window_a1dd3d66517814c292e6905ff84f0ffc0}\label{class_main_window_a1dd3d66517814c292e6905ff84f0ffc0}} 
+QDate\+Time {\bfseries date\+Start\+\_\+}
+\item 
+\mbox{\Hypertarget{class_main_window_aa6152981538f1e3d9457093c9f361f3f}\label{class_main_window_aa6152981538f1e3d9457093c9f361f3f}} 
+QString {\bfseries date\+Start\+Str\+\_\+}
+\item 
+\mbox{\Hypertarget{class_main_window_ada5f2492d196c3e57c1e77d28dff904a}\label{class_main_window_ada5f2492d196c3e57c1e77d28dff904a}} 
+double {\bfseries temperature}
+\item 
+\mbox{\Hypertarget{class_main_window_aa0ef5505079d16dccce9b82e7439f099}\label{class_main_window_aa0ef5505079d16dccce9b82e7439f099}} 
+double {\bfseries SV}
+\item 
+\mbox{\Hypertarget{class_main_window_ab58408025c66202f06697a39b767927d}\label{class_main_window_ab58408025c66202f06697a39b767927d}} 
+double {\bfseries MV}
+\item 
+\mbox{\Hypertarget{class_main_window_afcd691f3e495a6d39ad6f47a13942d91}\label{class_main_window_afcd691f3e495a6d39ad6f47a13942d91}} 
+double {\bfseries MVupper}
+\item 
+\mbox{\Hypertarget{class_main_window_a28e967f49084fe5445648c0009df00bc}\label{class_main_window_a28e967f49084fe5445648c0009df00bc}} 
+double {\bfseries MVlower}
+\item 
+\mbox{\Hypertarget{class_main_window_a847eae3e15e92f5a8a4fdac3cddd2f30}\label{class_main_window_a847eae3e15e92f5a8a4fdac3cddd2f30}} 
+double {\bfseries temp\+Decimal}
+\item 
+\mbox{\Hypertarget{class_main_window_a8d0ec88339230c0709e86e874b64e991}\label{class_main_window_a8d0ec88339230c0709e86e874b64e991}} 
+bool {\bfseries temp\+Control\+On\+Off}
+\item 
+\mbox{\Hypertarget{class_main_window_a1072580736e17f4d948e4a462e5487c2}\label{class_main_window_a1072580736e17f4d948e4a462e5487c2}} 
+bool {\bfseries temp\+Record\+On\+Off}
+\item 
+\mbox{\Hypertarget{class_main_window_ad74ed16f127d450071eb777bff013103}\label{class_main_window_ad74ed16f127d450071eb777bff013103}} 
+bool {\bfseries modbus\+Ready}
+\item 
+\mbox{\Hypertarget{class_main_window_abd0d93cb600a9549bd89d2c26968fb71}\label{class_main_window_abd0d93cb600a9549bd89d2c26968fb71}} 
+bool {\bfseries combox\+Enable}
+\item 
+\mbox{\Hypertarget{class_main_window_a2f85adc34692b3c678931d8801e434bf}\label{class_main_window_a2f85adc34692b3c678931d8801e434bf}} 
+bool {\bfseries spin\+Box\+Enable}
+\item 
+\mbox{\Hypertarget{class_main_window_a00682bf5e171508072dae11931b0937d}\label{class_main_window_a00682bf5e171508072dae11931b0937d}} 
+bool {\bfseries mute\+Log}
+\item 
+\mbox{\Hypertarget{class_main_window_ab965e38a15e97c692fa3474999867420}\label{class_main_window_ab965e38a15e97c692fa3474999867420}} 
+bool {\bfseries status\+Ask\+Temp\+\_\+}
+\item 
+\mbox{\Hypertarget{class_main_window_a47225dede69364a7eaaa1b8e57579652}\label{class_main_window_a47225dede69364a7eaaa1b8e57579652}} 
+bool {\bfseries status\+Ask\+MV\+\_\+}
+\item 
+\mbox{\Hypertarget{class_main_window_a407abc6d7c91507d3de156596ab2c899}\label{class_main_window_a407abc6d7c91507d3de156596ab2c899}} 
+bool {\bfseries status\+Ask\+Set\+Point\+\_\+}
+\item 
+\mbox{\Hypertarget{class_main_window_a9cb176201862b2ebe0a615b3514bb0a7}\label{class_main_window_a9cb176201862b2ebe0a615b3514bb0a7}} 
+bool {\bfseries status\+Run\+\_\+}
+\item 
+\mbox{\Hypertarget{class_main_window_a3706754e5cce24b90ac8e75970215af5}\label{class_main_window_a3706754e5cce24b90ac8e75970215af5}} 
+QVector$<$ \mbox{\hyperlink{class_q_c_p_graph_data}{QCPGraph\+Data}} $>$ {\bfseries pv\+Data}
+\item 
+\mbox{\Hypertarget{class_main_window_a741d7b3865e77e45603d04919125de48}\label{class_main_window_a741d7b3865e77e45603d04919125de48}} 
+QVector$<$ \mbox{\hyperlink{class_q_c_p_graph_data}{QCPGraph\+Data}} $>$ {\bfseries sv\+Data}
+\item 
+\mbox{\Hypertarget{class_main_window_acd78c49df3c94388f1e2361c685061b9}\label{class_main_window_acd78c49df3c94388f1e2361c685061b9}} 
+QVector$<$ \mbox{\hyperlink{class_q_c_p_graph_data}{QCPGraph\+Data}} $>$ {\bfseries mv\+Data}
+\item 
+\mbox{\Hypertarget{class_main_window_a7b1d7f2e5b0865975647c51caba09bb3}\label{class_main_window_a7b1d7f2e5b0865975647c51caba09bb3}} 
+QVector$<$ double $>$ {\bfseries vtemp\+\_\+}
+\item 
+\mbox{\Hypertarget{class_main_window_ac04daef0e19cf89e8091033773b57186}\label{class_main_window_ac04daef0e19cf89e8091033773b57186}} 
+QVector$<$ double $>$ {\bfseries valltemp\+\_\+}
+\item 
+\mbox{\Hypertarget{class_main_window_a0cc4eb4a83cc23edb6d7d29e1fca4201}\label{class_main_window_a0cc4eb4a83cc23edb6d7d29e1fca4201}} 
+QVector$<$ double $>$ {\bfseries vdifftemp\+\_\+}
+\item 
+\mbox{\Hypertarget{class_main_window_abafcbbd24f9649d7a8f69d2c730d782b}\label{class_main_window_abafcbbd24f9649d7a8f69d2c730d782b}} 
+double {\bfseries pid\+\_\+P}
+\item 
+\mbox{\Hypertarget{class_main_window_a8d412e4a05e1a8e756d675fa62e34ac0}\label{class_main_window_a8d412e4a05e1a8e756d675fa62e34ac0}} 
+double {\bfseries pid\+\_\+I}
+\item 
+\mbox{\Hypertarget{class_main_window_a44a410a1c9df02978d69995ea54381ad}\label{class_main_window_a44a410a1c9df02978d69995ea54381ad}} 
+double {\bfseries pid\+\_\+D}
+\item 
+\mbox{\Hypertarget{class_main_window_af1060a538a1fefb9daaf373abf8a8eba}\label{class_main_window_af1060a538a1fefb9daaf373abf8a8eba}} 
+QTimer $\ast$ {\bfseries clock}
+\item 
+\mbox{\Hypertarget{class_main_window_a771248b7e7723fcbea166e68dfac47d2}\label{class_main_window_a771248b7e7723fcbea166e68dfac47d2}} 
+QTimer $\ast$ {\bfseries wait\+Timer}
+\item 
+\mbox{\Hypertarget{class_main_window_a11b01e30b88ae2582da7af13f10ff749}\label{class_main_window_a11b01e30b88ae2582da7af13f10ff749}} 
+QString {\bfseries file\+Name\+\_\+}
+\item 
+\mbox{\Hypertarget{class_main_window_aa08891d8cf2a296cf291dcc7b21891ec}\label{class_main_window_aa08891d8cf2a296cf291dcc7b21891ec}} 
+QString {\bfseries file\+Path\+\_\+}
+\item 
+\mbox{\Hypertarget{class_main_window_a356784b4cf1287d2b1307ed8b754d219}\label{class_main_window_a356784b4cf1287d2b1307ed8b754d219}} 
+QFile {\bfseries output\+\_\+}
+\item 
+\mbox{\Hypertarget{class_main_window_a939d3b73e42a430363435d5a245bfa68}\label{class_main_window_a939d3b73e42a430363435d5a245bfa68}} 
+QElapsed\+Timer {\bfseries total\+Elapse}
+\item 
+\mbox{\Hypertarget{class_main_window_aaac3d0d58d745769b69a3603908247ac}\label{class_main_window_aaac3d0d58d745769b69a3603908247ac}} 
+bool {\bfseries check\+Day}
+\item 
+\mbox{\Hypertarget{class_main_window_ad24bcb21f61f0ef9860ce274ef189b63}\label{class_main_window_ad24bcb21f61f0ef9860ce274ef189b63}} 
+int {\bfseries day\+Counter}
+\item 
+\mbox{\Hypertarget{class_main_window_aadd70816ccaf4fc91281eaaa54bfc74d}\label{class_main_window_aadd70816ccaf4fc91281eaaa54bfc74d}} 
+bool {\bfseries next\+SV}
+\item 
+\mbox{\Hypertarget{class_main_window_af53d4c993e66d54da59f0c3559917afe}\label{class_main_window_af53d4c993e66d54da59f0c3559917afe}} 
+const size\+\_\+t {\bfseries vec\+Size\+\_\+} = 1000
+\item 
+\mbox{\Hypertarget{class_main_window_ad132309e41e5f7d1dc1c8ca956c4aa59}\label{class_main_window_ad132309e41e5f7d1dc1c8ca956c4aa59}} 
+QDialog $\ast$ {\bfseries help\+Dialog}
+\item 
+\mbox{\Hypertarget{class_main_window_aadbafd381640d8d8f9dd7dda5419dfbd}\label{class_main_window_aadbafd381640d8d8f9dd7dda5419dfbd}} 
+QLabel $\ast$ {\bfseries Help\+Label}
+\item 
+\mbox{\Hypertarget{class_main_window_ac96ae2476725d7dab3f2641dc2c3f952}\label{class_main_window_ac96ae2476725d7dab3f2641dc2c3f952}} 
+\mbox{\hyperlink{class_plot_dialog}{Plot\+Dialog}} $\ast$ {\bfseries plot\+Dialog\+\_\+}
+\item 
+\mbox{\Hypertarget{class_main_window_a0f1e9c32a9a81b88b374b38f03190256}\label{class_main_window_a0f1e9c32a9a81b88b374b38f03190256}} 
+\mbox{\hyperlink{class_configure_dialog}{Configure\+Dialog}} $\ast$ {\bfseries configure\+Dialog\+\_\+}
+\item 
+\mbox{\Hypertarget{class_main_window_aa6af81165d1a513cca6bb228014ef9ac}\label{class_main_window_aa6af81165d1a513cca6bb228014ef9ac}} 
+int {\bfseries pic\+Number}
+\item 
+\mbox{\Hypertarget{class_main_window_ab3c64c6ecf8d34a12c631bb0d0bb6aee}\label{class_main_window_ab3c64c6ecf8d34a12c631bb0d0bb6aee}} 
+QMutex {\bfseries mutex\+\_\+}
+\item 
+\mbox{\Hypertarget{class_main_window_ae4af8bbd81ce99ab0d6d7e96049f1298}\label{class_main_window_ae4af8bbd81ce99ab0d6d7e96049f1298}} 
+int {\bfseries count\+Temp\+Check\+\_\+}
+\begin{DoxyCompactList}\small\item\em Counter that Temp\+Check was executed. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_main_window_a13f6644a4ab43c90530f205c1ea907b4}\label{class_main_window_a13f6644a4ab43c90530f205c1ea907b4}} 
+int {\bfseries count\+Drop\+Check\+\_\+}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-
-
-Definition at line \mbox{\hyperlink{mainwindow_8h_source_l00029}{29}} of file \mbox{\hyperlink{mainwindow_8h_source}{mainwindow.\+h}}.
-
-
+The \mbox{\hyperlink{class_main_window}{Main\+Window}} class. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_main_window_a8b244be8b7b7db1b08de2a2acb9409db}\label{class_main_window_a8b244be8b7b7db1b08de2a2acb9409db}} 
@@ -70,50 +409,113 @@ Log\+Start
 
 Reserved memory size
 
-Definition at line \mbox{\hyperlink{mainwindow_8cpp_source_l00033}{33}} of file \mbox{\hyperlink{mainwindow_8cpp_source}{mainwindow.\+cpp}}.
-
-Here is the call graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_main_window_a8b244be8b7b7db1b08de2a2acb9409db_cgraph}
-\end{center}
-\end{figure}
-\mbox{\Hypertarget{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}\label{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}} 
-\index{MainWindow@{MainWindow}!````~MainWindow@{$\sim$MainWindow}}
-\index{````~MainWindow@{$\sim$MainWindow}!MainWindow@{MainWindow}}
-\doxysubsubsection{\texorpdfstring{$\sim$MainWindow()}{~MainWindow()}}
-{\footnotesize\ttfamily Main\+Window\+::$\sim$\+Main\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Definition at line \mbox{\hyperlink{mainwindow_8cpp_source_l00290}{290}} of file \mbox{\hyperlink{mainwindow_8cpp_source}{mainwindow.\+cpp}}.
-
-
-
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_main_window_a384e4eb100e8c9af82ad207333d13d87}\label{class_main_window_a384e4eb100e8c9af82ad207333d13d87}} 
-\index{MainWindow@{MainWindow}!findSeriesPortDevices@{findSeriesPortDevices}}
-\index{findSeriesPortDevices@{findSeriesPortDevices}!MainWindow@{MainWindow}}
-\doxysubsubsection{\texorpdfstring{findSeriesPortDevices()}{findSeriesPortDevices()}}
-{\footnotesize\ttfamily void Main\+Window\+::find\+Series\+Port\+Devices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{class_main_window_a562db5a27f6904df8b5ca7aa2845b2b6}\label{class_main_window_a562db5a27f6904df8b5ca7aa2845b2b6}} 
+\index{MainWindow@{MainWindow}!calcMovingAve@{calcMovingAve}}
+\index{calcMovingAve@{calcMovingAve}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{calcMovingAve}{calcMovingAve}}
+{\footnotesize\ttfamily double Main\+Window\+::calc\+Moving\+Ave (\begin{DoxyParamCaption}\item[{QVector$<$ double $>$}]{vtemp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
 
 
 
-Definition at line \mbox{\hyperlink{mainwindow_8cpp_source_l00325}{325}} of file \mbox{\hyperlink{mainwindow_8cpp_source}{mainwindow.\+cpp}}.
-
-\mbox{\Hypertarget{class_main_window_a44d85ff6240f89bc1aff38ff3dec128e}\label{class_main_window_a44d85ff6240f89bc1aff38ff3dec128e}} 
-\index{MainWindow@{MainWindow}!LogMsg@{LogMsg}}
-\index{LogMsg@{LogMsg}!MainWindow@{MainWindow}}
-\doxysubsubsection{\texorpdfstring{LogMsg()}{LogMsg()}}
-{\footnotesize\ttfamily void Main\+Window\+::\+Log\+Msg (\begin{DoxyParamCaption}\item[{QString}]{str,  }\item[{bool}]{new\+Line = {\ttfamily true} }\end{DoxyParamCaption})}
+\mbox{\hyperlink{class_main_window_a562db5a27f6904df8b5ca7aa2845b2b6}{Main\+Window\+::calc\+Moving\+Ave}}. 
 
 
+\begin{DoxyParams}{Parameters}
+{\em vtemp} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double aberage value of Neighborhood average of 3 points 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_main_window_a77f4ed0ba1af0d2ee7201df0a3ddef7c}\label{class_main_window_a77f4ed0ba1af0d2ee7201df0a3ddef7c}} 
+\index{MainWindow@{MainWindow}!fillDifference@{fillDifference}}
+\index{fillDifference@{fillDifference}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{fillDifference}{fillDifference}}
+{\footnotesize\ttfamily double Main\+Window\+::fill\+Difference (\begin{DoxyParamCaption}\item[{bool}]{mute = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
 
-Definition at line \mbox{\hyperlink{mainwindow_8cpp_source_l00307}{307}} of file \mbox{\hyperlink{mainwindow_8cpp_source}{mainwindow.\+cpp}}.
 
-\mbox{\Hypertarget{class_main_window_a699115cac96d47fd0f8a2bf359c3203c}\label{class_main_window_a699115cac96d47fd0f8a2bf359c3203c}} 
+
+\mbox{\hyperlink{class_main_window_a77f4ed0ba1af0d2ee7201df0a3ddef7c}{Main\+Window\+::fill\+Difference}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mute} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double Temperature difference
+\end{DoxyReturn}
+Function to subtract the last element from the last element stored in the member variable vtemp\+\_\+ to obtain the temperature change. If the argument mute is true, the temperature change is not output to the Log message. \mbox{\Hypertarget{class_main_window_aabb57a5fe49fae4fe0910dea1f853420}\label{class_main_window_aabb57a5fe49fae4fe0910dea1f853420}} 
+\index{MainWindow@{MainWindow}!generateSaveFile@{generateSaveFile}}
+\index{generateSaveFile@{generateSaveFile}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{generateSaveFile}{generateSaveFile}}
+{\footnotesize\ttfamily bool Main\+Window\+::generate\+Save\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Main\+Window\+::generate\+Savefile. 
+
+\begin{DoxyReturn}{Returns}
+bool
+\end{DoxyReturn}
+try to generate new file. Returns false if the file already exists. If the file does not exist, the header is written to the file and this function returns true. \mbox{\Hypertarget{class_main_window_a2e057a2ed5081cd84ac03fae724472ef}\label{class_main_window_a2e057a2ed5081cd84ac03fae724472ef}} 
+\index{MainWindow@{MainWindow}!isDrop@{isDrop}}
+\index{isDrop@{isDrop}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{isDrop}{isDrop}}
+{\footnotesize\ttfamily bool Main\+Window\+::is\+Drop (\begin{DoxyParamCaption}\item[{double}]{diff }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+\mbox{\hyperlink{class_main_window_a2e057a2ed5081cd84ac03fae724472ef}{Main\+Window\+::is\+Drop}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em diff} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool true or false
+\end{DoxyReturn}
+This function returns true when the argument is a positive sign. Otherwise false. It is assumed that a temperature change is assigned to the argument. \mbox{\Hypertarget{class_main_window_ad6b588b48ecc503aa0aea612026afd20}\label{class_main_window_ad6b588b48ecc503aa0aea612026afd20}} 
+\index{MainWindow@{MainWindow}!isIgnore@{isIgnore}}
+\index{isIgnore@{isIgnore}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{isIgnore}{isIgnore}}
+{\footnotesize\ttfamily bool Main\+Window\+::is\+Ignore (\begin{DoxyParamCaption}\item[{bool}]{check,  }\item[{double}]{temp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+\mbox{\hyperlink{class_main_window_ad6b588b48ecc503aa0aea612026afd20}{Main\+Window\+::is\+Ignore}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em check} & \\
+\hline
+{\em temp} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool true or false
+\end{DoxyReturn}
+This function checks whether the current temperature is within the temperature range to be ignored by the Temp\+Check mode. It is assumed that the first argument is a checkbox to enable or disable the ignore range parameter of Temp\+Check. The second argument is assumed to be the current temperature. \mbox{\Hypertarget{class_main_window_ad059de114f9aa3d3fba9dd72f498db07}\label{class_main_window_ad059de114f9aa3d3fba9dd72f498db07}} 
+\index{MainWindow@{MainWindow}!isViolate@{isViolate}}
+\index{isViolate@{isViolate}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{isViolate}{isViolate}}
+{\footnotesize\ttfamily bool Main\+Window\+::is\+Violate (\begin{DoxyParamCaption}\item[{QVector$<$ double $>$}]{vtemp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+\mbox{\hyperlink{class_main_window_ad059de114f9aa3d3fba9dd72f498db07}{Main\+Window\+::is\+Violate}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vtemp} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool true or false
+\end{DoxyReturn}
+Returns false if safe and not violated, and eturns true if it is violated. \mbox{\Hypertarget{class_main_window_a699115cac96d47fd0f8a2bf359c3203c}\label{class_main_window_a699115cac96d47fd0f8a2bf359c3203c}} 
 \index{MainWindow@{MainWindow}!makePlot@{makePlot}}
 \index{makePlot@{makePlot}!MainWindow@{MainWindow}}
 \doxysubsubsection{\texorpdfstring{makePlot}{makePlot}}
@@ -121,9 +523,24 @@ Definition at line \mbox{\hyperlink{mainwindow_8cpp_source_l00307}{307}} of file
 
 
 
-Definition at line \mbox{\hyperlink{mainwindow_8cpp_source_l01608}{1608}} of file \mbox{\hyperlink{mainwindow_8cpp_source}{mainwindow.\+cpp}}.
+\mbox{\hyperlink{class_main_window_a699115cac96d47fd0f8a2bf359c3203c}{Main\+Window\+::make\+Plot}}. 
 
-\mbox{\Hypertarget{class_main_window_ac6bb3fa372c4a2d7a3b9621deac79d4a}\label{class_main_window_ac6bb3fa372c4a2d7a3b9621deac79d4a}} 
+Function to get current temperature, output, and set temperature for plotting and writing data. Refer also fill\+Dat\+And\+Plot. \mbox{\Hypertarget{class_main_window_ae638f022d599b7e1133c94f32c748610}\label{class_main_window_ae638f022d599b7e1133c94f32c748610}} 
+\index{MainWindow@{MainWindow}!on\_checkBox\_dataSave\_toggled@{on\_checkBox\_dataSave\_toggled}}
+\index{on\_checkBox\_dataSave\_toggled@{on\_checkBox\_dataSave\_toggled}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{on\_checkBox\_dataSave\_toggled}{on\_checkBox\_dataSave\_toggled}}
+{\footnotesize\ttfamily void Main\+Window\+::on\+\_\+check\+Box\+\_\+data\+Save\+\_\+toggled (\begin{DoxyParamCaption}\item[{bool}]{checked }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+\mbox{\hyperlink{class_main_window_ae638f022d599b7e1133c94f32c748610}{Main\+Window\+::on\+\_\+check\+Box\+\_\+data\+Save\+\_\+toggled}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em checked} & \\
+\hline
+\end{DoxyParams}
+File is generated in this checkbos turn to be true (checked). \mbox{\Hypertarget{class_main_window_ac6bb3fa372c4a2d7a3b9621deac79d4a}\label{class_main_window_ac6bb3fa372c4a2d7a3b9621deac79d4a}} 
 \index{MainWindow@{MainWindow}!periodicWork@{periodicWork}}
 \index{periodicWork@{periodicWork}!MainWindow@{MainWindow}}
 \doxysubsubsection{\texorpdfstring{periodicWork}{periodicWork}}
@@ -131,9 +548,54 @@ Definition at line \mbox{\hyperlink{mainwindow_8cpp_source_l01608}{1608}} of fil
 
 
 
-Definition at line \mbox{\hyperlink{mainwindow_8cpp_source_l01579}{1579}} of file \mbox{\hyperlink{mainwindow_8cpp_source}{mainwindow.\+cpp}}.
+\mbox{\hyperlink{class_main_window_ac6bb3fa372c4a2d7a3b9621deac79d4a}{Main\+Window\+::periodic\+Work}}. 
 
-\mbox{\Hypertarget{class_main_window_af30ebac87cad0ccff631b6e11bcc50c8}\label{class_main_window_af30ebac87cad0ccff631b6e11bcc50c8}} 
+Evaluates whether the current output value has reached the upper limit. If the current output has reached the upper limit, then Thread\+Temp\+Check\+\_\+, the thread for Temp\+Check, is invoked. \mbox{\Hypertarget{class_main_window_a44e502225c153db20de1bb67d7b7513e}\label{class_main_window_a44e502225c153db20de1bb67d7b7513e}} 
+\index{MainWindow@{MainWindow}!Quit@{Quit}}
+\index{Quit@{Quit}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{Quit}{Quit}}
+{\footnotesize\ttfamily void Main\+Window\+::\+Quit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+\mbox{\hyperlink{class_main_window_a44e502225c153db20de1bb67d7b7513e}{Main\+Window\+::\+Quit}}. 
+
+The function for Emergency stop. Executed when Temp\+Check mode results in an unsafe condition. Interrupted Mod\+Bus communication with the device. Almost thread are terminated excluding thread\+Log\+\_\+. So, the log continue to be taken after emergency stop. (See Temp\+Check function for a call to this function.) \mbox{\Hypertarget{class_main_window_a199c0e31444d0ec7d7a2186380cc8386}\label{class_main_window_a199c0e31444d0ec7d7a2186380cc8386}} 
+\index{MainWindow@{MainWindow}!Run@{Run}}
+\index{Run@{Run}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{Run}{Run}}
+{\footnotesize\ttfamily void Main\+Window\+::\+Run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+\mbox{\hyperlink{class_main_window_a199c0e31444d0ec7d7a2186380cc8386}{Main\+Window\+::\+Run}}. 
+
+Function to start heater output of PID. At the same time, it also starts a thread for data logging and periodically checks output values. \mbox{\Hypertarget{class_main_window_aea8f18dcb9c96afb6ac71ad91b3053a0}\label{class_main_window_aea8f18dcb9c96afb6ac71ad91b3053a0}} 
+\index{MainWindow@{MainWindow}!setColor@{setColor}}
+\index{setColor@{setColor}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{setColor}{setColor}}
+{\footnotesize\ttfamily void Main\+Window\+::set\+Color (\begin{DoxyParamCaption}\item[{int}]{colorindex = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+\mbox{\hyperlink{class_main_window_aea8f18dcb9c96afb6ac71ad91b3053a0}{Main\+Window\+::set\+Color}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em colorindex} & \\
+\hline
+\end{DoxyParams}
+setting background colors. The background color of windows is green, yellow, red, and gray if the color index is 1, 2, 3, and default, respectively. \mbox{\Hypertarget{class_main_window_a59f30670d379a9bd2e90608c8a6950b2}\label{class_main_window_a59f30670d379a9bd2e90608c8a6950b2}} 
+\index{MainWindow@{MainWindow}!Stop@{Stop}}
+\index{Stop@{Stop}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{Stop}{Stop}}
+{\footnotesize\ttfamily void Main\+Window\+::\+Stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+\mbox{\hyperlink{class_main_window_a59f30670d379a9bd2e90608c8a6950b2}{Main\+Window\+::\+Stop}}. 
+
+Function to stop PID output. Stops the threads for output values and Temp\+Check mode but keeps the thread for data logging running. \mbox{\Hypertarget{class_main_window_af30ebac87cad0ccff631b6e11bcc50c8}\label{class_main_window_af30ebac87cad0ccff631b6e11bcc50c8}} 
 \index{MainWindow@{MainWindow}!TempCheck@{TempCheck}}
 \index{TempCheck@{TempCheck}!MainWindow@{MainWindow}}
 \doxysubsubsection{\texorpdfstring{TempCheck}{TempCheck}}
@@ -143,21 +605,29 @@ Definition at line \mbox{\hyperlink{mainwindow_8cpp_source_l01579}{1579}} of fil
 
 \mbox{\hyperlink{class_main_window_af30ebac87cad0ccff631b6e11bcc50c8}{Main\+Window\+::\+Temp\+Check}}. 
 
-The temperature stores in vtemp\+\_\+ until the given number is reached. A moving average is calculated from these values. If this moving average is smaller than the threshold value, it is assumed that there is no temperature change and the Quit function is executed. If it is greater than the threshold value, set count\+Temp\+Check\+\_\+ to 0 and exit Temp\+Check mode. Note that this function does not work if the temperature is in the ignore range given set\+Paramters function. 
+The temperature stores in vtemp\+\_\+ until the given number is reached. A moving average is calculated from these values. If this moving average is smaller than the threshold value, it is assumed that there is no temperature change and the Quit function is executed. If it is greater than the threshold value, set count\+Temp\+Check\+\_\+ to 0 and exit Temp\+Check mode. Note that this function does not work if the temperature is in the ignore range given set\+Paramters function. \mbox{\Hypertarget{class_main_window_a8b161b2d289156f35bbc77d1728406f1}\label{class_main_window_a8b161b2d289156f35bbc77d1728406f1}} 
+\index{MainWindow@{MainWindow}!waitTimming@{waitTimming}}
+\index{waitTimming@{waitTimming}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{waitTimming}{waitTimming}}
+{\footnotesize\ttfamily void Main\+Window\+::wait\+Timming (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
 
-Definition at line \mbox{\hyperlink{mainwindow_8cpp_source_l01528}{1528}} of file \mbox{\hyperlink{mainwindow_8cpp_source}{mainwindow.\+cpp}}.
 
-Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_main_window_af30ebac87cad0ccff631b6e11bcc50c8_icgraph}
-\end{center}
-\end{figure}
 
+\mbox{\hyperlink{class_main_window_a8b161b2d289156f35bbc77d1728406f1}{Main\+Window\+::wait\+Timming}}. 
+
+Function to avoid reading wrong values by Asking at the same time \mbox{\Hypertarget{class_main_window_a1fda2bd644e0a288533d7cf6839b17f7}\label{class_main_window_a1fda2bd644e0a288533d7cf6839b17f7}} 
+\index{MainWindow@{MainWindow}!writeData@{writeData}}
+\index{writeData@{writeData}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{writeData}{writeData}}
+{\footnotesize\ttfamily void Main\+Window\+::write\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+\mbox{\hyperlink{class_main_window_a1fda2bd644e0a288533d7cf6839b17f7}{Main\+Window\+::write\+Data}}. 
+
+The Data is saved to the file generated by on\+\_\+check\+Box\+\_\+data\+Save\+\_\+toggled. 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-mainwindow.\+h\item 
-mainwindow.\+cpp\end{DoxyCompactItemize}
+\mbox{\hyperlink{mainwindow_8h}{mainwindow.\+h}}\item 
+\mbox{\hyperlink{mainwindow_8cpp}{mainwindow.\+cpp}}\end{DoxyCompactItemize}

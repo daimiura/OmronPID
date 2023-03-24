@@ -18,7 +18,15 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_color_gradient.html#ac5dca17cc24336e6ca176610e7f77fc1"><param name="Name" value="ColorInterpolation"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_configure_dialog.html"><param name="Name" value="ConfigureDialog"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_configure_dialog.html#ad52f7d77aa9b7b2a546d2a05889ae7f6"><param name="Name" value="ConfigureDialog(QWidget *parent=nullptr)"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_configure_dialog.html#ad52f7d77aa9b7b2a546d2a05889ae7f6"><param name="Name" value="ConfigureDialog"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_configure_dialog.html"><param name="Name" value="ConfigureDialog"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_configure_dialog.html#ad52f7d77aa9b7b2a546d2a05889ae7f6"><param name="Name" value="ConfigureDialog(QWidget *parent=nullptr)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_configure_dialog.html"><param name="Name" value="ConfigureDialog"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_configure_dialog.html#a4e110145e9439bb9d3d795ce6c54e34e"><param name="Name" value="setValues()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="mainwindow_8cpp.html#a0937c7458a740f3febe48f677e5f405e"><param name="Name" value="E5CC_Address"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_line_ending.html#a5ef16e6876b4b74959c7261d8d4c2cd5"><param name="Name" value="EndingStyle"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_error_bars.html#a95f0220f11a72648b96480a85ce26474"><param name="Name" value="ErrorType"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_q_c_p.html#a17844f19e1019693a953e1eb93536d2f"><param name="Name" value="ExportPen"></OBJECT>
@@ -38,14 +46,94 @@
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_graph.html#ad60175cd9b5cac937c5ee685c32c0859"><param name="Name" value="QCPGraph"></OBJECT>
   </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="mainwindow_8cpp.html#a0937c7458a740f3febe48f677e5f405eab4802cfc1a9ec7ea1ce64553919d0e88"><param name="Name" value="MV"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="mainwindow_8cpp.html#a0937c7458a740f3febe48f677e5f405eaed4bb71e4d5f275506b808276d909b56"><param name="Name" value="MVlower"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="mainwindow_8cpp.html#a0937c7458a740f3febe48f677e5f405eafe70a50ccf1b0ec4ed920b6d0a3f9221"><param name="Name" value="MVupper"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html"><param name="Name" value="MainWindow"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db"><param name="Name" value="MainWindow(QWidget *parent=0)"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db"><param name="Name" value="MainWindow"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html"><param name="Name" value="MainWindow"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db"><param name="Name" value="MainWindow(QWidget *parent=0)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html"><param name="Name" value="MainWindow"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html#a44e502225c153db20de1bb67d7b7513e"><param name="Name" value="Quit()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html"><param name="Name" value="MainWindow"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html#a199c0e31444d0ec7d7a2186380cc8386"><param name="Name" value="Run()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html"><param name="Name" value="MainWindow"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html#a59f30670d379a9bd2e90608c8a6950b2"><param name="Name" value="Stop()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html"><param name="Name" value="MainWindow"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html#af30ebac87cad0ccff631b6e11bcc50c8"><param name="Name" value="TempCheck()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html"><param name="Name" value="MainWindow"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html#a562db5a27f6904df8b5ca7aa2845b2b6"><param name="Name" value="calcMovingAve(QVector&lt; double &gt; vtemp)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html"><param name="Name" value="MainWindow"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html#ae4af8bbd81ce99ab0d6d7e96049f1298"><param name="Name" value="countTempCheck_"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html"><param name="Name" value="MainWindow"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html#a77f4ed0ba1af0d2ee7201df0a3ddef7c"><param name="Name" value="fillDifference(bool mute=true)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html"><param name="Name" value="MainWindow"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html#aabb57a5fe49fae4fe0910dea1f853420"><param name="Name" value="generateSaveFile()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html"><param name="Name" value="MainWindow"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html#a2e057a2ed5081cd84ac03fae724472ef"><param name="Name" value="isDrop(double diff)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html"><param name="Name" value="MainWindow"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html#ad6b588b48ecc503aa0aea612026afd20"><param name="Name" value="isIgnore(bool check, double temp)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html"><param name="Name" value="MainWindow"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html#ad059de114f9aa3d3fba9dd72f498db07"><param name="Name" value="isViolate(QVector&lt; double &gt; vtemp)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html"><param name="Name" value="MainWindow"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html#a699115cac96d47fd0f8a2bf359c3203c"><param name="Name" value="makePlot()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html"><param name="Name" value="MainWindow"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html#ae638f022d599b7e1133c94f32c748610"><param name="Name" value="on_checkBox_dataSave_toggled(bool checked)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html"><param name="Name" value="MainWindow"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html#ac6bb3fa372c4a2d7a3b9621deac79d4a"><param name="Name" value="periodicWork()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html"><param name="Name" value="MainWindow"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html#aea8f18dcb9c96afb6ac71ad91b3053a0"><param name="Name" value="setColor(int colorindex=0)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html"><param name="Name" value="MainWindow"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html#a8b161b2d289156f35bbc77d1728406f1"><param name="Name" value="waitTimming()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html"><param name="Name" value="MainWindow"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html#a1fda2bd644e0a288533d7cf6839b17f7"><param name="Name" value="writeData()"></OBJECT>
+  </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_q_c_p.html#a7e487e3e2ccb62ab7771065bab7cae54"><param name="Name" value="MarginSide"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_my_q_line_edit.html"><param name="Name" value="MyQLineEdit"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_my_thread.html"><param name="Name" value="MyThread"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="md__r_e_a_d_m_e.html"><param name="Name" value="OmronPID"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="mainwindow_8cpp.html#a0937c7458a740f3febe48f677e5f405ea09fbc6169af8d5f6f28c6dfdfd86cf0e"><param name="Name" value="PID_D"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="mainwindow_8cpp.html#a0937c7458a740f3febe48f677e5f405ead6c843008c17d20cf46ec24bc3d64550"><param name="Name" value="PID_I"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="mainwindow_8cpp.html#a0937c7458a740f3febe48f677e5f405ea6bffd2397fda7caefa2e16c2450ec0de"><param name="Name" value="PID_P"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="mainwindow_8cpp.html#a0937c7458a740f3febe48f677e5f405ea94a88bc2d8d3518fd7403669def8d155"><param name="Name" value="PV"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_painter.html#a156cf16444ff5e0d81a73c615fdb156d"><param name="Name" value="PainterMode"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_plot_dialog.html"><param name="Name" value="PlotDialog"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_plot_dialog.html#a97901b28742faa51c77c07d46e1c544f"><param name="Name" value="PlotDialog(QWidget *parent=nullptr)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_plot_dialog.html#a97901b28742faa51c77c07d46e1c544f"><param name="Name" value="PlotDialog"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_q_c_p.html#a5400e5fcb9528d92002ddb938c1f4ef4"><param name="Name" value="PlottingHint"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_item_position.html#aad9936c22bf43e3d358552f6e86dbdc8"><param name="Name" value="PositionType"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_q_c_p.html"><param name="Name" value="QCP"></OBJECT>
@@ -5604,8 +5692,11 @@
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_custom_plot.html#af13fdc5bce7d0fabd640f13ba805c0b7"><param name="Name" value="yAxis2"></OBJECT>
   </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html#a44e502225c153db20de1bb67d7b7513e"><param name="Name" value="Quit()"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_custom_plot.html#a45d61392d13042e712a956d27762aa39"><param name="Name" value="RefreshPriority"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_q_c_p.html#a715d46153da230990aa887d0f0602452"><param name="Name" value="ResolutionUnit"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html#a199c0e31444d0ec7d7a2186380cc8386"><param name="Name" value="Run()"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="mainwindow_8cpp.html#a0937c7458a740f3febe48f677e5f405ea6eabb7287a6d7dc68f0fad83edf5c7cc"><param name="Name" value="SV"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_axis_ticker_fixed.html#a15b3d38b935d404b1311eb85cfb6a439"><param name="Name" value="ScaleStrategy"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_axis.html#a36d8e8658dbaa179bf2aeb973db2d6f0"><param name="Name" value="ScaleType"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_scatter_style.html#a8974f6a20f8f6eea7781f0e6af9deb46"><param name="Name" value="ScatterProperty"></OBJECT>
@@ -5623,6 +5714,8 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_q_c_p.html#afd50e7cf431af385614987d8553ff8a9"><param name="Name" value="SignDomain"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_layout_element.html#a0afb3e5773529e4bd20e448f81be4d2a"><param name="Name" value="SizeConstraintRect"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_bars_group.html#a4c0521120a97e60bbca37677a37075b6"><param name="Name" value="SpacingType"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html#a59f30670d379a9bd2e90608c8a6950b2"><param name="Name" value="Stop()"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html#af30ebac87cad0ccff631b6e11bcc50c8"><param name="Name" value="TempCheck()"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_axis_ticker.html#ab6d2f9d9477821623ac9bc4b21ddf49a"><param name="Name" value="TickStepStrategy"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_axis_ticker_time.html#a5c48ded8c6d3a1aca9b68219469fea3e"><param name="Name" value="TimeUnit"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_item_tracer.html#a2f05ddb13978036f902ca3ab47076500"><param name="Name" value="TracerStyle"></OBJECT>
@@ -5744,6 +5837,7 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_item_bracket.html#a7ac3afd0b24a607054e7212047d59dbda7f9df4a7359bfe3dac1dbe4ccf5d220c"><param name="Name" value="bsSquare"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_selection_decorator_bracket.html#aa6d18517ec0553575bbef0de4252336eaa10a8d25d409b09256a13220a4d74f81"><param name="Name" value="bsSquareBracket"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_selection_decorator_bracket.html#aa6d18517ec0553575bbef0de4252336ea5a627cacdaa30ce434371d6a034b991d"><param name="Name" value="bsUserStyle"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html#a562db5a27f6904df8b5ca7aa2845b2b6"><param name="Name" value="calcMovingAve(QVector&lt; double &gt; vtemp)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_selection_rect.html#af67bc58f4f5ce9a4dc420b9c42de235a"><param name="Name" value="cancel()"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_selection_rect.html#aeb82009393c90130102dccf36477b906"><param name="Name" value="canceled(const QRect &amp;rect, QInputEvent *event)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_color_map_data.html#af1a36385c78ab624cd617065602408b6"><param name="Name" value="cellToCoord(int keyIndex, int valueIndex, double *key, double *value) const"></OBJECT>
@@ -5817,6 +5911,7 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_abstract_plottable.html#a5acb50ae984eef09a7ab92315d2ad708"><param name="Name" value="coordsToPixels(double key, double value) const"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_abstract_plottable.html#a7ad84a36472441cf1f555c5683d0da93"><param name="Name" value="coordsToPixels(double key, double value, double &amp;x, double &amp;y) const"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_selection_decorator.html#a467a8d5cfcab27e862a17c797ac27b8a"><param name="Name" value="copyFrom(const QCPSelectionDecorator *other)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html#ae4af8bbd81ce99ab0d6d7e96049f1298"><param name="Name" value="countTempCheck_"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_axis_ticker_text.html#aa195c4fd0364d0393f1798fb495d6a60"><param name="Name" value="createTickVector(double tickStep, const QCPRange &amp;range) Q_DECL_OVERRIDE"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_financial.html#a0f800e21ee98d646dfc6f8f89d10ebfbac803cbd39f26e3f206bcc7028679e62f"><param name="Name" value="csCandlestick"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_financial.html#a0f800e21ee98d646dfc6f8f89d10ebfba3a516016c9298d3e95dd82aa203c4390"><param name="Name" value="csOhlc"></OBJECT>
@@ -6147,6 +6242,7 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_range.html#af81d70f1add7233d73a19dcbe5decb2e"><param name="Name" value="expanded(double includeCoord) const"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_color_map_data.html#a350f783260eb9b5de5c7b5e0d5d3e3c2"><param name="Name" value="fill(double z)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_color_map_data.html#a93e2a549d7702bc849cd48a585294657"><param name="Name" value="fillAlpha(unsigned char alpha)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html#a77f4ed0ba1af0d2ee7201df0a3ddef7c"><param name="Name" value="fillDifference(bool mute=true)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_plottable_interface1_d.html#a5b95783271306a4de97be54eac1e7d13"><param name="Name" value="findBegin(double sortKey, bool expandedRange=true) const =0"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_abstract_plottable1_d.html#ad0b46d25cde3d035b180fb8f10c056e6"><param name="Name" value="findBegin(double sortKey, bool expandedRange=true) const Q_DECL_OVERRIDE"></OBJECT>
   <UL>
@@ -6233,6 +6329,7 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_axis_ticker_pi.html#a262f1534c7f0c79a7d5237f5d1e2c54ca00f097b669b2a0e22f508f1ae97877d8"><param name="Name" value="fsFloatingPoint"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_axis_ticker_pi.html#a262f1534c7f0c79a7d5237f5d1e2c54ca92f38a938c8b179b23363d9993681c55"><param name="Name" value="fsUnicodeFractions"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_axis_ticker.html#aefbd11725678ca824add8cf926cbc856"><param name="Name" value="generate(const QCPRange &amp;range, const QLocale &amp;locale, QChar formatChar, int precision, QVector&lt; double &gt; &amp;ticks, QVector&lt; double &gt; *subTicks, QVector&lt; QString &gt; *tickLabels)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html#aabb57a5fe49fae4fe0910dea1f853420"><param name="Name" value="generateSaveFile()"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_abstract_plottable1_d.html#ae890e62ce403c54f575c73b9529f1af8"><param name="Name" value="getDataSegments(QList&lt; QCPDataRange &gt; &amp;selectedSegments, QList&lt; QCPDataRange &gt; &amp;unselectedSegments) const"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_abstract_plottable1_d.html#ae890e62ce403c54f575c73b9529f1af8"><param name="Name" value="QCPAbstractPlottable1D"></OBJECT>
@@ -6422,6 +6519,7 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_layout_inset.html#a8b9e17d9a2768293d2a7d72f5e298192aa81e7df4a785ddee2229a8f47c46e817"><param name="Name" value="ipBorderAligned"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_layout_inset.html#a8b9e17d9a2768293d2a7d72f5e298192aa4802986ea2cea457f932b115acba59e"><param name="Name" value="ipFree"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_selection_rect.html#ad27c1569c6ea8fa48e24b81e2a302df3"><param name="Name" value="isActive() const"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html#a2e057a2ed5081cd84ac03fae724472ef"><param name="Name" value="isDrop(double diff)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_bars_group.html#aac959e79e852e8ef9aea6e0449ad000a"><param name="Name" value="isEmpty() const"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_bars_group.html#aac959e79e852e8ef9aea6e0449ad000a"><param name="Name" value="QCPBarsGroup"></OBJECT>
@@ -6446,10 +6544,12 @@
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_margin_group.html#ae0d32656d8a5fc5690c4e7693f9d0539"><param name="Name" value="QCPMarginGroup"></OBJECT>
   </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html#ad6b588b48ecc503aa0aea612026afd20"><param name="Name" value="isIgnore(bool check, double temp)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_scatter_style.html#a72db6bcb1e1abd6e53c1315dd3dea7e4"><param name="Name" value="isNone() const"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_vector2_d.html#ace99f200b347b14864808213eef16593"><param name="Name" value="isNull() const"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_scatter_style.html#a47077eb6450fe9a788f833e4ec1b1d5a"><param name="Name" value="isPenDefined() const"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_data_range.html#aae53a37472212dca0a7939963e20dba0"><param name="Name" value="isValid() const"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html#ad059de114f9aa3d3fba9dd72f498db07"><param name="Name" value="isViolate(QVector&lt; double &gt; vtemp)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_custom_plot.html#a12eb2a283cf10a8a9176c01c0443e83e"><param name="Name" value="item() const"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_legend.html#acfe9694c45104a3359d3806ed366fcf7"><param name="Name" value="item(int index) const"></OBJECT>
   <UL>
@@ -6568,7 +6668,44 @@
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_statistical_box_data.html#a0df3cb31cfd6d48decf6173297b81746"><param name="Name" value="QCPStatisticalBoxData"></OBJECT>
   </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="mainwindow_8cpp.html"><param name="Name" value="mainwindow.cpp"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="mainwindow_8cpp.html#a0937c7458a740f3febe48f677e5f405e"><param name="Name" value="E5CC_Address"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="mainwindow_8cpp.html"><param name="Name" value="mainwindow.cpp"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="mainwindow_8cpp.html#a0937c7458a740f3febe48f677e5f405eab4802cfc1a9ec7ea1ce64553919d0e88"><param name="Name" value="MV"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="mainwindow_8cpp.html"><param name="Name" value="mainwindow.cpp"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="mainwindow_8cpp.html#a0937c7458a740f3febe48f677e5f405eaed4bb71e4d5f275506b808276d909b56"><param name="Name" value="MVlower"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="mainwindow_8cpp.html"><param name="Name" value="mainwindow.cpp"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="mainwindow_8cpp.html#a0937c7458a740f3febe48f677e5f405eafe70a50ccf1b0ec4ed920b6d0a3f9221"><param name="Name" value="MVupper"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="mainwindow_8cpp.html"><param name="Name" value="mainwindow.cpp"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="mainwindow_8cpp.html#a0937c7458a740f3febe48f677e5f405ea09fbc6169af8d5f6f28c6dfdfd86cf0e"><param name="Name" value="PID_D"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="mainwindow_8cpp.html"><param name="Name" value="mainwindow.cpp"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="mainwindow_8cpp.html#a0937c7458a740f3febe48f677e5f405ead6c843008c17d20cf46ec24bc3d64550"><param name="Name" value="PID_I"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="mainwindow_8cpp.html"><param name="Name" value="mainwindow.cpp"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="mainwindow_8cpp.html#a0937c7458a740f3febe48f677e5f405ea6bffd2397fda7caefa2e16c2450ec0de"><param name="Name" value="PID_P"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="mainwindow_8cpp.html"><param name="Name" value="mainwindow.cpp"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="mainwindow_8cpp.html#a0937c7458a740f3febe48f677e5f405ea94a88bc2d8d3518fd7403669def8d155"><param name="Name" value="PV"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="mainwindow_8cpp.html"><param name="Name" value="mainwindow.cpp"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="mainwindow_8cpp.html#a0937c7458a740f3febe48f677e5f405ea6eabb7287a6d7dc68f0fad83edf5c7cc"><param name="Name" value="SV"></OBJECT>
+  </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_painter.html#a7e63fbcf47e35c6f2ecd11b8fef7c7d8"><param name="Name" value="makeNonCosmetic()"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html#a699115cac96d47fd0f8a2bf359c3203c"><param name="Name" value="makePlot()"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_axis.html#ac0a6b77bd52bec6c81cd62d167cfeba6"><param name="Name" value="marginSideToAxisType(QCP::MarginSide side)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_range.html#a5ca51e7a2dc5dc0d49527ab171fe1f4f"><param name="Name" value="maxRange"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_layout_grid.html#a41ce0014c220d77b909e2ca937f0e599"><param name="Name" value="maximumOuterSizeHint() const Q_DECL_OVERRIDE"></OBJECT>
@@ -6688,6 +6825,7 @@
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_vector2_d.html#ad83268be370685c2a0630acc0fb1a425"><param name="Name" value="QCPVector2D"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_vector2_d.html#a707bb3af3b1f9331a2450ec75eaf7eb0"><param name="Name" value="normalized() const"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html#ae638f022d599b7e1133c94f32c748610"><param name="Name" value="on_checkBox_dataSave_toggled(bool checked)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_range.html#a558b1248ff6a9e41fd5b2630555a8acc"><param name="Name" value="operator*(const QCPRange &amp;range, double value)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_range.html#a5cb2332f6957021f47cc768089f4f090"><param name="Name" value="operator*(double value, const QCPRange &amp;range)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_range.html#a6876aa9620ff2f0f7f1873f998372cef"><param name="Name" value="operator*=(const double &amp;value)"></OBJECT>
@@ -6726,6 +6864,7 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_layout_element.html#a2a32a12a6161c9dffbadeb9cc585510c"><param name="Name" value="outerRect() const"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_item_position.html#a0a87f9dce1af6cc9b510785991bcf1c6"><param name="Name" value="parentAnchor() const"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_layerable.html#aa78b7e644d2c519e1a9a6f2ac5fcd858"><param name="Name" value="parentLayerable() const"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html#ac6bb3fa372c4a2d7a3b9621deac79d4a"><param name="Name" value="periodicWork()"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_vector2_d.html#a0e08d09f9027784237e302e32290b001"><param name="Name" value="perpendicular() const"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_q_c_p.html#a5400e5fcb9528d92002ddb938c1f4ef4a8e9cfe5ee0c5cd36dd7accf9739aff65"><param name="Name" value="phCacheLabels"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_q_c_p.html#a5400e5fcb9528d92002ddb938c1f4ef4aa5fd227bc878c56ad2a87ea32c74ee4d"><param name="Name" value="phFastPolylines"></OBJECT>
@@ -7145,6 +7284,7 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_abstract_item.html#a7dc75fcbcd10206fe0b75d757ea7a347"><param name="Name" value="setClipAxisRect(QCPAxisRect *rect)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_abstract_item.html#a39e05b9d4176b9accafc746d16ca6a06"><param name="Name" value="setClipToAxisRect(bool clip)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_item_text.html#aa51efc0841fe52da9eaf8aff6fc8a8b2"><param name="Name" value="setColor(const QColor &amp;color)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html#aea8f18dcb9c96afb6ac71ad91b3053a0"><param name="Name" value="setColor(int colorindex=0)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_color_gradient.html#aa13fda86406e1d896a465a409ae63b38"><param name="Name" value="setColorInterpolation(ColorInterpolation interpolation)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_color_map.html#aa828921db364fe3c6af4619580ab85fd"><param name="Name" value="setColorScale(QCPColorScale *colorScale)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_color_gradient.html#a3b48be5e78079db1bb2a1188a4c3390e"><param name="Name" value="setColorStopAt(double position, const QColor &amp;color)"></OBJECT>
@@ -7664,6 +7804,7 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_abstract_plottable.html#a71626a07367e241ec62ad2c34baf21cb"><param name="Name" value="setValueAxis(QCPAxis *axis)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_color_map_data.html#ada1b2680ba96a5f4175b6d341cf75d23"><param name="Name" value="setValueRange(const QCPRange &amp;valueRange)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_color_map_data.html#a0893c9e3914513048b45e3429ffd16f2"><param name="Name" value="setValueSize(int valueSize)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_configure_dialog.html#a4e110145e9439bb9d3d795ce6c54e34e"><param name="Name" value="setValues()"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_custom_plot.html#a3f9bc4b939dd8aaba9339fd09f273fc4"><param name="Name" value="setViewport(const QRect &amp;rect)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_layerable.html#a3bed99ddc396b48ce3ebfdc0418744f8"><param name="Name" value="setVisible(bool on)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_layer.html#ac07671f74edf6884b51a82afb2c19516"><param name="Name" value="setVisible(bool visible)"></OBJECT>
@@ -7965,6 +8106,7 @@
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_statistical_box_data.html#a1a2410fcf3d45fa3a1ad09e265b9bcad"><param name="Name" value="QCPStatisticalBoxData"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_data_container.html#a35a102dc2424d1228fc374d9313efbe9"><param name="Name" value="valueRange(bool &amp;foundRange, QCP::SignDomain signDomain=QCP::sdBoth, const QCPRange &amp;inKeyRange=QCPRange())"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html#a8b161b2d289156f35bbc77d1728406f1"><param name="Name" value="waitTimming()"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_axis_rect.html#a93eeaa0c127d6d6fe8171b2455080262"><param name="Name" value="wheelEvent(QWheelEvent *event) Q_DECL_OVERRIDE"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_axis_rect.html#a93eeaa0c127d6d6fe8171b2455080262"><param name="Name" value="QCPAxisRect"></OBJECT>
@@ -7986,6 +8128,7 @@
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_layerable.html#a47dfd7b8fd99c08ca54e09c362b6f022"><param name="Name" value="QCPLayerable"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_axis_rect.html#a204645398a4f9d0b0189385c7c2cfb91"><param name="Name" value="width() const"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_main_window.html#a1fda2bd644e0a288533d7cf6839b17f7"><param name="Name" value="writeData()"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_bars.html#a65dbbf1ab41cbe993d71521096ed4649ab74315c9aa77df593c58dd25dfc0de35"><param name="Name" value="wtAbsolute"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_q_c_p_bars.html#a65dbbf1ab41cbe993d71521096ed4649ab74315c9aa77df593c58dd25dfc0de35"><param name="Name" value="QCPBars"></OBJECT>

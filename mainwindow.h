@@ -30,6 +30,7 @@
 #include "mythread.h"
 #include "configuredialog.h"
 #include "plotdialog.h"
+#include "tempdropdialog.h"
 
 //!
 //! \namespace Ui
@@ -86,7 +87,8 @@ private slots:
     bool generateSaveFile();
     bool isIgnore(bool check, double temp);
     bool isViolate(QVector<double> vtemp);
-    bool isDrop(double diff);
+    bool isDrop(double diff, int mode);
+    void setTextTempDrop(bool);
 
     void on_pushButton_Connect_clicked();
     void on_pushButton_AskStatus_clicked();
@@ -107,6 +109,7 @@ private slots:
     void on_actionOpen_File_triggered();
     void on_action_Setting_parameters_for_TempCheck_triggered();
     void on_action_Setting_plot_triggered();
+    //void on_action_Setting_Temperature_Drop_triggered();
     void on_actionHelp_Page_triggered();
     void HelpPicNext();
 
@@ -185,6 +188,7 @@ private:
     QLabel * HelpLabel;
     PlotDialog * plotDialog_;
     ConfigureDialog * configureDialog_;
+    TempDropDialog * tempDropDialog_;
     int picNumber;
     QMutex mutex_;
     //! Counter that TempCheck was executed.

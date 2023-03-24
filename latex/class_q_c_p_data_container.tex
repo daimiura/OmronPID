@@ -12,9 +12,11 @@ The generic data container for one-\/dimensional plottables.
 \doxysubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-typedef QVector$<$ Data\+Type $>$\+::const\+\_\+iterator \mbox{\hyperlink{class_q_c_p_data_container_ae40a91f5cb0bcac61d727427449b7d15}{const\+\_\+iterator}}
+\mbox{\Hypertarget{class_q_c_p_data_container_ae40a91f5cb0bcac61d727427449b7d15}\label{class_q_c_p_data_container_ae40a91f5cb0bcac61d727427449b7d15}} 
+typedef QVector$<$ Data\+Type $>$\+::const\+\_\+iterator {\bfseries const\+\_\+iterator}
 \item 
-typedef QVector$<$ Data\+Type $>$\+::iterator \mbox{\hyperlink{class_q_c_p_data_container_a1bb453c3ae37d1ee5268878acb3a9d29}{iterator}}
+\mbox{\Hypertarget{class_q_c_p_data_container_a1bb453c3ae37d1ee5268878acb3a9d29}\label{class_q_c_p_data_container_a1bb453c3ae37d1ee5268878acb3a9d29}} 
+typedef QVector$<$ Data\+Type $>$\+::iterator {\bfseries iterator}
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -25,7 +27,8 @@ int \mbox{\hyperlink{class_q_c_p_data_container_a8e9b262c739672e13472d0d45b72025
 \item 
 bool \mbox{\hyperlink{class_q_c_p_data_container_a7bdebfccd2f9f84bf032882f9d6b00a8}{is\+Empty}} () const
 \item 
-bool \mbox{\hyperlink{class_q_c_p_data_container_a64f0f1621ca46de2352eaf87476db9b1}{auto\+Squeeze}} () const
+\mbox{\Hypertarget{class_q_c_p_data_container_a64f0f1621ca46de2352eaf87476db9b1}\label{class_q_c_p_data_container_a64f0f1621ca46de2352eaf87476db9b1}} 
+bool {\bfseries auto\+Squeeze} () const
 \item 
 void \mbox{\hyperlink{class_q_c_p_data_container_a233f866760a78950d2a393c1a4bc54b5}{set\+Auto\+Squeeze}} (bool enabled)
 \item 
@@ -78,20 +81,26 @@ void \mbox{\hyperlink{class_q_c_p_data_container_aa1b36f5ae86a5a5a0b92141d3a0945
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{class_q_c_p_data_container_aae8cdb2bcc3b900ec22f26df3e7d67c7}{preallocate\+Grow}} (int minimum\+Prealloc\+Size)
+\mbox{\Hypertarget{class_q_c_p_data_container_aae8cdb2bcc3b900ec22f26df3e7d67c7}\label{class_q_c_p_data_container_aae8cdb2bcc3b900ec22f26df3e7d67c7}} 
+void {\bfseries preallocate\+Grow} (int minimum\+Prealloc\+Size)
 \item 
-void \mbox{\hyperlink{class_q_c_p_data_container_a83c25ac14be1c920df85e797ee75c982}{perform\+Auto\+Squeeze}} ()
+\mbox{\Hypertarget{class_q_c_p_data_container_a83c25ac14be1c920df85e797ee75c982}\label{class_q_c_p_data_container_a83c25ac14be1c920df85e797ee75c982}} 
+void {\bfseries perform\+Auto\+Squeeze} ()
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-bool \mbox{\hyperlink{class_q_c_p_data_container_aae64c517d64511ad7a81ff8ee7b29147}{m\+Auto\+Squeeze}}
+\mbox{\Hypertarget{class_q_c_p_data_container_aae64c517d64511ad7a81ff8ee7b29147}\label{class_q_c_p_data_container_aae64c517d64511ad7a81ff8ee7b29147}} 
+bool {\bfseries m\+Auto\+Squeeze}
 \item 
-QVector$<$ Data\+Type $>$ \mbox{\hyperlink{class_q_c_p_data_container_a74906b4da829849c4062b5337c72585d}{m\+Data}}
+\mbox{\Hypertarget{class_q_c_p_data_container_a74906b4da829849c4062b5337c72585d}\label{class_q_c_p_data_container_a74906b4da829849c4062b5337c72585d}} 
+QVector$<$ Data\+Type $>$ {\bfseries m\+Data}
 \item 
-int \mbox{\hyperlink{class_q_c_p_data_container_a3554d3ad00e69f7ce057efa00ea6f4b2}{m\+Prealloc\+Size}}
+\mbox{\Hypertarget{class_q_c_p_data_container_a3554d3ad00e69f7ce057efa00ea6f4b2}\label{class_q_c_p_data_container_a3554d3ad00e69f7ce057efa00ea6f4b2}} 
+int {\bfseries m\+Prealloc\+Size}
 \item 
-int \mbox{\hyperlink{class_q_c_p_data_container_ab2115bf023c29691f441eaf1889de84a}{m\+Prealloc\+Iteration}}
+\mbox{\Hypertarget{class_q_c_p_data_container_ab2115bf023c29691f441eaf1889de84a}\label{class_q_c_p_data_container_ab2115bf023c29691f441eaf1889de84a}} 
+int {\bfseries m\+Prealloc\+Iteration}
 \end{DoxyCompactItemize}
 \doxysubsection*{Related Functions}
 (Note that these are not member functions.) \begin{DoxyCompactItemize}
@@ -136,35 +145,6 @@ The template parameter {\ttfamily Data\+Type} is the type of the stored data poi
  Returns the range this data point spans in the value axis coordinate. If the data is single-\/valued (e.\+g. \mbox{\hyperlink{class_q_c_p_graph_data}{QCPGraph\+Data}}), this is simply a range with both lower and upper set to the main data point value. However if the data points can represent multiple values at once (e.\+g \mbox{\hyperlink{class_q_c_p_financial_data}{QCPFinancial\+Data}} with its {\itshape high}, {\itshape low}, {\itshape open} and {\itshape close} values at each {\itshape key}) this method should return the range those values span. This method is used for example when determining the automatic axis rescaling of value axes (\mbox{\hyperlink{class_q_c_p_axis_a499345f02ebce4b23d8ccec96e58daa9}{QCPAxis\+::rescale}}). \end{DoxyItemize}
 
 
-Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02404}{2404}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
-
-
-
-\doxysubsection{Member Typedef Documentation}
-\mbox{\Hypertarget{class_q_c_p_data_container_ae40a91f5cb0bcac61d727427449b7d15}\label{class_q_c_p_data_container_ae40a91f5cb0bcac61d727427449b7d15}} 
-\index{QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}!const\_iterator@{const\_iterator}}
-\index{const\_iterator@{const\_iterator}!QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}}
-\doxysubsubsection{\texorpdfstring{const\_iterator}{const\_iterator}}
-{\footnotesize\ttfamily template$<$class Data\+Type $>$ \\
-typedef QVector$<$Data\+Type$>$\+::const\+\_\+iterator \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}$<$ Data\+Type $>$\+::const\+\_\+iterator}
-
-
-
-Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02407}{2407}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
-
-\mbox{\Hypertarget{class_q_c_p_data_container_a1bb453c3ae37d1ee5268878acb3a9d29}\label{class_q_c_p_data_container_a1bb453c3ae37d1ee5268878acb3a9d29}} 
-\index{QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}!iterator@{iterator}}
-\index{iterator@{iterator}!QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}}
-\doxysubsubsection{\texorpdfstring{iterator}{iterator}}
-{\footnotesize\ttfamily template$<$class Data\+Type $>$ \\
-typedef QVector$<$Data\+Type$>$\+::iterator \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}$<$ Data\+Type $>$\+::iterator}
-
-
-
-Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02408}{2408}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
-
-
-
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_q_c_p_data_container_af86c0c63719f92c360ff67cc06c6fe6f}\label{class_q_c_p_data_container_af86c0c63719f92c360ff67cc06c6fe6f}} 
 \index{QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}!QCPDataContainer@{QCPDataContainer}}
@@ -174,10 +154,6 @@ Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02408}{2408}} of file
 \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}$<$ Data\+Type $>$\mbox{\hyperlink{class_q_c_p_data_container}{\+::\+QCPData\+Container}}}
 
 Constructs a \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}} used for plottable classes that represent a series of key-\/sorted data 
-
-Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02599}{2599}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
-
-
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_q_c_p_data_container_a715e8e9972466804954a2f8fbd5288b7}\label{class_q_c_p_data_container_a715e8e9972466804954a2f8fbd5288b7}} 
@@ -194,10 +170,6 @@ Adds the provided single data point to the current data.
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_data_container_ae5f569a120648b167efa78835f12fd38}{remove}} 
 \end{DoxySeeAlso}
-
-
-Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02733}{2733}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
-
 \mbox{\Hypertarget{class_q_c_p_data_container_a42b98bd994307ccd163a43d576f91ad9}\label{class_q_c_p_data_container_a42b98bd994307ccd163a43d576f91ad9}} 
 \index{QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}!add@{add}}
 \index{add@{add}!QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}}
@@ -212,18 +184,6 @@ Adds the provided {\itshape data} to the current data in this container.
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_data_container_ae7042bd534fc3ce7befa2ce3f790b5bf}{set}}, \mbox{\hyperlink{class_q_c_p_data_container_ae5f569a120648b167efa78835f12fd38}{remove}} 
 \end{DoxySeeAlso}
-
-
-Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02664}{2664}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
-
-Here is the call graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_q_c_p_data_container_a42b98bd994307ccd163a43d576f91ad9_cgraph}
-\end{center}
-\end{figure}
 \mbox{\Hypertarget{class_q_c_p_data_container_a51d2a4c9ce4baf5e950b767d26673972}\label{class_q_c_p_data_container_a51d2a4c9ce4baf5e950b767d26673972}} 
 \index{QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}!add@{add}}
 \index{add@{add}!QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}}
@@ -238,10 +198,6 @@ If you can guarantee that the data points in {\itshape data} have ascending orde
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_data_container_ae7042bd534fc3ce7befa2ce3f790b5bf}{set}}, \mbox{\hyperlink{class_q_c_p_data_container_ae5f569a120648b167efa78835f12fd38}{remove}} 
 \end{DoxySeeAlso}
-
-
-Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02696}{2696}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
-
 \mbox{\Hypertarget{class_q_c_p_data_container_ae90c7457a052b223539906e6bddc0a92}\label{class_q_c_p_data_container_ae90c7457a052b223539906e6bddc0a92}} 
 \index{QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}!at@{at}}
 \index{at@{at}!QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}}
@@ -251,22 +207,7 @@ QCPData\+Container\+::const\+\_\+iterator \mbox{\hyperlink{class_q_c_p_data_cont
 
 Returns a const iterator to the element with the specified {\itshape index}. If {\itshape index} points beyond the available elements in this container, returns \mbox{\hyperlink{class_q_c_p_data_container_aa7f7cf239b85b1a28de3d675cc5b3da1}{const\+End}}, i.\+e. an iterator past the last valid element.
 
-You can use this method to easily obtain iterators from a \mbox{\hyperlink{class_q_c_p_data_range}{QCPData\+Range}}, see the data selection page for an example. 
-
-Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02440}{2440}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
-
-\mbox{\Hypertarget{class_q_c_p_data_container_a64f0f1621ca46de2352eaf87476db9b1}\label{class_q_c_p_data_container_a64f0f1621ca46de2352eaf87476db9b1}} 
-\index{QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}!autoSqueeze@{autoSqueeze}}
-\index{autoSqueeze@{autoSqueeze}!QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}}
-\doxysubsubsection{\texorpdfstring{autoSqueeze()}{autoSqueeze()}}
-{\footnotesize\ttfamily template$<$class Data\+Type $>$ \\
-bool \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}$<$ Data\+Type $>$\+::auto\+Squeeze (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02415}{2415}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
-
-\mbox{\Hypertarget{class_q_c_p_data_container_a80032518413ab8f418f7c81182fd06cb}\label{class_q_c_p_data_container_a80032518413ab8f418f7c81182fd06cb}} 
+You can use this method to easily obtain iterators from a \mbox{\hyperlink{class_q_c_p_data_range}{QCPData\+Range}}, see the data selection page for an example. \mbox{\Hypertarget{class_q_c_p_data_container_a80032518413ab8f418f7c81182fd06cb}\label{class_q_c_p_data_container_a80032518413ab8f418f7c81182fd06cb}} 
 \index{QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}!begin@{begin}}
 \index{begin@{begin}!QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}}
 \doxysubsubsection{\texorpdfstring{begin()}{begin()}}
@@ -275,11 +216,7 @@ QCPData\+Container\+::iterator \mbox{\hyperlink{class_q_c_p_data_container}{QCPD
 
 Returns a non-\/const iterator to the first data point in this container.
 
-You can manipulate the data points in-\/place through the non-\/const iterators, but great care must be taken when manipulating the sort key of a data point, see \mbox{\hyperlink{class_q_c_p_data_container_a75da92e33063b63d6da5014683591d45}{sort}}, or the detailed description of this class. 
-
-Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02436}{2436}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
-
-\mbox{\Hypertarget{class_q_c_p_data_container_a7e2b29736c6fd761649bda1a54ba967f}\label{class_q_c_p_data_container_a7e2b29736c6fd761649bda1a54ba967f}} 
+You can manipulate the data points in-\/place through the non-\/const iterators, but great care must be taken when manipulating the sort key of a data point, see \mbox{\hyperlink{class_q_c_p_data_container_a75da92e33063b63d6da5014683591d45}{sort}}, or the detailed description of this class. \mbox{\Hypertarget{class_q_c_p_data_container_a7e2b29736c6fd761649bda1a54ba967f}\label{class_q_c_p_data_container_a7e2b29736c6fd761649bda1a54ba967f}} 
 \index{QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}!clear@{clear}}
 \index{clear@{clear}!QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}}
 \doxysubsubsection{\texorpdfstring{clear()}{clear()}}
@@ -291,10 +228,6 @@ Removes all data points.
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_data_container_ae5f569a120648b167efa78835f12fd38}{remove}}, \mbox{\hyperlink{class_q_c_p_data_container_abbe5d87ffc10b5aeffa5bb42cf03aa3c}{remove\+After}}, \mbox{\hyperlink{class_q_c_p_data_container_aa7f74cbce304b0369e1626c3798e1eda}{remove\+Before}} 
 \end{DoxySeeAlso}
-
-
-Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02831}{2831}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
-
 \mbox{\Hypertarget{class_q_c_p_data_container_a49d7622999e2de67fa2331626a3159aa}\label{class_q_c_p_data_container_a49d7622999e2de67fa2331626a3159aa}} 
 \index{QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}!constBegin@{constBegin}}
 \index{constBegin@{constBegin}!QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}}
@@ -302,49 +235,21 @@ Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02831}{2831}} of file
 {\footnotesize\ttfamily template$<$class Data\+Type $>$ \\
 QCPData\+Container\+::const\+\_\+iterator \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}$<$ Data\+Type $>$\+::const\+Begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Returns a const iterator to the first data point in this container. 
-
-Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02434}{2434}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
-
-Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_q_c_p_data_container_a49d7622999e2de67fa2331626a3159aa_icgraph}
-\end{center}
-\end{figure}
-\mbox{\Hypertarget{class_q_c_p_data_container_aa7f7cf239b85b1a28de3d675cc5b3da1}\label{class_q_c_p_data_container_aa7f7cf239b85b1a28de3d675cc5b3da1}} 
+Returns a const iterator to the first data point in this container. \mbox{\Hypertarget{class_q_c_p_data_container_aa7f7cf239b85b1a28de3d675cc5b3da1}\label{class_q_c_p_data_container_aa7f7cf239b85b1a28de3d675cc5b3da1}} 
 \index{QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}!constEnd@{constEnd}}
 \index{constEnd@{constEnd}!QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}}
 \doxysubsubsection{\texorpdfstring{constEnd()}{constEnd()}}
 {\footnotesize\ttfamily template$<$class Data\+Type $>$ \\
 QCPData\+Container\+::const\+\_\+iterator \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}$<$ Data\+Type $>$\+::const\+End (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Returns a const iterator to the element past the last data point in this container. 
-
-Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02435}{2435}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
-
-Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_q_c_p_data_container_aa7f7cf239b85b1a28de3d675cc5b3da1_icgraph}
-\end{center}
-\end{figure}
-\mbox{\Hypertarget{class_q_c_p_data_container_aece90eeb2ba8d3c46d3d94023630fbc7}\label{class_q_c_p_data_container_aece90eeb2ba8d3c46d3d94023630fbc7}} 
+Returns a const iterator to the element past the last data point in this container. \mbox{\Hypertarget{class_q_c_p_data_container_aece90eeb2ba8d3c46d3d94023630fbc7}\label{class_q_c_p_data_container_aece90eeb2ba8d3c46d3d94023630fbc7}} 
 \index{QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}!dataRange@{dataRange}}
 \index{dataRange@{dataRange}!QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}}
 \doxysubsubsection{\texorpdfstring{dataRange()}{dataRange()}}
 {\footnotesize\ttfamily template$<$class Data\+Type $>$ \\
 \mbox{\hyperlink{class_q_c_p_data_range}{QCPData\+Range}} \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}$<$ Data\+Type $>$\+::data\+Range (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Returns a \mbox{\hyperlink{class_q_c_p_data_range}{QCPData\+Range}} encompassing the entire data set of this container. This means the begin index of the returned range is 0, and the end index is \mbox{\hyperlink{class_q_c_p_data_container_a8e9b262c739672e13472d0d45b720258}{size}}. 
-
-Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02443}{2443}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
-
-\mbox{\Hypertarget{class_q_c_p_data_container_acf66dfad83fe041380f5e0491e7676f2}\label{class_q_c_p_data_container_acf66dfad83fe041380f5e0491e7676f2}} 
+Returns a \mbox{\hyperlink{class_q_c_p_data_range}{QCPData\+Range}} encompassing the entire data set of this container. This means the begin index of the returned range is 0, and the end index is \mbox{\hyperlink{class_q_c_p_data_container_a8e9b262c739672e13472d0d45b720258}{size}}. \mbox{\Hypertarget{class_q_c_p_data_container_acf66dfad83fe041380f5e0491e7676f2}\label{class_q_c_p_data_container_acf66dfad83fe041380f5e0491e7676f2}} 
 \index{QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}!end@{end}}
 \index{end@{end}!QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}}
 \doxysubsubsection{\texorpdfstring{end()}{end()}}
@@ -353,11 +258,7 @@ QCPData\+Container\+::iterator \mbox{\hyperlink{class_q_c_p_data_container}{QCPD
 
 Returns a non-\/const iterator to the element past the last data point in this container.
 
-You can manipulate the data points in-\/place through the non-\/const iterators, but great care must be taken when manipulating the sort key of a data point, see \mbox{\hyperlink{class_q_c_p_data_container_a75da92e33063b63d6da5014683591d45}{sort}}, or the detailed description of this class. 
-
-Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02437}{2437}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
-
-\mbox{\Hypertarget{class_q_c_p_data_container_a2ad8a5399072d99a242d3a6d2d7e278a}\label{class_q_c_p_data_container_a2ad8a5399072d99a242d3a6d2d7e278a}} 
+You can manipulate the data points in-\/place through the non-\/const iterators, but great care must be taken when manipulating the sort key of a data point, see \mbox{\hyperlink{class_q_c_p_data_container_a75da92e33063b63d6da5014683591d45}{sort}}, or the detailed description of this class. \mbox{\Hypertarget{class_q_c_p_data_container_a2ad8a5399072d99a242d3a6d2d7e278a}\label{class_q_c_p_data_container_a2ad8a5399072d99a242d3a6d2d7e278a}} 
 \index{QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}!findBegin@{findBegin}}
 \index{findBegin@{findBegin}!QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}}
 \doxysubsubsection{\texorpdfstring{findBegin()}{findBegin()}}
@@ -375,18 +276,6 @@ If the container is empty, returns \mbox{\hyperlink{class_q_c_p_data_container_a
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_data_container_afb8b8f23cc2b7234a793a25ce79fe48f}{find\+End}}, \mbox{\hyperlink{class_q_c_p_plottable_interface1_d_a5b95783271306a4de97be54eac1e7d13}{QCPPlottable\+Interface1\+D\+::find\+Begin}} 
 \end{DoxySeeAlso}
-
-
-Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02898}{2898}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
-
-Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_q_c_p_data_container_a2ad8a5399072d99a242d3a6d2d7e278a_icgraph}
-\end{center}
-\end{figure}
 \mbox{\Hypertarget{class_q_c_p_data_container_afb8b8f23cc2b7234a793a25ce79fe48f}\label{class_q_c_p_data_container_afb8b8f23cc2b7234a793a25ce79fe48f}} 
 \index{QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}!findEnd@{findEnd}}
 \index{findEnd@{findEnd}!QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}}
@@ -405,18 +294,6 @@ If the container is empty, \mbox{\hyperlink{class_q_c_p_data_container_aa7f7cf23
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_data_container_a2ad8a5399072d99a242d3a6d2d7e278a}{find\+Begin}}, \mbox{\hyperlink{class_q_c_p_plottable_interface1_d_a5deced1016bc55a41a2339619045b295}{QCPPlottable\+Interface1\+D\+::find\+End}} 
 \end{DoxySeeAlso}
-
-
-Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02925}{2925}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
-
-Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_q_c_p_data_container_afb8b8f23cc2b7234a793a25ce79fe48f_icgraph}
-\end{center}
-\end{figure}
 \mbox{\Hypertarget{class_q_c_p_data_container_a7bdebfccd2f9f84bf032882f9d6b00a8}\label{class_q_c_p_data_container_a7bdebfccd2f9f84bf032882f9d6b00a8}} 
 \index{QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}!isEmpty@{isEmpty}}
 \index{isEmpty@{isEmpty}!QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}}
@@ -424,19 +301,7 @@ Here is the caller graph for this function\+:
 {\footnotesize\ttfamily template$<$class Data\+Type $>$ \\
 bool \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}$<$ Data\+Type $>$\+::is\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Returns whether this container holds no data points. 
-
-Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02414}{2414}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
-
-Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_q_c_p_data_container_a7bdebfccd2f9f84bf032882f9d6b00a8_icgraph}
-\end{center}
-\end{figure}
-\mbox{\Hypertarget{class_q_c_p_data_container_aba6e1a93c21ccc56a432b4a02c9d0ed2}\label{class_q_c_p_data_container_aba6e1a93c21ccc56a432b4a02c9d0ed2}} 
+Returns whether this container holds no data points. \mbox{\Hypertarget{class_q_c_p_data_container_aba6e1a93c21ccc56a432b4a02c9d0ed2}\label{class_q_c_p_data_container_aba6e1a93c21ccc56a432b4a02c9d0ed2}} 
 \index{QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}!keyRange@{keyRange}}
 \index{keyRange@{keyRange}!QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}}
 \doxysubsubsection{\texorpdfstring{keyRange()}{keyRange()}}
@@ -452,10 +317,6 @@ If the Data\+Type reports that its main key is equal to the sort key ({\itshape 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_data_container_a35a102dc2424d1228fc374d9313efbe9}{value\+Range}} 
 \end{DoxySeeAlso}
-
-
-Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02952}{2952}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
-
 \mbox{\Hypertarget{class_q_c_p_data_container_aa1b36f5ae86a5a5a0b92141d3a0945c4}\label{class_q_c_p_data_container_aa1b36f5ae86a5a5a0b92141d3a0945c4}} 
 \index{QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}!limitIteratorsToDataRange@{limitIteratorsToDataRange}}
 \index{limitIteratorsToDataRange@{limitIteratorsToDataRange}!QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}}
@@ -465,41 +326,7 @@ void \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}$<$ Data\+
 
 Makes sure {\itshape begin} and {\itshape end} mark a data range that is both within the bounds of this data container\textquotesingle{}s data, as well as within the specified {\itshape data\+Range}. The initial range described by the passed iterators {\itshape begin} and {\itshape end} is never expanded, only contracted if necessary.
 
-This function doesn\textquotesingle{}t require for {\itshape data\+Range} to be within the bounds of this data container\textquotesingle{}s valid range. 
-
-Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l03163}{3163}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
-
-Here is the call graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_q_c_p_data_container_aa1b36f5ae86a5a5a0b92141d3a0945c4_cgraph}
-\end{center}
-\end{figure}
-\mbox{\Hypertarget{class_q_c_p_data_container_a83c25ac14be1c920df85e797ee75c982}\label{class_q_c_p_data_container_a83c25ac14be1c920df85e797ee75c982}} 
-\index{QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}!performAutoSqueeze@{performAutoSqueeze}}
-\index{performAutoSqueeze@{performAutoSqueeze}!QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}}
-\doxysubsubsection{\texorpdfstring{performAutoSqueeze()}{performAutoSqueeze()}}
-{\footnotesize\ttfamily template$<$class Data\+Type $>$ \\
-void \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}$<$ Data\+Type $>$\+::perform\+Auto\+Squeeze\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l03211}{3211}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
-
-\mbox{\Hypertarget{class_q_c_p_data_container_aae8cdb2bcc3b900ec22f26df3e7d67c7}\label{class_q_c_p_data_container_aae8cdb2bcc3b900ec22f26df3e7d67c7}} 
-\index{QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}!preallocateGrow@{preallocateGrow}}
-\index{preallocateGrow@{preallocateGrow}!QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}}
-\doxysubsubsection{\texorpdfstring{preallocateGrow()}{preallocateGrow()}}
-{\footnotesize\ttfamily template$<$class Data\+Type $>$ \\
-void \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}$<$ Data\+Type $>$\+::preallocate\+Grow (\begin{DoxyParamCaption}\item[{int}]{minimum\+Prealloc\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l03181}{3181}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
-
-\mbox{\Hypertarget{class_q_c_p_data_container_a2dbded7f0732bacf9db48fdfbbb620bc}\label{class_q_c_p_data_container_a2dbded7f0732bacf9db48fdfbbb620bc}} 
+This function doesn\textquotesingle{}t require for {\itshape data\+Range} to be within the bounds of this data container\textquotesingle{}s valid range. \mbox{\Hypertarget{class_q_c_p_data_container_a2dbded7f0732bacf9db48fdfbbb620bc}\label{class_q_c_p_data_container_a2dbded7f0732bacf9db48fdfbbb620bc}} 
 \index{QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}!remove@{remove}}
 \index{remove@{remove}!QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}}
 \doxysubsubsection{\texorpdfstring{remove()}{remove()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -513,10 +340,6 @@ Removes a single data point at {\itshape sort\+Key}. If the position is not know
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_data_container_aa7f74cbce304b0369e1626c3798e1eda}{remove\+Before}}, \mbox{\hyperlink{class_q_c_p_data_container_abbe5d87ffc10b5aeffa5bb42cf03aa3c}{remove\+After}}, \mbox{\hyperlink{class_q_c_p_data_container_a7e2b29736c6fd761649bda1a54ba967f}{clear}} 
 \end{DoxySeeAlso}
-
-
-Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02811}{2811}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
-
 \mbox{\Hypertarget{class_q_c_p_data_container_ae5f569a120648b167efa78835f12fd38}\label{class_q_c_p_data_container_ae5f569a120648b167efa78835f12fd38}} 
 \index{QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}!remove@{remove}}
 \index{remove@{remove}!QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}}
@@ -529,10 +352,6 @@ Removes all data points with (sort-\/)keys between {\itshape sort\+Key\+From} an
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_data_container_aa7f74cbce304b0369e1626c3798e1eda}{remove\+Before}}, \mbox{\hyperlink{class_q_c_p_data_container_abbe5d87ffc10b5aeffa5bb42cf03aa3c}{remove\+After}}, \mbox{\hyperlink{class_q_c_p_data_container_a7e2b29736c6fd761649bda1a54ba967f}{clear}} 
 \end{DoxySeeAlso}
-
-
-Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02789}{2789}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
-
 \mbox{\Hypertarget{class_q_c_p_data_container_abbe5d87ffc10b5aeffa5bb42cf03aa3c}\label{class_q_c_p_data_container_abbe5d87ffc10b5aeffa5bb42cf03aa3c}} 
 \index{QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}!removeAfter@{removeAfter}}
 \index{removeAfter@{removeAfter}!QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}}
@@ -545,10 +364,6 @@ Removes all data points with (sort-\/)keys greater than or equal to {\itshape so
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_data_container_aa7f74cbce304b0369e1626c3798e1eda}{remove\+Before}}, \mbox{\hyperlink{class_q_c_p_data_container_ae5f569a120648b167efa78835f12fd38}{remove}}, \mbox{\hyperlink{class_q_c_p_data_container_a7e2b29736c6fd761649bda1a54ba967f}{clear}} 
 \end{DoxySeeAlso}
-
-
-Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02772}{2772}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
-
 \mbox{\Hypertarget{class_q_c_p_data_container_aa7f74cbce304b0369e1626c3798e1eda}\label{class_q_c_p_data_container_aa7f74cbce304b0369e1626c3798e1eda}} 
 \index{QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}!removeBefore@{removeBefore}}
 \index{removeBefore@{removeBefore}!QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}}
@@ -561,10 +376,6 @@ Removes all data points with (sort-\/)keys smaller than or equal to {\itshape so
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_data_container_abbe5d87ffc10b5aeffa5bb42cf03aa3c}{remove\+After}}, \mbox{\hyperlink{class_q_c_p_data_container_ae5f569a120648b167efa78835f12fd38}{remove}}, \mbox{\hyperlink{class_q_c_p_data_container_a7e2b29736c6fd761649bda1a54ba967f}{clear}} 
 \end{DoxySeeAlso}
-
-
-Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02757}{2757}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
-
 \mbox{\Hypertarget{class_q_c_p_data_container_ae7042bd534fc3ce7befa2ce3f790b5bf}\label{class_q_c_p_data_container_ae7042bd534fc3ce7befa2ce3f790b5bf}} 
 \index{QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}!set@{set}}
 \index{set@{set}!QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}}
@@ -579,10 +390,6 @@ Replaces the current data in this container with the provided {\itshape data}.
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_data_container_a42b98bd994307ccd163a43d576f91ad9}{add}}, \mbox{\hyperlink{class_q_c_p_data_container_ae5f569a120648b167efa78835f12fd38}{remove}} 
 \end{DoxySeeAlso}
-
-
-Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02632}{2632}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
-
 \mbox{\Hypertarget{class_q_c_p_data_container_aff99fffbb26597a354c4bc8312596ab2}\label{class_q_c_p_data_container_aff99fffbb26597a354c4bc8312596ab2}} 
 \index{QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}!set@{set}}
 \index{set@{set}!QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}}
@@ -599,10 +406,6 @@ If you can guarantee that the data points in {\itshape data} have ascending orde
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_data_container_a42b98bd994307ccd163a43d576f91ad9}{add}}, \mbox{\hyperlink{class_q_c_p_data_container_ae5f569a120648b167efa78835f12fd38}{remove}} 
 \end{DoxySeeAlso}
-
-
-Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02648}{2648}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
-
 \mbox{\Hypertarget{class_q_c_p_data_container_a233f866760a78950d2a393c1a4bc54b5}\label{class_q_c_p_data_container_a233f866760a78950d2a393c1a4bc54b5}} 
 \index{QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}!setAutoSqueeze@{setAutoSqueeze}}
 \index{setAutoSqueeze@{setAutoSqueeze}!QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}}
@@ -612,30 +415,14 @@ void \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}$<$ Data\+
 
 Sets whether the container automatically decides when to release memory from its post-\/ and preallocation pools when data points are removed. By default this is enabled and for typical applications shouldn\textquotesingle{}t be changed.
 
-If auto squeeze is disabled, you can manually decide when to release pre-\//postallocation with \mbox{\hyperlink{class_q_c_p_data_container_a82fcc511def22287fc62579d0706387c}{squeeze}}. 
-
-Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02615}{2615}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
-
-\mbox{\Hypertarget{class_q_c_p_data_container_a8e9b262c739672e13472d0d45b720258}\label{class_q_c_p_data_container_a8e9b262c739672e13472d0d45b720258}} 
+If auto squeeze is disabled, you can manually decide when to release pre-\//postallocation with \mbox{\hyperlink{class_q_c_p_data_container_a82fcc511def22287fc62579d0706387c}{squeeze}}. \mbox{\Hypertarget{class_q_c_p_data_container_a8e9b262c739672e13472d0d45b720258}\label{class_q_c_p_data_container_a8e9b262c739672e13472d0d45b720258}} 
 \index{QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}!size@{size}}
 \index{size@{size}!QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}}
 \doxysubsubsection{\texorpdfstring{size()}{size()}}
 {\footnotesize\ttfamily template$<$class Data\+Type $>$ \\
 int \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}$<$ Data\+Type $>$\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Returns the number of data points in the container. 
-
-Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02413}{2413}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
-
-Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_q_c_p_data_container_a8e9b262c739672e13472d0d45b720258_icgraph}
-\end{center}
-\end{figure}
-\mbox{\Hypertarget{class_q_c_p_data_container_a75da92e33063b63d6da5014683591d45}\label{class_q_c_p_data_container_a75da92e33063b63d6da5014683591d45}} 
+Returns the number of data points in the container. \mbox{\Hypertarget{class_q_c_p_data_container_a75da92e33063b63d6da5014683591d45}\label{class_q_c_p_data_container_a75da92e33063b63d6da5014683591d45}} 
 \index{QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}!sort@{sort}}
 \index{sort@{sort}!QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}}
 \doxysubsubsection{\texorpdfstring{sort()}{sort()}}
@@ -644,11 +431,7 @@ void \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}$<$ Data\+
 
 Re-\/sorts all data points in the container by their sort key.
 
-When setting, adding or removing points using the \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}} interface (\mbox{\hyperlink{class_q_c_p_data_container_ae7042bd534fc3ce7befa2ce3f790b5bf}{set}}, \mbox{\hyperlink{class_q_c_p_data_container_a42b98bd994307ccd163a43d576f91ad9}{add}}, \mbox{\hyperlink{class_q_c_p_data_container_ae5f569a120648b167efa78835f12fd38}{remove}}, etc.), the container makes sure to always stay in a sorted state such that a full resort is never necessary. However, if you choose to directly manipulate the sort key on data points by accessing and modifying it through the non-\/const iterators (\mbox{\hyperlink{class_q_c_p_data_container_a80032518413ab8f418f7c81182fd06cb}{begin}}, \mbox{\hyperlink{class_q_c_p_data_container_acf66dfad83fe041380f5e0491e7676f2}{end}}), it is your responsibility to bring the container back into a sorted state before any other methods are called on it. This can be achieved by calling this method immediately after finishing the sort key manipulation. 
-
-Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02850}{2850}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
-
-\mbox{\Hypertarget{class_q_c_p_data_container_a82fcc511def22287fc62579d0706387c}\label{class_q_c_p_data_container_a82fcc511def22287fc62579d0706387c}} 
+When setting, adding or removing points using the \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}} interface (\mbox{\hyperlink{class_q_c_p_data_container_ae7042bd534fc3ce7befa2ce3f790b5bf}{set}}, \mbox{\hyperlink{class_q_c_p_data_container_a42b98bd994307ccd163a43d576f91ad9}{add}}, \mbox{\hyperlink{class_q_c_p_data_container_ae5f569a120648b167efa78835f12fd38}{remove}}, etc.), the container makes sure to always stay in a sorted state such that a full resort is never necessary. However, if you choose to directly manipulate the sort key on data points by accessing and modifying it through the non-\/const iterators (\mbox{\hyperlink{class_q_c_p_data_container_a80032518413ab8f418f7c81182fd06cb}{begin}}, \mbox{\hyperlink{class_q_c_p_data_container_acf66dfad83fe041380f5e0491e7676f2}{end}}), it is your responsibility to bring the container back into a sorted state before any other methods are called on it. This can be achieved by calling this method immediately after finishing the sort key manipulation. \mbox{\Hypertarget{class_q_c_p_data_container_a82fcc511def22287fc62579d0706387c}\label{class_q_c_p_data_container_a82fcc511def22287fc62579d0706387c}} 
 \index{QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}!squeeze@{squeeze}}
 \index{squeeze@{squeeze}!QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}}
 \doxysubsubsection{\texorpdfstring{squeeze()}{squeeze()}}
@@ -659,11 +442,7 @@ Frees all unused memory that is currently in the preallocation and postallocatio
 
 Note that \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}} automatically decides whether squeezing is necessary, if \mbox{\hyperlink{class_q_c_p_data_container_a233f866760a78950d2a393c1a4bc54b5}{set\+Auto\+Squeeze}} is left enabled. It should thus not be necessary to use this method for typical applications.
 
-The parameters {\itshape pre\+Allocation} and {\itshape post\+Allocation} control whether pre-\/ and/or post allocation should be freed, respectively. 
-
-Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02866}{2866}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
-
-\mbox{\Hypertarget{class_q_c_p_data_container_a35a102dc2424d1228fc374d9313efbe9}\label{class_q_c_p_data_container_a35a102dc2424d1228fc374d9313efbe9}} 
+The parameters {\itshape pre\+Allocation} and {\itshape post\+Allocation} control whether pre-\/ and/or post allocation should be freed, respectively. \mbox{\Hypertarget{class_q_c_p_data_container_a35a102dc2424d1228fc374d9313efbe9}\label{class_q_c_p_data_container_a35a102dc2424d1228fc374d9313efbe9}} 
 \index{QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}!valueRange@{valueRange}}
 \index{valueRange@{valueRange}!QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}}
 \doxysubsubsection{\texorpdfstring{valueRange()}{valueRange()}}
@@ -681,10 +460,6 @@ Use {\itshape sign\+Domain} to control which sign of the value coordinates shoul
 \end{DoxySeeAlso}
 
 
-Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l03075}{3075}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
-
-
-
 \doxysubsection{Friends And Related Function Documentation}
 \mbox{\Hypertarget{class_q_c_p_data_container_a74c5e06728cb6fa778a25d9ec0c4bd36}\label{class_q_c_p_data_container_a74c5e06728cb6fa778a25d9ec0c4bd36}} 
 \index{QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}!qcpLessThanSortKey@{qcpLessThanSortKey}}
@@ -698,57 +473,6 @@ Returns whether the sort key of {\itshape a} is less than the sort key of {\itsh
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_data_container_a75da92e33063b63d6da5014683591d45}{QCPData\+Container\+::sort}} 
 \end{DoxySeeAlso}
-
-
-Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02401}{2401}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
-
-
-
-\doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{class_q_c_p_data_container_aae64c517d64511ad7a81ff8ee7b29147}\label{class_q_c_p_data_container_aae64c517d64511ad7a81ff8ee7b29147}} 
-\index{QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}!mAutoSqueeze@{mAutoSqueeze}}
-\index{mAutoSqueeze@{mAutoSqueeze}!QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}}
-\doxysubsubsection{\texorpdfstring{mAutoSqueeze}{mAutoSqueeze}}
-{\footnotesize\ttfamily template$<$class Data\+Type $>$ \\
-bool \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}$<$ Data\+Type $>$\+::m\+Auto\+Squeeze\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02448}{2448}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
-
-\mbox{\Hypertarget{class_q_c_p_data_container_a74906b4da829849c4062b5337c72585d}\label{class_q_c_p_data_container_a74906b4da829849c4062b5337c72585d}} 
-\index{QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}!mData@{mData}}
-\index{mData@{mData}!QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}}
-\doxysubsubsection{\texorpdfstring{mData}{mData}}
-{\footnotesize\ttfamily template$<$class Data\+Type $>$ \\
-QVector$<$Data\+Type$>$ \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}$<$ Data\+Type $>$\+::m\+Data\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02451}{2451}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
-
-\mbox{\Hypertarget{class_q_c_p_data_container_ab2115bf023c29691f441eaf1889de84a}\label{class_q_c_p_data_container_ab2115bf023c29691f441eaf1889de84a}} 
-\index{QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}!mPreallocIteration@{mPreallocIteration}}
-\index{mPreallocIteration@{mPreallocIteration}!QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}}
-\doxysubsubsection{\texorpdfstring{mPreallocIteration}{mPreallocIteration}}
-{\footnotesize\ttfamily template$<$class Data\+Type $>$ \\
-int \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}$<$ Data\+Type $>$\+::m\+Prealloc\+Iteration\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02453}{2453}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
-
-\mbox{\Hypertarget{class_q_c_p_data_container_a3554d3ad00e69f7ce057efa00ea6f4b2}\label{class_q_c_p_data_container_a3554d3ad00e69f7ce057efa00ea6f4b2}} 
-\index{QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}!mPreallocSize@{mPreallocSize}}
-\index{mPreallocSize@{mPreallocSize}!QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}}
-\doxysubsubsection{\texorpdfstring{mPreallocSize}{mPreallocSize}}
-{\footnotesize\ttfamily template$<$class Data\+Type $>$ \\
-int \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}$<$ Data\+Type $>$\+::m\+Prealloc\+Size\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line \mbox{\hyperlink{qcustomplot_8h_source_l02452}{2452}} of file \mbox{\hyperlink{qcustomplot_8h_source}{qcustomplot.\+h}}.
-
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

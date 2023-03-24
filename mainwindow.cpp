@@ -82,6 +82,12 @@ MainWindow::MainWindow(QWidget *parent) :
     plotDialog_ = new PlotDialog(this);
     plotDialog_->setWindowTitle("Setting for Plot");
 
+    /*
+    //! configure for TempDrop
+    tempDropDialog_ = new TempDropDialog(this);
+    tempDropDialog_->setWindowTitle("Setting for TempDrop mode");
+    */
+
   //Check Temp Directory, is not exist, create
     QDir myDir;
     myDir.setPath(DATA_PATH);
@@ -268,11 +274,11 @@ MainWindow::MainWindow(QWidget *parent) :
     threadLog_->interval_ = ui->spinBox_TempRecordTime->value() * 1000; //ms to sec.;
     threadLog_->moveToThread(threadLog_);
     QObject::connect(threadLog_, SIGNAL(data_update()), this, SLOT(makePlot()));
-    //connect()
 
     //! TempCheck counter is set to be 0.
     countTempCheck_ = 0;
     countDropCheck_ = 0;
+    connect(ui->checkBox_TempDropEnable, SIGNAL(clicked(bool)), this, SLOT(setTextTempDrop(bool)));
 
     ui->textEdit_Log->setTextColor(QColor(34,139,34,255));
     LogMsg("The AT and RUN/STOP do not get from the device. Please be careful.");
@@ -1342,12 +1348,18 @@ void MainWindow::HelpPicNext()
 }
 
 void MainWindow::on_action_Setting_plot_triggered(){
-    if( plotDialog_->isHidden() ) plotDialog_->show();
+  if( plotDialog_->isHidden() ) plotDialog_->show();
 }
 
 void MainWindow::on_action_Setting_parameters_for_TempCheck_triggered(){
   if(configureDialog_->isHidden()) configureDialog_->show();
 }
+
+/*
+void MainWindow::on_action_Setting_Temperature_Drop_triggered(){
+  if (tempDropDialog_->isHidden()) tempDropDialog_->show();
+}
+*/
 
 void MainWindow::setIntervalAskMV(){
   ui->lineEdit_IntervalAskMV->setEnabled(true);
@@ -1412,6 +1424,8 @@ void MainWindow::setParametersTempCheck(bool mute){
   threadMVcheck_->start();
   threadTempCheck_->start();
 }
+
+
 
 void MainWindow::on_pushButton_RunStop_toggled(bool checked)
 {
@@ -1598,16 +1612,32 @@ bool MainWindow::isViolate(QVector<double> vtemp){
 //! \details This function returns true when the argument is a positive sign. Otherwise false.
 //! It is assumed that a temperature change is assigned to the argument.
 //!
-bool MainWindow::isDrop(double diff){
+bool MainWindow::isDrop(double diff, int mode){
   if(ui->pushButton_Control->isChecked()) return false;
-  if (diff >= 0) {
-    ui->checkBoxStatusTempDrop->setChecked(false);
-    return false;
-    }
-  else {
-    ui->checkBoxStatusTempDrop->setChecked(true);
-    return true;
-    }
+  double interval = threadLog_->interval_/60.0; //sec to min.
+  switch (mode) {
+    case 1:
+      if (diff/interval >= ui->doubleSpinBox_TempDrop->value()) return true;
+      else return false;
+    break;
+    default:
+      if (diff >= 0) {
+        ui->checkBoxStatusTempDrop->setChecked(false);
+        return false;
+        }
+      else {
+        ui->checkBoxStatusTempDrop->setChecked(true);
+        return true;
+        }
+    break;
+  }
+  return false;
+}
+
+
+void MainWindow::setTextTempDrop(bool enable){
+  if(enable) ui->checkBox_TempDropEnable->setText(tr("Yes"));
+  else ui->checkBox_TempDropEnable->setText(tr("No"));
 }
 
 //!
@@ -1649,7 +1679,7 @@ void MainWindow::TempCheck(){
     QDateTime date = QDateTime::currentDateTime();
     QString datestr = date.toString("yyyyMMdd_HHmmss");
     ui->lineEdit_TempCheckCount->setStyleSheet("background-color:yellow; color:red;selection-background-color:red;");
-    ui->lineEdit_TempCheckCount->setText("Emergency Stop at" + datestr);
+    ui->lineEdit_TempCheckCount->setText("Emergency Stop at " + datestr);
     vtemp_.clear();
     ui->checkBoxStautsTempCheck->setChecked(false);
     Quit();
@@ -1710,10 +1740,11 @@ void MainWindow::makePlot(){
   fillDataAndPlot(date, temperature, setTemperature, MV);
   if(ui->checkBox_dataSave->isChecked()) writeData();
   double diff = fillDifference(true);
-  if (isDrop(diff) && countDropCheck_ <= 2) {
+  if (!ui->checkBox_TempDropEnable->isChecked()) return;
+  if (isDrop(diff, 1) && countDropCheck_ <= 2) {
       ui->lineEdit_TempCheckCount->setText("Temperature drop is detected.");
       countDropCheck_++;
-  } else if (isDrop(diff) && countDropCheck_ > 2) {
+  } else if (isDrop(diff, 1) && countDropCheck_ > 2) {
       Quit();
       ui->lineEdit_TempCheckCount->setText("The temperature drop has exceeded the threshold.");
   } else {

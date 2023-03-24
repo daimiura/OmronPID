@@ -339,7 +339,7 @@
        </sizepolicy>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -784,23 +784,10 @@
         <string>Safety</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_8">
-        <item row="1" column="0">
-         <widget class="QLabel" name="label_21">
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_20">
           <property name="text">
-           <string>Temperature Drop (C/min)</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="1">
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_TempDrop">
-          <property name="decimals">
-           <number>1</number>
-          </property>
-          <property name="maximum">
-           <double>20.000000000000000</double>
-          </property>
-          <property name="value">
-           <double>1.500000000000000</double>
+           <string>Upper Temperature</string>
           </property>
          </widget>
         </item>
@@ -823,14 +810,34 @@
           </property>
          </widget>
         </item>
-        <item row="0" column="0">
-         <widget class="QLabel" name="label_20">
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_21">
           <property name="text">
-           <string>Upper Temperature</string>
+           <string>Temperature Drop (C/min)</string>
           </property>
          </widget>
         </item>
-        <item row="2" column="0" colspan="2">
+        <item row="1" column="1">
+         <widget class="QDoubleSpinBox" name="doubleSpinBox_TempDrop">
+          <property name="decimals">
+           <number>1</number>
+          </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
+          <property name="value">
+           <double>20.000000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_30">
+          <property name="text">
+           <string>Enable emergency stop due to temperature drop?</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0" colspan="2">
          <widget class="QTextEdit" name="textEdit">
           <property name="enabled">
            <bool>false</bool>
@@ -850,6 +857,13 @@ li.checked::marker { content: &quot;\2612&quot;; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:12pt; font-weight:700; color:#ff0000;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:700; color:#ff0000;&quot;&gt;An emergency stop will also occur if the temperature drops beyond the Temperature Drop.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This temperature drop safety mode does not work during Slow Temperature control.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QCheckBox" name="checkBox_TempDropEnable">
+          <property name="text">
+           <string>No</string>
           </property>
          </widget>
         </item>
@@ -1089,6 +1103,11 @@ li.checked::marker { content: &quot;\2612&quot;; }
   <action name="action_Setting_plot">
    <property name="text">
     <string>&amp;Setting_plot</string>
+   </property>
+  </action>
+  <action name="action_Setting_Temperature_Drop">
+   <property name="text">
+    <string>&amp;Setting_Temperature_Drop</string>
    </property>
   </action>
  </widget>

@@ -31,14 +31,16 @@ SOURCES += \
         mainwindow.cpp \
     mythread.cpp \
     plotdialog.cpp \
-    qcustomplot.cpp
+    qcustomplot.cpp \
+    tempdropdialog.cpp
 
 HEADERS += \
     configuredialog.h \
         mainwindow.h \
     mythread.h \
     plotdialog.h \
-    qcustomplot.h
+    qcustomplot.h \
+    tempdropdialog.h
 
 FORMS += \
         mainwindow.ui
