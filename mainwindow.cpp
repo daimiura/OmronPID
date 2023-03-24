@@ -1614,7 +1614,7 @@ bool MainWindow::isViolate(QVector<double> vtemp){
 //!
 bool MainWindow::isDrop(double diff, int mode){
   if(ui->pushButton_Control->isChecked()) return false;
-  double interval = threadLog_->interval_/60.0; //sec to min.
+  double interval = ui->spinBox_TempRecordTime->value()/60.0; //sec to min.
   switch (mode) {
     case 1:
       if (diff/interval >= ui->doubleSpinBox_TempDrop->value()) return true;
