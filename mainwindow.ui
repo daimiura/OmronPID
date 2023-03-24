@@ -339,7 +339,7 @@
        </sizepolicy>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -826,7 +826,7 @@
            <double>100.000000000000000</double>
           </property>
           <property name="value">
-           <double>20.000000000000000</double>
+           <double>10.000000000000000</double>
           </property>
          </widget>
         </item>
@@ -863,7 +863,10 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <item row="2" column="1">
          <widget class="QCheckBox" name="checkBox_TempDropEnable">
           <property name="text">
-           <string>No</string>
+           <string>Yes</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
           </property>
          </widget>
         </item>
