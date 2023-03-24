@@ -1531,7 +1531,6 @@ void MainWindow::Quit(){
   QString cmd = "00 00 01 01";
   QByteArray value = QByteArray::fromHex(cmd.toStdString().c_str());
   request(QModbusPdu::WriteSingleRegister, value);
-  setColor(3);
   ui->textEdit_Log->setTextColor(QColor(255,0,0,255));
   LogMsg("Emergency Stop. Check the experimental condition.");
   threadMVcheck_->quit();
@@ -1547,6 +1546,7 @@ void MainWindow::Quit(){
   ui->checkBoxStatusSTC->setChecked(false);
   ui->pushButton_RunStop->setChecked(false);
   statusRun_ = false;
+  setColor(3);
 }
 
 
@@ -1759,15 +1759,15 @@ void MainWindow::makePlot(){
 //!
 void MainWindow::writeData(){
   if(!ui->checkBox_dataSave->isChecked()) return;
-  LogMsg("data save to : " + filePath_);
-  QFile output_(filePath_);
-  QTextStream stream(&output_);
-  if (!output_.exists()){
-    output_.open(QIODevice::WriteOnly| QIODevice::Text);
-    LogMsg(filePath_ + " does not be found. New file was be generated.");
+  LogMsg("data save to : " + fileName_);
+  QFile output(fileName_);
+  QTextStream stream(&output);
+  if (!output.exists()){
+    output.open(QIODevice::WriteOnly| QIODevice::Text);
+    LogMsg(fileName_ + " does not be found. New file was be generated.");
   }
   QDateTime date = QDateTime::currentDateTime();
-  output_.open(QIODevice::Append| QIODevice::Text);
+  output.open(QIODevice::Append| QIODevice::Text);
   stream << date.toString("MM-dd HH:mm:ss").toStdString().c_str()
          << "\t"
          << date.toSecsSinceEpoch()
@@ -1778,7 +1778,7 @@ void MainWindow::writeData(){
          << "\t"
          << QString::number(MV)
          << Qt::endl;
-  output_.close();
+  output.close();
 }
 
 //!
@@ -1801,18 +1801,18 @@ void MainWindow::on_checkBox_dataSave_toggled(bool checked)
 //!
 bool MainWindow::generateSaveFile(){
   QDateTime startTime = QDateTime::currentDateTime();
-  fileName_ = startTime.toString("yyyyMMdd_HHmmss") + ".dat";
-  QString filePath = ui->lineEdit_DirPath->text() + "/" + fileName_;
-  QFile output_(filePath);
-  QTextStream stream(&output_);
-  if (output_.exists()) {
+  QString name = startTime.toString("yyyyMMdd_HHmmss") + ".dat";
+  fileName_ = ui->lineEdit_DirPath->text() + "/" + name;
+  QFile output(fileName_);
+  QTextStream stream(&output);
+  if (output.exists()) {
     LogMsg("file already exists.");
-    output_.close();
+    output.close();
     return false;
   }else {
-    output_.open(QIODevice::WriteOnly| QIODevice::Text);
+    output.open(QIODevice::WriteOnly| QIODevice::Text);
     stream <<"Date\t"<<"Date_t\t"<<"temp [C]\t"<<"SV [C]\t"<<"Output [%]" <<Qt::endl;
-    output_.close();
+    output.close();
     return true;
   }
 }
