@@ -176,7 +176,7 @@ private:
     QTimer * waitTimer;
     QString fileName_;
     QString filePath_;
-    QFile output_;
+    //QFile output_;
     QElapsedTimer totalElapse;
     bool checkDay;
     int dayCounter;
