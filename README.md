@@ -3,8 +3,11 @@
   - [2.1. main](#21-main)
   - [2.2. 2023Qt6\_branch](#22-2023qt6_branch)
 - [3. Getting started](#3-getting-started)
-  - [3.1. Qt Installation](#31-qt-installation)
-  - [3.2. Setting E5CC](#32-setting-e5cc)
+  - [3.1. Setting E5CC](#31-setting-e5cc)
+    - [3.1.1. Input type](#311-input-type)
+    - [3.1.2. To communicate](#312-to-communicate)
+  - [3.2. .exe user](#32-exe-user)
+  - [3.3. Qt user](#33-qt-user)
 # 1. Source code & Contents
 [Original source code](https://github.com/TripletESR/Omron_PID) can be get.
 ```bash
@@ -37,10 +40,31 @@ This branch is stable version.　It corresponds to Qt4 and 5 and was written in 
 In Qt6, thisis not available because some functions are obsolute.　To use it in Qt6, this source code needs to be rewritten.　The update is developpoing in the 2023_Qt6 branch.　Now the contents in 2023_Qt6 include some issues, so  it is not available. 
 
 # 3. Getting started
-This section describes the installation of Qt, etc.　If you only use .exe, skip to the next section.
-## 3.1. Qt Installation
+This section describes how to use the OmronPID.exe and install Qt.
+## 3.1. Setting E5CC
+### 3.1.1. Input type
+This application is designed to use a K thermocouple as a thermometer probe (See that the [manual](manuals/e5cc_inst-5377443-6a.pdf) for thermocouple wiring and channels). Select the input type 6 (Default is 5. Reffer [manual for connection](manuals/e5cc_inst-5377443-6a.pdf) how to select input type).
+### 3.1.2. To communicate
+The setting items required for communication are as follows:
+- Protocol selection : Mod
+- Unit No. : 1
+- bit per sec : 9.6
+- Parity : None
+- Send waiting time : 20
+
+See 
+
+## 3.2. .exe user
+You can use OmronPID.exe if only you download the release directory. At first, connect E5CC to PC via USB cable. Then execute OmronPID.exe. If you have problems, it can be not exist dll files.he error messages show the dll files you need. After installing Qt5, copy the files from 
+```bash
+C/Qt/5.15.2/WinGW 8.10 64-bit/bin/
+```
+to the release directory. 
+
+
+## 3.3. Qt user
 Qt5 and 6 are available for free from [here](https://www.qt.io/download-qt-installer) (as of March 2023).　You need an account, so please create one.　You can register with your e-mail address.
-For example, we will create a Qt directory under the C directory and install it there.　For example, we will create a Qt directory under the C directory and install it there.
+For example, we will create a Qt directory under the C directory and install it there.
 ```bash
 $ C/Qt/
 ```
@@ -64,4 +88,3 @@ Qt Creator is useful for designing GUI, so Qt Creator should also be installed.�
   - Ninja 1.10.2
 - Qt Maintenance Tool
 
-## 3.2. Setting E5CC
