@@ -168,6 +168,9 @@
          <property name="text">
           <string>Data Save</string>
          </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
         </widget>
        </item>
        <item row="4" column="0" colspan="2">
