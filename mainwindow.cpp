@@ -50,8 +50,8 @@ MainWindow::MainWindow(QWidget *parent) :
     modbusReady = true;
     spinBoxEnable = false;
     muteLog = false;
-    //tempDecimal = 0.1; // for 0.1
-    tempDecimal = 1.0;
+    tempDecimal = 0.1; // for 0.1
+    //tempDecimal = 1.0;
 
     //======= clock
     clock = new QTimer(this);
