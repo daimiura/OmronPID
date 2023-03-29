@@ -1,3 +1,4 @@
+Table of Contents
 - [1. Source code \& Contents](#1-source-code--contents)
 - [2. branches](#2-branches)
   - [2.1. main](#21-main)
@@ -6,8 +7,10 @@
   - [3.1. Setting E5CC](#31-setting-e5cc)
     - [3.1.1. Input type](#311-input-type)
     - [3.1.2. To communicate](#312-to-communicate)
+    - [3.1.3. Summary of setting items](#313-summary-of-setting-items)
   - [3.2. .exe user](#32-exe-user)
   - [3.3. Qt user](#33-qt-user)
+- [4. OmronPID.exe](#4-omronpidexe)
 # 1. Source code & Contents
 [Original source code](https://github.com/TripletESR/Omron_PID) can be get.
 ```bash
@@ -43,7 +46,7 @@ In Qt6, thisis not available because some functions are obsolute.ã€€To use it in
 This section describes how to use the OmronPID.exe and install Qt.
 ## 3.1. Setting E5CC
 ### 3.1.1. Input type
-This application is designed to use a K thermocouple as a thermometer probe (See that the [manual](manuals/e5cc_inst-5377443-6a.pdf) for thermocouple wiring and channels). Select the input type 6 (Default is 5. Reffer [manual for connection](manuals/e5cc_inst-5377443-6a.pdf) how to select input type).
+This application is designed to use a K thermocouple as a thermometer probe (See that the [manual](manuals/e5cc_inst-5377443-6a.pdf) for thermocouple wiring and channels). <span style = "color:blue">Select the input type 6</span> (Default is 5. Reffer [manual for connection](manuals/e5cc_inst-5377443-6a.pdf) how to select input type).
 ### 3.1.2. To communicate
 The setting items required for communication are as follows:
 - Protocol selection : Mod
@@ -52,7 +55,18 @@ The setting items required for communication are as follows:
 - Parity : None
 - Send waiting time : 20
 
-See 
+See [communication manual](manuals/communicationmanual.pdf) that how to set the parameters for communication.
+
+### 3.1.3. Summary of setting items
+The lists of setting items are summarized in the following table.
+|Items|Sign|Default|to be set|
+|---|---|---|---|
+|Input Type|CN-t|5|6|
+|Protocol selection|PSEL|CWF|Mod|
+|Unit No.|U-No|1|1|
+|bit per sec|bPS|9.6|9.6|
+|Parity|PRty|EVEN|None|
+|Send waiting time|SdWt|20|20|
 
 ## 3.2. .exe user
 You can use OmronPID.exe if only you download the release directory. At first, connect E5CC to PC via USB cable. Then execute OmronPID.exe. If you have problems, it can be not exist dll files.he error messages show the dll files you need. After installing Qt5, copy the files from 
@@ -88,3 +102,4 @@ Qt Creator is useful for designing GUI, so Qt Creator should also be installed.ã
   - Ninja 1.10.2
 - Qt Maintenance Tool
 
+# 4. OmronPID.exe
