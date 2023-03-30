@@ -11,14 +11,14 @@ Table of Contents
   - [3.2. .exe user](#32-exe-user)
   - [3.3. Qt user](#33-qt-user)
 - [4. OmronPID.exe](#4-omronpidexe)
-  - [Processing for safety](#processing-for-safety)
-    - [TempCheck mode](#tempcheck-mode)
-      - [processing sequence](#processing-sequence)
-  - [GUI](#gui)
-    - [Connection to E5CC](#connection-to-e5cc)
-    - [Data Save](#data-save)
-    - [Run/Stop](#runstop)
-    - [Background Color](#background-color)
+  - [4.1. Processing for safety](#41-processing-for-safety)
+    - [4.1.1. TempCheck mode](#411-tempcheck-mode)
+      - [4.1.1.1. processing sequence](#4111-processing-sequence)
+  - [4.2. GUI](#42-gui)
+    - [4.2.1. Connection to E5CC](#421-connection-to-e5cc)
+    - [4.2.2. Data Save](#422-data-save)
+    - [4.2.3. Run/Stop](#423-runstop)
+    - [4.2.4. Background Color](#424-background-color)
 # 1. Source code & Contents
 [Original source code](https://github.com/TripletESR/Omron_PID) can be get.
 ```bash
