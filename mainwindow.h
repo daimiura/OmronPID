@@ -20,12 +20,14 @@
 #include <QScrollBar>
 #include <QMutex>
 #include <QMutexLocker>
+#include <QImage>
 #include <qcustomplot.h>
 #include <QElapsedTimer>
 #include <QApplication>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QFile>
+#include <QGraphicsView>
 #include <QTextStream>
 #include "mythread.h"
 #include "configuredialog.h"
@@ -186,6 +188,8 @@ private:
 
     QDialog * helpDialog;
     QLabel * HelpLabel;
+    QGraphicsScene *scene_;
+    QGraphicsView *view;
     PlotDialog * plotDialog_;
     ConfigureDialog * configureDialog_;
     TempDropDialog * tempDropDialog_;

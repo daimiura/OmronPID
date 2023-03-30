@@ -69,9 +69,9 @@ MainWindow::MainWindow(QWidget *parent) :
     helpDialog = new QDialog(this);
     HelpLabel = new QLabel();
     helpDialog->setWindowTitle("Help");
-    QImage image(":fig1.PNG");
     picNumber = 1;
-    HelpLabel->setPixmap(QPixmap::fromImage(image));
+    QPixmap image(":fig1.PNG");
+    HelpLabel->setPixmap(image);
     QPushButton * next = new QPushButton("Next");
     connect(next, SIGNAL(pressed()) , this, SLOT(HelpPicNext()));
     QVBoxLayout *mainLayout = new QVBoxLayout(helpDialog);
@@ -1332,19 +1332,30 @@ void MainWindow::on_actionHelp_Page_triggered(){
 
 void MainWindow::HelpPicNext()
 {
-    if( picNumber == 2){
-        QImage image(":fig1.PNG");
-        HelpLabel->setPixmap(QPixmap::fromImage(image));
-        picNumber = 1;
-        return;
-    }
-
-    if( picNumber == 1){
-        QImage image(":fig2.PNG");
-        HelpLabel->setPixmap(QPixmap::fromImage(image));
-        picNumber ++;
-        return;
-    }
+  if( picNumber == 4){
+      QPixmap image(":fig1.PNG");
+      HelpLabel->setPixmap(image);
+      picNumber = 1;
+      return;
+  }
+  if( picNumber == 3){
+      QPixmap image(":fig2.PNG");
+      HelpLabel->setPixmap(image);
+      picNumber++;
+      return;
+  }
+  if( picNumber == 2){
+      QPixmap image(":fig1.PNG");
+      HelpLabel->setPixmap(image);
+      picNumber++;
+      return;
+  }
+  if( picNumber == 1){
+      QPixmap image(":fig2.PNG");
+      HelpLabel->setPixmap(image);
+      picNumber++;
+      return;
+  }
 }
 
 void MainWindow::on_action_Setting_plot_triggered(){
