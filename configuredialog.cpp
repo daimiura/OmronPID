@@ -57,7 +57,7 @@ ConfigureDialog::ConfigureDialog(QWidget *parent) :
   spinBox_SafeLimit_->setMaximum(1000);
   spinBox_IgnoreLower_->setMaximum(0);
   spinBox_IgnoreLower_->setMinimum(-100);
-  intervalAskMV_ = 10;
+  intervalAskMV_ = 30;
   intervalAskTemp_ = 10;
   numbers_ = 10;
   safeLimit_ = 0.5;
