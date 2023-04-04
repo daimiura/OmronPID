@@ -13,7 +13,8 @@ Table of Contents
 - [4. OmronPID.exe](#4-omronpidexe)
   - [4.1. Processing for safety](#41-processing-for-safety)
     - [4.1.1. TempCheck mode](#411-tempcheck-mode)
-      - [4.1.1.1. processing sequence](#4111-processing-sequence)
+    - [4.1.2. Upper Limit](#412-upper-limit)
+    - [4.1.3. TempDrop](#413-tempdrop)
   - [4.2. GUI](#42-gui)
     - [4.2.1. Connection to E5CC](#421-connection-to-e5cc)
     - [4.2.2. Data Save](#422-data-save)
@@ -78,7 +79,7 @@ The lists of setting items are summarized in the following table.
 
 ## 3.2. .exe user
 You can use OmronPID.exe if only you download the [release directory](https://github.com/daimiura/OmronPID).
-At first, connect E5CC to PC via USB cable. Then execute OmronPID.exe. If you have problems, it can be not exist dll files.he error messages show the dll files you need. After installing Qt5, copy the files from 
+At first, connect E5CC to PC via USB cable. Then execute OmronPID.exe. If you have problems, it can be not exist dll files. The error messages show the dll files you need. After installing Qt5, copy the files from 
 ```bash
 C/Qt/5.15.2/mingw81_64/bin/
 ```
@@ -118,9 +119,21 @@ Qt Creator is useful for designing GUI, so Qt Creator should also be installed.�
   
 # 4. OmronPID.exe
 ## 4.1. Processing for safety
+OmronPID.exe has three safety features
+- TempCheck mode
+- Upper Limit
+- Temp Drop
+
+
+The above functions are implemented using four threads to simultaneously handle PID control, output checking, temperature change checking, and logging.
+- main thread : for PID control
+- threadMVcheck : for output checking
+- threadTempCheck : for temperature change checking
+- threadLog : for logging
+
 
 ### 4.1.1. TempCheck mode
-This mode checks for temperature changes. Normally, the temperature rises during heating. If there is some practical problem (e.g., the thermometer is not in the heat bath), the temperature detected by E5CC will not change. If the E5CC is commanded to heat, the temperature detected by the E5CC will remain unchanged (the heater is actually heating) even though it continues to output at the upper limit, which is dangerous and may result in a fire. To avoid this danger, TempCheck mode records temperature changes. This mode starts when the output reaches its maximum value. An emergency stop is performed if the temperature change is smaller than the threshold value. The flowchart shows as follwing
+This mode checks for temperature changes. Normally, the temperature rises during heating. If there is some practical problem (e.g., the thermometer is not in the heat bath), the temperature detected by E5CC will not change. If the E5CC is commanded to heat, the temperature detected by the E5CC will remain unchanged (the heater is actually heating) even though it continues to output at the upper limit, which is dangerous and may result in a fire. To avoid this danger, TempCheck mode records temperature changes. This mode starts when the output reaches its maximum value. An emergency stop is performed if the temperature change is smaller than the threshold value. The flowchart is shown as follwing
 ```mermaid
 flowchart LR
     id0("Get current output") --> id1{"Is upper limit of output ?"}
@@ -129,15 +142,8 @@ flowchart LR
     id3 -- No --> id0
     id3 -- Yes ---> id4("Emegerncy stop")    
 ```
-#### 4.1.1.1. processing sequence
-Omron PID.exe has four threads to simultaneously handle PID control, output checking, temperature change checking, and logging. 
-- main thread : for PID control
-- threadMVcheck : for output checking
-- threadTempCheck : for temperature change checking
-- threadLog : for logging
 
 The seaquenceDiagram displays the below. Note that all threads are started in parallel.　Even if the threadMV check is looping, other threads, such as mainthread and threadLog are doing their processing.
-
 
 ```mermaid
 sequenceDiagram
@@ -159,6 +165,64 @@ sequenceDiagram
     Note over mainthread : Quit
     Note over threadLog : Data logging continues after emergency
 ```
+
+### 4.1.2. Upper Limit
+Temperature, setpoint temperature, and output values are gotten using threadLog every specified second. If the temperature exceeds the safe upper limit (280 °C by default) at this time, an emergency stop is triggered in any case. The flowchart is shown the following. OmronPID.exe will continue to run as long as the safe maximum is not exceeded. After a specified number of seconds, it determines if the temperature exceeds the safe maximum again and repeats the process.
+```mermaid
+flowchart LR
+    id0("Get current temperature") --> id1{"Is the temperature above <br>the upper limit for safety?"}
+    id1 -- No ---> id0
+    id1 -- Yes --> id4("Emegerncy stop")    
+```
+The seaquence diagram is shown the following.
+```mermaid
+sequenceDiagram
+    mainthread->>threadLog: Run
+    Note over threadLog : Data logging starts
+    mainthread->>threadMVcheck: Run
+    Note over mainthread: PID control
+    threadLog->>mainthread : Temperature exceeds the safe upper limit
+    Note over mainthread, threadTempcheck : Emergency stop is executed.
+    mainthread->>threadMVcheck : Stop
+    Note over threadMVcheck : Quit
+    mainthread->>threadTempcheck : Stop
+    Note over threadTempcheck : Quit
+    mainthread->>mainthread : Stop
+    Note over mainthread : Quit
+    Note over threadLog : Data logging continues after emergency
+```
+
+### 4.1.3. TempDrop
+The function executes an emergency stop when the temperature drops above a threshold (default 10 °C/min). The temperature change is calculated as the difference from the previous data when the temperature is acquired in ThreadLog. If the sign of the difference is negative, the Temperature Drop indicator on the GUI will light up. If the threshold is not exceeded, the PID control continues after the indicator lights up. Note that Emergency stop by TempDrop is not performed in  Slow Temperature Controle mode. 
+
+```mermaid
+flowchart LR
+  id1{"Slow Temperature Contloe mode?"} -- No --> id0{"Temperature Drop?"}
+  id0 -- Yes ---> id2{"Temperature drop above threshold?"}
+  id2-- Yes--> id3("Emegerncy stop")    
+  id2 -- No ---> id1
+  id0 -- No --> id1
+```
+
+The seaquence diagram is shown as the following (same as upper limit diagram).
+```mermaid
+sequenceDiagram
+    mainthread->>threadLog: Run
+    Note over threadLog : Data logging starts
+    mainthread->>threadMVcheck: Run
+    Note over mainthread: PID control
+    threadLog->>mainthread : Temperature drop exceeds the threshold.
+    Note over mainthread, threadTempcheck : Emergency stop is executed.
+    mainthread->>threadMVcheck : Stop
+    Note over threadMVcheck : Quit
+    mainthread->>threadTempcheck : Stop
+    Note over threadTempcheck : Quit
+    mainthread->>mainthread : Stop
+    Note over mainthread : Quit
+    Note over threadLog : Data logging continues after emergency
+```
+
+
 
 ## 4.2. GUI
 ### 4.2.1. Connection to E5CC
