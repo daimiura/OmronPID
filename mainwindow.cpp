@@ -31,7 +31,7 @@ enum E5CC_Address{
 
 enum timing{
     modbus = 100,
-    getTempTimer = 100,
+    getTempTimer = 500,
     clockUpdate = 50,
     timeUp = 1000*60*10,
     timeOut = 700
@@ -64,6 +64,11 @@ MainWindow::MainWindow(QWidget *parent) :
     waitTimer->stop();
     waitTimer->setSingleShot(false);
     connect(waitTimer, SIGNAL(timeout()), this, SLOT(allowSetNextSV()));
+
+    threadTimer_= new QTimer(this);
+    threadTimer_ -> stop();
+    threadTimerInterval_ = 300*1000; //msec
+    connect(threadTimer_, SIGNAL(timeout()), this, SLOT(checkThreads()));
 
     //! helpDialog
     helpDialog = new QDialog(this);
@@ -285,8 +290,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->textEdit_Log->setTextColor(QColor(0,0,0,255));
 
     dateStart_ = QDateTime::currentDateTime();
-
-    //! LogStart
     LogMsgBox_ = new QMessageBox;
 
     pvData.clear();
@@ -313,7 +316,8 @@ MainWindow::~MainWindow()
     clock->stop();
     waitTimer->stop();
     threadMVcheck_->quit();
-    threadMVcheck_->wait();
+    threadLog_->quit();
+    threadTempCheck_->quit();
 
     delete waitTimer;
     delete clock;
@@ -536,6 +540,7 @@ void MainWindow::askTemperature(bool mute){
       ui->lineEdit_TempCheckCount->setText("Exceeded the upper safety limit temperature.");
       return;
     }
+  waitForMSec(200);
   statusAskTemp_ = false;
 }
 
@@ -544,6 +549,7 @@ void MainWindow::askSetPoint(bool mute){
   if(!mute) LogMsg("------ get Set Temperature.");
   read(QModbusDataUnit::HoldingRegisters, E5CC_Address::SV, 2);
   waitTimming();
+  waitForMSec(200);
   statusAskSetPoint_ = false;
 }
 
@@ -553,6 +559,7 @@ void MainWindow::askMV(bool mute){
   if (!mute) LogMsg("------ get Output power.");
   read(QModbusDataUnit::HoldingRegisters, E5CC_Address::MV, 2);
   waitTimming();
+  waitForMSec(200);
   statusAskMV_ = false;
 }
 
@@ -1499,6 +1506,7 @@ void MainWindow::Run(){
   ui->pushButton_Log->setChecked(true);
   ui->checkBoxStatusRun->setChecked(true);
   ui->checkBoxStatusPeriodic->setCheckable(true);
+  threadTimer_->start(threadTimerInterval_);
   statusRun_ = true;
 }
 
@@ -1511,6 +1519,7 @@ void MainWindow::Stop(){
   threadMVcheck_->quit();
   threadLog_->quit();
   threadTempCheck_->quit();
+  threadTimer_->stop();
   countTempCheck_ = 0;
   statusBar()->clearMessage();
   QString cmd = "00 00 01 01";
@@ -1557,6 +1566,7 @@ void MainWindow::Quit(){
   ui->checkBoxStatusSTC->setChecked(false);
   ui->pushButton_RunStop->setChecked(false);
   statusRun_ = false;
+  threadTimer_->stop();
   setColor(3);
 }
 
@@ -1714,7 +1724,7 @@ void MainWindow::periodicWork(){
   muteLog = true;
   if(threadMVcheck_->isRunning()) ui->checkBoxStatusPeriodic->setChecked(true);
   else ui->checkBoxStatusPeriodic->setChecked(false);
-  if (statusAskMV_) waitForMSec(200);
+  if (statusAskMV_) waitForMSec(1000);
   askMV(mute);
   muteLog = false;
   if (MV != MVupper) LogMsg("Current MVpower is below the upper limit.");
@@ -1738,11 +1748,11 @@ void MainWindow::makePlot(){
   muteLog = true;
   if(threadLog_->isRunning()) ui->checkBoxStatusRecord->setChecked(true);
   else ui->checkBoxStatusRecord->setChecked(false);
-  if (statusAskTemp_) waitForMSec(200);
+  if (statusAskTemp_) waitForMSec(1000);
   askTemperature(mute);
-  if (statusAskSetPoint_) waitForMSec(200);
+  if (statusAskSetPoint_) waitForMSec(1000);
   askSetPoint(mute);
-  if (statusAskMV_) waitForMSec(200);
+  if (statusAskMV_) waitForMSec(1000);
   askMV(mute);
   muteLog = false;
   const double setTemperature = ui->lineEdit_SV->text().toDouble();
@@ -1888,5 +1898,38 @@ void MainWindow::setColor(int colorindex){
       this->setPalette(pal);
       this->setAutoFillBackground(false);
       break;
+    }
+}
+
+void MainWindow::checkThreads(){
+    if(!threadMVcheck_->isRunning()) {
+        for (auto i = 0; i < 10; i++){
+            threadMVcheck_->quit();
+            threadMVcheck_->run();
+        }
+    }
+    if(!threadTempCheck_->isRunning()) {
+        for (auto i = 0; i < 10; i++){
+            threadTempCheck_->quit();
+            threadTempCheck_->run();
+        }
+    }
+    if(!threadLog_->isRunning()) {
+        for (auto i = 0; i < 10; i++){
+            threadLog_->quit();
+            threadLog_->run();
+        }
+    }
+    if(!threadMVcheck_->isRunning()){
+        LogMsg("threadMVcheck is something wrong. Emergency stop.");
+        Quit();
+    }
+    if(!threadTempCheck_->isRunning()){
+        LogMsg("threadTempCheck is something wrong. Emergency stop.");
+        Quit();
+    }
+    if(!threadLog_->isRunning()){
+        LogMsg("threadLog is something wrong. Emergency stop.");
+        Quit();
     }
 }
