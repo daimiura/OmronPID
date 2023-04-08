@@ -61,6 +61,7 @@ public slots:
   void periodicWork();
   void makePlot();
   void TempCheck();
+  void checkThreads();
 
 private slots:
     void keyPressEvent(QKeyEvent *key);
@@ -146,6 +147,7 @@ private:
 
     int msgCount;
     int respondType;
+    int threadTimerInterval_;
     QDateTime dateStart_;
     QString dateStartStr_;
 
@@ -176,6 +178,7 @@ private:
 
     QTimer * clock;
     QTimer * waitTimer;
+    QTimer * threadTimer_;
     QString fileName_;
     QString filePath_;
     //QFile output_;
