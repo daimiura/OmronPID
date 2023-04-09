@@ -24,11 +24,16 @@
 #include <qcustomplot.h>
 #include <QElapsedTimer>
 #include <QApplication>
+#include <QCoreApplication>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QFile>
 #include <QGraphicsView>
 #include <QTextStream>
+#include <QtNetwork/QNetworkAccessManager>
+#include <QtNetwork/QNetworkRequest>
+#include <QtNetwork/QNetworkReply>
+#include <QUrlQuery>
 #include "mythread.h"
 #include "configuredialog.h"
 #include "plotdialog.h"
@@ -132,6 +137,9 @@ private slots:
     void setColor(int colorindex = 0);
 
     double calcMovingAve(QVector<double> vtemp);
+
+    void sendLineNotify(const QString& message, const QString& token);
+    void sendLine(const QString& error_message);
 
 private:
     Ui::MainWindow *ui;
