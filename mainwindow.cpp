@@ -1508,6 +1508,8 @@ void MainWindow::Run(){
   ui->checkBoxStatusPeriodic->setCheckable(true);
   threadTimer_->start(threadTimerInterval_);
   statusRun_ = true;
+  QString message = "Running starts.";
+  sendLine(message);
 }
 
 //!
@@ -1536,6 +1538,8 @@ void MainWindow::Stop(){
   ui->lineEdit_TempCheckCount->clear();
   ui->lineEdit_TempCheckCount->setStyleSheet("");
   statusRun_ = false;
+  QString message = "Running stop.";
+  sendLine(message);
 }
 
 /**
@@ -1567,6 +1571,8 @@ void MainWindow::Quit(){
   ui->pushButton_RunStop->setChecked(false);
   statusRun_ = false;
   threadTimer_->stop();
+  QString message = "Emergency Stop!";
+  sendLine(message);
   setColor(3);
 }
 
@@ -1933,3 +1939,29 @@ void MainWindow::checkThreads(){
         Quit();
     }
 }
+
+void MainWindow::sendLineNotify(const QString& message, const QString& token) {
+    QNetworkAccessManager* manager = new QNetworkAccessManager();
+    QNetworkRequest request;
+    QUrl url("https://notify-api.line.me/api/notify");
+    QUrlQuery postData;
+
+    request.setUrl(url);
+    request.setRawHeader("Content-Type", "application/x-www-form-urlencoded");
+    request.setRawHeader("Authorization", QString("Bearer %1").arg(token).toUtf8());
+
+    postData.addQueryItem("message", message);
+    request.setHeader(QNetworkRequest::ContentLengthHeader, postData.toString().length());
+
+    QObject::connect(manager, &QNetworkAccessManager::finished, [=](QNetworkReply* reply) {
+        if (reply->error() != QNetworkReply::NoError) qDebug() << "Error while sending LINE Notify:" << reply->errorString();
+        reply->deleteLater();
+    });
+    manager->post(request, postData.toString().toUtf8());
+}
+
+void MainWindow::sendLine(const QString& message){
+    QString line_token = "9tYexDQw9KHKyJOAI5gIONbXLZgzolIxungdwos5Dyy";
+    sendLineNotify(message, line_token);
+}
+
