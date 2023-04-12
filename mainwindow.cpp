@@ -12,8 +12,8 @@
 
 const QString DESKTOP_PATH = QStandardPaths::locate(QStandardPaths::DesktopLocation, QString(), QStandardPaths::LocateDirectory);
 const QString DATA_PATH_2 = DESKTOP_PATH + "Temp_Record";
-//const QString DATA_PATH = "Z:/triplet/Temp_Record";
-const QString DATA_PATH = "/c/Users/daisuke/OmronPID";
+const QString DATA_PATH = "Z:/triplet/Temp_Record";
+//const QString DATA_PATH = "/c/Users/daisuke/OmronPID";
 
 /** enum E5CC_Address */
 enum E5CC_Address{
@@ -96,6 +96,7 @@ MainWindow::MainWindow(QWidget *parent) :
   //Check Temp Directory, is not exist, create
     QDir myDir;
     myDir.setPath(DATA_PATH);
+    filePath_ = DATA_PATH;
     // if Z:/triplet/Temp_Record does not exist, make directory on desktop.
     if( !myDir.exists()) {
         QMessageBox msgBox;
@@ -103,6 +104,7 @@ MainWindow::MainWindow(QWidget *parent) :
                        "Please set the NAS to be Z:\n"
                        "Data will be saved in Desktop/Temp_Record");
         myDir.mkpath(DATA_PATH_2);
+        filePath_ = DATA_PATH_2;
     }else{
         LogMsg("Data will be saved in : " + DATA_PATH );
     }
@@ -307,7 +309,7 @@ MainWindow::MainWindow(QWidget *parent) :
     statusAskTemp_ = false;
     statusAskSetPoint_ = false;
 
-    ui->lineEdit_DirPath->setText(DATA_PATH_2);
+    ui->lineEdit_DirPath->setText(filePath_);
 }
 MainWindow::~MainWindow()
 {
@@ -810,7 +812,7 @@ void MainWindow::on_pushButton_Control_clicked()
         QString fileName = startTime.toString("yyyyMMdd_HHmmss")
                 + "_tempControl_mode" + QString::number(mode)
                 + "_"  + ui->comboBox_SeriesNumber->currentText() +".dat";
-        QString filePath = DATA_PATH + "/" + fileName;
+        QString filePath = filePath_ + "/" + fileName;
         LogMsg("data save to : " + filePath);
         QFile outfile(filePath);
 
@@ -1050,6 +1052,7 @@ void MainWindow::on_comboBox_AT_currentIndexChanged(int index)
 
 void MainWindow::on_pushButton_Connect_clicked()
 {
+    sendLine("test");
     QString omronPortName = ui->comboBox_SeriesNumber->currentData().toString();
     LogMsg("=========== setting modbus.");
     omronID = ui->spinBox_DeviceAddress->value();
@@ -1210,7 +1213,7 @@ void MainWindow::on_comboBox_MemAddress_currentTextChanged(const QString &arg1)
 
 void MainWindow::on_actionOpen_File_triggered()
 {
-    QString filePath = QFileDialog::getOpenFileName(this, "Open File", DATA_PATH );
+    QString filePath = QFileDialog::getOpenFileName(this, "Open File", filePath_ );
     QFile infile(filePath);
 
     if(infile.open(QIODevice::ReadOnly | QIODevice::Text)) LogMsg("Open File : %s" + filePath);
@@ -1425,6 +1428,7 @@ void MainWindow::setIgnoreEnable(){
 
 void MainWindow::setParametersTempCheck(bool mute){
   if (!configureDialog_->warnigcheck_) return;
+  isSettParametersTempCheck_ = true;
   if (threadMVcheck_->isRunning()) threadMVcheck_->quit();
   if (threadTempCheck_->isRunning()) threadTempCheck_->quit();
   setIntervalAskMV();
@@ -1441,6 +1445,7 @@ void MainWindow::setParametersTempCheck(bool mute){
   }
   threadMVcheck_->start();
   threadTempCheck_->start();
+  isSettParametersTempCheck_ = false;
 }
 
 
@@ -1508,8 +1513,7 @@ void MainWindow::Run(){
   ui->checkBoxStatusPeriodic->setCheckable(true);
   threadTimer_->start(threadTimerInterval_);
   statusRun_ = true;
-  QString message = "Running starts.";
-  sendLine(message);
+  sendLine("Running starts.");
 }
 
 //!
@@ -1538,8 +1542,7 @@ void MainWindow::Stop(){
   ui->lineEdit_TempCheckCount->clear();
   ui->lineEdit_TempCheckCount->setStyleSheet("");
   statusRun_ = false;
-  QString message = "Running stop.";
-  sendLine(message);
+  sendLine("Running stop.");
 }
 
 /**
@@ -1571,8 +1574,7 @@ void MainWindow::Quit(){
   ui->pushButton_RunStop->setChecked(false);
   statusRun_ = false;
   threadTimer_->stop();
-  QString message = "Emergency Stop!";
-  sendLine(message);
+  sendLine("Emergency Stop!");
   setColor(3);
 }
 
@@ -1908,6 +1910,11 @@ void MainWindow::setColor(int colorindex){
 }
 
 void MainWindow::checkThreads(){
+    if(isSettParametersTempCheck_) return;
+    if(!statusRun_){
+        threadTimer_->stop();
+        return;
+    }
     if(!threadMVcheck_->isRunning()) {
         for (auto i = 0; i < 10; i++){
             threadMVcheck_->quit();
