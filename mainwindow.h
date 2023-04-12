@@ -139,7 +139,7 @@ private slots:
     double calcMovingAve(QVector<double> vtemp);
 
     void sendLineNotify(const QString& message, const QString& token);
-    void sendLine(const QString& error_message);
+    void sendLine(const QString& message);
 
 private:
     Ui::MainWindow *ui;
@@ -173,6 +173,7 @@ private:
     bool statusAskMV_;
     bool statusAskSetPoint_;
     bool statusRun_;
+    bool isSettParametersTempCheck_;
 
     QVector<QCPGraphData> pvData;
     QVector<QCPGraphData> svData;
