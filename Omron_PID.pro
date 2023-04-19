@@ -50,3 +50,7 @@ DISTFILES += \
 
 RESOURCES += \
     resource.qrc
+
+OPENSSL_DIR=C:/Qt/Tools/OpenSSL/Win_x64
+LIBS += $${OPENSSL_DIR}/lib/libcrypto.lib
+LIBS += $${OPENSSL_DIR}/lib/libssl.lib

@@ -34,6 +34,7 @@
 #include <QtNetwork/QNetworkRequest>
 #include <QtNetwork/QNetworkReply>
 #include <QUrlQuery>
+#include <QSslSocket>
 #include "mythread.h"
 #include "configuredialog.h"
 #include "plotdialog.h"
