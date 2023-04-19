@@ -70,6 +70,11 @@ MainWindow::MainWindow(QWidget *parent) :
     threadTimerInterval_ = 300*1000; //msec
     connect(threadTimer_, SIGNAL(timeout()), this, SLOT(checkThreads()));
 
+    connectionTimer_= new QTimer(this);
+    connectionTimer_ -> stop();
+    connectionTimerInteral_ = 500*1000; //msec
+    connect(connectionTimer_, SIGNAL(timeout()), this, SLOT(checkConnection()));
+
     //! helpDialog
     helpDialog = new QDialog(this);
     HelpLabel = new QLabel();
@@ -1052,7 +1057,6 @@ void MainWindow::on_comboBox_AT_currentIndexChanged(int index)
 
 void MainWindow::on_pushButton_Connect_clicked()
 {
-    sendLine("test");
     QString omronPortName = ui->comboBox_SeriesNumber->currentData().toString();
     LogMsg("=========== setting modbus.");
     omronID = ui->spinBox_DeviceAddress->value();
@@ -1514,6 +1518,7 @@ void MainWindow::Run(){
   threadTimer_->start(threadTimerInterval_);
   statusRun_ = true;
   sendLine("Running starts.");
+  generateSaveFile();
 }
 
 //!
@@ -1794,6 +1799,7 @@ void MainWindow::writeData(){
   if (!output.exists()){
     output.open(QIODevice::WriteOnly| QIODevice::Text);
     LogMsg(fileName_ + " does not be found. New file was be generated.");
+    generateSaveFile();
   }
   QDateTime date = QDateTime::currentDateTime();
   output.open(QIODevice::Append| QIODevice::Text);
@@ -1945,6 +1951,10 @@ void MainWindow::checkThreads(){
         LogMsg("threadLog is something wrong. Emergency stop.");
         Quit();
     }
+}
+
+void MainWindow::checkConnection(){
+    if(!omron) sendLine("OmronPID.exe has failed to communicate.");
 }
 
 void MainWindow::sendLineNotify(const QString& message, const QString& token) {
