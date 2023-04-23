@@ -292,7 +292,10 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->textEdit_Log->setTextColor(QColor(0,0,0,255));
 
     //! LineNotify
-    connect(omron, &QModbusRtuSerialMaster::stateChanged, sendLineNotifyConnection());
+    connect(omron, &QModbusRtuSerialMaster::stateChanged, [=](QModbusDevice::State state) {
+        sendLineNotifyConnection(omron);
+    });
+
 
     dateStart_ = QDateTime::currentDateTime();
     LogMsgBox_ = new QMessageBox;
