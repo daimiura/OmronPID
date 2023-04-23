@@ -68,7 +68,6 @@ public slots:
   void makePlot();
   void TempCheck();
   void checkThreads();
-  void checkConnection();
 
 private slots:
     void keyPressEvent(QKeyEvent *key);
@@ -142,6 +141,7 @@ private slots:
 
     void sendLineNotify(const QString& message, const QString& token);
     void sendLine(const QString& message);
+    void sendLineNotifyConnection(QModbusRtuSerialMaster * omron);
 
 private:
     Ui::MainWindow *ui;
@@ -191,7 +191,6 @@ private:
     QTimer * clock;
     QTimer * waitTimer;
     QTimer * threadTimer_;
-    QTimer * connectionTimer_;
     QString fileName_;
     QString filePath_;
     //QFile output_;

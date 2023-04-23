@@ -70,11 +70,6 @@ MainWindow::MainWindow(QWidget *parent) :
     threadTimerInterval_ = 300*1000; //msec
     connect(threadTimer_, SIGNAL(timeout()), this, SLOT(checkThreads()));
 
-    connectionTimer_= new QTimer(this);
-    connectionTimer_ -> stop();
-    connectionTimerInteral_ = 500*1000; //msec
-    connect(connectionTimer_, SIGNAL(timeout()), this, SLOT(checkConnection()));
-
     //! helpDialog
     helpDialog = new QDialog(this);
     HelpLabel = new QLabel();
@@ -295,6 +290,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->textEdit_Log->setTextColor(QColor(34,139,34,255));
     LogMsg("The AT and RUN/STOP do not get from the device. Please be careful.");
     ui->textEdit_Log->setTextColor(QColor(0,0,0,255));
+
+    //! LineNotify
+    connect(omron, &QModbusRtuSerialMaster::stateChanged, sendLineNotifyConnection());
 
     dateStart_ = QDateTime::currentDateTime();
     LogMsgBox_ = new QMessageBox;
@@ -1953,10 +1951,6 @@ void MainWindow::checkThreads(){
     }
 }
 
-void MainWindow::checkConnection(){
-    if(!omron) sendLine("OmronPID.exe has failed to communicate.");
-}
-
 void MainWindow::sendLineNotify(const QString& message, const QString& token) {
     QNetworkAccessManager* manager = new QNetworkAccessManager();
     QNetworkRequest request;
@@ -1982,3 +1976,15 @@ void MainWindow::sendLine(const QString& message){
     sendLineNotify(message, line_token);
 }
 
+void MainWindow::sendLineNotifyConnection(QModbusRtuSerialMaster * omron){
+    QModbusDevice::State state = omron->state();
+    switch (state) {
+    case QModbusDevice::UnconnectedState:
+        sendLine("Modbus communication is disconnected.");
+        break;
+    case QModbusDevice::ConnectedState:
+        sendLine("Modbus communication is connected");
+    default:
+        break;
+    }
+}
