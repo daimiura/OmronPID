@@ -20,13 +20,21 @@
 #include <QScrollBar>
 #include <QMutex>
 #include <QMutexLocker>
+#include <QImage>
 #include <qcustomplot.h>
 #include <QElapsedTimer>
 #include <QApplication>
+#include <QCoreApplication>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QFile>
+#include <QGraphicsView>
 #include <QTextStream>
+#include <QtNetwork/QNetworkAccessManager>
+#include <QtNetwork/QNetworkRequest>
+#include <QtNetwork/QNetworkReply>
+#include <QUrlQuery>
+#include <QSslSocket>
 #include "mythread.h"
 #include "configuredialog.h"
 #include "plotdialog.h"
@@ -59,6 +67,8 @@ public slots:
   void periodicWork();
   void makePlot();
   void TempCheck();
+  void checkThreads();
+  void checkConnection();
 
 private slots:
     void keyPressEvent(QKeyEvent *key);
@@ -130,6 +140,9 @@ private slots:
 
     double calcMovingAve(QVector<double> vtemp);
 
+    void sendLineNotify(const QString& message, const QString& token);
+    void sendLine(const QString& message);
+
 private:
     Ui::MainWindow *ui;
     QCustomPlot * plot;
@@ -144,6 +157,8 @@ private:
 
     int msgCount;
     int respondType;
+    int threadTimerInterval_;
+    int connectionTimerInteral_;
     QDateTime dateStart_;
     QString dateStartStr_;
 
@@ -161,6 +176,7 @@ private:
     bool statusAskMV_;
     bool statusAskSetPoint_;
     bool statusRun_;
+    bool isSettParametersTempCheck_;
 
     QVector<QCPGraphData> pvData;
     QVector<QCPGraphData> svData;
@@ -174,6 +190,8 @@ private:
 
     QTimer * clock;
     QTimer * waitTimer;
+    QTimer * threadTimer_;
+    QTimer * connectionTimer_;
     QString fileName_;
     QString filePath_;
     //QFile output_;
@@ -186,6 +204,8 @@ private:
 
     QDialog * helpDialog;
     QLabel * HelpLabel;
+    QGraphicsScene *scene_;
+    QGraphicsView *view;
     PlotDialog * plotDialog_;
     ConfigureDialog * configureDialog_;
     TempDropDialog * tempDropDialog_;

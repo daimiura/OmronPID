@@ -12,8 +12,8 @@
 
 const QString DESKTOP_PATH = QStandardPaths::locate(QStandardPaths::DesktopLocation, QString(), QStandardPaths::LocateDirectory);
 const QString DATA_PATH_2 = DESKTOP_PATH + "Temp_Record";
-//const QString DATA_PATH = "Z:/triplet/Temp_Record";
-const QString DATA_PATH = "/c/Users/daisuke/OmronPID";
+const QString DATA_PATH = "Z:/triplet/Temp_Record";
+//const QString DATA_PATH = "/c/Users/daisuke/OmronPID";
 
 /** enum E5CC_Address */
 enum E5CC_Address{
@@ -31,7 +31,7 @@ enum E5CC_Address{
 
 enum timing{
     modbus = 100,
-    getTempTimer = 100,
+    getTempTimer = 500,
     clockUpdate = 50,
     timeUp = 1000*60*10,
     timeOut = 700
@@ -50,8 +50,8 @@ MainWindow::MainWindow(QWidget *parent) :
     modbusReady = true;
     spinBoxEnable = false;
     muteLog = false;
-    //tempDecimal = 0.1; // for 0.1
-    tempDecimal = 1.0;
+    tempDecimal = 0.1; // for 0.1
+    //tempDecimal = 1.0;
 
     //======= clock
     clock = new QTimer(this);
@@ -65,13 +65,23 @@ MainWindow::MainWindow(QWidget *parent) :
     waitTimer->setSingleShot(false);
     connect(waitTimer, SIGNAL(timeout()), this, SLOT(allowSetNextSV()));
 
+    threadTimer_= new QTimer(this);
+    threadTimer_ -> stop();
+    threadTimerInterval_ = 300*1000; //msec
+    connect(threadTimer_, SIGNAL(timeout()), this, SLOT(checkThreads()));
+
+    connectionTimer_= new QTimer(this);
+    connectionTimer_ -> stop();
+    connectionTimerInteral_ = 500*1000; //msec
+    connect(connectionTimer_, SIGNAL(timeout()), this, SLOT(checkConnection()));
+
     //! helpDialog
     helpDialog = new QDialog(this);
     HelpLabel = new QLabel();
     helpDialog->setWindowTitle("Help");
-    QImage image(":fig1.PNG");
     picNumber = 1;
-    HelpLabel->setPixmap(QPixmap::fromImage(image));
+    QPixmap image(":fig1.PNG");
+    HelpLabel->setPixmap(image);
     QPushButton * next = new QPushButton("Next");
     connect(next, SIGNAL(pressed()) , this, SLOT(HelpPicNext()));
     QVBoxLayout *mainLayout = new QVBoxLayout(helpDialog);
@@ -91,6 +101,7 @@ MainWindow::MainWindow(QWidget *parent) :
   //Check Temp Directory, is not exist, create
     QDir myDir;
     myDir.setPath(DATA_PATH);
+    filePath_ = DATA_PATH;
     // if Z:/triplet/Temp_Record does not exist, make directory on desktop.
     if( !myDir.exists()) {
         QMessageBox msgBox;
@@ -98,6 +109,7 @@ MainWindow::MainWindow(QWidget *parent) :
                        "Please set the NAS to be Z:\n"
                        "Data will be saved in Desktop/Temp_Record");
         myDir.mkpath(DATA_PATH_2);
+        filePath_ = DATA_PATH_2;
     }else{
         LogMsg("Data will be saved in : " + DATA_PATH );
     }
@@ -285,8 +297,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->textEdit_Log->setTextColor(QColor(0,0,0,255));
 
     dateStart_ = QDateTime::currentDateTime();
-
-    //! LogStart
     LogMsgBox_ = new QMessageBox;
 
     pvData.clear();
@@ -304,7 +314,7 @@ MainWindow::MainWindow(QWidget *parent) :
     statusAskTemp_ = false;
     statusAskSetPoint_ = false;
 
-    ui->lineEdit_DirPath->setText(DATA_PATH_2);
+    ui->lineEdit_DirPath->setText(filePath_);
 }
 MainWindow::~MainWindow()
 {
@@ -313,7 +323,8 @@ MainWindow::~MainWindow()
     clock->stop();
     waitTimer->stop();
     threadMVcheck_->quit();
-    threadMVcheck_->wait();
+    threadLog_->quit();
+    threadTempCheck_->quit();
 
     delete waitTimer;
     delete clock;
@@ -536,6 +547,7 @@ void MainWindow::askTemperature(bool mute){
       ui->lineEdit_TempCheckCount->setText("Exceeded the upper safety limit temperature.");
       return;
     }
+  waitForMSec(200);
   statusAskTemp_ = false;
 }
 
@@ -544,6 +556,7 @@ void MainWindow::askSetPoint(bool mute){
   if(!mute) LogMsg("------ get Set Temperature.");
   read(QModbusDataUnit::HoldingRegisters, E5CC_Address::SV, 2);
   waitTimming();
+  waitForMSec(200);
   statusAskSetPoint_ = false;
 }
 
@@ -553,6 +566,7 @@ void MainWindow::askMV(bool mute){
   if (!mute) LogMsg("------ get Output power.");
   read(QModbusDataUnit::HoldingRegisters, E5CC_Address::MV, 2);
   waitTimming();
+  waitForMSec(200);
   statusAskMV_ = false;
 }
 
@@ -803,7 +817,7 @@ void MainWindow::on_pushButton_Control_clicked()
         QString fileName = startTime.toString("yyyyMMdd_HHmmss")
                 + "_tempControl_mode" + QString::number(mode)
                 + "_"  + ui->comboBox_SeriesNumber->currentText() +".dat";
-        QString filePath = DATA_PATH + "/" + fileName;
+        QString filePath = filePath_ + "/" + fileName;
         LogMsg("data save to : " + filePath);
         QFile outfile(filePath);
 
@@ -1203,7 +1217,7 @@ void MainWindow::on_comboBox_MemAddress_currentTextChanged(const QString &arg1)
 
 void MainWindow::on_actionOpen_File_triggered()
 {
-    QString filePath = QFileDialog::getOpenFileName(this, "Open File", DATA_PATH );
+    QString filePath = QFileDialog::getOpenFileName(this, "Open File", filePath_ );
     QFile infile(filePath);
 
     if(infile.open(QIODevice::ReadOnly | QIODevice::Text)) LogMsg("Open File : %s" + filePath);
@@ -1332,19 +1346,30 @@ void MainWindow::on_actionHelp_Page_triggered(){
 
 void MainWindow::HelpPicNext()
 {
-    if( picNumber == 2){
-        QImage image(":fig1.PNG");
-        HelpLabel->setPixmap(QPixmap::fromImage(image));
-        picNumber = 1;
-        return;
-    }
-
-    if( picNumber == 1){
-        QImage image(":fig2.PNG");
-        HelpLabel->setPixmap(QPixmap::fromImage(image));
-        picNumber ++;
-        return;
-    }
+  if( picNumber == 4){
+      QPixmap image(":fig1.PNG");
+      HelpLabel->setPixmap(image);
+      picNumber = 1;
+      return;
+  }
+  if( picNumber == 3){
+      QPixmap image(":fig2.PNG");
+      HelpLabel->setPixmap(image);
+      picNumber++;
+      return;
+  }
+  if( picNumber == 2){
+      QPixmap image(":fig1.PNG");
+      HelpLabel->setPixmap(image);
+      picNumber++;
+      return;
+  }
+  if( picNumber == 1){
+      QPixmap image(":fig2.PNG");
+      HelpLabel->setPixmap(image);
+      picNumber++;
+      return;
+  }
 }
 
 void MainWindow::on_action_Setting_plot_triggered(){
@@ -1407,6 +1432,7 @@ void MainWindow::setIgnoreEnable(){
 
 void MainWindow::setParametersTempCheck(bool mute){
   if (!configureDialog_->warnigcheck_) return;
+  isSettParametersTempCheck_ = true;
   if (threadMVcheck_->isRunning()) threadMVcheck_->quit();
   if (threadTempCheck_->isRunning()) threadTempCheck_->quit();
   setIntervalAskMV();
@@ -1423,6 +1449,7 @@ void MainWindow::setParametersTempCheck(bool mute){
   }
   threadMVcheck_->start();
   threadTempCheck_->start();
+  isSettParametersTempCheck_ = false;
 }
 
 
@@ -1488,7 +1515,10 @@ void MainWindow::Run(){
   ui->pushButton_Log->setChecked(true);
   ui->checkBoxStatusRun->setChecked(true);
   ui->checkBoxStatusPeriodic->setCheckable(true);
+  threadTimer_->start(threadTimerInterval_);
   statusRun_ = true;
+  sendLine("Running starts.");
+  generateSaveFile();
 }
 
 //!
@@ -1500,6 +1530,7 @@ void MainWindow::Stop(){
   threadMVcheck_->quit();
   threadLog_->quit();
   threadTempCheck_->quit();
+  threadTimer_->stop();
   countTempCheck_ = 0;
   statusBar()->clearMessage();
   QString cmd = "00 00 01 01";
@@ -1516,6 +1547,7 @@ void MainWindow::Stop(){
   ui->lineEdit_TempCheckCount->clear();
   ui->lineEdit_TempCheckCount->setStyleSheet("");
   statusRun_ = false;
+  sendLine("Running stop.");
 }
 
 /**
@@ -1546,6 +1578,8 @@ void MainWindow::Quit(){
   ui->checkBoxStatusSTC->setChecked(false);
   ui->pushButton_RunStop->setChecked(false);
   statusRun_ = false;
+  threadTimer_->stop();
+  sendLine("Emergency Stop!");
   setColor(3);
 }
 
@@ -1703,7 +1737,7 @@ void MainWindow::periodicWork(){
   muteLog = true;
   if(threadMVcheck_->isRunning()) ui->checkBoxStatusPeriodic->setChecked(true);
   else ui->checkBoxStatusPeriodic->setChecked(false);
-  if (statusAskMV_) waitForMSec(200);
+  if (statusAskMV_) waitForMSec(1000);
   askMV(mute);
   muteLog = false;
   if (MV != MVupper) LogMsg("Current MVpower is below the upper limit.");
@@ -1727,11 +1761,11 @@ void MainWindow::makePlot(){
   muteLog = true;
   if(threadLog_->isRunning()) ui->checkBoxStatusRecord->setChecked(true);
   else ui->checkBoxStatusRecord->setChecked(false);
-  if (statusAskTemp_) waitForMSec(200);
+  if (statusAskTemp_) waitForMSec(1000);
   askTemperature(mute);
-  if (statusAskSetPoint_) waitForMSec(200);
+  if (statusAskSetPoint_) waitForMSec(1000);
   askSetPoint(mute);
-  if (statusAskMV_) waitForMSec(200);
+  if (statusAskMV_) waitForMSec(1000);
   askMV(mute);
   muteLog = false;
   const double setTemperature = ui->lineEdit_SV->text().toDouble();
@@ -1765,6 +1799,7 @@ void MainWindow::writeData(){
   if (!output.exists()){
     output.open(QIODevice::WriteOnly| QIODevice::Text);
     LogMsg(fileName_ + " does not be found. New file was be generated.");
+    generateSaveFile();
   }
   QDateTime date = QDateTime::currentDateTime();
   output.open(QIODevice::Append| QIODevice::Text);
@@ -1879,3 +1914,71 @@ void MainWindow::setColor(int colorindex){
       break;
     }
 }
+
+void MainWindow::checkThreads(){
+    if(isSettParametersTempCheck_) return;
+    if(!statusRun_){
+        threadTimer_->stop();
+        return;
+    }
+    if(!threadMVcheck_->isRunning()) {
+        for (auto i = 0; i < 10; i++){
+            threadMVcheck_->quit();
+            threadMVcheck_->run();
+        }
+    }
+    if(!threadTempCheck_->isRunning()) {
+        for (auto i = 0; i < 10; i++){
+            threadTempCheck_->quit();
+            threadTempCheck_->run();
+        }
+    }
+    if(!threadLog_->isRunning()) {
+        for (auto i = 0; i < 10; i++){
+            threadLog_->quit();
+            threadLog_->run();
+        }
+    }
+    if(!threadMVcheck_->isRunning()){
+        LogMsg("threadMVcheck is something wrong. Emergency stop.");
+        Quit();
+    }
+    if(!threadTempCheck_->isRunning()){
+        LogMsg("threadTempCheck is something wrong. Emergency stop.");
+        Quit();
+    }
+    if(!threadLog_->isRunning()){
+        LogMsg("threadLog is something wrong. Emergency stop.");
+        Quit();
+    }
+}
+
+void MainWindow::checkConnection(){
+    if(!omron) sendLine("OmronPID.exe has failed to communicate.");
+}
+
+void MainWindow::sendLineNotify(const QString& message, const QString& token) {
+    QNetworkAccessManager* manager = new QNetworkAccessManager();
+    QNetworkRequest request;
+    QUrl url("https://notify-api.line.me/api/notify");
+    QUrlQuery postData;
+
+    request.setUrl(url);
+    request.setRawHeader("Content-Type", "application/x-www-form-urlencoded");
+    request.setRawHeader("Authorization", QString("Bearer %1").arg(token).toUtf8());
+
+    postData.addQueryItem("message", message);
+    request.setHeader(QNetworkRequest::ContentLengthHeader, postData.toString().length());
+
+    QObject::connect(manager, &QNetworkAccessManager::finished, [=](QNetworkReply* reply) {
+        if (reply->error() != QNetworkReply::NoError) qDebug() << "Error while sending LINE Notify:" << reply->errorString();
+        reply->deleteLater();
+    });
+    manager->post(request, postData.toString().toUtf8());
+}
+
+void MainWindow::sendLine(const QString& message){
+    QString line_token = "9tYexDQw9KHKyJOAI5gIONbXLZgzolIxungdwos5Dyy";
+    sendLineNotify(message, line_token);
+}
+

@@ -1,0 +1,14 @@
+release/configuredialog.o
+release/main.o
+release/mainwindow.o
+release/mythread.o
+release/plotdialog.o
+release/qcustomplot.o
+release/tempdropdialog.o
+release/qrc_resource.o
+release/moc_configuredialog.o
+release/moc_mainwindow.o
+release/moc_mythread.o
+release/moc_plotdialog.o
+release/moc_qcustomplot.o
+release/moc_tempdropdialog.o
