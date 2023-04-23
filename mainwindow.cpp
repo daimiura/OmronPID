@@ -1778,12 +1778,14 @@ void MainWindow::makePlot(){
   if (!ui->checkBox_TempDropEnable->isChecked()) return;
   if (isDrop(diff, 1) && countDropCheck_ <= 2) {
       ui->lineEdit_TempCheckCount->setText("Temperature drop is detected.");
+      setColor(4);
       countDropCheck_++;
   } else if (isDrop(diff, 1) && countDropCheck_ > 2) {
       Quit();
       ui->lineEdit_TempCheckCount->setText("The temperature drop has exceeded the threshold.");
   } else {
       countDropCheck_ = 0;
+      setColor(1);
       ui->lineEdit_TempCheckCount->clear();
   }
 }
@@ -1905,6 +1907,13 @@ void MainWindow::setColor(int colorindex){
       this->setPalette(pal);
       this->setAutoFillBackground(false);
       break;
+    case 4: //blue
+      ui->tabWidget->setStyleSheet("background-color: rgb(153, 153, 255)");
+      color = QColor(153, 153, 255, 255);
+      pal.setColor(QPalette::Window, color);
+      this->setAutoFillBackground(true);
+      this->setPalette(pal);
+      this->setAutoFillBackground(false);
     default: //gray
       ui->tabWidget->setStyleSheet("background-color: rgb(215, 214, 213)");
       color = QColor(215, 214, 213, 255);
