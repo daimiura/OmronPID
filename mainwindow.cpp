@@ -53,6 +53,7 @@ MainWindow::MainWindow(QWidget *parent) :
     tempDecimal = 0.1; // for 0.1
     //tempDecimal = 1.0;
 
+
     //======= clock
     clock = new QTimer(this);
     clock->stop();
@@ -69,6 +70,25 @@ MainWindow::MainWindow(QWidget *parent) :
     threadTimer_ -> stop();
     threadTimerInterval_ = 300*1000; //msec
     connect(threadTimer_, SIGNAL(timeout()), this, SLOT(checkThreads()));
+
+    omron = new QModbusRtuSerialMaster(this);
+    connectionTimer_ = new QTimer(this);
+    connect(connectionTimer_, &QTimer::timeout, [this]() {
+        QModbusDevice::State state = omron->state();
+        switch (state) {
+        case QModbusDevice::UnconnectedState:
+            unconnectedNotify();
+            break;
+        case QModbusDevice::ConnectedState:
+            break;
+        default:
+            break;
+        }
+    });
+    connectionTimer_->start(1000); // msec
+
+
+
 
     //! helpDialog
     helpDialog = new QDialog(this);
@@ -290,12 +310,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->textEdit_Log->setTextColor(QColor(34,139,34,255));
     LogMsg("The AT and RUN/STOP do not get from the device. Please be careful.");
     ui->textEdit_Log->setTextColor(QColor(0,0,0,255));
-
-    //! LineNotify
-    connect(omron, &QModbusRtuSerialMaster::stateChanged, [=](QModbusDevice::State state) {
-        sendLineNotifyConnection(omron);
-    });
-
 
     dateStart_ = QDateTime::currentDateTime();
     LogMsgBox_ = new QMessageBox;
@@ -2004,15 +2018,8 @@ void MainWindow::sendLine(const QString& message){
     sendLineNotify(message, line_token);
 }
 
-void MainWindow::sendLineNotifyConnection(QModbusRtuSerialMaster * omron){
-    QModbusDevice::State state = omron->state();
-    switch (state) {
-    case QModbusDevice::UnconnectedState:
-        sendLine("Modbus communication is disconnected.");
-        break;
-    case QModbusDevice::ConnectedState:
-        sendLine("Modbus communication is connected");
-    default:
-        break;
-    }
+void MainWindow::unconnectedNotify(){
+    sendLine("Failed to connection.");
+    Quit();
+    threadLog_->quit();
 }
