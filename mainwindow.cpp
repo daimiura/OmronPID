@@ -65,11 +65,12 @@ MainWindow::MainWindow(QWidget *parent) :
     waitTimer->setSingleShot(false);
     connect(waitTimer, SIGNAL(timeout()), this, SLOT(allowSetNextSV()));
 
+    /*
     threadTimer_= new QTimer(this);
     threadTimer_ -> stop();
     threadTimerInterval_ = 300*1000; //msec
     connect(threadTimer_, SIGNAL(timeout()), this, SLOT(checkThreads()));
-
+*/
     //! helpDialog
     helpDialog = new QDialog(this);
     HelpLabel = new QLabel();
@@ -1404,7 +1405,7 @@ void MainWindow::setIgnoreEnable(){
 }
 
 void MainWindow::setParametersTempCheck(bool mute){
-  if (!configureDialog_->warnigcheck_) return;
+  if (!configureDialog_ -> warnigcheck_) return;
   isSettParametersTempCheck_ = true;
   if (threadMVcheck_->isRunning()) threadMVcheck_->quit();
   if (threadTempCheck_->isRunning()) threadTempCheck_->quit();
@@ -1488,7 +1489,7 @@ void MainWindow::Run(){
   ui->pushButton_Log->setChecked(true);
   ui->checkBoxStatusRun->setChecked(true);
   ui->checkBoxStatusPeriodic->setCheckable(true);
-  threadTimer_->start(threadTimerInterval_);
+  //threadTimer_->start(threadTimerInterval_);
   statusRun_ = true;
   sendLine("Running starts.");
   generateSaveFile();
@@ -1504,7 +1505,7 @@ void MainWindow::Stop(){
   threadMVcheck_->quit();
   threadLog_->quit();
   threadTempCheck_->quit();
-  threadTimer_->stop();
+  //threadTimer_->stop();
   countTempCheck_ = 0;
   statusBar()->clearMessage();
   QString cmd = "00 00 01 01";
@@ -1553,7 +1554,7 @@ void MainWindow::Quit(){
   ui->checkBoxStatusSTC->setChecked(false);
   ui->pushButton_RunStop->setChecked(false);
   statusRun_ = false;
-  threadTimer_->stop();
+  //threadTimer_->stop();
   //connectionTimer_->stop();
   sendLine("Emergency Stop!");
   setColor(3);
@@ -1660,6 +1661,17 @@ void MainWindow::setTextTempDrop(bool enable){
 //!
 void MainWindow::TempCheck(){
   if (countTempCheck_ > ui->lineEdit_Numbers->text().toInt()) countTempCheck_ = 0;
+  if (statusAskMV_) waitForMSec(200);
+  askMV();
+  if (MV < MVupper){
+    countTempCheck_ = 0;
+    vtemp_.clear();
+    setColor(1);
+    ui->checkBoxStautsTempCheck->setChecked(false);
+    threadTempCheck_->quit();
+    return;
+  }
+
   if (statusAskTemp_) waitForMSec(200);
   askTemperature();
   vtemp_.push_back(temperature);
@@ -1699,6 +1711,7 @@ void MainWindow::TempCheck(){
     vtemp_.clear();
     setColor(1);
     ui->checkBoxStautsTempCheck->setChecked(false);
+    threadTempCheck_->quit();
     return;
   }
 }
@@ -1900,6 +1913,7 @@ void MainWindow::setColor(int colorindex){
     }
 }
 
+/*
 void MainWindow::checkThreads(){
     if(isSettParametersTempCheck_) return;
     if(!statusRun_){
@@ -1928,6 +1942,7 @@ void MainWindow::checkThreads(){
         LogMsg("threadMVcheck is something wrong. Emergency stop.");
         Quit();
     }
+
     if(!threadTempCheck_->isRunning()){
         LogMsg("threadTempCheck is something wrong. Emergency stop.");
         Quit();
@@ -1937,6 +1952,7 @@ void MainWindow::checkThreads(){
         Quit();
     }
 }
+*/
 
 void MainWindow::sendLineNotify(const QString& message, const QString& token) {
     QNetworkAccessManager* manager = new QNetworkAccessManager();
