@@ -153,30 +153,6 @@ MainWindow::MainWindow(QWidget *parent) :
     plot->axisRect()->setMargins(QMargins(0,0,100,0));
     plot->replot();
 
-    /*
-    ui->comboBox_Func->addItem("0x00 Invalid", QModbusPdu::Invalid);
-    ui->comboBox_Func->addItem("0x01 Read Coils", QModbusPdu::ReadCoils);
-    ui->comboBox_Func->addItem("0x02 Read Discrte Inputs", QModbusPdu::ReadDiscreteInputs);
-    ui->comboBox_Func->addItem("0x03 Read Holding Registers", QModbusPdu::ReadHoldingRegisters);
-    ui->comboBox_Func->addItem("0x04 Read Input Registers", QModbusPdu::ReadInputRegisters);
-    ui->comboBox_Func->addItem("0x05 Write Single Coil", QModbusPdu::WriteSingleCoil);
-    ui->comboBox_Func->addItem("0x06 Write Single Register", QModbusPdu::WriteSingleRegister);
-    ui->comboBox_Func->addItem("0x07 Read Exception Status", QModbusPdu::ReadExceptionStatus);
-    ui->comboBox_Func->addItem("0x08 Diagonstics", QModbusPdu::Diagnostics);
-    ui->comboBox_Func->addItem("0x0B Get Comm Event Counter", QModbusPdu::GetCommEventCounter);
-    ui->comboBox_Func->addItem("0x0C Get Comm Event Log", QModbusPdu::GetCommEventLog);
-    ui->comboBox_Func->addItem("0x0f Write Multiple Coils", QModbusPdu::WriteMultipleCoils);
-    ui->comboBox_Func->addItem("0x10 Write Multiple Registers", QModbusPdu::WriteMultipleRegisters);
-    ui->comboBox_Func->addItem("0x11 Report Server ID", QModbusPdu::ReportServerId);
-    ui->comboBox_Func->addItem("0x14 Read File Record", QModbusPdu::ReadFileRecord);
-    ui->comboBox_Func->addItem("0x15 Write File Record", QModbusPdu::WriteFileRecord);
-    ui->comboBox_Func->addItem("0x16 Mask Write Register", QModbusPdu::MaskWriteRegister);
-    ui->comboBox_Func->addItem("0x17 Read Write Multiple Registers", QModbusPdu::ReadWriteMultipleRegisters);
-    ui->comboBox_Func->addItem("0x18 Read Fifo Queue", QModbusPdu::ReadFifoQueue);
-    ui->comboBox_Func->addItem("0x2B Encapsulated Interface Transport", QModbusPdu::EncapsulatedInterfaceTransport);
-    ui->comboBox_Func->addItem("0x100 Undefined Function Code", QModbusPdu::UndefinedFunctionCode);
-    */
-
     comboxEnable = false;
     ui->comboBox_AT->addItem("AT cancel");
     ui->comboBox_AT->addItem("100% AT execute");
@@ -219,7 +195,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->comboBox_MemAddress->addItem("0x0702 (opt) Prop. band "             , 0x0702);
     ui->comboBox_MemAddress->addItem("0x0704 (opt) Inte. time "             , 0x0704);
     ui->comboBox_MemAddress->addItem("0x0706 (opt) deri. time "             , 0x0706);
-
     ui->comboBox_MemAddress->addItem("0x071E (adj) MV at stop "             , 0x071E);
     ui->comboBox_MemAddress->addItem("0x0722 (adj) MV at PV Error "         , 0x0722);
     //! modified "0x0A0A -> ""0x0A00" in part of the  first argument in addItem function @ 2023/2/27 by Daisuke Miura.
@@ -229,7 +204,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->comboBox_MemAddress->addItem("0x0A04 (adj) deri. time "             , 0x0A04);
     ui->comboBox_MemAddress->addItem("0x0A0A (adj) MV upper limit "         , 0x0A0A);
     ui->comboBox_MemAddress->addItem("0x0A0C (adj) MV lower limit "         , 0x0A0C);
-
     ui->comboBox_MemAddress->addItem("0x0710 (ini) Ctrl. period heating "   , 0x0710);
     ui->comboBox_MemAddress->addItem("0x0712 (ini) Ctrl. period cooling "   , 0x0712);
     ui->comboBox_MemAddress->addItem("0x0D06 (ini) Ctrl. output 1 current " , 0x0D06);
@@ -239,12 +213,10 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->comboBox_MemAddress->addItem("0x0D22 (ini) Std heating/cooling "    , 0x0D22);
     ui->comboBox_MemAddress->addItem("0x0D24 (ini) Direct/Reverse opt. "    , 0x0D24);
     ui->comboBox_MemAddress->addItem("0x0D28 (ini) PID on/off "             , 0x0D28);
-
     ui->comboBox_MemAddress->addItem("0x0500 (protect) Opt/Adj protect "       , 0x0500);
     ui->comboBox_MemAddress->addItem("0x0502 (protect) Init/Comm protect "     , 0x0502);
     ui->comboBox_MemAddress->addItem("0x0504 (protect) Setting Chg. protect "  , 0x0504);
     ui->comboBox_MemAddress->addItem("0x0506 (protect) PF key protect "        , 0x0506);
-
     ui->comboBox_MemAddress->addItem("0x0E0C (adv) Ctrl. output 1 Assignment "   , 0x0E0C);
     ui->comboBox_MemAddress->addItem("0x0E0E (adv) Ctrl. output 2 Assignment "   , 0x0E0E);
     ui->comboBox_MemAddress->addItem("0x0E20 (adv) Aux. output 1 Assignment "    , 0x0E20);
@@ -292,23 +264,10 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->textEdit_Log->setTextColor(QColor(0,0,0,255));
 
 
-    connectionTimer_ = new QTimer(this);
     QSerialPort *serial = new QSerialPort(this);
-    foreach(const QSerialPortInfo &port, QSerialPortInfo::availablePorts()) {
-        if (port.portName().startsWith("COM") && port.isBusy() == false) {
-            serial->setPort(port);
-            if (serial->open(QIODevice::ReadWrite)) {
-                connect(serial, &QSerialPort::errorOccurred, [this, serial]() {
-                    if (serial->error() == QSerialPort::ResourceError) sendLineNotifyConnection();
-                });
-            }
-        }
-    }
-
-
-
-
-
+    connect(serial, &QSerialPort::errorOccurred, [this, serial]() {
+        if (serial->error() == QSerialPort::ResourceError) sendLineNotifyConnection();
+    });
 
     dateStart_ = QDateTime::currentDateTime();
     LogMsgBox_ = new QMessageBox;
@@ -1533,7 +1492,7 @@ void MainWindow::Run(){
   statusRun_ = true;
   sendLine("Running starts.");
   generateSaveFile();
-  connectionTimer_->start(1000);
+  //connectionTimer_->start(1000);
 }
 
 //!

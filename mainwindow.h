@@ -158,7 +158,7 @@ private:
     int msgCount;
     int respondType;
     int threadTimerInterval_;
-    int connectionTimerInteral_;
+    //int connectionTimerInteral_;
     QDateTime dateStart_;
     QString dateStartStr_;
 
@@ -191,7 +191,7 @@ private:
     QTimer * clock;
     QTimer * waitTimer;
     QTimer * threadTimer_;
-    QTimer * connectionTimer_;
+    //QTimer * connectionTimer_;
     QString fileName_;
     QString filePath_;
     //QFile output_;
