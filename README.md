@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 - [1. Source code \& Contents](#1-source-code--contents)
 - [2. branches](#2-branches)
   - [2.1. main](#21-main)
@@ -281,4 +280,3 @@ The background color changes according to the situation to make the problem visi
 |Running|Green|
 |TempCheck mode|Yellow|
 |Emergency Stop|Red|
->>>>>>> origin/main
