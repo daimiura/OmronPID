@@ -88,6 +88,8 @@ MainWindow::MainWindow(QWidget *parent) :
     plotDialog_ = new PlotDialog(this);
     plotDialog_->setWindowTitle("Setting for Plot");
 
+
+
     /*
     //! configure for TempDrop
     tempDropDialog_ = new TempDropDialog(this);
@@ -230,6 +232,9 @@ MainWindow::MainWindow(QWidget *parent) :
     configureDialog_ = new ConfigureDialog(this);
     configureDialog_->setWindowTitle("Configure");
     connect(configureDialog_->pushButton_SetParameters_, SIGNAL(clicked(bool)), this, SLOT(setParametersTempCheck()) );
+
+    joinDialog_ = new JoinDialog(this);
+    joinDialog_->setWindowTitle("Join LINE talk");
 
     setIntervalAskMV();
     setIntervalAskTemp();
@@ -1318,6 +1323,8 @@ void MainWindow::on_actionHelp_Page_triggered(){
     if( helpDialog->isHidden() ) helpDialog->show();
 }
 
+
+
 void MainWindow::HelpPicNext()
 {
   if( picNumber == 4){
@@ -1352,6 +1359,10 @@ void MainWindow::on_action_Setting_plot_triggered(){
 
 void MainWindow::on_action_Setting_parameters_for_TempCheck_triggered(){
   if(configureDialog_->isHidden()) configureDialog_->show();
+}
+
+void MainWindow::on_action_Join_LINE_talk_triggered(){
+  if(joinDialog_->isHidden()) joinDialog_->show();
 }
 
 /*

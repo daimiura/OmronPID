@@ -39,6 +39,7 @@
 #include "configuredialog.h"
 #include "plotdialog.h"
 #include "tempdropdialog.h"
+#include "joindialog.h"
 
 //!
 //! \namespace Ui
@@ -67,7 +68,7 @@ public slots:
   void periodicWork();
   void makePlot();
   void TempCheck();
-  void checkThreads();
+  //void checkThreads();
 
 private slots:
     void keyPressEvent(QKeyEvent *key);
@@ -118,6 +119,7 @@ private slots:
     void on_actionOpen_File_triggered();
     void on_action_Setting_parameters_for_TempCheck_triggered();
     void on_action_Setting_plot_triggered();
+    void on_action_Join_LINE_talk_triggered();
     //void on_action_Setting_Temperature_Drop_triggered();
     void on_actionHelp_Page_triggered();
     void HelpPicNext();
@@ -209,6 +211,7 @@ private:
     PlotDialog * plotDialog_;
     ConfigureDialog * configureDialog_;
     TempDropDialog * tempDropDialog_;
+    JoinDialog * joinDialog_;
     int picNumber;
     QMutex mutex_;
     //! Counter that TempCheck was executed.

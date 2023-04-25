@@ -27,6 +27,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     configuredialog.cpp \
+    joindialog.cpp \
         main.cpp \
         mainwindow.cpp \
     mythread.cpp \
@@ -36,6 +37,7 @@ SOURCES += \
 
 HEADERS += \
     configuredialog.h \
+    joindialog.h \
         mainwindow.h \
     mythread.h \
     plotdialog.h \
@@ -50,6 +52,7 @@ DISTFILES += \
 
 RESOURCES += \
     resource.qrc
+
 
 OPENSSL_DIR=C:/Qt/Tools/OpenSSL/Win_x64
 LIBS += $${OPENSSL_DIR}/lib/libcrypto.lib
