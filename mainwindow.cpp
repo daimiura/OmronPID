@@ -291,10 +291,23 @@ MainWindow::MainWindow(QWidget *parent) :
     LogMsg("The AT and RUN/STOP do not get from the device. Please be careful.");
     ui->textEdit_Log->setTextColor(QColor(0,0,0,255));
 
-    //! LineNotify
-    connect(omron, &QModbusRtuSerialMaster::stateChanged, [=](QModbusDevice::State state) {
-        sendLineNotifyConnection(omron);
+    omron = new QModbusRtuSerialMaster(this);
+    connectionTimer_ = new QTimer(this);
+    connect(connectionTimer_, &QTimer::timeout, [this]() {
+        QModbusDevice::State state = omron->state(); // omronの宣言がラムダ式の外側にある場合
+        switch (state) {
+        case QModbusDevice::UnconnectedState:
+            sendLineNotifyConnection();
+            break;
+        case QModbusDevice::ConnectedState:
+            break;
+        default:
+            break;
+        }
     });
+    connectionTimer_->start(1000); // msec
+
+
 
 
     dateStart_ = QDateTime::currentDateTime();
@@ -1988,15 +2001,9 @@ void MainWindow::sendLine(const QString& message){
     sendLineNotify(message, line_token);
 }
 
-void MainWindow::sendLineNotifyConnection(QModbusRtuSerialMaster * omron){
-    QModbusDevice::State state = omron->state();
-    switch (state) {
-    case QModbusDevice::UnconnectedState:
-        sendLine("Modbus communication is disconnected.");
-        break;
-    case QModbusDevice::ConnectedState:
-        sendLine("Modbus communication is connected");
-    default:
-        break;
-    }
+void MainWindow::sendLineNotifyConnection(){
+    sendLine("Modbus communication is disconnected.");
+    Quit();
+    threadLog_->quit();
 }
+
