@@ -1522,7 +1522,7 @@ void MainWindow::Stop(){
   ui->lineEdit_TempCheckCount->setStyleSheet("");
   statusRun_ = false;
   sendLine("Running stop.");
-  connectionTimer_->stop();
+  //connectionTimer_->stop();
 }
 
 /**
@@ -1554,7 +1554,7 @@ void MainWindow::Quit(){
   ui->pushButton_RunStop->setChecked(false);
   statusRun_ = false;
   threadTimer_->stop();
-  connectionTimer_->stop();
+  //connectionTimer_->stop();
   sendLine("Emergency Stop!");
   setColor(3);
 }
