@@ -53,7 +53,6 @@ MainWindow::MainWindow(QWidget *parent) :
     tempDecimal = 0.1; // for 0.1
     //tempDecimal = 1.0;
 
-
     //======= clock
     clock = new QTimer(this);
     clock->stop();
@@ -70,25 +69,6 @@ MainWindow::MainWindow(QWidget *parent) :
     threadTimer_ -> stop();
     threadTimerInterval_ = 300*1000; //msec
     connect(threadTimer_, SIGNAL(timeout()), this, SLOT(checkThreads()));
-
-    omron = new QModbusRtuSerialMaster(this);
-    connectionTimer_ = new QTimer(this);
-    connect(connectionTimer_, &QTimer::timeout, [this]() {
-        QModbusDevice::State state = omron->state();
-        switch (state) {
-        case QModbusDevice::UnconnectedState:
-            unconnectedNotify();
-            break;
-        case QModbusDevice::ConnectedState:
-            break;
-        default:
-            break;
-        }
-    });
-    connectionTimer_->start(1000); // msec
-
-
-
 
     //! helpDialog
     helpDialog = new QDialog(this);
@@ -310,6 +290,25 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->textEdit_Log->setTextColor(QColor(34,139,34,255));
     LogMsg("The AT and RUN/STOP do not get from the device. Please be careful.");
     ui->textEdit_Log->setTextColor(QColor(0,0,0,255));
+
+    omron = new QModbusRtuSerialMaster(this);
+    connectionTimer_ = new QTimer(this);
+    connect(connectionTimer_, &QTimer::timeout, [this]() {
+        QModbusDevice::State state = omron->state(); // omronの宣言がラムダ式の外側にある場合
+        switch (state) {
+        case QModbusDevice::UnconnectedState:
+            sendLineNotifyConnection();
+            break;
+        case QModbusDevice::ConnectedState:
+            break;
+        default:
+            break;
+        }
+    });
+    connectionTimer_->start(1000); // msec
+
+
+
 
     dateStart_ = QDateTime::currentDateTime();
     LogMsgBox_ = new QMessageBox;
@@ -560,8 +559,6 @@ void MainWindow::askTemperature(bool mute){
   if (temperature >= ui->spinBox_TempUpper->value()) {
       Quit();
       ui->lineEdit_TempCheckCount->setText("Exceeded the upper safety limit temperature.");
-      ui->textEdit_Log->setTextColor(QColor(255,0,0,255));
-      LogMsg("Exceeded the upper safety limit temperature.");
       return;
     }
   waitForMSec(200);
@@ -1532,7 +1529,6 @@ void MainWindow::Run(){
   ui->pushButton_Log->setChecked(true);
   ui->checkBoxStatusRun->setChecked(true);
   ui->checkBoxStatusPeriodic->setCheckable(true);
-  countTempCheck_ = 0;
   threadTimer_->start(threadTimerInterval_);
   statusRun_ = true;
   sendLine("Running starts.");
@@ -1702,23 +1698,13 @@ void MainWindow::setTextTempDrop(bool enable){
 //!
 void MainWindow::TempCheck(){
   if (countTempCheck_ > ui->lineEdit_Numbers->text().toInt()) countTempCheck_ = 0;
-  if (statusAskMV_) waitForMSec(200);
-  askMV();
-  if (MV < MVupper){
-      countTempCheck_ = 0;
-      vtemp_.clear();
-      setColor(1);
-      ui->checkBoxStautsTempCheck->setChecked(false);
-      threadTempCheck_->quit();
-      threadMVcheck_->start();
-      return;
-  }
   if (statusAskTemp_) waitForMSec(200);
   askTemperature();
   vtemp_.push_back(temperature);
   if (statusAskSetPoint_) waitForMSec(200);
   askSetPoint();
-  bool continue0 = isIgnore(ui->checkBox_Ignore->isChecked(), SV);
+  double targetvalue = SV;
+  bool continue0 = isIgnore(ui->checkBox_Ignore->isChecked(), targetvalue);
   if (!continue0) return;
   ui->checkBoxStautsTempCheck->setChecked(true);
   ui->lineEdit_TempCheckCount->setStyleSheet("background-color:yellow; color:red;selection-background-color:red;");
@@ -1751,8 +1737,6 @@ void MainWindow::TempCheck(){
     vtemp_.clear();
     setColor(1);
     ui->checkBoxStautsTempCheck->setChecked(false);
-    threadTempCheck_ -> quit();
-    threadMVcheck_->start();
     return;
   }
 }
@@ -1960,7 +1944,6 @@ void MainWindow::checkThreads(){
         threadTimer_->stop();
         return;
     }
-
     if(!threadMVcheck_->isRunning()) {
         for (auto i = 0; i < 10; i++){
             threadMVcheck_->quit();
@@ -2018,8 +2001,9 @@ void MainWindow::sendLine(const QString& message){
     sendLineNotify(message, line_token);
 }
 
-void MainWindow::unconnectedNotify(){
-    sendLine("Failed to connection.");
+void MainWindow::sendLineNotifyConnection(){
+    sendLine("Modbus communication is disconnected.");
     Quit();
     threadLog_->quit();
 }
+

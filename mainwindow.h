@@ -141,6 +141,7 @@ private slots:
 
     void sendLineNotify(const QString& message, const QString& token);
     void sendLine(const QString& message);
+    void sendLineNotifyConnection();
 
 private:
     Ui::MainWindow *ui;
