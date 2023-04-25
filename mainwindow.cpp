@@ -291,21 +291,21 @@ MainWindow::MainWindow(QWidget *parent) :
     LogMsg("The AT and RUN/STOP do not get from the device. Please be careful.");
     ui->textEdit_Log->setTextColor(QColor(0,0,0,255));
 
-    omron = new QModbusRtuSerialMaster(this);
+
     connectionTimer_ = new QTimer(this);
-    connect(connectionTimer_, &QTimer::timeout, [this]() {
-        QModbusDevice::State state = omron->state(); // omronの宣言がラムダ式の外側にある場合
-        switch (state) {
-        case QModbusDevice::UnconnectedState:
-            sendLineNotifyConnection();
-            break;
-        case QModbusDevice::ConnectedState:
-            break;
-        default:
-            break;
+    QSerialPort *serial = new QSerialPort(this);
+    foreach(const QSerialPortInfo &port, QSerialPortInfo::availablePorts()) {
+        if (port.portName().startsWith("COM") && port.isBusy() == false) {
+            serial->setPort(port);
+            if (serial->open(QIODevice::ReadWrite)) {
+                connect(serial, &QSerialPort::errorOccurred, [this, serial]() {
+                    if (serial->error() == QSerialPort::ResourceError) sendLineNotifyConnection();
+                });
+            }
         }
-    });
-    connectionTimer_->start(1000); // msec
+    }
+
+
 
 
 
@@ -1533,6 +1533,7 @@ void MainWindow::Run(){
   statusRun_ = true;
   sendLine("Running starts.");
   generateSaveFile();
+  connectionTimer_->start(1000);
 }
 
 //!
@@ -1562,6 +1563,7 @@ void MainWindow::Stop(){
   ui->lineEdit_TempCheckCount->setStyleSheet("");
   statusRun_ = false;
   sendLine("Running stop.");
+  connectionTimer_->stop();
 }
 
 /**
@@ -1593,6 +1595,7 @@ void MainWindow::Quit(){
   ui->pushButton_RunStop->setChecked(false);
   statusRun_ = false;
   threadTimer_->stop();
+  connectionTimer_->stop();
   sendLine("Emergency Stop!");
   setColor(3);
 }
