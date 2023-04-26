@@ -4,20 +4,16 @@
   - [2.2. 2023Qt6\_branch](#22-2023qt6_branch)
 - [3. Getting started](#3-getting-started)
   - [3.1. Qt Installation](#31-qt-installation)
-  - [3.2. Setting E5CC](#32-setting-e5cc)
-=======
-Table of Contents
-- [1. Source code \& Contents](#1-source-code--contents)
-- [2. branches](#2-branches)
-  - [2.1. main](#21-main)
+- [For example, we will create a Qt directory under the C directory and install it there.ã€€For example, we will create a Qt directory under the C directory and install it there.](#for-example-we-will-create-a-qt-directory-under-the-c-directory-and-install-it-therefor-example-we-will-create-a-qt-directory-under-the-c-directory-and-install-it-there)
   - [2.2. 2023\_Qt6](#22-2023_qt6)
-- [3. Getting started](#3-getting-started)
+- [3. Getting started](#3-getting-started-1)
   - [3.1. Setting E5CC](#31-setting-e5cc)
     - [3.1.1. Input type](#311-input-type)
     - [3.1.2. To communicate](#312-to-communicate)
     - [3.1.3. Summary of setting items](#313-summary-of-setting-items)
   - [3.2. .exe user](#32-exe-user)
   - [3.3. Qt user](#33-qt-user)
+  - [3.2. Setting E5CC](#32-setting-e5cc)
 - [4. OmronPID.exe](#4-omronpidexe)
   - [4.1. Processing for safety](#41-processing-for-safety)
     - [4.1.1. TempCheck mode](#411-tempcheck-mode)
@@ -135,6 +131,8 @@ Qt Creator is useful for designing GUI, so Qt Creator should also be installed.ã
   - Debugging Tools for Windows
   - CMake 3.24.2
   - Ninja 1.10.2
+  - OpenSSL 1.1.1q Toolkit
+  - OpenSSL 3.0.8 Toolkit
 - Qt Maintenance Tool
 <<<<<<< HEAD
 
