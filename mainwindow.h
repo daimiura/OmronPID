@@ -69,6 +69,7 @@ public slots:
   void makePlot();
   void TempCheck();
   //void checkThreads();
+  void checkConnection();
 
 private slots:
     void keyPressEvent(QKeyEvent *key);
@@ -144,11 +145,14 @@ private slots:
     void sendLineNotify(const QString& message, const QString& token);
     void sendLine(const QString& message);
     void sendLineNotifyConnection();
+    void onStateChanged(QModbusDevice::State state);
+    //void onSerialError(QSerialPort::SerialPortError error);
 
 private:
     Ui::MainWindow *ui;
     QCustomPlot * plot;
     QModbusRtuSerialMaster * omron;
+    QSerialPort *serial;
     MyThread * threadMVcheck_;
     MyThread * threadLog_;
     MyThread * threadTempCheck_;
@@ -160,6 +164,7 @@ private:
     int msgCount;
     int respondType;
     int threadTimerInterval_;
+    int checkTimerInterval_ = 5000;
     //int connectionTimerInteral_;
     QDateTime dateStart_;
     QString dateStartStr_;
@@ -193,6 +198,7 @@ private:
     QTimer * clock;
     QTimer * waitTimer;
     QTimer * threadTimer_;
+    QTimer * checkTimer_;
     //QTimer * connectionTimer_;
     QString fileName_;
     QString filePath_;

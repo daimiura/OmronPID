@@ -53,6 +53,7 @@ MainWindow::MainWindow(QWidget *parent) :
     tempDecimal = 0.1; // for 0.1
     //tempDecimal = 1.0;
 
+
     //======= clock
     clock = new QTimer(this);
     clock->stop();
@@ -65,12 +66,47 @@ MainWindow::MainWindow(QWidget *parent) :
     waitTimer->setSingleShot(false);
     connect(waitTimer, SIGNAL(timeout()), this, SLOT(allowSetNextSV()));
 
+    checkTimer_ = new QTimer(this);
+    checkTimer_->stop();
+    connect(checkTimer_, SIGNAL(timeout()), this, SLOT(checkConnection()));
+    omron = new QModbusRtuSerialMaster(this);
+    connect(omron, &QModbusDevice::stateChanged, this, &MainWindow::onStateChanged);
+    bool isConnected = connect(omron, &QModbusDevice::stateChanged, this, &MainWindow::onStateChanged);
+
+    QSerialPortInfo serialInfo;
+    foreach (const QSerialPortInfo &info, QSerialPortInfo::availablePorts()) {
+        serialInfo = info;
+        break;
+    }
+
+    serial = new QSerialPort(serialInfo);
+    serial->setBaudRate(QSerialPort::Baud9600);
+
+    connect(serial, &QSerialPort::errorOccurred, [this](QSerialPort::SerialPortError error) {
+        if (error == QSerialPort::ResourceError) {
+            sendLine("USBが切断されました。");
+            qDebug() << "大変だ";
+        }
+    });
+
+    if (serial->open(QIODevice::ReadWrite)) {
+        // シリアルポートを正常に開けた場合の処理
+    } else {
+        qDebug() << "シリアルポートを開けませんでした";
+    }
+
+
+
+
     /*
     threadTimer_= new QTimer(this);
     threadTimer_ -> stop();
     threadTimerInterval_ = 300*1000; //msec
     connect(threadTimer_, SIGNAL(timeout()), this, SLOT(checkThreads()));
 */
+
+
+
     //! helpDialog
     helpDialog = new QDialog(this);
     HelpLabel = new QLabel();
@@ -268,12 +304,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->textEdit_Log->setTextColor(QColor(34,139,34,255));
     LogMsg("The AT and RUN/STOP do not get from the device. Please be careful.");
     ui->textEdit_Log->setTextColor(QColor(0,0,0,255));
-
-
-    QSerialPort *serial = new QSerialPort(this);
-    connect(serial, &QSerialPort::errorOccurred, [this, serial]() {
-        if (serial->error() == QSerialPort::ResourceError) sendLineNotifyConnection();
-    });
 
     dateStart_ = QDateTime::currentDateTime();
     LogMsgBox_ = new QMessageBox;
@@ -1504,7 +1534,7 @@ void MainWindow::Run(){
   statusRun_ = true;
   sendLine("Running starts.");
   generateSaveFile();
-  //connectionTimer_->start(1000);
+  checkTimer_->start(5000);
 }
 
 //!
@@ -1534,6 +1564,7 @@ void MainWindow::Stop(){
   ui->lineEdit_TempCheckCount->setStyleSheet("");
   statusRun_ = false;
   sendLine("Running stop.");
+  checkTimer_->stop();
   //connectionTimer_->stop();
 }
 
@@ -1913,6 +1944,7 @@ void MainWindow::setColor(int colorindex){
       this->setAutoFillBackground(true);
       this->setPalette(pal);
       this->setAutoFillBackground(false);
+      break;
     default: //gray
       ui->tabWidget->setStyleSheet("background-color: rgb(215, 214, 213)");
       color = QColor(215, 214, 213, 255);
@@ -1996,3 +2028,21 @@ void MainWindow::sendLineNotifyConnection(){
     threadLog_->quit();
 }
 
+void MainWindow::checkConnection() {
+    if (omron->state() == QModbusDevice::ConnectedState) {
+        //sendLine("接続中です。");
+        qDebug() << "接続中です。" ;
+    } else {
+        sendLine("切断されました。");
+        qDebug() << "切断。" ;
+    }
+}
+
+void MainWindow::onStateChanged(QModbusDevice::State state)
+{
+    if (state == QModbusDevice::ConnectedState) {
+        sendLine("connected");
+    } else {
+        sendLine("disconnected");
+    }
+}
