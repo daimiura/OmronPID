@@ -29,6 +29,9 @@ SOURCES += \
     configuredialog.cpp \
         main.cpp \
         mainwindow.cpp \
+    mycombobox.cpp \
+    mypushbbutton.cpp \
+    myradiobuttton.cpp \
     mythread.cpp \
     plotdialog.cpp \
     qcustomplot.cpp \
@@ -37,6 +40,9 @@ SOURCES += \
 HEADERS += \
     configuredialog.h \
         mainwindow.h \
+    mycombobox.h \
+    mypushbbutton.h \
+    myradiobuttton.h \
     mythread.h \
     plotdialog.h \
     qcustomplot.h \
