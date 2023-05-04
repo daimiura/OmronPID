@@ -7,6 +7,8 @@
 //! To improve safety, functions were added to check if the temperature was rising and to detect unexpected sudden temperature drops.
 //! The GUI was also modified to set the necessary parameters for these functions.
 //!
+//!
+#include "communication.h"
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
@@ -15,27 +17,10 @@ const QString DATA_PATH_2 = DESKTOP_PATH + "Temp_Record";
 const QString DATA_PATH = "Z:/triplet/Temp_Record";
 //const QString DATA_PATH = "/c/Users/daisuke/OmronPID";
 
-/** enum E5CC_Address */
-enum E5CC_Address{
-    // QByteArray::fromHex(QString::number(E5CC_Address::setPoint, 16).toStdString().c_str()
-    PV = 0x0000, /** Get Temperature */
-    MV= 0x0008, /** Get output power */
-    SV = 0x0106,/** Get set value */
-    MVupper = 0x0A0A, /** Get putput upper */
-    MVlower = 0x0A0C, /** Get output lower */
 
-    PID_P=0x0A00, /** Get Proportional */
-    PID_I=0x0A02, /** Get Integration */
-    PID_D=0x0A04 /** Get Difference */
-};
 
-enum timing{
-    modbus = 100,
-    getTempTimer = 500,
-    clockUpdate = 50,
-    timeUp = 1000*60*10,
-    timeOut = 700
-};
+
+
 
 //TODO nicer time display on LogMsg
 
@@ -44,13 +29,28 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    com_ = new Communication(this, ui->statusBar);
+    addPortName(com_->getSerialPortDevices());
+
+    connect(com_, &Communication::temperatureUpdated, this, &MainWindow::updateTemperature);
+    connect(com_, &Communication::SVUpdated, this, &MainWindow::updateSV);
+    connect(com_, &Communication::MVUpdated, this, &MainWindow::updateMV);
+    connect(com_, &Communication::MVupperUpdated, this, &MainWindow::updateMVupper);
+    connect(com_, &Communication::MVlowerUpdated, this, &MainWindow::updateMVlower);
+    connect(com_, &Communication::PID_PUpdated, this, &MainWindow::updatePID_P);
+    connect(com_, &Communication::PID_IUpdated, this, &MainWindow::updatePID_I);
+    connect(com_, &Communication::PID_DUpdated, this, &MainWindow::updatePID_D);
+    connect(com_, &Communication::deviceConnect, this, &MainWindow::connectDevice);
+
+    timing_ = com_->timing::clockUpdate;
+
     msgCount = 0;
     tempControlOnOff = false;
     tempRecordOnOff = false;
-    modbusReady = true;
+    //modbusReady = true;
     spinBoxEnable = false;
     muteLog = false;
-    tempDecimal = 0.1; // for 0.1
+    //tempDecimal = 0.1; // for 0.1
     //tempDecimal = 1.0;
 
 
@@ -71,22 +71,7 @@ MainWindow::MainWindow(QWidget *parent) :
     threadTimerInterval_ = 300*1000; //msec
     connect(threadTimer_, SIGNAL(timeout()), this, SLOT(checkThreads()));
 
-    omron = new QModbusRtuSerialMaster(this);
-    connectionTimer_ = new QTimer(this);
-    connect(connectionTimer_, &QTimer::timeout, [this]() {
-        QModbusDevice::State state = omron->state();
-        switch (state) {
-        case QModbusDevice::UnconnectedState:
-            unconnectedNotify();
-            break;
-        case QModbusDevice::ConnectedState:
-            break;
-        default:
-            break;
-        }
-    });
-    connectionTimer_->start(1000); // msec
-
+//    omron = new QModbusRtuSerialMaster(this);
 
 
 
@@ -106,12 +91,6 @@ MainWindow::MainWindow(QWidget *parent) :
     //! plotDialog
     plotDialog_ = new PlotDialog(this);
     plotDialog_->setWindowTitle("Setting for Plot");
-
-    /*
-    //! configure for TempDrop
-    tempDropDialog_ = new TempDropDialog(this);
-    tempDropDialog_->setWindowTitle("Setting for TempDrop mode");
-    */
 
   //Check Temp Directory, is not exist, create
     QDir myDir;
@@ -173,30 +152,6 @@ MainWindow::MainWindow(QWidget *parent) :
     plot->axisRect()->setMargins(QMargins(0,0,100,0));
     plot->replot();
 
-    /*
-    ui->comboBox_Func->addItem("0x00 Invalid", QModbusPdu::Invalid);
-    ui->comboBox_Func->addItem("0x01 Read Coils", QModbusPdu::ReadCoils);
-    ui->comboBox_Func->addItem("0x02 Read Discrte Inputs", QModbusPdu::ReadDiscreteInputs);
-    ui->comboBox_Func->addItem("0x03 Read Holding Registers", QModbusPdu::ReadHoldingRegisters);
-    ui->comboBox_Func->addItem("0x04 Read Input Registers", QModbusPdu::ReadInputRegisters);
-    ui->comboBox_Func->addItem("0x05 Write Single Coil", QModbusPdu::WriteSingleCoil);
-    ui->comboBox_Func->addItem("0x06 Write Single Register", QModbusPdu::WriteSingleRegister);
-    ui->comboBox_Func->addItem("0x07 Read Exception Status", QModbusPdu::ReadExceptionStatus);
-    ui->comboBox_Func->addItem("0x08 Diagonstics", QModbusPdu::Diagnostics);
-    ui->comboBox_Func->addItem("0x0B Get Comm Event Counter", QModbusPdu::GetCommEventCounter);
-    ui->comboBox_Func->addItem("0x0C Get Comm Event Log", QModbusPdu::GetCommEventLog);
-    ui->comboBox_Func->addItem("0x0f Write Multiple Coils", QModbusPdu::WriteMultipleCoils);
-    ui->comboBox_Func->addItem("0x10 Write Multiple Registers", QModbusPdu::WriteMultipleRegisters);
-    ui->comboBox_Func->addItem("0x11 Report Server ID", QModbusPdu::ReportServerId);
-    ui->comboBox_Func->addItem("0x14 Read File Record", QModbusPdu::ReadFileRecord);
-    ui->comboBox_Func->addItem("0x15 Write File Record", QModbusPdu::WriteFileRecord);
-    ui->comboBox_Func->addItem("0x16 Mask Write Register", QModbusPdu::MaskWriteRegister);
-    ui->comboBox_Func->addItem("0x17 Read Write Multiple Registers", QModbusPdu::ReadWriteMultipleRegisters);
-    ui->comboBox_Func->addItem("0x18 Read Fifo Queue", QModbusPdu::ReadFifoQueue);
-    ui->comboBox_Func->addItem("0x2B Encapsulated Interface Transport", QModbusPdu::EncapsulatedInterfaceTransport);
-    ui->comboBox_Func->addItem("0x100 Undefined Function Code", QModbusPdu::UndefinedFunctionCode);
-    */
-
     comboxEnable = false;
     ui->comboBox_AT->addItem("AT cancel");
     ui->comboBox_AT->addItem("100% AT execute");
@@ -214,8 +169,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->comboBox_Mode->setItemData(3, QBrush(Qt::darkGreen), Qt::ForegroundRole);
 
 
-    findSeriesPortDevices();
-    omron = NULL;
+    //findSeriesPortDevices();
+    //omron = NULL;
 
     panalOnOff(false);
     ui->pushButton_Control->setEnabled(false);
@@ -323,16 +278,18 @@ MainWindow::MainWindow(QWidget *parent) :
     mvData.reserve(vecSize_);
     vdifftemp_.reserve(vecSize_);
     vtemp_.reserve(10);
-    vtemp_.push_back(temperature);
+    vtemp_.push_back(com_->getTemperature());
 
     statusAskMV_ = false;
     statusAskTemp_ = false;
     statusAskSetPoint_ = false;
 
     ui->lineEdit_DirPath->setText(filePath_);
+
 }
 MainWindow::~MainWindow()
 {
+    auto omron = com_->getOmron();
     if (omron) omron->disconnectDevice();
 
     clock->stop();
@@ -427,7 +384,6 @@ void MainWindow::panalOnOff(bool IO)
     ui->doubleSpinBox_MVlower->setEnabled(IO);
     ui->doubleSpinBox_MVupper->setEnabled(IO);
     ui->comboBox_Mode->setEnabled(IO);
-    //ui->checkBox_MuteLogMsg->setEnabled(IO);
     ui->comboBox_MemAddress->setEnabled(IO);
     ui->lineEdit_SV2->setEnabled(IO);
     ui->doubleSpinBox_SV2WaitTime->setEnabled(IO);
@@ -454,11 +410,12 @@ void MainWindow::allowSetNextSV(){
 }
 
 void MainWindow::on_pushButton_AskStatus_clicked(){
-  askTemperature();
-  askSetPoint();
-  askMV();
+  com_->askTemperature();
+  com_->askSV();
+  com_->askMV();
 }
 
+/*
 void MainWindow::read(QModbusDataUnit::RegisterType type, quint16 adress, int size)
 {
     // accesing Hodling register, address 0x0000, for 2 Byte of value.
@@ -477,7 +434,9 @@ void MainWindow::read(QModbusDataUnit::RegisterType type, quint16 adress, int si
         statusBar()->showMessage(tr("Read error: ") + omron->errorString(), 0);
     }
 }
+*/
 
+/*
 void MainWindow::readReady()
 {
     //LogMsg("------ reading, " + QString::number(respondType));
@@ -551,7 +510,9 @@ void MainWindow::readReady()
     reply->deleteLater();
     modbusReady = true;
 }
+*/
 
+/*
 void MainWindow::askTemperature(bool mute){
   statusAskTemp_ = true;
   if(!mute) LogMsg("------ get Temperature.");
@@ -567,7 +528,8 @@ void MainWindow::askTemperature(bool mute){
   waitForMSec(200);
   statusAskTemp_ = false;
 }
-
+*/
+/*
 void MainWindow::askSetPoint(bool mute){
   statusAskSetPoint_ = true;
   if(!mute) LogMsg("------ get Set Temperature.");
@@ -576,7 +538,9 @@ void MainWindow::askSetPoint(bool mute){
   waitForMSec(200);
   statusAskSetPoint_ = false;
 }
+*/
 
+/*
 void MainWindow::askMV(bool mute){
   //if (statusAskMV_) waitForMSec(100);
   statusAskMV_ = true;
@@ -586,20 +550,25 @@ void MainWindow::askMV(bool mute){
   waitForMSec(200);
   statusAskMV_ = false;
 }
+*/
 
+/*
 void MainWindow::askMVupper(bool mute){
   if(!mute)LogMsg("------ get MV upper.");
   read(QModbusDataUnit::HoldingRegisters, E5CC_Address::MVupper, 2);
   waitTimming();
-
 }
+*/
 
+/*
 void MainWindow::askMVlower(bool mute){
   if(!mute)LogMsg("------ get MV lower.");
   read(QModbusDataUnit::HoldingRegisters, E5CC_Address::MVlower, 2);
   waitTimming();
 }
+*/
 
+/*
 //!
 //! \brief MainWindow::waitTimming
 //! \details Function to avoid reading wrong values by Asking at the same time
@@ -611,20 +580,26 @@ void MainWindow::waitTimming(){
     if( i > 10 ) modbusReady = true;
   }
 }
+*/
 
 void MainWindow::getSetting()
 {
-    askTemperature();
-    askSetPoint();
-    askMV();
+    com_->askTemperature();
+    com_->askSV();
+    com_->askMV();
 
     //ask MV upper Limit
     spinBoxEnable = false;
-    askMVupper();
-    askMVlower();
+    com_->askMVupper();
+    com_->askMVlower();
     spinBoxEnable = true;
 
     //get PID constant
+    com_->askPID("P");
+    com_->askPID("I");
+    com_->askPID("D");
+
+    /*
     LogMsg("------ get Propertion band.");
     read(QModbusDataUnit::HoldingRegisters, E5CC_Address::PID_P, 2);
     waitTimming();
@@ -635,6 +610,7 @@ void MainWindow::getSetting()
     LogMsg("------ get derivative time.");
     read(QModbusDataUnit::HoldingRegisters, E5CC_Address::PID_D, 2);
     waitTimming();
+    */
 }
 
 void MainWindow::setAT(int atFlag)
@@ -658,22 +634,25 @@ void MainWindow::setAT(int atFlag)
         LogMsg("Set AT to 40%. disable Set Point.");
     }
     QByteArray value = QByteArray::fromHex(cmd.toStdString().c_str());
-    request(QModbusPdu::WriteSingleRegister, value);
+    com_->request(QModbusPdu::WriteSingleRegister, value);
 }
 
-void MainWindow::setSV(double SV)
-{
+void MainWindow::setSV(double SV){
     statusBar()->clearMessage();
-    int sv_input = (qint16) (SV / tempDecimal + 0.5);
+    com_->changeSVValue(SV);
+    /*
+    int sv_input = (qint16) (SV /com_->tempDecimal_ + 0.5);
     QString valueStr = formatHex(sv_input, 8);
-    QString addressStr = formatHex(E5CC_Address::SV, 4);
+    QString addressStr = com_->formatE5CCAddress(Communication::E5CC_Address::Type::SV);
 
     QString cmd = addressStr + " 00 02 04" + valueStr;
     QByteArray value = QByteArray::fromHex(cmd.toStdString().c_str());
-    request(QModbusPdu::WriteMultipleRegisters, value);
+    com_->request(QModbusPdu::WriteMultipleRegisters, value);
+    */
     LogMsg("Target temperature is set to be " + QString::number(SV));
 }
 
+/*
 void MainWindow::request(QModbusPdu::FunctionCode code, QByteArray cmd)
 {
     statusBar()->clearMessage();
@@ -708,6 +687,7 @@ void MainWindow::request(QModbusPdu::FunctionCode code, QByteArray cmd)
     }
 
 }
+*/
 
 void MainWindow::on_pushButton_SetSV_clicked()
 {
@@ -743,8 +723,8 @@ void MainWindow::on_pushButton_Control_clicked()
     double iniTemp = 0;
     if(tempControlOnOff){
         on_pushButton_AskStatus_clicked();
-        iniTemp = temperature;
-        LogMsg("Current Temperature         : " + QString::number(temperature) + " C.");
+        iniTemp = com_->getTemperature();
+        LogMsg("Current Temperature         : " + QString::number(com_->getTemperature()) + " C.");
 
         const double targetValue = ui->lineEdit_SV->text().toDouble();
         const int tempGetTime = ui->spinBox_TempRecordTime->value() * 1000; // msec
@@ -769,7 +749,7 @@ void MainWindow::on_pushButton_Control_clicked()
         double estTransitionTime = 5; //min
         if( mode == 2 || mode == 3 || mode == 4) estTransitionTime = 0;
         double estSlope = (estTransitionTime + tempWaitTime/60/1000) / tempStepSize ;
-        double estTotalTime = estSlope * qAbs(temperature-targetValue);
+        double estTotalTime = estSlope * qAbs(com_->getTemperature()-targetValue);
         if(mode == 4){
             estSlope = ui->spinBox_TempStableTime->value(); // min/C
             estTotalTime = estSlope * qAbs(targetValue_2-targetValue);
@@ -884,7 +864,7 @@ void MainWindow::on_pushButton_Control_clicked()
         stream.flush();
 
         clock->setSingleShot(false);
-        clock->start(timing::clockUpdate);
+        clock->start(timing_);
         totalElapse.start(); // used for clock
         QTimer getTempTimer;
         getTempTimer.setSingleShot(true);
@@ -903,14 +883,15 @@ void MainWindow::on_pushButton_Control_clicked()
         waitTimer->setSingleShot(true);
         while(tempControlOnOff && mode == 4 && !targetValue_2_Reached){
             getTempTimer.start(tempGetTime);
-            askTemperature();
-            askMV();
-
+            com_->askTemperature();
+            com_->askMV();
+            double temperature = com_->getTemperature();
+            double MV = com_->getMV();
             QDateTime date = QDateTime::currentDateTime();
             fillDataAndPlot(date, temperature, targetValue_2, MV);
             writeData();
             while(getTempTimer.remainingTime() > 0 ){
-                waitForMSec(timing::getTempTimer);
+                waitForMSec(com_->timing::getTempTimer);
                 if(waitTimer->remainingTime() <= 0 && waitTimerStarted == true){
                     targetValue_2_Reached = true; // break the getTemp loop
                     muteLog = false;
@@ -938,7 +919,8 @@ void MainWindow::on_pushButton_Control_clicked()
         muteLog = false;
 
         //Looping ========================
-        askTemperature();
+        com_->askTemperature();
+        double temperature = com_->getTemperature();
         double smallShift = temperature;
         LogMsg("Present Temperature : " + QString::number(temperature) + " C.");
         const int direction = (temperature > targetValue ) ? (-1) : 1;
@@ -985,14 +967,15 @@ void MainWindow::on_pushButton_Control_clicked()
                 qDebug()  << "temp control. do-loop 1 = " << tempControlOnOff;
                 if(!tempControlOnOff) break;
 
-                askTemperature();
-                askMV();
+                com_->askTemperature();
+                com_->askMV();
 
                 QDateTime date = QDateTime::currentDateTime();
+                double MV = com_->getMV();
                 fillDataAndPlot(date, temperature, smallShift, MV);
                 writeData();
                 while(getTempTimer.remainingTime() > 0 ){
-                    waitForMSec(timing::getTempTimer);
+                    waitForMSec(com_->timing::getTempTimer);
                     if( nextSV == true){
                         break;
                     }
@@ -1050,13 +1033,15 @@ void MainWindow::on_pushButton_Control_clicked()
         while(tempControlOnOff){
             getTempTimer.start(tempGetTime);
             qDebug()  << "temp control. do-loop 2 = " << tempControlOnOff;
-            askTemperature();
-            askMV();
+            com_->askTemperature();
+            com_->askMV();
+            double temperature = com_->getTemperature();
+            double MV = com_->getMV();
             QDateTime date = QDateTime::currentDateTime();
             fillDataAndPlot(date, temperature, smallShift, MV);
             writeData();
             while(getTempTimer.remainingTime() != -1 ){
-                waitForMSec(timing::getTempTimer);
+                waitForMSec(com_->timing::getTempTimer);
             }
 
         };
@@ -1071,7 +1056,7 @@ void MainWindow::on_comboBox_AT_currentIndexChanged(int index)
     setAT(index);
 }
 
-
+/*
 void MainWindow::on_pushButton_Connect_clicked()
 {
     QString omronPortName = ui->comboBox_SeriesNumber->currentData().toString();
@@ -1117,58 +1102,42 @@ void MainWindow::on_pushButton_Connect_clicked()
     }
 
 }
+*/
 
-void MainWindow::on_doubleSpinBox_MVlower_valueChanged(double arg1)
-{
-    if(!spinBoxEnable) return;
-    if(!modbusReady) return;
-
-    MVlower = arg1;
-
-    int sv_2 = (qint16) (arg1 / tempDecimal + 0.5);
-    qDebug() << sv_2;
-    QString valueStr = formatHex(sv_2, 8);
-    QString addressStr = formatHex(E5CC_Address::MVlower, 4);
-
-    QString cmd = addressStr + " 00 02 04" + valueStr;
-    QByteArray value = QByteArray::fromHex(cmd.toStdString().c_str());
-    request(QModbusPdu::WriteMultipleRegisters, value);
-    LogMsg("Output lower limit is set to be " + QString::number(arg1));
-
+void MainWindow::on_pushButton_Connect_clicked(){
+    com_->setSerialPortName(ui->comboBox_SeriesNumber->currentData().toString());
+    com_->executeConnection(com_->getOmron());
 }
 
-void MainWindow::on_doubleSpinBox_MVupper_valueChanged(double arg1)
-{
+void MainWindow::on_doubleSpinBox_MVlower_valueChanged(double arg1){
     if(!spinBoxEnable) return;
-    if(!modbusReady) return;
+    com_->changeMVlowerValue(arg1);
+    LogMsg("Output lower limit is set to be " + QString::number(arg1));
+}
 
-    MVupper = arg1;
-
-    int sv_2 = (qint16) (arg1 / tempDecimal + 0.5);
-    qDebug() << sv_2;
-    QString valueStr = formatHex(sv_2, 8);
-    QString addressStr = formatHex(E5CC_Address::MVupper, 4);
-
-    QString cmd = addressStr + " 00 02 04" + valueStr;
-    QByteArray value = QByteArray::fromHex(cmd.toStdString().c_str());
-    request(QModbusPdu::WriteMultipleRegisters, value);
+void MainWindow::on_doubleSpinBox_MVupper_valueChanged(double arg1){
+    if(!spinBoxEnable) return;
+    com_->changeMVupperValue(arg1);
     LogMsg("Output upper limit is set to be " + QString::number(arg1));
-
-    plot->yAxis2->setRangeLower(MVupper + 2);
+    plot->yAxis2->setRangeLower(com_->getMVupper() + 2);
     plot->replot();
 }
 
-void MainWindow::on_pushButton_GetPID_clicked()
-{
+void MainWindow::on_pushButton_GetPID_clicked(){
   //get PID constant
-  LogMsg("------ get Propertion band.");
+  com_->askPID("P");
+  com_->askPID("I");
+  com_->askPID("D");
+  /*
+    LogMsg("------ get Propertion band.");
   read(QModbusDataUnit::HoldingRegisters, E5CC_Address::PID_P, 2);
   waitTimming();
   LogMsg("------ get integration time.");
   read(QModbusDataUnit::HoldingRegisters, E5CC_Address::PID_I, 2);
   waitTimming();
   LogMsg("------ get derivative time.");
-  read(QModbusDataUnit::HoldingRegisters, E5CC_Address::PID_D, 2);
+  read(QModbusDataUnit::HoldingRegisters, E5CC_Address::PID_D, 2);\
+  */
 }
 
 void MainWindow::on_comboBox_Mode_currentIndexChanged(int index)
@@ -1229,7 +1198,7 @@ void MainWindow::on_comboBox_MemAddress_currentTextChanged(const QString &arg1)
     if(!comboxEnable) return;
     quint16 address = ui->comboBox_MemAddress->currentData().toUInt();
     LogMsg("--------- read " + arg1);
-    read(QModbusDataUnit::HoldingRegisters, address, 2);
+    com_->read(QModbusDataUnit::HoldingRegisters, address, 2);
 }
 
 void MainWindow::on_actionOpen_File_triggered()
@@ -1309,7 +1278,6 @@ void MainWindow::fillDataAndPlot(const QDateTime date, const double PV, const do
 {
     QCPGraphData plotdata;
     plotdata.key = date.toSecsSinceEpoch();
-
     plotdata.value = PV;
     pvData.push_back(plotdata);
     plotdata.value = SV;
@@ -1469,8 +1437,6 @@ void MainWindow::setParametersTempCheck(bool mute){
   isSettParametersTempCheck_ = false;
 }
 
-
-
 void MainWindow::on_pushButton_RunStop_toggled(bool checked)
 {
   bool connectPID = ui->pushButton_Connect->isChecked();
@@ -1518,13 +1484,14 @@ void MainWindow::on_spinBox_TempRecordTime_valueChanged(int arg1){
 //!
 void MainWindow::Run(){
   statusBar()->clearMessage();
-  QString cmd = "00 00 01 00";
+  //QString cmd = "00 00 01 00";
   LogMsg("Set Run.");
   if (threadLog_->isRunning()) threadLog_->quit();
   if (threadMVcheck_->isRunning()) threadMVcheck_->quit();
   if (threadTempCheck_->isRunning()) threadTempCheck_->quit();
-  QByteArray value = QByteArray::fromHex(cmd.toStdString().c_str());
-  request(QModbusPdu::WriteSingleRegister, value);
+  //QByteArray value = QByteArray::fromHex(cmd.toStdString().c_str());
+  //request(QModbusPdu::WriteSingleRegister, value);
+  com_->executeRun();
   setColor(1);
   ui->lineEdit_TempCheckCount->setStyleSheet("");
   threadMVcheck_->start();
@@ -1551,10 +1518,11 @@ void MainWindow::Stop(){
   threadTimer_->stop();
   countTempCheck_ = 0;
   statusBar()->clearMessage();
-  QString cmd = "00 00 01 01";
+  com_->executeStop();
+  //QString cmd = "00 00 01 01";
   LogMsg("Set Stop.");
-  QByteArray value = QByteArray::fromHex(cmd.toStdString().c_str());
-  request(QModbusPdu::WriteSingleRegister, value);
+  //QByteArray value = QByteArray::fromHex(cmd.toStdString().c_str());
+  //request(QModbusPdu::WriteSingleRegister, value);
   setColor(0);
   ui->checkBoxStatusRun->setChecked(false);
   ui->checkBoxStatusPeriodic->setChecked(false);
@@ -1578,9 +1546,10 @@ void MainWindow::Stop(){
  * (See TempCheck function for a call to this function.)
  */
 void MainWindow::Quit(){
-  QString cmd = "00 00 01 01";
-  QByteArray value = QByteArray::fromHex(cmd.toStdString().c_str());
-  request(QModbusPdu::WriteSingleRegister, value);
+  //QString cmd = "00 00 01 01";
+  //QByteArray value = QByteArray::fromHex(cmd.toStdString().c_str());
+  //request(QModbusPdu::WriteSingleRegister, value);
+  com_->executeStop();
   ui->textEdit_Log->setTextColor(QColor(255,0,0,255));
   LogMsg("Emergency Stop. Check the experimental condition.");
   threadMVcheck_->quit();
@@ -1615,6 +1584,7 @@ bool MainWindow::isIgnore(bool check, double temp){
   if (!check) return true;
   double lower = ui->lineEdit_IgnoreLower->text().toDouble();
   double upper = ui->lineEdit_IgnoreUpper->text().toDouble();
+  double temperature = com_->getTemperature();
   if (temp+lower <= temperature && temp+upper >= temperature) {
     ui->textEdit_Log->setTextColor(QColor(0,0,255,255));
     LogMsg("Set Temperature is " + QString::number(temp));
@@ -1703,7 +1673,9 @@ void MainWindow::setTextTempDrop(bool enable){
 void MainWindow::TempCheck(){
   if (countTempCheck_ > ui->lineEdit_Numbers->text().toInt()) countTempCheck_ = 0;
   if (statusAskMV_) waitForMSec(200);
-  askMV();
+  com_->askMV();
+  double MV = com_->getMV();
+  double MVupper = com_->getMVupper();
   if (MV < MVupper){
       countTempCheck_ = 0;
       vtemp_.clear();
@@ -1714,11 +1686,11 @@ void MainWindow::TempCheck(){
       return;
   }
   if (statusAskTemp_) waitForMSec(200);
-  askTemperature();
-  vtemp_.push_back(temperature);
+  com_->askTemperature();
+  vtemp_.push_back(com_->getTemperature());
   if (statusAskSetPoint_) waitForMSec(200);
-  askSetPoint();
-  bool continue0 = isIgnore(ui->checkBox_Ignore->isChecked(), SV);
+  com_->askSV();
+  bool continue0 = isIgnore(ui->checkBox_Ignore->isChecked(), com_->getSV());
   if (!continue0) return;
   ui->checkBoxStautsTempCheck->setChecked(true);
   ui->lineEdit_TempCheckCount->setStyleSheet("background-color:yellow; color:red;selection-background-color:red;");
@@ -1763,14 +1735,14 @@ void MainWindow::TempCheck(){
 //! If the current output has reached the upper limit, then ThreadTempCheck_, the thread for TempCheck, is invoked.
 //!
 void MainWindow::periodicWork(){
-  bool mute = true;
   muteLog = true;
   if(threadMVcheck_->isRunning()) ui->checkBoxStatusPeriodic->setChecked(true);
   else ui->checkBoxStatusPeriodic->setChecked(false);
   if (statusAskMV_) waitForMSec(1000);
-  askMV(mute);
+  //askMV(mute);
+  com_->askMV();
   muteLog = false;
-  if (MV != MVupper) LogMsg("Current MVpower is below the upper limit.");
+  if (com_->getMV() != com_->getMVupper()) LogMsg("Current MVpower is below the upper limit.");
   else {
     ui->textEdit_Log->setTextColor(QColor(255,0,0,255));
     LogMsg("Current MVpower reaches upper limit.");
@@ -1787,21 +1759,22 @@ void MainWindow::periodicWork(){
 //! Refer also fillDatAndPlot.
 //!
 void MainWindow::makePlot(){
-  bool mute = true;
   muteLog = true;
   if(threadLog_->isRunning()) ui->checkBoxStatusRecord->setChecked(true);
   else ui->checkBoxStatusRecord->setChecked(false);
   if (statusAskTemp_) waitForMSec(1000);
-  askTemperature(mute);
+  com_->askTemperature();
+  //askTemperature(mute);
   if (statusAskSetPoint_) waitForMSec(1000);
-  askSetPoint(mute);
+  //askSetPoint(mute);
+  com_->askSV();
   if (statusAskMV_) waitForMSec(1000);
-  askMV(mute);
+  com_->askMV();
   muteLog = false;
   const double setTemperature = ui->lineEdit_SV->text().toDouble();
   QDateTime date = QDateTime::currentDateTime();
-  valltemp_.push_back(temperature);
-  fillDataAndPlot(date, temperature, setTemperature, MV);
+  valltemp_.push_back(com_->getTemperature());
+  fillDataAndPlot(date, com_->getTemperature(), setTemperature, com_->getMV());
   if(ui->checkBox_dataSave->isChecked()) writeData();
   double diff = fillDifference(true);
   if (!ui->checkBox_TempDropEnable->isChecked()) return;
@@ -1839,11 +1812,11 @@ void MainWindow::writeData(){
          << "\t"
          << date.toSecsSinceEpoch()
          << "\t"
-         << QString::number(temperature)
+         << QString::number(com_->getTemperature())
          << "\t"
-         << QString::number(SV)
+         << QString::number(com_->getSV())
          << "\t"
-         << QString::number(MV)
+         << QString::number(com_->getMV())
          << Qt::endl;
   output.close();
 }
@@ -2018,8 +1991,94 @@ void MainWindow::sendLine(const QString& message){
     sendLineNotify(message, line_token);
 }
 
-void MainWindow::unconnectedNotify(){
-    sendLine("Failed to connection.");
-    Quit();
-    threadLog_->quit();
+void MainWindow::addPortName(QList<QSerialPortInfo> info){
+    LogMsg("-------------- COM Ports found :");
+    for (const QSerialPortInfo &portinfo : info) {
+        LogMsg(portinfo.portName() + ", " + portinfo.serialNumber() + ", " + portinfo.manufacturer());
+        ui->comboBox_SeriesNumber->addItem( portinfo.serialNumber(), (QString) portinfo.portName());
+    }
+    LogMsg ("--------------");
+}
+
+void MainWindow::updateTemperature(double temperature){
+    QString str = tr("Current Temperature : %1 C").arg(QString::number(temperature));
+    ui->lineEdit_Temp->setText(QString::number(temperature) + " C");
+    LogMsg(str);
+}
+
+void MainWindow::updateMV(double MV){
+    QString str = tr("Current MV : %1 \%").arg(QString::number(MV));
+    ui->lineEdit_CurrentMV->setText(QString::number(MV) + " %");
+    LogMsg(str);
+}
+
+void MainWindow::updateSV(double SV){
+    QString str = tr("Current Set Point : %1 C").arg(QString::number(SV));
+    ui->lineEdit_CurrentSV->setText(QString::number(SV) + " C");
+    LogMsg(str);
+}
+
+void MainWindow::updateMVupper(double MVupper){
+    QString str = tr("MV upper limit : %1 \%").arg(QString::number(MVupper));
+    ui->doubleSpinBox_MVupper->setValue(MVupper);
+    LogMsg(str);
+    plot->yAxis2->setRangeUpper(MVupper + 2);
+    plot->replot();
+}
+
+void MainWindow::updateMVlower(double MVlower){
+    QString str = tr("MV lower limit : %1 \%").arg(QString::number(MVlower));
+    ui->doubleSpinBox_MVlower->setValue(MVlower);
+    LogMsg(str);
+}
+
+void MainWindow::updatePID_P(double PID_P){
+    QString str = tr("P       : %1 ").arg(QString::number(PID_P));
+    ui->lineEdit_P->setText(QString::number(PID_P));
+    LogMsg(str);
+}
+
+void MainWindow::updatePID_I(double PID_I){
+    QString str = tr("I (raw) : %1 sec").arg(QString::number(PID_I));
+    ui->lineEdit_I->setText(QString::number(PID_I));
+    LogMsg(str);
+}
+
+void MainWindow::updatePID_D(double PID_D){
+    QString str = tr("D (raw) : %1 sec").arg(QString::number(PID_D));
+    ui->lineEdit_D->setText(QString::number(PID_D));
+    LogMsg(str);
+}
+
+void MainWindow::catchLogMsg(const QString& msg){
+    LogMsg(msg);
+}
+
+void MainWindow::connectDevice(){
+    ui->textEdit_Log->setTextColor(QColor(0,0,255,255));
+    LogMsg("The Omron temperature control is connected in " + omronPortName + ".");
+    ui->textEdit_Log->setTextColor(QColor(0,0,0,255));
+    ui->comboBox_SeriesNumber->setEnabled(false);
+    ui->pushButton_Connect->setStyleSheet("background-color: rgb(255,127,80)");
+    ui->pushButton_Connect->setEnabled(false);
+    panalOnOff(true);
+    ui->pushButton_Control->setEnabled(true);
+    ui->lineEdit_SV2->setEnabled(false);
+    ui->doubleSpinBox_SV2WaitTime->setEnabled(false);
+    QString title = this->windowTitle();
+    this->setWindowTitle(title + " | " + ui->comboBox_SeriesNumber->currentText());
+    getSetting();
+    ui->lineEdit_SV->setText(QString::number(com_->getSV()));
+    LogMsg("Set Stop.");
+    QColor color = QColor("palegray");
+    QPalette pal = palette();
+    pal.setColor(QPalette::Window, color);
+}
+
+void MainWindow::connectFailed(){
+    ui->textEdit_Log->setTextColor(QColor(255,0,0,255));
+    LogMsg("The Omron temperature control cannot be connected on any COM port.");
+    ui->textEdit_Log->setTextColor(QColor(0,0,0,255));
+    ui->comboBox_SeriesNumber->setEnabled(true);
+    ui->pushButton_Connect->setStyleSheet("");
 }

@@ -47,10 +47,9 @@ namespace Ui {
 class MainWindow;
 }
 
+class Communication;
 
-//!
 //! \brief The MainWindow class
-//!
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -58,9 +57,10 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-
     void LogMsg(QString str, bool newLine = true);
     void findSeriesPortDevices();
+
+
 signals:
 
 public slots:
@@ -79,20 +79,20 @@ private slots:
     void showTime();
     void allowSetNextSV();
 
-    void read(QModbusDataUnit::RegisterType type, quint16 adress, int size);
-    void readReady();
-    void request(QModbusPdu::FunctionCode code, QByteArray cmd); // no PDU reply
+    //void read(QModbusDataUnit::RegisterType type, quint16 adress, int size);
+    //void readReady();
+    //void request(QModbusPdu::FunctionCode code, QByteArray cmd); // no PDU reply
 
-    void askTemperature(bool mute = false);
-    void askSetPoint(bool mute = false);
-    void askMV(bool mute = false);
-    void askMVupper(bool mute = false);
-    void askMVlower(bool mute = false);
+    //void askTemperature(bool mute = false);
+    //void askSetPoint(bool mute = false);
+    //void askMV(bool mute = false);
+    //void askMVupper(bool mute = false);
+    //void askMVlower(bool mute = false);
     void getSetting();
     void setAT(int atFlag);
     void setSV(double SV);
     void writeData();
-    void waitTimming();
+    //void waitTimming();
     bool generateSaveFile();
     bool isIgnore(bool check, double temp);
     bool isViolate(QVector<double> vtemp);
@@ -142,32 +142,47 @@ private slots:
     void sendLineNotify(const QString& message, const QString& token);
     void sendLine(const QString& message);
 
+    void updateTemperature(double temperature);
+    void updateMV(double MV);
+    void updateSV(double SV);
+    void updateMVupper(double MVupper);
+    void updateMVlower(double MVlower);
+    void updatePID_P(double PID_P);
+    void updatePID_I(double PID_I);
+    void updatePID_D(double PID_D);
+    void catchLogMsg(const QString& msg);
+    void connectDevice();
+    void connectFailed();
+
 private:
     Ui::MainWindow *ui;
     QCustomPlot * plot;
-    QModbusRtuSerialMaster * omron;
+    Communication *com_;
+
+    //QModbusRtuSerialMaster * omron;
     MyThread * threadMVcheck_;
     MyThread * threadLog_;
     MyThread * threadTempCheck_;
     QMessageBox * LogMsgBox_;
 
     QString omronPortName;
-    int omronID;
+    //int omronID;
 
     int msgCount;
-    int respondType;
+//    int respondType;
     int threadTimerInterval_;
     int connectionTimerInteral_;
+    int timing_;
     QDateTime dateStart_;
     QString dateStartStr_;
 
-    double temperature, SV, MV;
-    double MVupper, MVlower;
-    double tempDecimal;
+    //double temperature, SV, MV;
+    //double MVupper, MVlower;
+    //double tempDecimal;
 
     bool tempControlOnOff;
     bool tempRecordOnOff;
-    bool modbusReady;
+    //bool modbusReady;
     bool comboxEnable;
     bool spinBoxEnable;
     bool muteLog;
@@ -185,7 +200,7 @@ private:
     QVector<double> vdifftemp_;
 
 
-    double pid_P, pid_I, pid_D;
+    //double pid_P, pid_I, pid_D;
 
     QTimer * clock;
     QTimer * waitTimer;
@@ -209,10 +224,13 @@ private:
     ConfigureDialog * configureDialog_;
     TempDropDialog * tempDropDialog_;
     int picNumber;
-    QMutex mutex_;
+    //QMutex mutex_;
     //! Counter that TempCheck was executed.
     int countTempCheck_;
     int countDropCheck_;
+
+    void addPortName(QList<QSerialPortInfo> info);
+
 };
 
 #endif // MAINWINDOW_H

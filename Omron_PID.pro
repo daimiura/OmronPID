@@ -26,23 +26,19 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += \
+    communication.cpp \
     configuredialog.cpp \
         main.cpp \
         mainwindow.cpp \
-    mycombobox.cpp \
-    mypushbbutton.cpp \
-    myradiobuttton.cpp \
     mythread.cpp \
     plotdialog.cpp \
     qcustomplot.cpp \
     tempdropdialog.cpp
 
 HEADERS += \
+    communication.h \
     configuredialog.h \
         mainwindow.h \
-    mycombobox.h \
-    mypushbbutton.h \
-    myradiobuttton.h \
     mythread.h \
     plotdialog.h \
     qcustomplot.h \
@@ -57,6 +53,6 @@ DISTFILES += \
 RESOURCES += \
     resource.qrc
 
-OPENSSL_DIR=C:/Qt/Tools/OpenSSL/Win_x64
-LIBS += $${OPENSSL_DIR}/lib/libcrypto.lib
-LIBS += $${OPENSSL_DIR}/lib/libssl.lib
+#OPENSSL_DIR=C:/Qt/Tools/OpenSSL/Win_x64
+#LIBS += $${OPENSSL_DIR}/lib/libcrypto.lib
+#LIBS += $${OPENSSL_DIR}/lib/libssl.lib
