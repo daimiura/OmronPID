@@ -23,12 +23,21 @@
  */
 
 class Communication : public QObject{
-        Q_OBJECT
+  Q_OBJECT
+  Q_PROPERTY(double Temperature READ getTemperature WRITE setTemperature NOTIFY TemperatureUpdated);
+  Q_PROPERTY(double SV READ getSV WRITE setSV NOTIFY SVUpdated);
+  Q_PROPERTY(double MV READ getMV WRITE setMV NOTIFY MVUpdated);
+  Q_PROPERTY(double MVupper READ getMVupper WRITE setMVupper NOTIFY MVupperUpdated);
+  Q_PROPERTY(double MVlower READ getMVlower WRITE setMVlower NOTIFY MVlowerUpdated);
+  Q_PROPERTY(double PID_P READ getPID_P WRITE setPID_P NOTIFY PID_PUpdated);
+  Q_PROPERTY(double PID_I READ getPID_I WRITE setPID_P NOTIFY PID_IUpdated);
+  Q_PROPERTY(double PID_D READ getPID_D WRITE setPID_D NOTIFY PID_DUpdated);
+  Q_PROPERTY(int OmronID READ getOmronID WRITE setOmronID NOTIFY OmronIDChanged);
 public:
     /**
      * @brief Constructs a Communication object.
      */
-    Communication(QObject *parent, QStatusBar *statusBar);
+    Communication(QMainWindow *parent, QStatusBar *statusBar);
     ~Communication();
     /**
      * @brief The E5CC_Address nested class defines an enum class Type for ModBus addresses
@@ -51,9 +60,9 @@ public:
             PID_D = 0x0A04 /**< Get Difference */
         };
     };
+    double Temperature();
 
-    QModbusRtuSerialMaster *getOmron();
-    QList<QSerialPortInfo> getSerialPortDevices();
+
     void request(QModbusPdu::FunctionCode code, QByteArray cmd);
     QString formatHex(int value, int digit);
     QString formatE5CCAddress(E5CC_Address::Type address, int width = 4);
@@ -63,9 +72,9 @@ public:
     void askMVupper();
     void askMVlower();
     void askPID(QString PID);
-    void executeConnection(QModbusRtuSerialMaster* omron);
-    void executeRun();
-    void executeStop();
+    void executeConnection(){Connection();};
+    void executeRun(){Run();};
+    void executeStop(){Stop();};
     void changeMVlowerValue(double MVlower);
     void changeMVupperValue(double MVupper);
     void changeSVValue(double SV);
@@ -81,22 +90,31 @@ public:
     void setMV(double MV);
     void setMVupper(double MVupper);
     void setMVlower(double MVlower);
+    void setPID_P(double PID_P);
+    void setPID_I(double PID_I);
+    void setPID_D(double PID_D);
+    void setOmronID(int omronID);
 
     //getter methods
-    double getTemperature();
-    double getMV();
-    double getSV();
-    double getMVupper();
-    double getMVlower();
-    double getPID_P();
-    double getPID_I();
-    double getPID_D();
+    QModbusRtuSerialMaster* getOmron() const;
+    QList<QSerialPortInfo> getSerialPortDevices() const;
+    QString getPortName() const;
+    double getTemperature() const;
+    double getMV() const;
+    double getSV() const;
+    double getMVupper() const;
+    double getMVlower() const;
+    double getPID_P() const;
+    double getPID_I() const;
+    double getPID_D() const;
+    int getOmronID() const;
+
 
     /**
      * @brief The timing enum defines the timing values used in the Communication class.
      */
     enum timing{
-        modbus = 100, /**< The time in milliseconds between Modbus communication */
+        modbus = 200, /**< The time in milliseconds between Modbus communication */
         getTempTimer = 500, /**< The time in milliseconds between requests for temperature */
         clockUpdate = 50, /**< The time in milliseconds between clock updates */
         timeUp = 1000*60*10, /**< The maximum time in milliseconds before resetting the clock */
@@ -104,7 +122,7 @@ public:
     };
 
 signals:
-    void temperatureUpdated(double temperature);
+    void TemperatureUpdated(double temperature);
     void MVUpdated(double MV);
     void SVUpdated(double SV);
     void MVupperUpdated(double MVupper);
@@ -116,9 +134,10 @@ signals:
     //void errorOccurred(QModbusDevice::Error error);
     //void errorOccurred(QString error);
     //void stateChanged(QModbusDevice::State state);
-    void logMsg(QString string);
+    void logMsg(QString string, bool newline = true);
     void deviceConnect();
     void failedConnect();
+    void OmronIDChanged();
 
 
 
@@ -134,10 +153,9 @@ private:
     MainWindow *mainwindow_;
     QStatusBar *statusBar_;
     QMutex mutex_;
-    int slaveAddress_;
     int respondType_;
     bool modbusReady_;
-    int OmronID_;
+    int omronID_;
     QString portName_;
     double temperature_, SV_, MV_;
     double MVupper_, MVlower_;
@@ -147,7 +165,7 @@ private:
     //QModbusDataUnit createDataUnit(QModbusDataUnit::RegisterType type, quint16 address, int size);
     //QModbusReply* sendReadRequest(const QModbusDataUnit& request);
 
-    void Connection(QModbusRtuSerialMaster* omron);
+    void Connection();
     void Run();
     void Stop();
 

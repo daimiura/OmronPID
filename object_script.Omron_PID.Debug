@@ -1,3 +1,4 @@
+debug/communication.o
 debug/configuredialog.o
 debug/main.o
 debug/mainwindow.o
@@ -6,6 +7,7 @@ debug/plotdialog.o
 debug/qcustomplot.o
 debug/tempdropdialog.o
 debug/qrc_resource.o
+debug/moc_communication.o
 debug/moc_configuredialog.o
 debug/moc_mainwindow.o
 debug/moc_mythread.o

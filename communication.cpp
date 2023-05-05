@@ -1,12 +1,13 @@
 #include <QSerialPortInfo>
 #include <QModbusRtuSerialMaster>
+#include <QException>
 #include <QDebug>
 #include <QTimer>
 #include <QEventLoop>
 #include "communication.h"
 
 
-Communication::Communication(QObject *parent, QStatusBar *statusBar)
+Communication::Communication(QMainWindow *parent, QStatusBar *statusBar)
     : QObject(parent),
       omron_(nullptr),
       modbusDevice_(nullptr),
@@ -14,15 +15,16 @@ Communication::Communication(QObject *parent, QStatusBar *statusBar)
       connectTimer_(new QTimer(this)),
       statusBar_(statusBar)
 {
-    mutex_.lock();
-    mainwindow_ = qobject_cast<MainWindow*>(parent);
 
-    // シリアルポートの検索とコンボボックスへの追加
-    const auto infos = QSerialPortInfo::availablePorts();
-    infos_ = infos;
-    // タイマーの設定
-    connectTimer_->setSingleShot(true);
-   // connect(connectTimer_, &QTimer::timeout, this, &Communication::connectTimeout);
+  mutex_.lock();
+  mainwindow_ = qobject_cast<MainWindow*>(parent);
+  // シリアルポートの検索とコンボボックスへの追加
+  const auto infos = QSerialPortInfo::availablePorts();
+  infos_ = infos;
+  omron_= new QModbusRtuSerialMaster(this);
+  // タイマーの設定
+  connectTimer_->setSingleShot(true);
+  connect(connectTimer_, &QTimer::timeout, this, &Communication::connectTimeout);
 }
 
 Communication::~Communication(){
@@ -50,116 +52,117 @@ void Communication::stateChanged(QModbusDevice::State state){
 */
 
 void Communication::request(QModbusPdu::FunctionCode code, QByteArray cmd){
-    statusBar_->clearMessage();
-    modbusReady_ = false;
-    QModbusPdu pdu;
-    pdu.setFunctionCode(code);
-    pdu.setData(cmd);
-    qDebug() << pdu;
-    QModbusRequest ask(pdu);
-    if (auto *reply = omron_->sendRawRequest(ask, OmronID_)) {
-        if (!reply->isFinished()) {
-            connect(reply, &QModbusReply::finished, this, [this, reply]() {
-                if (reply->error() == QModbusDevice::ProtocolError) {
-                    statusBar_->showMessage(tr("Write response error: %1 (Mobus exception: 0x%2)")
-                        .arg(reply->errorString()).arg(reply->rawResult().exceptionCode(), -1, 16), 0);
-                } else if (reply->error() != QModbusDevice::NoError) {
-                    statusBar_->showMessage(tr("Write response error: %1 (code: 0x%2)").
-                        arg(reply->errorString()).arg(reply->error(), -1, 16), 0);
-                }
-                reply->deleteLater();
-                modbusReady_ = true;
-            });
-        } else {
-            // broadcast replies return immediately
-            reply->deleteLater();
-        }
-    } else {
-        statusBar_->showMessage(tr("Write error: ") + omron_->errorString(), 0);
-    }
+  statusBar_->clearMessage();
+  modbusReady_ = false;
+  QModbusPdu pdu;
+  pdu.setFunctionCode(code);
+  pdu.setData(cmd);
+  QModbusRequest ask(pdu);
+  if (auto *reply = omron_->sendRawRequest(ask, omronID_)) {
+      if (!reply->isFinished()) {
+          connect(reply, &QModbusReply::finished, this, [this, reply]() {
+              if (reply->error() == QModbusDevice::ProtocolError) {
+                  statusBar_->showMessage(tr("Write response error: %1 (Mobus exception: 0x%2)")
+                      .arg(reply->errorString()).arg(reply->rawResult().exceptionCode(), -1, 16), 0);
+              } else if (reply->error() != QModbusDevice::NoError) {
+                  statusBar_->showMessage(tr("Write response error: %1 (code: 0x%2)").
+                      arg(reply->errorString()).arg(reply->error(), -1, 16), 0);
+              }
+              reply->deleteLater();
+              modbusReady_ = true;
+          });
+      } else {
+          // broadcast replies return immediately
+          reply->deleteLater();
+      }
+  } else {
+      statusBar_->showMessage(tr("Write error: ") + omron_->errorString(), 0);
+  }
 }
 
 void Communication::read(QModbusDataUnit::RegisterType type, quint16 address, int size) {
-    QMutexLocker locker(&mutex_);
-    QModbusDataUnit request(type, address, size);
-    if (auto *reply = modbusDevice_->sendReadRequest(request, slaveAddress_)) {
-        connect(reply, &QModbusReply::finished, this, &Communication::readReady);
-        while (!reply->isFinished()) {
-            QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
-        }
-    } else {
-        //emit errorOccurred(modbusDevice_->errorString());
-    }
-
+  QModbusDataUnit ans(type, address, size);
+  respondType_ = address;
+  modbusReady_ = false;
+  if (auto *reply = omron_->sendReadRequest(ans, omronID_)) {
+      if (!reply->isFinished()){
+          connect(reply, &QModbusReply::finished, this, &Communication::readReady);
+      }else{
+          delete reply; // broadcast replies return immediately
+      }
+  } else {
+      statusBar_->showMessage(tr("Read error: ") + omron_->errorString(), 0);
+  }
 }
 
 void Communication::readReady(){
-    QMutexLocker locker(&mutex_);
-    auto reply = qobject_cast<QModbusReply *>(sender());
-    if (!reply) return;
-    if (reply->error() == QModbusDevice::ProtocolError) {
-    statusBar_->showMessage(tr("Read response error: %1 (Mobus exception: 0x%2)").
-                                arg(reply->errorString()).
-                                arg(reply->rawResult().exceptionCode(), -1, 16), 0);
-    } else {
-    statusBar_->showMessage(tr("Read response error: %1 (code: 0x%2)").
-                                arg(reply->errorString()).
-                                arg(reply->error(), -1, 16), 0);
-    }
-
-    switch (respondType_){
-    case static_cast<int>(E5CC_Address::Type::PV): {
-        const QModbusDataUnit unit = reply->result();
-        temperature_ = QString::number(unit.value(1), 10).toDouble() * tempDecimal_;
-        break;
-    }
-    case static_cast<int>(E5CC_Address::Type::SV):{
-        const QModbusDataUnit unit = reply->result();
-        SV_ = QString::number(unit.value(1), 10).toDouble() * tempDecimal_;
-        break;
-    }
-    case static_cast<int>(E5CC_Address::Type::MV): {
-        const QModbusDataUnit unit = reply->result();
-        MV_ = QString::number(unit.value(1), 10).toDouble() * tempDecimal_;
-        break;
-    }
-    case static_cast<int>(E5CC_Address::Type::MVupper): {
-        const QModbusDataUnit unit = reply->result();
-        MVupper_ = QString::number(unit.value(1), 10).toDouble() * tempDecimal_;
-        break;
-    }
-    case static_cast<int>(E5CC_Address::Type::MVlower): {
-        const QModbusDataUnit unit = reply->result();
-        MVlower_ = QString::number(unit.value(1), 10).toDouble() * tempDecimal_;
-        break;
-    }
-    case static_cast<int>(E5CC_Address::Type::PID_P): {
-        const QModbusDataUnit unit = reply->result();
-        pid_P_ = QString::number(unit.value(1), 10).toDouble() * 0.1;
-        break;
-    }
-    case static_cast<int>(E5CC_Address::Type::PID_I): {
-        const QModbusDataUnit unit = reply->result();
-        pid_I_ = QString::number(unit.value(1), 10).toDouble();
-        break;
-    }
-    case static_cast<int>(E5CC_Address::Type::PID_D): {
-        const QModbusDataUnit unit = reply->result();
-        pid_D_ = QString::number(unit.value(1), 10).toDouble();
-        break;
-    }
-    default: {
-        const QModbusDataUnit unit = reply->result();
-        emit logMsg("respond count: " + QString::number(unit.valueCount()));
-        for (uint i = 0; i < unit.valueCount(); i++) {
-            const QString entry = tr("Address: %1, Value: %2").arg(unit.startAddress()).arg(QString::number(unit.value(i), 10));
-            emit logMsg(entry);
-        }
-        break;
-    }
-    }
-    reply->deleteLater();
-    modbusReady_ = true;
+  auto reply = qobject_cast<QModbusReply *>(sender());
+  if (!reply) return;
+  if (reply->error() == QModbusDevice::ProtocolError) {
+  statusBar_->showMessage(tr("Read response error: %1 (Mobus exception: 0x%2)").
+                              arg(reply->errorString()).
+                              arg(reply->rawResult().exceptionCode(), -1, 16), 0);
+  } else {
+  statusBar_->showMessage(tr("Read response error: %1 (code: 0x%2)").
+                              arg(reply->errorString()).
+                              arg(reply->error(), -1, 16), 0);
+  }
+  switch (respondType_){
+  case static_cast<int>(E5CC_Address::Type::PV): {
+      const QModbusDataUnit unit = reply->result();
+      qDebug() << "AAAA";
+      qDebug() << unit.value(1);
+      temperature_ = QString::number(unit.value(1), 10).toDouble() * tempDecimal_;
+      qDebug() << temperature_;
+      break;
+  }
+  case static_cast<int>(E5CC_Address::Type::SV):{
+      const QModbusDataUnit unit = reply->result();
+      SV_ = QString::number(unit.value(1), 10).toDouble() * tempDecimal_;
+      break;
+  }
+  case static_cast<int>(E5CC_Address::Type::MV): {
+      const QModbusDataUnit unit = reply->result();
+      MV_ = QString::number(unit.value(1), 10).toDouble() * tempDecimal_;
+      break;
+  }
+  case static_cast<int>(E5CC_Address::Type::MVupper): {
+      const QModbusDataUnit unit = reply->result();
+      MVupper_ = QString::number(unit.value(1), 10).toDouble() * tempDecimal_;
+      break;
+  }
+  case static_cast<int>(E5CC_Address::Type::MVlower): {
+      const QModbusDataUnit unit = reply->result();
+      MVlower_ = QString::number(unit.value(1), 10).toDouble() * tempDecimal_;
+      break;
+  }
+  case static_cast<int>(E5CC_Address::Type::PID_P): {
+      const QModbusDataUnit unit = reply->result();
+      pid_P_ = QString::number(unit.value(1), 10).toDouble() * 0.1;
+      break;
+  }
+  case static_cast<int>(E5CC_Address::Type::PID_I): {
+      const QModbusDataUnit unit = reply->result();
+      pid_I_ = QString::number(unit.value(1), 10).toDouble();
+      break;
+  }
+  case static_cast<int>(E5CC_Address::Type::PID_D): {
+      const QModbusDataUnit unit = reply->result();
+      pid_D_ = QString::number(unit.value(1), 10).toDouble();
+      break;
+  }
+  default: {
+      const QModbusDataUnit unit = reply->result();
+      emit logMsg("respond count: " + QString::number(unit.valueCount()));
+      for (uint i = 0; i < unit.valueCount(); i++) {
+          const QString entry = tr("Address: %1, Value: %2").arg(unit.startAddress()).arg(QString::number(unit.value(i), 10));
+          emit logMsg(entry);
+      }
+      break;
+  }
+  }
+  reply->deleteLater();
+  modbusReady_ = true;
 }
 
 QString Communication::formatHex(int value, int digit){
@@ -174,34 +177,22 @@ QString Communication::formatE5CCAddress(E5CC_Address::Type address, int width){
     return formatHex(static_cast<int>(address), width);
 }
 
-void Communication::executeConnection(QModbusRtuSerialMaster* omron){
-    Connection(omron);
-}
-
-void Communication::executeRun(){
-    Run();
-}
-
-void Communication::executeStop(){
-    Stop();
-}
-
-void Communication::Connection(QModbusRtuSerialMaster* omron){
-    omron = new QModbusRtuSerialMaster(this);
-    omron->setConnectionParameter(QModbusDevice::SerialPortNameParameter, portName_);
-    omron->setConnectionParameter(QModbusDevice::SerialBaudRateParameter, QSerialPort::Baud9600);
-    omron->setConnectionParameter(QModbusDevice::SerialDataBitsParameter, QSerialPort::Data8);
-    omron->setConnectionParameter(QModbusDevice::SerialParityParameter, QSerialPort::NoParity);
-    omron->setConnectionParameter(QModbusDevice::SerialStopBitsParameter, QSerialPort::TwoStop);
-    omron->setTimeout(timing::timeOut);
-    omron->setNumberOfRetries(0);
-    if(omron->connectDevice()){
-        emit deviceConnect();
-        QString cmd = "00 00 01 01";
-        QByteArray value = QByteArray::fromHex(cmd.toStdString().c_str());
-        request(QModbusPdu::WriteSingleRegister, value);
+void Communication::Connection(){
+    omron_= new QModbusRtuSerialMaster(this);
+    omron_->setConnectionParameter(QModbusDevice::SerialPortNameParameter, portName_);
+    omron_->setConnectionParameter(QModbusDevice::SerialBaudRateParameter, QSerialPort::Baud9600);
+    omron_->setConnectionParameter(QModbusDevice::SerialDataBitsParameter, QSerialPort::Data8);
+    omron_->setConnectionParameter(QModbusDevice::SerialParityParameter, QSerialPort::NoParity);
+    omron_->setConnectionParameter(QModbusDevice::SerialStopBitsParameter, QSerialPort::TwoStop);
+    omron_->setTimeout(timing::timeOut);
+    omron_->setNumberOfRetries(0);
+    if(omron_->connectDevice()){
+     emit deviceConnect();
+     QString cmd = "00 00 01 01";
+     QByteArray value = QByteArray::fromHex(cmd.toStdString().c_str());
+     request(QModbusPdu::WriteSingleRegister, value);
     }else{
-        emit failedConnect();
+      emit failedConnect();
     }
 }
 
@@ -218,170 +209,111 @@ void Communication::Stop(){
 }
 
 void Communication::askTemperature(){
-    QMutexLocker locker(&mutex_);
-    read(QModbusDataUnit::HoldingRegisters, static_cast<int>(E5CC_Address::Type::PV), 2);
-    emit temperatureUpdated(temperature_);
+  read(QModbusDataUnit::HoldingRegisters, static_cast<int>(E5CC_Address::Type::PV), 2);
+  waitForMsec(timing::modbus);
+  emit TemperatureUpdated(temperature_);
 }
 
 void Communication::askSV(){
-    QMutexLocker locker(&mutex_);
-    read(QModbusDataUnit::HoldingRegisters, static_cast<int>(E5CC_Address::Type::SV), 2);
-    emit SVUpdated(SV_);
+  read(QModbusDataUnit::HoldingRegisters, static_cast<int>(E5CC_Address::Type::SV), 2);
+  waitForMsec(timing::modbus);
+  emit SVUpdated(SV_);
 }
 
 void Communication::askMV(){
-    QMutexLocker locker(&mutex_);
-    read(QModbusDataUnit::HoldingRegisters, static_cast<int>(E5CC_Address::Type::MV), 2);
-    emit MVUpdated(SV_);
+  read(QModbusDataUnit::HoldingRegisters, static_cast<int>(E5CC_Address::Type::MV), 2);
+  waitForMsec(timing::modbus);
+  emit MVUpdated(SV_);
 }
 
 void Communication::askMVupper(){
-    QMutexLocker locker(&mutex_);
-    read(QModbusDataUnit::HoldingRegisters, static_cast<int>(E5CC_Address::Type::MVupper), 2);
-    emit MVupperUpdated(MVupper_);
+  read(QModbusDataUnit::HoldingRegisters, static_cast<int>(E5CC_Address::Type::MVupper), 2);
+  waitForMsec(timing::modbus);
+  emit MVupperUpdated(MVupper_);
 }
 
 void Communication::askMVlower(){
-    QMutexLocker locker(&mutex_);
-    read(QModbusDataUnit::HoldingRegisters, static_cast<int>(E5CC_Address::Type::MVlower), 2);
-    emit MVlowerUpdated(MVlower_);
+  read(QModbusDataUnit::HoldingRegisters, static_cast<int>(E5CC_Address::Type::MVlower), 2);
+  waitForMsec(timing::modbus);
+  emit MVlowerUpdated(MVlower_);
 }
 
 void Communication::askPID(QString PID){
-    QMutexLocker locker(&mutex_);
-    if (PID == "P"){
-        read(QModbusDataUnit::HoldingRegisters, static_cast<int>(E5CC_Address::Type::PID_P), 2);
-        emit logMsg("------ get Propertion band.");
-        emit PID_PUpdated(pid_P_);
-    } else if (PID == "I"){
-        read(QModbusDataUnit::HoldingRegisters, static_cast<int>(E5CC_Address::Type::PID_I), 2);
-        emit logMsg("------ get integration time.");
-        emit PID_IUpdated(pid_I_);
-    } else if (PID == "D"){
-        read(QModbusDataUnit::HoldingRegisters, static_cast<int>(E5CC_Address::Type::PID_D), 2);
-        emit logMsg("------ get derivative time.");
-        emit PID_DUpdated(pid_D_);
-    } else {
-        emit logMsg("Input P, I, or D as QString on the argument of askPID");
-    }
+  if (PID == "P"){
+      read(QModbusDataUnit::HoldingRegisters, static_cast<int>(E5CC_Address::Type::PID_P), 2);
+       waitForMsec(timing::modbus);
+      emit logMsg("------ get Propertion band.");
+      emit PID_PUpdated(pid_P_);
+  } else if (PID == "I"){
+      read(QModbusDataUnit::HoldingRegisters, static_cast<int>(E5CC_Address::Type::PID_I), 2);
+       waitForMsec(timing::modbus);
+      emit logMsg("------ get integration time.");
+      emit PID_IUpdated(pid_I_);
+  } else if (PID == "D"){
+      read(QModbusDataUnit::HoldingRegisters, static_cast<int>(E5CC_Address::Type::PID_D), 2);
+       waitForMsec(timing::modbus);
+      emit logMsg("------ get derivative time.");
+      emit PID_DUpdated(pid_D_);
+  } else {
+      emit logMsg("Input P, I, or D as QString on the argument of askPID");
+  }
 }
 
 void Communication::changeMVlowerValue(double MVlower){
-    if(!modbusReady_) return;
-    setMVlower(MVlower);
-    int sv = (qint16) (MVlower / tempDecimal_ + 0.5);
-    qDebug() << sv;
-    QString valueStr = formatHex(sv, 8);
-    QString addressStr = formatHex(static_cast<int>(E5CC_Address::Type::MVlower), 4);
-    QString cmd = addressStr + " 00 02 04" + valueStr;
-    QByteArray value = QByteArray::fromHex(cmd.toStdString().c_str());
-    request(QModbusPdu::WriteMultipleRegisters, value);
+  if(!modbusReady_) return;
+  setMVlower(MVlower);
+  int sv = (qint16) (MVlower / tempDecimal_ + 0.5);
+  qDebug() << sv;
+  QString valueStr = formatHex(sv, 8);
+  QString addressStr = formatHex(static_cast<int>(E5CC_Address::Type::MVlower), 4);
+  QString cmd = addressStr + " 00 02 04" + valueStr;
+  QByteArray value = QByteArray::fromHex(cmd.toStdString().c_str());
+  request(QModbusPdu::WriteMultipleRegisters, value);
 }
 
 void Communication::changeMVupperValue(double MVupper){
-    if(!modbusReady_) return;;
-    setMVupper(MVupper);
-    int sv = (qint16) (MVupper / tempDecimal_ + 0.5);
-    qDebug() << sv;
-    QString valueStr = formatHex(sv, 8);
-    QString addressStr = formatHex(static_cast<int>(E5CC_Address::Type::MVupper), 4);
-    QString cmd = addressStr + " 00 02 04" + valueStr;
-    QByteArray value = QByteArray::fromHex(cmd.toStdString().c_str());
-    request(QModbusPdu::WriteMultipleRegisters, value);
+  if(!modbusReady_) return;;
+  setMVupper(MVupper);
+  int sv = (qint16) (MVupper / tempDecimal_ + 0.5);
+  qDebug() << sv;
+  QString valueStr = formatHex(sv, 8);
+  QString addressStr = formatHex(static_cast<int>(E5CC_Address::Type::MVupper), 4);
+  QString cmd = addressStr + " 00 02 04" + valueStr;
+  QByteArray value = QByteArray::fromHex(cmd.toStdString().c_str());
+  request(QModbusPdu::WriteMultipleRegisters, value);
 }
 
 void Communication::changeSVValue(double SV){
-    int sv_input = (qint16) (SV /tempDecimal_ + 0.5);
-    QString valueStr = formatHex(sv_input, 8);
-    QString addressStr = formatE5CCAddress(E5CC_Address::Type::SV);
-    QString cmd = addressStr + " 00 02 04" + valueStr;
-    QByteArray value = QByteArray::fromHex(cmd.toStdString().c_str());
-    request(QModbusPdu::WriteMultipleRegisters, value);
+  int sv_input = (qint16) (SV /tempDecimal_ + 0.5);
+  QString valueStr = formatHex(sv_input, 8);
+  QString addressStr = formatE5CCAddress(E5CC_Address::Type::SV);
+  QString cmd = addressStr + " 00 02 04" + valueStr;
+  QByteArray value = QByteArray::fromHex(cmd.toStdString().c_str());
+  request(QModbusPdu::WriteMultipleRegisters, value);
 }
 
-/** setter methods
- *
-**/
-void Communication::setSerialPortName(QString portName){
-    QMutexLocker locker(&mutex_);
-    portName_ = portName;
-}
+// setter methods
+void Communication::setSerialPortName(QString portName){portName_ = portName;}
+void Communication::setTemperature(double temperature){temperature_ = temperature;}
+void Communication::setSV(double SV){SV_ = SV;}
+void Communication::setMV(double MV){MV_ = MV;}
+void Communication::setMVupper(double MVupper){MVupper_ = MVupper;}
+void Communication::setMVlower(double MVlower){MVlower_ = MVlower;}
+void Communication::setOmronID(int OmronID){omronID_ = OmronID;}
+void Communication::setPID_P(double PID_P){return;} // Nothing. Generated to define Q_PROPERTY
+void Communication::setPID_I(double PID_I){return;} // Nothing. Generated to define Q_PROPERTY
+void Communication::setPID_D(double PID_D){return;} // Nothing. Generated to define Q_PROPERTY
 
-void Communication::setTemperature(double temperature){
-    QMutexLocker locker(&mutex_);
-    temperature_ = temperature;
-}
-
-void Communication::setSV(double SV){
-    QMutexLocker locker(&mutex_);
-    SV_ = SV;
-}
-
-void Communication::setMV(double MV){
-    QMutexLocker locker(&mutex_);
-    MV_ = MV;
-}
-
-void Communication::setMVupper(double MVupper){
-    QMutexLocker locker(&mutex_);
-    MVupper_ = MVupper;
-}
-
-void Communication::setMVlower(double MVlower){
-    QMutexLocker locker(&mutex_);
-    MVlower_ = MVlower;
-}
-
-
-/** getter methods
- *
-**/
-QModbusRtuSerialMaster* Communication::getOmron(){
-    QMutexLocker locker(&mutex_);
-    return omron_;
-}
-
-QList<QSerialPortInfo> Communication::getSerialPortDevices(){
-    QMutexLocker locker(&mutex_);
-    return infos_;
-}
-
-double Communication::getTemperature(){
-    QMutexLocker locker(&mutex_);
-    return temperature_;
-}
-
-double Communication::getMV(){
-    QMutexLocker locker(&mutex_);
-    return MV_;
-}
-
-double Communication::getSV(){
-    QMutexLocker locker(&mutex_);
-    return SV_;
-}
-
-double Communication::getMVupper(){
-    QMutexLocker locker(&mutex_);
-    return MVupper_;
-}
-
-double Communication::getMVlower(){
-    QMutexLocker locker(&mutex_);
-    return MVlower_;
-}
-
-double Communication::getPID_P(){
-    QMutexLocker locker(&mutex_);
-    return pid_P_;
-}
-
-double Communication::getPID_I(){
-    QMutexLocker locker(&mutex_);
-    return pid_I_;
-}
-
-double Communication::getPID_D(){
-    QMutexLocker locker(&mutex_);
-    return pid_D_;
-}
+// getter methods
+QModbusRtuSerialMaster* Communication::getOmron() const {return omron_;}
+QList<QSerialPortInfo> Communication::getSerialPortDevices() const {return infos_;}
+QString Communication::getPortName() const {return portName_;}
+double Communication::getTemperature() const {return temperature_;}
+double Communication::getMV() const {return MV_;}
+double Communication::getSV() const {return SV_;}
+double Communication::getMVupper() const {return MVupper_;}
+double Communication::getMVlower() const {return MVlower_;}
+double Communication::getPID_P() const {return pid_P_;}
+double Communication::getPID_I() const {return pid_I_;}
+double Communication::getPID_D() const {return pid_D_;}
+int Communication::getOmronID() const {return omronID_;}

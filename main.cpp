@@ -4,9 +4,10 @@
 
 int main(int argc, char *argv[])
 {
-    QLoggingCategory::setFilterRules(QStringLiteral("qt.modbus* = true"));
-    QApplication a(argc, argv);
-    MainWindow w;
-    w.show();
-    return a.exec();
+  QLoggingCategory::setFilterRules(QStringLiteral("qt.modbus* = true"));
+  QApplication a(argc, argv);
+  MainWindow w;
+  w.show();
+  qDebug() << "Application started.";
+  return a.exec();
 }

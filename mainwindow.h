@@ -68,26 +68,30 @@ public slots:
   void makePlot();
   void TempCheck();
   void checkThreads();
+  void updateTemperature(double temperature);
+  void updateMV(double MV);
+  void updateSV(double SV);
+  void updateMVupper(double MVupper);
+  void updateMVlower(double MVlower);
+  void updatePID_P(double PID_P);
+  void updatePID_I(double PID_I);
+  void updatePID_D(double PID_D);
+  void catchLogMsg(const QString& msg);
+  void connectDevice();
+  void connectFailed();
+
 
 private slots:
     void keyPressEvent(QKeyEvent *key);
     void keyReleaseEvent(QKeyEvent *key);
-    QString formatHex(int value, int digit);
+    //QString formatHex(int value, int digit);
     void waitForMSec(int msec);
     void panalOnOff(bool IO);
 
     void showTime();
     void allowSetNextSV();
 
-    //void read(QModbusDataUnit::RegisterType type, quint16 adress, int size);
-    //void readReady();
-    //void request(QModbusPdu::FunctionCode code, QByteArray cmd); // no PDU reply
 
-    //void askTemperature(bool mute = false);
-    //void askSetPoint(bool mute = false);
-    //void askMV(bool mute = false);
-    //void askMVupper(bool mute = false);
-    //void askMVlower(bool mute = false);
     void getSetting();
     void setAT(int atFlag);
     void setSV(double SV);
@@ -142,17 +146,7 @@ private slots:
     void sendLineNotify(const QString& message, const QString& token);
     void sendLine(const QString& message);
 
-    void updateTemperature(double temperature);
-    void updateMV(double MV);
-    void updateSV(double SV);
-    void updateMVupper(double MVupper);
-    void updateMVlower(double MVlower);
-    void updatePID_P(double PID_P);
-    void updatePID_I(double PID_I);
-    void updatePID_D(double PID_D);
-    void catchLogMsg(const QString& msg);
-    void connectDevice();
-    void connectFailed();
+
 
 private:
     Ui::MainWindow *ui;
@@ -175,14 +169,8 @@ private:
     int timing_;
     QDateTime dateStart_;
     QString dateStartStr_;
-
-    //double temperature, SV, MV;
-    //double MVupper, MVlower;
-    //double tempDecimal;
-
     bool tempControlOnOff;
     bool tempRecordOnOff;
-    //bool modbusReady;
     bool comboxEnable;
     bool spinBoxEnable;
     bool muteLog;
@@ -199,16 +187,12 @@ private:
     QVector<double> valltemp_;
     QVector<double> vdifftemp_;
 
-
-    //double pid_P, pid_I, pid_D;
-
     QTimer * clock;
     QTimer * waitTimer;
     QTimer * threadTimer_;
     QTimer * connectionTimer_;
     QString fileName_;
     QString filePath_;
-    //QFile output_;
     QElapsedTimer totalElapse;
     bool checkDay;
     int dayCounter;
@@ -224,8 +208,6 @@ private:
     ConfigureDialog * configureDialog_;
     TempDropDialog * tempDropDialog_;
     int picNumber;
-    //QMutex mutex_;
-    //! Counter that TempCheck was executed.
     int countTempCheck_;
     int countDropCheck_;
 
