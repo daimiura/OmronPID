@@ -3,6 +3,9 @@
  * @brief This file defines the Communication class and its nested class E5CC_Address,
  *        which contains an enum class Type for ModBus addresses used for communication
  *        with the E5CC temperature controller.
+ *  @author Daisuke Miura
+ *  @date 2023/5/5
+ *
  */
 
 #ifndef COMMUNICATION_H
@@ -21,7 +24,6 @@
  * @brief The Communication class provides functionality for ModBus communication
  *        with the E5CC temperature controller.
  */
-
 class Communication : public QObject{
   Q_OBJECT
   Q_PROPERTY(double Temperature READ getTemperature WRITE setTemperature NOTIFY TemperatureUpdated);
@@ -60,9 +62,6 @@ public:
             PID_D = 0x0A04 /**< Get Difference */
         };
     };
-    double Temperature();
-
-
     void request(QModbusPdu::FunctionCode code, QByteArray cmd);
     QString formatHex(int value, int digit);
     QString formatE5CCAddress(E5CC_Address::Type address, int width = 4);
@@ -72,16 +71,17 @@ public:
     void askMVupper();
     void askMVlower();
     void askPID(QString PID);
-    void executeConnection(){Connection();};
-    void executeRun(){Run();};
-    void executeStop(){Stop();};
+    void executeConnection(){Connection();}
+    void executeRun(){Run();}
+    void executeStop(){Stop();}
+    void executeSendRequestSV(double SV){sendRequestSV(SV);}
+    void executeSendRequestAT(int atFlag){sendRequestAT(atFlag);}
     void changeMVlowerValue(double MVlower);
     void changeMVupperValue(double MVupper);
     void changeSVValue(double SV);
 
 
     void read(QModbusDataUnit::RegisterType type, quint16 adress, int size);
-
 
     //setter methods
     void setSerialPortName(QString portName);
@@ -130,6 +130,8 @@ signals:
     void PID_PUpdated(double PID_P);
     void PID_IUpdated(double PID_I);
     void PID_DUpdated(double PID_D);
+    void ATSendFinish(int atFlag);
+    void SVSendFinish(double SV);
     void connectTimeout();
     //void errorOccurred(QModbusDevice::Error error);
     //void errorOccurred(QString error);
@@ -138,8 +140,6 @@ signals:
     void deviceConnect();
     void failedConnect();
     void OmronIDChanged();
-
-
 
 private:
     /**
@@ -168,6 +168,8 @@ private:
     void Connection();
     void Run();
     void Stop();
+    void sendRequestSV(double SV);
+    void sendRequestAT(int afFlag);
 
 private slots:
     void waitForMsec(int msec);

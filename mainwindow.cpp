@@ -40,6 +40,8 @@ MainWindow::MainWindow(QWidget *parent) :
   connect(com_, &Communication::deviceConnect, this, &MainWindow::connectDevice);
   connect(com_, &Communication::failedConnect, this, &MainWindow::connectFailed);
   connect(com_, &Communication::logMsg, this, &MainWindow::catchLogMsg);
+  connect(com_, &Communication::ATSendFinish, this, &MainWindow::finishSendAT);
+  connect(com_, &Communication::SVSendFinish, this, &MainWindow::finishSendSV);
   addPortName(com_->getSerialPortDevices());
 
   LogMsgBox_ = new QMessageBox;
@@ -71,7 +73,7 @@ MainWindow::MainWindow(QWidget *parent) :
   threadTimer_= new QTimer(this);
   threadTimer_ -> stop();
   threadTimerInterval_ = 300*1000; //msec
-  connect(threadTimer_, SIGNAL(timeout()), this, SLOT(checkThreads()));
+  //connect(threadTimer_, SIGNAL(timeout()), this, SLOT(checkThreads()));
 
 //    omron = new QModbusRtuSerialMaster(this);
 
@@ -403,44 +405,14 @@ void MainWindow::getSetting(){
   com_->askMVupper();
   com_->askMVlower();
   spinBoxEnable = true;
-  com_->askPID("P");
-  com_->askPID("I");
-  com_->askPID("D");
+  com_->askPID("PID");
+;
 }
 
-void MainWindow::setAT(int atFlag)
-{
-    statusBar()->clearMessage();
-    QString cmd;
-    if( atFlag == 0){
-        cmd = "00 00 03 00";
-        ui->lineEdit_SV->setEnabled(true);
-        ui->pushButton_SetSV->setEnabled(true);
-        LogMsg("Set AT to none.");
-    }else if( atFlag == 1){
-        cmd = "00 00 03 01";
-        ui->lineEdit_SV->setEnabled(false);
-        ui->pushButton_SetSV->setEnabled(false);
-        LogMsg("Set AT to 100%., disable Set Point.");
-    }else if( atFlag == 2){
-        cmd = "00 00 03 02";
-        ui->lineEdit_SV->setEnabled(false);
-        ui->pushButton_SetSV->setEnabled(false);
-        LogMsg("Set AT to 40%. disable Set Point.");
-    }
-    QByteArray value = QByteArray::fromHex(cmd.toStdString().c_str());
-    com_->request(QModbusPdu::WriteSingleRegister, value);
-}
-
-void MainWindow::setSV(double SV){
-    statusBar()->clearMessage();
-    com_->changeSVValue(SV);
-    LogMsg("Target temperature is set to be " + QString::number(SV));
-}
 
 void MainWindow::on_pushButton_SetSV_clicked()
 {
-  setSV( ui->lineEdit_SV->text().toDouble());
+  com_->executeSendRequestSV(ui->lineEdit_SV->text().toDouble());
   LogMsg("Set Temperature is changed to " + ui->lineEdit_SV->text() + " C.");
 }
 
@@ -620,7 +592,7 @@ void MainWindow::on_pushButton_Control_clicked()
 
         //########################### mode 4 extra code, go to targetValue_2
         //----- set SV
-        setSV(targetValue_2);
+        com_->executeSendRequestSV(targetValue_2);
 
         //----- wait for temp reach targetValue_2, while recording temperature.
         pvData.clear();
@@ -710,7 +682,8 @@ void MainWindow::on_pushButton_Control_clicked()
             ui->lineEdit_CurrentSV->setText(QString::number(smallShift) + " C");
             LogMsg("==== Set-temp : " + QString::number(smallShift) + " C. Elapse Time : " + QString::number(totalElapse.elapsed()/1000./60.) + " mins.");
 
-            setSV(smallShift);
+            //setSV(smallShift);
+            com_->executeSendRequestSV(smallShift);
             do{
                 getTempTimer.start(tempGetTime);
                 qDebug()  << "temp control. do-loop 1 = " << tempControlOnOff;
@@ -802,7 +775,7 @@ void MainWindow::on_pushButton_Control_clicked()
 void MainWindow::on_comboBox_AT_currentIndexChanged(int index)
 {
     if(!comboxEnable) return;
-    setAT(index);
+    com_->executeSendRequestAT(index);
 }
 
 
@@ -826,9 +799,7 @@ void MainWindow::on_doubleSpinBox_MVupper_valueChanged(double arg1){
 }
 
 void MainWindow::on_pushButton_GetPID_clicked(){
-  com_->askPID("P");
-  com_->askPID("I");
-  com_->askPID("D");
+  com_->askPID("PID");
 }
 
 void MainWindow::on_comboBox_Mode_currentIndexChanged(int index)
@@ -1175,13 +1146,10 @@ void MainWindow::on_spinBox_TempRecordTime_valueChanged(int arg1){
 //!
 void MainWindow::Run(){
   statusBar()->clearMessage();
-  //QString cmd = "00 00 01 00";
   LogMsg("Set Run.");
   if (threadLog_->isRunning()) threadLog_->quit();
   if (threadMVcheck_->isRunning()) threadMVcheck_->quit();
   if (threadTempCheck_->isRunning()) threadTempCheck_->quit();
-  //QByteArray value = QByteArray::fromHex(cmd.toStdString().c_str());
-  //request(QModbusPdu::WriteSingleRegister, value);
   com_->executeRun();
   setColor(1);
   ui->lineEdit_TempCheckCount->setStyleSheet("");
@@ -1210,10 +1178,7 @@ void MainWindow::Stop(){
   countTempCheck_ = 0;
   statusBar()->clearMessage();
   com_->executeStop();
-  //QString cmd = "00 00 01 01";
   LogMsg("Set Stop.");
-  //QByteArray value = QByteArray::fromHex(cmd.toStdString().c_str());
-  //request(QModbusPdu::WriteSingleRegister, value);
   setColor(0);
   ui->checkBoxStatusRun->setChecked(false);
   ui->checkBoxStatusPeriodic->setChecked(false);
@@ -1237,9 +1202,6 @@ void MainWindow::Stop(){
  * (See TempCheck function for a call to this function.)
  */
 void MainWindow::Quit(){
-  //QString cmd = "00 00 01 01";
-  //QByteArray value = QByteArray::fromHex(cmd.toStdString().c_str());
-  //request(QModbusPdu::WriteSingleRegister, value);
   com_->executeStop();
   ui->textEdit_Log->setTextColor(QColor(255,0,0,255));
   LogMsg("Emergency Stop. Check the experimental condition.");
@@ -1453,13 +1415,8 @@ void MainWindow::makePlot(){
   muteLog = true;
   if(threadLog_->isRunning()) ui->checkBoxStatusRecord->setChecked(true);
   else ui->checkBoxStatusRecord->setChecked(false);
-  //if (statusAskTemp_) waitForMSec(1000);
   com_->askTemperature();
-  //askTemperature(mute);
-  //if (statusAskSetPoint_) waitForMSec(1000);
-  //askSetPoint(mute);
   com_->askSV();
-  //if (statusAskMV_) waitForMSec(1000);
   com_->askMV();
   muteLog = false;
   const double setTemperature = ui->lineEdit_SV->text().toDouble();
@@ -1488,6 +1445,7 @@ void MainWindow::makePlot(){
 //! \details The Data is saved to the file generated by on_checkBox_dataSave_toggled.
 //!
 void MainWindow::writeData(){
+   qDebug() << com_->getTemperature();
   if(!ui->checkBox_dataSave->isChecked()) return;
   LogMsg("data save to : " + fileName_);
   QFile output(fileName_);
@@ -1509,6 +1467,7 @@ void MainWindow::writeData(){
          << "\t"
          << QString::number(com_->getMV())
          << Qt::endl;
+
   output.close();
 }
 
@@ -1619,6 +1578,7 @@ void MainWindow::setColor(int colorindex){
     }
 }
 
+/*
 void MainWindow::checkThreads(){
     if(isSettParametersTempCheck_) return;
     if(!statusRun_){
@@ -1657,6 +1617,7 @@ void MainWindow::checkThreads(){
         Quit();
     }
 }
+*/
 
 void MainWindow::sendLineNotify(const QString& message, const QString& token) {
     QNetworkAccessManager* manager = new QNetworkAccessManager();
@@ -1692,6 +1653,8 @@ void MainWindow::addPortName(QList<QSerialPortInfo> info){
     LogMsg ("--------------");
 }
 
+
+//signals
 void MainWindow::updateTemperature(double temperature){
     QString str = tr("Current Temperature : %1 C").arg(QString::number(temperature));
     ui->lineEdit_Temp->setText(QString::number(temperature) + " C");
@@ -1726,26 +1689,27 @@ void MainWindow::updateMVlower(double MVlower){
 }
 
 void MainWindow::updatePID_P(double PID_P){
+  LogMsg("------ get Propertion band.");
     QString str = tr("P       : %1 ").arg(QString::number(PID_P));
     ui->lineEdit_P->setText(QString::number(PID_P));
     LogMsg(str);
 }
 
 void MainWindow::updatePID_I(double PID_I){
+  LogMsg("------ get integration time.");
     QString str = tr("I (raw) : %1 sec").arg(QString::number(PID_I));
     ui->lineEdit_I->setText(QString::number(PID_I));
     LogMsg(str);
 }
 
 void MainWindow::updatePID_D(double PID_D){
+    LogMsg("------ get derivative time.");
     QString str = tr("D (raw) : %1 sec").arg(QString::number(PID_D));
     ui->lineEdit_D->setText(QString::number(PID_D));
     LogMsg(str);
 }
 
-void MainWindow::catchLogMsg(const QString& msg){
-    LogMsg(msg);
-}
+void MainWindow::catchLogMsg(const QString& msg){LogMsg(msg);}
 
 void MainWindow::connectDevice(){
   ui->textEdit_Log->setTextColor(QColor(0,0,255,255));
@@ -1773,4 +1737,24 @@ void MainWindow::connectFailed(){
     ui->textEdit_Log->setTextColor(QColor(0,0,0,255));
     ui->comboBox_SeriesNumber->setEnabled(true);
     ui->pushButton_Connect->setStyleSheet("");
+}
+
+void MainWindow::finishSendAT(int atFlag){
+  if (atFlag == 1){
+    ui->lineEdit_SV->setEnabled(false);
+    ui->pushButton_SetSV->setEnabled(false);
+    LogMsg("Set AT to 100%., disable Set Point.");
+  } else if (atFlag == 2){
+    ui->lineEdit_SV->setEnabled(false);
+    ui->pushButton_SetSV->setEnabled(false);
+    LogMsg("Set AT to 40%. disable Set Point.");
+  } else {
+    ui->lineEdit_SV->setEnabled(true);
+    ui->pushButton_SetSV->setEnabled(true);
+    LogMsg("Set AT to none.");
+  }
+}
+
+void MainWindow::finishSendSV(double SV){
+   LogMsg("Target temperature is set to be " + QString::number(SV));
 }

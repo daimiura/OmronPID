@@ -67,7 +67,7 @@ public slots:
   void periodicWork();
   void makePlot();
   void TempCheck();
-  void checkThreads();
+  //void checkThreads();
   void updateTemperature(double temperature);
   void updateMV(double MV);
   void updateSV(double SV);
@@ -76,6 +76,8 @@ public slots:
   void updatePID_P(double PID_P);
   void updatePID_I(double PID_I);
   void updatePID_D(double PID_D);
+  void finishSendAT(int atFlag);
+  void finishSendSV(double SV);
   void catchLogMsg(const QString& msg);
   void connectDevice();
   void connectFailed();
@@ -84,7 +86,6 @@ public slots:
 private slots:
     void keyPressEvent(QKeyEvent *key);
     void keyReleaseEvent(QKeyEvent *key);
-    //QString formatHex(int value, int digit);
     void waitForMSec(int msec);
     void panalOnOff(bool IO);
 
@@ -93,10 +94,9 @@ private slots:
 
 
     void getSetting();
-    void setAT(int atFlag);
-    void setSV(double SV);
+    //void setAT(int atFlag);
+    //void setSV(double SV);
     void writeData();
-    //void waitTimming();
     bool generateSaveFile();
     bool isIgnore(bool check, double temp);
     bool isViolate(QVector<double> vtemp);
@@ -113,12 +113,10 @@ private slots:
     void on_comboBox_MemAddress_currentTextChanged(const QString &arg1);
     void on_doubleSpinBox_MVlower_valueChanged(double arg1);
     void on_doubleSpinBox_MVupper_valueChanged(double arg1);
-
     void on_checkBox_dataSave_toggled(bool checked);
     void on_pushButton_Log_toggled(bool checked);
     void on_spinBox_TempRecordTime_valueChanged(int arg1);
     void on_pushButton_RunStop_toggled(bool checked);
-
     void on_actionOpen_File_triggered();
     void on_action_Setting_parameters_for_TempCheck_triggered();
     void on_action_Setting_plot_triggered();

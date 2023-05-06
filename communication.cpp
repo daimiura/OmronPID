@@ -110,10 +110,7 @@ void Communication::readReady(){
   switch (respondType_){
   case static_cast<int>(E5CC_Address::Type::PV): {
       const QModbusDataUnit unit = reply->result();
-      qDebug() << "AAAA";
-      qDebug() << unit.value(1);
       temperature_ = QString::number(unit.value(1), 10).toDouble() * tempDecimal_;
-      qDebug() << temperature_;
       break;
   }
   case static_cast<int>(E5CC_Address::Type::SV):{
@@ -202,6 +199,37 @@ void Communication::Run(){
     request(QModbusPdu::WriteSingleRegister, value);
 }
 
+void Communication::sendRequestAT(int atFlag){
+  statusBar_ -> clearMessage();
+  switch (atFlag){
+    case 1:{
+        QString cmd = "00 00 03 01";
+        QByteArray value = QByteArray::fromHex(cmd.toStdString().c_str());
+        request(QModbusPdu::WriteSingleRegister, value);
+        break;
+      }
+    case 2:{
+        QString cmd = "00 00 03 02";
+        QByteArray value = QByteArray::fromHex(cmd.toStdString().c_str());
+        request(QModbusPdu::WriteSingleRegister, value);
+        break;
+     }
+    default:{
+      QString cmd = "00 00 03 00";
+      QByteArray value = QByteArray::fromHex(cmd.toStdString().c_str());
+      request(QModbusPdu::WriteSingleRegister, value);
+      break;
+    }
+  }
+  emit ATSendFinish(atFlag);
+}
+
+void Communication::sendRequestSV(double SV){
+  statusBar_->clearMessage();
+  changeSVValue(SV);
+  emit SVSendFinish(SV);
+}
+
 void Communication::Stop(){
     QString cmd = "00 00 01 01";
     QByteArray value = QByteArray::fromHex(cmd.toStdString().c_str());
@@ -223,7 +251,7 @@ void Communication::askSV(){
 void Communication::askMV(){
   read(QModbusDataUnit::HoldingRegisters, static_cast<int>(E5CC_Address::Type::MV), 2);
   waitForMsec(timing::modbus);
-  emit MVUpdated(SV_);
+  emit MVUpdated(MV_);
 }
 
 void Communication::askMVupper(){
@@ -241,21 +269,26 @@ void Communication::askMVlower(){
 void Communication::askPID(QString PID){
   if (PID == "P"){
       read(QModbusDataUnit::HoldingRegisters, static_cast<int>(E5CC_Address::Type::PID_P), 2);
-       waitForMsec(timing::modbus);
-      emit logMsg("------ get Propertion band.");
+      waitForMsec(timing::modbus);
       emit PID_PUpdated(pid_P_);
   } else if (PID == "I"){
       read(QModbusDataUnit::HoldingRegisters, static_cast<int>(E5CC_Address::Type::PID_I), 2);
-       waitForMsec(timing::modbus);
-      emit logMsg("------ get integration time.");
+      waitForMsec(timing::modbus);
       emit PID_IUpdated(pid_I_);
   } else if (PID == "D"){
       read(QModbusDataUnit::HoldingRegisters, static_cast<int>(E5CC_Address::Type::PID_D), 2);
-       waitForMsec(timing::modbus);
-      emit logMsg("------ get derivative time.");
+      waitForMsec(timing::modbus);
       emit PID_DUpdated(pid_D_);
   } else {
-      emit logMsg("Input P, I, or D as QString on the argument of askPID");
+    read(QModbusDataUnit::HoldingRegisters, static_cast<int>(E5CC_Address::Type::PID_P), 2);
+     waitForMsec(timing::modbus);
+     emit PID_PUpdated(pid_P_);
+     read(QModbusDataUnit::HoldingRegisters, static_cast<int>(E5CC_Address::Type::PID_I), 2);
+     waitForMsec(timing::modbus);
+     emit PID_IUpdated(pid_I_);
+     read(QModbusDataUnit::HoldingRegisters, static_cast<int>(E5CC_Address::Type::PID_D), 2);
+     waitForMsec(timing::modbus);
+     emit PID_DUpdated(pid_D_);
   }
 }
 
