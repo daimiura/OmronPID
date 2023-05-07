@@ -1170,7 +1170,7 @@ void MainWindow::Run(){
   statusRun_ = true;
   sendLine("Running starts.");
   generateSaveFile();
-  safety_->timer_->start(5000);
+  safety_->TempCheckStart();
 }
 
 //!
@@ -1199,7 +1199,7 @@ void MainWindow::Stop(){
   ui->lineEdit_TempCheckCount->setStyleSheet("");
   statusRun_ = false;
   sendLine("Running stop.");
-  safety_->timer_->stop();
+  //safety_->timer_->stop();
 }
 
 /**

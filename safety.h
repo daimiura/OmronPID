@@ -13,9 +13,10 @@ class Safety : public QObject
   Q_PROPERTY(double MVupper READ getMVUpper WRITE setMVUpper NOTIFY MVUpperChanged);
   Q_PROPERTY(int NumberOfCheck READ getNumberOfCheck WRITE setNumberOfCheck NOTIFY NumberOfCheckChanged);
   Q_PROPERTY(double tempChangeThreshold READ getTempChangeThreshold WRITE setTempChangeThreshold NOTIFY tempChangeThresholdChanged)
-  Q_PROPERTY(int intervalTempCheck READ intervalTempCheck WRITE setIntervalTempCheck NOTIFY intervalTempCheckChanged);
-  Q_PROPERTY(int intervalTempChange READ intervalTempChange WRITE setIntervalTempChange NOTIFY intervalTempChangeChanged);
+  Q_PROPERTY(int intervalTempCheck READ getIntervalTempCheck WRITE setIntervalTempCheck NOTIFY intervalTempCheckChanged);
+  Q_PROPERTY(int intervalTempChange READ getIntervalTempChange WRITE setIntervalTempChange NOTIFY intervalTempChangeChanged);
 
+public:
   explicit Safety(Communication* com);
   ~Safety();
   QTimer *timer_; // 温度をチェックするためのタイマー
@@ -36,6 +37,8 @@ class Safety : public QObject
   void setIntervalTempChange(int inteerval);
   void checkTempChange();
 
+  void TempCheckStart(int interval = 5000);
+
 
 signals:
   void permitedMaxTempChanged(double maxtemp);
@@ -44,6 +47,8 @@ signals:
   void NumberOfCheckChanged(int number);
   void tempChangeThresholdChanged(double temp);
   void dangerSignal(int type);
+  void intervalTempCheckChanged();
+  void intervalTempChangeChanged();
 
 
 private slots:
@@ -54,7 +59,7 @@ private:
   //QTimer *timer_; // 温度をチェックするためのタイマー
   Communication *com_;
   QMutex mutex_;
-  QTimer *timerTempCheck_, timerTempChange_;
+  QTimer *timerTempCheck_, *timerTempChange_;
   double temperature_, permitedMaxTemp_, diffTemp_, MV_, MVUpper_, tempChangeThreshold_;
   int numberOfCheck_, checkNumber_, intervalTempCheck_, intervalTempChange_;
   QVector<double> vTempHistory_, vTempChangeData_;

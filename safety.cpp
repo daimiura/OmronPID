@@ -1,14 +1,18 @@
 #include "safety.h"
 
 Safety::Safety(Communication* com)
-    : com_(com)
+    : com_(com),
+      numberOfCheck_(10),
+      checkNumber_(0),
+      timerTempCheck_(new QTimer(this)),
+      timerTempChange_(new QTimer(this))
 {
-  timer_ = new QTimer(this);
-  checkNumber_ = 0;
   vTempChangeData_.clear();
-  numberOfCheck_ = 10;
-  connect(timer_, &QTimer::timeout, this, &Safety::checkTemperature);
-  connect(timer_, &QTimer::timeout, this, &Safety::checkTempChange);
+  timerTempCheck_->setInterval(4000);
+  timerTempChange_->setInterval(5000);
+  connect(timerTempCheck_, &QTimer::timeout, this, &Safety::checkTemperature);
+  connect(timerTempCheck_, &QTimer::timeout, this, &Safety::isMVupper);
+  connect(timerTempChange_, &QTimer::timeout, this, &Safety::checkTempChange);
   connect(this, &Safety::permitedMaxTempChanged, this, &Safety::setPermitedMaxTemp);
   connect(this, &Safety::MVUpperChanged, this, &Safety::setMVUpper);
   connect(this, &Safety::NumberOfCheckChanged, this, &Safety::setNumberOfCheck);
@@ -17,8 +21,8 @@ Safety::Safety(Communication* com)
 }
 
 Safety::~Safety(){
-  delete timer_;
-  delete timer2_;
+  delete timerTempCheck_;
+  delete timerTempChange_;
   delete com_;
   mutex_.unlock();
   vTempChangeData_.clear();
@@ -33,6 +37,8 @@ void Safety::checkTemperature(){
 }
 
 void Safety::checkTempChange() {
+  timerTempChange_->start();
+  qDebug() << "checkTempCange at " << checkNumber_;
   if (!isMVupper_) {
       checkNumber_ = 0;
       vTempChangeData_.clear();
@@ -51,10 +57,10 @@ void Safety::checkTempChange() {
   double ave = movingAverage(vdiff, 3);
   if (ave <= tempChangeThreshold_) {
     emit dangerSignal(1);
-    timer2_->stop(); // 温度取得を停止
-    timer_->stop(); // 温度取得を停止
+    timerTempChange_->stop(); // 温度取得を停止
+    timerTempCheck_->stop(); // 温度取得を停止
   } else {
-    timer2_->stop();
+    timerTempCheck_->stop();
   }
   vdiff.clear();
   vTempChangeData_.clear();
@@ -78,9 +84,11 @@ bool Safety::isMVupper(){
   setMV(com_->getMV());
   setMVUpper(com_->getMVupper());
   if (MV_ == MVUpper_) {
+      qDebug() << "MV reached MVupper";
       isMVupper_ = true;
       emit MVupperReachedUpperLimit();
   } else {
+      qDebug() << "MV < MVupper";
       isMVupper_ = false;
   }
   return isMVupper_;
@@ -96,6 +104,11 @@ double Safety::diffTemp() const {
   double currentTemp = vTempHistory_.last();
   double oldTemp = vTempHistory_[vTempHistory_.size()-2];
   return currentTemp - oldTemp;
+}
+
+void Safety::TempCheckStart(int interval){
+  setIntervalTempCheck(interval);
+  timerTempCheck_->start(intervalTempCheck_);
 }
 
 double Safety::diffTemp(double temp1, double temp2) const {return temp1 - temp2;}

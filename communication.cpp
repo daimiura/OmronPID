@@ -16,7 +16,6 @@ Communication::Communication(QMainWindow *parent, QStatusBar *statusBar)
       connectTimer_(new QTimer(this)),
       statusBar_(statusBar)
 {
-
   mutex_.lock();
   mainwindow_ = qobject_cast<MainWindow*>(parent);
   // シリアルポートの検索とコンボボックスへの追加
@@ -24,7 +23,6 @@ Communication::Communication(QMainWindow *parent, QStatusBar *statusBar)
   infos_ = infos;
   omron_= new QModbusRtuSerialMaster(this);
   // タイマーの設定
-  connectTimer_->start(10000);
   connect(connectTimer_, &QTimer::timeout, this, &Communication::checkConnection);
 
  }
@@ -193,16 +191,17 @@ void Communication::Connection(){
      QString cmd = "00 00 01 01";
      QByteArray value = QByteArray::fromHex(cmd.toStdString().c_str());
      request(QModbusPdu::WriteSingleRegister, value);
+     timer_->start(5000);
+      connectTimer_->start(10000);
     }else{
       emit failedConnect();
     }
 }
 
 void Communication::Run(){
-    QString cmd = "00 00 01 00";
-    QByteArray value = QByteArray::fromHex(cmd.toStdString().c_str());
-    request(QModbusPdu::WriteSingleRegister, value);
-    timer_->start(5000);
+  QString cmd = "00 00 01 00";
+  QByteArray value = QByteArray::fromHex(cmd.toStdString().c_str());
+  request(QModbusPdu::WriteSingleRegister, value);
 }
 
 void Communication::sendRequestAT(int atFlag){
@@ -237,9 +236,9 @@ void Communication::sendRequestSV(double SV){
 }
 
 void Communication::Stop(){
-    QString cmd = "00 00 01 01";
-    QByteArray value = QByteArray::fromHex(cmd.toStdString().c_str());
-    request(QModbusPdu::WriteSingleRegister, value);
+  QString cmd = "00 00 01 01";
+  QByteArray value = QByteArray::fromHex(cmd.toStdString().c_str());
+  request(QModbusPdu::WriteSingleRegister, value);
 }
 
 void Communication::askTemperature(){
