@@ -4,22 +4,19 @@ Safety::Safety(Communication* com)
     : com_(com)
 {
   timer_ = new QTimer(this);
-  timer2_ = new QTimer(this);
   checkNumber_ = 0;
   vTempChangeData_.clear();
   numberOfCheck_ = 10;
-  //vTempChangeData_.resize(10);
   connect(timer_, &QTimer::timeout, this, &Safety::checkTemperature);
-  connect(timer_, &QTimer::timeout, this, &Safety::isTemperatureChanged);
   connect(timer_, &QTimer::timeout, this, &Safety::checkTempChange);
   connect(this, &Safety::permitedMaxTempChanged, this, &Safety::setPermitedMaxTemp);
   connect(this, &Safety::MVUpperChanged, this, &Safety::setMVUpper);
   connect(this, &Safety::NumberOfCheckChanged, this, &Safety::setNumberOfCheck);
   connect(this, &Safety::tempChangeThresholdChanged, this, &Safety::setTempChangeThreshold);
+  connect(this, &Safety::MVupperReachedUpperLimit, this, &Safety::checkTempChange);
 }
 
 Safety::~Safety(){
-  timer_->stop();
   delete timer_;
   delete timer2_;
   delete com_;
@@ -29,7 +26,6 @@ Safety::~Safety(){
 
 void Safety::checkTemperature(){
   QMutexLocker locker(&mutex_);
-  //com_->askTemperature();
   temperature_ = com_->getTemperature();
   addTemperature(temperature_);
   if (temperature_ >= permitedMaxTemp_) emit dangerSignal(0);
@@ -37,13 +33,19 @@ void Safety::checkTemperature(){
 }
 
 void Safety::checkTempChange() {
-      QMutexLocker locker(&mutex_);
+  if (!isMVupper_) {
+      checkNumber_ = 0;
+      vTempChangeData_.clear();
+      return;
+  }
+
+  QMutexLocker locker(&mutex_);
   if (checkNumber_ <= numberOfCheck_){
-    //com_->askTemperature(); // 温度を取得
     vTempChangeData_.push_back(com_->getTemperature());
     checkNumber_ ++;
     return;
   }
+
   QVector<double> vdiff;
   for (auto i = 0; i <vTempChangeData_.size()-1; i++) vdiff.push_back(diffTemp(vTempChangeData_[i+1], vTempChangeData_[i]));
   double ave = movingAverage(vdiff, 3);
@@ -53,7 +55,9 @@ void Safety::checkTempChange() {
     timer_->stop(); // 温度取得を停止
   } else {
     timer2_->stop();
-    }
+  }
+  vdiff.clear();
+  vTempChangeData_.clear();
 }
 
 double Safety::movingAverage(QVector<double> data, int wsize) const {
@@ -70,12 +74,16 @@ double Safety::movingAverage(QVector<double> data, int wsize) const {
 }
 
 
-
-bool Safety::isTemperatureChanged(){
-  QMutexLocker locker(&mutex_);
-  bool isChanged = (abs(diffTemp_) >= 0.1);
-  qDebug () << "Difference temperature is " << diffTemp_;
-  return isChanged;
+bool Safety::isMVupper(){
+  setMV(com_->getMV());
+  setMVUpper(com_->getMVupper());
+  if (MV_ == MVUpper_) {
+      isMVupper_ = true;
+      emit MVupperReachedUpperLimit();
+  } else {
+      isMVupper_ = false;
+  }
+  return isMVupper_;
 }
 
 void Safety::addTemperature(double temp){
@@ -94,10 +102,16 @@ double Safety::diffTemp(double temp1, double temp2) const {return temp1 - temp2;
 double Safety::getTemperature() const {return temperature_;}
 double Safety::getPermitedMaxTemp() const {return permitedMaxTemp_;}
 double Safety::getMVUpper() const {return MVUpper_;}
+double Safety::getMV() const {return MV_;}
 double Safety::getTempChangeThreshold() const {return tempChangeThreshold_;}
 int Safety::getNumberOfCheck() const {return numberOfCheck_;}
+int Safety::getIntervalTempCheck() const {return intervalTempCheck_;}
+int Safety::getIntervalTempChange() const {return intervalTempChange_;}
 
 void Safety::setPermitedMaxTemp(double maxtemp) {permitedMaxTemp_ = maxtemp;}
 void Safety::setMVUpper(double MVupper) {MVUpper_ = MVupper;}
+void Safety::setMV(double MV) {MV_ = MV;}
 void Safety::setNumberOfCheck(int number) {numberOfCheck_ = number;}
 void Safety::setTempChangeThreshold(double temp){tempChangeThreshold_ = temp;}
+void Safety::setIntervalTempCheck(int interval) {intervalTempCheck_ = interval;}
+void Safety::setIntervalTempChange(int interval) {intervalTempChange_ = interval;}

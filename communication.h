@@ -169,7 +169,5 @@ private slots:
     void askStatus();
     void checkConnection();
 
-
-
 };
 #endif // COMMUNICATION_H

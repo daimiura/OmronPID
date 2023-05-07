@@ -13,21 +13,28 @@ class Safety : public QObject
   Q_PROPERTY(double MVupper READ getMVUpper WRITE setMVUpper NOTIFY MVUpperChanged);
   Q_PROPERTY(int NumberOfCheck READ getNumberOfCheck WRITE setNumberOfCheck NOTIFY NumberOfCheckChanged);
   Q_PROPERTY(double tempChangeThreshold READ getTempChangeThreshold WRITE setTempChangeThreshold NOTIFY tempChangeThresholdChanged)
-public:
+  Q_PROPERTY(int intervalTempCheck READ intervalTempCheck WRITE setIntervalTempCheck NOTIFY intervalTempCheckChanged);
+  Q_PROPERTY(int intervalTempChange READ intervalTempChange WRITE setIntervalTempChange NOTIFY intervalTempChangeChanged);
+
   explicit Safety(Communication* com);
   ~Safety();
   QTimer *timer_; // 温度をチェックするためのタイマー
   double getTemperature() const;
   double getPermitedMaxTemp() const;
   double getMVUpper() const;
+  double getMV() const;
   int getNumberOfCheck() const;
+  int getIntervalTempCheck() const;
+  int getIntervalTempChange() const;
   double getTempChangeThreshold() const;
   void setPermitedMaxTemp(double maxtemp);
   void setMVUpper(double MVupper);
+  void setMV(double MV);
   void setNumberOfCheck(int number);
   void setTempChangeThreshold(double temp);
-
-   void checkTempChange();
+  void setIntervalTempCheck(int interval);
+  void setIntervalTempChange(int inteerval);
+  void checkTempChange();
 
 
 signals:
@@ -38,6 +45,7 @@ signals:
   void tempChangeThresholdChanged(double temp);
   void dangerSignal(int type);
 
+
 private slots:
   void checkTemperature();
   //void checkTempChange();
@@ -46,17 +54,13 @@ private:
   //QTimer *timer_; // 温度をチェックするためのタイマー
   Communication *com_;
   QMutex mutex_;
-  QTimer *timer2_;
-  double temperature_; // 最新の温度データ
-  double permitedMaxTemp_;
-  double diffTemp_;
-  double MVUpper_;
-  int numberOfCheck_;
-  int checkNumber_;
-  double tempChangeThreshold_;
-  QVector<double> vTempHistory_;
-  QVector<double> vTempChangeData_;
+  QTimer *timerTempCheck_, timerTempChange_;
+  double temperature_, permitedMaxTemp_, diffTemp_, MV_, MVUpper_, tempChangeThreshold_;
+  int numberOfCheck_, checkNumber_, intervalTempCheck_, intervalTempChange_;
+  QVector<double> vTempHistory_, vTempChangeData_;
+  bool isMVupper_ = false;
   bool isTemperatureChanged();
+  bool isMVupper();
   double diffTemp() const;
   double diffTemp(double temp1, double temp2) const;
   void addTemperature(double temp);
