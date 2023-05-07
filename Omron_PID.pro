@@ -33,6 +33,7 @@ SOURCES += \
     mythread.cpp \
     plotdialog.cpp \
     qcustomplot.cpp \
+    safety.cpp \
     tempdropdialog.cpp
 
 HEADERS += \
@@ -42,6 +43,7 @@ HEADERS += \
     mythread.h \
     plotdialog.h \
     qcustomplot.h \
+    safety.h \
     tempdropdialog.h
 
 FORMS += \

@@ -18,8 +18,6 @@
 #include <QMutex>
 #include "mainwindow.h"
 
-
-
 /**
  * @brief The Communication class provides functionality for ModBus communication
  *        with the E5CC temperature controller.
@@ -31,9 +29,6 @@ class Communication : public QObject{
   Q_PROPERTY(double MV READ getMV WRITE setMV NOTIFY MVUpdated);
   Q_PROPERTY(double MVupper READ getMVupper WRITE setMVupper NOTIFY MVupperUpdated);
   Q_PROPERTY(double MVlower READ getMVlower WRITE setMVlower NOTIFY MVlowerUpdated);
-  Q_PROPERTY(double PID_P READ getPID_P WRITE setPID_P NOTIFY PID_PUpdated);
-  Q_PROPERTY(double PID_I READ getPID_I WRITE setPID_P NOTIFY PID_IUpdated);
-  Q_PROPERTY(double PID_D READ getPID_D WRITE setPID_D NOTIFY PID_DUpdated);
   Q_PROPERTY(int OmronID READ getOmronID WRITE setOmronID NOTIFY OmronIDChanged);
 public:
     /**
@@ -90,9 +85,6 @@ public:
     void setMV(double MV);
     void setMVupper(double MVupper);
     void setMVlower(double MVlower);
-    void setPID_P(double PID_P);
-    void setPID_I(double PID_I);
-    void setPID_D(double PID_D);
     void setOmronID(int omronID);
 
     //getter methods
@@ -114,7 +106,7 @@ public:
      * @brief The timing enum defines the timing values used in the Communication class.
      */
     enum timing{
-        modbus = 200, /**< The time in milliseconds between Modbus communication */
+        modbus = 300, /**< The time in milliseconds between Modbus communication */
         getTempTimer = 500, /**< The time in milliseconds between requests for temperature */
         clockUpdate = 50, /**< The time in milliseconds between clock updates */
         timeUp = 1000*60*10, /**< The maximum time in milliseconds before resetting the clock */
@@ -122,14 +114,14 @@ public:
     };
 
 signals:
-    void TemperatureUpdated(double temperature);
-    void MVUpdated(double MV);
-    void SVUpdated(double SV);
-    void MVupperUpdated(double MVupper);
-    void MVlowerUpdated(double MVlopwer);
-    void PID_PUpdated(double PID_P);
-    void PID_IUpdated(double PID_I);
-    void PID_DUpdated(double PID_D);
+    void TemperatureUpdated(double temperature, bool mute = true);
+    void MVUpdated(double MV, bool mute = true);
+    void SVUpdated(double SV, bool mute = true);
+    void MVupperUpdated(double MVupper, bool mute = true);
+    void MVlowerUpdated(double MVlopwer, bool mute = true);
+    void PID_PUpdated(double PID_P, bool mute = true);
+    void PID_IUpdated(double PID_I, bool mute = true);
+    void PID_DUpdated(double PID_D, bool mute = true);
     void ATSendFinish(int atFlag);
     void SVSendFinish(double SV);
     void connectTimeout();
@@ -140,6 +132,7 @@ signals:
     void deviceConnect();
     void failedConnect();
     void OmronIDChanged();
+    void serialPortRemove(QString str);
 
 private:
     /**
@@ -149,22 +142,20 @@ private:
     QList<QSerialPortInfo> infos_;
     QModbusTcpClient* modbusDevice_;
     QModbusReply *modbusReply_;
-    QTimer *connectTimer_;
+    QTimer *timer_, *connectTimer_;
     MainWindow *mainwindow_;
     QStatusBar *statusBar_;
     QMutex mutex_;
     int respondType_;
     bool modbusReady_;
+    bool isSerialPortRemoved_ = false;
     int omronID_;
     QString portName_;
+    QSerialPort *serialPort_;
     double temperature_, SV_, MV_;
     double MVupper_, MVlower_;
     double tempDecimal_ = 0.1;
     double pid_P_, pid_I_, pid_D_;
-
-    //QModbusDataUnit createDataUnit(QModbusDataUnit::RegisterType type, quint16 address, int size);
-    //QModbusReply* sendReadRequest(const QModbusDataUnit& request);
-
     void Connection();
     void Run();
     void Stop();
@@ -175,6 +166,9 @@ private slots:
     void waitForMsec(int msec);
     //void read(QModbusDataUnit::RegisterType type, quint16 adress, int size);
     void readReady();
+    void askStatus();
+    void checkConnection();
+
 
 
 };

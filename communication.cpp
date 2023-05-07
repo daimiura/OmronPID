@@ -12,6 +12,7 @@ Communication::Communication(QMainWindow *parent, QStatusBar *statusBar)
       omron_(nullptr),
       modbusDevice_(nullptr),
       modbusReply_(nullptr),
+      timer_(new QTimer(this)),
       connectTimer_(new QTimer(this)),
       statusBar_(statusBar)
 {
@@ -23,13 +24,16 @@ Communication::Communication(QMainWindow *parent, QStatusBar *statusBar)
   infos_ = infos;
   omron_= new QModbusRtuSerialMaster(this);
   // タイマーの設定
-  connectTimer_->setSingleShot(true);
-  connect(connectTimer_, &QTimer::timeout, this, &Communication::connectTimeout);
-}
+  connectTimer_->start(10000);
+  connect(connectTimer_, &QTimer::timeout, this, &Communication::checkConnection);
+
+ }
 
 Communication::~Communication(){
     mutex_.unlock();
     delete omron_;
+    delete modbusDevice_;
+    delete modbusReply_;
 }
 
 void Communication::waitForMsec(int msec){
@@ -183,6 +187,7 @@ void Communication::Connection(){
     omron_->setConnectionParameter(QModbusDevice::SerialStopBitsParameter, QSerialPort::TwoStop);
     omron_->setTimeout(timing::timeOut);
     omron_->setNumberOfRetries(0);
+    serialPort_ = new QSerialPort(portName_, this);
     if(omron_->connectDevice()){
      emit deviceConnect();
      QString cmd = "00 00 01 01";
@@ -197,6 +202,7 @@ void Communication::Run(){
     QString cmd = "00 00 01 00";
     QByteArray value = QByteArray::fromHex(cmd.toStdString().c_str());
     request(QModbusPdu::WriteSingleRegister, value);
+    timer_->start(5000);
 }
 
 void Communication::sendRequestAT(int atFlag){
@@ -292,11 +298,20 @@ void Communication::askPID(QString PID){
   }
 }
 
+void Communication::askStatus(){
+  askTemperature();
+  askMV();
+  askSV();
+  askMVupper();
+  askMVlower();
+}
+
+
 void Communication::changeMVlowerValue(double MVlower){
   if(!modbusReady_) return;
   setMVlower(MVlower);
   int sv = (qint16) (MVlower / tempDecimal_ + 0.5);
-  qDebug() << sv;
+  //qDebug() << sv;
   QString valueStr = formatHex(sv, 8);
   QString addressStr = formatHex(static_cast<int>(E5CC_Address::Type::MVlower), 4);
   QString cmd = addressStr + " 00 02 04" + valueStr;
@@ -308,7 +323,7 @@ void Communication::changeMVupperValue(double MVupper){
   if(!modbusReady_) return;;
   setMVupper(MVupper);
   int sv = (qint16) (MVupper / tempDecimal_ + 0.5);
-  qDebug() << sv;
+  //qDebug() << sv;
   QString valueStr = formatHex(sv, 8);
   QString addressStr = formatHex(static_cast<int>(E5CC_Address::Type::MVupper), 4);
   QString cmd = addressStr + " 00 02 04" + valueStr;
@@ -325,6 +340,26 @@ void Communication::changeSVValue(double SV){
   request(QModbusPdu::WriteMultipleRegisters, value);
 }
 
+void Communication::checkConnection(){
+  const auto currentPorts = QSerialPortInfo::availablePorts();
+  for (const auto& port : currentPorts){
+    if (!infos_.contains(port) ){
+    infos_.append(port);
+    }
+  }
+  if (isSerialPortRemoved_) return;
+  for (const QSerialPortInfo& port : qAsConst(infos_)) {
+    if (!currentPorts.contains(port)) {
+      emit serialPortRemove("USB connection lost. <<Correctly, COM port has been deleted.>>"
+                            "Communication with the application may not be possible. "
+                            "Please come to the laboratory as soon as possible.");
+      isSerialPortRemoved_ = true;
+    }
+  }
+}
+
+
+
 // setter methods
 void Communication::setSerialPortName(QString portName){portName_ = portName;}
 void Communication::setTemperature(double temperature){temperature_ = temperature;}
@@ -333,9 +368,6 @@ void Communication::setMV(double MV){MV_ = MV;}
 void Communication::setMVupper(double MVupper){MVupper_ = MVupper;}
 void Communication::setMVlower(double MVlower){MVlower_ = MVlower;}
 void Communication::setOmronID(int OmronID){omronID_ = OmronID;}
-void Communication::setPID_P(double PID_P){return;} // Nothing. Generated to define Q_PROPERTY
-void Communication::setPID_I(double PID_I){return;} // Nothing. Generated to define Q_PROPERTY
-void Communication::setPID_D(double PID_D){return;} // Nothing. Generated to define Q_PROPERTY
 
 // getter methods
 QModbusRtuSerialMaster* Communication::getOmron() const {return omron_;}
@@ -350,3 +382,11 @@ double Communication::getPID_P() const {return pid_P_;}
 double Communication::getPID_I() const {return pid_I_;}
 double Communication::getPID_D() const {return pid_D_;}
 int Communication::getOmronID() const {return omronID_;}
+
+bool operator==(const QSerialPortInfo &lhs, const QSerialPortInfo &rhs){
+  return lhs.portName() == rhs.portName() &&
+         lhs.description() == rhs.description() &&
+         lhs.manufacturer() == rhs.manufacturer() &&
+         lhs.serialNumber() == rhs.serialNumber();
+}
+

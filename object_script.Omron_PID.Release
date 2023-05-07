@@ -5,6 +5,7 @@ release/mainwindow.o
 release/mythread.o
 release/plotdialog.o
 release/qcustomplot.o
+release/safety.o
 release/tempdropdialog.o
 release/qrc_resource.o
 release/moc_communication.o
@@ -13,4 +14,5 @@ release/moc_mainwindow.o
 release/moc_mythread.o
 release/moc_plotdialog.o
 release/moc_qcustomplot.o
+release/moc_safety.o
 release/moc_tempdropdialog.o

@@ -39,6 +39,7 @@
 #include "configuredialog.h"
 #include "plotdialog.h"
 #include "tempdropdialog.h"
+//#include "safety.h"
 
 //!
 //! \namespace Ui
@@ -48,6 +49,7 @@ class MainWindow;
 }
 
 class Communication;
+class Safety;
 
 //! \brief The MainWindow class
 class MainWindow : public QMainWindow
@@ -68,19 +70,21 @@ public slots:
   void makePlot();
   void TempCheck();
   //void checkThreads();
-  void updateTemperature(double temperature);
-  void updateMV(double MV);
-  void updateSV(double SV);
-  void updateMVupper(double MVupper);
-  void updateMVlower(double MVlower);
-  void updatePID_P(double PID_P);
-  void updatePID_I(double PID_I);
-  void updatePID_D(double PID_D);
+  void updateTemperature(double temperature, bool mute);
+  void updateMV(double MV, bool mute);
+  void updateSV(double SV, bool mute);
+  void updateMVupper(double MVupper, bool mute);
+  void updateMVlower(double MVlower, bool mute);
+  void updatePID_P(double PID_P, bool mute);
+  void updatePID_I(double PID_I, bool mute);
+  void updatePID_D(double PID_D, bool mute);
   void finishSendAT(int atFlag);
   void finishSendSV(double SV);
   void catchLogMsg(const QString& msg);
   void connectDevice();
   void connectFailed();
+  //void OutOfRangeTemperature(double temperature);
+  void catchDanger(int type);
 
 
 private slots:
@@ -137,7 +141,7 @@ private slots:
     void setIgnoreEnable();
     double fillDifference(bool mute = true);
 
-    void setColor(int colorindex = 0);
+    void setColor(int colorindex = 0, bool changerable = true);
 
     double calcMovingAve(QVector<double> vtemp);
 
@@ -150,18 +154,16 @@ private:
     Ui::MainWindow *ui;
     QCustomPlot * plot;
     Communication *com_;
+    Safety *safety_;
 
-    //QModbusRtuSerialMaster * omron;
     MyThread * threadMVcheck_;
     MyThread * threadLog_;
     MyThread * threadTempCheck_;
     QMessageBox * LogMsgBox_;
 
     QString omronPortName;
-    //int omronID;
 
     int msgCount;
-//    int respondType;
     int threadTimerInterval_;
     int connectionTimerInteral_;
     int timing_;
@@ -208,6 +210,7 @@ private:
     int picNumber;
     int countTempCheck_;
     int countDropCheck_;
+    bool bkgColorChangeable_;
 
     void addPortName(QList<QSerialPortInfo> info);
 

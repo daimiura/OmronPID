@@ -5,6 +5,7 @@ debug/mainwindow.o
 debug/mythread.o
 debug/plotdialog.o
 debug/qcustomplot.o
+debug/safety.o
 debug/tempdropdialog.o
 debug/qrc_resource.o
 debug/moc_communication.o
@@ -13,4 +14,5 @@ debug/moc_mainwindow.o
 debug/moc_mythread.o
 debug/moc_plotdialog.o
 debug/moc_qcustomplot.o
+debug/moc_safety.o
 debug/moc_tempdropdialog.o
