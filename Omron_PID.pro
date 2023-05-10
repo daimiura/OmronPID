@@ -31,6 +31,7 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     mythread.cpp \
+    notify.cpp \
     plotdialog.cpp \
     qcustomplot.cpp \
     safety.cpp \
@@ -41,6 +42,7 @@ HEADERS += \
     configuredialog.h \
         mainwindow.h \
     mythread.h \
+    notify.h \
     plotdialog.h \
     qcustomplot.h \
     safety.h \

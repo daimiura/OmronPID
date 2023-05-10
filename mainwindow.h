@@ -30,16 +30,12 @@
 #include <QFile>
 #include <QGraphicsView>
 #include <QTextStream>
-#include <QtNetwork/QNetworkAccessManager>
-#include <QtNetwork/QNetworkRequest>
-#include <QtNetwork/QNetworkReply>
-#include <QUrlQuery>
 #include <QSslSocket>
 #include "mythread.h"
 #include "configuredialog.h"
 #include "plotdialog.h"
 #include "tempdropdialog.h"
-//#include "safety.h"
+#include "notify.h"
 
 //!
 //! \namespace Ui
@@ -69,7 +65,6 @@ public slots:
   void periodicWork();
   void makePlot();
   void TempCheck();
-  //void checkThreads();
   void updateTemperature(double temperature, bool mute);
   void updateMV(double MV, bool mute);
   void updateSV(double SV, bool mute);
@@ -83,7 +78,6 @@ public slots:
   void catchLogMsg(const QString& msg);
   void connectDevice();
   void connectFailed();
-  //void OutOfRangeTemperature(double temperature);
   void catchDanger(int type);
 
 
@@ -95,11 +89,7 @@ private slots:
 
     void showTime();
     void allowSetNextSV();
-
-
     void getSetting();
-    //void setAT(int atFlag);
-    //void setSV(double SV);
     void writeData();
     bool generateSaveFile();
     bool isIgnore(bool check, double temp);
@@ -145,8 +135,8 @@ private slots:
 
     double calcMovingAve(QVector<double> vtemp);
 
-    void sendLineNotify(const QString& message, const QString& token);
-    void sendLine(const QString& message);
+    void sendLINE(const QString& message);
+    //void sendLine(const QString& message);
 
 
 
@@ -155,6 +145,7 @@ private:
     QCustomPlot * plot;
     Communication *com_;
     Safety *safety_;
+    Notify *notify_;
 
     MyThread * threadMVcheck_;
     MyThread * threadLog_;
@@ -189,10 +180,13 @@ private:
 
     QTimer * clock;
     QTimer * waitTimer;
-    QTimer * threadTimer_;
     QTimer * connectionTimer_;
     QString fileName_;
     QString filePath_;
+
+    QString LINEToken_ ;
+    QUrl LINEurl_;
+
     QElapsedTimer totalElapse;
     bool checkDay;
     int dayCounter;
@@ -213,6 +207,8 @@ private:
     bool bkgColorChangeable_;
 
     void addPortName(QList<QSerialPortInfo> info);
+    void setupPlot();
+    void setupCombBox();
 
 };
 
