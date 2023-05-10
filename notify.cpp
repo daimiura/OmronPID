@@ -2,7 +2,8 @@
 #include <QUrlQuery>
 
 Notify::Notify(QObject *parent)
-    : QObject(parent)
+    : QObject(parent),
+    url_("https://notify-api.line.me/api/notify")
 {
 }
 
@@ -11,9 +12,8 @@ Notify::~Notify() {}
 
 void Notify::setLINE(const QString& message, const QString& token){
     QNetworkRequest request;
-    QUrl url("https://notify-api.line.me/api/notify");
     QUrlQuery postData;
-    request.setUrl(url);
+    request.setUrl(url_);
     request.setRawHeader("Content-Type", "application/x-www-form-urlencoded");
     request.setRawHeader("Authorization", QString("Bearer %1").arg(token).toUtf8());
     postData.addQueryItem("message", message);

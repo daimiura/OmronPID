@@ -19,6 +19,7 @@ private slots:
 
 private:
     QNetworkAccessManager networkManager_;
+    QUrl url_;
 };
 
 #endif // NOTIFY_H
