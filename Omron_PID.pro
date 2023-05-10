@@ -28,6 +28,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     communication.cpp \
     configuredialog.cpp \
+    datasummary.cpp \
     gui.cpp \
         main.cpp \
         mainwindow.cpp \
@@ -41,6 +42,7 @@ SOURCES += \
 HEADERS += \
     communication.h \
     configuredialog.h \
+    datasummary.h \
         mainwindow.h \
     mythread.h \
     notify.h \
