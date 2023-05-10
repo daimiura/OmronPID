@@ -1,5 +1,6 @@
 release/communication.o
 release/configuredialog.o
+release/gui.o
 release/main.o
 release/mainwindow.o
 release/mythread.o

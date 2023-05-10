@@ -41,7 +41,7 @@
 //! \namespace Ui
 //!
 namespace Ui {
-class MainWindow;
+  class MainWindow;
 }
 
 class Communication;
@@ -57,6 +57,8 @@ public:
     ~MainWindow();
     void LogMsg(QString str, bool newLine = true);
     void findSeriesPortDevices();
+    QCustomPlot* getPlot() const;
+    Ui::MainWindow* getUi() const;
 
 
 signals:

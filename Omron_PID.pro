@@ -28,6 +28,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     communication.cpp \
     configuredialog.cpp \
+    gui.cpp \
         main.cpp \
         mainwindow.cpp \
     mythread.cpp \

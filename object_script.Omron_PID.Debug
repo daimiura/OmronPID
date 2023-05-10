@@ -1,5 +1,6 @@
 debug/communication.o
 debug/configuredialog.o
+debug/gui.o
 debug/main.o
 debug/mainwindow.o
 debug/mythread.o
