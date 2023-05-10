@@ -8,15 +8,12 @@ void MainWindow::setupPlot(){
   plot->addGraph(plot->xAxis, plot->yAxis2);
   plot->graph(0)->setName("Output");
   plot->graph(0)->setPen(QPen(Qt::darkGreen)); // MV
-  //plot->graph(0)->setScatterStyle(QCPScatterStyle::ssDisc);
   plot->addGraph();
   plot->graph(1)->setName("Temp.");
   plot->graph(1)->setPen(QPen(Qt::blue)); // PV
-  //plot->graph(1)->setScatterStyle(QCPScatterStyle::ssDisc);
   plot->addGraph();
   plot->graph(2)->setName("Set-temp.");
   plot->graph(2)->setPen(QPen(Qt::red)); // SV
-  //plot->graph(2)->setScatterStyle(QCPScatterStyle::ssDisc);
   QSharedPointer<QCPAxisTickerDateTime> dateTicker(new QCPAxisTickerDateTime);
   double now = QDateTime::currentDateTime().toSecsSinceEpoch();
   dateTicker->setDateTimeFormat("MM/dd HH:mm:ss");
@@ -80,7 +77,6 @@ void MainWindow::setupCombBox(){
   ui->comboBox_MemAddress->addItem("0x0702 (opt) Prop. band "             , 0x0702);
   ui->comboBox_MemAddress->addItem("0x0704 (opt) Inte. time "             , 0x0704);
   ui->comboBox_MemAddress->addItem("0x0706 (opt) deri. time "             , 0x0706);
-
   ui->comboBox_MemAddress->addItem("0x071E (adj) MV at stop "             , 0x071E);
   ui->comboBox_MemAddress->addItem("0x0722 (adj) MV at PV Error "         , 0x0722);
   //! modified "0x0A0A -> ""0x0A00" in part of the  first argument in addItem function @ 2023/2/27 by Daisuke Miura.
@@ -90,7 +86,6 @@ void MainWindow::setupCombBox(){
   ui->comboBox_MemAddress->addItem("0x0A04 (adj) deri. time "             , 0x0A04);
   ui->comboBox_MemAddress->addItem("0x0A0A (adj) MV upper limit "         , 0x0A0A);
   ui->comboBox_MemAddress->addItem("0x0A0C (adj) MV lower limit "         , 0x0A0C);
-
   ui->comboBox_MemAddress->addItem("0x0710 (ini) Ctrl. period heating "   , 0x0710);
   ui->comboBox_MemAddress->addItem("0x0712 (ini) Ctrl. period cooling "   , 0x0712);
   ui->comboBox_MemAddress->addItem("0x0D06 (ini) Ctrl. output 1 current " , 0x0D06);
@@ -100,16 +95,50 @@ void MainWindow::setupCombBox(){
   ui->comboBox_MemAddress->addItem("0x0D22 (ini) Std heating/cooling "    , 0x0D22);
   ui->comboBox_MemAddress->addItem("0x0D24 (ini) Direct/Reverse opt. "    , 0x0D24);
   ui->comboBox_MemAddress->addItem("0x0D28 (ini) PID on/off "             , 0x0D28);
-
   ui->comboBox_MemAddress->addItem("0x0500 (protect) Opt/Adj protect "       , 0x0500);
   ui->comboBox_MemAddress->addItem("0x0502 (protect) Init/Comm protect "     , 0x0502);
   ui->comboBox_MemAddress->addItem("0x0504 (protect) Setting Chg. protect "  , 0x0504);
   ui->comboBox_MemAddress->addItem("0x0506 (protect) PF key protect "        , 0x0506);
-
   ui->comboBox_MemAddress->addItem("0x0E0C (adv) Ctrl. output 1 Assignment "   , 0x0E0C);
   ui->comboBox_MemAddress->addItem("0x0E0E (adv) Ctrl. output 2 Assignment "   , 0x0E0E);
   ui->comboBox_MemAddress->addItem("0x0E20 (adv) Aux. output 1 Assignment "    , 0x0E20);
   ui->comboBox_MemAddress->addItem("0x0E22 (adv) Aux. output 2 Assignment "    , 0x0E22);
   ui->comboBox_MemAddress->addItem("0x0E24 (adv) Aux. output 3 Assignment "    , 0x0E24);
   comboxEnable = true;
+}
+
+void MainWindow::setEnabledFalse(){
+  tempControlOnOff = false;
+  tempRecordOnOff = false;
+  spinBoxEnable = false;
+  muteLog = false;
+  checkDay = false;
+  panalOnOff(false);
+  ui->pushButton_Control->setEnabled(false);
+  ui-> pushButton_RunStop->setEnabled(false);
+  statusAskMV_ = false;
+  statusAskTemp_ = false;
+  statusAskSetPoint_ = false;
+  bkgColorChangeable_ = true;
+}
+
+
+void MainWindow::initializeVariables(){
+  msgCount = 0;
+  dayCounter = 0;
+  const size_t vecSize_ = 1000;
+  pvData.clear();
+  mvData.clear();
+  svData.clear();
+  //! Reserved memory size
+  pvData.reserve(vecSize_);
+  svData.reserve(vecSize_);
+  mvData.reserve(vecSize_);
+  vdifftemp_.reserve(vecSize_);
+  vtemp_.reserve(10);
+  dateStart_ = QDateTime::currentDateTime();
+  clock->stop();
+  totalElapse.start();
+  waitTimer->stop();
+  waitTimer->setSingleShot(false);
 }

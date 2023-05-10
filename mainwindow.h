@@ -64,9 +64,7 @@ public:
 signals:
 
 public slots:
-  void periodicWork();
   void makePlot();
-  void TempCheck();
   void updateTemperature(double temperature, bool mute);
   void updateMV(double MV, bool mute);
   void updateSV(double SV, bool mute);
@@ -81,6 +79,9 @@ public slots:
   void connectDevice();
   void connectFailed();
   void catchDanger(int type);
+  void updateCheckNumber(int checkNumber);
+  void cathcEscapeTempCheckChange(int sign);
+  void catchStartTempChangeCheck(int checknumber);
 
 
 private slots:
@@ -95,8 +96,6 @@ private slots:
     void writeData();
     bool generateSaveFile();
     bool isIgnore(bool check, double temp);
-    bool isViolate(QVector<double> vtemp);
-    bool isDrop(double diff, int mode);
     void setTextTempDrop(bool);
 
     void on_pushButton_Connect_clicked();
@@ -129,15 +128,14 @@ private slots:
     void setSafeLimit();
     void setNumbers();
     void setIgnoreRange();
-    void setParametersTempCheck(bool mute = true);
+    void setParametersTempCheckChange(bool mute = true);
     void setIgnoreEnable();
     double fillDifference(bool mute = true);
 
     void setColor(int colorindex = 0, bool changerable = true);
 
-    double calcMovingAve(QVector<double> vtemp);
-
     void sendLINE(const QString& message);
+
     //void sendLine(const QString& message);
 
 
@@ -149,9 +147,6 @@ private:
     Safety *safety_;
     Notify *notify_;
 
-    MyThread * threadMVcheck_;
-    MyThread * threadLog_;
-    MyThread * threadTempCheck_;
     QMessageBox * LogMsgBox_;
 
     QString omronPortName;
@@ -194,7 +189,6 @@ private:
     int dayCounter;
     bool nextSV;
 
-    const size_t vecSize_ = 1000;
 
     QDialog * helpDialog;
     QLabel * HelpLabel;
@@ -209,8 +203,12 @@ private:
     bool bkgColorChangeable_;
 
     void addPortName(QList<QSerialPortInfo> info);
+
+    //The following functions are inplemented in gui.cpp
     void setupPlot();
     void setupCombBox();
+    void setEnabledFalse();
+    void initializeVariables();
 
 };
 

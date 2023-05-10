@@ -18,15 +18,14 @@ const QString DESKTOP_PATH = QStandardPaths::locate(QStandardPaths::DesktopLocat
 const QString DATA_PATH_2 = DESKTOP_PATH + "Temp_Record";
 const QString DATA_PATH = "Z:/triplet/Temp_Record";
 //const QString DATA_PATH = "/c/Users/daisuke/OmronPID";
-
-
-
 //TODO nicer time display on LogMsg
 
 MainWindow::MainWindow(QWidget *parent) :
   QMainWindow(parent),
   ui(new Ui::MainWindow),
   plot(new QCustomPlot),
+  clock(new QTimer),
+  waitTimer(new QTimer),
   LINEToken_("9tYexDQw9KHKyJOAI5gIONbXLZgzolIxungdwos5Dyy")
 {
   ui->setupUi(this);
@@ -45,32 +44,24 @@ MainWindow::MainWindow(QWidget *parent) :
   connect(com_, &Communication::logMsg, this, &MainWindow::catchLogMsg);
   connect(com_, &Communication::ATSendFinish, this, &MainWindow::finishSendAT);
   connect(com_, &Communication::SVSendFinish, this, &MainWindow::finishSendSV);
-  //connect(com_, &Communication::serialPortRemove, this, &Notify::sendLINE);
+  connect(com_, &Communication::serialPortRemove, this, &MainWindow::sendLINE);
   addPortName(com_->getSerialPortDevices());
 
   safety_ = new Safety(com_);
   safety_->setPermitedMaxTemp(ui->spinBox_TempUpper->value());
   connect(safety_, &Safety::dangerSignal, this, &MainWindow::catchDanger);
+  connect(safety_, &Safety::checkNumberChanged, this, &MainWindow::updateCheckNumber);
+  connect(safety_, &Safety::escapeTempCheckChange, this, &MainWindow::cathcEscapeTempCheckChange);
+  connect(safety_, &Safety::startTempChangeCheck, this, &MainWindow::catchStartTempChangeCheck);
 
   notify_ = new Notify(this);
 
-  LogMsgBox_ = new QMessageBox;
+  //LogMsgBox_ = new QMessageBox;
+  initializeVariables();
   timing_ = com_->timing::clockUpdate;
-  msgCount = 0;
-  tempControlOnOff = false;
-  tempRecordOnOff = false;
-  spinBoxEnable = false;
-  muteLog = false;
+  setEnabledFalse();
   //======= clock
-  clock = new QTimer(this);
-  clock->stop();
   connect(clock, SIGNAL(timeout()), this, SLOT(showTime()));
-  totalElapse.start();
-  dayCounter = 0;
-  checkDay = false;
-  waitTimer = new QTimer(this);
-  waitTimer->stop();
-  waitTimer->setSingleShot(false);
   connect(waitTimer, SIGNAL(timeout()), this, SLOT(allowSetNextSV()));
 
   //! helpDialog
@@ -108,15 +99,11 @@ MainWindow::MainWindow(QWidget *parent) :
 
   setupPlot();
   setupCombBox();
-  panalOnOff(false);
-  ui->pushButton_Control->setEnabled(false);
-  ui-> pushButton_RunStop->setEnabled(false);
-  setColor(0);
 
 
   configureDialog_ = new ConfigureDialog(this);
   configureDialog_->setWindowTitle("Configure");
-  connect(configureDialog_->pushButton_SetParameters_, SIGNAL(clicked(bool)), this, SLOT(setParametersTempCheck()) );
+  connect(configureDialog_->pushButton_SetParameters_, SIGNAL(clicked(bool)), this, SLOT(setParametersTempCheckChange()) );
 
   setIntervalAskMV();
   setIntervalAskTemp();
@@ -124,52 +111,9 @@ MainWindow::MainWindow(QWidget *parent) :
   setSafeLimit();
   setIgnoreRange();
 
-  //! Thread for TempCheck mode.
-  threadTempCheck_ = new MyThread();
-  threadTempCheck_->interval_ = ui->lineEdit_IntervalAskTemp->text().toInt()*1000; //ms to sec.
-  threadTempCheck_->moveToThread(threadTempCheck_);
-  QObject::connect(threadTempCheck_, SIGNAL(data_update()), this, SLOT(TempCheck()));
-
-  //! Thread for TempCheck mode. Priotity is set to  QThread::TimeCriticalPriority
-  threadMVcheck_ = new MyThread();
-  threadMVcheck_->interval_ = ui->lineEdit_IntervalAskMV->text().toInt()*1000; //ms to sec.
-  threadMVcheck_->moveToThread(threadMVcheck_);
-  QObject::connect(threadMVcheck_, SIGNAL(data_update()), this, SLOT(periodicWork()));
-
-  //! Thread for Logging. Priotity is set to QThread::HighestPriority
-  threadLog_ = new MyThread();
-  threadLog_->interval_ = ui->spinBox_TempRecordTime->value() * 1000; //ms to sec.;
-  threadLog_->moveToThread(threadLog_);
-  QObject::connect(threadLog_, SIGNAL(data_update()), this, SLOT(makePlot()));
-
-  //! TempCheck counter is set to be 0.
-  countTempCheck_ = 0;
-  countDropCheck_ = 0;
-  connect(ui->checkBox_TempDropEnable, SIGNAL(clicked(bool)), this, SLOT(setTextTempDrop(bool)));
-
   ui->textEdit_Log->setTextColor(QColor(34,139,34,255));
   LogMsg("The AT and RUN/STOP do not get from the device. Please be careful.");
   ui->textEdit_Log->setTextColor(QColor(0,0,0,255));
-
-  dateStart_ = QDateTime::currentDateTime();
-
-
-  pvData.clear();
-  mvData.clear();
-  svData.clear();
-  //! Reserved memory size
-  pvData.reserve(vecSize_);
-  svData.reserve(vecSize_);
-  mvData.reserve(vecSize_);
-  vdifftemp_.reserve(vecSize_);
-  vtemp_.reserve(10);
-  vtemp_.push_back(com_->getTemperature());
-
-  statusAskMV_ = false;
-  statusAskTemp_ = false;
-  statusAskSetPoint_ = false;
-  bkgColorChangeable_ = true;
-
   ui->lineEdit_DirPath->setText(filePath_);
 }
 
@@ -181,10 +125,6 @@ MainWindow::~MainWindow()
 
     clock->stop();
     waitTimer->stop();
-    threadMVcheck_->quit();
-    threadLog_->quit();
-    threadTempCheck_->quit();
-
     delete waitTimer;
     delete clock;
     delete plot;
@@ -687,8 +627,7 @@ void MainWindow::on_pushButton_GetPID_clicked(){
   com_->askPID("PID");
 }
 
-void MainWindow::on_comboBox_Mode_currentIndexChanged(int index)
-{
+void MainWindow::on_comboBox_Mode_currentIndexChanged(int index){
     if(!comboxEnable) return;
     if(index == 1){
         ui->doubleSpinBox_TempTorr->setEnabled(false);
@@ -751,16 +690,13 @@ void MainWindow::on_actionOpen_File_triggered()
 {
     QString filePath = QFileDialog::getOpenFileName(this, "Open File", filePath_ );
     QFile infile(filePath);
-
     if(infile.open(QIODevice::ReadOnly | QIODevice::Text)) LogMsg("Open File : %s" + filePath);
     else{
         LogMsg("Open file failed ");
         return;
     }
-
     QTextStream stream(&infile);
     QString line;
-
     pvData.clear();
     svData.clear();
     mvData.clear();
@@ -920,12 +856,14 @@ void MainWindow::on_action_Setting_Temperature_Drop_triggered(){
 void MainWindow::setIntervalAskMV(){
   ui->lineEdit_IntervalAskMV->setEnabled(true);
   ui->lineEdit_IntervalAskMV->setText(QString::number(configureDialog_->intervalAskMV_));
+  safety_->setIntervalMVCheck(configureDialog_->intervalAskMV_);
   ui->lineEdit_IntervalAskMV->setEnabled(false);
 }
 
 void MainWindow::setIntervalAskTemp(){
   ui->lineEdit_IntervalAskTemp->setEnabled(true);
   ui->lineEdit_IntervalAskTemp->setText(QString::number(configureDialog_->intervalAskTemp_));
+  safety_->setIntervalTempChange(configureDialog_->intervalAskTemp_);
   ui->lineEdit_IntervalAskTemp->setEnabled(false);
 }
 
@@ -949,6 +887,8 @@ void MainWindow::setIgnoreRange(){
   if(configureDialog_->ignoreEnable_){
     ui->lineEdit_IgnoreLower->setText(QString::number(configureDialog_->ignoreLower_));
     ui->lineEdit_IgnoreUpper->setText(QString::number(configureDialog_->ignoreUpper_));
+    safety_->setIgnoreLower(configureDialog_->ignoreLower_);
+    safety_->setIgnoreUpper(configureDialog_->ignoreUpper_);
   } else{
     ui->lineEdit_IgnoreLower->setText("None.");
     ui->lineEdit_IgnoreUpper->setText("None.");
@@ -960,29 +900,22 @@ void MainWindow::setIgnoreRange(){
 void MainWindow::setIgnoreEnable(){
   ui->checkBox_Ignore->setEnabled(true);
   ui->checkBox_Ignore->setChecked(configureDialog_->ignoreEnable_);
+  safety_->setEnableTempChangeeRange(configureDialog_->ignoreEnable_);
   ui->checkBox_Ignore->setEnabled(false);
 }
 
-void MainWindow::setParametersTempCheck(bool mute){
+void MainWindow::setParametersTempCheckChange(bool mute){
   if (!configureDialog_->warnigcheck_) return;
-  isSettParametersTempCheck_ = true;
-  if (threadMVcheck_->isRunning()) threadMVcheck_->quit();
-  if (threadTempCheck_->isRunning()) threadTempCheck_->quit();
   setIntervalAskMV();
   setIntervalAskTemp();
   setNumbers();
   setSafeLimit();
   setIgnoreRange();
   setIgnoreEnable();
-  threadMVcheck_->interval_ = ui->lineEdit_IntervalAskMV->text().toInt()*1000; //ms to sec
-  threadTempCheck_->interval_ = ui->lineEdit_IntervalAskTemp->text().toInt()*1000; //ms to sec
   if (!mute){
     LogMsg("set to be parameters for TempCheck.");
     LogMsg(configureDialog_->msg_);
   }
-  threadMVcheck_->start();
-  threadTempCheck_->start();
-  isSettParametersTempCheck_ = false;
 }
 
 void MainWindow::on_pushButton_RunStop_toggled(bool checked)
@@ -996,7 +929,7 @@ void MainWindow::on_pushButton_RunStop_toggled(bool checked)
     Stop();
   } else {
     LogMsg("Not connected. Please check COM PORT etc.");
-    if(threadLog_->isRunning()) threadLog_->quit();
+    //if(threadLog_->isRunning()) threadLog_->quit();
     ui->checkBoxStatusRun->setChecked(false);
   }
 }
@@ -1005,43 +938,31 @@ void MainWindow::on_pushButton_Log_toggled(bool checked){
   bool connectPID = ui->pushButton_Connect->isChecked();
   if(checked && connectPID){
     ui->pushButton_Log->setText("Logging Stop");
-    if(!threadLog_->isRunning()) threadLog_->start();
+    //if(!threadLog_->isRunning()) threadLog_->start();
     ui->checkBoxStatusRecord->setChecked(true);
   }else if (connectPID) {
     ui->pushButton_Log->setText("Logging Start");
-    if(threadLog_->isRunning()) threadLog_->quit();
+    //if(threadLog_->isRunning()) threadLog_->quit();
       ui->checkBoxStatusRecord->setChecked(false);
   } else {
     LogMsg("Not connected. Please check COM PORT etc.");
-    if(threadLog_->isRunning()) threadLog_->quit();
+    //if(threadLog_->isRunning()) threadLog_->quit();
     ui->checkBoxStatusRecord->setChecked(false);
   }
 }
 
 void MainWindow::on_spinBox_TempRecordTime_valueChanged(int arg1){
-  if(threadLog_->isRunning()) threadLog_->quit();
-  threadLog_->interval_ = arg1 * 1000; //ms to sec
-  threadLog_->start();
-  LogMsg("Record Temp Interval set to " + QString::number(threadLog_->interval_ *.001) + " seconds.");
+  //LogMsg("Record Temp Interval set to " + QString::number(threadLog_->interval_ *.001) + " seconds.");
 }
 
-//!
-//! \brief MainWindow::Run
-//! \details Function to start heater output of PID.
-//! At the same time, it also starts a thread for data logging and periodically checks output values.
-//!
+
 void MainWindow::Run(){
   statusBar()->clearMessage();
   LogMsg("Set Run.");
-  if (threadLog_->isRunning()) threadLog_->quit();
-  if (threadMVcheck_->isRunning()) threadMVcheck_->quit();
-  if (threadTempCheck_->isRunning()) threadTempCheck_->quit();
   com_->executeRun();
   bkgColorChangeable_ = true;
   setColor(1, bkgColorChangeable_);
   ui->lineEdit_TempCheckCount->setStyleSheet("");
-  threadMVcheck_->start();
-  threadLog_->start();
   ui->pushButton_Log->setChecked(true);
   ui->checkBoxStatusRun->setChecked(true);
   ui->checkBoxStatusPeriodic->setCheckable(true);
@@ -1052,15 +973,7 @@ void MainWindow::Run(){
   safety_->TempCheckStart();
 }
 
-//!
-//! \brief MainWindow::Stop
-//! \details Function to stop PID output.
-//! Stops the threads for output values and TempCheck mode but keeps the thread for data logging running.
-//!
 void MainWindow::Stop(){
-  threadMVcheck_->quit();
-  threadLog_->quit();
-  threadTempCheck_->quit();
   countTempCheck_ = 0;
   statusBar()->clearMessage();
   com_->executeStop();
@@ -1076,25 +989,14 @@ void MainWindow::Stop(){
   ui->lineEdit_TempCheckCount->clear();
   ui->lineEdit_TempCheckCount->setStyleSheet("");
   statusRun_ = false;
+  safety_->stopTimer();
   sendLINE("Running stop.");
-  //safety_->timer_->stop();
 }
 
-/**
- * @brief MainWindow::Quit
- * @details The function for Emergency stop.
- * Executed when TempCheck mode results in an unsafe condition.
- * Interrupted ModBus communication with the device.
- * Almost thread are terminated excluding threadLog_.
- * So, the log continue to be taken after emergency stop.
- * (See TempCheck function for a call to this function.)
- */
 void MainWindow::Quit(){
   com_->executeStop();
   ui->textEdit_Log->setTextColor(QColor(255,0,0,255));
   LogMsg("Emergency Stop. Check the experimental condition.");
-  threadMVcheck_->quit();
-  if (threadTempCheck_->isRunning()) threadTempCheck_->quit();
   vtemp_.clear();
   LogMsg("Thred stop.");
   countTempCheck_ = 0;
@@ -1106,12 +1008,11 @@ void MainWindow::Quit(){
   ui->checkBoxStatusSTC->setChecked(false);
   ui->pushButton_RunStop->setChecked(false);
   statusRun_ = false;
+  safety_->stopTimer();
   sendLINE("Emergency Stop!");
   bkgColorChangeable_ = true;
   setColor(3, bkgColorChangeable_);
   bkgColorChangeable_ = false;
-  delete safety_;
-  threadLog_->run();
 }
 
 
@@ -1140,7 +1041,6 @@ bool MainWindow::isIgnore(bool check, double temp){
     ui->lineEdit_TempCheckCount->clear();
     ui->lineEdit_TempCheckCount->setStyleSheet("");
     ui->checkBoxStautsTempCheck->setChecked(false);
-    threadTempCheck_->start();
     if (statusRun_) setColor(1, bkgColorChangeable_);
     else setColor(0, bkgColorChangeable_);
     return false;
@@ -1149,166 +1049,12 @@ bool MainWindow::isIgnore(bool check, double temp){
 }
 
 
-//!
-//! \brief MainWindow::isViolate
-//! \param vtemp
-//! \return bool true or false
-//! \details Returns false if safe and not violated, and eturns true if it is violated.
-//!
-bool MainWindow::isViolate(QVector<double> vtemp){
-  double safelimit = ui->lineEdit_SafeLimit->text().toDouble();
-  double dtemp = calcMovingAve(vtemp);
-  if (dtemp >= safelimit){
-    ui->textEdit_Log->setTextColor(QColor(0,0,255,255));
-    LogMsg("Safety.");
-    LogMsg("Permitted temperature change is " + QString::number(safelimit));
-    LogMsg("Observed temperature change is " + QString::number(dtemp));
-    threadTempCheck_->start();
-    ui->checkBoxStautsTempCheck->setChecked(false);
-    if (statusRun_) setColor(1, bkgColorChangeable_);
-    else setColor(0, bkgColorChangeable_);
-    return false;
-  } else return true;
-}
-
-//!
-//! \brief MainWindow::isDrop
-//! \param diff
-//! \return bool true or false
-//! \details This function returns true when the argument is a positive sign. Otherwise false.
-//! It is assumed that a temperature change is assigned to the argument.
-//!
-bool MainWindow::isDrop(double diff, int mode){
-  if(ui->pushButton_Control->isChecked()) return false;
-  double interval = ui->spinBox_TempRecordTime->value()/60.0; //sec to min.
-  switch (mode) {
-    case 1:
-      if (diff/interval >= ui->doubleSpinBox_TempDrop->value()) return true;
-      else return false;
-    break;
-    default:
-      if (diff >= 0) {
-        ui->checkBoxStatusTempDrop->setChecked(false);
-        return false;
-        }
-      else {
-        ui->checkBoxStatusTempDrop->setChecked(true);
-        return true;
-        }
-    break;
-  }
-  return false;
-}
-
-
 void MainWindow::setTextTempDrop(bool enable){
   if(enable) ui->checkBox_TempDropEnable->setText(tr("Yes"));
   else ui->checkBox_TempDropEnable->setText(tr("No"));
 }
 
-//!
-//! \brief MainWindow::TempCheck
-//! \details The temperature stores in vtemp_ until the given number is reached.
-//! A moving average is calculated from these values. If this moving average is smaller than the threshold value,
-//! it is assumed that there is no temperature change and the Quit function is executed.
-//! If it is greater than the threshold value, set countTempCheck_ to 0 and exit TempCheck mode.
-//! Note that this function does not work if the temperature is in the ignore range given setParamters function.
-//!
-void MainWindow::TempCheck(){
-  if (countTempCheck_ > ui->lineEdit_Numbers->text().toInt()) countTempCheck_ = 0;
-  //if (statusAskMV_) waitForMSec(200);
-  //com_->askMV();
-  double MV = com_->getMV();
-  double MVupper = com_->getMVupper();
-  if (MV == MVupper) safety_->checkTempChange();
-  /*
-  if (MV < MVupper){
-      countTempCheck_ = 0;
-      vtemp_.clear();
-      setColor(1, bkgColorChangeable_);
-      ui->checkBoxStautsTempCheck->setChecked(false);
-      threadTempCheck_->quit();
-      threadMVcheck_->start();
-      return;
-  }
-  //if (statusAskTemp_) waitForMSec(200);
-  com_->askTemperature();
-  vtemp_.push_back(com_->getTemperature());
-  //if (statusAskSetPoint_) waitForMSec(200);
-  com_->askSV();
-  bool continue0 = isIgnore(ui->checkBox_Ignore->isChecked(), com_->getSV());
-  if (!continue0) return;
-  ui->checkBoxStautsTempCheck->setChecked(true);
-  ui->lineEdit_TempCheckCount->setStyleSheet("background-color:yellow; color:red;selection-background-color:red;");
-  ui->lineEdit_TempCheckCount->setText("!! TempCheck is working !!");
-  ui->lineEdit_TempCheckCount->setStyleSheet("");
-  setColor(2, bkgColorChangeable_);
-  ui->textEdit_Log->setTextColor(QColor(255,0,0,255));
-  LogMsg("*** CheckTemp start ****");
-  LogMsg("The result in " + QString::number(countTempCheck_));
-  ui->textEdit_Log->setTextColor(QColor(0,0,0,255));
-  ui->lineEdit_TempCheckCount->setEnabled(true);
-  ui->lineEdit_TempCheckCount->setText("Checking in " + QString::number(countTempCheck_));
-  ui->lineEdit_TempCheckCount->setEnabled(false);
-  if (countTempCheck_ < ui->lineEdit_Numbers->text().toInt()){
-    countTempCheck_++;
-    threadTempCheck_->start();
-    return;
-  }
-  if (isViolate(vtemp_)) {
-    QDateTime date = QDateTime::currentDateTime();
-    QString datestr = date.toString("yyyyMMdd_HHmmss");
-    ui->lineEdit_TempCheckCount->setStyleSheet("background-color:yellow; color:red;selection-background-color:red;");
-    ui->lineEdit_TempCheckCount->setText("Emergency Stop at " + datestr);
-    vtemp_.clear();
-    ui->checkBoxStautsTempCheck->setChecked(false);
-    Quit();
-    return;
-  } else{
-    countTempCheck_ = 0;
-    vtemp_.clear();
-    setColor(1, bkgColorChangeable_);
-    ui->checkBoxStautsTempCheck->setChecked(false);
-    threadTempCheck_ -> quit();
-    threadMVcheck_->start();
-    return;
-  }
-  */
-}
-
-//!
-//! \brief MainWindow::periodicWork
-//! \details Evaluates whether the current output value has reached the upper limit.
-//! If the current output has reached the upper limit, then ThreadTempCheck_, the thread for TempCheck, is invoked.
-//!
-void MainWindow::periodicWork(){
-  muteLog = true;
-  if(threadMVcheck_->isRunning()) ui->checkBoxStatusPeriodic->setChecked(true);
-  else ui->checkBoxStatusPeriodic->setChecked(false);
-  if (com_->getMV() != com_->getMVupper()) LogMsg("Current MVpower is below the upper limit.");
-  else {
-    ui->textEdit_Log->setTextColor(QColor(255,0,0,255));
-    LogMsg("Current MVpower reaches upper limit.");
-    if (!threadTempCheck_->isRunning()) threadTempCheck_->start();
-    if (threadMVcheck_->isRunning()) threadMVcheck_->quit();
-    else threadMVcheck_->start();
-    ui->textEdit_Log->setTextColor(QColor(0,0,0,255));
-  }
-}
-
-//!
-//! \brief MainWindow::makePlot
-//! \details Function to get current temperature, output, and set temperature for plotting and writing data.
-//! Refer also fillDatAndPlot.
-//!
 void MainWindow::makePlot(){
-  //muteLog = true;
-  if(threadLog_->isRunning()) ui->checkBoxStatusRecord->setChecked(true);
-  else ui->checkBoxStatusRecord->setChecked(false);
-  //com_->askTemperature();
-  //com_->askSV();
-  //com_->askMV();
-  //muteLog = false;
   const double setTemperature = ui->lineEdit_SV->text().toDouble();
   QDateTime date = QDateTime::currentDateTime();
   valltemp_.push_back(com_->getTemperature());
@@ -1316,6 +1062,7 @@ void MainWindow::makePlot(){
   if(ui->checkBox_dataSave->isChecked()) writeData();
   double diff = fillDifference(true);
   if (!ui->checkBox_TempDropEnable->isChecked()) return;
+  /*
   if (isDrop(diff, 1) && countDropCheck_ <= 2) {
       ui->lineEdit_TempCheckCount->setText("Temperature drop is detected.");
       setColor(4, bkgColorChangeable_);
@@ -1328,12 +1075,9 @@ void MainWindow::makePlot(){
       setColor(1, bkgColorChangeable_);
       ui->lineEdit_TempCheckCount->clear();
   }
+  */
 }
 
-//!
-//! \brief MainWindow::writeData
-//! \details The Data is saved to the file generated by on_checkBox_dataSave_toggled.
-//!
 void MainWindow::writeData(){
   //qDebug() << com_->getTemperature();
   if(!ui->checkBox_dataSave->isChecked()) return;
@@ -1361,24 +1105,12 @@ void MainWindow::writeData(){
   output.close();
 }
 
-//!
-//! \brief MainWindow::on_checkBox_dataSave_toggled
-//! \param checked
-//! \details File is generated in this checkbos turn to be true (checked).
-//!
 void MainWindow::on_checkBox_dataSave_toggled(bool checked)
 {
   if(!checked) return;
   generateSaveFile();
 }
 
-//!
-//! \brief MainWindow::generateSavefile
-//! \return bool
-//! \details try to generate new file.
-//! Returns false if the file already exists.
-//! If the file does not exist, the header is written to the file and this function returns true.
-//!
 bool MainWindow::generateSaveFile(){
   QDateTime startTime = QDateTime::currentDateTime();
   QString name = startTime.toString("yyyyMMdd_HHmmss") + ".dat";
@@ -1397,29 +1129,6 @@ bool MainWindow::generateSaveFile(){
   }
 }
 
-//!
-//! \brief MainWindow::calcMovingAve
-//! \param vtemp
-//! \return double aberage value of Neighborhood average of 3 points
-//!
-double MainWindow::calcMovingAve(QVector<double> vtemp){
-  double mave =.0;
-  int size = 0;
-  for (auto i = 1; i < vtemp.size()-1; i++) {
-      mave += (vtemp.at(i-1) + vtemp.at(i) + vtemp.at(i+1) -3.0*vtemp.at(0))/3.0;
-      size ++;
-    }
-  mave /= size;
-  LogMsg("MovingAve " + QString::number(mave));
-  return mave;
-}
-
-//!
-//! \brief MainWindow::setColor
-//! \param colorindex
-//! \details setting background colors.
-//! The background color of windows is green, yellow, red, and gray if the color index is 1, 2, 3, and default, respectively.
-//!
 void MainWindow::setColor(int colorindex, bool enable){
   if (!enable) return;
   QPalette pal = palette();
@@ -1543,6 +1252,15 @@ void MainWindow::updatePID_D(double PID_D, bool mute){
   LogMsg(str);
 }
 
+void MainWindow::updateCheckNumber(int checkNumber){
+  if (checkNumber == 0) return;
+  ui->textEdit_Log->setTextColor(QColor(255, 0, 0, 255));
+  LogMsg("Checking temperature change in " + QString::number(checkNumber));
+  ui->textEdit_Log->setTextColor(QColor(0, 0, 0, 255));
+  ui->lineEdit_TempCheckCount->setText("Checking temperature change in " + QString::number(checkNumber));
+  setColor(2);
+}
+
 void MainWindow::catchLogMsg(const QString& msg){LogMsg(msg);}
 
 void MainWindow::connectDevice(){
@@ -1607,7 +1325,36 @@ void MainWindow::catchDanger(int type){
       break;
   }
   ui->textEdit_Log->setTextColor(QColor(0,0,0,255));
+  QDateTime date = QDateTime::currentDateTime();
+  QString datestr = date.toString("yyyyMMdd_HHmmss");
+  ui->lineEdit_TempCheckCount->setStyleSheet("background-color:yellow; color:red;selection-background-color:red;");
+  ui->lineEdit_TempCheckCount->setText("Emergency Stop at " + datestr);
   Quit();
+}
+
+void MainWindow::cathcEscapeTempCheckChange(int sign){
+  setColor(1);
+  ui->textEdit_Log->setTextColor(QColor(0, 0, 255, 255));
+  if (sign == 0){
+      LogMsg("Escape TempChangeCheck mode because current MV decrease belows MVupper.");
+  } else if (sign ==1) {
+      LogMsg("Escape TempChangeCheck mode because current temperature is in ignore range.");
+  } else {
+      LogMsg("Escape TempChangeCheck mode.");
+  }
+  ui->textEdit_Log->setTextColor(QColor(0, 0, 0, 255));
+}
+
+void MainWindow::catchStartTempChangeCheck(int checknumber){
+  setColor(2);
+  ui->textEdit_Log->setTextColor(QColor(255, 0, 0, 255));
+  if (checknumber == 0){
+      LogMsg("current MV reached MV upper.");
+      LogMsg("Start Temp Change Check mode.");
+  } else {
+      LogMsg("Temp Change Check mode in " + QString::number(checknumber));
+  }
+  ui->textEdit_Log->setTextColor(QColor(0, 0, 0, 255));
 }
 
 QCustomPlot* MainWindow::getPlot() const {return ui->plot;}

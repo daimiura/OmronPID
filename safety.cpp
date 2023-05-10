@@ -2,26 +2,29 @@
 
 Safety::Safety(Communication* com)
     : com_(com),
+      timerMVCheck_(new QTimer(this)),
+      timerTempChange_(new QTimer(this)),
+      intervalTempChange_(10000),
       numberOfCheck_(10),
       checkNumber_(0),
-      timerTempCheck_(new QTimer(this)),
-      timerTempChange_(new QTimer(this))
+      intervalMVCheck_(10000)
 {
   vTempChangeData_.clear();
-  timerTempCheck_->setInterval(4000);
-  timerTempChange_->setInterval(5000);
-  connect(timerTempCheck_, &QTimer::timeout, this, &Safety::checkTemperature);
-  connect(timerTempCheck_, &QTimer::timeout, this, &Safety::isMVupper);
+  timerMVCheck_->setInterval(intervalMVCheck_);
+  timerTempChange_->setInterval(intervalTempChange_);
+  connect(timerMVCheck_, &QTimer::timeout, this, &Safety::isMVupper);
   connect(timerTempChange_, &QTimer::timeout, this, &Safety::checkTempChange);
   connect(this, &Safety::permitedMaxTempChanged, this, &Safety::setPermitedMaxTemp);
   connect(this, &Safety::MVUpperChanged, this, &Safety::setMVUpper);
   connect(this, &Safety::NumberOfCheckChanged, this, &Safety::setNumberOfCheck);
   connect(this, &Safety::tempChangeThresholdChanged, this, &Safety::setTempChangeThreshold);
   connect(this, &Safety::MVupperReachedUpperLimit, this, &Safety::checkTempChange);
+  connect(this, &Safety::intervalMVCheckChanged, this, &Safety::setIntervalTempChange);
 }
 
+
 Safety::~Safety(){
-  delete timerTempCheck_;
+  delete timerMVCheck_;
   delete timerTempChange_;
   delete com_;
   mutex_.unlock();
@@ -36,16 +39,28 @@ void Safety::checkTemperature(){
   diffTemp_ = diffTemp();
 }
 
+
 void Safety::checkTempChange() {
-  timerTempChange_->start();
-  qDebug() << "checkTempCange at " << checkNumber_;
   if (!isMVupper_) {
-      checkNumber_ = 0;
-      vTempChangeData_.clear();
-      return;
+    checkNumber_ = 0;
+    vTempChangeData_.clear();
+    timerTempChange_->stop();
+    emit escapeTempCheckChange(0);
+    return;
+  }
+  double temp = com_->getTemperature();
+  if (temp >= ignoreLower_ && temp <= ignoreUpper_){
+    checkNumber_ = 0;
+    vTempChangeData_.clear();
+    timerTempChange_->stop();
+    emit escapeTempCheckChange(1);
+    return;
   }
 
+  emit startTempChangeCheck(checkNumber_);
   QMutexLocker locker(&mutex_);
+  timerTempChange_->start();
+  qDebug() << "checkTempCange at " << checkNumber_;
   if (checkNumber_ <= numberOfCheck_){
     vTempChangeData_.push_back(com_->getTemperature());
     checkNumber_ ++;
@@ -58,9 +73,9 @@ void Safety::checkTempChange() {
   if (ave <= tempChangeThreshold_) {
     emit dangerSignal(1);
     timerTempChange_->stop(); // 温度取得を停止
-    timerTempCheck_->stop(); // 温度取得を停止
+    timerMVCheck_->stop(); // 温度取得を停止
   } else {
-    timerTempCheck_->stop();
+    timerMVCheck_->stop();
   }
   vdiff.clear();
   vTempChangeData_.clear();
@@ -107,9 +122,15 @@ double Safety::diffTemp() const {
 }
 
 void Safety::TempCheckStart(int interval){
-  setIntervalTempCheck(interval);
-  timerTempCheck_->start(intervalTempCheck_);
+  setIntervalMVCheck(interval);
+  timerMVCheck_->start(intervalMVCheck_);
 }
+
+void Safety::stopTimer(){
+  timerMVCheck_->stop();
+  timerTempChange_->stop();
+}
+
 
 double Safety::diffTemp(double temp1, double temp2) const {return temp1 - temp2;}
 double Safety::getTemperature() const {return temperature_;}
@@ -117,14 +138,24 @@ double Safety::getPermitedMaxTemp() const {return permitedMaxTemp_;}
 double Safety::getMVUpper() const {return MVUpper_;}
 double Safety::getMV() const {return MV_;}
 double Safety::getTempChangeThreshold() const {return tempChangeThreshold_;}
+double Safety::getIgnoreLower() const {return ignoreLower_;}
+double Safety::getIgnoreUpper() const {return ignoreUpper_;}
 int Safety::getNumberOfCheck() const {return numberOfCheck_;}
-int Safety::getIntervalTempCheck() const {return intervalTempCheck_;}
+int Safety::getCheckNumber() const {return checkNumber_;}
+int Safety::getIntervalMVCheck() const {return intervalMVCheck_;}
 int Safety::getIntervalTempChange() const {return intervalTempChange_;}
+
 
 void Safety::setPermitedMaxTemp(double maxtemp) {permitedMaxTemp_ = maxtemp;}
 void Safety::setMVUpper(double MVupper) {MVUpper_ = MVupper;}
 void Safety::setMV(double MV) {MV_ = MV;}
 void Safety::setNumberOfCheck(int number) {numberOfCheck_ = number;}
+void Safety::setCheckNumber(int number) {checkNumber_ = number;}
 void Safety::setTempChangeThreshold(double temp){tempChangeThreshold_ = temp;}
-void Safety::setIntervalTempCheck(int interval) {intervalTempCheck_ = interval;}
+void Safety::setIntervalMVCheck(int interval) {intervalMVCheck_ = interval;}
 void Safety::setIntervalTempChange(int interval) {intervalTempChange_ = interval;}
+void Safety::setEnableTempChangeeRange (bool enable) {isEnableTempChangeeRange_ = enable;}
+void Safety::setIgnoreLower(double lower) {ignoreLower_ = lower;}
+void Safety::setIgnoreUpper(double upper) {ignoreUpper_ = upper;}
+void Safety::setIgnoreRange(double lower, double upper){ignoreLower_ = lower; ignoreUpper_ = upper;}
+
