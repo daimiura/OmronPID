@@ -91,5 +91,3 @@ void DataSummary::logingStart(){
 void DataSummary::logingStop(){
   logTimer_->stop();
 }
-
-

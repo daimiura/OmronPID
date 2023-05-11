@@ -104,8 +104,13 @@ MainWindow::MainWindow(QWidget *parent) :
   ui->textEdit_Log->setTextColor(QColor(0,0,0,255));
   LogMsgBox_ = new QMessageBox;
 
+  plotTimer_ = new QTimer(this);
+  plotTimer_->setInterval(intervalPlot_);
   connect(ui->spinBox_TempRecordTime, SIGNAL(valueChanged(int)), data_, SLOT(setIntervalLog(int)));
+  connect(ui->spinBox_TempRecordTime, SIGNAL(valueChanged(int)), this, SLOT(setIntervalPlot(int)));
   connect(ui->checkBox_dataSave, SIGNAL(toggled(bool)), data_, SLOT(setSave(bool)));
+  connect(plotTimer_, SIGNAL(timeout()), this, SLOT(makePlot()));
+
 }
 
 
@@ -824,6 +829,7 @@ void MainWindow::on_action_Setting_Temperature_Drop_triggered(){
 void MainWindow::setIntervalAskMV(){
   ui->lineEdit_IntervalAskMV->setEnabled(true);
   ui->lineEdit_IntervalAskMV->setText(QString::number(configureDialog_->intervalAskMV_));
+  safety_->stop();
   safety_->setIntervalMVCheck(configureDialog_->intervalAskMV_);
   ui->lineEdit_IntervalAskMV->setEnabled(false);
 }
@@ -831,6 +837,7 @@ void MainWindow::setIntervalAskMV(){
 void MainWindow::setIntervalAskTemp(){
   ui->lineEdit_IntervalAskTemp->setEnabled(true);
   ui->lineEdit_IntervalAskTemp->setText(QString::number(configureDialog_->intervalAskTemp_));
+  safety_->stop();
   safety_->setIntervalTempChange(configureDialog_->intervalAskTemp_);
   ui->lineEdit_IntervalAskTemp->setEnabled(false);
 }
@@ -838,6 +845,7 @@ void MainWindow::setIntervalAskTemp(){
 void MainWindow::setNumbers(){
   ui->lineEdit_Numbers->setEnabled(true);
   ui->lineEdit_Numbers->setText(QString::number(configureDialog_->numbers_));
+  safety_->stop();
   safety_->setNumberOfCheck(configureDialog_->numbers_);
   ui->lineEdit_Numbers->setEnabled(false);
 }
@@ -845,6 +853,7 @@ void MainWindow::setNumbers(){
 void MainWindow::setSafeLimit(){
   ui->lineEdit_SafeLimit->setEnabled(true);
   ui->lineEdit_SafeLimit->setText(QString::number(configureDialog_->safeLimit_));
+  safety_->stop();
   safety_->setTempChangeThreshold(configureDialog_->safeLimit_);
   ui->lineEdit_SafeLimit->setEnabled(false);
 }
@@ -852,6 +861,7 @@ void MainWindow::setSafeLimit(){
 void MainWindow::setIgnoreRange(){
   ui->lineEdit_IgnoreLower->setEnabled(true);
   ui->lineEdit_IgnoreUpper->setEnabled(true);
+  safety_->stop();
   if(configureDialog_->ignoreEnable_){
     ui->lineEdit_IgnoreLower->setText(QString::number(configureDialog_->ignoreLower_));
     ui->lineEdit_IgnoreUpper->setText(QString::number(configureDialog_->ignoreUpper_));
@@ -868,6 +878,7 @@ void MainWindow::setIgnoreRange(){
 void MainWindow::setIgnoreEnable(){
   ui->checkBox_Ignore->setEnabled(true);
   ui->checkBox_Ignore->setChecked(configureDialog_->ignoreEnable_);
+  safety_->stop();
   safety_->setEnableTempChangeeRange(configureDialog_->ignoreEnable_);
   ui->checkBox_Ignore->setEnabled(false);
 }
@@ -919,11 +930,6 @@ void MainWindow::on_pushButton_Log_toggled(bool checked){
   }
 }
 
-void MainWindow::on_spinBox_TempRecordTime_valueChanged(int arg1){
-  //LogMsg("Record Temp Interval set to " + QString::number(threadLog_->interval_ *.001) + " seconds.");
-}
-
-
 void MainWindow::Run(){
   statusBar()->clearMessage();
   LogMsg("Set Run.");
@@ -937,9 +943,12 @@ void MainWindow::Run(){
   countTempCheck_ = 0;
   statusRun_ = true;
   sendLINE("Running starts.");
+  plotTimer_->start();
   data_->generateSaveFile();
   data_->SetIntervalLog(ui->spinBox_TempRecordTime->value());
   data_->logingStart();
+  safety_->setIntervalMVCheck(ui->lineEdit_IntervalAskMV->text().toInt());
+  safety_->setIntervalTempChange(ui->lineEdit_IntervalAskTemp->text().toInt());
   safety_->start();
 }
 
@@ -962,6 +971,7 @@ void MainWindow::Stop(){
   safety_->stop();
   //data_->setIntervalLog(ui->spinBox_TempRecordTime->value());
   data_->logingStop();
+  plotTimer_->stop();
   sendLINE("Running stop.");
 }
 
@@ -985,6 +995,7 @@ void MainWindow::Quit(){
   setColor(3, bkgColorChangeable_);
   bkgColorChangeable_ = false;
   data_->logingStart();
+  plotTimer_->start();
 }
 
 
@@ -1000,7 +1011,6 @@ void MainWindow::makePlot(){
   fillDataAndPlot(date, com_->getTemperature(), setTemperature, com_->getMV());
   //if(ui->checkBox_dataSave->isChecked()) writeData();
   double diff = fillDifference(true);
-
 }
 
 void MainWindow::on_checkBox_dataSave_toggled(bool checked)
@@ -1266,3 +1276,14 @@ void MainWindow::saveFile(bool sucess){
     }
 }
 
+void MainWindow::setIntervalPlot(int interval){
+  intervalPlot_ = interval * 1000;
+  if (plotTimer_->isActive()){
+    plotTimer_->stop();
+    plotTimer_->setInterval(intervalPlot_);
+    plotTimer_->start();
+  } else {
+    plotTimer_->stop();
+    plotTimer_->setInterval(intervalPlot_);
+  }
+}

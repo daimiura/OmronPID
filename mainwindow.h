@@ -107,12 +107,10 @@ private slots:
     void on_doubleSpinBox_MVupper_valueChanged(double arg1);
     void on_checkBox_dataSave_toggled(bool checked);
     void on_pushButton_Log_toggled(bool checked);
-    void on_spinBox_TempRecordTime_valueChanged(int arg1);
     void on_pushButton_RunStop_toggled(bool checked);
     void on_actionOpen_File_triggered();
     void on_action_Setting_parameters_for_TempCheck_triggered();
     void on_action_Setting_plot_triggered();
-    //void on_action_Setting_Temperature_Drop_triggered();
     void on_actionHelp_Page_triggered();
     void HelpPicNext();
 
@@ -122,12 +120,14 @@ private slots:
     void Quit();
     void setIntervalAskMV();
     void setIntervalAskTemp();
+    void setIntervalPlot(int interval);
     void setSafeLimit();
     void setNumbers();
     void setIgnoreRange();
     void setParametersTempCheckChange(bool mute = true);
     void setIgnoreEnable();
     double fillDifference(bool mute = true);
+
 
     void setColor(int colorindex = 0, bool changerable = true);
 
@@ -151,6 +151,7 @@ private:
     int threadTimerInterval_;
     int connectionTimerInteral_;
     int timing_;
+    int intervalPlot_{5000};
     QDateTime dateStart_;
     QString dateStartStr_;
     bool tempControlOnOff;
@@ -164,6 +165,7 @@ private:
     bool statusRun_;
     bool isSettParametersTempCheck_;
 
+
     QVector<QCPGraphData> pvData;
     QVector<QCPGraphData> svData;
     QVector<QCPGraphData> mvData;
@@ -173,7 +175,7 @@ private:
 
     QTimer * clock;
     QTimer * waitTimer;
-    QTimer * connectionTimer_;
+    QTimer *plotTimer_;
     QString fileName_;
     QString filePath_;
 

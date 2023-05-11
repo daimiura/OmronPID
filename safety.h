@@ -46,7 +46,7 @@ public:
   void checkTempChange();
   void setEnableTempChangeeRange(bool enable);
 
-  void start(int interval = 5000);
+  void start();
   void stop();
 
 

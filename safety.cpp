@@ -36,8 +36,7 @@ void Safety::checkTemperature(){
   QMutexLocker locker(&mutex_);
   temperature_ = com_->getTemperature();
   addTemperature(temperature_);
-  //if (temperature_ >= permitedMaxTemp_) emit dangerSignal(0);
-  if (temperature_ >= 32.0) emit dangerSignal(0);
+  if (temperature_ >= permitedMaxTemp_) emit dangerSignal(0);
   diffTemp_ = diffTemp();
 }
 
@@ -123,10 +122,10 @@ double Safety::diffTemp() const {
   return currentTemp - oldTemp;
 }
 
-void Safety::start(int interval){
+void Safety::start(){
   checkNumber_ = 0;
-  setIntervalMVCheck(interval);
-  timerMVCheck_->start(intervalMVCheck_);
+  timerMVCheck_->setInterval(intervalMVCheck_);
+  timerMVCheck_->start();
 }
 
 void Safety::stop(){
@@ -156,8 +155,14 @@ void Safety::setMV(double MV) {MV_ = MV;}
 void Safety::setNumberOfCheck(int number) {numberOfCheck_ = number;}
 void Safety::setCheckNumber(int number) {checkNumber_ = number;}
 void Safety::setTempChangeThreshold(double temp){tempChangeThreshold_ = temp;}
-void Safety::setIntervalMVCheck(int interval) {intervalMVCheck_ = interval;}
-void Safety::setIntervalTempChange(int interval) {intervalTempChange_ = interval;}
+void Safety::setIntervalMVCheck(int interval) {
+  intervalMVCheck_ = interval*1000;
+  timerMVCheck_->setInterval(intervalMVCheck_);
+}
+void Safety::setIntervalTempChange(int interval) {
+  intervalTempChange_ = interval*1000;
+  timerTempChange_->setInterval(intervalTempChange_);
+}
 void Safety::setEnableTempChangeeRange (bool enable) {isEnableTempChangeeRange_ = enable;}
 void Safety::setIgnoreLower(double lower) {ignoreLower_ = lower;}
 void Safety::setIgnoreUpper(double upper) {ignoreUpper_ = upper;}
