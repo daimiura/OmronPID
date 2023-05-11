@@ -25,7 +25,6 @@ Communication::Communication(QMainWindow *parent, QStatusBar *statusBar)
   // タイマーの設定
   connect(connectTimer_, &QTimer::timeout, this, &Communication::checkConnection);
   connect(timerUpdate_, &QTimer::timeout, this, &Communication::askStatus);
-
  }
 
 Communication::~Communication(){
@@ -304,8 +303,8 @@ void Communication::askStatus(){
   askTemperature();
   askMV();
   askSV();
-  askMVupper();
-  askMVlower();
+  //askMVupper();
+  //askMVlower();
 }
 
 

@@ -11,9 +11,9 @@ DataSummary::DataSummary(Communication* com)
     myDir.mkpath(DATA_PATH_2);
     filePath_ = DATA_PATH_2;
   }
-  connect(com_, &Communication::TemperatureUpdated, this, &DataSummary::setTemperature);
-  connect(com_, &Communication::MVUpdated, this, &DataSummary::setMV);
-  connect(com_, &Communication::SVUpdated, this, &DataSummary::setSV);
+  //connect(com_, &Communication::TemperatureUpdated, this, &DataSummary::setTemperature);
+  //connect(com_, &Communication::MVUpdated, this, &DataSummary::setMV);
+  //connect(com_, &Communication::SVUpdated, this, &DataSummary::setSV);
 }
 
 double DataSummary::getTemperature() const {return temperature_;}
