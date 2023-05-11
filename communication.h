@@ -30,6 +30,8 @@ class Communication : public QObject{
   Q_PROPERTY(double MVupper READ getMVupper WRITE setMVupper NOTIFY MVupperUpdated);
   Q_PROPERTY(double MVlower READ getMVlower WRITE setMVlower NOTIFY MVlowerUpdated);
   Q_PROPERTY(int OmronID READ getOmronID WRITE setOmronID NOTIFY OmronIDChanged);
+  Q_PROPERTY(int intervalUpdate READ getIntervalUpdate WRITE setIntervalUpdate NOTIFY intervalUpdateChanged);
+  Q_PROPERTY(int intervalConectionCheck READ getIntervalConectionCheck WRITE setIntervalConectionCheck NOTIFY intervalConectionCheckChanged);
 public:
     /**
      * @brief Constructs a Communication object.
@@ -86,6 +88,8 @@ public:
     void setMVupper(double MVupper);
     void setMVlower(double MVlower);
     void setOmronID(int omronID);
+    void setIntervalUpdate(int interval);
+    void setIntervalConectionCheck(int interval);
 
     //getter methods
     QModbusRtuSerialMaster* getOmron() const;
@@ -100,6 +104,8 @@ public:
     double getPID_I() const;
     double getPID_D() const;
     int getOmronID() const;
+    int getIntervalUpdate() const;
+    int getIntervalConectionCheck() const;
 
 
     /**
@@ -114,14 +120,14 @@ public:
     };
 
 signals:
-    void TemperatureUpdated(double temperature, bool mute = true);
-    void MVUpdated(double MV, bool mute = true);
-    void SVUpdated(double SV, bool mute = true);
-    void MVupperUpdated(double MVupper, bool mute = true);
-    void MVlowerUpdated(double MVlopwer, bool mute = true);
-    void PID_PUpdated(double PID_P, bool mute = true);
-    void PID_IUpdated(double PID_I, bool mute = true);
-    void PID_DUpdated(double PID_D, bool mute = true);
+    void TemperatureUpdated(double temperature);
+    void MVUpdated(double MV);
+    void SVUpdated(double SV);
+    void MVupperUpdated(double MVupper);
+    void MVlowerUpdated(double MVlopwer);
+    void PID_PUpdated(double PID_P);
+    void PID_IUpdated(double PID_I);
+    void PID_DUpdated(double PID_D);
     void ATSendFinish(int atFlag);
     void SVSendFinish(double SV);
     void connectTimeout();
@@ -133,29 +139,39 @@ signals:
     void failedConnect();
     void OmronIDChanged();
     void serialPortRemove(QString str);
+    void intervalUpdateChanged(int interval);
+    void intervalConectionCheckChanged(int interval);
 
 private:
     /**
      * @brief Pointer to the QModbusRtuSerialMaster object for communication with the E5CC temperature controller.
      */
+    QMainWindow *mainwindow_;
+    QStatusBar *statusBar_;
     QModbusRtuSerialMaster* omron_;
     QList<QSerialPortInfo> infos_;
     QModbusTcpClient* modbusDevice_;
     QModbusReply *modbusReply_;
-    QTimer *timer_, *connectTimer_;
-    MainWindow *mainwindow_;
-    QStatusBar *statusBar_;
+    QTimer *timerUpdate_, *connectTimer_;
     QMutex mutex_;
-    int respondType_;
-    bool modbusReady_;
-    bool isSerialPortRemoved_ = false;
-    int omronID_;
     QString portName_;
     QSerialPort *serialPort_;
-    double temperature_, SV_, MV_;
-    double MVupper_, MVlower_;
-    double tempDecimal_ = 0.1;
-    double pid_P_, pid_I_, pid_D_;
+    int respondType_;
+    int omronID_;
+    int intervalUpdate_{3000};
+    int intervalConectionCheck_{10000};
+    bool modbusReady_;
+    bool isSerialPortRemoved_ = false;
+    double temperature_{};
+    double SV_{};
+    double MV_{};
+    double MVupper_{};
+    double MVlower_{};
+    double tempDecimal_{0.1};
+    double pid_P_{};
+    double pid_I_{};
+    double pid_D_{};
+
     void Connection();
     void Run();
     void Stop();

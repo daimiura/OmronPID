@@ -36,6 +36,7 @@
 #include "plotdialog.h"
 #include "tempdropdialog.h"
 #include "notify.h"
+#include "datasummary.h"
 
 //!
 //! \namespace Ui
@@ -46,6 +47,7 @@ namespace Ui {
 
 class Communication;
 class Safety;
+class DataSummary;
 
 //! \brief The MainWindow class
 class MainWindow : public QMainWindow
@@ -65,14 +67,14 @@ signals:
 
 public slots:
   void makePlot();
-  void updateTemperature(double temperature, bool mute);
-  void updateMV(double MV, bool mute);
-  void updateSV(double SV, bool mute);
-  void updateMVupper(double MVupper, bool mute);
-  void updateMVlower(double MVlower, bool mute);
-  void updatePID_P(double PID_P, bool mute);
-  void updatePID_I(double PID_I, bool mute);
-  void updatePID_D(double PID_D, bool mute);
+  void updateTemperature(double temperature);
+  void updateMV(double MV);
+  void updateSV(double SV);
+  void updateMVupper(double MVupper);
+  void updateMVlower(double MVlower);
+  void updatePID_P(double PID_P);
+  void updatePID_I(double PID_I);
+  void updatePID_D(double PID_D);
   void finishSendAT(int atFlag);
   void finishSendSV(double SV);
   void catchLogMsg(const QString& msg);
@@ -93,8 +95,8 @@ private slots:
     void showTime();
     void allowSetNextSV();
     void getSetting();
-    void writeData();
-    bool generateSaveFile();
+    //void writeData();
+    //bool generateSaveFile();
     bool isIgnore(bool check, double temp);
     void setTextTempDrop(bool);
 
@@ -135,9 +137,7 @@ private slots:
     void setColor(int colorindex = 0, bool changerable = true);
 
     void sendLINE(const QString& message);
-
-    //void sendLine(const QString& message);
-
+    void saveFile(bool sucess);
 
 
 private:
@@ -146,6 +146,7 @@ private:
     Communication *com_;
     Safety *safety_;
     Notify *notify_;
+    DataSummary *data_;
 
     QMessageBox * LogMsgBox_;
 

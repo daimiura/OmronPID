@@ -1,5 +1,6 @@
 debug/communication.o
 debug/configuredialog.o
+debug/datasummary.o
 debug/gui.o
 debug/main.o
 debug/mainwindow.o
@@ -12,6 +13,7 @@ debug/tempdropdialog.o
 debug/qrc_resource.o
 debug/moc_communication.o
 debug/moc_configuredialog.o
+debug/moc_datasummary.o
 debug/moc_mainwindow.o
 debug/moc_mythread.o
 debug/moc_notify.o

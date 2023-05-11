@@ -12,13 +12,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "safety.h"
+#include "datasummary.h"
 
-
-const QString DESKTOP_PATH = QStandardPaths::locate(QStandardPaths::DesktopLocation, QString(), QStandardPaths::LocateDirectory);
-const QString DATA_PATH_2 = DESKTOP_PATH + "Temp_Record";
-const QString DATA_PATH = "Z:/triplet/Temp_Record";
-//const QString DATA_PATH = "/c/Users/daisuke/OmronPID";
-//TODO nicer time display on LogMsg
 
 MainWindow::MainWindow(QWidget *parent) :
   QMainWindow(parent),
@@ -54,9 +49,15 @@ MainWindow::MainWindow(QWidget *parent) :
   connect(safety_, &Safety::escapeTempCheckChange, this, &MainWindow::cathcEscapeTempCheckChange);
   connect(safety_, &Safety::startTempChangeCheck, this, &MainWindow::catchStartTempChangeCheck);
 
+  data_ = new DataSummary(com_);
+  QDateTime startTime = QDateTime::currentDateTime();
+  QString name = startTime.toString("yyyyMMdd_HHmmss") + ".dat";
+  data_->setFileName(ui->lineEdit_DirPath->text() + "/" + name);
+  data_->setSave(ui->checkBox_dataSave->isChecked());
+  connect(data_, &DataSummary::FileSave, this, &MainWindow::saveFile);
+
   notify_ = new Notify(this);
 
-  //LogMsgBox_ = new QMessageBox;
   initializeVariables();
   timing_ = com_->timing::clockUpdate;
   setEnabledFalse();
@@ -81,21 +82,7 @@ MainWindow::MainWindow(QWidget *parent) :
   plotDialog_ = new PlotDialog(this);
   plotDialog_->setWindowTitle("Setting for Plot");
 
-//Check Temp Directory, is not exist, create
-  QDir myDir;
-  myDir.setPath(DATA_PATH);
-  filePath_ = DATA_PATH;
-  // if Z:/triplet/Temp_Record does not exist, make directory on desktop.
-  if( !myDir.exists()) {
-      QMessageBox msgBox;
-      msgBox.setText("Cannot locate Z Drive!\n"
-                     "Please set the NAS to be Z:\n"
-                     "Data will be saved in Desktop/Temp_Record");
-      myDir.mkpath(DATA_PATH_2);
-      filePath_ = DATA_PATH_2;
-  }else{
-      LogMsg("Data will be saved in : " + DATA_PATH );
-  }
+
 
   setupPlot();
   setupCombBox();
@@ -115,6 +102,9 @@ MainWindow::MainWindow(QWidget *parent) :
   LogMsg("The AT and RUN/STOP do not get from the device. Please be careful.");
   ui->textEdit_Log->setTextColor(QColor(0,0,0,255));
   ui->lineEdit_DirPath->setText(filePath_);
+
+
+  LogMsgBox_ = new QMessageBox;
 }
 
 
@@ -435,7 +425,7 @@ void MainWindow::on_pushButton_Control_clicked()
             double MV = com_->getMV();
             QDateTime date = QDateTime::currentDateTime();
             fillDataAndPlot(date, temperature, targetValue_2, MV);
-            writeData();
+            data_->writeData();
             while(getTempTimer.remainingTime() > 0 ){
                 waitForMSec(com_->timing::getTempTimer);
                 if(waitTimer->remainingTime() <= 0 && waitTimerStarted == true){
@@ -520,7 +510,7 @@ void MainWindow::on_pushButton_Control_clicked()
                 QDateTime date = QDateTime::currentDateTime();
                 double MV = com_->getMV();
                 fillDataAndPlot(date, temperature, smallShift, MV);
-                writeData();
+                data_->writeData();
                 while(getTempTimer.remainingTime() > 0 ){
                     waitForMSec(com_->timing::getTempTimer);
                     if( nextSV == true){
@@ -586,7 +576,7 @@ void MainWindow::on_pushButton_Control_clicked()
             double MV = com_->getMV();
             QDateTime date = QDateTime::currentDateTime();
             fillDataAndPlot(date, temperature, smallShift, MV);
-            writeData();
+            data_->writeData();
             while(getTempTimer.remainingTime() != -1 ){
                 waitForMSec(com_->timing::getTempTimer);
             }
@@ -938,15 +928,12 @@ void MainWindow::on_pushButton_Log_toggled(bool checked){
   bool connectPID = ui->pushButton_Connect->isChecked();
   if(checked && connectPID){
     ui->pushButton_Log->setText("Logging Stop");
-    //if(!threadLog_->isRunning()) threadLog_->start();
     ui->checkBoxStatusRecord->setChecked(true);
   }else if (connectPID) {
     ui->pushButton_Log->setText("Logging Start");
-    //if(threadLog_->isRunning()) threadLog_->quit();
-      ui->checkBoxStatusRecord->setChecked(false);
+    ui->checkBoxStatusRecord->setChecked(false);
   } else {
     LogMsg("Not connected. Please check COM PORT etc.");
-    //if(threadLog_->isRunning()) threadLog_->quit();
     ui->checkBoxStatusRecord->setChecked(false);
   }
 }
@@ -969,7 +956,7 @@ void MainWindow::Run(){
   countTempCheck_ = 0;
   statusRun_ = true;
   sendLINE("Running starts.");
-  generateSaveFile();
+  data_->generateSaveFile();
   safety_->TempCheckStart();
 }
 
@@ -1059,25 +1046,12 @@ void MainWindow::makePlot(){
   QDateTime date = QDateTime::currentDateTime();
   valltemp_.push_back(com_->getTemperature());
   fillDataAndPlot(date, com_->getTemperature(), setTemperature, com_->getMV());
-  if(ui->checkBox_dataSave->isChecked()) writeData();
+  //if(ui->checkBox_dataSave->isChecked()) writeData();
   double diff = fillDifference(true);
-  if (!ui->checkBox_TempDropEnable->isChecked()) return;
-  /*
-  if (isDrop(diff, 1) && countDropCheck_ <= 2) {
-      ui->lineEdit_TempCheckCount->setText("Temperature drop is detected.");
-      setColor(4, bkgColorChangeable_);
-      countDropCheck_++;
-  } else if (isDrop(diff, 1) && countDropCheck_ > 2) {
-      Quit();
-      ui->lineEdit_TempCheckCount->setText("The temperature drop has exceeded the threshold.");
-  } else {
-      countDropCheck_ = 0;
-      setColor(1, bkgColorChangeable_);
-      ui->lineEdit_TempCheckCount->clear();
-  }
-  */
+
 }
 
+/*
 void MainWindow::writeData(){
   //qDebug() << com_->getTemperature();
   if(!ui->checkBox_dataSave->isChecked()) return;
@@ -1100,35 +1074,16 @@ void MainWindow::writeData(){
          << QString::number(com_->getSV())
          << "\t"
          << QString::number(com_->getMV())
-         << Qt::endl;
-
+         << Qt::endl
   output.close();
 }
+*/
 
 void MainWindow::on_checkBox_dataSave_toggled(bool checked)
 {
   if(!checked) return;
-  generateSaveFile();
+  data_->generateSaveFile();
 }
-
-bool MainWindow::generateSaveFile(){
-  QDateTime startTime = QDateTime::currentDateTime();
-  QString name = startTime.toString("yyyyMMdd_HHmmss") + ".dat";
-  fileName_ = ui->lineEdit_DirPath->text() + "/" + name;
-  QFile output(fileName_);
-  QTextStream stream(&output);
-  if (output.exists()) {
-    LogMsg("file already exists.");
-    output.close();
-    return false;
-  }else {
-    output.open(QIODevice::WriteOnly| QIODevice::Text);
-    stream <<"Date\t"<<"Date_t\t"<<"temp [C]\t"<<"SV [C]\t"<<"Output [%]" <<Qt::endl;
-    output.close();
-    return true;
-  }
-}
-
 void MainWindow::setColor(int colorindex, bool enable){
   if (!enable) return;
   QPalette pal = palette();
@@ -1191,65 +1146,78 @@ void MainWindow::addPortName(QList<QSerialPortInfo> info){
 
 
 //signals
-void MainWindow::updateTemperature(double temperature, bool mute){
+void MainWindow::updateTemperature(double temperature){
   ui->lineEdit_Temp->setText(QString::number(temperature) + " C");
+  /*
   if (mute) return;
   QString str = tr("Current Temperature : %1 C").arg(QString::number(temperature));
   LogMsg(str);
+  */
 }
 
-void MainWindow::updateMV(double MV, bool mute){
+void MainWindow::updateMV(double MV){
   ui->lineEdit_CurrentMV->setText(QString::number(MV) + " %");
+  /*
   if (mute) return;
   QString str = tr("Current MV : %1 \%").arg(QString::number(MV));
   LogMsg(str);
+  */
 }
 
-void MainWindow::updateSV(double SV, bool mute){
+void MainWindow::updateSV(double SV){
   ui->lineEdit_CurrentSV->setText(QString::number(SV) + " C");
+  /*
   if (mute) return;
   QString str = tr("Current Set Point : %1 C").arg(QString::number(SV));
   LogMsg(str);
+  */
 }
 
-void MainWindow::updateMVupper(double MVupper, bool mute){
+void MainWindow::updateMVupper(double MVupper){
   ui->doubleSpinBox_MVupper->setValue(MVupper);
   plot->yAxis2->setRangeUpper(MVupper + 2);
   plot->replot();
+  /*
   if (mute) return;
   QString str = tr("MV upper limit : %1 \%").arg(QString::number(MVupper));
   LogMsg(str);
+  */
 }
 
-void MainWindow::updateMVlower(double MVlower, bool mute){
+void MainWindow::updateMVlower(double MVlower){
   ui->doubleSpinBox_MVlower->setValue(MVlower);
-  if (mute) return;
+  /*
   QString str = tr("MV lower limit : %1 \%").arg(QString::number(MVlower));
   LogMsg(str);
+  */
 }
 
-void MainWindow::updatePID_P(double PID_P, bool mute){
+void MainWindow::updatePID_P(double PID_P){
   ui->lineEdit_P->setText(QString::number(PID_P));
+  /*
   if (mute) return;
   LogMsg("------ get Propertion band.");
   QString str = tr("P       : %1 ").arg(QString::number(PID_P));
   LogMsg(str);
+  */
 }
 
-void MainWindow::updatePID_I(double PID_I, bool mute){
+void MainWindow::updatePID_I(double PID_I){
   ui->lineEdit_I->setText(QString::number(PID_I));
-  if (mute) return;
+  /*
   LogMsg("------ get integration time.");
   QString str = tr("I (raw) : %1 sec").arg(QString::number(PID_I));
   LogMsg(str);
+  */
 }
 
-void MainWindow::updatePID_D(double PID_D, bool mute){
+void MainWindow::updatePID_D(double PID_D){
   ui->lineEdit_D->setText(QString::number(PID_D));
-  if (mute) return;
+  /*
   LogMsg("------ get derivative time.");
   QString str = tr("D (raw) : %1 sec").arg(QString::number(PID_D));
   LogMsg(str);
+  */
 }
 
 void MainWindow::updateCheckNumber(int checkNumber){
@@ -1355,6 +1323,15 @@ void MainWindow::catchStartTempChangeCheck(int checknumber){
       LogMsg("Temp Change Check mode in " + QString::number(checknumber));
   }
   ui->textEdit_Log->setTextColor(QColor(0, 0, 0, 255));
+}
+
+void MainWindow::saveFile(bool sucess){
+  if (sucess) LogMsg("Sucess to write data log.");
+  else {
+      ui->textEdit_Log->setTextColor(QColor(0, 0, 255, 255));
+      LogMsg("Failed to srite data log.");
+      ui->textEdit_Log->setTextColor(QColor(0, 0, 0, 255));
+    }
 }
 
 QCustomPlot* MainWindow::getPlot() const {return ui->plot;}

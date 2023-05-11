@@ -1,5 +1,6 @@
 release/communication.o
 release/configuredialog.o
+release/datasummary.o
 release/gui.o
 release/main.o
 release/mainwindow.o
@@ -12,6 +13,7 @@ release/tempdropdialog.o
 release/qrc_resource.o
 release/moc_communication.o
 release/moc_configuredialog.o
+release/moc_datasummary.o
 release/moc_mainwindow.o
 release/moc_mythread.o
 release/moc_notify.o

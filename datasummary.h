@@ -1,41 +1,52 @@
 #ifndef DATASUMMARY_H
 #define DATASUMMARY_H
 
+#include "communication.h"
 #include <QObject>
 
-class DataSummary: public QObject {
-  Q_OBJECT
+class Communication;
+
+class DataSummary : public QObject
+{
+    Q_OBJECT
+
 public:
-  explicit Data(Communication* com, QObject* parent = nullptr);
+    explicit DataSummary(Communication* com);
+    double getTemperature() const;
+    double getMV() const;
+    double getSV() const;
+    void setFileName(QString name);
+    void setSave(bool save);
 
-  Q_PROPERTY(double temperature READ temperature NOTIFY temperatureChanged)
-  Q_PROPERTY(double mv READ mv NOTIFY mvChanged)
-  Q_PROPERTY(double sv READ sv NOTIFY svChanged)
-  Q_PROPERTY(int interval READ interval WRITE setInterval NOTIFY intervalChanged)
-
-  double temperature() const;
-  double mv() const;
-  double sv() const;
-  void setInterval(int msec);
+    bool generateSaveFile();
+    int writeData();
 
 signals:
-  void temperatureChanged();
-  void mvChanged();
-  void svChanged();
-  void intervalChanged();
+    void temperatureChanged(double temperature);
+    void mvChanged(double mv);
+    void svChanged(double sv);
+    void FileSave(bool sucess);
 
 private slots:
-  void updateData();
+    void setTemperature(double temperature);
+    void setMV(double mv);
+    void setSV(double sv);
+
 
 private:
-  Communication* com_;
-  QTimer* timer_;
-  double temperature_;
-  double mv_;
-  double sv_;
-  int interval_;
+    Communication *com_;
+    double temperature_{};
+    double mv_{};
+    double sv_{};
+    QString fileName_{};
+    QString filePath_{};
+    bool save_{true};
+
+
+
+    const QString DESKTOP_PATH = QStandardPaths::locate(QStandardPaths::DesktopLocation, QString(), QStandardPaths::LocateDirectory);
+    const QString DATA_PATH_2 = DESKTOP_PATH + "Temp_Record";
+    const QString DATA_PATH = "Z:/triplet/Temp_Record";
 };
-
-
 
 #endif // DATASUMMARY_H

@@ -12,7 +12,7 @@ Communication::Communication(QMainWindow *parent, QStatusBar *statusBar)
       omron_(nullptr),
       modbusDevice_(nullptr),
       modbusReply_(nullptr),
-      timer_(new QTimer(this)),
+      timerUpdate_(new QTimer(this)),
       connectTimer_(new QTimer(this)),
       statusBar_(statusBar)
 {
@@ -24,6 +24,7 @@ Communication::Communication(QMainWindow *parent, QStatusBar *statusBar)
   omron_= new QModbusRtuSerialMaster(this);
   // タイマーの設定
   connect(connectTimer_, &QTimer::timeout, this, &Communication::checkConnection);
+  connect(timerUpdate_, &QTimer::timeout, this, &Communication::askStatus);
 
  }
 
@@ -191,8 +192,6 @@ void Communication::Connection(){
      QString cmd = "00 00 01 01";
      QByteArray value = QByteArray::fromHex(cmd.toStdString().c_str());
      request(QModbusPdu::WriteSingleRegister, value);
-     timer_->start(5000);
-      connectTimer_->start(10000);
     }else{
       emit failedConnect();
     }
@@ -202,6 +201,8 @@ void Communication::Run(){
   QString cmd = "00 00 01 00";
   QByteArray value = QByteArray::fromHex(cmd.toStdString().c_str());
   request(QModbusPdu::WriteSingleRegister, value);
+  timerUpdate_->start(intervalUpdate_);
+  connectTimer_->start(intervalConectionCheck_);
 }
 
 void Communication::sendRequestAT(int atFlag){
@@ -239,6 +240,8 @@ void Communication::Stop(){
   QString cmd = "00 00 01 01";
   QByteArray value = QByteArray::fromHex(cmd.toStdString().c_str());
   request(QModbusPdu::WriteSingleRegister, value);
+  timerUpdate_->stop();
+  connectTimer_->stop();
 }
 
 void Communication::askTemperature(){
@@ -286,13 +289,13 @@ void Communication::askPID(QString PID){
       emit PID_DUpdated(pid_D_);
   } else {
     read(QModbusDataUnit::HoldingRegisters, static_cast<int>(E5CC_Address::Type::PID_P), 2);
-     waitForMsec(timing::modbus);
+     waitForMsec(2*timing::modbus);
      emit PID_PUpdated(pid_P_);
      read(QModbusDataUnit::HoldingRegisters, static_cast<int>(E5CC_Address::Type::PID_I), 2);
-     waitForMsec(timing::modbus);
+     waitForMsec(2*timing::modbus);
      emit PID_IUpdated(pid_I_);
      read(QModbusDataUnit::HoldingRegisters, static_cast<int>(E5CC_Address::Type::PID_D), 2);
-     waitForMsec(timing::modbus);
+     waitForMsec(2*timing::modbus);
      emit PID_DUpdated(pid_D_);
   }
 }
@@ -357,8 +360,6 @@ void Communication::checkConnection(){
   }
 }
 
-
-
 // setter methods
 void Communication::setSerialPortName(QString portName){portName_ = portName;}
 void Communication::setTemperature(double temperature){temperature_ = temperature;}
@@ -367,6 +368,8 @@ void Communication::setMV(double MV){MV_ = MV;}
 void Communication::setMVupper(double MVupper){MVupper_ = MVupper;}
 void Communication::setMVlower(double MVlower){MVlower_ = MVlower;}
 void Communication::setOmronID(int OmronID){omronID_ = OmronID;}
+void Communication::setIntervalUpdate(int interval){intervalUpdate_ = interval;}
+void Communication::setIntervalConectionCheck(int interval){intervalConectionCheck_ = interval;}
 
 // getter methods
 QModbusRtuSerialMaster* Communication::getOmron() const {return omron_;}
@@ -381,6 +384,8 @@ double Communication::getPID_P() const {return pid_P_;}
 double Communication::getPID_I() const {return pid_I_;}
 double Communication::getPID_D() const {return pid_D_;}
 int Communication::getOmronID() const {return omronID_;}
+int Communication::getIntervalUpdate() const {return intervalUpdate_;}
+int Communication::getIntervalConectionCheck() const {return intervalConectionCheck_;}
 
 bool operator==(const QSerialPortInfo &lhs, const QSerialPortInfo &rhs){
   return lhs.portName() == rhs.portName() &&
