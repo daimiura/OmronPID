@@ -26,22 +26,37 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += \
+    communication.cpp \
     configuredialog.cpp \
+<<<<<<< HEAD
     joindialog.cpp \
+=======
+    datasummary.cpp \
+    gui.cpp \
+>>>>>>> develop_ModBus
         main.cpp \
         mainwindow.cpp \
     mythread.cpp \
+    notify.cpp \
     plotdialog.cpp \
     qcustomplot.cpp \
+    safety.cpp \
     tempdropdialog.cpp
 
 HEADERS += \
+    communication.h \
     configuredialog.h \
+<<<<<<< HEAD
     joindialog.h \
+=======
+    datasummary.h \
+>>>>>>> develop_ModBus
         mainwindow.h \
     mythread.h \
+    notify.h \
     plotdialog.h \
     qcustomplot.h \
+    safety.h \
     tempdropdialog.h
 
 FORMS += \

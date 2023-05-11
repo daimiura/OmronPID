@@ -122,7 +122,11 @@
       </property>
       <layout class="QGridLayout" name="gridLayout_3">
        <item row="0" column="0">
-        <widget class="QTextEdit" name="textEdit_Log"/>
+        <widget class="QTextEdit" name="textEdit_Log">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>
@@ -930,7 +934,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
        <item row="2" column="1" colspan="2">
         <widget class="QLabel" name="label_25">
          <property name="text">
-          <string>TempCheck</string>
+          <string>TempChangeCheck</string>
          </property>
         </widget>
        </item>
@@ -1009,7 +1013,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
         </spacer>
        </item>
        <item row="7" column="0" colspan="3">
-        <widget class="QLineEdit" name="lineEdit_TempCheckCount">
+        <widget class="QLineEdit" name="lineEdit_msg">
          <property name="enabled">
           <bool>false</bool>
          </property>
@@ -1045,7 +1049,11 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <x>0</x>
      <y>0</y>
      <width>1302</width>
+<<<<<<< HEAD
      <height>24</height>
+=======
+     <height>17</height>
+>>>>>>> develop_ModBus
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">

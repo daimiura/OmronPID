@@ -30,28 +30,30 @@
 #include <QFile>
 #include <QGraphicsView>
 #include <QTextStream>
-#include <QtNetwork/QNetworkAccessManager>
-#include <QtNetwork/QNetworkRequest>
-#include <QtNetwork/QNetworkReply>
-#include <QUrlQuery>
 #include <QSslSocket>
 #include "mythread.h"
 #include "configuredialog.h"
 #include "plotdialog.h"
 #include "tempdropdialog.h"
+<<<<<<< HEAD
 #include "joindialog.h"
+=======
+#include "notify.h"
+#include "datasummary.h"
+>>>>>>> develop_ModBus
 
 //!
 //! \namespace Ui
 //!
 namespace Ui {
-class MainWindow;
+  class MainWindow;
 }
 
+class Communication;
+class Safety;
+class DataSummary;
 
-//!
 //! \brief The MainWindow class
-//!
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -59,46 +61,48 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-
     void LogMsg(QString str, bool newLine = true);
     void findSeriesPortDevices();
+
 signals:
 
 public slots:
-  void periodicWork();
   void makePlot();
+<<<<<<< HEAD
   void TempCheck();
   //void checkThreads();
   void checkConnection();
+=======
+  void updateTemperature(double temperature);
+  void updateMV(double MV);
+  void updateSV(double SV);
+  void updateMVupper(double MVupper);
+  void updateMVlower(double MVlower);
+  void updatePID_P(double PID_P);
+  void updatePID_I(double PID_I);
+  void updatePID_D(double PID_D);
+  void updateStatus();
+  void finishSendAT(int atFlag);
+  void finishSendSV(double SV);
+  void catchLogMsg(const QString& msg);
+  void connectDevice();
+  void connectFailed();
+  void catchDanger(int type);
+  void updateCheckNumber(int checkNumber);
+  void cathcEscapeTempCheckChange(int sign);
+  void catchStartTempChangeCheck(int checknumber);
+
+>>>>>>> develop_ModBus
 
 private slots:
     void keyPressEvent(QKeyEvent *key);
     void keyReleaseEvent(QKeyEvent *key);
-    QString formatHex(int value, int digit);
     void waitForMSec(int msec);
     void panalOnOff(bool IO);
 
     void showTime();
     void allowSetNextSV();
-
-    void read(QModbusDataUnit::RegisterType type, quint16 adress, int size);
-    void readReady();
-    void request(QModbusPdu::FunctionCode code, QByteArray cmd); // no PDU reply
-
-    void askTemperature(bool mute = false);
-    void askSetPoint(bool mute = false);
-    void askMV(bool mute = false);
-    void askMVupper(bool mute = false);
-    void askMVlower(bool mute = false);
     void getSetting();
-    void setAT(int atFlag);
-    void setSV(double SV);
-    void writeData();
-    void waitTimming();
-    bool generateSaveFile();
-    bool isIgnore(bool check, double temp);
-    bool isViolate(QVector<double> vtemp);
-    bool isDrop(double diff, int mode);
     void setTextTempDrop(bool);
 
     void on_pushButton_Connect_clicked();
@@ -111,17 +115,17 @@ private slots:
     void on_comboBox_MemAddress_currentTextChanged(const QString &arg1);
     void on_doubleSpinBox_MVlower_valueChanged(double arg1);
     void on_doubleSpinBox_MVupper_valueChanged(double arg1);
-
     void on_checkBox_dataSave_toggled(bool checked);
     void on_pushButton_Log_toggled(bool checked);
-    void on_spinBox_TempRecordTime_valueChanged(int arg1);
     void on_pushButton_RunStop_toggled(bool checked);
-
     void on_actionOpen_File_triggered();
     void on_action_Setting_parameters_for_TempCheck_triggered();
     void on_action_Setting_plot_triggered();
+<<<<<<< HEAD
     void on_action_Join_LINE_talk_triggered();
     //void on_action_Setting_Temperature_Drop_triggered();
+=======
+>>>>>>> develop_ModBus
     void on_actionHelp_Page_triggered();
     void HelpPicNext();
 
@@ -131,51 +135,63 @@ private slots:
     void Quit();
     void setIntervalAskMV();
     void setIntervalAskTemp();
+    void setIntervalPlot(int interval);
     void setSafeLimit();
     void setNumbers();
     void setIgnoreRange();
-    void setParametersTempCheck(bool mute = true);
+    void setParametersTempCheckChange(bool mute = true);
     void setIgnoreEnable();
     double fillDifference(bool mute = true);
 
-    void setColor(int colorindex = 0);
 
-    double calcMovingAve(QVector<double> vtemp);
+    void setColor(int colorindex = 0, bool changerable = true);
 
+    void sendLINE(const QString& message);
+    void saveFile(bool sucess);
+
+<<<<<<< HEAD
     void sendLineNotify(const QString& message, const QString& token);
     void sendLine(const QString& message);
     void sendLineNotifyConnection();
     void onStateChanged(QModbusDevice::State state);
     //void onSerialError(QSerialPort::SerialPortError error);
+=======
+>>>>>>> develop_ModBus
 
 private:
     Ui::MainWindow *ui;
     QCustomPlot * plot;
+<<<<<<< HEAD
     QModbusRtuSerialMaster * omron;
     QSerialPort *serial;
     MyThread * threadMVcheck_;
     MyThread * threadLog_;
     MyThread * threadTempCheck_;
+=======
+    Communication *com_;
+    Safety *safety_;
+    Notify *notify_;
+    DataSummary *data_;
+
+>>>>>>> develop_ModBus
     QMessageBox * LogMsgBox_;
 
     QString omronPortName;
-    int omronID;
 
     int msgCount;
-    int respondType;
     int threadTimerInterval_;
+<<<<<<< HEAD
     int checkTimerInterval_ = 5000;
     //int connectionTimerInteral_;
+=======
+    int connectionTimerInteral_;
+    int timing_;
+    int intervalPlot_{5000};
+>>>>>>> develop_ModBus
     QDateTime dateStart_;
     QString dateStartStr_;
-
-    double temperature, SV, MV;
-    double MVupper, MVlower;
-    double tempDecimal;
-
     bool tempControlOnOff;
     bool tempRecordOnOff;
-    bool modbusReady;
     bool comboxEnable;
     bool spinBoxEnable;
     bool muteLog;
@@ -185,6 +201,7 @@ private:
     bool statusRun_;
     bool isSettParametersTempCheck_;
 
+
     QVector<QCPGraphData> pvData;
     QVector<QCPGraphData> svData;
     QVector<QCPGraphData> mvData;
@@ -192,23 +209,26 @@ private:
     QVector<double> valltemp_;
     QVector<double> vdifftemp_;
 
-
-    double pid_P, pid_I, pid_D;
-
     QTimer * clock;
     QTimer * waitTimer;
+<<<<<<< HEAD
     QTimer * threadTimer_;
     QTimer * checkTimer_;
     //QTimer * connectionTimer_;
+=======
+    QTimer *plotTimer_;
+>>>>>>> develop_ModBus
     QString fileName_;
     QString filePath_;
-    //QFile output_;
+
+    QString LINEToken_ ;
+    QUrl LINEurl_;
+
     QElapsedTimer totalElapse;
     bool checkDay;
     int dayCounter;
     bool nextSV;
 
-    const size_t vecSize_ = 1000;
 
     QDialog * helpDialog;
     QLabel * HelpLabel;
@@ -219,10 +239,18 @@ private:
     TempDropDialog * tempDropDialog_;
     JoinDialog * joinDialog_;
     int picNumber;
-    QMutex mutex_;
-    //! Counter that TempCheck was executed.
     int countTempCheck_;
     int countDropCheck_;
+    bool bkgColorChangeable_;
+
+    void addPortName(QList<QSerialPortInfo> info);
+
+    //The following functions are inplemented in gui.cpp
+    void setupPlot();
+    void setupCombBox();
+    void setEnabledFalse();
+    void initializeVariables();
+
 };
 
 #endif // MAINWINDOW_H
