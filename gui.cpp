@@ -142,3 +142,24 @@ void MainWindow::initializeVariables(){
   waitTimer->stop();
   waitTimer->setSingleShot(false);
 }
+
+void MainWindow::panalOnOff(bool IO)
+{
+    ui->lineEdit_SV->setEnabled(IO);
+    ui->comboBox_AT->setEnabled(IO);
+    ui->pushButton_AskStatus->setEnabled(IO);
+    ui->pushButton_GetPID->setEnabled(IO);
+    ui->pushButton_SetSV->setEnabled(IO);
+    ui->pushButton_RunStop->setEnabled(IO);
+    ui->spinBox_TempRecordTime->setEnabled(IO);
+    ui->spinBox_TempStableTime->setEnabled(IO);
+    ui->spinBox_DeviceAddress->setEnabled(IO);
+    ui->doubleSpinBox_TempTorr->setEnabled(IO);
+    ui->doubleSpinBox_TempStepSize->setEnabled(IO);
+    ui->doubleSpinBox_MVlower->setEnabled(IO);
+    ui->doubleSpinBox_MVupper->setEnabled(IO);
+    ui->comboBox_Mode->setEnabled(IO);
+    ui->comboBox_MemAddress->setEnabled(IO);
+    ui->lineEdit_SV2->setEnabled(IO);
+    ui->doubleSpinBox_SV2WaitTime->setEnabled(IO);
+}

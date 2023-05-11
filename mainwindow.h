@@ -59,9 +59,6 @@ public:
     ~MainWindow();
     void LogMsg(QString str, bool newLine = true);
     void findSeriesPortDevices();
-    QCustomPlot* getPlot() const;
-    Ui::MainWindow* getUi() const;
-
 
 signals:
 
@@ -75,6 +72,7 @@ public slots:
   void updatePID_P(double PID_P);
   void updatePID_I(double PID_I);
   void updatePID_D(double PID_D);
+  void updateStatus();
   void finishSendAT(int atFlag);
   void finishSendSV(double SV);
   void catchLogMsg(const QString& msg);
@@ -95,9 +93,6 @@ private slots:
     void showTime();
     void allowSetNextSV();
     void getSetting();
-    //void writeData();
-    //bool generateSaveFile();
-    bool isIgnore(bool check, double temp);
     void setTextTempDrop(bool);
 
     void on_pushButton_Connect_clicked();

@@ -303,8 +303,7 @@ void Communication::askStatus(){
   askTemperature();
   askMV();
   askSV();
-  //askMVupper();
-  //askMVlower();
+  emit statusUpdate();
 }
 
 

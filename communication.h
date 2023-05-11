@@ -135,6 +135,7 @@ signals:
     //void errorOccurred(QString error);
     //void stateChanged(QModbusDevice::State state);
     void logMsg(QString string, bool newline = true);
+    void statusUpdate();
     void deviceConnect();
     void failedConnect();
     void OmronIDChanged();

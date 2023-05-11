@@ -1013,7 +1013,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
         </spacer>
        </item>
        <item row="7" column="0" colspan="3">
-        <widget class="QLineEdit" name="lineEdit_TempCheckCount">
+        <widget class="QLineEdit" name="lineEdit_msg">
          <property name="enabled">
           <bool>false</bool>
          </property>

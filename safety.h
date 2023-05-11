@@ -44,10 +44,10 @@ public:
   void setIgnoreLower(double lower);
   void setIgnoreRange(double lower, double upper);
   void checkTempChange();
-  void TempCheckStart(int interval = 5000);
   void setEnableTempChangeeRange(bool enable);
 
-  void stopTimer();
+  void start(int interval = 5000);
+  void stop();
 
 
 signals:

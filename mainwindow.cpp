@@ -36,6 +36,7 @@ MainWindow::MainWindow(QWidget *parent) :
   connect(com_, &Communication::PID_DUpdated, this, &MainWindow::updatePID_D);
   connect(com_, &Communication::deviceConnect, this, &MainWindow::connectDevice);
   connect(com_, &Communication::failedConnect, this, &MainWindow::connectFailed);
+  connect(com_, &Communication::statusUpdate, this, &MainWindow::updateStatus);
   connect(com_, &Communication::logMsg, this, &MainWindow::catchLogMsg);
   connect(com_, &Communication::ATSendFinish, this, &MainWindow::finishSendAT);
   connect(com_, &Communication::SVSendFinish, this, &MainWindow::finishSendSV);
@@ -50,11 +51,11 @@ MainWindow::MainWindow(QWidget *parent) :
   connect(safety_, &Safety::startTempChangeCheck, this, &MainWindow::catchStartTempChangeCheck);
 
   data_ = new DataSummary(com_);
-  QDateTime startTime = QDateTime::currentDateTime();
-  QString name = startTime.toString("yyyyMMdd_HHmmss") + ".dat";
-  data_->setFileName(ui->lineEdit_DirPath->text() + "/" + name);
-  data_->setSave(ui->checkBox_dataSave->isChecked());
+  //data_->setSave(ui->checkBox_dataSave->isChecked());
   connect(data_, &DataSummary::FileSave, this, &MainWindow::saveFile);
+  LogMsg(data_->getFilePath());
+  LogMsg(data_->getFileName());
+  ui->lineEdit_DirPath->setText(data_->getFilePath());
 
   notify_ = new Notify(this);
 
@@ -101,10 +102,10 @@ MainWindow::MainWindow(QWidget *parent) :
   ui->textEdit_Log->setTextColor(QColor(34,139,34,255));
   LogMsg("The AT and RUN/STOP do not get from the device. Please be careful.");
   ui->textEdit_Log->setTextColor(QColor(0,0,0,255));
-  ui->lineEdit_DirPath->setText(filePath_);
-
-
   LogMsgBox_ = new QMessageBox;
+
+  connect(ui->spinBox_TempRecordTime, SIGNAL(valueChanged(int)), data_, SLOT(setIntervalLog(int)));
+  connect(ui->checkBox_dataSave, SIGNAL(toggled(bool)), data_, SLOT(setSave(bool)));
 }
 
 
@@ -165,27 +166,6 @@ void MainWindow::waitForMSec(int msec)
     eventLoop.exec();
 }
 
-void MainWindow::panalOnOff(bool IO)
-{
-    ui->lineEdit_SV->setEnabled(IO);
-    ui->comboBox_AT->setEnabled(IO);
-    ui->pushButton_AskStatus->setEnabled(IO);
-    ui->pushButton_GetPID->setEnabled(IO);
-    ui->pushButton_SetSV->setEnabled(IO);
-    ui->pushButton_RunStop->setEnabled(IO);
-    ui->spinBox_TempRecordTime->setEnabled(IO);
-    ui->spinBox_TempStableTime->setEnabled(IO);
-    ui->spinBox_DeviceAddress->setEnabled(IO);
-    ui->doubleSpinBox_TempTorr->setEnabled(IO);
-    ui->doubleSpinBox_TempStepSize->setEnabled(IO);
-    ui->doubleSpinBox_MVlower->setEnabled(IO);
-    ui->doubleSpinBox_MVupper->setEnabled(IO);
-    ui->comboBox_Mode->setEnabled(IO);
-    ui->comboBox_MemAddress->setEnabled(IO);
-    ui->lineEdit_SV2->setEnabled(IO);
-    ui->doubleSpinBox_SV2WaitTime->setEnabled(IO);
-}
-
 void MainWindow::showTime()
 {
     double hour = totalElapse.elapsed()/1000./60./60.;
@@ -220,9 +200,7 @@ void MainWindow::getSetting(){
   com_->askMVlower();
   spinBoxEnable = true;
   com_->askPID("PID");
-;
 }
-
 
 void MainWindow::on_pushButton_SetSV_clicked(){
   com_->executeSendRequestSV(ui->lineEdit_SV->text().toDouble());
@@ -239,7 +217,7 @@ void MainWindow::on_pushButton_Control_clicked()
     if(tempControlOnOff) {
         LogMsg("================ Temperature control =====");
         ui->pushButton_Control->setStyleSheet("background-color: rgb(50,137,48)");
-        ui->lineEdit_TempCheckCount->setText("Slow Temperature controle mode");
+        ui->lineEdit_msg->setText("Slow Temperature controle mode");
         ui->checkBoxStatusSTC->setChecked(true);
         ui->checkBoxStatusTempDrop->setChecked(false);
         ui->checkBoxStatusTempDrop->setEnabled(false);
@@ -252,7 +230,7 @@ void MainWindow::on_pushButton_Control_clicked()
         totalElapse.start();
         ui->checkBoxStatusSTC->setChecked(false);
         ui->checkBoxStatusTempDrop->setEnabled(true);
-        ui->lineEdit_TempCheckCount->clear();
+        ui->lineEdit_msg->clear();
         return;
     }
 
@@ -929,12 +907,15 @@ void MainWindow::on_pushButton_Log_toggled(bool checked){
   if(checked && connectPID){
     ui->pushButton_Log->setText("Logging Stop");
     ui->checkBoxStatusRecord->setChecked(true);
+    data_->logingStart();
   }else if (connectPID) {
     ui->pushButton_Log->setText("Logging Start");
     ui->checkBoxStatusRecord->setChecked(false);
+    data_->logingStop();
   } else {
     LogMsg("Not connected. Please check COM PORT etc.");
     ui->checkBoxStatusRecord->setChecked(false);
+    data_->logingStop();
   }
 }
 
@@ -949,7 +930,7 @@ void MainWindow::Run(){
   com_->executeRun();
   bkgColorChangeable_ = true;
   setColor(1, bkgColorChangeable_);
-  ui->lineEdit_TempCheckCount->setStyleSheet("");
+  ui->lineEdit_msg->setStyleSheet("");
   ui->pushButton_Log->setChecked(true);
   ui->checkBoxStatusRun->setChecked(true);
   ui->checkBoxStatusPeriodic->setCheckable(true);
@@ -957,7 +938,9 @@ void MainWindow::Run(){
   statusRun_ = true;
   sendLINE("Running starts.");
   data_->generateSaveFile();
-  safety_->TempCheckStart();
+  data_->SetIntervalLog(ui->spinBox_TempRecordTime->value());
+  data_->logingStart();
+  safety_->start();
 }
 
 void MainWindow::Stop(){
@@ -973,10 +956,12 @@ void MainWindow::Stop(){
   ui->checkBoxStautsTempCheck->setChecked(false);
   ui->checkBoxStatusSTC->setChecked(false);
   ui->action_Setting_parameters_for_TempCheck->setEnabled(true);
-  ui->lineEdit_TempCheckCount->clear();
-  ui->lineEdit_TempCheckCount->setStyleSheet("");
+  ui->lineEdit_msg->clear();
+  ui->lineEdit_msg->setStyleSheet("");
   statusRun_ = false;
-  safety_->stopTimer();
+  safety_->stop();
+  //data_->setIntervalLog(ui->spinBox_TempRecordTime->value());
+  data_->logingStop();
   sendLINE("Running stop.");
 }
 
@@ -985,7 +970,6 @@ void MainWindow::Quit(){
   ui->textEdit_Log->setTextColor(QColor(255,0,0,255));
   LogMsg("Emergency Stop. Check the experimental condition.");
   vtemp_.clear();
-  LogMsg("Thred stop.");
   countTempCheck_ = 0;
   ui->textEdit_Log->setTextColor(QColor(0,0,0,255));
   ui->checkBoxStatusRun->setChecked(false);
@@ -995,44 +979,12 @@ void MainWindow::Quit(){
   ui->checkBoxStatusSTC->setChecked(false);
   ui->pushButton_RunStop->setChecked(false);
   statusRun_ = false;
-  safety_->stopTimer();
+  safety_->stop();
   sendLINE("Emergency Stop!");
   bkgColorChangeable_ = true;
   setColor(3, bkgColorChangeable_);
   bkgColorChangeable_ = false;
-}
-
-
-//!
-//! \brief MainWindow::isIgnore
-//! \param check
-//! \param temp
-//! \return bool true or false
-//! \details This function checks whether the current temperature is within the temperature range to be ignored by the TempCheck mode.
-//! It is assumed that the first argument is a checkbox to enable or disable the ignore range parameter of TempCheck.
-//! The second argument is assumed to be the current temperature.
-//!
-bool MainWindow::isIgnore(bool check, double temp){
-  if (!check) return true;
-  double lower = ui->lineEdit_IgnoreLower->text().toDouble();
-  double upper = ui->lineEdit_IgnoreUpper->text().toDouble();
-  double temperature = com_->getTemperature();
-  if (temp+lower <= temperature && temp+upper >= temperature) {
-    ui->textEdit_Log->setTextColor(QColor(0,0,255,255));
-    LogMsg("Set Temperature is " + QString::number(temp));
-    LogMsg("Current temperature is outside the TempCheck mode.");
-    LogMsg("TempCheck mode does not work in the range");
-    ui->textEdit_Log->setTextColor(QColor(0,0,0,255));
-    vtemp_.clear();
-    countTempCheck_ = 0;
-    ui->lineEdit_TempCheckCount->clear();
-    ui->lineEdit_TempCheckCount->setStyleSheet("");
-    ui->checkBoxStautsTempCheck->setChecked(false);
-    if (statusRun_) setColor(1, bkgColorChangeable_);
-    else setColor(0, bkgColorChangeable_);
-    return false;
-  }
-  return true;
+  data_->logingStart();
 }
 
 
@@ -1050,34 +1002,6 @@ void MainWindow::makePlot(){
   double diff = fillDifference(true);
 
 }
-
-/*
-void MainWindow::writeData(){
-  //qDebug() << com_->getTemperature();
-  if(!ui->checkBox_dataSave->isChecked()) return;
-  LogMsg("data save to : " + fileName_);
-  QFile output(fileName_);
-  QTextStream stream(&output);
-  if (!output.exists()){
-    output.open(QIODevice::WriteOnly| QIODevice::Text);
-    LogMsg(fileName_ + " does not be found. New file was be generated.");
-    generateSaveFile();
-  }
-  QDateTime date = QDateTime::currentDateTime();
-  output.open(QIODevice::Append| QIODevice::Text);
-  stream << date.toString("MM-dd HH:mm:ss").toStdString().c_str()
-         << "\t"
-         << date.toSecsSinceEpoch()
-         << "\t"
-         << QString::number(com_->getTemperature())
-         << "\t"
-         << QString::number(com_->getSV())
-         << "\t"
-         << QString::number(com_->getMV())
-         << Qt::endl
-  output.close();
-}
-*/
 
 void MainWindow::on_checkBox_dataSave_toggled(bool checked)
 {
@@ -1225,8 +1149,16 @@ void MainWindow::updateCheckNumber(int checkNumber){
   ui->textEdit_Log->setTextColor(QColor(255, 0, 0, 255));
   LogMsg("Checking temperature change in " + QString::number(checkNumber));
   ui->textEdit_Log->setTextColor(QColor(0, 0, 0, 255));
-  ui->lineEdit_TempCheckCount->setText("Checking temperature change in " + QString::number(checkNumber));
+  ui->lineEdit_msg->setText("Checking temperature change in " + QString::number(checkNumber));
   setColor(2);
+}
+
+void MainWindow::updateStatus(){
+  QDateTime date = QDateTime::currentDateTime();
+  QString datestr = date.toString("HH:mm:ss").toStdString().c_str();
+  ui->lineEdit_msg->setEnabled(true);
+  ui->lineEdit_msg->setText("Data is updated @ " + datestr);
+  ui->lineEdit_msg->setEnabled(false);
 }
 
 void MainWindow::catchLogMsg(const QString& msg){LogMsg(msg);}
@@ -1295,8 +1227,8 @@ void MainWindow::catchDanger(int type){
   ui->textEdit_Log->setTextColor(QColor(0,0,0,255));
   QDateTime date = QDateTime::currentDateTime();
   QString datestr = date.toString("yyyyMMdd_HHmmss");
-  ui->lineEdit_TempCheckCount->setStyleSheet("background-color:yellow; color:red;selection-background-color:red;");
-  ui->lineEdit_TempCheckCount->setText("Emergency Stop at " + datestr);
+  ui->lineEdit_msg->setStyleSheet("background-color:yellow; color:red;selection-background-color:red;");
+  ui->lineEdit_msg->setText("Emergency Stop at " + datestr);
   Quit();
 }
 
@@ -1334,5 +1266,3 @@ void MainWindow::saveFile(bool sucess){
     }
 }
 
-QCustomPlot* MainWindow::getPlot() const {return ui->plot;}
-Ui::MainWindow* MainWindow::getUi() const {return ui;}

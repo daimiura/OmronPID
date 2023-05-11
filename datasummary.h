@@ -15,11 +15,14 @@ public:
     double getTemperature() const;
     double getMV() const;
     double getSV() const;
+    QString getFileName() const;
+    QString getFilePath() const;
     void setFileName(QString name);
-    void setSave(bool save);
-
     bool generateSaveFile();
-    int writeData();
+    void writeData();
+    void logingStart();
+    void logingStop();
+    void SetIntervalLog(int interval){setIntervalLog(interval);}
 
 signals:
     void temperatureChanged(double temperature);
@@ -31,7 +34,8 @@ private slots:
     void setTemperature(double temperature);
     void setMV(double mv);
     void setSV(double sv);
-
+    void setSave(bool save);
+    void setIntervalLog(int interval);
 
 private:
     Communication *com_;
@@ -41,12 +45,12 @@ private:
     QString fileName_{};
     QString filePath_{};
     bool save_{true};
+    QTimer *logTimer_;
+    int intervalLog_{10 * 1000};
 
-
-
-    const QString DESKTOP_PATH = QStandardPaths::locate(QStandardPaths::DesktopLocation, QString(), QStandardPaths::LocateDirectory);
-    const QString DATA_PATH_2 = DESKTOP_PATH + "Temp_Record";
-    const QString DATA_PATH = "Z:/triplet/Temp_Record";
+    const QString desktopPath_{QStandardPaths::locate(QStandardPaths::DesktopLocation, QString(), QStandardPaths::LocateDirectory)};
+    const QString dataPath2_{desktopPath_ + "Temp_Record"};
+    const QString dataPath_{"Z:/triplet/Temp_Record"};
 };
 
 #endif // DATASUMMARY_H

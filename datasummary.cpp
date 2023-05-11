@@ -1,50 +1,67 @@
 #include "datasummary.h"
+
 DataSummary::DataSummary(Communication* com)
-    : com_(com)
+    : com_(com),
+      logTimer_(new QTimer(this))
 {
   //Check Temp Directory, is not exist, create
   QDir myDir;
-  myDir.setPath(DATA_PATH);
-  filePath_ = DATA_PATH;
+  myDir.setPath(dataPath_);
+  filePath_ = dataPath_;
   // if Z:/triplet/Temp_Record does not exist, make directory on desktop.
   if(!myDir.exists()){
-    myDir.mkpath(DATA_PATH_2);
-    filePath_ = DATA_PATH_2;
+    myDir.mkpath(dataPath2_);
+    filePath_ = dataPath2_;
   }
-  //connect(com_, &Communication::TemperatureUpdated, this, &DataSummary::setTemperature);
-  //connect(com_, &Communication::MVUpdated, this, &DataSummary::setMV);
-  //connect(com_, &Communication::SVUpdated, this, &DataSummary::setSV);
+  QDateTime startTime = QDateTime::currentDateTime();
+  fileName_ = filePath_ + "/" + startTime.toString("yyyyMMdd_HHmmss") + ".dat";
+  connect(com_, &Communication::TemperatureUpdated, this, &DataSummary::setTemperature);
+  connect(com_, &Communication::MVUpdated, this, &DataSummary::setMV);
+  connect(com_, &Communication::SVUpdated, this, &DataSummary::setSV);
+  connect(logTimer_, &QTimer::timeout, this, &DataSummary::writeData);
 }
 
 double DataSummary::getTemperature() const {return temperature_;}
 double DataSummary::getMV() const {return mv_;}
 double DataSummary::getSV() const {return sv_;}
+QString DataSummary::getFileName() const {return fileName_;}
+QString DataSummary::getFilePath() const {return filePath_;}
 
 void DataSummary::setTemperature(double temperature){temperature_ = temperature;}
 void DataSummary::setMV(double mv){mv_ = mv;}
 void DataSummary::setSV(double sv){sv_ = sv;}
 void DataSummary::setFileName(QString name) {fileName_ = name;}
 void DataSummary::setSave(bool save) {save_ = save;}
+void DataSummary::setIntervalLog(int interval) {
+  intervalLog_ = interval * 1000;
+  if (logTimer_->isActive()){
+    logTimer_->stop();
+    logTimer_->setInterval(intervalLog_);
+    logTimer_->start();
+  } else {
+    logTimer_->stop();
+    logTimer_->setInterval(intervalLog_);
+  }
+}
 
 bool DataSummary::generateSaveFile(){
   QFile output(fileName_);
   QTextStream stream(&output);
   if (output.exists()) {
     output.close();
-    emit FileSave(false);
     return false;
   }else {
     output.open(QIODevice::WriteOnly| QIODevice::Text);
     stream <<"Date\t"<<"Date_t\t"<<"temp [C]\t"<<"SV [C]\t"<<"Output [%]" <<Qt::endl;
     output.close();
-    emit FileSave(true);
     return true;
   }
 }
 
-int DataSummary::writeData(){
-  if (!save_) return -1;
+void DataSummary::writeData(){
+  if (!save_) return;
   QFile output(fileName_);
+  qDebug () << fileName_;
   QTextStream stream(&output);
   if (!output.exists()){
     output.open(QIODevice::WriteOnly| QIODevice::Text);
@@ -63,7 +80,16 @@ int DataSummary::writeData(){
          << QString::number(getMV())
          << Qt::endl;
   output.close();
-  return 1;
+  emit FileSave(true);
+}
+
+void DataSummary::logingStart(){
+  if(logTimer_->isActive()) logTimer_->stop();
+  logTimer_->start();
+}
+
+void DataSummary::logingStop(){
+  logTimer_->stop();
 }
 
 

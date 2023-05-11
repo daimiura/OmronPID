@@ -13,6 +13,7 @@ Safety::Safety(Communication* com)
   timerMVCheck_->setInterval(intervalMVCheck_);
   timerTempChange_->setInterval(intervalTempChange_);
   connect(timerMVCheck_, &QTimer::timeout, this, &Safety::isMVupper);
+  connect(timerMVCheck_, &QTimer::timeout, this, &Safety::checkTemperature);
   connect(timerTempChange_, &QTimer::timeout, this, &Safety::checkTempChange);
   connect(this, &Safety::permitedMaxTempChanged, this, &Safety::setPermitedMaxTemp);
   connect(this, &Safety::MVUpperChanged, this, &Safety::setMVUpper);
@@ -35,7 +36,8 @@ void Safety::checkTemperature(){
   QMutexLocker locker(&mutex_);
   temperature_ = com_->getTemperature();
   addTemperature(temperature_);
-  if (temperature_ >= permitedMaxTemp_) emit dangerSignal(0);
+  //if (temperature_ >= permitedMaxTemp_) emit dangerSignal(0);
+  if (temperature_ >= 32.0) emit dangerSignal(0);
   diffTemp_ = diffTemp();
 }
 
@@ -121,14 +123,16 @@ double Safety::diffTemp() const {
   return currentTemp - oldTemp;
 }
 
-void Safety::TempCheckStart(int interval){
+void Safety::start(int interval){
+  checkNumber_ = 0;
   setIntervalMVCheck(interval);
   timerMVCheck_->start(intervalMVCheck_);
 }
 
-void Safety::stopTimer(){
+void Safety::stop(){
   timerMVCheck_->stop();
   timerTempChange_->stop();
+  checkNumber_ = 0;
 }
 
 
