@@ -15,7 +15,7 @@ Safety::Safety(DataSummary* data)
   connect(this, &Safety::NumberOfCheckChanged, this, &Safety::setNumberOfCheck);
   connect(this, &Safety::tempChangeThresholdChanged, this, &Safety::setTempChangeThreshold);
   connect(this, &Safety::MVupperReachedUpperLimit, this, &Safety::checkTempChange);
-  connect(this, &Safety::intervalMVCheckChanged, this, &Safety::setIntervalTempChange);
+
 }
 
 
@@ -37,6 +37,8 @@ void Safety::checkTemperature(){
 
 
 void Safety::checkTempChange() {
+  QMutexLocker locker(&mutex_);
+  if (checkNumber_ > numberOfCheck_) return;
   if (!isMVupper_) {
     checkNumber_ = 0;
     vTempChangeData_.clear();
@@ -44,20 +46,22 @@ void Safety::checkTempChange() {
     emit escapeTempCheckChange(0);
     return;
   }
+
   double temp = data_->getTemperature();
-  if (temp >= ignoreLower_ && temp <= ignoreUpper_){
-    checkNumber_ = 0;
-    vTempChangeData_.clear();
-    timerTempChange_->stop();
-    emit escapeTempCheckChange(1);
-    return;
-  }
+  if (isEnableTempChangeeRange_){
+      if (temp > ignoreLower_ && temp < ignoreUpper_){
+        checkNumber_ = 0;
+        vTempChangeData_.clear();
+        timerTempChange_->stop();
+        emit escapeTempCheckChange(1);
+        return;
+      }
+   }
 
   emit startTempChangeCheck(checkNumber_);
-  QMutexLocker locker(&mutex_);
   timerTempChange_->start();
   qDebug() << "checkTempCange at " << checkNumber_;
-  if (checkNumber_ <= numberOfCheck_){
+  if (checkNumber_ < numberOfCheck_){
     vTempChangeData_.push_back(data_->getTemperature());
     checkNumber_ ++;
     return;
@@ -75,6 +79,7 @@ void Safety::checkTempChange() {
   }
   vdiff.clear();
   vTempChangeData_.clear();
+  return;
 }
 
 double Safety::movingAverage(QVector<double> data, int wsize) const {
@@ -152,7 +157,9 @@ void Safety::setNumberOfCheck(int number) {numberOfCheck_ = number;}
 void Safety::setCheckNumber(int number) {checkNumber_ = number;}
 void Safety::setTempChangeThreshold(double temp){tempChangeThreshold_ = temp;}
 void Safety::setIntervalMVCheck(int interval) {
+  qDebug() << "The arggument is " << interval;
   intervalMVCheck_ = interval*1000;
+  qDebug() << "Current interval MV check is " << intervalMVCheck_;
   timerMVCheck_->setInterval(intervalMVCheck_);
 }
 void Safety::setIntervalTempChange(int interval) {

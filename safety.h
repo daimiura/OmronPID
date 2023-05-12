@@ -38,13 +38,13 @@ public:
   void setNumberOfCheck(int number);
   void setCheckNumber(int number);
   void setTempChangeThreshold(double temp);
-  void setIntervalMVCheck(int interval);
-  void setIntervalTempChange(int inteerval);
   void setIgnoreUpper(double upper);
   void setIgnoreLower(double lower);
   void setIgnoreRange(double lower, double upper);
   void checkTempChange();
   void setEnableTempChangeeRange(bool enable);
+  void setIntervalMVCheck(int interval);
+  void setIntervalTempChange(int inteerval);
 
   void start();
   void stop();
@@ -65,6 +65,7 @@ signals:
 
 private slots:
   void checkTemperature();
+
 
 private:
   DataSummary *data_{nullptr};

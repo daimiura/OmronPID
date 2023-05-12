@@ -112,6 +112,8 @@ MainWindow::MainWindow(QWidget *parent) :
   connect(ui->spinBox_TempRecordTime, SIGNAL(valueChanged(int)), this, SLOT(setIntervalPlot(int)));
   connect(ui->checkBox_dataSave, SIGNAL(toggled(bool)), data_, SLOT(setSave(bool)));
   connect(plotTimer_, SIGNAL(timeout()), this, SLOT(makePlot()));
+  connect(ui->doubleSpinBox_MVupper, SIGNAL(valueChanged(double)), data_, SLOT(setMVUpper(double)));
+  connect(ui->doubleSpinBox_MVlower, SIGNAL(valueChanged(double)), data_, SLOT(setMVLower(double)));
 }
 
 
@@ -863,6 +865,7 @@ void MainWindow::setIgnoreRange(){
   ui->lineEdit_IgnoreLower->setEnabled(true);
   ui->lineEdit_IgnoreUpper->setEnabled(true);
   safety_->stop();
+  safety_->setEnableTempChangeeRange(configureDialog_->ignoreEnable_);
   if(configureDialog_->ignoreEnable_){
     ui->lineEdit_IgnoreLower->setText(QString::number(configureDialog_->ignoreLower_));
     ui->lineEdit_IgnoreUpper->setText(QString::number(configureDialog_->ignoreUpper_));
@@ -1251,7 +1254,7 @@ void MainWindow::cathcEscapeTempCheckChange(int sign){
   } else if (sign ==1) {
       LogMsg("Escape TempChangeCheck mode because current temperature is in ignore range.");
   } else {
-      LogMsg("Escape TempChangeCheck mode.");
+      LogMsg("Escape TempChangeCheck mode");
   }
   ui->textEdit_Log->setTextColor(QColor(0, 0, 0, 255));
 }
