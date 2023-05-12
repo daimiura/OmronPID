@@ -28,12 +28,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     communication.cpp \
     configuredialog.cpp \
-<<<<<<< HEAD
-    joindialog.cpp \
-=======
     datasummary.cpp \
     gui.cpp \
->>>>>>> develop_ModBus
         main.cpp \
         mainwindow.cpp \
     mythread.cpp \
@@ -46,11 +42,7 @@ SOURCES += \
 HEADERS += \
     communication.h \
     configuredialog.h \
-<<<<<<< HEAD
-    joindialog.h \
-=======
     datasummary.h \
->>>>>>> develop_ModBus
         mainwindow.h \
     mythread.h \
     notify.h \
@@ -67,7 +59,6 @@ DISTFILES += \
 
 RESOURCES += \
     resource.qrc
-
 
 OPENSSL_DIR=C:/Qt/Tools/OpenSSL/Win_x64
 LIBS += $${OPENSSL_DIR}/lib/libcrypto.lib

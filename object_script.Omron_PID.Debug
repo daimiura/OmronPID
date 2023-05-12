@@ -1,5 +1,6 @@
 debug/communication.o
 debug/configuredialog.o
+debug/joindialog.o
 debug/datasummary.o
 debug/gui.o
 debug/main.o
@@ -10,14 +11,6 @@ debug/plotdialog.o
 debug/qcustomplot.o
 debug/safety.o
 debug/tempdropdialog.o
+debug/HEADERS.o
+debug/+=.o
 debug/qrc_resource.o
-debug/moc_communication.o
-debug/moc_configuredialog.o
-debug/moc_datasummary.o
-debug/moc_mainwindow.o
-debug/moc_mythread.o
-debug/moc_notify.o
-debug/moc_plotdialog.o
-debug/moc_qcustomplot.o
-debug/moc_safety.o
-debug/moc_tempdropdialog.o
