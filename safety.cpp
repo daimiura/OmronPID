@@ -75,9 +75,12 @@ void Safety::checkTempChange() {
     timerTempChange_->stop();
     timerMVCheck_->stop();
   } else {
-    timerMVCheck_->stop();
+    qDebug()<<"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+    timerTempChange_->stop();
   }
   vdiff.clear();
+  checkNumber_=0;
+  qDebug()<<"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb";
   vTempChangeData_.clear();
   } catch (std::exception e){
     qDebug() << "EXCEPTION EXCEPTION EXCEPTION EXCEPTION EXCEPTION EXCEPTION EXCEPTION";
@@ -91,8 +94,9 @@ double Safety::movingAverage(QVector<double> data, int wsize) const {
   for (int i = 0; i < wsize; i++) sum += data[i];
   double avg = sum / wsize;
   for (int i = wsize; i < data.size(); i++) {
+      qDebug() << i << "\t" << i-wsize ;
       sum += data[i] - data[i-wsize];
-      avg = sum / wsize;
+    avg = sum / wsize;
   }
   qDebug() << "Calculation end/ The average value is " << avg;
   return avg;
