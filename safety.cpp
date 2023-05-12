@@ -35,7 +35,6 @@ void Safety::checkTemperature(){
   diffTemp_ = diffTemp();
 }
 
-
 void Safety::checkTempChange() {
   QMutexLocker locker(&mutex_);
   if (checkNumber_ > numberOfCheck_) return;
@@ -67,6 +66,7 @@ void Safety::checkTempChange() {
     return;
   }
 
+  try{
   QVector<double> vdiff;
   for (auto i = 0; i <vTempChangeData_.size()-1; i++) vdiff.push_back(diffTemp(vTempChangeData_[i+1], vTempChangeData_[i]));
   double ave = movingAverage(vdiff, 3);
@@ -79,7 +79,10 @@ void Safety::checkTempChange() {
   }
   vdiff.clear();
   vTempChangeData_.clear();
-  return;
+  } catch (std::exception e){
+    qDebug() << "EXCEPTION EXCEPTION EXCEPTION EXCEPTION EXCEPTION EXCEPTION EXCEPTION";
+    return;
+  }
 }
 
 double Safety::movingAverage(QVector<double> data, int wsize) const {

@@ -1085,77 +1085,37 @@ void MainWindow::addPortName(QList<QSerialPortInfo> info){
 
 //signals
 void MainWindow::updateTemperature(double temperature){
-  ui->lineEdit_Temp->setText(QString::number(temperature) + " C");
-  /*
-  if (mute) return;
-  QString str = tr("Current Temperature : %1 C").arg(QString::number(temperature));
-  LogMsg(str);
-  */
+  ui->lineEdit_Temp->setText(QString::number(temperature) + " C");/
 }
 
 void MainWindow::updateMV(double MV){
   ui->lineEdit_CurrentMV->setText(QString::number(MV) + " %");
-  /*
-  if (mute) return;
-  QString str = tr("Current MV : %1 \%").arg(QString::number(MV));
-  LogMsg(str);
-  */
 }
 
 void MainWindow::updateSV(double SV){
   ui->lineEdit_CurrentSV->setText(QString::number(SV) + " C");
-  /*
-  if (mute) return;
-  QString str = tr("Current Set Point : %1 C").arg(QString::number(SV));
-  LogMsg(str);
-  */
 }
 
 void MainWindow::updateMVupper(double MVupper){
   ui->doubleSpinBox_MVupper->setValue(MVupper);
   plot->yAxis2->setRangeUpper(MVupper + 2);
   plot->replot();
-  /*
-  if (mute) return;
-  QString str = tr("MV upper limit : %1 \%").arg(QString::number(MVupper));
-  LogMsg(str);
-  */
 }
 
 void MainWindow::updateMVlower(double MVlower){
   ui->doubleSpinBox_MVlower->setValue(MVlower);
-  /*
-  QString str = tr("MV lower limit : %1 \%").arg(QString::number(MVlower));
-  LogMsg(str);
-  */
 }
 
 void MainWindow::updatePID_P(double PID_P){
   ui->lineEdit_P->setText(QString::number(PID_P));
-  /*
-  if (mute) return;
-  LogMsg("------ get Propertion band.");
-  QString str = tr("P       : %1 ").arg(QString::number(PID_P));
-  LogMsg(str);
-  */
 }
 
 void MainWindow::updatePID_I(double PID_I){
   ui->lineEdit_I->setText(QString::number(PID_I));
-  /*
-  LogMsg("------ get integration time.");
-  QString str = tr("I (raw) : %1 sec").arg(QString::number(PID_I));
-  LogMsg(str);
-  */
 }
 
 void MainWindow::updatePID_D(double PID_D){
   ui->lineEdit_D->setText(QString::number(PID_D));
-  /*
-  LogMsg("------ get derivative time.");
-  QString str = tr("D (raw) : %1 sec").arg(QString::number(PID_D));
-  LogMsg(str);
-  */
 }
 
 void MainWindow::updateCheckNumber(int checkNumber){
