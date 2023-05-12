@@ -2,7 +2,7 @@
 \label{class_q_c_p_data_container}\index{QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}}
 
 
-The generic data container for one-\/dimensional plottables.  
+\mbox{\hyperlink{class_the}{The}} generic data container for one-\/dimensional plottables.  
 
 
 
@@ -112,18 +112,18 @@ int {\bfseries m\+Prealloc\+Iteration}
 \doxysubsection{Detailed Description}
 \subsubsection*{template$<$class Data\+Type$>$\newline
 class QCPData\+Container$<$ Data\+Type $>$}
-The generic data container for one-\/dimensional plottables. 
+\mbox{\hyperlink{class_the}{The}} generic data container for one-\/dimensional plottables. 
 
-This class template provides a fast container for data storage of one-\/dimensional data. The data type is specified as template parameter (called {\itshape Data\+Type} in the following) and must provide some methods as described in the \mbox{\hyperlink{class_q_c_p_data_container_qcpdatacontainer-datatype}{next section}}.
+This class template provides a fast container for data storage of one-\/dimensional data. \mbox{\hyperlink{class_the}{The}} data type is specified as template parameter (called {\itshape Data\+Type} in the following) and must provide some methods as described in the \mbox{\hyperlink{class_q_c_p_data_container_qcpdatacontainer-datatype}{next section}}.
 
-The data is stored in a sorted fashion, which allows very quick lookups by the sorted key as well as retrieval of ranges (see \mbox{\hyperlink{class_q_c_p_data_container_a2ad8a5399072d99a242d3a6d2d7e278a}{find\+Begin}}, \mbox{\hyperlink{class_q_c_p_data_container_afb8b8f23cc2b7234a793a25ce79fe48f}{find\+End}}, \mbox{\hyperlink{class_q_c_p_data_container_aba6e1a93c21ccc56a432b4a02c9d0ed2}{key\+Range}}) using binary search. The container uses a preallocation and a postallocation scheme, such that appending and prepending data (with respect to the sort key) is very fast and minimizes reallocations. If data is added which needs to be inserted between existing keys, the merge usually can be done quickly too, using the fact that existing data is always sorted. The user can further improve performance by specifying that added data is already itself sorted by key, if he can guarantee that this is the case (see for example \mbox{\hyperlink{class_q_c_p_data_container_a51d2a4c9ce4baf5e950b767d26673972}{add(const QVector$<$\+Data\+Type$>$ \&data, bool already\+Sorted)}}).
+\mbox{\hyperlink{class_the}{The}} data is stored in a sorted fashion, which allows very quick lookups by the sorted key as well as retrieval of ranges (see \mbox{\hyperlink{class_q_c_p_data_container_a2ad8a5399072d99a242d3a6d2d7e278a}{find\+Begin}}, \mbox{\hyperlink{class_q_c_p_data_container_afb8b8f23cc2b7234a793a25ce79fe48f}{find\+End}}, \mbox{\hyperlink{class_q_c_p_data_container_aba6e1a93c21ccc56a432b4a02c9d0ed2}{key\+Range}}) using binary search. \mbox{\hyperlink{class_the}{The}} container uses a preallocation and a postallocation scheme, such that appending and prepending data (with respect to the sort key) is very fast and minimizes reallocations. If data is added which needs to be inserted between existing keys, the merge usually can be done quickly too, using the fact that existing data is always sorted. \mbox{\hyperlink{class_the}{The}} user can further improve performance by specifying that added data is already itself sorted by key, if he can guarantee that this is the case (see for example \mbox{\hyperlink{class_q_c_p_data_container_a51d2a4c9ce4baf5e950b767d26673972}{add(const QVector$<$\+Data\+Type$>$ \&data, bool already\+Sorted)}}).
 
-The data can be accessed with the provided const iterators (\mbox{\hyperlink{class_q_c_p_data_container_a49d7622999e2de67fa2331626a3159aa}{const\+Begin}}, \mbox{\hyperlink{class_q_c_p_data_container_aa7f7cf239b85b1a28de3d675cc5b3da1}{const\+End}}). If it is necessary to alter existing data in-\/place, the non-\/const iterators can be used (\mbox{\hyperlink{class_q_c_p_data_container_a80032518413ab8f418f7c81182fd06cb}{begin}}, \mbox{\hyperlink{class_q_c_p_data_container_acf66dfad83fe041380f5e0491e7676f2}{end}}). Changing data members that are not the sort key (for most data types called {\itshape key}) is safe from the container\textquotesingle{}s perspective.
+\mbox{\hyperlink{class_the}{The}} data can be accessed with the provided const iterators (\mbox{\hyperlink{class_q_c_p_data_container_a49d7622999e2de67fa2331626a3159aa}{const\+Begin}}, \mbox{\hyperlink{class_q_c_p_data_container_aa7f7cf239b85b1a28de3d675cc5b3da1}{const\+End}}). If it is necessary to alter existing data in-\/place, the non-\/const iterators can be used (\mbox{\hyperlink{class_q_c_p_data_container_a80032518413ab8f418f7c81182fd06cb}{begin}}, \mbox{\hyperlink{class_q_c_p_data_container_acf66dfad83fe041380f5e0491e7676f2}{end}}). Changing data members that are not the sort key (for most data types called {\itshape key}) is safe from the container\textquotesingle{}s perspective.
 
 Great care must be taken however if the sort key is modified through the non-\/const iterators. For performance reasons, the iterators don\textquotesingle{}t automatically cause a re-\/sorting upon their manipulation. It is thus the responsibility of the user to leave the container in a sorted state when finished with the data manipulation, before calling any other methods on the container. A complete re-\/sort (e.\+g. after finishing all sort key manipulation) can be done by calling \mbox{\hyperlink{class_q_c_p_data_container_a75da92e33063b63d6da5014683591d45}{sort}}. Failing to do so can not be detected by the container efficiently and will cause both rendering artifacts and potential data loss.
 
 Implementing one-\/dimensional plottables that make use of a \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container$<$\+T$>$}} is usually done by subclassing from \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d}{QCPAbstract\+Plottable1D\texorpdfstring{$<$}{<}T\texorpdfstring{$>$}{>}}}, which introduces an according {\itshape m\+Data\+Container} member and some convenience methods.\hypertarget{class_q_c_p_data_container_qcpdatacontainer-datatype}{}\doxysubsection{Requirements for the Data\+Type template parameter}\label{class_q_c_p_data_container_qcpdatacontainer-datatype}
-The template parameter {\ttfamily Data\+Type} is the type of the stored data points. It must be trivially copyable and have the following public methods, preferably inline\+:
+\mbox{\hyperlink{class_the}{The}} template parameter {\ttfamily Data\+Type} is the type of the stored data points. It must be trivially copyable and have the following public methods, preferably inline\+:
 
 \begin{DoxyItemize}
 \item {\ttfamily double sort\+Key() const}~\newline
@@ -308,7 +308,7 @@ Returns whether this container holds no data points. \mbox{\Hypertarget{class_q_
 {\footnotesize\ttfamily template$<$class Data\+Type $>$ \\
 \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}$<$ Data\+Type $>$\+::key\+Range (\begin{DoxyParamCaption}\item[{bool \&}]{found\+Range,  }\item[{\mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9}{QCP\+::\+Sign\+Domain}}}]{sign\+Domain = {\ttfamily \mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9aa38352ef02d51ddfa4399d9551566e24}{QCP\+::sd\+Both}}} }\end{DoxyParamCaption})}
 
-Returns the range encompassed by the (main-\/)key coordinate of all data points. The output parameter {\itshape found\+Range} indicates whether a sensible range was found. If this is false, you should not use the returned \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} (e.\+g. the data container is empty or all points have the same key).
+Returns the range encompassed by the (main-\/)key coordinate of all data points. \mbox{\hyperlink{class_the}{The}} output parameter {\itshape found\+Range} indicates whether a sensible range was found. If this is false, you should not use the returned \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} (e.\+g. the data container is empty or all points have the same key).
 
 Use {\itshape sign\+Domain} to control which sign of the key coordinates should be considered. This is relevant e.\+g. for logarithmic plots which can mathematically only display one sign domain at a time.
 
@@ -324,7 +324,7 @@ If the Data\+Type reports that its main key is equal to the sort key ({\itshape 
 {\footnotesize\ttfamily template$<$class Data\+Type $>$ \\
 void \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}$<$ Data\+Type $>$\+::limit\+Iterators\+To\+Data\+Range (\begin{DoxyParamCaption}\item[{const\+\_\+iterator \&}]{begin,  }\item[{const\+\_\+iterator \&}]{end,  }\item[{const \mbox{\hyperlink{class_q_c_p_data_range}{QCPData\+Range}} \&}]{data\+Range }\end{DoxyParamCaption}) const}
 
-Makes sure {\itshape begin} and {\itshape end} mark a data range that is both within the bounds of this data container\textquotesingle{}s data, as well as within the specified {\itshape data\+Range}. The initial range described by the passed iterators {\itshape begin} and {\itshape end} is never expanded, only contracted if necessary.
+Makes sure {\itshape begin} and {\itshape end} mark a data range that is both within the bounds of this data container\textquotesingle{}s data, as well as within the specified {\itshape data\+Range}. \mbox{\hyperlink{class_the}{The}} initial range described by the passed iterators {\itshape begin} and {\itshape end} is never expanded, only contracted if necessary.
 
 This function doesn\textquotesingle{}t require for {\itshape data\+Range} to be within the bounds of this data container\textquotesingle{}s valid range. \mbox{\Hypertarget{class_q_c_p_data_container_a2dbded7f0732bacf9db48fdfbbb620bc}\label{class_q_c_p_data_container_a2dbded7f0732bacf9db48fdfbbb620bc}} 
 \index{QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}!remove@{remove}}
@@ -442,14 +442,14 @@ Frees all unused memory that is currently in the preallocation and postallocatio
 
 Note that \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}} automatically decides whether squeezing is necessary, if \mbox{\hyperlink{class_q_c_p_data_container_a233f866760a78950d2a393c1a4bc54b5}{set\+Auto\+Squeeze}} is left enabled. It should thus not be necessary to use this method for typical applications.
 
-The parameters {\itshape pre\+Allocation} and {\itshape post\+Allocation} control whether pre-\/ and/or post allocation should be freed, respectively. \mbox{\Hypertarget{class_q_c_p_data_container_a35a102dc2424d1228fc374d9313efbe9}\label{class_q_c_p_data_container_a35a102dc2424d1228fc374d9313efbe9}} 
+\mbox{\hyperlink{class_the}{The}} parameters {\itshape pre\+Allocation} and {\itshape post\+Allocation} control whether pre-\/ and/or post allocation should be freed, respectively. \mbox{\Hypertarget{class_q_c_p_data_container_a35a102dc2424d1228fc374d9313efbe9}\label{class_q_c_p_data_container_a35a102dc2424d1228fc374d9313efbe9}} 
 \index{QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}!valueRange@{valueRange}}
 \index{valueRange@{valueRange}!QCPDataContainer$<$ DataType $>$@{QCPDataContainer$<$ DataType $>$}}
 \doxysubsubsection{\texorpdfstring{valueRange()}{valueRange()}}
 {\footnotesize\ttfamily template$<$class Data\+Type $>$ \\
 \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}$<$ Data\+Type $>$\+::value\+Range (\begin{DoxyParamCaption}\item[{bool \&}]{found\+Range,  }\item[{\mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9}{QCP\+::\+Sign\+Domain}}}]{sign\+Domain = {\ttfamily \mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9aa38352ef02d51ddfa4399d9551566e24}{QCP\+::sd\+Both}}},  }\item[{const \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \&}]{in\+Key\+Range = {\ttfamily \mbox{\hyperlink{class_q_c_p_range}{QCPRange}}()} }\end{DoxyParamCaption})}
 
-Returns the range encompassed by the value coordinates of the data points in the specified key range ({\itshape in\+Key\+Range}), using the full {\itshape Data\+Type\+::value\+Range} reported by the data points. The output parameter {\itshape found\+Range} indicates whether a sensible range was found. If this is false, you should not use the returned \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} (e.\+g. the data container is empty or all points have the same value).
+Returns the range encompassed by the value coordinates of the data points in the specified key range ({\itshape in\+Key\+Range}), using the full {\itshape Data\+Type\+::value\+Range} reported by the data points. \mbox{\hyperlink{class_the}{The}} output parameter {\itshape found\+Range} indicates whether a sensible range was found. If this is false, you should not use the returned \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} (e.\+g. the data container is empty or all points have the same value).
 
 If {\itshape in\+Key\+Range} has both lower and upper bound set to zero (is equal to {\ttfamily \mbox{\hyperlink{class_q_c_p_range}{QCPRange()}}}), all data points are considered, without any restriction on the keys.
 

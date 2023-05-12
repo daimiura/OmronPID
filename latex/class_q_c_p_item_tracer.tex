@@ -5,22 +5,10 @@
 Item that sticks to \mbox{\hyperlink{class_q_c_p_graph}{QCPGraph}} data points.  
 
 
-
-
-Inheritance diagram for QCPItem\+Tracer\+:\nopagebreak
-\begin{figure}[H]
+Inheritance diagram for QCPItem\+Tracer\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=173pt]{class_q_c_p_item_tracer__inherit__graph}
-\end{center}
-\end{figure}
-
-
-Collaboration diagram for QCPItem\+Tracer\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_q_c_p_item_tracer__coll__graph}
+\includegraphics[height=4.000000cm]{class_q_c_p_item_tracer}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Types}
@@ -337,16 +325,16 @@ Item that sticks to \mbox{\hyperlink{class_q_c_p_graph}{QCPGraph}} data points.
 
 
 
-The tracer can be connected with a \mbox{\hyperlink{class_q_c_p_graph}{QCPGraph}} via \mbox{\hyperlink{class_q_c_p_item_tracer_af5886f4ded8dd68cb4f3388f390790c0}{set\+Graph}}. Then it will automatically adopt the coordinate axes of the graph and update its {\itshape position} to be on the graph\textquotesingle{}s data. This means the key stays controllable via \mbox{\hyperlink{class_q_c_p_item_tracer_a6840143b42f3b685cedf7c6d83a704c8}{set\+Graph\+Key}}, but the value will follow the graph data. If a \mbox{\hyperlink{class_q_c_p_graph}{QCPGraph}} is connected, note that setting the coordinates of the tracer item directly via {\itshape position} will have no effect because they will be overriden in the next redraw (this is when the coordinate update happens).
+\mbox{\hyperlink{class_the}{The}} tracer can be connected with a \mbox{\hyperlink{class_q_c_p_graph}{QCPGraph}} via \mbox{\hyperlink{class_q_c_p_item_tracer_af5886f4ded8dd68cb4f3388f390790c0}{set\+Graph}}. Then it will automatically adopt the coordinate axes of the graph and update its {\itshape position} to be on the graph\textquotesingle{}s data. This means the key stays controllable via \mbox{\hyperlink{class_q_c_p_item_tracer_a6840143b42f3b685cedf7c6d83a704c8}{set\+Graph\+Key}}, but the value will follow the graph data. If a \mbox{\hyperlink{class_q_c_p_graph}{QCPGraph}} is connected, note that setting the coordinates of the tracer item directly via {\itshape position} will have no effect because they will be overriden in the next redraw (this is when the coordinate update happens).
 
 If the specified key in \mbox{\hyperlink{class_q_c_p_item_tracer_a6840143b42f3b685cedf7c6d83a704c8}{set\+Graph\+Key}} is outside the key bounds of the graph, the tracer will stay at the corresponding end of the graph.
 
 With \mbox{\hyperlink{class_q_c_p_item_tracer_a6c244a9d1175bef12b50afafd4f5fcd2}{set\+Interpolating}} you may specify whether the tracer may only stay exactly on data points or whether it interpolates data points linearly, if given a key that lies between two data points of the graph.
 
-The tracer has different visual styles, see \mbox{\hyperlink{class_q_c_p_item_tracer_a41a2ac4f1acd7897b4e2a2579c03204e}{set\+Style}}. It is also possible to make the tracer have no own visual appearance (set the style to \mbox{\hyperlink{class_q_c_p_item_tracer_a2f05ddb13978036f902ca3ab47076500aac27462c79146225bfa8fba24d2ee8a4}{ts\+None}}), and just connect other item positions to the tracer {\itshape position} (used as an anchor) via \mbox{\hyperlink{class_q_c_p_item_position_ac094d67a95d2dceafa0d50b9db3a7e51}{QCPItem\+Position\+::set\+Parent\+Anchor}}.
+\mbox{\hyperlink{class_the}{The}} tracer has different visual styles, see \mbox{\hyperlink{class_q_c_p_item_tracer_a41a2ac4f1acd7897b4e2a2579c03204e}{set\+Style}}. It is also possible to make the tracer have no own visual appearance (set the style to \mbox{\hyperlink{class_q_c_p_item_tracer_a2f05ddb13978036f902ca3ab47076500aac27462c79146225bfa8fba24d2ee8a4}{ts\+None}}), and just connect other item positions to the tracer {\itshape position} (used as an anchor) via \mbox{\hyperlink{class_q_c_p_item_position_ac094d67a95d2dceafa0d50b9db3a7e51}{QCPItem\+Position\+::set\+Parent\+Anchor}}.
 
 \begin{DoxyNote}{Note}
-The tracer position is only automatically updated upon redraws. So when the data of the graph changes and immediately afterwards (without a redraw) the position coordinates of the tracer are retrieved, they will not reflect the updated data of the graph. In this case \mbox{\hyperlink{class_q_c_p_item_tracer_a5b90296109e36384aedbc8908a670413}{update\+Position}} must be called manually, prior to reading the tracer coordinates. 
+\mbox{\hyperlink{class_the}{The}} tracer position is only automatically updated upon redraws. So when the data of the graph changes and immediately afterwards (without a redraw) the position coordinates of the tracer are retrieved, they will not reflect the updated data of the graph. In this case \mbox{\hyperlink{class_q_c_p_item_tracer_a5b90296109e36384aedbc8908a670413}{update\+Position}} must be called manually, prior to reading the tracer coordinates. 
 \end{DoxyNote}
 
 
@@ -357,14 +345,14 @@ The tracer position is only automatically updated upon redraws. So when the data
 \doxysubsubsection{\texorpdfstring{TracerStyle}{TracerStyle}}
 {\footnotesize\ttfamily enum \mbox{\hyperlink{class_q_c_p_item_tracer_a2f05ddb13978036f902ca3ab47076500}{QCPItem\+Tracer\+::\+Tracer\+Style}}}
 
-The different visual appearances a tracer item can have. Some styles size may be controlled with \mbox{\hyperlink{class_q_c_p_item_tracer_ae47fe0617f5fef5fdb766999569be10a}{set\+Size}}.
+\mbox{\hyperlink{class_the}{The}} different visual appearances a tracer item can have. Some styles size may be controlled with \mbox{\hyperlink{class_q_c_p_item_tracer_ae47fe0617f5fef5fdb766999569be10a}{set\+Size}}.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_item_tracer_a41a2ac4f1acd7897b4e2a2579c03204e}{set\+Style}} 
 \end{DoxySeeAlso}
 \begin{DoxyEnumFields}{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{tsNone@{tsNone}!QCPItemTracer@{QCPItemTracer}}\index{QCPItemTracer@{QCPItemTracer}!tsNone@{tsNone}}}\mbox{\Hypertarget{class_q_c_p_item_tracer_a2f05ddb13978036f902ca3ab47076500aac27462c79146225bfa8fba24d2ee8a4}\label{class_q_c_p_item_tracer_a2f05ddb13978036f902ca3ab47076500aac27462c79146225bfa8fba24d2ee8a4}} 
-ts\+None&The tracer is not visible. \\
+ts\+None&\mbox{\hyperlink{class_the}{The}} tracer is not visible. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{tsPlus@{tsPlus}!QCPItemTracer@{QCPItemTracer}}\index{QCPItemTracer@{QCPItemTracer}!tsPlus@{tsPlus}}}\mbox{\Hypertarget{class_q_c_p_item_tracer_a2f05ddb13978036f902ca3ab47076500a3323fb04017146e4885e080a459472fa}\label{class_q_c_p_item_tracer_a2f05ddb13978036f902ca3ab47076500a3323fb04017146e4885e080a459472fa}} 
@@ -395,7 +383,7 @@ ts\+Square&A square. \\
 
 Creates a tracer item and sets default values.
 
-The created item is automatically registered with {\itshape parent\+Plot}. This \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance takes ownership of the item, so do not delete it manually but use \mbox{\hyperlink{class_q_custom_plot_ae04446557292551e8fb6e2c106e1848d}{QCustom\+Plot\+::remove\+Item()}} instead. 
+\mbox{\hyperlink{class_the}{The}} created item is automatically registered with {\itshape parent\+Plot}. This \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance takes ownership of the item, so do not delete it manually but use \mbox{\hyperlink{class_q_custom_plot_ae04446557292551e8fb6e2c106e1848d}{QCustom\+Plot\+::remove\+Item()}} instead. 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_q_c_p_item_tracer_a11f187ffea436434f3b5cfc387811967}\label{class_q_c_p_item_tracer_a11f187ffea436434f3b5cfc387811967}} 
@@ -422,9 +410,9 @@ If the object is represented not by single lines but by an area like a \mbox{\hy
 
 Providing a constant value for area objects allows selecting line objects even when they are obscured by such area objects, by clicking close to the lines (i.\+e. closer than 0.\+99$\ast$selection\+Tolerance).
 
-The actual setting of the selection state is not done by this function. This is handled by the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} when the mouse\+Release\+Event occurs, and the finally selected object is notified via the select\+Event/ deselect\+Event methods.
+\mbox{\hyperlink{class_the}{The}} actual setting of the selection state is not done by this function. This is handled by the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} when the mouse\+Release\+Event occurs, and the finally selected object is notified via the select\+Event/ deselect\+Event methods.
 
-{\itshape details} is an optional output parameter. Every layerable subclass may place any information in {\itshape details}. This information will be passed to select\+Event when the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} decides on the basis of this select\+Test call, that the object was successfully selected. The subsequent call to select\+Event will carry the {\itshape details}. This is useful for multi-\/part objects (like \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}}). This way, a possibly complex calculation to decide which part was clicked is only done once in \mbox{\hyperlink{class_q_c_p_item_tracer_a9fd955fea40e977d66f3a9fd5765aec4}{select\+Test}}. The result (i.\+e. the actually clicked part) can then be placed in {\itshape details}. So in the subsequent select\+Event, the decision which part was selected doesn\textquotesingle{}t have to be done a second time for a single selection operation.
+{\itshape details} is an optional output parameter. Every layerable subclass may place any information in {\itshape details}. This information will be passed to select\+Event when the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} decides on the basis of this select\+Test call, that the object was successfully selected. \mbox{\hyperlink{class_the}{The}} subsequent call to select\+Event will carry the {\itshape details}. This is useful for multi-\/part objects (like \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}}). This way, a possibly complex calculation to decide which part was clicked is only done once in \mbox{\hyperlink{class_q_c_p_item_tracer_a9fd955fea40e977d66f3a9fd5765aec4}{select\+Test}}. \mbox{\hyperlink{class_the}{The}} result (i.\+e. the actually clicked part) can then be placed in {\itshape details}. So in the subsequent select\+Event, the decision which part was selected doesn\textquotesingle{}t have to be done a second time for a single selection operation.
 
 You may pass 0 as {\itshape details} to indicate that you are not interested in those selection details.
 
@@ -452,9 +440,9 @@ Sets the brush that will be used to draw any fills of the tracer
 \doxysubsubsection{\texorpdfstring{setGraph()}{setGraph()}}
 {\footnotesize\ttfamily void QCPItem\+Tracer\+::set\+Graph (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_graph}{QCPGraph}} $\ast$}]{graph }\end{DoxyParamCaption})}
 
-Sets the \mbox{\hyperlink{class_q_c_p_graph}{QCPGraph}} this tracer sticks to. The tracer {\itshape position} will be set to type \mbox{\hyperlink{class_q_c_p_item_position_aad9936c22bf43e3d358552f6e86dbdc8ad5ffb8dc99ad73263f7010c77342294c}{QCPItem\+Position\+::pt\+Plot\+Coords}} and the axes will be set to the axes of {\itshape graph}.
+Sets the \mbox{\hyperlink{class_q_c_p_graph}{QCPGraph}} this tracer sticks to. \mbox{\hyperlink{class_the}{The}} tracer {\itshape position} will be set to type \mbox{\hyperlink{class_q_c_p_item_position_aad9936c22bf43e3d358552f6e86dbdc8ad5ffb8dc99ad73263f7010c77342294c}{QCPItem\+Position\+::pt\+Plot\+Coords}} and the axes will be set to the axes of {\itshape graph}.
 
-To free the tracer from any graph, set {\itshape graph} to 0. The tracer {\itshape position} can then be placed freely like any other item position. This is the state the tracer will assume when its graph gets deleted while still attached to it.
+To free the tracer from any graph, set {\itshape graph} to 0. \mbox{\hyperlink{class_the}{The}} tracer {\itshape position} can then be placed freely like any other item position. This is the state the tracer will assume when its graph gets deleted while still attached to it.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_item_tracer_a6840143b42f3b685cedf7c6d83a704c8}{set\+Graph\+Key}} 

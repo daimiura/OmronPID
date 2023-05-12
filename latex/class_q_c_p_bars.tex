@@ -5,22 +5,10 @@
 A plottable representing a bar chart in a plot.  
 
 
-
-
-Inheritance diagram for QCPBars\+:\nopagebreak
-\begin{figure}[H]
+Inheritance diagram for QCPBars\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=336pt]{class_q_c_p_bars__inherit__graph}
-\end{center}
-\end{figure}
-
-
-Collaboration diagram for QCPBars\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_q_c_p_bars__coll__graph}
+\includegraphics[height=5.000000cm]{class_q_c_p_bars}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Types}
@@ -474,7 +462,7 @@ A plottable representing a bar chart in a plot.
 
 
 To plot data, assign it with the \mbox{\hyperlink{class_q_c_p_bars_a6dc562ec7120a8521e1061f2134367e4}{set\+Data}} or \mbox{\hyperlink{class_q_c_p_bars_a323d6970d6d6e3166d89916a7f60f733}{add\+Data}} functions.\hypertarget{class_q_c_p_bars_qcpbars-appearance}{}\doxysubsection{Changing the appearance}\label{class_q_c_p_bars_qcpbars-appearance}
-The appearance of the bars is determined by the pen and the brush (\mbox{\hyperlink{class_q_c_p_abstract_plottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}{set\+Pen}}, \mbox{\hyperlink{class_q_c_p_abstract_plottable_a7a4b92144dca6453a1f0f210e27edc74}{set\+Brush}}). The width of the individual bars can be controlled with \mbox{\hyperlink{class_q_c_p_bars_adcaa3b41281bb2c0f7949b341592fcc0}{set\+Width\+Type}} and \mbox{\hyperlink{class_q_c_p_bars_afec6116579d44d5b706e0fa5e5332507}{set\+Width}}.
+\mbox{\hyperlink{class_the}{The}} appearance of the bars is determined by the pen and the brush (\mbox{\hyperlink{class_q_c_p_abstract_plottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}{set\+Pen}}, \mbox{\hyperlink{class_q_c_p_abstract_plottable_a7a4b92144dca6453a1f0f210e27edc74}{set\+Brush}}). \mbox{\hyperlink{class_the}{The}} width of the individual bars can be controlled with \mbox{\hyperlink{class_q_c_p_bars_adcaa3b41281bb2c0f7949b341592fcc0}{set\+Width\+Type}} and \mbox{\hyperlink{class_q_c_p_bars_afec6116579d44d5b706e0fa5e5332507}{set\+Width}}.
 
 Bar charts are stackable. This means, two \mbox{\hyperlink{class_q_c_p_bars}{QCPBars}} plottables can be placed on top of each other (see \mbox{\hyperlink{class_q_c_p_bars_ac22e00a6a41509538c21b04f0a57318c}{QCPBars\+::move\+Above}}). So when two bars are at the same key position, they will appear stacked.
 
@@ -487,7 +475,7 @@ Usually, you first create an instance\+:
 \begin{DoxyCodeInclude}{0}
 
 \end{DoxyCodeInclude}
- which registers it with the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance of the passed axes. Note that this \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance takes ownership of the plottable, so do not delete it manually but use \mbox{\hyperlink{class_q_custom_plot_af3dafd56884208474f311d6226513ab2}{QCustom\+Plot\+::remove\+Plottable()}} instead. The newly created plottable can be modified, e.\+g.\+: 
+ which registers it with the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance of the passed axes. Note that this \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance takes ownership of the plottable, so do not delete it manually but use \mbox{\hyperlink{class_q_custom_plot_af3dafd56884208474f311d6226513ab2}{QCustom\+Plot\+::remove\+Plottable()}} instead. \mbox{\hyperlink{class_the}{The}} newly created plottable can be modified, e.\+g.\+: 
 \begin{DoxyCodeInclude}{0}
 
 \end{DoxyCodeInclude}
@@ -530,7 +518,7 @@ wt\+Plot\+Coords&Bar width is in key coordinates and thus scales with the key ax
 
 Constructs a bar chart which uses {\itshape key\+Axis} as its key axis (\char`\"{}x\char`\"{}) and {\itshape value\+Axis} as its value axis (\char`\"{}y\char`\"{}). {\itshape key\+Axis} and {\itshape value\+Axis} must reside in the same \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance and not have the same orientation. If either of these restrictions is violated, a corresponding message is printed to the debug output (q\+Debug), the construction is not aborted, though.
 
-The created \mbox{\hyperlink{class_q_c_p_bars}{QCPBars}} is automatically registered with the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance inferred from {\itshape key\+Axis}. This \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance takes ownership of the \mbox{\hyperlink{class_q_c_p_bars}{QCPBars}}, so do not delete it manually but use \mbox{\hyperlink{class_q_custom_plot_af3dafd56884208474f311d6226513ab2}{QCustom\+Plot\+::remove\+Plottable()}} instead. 
+\mbox{\hyperlink{class_the}{The}} created \mbox{\hyperlink{class_q_c_p_bars}{QCPBars}} is automatically registered with the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance inferred from {\itshape key\+Axis}. This \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance takes ownership of the \mbox{\hyperlink{class_q_c_p_bars}{QCPBars}}, so do not delete it manually but use \mbox{\hyperlink{class_q_custom_plot_af3dafd56884208474f311d6226513ab2}{QCustom\+Plot\+::remove\+Plottable()}} instead. 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_q_c_p_bars_a323d6970d6d6e3166d89916a7f60f733}\label{class_q_c_p_bars_a323d6970d6d6e3166d89916a7f60f733}} 
@@ -541,7 +529,7 @@ The created \mbox{\hyperlink{class_q_c_p_bars}{QCPBars}} is automatically regist
 
 This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
 
-Adds the provided points in {\itshape keys} and {\itshape values} to the current data. The provided vectors should have equal length. Else, the number of added points will be the size of the smallest vector.
+Adds the provided points in {\itshape keys} and {\itshape values} to the current data. \mbox{\hyperlink{class_the}{The}} provided vectors should have equal length. Else, the number of added points will be the size of the smallest vector.
 
 If you can guarantee that the passed data points are sorted by {\itshape keys} in ascending order, you can set {\itshape already\+Sorted} to true, to improve performance by saving a sorting run.
 
@@ -659,7 +647,7 @@ Implements \mbox{\hyperlink{class_q_c_p_abstract_plottable_a4de773988b21ed090fdd
 \doxysubsubsection{\texorpdfstring{moveAbove()}{moveAbove()}}
 {\footnotesize\ttfamily void QCPBars\+::move\+Above (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_bars}{QCPBars}} $\ast$}]{bars }\end{DoxyParamCaption})}
 
-Moves this bars plottable above {\itshape bars}. In other words, the bars of this plottable will appear above the bars of {\itshape bars}. The move target {\itshape bars} must use the same key and value axis as this plottable.
+Moves this bars plottable above {\itshape bars}. In other words, the bars of this plottable will appear above the bars of {\itshape bars}. \mbox{\hyperlink{class_the}{The}} move target {\itshape bars} must use the same key and value axis as this plottable.
 
 Inserting into and removing from existing bar stacking is handled gracefully. If {\itshape bars} already has a bars object above itself, this bars object is inserted between the two. If this bars object is already between two other bars, the two other bars will be stacked on top of each other after the operation.
 
@@ -674,7 +662,7 @@ To remove this bars plottable from any stacking, set {\itshape bars} to 0.
 \doxysubsubsection{\texorpdfstring{moveBelow()}{moveBelow()}}
 {\footnotesize\ttfamily void QCPBars\+::move\+Below (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_bars}{QCPBars}} $\ast$}]{bars }\end{DoxyParamCaption})}
 
-Moves this bars plottable below {\itshape bars}. In other words, the bars of this plottable will appear below the bars of {\itshape bars}. The move target {\itshape bars} must use the same key and value axis as this plottable.
+Moves this bars plottable below {\itshape bars}. In other words, the bars of this plottable will appear below the bars of {\itshape bars}. \mbox{\hyperlink{class_the}{The}} move target {\itshape bars} must use the same key and value axis as this plottable.
 
 Inserting into and removing from existing bar stacking is handled gracefully. If {\itshape bars} already has a bars object below itself, this bars object is inserted between the two. If this bars object is already between two other bars, the two other bars will be stacked on top of each other after the operation.
 
@@ -732,11 +720,11 @@ To remove this \mbox{\hyperlink{class_q_c_p_bars}{QCPBars}} from any group, set 
 
 Sets the base value of this bars plottable.
 
-The base value defines where on the value coordinate the bars start. How far the bars extend from the base value is given by their individual value data. For example, if the base value is set to 1, a bar with data value 2 will have its lowest point at value coordinate 1 and highest point at 3.
+\mbox{\hyperlink{class_the}{The}} base value defines where on the value coordinate the bars start. How far the bars extend from the base value is given by their individual value data. For example, if the base value is set to 1, a bar with data value 2 will have its lowest point at value coordinate 1 and highest point at 3.
 
 For stacked bars, only the base value of the bottom-\/most \mbox{\hyperlink{class_q_c_p_bars}{QCPBars}} has meaning.
 
-The default base value is 0. \mbox{\Hypertarget{class_q_c_p_bars_a2a88cd5b16ec7b71e5a590f95b50c5ce}\label{class_q_c_p_bars_a2a88cd5b16ec7b71e5a590f95b50c5ce}} 
+\mbox{\hyperlink{class_the}{The}} default base value is 0. \mbox{\Hypertarget{class_q_c_p_bars_a2a88cd5b16ec7b71e5a590f95b50c5ce}\label{class_q_c_p_bars_a2a88cd5b16ec7b71e5a590f95b50c5ce}} 
 \index{QCPBars@{QCPBars}!setData@{setData}}
 \index{setData@{setData}!QCPBars@{QCPBars}}
 \doxysubsubsection{\texorpdfstring{setData()}{setData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -744,7 +732,7 @@ The default base value is 0. \mbox{\Hypertarget{class_q_c_p_bars_a2a88cd5b16ec7b
 
 This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
 
-Replaces the current data with the provided points in {\itshape keys} and {\itshape values}. The provided vectors should have equal length. Else, the number of added points will be the size of the smallest vector.
+Replaces the current data with the provided points in {\itshape keys} and {\itshape values}. \mbox{\hyperlink{class_the}{The}} provided vectors should have equal length. Else, the number of added points will be the size of the smallest vector.
 
 If you can guarantee that the passed data points are sorted by {\itshape keys} in ascending order, you can set {\itshape already\+Sorted} to true, to improve performance by saving a sorting run.
 
@@ -798,7 +786,7 @@ How the number passed as {\itshape width} is interpreted (e.\+g. screen pixels, 
 
 Sets how the width of the bars is defined. See the documentation of \mbox{\hyperlink{class_q_c_p_bars_a65dbbf1ab41cbe993d71521096ed4649}{Width\+Type}} for an explanation of the possible values for {\itshape width\+Type}.
 
-The default value is \mbox{\hyperlink{class_q_c_p_bars_a65dbbf1ab41cbe993d71521096ed4649aad3cc60ae1bfb1160a30237bee9eaf10}{wt\+Plot\+Coords}}.
+\mbox{\hyperlink{class_the}{The}} default value is \mbox{\hyperlink{class_q_c_p_bars_a65dbbf1ab41cbe993d71521096ed4649aad3cc60ae1bfb1160a30237bee9eaf10}{wt\+Plot\+Coords}}.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_bars_afec6116579d44d5b706e0fa5e5332507}{set\+Width}} 

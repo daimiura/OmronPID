@@ -19,5 +19,9 @@ var searchData=
   ['moveabove_16',['moveAbove',['../class_q_c_p_bars.html#ac22e00a6a41509538c21b04f0a57318c',1,'QCPBars']]],
   ['movebelow_17',['moveBelow',['../class_q_c_p_bars.html#a69fc371346980f19177c3d1ecdad78ee',1,'QCPBars']]],
   ['movelayer_18',['moveLayer',['../class_q_custom_plot.html#ae896140beff19424e9e9e02d6e331104',1,'QCustomPlot']]],
-  ['moverange_19',['moveRange',['../class_q_c_p_axis.html#a18f3a68f2b691af1fd34b6593c886630',1,'QCPAxis']]]
+  ['moverange_19',['moveRange',['../class_q_c_p_axis.html#a18f3a68f2b691af1fd34b6593c886630',1,'QCPAxis']]],
+  ['mvchanged_20',['mvChanged',['../class_data_summary.html#ad939eb587c1452110a8bf2ac0b6c024a',1,'DataSummary']]],
+  ['mvlowerupdated_21',['MVlowerUpdated',['../class_communication.html#a48071434d4991e27589e83788f4ad0c5',1,'Communication']]],
+  ['mvupdated_22',['MVUpdated',['../class_communication.html#a99b3ee7daebd86b82269e558d38b89a7',1,'Communication']]],
+  ['mvupperupdated_23',['MVupperUpdated',['../class_communication.html#ac2fe10e50d7b27a2218f740390427d3d',1,'Communication']]]
 ];

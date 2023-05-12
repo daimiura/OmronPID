@@ -2,25 +2,13 @@
 \label{class_q_c_p_abstract_item}\index{QCPAbstractItem@{QCPAbstractItem}}
 
 
-The abstract base class for all items in a plot.  
+\mbox{\hyperlink{class_the}{The}} abstract base class for all items in a plot.  
 
 
-
-
-Inheritance diagram for QCPAbstract\+Item\+:\nopagebreak
-\begin{figure}[H]
+Inheritance diagram for QCPAbstract\+Item\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_q_c_p_abstract_item__inherit__graph}
-\end{center}
-\end{figure}
-
-
-Collaboration diagram for QCPAbstract\+Item\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_q_c_p_abstract_item__coll__graph}
+\includegraphics[height=12.000000cm]{class_q_c_p_abstract_item}
 \end{center}
 \end{figure}
 \doxysubsection*{Signals}
@@ -228,13 +216,13 @@ class {\bfseries QCPItem\+Anchor}
 
 
 \doxysubsection{Detailed Description}
-The abstract base class for all items in a plot. 
+\mbox{\hyperlink{class_the}{The}} abstract base class for all items in a plot. 
 
 In \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}, items are supplemental graphical elements that are neither plottables (\mbox{\hyperlink{class_q_c_p_abstract_plottable}{QCPAbstract\+Plottable}}) nor axes (\mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}}). While plottables are always tied to two axes and thus plot coordinates, items can also be placed in absolute coordinates independent of any axes. Each specific item has at least one \mbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}} member which controls the positioning. Some items are defined by more than one coordinate and thus have two or more \mbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}} members (For example, \mbox{\hyperlink{class_q_c_p_item_rect}{QCPItem\+Rect}} has {\itshape top\+Left} and {\itshape bottom\+Right}).
 
 This abstract base class defines a very basic interface like visibility and clipping. Since this class is abstract, it can\textquotesingle{}t be instantiated. Use one of the subclasses or create a subclass yourself to create new items.
 
-The built-\/in items are\+: \tabulinesep=1mm
+\mbox{\hyperlink{class_the}{The}} built-\/in items are\+: \tabulinesep=1mm
 \begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
 \hline
 \mbox{\hyperlink{class_q_c_p_item_line}{QCPItem\+Line}}&A line defined by a start and an end point. May have different ending styles on each side (e.\+g. arrows). \\\cline{1-2}
@@ -286,7 +274,7 @@ As mentioned, item positions are represented by \mbox{\hyperlink{class_q_c_p_ite
 \end{DoxyCode}
 
 
-the const makes sure the pointer itself can\textquotesingle{}t be modified from the user of your new item (the \mbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}} instance it points to, can be modified, of course). The initialization of this pointer is made easy with the create\+Position function. Just assign the return value of this function to each \mbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}} in the constructor of your item. create\+Position takes a string which is the name of the position, typically this is identical to the variable name. For example, the constructor of QCPItem\+Example could look like this\+:
+the const makes sure the pointer itself can\textquotesingle{}t be modified from the user of your new item (the \mbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}} instance it points to, can be modified, of course). \mbox{\hyperlink{class_the}{The}} initialization of this pointer is made easy with the create\+Position function. Just assign the return value of this function to each \mbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}} in the constructor of your item. create\+Position takes a string which is the name of the position, typically this is identical to the variable name. For example, the constructor of QCPItem\+Example could look like this\+:
 
 
 \begin{DoxyCode}{0}
@@ -467,9 +455,9 @@ If the object is represented not by single lines but by an area like a \mbox{\hy
 
 Providing a constant value for area objects allows selecting line objects even when they are obscured by such area objects, by clicking close to the lines (i.\+e. closer than 0.\+99$\ast$selection\+Tolerance).
 
-The actual setting of the selection state is not done by this function. This is handled by the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} when the mouse\+Release\+Event occurs, and the finally selected object is notified via the select\+Event/ deselect\+Event methods.
+\mbox{\hyperlink{class_the}{The}} actual setting of the selection state is not done by this function. This is handled by the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} when the mouse\+Release\+Event occurs, and the finally selected object is notified via the select\+Event/ deselect\+Event methods.
 
-{\itshape details} is an optional output parameter. Every layerable subclass may place any information in {\itshape details}. This information will be passed to select\+Event when the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} decides on the basis of this select\+Test call, that the object was successfully selected. The subsequent call to select\+Event will carry the {\itshape details}. This is useful for multi-\/part objects (like \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}}). This way, a possibly complex calculation to decide which part was clicked is only done once in \mbox{\hyperlink{class_q_c_p_abstract_item_ae41d0349d68bb802c49104afd100ba2a}{select\+Test}}. The result (i.\+e. the actually clicked part) can then be placed in {\itshape details}. So in the subsequent select\+Event, the decision which part was selected doesn\textquotesingle{}t have to be done a second time for a single selection operation.
+{\itshape details} is an optional output parameter. Every layerable subclass may place any information in {\itshape details}. This information will be passed to select\+Event when the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} decides on the basis of this select\+Test call, that the object was successfully selected. \mbox{\hyperlink{class_the}{The}} subsequent call to select\+Event will carry the {\itshape details}. This is useful for multi-\/part objects (like \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}}). This way, a possibly complex calculation to decide which part was clicked is only done once in \mbox{\hyperlink{class_q_c_p_abstract_item_ae41d0349d68bb802c49104afd100ba2a}{select\+Test}}. \mbox{\hyperlink{class_the}{The}} result (i.\+e. the actually clicked part) can then be placed in {\itshape details}. So in the subsequent select\+Event, the decision which part was selected doesn\textquotesingle{}t have to be done a second time for a single selection operation.
 
 You may pass 0 as {\itshape details} to indicate that you are not interested in those selection details.
 
@@ -501,7 +489,7 @@ Sets the clip axis rect. It defines the rect that will be used to clip the item 
 \doxysubsubsection{\texorpdfstring{setClipToAxisRect()}{setClipToAxisRect()}}
 {\footnotesize\ttfamily void QCPAbstract\+Item\+::set\+Clip\+To\+Axis\+Rect (\begin{DoxyParamCaption}\item[{bool}]{clip }\end{DoxyParamCaption})}
 
-Sets whether the item shall be clipped to an axis rect or whether it shall be visible on the entire \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}. The axis rect can be set with \mbox{\hyperlink{class_q_c_p_abstract_item_a7dc75fcbcd10206fe0b75d757ea7a347}{set\+Clip\+Axis\+Rect}}.
+Sets whether the item shall be clipped to an axis rect or whether it shall be visible on the entire \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}. \mbox{\hyperlink{class_the}{The}} axis rect can be set with \mbox{\hyperlink{class_q_c_p_abstract_item_a7dc75fcbcd10206fe0b75d757ea7a347}{set\+Clip\+Axis\+Rect}}.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_abstract_item_a7dc75fcbcd10206fe0b75d757ea7a347}{set\+Clip\+Axis\+Rect}} 
@@ -527,7 +515,7 @@ However, even when {\itshape selectable} was set to false, it is possible to set
 
 Sets whether this item is selected or not. When selected, it might use a different visual appearance (e.\+g. pen and brush), this depends on the specific item though.
 
-The entire selection mechanism for items is handled automatically when \mbox{\hyperlink{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5}{QCustom\+Plot\+::set\+Interactions}} contains QCustom\+Plot\+::i\+Select\+Items. You only need to call this function when you wish to change the selection state manually.
+\mbox{\hyperlink{class_the}{The}} entire selection mechanism for items is handled automatically when \mbox{\hyperlink{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5}{QCustom\+Plot\+::set\+Interactions}} contains QCustom\+Plot\+::i\+Select\+Items. You only need to call this function when you wish to change the selection state manually.
 
 This function can change the selection state even when \mbox{\hyperlink{class_q_c_p_abstract_item_a8a8e32a55bc478b849756a78c2d87fd2}{set\+Selectable}} was set to false.
 

@@ -5,22 +5,10 @@
 A plottable representing a graph in a plot.  
 
 
-
-
-Inheritance diagram for QCPGraph\+:\nopagebreak
-\begin{figure}[H]
+Inheritance diagram for QCPGraph\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=336pt]{class_q_c_p_graph__inherit__graph}
-\end{center}
-\end{figure}
-
-
-Collaboration diagram for QCPGraph\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_q_c_p_graph__coll__graph}
+\includegraphics[height=5.000000cm]{class_q_c_p_graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Types}
@@ -513,14 +501,14 @@ A plottable representing a graph in a plot.
 
 
 
-Usually you create new graphs by calling \mbox{\hyperlink{class_q_custom_plot_a6fb2873d35a8a8089842d81a70a54167}{QCustom\+Plot\+::add\+Graph}}. The resulting instance can be accessed via \mbox{\hyperlink{class_q_custom_plot_a6ecae130f684b25276fb47bd3a5875c6}{QCustom\+Plot\+::graph}}.
+Usually you create new graphs by calling \mbox{\hyperlink{class_q_custom_plot_a6fb2873d35a8a8089842d81a70a54167}{QCustom\+Plot\+::add\+Graph}}. \mbox{\hyperlink{class_the}{The}} resulting instance can be accessed via \mbox{\hyperlink{class_q_custom_plot_a6ecae130f684b25276fb47bd3a5875c6}{QCustom\+Plot\+::graph}}.
 
 To plot data, assign it with the \mbox{\hyperlink{class_q_c_p_graph_a1eae9429a316b008e2d99b2d65a54395}{set\+Data}} or \mbox{\hyperlink{class_q_c_p_graph_ae0555c0d3fe0fa7cb8628f88158d420f}{add\+Data}} functions. Alternatively, you can also access and modify the data via the \mbox{\hyperlink{class_q_c_p_graph_a141aa31a1f19bbd0ce60f55eaeb9ea60}{data}} method, which returns a pointer to the internal QCPGraph\+Data\+Container.
 
 Graphs are used to display single-\/valued data. Single-\/valued means that there should only be one data point per unique key coordinate. In other words, the graph can\textquotesingle{}t have {\itshape loops}. If you do want to plot non-\/single-\/valued curves, rather use the \mbox{\hyperlink{class_q_c_p_curve}{QCPCurve}} plottable.
 
 Gaps in the graph line can be created by adding data points with NaN as value ({\ttfamily q\+QNa\+N()} or {\ttfamily std\+::numeric\+\_\+limits$<$double$>$\+::quiet\+\_\+\+Na\+N()}) in between the two data points that shall be separated.\hypertarget{class_q_c_p_graph_qcpgraph-appearance}{}\doxysubsection{Changing the appearance}\label{class_q_c_p_graph_qcpgraph-appearance}
-The appearance of the graph is mainly determined by the line style, scatter style, brush and pen of the graph (\mbox{\hyperlink{class_q_c_p_graph_a513fecccff5b2a50ce53f665338c60ff}{set\+Line\+Style}}, \mbox{\hyperlink{class_q_c_p_graph_a12bd17a8ba21983163ec5d8f42a9fea5}{set\+Scatter\+Style}}, \mbox{\hyperlink{class_q_c_p_abstract_plottable_a7a4b92144dca6453a1f0f210e27edc74}{set\+Brush}}, \mbox{\hyperlink{class_q_c_p_abstract_plottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}{set\+Pen}}).\hypertarget{class_q_c_p_graph_filling}{}\doxysubsubsection{Filling under or between graphs}\label{class_q_c_p_graph_filling}
+\mbox{\hyperlink{class_the}{The}} appearance of the graph is mainly determined by the line style, scatter style, brush and pen of the graph (\mbox{\hyperlink{class_q_c_p_graph_a513fecccff5b2a50ce53f665338c60ff}{set\+Line\+Style}}, \mbox{\hyperlink{class_q_c_p_graph_a12bd17a8ba21983163ec5d8f42a9fea5}{set\+Scatter\+Style}}, \mbox{\hyperlink{class_q_c_p_abstract_plottable_a7a4b92144dca6453a1f0f210e27edc74}{set\+Brush}}, \mbox{\hyperlink{class_q_c_p_abstract_plottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}{set\+Pen}}).\hypertarget{class_q_c_p_graph_filling}{}\doxysubsubsection{Filling under or between graphs}\label{class_q_c_p_graph_filling}
 \mbox{\hyperlink{class_q_c_p_graph}{QCPGraph}} knows two types of fills\+: Normal graph fills towards the zero-\/value-\/line parallel to the key axis of the graph, and fills between two graphs, called channel fills. To enable a fill, just set a brush with \mbox{\hyperlink{class_q_c_p_abstract_plottable_a7a4b92144dca6453a1f0f210e27edc74}{set\+Brush}} which is neither Qt\+::\+No\+Brush nor fully transparent.
 
 By default, a normal fill towards the zero-\/value-\/line will be drawn. To set up a channel fill between this graph and another one, call \mbox{\hyperlink{class_q_c_p_graph_a2d03156df1b64037a2e36cfa50351ca3}{set\+Channel\+Fill\+Graph}} with the other graph as parameter.
@@ -537,7 +525,7 @@ By default, a normal fill towards the zero-\/value-\/line will be drawn. To set 
 \doxysubsubsection{\texorpdfstring{LineStyle}{LineStyle}}
 {\footnotesize\ttfamily enum \mbox{\hyperlink{class_q_c_p_graph_ad60175cd9b5cac937c5ee685c32c0859}{QCPGraph\+::\+Line\+Style}}}
 
-Defines how the graph\textquotesingle{}s line is represented visually in the plot. The line is drawn with the current pen of the graph (\mbox{\hyperlink{class_q_c_p_abstract_plottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}{set\+Pen}}). \begin{DoxySeeAlso}{See also}
+Defines how the graph\textquotesingle{}s line is represented visually in the plot. \mbox{\hyperlink{class_the}{The}} line is drawn with the current pen of the graph (\mbox{\hyperlink{class_q_c_p_abstract_plottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}{set\+Pen}}). \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_graph_a513fecccff5b2a50ce53f665338c60ff}{set\+Line\+Style}} 
 \end{DoxySeeAlso}
 \begin{DoxyEnumFields}{Enumerator}
@@ -577,7 +565,7 @@ ls\+Impulse&each data point is represented by a line parallel to the value axis,
 
 Constructs a graph which uses {\itshape key\+Axis} as its key axis (\char`\"{}x\char`\"{}) and {\itshape value\+Axis} as its value axis (\char`\"{}y\char`\"{}). {\itshape key\+Axis} and {\itshape value\+Axis} must reside in the same \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance and not have the same orientation. If either of these restrictions is violated, a corresponding message is printed to the debug output (q\+Debug), the construction is not aborted, though.
 
-The created \mbox{\hyperlink{class_q_c_p_graph}{QCPGraph}} is automatically registered with the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance inferred from {\itshape key\+Axis}. This \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance takes ownership of the \mbox{\hyperlink{class_q_c_p_graph}{QCPGraph}}, so do not delete it manually but use \mbox{\hyperlink{class_q_custom_plot_af3dafd56884208474f311d6226513ab2}{QCustom\+Plot\+::remove\+Plottable()}} instead.
+\mbox{\hyperlink{class_the}{The}} created \mbox{\hyperlink{class_q_c_p_graph}{QCPGraph}} is automatically registered with the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance inferred from {\itshape key\+Axis}. This \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance takes ownership of the \mbox{\hyperlink{class_q_c_p_graph}{QCPGraph}}, so do not delete it manually but use \mbox{\hyperlink{class_q_custom_plot_af3dafd56884208474f311d6226513ab2}{QCustom\+Plot\+::remove\+Plottable()}} instead.
 
 To directly create a graph inside a plot, you can also use the simpler \mbox{\hyperlink{class_q_custom_plot_a6fb2873d35a8a8089842d81a70a54167}{QCustom\+Plot\+::add\+Graph}} function. 
 
@@ -590,7 +578,7 @@ To directly create a graph inside a plot, you can also use the simpler \mbox{\hy
 
 This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
 
-Adds the provided points in {\itshape keys} and {\itshape values} to the current data. The provided vectors should have equal length. Else, the number of added points will be the size of the smallest vector.
+Adds the provided points in {\itshape keys} and {\itshape values} to the current data. \mbox{\hyperlink{class_the}{The}} provided vectors should have equal length. Else, the number of added points will be the size of the smallest vector.
 
 If you can guarantee that the passed data points are sorted by {\itshape keys} in ascending order, you can set {\itshape already\+Sorted} to true, to improve performance by saving a sorting run.
 
@@ -672,7 +660,7 @@ Implements \mbox{\hyperlink{class_q_c_p_abstract_plottable_a4de773988b21ed090fdd
 \doxysubsubsection{\texorpdfstring{getVisibleDataBounds()}{getVisibleDataBounds()}}
 {\footnotesize\ttfamily void QCPGraph\+::get\+Visible\+Data\+Bounds (\begin{DoxyParamCaption}\item[{QCPGraph\+Data\+Container\+::const\+\_\+iterator \&}]{begin,  }\item[{QCPGraph\+Data\+Container\+::const\+\_\+iterator \&}]{end,  }\item[{const \mbox{\hyperlink{class_q_c_p_data_range}{QCPData\+Range}} \&}]{range\+Restriction }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
 
-This method outputs the currently visible data range via {\itshape begin} and {\itshape end}. The returned range will also never exceed {\itshape range\+Restriction}.
+This method outputs the currently visible data range via {\itshape begin} and {\itshape end}. \mbox{\hyperlink{class_the}{The}} returned range will also never exceed {\itshape range\+Restriction}.
 
 This method takes into account that the drawing of data lines at the axis rect border always requires the points just outside the visible axis range. So {\itshape begin} and {\itshape end} may actually indicate a range that contains one additional data point to the left and right of the visible axis range. \mbox{\Hypertarget{class_q_c_p_graph_a6d669d04462d272c6aa0e5f85846d673}\label{class_q_c_p_graph_a6d669d04462d272c6aa0e5f85846d673}} 
 \index{QCPGraph@{QCPGraph}!selectTest@{selectTest}}
@@ -698,11 +686,11 @@ By default, adaptive sampling is enabled. Even if enabled, \mbox{\hyperlink{clas
 
 
 
-As can be seen, line plots experience no visual degradation from adaptive sampling. Outliers are reproduced reliably, as well as the overall shape of the data set. The replot time reduces dramatically though. This allows \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} to display large amounts of data in realtime.
+As can be seen, line plots experience no visual degradation from adaptive sampling. Outliers are reproduced reliably, as well as the overall shape of the data set. \mbox{\hyperlink{class_the}{The}} replot time reduces dramatically though. This allows \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} to display large amounts of data in realtime.
 
 
 
-Care must be taken when using high-\/density scatter plots in combination with adaptive sampling. The adaptive sampling algorithm treats scatter plots more carefully than line plots which still gives a significant reduction of replot times, but not quite as much as for line plots. This is because scatter plots inherently need more data points to be preserved in order to still resemble the original, non-\/adaptive-\/sampling plot. As shown above, the results still aren\textquotesingle{}t quite identical, as banding occurs for the outer data points. This is in fact intentional, such that the boundaries of the data cloud stay visible to the viewer. How strong the banding appears, depends on the point density, i.\+e. the number of points in the plot.
+Care must be taken when using high-\/density scatter plots in combination with adaptive sampling. \mbox{\hyperlink{class_the}{The}} adaptive sampling algorithm treats scatter plots more carefully than line plots which still gives a significant reduction of replot times, but not quite as much as for line plots. This is because scatter plots inherently need more data points to be preserved in order to still resemble the original, non-\/adaptive-\/sampling plot. As shown above, the results still aren\textquotesingle{}t quite identical, as banding occurs for the outer data points. This is in fact intentional, such that the boundaries of the data cloud stay visible to the viewer. How strong the banding appears, depends on the point density, i.\+e. the number of points in the plot.
 
 For some situations with scatter plots it might thus be desirable to manually turn adaptive sampling off. For example, when saving the plot to disk. This can be achieved by setting {\itshape enabled} to false before issuing a command like \mbox{\hyperlink{class_q_custom_plot_ac92cc9256d12f354b40a4be4600b5fb9}{QCustom\+Plot\+::save\+Png}}, and setting {\itshape enabled} back to true afterwards. \mbox{\Hypertarget{class_q_c_p_graph_a2d03156df1b64037a2e36cfa50351ca3}\label{class_q_c_p_graph_a2d03156df1b64037a2e36cfa50351ca3}} 
 \index{QCPGraph@{QCPGraph}!setChannelFillGraph@{setChannelFillGraph}}
@@ -725,7 +713,7 @@ When {\itshape target\+Graph} is set to 0, a normal graph fill to the zero-\/val
 
 This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
 
-Replaces the current data with the provided points in {\itshape keys} and {\itshape values}. The provided vectors should have equal length. Else, the number of added points will be the size of the smallest vector.
+Replaces the current data with the provided points in {\itshape keys} and {\itshape values}. \mbox{\hyperlink{class_the}{The}} provided vectors should have equal length. Else, the number of added points will be the size of the smallest vector.
 
 If you can guarantee that the passed data points are sorted by {\itshape keys} in ascending order, you can set {\itshape already\+Sorted} to true, to improve performance by saving a sorting run.
 

@@ -5,22 +5,10 @@
 Specialized axis ticker which allows arbitrary labels at specified coordinates.  
 
 
-
-
-Inheritance diagram for QCPAxis\+Ticker\+Text\+:\nopagebreak
-\begin{figure}[H]
+Inheritance diagram for QCPAxis\+Ticker\+Text\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=182pt]{class_q_c_p_axis_ticker_text__inherit__graph}
-\end{center}
-\end{figure}
-
-
-Collaboration diagram for QCPAxis\+Ticker\+Text\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=182pt]{class_q_c_p_axis_ticker_text__coll__graph}
+\includegraphics[height=2.000000cm]{class_q_c_p_axis_ticker_text}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
@@ -43,7 +31,7 @@ void \mbox{\hyperlink{class_q_c_p_axis_ticker_text_a21826d2fcd9a25c194d34d4f67aa
 \item 
 void \mbox{\hyperlink{class_q_c_p_axis_ticker_text_aada3db69e5fc6585aaa4ea5d89552eb0}{add\+Tick}} (double position, QString label)
 \item 
-void \mbox{\hyperlink{class_q_c_p_axis_ticker_text_aba34051300eecaefbedb2df8feff2d45}{add\+Ticks}} (const QMap$<$ double, QString $>$ \&\mbox{\hyperlink{class_q_c_p_axis_ticker_text_ac84622a6bb4f2a98474e185ecaf3189a}{ticks}})
+void \mbox{\hyperlink{class_q_c_p_axis_ticker_text_aea0819f861bf268a37bd13d5487e3162}{add\+Ticks}} (const QMulti\+Map$<$ double, QString $>$ \&\mbox{\hyperlink{class_q_c_p_axis_ticker_text_ac84622a6bb4f2a98474e185ecaf3189a}{ticks}})
 \item 
 void \mbox{\hyperlink{class_q_c_p_axis_ticker_text_a8140c730e20b0050e1b702af3db00b2e}{add\+Ticks}} (const QVector$<$ double $>$ \&positions, const QVector$<$ QString $>$ \&labels)
 \end{DoxyCompactItemize}
@@ -151,7 +139,7 @@ This is useful for cases where the axis represents categories rather than numeri
 
 If you are updating the ticks of this ticker regularly and in a dynamic fasion (e.\+g. dependent on the axis range), it is a sign that you should probably create an own ticker by subclassing \mbox{\hyperlink{class_q_c_p_axis_ticker}{QCPAxis\+Ticker}}, instead of using this one.
 
-The ticker can be created and assigned to an axis like this\+: 
+\mbox{\hyperlink{class_the}{The}} ticker can be created and assigned to an axis like this\+: 
 \begin{DoxyCodeInclude}{0}
 
 \end{DoxyCodeInclude}
@@ -176,17 +164,17 @@ Constructs the ticker and sets reasonable default values. Axis tickers are commo
 Adds a single tick to the axis at the given axis coordinate {\itshape position}, with the provided tick {\itshape label}.
 
 \begin{DoxySeeAlso}{See also}
-\mbox{\hyperlink{class_q_c_p_axis_ticker_text_aba34051300eecaefbedb2df8feff2d45}{add\+Ticks}}, \mbox{\hyperlink{class_q_c_p_axis_ticker_text_a8cdf1f21940f1f53f5e3d30b2c74f5cf}{set\+Ticks}}, \mbox{\hyperlink{class_q_c_p_axis_ticker_text_a21826d2fcd9a25c194d34d4f67aa1460}{clear}} 
+\mbox{\hyperlink{class_q_c_p_axis_ticker_text_aea0819f861bf268a37bd13d5487e3162}{add\+Ticks}}, \mbox{\hyperlink{class_q_c_p_axis_ticker_text_a8cdf1f21940f1f53f5e3d30b2c74f5cf}{set\+Ticks}}, \mbox{\hyperlink{class_q_c_p_axis_ticker_text_a21826d2fcd9a25c194d34d4f67aa1460}{clear}} 
 \end{DoxySeeAlso}
-\mbox{\Hypertarget{class_q_c_p_axis_ticker_text_aba34051300eecaefbedb2df8feff2d45}\label{class_q_c_p_axis_ticker_text_aba34051300eecaefbedb2df8feff2d45}} 
+\mbox{\Hypertarget{class_q_c_p_axis_ticker_text_aea0819f861bf268a37bd13d5487e3162}\label{class_q_c_p_axis_ticker_text_aea0819f861bf268a37bd13d5487e3162}} 
 \index{QCPAxisTickerText@{QCPAxisTickerText}!addTicks@{addTicks}}
 \index{addTicks@{addTicks}!QCPAxisTickerText@{QCPAxisTickerText}}
 \doxysubsubsection{\texorpdfstring{addTicks()}{addTicks()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily void QCPAxis\+Ticker\+Text\+::add\+Ticks (\begin{DoxyParamCaption}\item[{const QMap$<$ double, QString $>$ \&}]{ticks }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void QCPAxis\+Ticker\+Text\+::add\+Ticks (\begin{DoxyParamCaption}\item[{const QMulti\+Map$<$ double, QString $>$ \&}]{ticks }\end{DoxyParamCaption})}
 
 This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
 
-Adds the provided {\itshape ticks} to the ones already existing. The map key of {\itshape ticks} corresponds to the axis coordinate, and the map value is the string that will appear as tick label.
+Adds the provided {\itshape ticks} to the ones already existing. \mbox{\hyperlink{class_the}{The}} map key of {\itshape ticks} corresponds to the axis coordinate, and the map value is the string that will appear as tick label.
 
 An alternative to manipulate ticks is to directly access the internal storage with the \mbox{\hyperlink{class_q_c_p_axis_ticker_text_ac84622a6bb4f2a98474e185ecaf3189a}{ticks}} getter.
 
@@ -201,7 +189,7 @@ An alternative to manipulate ticks is to directly access the internal storage wi
 
 This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
 
-Adds the provided ticks to the ones already existing. The entries of {\itshape positions} correspond to the axis coordinates, and the entries of {\itshape labels} are the respective strings that will appear as tick labels.
+Adds the provided ticks to the ones already existing. \mbox{\hyperlink{class_the}{The}} entries of {\itshape positions} correspond to the axis coordinates, and the entries of {\itshape labels} are the respective strings that will appear as tick labels.
 
 An alternative to manipulate ticks is to directly access the internal storage with the \mbox{\hyperlink{class_q_c_p_axis_ticker_text_ac84622a6bb4f2a98474e185ecaf3189a}{ticks}} getter.
 
@@ -219,7 +207,7 @@ Clears all ticks.
 An alternative to manipulate ticks is to directly access the internal storage with the \mbox{\hyperlink{class_q_c_p_axis_ticker_text_ac84622a6bb4f2a98474e185ecaf3189a}{ticks}} getter.
 
 \begin{DoxySeeAlso}{See also}
-\mbox{\hyperlink{class_q_c_p_axis_ticker_text_a8cdf1f21940f1f53f5e3d30b2c74f5cf}{set\+Ticks}}, \mbox{\hyperlink{class_q_c_p_axis_ticker_text_aba34051300eecaefbedb2df8feff2d45}{add\+Ticks}}, \mbox{\hyperlink{class_q_c_p_axis_ticker_text_aada3db69e5fc6585aaa4ea5d89552eb0}{add\+Tick}} 
+\mbox{\hyperlink{class_q_c_p_axis_ticker_text_a8cdf1f21940f1f53f5e3d30b2c74f5cf}{set\+Ticks}}, \mbox{\hyperlink{class_q_c_p_axis_ticker_text_aea0819f861bf268a37bd13d5487e3162}{add\+Ticks}}, \mbox{\hyperlink{class_q_c_p_axis_ticker_text_aada3db69e5fc6585aaa4ea5d89552eb0}{add\+Tick}} 
 \end{DoxySeeAlso}
 \mbox{\Hypertarget{class_q_c_p_axis_ticker_text_aa195c4fd0364d0393f1798fb495d6a60}\label{class_q_c_p_axis_ticker_text_aa195c4fd0364d0393f1798fb495d6a60}} 
 \index{QCPAxisTickerText@{QCPAxisTickerText}!createTickVector@{createTickVector}}
@@ -227,7 +215,7 @@ An alternative to manipulate ticks is to directly access the internal storage wi
 \doxysubsubsection{\texorpdfstring{createTickVector()}{createTickVector()}}
 {\footnotesize\ttfamily QVector$<$ double $>$ QCPAxis\+Ticker\+Text\+::create\+Tick\+Vector (\begin{DoxyParamCaption}\item[{double}]{tick\+Step,  }\item[{const \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \&}]{range }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
 
-Returns the externally provided tick coordinates which are in the specified {\itshape range}. If available, one tick above and below the range is provided in addition, to allow possible sub tick calculation. The parameter {\itshape tick\+Step} is ignored.
+Returns the externally provided tick coordinates which are in the specified {\itshape range}. If available, one tick above and below the range is provided in addition, to allow possible sub tick calculation. \mbox{\hyperlink{class_the}{The}} parameter {\itshape tick\+Step} is ignored.
 
 \textbackslash{}seebaseclassmethod 
 
@@ -283,12 +271,12 @@ Sets the number of sub ticks that shall appear between ticks. For \mbox{\hyperli
 
 This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
 
-Sets the ticks that shall appear on the axis. The map key of {\itshape ticks} corresponds to the axis coordinate, and the map value is the string that will appear as tick label.
+Sets the ticks that shall appear on the axis. \mbox{\hyperlink{class_the}{The}} map key of {\itshape ticks} corresponds to the axis coordinate, and the map value is the string that will appear as tick label.
 
 An alternative to manipulate ticks is to directly access the internal storage with the \mbox{\hyperlink{class_q_c_p_axis_ticker_text_ac84622a6bb4f2a98474e185ecaf3189a}{ticks}} getter.
 
 \begin{DoxySeeAlso}{See also}
-\mbox{\hyperlink{class_q_c_p_axis_ticker_text_aba34051300eecaefbedb2df8feff2d45}{add\+Ticks}}, \mbox{\hyperlink{class_q_c_p_axis_ticker_text_aada3db69e5fc6585aaa4ea5d89552eb0}{add\+Tick}}, \mbox{\hyperlink{class_q_c_p_axis_ticker_text_a21826d2fcd9a25c194d34d4f67aa1460}{clear}} 
+\mbox{\hyperlink{class_q_c_p_axis_ticker_text_aea0819f861bf268a37bd13d5487e3162}{add\+Ticks}}, \mbox{\hyperlink{class_q_c_p_axis_ticker_text_aada3db69e5fc6585aaa4ea5d89552eb0}{add\+Tick}}, \mbox{\hyperlink{class_q_c_p_axis_ticker_text_a21826d2fcd9a25c194d34d4f67aa1460}{clear}} 
 \end{DoxySeeAlso}
 \mbox{\Hypertarget{class_q_c_p_axis_ticker_text_a69f3898cc1cf11d2437851f959faa1e8}\label{class_q_c_p_axis_ticker_text_a69f3898cc1cf11d2437851f959faa1e8}} 
 \index{QCPAxisTickerText@{QCPAxisTickerText}!setTicks@{setTicks}}
@@ -298,10 +286,10 @@ An alternative to manipulate ticks is to directly access the internal storage wi
 
 This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
 
-Sets the ticks that shall appear on the axis. The entries of {\itshape positions} correspond to the axis coordinates, and the entries of {\itshape labels} are the respective strings that will appear as tick labels.
+Sets the ticks that shall appear on the axis. \mbox{\hyperlink{class_the}{The}} entries of {\itshape positions} correspond to the axis coordinates, and the entries of {\itshape labels} are the respective strings that will appear as tick labels.
 
 \begin{DoxySeeAlso}{See also}
-\mbox{\hyperlink{class_q_c_p_axis_ticker_text_aba34051300eecaefbedb2df8feff2d45}{add\+Ticks}}, \mbox{\hyperlink{class_q_c_p_axis_ticker_text_aada3db69e5fc6585aaa4ea5d89552eb0}{add\+Tick}}, \mbox{\hyperlink{class_q_c_p_axis_ticker_text_a21826d2fcd9a25c194d34d4f67aa1460}{clear}} 
+\mbox{\hyperlink{class_q_c_p_axis_ticker_text_aea0819f861bf268a37bd13d5487e3162}{add\+Ticks}}, \mbox{\hyperlink{class_q_c_p_axis_ticker_text_aada3db69e5fc6585aaa4ea5d89552eb0}{add\+Tick}}, \mbox{\hyperlink{class_q_c_p_axis_ticker_text_a21826d2fcd9a25c194d34d4f67aa1460}{clear}} 
 \end{DoxySeeAlso}
 \mbox{\Hypertarget{class_q_c_p_axis_ticker_text_ac84622a6bb4f2a98474e185ecaf3189a}\label{class_q_c_p_axis_ticker_text_ac84622a6bb4f2a98474e185ecaf3189a}} 
 \index{QCPAxisTickerText@{QCPAxisTickerText}!ticks@{ticks}}

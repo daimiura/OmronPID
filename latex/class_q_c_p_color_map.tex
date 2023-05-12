@@ -5,22 +5,10 @@
 A plottable representing a two-\/dimensional color map in a plot.  
 
 
-
-
-Inheritance diagram for QCPColor\+Map\+:\nopagebreak
-\begin{figure}[H]
+Inheritance diagram for QCPColor\+Map\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=193pt]{class_q_c_p_color_map__inherit__graph}
-\end{center}
-\end{figure}
-
-
-Collaboration diagram for QCPColor\+Map\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_q_c_p_color_map__coll__graph}
+\includegraphics[height=4.000000cm]{class_q_c_p_color_map}
 \end{center}
 \end{figure}
 \doxysubsection*{Signals}
@@ -394,37 +382,37 @@ A plottable representing a two-\/dimensional color map in a plot.
 
 
 
-The data is stored in the class \mbox{\hyperlink{class_q_c_p_color_map_data}{QCPColor\+Map\+Data}}, which can be accessed via the \mbox{\hyperlink{class_q_c_p_color_map_a047d7eb3ae657f93f2f39b5e68b79451}{data()}} method.
+\mbox{\hyperlink{class_the}{The}} data is stored in the class \mbox{\hyperlink{class_q_c_p_color_map_data}{QCPColor\+Map\+Data}}, which can be accessed via the \mbox{\hyperlink{class_q_c_p_color_map_a047d7eb3ae657f93f2f39b5e68b79451}{data()}} method.
 
-A color map has three dimensions to represent a data point\+: The {\itshape key} dimension, the {\itshape value} dimension and the {\itshape data} dimension. As with other plottables such as graphs, {\itshape key} and {\itshape value} correspond to two orthogonal axes on the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} surface that you specify in the \mbox{\hyperlink{class_q_c_p_color_map}{QCPColor\+Map}} constructor. The {\itshape data} dimension however is encoded as the color of the point at ({\itshape key}, {\itshape value}).
+A color map has three dimensions to represent a data point\+: \mbox{\hyperlink{class_the}{The}} {\itshape key} dimension, the {\itshape value} dimension and the {\itshape data} dimension. As with other plottables such as graphs, {\itshape key} and {\itshape value} correspond to two orthogonal axes on the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} surface that you specify in the \mbox{\hyperlink{class_q_c_p_color_map}{QCPColor\+Map}} constructor. \mbox{\hyperlink{class_the}{The}} {\itshape data} dimension however is encoded as the color of the point at ({\itshape key}, {\itshape value}).
 
-Set the number of points (or {\itshape cells}) in the key/value dimension via \mbox{\hyperlink{class_q_c_p_color_map_data_a0d9ff35c299d0478b682bfbcdd9c097e}{QCPColor\+Map\+Data\+::set\+Size}}. The plot coordinate range over which these points will be displayed is specified via \mbox{\hyperlink{class_q_c_p_color_map_data_aad9c1c7c703c1339489fc730517c83d4}{QCPColor\+Map\+Data\+::set\+Range}}. The first cell will be centered on the lower range boundary and the last cell will be centered on the upper range boundary. The data can be set by either accessing the cells directly with \mbox{\hyperlink{class_q_c_p_color_map_data_a8e75eaf8746596319032a93f3d2d0683}{QCPColor\+Map\+Data\+::set\+Cell}} or by addressing the cells via their plot coordinates with \mbox{\hyperlink{class_q_c_p_color_map_data_afd2083ccfd6987ec94aa7ef8e91ca39a}{QCPColor\+Map\+Data\+::set\+Data}}. If possible, you should prefer set\+Cell, since it doesn\textquotesingle{}t need to do any coordinate transformation and thus performs a bit better.
+Set the number of points (or {\itshape cells}) in the key/value dimension via \mbox{\hyperlink{class_q_c_p_color_map_data_a0d9ff35c299d0478b682bfbcdd9c097e}{QCPColor\+Map\+Data\+::set\+Size}}. \mbox{\hyperlink{class_the}{The}} plot coordinate range over which these points will be displayed is specified via \mbox{\hyperlink{class_q_c_p_color_map_data_aad9c1c7c703c1339489fc730517c83d4}{QCPColor\+Map\+Data\+::set\+Range}}. \mbox{\hyperlink{class_the}{The}} first cell will be centered on the lower range boundary and the last cell will be centered on the upper range boundary. \mbox{\hyperlink{class_the}{The}} data can be set by either accessing the cells directly with \mbox{\hyperlink{class_q_c_p_color_map_data_a8e75eaf8746596319032a93f3d2d0683}{QCPColor\+Map\+Data\+::set\+Cell}} or by addressing the cells via their plot coordinates with \mbox{\hyperlink{class_q_c_p_color_map_data_afd2083ccfd6987ec94aa7ef8e91ca39a}{QCPColor\+Map\+Data\+::set\+Data}}. If possible, you should prefer set\+Cell, since it doesn\textquotesingle{}t need to do any coordinate transformation and thus performs a bit better.
 
-The cell with index (0, 0) is at the bottom left, if the color map uses normal (i.\+e. not reversed) key and value axes.
+\mbox{\hyperlink{class_the}{The}} cell with index (0, 0) is at the bottom left, if the color map uses normal (i.\+e. not reversed) key and value axes.
 
 To show the user which colors correspond to which {\itshape data} values, a \mbox{\hyperlink{class_q_c_p_color_scale}{QCPColor\+Scale}} is typically placed to the right of the axis rect. See the documentation there for details on how to add and use a color scale.\hypertarget{class_q_c_p_color_map_qcpcolormap-appearance}{}\doxysubsection{Changing the appearance}\label{class_q_c_p_color_map_qcpcolormap-appearance}
-The central part of the appearance is the color gradient, which can be specified via \mbox{\hyperlink{class_q_c_p_color_map_a7313c78360471cead3576341a2c50377}{set\+Gradient}}. See the documentation of \mbox{\hyperlink{class_q_c_p_color_gradient}{QCPColor\+Gradient}} for details on configuring a color gradient.
+\mbox{\hyperlink{class_the}{The}} central part of the appearance is the color gradient, which can be specified via \mbox{\hyperlink{class_q_c_p_color_map_a7313c78360471cead3576341a2c50377}{set\+Gradient}}. See the documentation of \mbox{\hyperlink{class_q_c_p_color_gradient}{QCPColor\+Gradient}} for details on configuring a color gradient.
 
-The {\itshape data} range that is mapped to the colors of the gradient can be specified with \mbox{\hyperlink{class_q_c_p_color_map_a980b42837821159786a85b4b7dcb8774}{set\+Data\+Range}}. To make the data range encompass the whole data set minimum to maximum, call \mbox{\hyperlink{class_q_c_p_color_map_a856608fa3dd1cc290bcd5f29a5575774}{rescale\+Data\+Range}}.\hypertarget{class_q_c_p_color_map_qcpcolormap-transparency}{}\doxysubsection{Transparency}\label{class_q_c_p_color_map_qcpcolormap-transparency}
+\mbox{\hyperlink{class_the}{The}} {\itshape data} range that is mapped to the colors of the gradient can be specified with \mbox{\hyperlink{class_q_c_p_color_map_a980b42837821159786a85b4b7dcb8774}{set\+Data\+Range}}. To make the data range encompass the whole data set minimum to maximum, call \mbox{\hyperlink{class_q_c_p_color_map_a856608fa3dd1cc290bcd5f29a5575774}{rescale\+Data\+Range}}.\hypertarget{class_q_c_p_color_map_qcpcolormap-transparency}{}\doxysubsection{Transparency}\label{class_q_c_p_color_map_qcpcolormap-transparency}
 Transparency in color maps can be achieved by two mechanisms. On one hand, you can specify alpha values for color stops of the \mbox{\hyperlink{class_q_c_p_color_gradient}{QCPColor\+Gradient}}, via the regular QColor interface. This will cause the color map data which gets mapped to colors around those color stops to appear with the accordingly interpolated transparency.
 
-On the other hand you can also directly apply an alpha value to each cell independent of its data, by using the alpha map feature of \mbox{\hyperlink{class_q_c_p_color_map_data}{QCPColor\+Map\+Data}}. The relevant methods are \mbox{\hyperlink{class_q_c_p_color_map_data_aaf7de5b34c58f38d8f4c1ceb064a876c}{QCPColor\+Map\+Data\+::set\+Alpha}}, \mbox{\hyperlink{class_q_c_p_color_map_data_a93e2a549d7702bc849cd48a585294657}{QCPColor\+Map\+Data\+::fill\+Alpha}} and \mbox{\hyperlink{class_q_c_p_color_map_data_a14d08b9c3720cd719400079b86d3906b}{QCPColor\+Map\+Data\+::clear\+Alpha()}}.
+On the other hand you can also directly apply an alpha value to each cell independent of its data, by using the alpha map feature of \mbox{\hyperlink{class_q_c_p_color_map_data}{QCPColor\+Map\+Data}}. \mbox{\hyperlink{class_the}{The}} relevant methods are \mbox{\hyperlink{class_q_c_p_color_map_data_aaf7de5b34c58f38d8f4c1ceb064a876c}{QCPColor\+Map\+Data\+::set\+Alpha}}, \mbox{\hyperlink{class_q_c_p_color_map_data_a93e2a549d7702bc849cd48a585294657}{QCPColor\+Map\+Data\+::fill\+Alpha}} and \mbox{\hyperlink{class_q_c_p_color_map_data_a14d08b9c3720cd719400079b86d3906b}{QCPColor\+Map\+Data\+::clear\+Alpha()}}.
 
-The two transparencies will be joined together in the plot and otherwise not interfere with each other. They are mixed in a multiplicative matter, so an alpha of e.\+g. 50\% (128/255) in both modes simultaneously, will result in a total transparency of 25\% (64/255).\hypertarget{class_q_c_p_color_map_qcpcolormap-usage}{}\doxysubsection{Usage}\label{class_q_c_p_color_map_qcpcolormap-usage}
+\mbox{\hyperlink{class_the}{The}} two transparencies will be joined together in the plot and otherwise not interfere with each other. They are mixed in a multiplicative matter, so an alpha of e.\+g. 50\% (128/255) in both modes simultaneously, will result in a total transparency of 25\% (64/255).\hypertarget{class_q_c_p_color_map_qcpcolormap-usage}{}\doxysubsection{Usage}\label{class_q_c_p_color_map_qcpcolormap-usage}
 Like all data representing objects in \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}, the \mbox{\hyperlink{class_q_c_p_color_map}{QCPColor\+Map}} is a plottable (\mbox{\hyperlink{class_q_c_p_abstract_plottable}{QCPAbstract\+Plottable}}). So the plottable-\/interface of \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} applies (\mbox{\hyperlink{class_q_custom_plot_a32de81ff53e263e785b83b52ecd99d6f}{QCustom\+Plot\+::plottable}}, \mbox{\hyperlink{class_q_custom_plot_af3dafd56884208474f311d6226513ab2}{QCustom\+Plot\+::remove\+Plottable}}, etc.)
 
 Usually, you first create an instance\+: 
 \begin{DoxyCodeInclude}{0}
 
 \end{DoxyCodeInclude}
- which registers it with the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance of the passed axes. Note that this \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance takes ownership of the plottable, so do not delete it manually but use \mbox{\hyperlink{class_q_custom_plot_af3dafd56884208474f311d6226513ab2}{QCustom\+Plot\+::remove\+Plottable()}} instead. The newly created plottable can be modified, e.\+g.\+: 
+ which registers it with the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance of the passed axes. Note that this \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance takes ownership of the plottable, so do not delete it manually but use \mbox{\hyperlink{class_q_custom_plot_af3dafd56884208474f311d6226513ab2}{QCustom\+Plot\+::remove\+Plottable()}} instead. \mbox{\hyperlink{class_the}{The}} newly created plottable can be modified, e.\+g.\+: 
 \begin{DoxyCodeInclude}{0}
 
 \end{DoxyCodeInclude}
 
 
 \begin{DoxyNote}{Note}
-The \mbox{\hyperlink{class_q_c_p_color_map}{QCPColor\+Map}} always displays the data at equal key/value intervals, even if the key or value axis is set to a logarithmic scaling. If you want to use \mbox{\hyperlink{class_q_c_p_color_map}{QCPColor\+Map}} with logarithmic axes, you shouldn\textquotesingle{}t use the \mbox{\hyperlink{class_q_c_p_color_map_data_afd2083ccfd6987ec94aa7ef8e91ca39a}{QCPColor\+Map\+Data\+::set\+Data}} method as it uses a linear transformation to determine the cell index. Rather directly access the cell index with \mbox{\hyperlink{class_q_c_p_color_map_data_a8e75eaf8746596319032a93f3d2d0683}{QCPColor\+Map\+Data\+::set\+Cell}}. 
+\mbox{\hyperlink{class_the}{The}} \mbox{\hyperlink{class_q_c_p_color_map}{QCPColor\+Map}} always displays the data at equal key/value intervals, even if the key or value axis is set to a logarithmic scaling. If you want to use \mbox{\hyperlink{class_q_c_p_color_map}{QCPColor\+Map}} with logarithmic axes, you shouldn\textquotesingle{}t use the \mbox{\hyperlink{class_q_c_p_color_map_data_afd2083ccfd6987ec94aa7ef8e91ca39a}{QCPColor\+Map\+Data\+::set\+Data}} method as it uses a linear transformation to determine the cell index. Rather directly access the cell index with \mbox{\hyperlink{class_q_c_p_color_map_data_a8e75eaf8746596319032a93f3d2d0683}{QCPColor\+Map\+Data\+::set\+Cell}}. 
 \end{DoxyNote}
 
 
@@ -437,7 +425,7 @@ The \mbox{\hyperlink{class_q_c_p_color_map}{QCPColor\+Map}} always displays the 
 
 Constructs a color map with the specified {\itshape key\+Axis} and {\itshape value\+Axis}.
 
-The created \mbox{\hyperlink{class_q_c_p_color_map}{QCPColor\+Map}} is automatically registered with the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance inferred from {\itshape key\+Axis}. This \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance takes ownership of the \mbox{\hyperlink{class_q_c_p_color_map}{QCPColor\+Map}}, so do not delete it manually but use \mbox{\hyperlink{class_q_custom_plot_af3dafd56884208474f311d6226513ab2}{QCustom\+Plot\+::remove\+Plottable()}} instead. 
+\mbox{\hyperlink{class_the}{The}} created \mbox{\hyperlink{class_q_c_p_color_map}{QCPColor\+Map}} is automatically registered with the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance inferred from {\itshape key\+Axis}. This \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance takes ownership of the \mbox{\hyperlink{class_q_c_p_color_map}{QCPColor\+Map}}, so do not delete it manually but use \mbox{\hyperlink{class_q_custom_plot_af3dafd56884208474f311d6226513ab2}{QCustom\+Plot\+::remove\+Plottable()}} instead. 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_q_c_p_color_map_a047d7eb3ae657f93f2f39b5e68b79451}\label{class_q_c_p_color_map_a047d7eb3ae657f93f2f39b5e68b79451}} 
@@ -548,7 +536,7 @@ This signal is emitted when the gradient changes.
 
 Sets the data range (\mbox{\hyperlink{class_q_c_p_color_map_a980b42837821159786a85b4b7dcb8774}{set\+Data\+Range}}) to span the minimum and maximum values that occur in the current data set. This corresponds to the \mbox{\hyperlink{class_q_c_p_abstract_plottable_ae96b83c961e257da116c6acf9c7da308}{rescale\+Key\+Axis}} or \mbox{\hyperlink{class_q_c_p_abstract_plottable_a714eaf36b12434cd71846215504db82e}{rescale\+Value\+Axis}} methods, only for the third data dimension of the color map.
 
-The minimum and maximum values of the data set are buffered in the internal \mbox{\hyperlink{class_q_c_p_color_map_data}{QCPColor\+Map\+Data}} instance (\mbox{\hyperlink{class_q_c_p_color_map_a047d7eb3ae657f93f2f39b5e68b79451}{data}}). As data is updated via its \mbox{\hyperlink{class_q_c_p_color_map_data_a8e75eaf8746596319032a93f3d2d0683}{QCPColor\+Map\+Data\+::set\+Cell}} or \mbox{\hyperlink{class_q_c_p_color_map_data_afd2083ccfd6987ec94aa7ef8e91ca39a}{QCPColor\+Map\+Data\+::set\+Data}}, the buffered minimum and maximum values are updated, too. For performance reasons, however, they are only updated in an expanding fashion. So the buffered maximum can only increase and the buffered minimum can only decrease. In consequence, changes to the data that actually lower the maximum of the data set (by overwriting the cell holding the current maximum with a smaller value), aren\textquotesingle{}t recognized and the buffered maximum overestimates the true maximum of the data set. The same happens for the buffered minimum. To recalculate the true minimum and maximum by explicitly looking at each cell, the method \mbox{\hyperlink{class_q_c_p_color_map_data_ab235ade8a4d64bd3adb26a99b3dd57ee}{QCPColor\+Map\+Data\+::recalculate\+Data\+Bounds}} can be used. For convenience, setting the parameter {\itshape recalculate\+Data\+Bounds} calls this method before setting the data range to the buffered minimum and maximum.
+\mbox{\hyperlink{class_the}{The}} minimum and maximum values of the data set are buffered in the internal \mbox{\hyperlink{class_q_c_p_color_map_data}{QCPColor\+Map\+Data}} instance (\mbox{\hyperlink{class_q_c_p_color_map_a047d7eb3ae657f93f2f39b5e68b79451}{data}}). As data is updated via its \mbox{\hyperlink{class_q_c_p_color_map_data_a8e75eaf8746596319032a93f3d2d0683}{QCPColor\+Map\+Data\+::set\+Cell}} or \mbox{\hyperlink{class_q_c_p_color_map_data_afd2083ccfd6987ec94aa7ef8e91ca39a}{QCPColor\+Map\+Data\+::set\+Data}}, the buffered minimum and maximum values are updated, too. For performance reasons, however, they are only updated in an expanding fashion. So the buffered maximum can only increase and the buffered minimum can only decrease. In consequence, changes to the data that actually lower the maximum of the data set (by overwriting the cell holding the current maximum with a smaller value), aren\textquotesingle{}t recognized and the buffered maximum overestimates the true maximum of the data set. \mbox{\hyperlink{class_the}{The}} same happens for the buffered minimum. To recalculate the true minimum and maximum by explicitly looking at each cell, the method \mbox{\hyperlink{class_q_c_p_color_map_data_ab235ade8a4d64bd3adb26a99b3dd57ee}{QCPColor\+Map\+Data\+::recalculate\+Data\+Bounds}} can be used. For convenience, setting the parameter {\itshape recalculate\+Data\+Bounds} calls this method before setting the data range to the buffered minimum and maximum.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_color_map_a980b42837821159786a85b4b7dcb8774}{set\+Data\+Range}} 
@@ -567,9 +555,9 @@ If the object is represented not by single lines but by an area like a \mbox{\hy
 
 Providing a constant value for area objects allows selecting line objects even when they are obscured by such area objects, by clicking close to the lines (i.\+e. closer than 0.\+99$\ast$selection\+Tolerance).
 
-The actual setting of the selection state is not done by this function. This is handled by the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} when the mouse\+Release\+Event occurs, and the finally selected object is notified via the select\+Event/ deselect\+Event methods.
+\mbox{\hyperlink{class_the}{The}} actual setting of the selection state is not done by this function. This is handled by the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} when the mouse\+Release\+Event occurs, and the finally selected object is notified via the select\+Event/ deselect\+Event methods.
 
-{\itshape details} is an optional output parameter. Every layerable subclass may place any information in {\itshape details}. This information will be passed to select\+Event when the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} decides on the basis of this select\+Test call, that the object was successfully selected. The subsequent call to select\+Event will carry the {\itshape details}. This is useful for multi-\/part objects (like \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}}). This way, a possibly complex calculation to decide which part was clicked is only done once in \mbox{\hyperlink{class_q_c_p_color_map_afb4b843596addf58096082827a9e3450}{select\+Test}}. The result (i.\+e. the actually clicked part) can then be placed in {\itshape details}. So in the subsequent select\+Event, the decision which part was selected doesn\textquotesingle{}t have to be done a second time for a single selection operation.
+{\itshape details} is an optional output parameter. Every layerable subclass may place any information in {\itshape details}. This information will be passed to select\+Event when the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} decides on the basis of this select\+Test call, that the object was successfully selected. \mbox{\hyperlink{class_the}{The}} subsequent call to select\+Event will carry the {\itshape details}. This is useful for multi-\/part objects (like \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}}). This way, a possibly complex calculation to decide which part was clicked is only done once in \mbox{\hyperlink{class_q_c_p_color_map_afb4b843596addf58096082827a9e3450}{select\+Test}}. \mbox{\hyperlink{class_the}{The}} result (i.\+e. the actually clicked part) can then be placed in {\itshape details}. So in the subsequent select\+Event, the decision which part was selected doesn\textquotesingle{}t have to be done a second time for a single selection operation.
 
 You may pass 0 as {\itshape details} to indicate that you are not interested in those selection details.
 
@@ -606,7 +594,7 @@ If {\itshape copy} is set to true, the {\itshape data} object will only be copie
 \doxysubsubsection{\texorpdfstring{setDataRange()}{setDataRange()}}
 {\footnotesize\ttfamily void QCPColor\+Map\+::set\+Data\+Range (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \&}]{data\+Range }\end{DoxyParamCaption})}
 
-Sets the data range of this color map to {\itshape data\+Range}. The data range defines which data values are mapped to the color gradient.
+Sets the data range of this color map to {\itshape data\+Range}. \mbox{\hyperlink{class_the}{The}} data range defines which data values are mapped to the color gradient.
 
 To make the data range span the full range of the data set, use \mbox{\hyperlink{class_q_c_p_color_map_a856608fa3dd1cc290bcd5f29a5575774}{rescale\+Data\+Range}}.
 
@@ -632,7 +620,7 @@ Sets whether the data is correlated with the color gradient linearly or logarith
 
 Sets the color gradient that is used to represent the data. For more details on how to create an own gradient or use one of the preset gradients, see \mbox{\hyperlink{class_q_c_p_color_gradient}{QCPColor\+Gradient}}.
 
-The colors defined by the gradient will be used to represent data values in the currently set data range, see \mbox{\hyperlink{class_q_c_p_color_map_a980b42837821159786a85b4b7dcb8774}{set\+Data\+Range}}. Data points that are outside this data range will either be colored uniformly with the respective gradient boundary color, or the gradient will repeat, depending on \mbox{\hyperlink{class_q_c_p_color_gradient_a39d6448155fc00a219f239220d14bb39}{QCPColor\+Gradient\+::set\+Periodic}}.
+\mbox{\hyperlink{class_the}{The}} colors defined by the gradient will be used to represent data values in the currently set data range, see \mbox{\hyperlink{class_q_c_p_color_map_a980b42837821159786a85b4b7dcb8774}{set\+Data\+Range}}. Data points that are outside this data range will either be colored uniformly with the respective gradient boundary color, or the gradient will repeat, depending on \mbox{\hyperlink{class_q_c_p_color_gradient_a39d6448155fc00a219f239220d14bb39}{QCPColor\+Gradient\+::set\+Periodic}}.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_color_scale_a1f29583bb6f1e7f473b62fb712be3940}{QCPColor\+Scale\+::set\+Gradient}} 
@@ -663,9 +651,9 @@ if {\itshape enabled} is set to false, the data points at the border of the colo
 
 Takes the current appearance of the color map and updates the legend icon, which is used to represent this color map in the legend (see \mbox{\hyperlink{class_q_c_p_legend}{QCPLegend}}).
 
-The {\itshape transform\+Mode} specifies whether the rescaling is done by a faster, low quality image scaling algorithm (Qt\+::\+Fast\+Transformation) or by a slower, higher quality algorithm (Qt\+::\+Smooth\+Transformation).
+\mbox{\hyperlink{class_the}{The}} {\itshape transform\+Mode} specifies whether the rescaling is done by a faster, low quality image scaling algorithm (Qt\+::\+Fast\+Transformation) or by a slower, higher quality algorithm (Qt\+::\+Smooth\+Transformation).
 
-The current color map appearance is scaled down to {\itshape thumb\+Size}. Ideally, this should be equal to the size of the legend icon (see \mbox{\hyperlink{class_q_c_p_legend_a8b0740cce488bf7010da6beda6898984}{QCPLegend\+::set\+Icon\+Size}}). If it isn\textquotesingle{}t exactly the configured legend icon size, the thumb will be rescaled during drawing of the legend item.
+\mbox{\hyperlink{class_the}{The}} current color map appearance is scaled down to {\itshape thumb\+Size}. Ideally, this should be equal to the size of the legend icon (see \mbox{\hyperlink{class_q_c_p_legend_a8b0740cce488bf7010da6beda6898984}{QCPLegend\+::set\+Icon\+Size}}). If it isn\textquotesingle{}t exactly the configured legend icon size, the thumb will be rescaled during drawing of the legend item.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_color_map_a980b42837821159786a85b4b7dcb8774}{set\+Data\+Range}} 

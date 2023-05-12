@@ -5,22 +5,10 @@
 Specialized axis ticker for calendar dates and times as axis ticks.  
 
 
-
-
-Inheritance diagram for QCPAxis\+Ticker\+Date\+Time\+:\nopagebreak
-\begin{figure}[H]
+Inheritance diagram for QCPAxis\+Ticker\+Date\+Time\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=205pt]{class_q_c_p_axis_ticker_date_time__inherit__graph}
-\end{center}
-\end{figure}
-
-
-Collaboration diagram for QCPAxis\+Ticker\+Date\+Time\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=205pt]{class_q_c_p_axis_ticker_date_time__coll__graph}
+\includegraphics[height=2.000000cm]{class_q_c_p_axis_ticker_date_time}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
@@ -161,15 +149,15 @@ Specialized axis ticker for calendar dates and times as axis ticks.
 
 
 
-This \mbox{\hyperlink{class_q_c_p_axis_ticker}{QCPAxis\+Ticker}} subclass generates ticks that correspond to real calendar dates and times. The plot axis coordinate is interpreted as Unix Time, so seconds since Epoch (January 1, 1970, 00\+:00 UTC). This is also used for example by QDate\+Time in the {\ttfamily to\+Time\+\_\+t()/set\+Time\+\_\+t()} methods with a precision of one second. Since Qt 4.\+7, millisecond accuracy can be obtained from QDate\+Time by using {\ttfamily QDate\+Time\+::from\+MSecs\+Since\+Epoch()/1000.0}. The static methods \mbox{\hyperlink{class_q_c_p_axis_ticker_date_time_aa24f293f16fff0f937bf71f4140033f1}{date\+Time\+To\+Key}} and \mbox{\hyperlink{class_q_c_p_axis_ticker_date_time_a4c1761ad057f5564804a53f942629b53}{key\+To\+Date\+Time}} conveniently perform this conversion achieving a precision of one millisecond on all Qt versions.
+This \mbox{\hyperlink{class_q_c_p_axis_ticker}{QCPAxis\+Ticker}} subclass generates ticks that correspond to real calendar dates and times. \mbox{\hyperlink{class_the}{The}} plot axis coordinate is interpreted as Unix Time, so seconds since Epoch (January 1, 1970, 00\+:00 UTC). This is also used for example by QDate\+Time in the {\ttfamily to\+Time\+\_\+t()/set\+Time\+\_\+t()} methods with a precision of one second. Since Qt 4.\+7, millisecond accuracy can be obtained from QDate\+Time by using {\ttfamily QDate\+Time\+::from\+MSecs\+Since\+Epoch()/1000.0}. \mbox{\hyperlink{class_the}{The}} static methods \mbox{\hyperlink{class_q_c_p_axis_ticker_date_time_aa24f293f16fff0f937bf71f4140033f1}{date\+Time\+To\+Key}} and \mbox{\hyperlink{class_q_c_p_axis_ticker_date_time_a4c1761ad057f5564804a53f942629b53}{key\+To\+Date\+Time}} conveniently perform this conversion achieving a precision of one millisecond on all Qt versions.
 
-The format of the date/time display in the tick labels is controlled with \mbox{\hyperlink{class_q_c_p_axis_ticker_date_time_ad52660a82f688395468674d555f6a86b}{set\+Date\+Time\+Format}}. If a different time spec (time zone) shall be used, see \mbox{\hyperlink{class_q_c_p_axis_ticker_date_time_afbd987c7197e42ab61e67fb1c38abebc}{set\+Date\+Time\+Spec}}.
+\mbox{\hyperlink{class_the}{The}} format of the date/time display in the tick labels is controlled with \mbox{\hyperlink{class_q_c_p_axis_ticker_date_time_ad52660a82f688395468674d555f6a86b}{set\+Date\+Time\+Format}}. If a different time spec (time zone) shall be used, see \mbox{\hyperlink{class_q_c_p_axis_ticker_date_time_afbd987c7197e42ab61e67fb1c38abebc}{set\+Date\+Time\+Spec}}.
 
-This ticker produces unequal tick spacing in order to provide intuitive date and time-\/of-\/day ticks. For example, if the axis range spans a few years such that there is one tick per year, ticks will be positioned on 1. January of every year. This is intuitive but, due to leap years, will result in slightly unequal tick intervals (visually unnoticeable). The same can be seen in the image above\+: even though the number of days varies month by month, this ticker generates ticks on the same day of each month.
+This ticker produces unequal tick spacing in order to provide intuitive date and time-\/of-\/day ticks. For example, if the axis range spans a few years such that there is one tick per year, ticks will be positioned on 1. January of every year. This is intuitive but, due to leap years, will result in slightly unequal tick intervals (visually unnoticeable). \mbox{\hyperlink{class_the}{The}} same can be seen in the image above\+: even though the number of days varies month by month, this ticker generates ticks on the same day of each month.
 
 If you would like to change the date/time that is used as a (mathematical) starting date for the ticks, use the \mbox{\hyperlink{class_q_c_p_axis_ticker_date_time_a2ea905872b8171847a49a5e093fb0c48}{set\+Tick\+Origin(const QDate\+Time \&origin)}} method overload, which takes a QDate\+Time. If you pass 15. July, 9\+:45 to this method, the yearly ticks will end up on 15. July at 9\+:45 of every year.
 
-The ticker can be created and assigned to an axis like this\+: 
+\mbox{\hyperlink{class_the}{The}} ticker can be created and assigned to an axis like this\+: 
 \begin{DoxyCodeInclude}{0}
 
 \end{DoxyCodeInclude}
@@ -223,7 +211,7 @@ This is an overloaded member function, provided for convenience. It differs from
 
 A convenience method which turns a QDate\+Time object into a double value that corresponds to seconds since Epoch (1. Jan 1970, 00\+:00 UTC). This is the format used as axis coordinates by \mbox{\hyperlink{class_q_c_p_axis_ticker_date_time}{QCPAxis\+Ticker\+Date\+Time}}.
 
-The accuracy achieved by this method is one millisecond, irrespective of the used Qt version (it works around the lack of a QDate\+Time\+::to\+MSecs\+Since\+Epoch in Qt 4.\+6)
+\mbox{\hyperlink{class_the}{The}} accuracy achieved by this method is one millisecond, irrespective of the used Qt version (it works around the lack of a QDate\+Time\+::to\+MSecs\+Since\+Epoch in Qt 4.\+6)
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_axis_ticker_date_time_a4c1761ad057f5564804a53f942629b53}{key\+To\+Date\+Time}} 
@@ -266,7 +254,7 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_axis_ticker}{QCPAxis\+Ticker}}.
 
 A convenience method which turns {\itshape key} (in seconds since Epoch 1. Jan 1970, 00\+:00 UTC) into a QDate\+Time object. This can be used to turn axis coordinates to actual QDate\+Times.
 
-The accuracy achieved by this method is one millisecond, irrespective of the used Qt version (it works around the lack of a QDate\+Time\+::from\+MSecs\+Since\+Epoch in Qt 4.\+6)
+\mbox{\hyperlink{class_the}{The}} accuracy achieved by this method is one millisecond, irrespective of the used Qt version (it works around the lack of a QDate\+Time\+::from\+MSecs\+Since\+Epoch in Qt 4.\+6)
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_axis_ticker_date_time_aa24f293f16fff0f937bf71f4140033f1}{date\+Time\+To\+Key}} 
@@ -292,7 +280,7 @@ Newlines can be inserted with \char`\"{}\textbackslash{}n\char`\"{}.
 
 Sets the time spec that is used for creating the tick labels from corresponding dates/times.
 
-The default value of QDate\+Time objects (and also \mbox{\hyperlink{class_q_c_p_axis_ticker_date_time}{QCPAxis\+Ticker\+Date\+Time}}) is {\ttfamily Qt\+::\+Local\+Time}. However, if the date time values passed to \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} (e.\+g. in the form of axis ranges or keys of a plottable) are given in the UTC spec, set {\itshape spec} to {\ttfamily Qt\+::\+UTC} to get the correct axis labels.
+\mbox{\hyperlink{class_the}{The}} default value of QDate\+Time objects (and also \mbox{\hyperlink{class_q_c_p_axis_ticker_date_time}{QCPAxis\+Ticker\+Date\+Time}}) is {\ttfamily Qt\+::\+Local\+Time}. However, if the date time values passed to \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} (e.\+g. in the form of axis ranges or keys of a plottable) are given in the UTC spec, set {\itshape spec} to {\ttfamily Qt\+::\+UTC} to get the correct axis labels.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_axis_ticker_date_time_ad52660a82f688395468674d555f6a86b}{set\+Date\+Time\+Format}} 

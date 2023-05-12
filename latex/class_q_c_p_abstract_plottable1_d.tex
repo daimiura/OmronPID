@@ -9,22 +9,10 @@ A template base class for plottables with one-\/dimensional data.
 
 {\ttfamily \#include $<$qcustomplot.\+h$>$}
 
-
-
-Inheritance diagram for QCPAbstract\+Plottable1D\texorpdfstring{$<$}{<} Data\+Type \texorpdfstring{$>$}{>}\+:\nopagebreak
-\begin{figure}[H]
+Inheritance diagram for QCPAbstract\+Plottable1D\texorpdfstring{$<$}{<} Data\+Type \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=336pt]{class_q_c_p_abstract_plottable1_d__inherit__graph}
-\end{center}
-\end{figure}
-
-
-Collaboration diagram for QCPAbstract\+Plottable1D\texorpdfstring{$<$}{<} Data\+Type \texorpdfstring{$>$}{>}\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_q_c_p_abstract_plottable1_d__coll__graph}
+\includegraphics[height=4.000000cm]{class_q_c_p_abstract_plottable1_d}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
@@ -352,7 +340,7 @@ A template base class for plottables with one-\/dimensional data.
 
 This template class derives from \mbox{\hyperlink{class_q_c_p_abstract_plottable}{QCPAbstract\+Plottable}} and from the abstract interface \mbox{\hyperlink{class_q_c_p_plottable_interface1_d}{QCPPlottable\+Interface1D}}. It serves as a base class for all one-\/dimensional data (i.\+e. data with one key dimension), such as \mbox{\hyperlink{class_q_c_p_graph}{QCPGraph}} and \mbox{\hyperlink{class_q_c_p_curve}{QCPCurve}}.
 
-The template parameter {\itshape Data\+Type} is the type of the data points of this plottable (e.\+g. \mbox{\hyperlink{class_q_c_p_graph_data}{QCPGraph\+Data}} or \mbox{\hyperlink{class_q_c_p_curve_data}{QCPCurve\+Data}}). The main purpose of this base class is to provide the member {\itshape m\+Data\+Container} (a shared pointer to a \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container\texorpdfstring{$<$}{<}Data\+Type\texorpdfstring{$>$}{>}}}) and implement the according virtual methods of the \mbox{\hyperlink{class_q_c_p_plottable_interface1_d}{QCPPlottable\+Interface1D}}, such that most subclassed plottables don\textquotesingle{}t need to worry about this anymore.
+\mbox{\hyperlink{class_the}{The}} template parameter {\itshape Data\+Type} is the type of the data points of this plottable (e.\+g. \mbox{\hyperlink{class_q_c_p_graph_data}{QCPGraph\+Data}} or \mbox{\hyperlink{class_q_c_p_curve_data}{QCPCurve\+Data}}). \mbox{\hyperlink{class_the}{The}} main purpose of this base class is to provide the member {\itshape m\+Data\+Container} (a shared pointer to a \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container\texorpdfstring{$<$}{<}Data\+Type\texorpdfstring{$>$}{>}}}) and implement the according virtual methods of the \mbox{\hyperlink{class_q_c_p_plottable_interface1_d}{QCPPlottable\+Interface1D}}, such that most subclassed plottables don\textquotesingle{}t need to worry about this anymore.
 
 Further, it provides a convenience method for retrieving selected/unselected data segments via \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_ae890e62ce403c54f575c73b9529f1af8}{get\+Data\+Segments}}. This is useful when subclasses implement their draw method and need to draw selected segments with a different pen/brush than unselected segments (also see \mbox{\hyperlink{class_q_c_p_selection_decorator}{QCPSelection\+Decorator}}).
 

@@ -5,22 +5,10 @@
 Manages a single axis inside a \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}.  
 
 
-
-
-Inheritance diagram for QCPAxis\+:\nopagebreak
-\begin{figure}[H]
+Inheritance diagram for QCPAxis\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=160pt]{class_q_c_p_axis__inherit__graph}
-\end{center}
-\end{figure}
-
-
-Collaboration diagram for QCPAxis\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_q_c_p_axis__coll__graph}
+\includegraphics[height=3.000000cm]{class_q_c_p_axis}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Types}
@@ -613,7 +601,7 @@ Manages a single axis inside a \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Pl
 Usually doesn\textquotesingle{}t need to be instantiated externally. Access QCustom\+Plot\textquotesingle{}s default four axes via \mbox{\hyperlink{class_q_custom_plot_a9a79cd0158a4c7f30cbc702f0fd800e4}{QCustom\+Plot\+::x\+Axis}} (bottom), \mbox{\hyperlink{class_q_custom_plot_af6fea5679725b152c14facd920b19367}{QCustom\+Plot\+::y\+Axis}} (left), \mbox{\hyperlink{class_q_custom_plot_ada41599f22cad901c030f3dcbdd82fd9}{QCustom\+Plot\+::x\+Axis2}} (top) and \mbox{\hyperlink{class_q_custom_plot_af13fdc5bce7d0fabd640f13ba805c0b7}{QCustom\+Plot\+::y\+Axis2}} (right).
 
 Axes are always part of an axis rect, see \mbox{\hyperlink{class_q_c_p_axis_rect}{QCPAxis\+Rect}}.  \begin{center}Naming convention of axis parts\end{center}  ~\newline
-  \begin{center}Overview of the spacings and paddings that define the geometry of an axis. The dashed gray line on the left represents the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} widget border.\end{center} 
+  \begin{center}Overview of the spacings and paddings that define the geometry of an axis. \mbox{\hyperlink{class_the}{The}} dashed gray line on the left represents the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} widget border.\end{center} 
 
 Each axis holds an instance of \mbox{\hyperlink{class_q_c_p_axis_ticker}{QCPAxis\+Ticker}} which is used to generate the tick coordinates and tick labels. You can access the currently installed \mbox{\hyperlink{class_q_c_p_axis_a7b7a27151be8235059e1294f73ecf615}{ticker}} or set a new one (possibly one of the specialized subclasses, or your own subclass) via \mbox{\hyperlink{class_q_c_p_axis_a4ee03fcd2c74d05cd1a419b9af5cfbdc}{set\+Ticker}}. For details, see the documentation of \mbox{\hyperlink{class_q_c_p_axis_ticker}{QCPAxis\+Ticker}}. 
 
@@ -697,7 +685,7 @@ sp\+None&None of the selectable parts. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{spAxis@{spAxis}!QCPAxis@{QCPAxis}}\index{QCPAxis@{QCPAxis}!spAxis@{spAxis}}}\mbox{\Hypertarget{class_q_c_p_axis_abee4c7a54c468b1385dfce2c898b115fa8949d2c1a31eccae9be7ed32e7a1ae38}\label{class_q_c_p_axis_abee4c7a54c468b1385dfce2c898b115fa8949d2c1a31eccae9be7ed32e7a1ae38}} 
-sp\+Axis&The axis backbone and tick marks. \\
+sp\+Axis&\mbox{\hyperlink{class_the}{The}} axis backbone and tick marks. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{spTickLabels@{spTickLabels}!QCPAxis@{QCPAxis}}\index{QCPAxis@{QCPAxis}!spTickLabels@{spTickLabels}}}\mbox{\Hypertarget{class_q_c_p_axis_abee4c7a54c468b1385dfce2c898b115fa584e0a3dc4d064880647619f4bd4e771}\label{class_q_c_p_axis_abee4c7a54c468b1385dfce2c898b115fa584e0a3dc4d064880647619f4bd4e771}} 
@@ -705,7 +693,7 @@ sp\+Tick\+Labels&Tick labels (numbers) of this axis (as a whole, not individuall
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{spAxisLabel@{spAxisLabel}!QCPAxis@{QCPAxis}}\index{QCPAxis@{QCPAxis}!spAxisLabel@{spAxisLabel}}}\mbox{\Hypertarget{class_q_c_p_axis_abee4c7a54c468b1385dfce2c898b115fa851e0600e0d08b4f5fee9361e3fedabd}\label{class_q_c_p_axis_abee4c7a54c468b1385dfce2c898b115fa851e0600e0d08b4f5fee9361e3fedabd}} 
-sp\+Axis\+Label&The axis label. \\
+sp\+Axis\+Label&\mbox{\hyperlink{class_the}{The}} axis label. \\
 \hline
 
 \end{DoxyEnumFields}
@@ -765,7 +753,7 @@ Implements \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}.
 \doxysubsubsection{\texorpdfstring{getPartAt()}{getPartAt()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_axis_abee4c7a54c468b1385dfce2c898b115f}{QCPAxis\+::\+Selectable\+Part}} QCPAxis\+::get\+Part\+At (\begin{DoxyParamCaption}\item[{const QPointF \&}]{pos }\end{DoxyParamCaption}) const}
 
-Returns the part of the axis that is hit by {\itshape pos} (in pixels). The return value of this function is independent of the user-\/selectable parts defined with \mbox{\hyperlink{class_q_c_p_axis_a513f9b9e326c505d9bec54880031b085}{set\+Selectable\+Parts}}. Further, this function does not change the current selection state of the axis.
+Returns the part of the axis that is hit by {\itshape pos} (in pixels). \mbox{\hyperlink{class_the}{The}} return value of this function is independent of the user-\/selectable parts defined with \mbox{\hyperlink{class_q_c_p_axis_a513f9b9e326c505d9bec54880031b085}{set\+Selectable\+Parts}}. Further, this function does not change the current selection state of the axis.
 
 If the axis is not visible (\mbox{\hyperlink{class_q_c_p_layerable_a3bed99ddc396b48ce3ebfdc0418744f8}{set\+Visible}}), this function always returns \mbox{\hyperlink{class_q_c_p_axis_abee4c7a54c468b1385dfce2c898b115fae0df8123a5528d5ccf87cb7794f971ea}{sp\+None}}.
 
@@ -814,9 +802,9 @@ Transforms a margin side to the logically corresponding axis type. (\mbox{\hyper
 
 This event gets called when the user moves the mouse while holding a mouse button, after this layerable has become the mouse grabber by accepting the preceding \mbox{\hyperlink{class_q_c_p_axis_ac89c068873ee9197a5d2af715bdc1105}{mouse\+Press\+Event}}.
 
-The current pixel position of the cursor on the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} widget is accessible via {\ttfamily event-\/\texorpdfstring{$>$}{>}pos()}. The parameter {\itshape start\+Pos} indicates the position where the initial \mbox{\hyperlink{class_q_c_p_axis_ac89c068873ee9197a5d2af715bdc1105}{mouse\+Press\+Event}} occured, that started the mouse interaction.
+\mbox{\hyperlink{class_the}{The}} current pixel position of the cursor on the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} widget is accessible via {\ttfamily event-\/\texorpdfstring{$>$}{>}pos()}. \mbox{\hyperlink{class_the}{The}} parameter {\itshape start\+Pos} indicates the position where the initial \mbox{\hyperlink{class_q_c_p_axis_ac89c068873ee9197a5d2af715bdc1105}{mouse\+Press\+Event}} occured, that started the mouse interaction.
 
-The default implementation does nothing.
+\mbox{\hyperlink{class_the}{The}} default implementation does nothing.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_axis_ac89c068873ee9197a5d2af715bdc1105}{mouse\+Press\+Event}}, \mbox{\hyperlink{class_q_c_p_axis_a35663b938ad83e91c0b8e59dbc8c6b18}{mouse\+Release\+Event}}, \mbox{\hyperlink{class_q_c_p_layerable_a4171e2e823aca242dd0279f00ed2de81}{mouse\+Double\+Click\+Event}}, \mbox{\hyperlink{class_q_c_p_axis_a71643d27524a843230b5ba68085b3d9b}{wheel\+Event}} 
@@ -833,13 +821,13 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_layerable_a9eee1ba47fd69be111059
 
 This event gets called when the user presses a mouse button while the cursor is over the layerable. Whether a cursor is over the layerable is decided by a preceding call to \mbox{\hyperlink{class_q_c_p_axis_a63b7103c57fe9acfbce164334ea837f8}{select\+Test}}.
 
-The current pixel position of the cursor on the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} widget is accessible via {\ttfamily event-\/\texorpdfstring{$>$}{>}pos()}. The parameter {\itshape details} contains layerable-\/specific details about the hit, which were generated in the previous call to \mbox{\hyperlink{class_q_c_p_axis_a63b7103c57fe9acfbce164334ea837f8}{select\+Test}}. For example, One-\/dimensional plottables like \mbox{\hyperlink{class_q_c_p_graph}{QCPGraph}} or \mbox{\hyperlink{class_q_c_p_bars}{QCPBars}} convey the clicked data point in the {\itshape details} parameter, as \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} packed as QVariant. Multi-\/part objects convey the specific {\ttfamily Selectable\+Part} that was hit (e.\+g. \mbox{\hyperlink{class_q_c_p_axis_abee4c7a54c468b1385dfce2c898b115f}{QCPAxis\+::\+Selectable\+Part}} in the case of axes).
+\mbox{\hyperlink{class_the}{The}} current pixel position of the cursor on the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} widget is accessible via {\ttfamily event-\/\texorpdfstring{$>$}{>}pos()}. \mbox{\hyperlink{class_the}{The}} parameter {\itshape details} contains layerable-\/specific details about the hit, which were generated in the previous call to \mbox{\hyperlink{class_q_c_p_axis_a63b7103c57fe9acfbce164334ea837f8}{select\+Test}}. For example, One-\/dimensional plottables like \mbox{\hyperlink{class_q_c_p_graph}{QCPGraph}} or \mbox{\hyperlink{class_q_c_p_bars}{QCPBars}} convey the clicked data point in the {\itshape details} parameter, as \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} packed as QVariant. Multi-\/part objects convey the specific {\ttfamily Selectable\+Part} that was hit (e.\+g. \mbox{\hyperlink{class_q_c_p_axis_abee4c7a54c468b1385dfce2c898b115f}{QCPAxis\+::\+Selectable\+Part}} in the case of axes).
 
 \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} uses an event propagation system that works the same as Qt\textquotesingle{}s system. If your layerable doesn\textquotesingle{}t reimplement the \mbox{\hyperlink{class_q_c_p_axis_ac89c068873ee9197a5d2af715bdc1105}{mouse\+Press\+Event}} or explicitly calls {\ttfamily event-\/\texorpdfstring{$>$}{>}ignore()} in its reimplementation, the event will be propagated to the next layerable in the stacking order.
 
 Once a layerable has accepted the \mbox{\hyperlink{class_q_c_p_axis_ac89c068873ee9197a5d2af715bdc1105}{mouse\+Press\+Event}}, it is considered the mouse grabber and will receive all following calls to \mbox{\hyperlink{class_q_c_p_axis_a2a89a13440eec099fc2327c2672be0cd}{mouse\+Move\+Event}} or \mbox{\hyperlink{class_q_c_p_axis_a35663b938ad83e91c0b8e59dbc8c6b18}{mouse\+Release\+Event}} for this mouse interaction (a \char`\"{}mouse interaction\char`\"{} in this context ends with the release).
 
-The default implementation does nothing except explicitly ignoring the event with {\ttfamily event-\/\texorpdfstring{$>$}{>}ignore()}.
+\mbox{\hyperlink{class_the}{The}} default implementation does nothing except explicitly ignoring the event with {\ttfamily event-\/\texorpdfstring{$>$}{>}ignore()}.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_axis_a2a89a13440eec099fc2327c2672be0cd}{mouse\+Move\+Event}}, \mbox{\hyperlink{class_q_c_p_axis_a35663b938ad83e91c0b8e59dbc8c6b18}{mouse\+Release\+Event}}, \mbox{\hyperlink{class_q_c_p_layerable_a4171e2e823aca242dd0279f00ed2de81}{mouse\+Double\+Click\+Event}}, \mbox{\hyperlink{class_q_c_p_axis_a71643d27524a843230b5ba68085b3d9b}{wheel\+Event}} 
@@ -856,9 +844,9 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_layerable_af6567604818db90f4fd52
 
 This event gets called when the user releases the mouse button, after this layerable has become the mouse grabber by accepting the preceding \mbox{\hyperlink{class_q_c_p_axis_ac89c068873ee9197a5d2af715bdc1105}{mouse\+Press\+Event}}.
 
-The current pixel position of the cursor on the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} widget is accessible via {\ttfamily event-\/\texorpdfstring{$>$}{>}pos()}. The parameter {\itshape start\+Pos} indicates the position where the initial \mbox{\hyperlink{class_q_c_p_axis_ac89c068873ee9197a5d2af715bdc1105}{mouse\+Press\+Event}} occured, that started the mouse interaction.
+\mbox{\hyperlink{class_the}{The}} current pixel position of the cursor on the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} widget is accessible via {\ttfamily event-\/\texorpdfstring{$>$}{>}pos()}. \mbox{\hyperlink{class_the}{The}} parameter {\itshape start\+Pos} indicates the position where the initial \mbox{\hyperlink{class_q_c_p_axis_ac89c068873ee9197a5d2af715bdc1105}{mouse\+Press\+Event}} occured, that started the mouse interaction.
 
-The default implementation does nothing.
+\mbox{\hyperlink{class_the}{The}} default implementation does nothing.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_axis_ac89c068873ee9197a5d2af715bdc1105}{mouse\+Press\+Event}}, \mbox{\hyperlink{class_q_c_p_axis_a2a89a13440eec099fc2327c2672be0cd}{mouse\+Move\+Event}}, \mbox{\hyperlink{class_q_c_p_layerable_a4171e2e823aca242dd0279f00ed2de81}{mouse\+Double\+Click\+Event}}, \mbox{\hyperlink{class_q_c_p_axis_a71643d27524a843230b5ba68085b3d9b}{wheel\+Event}} 
@@ -873,7 +861,7 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_layerable_aa0d79b005686f668622bb
 \doxysubsubsection{\texorpdfstring{moveRange()}{moveRange()}}
 {\footnotesize\ttfamily void QCPAxis\+::move\+Range (\begin{DoxyParamCaption}\item[{double}]{diff }\end{DoxyParamCaption})}
 
-If the scale type (\mbox{\hyperlink{class_q_c_p_axis_adef29cae617af4f519f6c40d1a866ca6}{set\+Scale\+Type}}) is \mbox{\hyperlink{class_q_c_p_axis_a36d8e8658dbaa179bf2aeb973db2d6f0aff6e30a11a828bc850caffab0ff994f6}{st\+Linear}}, {\itshape diff} is added to the lower and upper bounds of the range. The range is simply moved by {\itshape diff}.
+If the scale type (\mbox{\hyperlink{class_q_c_p_axis_adef29cae617af4f519f6c40d1a866ca6}{set\+Scale\+Type}}) is \mbox{\hyperlink{class_q_c_p_axis_a36d8e8658dbaa179bf2aeb973db2d6f0aff6e30a11a828bc850caffab0ff994f6}{st\+Linear}}, {\itshape diff} is added to the lower and upper bounds of the range. \mbox{\hyperlink{class_the}{The}} range is simply moved by {\itshape diff}.
 
 If the scale type is \mbox{\hyperlink{class_q_c_p_axis_a36d8e8658dbaa179bf2aeb973db2d6f0abf5b785ad976618816dc6f79b73216d4}{st\+Logarithmic}}, the range bounds are multiplied by {\itshape diff}. This corresponds to an apparent \char`\"{}linear\char`\"{} move in logarithmic scaling by a distance of log(diff). \mbox{\Hypertarget{class_q_c_p_axis_aa85ba73dfee6483e23825461b725e363}\label{class_q_c_p_axis_aa85ba73dfee6483e23825461b725e363}} 
 \index{QCPAxis@{QCPAxis}!opposite@{opposite}}
@@ -887,7 +875,7 @@ Returns the axis type that describes the opposite axis of an axis with the speci
 \doxysubsubsection{\texorpdfstring{orientation()}{orientation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily Qt\+::\+Orientation QCPAxis\+::orientation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Returns the orientation of this axis. The axis orientation (horizontal or vertical) is deduced from the axis type (left, top, right or bottom).
+Returns the orientation of this axis. \mbox{\hyperlink{class_the}{The}} axis orientation (horizontal or vertical) is deduced from the axis type (left, top, right or bottom).
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_axis_a9a68b3e45f1b1e33d4d807822342516c}{orientation(\+Axis\+Type type)}}, \mbox{\hyperlink{class_q_c_p_axis_a45c45bed7e5666683b8d56afa66fa51f}{pixel\+Orientation}} 
@@ -1046,9 +1034,9 @@ If the object is represented not by single lines but by an area like a \mbox{\hy
 
 Providing a constant value for area objects allows selecting line objects even when they are obscured by such area objects, by clicking close to the lines (i.\+e. closer than 0.\+99$\ast$selection\+Tolerance).
 
-The actual setting of the selection state is not done by this function. This is handled by the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} when the mouse\+Release\+Event occurs, and the finally selected object is notified via the select\+Event/ deselect\+Event methods.
+\mbox{\hyperlink{class_the}{The}} actual setting of the selection state is not done by this function. This is handled by the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} when the mouse\+Release\+Event occurs, and the finally selected object is notified via the select\+Event/ deselect\+Event methods.
 
-{\itshape details} is an optional output parameter. Every layerable subclass may place any information in {\itshape details}. This information will be passed to select\+Event when the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} decides on the basis of this select\+Test call, that the object was successfully selected. The subsequent call to select\+Event will carry the {\itshape details}. This is useful for multi-\/part objects (like \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}}). This way, a possibly complex calculation to decide which part was clicked is only done once in \mbox{\hyperlink{class_q_c_p_axis_a63b7103c57fe9acfbce164334ea837f8}{select\+Test}}. The result (i.\+e. the actually clicked part) can then be placed in {\itshape details}. So in the subsequent select\+Event, the decision which part was selected doesn\textquotesingle{}t have to be done a second time for a single selection operation.
+{\itshape details} is an optional output parameter. Every layerable subclass may place any information in {\itshape details}. This information will be passed to select\+Event when the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} decides on the basis of this select\+Test call, that the object was successfully selected. \mbox{\hyperlink{class_the}{The}} subsequent call to select\+Event will carry the {\itshape details}. This is useful for multi-\/part objects (like \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}}). This way, a possibly complex calculation to decide which part was clicked is only done once in \mbox{\hyperlink{class_q_c_p_axis_a63b7103c57fe9acfbce164334ea837f8}{select\+Test}}. \mbox{\hyperlink{class_the}{The}} result (i.\+e. the actually clicked part) can then be placed in {\itshape details}. So in the subsequent select\+Event, the decision which part was selected doesn\textquotesingle{}t have to be done a second time for a single selection operation.
 
 You may pass 0 as {\itshape details} to indicate that you are not interested in those selection details.
 
@@ -1130,10 +1118,10 @@ For horizontal axes, this method refers to the left ending, for vertical axes th
 
 Sets the number format for the numbers in tick labels. This {\itshape format\+Code} is an extended version of the format code used e.\+g. by QString\+::number() and QLocale\+::to\+String(). For reference about that, see the \char`\"{}\+Argument Formats\char`\"{} section in the detailed description of the QString class.
 
-{\itshape format\+Code} is a string of one, two or three characters. The first character is identical to the normal format code used by Qt. In short, this means\+: \textquotesingle{}e\textquotesingle{}/\textquotesingle{}E\textquotesingle{} scientific format, \textquotesingle{}f\textquotesingle{} fixed format, \textquotesingle{}g\textquotesingle{}/\textquotesingle{}G\textquotesingle{} scientific or fixed, whichever is shorter.
+{\itshape format\+Code} is a string of one, two or three characters. \mbox{\hyperlink{class_the}{The}} first character is identical to the normal format code used by Qt. In short, this means\+: \textquotesingle{}e\textquotesingle{}/\textquotesingle{}E\textquotesingle{} scientific format, \textquotesingle{}f\textquotesingle{} fixed format, \textquotesingle{}g\textquotesingle{}/\textquotesingle{}G\textquotesingle{} scientific or fixed, whichever is shorter.
 
-The second and third characters are optional and specific to \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}\+:~\newline
-If the first char was \textquotesingle{}e\textquotesingle{} or \textquotesingle{}g\textquotesingle{}, numbers are/might be displayed in the scientific format, e.\+g. \char`\"{}5.\+5e9\char`\"{}, which is ugly in a plot. So when the second char of {\itshape format\+Code} is set to \textquotesingle{}b\textquotesingle{} (for \char`\"{}beautiful\char`\"{}), those exponential numbers are formatted in a more natural way, i.\+e. \char`\"{}5.\+5 \mbox{[}multiplication sign\mbox{]} 10 \mbox{[}superscript\mbox{]} 9\char`\"{}. By default, the multiplication sign is a centered dot. If instead a cross should be shown (as is usual in the USA), the third char of {\itshape format\+Code} can be set to \textquotesingle{}c\textquotesingle{}. The inserted multiplication signs are the UTF-\/8 characters 215 (0x\+D7) for the cross and 183 (0x\+B7) for the dot.
+\mbox{\hyperlink{class_the}{The}} second and third characters are optional and specific to \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}\+:~\newline
+If the first char was \textquotesingle{}e\textquotesingle{} or \textquotesingle{}g\textquotesingle{}, numbers are/might be displayed in the scientific format, e.\+g. \char`\"{}5.\+5e9\char`\"{}, which is ugly in a plot. So when the second char of {\itshape format\+Code} is set to \textquotesingle{}b\textquotesingle{} (for \char`\"{}beautiful\char`\"{}), those exponential numbers are formatted in a more natural way, i.\+e. \char`\"{}5.\+5 \mbox{[}multiplication sign\mbox{]} 10 \mbox{[}superscript\mbox{]} 9\char`\"{}. By default, the multiplication sign is a centered dot. If instead a cross should be shown (as is usual in the USA), the third char of {\itshape format\+Code} can be set to \textquotesingle{}c\textquotesingle{}. \mbox{\hyperlink{class_the}{The}} inserted multiplication signs are the UTF-\/8 characters 215 (0x\+D7) for the cross and 183 (0x\+B7) for the dot.
 
 Examples for {\itshape format\+Code\+:} \begin{DoxyItemize}
 \item {\ttfamily g} normal format code behaviour. If number is small, fixed format is used, if number is large, normal scientific format is used \item {\ttfamily gb} If number is small, fixed format is used, if number is large, scientific format is used with beautifully typeset decimal powers and a dot as multiplication sign \item {\ttfamily ebc} All numbers are in scientific format with beautifully typeset decimal power and a cross as multiplication sign \item {\ttfamily fb} illegal format code, since fixed format doesn\textquotesingle{}t support (or need) beautifully typeset decimal powers. Format code will be reduced to \textquotesingle{}f\textquotesingle{}. \item {\ttfamily hello} illegal format code, since first char is not \textquotesingle{}e\textquotesingle{}, \textquotesingle{}E\textquotesingle{}, \textquotesingle{}f\textquotesingle{}, \textquotesingle{}g\textquotesingle{} or \textquotesingle{}G\textquotesingle{}. Current format code will not be changed. \end{DoxyItemize}
@@ -1143,7 +1131,7 @@ Examples for {\itshape format\+Code\+:} \begin{DoxyItemize}
 \doxysubsubsection{\texorpdfstring{setNumberPrecision()}{setNumberPrecision()}}
 {\footnotesize\ttfamily void QCPAxis\+::set\+Number\+Precision (\begin{DoxyParamCaption}\item[{int}]{precision }\end{DoxyParamCaption})}
 
-Sets the precision of the tick label numbers. See QLocale\+::to\+String(double i, char f, int prec) for details. The effect of precisions are most notably for number Formats starting with \textquotesingle{}e\textquotesingle{}, see \mbox{\hyperlink{class_q_c_p_axis_ae585a54dc2aac662e90a2ca82f002590}{set\+Number\+Format}} \mbox{\Hypertarget{class_q_c_p_axis_a04a652603cbe50eba9969ee6d68873c3}\label{class_q_c_p_axis_a04a652603cbe50eba9969ee6d68873c3}} 
+Sets the precision of the tick label numbers. See QLocale\+::to\+String(double i, char f, int prec) for details. \mbox{\hyperlink{class_the}{The}} effect of precisions are most notably for number Formats starting with \textquotesingle{}e\textquotesingle{}, see \mbox{\hyperlink{class_q_c_p_axis_ae585a54dc2aac662e90a2ca82f002590}{set\+Number\+Format}} \mbox{\Hypertarget{class_q_c_p_axis_a04a652603cbe50eba9969ee6d68873c3}\label{class_q_c_p_axis_a04a652603cbe50eba9969ee6d68873c3}} 
 \index{QCPAxis@{QCPAxis}!setOffset@{setOffset}}
 \index{setOffset@{setOffset}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{setOffset()}{setOffset()}}
@@ -1151,7 +1139,7 @@ Sets the precision of the tick label numbers. See QLocale\+::to\+String(double i
 
 Sets the offset the axis has to its axis rect side.
 
-If an axis rect side has multiple axes and automatic margin calculation is enabled for that side, only the offset of the inner most axis has meaning (even if it is set to be invisible). The offset of the other, outer axes is controlled automatically, to place them at appropriate positions. \mbox{\Hypertarget{class_q_c_p_axis_a5691441cb3de9e9844855d339c0db279}\label{class_q_c_p_axis_a5691441cb3de9e9844855d339c0db279}} 
+If an axis rect side has multiple axes and automatic margin calculation is enabled for that side, only the offset of the inner most axis has meaning (even if it is set to be invisible). \mbox{\hyperlink{class_the}{The}} offset of the other, outer axes is controlled automatically, to place them at appropriate positions. \mbox{\Hypertarget{class_q_c_p_axis_a5691441cb3de9e9844855d339c0db279}\label{class_q_c_p_axis_a5691441cb3de9e9844855d339c0db279}} 
 \index{QCPAxis@{QCPAxis}!setPadding@{setPadding}}
 \index{setPadding@{setPadding}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{setPadding()}{setPadding()}}
@@ -1161,7 +1149,7 @@ Sets the padding of the axis.
 
 When \mbox{\hyperlink{class_q_c_p_layout_element_accfda49994e3e6d51ed14504abf9d27d}{QCPAxis\+Rect\+::set\+Auto\+Margins}} is enabled, the padding is the additional outer most space, that is left blank.
 
-The axis padding has no meaning if \mbox{\hyperlink{class_q_c_p_layout_element_accfda49994e3e6d51ed14504abf9d27d}{QCPAxis\+Rect\+::set\+Auto\+Margins}} is disabled.
+\mbox{\hyperlink{class_the}{The}} axis padding has no meaning if \mbox{\hyperlink{class_q_c_p_layout_element_accfda49994e3e6d51ed14504abf9d27d}{QCPAxis\+Rect\+::set\+Auto\+Margins}} is disabled.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_axis_a4391192a766e5d20cfe5cbc17607a7a2}{set\+Label\+Padding}}, \mbox{\hyperlink{class_q_c_p_axis_af302c479af9dbc2e9f0e44e07c0012ee}{set\+Tick\+Label\+Padding}} 
@@ -1198,13 +1186,13 @@ This is an overloaded member function, provided for convenience. It differs from
 
 Sets the range of the axis.
 
-The {\itshape position} coordinate indicates together with the {\itshape alignment} parameter, where the new range will be positioned. {\itshape size} defines the size of the new axis range. {\itshape alignment} may be Qt\+::\+Align\+Left, Qt\+::\+Align\+Right or Qt\+::\+Align\+Center. This will cause the left border, right border, or center of the range to be aligned with {\itshape position}. Any other values of {\itshape alignment} will default to Qt\+::\+Align\+Center. \mbox{\Hypertarget{class_q_c_p_axis_afcf51227d337db28d1a9ce9a4d1bc91a}\label{class_q_c_p_axis_afcf51227d337db28d1a9ce9a4d1bc91a}} 
+\mbox{\hyperlink{class_the}{The}} {\itshape position} coordinate indicates together with the {\itshape alignment} parameter, where the new range will be positioned. {\itshape size} defines the size of the new axis range. {\itshape alignment} may be Qt\+::\+Align\+Left, Qt\+::\+Align\+Right or Qt\+::\+Align\+Center. This will cause the left border, right border, or center of the range to be aligned with {\itshape position}. Any other values of {\itshape alignment} will default to Qt\+::\+Align\+Center. \mbox{\Hypertarget{class_q_c_p_axis_afcf51227d337db28d1a9ce9a4d1bc91a}\label{class_q_c_p_axis_afcf51227d337db28d1a9ce9a4d1bc91a}} 
 \index{QCPAxis@{QCPAxis}!setRangeLower@{setRangeLower}}
 \index{setRangeLower@{setRangeLower}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{setRangeLower()}{setRangeLower()}}
 {\footnotesize\ttfamily void QCPAxis\+::set\+Range\+Lower (\begin{DoxyParamCaption}\item[{double}]{lower }\end{DoxyParamCaption})}
 
-Sets the lower bound of the axis range. The upper bound is not changed. \begin{DoxySeeAlso}{See also}
+Sets the lower bound of the axis range. \mbox{\hyperlink{class_the}{The}} upper bound is not changed. \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_axis_aebdfea5d44c3a0ad2b4700cd4d25b641}{set\+Range}} 
 \end{DoxySeeAlso}
 \mbox{\Hypertarget{class_q_c_p_axis_a2172fdb196b1a0dc3f40992fcad8e9e1}\label{class_q_c_p_axis_a2172fdb196b1a0dc3f40992fcad8e9e1}} 
@@ -1221,7 +1209,7 @@ Note that the range and data interface stays the same for reversed axes, e.\+g. 
 \doxysubsubsection{\texorpdfstring{setRangeUpper()}{setRangeUpper()}}
 {\footnotesize\ttfamily void QCPAxis\+::set\+Range\+Upper (\begin{DoxyParamCaption}\item[{double}]{upper }\end{DoxyParamCaption})}
 
-Sets the upper bound of the axis range. The lower bound is not changed. \begin{DoxySeeAlso}{See also}
+Sets the upper bound of the axis range. \mbox{\hyperlink{class_the}{The}} lower bound is not changed. \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_axis_aebdfea5d44c3a0ad2b4700cd4d25b641}{set\+Range}} 
 \end{DoxySeeAlso}
 \mbox{\Hypertarget{class_q_c_p_axis_af4bbd446dcaee5a83ac30ce9bcd6e125}\label{class_q_c_p_axis_af4bbd446dcaee5a83ac30ce9bcd6e125}} 
@@ -1230,7 +1218,7 @@ Sets the upper bound of the axis range. The lower bound is not changed. \begin{D
 \doxysubsubsection{\texorpdfstring{setScaleRatio()}{setScaleRatio()}}
 {\footnotesize\ttfamily void QCPAxis\+::set\+Scale\+Ratio (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$}]{other\+Axis,  }\item[{double}]{ratio = {\ttfamily 1.0} }\end{DoxyParamCaption})}
 
-Scales the range of this axis to have a certain scale {\itshape ratio} to {\itshape other\+Axis}. The scaling will be done around the center of the current axis range.
+Scales the range of this axis to have a certain scale {\itshape ratio} to {\itshape other\+Axis}. \mbox{\hyperlink{class_the}{The}} scaling will be done around the center of the current axis range.
 
 For example, if {\itshape ratio} is 1, this axis is the {\itshape y\+Axis} and {\itshape other\+Axis} is {\itshape x\+Axis}, graphs plotted with those axes will appear in a 1\+:1 aspect ratio, independent of the aspect ratio the axis rect has.
 
@@ -1298,7 +1286,7 @@ Sets the font that is used for the axis label when it is selected.
 
 Sets the selected state of the respective axis parts described by \mbox{\hyperlink{class_q_c_p_axis_abee4c7a54c468b1385dfce2c898b115f}{Selectable\+Part}}. When a part is selected, it uses a different pen/font.
 
-The entire selection mechanism for axes is handled automatically when \mbox{\hyperlink{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5}{QCustom\+Plot\+::set\+Interactions}} contains i\+Select\+Axes. You only need to call this function when you wish to change the selection state manually.
+\mbox{\hyperlink{class_the}{The}} entire selection mechanism for axes is handled automatically when \mbox{\hyperlink{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5}{QCustom\+Plot\+::set\+Interactions}} contains i\+Select\+Axes. You only need to call this function when you wish to change the selection state manually.
 
 This function can change the selection state of a part, independent of the \mbox{\hyperlink{class_q_c_p_axis_a513f9b9e326c505d9bec54880031b085}{set\+Selectable\+Parts}} setting.
 
@@ -1414,7 +1402,7 @@ Sub ticks are only potentially visible if (major) ticks are also visible (see \m
 \doxysubsubsection{\texorpdfstring{setTicker()}{setTicker()}}
 {\footnotesize\ttfamily void QCPAxis\+::set\+Ticker (\begin{DoxyParamCaption}\item[{QShared\+Pointer$<$ \mbox{\hyperlink{class_q_c_p_axis_ticker}{QCPAxis\+Ticker}} $>$}]{ticker }\end{DoxyParamCaption})}
 
-The axis ticker is responsible for generating the tick positions and tick labels. See the documentation of \mbox{\hyperlink{class_q_c_p_axis_ticker}{QCPAxis\+Ticker}} for details on how to work with axis tickers.
+\mbox{\hyperlink{class_the}{The}} axis ticker is responsible for generating the tick positions and tick labels. See the documentation of \mbox{\hyperlink{class_q_c_p_axis_ticker}{QCPAxis\+Ticker}} for details on how to work with axis tickers.
 
 You can change the tick positioning/labeling behaviour of this axis by setting a different \mbox{\hyperlink{class_q_c_p_axis_ticker}{QCPAxis\+Ticker}} subclass using this method. If you only wish to modify the currently installed axis ticker, access it via \mbox{\hyperlink{class_q_c_p_axis_a7b7a27151be8235059e1294f73ecf615}{ticker}}.
 
@@ -1460,7 +1448,7 @@ Sets the distance between the axis base line (including any outward ticks) and t
 \doxysubsubsection{\texorpdfstring{setTickLabelRotation()}{setTickLabelRotation()}}
 {\footnotesize\ttfamily void QCPAxis\+::set\+Tick\+Label\+Rotation (\begin{DoxyParamCaption}\item[{double}]{degrees }\end{DoxyParamCaption})}
 
-Sets the rotation of the tick labels. If {\itshape degrees} is zero, the labels are drawn normally. Else, the tick labels are drawn rotated by {\itshape degrees} clockwise. The specified angle is bound to values from -\/90 to 90 degrees.
+Sets the rotation of the tick labels. If {\itshape degrees} is zero, the labels are drawn normally. Else, the tick labels are drawn rotated by {\itshape degrees} clockwise. \mbox{\hyperlink{class_the}{The}} specified angle is bound to values from -\/90 to 90 degrees.
 
 If {\itshape degrees} is exactly -\/90, 0 or 90, the tick labels are centered on the tick coordinate. For other angles, the label is drawn with an offset such that it seems to point toward or away from the tick mark. \mbox{\Hypertarget{class_q_c_p_axis_a04ba16e1f6f78d70f938519576ed32c8}\label{class_q_c_p_axis_a04ba16e1f6f78d70f938519576ed32c8}} 
 \index{QCPAxis@{QCPAxis}!setTickLabels@{setTickLabels}}
@@ -1476,7 +1464,7 @@ Sets whether tick labels are displayed. Tick labels are the numbers drawn next t
 
 Sets whether the tick labels (numbers) shall appear inside or outside the axis rect.
 
-The usual and default setting is \mbox{\hyperlink{class_q_c_p_axis_a24b13374b9b8f75f47eed2ea78c37db9a2eadb509fc0c9a8b35b85c86ec9f3c7a}{ls\+Outside}}. Very compact plots sometimes require tick labels to be inside the axis rect, to save space. If {\itshape side} is set to \mbox{\hyperlink{class_q_c_p_axis_a24b13374b9b8f75f47eed2ea78c37db9aae7b027ac2839cf4ad611df30236fc3f}{ls\+Inside}}, the tick labels appear on the inside are additionally clipped to the axis rect. \mbox{\Hypertarget{class_q_c_p_axis_a62ec40bebe3540e9c1479a8fd2be3b0d}\label{class_q_c_p_axis_a62ec40bebe3540e9c1479a8fd2be3b0d}} 
+\mbox{\hyperlink{class_the}{The}} usual and default setting is \mbox{\hyperlink{class_q_c_p_axis_a24b13374b9b8f75f47eed2ea78c37db9a2eadb509fc0c9a8b35b85c86ec9f3c7a}{ls\+Outside}}. Very compact plots sometimes require tick labels to be inside the axis rect, to save space. If {\itshape side} is set to \mbox{\hyperlink{class_q_c_p_axis_a24b13374b9b8f75f47eed2ea78c37db9aae7b027ac2839cf4ad611df30236fc3f}{ls\+Inside}}, the tick labels appear on the inside are additionally clipped to the axis rect. \mbox{\Hypertarget{class_q_c_p_axis_a62ec40bebe3540e9c1479a8fd2be3b0d}\label{class_q_c_p_axis_a62ec40bebe3540e9c1479a8fd2be3b0d}} 
 \index{QCPAxis@{QCPAxis}!setTickLength@{setTickLength}}
 \index{setTickLength@{setTickLength}!QCPAxis@{QCPAxis}}
 \doxysubsubsection{\texorpdfstring{setTickLength()}{setTickLength()}}
@@ -1552,7 +1540,7 @@ For horizontal axes, this method refers to the right ending, for vertical axes t
 \doxysubsubsection{\texorpdfstring{ticker()}{ticker()}}
 {\footnotesize\ttfamily QShared\+Pointer$<$ \mbox{\hyperlink{class_q_c_p_axis_ticker}{QCPAxis\+Ticker}} $>$ QCPAxis\+::ticker (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Returns a modifiable shared pointer to the currently installed axis ticker. The axis ticker is responsible for generating the tick positions and tick labels of this axis. You can access the \mbox{\hyperlink{class_q_c_p_axis_ticker}{QCPAxis\+Ticker}} with this method and modify basic properties such as the approximate tick count (\mbox{\hyperlink{class_q_c_p_axis_ticker_a47752abba8293e6dc18491501ae34008}{QCPAxis\+Ticker\+::set\+Tick\+Count}}).
+Returns a modifiable shared pointer to the currently installed axis ticker. \mbox{\hyperlink{class_the}{The}} axis ticker is responsible for generating the tick positions and tick labels of this axis. You can access the \mbox{\hyperlink{class_q_c_p_axis_ticker}{QCPAxis\+Ticker}} with this method and modify basic properties such as the approximate tick count (\mbox{\hyperlink{class_q_c_p_axis_ticker_a47752abba8293e6dc18491501ae34008}{QCPAxis\+Ticker\+::set\+Tick\+Count}}).
 
 You can gain more control over the axis ticks by setting a different \mbox{\hyperlink{class_q_c_p_axis_ticker}{QCPAxis\+Ticker}} subclass, see the documentation there. A new axis ticker can be set with \mbox{\hyperlink{class_q_c_p_axis_a4ee03fcd2c74d05cd1a419b9af5cfbdc}{set\+Ticker}}.
 
@@ -1569,11 +1557,11 @@ Since the ticker is stored in the axis as a shared pointer, multiple axes may sh
 
 This event gets called when the user turns the mouse scroll wheel while the cursor is over the layerable. Whether a cursor is over the layerable is decided by a preceding call to \mbox{\hyperlink{class_q_c_p_axis_a63b7103c57fe9acfbce164334ea837f8}{select\+Test}}.
 
-The current pixel position of the cursor on the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} widget is accessible via {\ttfamily event-\/\texorpdfstring{$>$}{>}pos()}.
+\mbox{\hyperlink{class_the}{The}} current pixel position of the cursor on the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} widget is accessible via {\ttfamily event-\/\texorpdfstring{$>$}{>}pos()}.
 
-The {\ttfamily event-\/\texorpdfstring{$>$}{>}delta()} indicates how far the mouse wheel was turned, which is usually +/-\/ 120 for single rotation steps. However, if the mouse wheel is turned rapidly, multiple steps may accumulate to one event, making {\ttfamily event-\/\texorpdfstring{$>$}{>}delta()} larger. On the other hand, if the wheel has very smooth steps or none at all, the delta may be smaller.
+\mbox{\hyperlink{class_the}{The}} {\ttfamily event-\/\texorpdfstring{$>$}{>}delta()} indicates how far the mouse wheel was turned, which is usually +/-\/ 120 for single rotation steps. However, if the mouse wheel is turned rapidly, multiple steps may accumulate to one event, making {\ttfamily event-\/\texorpdfstring{$>$}{>}delta()} larger. On the other hand, if the wheel has very smooth steps or none at all, the delta may be smaller.
 
-The default implementation does nothing.
+\mbox{\hyperlink{class_the}{The}} default implementation does nothing.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_axis_ac89c068873ee9197a5d2af715bdc1105}{mouse\+Press\+Event}}, \mbox{\hyperlink{class_q_c_p_axis_a2a89a13440eec099fc2327c2672be0cd}{mouse\+Move\+Event}}, \mbox{\hyperlink{class_q_c_p_axis_a35663b938ad83e91c0b8e59dbc8c6b18}{mouse\+Release\+Event}}, \mbox{\hyperlink{class_q_c_p_layerable_a4171e2e823aca242dd0279f00ed2de81}{mouse\+Double\+Click\+Event}} 

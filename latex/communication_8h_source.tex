@@ -1,0 +1,219 @@
+\hypertarget{communication_8h_source}{}\doxysection{communication.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ COMMUNICATION\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ COMMUNICATION\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <QtSerialBus/QModbusRtuSerialMaster>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <QSerialPort>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <QStatusBar>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <QModbusTcpClient>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <QMutex>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mainwindow_8h}{mainwindow.h}}"{}}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_communication}{Communication}}\ :\ \textcolor{keyword}{public}\ QObject\{}
+\DoxyCodeLine{00020\ \ \ Q\_OBJECT}
+\DoxyCodeLine{00021\ \ \ Q\_PROPERTY(\textcolor{keywordtype}{double}\ Temperature\ READ\ \mbox{\hyperlink{class_communication_a4787d8dd4fc9b9d4fe9081aaf501169e}{getTemperature}}\ WRITE\ \mbox{\hyperlink{class_communication_a1d72865effe27d7ac3c2ef13a8adea8f}{setTemperature}}\ NOTIFY\ \mbox{\hyperlink{class_communication_a0feaf16daf26b74c348daf8395d2a780}{TemperatureUpdated}})}
+\DoxyCodeLine{00022\ \ \ Q\_PROPERTY(\textcolor{keywordtype}{double}\ SV\ READ\ \mbox{\hyperlink{class_communication_a28ba88fef838dca1ac59a87308dc6f07}{getSV}}\ WRITE\ \mbox{\hyperlink{class_communication_adf0dbdf2edce36b04c5a383a816910ea}{setSV}}\ NOTIFY\ \mbox{\hyperlink{class_communication_a9ab412f55487d76ce72b3d7b3d9ba281}{SVUpdated}})}
+\DoxyCodeLine{00023\ \ \ Q\_PROPERTY(\textcolor{keywordtype}{double}\ MV\ READ\ \mbox{\hyperlink{class_communication_a056cfd355f2db3c4dbc6902d4abd8702}{getMV}}\ WRITE\ \mbox{\hyperlink{class_communication_a2e07593772c80d5541f10afc77a11dea}{setMV}}\ NOTIFY\ \mbox{\hyperlink{class_communication_a99b3ee7daebd86b82269e558d38b89a7}{MVUpdated}})}
+\DoxyCodeLine{00024\ \ \ Q\_PROPERTY(\textcolor{keywordtype}{double}\ MVupper\ READ\ \mbox{\hyperlink{class_communication_a9cdb0feb64d8238615841b322cdb0630}{getMVupper}}\ WRITE\ \mbox{\hyperlink{class_communication_ac0cdf2a7e5f33fc544a24fddd1675c5e}{setMVupper}}\ NOTIFY\ \mbox{\hyperlink{class_communication_ac2fe10e50d7b27a2218f740390427d3d}{MVupperUpdated}})}
+\DoxyCodeLine{00025\ \ \ Q\_PROPERTY(\textcolor{keywordtype}{double}\ MVlower\ READ\ \mbox{\hyperlink{class_communication_a8be32adbb560931be8785467060351d7}{getMVlower}}\ WRITE\ \mbox{\hyperlink{class_communication_ac8c816cb166e0fc0995f7f535fae76e4}{setMVlower}}\ NOTIFY\ \mbox{\hyperlink{class_communication_a48071434d4991e27589e83788f4ad0c5}{MVlowerUpdated}})}
+\DoxyCodeLine{00026\ \ \ Q\_PROPERTY(\textcolor{keywordtype}{int}\ OmronID\ READ\ \mbox{\hyperlink{class_communication_afd435fd35312d895297048f5607e7476}{getOmronID}}\ WRITE\ \mbox{\hyperlink{class_communication_a6d3ded92e8052c9ecea7076a000780a5}{setOmronID}}\ NOTIFY\ \mbox{\hyperlink{class_communication_a2b7bf2aa777d097bcbff8ac4b162297b}{OmronIDChanged}})}
+\DoxyCodeLine{00027\ \ \ Q\_PROPERTY(\textcolor{keywordtype}{int}\ intervalUpdate\ READ\ \mbox{\hyperlink{class_communication_aacb8bc64b62f967c94ff913bc9d58af4}{getIntervalUpdate}}\ WRITE\ \mbox{\hyperlink{class_communication_a29fab1f8ee87f358da3e026784579690}{setIntervalUpdate}}\ NOTIFY\ \mbox{\hyperlink{class_communication_a1b207c9a7d1b917f4074119232c957a7}{intervalUpdateChanged}})}
+\DoxyCodeLine{00028\ \ \ Q\_PROPERTY(\textcolor{keywordtype}{int}\ intervalConectionCheck\ READ\ \mbox{\hyperlink{class_communication_a9ea9548f8ab7025ec6d3a797a3cd0a03}{getIntervalConectionCheck}}\ WRITE\ \mbox{\hyperlink{class_communication_a1cb7912f36961fabd2ce61c95088e6db}{setIntervalConectionCheck}}\ NOTIFY\ \mbox{\hyperlink{class_communication_aec1bbb406a620cb1dc929a8cdeee778b}{intervalConectionCheckChanged}})}
+\DoxyCodeLine{00029\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{class_communication}{Communication}}(QMainWindow\ *parent,\ QStatusBar\ *statusBar);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{class_communication_a75ba08ce908d45251e28e4c1db94e6f4}{\string~Communication}}();}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_communication_1_1_e5_c_c___address}{E5CC\_Address}}\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{class_communication_1_1_e5_c_c___address_ae65845c8cd58de1fd62558b229f90dbc}{Type}}\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_communication_1_1_e5_c_c___address_ae65845c8cd58de1fd62558b229f90dbcaa565153df227b0510b1c789d5cdc39ec}{PV}}\ =\ 0x0000,\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_communication_1_1_e5_c_c___address_ae65845c8cd58de1fd62558b229f90dbca77d96fc8e5c080038b043ead02dadfc3}{MV}}\ =\ 0x0008,\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_communication_1_1_e5_c_c___address_ae65845c8cd58de1fd62558b229f90dbcad38212a0c0e98f678feaaa5a8b9167f5}{SV}}\ =\ 0x0106,\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_communication_1_1_e5_c_c___address_ae65845c8cd58de1fd62558b229f90dbca962aa8f9d58029a2e265f07375932c6a}{MVupper}}\ =\ 0x0A0A,\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_communication_1_1_e5_c_c___address_ae65845c8cd58de1fd62558b229f90dbca901e869fca582763eaeebd3317dc1b5e}{MVlower}}\ =\ 0x0A0C,\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_communication_1_1_e5_c_c___address_ae65845c8cd58de1fd62558b229f90dbca8eaa7ba81c8dcdb819b46ec98fda824a}{PID\_P}}\ =\ 0x0A00,\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_communication_1_1_e5_c_c___address_ae65845c8cd58de1fd62558b229f90dbcac4084f814d4d0e0d34b68042e38e8793}{PID\_I}}\ =\ 0x0A02,\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_communication_1_1_e5_c_c___address_ae65845c8cd58de1fd62558b229f90dbca9386f09884828c10bcc614271d88836a}{PID\_D}}\ =\ 0x0A04\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00062\ \ \ \ \ \};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_communication_a61c96d1875bc1c421590858891169467}{request}}(QModbusPdu::FunctionCode\ code,\ QByteArray\ cmd);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00077\ \ \ \ \ QString\ \mbox{\hyperlink{class_communication_a3c8f92126749c14140090ec400cb5e74}{formatHex}}(\textcolor{keywordtype}{int}\ value,\ \textcolor{keywordtype}{int}\ digit);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00085\ \ \ \ \ QString\ \mbox{\hyperlink{class_communication_a6b45f0b8f1d9f9b269ff7dd2ffbc9698}{formatE5CCAddress}}(\mbox{\hyperlink{class_communication_1_1_e5_c_c___address_ae65845c8cd58de1fd62558b229f90dbc}{E5CC\_Address::Type}}\ address,\ \textcolor{keywordtype}{int}\ width\ =\ 4);}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_communication_ac6d27ab62868a050d8e2b254a2d0d4dd}{askTemperature}}();}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_communication_a7af5bef528b7769c72cd69af4eccf782}{askMV}}();}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_communication_aaa9c871501d03ca6453bac667a26263b}{askSV}}();}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_communication_a78609ae23d99b52e668a220586675c6e}{askMVupper}}();}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_communication_a23299835a8f07f118c0d5d9f68f41d42}{askMVlower}}();}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_communication_a1fd79af9afdfac21cb09c6a57c122668}{askPID}}(QString\ PID);}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_communication_abe234ec3b344972d614302035c60055e}{executeConnection}}()\{Connection();\}}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_communication_ad1c2b0978dba554db0da18d4589e218c}{executeRun}}()\{Run();\}}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_communication_a5e8f719672ffd34035907b52eac72f6e}{executeStop}}()\{Stop();\}}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_communication_a038a4904d1b15df1dcc8ad2d8debc797}{executeSendRequestSV}}(\textcolor{keywordtype}{double}\ SV)\{sendRequestSV(SV);\}}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_communication_a72dd8637a79be79348fc6eaea4356824}{executeSendRequestAT}}(\textcolor{keywordtype}{int}\ atFlag)\{sendRequestAT(atFlag);\}}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_communication_a2e8eb43c3a20aba35b70c5a1d86a008d}{changeMVlowerValue}}(\textcolor{keywordtype}{double}\ MVlower);}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_communication_add15ec23dd41794a58564b47fd6ab9ae}{changeMVupperValue}}(\textcolor{keywordtype}{double}\ MVupper);}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_communication_af5f1beb1fa861593614bb4dc6e2e3a9f}{changeSVValue}}(\textcolor{keywordtype}{double}\ SV);}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_communication_a0e76d9bca5fb1eb5c0781f870503e058}{read}}(QModbusDataUnit::RegisterType\ type,\ quint16\ adress,\ \textcolor{keywordtype}{int}\ size);}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_communication_a6335673fcbdeae311a70a53118f679f8}{setSerialPortName}}(QString\ portName);}
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_communication_a1d72865effe27d7ac3c2ef13a8adea8f}{setTemperature}}(\textcolor{keywordtype}{double}\ temperature);}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_communication_adf0dbdf2edce36b04c5a383a816910ea}{setSV}}(\textcolor{keywordtype}{double}\ SV);}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_communication_a2e07593772c80d5541f10afc77a11dea}{setMV}}(\textcolor{keywordtype}{double}\ MV);}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00199\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_communication_ac0cdf2a7e5f33fc544a24fddd1675c5e}{setMVupper}}(\textcolor{keywordtype}{double}\ MVupper);}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00205\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_communication_ac8c816cb166e0fc0995f7f535fae76e4}{setMVlower}}(\textcolor{keywordtype}{double}\ MVlower);}
+\DoxyCodeLine{00211\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_communication_a6d3ded92e8052c9ecea7076a000780a5}{setOmronID}}(\textcolor{keywordtype}{int}\ omronID);}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_communication_a29fab1f8ee87f358da3e026784579690}{setIntervalUpdate}}(\textcolor{keywordtype}{int}\ interval);}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00223\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_communication_a1cb7912f36961fabd2ce61c95088e6db}{setIntervalConectionCheck}}(\textcolor{keywordtype}{int}\ interval);}
+\DoxyCodeLine{00224\ }
+\DoxyCodeLine{00229\ \ \ \ \ QModbusRtuSerialMaster*\ \mbox{\hyperlink{class_communication_a31b66f90c1e0c149ae646dd6ec23f7a9}{getOmron}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00235\ \ \ \ \ QList<QSerialPortInfo>\ \mbox{\hyperlink{class_communication_a059db4b78b4cce68c6d09b868c2fe785}{getSerialPortDevices}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00236\ }
+\DoxyCodeLine{00241\ \ \ \ \ QString\ \mbox{\hyperlink{class_communication_acfe8d3d898502fdf93f06cc82b2e6409}{getPortName}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00247\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_communication_a4787d8dd4fc9b9d4fe9081aaf501169e}{getTemperature}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00253\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_communication_a056cfd355f2db3c4dbc6902d4abd8702}{getMV}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00254\ }
+\DoxyCodeLine{00259\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_communication_a28ba88fef838dca1ac59a87308dc6f07}{getSV}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00260\ }
+\DoxyCodeLine{00265\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_communication_a9cdb0feb64d8238615841b322cdb0630}{getMVupper}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00266\ }
+\DoxyCodeLine{00271\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_communication_a8be32adbb560931be8785467060351d7}{getMVlower}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00272\ }
+\DoxyCodeLine{00277\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_communication_aae12f547cbd57e7e76d44733b2942fc1}{getPID\_P}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00278\ }
+\DoxyCodeLine{00283\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_communication_a34b6ffcae3b31a13abe99037a234884d}{getPID\_I}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00284\ }
+\DoxyCodeLine{00289\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_communication_a13b106aa7b267d95e4b93160feec0b05}{getPID\_D}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00290\ }
+\DoxyCodeLine{00295\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_communication_afd435fd35312d895297048f5607e7476}{getOmronID}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00296\ }
+\DoxyCodeLine{00301\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_communication_aacb8bc64b62f967c94ff913bc9d58af4}{getIntervalUpdate}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00302\ }
+\DoxyCodeLine{00307\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_communication_a9ea9548f8ab7025ec6d3a797a3cd0a03}{getIntervalConectionCheck}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00308\ }
+\DoxyCodeLine{00313\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{class_communication_ab1638e2cf124e4c5694578c3d1d5090c}{timing}}\ \{}
+\DoxyCodeLine{00314\ \ \ \ \ \mbox{\hyperlink{class_communication_ab1638e2cf124e4c5694578c3d1d5090cae8fc4a2ced973ee81f1c8b2cdd697700}{modbus}}\ =\ 300,\ }
+\DoxyCodeLine{00315\ \ \ \ \ \mbox{\hyperlink{class_communication_ab1638e2cf124e4c5694578c3d1d5090cae394ac1030a5be2d94d9d23ebbf66daf}{getTempTimer}}\ =\ 500,\ }
+\DoxyCodeLine{00316\ \ \ \ \ \mbox{\hyperlink{class_communication_ab1638e2cf124e4c5694578c3d1d5090cacfeefcf3319c15c0fe0a802688c3943e}{clockUpdate}}\ =\ 50,\ }
+\DoxyCodeLine{00317\ \ \ \ \ \mbox{\hyperlink{class_communication_ab1638e2cf124e4c5694578c3d1d5090ca65ec9a4d34cd472f68f1294a34a8121a}{timeUp}}\ =\ 1000\ *\ 60\ *\ 10,\ }
+\DoxyCodeLine{00318\ \ \ \ \ \mbox{\hyperlink{class_communication_ab1638e2cf124e4c5694578c3d1d5090ca67140116da3e6c304a97f49ece3885dc}{timeOut}}\ =\ 700\ }
+\DoxyCodeLine{00319\ \ \ \ \ \};}
+\DoxyCodeLine{00320\ }
+\DoxyCodeLine{00321\ signals:}
+\DoxyCodeLine{00326\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_communication_a0feaf16daf26b74c348daf8395d2a780}{TemperatureUpdated}}(\textcolor{keywordtype}{double}\ temperature);}
+\DoxyCodeLine{00327\ }
+\DoxyCodeLine{00332\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_communication_a99b3ee7daebd86b82269e558d38b89a7}{MVUpdated}}(\textcolor{keywordtype}{double}\ MV);}
+\DoxyCodeLine{00333\ }
+\DoxyCodeLine{00338\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_communication_a9ab412f55487d76ce72b3d7b3d9ba281}{SVUpdated}}(\textcolor{keywordtype}{double}\ SV);}
+\DoxyCodeLine{00339\ }
+\DoxyCodeLine{00344\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_communication_ac2fe10e50d7b27a2218f740390427d3d}{MVupperUpdated}}(\textcolor{keywordtype}{double}\ MVupper);}
+\DoxyCodeLine{00345\ }
+\DoxyCodeLine{00350\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_communication_a48071434d4991e27589e83788f4ad0c5}{MVlowerUpdated}}(\textcolor{keywordtype}{double}\ MVlower);}
+\DoxyCodeLine{00351\ }
+\DoxyCodeLine{00356\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_communication_a7e960d415df3004947a01c1e77a9694c}{PID\_PUpdated}}(\textcolor{keywordtype}{double}\ PID\_P);}
+\DoxyCodeLine{00357\ }
+\DoxyCodeLine{00362\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_communication_ab23d3916e3546afc46f1277611e56b01}{PID\_IUpdated}}(\textcolor{keywordtype}{double}\ PID\_I);}
+\DoxyCodeLine{00363\ }
+\DoxyCodeLine{00368\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_communication_a2b24ed3da6f02cd85faf33dd33b42864}{PID\_DUpdated}}(\textcolor{keywordtype}{double}\ PID\_D);}
+\DoxyCodeLine{00369\ }
+\DoxyCodeLine{00374\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_communication_a2d3eb36896fa65903c35dece6c439ad4}{ATSendFinish}}(\textcolor{keywordtype}{int}\ atFlag);}
+\DoxyCodeLine{00375\ }
+\DoxyCodeLine{00380\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_communication_a0596ae71d743bbc479135515faa17cde}{SVSendFinish}}(\textcolor{keywordtype}{double}\ SV);}
+\DoxyCodeLine{00381\ }
+\DoxyCodeLine{00385\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_communication_a4e5a5e91ee7e514ab83728b60824df4c}{connectTimeout}}();}
+\DoxyCodeLine{00386\ }
+\DoxyCodeLine{00392\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_communication_a53e0c58bfb65fc88f1f7bc13f48c7b33}{logMsg}}(QString\ \textcolor{keywordtype}{string},\ \textcolor{keywordtype}{bool}\ newline\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00393\ }
+\DoxyCodeLine{00397\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_communication_aa48209f9bd80b5db54d5a55b5a393b93}{statusUpdate}}();}
+\DoxyCodeLine{00398\ }
+\DoxyCodeLine{00402\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_communication_a43693f08bb5417e496799672fe4b14f9}{deviceConnect}}();}
+\DoxyCodeLine{00403\ }
+\DoxyCodeLine{00407\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_communication_aa779164625ba09bb051d756ab27c2c3f}{failedConnect}}();}
+\DoxyCodeLine{00408\ }
+\DoxyCodeLine{00412\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_communication_a2b7bf2aa777d097bcbff8ac4b162297b}{OmronIDChanged}}();}
+\DoxyCodeLine{00413\ }
+\DoxyCodeLine{00418\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_communication_abe626b7eae9fd6d16897b635466926c4}{serialPortRemove}}(QString\ str);}
+\DoxyCodeLine{00419\ }
+\DoxyCodeLine{00424\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_communication_a1b207c9a7d1b917f4074119232c957a7}{intervalUpdateChanged}}(\textcolor{keywordtype}{int}\ interval);}
+\DoxyCodeLine{00425\ }
+\DoxyCodeLine{00430\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_communication_aec1bbb406a620cb1dc929a8cdeee778b}{intervalConectionCheckChanged}}(\textcolor{keywordtype}{int}\ interval);}
+\DoxyCodeLine{00431\ }
+\DoxyCodeLine{00432\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00433\ \ \ \ \ QMainWindow\ *mainwindow\_\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00434\ \ \ \ \ QStatusBar\ *statusBar\_\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00435\ \ \ \ \ QModbusRtuSerialMaster*\ omron\_\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00436\ \ \ \ \ QList<QSerialPortInfo>\ infos\_;}
+\DoxyCodeLine{00437\ \ \ \ \ QModbusTcpClient*\ modbusDevice\_\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00438\ \ \ \ \ QModbusReply\ *modbusReply\_\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00439\ \ \ \ \ QTimer\ *timerUpdate\_\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00440\ \ \ \ \ QTimer\ *connectTimer\_\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00441\ \ \ \ \ QMutex\ mutex\_;}
+\DoxyCodeLine{00442\ \ \ \ \ QString\ portName\_\{\};}
+\DoxyCodeLine{00443\ \ \ \ \ QSerialPort\ *serialPort\_\{\};}
+\DoxyCodeLine{00444\ \ \ \ \ \textcolor{keywordtype}{int}\ respondType\_\{\};}
+\DoxyCodeLine{00445\ \ \ \ \ \textcolor{keywordtype}{int}\ omronID\_\{\};}
+\DoxyCodeLine{00446\ \ \ \ \ \textcolor{keywordtype}{int}\ intervalUpdate\_\{3000\};}
+\DoxyCodeLine{00447\ \ \ \ \ \textcolor{keywordtype}{int}\ intervalConectionCheck\_\{10000\};}
+\DoxyCodeLine{00448\ \ \ \ \ \textcolor{keywordtype}{bool}\ modbusReady\_\{\textcolor{keyword}{false}\};}
+\DoxyCodeLine{00449\ \ \ \ \ \textcolor{keywordtype}{bool}\ isSerialPortRemoved\_\{\textcolor{keyword}{false}\};}
+\DoxyCodeLine{00450\ \ \ \ \ \textcolor{keywordtype}{double}\ temperature\_\{\};}
+\DoxyCodeLine{00451\ \ \ \ \ \textcolor{keywordtype}{double}\ SV\_\{\};}
+\DoxyCodeLine{00452\ \ \ \ \ \textcolor{keywordtype}{double}\ MV\_\{\};}
+\DoxyCodeLine{00453\ \ \ \ \ \textcolor{keywordtype}{double}\ MVupper\_\{\};}
+\DoxyCodeLine{00454\ \ \ \ \ \textcolor{keywordtype}{double}\ MVlower\_\{\};}
+\DoxyCodeLine{00455\ \ \ \ \ \textcolor{keywordtype}{double}\ tempDecimal\_\{0.1\};}
+\DoxyCodeLine{00456\ \ \ \ \ \textcolor{keywordtype}{double}\ pid\_P\_\{\};}
+\DoxyCodeLine{00457\ \ \ \ \ \textcolor{keywordtype}{double}\ pid\_I\_\{\};}
+\DoxyCodeLine{00458\ \ \ \ \ \textcolor{keywordtype}{double}\ pid\_D\_\{\};}
+\DoxyCodeLine{00459\ }
+\DoxyCodeLine{00460\ \ \ \ \ \textcolor{keywordtype}{void}\ Connection();}
+\DoxyCodeLine{00461\ \ \ \ \ \textcolor{keywordtype}{void}\ Run();}
+\DoxyCodeLine{00462\ \ \ \ \ \textcolor{keywordtype}{void}\ Stop();}
+\DoxyCodeLine{00463\ \ \ \ \ \textcolor{keywordtype}{void}\ sendRequestSV(\textcolor{keywordtype}{double}\ SV);}
+\DoxyCodeLine{00464\ \ \ \ \ \textcolor{keywordtype}{void}\ sendRequestAT(\textcolor{keywordtype}{int}\ afFlag);}
+\DoxyCodeLine{00465\ }
+\DoxyCodeLine{00466\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00471\ \ \ \ \ \textcolor{keywordtype}{void}\ waitForMsec(\textcolor{keywordtype}{int}\ msec);}
+\DoxyCodeLine{00472\ }
+\DoxyCodeLine{00476\ \ \ \ \ \textcolor{keywordtype}{void}\ readReady();}
+\DoxyCodeLine{00477\ }
+\DoxyCodeLine{00481\ \ \ \ \ \textcolor{keywordtype}{void}\ askStatus();}
+\DoxyCodeLine{00482\ }
+\DoxyCodeLine{00486\ \ \ \ \ \textcolor{keywordtype}{void}\ checkConnection();}
+\DoxyCodeLine{00487\ \};}
+\DoxyCodeLine{00488\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ COMMUNICATION\_H}}
+\DoxyCodeLine{00489\ }
+\DoxyCodeLine{00490\ }
+
+\end{DoxyCode}

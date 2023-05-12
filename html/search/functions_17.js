@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['y_0',['y',['../class_q_c_p_vector2_d.html#a6398fb643ba380d7961a4b208f4eecf1',1,'QCPVector2D']]]
+  ['_7ecommunication_0',['~Communication',['../class_communication.html#a75ba08ce908d45251e28e4c1db94e6f4',1,'Communication']]],
+  ['_7enotify_1',['~Notify',['../class_notify.html#a621d36ca663f0c8460c82611c708b51e',1,'Notify']]]
 ];

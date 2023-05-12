@@ -464,12 +464,26 @@ private:
     void sendRequestAT(int afFlag);
 
 private slots:
+    /**
+     * @brief Pauses the execution for a specified amount of time.
+     * @param msec The time to pause in milliseconds.
+     */
     void waitForMsec(int msec);
-    //void read(QModbusDataUnit::RegisterType type, quint16 adress, int size);
-    void readReady();
-    void askStatus();
-    void checkConnection();
 
+    /**
+     * @brief Handles the data ready signal from the Modbus device.
+     */
+    void readReady();
+
+    /**
+     * @brief Sends a request for the status of the Omron device.
+     */
+    void askStatus();
+
+    /**
+     * @brief Checks the connection to the Omron device and attempts to reconnect if necessary.
+     */
+    void checkConnection();
 };
 #endif // COMMUNICATION_H
 

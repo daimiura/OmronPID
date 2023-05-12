@@ -5,22 +5,10 @@
 A plottable representing a parametric curve in a plot.  
 
 
-
-
-Inheritance diagram for QCPCurve\+:\nopagebreak
-\begin{figure}[H]
+Inheritance diagram for QCPCurve\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=336pt]{class_q_c_p_curve__inherit__graph}
-\end{center}
-\end{figure}
-
-
-Collaboration diagram for QCPCurve\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_q_c_p_curve__coll__graph}
+\includegraphics[height=5.000000cm]{class_q_c_p_curve}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Types}
@@ -461,14 +449,14 @@ Unlike \mbox{\hyperlink{class_q_c_p_graph}{QCPGraph}}, plottables of this type m
 To plot data, assign it with the \mbox{\hyperlink{class_q_c_p_curve_a41246850d2e080bc57183ca19cd4135e}{set\+Data}} or \mbox{\hyperlink{class_q_c_p_curve_a73edf394b94f3f24f07518e30565a07f}{add\+Data}} functions. Alternatively, you can also access and modify the curve\textquotesingle{}s data via the \mbox{\hyperlink{class_q_c_p_curve_a761492fd00b1ab7cb18ce23c118c6c60}{data}} method, which returns a pointer to the internal QCPCurve\+Data\+Container.
 
 Gaps in the curve can be created by adding data points with NaN as key and value ({\ttfamily q\+QNa\+N()} or {\ttfamily std\+::numeric\+\_\+limits$<$double$>$\+::quiet\+\_\+\+Na\+N()}) in between the two data points that shall be separated.\hypertarget{class_q_c_p_curve_qcpcurve-appearance}{}\doxysubsection{Changing the appearance}\label{class_q_c_p_curve_qcpcurve-appearance}
-The appearance of the curve is determined by the pen and the brush (\mbox{\hyperlink{class_q_c_p_abstract_plottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}{set\+Pen}}, \mbox{\hyperlink{class_q_c_p_abstract_plottable_a7a4b92144dca6453a1f0f210e27edc74}{set\+Brush}}).\hypertarget{class_q_c_p_curve_qcpcurve-usage}{}\doxysubsection{Usage}\label{class_q_c_p_curve_qcpcurve-usage}
+\mbox{\hyperlink{class_the}{The}} appearance of the curve is determined by the pen and the brush (\mbox{\hyperlink{class_q_c_p_abstract_plottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}{set\+Pen}}, \mbox{\hyperlink{class_q_c_p_abstract_plottable_a7a4b92144dca6453a1f0f210e27edc74}{set\+Brush}}).\hypertarget{class_q_c_p_curve_qcpcurve-usage}{}\doxysubsection{Usage}\label{class_q_c_p_curve_qcpcurve-usage}
 Like all data representing objects in \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}, the \mbox{\hyperlink{class_q_c_p_curve}{QCPCurve}} is a plottable (\mbox{\hyperlink{class_q_c_p_abstract_plottable}{QCPAbstract\+Plottable}}). So the plottable-\/interface of \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} applies (\mbox{\hyperlink{class_q_custom_plot_a32de81ff53e263e785b83b52ecd99d6f}{QCustom\+Plot\+::plottable}}, \mbox{\hyperlink{class_q_custom_plot_af3dafd56884208474f311d6226513ab2}{QCustom\+Plot\+::remove\+Plottable}}, etc.)
 
 Usually, you first create an instance\+: 
 \begin{DoxyCodeInclude}{0}
 
 \end{DoxyCodeInclude}
- which registers it with the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance of the passed axes. Note that this \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance takes ownership of the plottable, so do not delete it manually but use \mbox{\hyperlink{class_q_custom_plot_af3dafd56884208474f311d6226513ab2}{QCustom\+Plot\+::remove\+Plottable()}} instead. The newly created plottable can be modified, e.\+g.\+: 
+ which registers it with the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance of the passed axes. Note that this \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance takes ownership of the plottable, so do not delete it manually but use \mbox{\hyperlink{class_q_custom_plot_af3dafd56884208474f311d6226513ab2}{QCustom\+Plot\+::remove\+Plottable()}} instead. \mbox{\hyperlink{class_the}{The}} newly created plottable can be modified, e.\+g.\+: 
 \begin{DoxyCodeInclude}{0}
 
 \end{DoxyCodeInclude}
@@ -481,7 +469,7 @@ Usually, you first create an instance\+:
 \doxysubsubsection{\texorpdfstring{LineStyle}{LineStyle}}
 {\footnotesize\ttfamily enum \mbox{\hyperlink{class_q_c_p_curve_a2710e9f79302152cff794c6e16cc01f1}{QCPCurve\+::\+Line\+Style}}}
 
-Defines how the curve\textquotesingle{}s line is represented visually in the plot. The line is drawn with the current pen of the curve (\mbox{\hyperlink{class_q_c_p_abstract_plottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}{set\+Pen}}). \begin{DoxySeeAlso}{See also}
+Defines how the curve\textquotesingle{}s line is represented visually in the plot. \mbox{\hyperlink{class_the}{The}} line is drawn with the current pen of the curve (\mbox{\hyperlink{class_q_c_p_abstract_plottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}{set\+Pen}}). \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_curve_a4a377ec863ff81a1875c3094a6177c19}{set\+Line\+Style}} 
 \end{DoxySeeAlso}
 \begin{DoxyEnumFields}{Enumerator}
@@ -505,7 +493,7 @@ ls\+Line&Data points are connected with a straight line. \\
 
 Constructs a curve which uses {\itshape key\+Axis} as its key axis (\char`\"{}x\char`\"{}) and {\itshape value\+Axis} as its value axis (\char`\"{}y\char`\"{}). {\itshape key\+Axis} and {\itshape value\+Axis} must reside in the same \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance and not have the same orientation. If either of these restrictions is violated, a corresponding message is printed to the debug output (q\+Debug), the construction is not aborted, though.
 
-The created \mbox{\hyperlink{class_q_c_p_curve}{QCPCurve}} is automatically registered with the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance inferred from {\itshape key\+Axis}. This \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance takes ownership of the \mbox{\hyperlink{class_q_c_p_curve}{QCPCurve}}, so do not delete it manually but use \mbox{\hyperlink{class_q_custom_plot_af3dafd56884208474f311d6226513ab2}{QCustom\+Plot\+::remove\+Plottable()}} instead. 
+\mbox{\hyperlink{class_the}{The}} created \mbox{\hyperlink{class_q_c_p_curve}{QCPCurve}} is automatically registered with the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance inferred from {\itshape key\+Axis}. This \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance takes ownership of the \mbox{\hyperlink{class_q_c_p_curve}{QCPCurve}}, so do not delete it manually but use \mbox{\hyperlink{class_q_custom_plot_af3dafd56884208474f311d6226513ab2}{QCustom\+Plot\+::remove\+Plottable()}} instead. 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_q_c_p_curve_a6424fa06da1786648c83ad13a0d0aa14}\label{class_q_c_p_curve_a6424fa06da1786648c83ad13a0d0aa14}} 
@@ -516,9 +504,9 @@ The created \mbox{\hyperlink{class_q_c_p_curve}{QCPCurve}} is automatically regi
 
 This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
 
-Adds the provided points in {\itshape keys} and {\itshape values} to the current data. The provided vectors should have equal length. Else, the number of added points will be the size of the smallest vector.
+Adds the provided points in {\itshape keys} and {\itshape values} to the current data. \mbox{\hyperlink{class_the}{The}} provided vectors should have equal length. Else, the number of added points will be the size of the smallest vector.
 
-The t parameter of each data point will be set to the integer index of the respective key/value pair.
+\mbox{\hyperlink{class_the}{The}} t parameter of each data point will be set to the integer index of the respective key/value pair.
 
 Alternatively, you can also access and modify the data directly via the \mbox{\hyperlink{class_q_c_p_curve_a761492fd00b1ab7cb18ce23c118c6c60}{data}} method, which returns a pointer to the internal data container. \mbox{\Hypertarget{class_q_c_p_curve_a73edf394b94f3f24f07518e30565a07f}\label{class_q_c_p_curve_a73edf394b94f3f24f07518e30565a07f}} 
 \index{QCPCurve@{QCPCurve}!addData@{addData}}
@@ -528,7 +516,7 @@ Alternatively, you can also access and modify the data directly via the \mbox{\h
 
 This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
 
-Adds the provided points in {\itshape t}, {\itshape keys} and {\itshape values} to the current data. The provided vectors should have equal length. Else, the number of added points will be the size of the smallest vector.
+Adds the provided points in {\itshape t}, {\itshape keys} and {\itshape values} to the current data. \mbox{\hyperlink{class_the}{The}} provided vectors should have equal length. Else, the number of added points will be the size of the smallest vector.
 
 If you can guarantee that the passed data points are sorted by {\itshape keys} in ascending order, you can set {\itshape already\+Sorted} to true, to improve performance by saving a sorting run.
 
@@ -542,7 +530,7 @@ This is an overloaded member function, provided for convenience. It differs from
 
 Adds the provided data point as {\itshape key} and {\itshape value} to the current data.
 
-The t parameter is generated automatically by increments of 1 for each point, starting at the highest t of previously existing data or 0, if the curve data is empty.
+\mbox{\hyperlink{class_the}{The}} t parameter is generated automatically by increments of 1 for each point, starting at the highest t of previously existing data or 0, if the curve data is empty.
 
 Alternatively, you can also access and modify the data directly via the \mbox{\hyperlink{class_q_c_p_curve_a761492fd00b1ab7cb18ce23c118c6c60}{data}} method, which returns a pointer to the internal data container. \mbox{\Hypertarget{class_q_c_p_curve_a13398b236f6926014e404eeb5b9f415c}\label{class_q_c_p_curve_a13398b236f6926014e404eeb5b9f415c}} 
 \index{QCPCurve@{QCPCurve}!addData@{addData}}
@@ -634,9 +622,9 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a4611b43bc
 
 This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
 
-Replaces the current data with the provided points in {\itshape keys} and {\itshape values}. The provided vectors should have equal length. Else, the number of added points will be the size of the smallest vector.
+Replaces the current data with the provided points in {\itshape keys} and {\itshape values}. \mbox{\hyperlink{class_the}{The}} provided vectors should have equal length. Else, the number of added points will be the size of the smallest vector.
 
-The t parameter of each data point will be set to the integer index of the respective key/value pair.
+\mbox{\hyperlink{class_the}{The}} t parameter of each data point will be set to the integer index of the respective key/value pair.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_curve_a73edf394b94f3f24f07518e30565a07f}{add\+Data}} 
@@ -649,7 +637,7 @@ The t parameter of each data point will be set to the integer index of the respe
 
 This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
 
-Replaces the current data with the provided points in {\itshape t}, {\itshape keys} and {\itshape values}. The provided vectors should have equal length. Else, the number of added points will be the size of the smallest vector.
+Replaces the current data with the provided points in {\itshape t}, {\itshape keys} and {\itshape values}. \mbox{\hyperlink{class_the}{The}} provided vectors should have equal length. Else, the number of added points will be the size of the smallest vector.
 
 If you can guarantee that the passed data points are sorted by {\itshape t} in ascending order, you can set {\itshape already\+Sorted} to true, to improve performance by saving a sorting run.
 

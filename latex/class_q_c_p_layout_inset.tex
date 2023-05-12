@@ -5,22 +5,10 @@
 A layout that places child elements aligned to the border or arbitrarily positioned.  
 
 
-
-
-Inheritance diagram for QCPLayout\+Inset\+:\nopagebreak
-\begin{figure}[H]
+Inheritance diagram for QCPLayout\+Inset\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=183pt]{class_q_c_p_layout_inset__inherit__graph}
-\end{center}
-\end{figure}
-
-
-Collaboration diagram for QCPLayout\+Inset\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_q_c_p_layout_inset__coll__graph}
+\includegraphics[height=5.000000cm]{class_q_c_p_layout_inset}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Types}
@@ -364,9 +352,9 @@ A layout that places child elements aligned to the border or arbitrarily positio
 
 Elements are placed either aligned to the border or at arbitrary position in the area of the layout. Which placement applies is controlled with the \mbox{\hyperlink{class_q_c_p_layout_inset_a8b9e17d9a2768293d2a7d72f5e298192}{Inset\+Placement}} (\mbox{\hyperlink{class_q_c_p_layout_inset_a63298830744d5d8c5345511c00fd2144}{set\+Inset\+Placement}}).
 
-Elements are added via \mbox{\hyperlink{class_q_c_p_layout_inset_ad61529eb576af7f04dff94abb10c745a}{add\+Element(\+QCPLayout\+Element $\ast$element, Qt\+::\+Alignment alignment)}} or \mbox{\hyperlink{class_q_c_p_layout_inset_a8ff61fbee4a1f0ff45c398009d9f1e56}{add\+Element(\+QCPLayout\+Element $\ast$element, const QRect\+F \&rect)}}. If the first method is used, the inset placement will default to \mbox{\hyperlink{class_q_c_p_layout_inset_a8b9e17d9a2768293d2a7d72f5e298192aa81e7df4a785ddee2229a8f47c46e817}{ip\+Border\+Aligned}} and the element will be aligned according to the {\itshape alignment} parameter. The second method defaults to \mbox{\hyperlink{class_q_c_p_layout_inset_a8b9e17d9a2768293d2a7d72f5e298192aa4802986ea2cea457f932b115acba59e}{ip\+Free}} and allows placing elements at arbitrary position and size, defined by {\itshape rect}.
+Elements are added via \mbox{\hyperlink{class_q_c_p_layout_inset_ad61529eb576af7f04dff94abb10c745a}{add\+Element(\+QCPLayout\+Element $\ast$element, Qt\+::\+Alignment alignment)}} or \mbox{\hyperlink{class_q_c_p_layout_inset_a8ff61fbee4a1f0ff45c398009d9f1e56}{add\+Element(\+QCPLayout\+Element $\ast$element, const QRect\+F \&rect)}}. If the first method is used, the inset placement will default to \mbox{\hyperlink{class_q_c_p_layout_inset_a8b9e17d9a2768293d2a7d72f5e298192aa81e7df4a785ddee2229a8f47c46e817}{ip\+Border\+Aligned}} and the element will be aligned according to the {\itshape alignment} parameter. \mbox{\hyperlink{class_the}{The}} second method defaults to \mbox{\hyperlink{class_q_c_p_layout_inset_a8b9e17d9a2768293d2a7d72f5e298192aa4802986ea2cea457f932b115acba59e}{ip\+Free}} and allows placing elements at arbitrary position and size, defined by {\itshape rect}.
 
-The alignment or rect can be set via \mbox{\hyperlink{class_q_c_p_layout_inset_a62882a4f9ad58bb0f53da12fde022abe}{set\+Inset\+Alignment}} or \mbox{\hyperlink{class_q_c_p_layout_inset_aa487c8378a6f9533567a2e6430099dc3}{set\+Inset\+Rect}}, respectively.
+\mbox{\hyperlink{class_the}{The}} alignment or rect can be set via \mbox{\hyperlink{class_q_c_p_layout_inset_a62882a4f9ad58bb0f53da12fde022abe}{set\+Inset\+Alignment}} or \mbox{\hyperlink{class_q_c_p_layout_inset_aa487c8378a6f9533567a2e6430099dc3}{set\+Inset\+Rect}}, respectively.
 
 This is the layout that every \mbox{\hyperlink{class_q_c_p_axis_rect}{QCPAxis\+Rect}} has as \mbox{\hyperlink{class_q_c_p_axis_rect_a949f803466619924c7018df4b511ae10}{QCPAxis\+Rect\+::inset\+Layout}}. 
 
@@ -379,11 +367,11 @@ This is the layout that every \mbox{\hyperlink{class_q_c_p_axis_rect}{QCPAxis\+R
 
 Defines how the placement and sizing is handled for a certain element in a \mbox{\hyperlink{class_q_c_p_layout_inset}{QCPLayout\+Inset}}. \begin{DoxyEnumFields}{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{ipFree@{ipFree}!QCPLayoutInset@{QCPLayoutInset}}\index{QCPLayoutInset@{QCPLayoutInset}!ipFree@{ipFree}}}\mbox{\Hypertarget{class_q_c_p_layout_inset_a8b9e17d9a2768293d2a7d72f5e298192aa4802986ea2cea457f932b115acba59e}\label{class_q_c_p_layout_inset_a8b9e17d9a2768293d2a7d72f5e298192aa4802986ea2cea457f932b115acba59e}} 
-ip\+Free&The element may be positioned/sized arbitrarily, see \mbox{\hyperlink{class_q_c_p_layout_inset_aa487c8378a6f9533567a2e6430099dc3}{set\+Inset\+Rect}}. \\
+ip\+Free&\mbox{\hyperlink{class_the}{The}} element may be positioned/sized arbitrarily, see \mbox{\hyperlink{class_q_c_p_layout_inset_aa487c8378a6f9533567a2e6430099dc3}{set\+Inset\+Rect}}. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{ipBorderAligned@{ipBorderAligned}!QCPLayoutInset@{QCPLayoutInset}}\index{QCPLayoutInset@{QCPLayoutInset}!ipBorderAligned@{ipBorderAligned}}}\mbox{\Hypertarget{class_q_c_p_layout_inset_a8b9e17d9a2768293d2a7d72f5e298192aa81e7df4a785ddee2229a8f47c46e817}\label{class_q_c_p_layout_inset_a8b9e17d9a2768293d2a7d72f5e298192aa81e7df4a785ddee2229a8f47c46e817}} 
-ip\+Border\+Aligned&The element is aligned to one of the layout sides, see \mbox{\hyperlink{class_q_c_p_layout_inset_a62882a4f9ad58bb0f53da12fde022abe}{set\+Inset\+Alignment}}. \\
+ip\+Border\+Aligned&\mbox{\hyperlink{class_the}{The}} element is aligned to one of the layout sides, see \mbox{\hyperlink{class_q_c_p_layout_inset_a62882a4f9ad58bb0f53da12fde022abe}{set\+Inset\+Alignment}}. \\
 \hline
 
 \end{DoxyEnumFields}
@@ -405,7 +393,7 @@ Creates an instance of \mbox{\hyperlink{class_q_c_p_layout_inset}{QCPLayout\+Ins
 \doxysubsubsection{\texorpdfstring{addElement()}{addElement()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily void QCPLayout\+Inset\+::add\+Element (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}} $\ast$}]{element,  }\item[{const QRectF \&}]{rect }\end{DoxyParamCaption})}
 
-Adds the specified {\itshape element} to the layout as an inset with free positioning/sizing (\mbox{\hyperlink{class_q_c_p_layout_inset_a62882a4f9ad58bb0f53da12fde022abe}{set\+Inset\+Alignment}} is initialized with \mbox{\hyperlink{class_q_c_p_layout_inset_a8b9e17d9a2768293d2a7d72f5e298192aa4802986ea2cea457f932b115acba59e}{ip\+Free}}). The position and size is set to {\itshape rect}.
+Adds the specified {\itshape element} to the layout as an inset with free positioning/sizing (\mbox{\hyperlink{class_q_c_p_layout_inset_a62882a4f9ad58bb0f53da12fde022abe}{set\+Inset\+Alignment}} is initialized with \mbox{\hyperlink{class_q_c_p_layout_inset_a8b9e17d9a2768293d2a7d72f5e298192aa4802986ea2cea457f932b115acba59e}{ip\+Free}}). \mbox{\hyperlink{class_the}{The}} position and size is set to {\itshape rect}.
 
 {\itshape rect} is given in fractions of the whole inset layout rect. So an inset with rect (0, 0, 1, 1) will span the entire layout. An inset with rect (0.\+6, 0.\+1, 0.\+35, 0.\+35) will be in the top right corner of the layout, with 35\% width and height of the parent layout.
 
@@ -418,7 +406,7 @@ Adds the specified {\itshape element} to the layout as an inset with free positi
 \doxysubsubsection{\texorpdfstring{addElement()}{addElement()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily void QCPLayout\+Inset\+::add\+Element (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}} $\ast$}]{element,  }\item[{Qt\+::\+Alignment}]{alignment }\end{DoxyParamCaption})}
 
-Adds the specified {\itshape element} to the layout as an inset aligned at the border (\mbox{\hyperlink{class_q_c_p_layout_inset_a62882a4f9ad58bb0f53da12fde022abe}{set\+Inset\+Alignment}} is initialized with \mbox{\hyperlink{class_q_c_p_layout_inset_a8b9e17d9a2768293d2a7d72f5e298192aa81e7df4a785ddee2229a8f47c46e817}{ip\+Border\+Aligned}}). The alignment is set to {\itshape alignment}.
+Adds the specified {\itshape element} to the layout as an inset aligned at the border (\mbox{\hyperlink{class_q_c_p_layout_inset_a62882a4f9ad58bb0f53da12fde022abe}{set\+Inset\+Alignment}} is initialized with \mbox{\hyperlink{class_q_c_p_layout_inset_a8b9e17d9a2768293d2a7d72f5e298192aa81e7df4a785ddee2229a8f47c46e817}{ip\+Border\+Aligned}}). \mbox{\hyperlink{class_the}{The}} alignment is set to {\itshape alignment}.
 
 {\itshape alignment} is an or combination of the following alignment flags\+: Qt\+::\+Align\+Left, Qt\+::\+Align\+HCenter, Qt\+::\+Aligh\+Right, Qt\+::\+Align\+Top, Qt\+::\+Align\+VCenter, Qt\+::\+Align\+Bottom. Any other alignment flags will be ignored.
 
@@ -463,7 +451,7 @@ Implements \mbox{\hyperlink{class_q_c_p_layout_a39d3e9ef5d9b82ab1885ba1cb9597e56
 \doxysubsubsection{\texorpdfstring{insetAlignment()}{insetAlignment()}}
 {\footnotesize\ttfamily Qt\+::\+Alignment QCPLayout\+Inset\+::inset\+Alignment (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const}
 
-Returns the alignment of the element with the specified {\itshape index}. The alignment only has a meaning, if the inset placement (\mbox{\hyperlink{class_q_c_p_layout_inset_a63298830744d5d8c5345511c00fd2144}{set\+Inset\+Placement}}) is \mbox{\hyperlink{class_q_c_p_layout_inset_a8b9e17d9a2768293d2a7d72f5e298192aa81e7df4a785ddee2229a8f47c46e817}{ip\+Border\+Aligned}}. \mbox{\Hypertarget{class_q_c_p_layout_inset_a6fcbd74ebbc45bfe64c604b2791aa57f}\label{class_q_c_p_layout_inset_a6fcbd74ebbc45bfe64c604b2791aa57f}} 
+Returns the alignment of the element with the specified {\itshape index}. \mbox{\hyperlink{class_the}{The}} alignment only has a meaning, if the inset placement (\mbox{\hyperlink{class_q_c_p_layout_inset_a63298830744d5d8c5345511c00fd2144}{set\+Inset\+Placement}}) is \mbox{\hyperlink{class_q_c_p_layout_inset_a8b9e17d9a2768293d2a7d72f5e298192aa81e7df4a785ddee2229a8f47c46e817}{ip\+Border\+Aligned}}. \mbox{\Hypertarget{class_q_c_p_layout_inset_a6fcbd74ebbc45bfe64c604b2791aa57f}\label{class_q_c_p_layout_inset_a6fcbd74ebbc45bfe64c604b2791aa57f}} 
 \index{QCPLayoutInset@{QCPLayoutInset}!insetPlacement@{insetPlacement}}
 \index{insetPlacement@{insetPlacement}!QCPLayoutInset@{QCPLayoutInset}}
 \doxysubsubsection{\texorpdfstring{insetPlacement()}{insetPlacement()}}
@@ -475,13 +463,13 @@ Returns the placement type of the element with the specified {\itshape index}. \
 \doxysubsubsection{\texorpdfstring{insetRect()}{insetRect()}}
 {\footnotesize\ttfamily QRectF QCPLayout\+Inset\+::inset\+Rect (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const}
 
-Returns the rect of the element with the specified {\itshape index}. The rect only has a meaning, if the inset placement (\mbox{\hyperlink{class_q_c_p_layout_inset_a63298830744d5d8c5345511c00fd2144}{set\+Inset\+Placement}}) is \mbox{\hyperlink{class_q_c_p_layout_inset_a8b9e17d9a2768293d2a7d72f5e298192aa4802986ea2cea457f932b115acba59e}{ip\+Free}}. \mbox{\Hypertarget{class_q_c_p_layout_inset_a2eeef7ea1b8340e7c7c2e2fc229df5ea}\label{class_q_c_p_layout_inset_a2eeef7ea1b8340e7c7c2e2fc229df5ea}} 
+Returns the rect of the element with the specified {\itshape index}. \mbox{\hyperlink{class_the}{The}} rect only has a meaning, if the inset placement (\mbox{\hyperlink{class_q_c_p_layout_inset_a63298830744d5d8c5345511c00fd2144}{set\+Inset\+Placement}}) is \mbox{\hyperlink{class_q_c_p_layout_inset_a8b9e17d9a2768293d2a7d72f5e298192aa4802986ea2cea457f932b115acba59e}{ip\+Free}}. \mbox{\Hypertarget{class_q_c_p_layout_inset_a2eeef7ea1b8340e7c7c2e2fc229df5ea}\label{class_q_c_p_layout_inset_a2eeef7ea1b8340e7c7c2e2fc229df5ea}} 
 \index{QCPLayoutInset@{QCPLayoutInset}!selectTest@{selectTest}}
 \index{selectTest@{selectTest}!QCPLayoutInset@{QCPLayoutInset}}
 \doxysubsubsection{\texorpdfstring{selectTest()}{selectTest()}}
 {\footnotesize\ttfamily double QCPLayout\+Inset\+::select\+Test (\begin{DoxyParamCaption}\item[{const QPointF \&}]{pos,  }\item[{bool}]{only\+Selectable,  }\item[{QVariant $\ast$}]{details = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
 
-The inset layout is sensitive to events only at areas where its (visible) child elements are sensitive. If the select\+Test method of any of the child elements returns a positive number for {\itshape pos}, this method returns a value corresponding to 0.\+99 times the parent plot\textquotesingle{}s selection tolerance. The inset layout is not selectable itself by default. So if {\itshape only\+Selectable} is true, -\/1.\+0 is returned.
+\mbox{\hyperlink{class_the}{The}} inset layout is sensitive to events only at areas where its (visible) child elements are sensitive. If the select\+Test method of any of the child elements returns a positive number for {\itshape pos}, this method returns a value corresponding to 0.\+99 times the parent plot\textquotesingle{}s selection tolerance. \mbox{\hyperlink{class_the}{The}} inset layout is not selectable itself by default. So if {\itshape only\+Selectable} is true, -\/1.\+0 is returned.
 
 See \mbox{\hyperlink{class_q_c_p_layerable_a04db8351fefd44cfdb77958e75c6288e}{QCPLayerable\+::select\+Test}} for a general explanation of this virtual method. 
 
@@ -522,7 +510,7 @@ Note that the minimum and maximum sizes of the embedded element (\mbox{\hyperlin
 \doxysubsubsection{\texorpdfstring{simplify()}{simplify()}}
 {\footnotesize\ttfamily void QCPLayout\+Inset\+::simplify (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
-The QCPInset\+Layout does not need simplification since it can never have empty cells due to its linear index structure. This method does nothing. 
+\mbox{\hyperlink{class_the}{The}} QCPInset\+Layout does not need simplification since it can never have empty cells due to its linear index structure. This method does nothing. 
 
 Reimplemented from \mbox{\hyperlink{class_q_c_p_layout_a41e6ac049143866e8f8b4964efab01b2}{QCPLayout}}.
 

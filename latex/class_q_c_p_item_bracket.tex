@@ -5,22 +5,10 @@
 A bracket for referencing/highlighting certain parts in the plot.  
 
 
-
-
-Inheritance diagram for QCPItem\+Bracket\+:\nopagebreak
-\begin{figure}[H]
+Inheritance diagram for QCPItem\+Bracket\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=173pt]{class_q_c_p_item_bracket__inherit__graph}
-\end{center}
-\end{figure}
-
-
-Collaboration diagram for QCPItem\+Bracket\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_q_c_p_item_bracket__coll__graph}
+\includegraphics[height=4.000000cm]{class_q_c_p_item_bracket}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Types}
@@ -306,7 +294,7 @@ A bracket for referencing/highlighting certain parts in the plot.
 
 It has two positions, {\itshape left} and {\itshape right}, which define the span of the bracket. If {\itshape left} is actually farther to the left than {\itshape right}, the bracket is opened to the bottom, as shown in the example image.
 
-The bracket supports multiple styles via \mbox{\hyperlink{class_q_c_p_item_bracket_a612dffa2373422eef8754d690add3703}{set\+Style}}. The length, i.\+e. how far the bracket stretches away from the embraced span, can be controlled with \mbox{\hyperlink{class_q_c_p_item_bracket_ac7cfc3da7da9b5c5ac5dfbe4f0351b2a}{set\+Length}}.
+\mbox{\hyperlink{class_the}{The}} bracket supports multiple styles via \mbox{\hyperlink{class_q_c_p_item_bracket_a612dffa2373422eef8754d690add3703}{set\+Style}}. \mbox{\hyperlink{class_the}{The}} length, i.\+e. how far the bracket stretches away from the embraced span, can be controlled with \mbox{\hyperlink{class_q_c_p_item_bracket_ac7cfc3da7da9b5c5ac5dfbe4f0351b2a}{set\+Length}}.
 
  \begin{center}Demonstrating the effect of different values for \mbox{\hyperlink{class_q_c_p_item_bracket_ac7cfc3da7da9b5c5ac5dfbe4f0351b2a}{set\+Length}}, for styles \mbox{\hyperlink{class_q_c_p_item_bracket_a7ac3afd0b24a607054e7212047d59dbda8f29f5ef754e2dc9a9efdedb2face0f3}{bs\+Calligraphic}} and \mbox{\hyperlink{class_q_c_p_item_bracket_a7ac3afd0b24a607054e7212047d59dbda7f9df4a7359bfe3dac1dbe4ccf5d220c}{bs\+Square}}. Anchors and positions are displayed for reference.\end{center} 
 
@@ -319,7 +307,7 @@ It provides an anchor {\itshape center}, to allow connection of other items, e.\
 \doxysubsubsection{\texorpdfstring{BracketStyle}{BracketStyle}}
 {\footnotesize\ttfamily enum \mbox{\hyperlink{class_q_c_p_item_bracket_a7ac3afd0b24a607054e7212047d59dbd}{QCPItem\+Bracket\+::\+Bracket\+Style}}}
 
-Defines the various visual shapes of the bracket item. The appearance can be further modified by \mbox{\hyperlink{class_q_c_p_item_bracket_ac7cfc3da7da9b5c5ac5dfbe4f0351b2a}{set\+Length}} and \mbox{\hyperlink{class_q_c_p_item_bracket_ab13001d9cc5d8f9e56ea15bdda682acb}{set\+Pen}}.
+Defines the various visual shapes of the bracket item. \mbox{\hyperlink{class_the}{The}} appearance can be further modified by \mbox{\hyperlink{class_q_c_p_item_bracket_ac7cfc3da7da9b5c5ac5dfbe4f0351b2a}{set\+Length}} and \mbox{\hyperlink{class_q_c_p_item_bracket_ab13001d9cc5d8f9e56ea15bdda682acb}{set\+Pen}}.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_item_bracket_a612dffa2373422eef8754d690add3703}{set\+Style}} 
@@ -353,7 +341,7 @@ bs\+Calligraphic&A curly brace with varying stroke width giving a calligraphic i
 
 Creates a bracket item and sets default values.
 
-The created item is automatically registered with {\itshape parent\+Plot}. This \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance takes ownership of the item, so do not delete it manually but use \mbox{\hyperlink{class_q_custom_plot_ae04446557292551e8fb6e2c106e1848d}{QCustom\+Plot\+::remove\+Item()}} instead. 
+\mbox{\hyperlink{class_the}{The}} created item is automatically registered with {\itshape parent\+Plot}. This \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance takes ownership of the item, so do not delete it manually but use \mbox{\hyperlink{class_q_custom_plot_ae04446557292551e8fb6e2c106e1848d}{QCustom\+Plot\+::remove\+Item()}} instead. 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_q_c_p_item_bracket_a008d87325d26b6616d368cec06027cce}\label{class_q_c_p_item_bracket_a008d87325d26b6616d368cec06027cce}} 
@@ -390,9 +378,9 @@ If the object is represented not by single lines but by an area like a \mbox{\hy
 
 Providing a constant value for area objects allows selecting line objects even when they are obscured by such area objects, by clicking close to the lines (i.\+e. closer than 0.\+99$\ast$selection\+Tolerance).
 
-The actual setting of the selection state is not done by this function. This is handled by the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} when the mouse\+Release\+Event occurs, and the finally selected object is notified via the select\+Event/ deselect\+Event methods.
+\mbox{\hyperlink{class_the}{The}} actual setting of the selection state is not done by this function. This is handled by the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} when the mouse\+Release\+Event occurs, and the finally selected object is notified via the select\+Event/ deselect\+Event methods.
 
-{\itshape details} is an optional output parameter. Every layerable subclass may place any information in {\itshape details}. This information will be passed to select\+Event when the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} decides on the basis of this select\+Test call, that the object was successfully selected. The subsequent call to select\+Event will carry the {\itshape details}. This is useful for multi-\/part objects (like \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}}). This way, a possibly complex calculation to decide which part was clicked is only done once in \mbox{\hyperlink{class_q_c_p_item_bracket_a49a6b2f41e0a8c2a2e3a2836027a8455}{select\+Test}}. The result (i.\+e. the actually clicked part) can then be placed in {\itshape details}. So in the subsequent select\+Event, the decision which part was selected doesn\textquotesingle{}t have to be done a second time for a single selection operation.
+{\itshape details} is an optional output parameter. Every layerable subclass may place any information in {\itshape details}. This information will be passed to select\+Event when the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} decides on the basis of this select\+Test call, that the object was successfully selected. \mbox{\hyperlink{class_the}{The}} subsequent call to select\+Event will carry the {\itshape details}. This is useful for multi-\/part objects (like \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}}). This way, a possibly complex calculation to decide which part was clicked is only done once in \mbox{\hyperlink{class_q_c_p_item_bracket_a49a6b2f41e0a8c2a2e3a2836027a8455}{select\+Test}}. \mbox{\hyperlink{class_the}{The}} result (i.\+e. the actually clicked part) can then be placed in {\itshape details}. So in the subsequent select\+Event, the decision which part was selected doesn\textquotesingle{}t have to be done a second time for a single selection operation.
 
 You may pass 0 as {\itshape details} to indicate that you are not interested in those selection details.
 

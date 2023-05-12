@@ -5,22 +5,10 @@
 A plottable that adds a set of error bars to other plottables.  
 
 
-
-
-Inheritance diagram for QCPError\+Bars\+:\nopagebreak
-\begin{figure}[H]
+Inheritance diagram for QCPError\+Bars\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=336pt]{class_q_c_p_error_bars__inherit__graph}
-\end{center}
-\end{figure}
-
-
-Collaboration diagram for QCPError\+Bars\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_q_c_p_error_bars__coll__graph}
+\includegraphics[height=4.000000cm]{class_q_c_p_error_bars}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Types}
@@ -432,14 +420,14 @@ A plottable that adds a set of error bars to other plottables.
 
 
 
-The \mbox{\hyperlink{class_q_c_p_error_bars}{QCPError\+Bars}} plottable can be attached to other one-\/dimensional plottables (e.\+g. \mbox{\hyperlink{class_q_c_p_graph}{QCPGraph}}, \mbox{\hyperlink{class_q_c_p_curve}{QCPCurve}}, \mbox{\hyperlink{class_q_c_p_bars}{QCPBars}}, etc.) and equips them with error bars.
+\mbox{\hyperlink{class_the}{The}} \mbox{\hyperlink{class_q_c_p_error_bars}{QCPError\+Bars}} plottable can be attached to other one-\/dimensional plottables (e.\+g. \mbox{\hyperlink{class_q_c_p_graph}{QCPGraph}}, \mbox{\hyperlink{class_q_c_p_curve}{QCPCurve}}, \mbox{\hyperlink{class_q_c_p_bars}{QCPBars}}, etc.) and equips them with error bars.
 
-Use \mbox{\hyperlink{class_q_c_p_error_bars_aabb42a964cfbf780cd1c79850c7cd989}{set\+Data\+Plottable}} to define for which plottable the \mbox{\hyperlink{class_q_c_p_error_bars}{QCPError\+Bars}} shall display the error bars. The orientation of the error bars can be controlled with \mbox{\hyperlink{class_q_c_p_error_bars_af0af493d454a8f3a0908830160680d2b}{set\+Error\+Type}}.
+Use \mbox{\hyperlink{class_q_c_p_error_bars_aabb42a964cfbf780cd1c79850c7cd989}{set\+Data\+Plottable}} to define for which plottable the \mbox{\hyperlink{class_q_c_p_error_bars}{QCPError\+Bars}} shall display the error bars. \mbox{\hyperlink{class_the}{The}} orientation of the error bars can be controlled with \mbox{\hyperlink{class_q_c_p_error_bars_af0af493d454a8f3a0908830160680d2b}{set\+Error\+Type}}.
 
-By using \mbox{\hyperlink{class_q_c_p_error_bars_a92b1980003255f5f7c05407a4d92aabc}{set\+Data}}, you can supply the actual error data, either as symmetric error or plus/minus asymmetric errors. \mbox{\hyperlink{class_q_c_p_error_bars}{QCPError\+Bars}} only stores the error data. The absolute key/value position of each error bar will be adopted from the configured data plottable. The error data of the \mbox{\hyperlink{class_q_c_p_error_bars}{QCPError\+Bars}} are associated one-\/to-\/one via their index to the data points of the data plottable. You can directly access and manipulate the error bar data via \mbox{\hyperlink{class_q_c_p_error_bars_aeebd1b14f4c3573565efafd514988813}{data}}.
+By using \mbox{\hyperlink{class_q_c_p_error_bars_a92b1980003255f5f7c05407a4d92aabc}{set\+Data}}, you can supply the actual error data, either as symmetric error or plus/minus asymmetric errors. \mbox{\hyperlink{class_q_c_p_error_bars}{QCPError\+Bars}} only stores the error data. \mbox{\hyperlink{class_the}{The}} absolute key/value position of each error bar will be adopted from the configured data plottable. \mbox{\hyperlink{class_the}{The}} error data of the \mbox{\hyperlink{class_q_c_p_error_bars}{QCPError\+Bars}} are associated one-\/to-\/one via their index to the data points of the data plottable. You can directly access and manipulate the error bar data via \mbox{\hyperlink{class_q_c_p_error_bars_aeebd1b14f4c3573565efafd514988813}{data}}.
 
 Set either of the plus/minus errors to NaN ({\ttfamily q\+QNa\+N()} or {\ttfamily std\+::numeric\+\_\+limits$<$double$>$\+::quiet\+\_\+\+Na\+N()}) to not show the respective error bar on the data point at that index.\hypertarget{class_q_c_p_error_bars_qcperrorbars-appearance}{}\doxysubsection{Changing the appearance}\label{class_q_c_p_error_bars_qcperrorbars-appearance}
-The appearance of the error bars is defined by the pen (\mbox{\hyperlink{class_q_c_p_abstract_plottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}{set\+Pen}}), and the width of the whiskers (\mbox{\hyperlink{class_q_c_p_error_bars_ad05f6ff9e46c6047f1cd2459744b7b59}{set\+Whisker\+Width}}). Further, the error bar backbones may leave a gap around the data point center to prevent that error bars are drawn too close to or even through scatter points. This gap size can be controlled via \mbox{\hyperlink{class_q_c_p_error_bars_a280ee8d863d8a2630c309701d019b3de}{set\+Symbol\+Gap}}. 
+\mbox{\hyperlink{class_the}{The}} appearance of the error bars is defined by the pen (\mbox{\hyperlink{class_q_c_p_abstract_plottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}{set\+Pen}}), and the width of the whiskers (\mbox{\hyperlink{class_q_c_p_error_bars_ad05f6ff9e46c6047f1cd2459744b7b59}{set\+Whisker\+Width}}). Further, the error bar backbones may leave a gap around the data point center to prevent that error bars are drawn too close to or even through scatter points. This gap size can be controlled via \mbox{\hyperlink{class_q_c_p_error_bars_a280ee8d863d8a2630c309701d019b3de}{set\+Symbol\+Gap}}. 
 
 \doxysubsection{Member Enumeration Documentation}
 \mbox{\Hypertarget{class_q_c_p_error_bars_a95f0220f11a72648b96480a85ce26474}\label{class_q_c_p_error_bars_a95f0220f11a72648b96480a85ce26474}} 
@@ -455,11 +443,11 @@ Defines in which orientation the error bars shall appear. If your data needs bot
 \end{DoxySeeAlso}
 \begin{DoxyEnumFields}{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{etKeyError@{etKeyError}!QCPErrorBars@{QCPErrorBars}}\index{QCPErrorBars@{QCPErrorBars}!etKeyError@{etKeyError}}}\mbox{\Hypertarget{class_q_c_p_error_bars_a95f0220f11a72648b96480a85ce26474a9fca24d20d5376e41be216fc9b08cd21}\label{class_q_c_p_error_bars_a95f0220f11a72648b96480a85ce26474a9fca24d20d5376e41be216fc9b08cd21}} 
-et\+Key\+Error&The errors are for the key dimension (bars appear parallel to the key axis) \\
+et\+Key\+Error&\mbox{\hyperlink{class_the}{The}} errors are for the key dimension (bars appear parallel to the key axis) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{etValueError@{etValueError}!QCPErrorBars@{QCPErrorBars}}\index{QCPErrorBars@{QCPErrorBars}!etValueError@{etValueError}}}\mbox{\Hypertarget{class_q_c_p_error_bars_a95f0220f11a72648b96480a85ce26474a5f760fc9c0a98c7f1e93e33bf54e9d83}\label{class_q_c_p_error_bars_a95f0220f11a72648b96480a85ce26474a5f760fc9c0a98c7f1e93e33bf54e9d83}} 
-et\+Value\+Error&The errors are for the value dimension (bars appear parallel to the value axis) \\
+et\+Value\+Error&\mbox{\hyperlink{class_the}{The}} errors are for the value dimension (bars appear parallel to the value axis) \\
 \hline
 
 \end{DoxyEnumFields}
@@ -476,7 +464,7 @@ Constructs an error bars plottable which uses {\itshape key\+Axis} as its key ax
 
 It is also important that the {\itshape key\+Axis} and {\itshape value\+Axis} are the same for the error bars plottable and the data plottable that the error bars shall be drawn on (\mbox{\hyperlink{class_q_c_p_error_bars_aabb42a964cfbf780cd1c79850c7cd989}{set\+Data\+Plottable}}).
 
-The created \mbox{\hyperlink{class_q_c_p_error_bars}{QCPError\+Bars}} is automatically registered with the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance inferred from {\itshape key\+Axis}. This \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance takes ownership of the \mbox{\hyperlink{class_q_c_p_error_bars}{QCPError\+Bars}}, so do not delete it manually but use \mbox{\hyperlink{class_q_custom_plot_af3dafd56884208474f311d6226513ab2}{QCustom\+Plot\+::remove\+Plottable()}} instead. 
+\mbox{\hyperlink{class_the}{The}} created \mbox{\hyperlink{class_q_c_p_error_bars}{QCPError\+Bars}} is automatically registered with the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance inferred from {\itshape key\+Axis}. This \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance takes ownership of the \mbox{\hyperlink{class_q_c_p_error_bars}{QCPError\+Bars}}, so do not delete it manually but use \mbox{\hyperlink{class_q_custom_plot_af3dafd56884208474f311d6226513ab2}{QCustom\+Plot\+::remove\+Plottable()}} instead. 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_q_c_p_error_bars_aae296ad9817b3fa418db284af81cecf8}\label{class_q_c_p_error_bars_aae296ad9817b3fa418db284af81cecf8}} 
@@ -487,7 +475,7 @@ The created \mbox{\hyperlink{class_q_c_p_error_bars}{QCPError\+Bars}} is automat
 
 This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
 
-Adds symmetrical error values as specified in {\itshape error}. The errors will be associated one-\/to-\/one by the data point index to the associated data plottable (\mbox{\hyperlink{class_q_c_p_error_bars_aabb42a964cfbf780cd1c79850c7cd989}{set\+Data\+Plottable}}).
+Adds symmetrical error values as specified in {\itshape error}. \mbox{\hyperlink{class_the}{The}} errors will be associated one-\/to-\/one by the data point index to the associated data plottable (\mbox{\hyperlink{class_q_c_p_error_bars_aabb42a964cfbf780cd1c79850c7cd989}{set\+Data\+Plottable}}).
 
 You can directly access and manipulate the error bar data via \mbox{\hyperlink{class_q_c_p_error_bars_aeebd1b14f4c3573565efafd514988813}{data}}.
 
@@ -502,7 +490,7 @@ You can directly access and manipulate the error bar data via \mbox{\hyperlink{c
 
 This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
 
-Adds asymmetrical errors as specified in {\itshape error\+Minus} and {\itshape error\+Plus}. The errors will be associated one-\/to-\/one by the data point index to the associated data plottable (\mbox{\hyperlink{class_q_c_p_error_bars_aabb42a964cfbf780cd1c79850c7cd989}{set\+Data\+Plottable}}).
+Adds asymmetrical errors as specified in {\itshape error\+Minus} and {\itshape error\+Plus}. \mbox{\hyperlink{class_the}{The}} errors will be associated one-\/to-\/one by the data point index to the associated data plottable (\mbox{\hyperlink{class_q_c_p_error_bars_aabb42a964cfbf780cd1c79850c7cd989}{set\+Data\+Plottable}}).
 
 You can directly access and manipulate the error bar data via \mbox{\hyperlink{class_q_c_p_error_bars_aeebd1b14f4c3573565efafd514988813}{data}}.
 
@@ -517,7 +505,7 @@ You can directly access and manipulate the error bar data via \mbox{\hyperlink{c
 
 This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
 
-Adds a single symmetrical error bar as specified in {\itshape error}. The errors will be associated one-\/to-\/one by the data point index to the associated data plottable (\mbox{\hyperlink{class_q_c_p_error_bars_aabb42a964cfbf780cd1c79850c7cd989}{set\+Data\+Plottable}}).
+Adds a single symmetrical error bar as specified in {\itshape error}. \mbox{\hyperlink{class_the}{The}} errors will be associated one-\/to-\/one by the data point index to the associated data plottable (\mbox{\hyperlink{class_q_c_p_error_bars_aabb42a964cfbf780cd1c79850c7cd989}{set\+Data\+Plottable}}).
 
 You can directly access and manipulate the error bar data via \mbox{\hyperlink{class_q_c_p_error_bars_aeebd1b14f4c3573565efafd514988813}{data}}.
 
@@ -532,7 +520,7 @@ You can directly access and manipulate the error bar data via \mbox{\hyperlink{c
 
 This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
 
-Adds a single asymmetrical error bar as specified in {\itshape error\+Minus} and {\itshape error\+Plus}. The errors will be associated one-\/to-\/one by the data point index to the associated data plottable (\mbox{\hyperlink{class_q_c_p_error_bars_aabb42a964cfbf780cd1c79850c7cd989}{set\+Data\+Plottable}}).
+Adds a single asymmetrical error bar as specified in {\itshape error\+Minus} and {\itshape error\+Plus}. \mbox{\hyperlink{class_the}{The}} errors will be associated one-\/to-\/one by the data point index to the associated data plottable (\mbox{\hyperlink{class_q_c_p_error_bars_aabb42a964cfbf780cd1c79850c7cd989}{set\+Data\+Plottable}}).
 
 You can directly access and manipulate the error bar data via \mbox{\hyperlink{class_q_c_p_error_bars_aeebd1b14f4c3573565efafd514988813}{data}}.
 
@@ -739,9 +727,9 @@ If the object is represented not by single lines but by an area like a \mbox{\hy
 
 Providing a constant value for area objects allows selecting line objects even when they are obscured by such area objects, by clicking close to the lines (i.\+e. closer than 0.\+99$\ast$selection\+Tolerance).
 
-The actual setting of the selection state is not done by this function. This is handled by the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} when the mouse\+Release\+Event occurs, and the finally selected object is notified via the select\+Event/ deselect\+Event methods.
+\mbox{\hyperlink{class_the}{The}} actual setting of the selection state is not done by this function. This is handled by the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} when the mouse\+Release\+Event occurs, and the finally selected object is notified via the select\+Event/ deselect\+Event methods.
 
-{\itshape details} is an optional output parameter. Every layerable subclass may place any information in {\itshape details}. This information will be passed to select\+Event when the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} decides on the basis of this select\+Test call, that the object was successfully selected. The subsequent call to select\+Event will carry the {\itshape details}. This is useful for multi-\/part objects (like \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}}). This way, a possibly complex calculation to decide which part was clicked is only done once in \mbox{\hyperlink{class_q_c_p_error_bars_ac1b6675ef43e32547a3cbcf7b7ac46ed}{select\+Test}}. The result (i.\+e. the actually clicked part) can then be placed in {\itshape details}. So in the subsequent select\+Event, the decision which part was selected doesn\textquotesingle{}t have to be done a second time for a single selection operation.
+{\itshape details} is an optional output parameter. Every layerable subclass may place any information in {\itshape details}. This information will be passed to select\+Event when the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} decides on the basis of this select\+Test call, that the object was successfully selected. \mbox{\hyperlink{class_the}{The}} subsequent call to select\+Event will carry the {\itshape details}. This is useful for multi-\/part objects (like \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}}). This way, a possibly complex calculation to decide which part was clicked is only done once in \mbox{\hyperlink{class_q_c_p_error_bars_ac1b6675ef43e32547a3cbcf7b7ac46ed}{select\+Test}}. \mbox{\hyperlink{class_the}{The}} result (i.\+e. the actually clicked part) can then be placed in {\itshape details}. So in the subsequent select\+Event, the decision which part was selected doesn\textquotesingle{}t have to be done a second time for a single selection operation.
 
 You may pass 0 as {\itshape details} to indicate that you are not interested in those selection details.
 
@@ -781,7 +769,7 @@ Implements \mbox{\hyperlink{class_q_c_p_plottable_interface1_d_a67093e4ccf490ff5
 
 This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
 
-Sets symmetrical error values as specified in {\itshape error}. The errors will be associated one-\/to-\/one by the data point index to the associated data plottable (\mbox{\hyperlink{class_q_c_p_error_bars_aabb42a964cfbf780cd1c79850c7cd989}{set\+Data\+Plottable}}).
+Sets symmetrical error values as specified in {\itshape error}. \mbox{\hyperlink{class_the}{The}} errors will be associated one-\/to-\/one by the data point index to the associated data plottable (\mbox{\hyperlink{class_q_c_p_error_bars_aabb42a964cfbf780cd1c79850c7cd989}{set\+Data\+Plottable}}).
 
 You can directly access and manipulate the error bar data via \mbox{\hyperlink{class_q_c_p_error_bars_aeebd1b14f4c3573565efafd514988813}{data}}.
 
@@ -796,7 +784,7 @@ You can directly access and manipulate the error bar data via \mbox{\hyperlink{c
 
 This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
 
-Sets asymmetrical errors as specified in {\itshape error\+Minus} and {\itshape error\+Plus}. The errors will be associated one-\/to-\/one by the data point index to the associated data plottable (\mbox{\hyperlink{class_q_c_p_error_bars_aabb42a964cfbf780cd1c79850c7cd989}{set\+Data\+Plottable}}).
+Sets asymmetrical errors as specified in {\itshape error\+Minus} and {\itshape error\+Plus}. \mbox{\hyperlink{class_the}{The}} errors will be associated one-\/to-\/one by the data point index to the associated data plottable (\mbox{\hyperlink{class_q_c_p_error_bars_aabb42a964cfbf780cd1c79850c7cd989}{set\+Data\+Plottable}}).
 
 You can directly access and manipulate the error bar data via \mbox{\hyperlink{class_q_c_p_error_bars_aeebd1b14f4c3573565efafd514988813}{data}}.
 
@@ -834,9 +822,9 @@ If you do not wish to share containers, but create a copy from an existing conta
 \doxysubsubsection{\texorpdfstring{setDataPlottable()}{setDataPlottable()}}
 {\footnotesize\ttfamily void QCPError\+Bars\+::set\+Data\+Plottable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_abstract_plottable}{QCPAbstract\+Plottable}} $\ast$}]{plottable }\end{DoxyParamCaption})}
 
-Sets the data plottable to which the error bars will be applied. The error values specified e.\+g. via \mbox{\hyperlink{class_q_c_p_error_bars_a92b1980003255f5f7c05407a4d92aabc}{set\+Data}} will be associated one-\/to-\/one by the data point index to the data points of {\itshape plottable}. This means that the error bars will adopt the key/value coordinates of the data point with the same index.
+Sets the data plottable to which the error bars will be applied. \mbox{\hyperlink{class_the}{The}} error values specified e.\+g. via \mbox{\hyperlink{class_q_c_p_error_bars_a92b1980003255f5f7c05407a4d92aabc}{set\+Data}} will be associated one-\/to-\/one by the data point index to the data points of {\itshape plottable}. This means that the error bars will adopt the key/value coordinates of the data point with the same index.
 
-The passed {\itshape plottable} must be a one-\/dimensional plottable, i.\+e. it must implement the \mbox{\hyperlink{class_q_c_p_plottable_interface1_d}{QCPPlottable\+Interface1D}}. Further, it must not be a \mbox{\hyperlink{class_q_c_p_error_bars}{QCPError\+Bars}} instance itself. If either of these restrictions is violated, a corresponding q\+Debug output is generated, and the data plottable of this \mbox{\hyperlink{class_q_c_p_error_bars}{QCPError\+Bars}} instance is set to zero.
+\mbox{\hyperlink{class_the}{The}} passed {\itshape plottable} must be a one-\/dimensional plottable, i.\+e. it must implement the \mbox{\hyperlink{class_q_c_p_plottable_interface1_d}{QCPPlottable\+Interface1D}}. Further, it must not be a \mbox{\hyperlink{class_q_c_p_error_bars}{QCPError\+Bars}} instance itself. If either of these restrictions is violated, a corresponding q\+Debug output is generated, and the data plottable of this \mbox{\hyperlink{class_q_c_p_error_bars}{QCPError\+Bars}} instance is set to zero.
 
 For proper display, care must also be taken that the key and value axes of the {\itshape plottable} match those configured for this \mbox{\hyperlink{class_q_c_p_error_bars}{QCPError\+Bars}} instance. \mbox{\Hypertarget{class_q_c_p_error_bars_af0af493d454a8f3a0908830160680d2b}\label{class_q_c_p_error_bars_af0af493d454a8f3a0908830160680d2b}} 
 \index{QCPErrorBars@{QCPErrorBars}!setErrorType@{setErrorType}}

@@ -21,12 +21,15 @@ var searchData=
   ['lmbuffered_18',['lmBuffered',['../class_q_c_p_layer.html#a67dcfc1590be2a1f2227c5a39bb59c7cab581b9fab3007c4c65f057f4185d7538',1,'QCPLayer']]],
   ['lmlogical_19',['lmLogical',['../class_q_c_p_layer.html#a67dcfc1590be2a1f2227c5a39bb59c7ca02eb5e9a4cb7f1baf1e2b6b99e3b87ce',1,'QCPLayer']]],
   ['loadpreset_20',['loadPreset',['../class_q_c_p_color_gradient.html#aa0aeec1528241728b9671bf8e60b1622',1,'QCPColorGradient']]],
-  ['lsimpulse_21',['lsImpulse',['../class_q_c_p_graph.html#ad60175cd9b5cac937c5ee685c32c0859aa3b358b4ae7cca94aceeb8e529c12ebb',1,'QCPGraph']]],
-  ['lsinside_22',['lsInside',['../class_q_c_p_axis.html#a24b13374b9b8f75f47eed2ea78c37db9aae7b027ac2839cf4ad611df30236fc3f',1,'QCPAxis']]],
-  ['lsline_23',['lsLine',['../class_q_c_p_graph.html#ad60175cd9b5cac937c5ee685c32c0859a3c42a27b15aa3c92d399082fad8b7515',1,'QCPGraph::lsLine()'],['../class_q_c_p_curve.html#a2710e9f79302152cff794c6e16cc01f1ade5822ce6fbf131d3df131795c2e1003',1,'QCPCurve::lsLine()']]],
-  ['lsnone_24',['lsNone',['../class_q_c_p_graph.html#ad60175cd9b5cac937c5ee685c32c0859aea9591b933733cc7b20786b71e60fa04',1,'QCPGraph::lsNone()'],['../class_q_c_p_curve.html#a2710e9f79302152cff794c6e16cc01f1aec1601a191cdf0b4e761c4c66092cc48',1,'QCPCurve::lsNone()']]],
-  ['lsoutside_25',['lsOutside',['../class_q_c_p_axis.html#a24b13374b9b8f75f47eed2ea78c37db9a2eadb509fc0c9a8b35b85c86ec9f3c7a',1,'QCPAxis']]],
-  ['lsstepcenter_26',['lsStepCenter',['../class_q_c_p_graph.html#ad60175cd9b5cac937c5ee685c32c0859a5adf7b04da215a40a764c21294ea7366',1,'QCPGraph']]],
-  ['lsstepleft_27',['lsStepLeft',['../class_q_c_p_graph.html#ad60175cd9b5cac937c5ee685c32c0859ae10568bda57836487d9dec5eba1d6c6e',1,'QCPGraph']]],
-  ['lsstepright_28',['lsStepRight',['../class_q_c_p_graph.html#ad60175cd9b5cac937c5ee685c32c0859a9c37951f7d11aa070100fd16f2935c9e',1,'QCPGraph']]]
+  ['logingstart_21',['logingStart',['../class_data_summary.html#af084f99cb72bc2e4b3331f20bdd9b2b7',1,'DataSummary']]],
+  ['logingstop_22',['logingStop',['../class_data_summary.html#a97d2892a28a7e5f80805fda31e88d855',1,'DataSummary']]],
+  ['logmsg_23',['logMsg',['../class_communication.html#a53e0c58bfb65fc88f1f7bc13f48c7b33',1,'Communication']]],
+  ['lsimpulse_24',['lsImpulse',['../class_q_c_p_graph.html#ad60175cd9b5cac937c5ee685c32c0859aa3b358b4ae7cca94aceeb8e529c12ebb',1,'QCPGraph']]],
+  ['lsinside_25',['lsInside',['../class_q_c_p_axis.html#a24b13374b9b8f75f47eed2ea78c37db9aae7b027ac2839cf4ad611df30236fc3f',1,'QCPAxis']]],
+  ['lsline_26',['lsLine',['../class_q_c_p_graph.html#ad60175cd9b5cac937c5ee685c32c0859a3c42a27b15aa3c92d399082fad8b7515',1,'QCPGraph::lsLine()'],['../class_q_c_p_curve.html#a2710e9f79302152cff794c6e16cc01f1ade5822ce6fbf131d3df131795c2e1003',1,'QCPCurve::lsLine()']]],
+  ['lsnone_27',['lsNone',['../class_q_c_p_graph.html#ad60175cd9b5cac937c5ee685c32c0859aea9591b933733cc7b20786b71e60fa04',1,'QCPGraph::lsNone()'],['../class_q_c_p_curve.html#a2710e9f79302152cff794c6e16cc01f1aec1601a191cdf0b4e761c4c66092cc48',1,'QCPCurve::lsNone()']]],
+  ['lsoutside_28',['lsOutside',['../class_q_c_p_axis.html#a24b13374b9b8f75f47eed2ea78c37db9a2eadb509fc0c9a8b35b85c86ec9f3c7a',1,'QCPAxis']]],
+  ['lsstepcenter_29',['lsStepCenter',['../class_q_c_p_graph.html#ad60175cd9b5cac937c5ee685c32c0859a5adf7b04da215a40a764c21294ea7366',1,'QCPGraph']]],
+  ['lsstepleft_30',['lsStepLeft',['../class_q_c_p_graph.html#ad60175cd9b5cac937c5ee685c32c0859ae10568bda57836487d9dec5eba1d6c6e',1,'QCPGraph']]],
+  ['lsstepright_31',['lsStepRight',['../class_q_c_p_graph.html#ad60175cd9b5cac937c5ee685c32c0859a9c37951f7d11aa070100fd16f2935c9e',1,'QCPGraph']]]
 ];

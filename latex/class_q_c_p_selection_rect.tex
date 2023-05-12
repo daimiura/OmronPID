@@ -5,22 +5,10 @@
 Provides rect/rubber-\/band data selection and range zoom interaction.  
 
 
-
-
-Inheritance diagram for QCPSelection\+Rect\+:\nopagebreak
-\begin{figure}[H]
+Inheritance diagram for QCPSelection\+Rect\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=178pt]{class_q_c_p_selection_rect__inherit__graph}
-\end{center}
-\end{figure}
-
-
-Collaboration diagram for QCPSelection\+Rect\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_q_c_p_selection_rect__coll__graph}
+\includegraphics[height=3.000000cm]{class_q_c_p_selection_rect}
 \end{center}
 \end{figure}
 \doxysubsection*{Signals}
@@ -205,11 +193,11 @@ Provides rect/rubber-\/band data selection and range zoom interaction.
 
 \mbox{\hyperlink{class_q_c_p_selection_rect}{QCPSelection\+Rect}} is used by \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} when the \mbox{\hyperlink{class_q_custom_plot_a810ef958ebe84db661c7288b526c0deb}{QCustom\+Plot\+::set\+Selection\+Rect\+Mode}} is not \mbox{\hyperlink{namespace_q_c_p_ac9aa4d6d81ac76b094f9af9ad2d3aacfa9032f170490d67240a6c68c2638ffab1}{QCP\+::srm\+None}}. When the user drags the mouse across the plot, the current selection rect instance (\mbox{\hyperlink{class_q_custom_plot_a0c09f96df15faa4799ad7051bb16cf33}{QCustom\+Plot\+::set\+Selection\+Rect}}) is forwarded these events and makes sure an according rect shape is drawn. At the begin, during, and after completion of the interaction, it emits the corresponding signals \mbox{\hyperlink{class_q_c_p_selection_rect_a7b7162d19f4f2174d3644ff1a5d335aa}{started}}, \mbox{\hyperlink{class_q_c_p_selection_rect_a1bab11026bca52740c2e6682623e6964}{changed}}, \mbox{\hyperlink{class_q_c_p_selection_rect_aeb82009393c90130102dccf36477b906}{canceled}}, and \mbox{\hyperlink{class_q_c_p_selection_rect_a15a43542e1f7b953a44c260b419e6d2c}{accepted}}.
 
-The \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance connects own slots to the current selection rect instance, in order to react to an accepted selection rect interaction accordingly.
+\mbox{\hyperlink{class_the}{The}} \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance connects own slots to the current selection rect instance, in order to react to an accepted selection rect interaction accordingly.
 
 \mbox{\hyperlink{class_q_c_p_selection_rect_ad27c1569c6ea8fa48e24b81e2a302df3}{is\+Active}} can be used to check whether the selection rect is currently active. An ongoing selection interaction can be cancelled programmatically via calling \mbox{\hyperlink{class_q_c_p_selection_rect_af67bc58f4f5ce9a4dc420b9c42de235a}{cancel}} at any time.
 
-The appearance of the selection rect can be controlled via \mbox{\hyperlink{class_q_c_p_selection_rect_ada20b7fb1b2dcbe50523262636b06963}{set\+Pen}} and \mbox{\hyperlink{class_q_c_p_selection_rect_ab0c66f1484418782efa01f4153611080}{set\+Brush}}.
+\mbox{\hyperlink{class_the}{The}} appearance of the selection rect can be controlled via \mbox{\hyperlink{class_q_c_p_selection_rect_ada20b7fb1b2dcbe50523262636b06963}{set\+Pen}} and \mbox{\hyperlink{class_q_c_p_selection_rect_ab0c66f1484418782efa01f4153611080}{set\+Brush}}.
 
 If you wish to provide custom behaviour, e.\+g. a different visual representation of the selection rect (QCPSelection\+Rect\+::draw), you can subclass \mbox{\hyperlink{class_q_c_p_selection_rect}{QCPSelection\+Rect}} and pass an instance of your subclass to \mbox{\hyperlink{class_q_custom_plot_a0c09f96df15faa4799ad7051bb16cf33}{QCustom\+Plot\+::set\+Selection\+Rect}}. 
 
@@ -247,7 +235,7 @@ Implements \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}.
 \doxysubsubsection{\texorpdfstring{cancel()}{cancel()}}
 {\footnotesize\ttfamily void QCPSelection\+Rect\+::cancel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-If there is currently a selection interaction going on (\mbox{\hyperlink{class_q_c_p_selection_rect_ad27c1569c6ea8fa48e24b81e2a302df3}{is\+Active}}), the interaction is canceled. The selection rect will emit the \mbox{\hyperlink{class_q_c_p_selection_rect_aeb82009393c90130102dccf36477b906}{canceled}} signal. \mbox{\Hypertarget{class_q_c_p_selection_rect_aeb82009393c90130102dccf36477b906}\label{class_q_c_p_selection_rect_aeb82009393c90130102dccf36477b906}} 
+If there is currently a selection interaction going on (\mbox{\hyperlink{class_q_c_p_selection_rect_ad27c1569c6ea8fa48e24b81e2a302df3}{is\+Active}}), the interaction is canceled. \mbox{\hyperlink{class_the}{The}} selection rect will emit the \mbox{\hyperlink{class_q_c_p_selection_rect_aeb82009393c90130102dccf36477b906}{canceled}} signal. \mbox{\Hypertarget{class_q_c_p_selection_rect_aeb82009393c90130102dccf36477b906}\label{class_q_c_p_selection_rect_aeb82009393c90130102dccf36477b906}} 
 \index{QCPSelectionRect@{QCPSelectionRect}!canceled@{canceled}}
 \index{canceled@{canceled}!QCPSelectionRect@{QCPSelectionRect}}
 \doxysubsubsection{\texorpdfstring{canceled}{canceled}}
@@ -255,7 +243,7 @@ If there is currently a selection interaction going on (\mbox{\hyperlink{class_q
 
 This signal is emitted when the selection interaction was cancelled. Note that {\itshape event} is 0 if the selection interaction was cancelled programmatically, by a call to \mbox{\hyperlink{class_q_c_p_selection_rect_af67bc58f4f5ce9a4dc420b9c42de235a}{cancel}}.
 
-The user may cancel the selection interaction by pressing the escape key. In this case, {\itshape event} holds the respective input event.
+\mbox{\hyperlink{class_the}{The}} user may cancel the selection interaction by pressing the escape key. In this case, {\itshape event} holds the respective input event.
 
 Note that {\itshape rect} may have a negative width or height, if the selection is being dragged to the upper or left side of the selection rect origin. \mbox{\Hypertarget{class_q_c_p_selection_rect_a1bab11026bca52740c2e6682623e6964}\label{class_q_c_p_selection_rect_a1bab11026bca52740c2e6682623e6964}} 
 \index{QCPSelectionRect@{QCPSelectionRect}!changed@{changed}}

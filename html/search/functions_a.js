@@ -11,5 +11,8 @@ var searchData=
   ['length_8',['length',['../class_q_c_p_vector2_d.html#a10adb5ab031fe94f0b64a3c5aefb552e',1,'QCPVector2D::length()'],['../class_q_c_p_data_range.html#a1e7836058f755c6ab9f11996477b7150',1,'QCPDataRange::length()']]],
   ['lengthsquared_9',['lengthSquared',['../class_q_c_p_vector2_d.html#a766585459d84cb149334fda1a498b2e5',1,'QCPVector2D']]],
   ['limititeratorstodatarange_10',['limitIteratorsToDataRange',['../class_q_c_p_data_container.html#aa1b36f5ae86a5a5a0b92141d3a0945c4',1,'QCPDataContainer']]],
-  ['loadpreset_11',['loadPreset',['../class_q_c_p_color_gradient.html#aa0aeec1528241728b9671bf8e60b1622',1,'QCPColorGradient']]]
+  ['loadpreset_11',['loadPreset',['../class_q_c_p_color_gradient.html#aa0aeec1528241728b9671bf8e60b1622',1,'QCPColorGradient']]],
+  ['logingstart_12',['logingStart',['../class_data_summary.html#af084f99cb72bc2e4b3331f20bdd9b2b7',1,'DataSummary']]],
+  ['logingstop_13',['logingStop',['../class_data_summary.html#a97d2892a28a7e5f80805fda31e88d855',1,'DataSummary']]],
+  ['logmsg_14',['logMsg',['../class_communication.html#a53e0c58bfb65fc88f1f7bc13f48c7b33',1,'Communication']]]
 ];
