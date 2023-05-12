@@ -1,15 +1,10 @@
 #include "safety.h"
 
 Safety::Safety(Communication* com)
-    : com_(com),
-      timerMVCheck_(new QTimer(this)),
-      timerTempChange_(new QTimer(this)),
-      intervalTempChange_(10000),
-      numberOfCheck_(10),
-      checkNumber_(0),
-      intervalMVCheck_(10000)
 {
-  vTempChangeData_.clear();
+  com_ = com;
+  timerMVCheck_ = new QTimer(this);
+  timerTempChange_ = new QTimer(this);
   timerMVCheck_->setInterval(intervalMVCheck_);
   timerTempChange_->setInterval(intervalTempChange_);
   connect(timerMVCheck_, &QTimer::timeout, this, &Safety::isMVupper);

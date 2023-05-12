@@ -9,20 +9,15 @@
 
 Communication::Communication(QMainWindow *parent, QStatusBar *statusBar)
     : QObject(parent),
-      omron_(nullptr),
-      modbusDevice_(nullptr),
-      modbusReply_(nullptr),
-      timerUpdate_(new QTimer(this)),
-      connectTimer_(new QTimer(this)),
       statusBar_(statusBar)
 {
   mutex_.lock();
   mainwindow_ = qobject_cast<MainWindow*>(parent);
-  // シリアルポートの検索とコンボボックスへの追加
   const auto infos = QSerialPortInfo::availablePorts();
   infos_ = infos;
   omron_= new QModbusRtuSerialMaster(this);
-  // タイマーの設定
+  timerUpdate_ = new QTimer(this);
+  connectTimer_ = new QTimer(this);
   connect(connectTimer_, &QTimer::timeout, this, &Communication::checkConnection);
   connect(timerUpdate_, &QTimer::timeout, this, &Communication::askStatus);
  }
