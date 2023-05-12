@@ -1,15 +1,10 @@
 #include "safety.h"
 
-Safety::Safety(Communication* com)
-    : com_(com),
-      timerMVCheck_(new QTimer(this)),
-      timerTempChange_(new QTimer(this)),
-      intervalTempChange_(10000),
-      numberOfCheck_(10),
-      checkNumber_(0),
-      intervalMVCheck_(10000)
+Safety::Safety(DataSummary* data)
 {
-  vTempChangeData_.clear();
+  data_ = data;
+  timerMVCheck_ = new QTimer(this);
+  timerTempChange_ = new QTimer(this);
   timerMVCheck_->setInterval(intervalMVCheck_);
   timerTempChange_->setInterval(intervalTempChange_);
   connect(timerMVCheck_, &QTimer::timeout, this, &Safety::isMVupper);
@@ -27,14 +22,14 @@ Safety::Safety(Communication* com)
 Safety::~Safety(){
   delete timerMVCheck_;
   delete timerTempChange_;
-  delete com_;
+  delete data_;
   mutex_.unlock();
   vTempChangeData_.clear();
 }
 
 void Safety::checkTemperature(){
   QMutexLocker locker(&mutex_);
-  temperature_ = com_->getTemperature();
+  temperature_ = data_->getTemperature();
   addTemperature(temperature_);
   if (temperature_ >= permitedMaxTemp_) emit dangerSignal(0);
   diffTemp_ = diffTemp();
@@ -49,7 +44,7 @@ void Safety::checkTempChange() {
     emit escapeTempCheckChange(0);
     return;
   }
-  double temp = com_->getTemperature();
+  double temp = data_->getTemperature();
   if (temp >= ignoreLower_ && temp <= ignoreUpper_){
     checkNumber_ = 0;
     vTempChangeData_.clear();
@@ -63,7 +58,7 @@ void Safety::checkTempChange() {
   timerTempChange_->start();
   qDebug() << "checkTempCange at " << checkNumber_;
   if (checkNumber_ <= numberOfCheck_){
-    vTempChangeData_.push_back(com_->getTemperature());
+    vTempChangeData_.push_back(data_->getTemperature());
     checkNumber_ ++;
     return;
   }
@@ -73,8 +68,8 @@ void Safety::checkTempChange() {
   double ave = movingAverage(vdiff, 3);
   if (ave <= tempChangeThreshold_) {
     emit dangerSignal(1);
-    timerTempChange_->stop(); // 温度取得を停止
-    timerMVCheck_->stop(); // 温度取得を停止
+    timerTempChange_->stop();
+    timerMVCheck_->stop();
   } else {
     timerMVCheck_->stop();
   }
@@ -97,9 +92,10 @@ double Safety::movingAverage(QVector<double> data, int wsize) const {
 
 
 bool Safety::isMVupper(){
-  setMV(com_->getMV());
-  setMVUpper(com_->getMVupper());
-  if (MV_ == MVUpper_) {
+  qDebug() << "Safey function works every " << intervalMVCheck_ ;
+  setMV(data_->getMV());
+  setMVUpper(data_->getMVUpper());
+  if (MV_ >= MVUpper_) {
       qDebug() << "MV reached MVupper";
       isMVupper_ = true;
       emit MVupperReachedUpperLimit();

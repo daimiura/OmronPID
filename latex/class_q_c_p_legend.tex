@@ -5,22 +5,10 @@
 Manages a legend inside a \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}.  
 
 
-
-
-Inheritance diagram for QCPLegend\+:\nopagebreak
-\begin{figure}[H]
+Inheritance diagram for QCPLegend\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=183pt]{class_q_c_p_legend__inherit__graph}
-\end{center}
-\end{figure}
-
-
-Collaboration diagram for QCPLegend\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_q_c_p_legend__coll__graph}
+\includegraphics[height=6.000000cm]{class_q_c_p_legend}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Types}
@@ -616,9 +604,9 @@ Manages a legend inside a \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}.
 
 A legend is a small box somewhere in the plot which lists plottables with their name and icon.
 
-A legend is populated with legend items by calling \mbox{\hyperlink{class_q_c_p_abstract_plottable_aa64e93cb5b606d8110d2cc0a349bb30f}{QCPAbstract\+Plottable\+::add\+To\+Legend}} on the plottable, for which a legend item shall be created. In the case of the main legend (\mbox{\hyperlink{class_q_custom_plot_a4eadcd237dc6a09938b68b16877fa6af}{QCustom\+Plot\+::legend}}), simply adding plottables to the plot while \mbox{\hyperlink{class_q_custom_plot_ad8858410c2db47b7104040a3aa61c3fc}{QCustom\+Plot\+::set\+Auto\+Add\+Plottable\+To\+Legend}} is set to true (the default) creates corresponding legend items. The legend item associated with a certain plottable can be removed with \mbox{\hyperlink{class_q_c_p_abstract_plottable_a3cc235007e2343a65ad4f463767e0e20}{QCPAbstract\+Plottable\+::remove\+From\+Legend}}. However, \mbox{\hyperlink{class_q_c_p_legend}{QCPLegend}} also offers an interface to add and manipulate legend items directly\+: \mbox{\hyperlink{class_q_c_p_legend_acfe9694c45104a3359d3806ed366fcf7}{item}}, \mbox{\hyperlink{class_q_c_p_legend_a91e790002d8bf15a20628a8e8841e397}{item\+With\+Plottable}}, \mbox{\hyperlink{class_q_c_p_legend_a57ab86ab8b2a3762d4c1455eb5452c88}{item\+Count}}, \mbox{\hyperlink{class_q_c_p_legend_a3ab274de52d2951faea45a6d975e6b3f}{add\+Item}}, \mbox{\hyperlink{class_q_c_p_legend_ac91595c3eaa746fe6321d2eb952c63bb}{remove\+Item}}, etc.
+A legend is populated with legend items by calling \mbox{\hyperlink{class_q_c_p_abstract_plottable_aa64e93cb5b606d8110d2cc0a349bb30f}{QCPAbstract\+Plottable\+::add\+To\+Legend}} on the plottable, for which a legend item shall be created. In the case of the main legend (\mbox{\hyperlink{class_q_custom_plot_a4eadcd237dc6a09938b68b16877fa6af}{QCustom\+Plot\+::legend}}), simply adding plottables to the plot while \mbox{\hyperlink{class_q_custom_plot_ad8858410c2db47b7104040a3aa61c3fc}{QCustom\+Plot\+::set\+Auto\+Add\+Plottable\+To\+Legend}} is set to true (the default) creates corresponding legend items. \mbox{\hyperlink{class_the}{The}} legend item associated with a certain plottable can be removed with \mbox{\hyperlink{class_q_c_p_abstract_plottable_a3cc235007e2343a65ad4f463767e0e20}{QCPAbstract\+Plottable\+::remove\+From\+Legend}}. However, \mbox{\hyperlink{class_q_c_p_legend}{QCPLegend}} also offers an interface to add and manipulate legend items directly\+: \mbox{\hyperlink{class_q_c_p_legend_acfe9694c45104a3359d3806ed366fcf7}{item}}, \mbox{\hyperlink{class_q_c_p_legend_a91e790002d8bf15a20628a8e8841e397}{item\+With\+Plottable}}, \mbox{\hyperlink{class_q_c_p_legend_a57ab86ab8b2a3762d4c1455eb5452c88}{item\+Count}}, \mbox{\hyperlink{class_q_c_p_legend_a3ab274de52d2951faea45a6d975e6b3f}{add\+Item}}, \mbox{\hyperlink{class_q_c_p_legend_ac91595c3eaa746fe6321d2eb952c63bb}{remove\+Item}}, etc.
 
-Since \mbox{\hyperlink{class_q_c_p_legend}{QCPLegend}} derives from \mbox{\hyperlink{class_q_c_p_layout_grid}{QCPLayout\+Grid}}, it can be placed in any position a \mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}} may be positioned. The legend items are themselves \mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Elements}} which are placed in the grid layout of the legend. \mbox{\hyperlink{class_q_c_p_legend}{QCPLegend}} only adds an interface specialized for handling child elements of type \mbox{\hyperlink{class_q_c_p_abstract_legend_item}{QCPAbstract\+Legend\+Item}}, as mentioned above. In principle, any other layout elements may also be added to a legend via the normal \mbox{\hyperlink{class_q_c_p_layout_grid}{QCPLayout\+Grid}} interface. See the special page about \mbox{\hyperlink{}{The Layout System}} for examples on how to add other elements to the legend and move it outside the axis rect.
+Since \mbox{\hyperlink{class_q_c_p_legend}{QCPLegend}} derives from \mbox{\hyperlink{class_q_c_p_layout_grid}{QCPLayout\+Grid}}, it can be placed in any position a \mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}} may be positioned. \mbox{\hyperlink{class_the}{The}} legend items are themselves \mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Elements}} which are placed in the grid layout of the legend. \mbox{\hyperlink{class_q_c_p_legend}{QCPLegend}} only adds an interface specialized for handling child elements of type \mbox{\hyperlink{class_q_c_p_abstract_legend_item}{QCPAbstract\+Legend\+Item}}, as mentioned above. In principle, any other layout elements may also be added to a legend via the normal \mbox{\hyperlink{class_q_c_p_layout_grid}{QCPLayout\+Grid}} interface. See the special page about \mbox{\hyperlink{}{The Layout System}} for examples on how to add other elements to the legend and move it outside the axis rect.
 
 Use the methods \mbox{\hyperlink{class_q_c_p_layout_grid_affc2f3cfd22f28698c5b29b960d2a391}{set\+Fill\+Order}} and \mbox{\hyperlink{class_q_c_p_layout_grid_ab36af18d77e4428386d02970382ee598}{set\+Wrap}} inherited from \mbox{\hyperlink{class_q_c_p_layout_grid}{QCPLayout\+Grid}} to control in which order (column first or row first) the legend is filled up when calling \mbox{\hyperlink{class_q_c_p_legend_a3ab274de52d2951faea45a6d975e6b3f}{add\+Item}}, and at which column or row wrapping occurs.
 
@@ -642,7 +630,7 @@ sp\+None&{\ttfamily 0x000} None \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{spLegendBox@{spLegendBox}!QCPLegend@{QCPLegend}}\index{QCPLegend@{QCPLegend}!spLegendBox@{spLegendBox}}}\mbox{\Hypertarget{class_q_c_p_legend_a5404de8bc1e4a994ca4ae69e2c7072f1a0fa4758962a46fa1dc9da818abae23c4}\label{class_q_c_p_legend_a5404de8bc1e4a994ca4ae69e2c7072f1a0fa4758962a46fa1dc9da818abae23c4}} 
-sp\+Legend\+Box&{\ttfamily 0x001} The legend box (frame) \\
+sp\+Legend\+Box&{\ttfamily 0x001} \mbox{\hyperlink{class_the}{The}} legend box (frame) \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{spItems@{spItems}!QCPLegend@{QCPLegend}}\index{QCPLegend@{QCPLegend}!spItems@{spItems}}}\mbox{\Hypertarget{class_q_c_p_legend_a5404de8bc1e4a994ca4ae69e2c7072f1a768bfb95f323db4c66473375032c0af7}\label{class_q_c_p_legend_a5404de8bc1e4a994ca4ae69e2c7072f1a768bfb95f323db4c66473375032c0af7}} 
@@ -670,11 +658,11 @@ Note that by default, \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} alre
 \doxysubsubsection{\texorpdfstring{addItem()}{addItem()}}
 {\footnotesize\ttfamily bool QCPLegend\+::add\+Item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_abstract_legend_item}{QCPAbstract\+Legend\+Item}} $\ast$}]{item }\end{DoxyParamCaption})}
 
-Adds {\itshape item} to the legend, if it\textquotesingle{}s not present already. The element is arranged according to the current fill order (\mbox{\hyperlink{class_q_c_p_layout_grid_affc2f3cfd22f28698c5b29b960d2a391}{set\+Fill\+Order}}) and wrapping (\mbox{\hyperlink{class_q_c_p_layout_grid_ab36af18d77e4428386d02970382ee598}{set\+Wrap}}).
+Adds {\itshape item} to the legend, if it\textquotesingle{}s not present already. \mbox{\hyperlink{class_the}{The}} element is arranged according to the current fill order (\mbox{\hyperlink{class_q_c_p_layout_grid_affc2f3cfd22f28698c5b29b960d2a391}{set\+Fill\+Order}}) and wrapping (\mbox{\hyperlink{class_q_c_p_layout_grid_ab36af18d77e4428386d02970382ee598}{set\+Wrap}}).
 
 Returns true on sucess, i.\+e. if the item wasn\textquotesingle{}t in the list already and has been successfuly added.
 
-The legend takes ownership of the item.
+\mbox{\hyperlink{class_the}{The}} legend takes ownership of the item.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_legend_ac91595c3eaa746fe6321d2eb952c63bb}{remove\+Item}}, \mbox{\hyperlink{class_q_c_p_legend_acfe9694c45104a3359d3806ed366fcf7}{item}}, \mbox{\hyperlink{class_q_c_p_legend_ad0f698e33db454a6c103b5206740e599}{has\+Item}} 
@@ -992,7 +980,7 @@ Sets the pen legend items will use to draw their icon borders, when they are sel
 
 Sets the selected state of the respective legend parts described by \mbox{\hyperlink{class_q_c_p_legend_a5404de8bc1e4a994ca4ae69e2c7072f1}{Selectable\+Part}}. When a part is selected, it uses a different pen/font and brush. If some legend items are selected and {\itshape selected} doesn\textquotesingle{}t contain \mbox{\hyperlink{class_q_c_p_legend_a5404de8bc1e4a994ca4ae69e2c7072f1a768bfb95f323db4c66473375032c0af7}{sp\+Items}}, those items become deselected.
 
-The entire selection mechanism is handled automatically when \mbox{\hyperlink{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5}{QCustom\+Plot\+::set\+Interactions}} contains i\+Select\+Legend. You only need to call this function when you wish to change the selection state manually.
+\mbox{\hyperlink{class_the}{The}} entire selection mechanism is handled automatically when \mbox{\hyperlink{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5}{QCustom\+Plot\+::set\+Interactions}} contains i\+Select\+Legend. You only need to call this function when you wish to change the selection state manually.
 
 This function can change the selection state of a part even when \mbox{\hyperlink{class_q_c_p_legend_a9ce60aa8bbd89f62ae4fa83ac6c60110}{set\+Selectable\+Parts}} was set to a value that actually excludes the part.
 

@@ -5,22 +5,10 @@
 A legend item representing a plottable with an icon and the plottable name.  
 
 
-
-
-Inheritance diagram for QCPPlottable\+Legend\+Item\+:\nopagebreak
-\begin{figure}[H]
+Inheritance diagram for QCPPlottable\+Legend\+Item\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=206pt]{class_q_c_p_plottable_legend_item__inherit__graph}
-\end{center}
-\end{figure}
-
-
-Collaboration diagram for QCPPlottable\+Legend\+Item\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_q_c_p_plottable_legend_item__coll__graph}
+\includegraphics[height=5.000000cm]{class_q_c_p_plottable_legend_item}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
@@ -371,11 +359,11 @@ void \mbox{\hyperlink{class_q_c_p_layerable_abbf8657cedea73ac1c3499b521c90eba}{l
 \doxysubsection{Detailed Description}
 A legend item representing a plottable with an icon and the plottable name. 
 
-This is the standard legend item for plottables. It displays an icon of the plottable next to the plottable name. The icon is drawn by the respective plottable itself (QCPAbstract\+Plottable\+::draw\+Legend\+Icon), and tries to give an intuitive symbol for the plottable. For example, the \mbox{\hyperlink{class_q_c_p_graph}{QCPGraph}} draws a centered horizontal line and/or a single scatter point in the middle.
+This is the standard legend item for plottables. It displays an icon of the plottable next to the plottable name. \mbox{\hyperlink{class_the}{The}} icon is drawn by the respective plottable itself (QCPAbstract\+Plottable\+::draw\+Legend\+Icon), and tries to give an intuitive symbol for the plottable. For example, the \mbox{\hyperlink{class_q_c_p_graph}{QCPGraph}} draws a centered horizontal line and/or a single scatter point in the middle.
 
 Legend items of this type are always associated with one plottable (retrievable via the plottable() function and settable with the constructor). You may change the font of the plottable name with \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a409c53455d8112f71d70c0c43eb10265}{set\+Font}}. Icon padding and border pen is taken from the parent \mbox{\hyperlink{class_q_c_p_legend}{QCPLegend}}, see \mbox{\hyperlink{class_q_c_p_legend_a2f2c93d18a651f4ff294bb3f026f49b8}{QCPLegend\+::set\+Icon\+Border\+Pen}} and \mbox{\hyperlink{class_q_c_p_legend_a62973bd69d5155e8ea3141366e8968f6}{QCPLegend\+::set\+Icon\+Text\+Padding}}.
 
-The function QCPAbstract\+Plottable\+::add\+To\+Legend/ \mbox{\hyperlink{class_q_c_p_abstract_plottable_a3cc235007e2343a65ad4f463767e0e20}{QCPAbstract\+Plottable\+::remove\+From\+Legend}} creates/removes legend items of this type.
+\mbox{\hyperlink{class_the}{The}} function QCPAbstract\+Plottable\+::add\+To\+Legend/ \mbox{\hyperlink{class_q_c_p_abstract_plottable_a3cc235007e2343a65ad4f463767e0e20}{QCPAbstract\+Plottable\+::remove\+From\+Legend}} creates/removes legend items of this type.
 
 Since \mbox{\hyperlink{class_q_c_p_legend}{QCPLegend}} is based on \mbox{\hyperlink{class_q_c_p_layout_grid}{QCPLayout\+Grid}}, a legend item itself is just a subclass of \mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}}. While it could be added to a legend (or any other layout) via the normal layout interface, \mbox{\hyperlink{class_q_c_p_legend}{QCPLegend}} has specialized functions for handling legend items conveniently, see the documentation of \mbox{\hyperlink{class_q_c_p_legend}{QCPLegend}}. 
 
@@ -415,7 +403,7 @@ if a minimum size (\mbox{\hyperlink{class_q_c_p_layout_element_a5dd29a3c8bc88440
 
 A manual minimum size is considered set if it is non-\/zero.
 
-The default implementation simply returns the sum of the horizontal margins for the width and the sum of the vertical margins for the height. Reimplementations may use their detailed knowledge about the layout element\textquotesingle{}s content to provide size hints. 
+\mbox{\hyperlink{class_the}{The}} default implementation simply returns the sum of the horizontal margins for the width and the sum of the vertical margins for the height. Reimplementations may use their detailed knowledge about the layout element\textquotesingle{}s content to provide size hints. 
 
 Reimplemented from \mbox{\hyperlink{class_q_c_p_layout_element_a46789036c4fcb190fa374f91321d7c09}{QCPLayout\+Element}}.
 

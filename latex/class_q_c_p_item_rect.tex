@@ -5,22 +5,10 @@
 A rectangle.  
 
 
-
-
-Inheritance diagram for QCPItem\+Rect\+:\nopagebreak
-\begin{figure}[H]
+Inheritance diagram for QCPItem\+Rect\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=173pt]{class_q_c_p_item_rect__inherit__graph}
-\end{center}
-\end{figure}
-
-
-Collaboration diagram for QCPItem\+Rect\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_q_c_p_item_rect__coll__graph}
+\includegraphics[height=4.000000cm]{class_q_c_p_item_rect}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
@@ -331,7 +319,7 @@ It has two positions, {\itshape top\+Left} and {\itshape bottom\+Right}, which d
 
 Creates a rectangle item and sets default values.
 
-The created item is automatically registered with {\itshape parent\+Plot}. This \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance takes ownership of the item, so do not delete it manually but use \mbox{\hyperlink{class_q_custom_plot_ae04446557292551e8fb6e2c106e1848d}{QCustom\+Plot\+::remove\+Item()}} instead. 
+\mbox{\hyperlink{class_the}{The}} created item is automatically registered with {\itshape parent\+Plot}. This \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance takes ownership of the item, so do not delete it manually but use \mbox{\hyperlink{class_q_custom_plot_ae04446557292551e8fb6e2c106e1848d}{QCustom\+Plot\+::remove\+Item()}} instead. 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_q_c_p_item_rect_a844027325b33a3b7eef424128ee5109c}\label{class_q_c_p_item_rect_a844027325b33a3b7eef424128ee5109c}} 
@@ -368,9 +356,9 @@ If the object is represented not by single lines but by an area like a \mbox{\hy
 
 Providing a constant value for area objects allows selecting line objects even when they are obscured by such area objects, by clicking close to the lines (i.\+e. closer than 0.\+99$\ast$selection\+Tolerance).
 
-The actual setting of the selection state is not done by this function. This is handled by the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} when the mouse\+Release\+Event occurs, and the finally selected object is notified via the select\+Event/ deselect\+Event methods.
+\mbox{\hyperlink{class_the}{The}} actual setting of the selection state is not done by this function. This is handled by the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} when the mouse\+Release\+Event occurs, and the finally selected object is notified via the select\+Event/ deselect\+Event methods.
 
-{\itshape details} is an optional output parameter. Every layerable subclass may place any information in {\itshape details}. This information will be passed to select\+Event when the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} decides on the basis of this select\+Test call, that the object was successfully selected. The subsequent call to select\+Event will carry the {\itshape details}. This is useful for multi-\/part objects (like \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}}). This way, a possibly complex calculation to decide which part was clicked is only done once in \mbox{\hyperlink{class_q_c_p_item_rect_a2e68621b75bae4da6ae0ab2cdd0dd733}{select\+Test}}. The result (i.\+e. the actually clicked part) can then be placed in {\itshape details}. So in the subsequent select\+Event, the decision which part was selected doesn\textquotesingle{}t have to be done a second time for a single selection operation.
+{\itshape details} is an optional output parameter. Every layerable subclass may place any information in {\itshape details}. This information will be passed to select\+Event when the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} decides on the basis of this select\+Test call, that the object was successfully selected. \mbox{\hyperlink{class_the}{The}} subsequent call to select\+Event will carry the {\itshape details}. This is useful for multi-\/part objects (like \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}}). This way, a possibly complex calculation to decide which part was clicked is only done once in \mbox{\hyperlink{class_q_c_p_item_rect_a2e68621b75bae4da6ae0ab2cdd0dd733}{select\+Test}}. \mbox{\hyperlink{class_the}{The}} result (i.\+e. the actually clicked part) can then be placed in {\itshape details}. So in the subsequent select\+Event, the decision which part was selected doesn\textquotesingle{}t have to be done a second time for a single selection operation.
 
 You may pass 0 as {\itshape details} to indicate that you are not interested in those selection details.
 

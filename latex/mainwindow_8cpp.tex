@@ -5,52 +5,11 @@
 mainwindow for connection to the E5\+CC  
 
 
+{\ttfamily \#include \char`\"{}communication.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}mainwindow.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}ui\+\_\+mainwindow.\+h\char`\"{}}\newline
-Include dependency graph for mainwindow.\+cpp\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{mainwindow_8cpp__incl}
-\end{center}
-\end{figure}
-\doxysubsection*{Enumerations}
-\begin{DoxyCompactItemize}
-\item 
-enum \mbox{\hyperlink{mainwindow_8cpp_a0937c7458a740f3febe48f677e5f405e}{E5\+CC\+\_\+\+Address}} \{ \newline
-{\bfseries PV} = 0x0000
-, \mbox{\hyperlink{mainwindow_8cpp_a0937c7458a740f3febe48f677e5f405eab4802cfc1a9ec7ea1ce64553919d0e88}{MV}} = 0x0008
-, \mbox{\hyperlink{mainwindow_8cpp_a0937c7458a740f3febe48f677e5f405ea6eabb7287a6d7dc68f0fad83edf5c7cc}{SV}} = 0x0106
-, \mbox{\hyperlink{mainwindow_8cpp_a0937c7458a740f3febe48f677e5f405eafe70a50ccf1b0ec4ed920b6d0a3f9221}{MVupper}} = 0x0\+A0A
-, \newline
-\mbox{\hyperlink{mainwindow_8cpp_a0937c7458a740f3febe48f677e5f405eaed4bb71e4d5f275506b808276d909b56}{MVlower}} = 0x0\+A0C
-, \mbox{\hyperlink{mainwindow_8cpp_a0937c7458a740f3febe48f677e5f405ea6bffd2397fda7caefa2e16c2450ec0de}{PID\+\_\+P}} =0x0\+A00
-, \mbox{\hyperlink{mainwindow_8cpp_a0937c7458a740f3febe48f677e5f405ead6c843008c17d20cf46ec24bc3d64550}{PID\+\_\+I}} =0x0\+A02
-, \mbox{\hyperlink{mainwindow_8cpp_a0937c7458a740f3febe48f677e5f405ea09fbc6169af8d5f6f28c6dfdfd86cf0e}{PID\+\_\+D}} =0x0\+A04
- \}
-\item 
-\mbox{\Hypertarget{mainwindow_8cpp_ac1950af19aa9eb86a3ba6cf8422caa8f}\label{mainwindow_8cpp_ac1950af19aa9eb86a3ba6cf8422caa8f}} 
-enum {\bfseries timing} \{ \newline
-{\bfseries modbus} = 100
-, {\bfseries get\+Temp\+Timer} = 100
-, {\bfseries clock\+Update} = 50
-, {\bfseries time\+Up} = 1000$\ast$60$\ast$10
-, \newline
-{\bfseries time\+Out} = 700
- \}
-\end{DoxyCompactItemize}
-\doxysubsection*{Variables}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\Hypertarget{mainwindow_8cpp_a709cb9021410ffce1615996c392171bd}\label{mainwindow_8cpp_a709cb9021410ffce1615996c392171bd}} 
-const QString {\bfseries DESKTOP\+\_\+\+PATH} = QStandard\+Paths\+::locate(QStandard\+Paths\+::\+Desktop\+Location, QString(), QStandard\+Paths\+::\+Locate\+Directory)
-\item 
-\mbox{\Hypertarget{mainwindow_8cpp_af2076f852583dbe328b9cded02d7adf6}\label{mainwindow_8cpp_af2076f852583dbe328b9cded02d7adf6}} 
-const QString {\bfseries DATA\+\_\+\+PATH\+\_\+2} = DESKTOP\+\_\+\+PATH + \char`\"{}Temp\+\_\+\+Record\char`\"{}
-\item 
-\mbox{\Hypertarget{mainwindow_8cpp_acf91cc33c5480e911ade8091442ada54}\label{mainwindow_8cpp_acf91cc33c5480e911ade8091442ada54}} 
-const QString {\bfseries DATA\+\_\+\+PATH} = \char`\"{}/c/Users/daisuke/Omron\+PID\char`\"{}
-\end{DoxyCompactItemize}
+{\ttfamily \#include \char`\"{}safety.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}datasummary.\+h\char`\"{}}\newline
 
 
 \doxysubsection{Detailed Description}
@@ -62,42 +21,4 @@ Daisuke Miura (Original source code xxxxx)
 \begin{DoxyDate}{Date}
 2023/3/15
 \end{DoxyDate}
-The original source code did not include safety measures. To improve safety, functions were added to check if the temperature was rising and to detect unexpected sudden temperature drops. The GUI was also modified to set the necessary parameters for these functions. 
-
-\doxysubsection{Enumeration Type Documentation}
-\mbox{\Hypertarget{mainwindow_8cpp_a0937c7458a740f3febe48f677e5f405e}\label{mainwindow_8cpp_a0937c7458a740f3febe48f677e5f405e}} 
-\index{mainwindow.cpp@{mainwindow.cpp}!E5CC\_Address@{E5CC\_Address}}
-\index{E5CC\_Address@{E5CC\_Address}!mainwindow.cpp@{mainwindow.cpp}}
-\doxysubsubsection{\texorpdfstring{E5CC\_Address}{E5CC\_Address}}
-{\footnotesize\ttfamily enum \mbox{\hyperlink{mainwindow_8cpp_a0937c7458a740f3febe48f677e5f405e}{E5\+CC\+\_\+\+Address}}}
-
-enum E5\+CC\+\_\+\+Address \begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{MV@{MV}!mainwindow.cpp@{mainwindow.cpp}}\index{mainwindow.cpp@{mainwindow.cpp}!MV@{MV}}}\mbox{\Hypertarget{mainwindow_8cpp_a0937c7458a740f3febe48f677e5f405eab4802cfc1a9ec7ea1ce64553919d0e88}\label{mainwindow_8cpp_a0937c7458a740f3febe48f677e5f405eab4802cfc1a9ec7ea1ce64553919d0e88}} 
-MV&\texorpdfstring{$<$}{<} Get Temperature \\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{SV@{SV}!mainwindow.cpp@{mainwindow.cpp}}\index{mainwindow.cpp@{mainwindow.cpp}!SV@{SV}}}\mbox{\Hypertarget{mainwindow_8cpp_a0937c7458a740f3febe48f677e5f405ea6eabb7287a6d7dc68f0fad83edf5c7cc}\label{mainwindow_8cpp_a0937c7458a740f3febe48f677e5f405ea6eabb7287a6d7dc68f0fad83edf5c7cc}} 
-SV&\texorpdfstring{$<$}{<} Get output power \\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{MVupper@{MVupper}!mainwindow.cpp@{mainwindow.cpp}}\index{mainwindow.cpp@{mainwindow.cpp}!MVupper@{MVupper}}}\mbox{\Hypertarget{mainwindow_8cpp_a0937c7458a740f3febe48f677e5f405eafe70a50ccf1b0ec4ed920b6d0a3f9221}\label{mainwindow_8cpp_a0937c7458a740f3febe48f677e5f405eafe70a50ccf1b0ec4ed920b6d0a3f9221}} 
-MVupper&\texorpdfstring{$<$}{<} Get set value \\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{MVlower@{MVlower}!mainwindow.cpp@{mainwindow.cpp}}\index{mainwindow.cpp@{mainwindow.cpp}!MVlower@{MVlower}}}\mbox{\Hypertarget{mainwindow_8cpp_a0937c7458a740f3febe48f677e5f405eaed4bb71e4d5f275506b808276d909b56}\label{mainwindow_8cpp_a0937c7458a740f3febe48f677e5f405eaed4bb71e4d5f275506b808276d909b56}} 
-MVlower&\texorpdfstring{$<$}{<} Get putput upper \\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{PID\_P@{PID\_P}!mainwindow.cpp@{mainwindow.cpp}}\index{mainwindow.cpp@{mainwindow.cpp}!PID\_P@{PID\_P}}}\mbox{\Hypertarget{mainwindow_8cpp_a0937c7458a740f3febe48f677e5f405ea6bffd2397fda7caefa2e16c2450ec0de}\label{mainwindow_8cpp_a0937c7458a740f3febe48f677e5f405ea6bffd2397fda7caefa2e16c2450ec0de}} 
-PID\+\_\+P&\texorpdfstring{$<$}{<} Get output lower \\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{PID\_I@{PID\_I}!mainwindow.cpp@{mainwindow.cpp}}\index{mainwindow.cpp@{mainwindow.cpp}!PID\_I@{PID\_I}}}\mbox{\Hypertarget{mainwindow_8cpp_a0937c7458a740f3febe48f677e5f405ead6c843008c17d20cf46ec24bc3d64550}\label{mainwindow_8cpp_a0937c7458a740f3febe48f677e5f405ead6c843008c17d20cf46ec24bc3d64550}} 
-PID\+\_\+I&\texorpdfstring{$<$}{<} Get Proportional \\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{PID\_D@{PID\_D}!mainwindow.cpp@{mainwindow.cpp}}\index{mainwindow.cpp@{mainwindow.cpp}!PID\_D@{PID\_D}}}\mbox{\Hypertarget{mainwindow_8cpp_a0937c7458a740f3febe48f677e5f405ea09fbc6169af8d5f6f28c6dfdfd86cf0e}\label{mainwindow_8cpp_a0937c7458a740f3febe48f677e5f405ea09fbc6169af8d5f6f28c6dfdfd86cf0e}} 
-PID\+\_\+D&\texorpdfstring{$<$}{<} Get Integration \\
-\hline
-
-\end{DoxyEnumFields}
+\mbox{\hyperlink{class_the}{The}} original source code did not include safety measures. To improve safety, functions were added to check if the temperature was rising and to detect unexpected sudden temperature drops. \mbox{\hyperlink{class_the}{The}} GUI was also modified to set the necessary parameters for these functions. 

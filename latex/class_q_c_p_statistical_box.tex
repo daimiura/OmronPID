@@ -5,22 +5,10 @@
 A plottable representing a single statistical box in a plot.  
 
 
-
-
-Inheritance diagram for QCPStatistical\+Box\+:\nopagebreak
-\begin{figure}[H]
+Inheritance diagram for QCPStatistical\+Box\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=336pt]{class_q_c_p_statistical_box__inherit__graph}
-\end{center}
-\end{figure}
-
-
-Collaboration diagram for QCPStatistical\+Box\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_q_c_p_statistical_box__coll__graph}
+\includegraphics[height=4.530744cm]{class_q_c_p_statistical_box}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
@@ -461,20 +449,20 @@ A plottable representing a single statistical box in a plot.
 To plot data, assign it with the \mbox{\hyperlink{class_q_c_p_statistical_box_a08a6da55822bad825ee25a8069b9b52f}{set\+Data}} or \mbox{\hyperlink{class_q_c_p_statistical_box_a9a8739c5b8291db8fd839e892fc8f478}{add\+Data}} functions. Alternatively, you can also access and modify the data via the \mbox{\hyperlink{class_q_c_p_statistical_box_a728e501413eaf191544014173d52dfbc}{data}} method, which returns a pointer to the internal QCPStatistical\+Box\+Data\+Container.
 
 Additionally each data point can itself have a list of outliers, drawn as scatter points at the key coordinate of the respective statistical box data point. They can either be set by using the respective \mbox{\hyperlink{class_q_c_p_statistical_box_a026f2790b530d6f29312254ecb1e7c1e}{add\+Data}} method or accessing the individual data points through \mbox{\hyperlink{class_q_c_p_statistical_box_a728e501413eaf191544014173d52dfbc}{data}}, and setting the {\ttfamily QVector$<$double$>$ outliers} of the data points directly.\hypertarget{class_q_c_p_statistical_box_qcpstatisticalbox-appearance}{}\doxysubsection{Changing the appearance}\label{class_q_c_p_statistical_box_qcpstatisticalbox-appearance}
-The appearance of each data point box, ranging from the lower to the upper quartile, is controlled via \mbox{\hyperlink{class_q_c_p_abstract_plottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}{set\+Pen}} and \mbox{\hyperlink{class_q_c_p_abstract_plottable_a7a4b92144dca6453a1f0f210e27edc74}{set\+Brush}}. You may change the width of the boxes with \mbox{\hyperlink{class_q_c_p_statistical_box_a0b62775bd67301b1eba5c785f2b26f14}{set\+Width}} in plot coordinates.
+\mbox{\hyperlink{class_the}{The}} appearance of each data point box, ranging from the lower to the upper quartile, is controlled via \mbox{\hyperlink{class_q_c_p_abstract_plottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}{set\+Pen}} and \mbox{\hyperlink{class_q_c_p_abstract_plottable_a7a4b92144dca6453a1f0f210e27edc74}{set\+Brush}}. You may change the width of the boxes with \mbox{\hyperlink{class_q_c_p_statistical_box_a0b62775bd67301b1eba5c785f2b26f14}{set\+Width}} in plot coordinates.
 
-Each data point\textquotesingle{}s visual representation also consists of two whiskers. Whiskers are the lines which reach from the upper quartile to the maximum, and from the lower quartile to the minimum. The appearance of the whiskers can be modified with\+: \mbox{\hyperlink{class_q_c_p_statistical_box_a4a5034cb3b9b040444df05ab1684620b}{set\+Whisker\+Pen}}, \mbox{\hyperlink{class_q_c_p_statistical_box_aa8d3e503897788e1abf68dc74b5f147f}{set\+Whisker\+Bar\+Pen}}, \mbox{\hyperlink{class_q_c_p_statistical_box_adf378812446bd66f34d1f7f293d991cd}{set\+Whisker\+Width}}. The whisker width is the width of the bar perpendicular to the whisker at the top (for maximum) and bottom (for minimum). If the whisker pen is changed, make sure to set the {\ttfamily cap\+Style} to {\ttfamily Qt\+::\+Flat\+Cap}. Otherwise the backbone line might exceed the whisker bars by a few pixels due to the pen cap being not perfectly flat.
+Each data point\textquotesingle{}s visual representation also consists of two whiskers. Whiskers are the lines which reach from the upper quartile to the maximum, and from the lower quartile to the minimum. \mbox{\hyperlink{class_the}{The}} appearance of the whiskers can be modified with\+: \mbox{\hyperlink{class_q_c_p_statistical_box_a4a5034cb3b9b040444df05ab1684620b}{set\+Whisker\+Pen}}, \mbox{\hyperlink{class_q_c_p_statistical_box_aa8d3e503897788e1abf68dc74b5f147f}{set\+Whisker\+Bar\+Pen}}, \mbox{\hyperlink{class_q_c_p_statistical_box_adf378812446bd66f34d1f7f293d991cd}{set\+Whisker\+Width}}. \mbox{\hyperlink{class_the}{The}} whisker width is the width of the bar perpendicular to the whisker at the top (for maximum) and bottom (for minimum). If the whisker pen is changed, make sure to set the {\ttfamily cap\+Style} to {\ttfamily Qt\+::\+Flat\+Cap}. Otherwise the backbone line might exceed the whisker bars by a few pixels due to the pen cap being not perfectly flat.
 
-The median indicator line inside the box has its own pen, \mbox{\hyperlink{class_q_c_p_statistical_box_a7260ac55b669f5d0a74f16d5ca84c52c}{set\+Median\+Pen}}.
+\mbox{\hyperlink{class_the}{The}} median indicator line inside the box has its own pen, \mbox{\hyperlink{class_q_c_p_statistical_box_a7260ac55b669f5d0a74f16d5ca84c52c}{set\+Median\+Pen}}.
 
-The outlier data points are drawn as normal scatter points. Their look can be controlled with \mbox{\hyperlink{class_q_c_p_statistical_box_ad5241943422eb8e58360a97e99ad6aa7}{set\+Outlier\+Style}}\hypertarget{class_q_c_p_statistical_box_qcpstatisticalbox-usage}{}\doxysubsection{Usage}\label{class_q_c_p_statistical_box_qcpstatisticalbox-usage}
+\mbox{\hyperlink{class_the}{The}} outlier data points are drawn as normal scatter points. Their look can be controlled with \mbox{\hyperlink{class_q_c_p_statistical_box_ad5241943422eb8e58360a97e99ad6aa7}{set\+Outlier\+Style}}\hypertarget{class_q_c_p_statistical_box_qcpstatisticalbox-usage}{}\doxysubsection{Usage}\label{class_q_c_p_statistical_box_qcpstatisticalbox-usage}
 Like all data representing objects in \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}, the \mbox{\hyperlink{class_q_c_p_statistical_box}{QCPStatistical\+Box}} is a plottable (\mbox{\hyperlink{class_q_c_p_abstract_plottable}{QCPAbstract\+Plottable}}). So the plottable-\/interface of \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} applies (\mbox{\hyperlink{class_q_custom_plot_a32de81ff53e263e785b83b52ecd99d6f}{QCustom\+Plot\+::plottable}}, \mbox{\hyperlink{class_q_custom_plot_af3dafd56884208474f311d6226513ab2}{QCustom\+Plot\+::remove\+Plottable}}, etc.)
 
 Usually, you first create an instance\+: 
 \begin{DoxyCodeInclude}{0}
 
 \end{DoxyCodeInclude}
- which registers it with the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance of the passed axes. Note that this \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance takes ownership of the plottable, so do not delete it manually but use \mbox{\hyperlink{class_q_custom_plot_af3dafd56884208474f311d6226513ab2}{QCustom\+Plot\+::remove\+Plottable()}} instead. The newly created plottable can be modified, e.\+g.\+: 
+ which registers it with the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance of the passed axes. Note that this \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance takes ownership of the plottable, so do not delete it manually but use \mbox{\hyperlink{class_q_custom_plot_af3dafd56884208474f311d6226513ab2}{QCustom\+Plot\+::remove\+Plottable()}} instead. \mbox{\hyperlink{class_the}{The}} newly created plottable can be modified, e.\+g.\+: 
 \begin{DoxyCodeInclude}{0}
 
 \end{DoxyCodeInclude}
@@ -489,7 +477,7 @@ Usually, you first create an instance\+:
 
 Constructs a statistical box which uses {\itshape key\+Axis} as its key axis (\char`\"{}x\char`\"{}) and {\itshape value\+Axis} as its value axis (\char`\"{}y\char`\"{}). {\itshape key\+Axis} and {\itshape value\+Axis} must reside in the same \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance and not have the same orientation. If either of these restrictions is violated, a corresponding message is printed to the debug output (q\+Debug), the construction is not aborted, though.
 
-The created \mbox{\hyperlink{class_q_c_p_statistical_box}{QCPStatistical\+Box}} is automatically registered with the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance inferred from {\itshape key\+Axis}. This \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance takes ownership of the \mbox{\hyperlink{class_q_c_p_statistical_box}{QCPStatistical\+Box}}, so do not delete it manually but use \mbox{\hyperlink{class_q_custom_plot_af3dafd56884208474f311d6226513ab2}{QCustom\+Plot\+::remove\+Plottable()}} instead. 
+\mbox{\hyperlink{class_the}{The}} created \mbox{\hyperlink{class_q_c_p_statistical_box}{QCPStatistical\+Box}} is automatically registered with the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance inferred from {\itshape key\+Axis}. This \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance takes ownership of the \mbox{\hyperlink{class_q_c_p_statistical_box}{QCPStatistical\+Box}}, so do not delete it manually but use \mbox{\hyperlink{class_q_custom_plot_af3dafd56884208474f311d6226513ab2}{QCustom\+Plot\+::remove\+Plottable()}} instead. 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_q_c_p_statistical_box_a9a8739c5b8291db8fd839e892fc8f478}\label{class_q_c_p_statistical_box_a9a8739c5b8291db8fd839e892fc8f478}} 
@@ -500,7 +488,7 @@ The created \mbox{\hyperlink{class_q_c_p_statistical_box}{QCPStatistical\+Box}} 
 
 This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
 
-Adds the provided points in {\itshape keys}, {\itshape minimum}, {\itshape lower\+Quartile}, {\itshape median}, {\itshape upper\+Quartile} and {\itshape maximum} to the current data. The provided vectors should have equal length. Else, the number of added points will be the size of the smallest vector.
+Adds the provided points in {\itshape keys}, {\itshape minimum}, {\itshape lower\+Quartile}, {\itshape median}, {\itshape upper\+Quartile} and {\itshape maximum} to the current data. \mbox{\hyperlink{class_the}{The}} provided vectors should have equal length. Else, the number of added points will be the size of the smallest vector.
 
 If you can guarantee that the passed data points are sorted by {\itshape keys} in ascending order, you can set {\itshape already\+Sorted} to true, to improve performance by saving a sorting run.
 
@@ -630,7 +618,7 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a22377bf6e
 
 This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
 
-Replaces the current data with the provided points in {\itshape keys}, {\itshape minimum}, {\itshape lower\+Quartile}, {\itshape median}, {\itshape upper\+Quartile} and {\itshape maximum}. The provided vectors should have equal length. Else, the number of added points will be the size of the smallest vector.
+Replaces the current data with the provided points in {\itshape keys}, {\itshape minimum}, {\itshape lower\+Quartile}, {\itshape median}, {\itshape upper\+Quartile} and {\itshape maximum}. \mbox{\hyperlink{class_the}{The}} provided vectors should have equal length. Else, the number of added points will be the size of the smallest vector.
 
 If you can guarantee that the passed data points are sorted by {\itshape keys} in ascending order, you can set {\itshape already\+Sorted} to true, to improve performance by saving a sorting run.
 

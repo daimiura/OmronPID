@@ -5,22 +5,10 @@
 A plottable representing a financial stock chart.  
 
 
-
-
-Inheritance diagram for QCPFinancial\+:\nopagebreak
-\begin{figure}[H]
+Inheritance diagram for QCPFinancial\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=336pt]{class_q_c_p_financial__inherit__graph}
-\end{center}
-\end{figure}
-
-
-Collaboration diagram for QCPFinancial\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_q_c_p_financial__coll__graph}
+\includegraphics[height=4.878048cm]{class_q_c_p_financial}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Types}
@@ -490,11 +478,11 @@ A plottable representing a financial stock chart.
 
 
 
-This plottable represents time series data binned to certain intervals, mainly used for stock charts. The two common representations OHLC (Open-\/\+High-\/\+Low-\/\+Close) bars and Candlesticks can be set via \mbox{\hyperlink{class_q_c_p_financial_a5a59175d36279d71596e64d7bb65596f}{set\+Chart\+Style}}.
+This plottable represents time series data binned to certain intervals, mainly used for stock charts. \mbox{\hyperlink{class_the}{The}} two common representations OHLC (Open-\/\+High-\/\+Low-\/\+Close) bars and Candlesticks can be set via \mbox{\hyperlink{class_q_c_p_financial_a5a59175d36279d71596e64d7bb65596f}{set\+Chart\+Style}}.
 
-The data is passed via \mbox{\hyperlink{class_q_c_p_financial_a72089e75b8a50d18097526c3c79fdb85}{set\+Data}} as a set of open/high/low/close values at certain keys (typically times). This means the data must be already binned appropriately. If data is only available as a series of values (e.\+g. {\itshape price} against {\itshape time}), you can use the static convenience function \mbox{\hyperlink{class_q_c_p_financial_a9a058c035040d3939b8884f4aaccb1a7}{time\+Series\+To\+Ohlc}} to generate binned OHLC-\/data which can then be passed to \mbox{\hyperlink{class_q_c_p_financial_a72089e75b8a50d18097526c3c79fdb85}{set\+Data}}.
+\mbox{\hyperlink{class_the}{The}} data is passed via \mbox{\hyperlink{class_q_c_p_financial_a72089e75b8a50d18097526c3c79fdb85}{set\+Data}} as a set of open/high/low/close values at certain keys (typically times). This means the data must be already binned appropriately. If data is only available as a series of values (e.\+g. {\itshape price} against {\itshape time}), you can use the static convenience function \mbox{\hyperlink{class_q_c_p_financial_a9a058c035040d3939b8884f4aaccb1a7}{time\+Series\+To\+Ohlc}} to generate binned OHLC-\/data which can then be passed to \mbox{\hyperlink{class_q_c_p_financial_a72089e75b8a50d18097526c3c79fdb85}{set\+Data}}.
 
-The width of the OHLC bars/candlesticks can be controlled with \mbox{\hyperlink{class_q_c_p_financial_a99633f8bac86a61d534ae5eeb1a3068f}{set\+Width}} and \mbox{\hyperlink{class_q_c_p_financial_a204b7b710352796593a432b723e34089}{set\+Width\+Type}}. A typical choice is to set the width type to \mbox{\hyperlink{class_q_c_p_financial_aef1761dda71a53dc5269685e9e492626af676bc8dbe700b96b333329c9dbfc30f}{wt\+Plot\+Coords}} (the default) and the width to (or slightly less than) one time bin interval width.\hypertarget{class_q_c_p_financial_qcpfinancial-appearance}{}\doxysubsection{Changing the appearance}\label{class_q_c_p_financial_qcpfinancial-appearance}
+\mbox{\hyperlink{class_the}{The}} width of the OHLC bars/candlesticks can be controlled with \mbox{\hyperlink{class_q_c_p_financial_a99633f8bac86a61d534ae5eeb1a3068f}{set\+Width}} and \mbox{\hyperlink{class_q_c_p_financial_a204b7b710352796593a432b723e34089}{set\+Width\+Type}}. A typical choice is to set the width type to \mbox{\hyperlink{class_q_c_p_financial_aef1761dda71a53dc5269685e9e492626af676bc8dbe700b96b333329c9dbfc30f}{wt\+Plot\+Coords}} (the default) and the width to (or slightly less than) one time bin interval width.\hypertarget{class_q_c_p_financial_qcpfinancial-appearance}{}\doxysubsection{Changing the appearance}\label{class_q_c_p_financial_qcpfinancial-appearance}
 Charts can be either single-\/ or two-\/colored (\mbox{\hyperlink{class_q_c_p_financial_a138e44aac160a17a9676652e240c5f08}{set\+Two\+Colored}}). If set to be single-\/colored, lines are drawn with the plottable\textquotesingle{}s pen (\mbox{\hyperlink{class_q_c_p_abstract_plottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}{set\+Pen}}) and fills with the brush (\mbox{\hyperlink{class_q_c_p_abstract_plottable_a7a4b92144dca6453a1f0f210e27edc74}{set\+Brush}}).
 
 If set to two-\/colored, positive changes of the value during an interval ({\itshape close} \texorpdfstring{$>$}{>}= {\itshape open}) are represented with a different pen and brush than negative changes ({\itshape close} \texorpdfstring{$<$}{<} {\itshape open}). These can be configured with \mbox{\hyperlink{class_q_c_p_financial_ac58aa3adc7a35aab0088764b840683e5}{set\+Pen\+Positive}}, \mbox{\hyperlink{class_q_c_p_financial_afe5c07e94ccea01a75b3a2476993c346}{set\+Pen\+Negative}}, \mbox{\hyperlink{class_q_c_p_financial_a5ebff2b1764efd07cc44942e67821829}{set\+Brush\+Positive}}, and \mbox{\hyperlink{class_q_c_p_financial_a8bbdd87629f9144b3ef51af660c0961a}{set\+Brush\+Negative}}. In two-\/colored mode, the normal plottable pen/brush is ignored. Upon selection however, the normal selected pen/brush (provided by the \mbox{\hyperlink{class_q_c_p_abstract_plottable_a7861518e47ca0c6a0c386032c2db075e}{selection\+Decorator}}) is used, irrespective of whether the chart is single-\/ or two-\/colored.\hypertarget{class_q_c_p_financial_qcpfinancial-usage}{}\doxysubsection{Usage}\label{class_q_c_p_financial_qcpfinancial-usage}
@@ -506,7 +494,7 @@ Usually, you first create an instance\+:
 \begin{DoxyCodeInclude}{0}
 
 \end{DoxyCodeInclude}
- which registers it with the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance of the passed axes. Note that this \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance takes ownership of the plottable, so do not delete it manually but use \mbox{\hyperlink{class_q_custom_plot_af3dafd56884208474f311d6226513ab2}{QCustom\+Plot\+::remove\+Plottable()}} instead. The newly created plottable can be modified, e.\+g.\+:
+ which registers it with the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance of the passed axes. Note that this \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance takes ownership of the plottable, so do not delete it manually but use \mbox{\hyperlink{class_q_custom_plot_af3dafd56884208474f311d6226513ab2}{QCustom\+Plot\+::remove\+Plottable()}} instead. \mbox{\hyperlink{class_the}{The}} newly created plottable can be modified, e.\+g.\+:
 
 
 \begin{DoxyCodeInclude}{0}
@@ -572,7 +560,7 @@ wt\+Plot\+Coords&width is in key coordinates and thus scales with the key axis r
 
 Constructs a financial chart which uses {\itshape key\+Axis} as its key axis (\char`\"{}x\char`\"{}) and {\itshape value\+Axis} as its value axis (\char`\"{}y\char`\"{}). {\itshape key\+Axis} and {\itshape value\+Axis} must reside in the same \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance and not have the same orientation. If either of these restrictions is violated, a corresponding message is printed to the debug output (q\+Debug), the construction is not aborted, though.
 
-The created \mbox{\hyperlink{class_q_c_p_financial}{QCPFinancial}} is automatically registered with the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance inferred from {\itshape key\+Axis}. This \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance takes ownership of the \mbox{\hyperlink{class_q_c_p_financial}{QCPFinancial}}, so do not delete it manually but use \mbox{\hyperlink{class_q_custom_plot_af3dafd56884208474f311d6226513ab2}{QCustom\+Plot\+::remove\+Plottable()}} instead. 
+\mbox{\hyperlink{class_the}{The}} created \mbox{\hyperlink{class_q_c_p_financial}{QCPFinancial}} is automatically registered with the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance inferred from {\itshape key\+Axis}. This \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance takes ownership of the \mbox{\hyperlink{class_q_c_p_financial}{QCPFinancial}}, so do not delete it manually but use \mbox{\hyperlink{class_q_custom_plot_af3dafd56884208474f311d6226513ab2}{QCustom\+Plot\+::remove\+Plottable()}} instead. 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_q_c_p_financial_a372ac031e44a7a6c912d203556af96f7}\label{class_q_c_p_financial_a372ac031e44a7a6c912d203556af96f7}} 
@@ -583,7 +571,7 @@ The created \mbox{\hyperlink{class_q_c_p_financial}{QCPFinancial}} is automatica
 
 This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
 
-Adds the provided points in {\itshape keys}, {\itshape open}, {\itshape high}, {\itshape low} and {\itshape close} to the current data. The provided vectors should have equal length. Else, the number of added points will be the size of the smallest vector.
+Adds the provided points in {\itshape keys}, {\itshape open}, {\itshape high}, {\itshape low} and {\itshape close} to the current data. \mbox{\hyperlink{class_the}{The}} provided vectors should have equal length. Else, the number of added points will be the size of the smallest vector.
 
 If you can guarantee that the passed data points are sorted by {\itshape keys} in ascending order, you can set {\itshape already\+Sorted} to true, to improve performance by saving a sorting run.
 
@@ -742,7 +730,7 @@ Sets which representation style shall be used to display the OHLC data. \mbox{\H
 
 This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
 
-Replaces the current data with the provided points in {\itshape keys}, {\itshape open}, {\itshape high}, {\itshape low} and {\itshape close}. The provided vectors should have equal length. Else, the number of added points will be the size of the smallest vector.
+Replaces the current data with the provided points in {\itshape keys}, {\itshape open}, {\itshape high}, {\itshape low} and {\itshape close}. \mbox{\hyperlink{class_the}{The}} provided vectors should have equal length. Else, the number of added points will be the size of the smallest vector.
 
 If you can guarantee that the passed data points are sorted by {\itshape keys} in ascending order, you can set {\itshape already\+Sorted} to true, to improve performance by saving a sorting run.
 
@@ -829,7 +817,7 @@ A typical choice is to set it to (or slightly less than) one bin interval width.
 
 Sets how the width of the financial bars is defined. See the documentation of \mbox{\hyperlink{class_q_c_p_financial_aef1761dda71a53dc5269685e9e492626}{Width\+Type}} for an explanation of the possible values for {\itshape width\+Type}.
 
-The default value is \mbox{\hyperlink{class_q_c_p_financial_aef1761dda71a53dc5269685e9e492626af676bc8dbe700b96b333329c9dbfc30f}{wt\+Plot\+Coords}}.
+\mbox{\hyperlink{class_the}{The}} default value is \mbox{\hyperlink{class_q_c_p_financial_aef1761dda71a53dc5269685e9e492626af676bc8dbe700b96b333329c9dbfc30f}{wt\+Plot\+Coords}}.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_financial_a99633f8bac86a61d534ae5eeb1a3068f}{set\+Width}} 
@@ -840,11 +828,11 @@ The default value is \mbox{\hyperlink{class_q_c_p_financial_aef1761dda71a53dc526
 \doxysubsubsection{\texorpdfstring{timeSeriesToOhlc()}{timeSeriesToOhlc()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_data_container}{QCPFinancial\+Data\+Container}} QCPFinancial\+::time\+Series\+To\+Ohlc (\begin{DoxyParamCaption}\item[{const QVector$<$ double $>$ \&}]{time,  }\item[{const QVector$<$ double $>$ \&}]{value,  }\item[{double}]{time\+Bin\+Size,  }\item[{double}]{time\+Bin\+Offset = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-A convenience function that converts time series data ({\itshape value} against {\itshape time}) to OHLC binned data points. The return value can then be passed on to QCPFinancial\+Data\+Container\+::set(const \+QCPFinancial\+Data\+Container\&).
+A convenience function that converts time series data ({\itshape value} against {\itshape time}) to OHLC binned data points. \mbox{\hyperlink{class_the}{The}} return value can then be passed on to QCPFinancial\+Data\+Container\+::set(const \+QCPFinancial\+Data\+Container\&).
 
-The size of the bins can be controlled with {\itshape time\+Bin\+Size} in the same units as {\itshape time} is given. For example, if the unit of {\itshape time} is seconds and single OHLC/\+Candlesticks should span an hour each, set {\itshape time\+Bin\+Size} to 3600.
+\mbox{\hyperlink{class_the}{The}} size of the bins can be controlled with {\itshape time\+Bin\+Size} in the same units as {\itshape time} is given. For example, if the unit of {\itshape time} is seconds and single OHLC/\+Candlesticks should span an hour each, set {\itshape time\+Bin\+Size} to 3600.
 
-{\itshape time\+Bin\+Offset} allows to control precisely at what {\itshape time} coordinate a bin should start. The value passed as {\itshape time\+Bin\+Offset} doesn\textquotesingle{}t need to be in the range encompassed by the {\itshape time} keys. It merely defines the mathematical offset/phase of the bins that will be used to process the data. 
+{\itshape time\+Bin\+Offset} allows to control precisely at what {\itshape time} coordinate a bin should start. \mbox{\hyperlink{class_the}{The}} value passed as {\itshape time\+Bin\+Offset} doesn\textquotesingle{}t need to be in the range encompassed by the {\itshape time} keys. It merely defines the mathematical offset/phase of the bins that will be used to process the data. 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

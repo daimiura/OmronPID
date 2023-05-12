@@ -1,21 +1,9 @@
 \hypertarget{class_q_c_p_color_scale_axis_rect_private}{}\doxysection{QCPColor\+Scale\+Axis\+Rect\+Private Class Reference}
 \label{class_q_c_p_color_scale_axis_rect_private}\index{QCPColorScaleAxisRectPrivate@{QCPColorScaleAxisRectPrivate}}
-
-
-Inheritance diagram for QCPColor\+Scale\+Axis\+Rect\+Private\+:\nopagebreak
-\begin{figure}[H]
+Inheritance diagram for QCPColor\+Scale\+Axis\+Rect\+Private\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=234pt]{class_q_c_p_color_scale_axis_rect_private__inherit__graph}
-\end{center}
-\end{figure}
-
-
-Collaboration diagram for QCPColor\+Scale\+Axis\+Rect\+Private\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_q_c_p_color_scale_axis_rect_private__coll__graph}
+\includegraphics[height=5.000000cm]{class_q_c_p_color_scale_axis_rect_private}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
@@ -540,9 +528,9 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_axis_rect}{QCPAxis\+Rect}}.
 
 This event gets called when the user moves the mouse while holding a mouse button, after this layerable has become the mouse grabber by accepting the preceding \mbox{\hyperlink{class_q_c_p_color_scale_axis_rect_private_aa9a7c807eaa4666870ac94aa6abc4dde}{mouse\+Press\+Event}}.
 
-The current pixel position of the cursor on the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} widget is accessible via {\ttfamily event-\/\texorpdfstring{$>$}{>}pos()}. The parameter {\itshape start\+Pos} indicates the position where the initial \mbox{\hyperlink{class_q_c_p_color_scale_axis_rect_private_aa9a7c807eaa4666870ac94aa6abc4dde}{mouse\+Press\+Event}} occured, that started the mouse interaction.
+\mbox{\hyperlink{class_the}{The}} current pixel position of the cursor on the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} widget is accessible via {\ttfamily event-\/\texorpdfstring{$>$}{>}pos()}. \mbox{\hyperlink{class_the}{The}} parameter {\itshape start\+Pos} indicates the position where the initial \mbox{\hyperlink{class_q_c_p_color_scale_axis_rect_private_aa9a7c807eaa4666870ac94aa6abc4dde}{mouse\+Press\+Event}} occured, that started the mouse interaction.
 
-The default implementation does nothing.
+\mbox{\hyperlink{class_the}{The}} default implementation does nothing.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_color_scale_axis_rect_private_aa9a7c807eaa4666870ac94aa6abc4dde}{mouse\+Press\+Event}}, \mbox{\hyperlink{class_q_c_p_color_scale_axis_rect_private_a6c89b988d3a0b93c0878f0ebdb5037f4}{mouse\+Release\+Event}}, \mbox{\hyperlink{class_q_c_p_layerable_a4171e2e823aca242dd0279f00ed2de81}{mouse\+Double\+Click\+Event}}, \mbox{\hyperlink{class_q_c_p_color_scale_axis_rect_private_a93eeaa0c127d6d6fe8171b2455080262}{wheel\+Event}} 
@@ -559,13 +547,13 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_axis_rect_a9cd27ad8c5cfb49aefd9d
 
 This event gets called when the user presses a mouse button while the cursor is over the layerable. Whether a cursor is over the layerable is decided by a preceding call to \mbox{\hyperlink{class_q_c_p_layout_element_ae97f483cccedadbf18ea4525ef240ee4}{select\+Test}}.
 
-The current pixel position of the cursor on the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} widget is accessible via {\ttfamily event-\/\texorpdfstring{$>$}{>}pos()}. The parameter {\itshape details} contains layerable-\/specific details about the hit, which were generated in the previous call to \mbox{\hyperlink{class_q_c_p_layout_element_ae97f483cccedadbf18ea4525ef240ee4}{select\+Test}}. For example, One-\/dimensional plottables like \mbox{\hyperlink{class_q_c_p_graph}{QCPGraph}} or \mbox{\hyperlink{class_q_c_p_bars}{QCPBars}} convey the clicked data point in the {\itshape details} parameter, as \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} packed as QVariant. Multi-\/part objects convey the specific {\ttfamily Selectable\+Part} that was hit (e.\+g. \mbox{\hyperlink{class_q_c_p_axis_abee4c7a54c468b1385dfce2c898b115f}{QCPAxis\+::\+Selectable\+Part}} in the case of axes).
+\mbox{\hyperlink{class_the}{The}} current pixel position of the cursor on the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} widget is accessible via {\ttfamily event-\/\texorpdfstring{$>$}{>}pos()}. \mbox{\hyperlink{class_the}{The}} parameter {\itshape details} contains layerable-\/specific details about the hit, which were generated in the previous call to \mbox{\hyperlink{class_q_c_p_layout_element_ae97f483cccedadbf18ea4525ef240ee4}{select\+Test}}. For example, One-\/dimensional plottables like \mbox{\hyperlink{class_q_c_p_graph}{QCPGraph}} or \mbox{\hyperlink{class_q_c_p_bars}{QCPBars}} convey the clicked data point in the {\itshape details} parameter, as \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} packed as QVariant. Multi-\/part objects convey the specific {\ttfamily Selectable\+Part} that was hit (e.\+g. \mbox{\hyperlink{class_q_c_p_axis_abee4c7a54c468b1385dfce2c898b115f}{QCPAxis\+::\+Selectable\+Part}} in the case of axes).
 
 \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} uses an event propagation system that works the same as Qt\textquotesingle{}s system. If your layerable doesn\textquotesingle{}t reimplement the \mbox{\hyperlink{class_q_c_p_color_scale_axis_rect_private_aa9a7c807eaa4666870ac94aa6abc4dde}{mouse\+Press\+Event}} or explicitly calls {\ttfamily event-\/\texorpdfstring{$>$}{>}ignore()} in its reimplementation, the event will be propagated to the next layerable in the stacking order.
 
 Once a layerable has accepted the \mbox{\hyperlink{class_q_c_p_color_scale_axis_rect_private_aa9a7c807eaa4666870ac94aa6abc4dde}{mouse\+Press\+Event}}, it is considered the mouse grabber and will receive all following calls to \mbox{\hyperlink{class_q_c_p_color_scale_axis_rect_private_a9cd27ad8c5cfb49aefd9dbb30def4beb}{mouse\+Move\+Event}} or \mbox{\hyperlink{class_q_c_p_color_scale_axis_rect_private_a6c89b988d3a0b93c0878f0ebdb5037f4}{mouse\+Release\+Event}} for this mouse interaction (a \char`\"{}mouse interaction\char`\"{} in this context ends with the release).
 
-The default implementation does nothing except explicitly ignoring the event with {\ttfamily event-\/\texorpdfstring{$>$}{>}ignore()}.
+\mbox{\hyperlink{class_the}{The}} default implementation does nothing except explicitly ignoring the event with {\ttfamily event-\/\texorpdfstring{$>$}{>}ignore()}.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_color_scale_axis_rect_private_a9cd27ad8c5cfb49aefd9dbb30def4beb}{mouse\+Move\+Event}}, \mbox{\hyperlink{class_q_c_p_color_scale_axis_rect_private_a6c89b988d3a0b93c0878f0ebdb5037f4}{mouse\+Release\+Event}}, \mbox{\hyperlink{class_q_c_p_layerable_a4171e2e823aca242dd0279f00ed2de81}{mouse\+Double\+Click\+Event}}, \mbox{\hyperlink{class_q_c_p_color_scale_axis_rect_private_a93eeaa0c127d6d6fe8171b2455080262}{wheel\+Event}} 
@@ -582,9 +570,9 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_axis_rect_aa9a7c807eaa4666870ac9
 
 This event gets called when the user releases the mouse button, after this layerable has become the mouse grabber by accepting the preceding \mbox{\hyperlink{class_q_c_p_color_scale_axis_rect_private_aa9a7c807eaa4666870ac94aa6abc4dde}{mouse\+Press\+Event}}.
 
-The current pixel position of the cursor on the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} widget is accessible via {\ttfamily event-\/\texorpdfstring{$>$}{>}pos()}. The parameter {\itshape start\+Pos} indicates the position where the initial \mbox{\hyperlink{class_q_c_p_color_scale_axis_rect_private_aa9a7c807eaa4666870ac94aa6abc4dde}{mouse\+Press\+Event}} occured, that started the mouse interaction.
+\mbox{\hyperlink{class_the}{The}} current pixel position of the cursor on the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} widget is accessible via {\ttfamily event-\/\texorpdfstring{$>$}{>}pos()}. \mbox{\hyperlink{class_the}{The}} parameter {\itshape start\+Pos} indicates the position where the initial \mbox{\hyperlink{class_q_c_p_color_scale_axis_rect_private_aa9a7c807eaa4666870ac94aa6abc4dde}{mouse\+Press\+Event}} occured, that started the mouse interaction.
 
-The default implementation does nothing.
+\mbox{\hyperlink{class_the}{The}} default implementation does nothing.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_color_scale_axis_rect_private_aa9a7c807eaa4666870ac94aa6abc4dde}{mouse\+Press\+Event}}, \mbox{\hyperlink{class_q_c_p_color_scale_axis_rect_private_a9cd27ad8c5cfb49aefd9dbb30def4beb}{mouse\+Move\+Event}}, \mbox{\hyperlink{class_q_c_p_layerable_a4171e2e823aca242dd0279f00ed2de81}{mouse\+Double\+Click\+Event}}, \mbox{\hyperlink{class_q_c_p_color_scale_axis_rect_private_a93eeaa0c127d6d6fe8171b2455080262}{wheel\+Event}} 
@@ -615,11 +603,11 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_axis_rect_add049d464b9ef2ccdc638
 
 This event gets called when the user turns the mouse scroll wheel while the cursor is over the layerable. Whether a cursor is over the layerable is decided by a preceding call to \mbox{\hyperlink{class_q_c_p_layout_element_ae97f483cccedadbf18ea4525ef240ee4}{select\+Test}}.
 
-The current pixel position of the cursor on the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} widget is accessible via {\ttfamily event-\/\texorpdfstring{$>$}{>}pos()}.
+\mbox{\hyperlink{class_the}{The}} current pixel position of the cursor on the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} widget is accessible via {\ttfamily event-\/\texorpdfstring{$>$}{>}pos()}.
 
-The {\ttfamily event-\/\texorpdfstring{$>$}{>}delta()} indicates how far the mouse wheel was turned, which is usually +/-\/ 120 for single rotation steps. However, if the mouse wheel is turned rapidly, multiple steps may accumulate to one event, making {\ttfamily event-\/\texorpdfstring{$>$}{>}delta()} larger. On the other hand, if the wheel has very smooth steps or none at all, the delta may be smaller.
+\mbox{\hyperlink{class_the}{The}} {\ttfamily event-\/\texorpdfstring{$>$}{>}delta()} indicates how far the mouse wheel was turned, which is usually +/-\/ 120 for single rotation steps. However, if the mouse wheel is turned rapidly, multiple steps may accumulate to one event, making {\ttfamily event-\/\texorpdfstring{$>$}{>}delta()} larger. On the other hand, if the wheel has very smooth steps or none at all, the delta may be smaller.
 
-The default implementation does nothing.
+\mbox{\hyperlink{class_the}{The}} default implementation does nothing.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_color_scale_axis_rect_private_aa9a7c807eaa4666870ac94aa6abc4dde}{mouse\+Press\+Event}}, \mbox{\hyperlink{class_q_c_p_color_scale_axis_rect_private_a9cd27ad8c5cfb49aefd9dbb30def4beb}{mouse\+Move\+Event}}, \mbox{\hyperlink{class_q_c_p_color_scale_axis_rect_private_a6c89b988d3a0b93c0878f0ebdb5037f4}{mouse\+Release\+Event}}, \mbox{\hyperlink{class_q_c_p_layerable_a4171e2e823aca242dd0279f00ed2de81}{mouse\+Double\+Click\+Event}} 

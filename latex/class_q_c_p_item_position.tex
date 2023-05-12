@@ -5,22 +5,10 @@
 Manages the position of an item.  
 
 
-
-
-Inheritance diagram for QCPItem\+Position\+:\nopagebreak
-\begin{figure}[H]
+Inheritance diagram for QCPItem\+Position\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=172pt]{class_q_c_p_item_position__inherit__graph}
-\end{center}
-\end{figure}
-
-
-Collaboration diagram for QCPItem\+Position\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_q_c_p_item_position__coll__graph}
+\includegraphics[height=2.000000cm]{class_q_c_p_item_position}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Types}
@@ -304,7 +292,7 @@ If different types were configured for X and Y (\mbox{\hyperlink{class_q_c_p_ite
 \doxysubsubsection{\texorpdfstring{setParentAnchor()}{setParentAnchor()}}
 {\footnotesize\ttfamily bool QCPItem\+Position\+::set\+Parent\+Anchor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_item_anchor}{QCPItem\+Anchor}} $\ast$}]{parent\+Anchor,  }\item[{bool}]{keep\+Pixel\+Position = {\ttfamily false} }\end{DoxyParamCaption})}
 
-Sets the parent of this \mbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}} to {\itshape parent\+Anchor}. This means the position will now follow any position changes of the anchor. The local coordinate system of positions with a parent anchor always is absolute pixels, with (0, 0) being exactly on top of the parent anchor. (Hence the type shouldn\textquotesingle{}t be set to \mbox{\hyperlink{class_q_c_p_item_position_aad9936c22bf43e3d358552f6e86dbdc8ad5ffb8dc99ad73263f7010c77342294c}{pt\+Plot\+Coords}} for positions with parent anchors.)
+Sets the parent of this \mbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}} to {\itshape parent\+Anchor}. This means the position will now follow any position changes of the anchor. \mbox{\hyperlink{class_the}{The}} local coordinate system of positions with a parent anchor always is absolute pixels, with (0, 0) being exactly on top of the parent anchor. (Hence the type shouldn\textquotesingle{}t be set to \mbox{\hyperlink{class_q_c_p_item_position_aad9936c22bf43e3d358552f6e86dbdc8ad5ffb8dc99ad73263f7010c77342294c}{pt\+Plot\+Coords}} for positions with parent anchors.)
 
 if {\itshape keep\+Pixel\+Position} is true, the current pixel position of the \mbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}} is preserved during reparenting. If it\textquotesingle{}s set to false, the coordinates are set to (0, 0), i.\+e. the position will be exactly on top of the parent anchor.
 
@@ -357,14 +345,14 @@ Only if the type is \mbox{\hyperlink{class_q_c_p_item_position_aad9936c22bf43e3d
 \doxysubsubsection{\texorpdfstring{setType()}{setType()}}
 {\footnotesize\ttfamily void QCPItem\+Position\+::set\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_item_position_aad9936c22bf43e3d358552f6e86dbdc8}{QCPItem\+Position\+::\+Position\+Type}}}]{type }\end{DoxyParamCaption})}
 
-Sets the type of the position. The type defines how the coordinates passed to \mbox{\hyperlink{class_q_c_p_item_position_aa988ba4e87ab684c9021017dcaba945f}{set\+Coords}} should be handled and how the \mbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}} should behave in the plot.
+Sets the type of the position. \mbox{\hyperlink{class_the}{The}} type defines how the coordinates passed to \mbox{\hyperlink{class_q_c_p_item_position_aa988ba4e87ab684c9021017dcaba945f}{set\+Coords}} should be handled and how the \mbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}} should behave in the plot.
 
-The possible values for {\itshape type} can be separated in two main categories\+:
+\mbox{\hyperlink{class_the}{The}} possible values for {\itshape type} can be separated in two main categories\+:
 
 \begin{DoxyItemize}
-\item The position is regarded as a point in plot coordinates. This corresponds to \mbox{\hyperlink{class_q_c_p_item_position_aad9936c22bf43e3d358552f6e86dbdc8ad5ffb8dc99ad73263f7010c77342294c}{pt\+Plot\+Coords}} and requires two axes that define the plot coordinate system. They can be specified with \mbox{\hyperlink{class_q_c_p_item_position_a2185f45c75ac8cb9be89daeaaad50e37}{set\+Axes}}. By default, the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}\textquotesingle{}s x-\/ and y\+Axis are used.\end{DoxyItemize}
+\item \mbox{\hyperlink{class_the}{The}} position is regarded as a point in plot coordinates. This corresponds to \mbox{\hyperlink{class_q_c_p_item_position_aad9936c22bf43e3d358552f6e86dbdc8ad5ffb8dc99ad73263f7010c77342294c}{pt\+Plot\+Coords}} and requires two axes that define the plot coordinate system. They can be specified with \mbox{\hyperlink{class_q_c_p_item_position_a2185f45c75ac8cb9be89daeaaad50e37}{set\+Axes}}. By default, the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}\textquotesingle{}s x-\/ and y\+Axis are used.\end{DoxyItemize}
 \begin{DoxyItemize}
-\item The position is fixed on the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} surface, i.\+e. independent of axis ranges. This corresponds to all other types, i.\+e. \mbox{\hyperlink{class_q_c_p_item_position_aad9936c22bf43e3d358552f6e86dbdc8a564f5e53e550ead1ec5fc7fc7d0b73e0}{pt\+Absolute}}, \mbox{\hyperlink{class_q_c_p_item_position_aad9936c22bf43e3d358552f6e86dbdc8ac7d6aa89ceacb39658b0d6da061c789a}{pt\+Viewport\+Ratio}} and \mbox{\hyperlink{class_q_c_p_item_position_aad9936c22bf43e3d358552f6e86dbdc8a01080fd00eaf09fa238ef6b73bbfef75}{pt\+Axis\+Rect\+Ratio}}. They differ only in the way the absolute position is described, see the documentation of \mbox{\hyperlink{class_q_c_p_item_position_aad9936c22bf43e3d358552f6e86dbdc8}{Position\+Type}} for details. For \mbox{\hyperlink{class_q_c_p_item_position_aad9936c22bf43e3d358552f6e86dbdc8a01080fd00eaf09fa238ef6b73bbfef75}{pt\+Axis\+Rect\+Ratio}}, note that you can specify the axis rect with \mbox{\hyperlink{class_q_c_p_item_position_a0cd9b326fb324710169e92e8ca0041c2}{set\+Axis\+Rect}}. By default this is set to the main axis rect.\end{DoxyItemize}
+\item \mbox{\hyperlink{class_the}{The}} position is fixed on the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} surface, i.\+e. independent of axis ranges. This corresponds to all other types, i.\+e. \mbox{\hyperlink{class_q_c_p_item_position_aad9936c22bf43e3d358552f6e86dbdc8a564f5e53e550ead1ec5fc7fc7d0b73e0}{pt\+Absolute}}, \mbox{\hyperlink{class_q_c_p_item_position_aad9936c22bf43e3d358552f6e86dbdc8ac7d6aa89ceacb39658b0d6da061c789a}{pt\+Viewport\+Ratio}} and \mbox{\hyperlink{class_q_c_p_item_position_aad9936c22bf43e3d358552f6e86dbdc8a01080fd00eaf09fa238ef6b73bbfef75}{pt\+Axis\+Rect\+Ratio}}. They differ only in the way the absolute position is described, see the documentation of \mbox{\hyperlink{class_q_c_p_item_position_aad9936c22bf43e3d358552f6e86dbdc8}{Position\+Type}} for details. For \mbox{\hyperlink{class_q_c_p_item_position_aad9936c22bf43e3d358552f6e86dbdc8a01080fd00eaf09fa238ef6b73bbfef75}{pt\+Axis\+Rect\+Ratio}}, note that you can specify the axis rect with \mbox{\hyperlink{class_q_c_p_item_position_a0cd9b326fb324710169e92e8ca0041c2}{set\+Axis\+Rect}}. By default this is set to the main axis rect.\end{DoxyItemize}
 Note that the position type \mbox{\hyperlink{class_q_c_p_item_position_aad9936c22bf43e3d358552f6e86dbdc8ad5ffb8dc99ad73263f7010c77342294c}{pt\+Plot\+Coords}} is only available (and sensible) when the position has no parent anchor (\mbox{\hyperlink{class_q_c_p_item_position_ac094d67a95d2dceafa0d50b9db3a7e51}{set\+Parent\+Anchor}}).
 
 If the type is changed, the apparent pixel position on the plot is preserved. This means the coordinates as retrieved with coords() and set with \mbox{\hyperlink{class_q_c_p_item_position_aa988ba4e87ab684c9021017dcaba945f}{set\+Coords}} may change in the process.

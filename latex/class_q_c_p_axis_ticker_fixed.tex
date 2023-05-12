@@ -5,22 +5,10 @@
 Specialized axis ticker with a fixed tick step.  
 
 
-
-
-Inheritance diagram for QCPAxis\+Ticker\+Fixed\+:\nopagebreak
-\begin{figure}[H]
+Inheritance diagram for QCPAxis\+Ticker\+Fixed\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=187pt]{class_q_c_p_axis_ticker_fixed__inherit__graph}
-\end{center}
-\end{figure}
-
-
-Collaboration diagram for QCPAxis\+Ticker\+Fixed\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=187pt]{class_q_c_p_axis_ticker_fixed__coll__graph}
+\includegraphics[height=2.000000cm]{class_q_c_p_axis_ticker_fixed}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Types}
@@ -143,7 +131,7 @@ A typical application of this ticker is to make an axis only display integers, b
 
 Another case is when a certain number has a special meaning and axis ticks should only appear at multiples of that value. In this case you might also want to consider \mbox{\hyperlink{class_q_c_p_axis_ticker_pi}{QCPAxis\+Ticker\+Pi}} because despite the name it is not limited to only pi symbols/values.
 
-The ticker can be created and assigned to an axis like this\+: 
+\mbox{\hyperlink{class_the}{The}} ticker can be created and assigned to an axis like this\+: 
 \begin{DoxyCodeInclude}{0}
 
 \end{DoxyCodeInclude}
@@ -167,7 +155,7 @@ ss\+None&Modifications are not allowed, the specified tick step is absolutely fi
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{ssMultiples@{ssMultiples}!QCPAxisTickerFixed@{QCPAxisTickerFixed}}\index{QCPAxisTickerFixed@{QCPAxisTickerFixed}!ssMultiples@{ssMultiples}}}\mbox{\Hypertarget{class_q_c_p_axis_ticker_fixed_a15b3d38b935d404b1311eb85cfb6a439a22f651785f6412645837421896561104}\label{class_q_c_p_axis_ticker_fixed_a15b3d38b935d404b1311eb85cfb6a439a22f651785f6412645837421896561104}} 
-ss\+Multiples&An integer multiple of the specified tick step is allowed. The used factor follows the base class properties of \mbox{\hyperlink{class_q_c_p_axis_ticker_a73b1d847c1a12159af6bfda4ebebe7d5}{set\+Tick\+Step\+Strategy}} and \mbox{\hyperlink{class_q_c_p_axis_ticker_a47752abba8293e6dc18491501ae34008}{set\+Tick\+Count}}. \\
+ss\+Multiples&An integer multiple of the specified tick step is allowed. \mbox{\hyperlink{class_the}{The}} used factor follows the base class properties of \mbox{\hyperlink{class_q_c_p_axis_ticker_a73b1d847c1a12159af6bfda4ebebe7d5}{set\+Tick\+Step\+Strategy}} and \mbox{\hyperlink{class_q_c_p_axis_ticker_a47752abba8293e6dc18491501ae34008}{set\+Tick\+Count}}. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{ssPowers@{ssPowers}!QCPAxisTickerFixed@{QCPAxisTickerFixed}}\index{QCPAxisTickerFixed@{QCPAxisTickerFixed}!ssPowers@{ssPowers}}}\mbox{\Hypertarget{class_q_c_p_axis_ticker_fixed_a15b3d38b935d404b1311eb85cfb6a439ac39d5813e9165ebd494307ae61ce5dce}\label{class_q_c_p_axis_ticker_fixed_a15b3d38b935d404b1311eb85cfb6a439ac39d5813e9165ebd494307ae61ce5dce}} 
@@ -205,7 +193,7 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_axis_ticker}{QCPAxis\+Ticker}}.
 
 Sets whether the specified tick step (\mbox{\hyperlink{class_q_c_p_axis_ticker_fixed_a4bc83d85a4f81d4abdd3fa5042d7b833}{set\+Tick\+Step}}) is absolutely fixed or whether modifications may be applied to it before calculating the finally used tick step, such as permitting multiples or powers. See \mbox{\hyperlink{class_q_c_p_axis_ticker_fixed_a15b3d38b935d404b1311eb85cfb6a439}{Scale\+Strategy}} for details.
 
-The default strategy is \mbox{\hyperlink{class_q_c_p_axis_ticker_fixed_a15b3d38b935d404b1311eb85cfb6a439a6621275677a05caa0de204ae3956b85f}{ss\+None}}, which means the tick step is absolutely fixed. \mbox{\Hypertarget{class_q_c_p_axis_ticker_fixed_a4bc83d85a4f81d4abdd3fa5042d7b833}\label{class_q_c_p_axis_ticker_fixed_a4bc83d85a4f81d4abdd3fa5042d7b833}} 
+\mbox{\hyperlink{class_the}{The}} default strategy is \mbox{\hyperlink{class_q_c_p_axis_ticker_fixed_a15b3d38b935d404b1311eb85cfb6a439a6621275677a05caa0de204ae3956b85f}{ss\+None}}, which means the tick step is absolutely fixed. \mbox{\Hypertarget{class_q_c_p_axis_ticker_fixed_a4bc83d85a4f81d4abdd3fa5042d7b833}\label{class_q_c_p_axis_ticker_fixed_a4bc83d85a4f81d4abdd3fa5042d7b833}} 
 \index{QCPAxisTickerFixed@{QCPAxisTickerFixed}!setTickStep@{setTickStep}}
 \index{setTickStep@{setTickStep}!QCPAxisTickerFixed@{QCPAxisTickerFixed}}
 \doxysubsubsection{\texorpdfstring{setTickStep()}{setTickStep()}}
@@ -213,7 +201,7 @@ The default strategy is \mbox{\hyperlink{class_q_c_p_axis_ticker_fixed_a15b3d38b
 
 Sets the fixed tick interval to {\itshape step}.
 
-The axis ticker will only use this tick step when generating axis ticks. This might cause a very high tick density and overlapping labels if the axis range is zoomed out. Using \mbox{\hyperlink{class_q_c_p_axis_ticker_fixed_acbc7c9bcd80b3dc3edee5f0519d301f6}{set\+Scale\+Strategy}} it is possible to relax the fixed step and also allow multiples or powers of {\itshape step}. This will enable the ticker to reduce the number of ticks to a reasonable amount (see \mbox{\hyperlink{class_q_c_p_axis_ticker_a47752abba8293e6dc18491501ae34008}{set\+Tick\+Count}}). 
+\mbox{\hyperlink{class_the}{The}} axis ticker will only use this tick step when generating axis ticks. This might cause a very high tick density and overlapping labels if the axis range is zoomed out. Using \mbox{\hyperlink{class_q_c_p_axis_ticker_fixed_acbc7c9bcd80b3dc3edee5f0519d301f6}{set\+Scale\+Strategy}} it is possible to relax the fixed step and also allow multiples or powers of {\itshape step}. This will enable the ticker to reduce the number of ticks to a reasonable amount (see \mbox{\hyperlink{class_q_c_p_axis_ticker_a47752abba8293e6dc18491501ae34008}{set\+Tick\+Count}}). 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

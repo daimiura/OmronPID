@@ -2,25 +2,13 @@
 \label{class_q_c_p_abstract_plottable}\index{QCPAbstractPlottable@{QCPAbstractPlottable}}
 
 
-The abstract base class for all data representing objects in a plot.  
+\mbox{\hyperlink{class_the}{The}} abstract base class for all data representing objects in a plot.  
 
 
-
-
-Inheritance diagram for QCPAbstract\+Plottable\+:\nopagebreak
-\begin{figure}[H]
+Inheritance diagram for QCPAbstract\+Plottable\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_q_c_p_abstract_plottable__inherit__graph}
-\end{center}
-\end{figure}
-
-
-Collaboration diagram for QCPAbstract\+Plottable\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_q_c_p_abstract_plottable__coll__graph}
+\includegraphics[height=9.967637cm]{class_q_c_p_abstract_plottable}
 \end{center}
 \end{figure}
 \doxysubsection*{Signals}
@@ -289,7 +277,7 @@ class {\bfseries QCPPlottable\+Legend\+Item}
 
 
 \doxysubsection{Detailed Description}
-The abstract base class for all data representing objects in a plot. 
+\mbox{\hyperlink{class_the}{The}} abstract base class for all data representing objects in a plot. 
 
 It defines a very basic interface like name, pen, brush, visibility etc. Since this class is abstract, it can\textquotesingle{}t be instantiated. Use one of the subclasses or create a subclass yourself to create new ways of displaying data (see \char`\"{}\+Creating own plottables\char`\"{} below). Plottables that display one-\/dimensional data (i.\+e. data points have a single key dimension and one or multiple values at each key) are based off of the template subclass \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d}{QCPAbstract\+Plottable1D}}, see details there.
 
@@ -307,12 +295,12 @@ For drawing your plot, you can use the \mbox{\hyperlink{class_q_c_p_abstract_plo
 Here are some important members you inherit from \mbox{\hyperlink{class_q_c_p_abstract_plottable}{QCPAbstract\+Plottable}}\+: \tabulinesep=1mm
 \begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
 \hline
-\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast${\bfseries{m\+Parent\+Plot}}  &A pointer to the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance. The parent plot is inferred from the axes that are passed in the constructor. \\\cline{1-2}
-QString {\bfseries{m\+Name}}  &The name of the plottable. \\\cline{1-2}
-QPen {\bfseries{m\+Pen}}  &The generic pen of the plottable. You should use this pen for the most prominent data representing lines in the plottable (e.\+g \mbox{\hyperlink{class_q_c_p_graph}{QCPGraph}} uses this pen for its graph lines and scatters) \\\cline{1-2}
-QBrush {\bfseries{m\+Brush}}  &The generic brush of the plottable. You should use this brush for the most prominent fillable structures in the plottable (e.\+g. \mbox{\hyperlink{class_q_c_p_graph}{QCPGraph}} uses this brush to control filling under the graph) \\\cline{1-2}
-QPointer\texorpdfstring{$<$}{<}\mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}}\texorpdfstring{$>$}{>} {\bfseries{m\+Key\+Axis}}, {\bfseries{m\+Value\+Axis}}  &The key and value axes this plottable is attached to. Call their \mbox{\hyperlink{class_q_c_p_axis_af15d1b3a7f7e9b53d759d3ccff1fe4b4}{QCPAxis\+::coord\+To\+Pixel}} functions to translate coordinates to pixels in either the key or value dimension. Make sure to check whether the pointer is null before using it. If one of the axes is null, don\textquotesingle{}t draw the plottable. \\\cline{1-2}
-\mbox{\hyperlink{class_q_c_p_selection_decorator}{QCPSelection\+Decorator}} {\bfseries{m\+Selection\+Decorator}}  &The currently set selection decorator which specifies how selected data of the plottable shall be drawn and decorated. When drawing your data, you must consult this decorator for the appropriate pen/brush before drawing unselected/selected data segments. Finally, you should call its \mbox{\hyperlink{class_q_c_p_selection_decorator_a4f8eb49e277063845391e803ae23054a}{QCPSelection\+Decorator\+::draw\+Decoration}} method at the end of your draw implementation. \\\cline{1-2}
+\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast${\bfseries{m\+Parent\+Plot}}  &A pointer to the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance. \mbox{\hyperlink{class_the}{The}} parent plot is inferred from the axes that are passed in the constructor. \\\cline{1-2}
+QString {\bfseries{m\+Name}}  &\mbox{\hyperlink{class_the}{The}} name of the plottable. \\\cline{1-2}
+QPen {\bfseries{m\+Pen}}  &\mbox{\hyperlink{class_the}{The}} generic pen of the plottable. You should use this pen for the most prominent data representing lines in the plottable (e.\+g \mbox{\hyperlink{class_q_c_p_graph}{QCPGraph}} uses this pen for its graph lines and scatters) \\\cline{1-2}
+QBrush {\bfseries{m\+Brush}}  &\mbox{\hyperlink{class_the}{The}} generic brush of the plottable. You should use this brush for the most prominent fillable structures in the plottable (e.\+g. \mbox{\hyperlink{class_q_c_p_graph}{QCPGraph}} uses this brush to control filling under the graph) \\\cline{1-2}
+QPointer\texorpdfstring{$<$}{<}\mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}}\texorpdfstring{$>$}{>} {\bfseries{m\+Key\+Axis}}, {\bfseries{m\+Value\+Axis}}  &\mbox{\hyperlink{class_the}{The}} key and value axes this plottable is attached to. Call their \mbox{\hyperlink{class_q_c_p_axis_af15d1b3a7f7e9b53d759d3ccff1fe4b4}{QCPAxis\+::coord\+To\+Pixel}} functions to translate coordinates to pixels in either the key or value dimension. Make sure to check whether the pointer is null before using it. If one of the axes is null, don\textquotesingle{}t draw the plottable. \\\cline{1-2}
+\mbox{\hyperlink{class_q_c_p_selection_decorator}{QCPSelection\+Decorator}} {\bfseries{m\+Selection\+Decorator}}  &\mbox{\hyperlink{class_the}{The}} currently set selection decorator which specifies how selected data of the plottable shall be drawn and decorated. When drawing your data, you must consult this decorator for the appropriate pen/brush before drawing unselected/selected data segments. Finally, you should call its \mbox{\hyperlink{class_q_c_p_selection_decorator_a4f8eb49e277063845391e803ae23054a}{QCPSelection\+Decorator\+::draw\+Decoration}} method at the end of your draw implementation. \\\cline{1-2}
 \mbox{\hyperlink{namespace_q_c_p_ac6cb9db26a564b27feda362a438db038}{QCP\+::\+Selection\+Type}} {\bfseries{m\+Selectable}}  &In which composition, if at all, this plottable\textquotesingle{}s data may be selected. Enforcing this setting on the data selection is done by \mbox{\hyperlink{class_q_c_p_abstract_plottable}{QCPAbstract\+Plottable}} automatically. \\\cline{1-2}
 \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} {\bfseries{m\+Selection}}  &Holds the current selection state of the plottable\textquotesingle{}s data, i.\+e. the selected data ranges (\mbox{\hyperlink{class_q_c_p_data_range}{QCPData\+Range}}).  \\\cline{1-2}
 \end{longtabu}
@@ -605,7 +593,7 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}.
 \doxysubsubsection{\texorpdfstring{selectionChanged}{selectionChanged}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily void QCPAbstract\+Plottable\+::selection\+Changed (\begin{DoxyParamCaption}\item[{bool}]{selected }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
 
-This signal is emitted when the selection state of this plottable has changed, either by user interaction or by a direct call to \mbox{\hyperlink{class_q_c_p_abstract_plottable_a219bc5403a9d85d3129165ec3f5ae436}{set\+Selection}}. The parameter {\itshape selected} indicates whether there are any points selected or not.
+This signal is emitted when the selection state of this plottable has changed, either by user interaction or by a direct call to \mbox{\hyperlink{class_q_c_p_abstract_plottable_a219bc5403a9d85d3129165ec3f5ae436}{set\+Selection}}. \mbox{\hyperlink{class_the}{The}} parameter {\itshape selected} indicates whether there are any points selected or not.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_abstract_plottable_a3af66432b1dca93b28e00e78a8c7c1d9}{selection\+Changed(const QCPData\+Selection \&selection)}} 
@@ -616,7 +604,7 @@ This signal is emitted when the selection state of this plottable has changed, e
 \doxysubsubsection{\texorpdfstring{selectionChanged}{selectionChanged}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily void QCPAbstract\+Plottable\+::selection\+Changed (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} \&}]{selection }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
 
-This signal is emitted when the selection state of this plottable has changed, either by user interaction or by a direct call to \mbox{\hyperlink{class_q_c_p_abstract_plottable_a219bc5403a9d85d3129165ec3f5ae436}{set\+Selection}}. The parameter {\itshape selection} holds the currently selected data ranges.
+This signal is emitted when the selection state of this plottable has changed, either by user interaction or by a direct call to \mbox{\hyperlink{class_q_c_p_abstract_plottable_a219bc5403a9d85d3129165ec3f5ae436}{set\+Selection}}. \mbox{\hyperlink{class_the}{The}} parameter {\itshape selection} holds the currently selected data ranges.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_abstract_plottable_a3af66432b1dca93b28e00e78a8c7c1d9}{selection\+Changed(bool selected)}} 
@@ -627,7 +615,7 @@ This signal is emitted when the selection state of this plottable has changed, e
 \doxysubsubsection{\texorpdfstring{selectionDecorator()}{selectionDecorator()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_selection_decorator}{QCPSelection\+Decorator}} $\ast$ QCPAbstract\+Plottable\+::selection\+Decorator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Provides access to the selection decorator of this plottable. The selection decorator controls how selected data ranges are drawn (e.\+g. their pen color and fill), see \mbox{\hyperlink{class_q_c_p_selection_decorator}{QCPSelection\+Decorator}} for details.
+Provides access to the selection decorator of this plottable. \mbox{\hyperlink{class_the}{The}} selection decorator controls how selected data ranges are drawn (e.\+g. their pen color and fill), see \mbox{\hyperlink{class_q_c_p_selection_decorator}{QCPSelection\+Decorator}} for details.
 
 If you wish to use an own \mbox{\hyperlink{class_q_c_p_selection_decorator}{QCPSelection\+Decorator}} subclass, pass an instance of it to \mbox{\hyperlink{class_q_c_p_abstract_plottable_a20e266ad646f8c4a7e4631040510e5d9}{set\+Selection\+Decorator}}. \mbox{\Hypertarget{class_q_c_p_abstract_plottable_a38efe9641d972992a3d44204bc80ec1d}\label{class_q_c_p_abstract_plottable_a38efe9641d972992a3d44204bc80ec1d}} 
 \index{QCPAbstractPlottable@{QCPAbstractPlottable}!selectTest@{selectTest}}
@@ -643,9 +631,9 @@ If the object is represented not by single lines but by an area like a \mbox{\hy
 
 Providing a constant value for area objects allows selecting line objects even when they are obscured by such area objects, by clicking close to the lines (i.\+e. closer than 0.\+99$\ast$selection\+Tolerance).
 
-The actual setting of the selection state is not done by this function. This is handled by the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} when the mouse\+Release\+Event occurs, and the finally selected object is notified via the select\+Event/ deselect\+Event methods.
+\mbox{\hyperlink{class_the}{The}} actual setting of the selection state is not done by this function. This is handled by the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} when the mouse\+Release\+Event occurs, and the finally selected object is notified via the select\+Event/ deselect\+Event methods.
 
-{\itshape details} is an optional output parameter. Every layerable subclass may place any information in {\itshape details}. This information will be passed to select\+Event when the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} decides on the basis of this select\+Test call, that the object was successfully selected. The subsequent call to select\+Event will carry the {\itshape details}. This is useful for multi-\/part objects (like \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}}). This way, a possibly complex calculation to decide which part was clicked is only done once in \mbox{\hyperlink{class_q_c_p_abstract_plottable_a38efe9641d972992a3d44204bc80ec1d}{select\+Test}}. The result (i.\+e. the actually clicked part) can then be placed in {\itshape details}. So in the subsequent select\+Event, the decision which part was selected doesn\textquotesingle{}t have to be done a second time for a single selection operation.
+{\itshape details} is an optional output parameter. Every layerable subclass may place any information in {\itshape details}. This information will be passed to select\+Event when the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} decides on the basis of this select\+Test call, that the object was successfully selected. \mbox{\hyperlink{class_the}{The}} subsequent call to select\+Event will carry the {\itshape details}. This is useful for multi-\/part objects (like \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}}). This way, a possibly complex calculation to decide which part was clicked is only done once in \mbox{\hyperlink{class_q_c_p_abstract_plottable_a38efe9641d972992a3d44204bc80ec1d}{select\+Test}}. \mbox{\hyperlink{class_the}{The}} result (i.\+e. the actually clicked part) can then be placed in {\itshape details}. So in the subsequent select\+Event, the decision which part was selected doesn\textquotesingle{}t have to be done a second time for a single selection operation.
 
 You may pass 0 as {\itshape details} to indicate that you are not interested in those selection details.
 
@@ -682,7 +670,7 @@ Note that this setting may be overridden by \mbox{\hyperlink{class_q_custom_plot
 \doxysubsubsection{\texorpdfstring{setBrush()}{setBrush()}}
 {\footnotesize\ttfamily void QCPAbstract\+Plottable\+::set\+Brush (\begin{DoxyParamCaption}\item[{const QBrush \&}]{brush }\end{DoxyParamCaption})}
 
-The brush is used to draw basic fills of the plottable representation in the plot. The Fill can be a color, gradient or texture, see the usage of QBrush.
+\mbox{\hyperlink{class_the}{The}} brush is used to draw basic fills of the plottable representation in the plot. \mbox{\hyperlink{class_the}{The}} Fill can be a color, gradient or texture, see the usage of QBrush.
 
 For example, the \mbox{\hyperlink{class_q_c_p_graph}{QCPGraph}} subclass draws the fill under the graph with this brush, when it\textquotesingle{}s not set to Qt\+::\+No\+Brush.
 
@@ -695,7 +683,7 @@ For example, the \mbox{\hyperlink{class_q_c_p_graph}{QCPGraph}} subclass draws t
 \doxysubsubsection{\texorpdfstring{setKeyAxis()}{setKeyAxis()}}
 {\footnotesize\ttfamily void QCPAbstract\+Plottable\+::set\+Key\+Axis (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$}]{axis }\end{DoxyParamCaption})}
 
-The key axis of a plottable can be set to any axis of a \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}, as long as it is orthogonal to the plottable\textquotesingle{}s value axis. This function performs no checks to make sure this is the case. The typical mathematical choice is to use the x-\/axis (\mbox{\hyperlink{class_q_custom_plot_a9a79cd0158a4c7f30cbc702f0fd800e4}{QCustom\+Plot\+::x\+Axis}}) as key axis and the y-\/axis (\mbox{\hyperlink{class_q_custom_plot_af6fea5679725b152c14facd920b19367}{QCustom\+Plot\+::y\+Axis}}) as value axis.
+\mbox{\hyperlink{class_the}{The}} key axis of a plottable can be set to any axis of a \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}, as long as it is orthogonal to the plottable\textquotesingle{}s value axis. This function performs no checks to make sure this is the case. \mbox{\hyperlink{class_the}{The}} typical mathematical choice is to use the x-\/axis (\mbox{\hyperlink{class_q_custom_plot_a9a79cd0158a4c7f30cbc702f0fd800e4}{QCustom\+Plot\+::x\+Axis}}) as key axis and the y-\/axis (\mbox{\hyperlink{class_q_custom_plot_af6fea5679725b152c14facd920b19367}{QCustom\+Plot\+::y\+Axis}}) as value axis.
 
 Normally, the key and value axes are set in the constructor of the plottable (or \mbox{\hyperlink{class_q_custom_plot_a6fb2873d35a8a8089842d81a70a54167}{QCustom\+Plot\+::add\+Graph}} when working with QCPGraphs through the dedicated graph interface).
 
@@ -708,13 +696,13 @@ Normally, the key and value axes are set in the constructor of the plottable (or
 \doxysubsubsection{\texorpdfstring{setName()}{setName()}}
 {\footnotesize\ttfamily void QCPAbstract\+Plottable\+::set\+Name (\begin{DoxyParamCaption}\item[{const QString \&}]{name }\end{DoxyParamCaption})}
 
-The name is the textual representation of this plottable as it is displayed in the legend (\mbox{\hyperlink{class_q_c_p_legend}{QCPLegend}}). It may contain any UTF-\/8 characters, including newlines. \mbox{\Hypertarget{class_q_c_p_abstract_plottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}\label{class_q_c_p_abstract_plottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}} 
+\mbox{\hyperlink{class_the}{The}} name is the textual representation of this plottable as it is displayed in the legend (\mbox{\hyperlink{class_q_c_p_legend}{QCPLegend}}). It may contain any UTF-\/8 characters, including newlines. \mbox{\Hypertarget{class_q_c_p_abstract_plottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}\label{class_q_c_p_abstract_plottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}} 
 \index{QCPAbstractPlottable@{QCPAbstractPlottable}!setPen@{setPen}}
 \index{setPen@{setPen}!QCPAbstractPlottable@{QCPAbstractPlottable}}
 \doxysubsubsection{\texorpdfstring{setPen()}{setPen()}}
 {\footnotesize\ttfamily void QCPAbstract\+Plottable\+::set\+Pen (\begin{DoxyParamCaption}\item[{const QPen \&}]{pen }\end{DoxyParamCaption})}
 
-The pen is used to draw basic lines that make up the plottable representation in the plot.
+\mbox{\hyperlink{class_the}{The}} pen is used to draw basic lines that make up the plottable representation in the plot.
 
 For example, the \mbox{\hyperlink{class_q_c_p_graph}{QCPGraph}} subclass draws its graph lines with this pen.
 
@@ -742,7 +730,7 @@ A selection can happen by clicking on the \mbox{\hyperlink{class_q_custom_plot}{
 
 Sets which data ranges of this plottable are selected. Selected data ranges are drawn differently (e.\+g. color) in the plot. This can be controlled via the selection decorator (see \mbox{\hyperlink{class_q_c_p_abstract_plottable_a7861518e47ca0c6a0c386032c2db075e}{selection\+Decorator}}).
 
-The entire selection mechanism for plottables is handled automatically when \mbox{\hyperlink{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5}{QCustom\+Plot\+::set\+Interactions}} contains i\+Select\+Plottables. You only need to call this function when you wish to change the selection state programmatically.
+\mbox{\hyperlink{class_the}{The}} entire selection mechanism for plottables is handled automatically when \mbox{\hyperlink{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5}{QCustom\+Plot\+::set\+Interactions}} contains i\+Select\+Plottables. You only need to call this function when you wish to change the selection state programmatically.
 
 Using \mbox{\hyperlink{class_q_c_p_abstract_plottable_ac238d6e910f976f1f30d41c2bca44ac3}{set\+Selectable}} you can further specify for each plottable whether and to which granularity it is selectable. If {\itshape selection} is not compatible with the current \mbox{\hyperlink{namespace_q_c_p_ac6cb9db26a564b27feda362a438db038}{QCP\+::\+Selection\+Type}} set via \mbox{\hyperlink{class_q_c_p_abstract_plottable_ac238d6e910f976f1f30d41c2bca44ac3}{set\+Selectable}}, the resulting selection will be adjusted accordingly (see \mbox{\hyperlink{class_q_c_p_data_selection_a17b84d852911531d229f4a76aa239a75}{QCPData\+Selection\+::enforce\+Type}}).
 
@@ -759,15 +747,15 @@ emits the \mbox{\hyperlink{class_q_c_p_abstract_plottable_a3af66432b1dca93b28e00
 
 Use this method to set an own \mbox{\hyperlink{class_q_c_p_selection_decorator}{QCPSelection\+Decorator}} (subclass) instance. This allows you to customize the visual representation of selected data ranges further than by using the default \mbox{\hyperlink{class_q_c_p_selection_decorator}{QCPSelection\+Decorator}}.
 
-The plottable takes ownership of the {\itshape decorator}.
+\mbox{\hyperlink{class_the}{The}} plottable takes ownership of the {\itshape decorator}.
 
-The currently set decorator can be accessed via \mbox{\hyperlink{class_q_c_p_abstract_plottable_a7861518e47ca0c6a0c386032c2db075e}{selection\+Decorator}}. \mbox{\Hypertarget{class_q_c_p_abstract_plottable_a71626a07367e241ec62ad2c34baf21cb}\label{class_q_c_p_abstract_plottable_a71626a07367e241ec62ad2c34baf21cb}} 
+\mbox{\hyperlink{class_the}{The}} currently set decorator can be accessed via \mbox{\hyperlink{class_q_c_p_abstract_plottable_a7861518e47ca0c6a0c386032c2db075e}{selection\+Decorator}}. \mbox{\Hypertarget{class_q_c_p_abstract_plottable_a71626a07367e241ec62ad2c34baf21cb}\label{class_q_c_p_abstract_plottable_a71626a07367e241ec62ad2c34baf21cb}} 
 \index{QCPAbstractPlottable@{QCPAbstractPlottable}!setValueAxis@{setValueAxis}}
 \index{setValueAxis@{setValueAxis}!QCPAbstractPlottable@{QCPAbstractPlottable}}
 \doxysubsubsection{\texorpdfstring{setValueAxis()}{setValueAxis()}}
 {\footnotesize\ttfamily void QCPAbstract\+Plottable\+::set\+Value\+Axis (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$}]{axis }\end{DoxyParamCaption})}
 
-The value axis of a plottable can be set to any axis of a \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}, as long as it is orthogonal to the plottable\textquotesingle{}s key axis. This function performs no checks to make sure this is the case. The typical mathematical choice is to use the x-\/axis (\mbox{\hyperlink{class_q_custom_plot_a9a79cd0158a4c7f30cbc702f0fd800e4}{QCustom\+Plot\+::x\+Axis}}) as key axis and the y-\/axis (\mbox{\hyperlink{class_q_custom_plot_af6fea5679725b152c14facd920b19367}{QCustom\+Plot\+::y\+Axis}}) as value axis.
+\mbox{\hyperlink{class_the}{The}} value axis of a plottable can be set to any axis of a \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}, as long as it is orthogonal to the plottable\textquotesingle{}s key axis. This function performs no checks to make sure this is the case. \mbox{\hyperlink{class_the}{The}} typical mathematical choice is to use the x-\/axis (\mbox{\hyperlink{class_q_custom_plot_a9a79cd0158a4c7f30cbc702f0fd800e4}{QCustom\+Plot\+::x\+Axis}}) as key axis and the y-\/axis (\mbox{\hyperlink{class_q_custom_plot_af6fea5679725b152c14facd920b19367}{QCustom\+Plot\+::y\+Axis}}) as value axis.
 
 Normally, the key and value axes are set in the constructor of the plottable (or \mbox{\hyperlink{class_q_custom_plot_a6fb2873d35a8a8089842d81a70a54167}{QCustom\+Plot\+::add\+Graph}} when working with QCPGraphs through the dedicated graph interface).
 

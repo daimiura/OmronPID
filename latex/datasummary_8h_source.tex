@@ -1,0 +1,79 @@
+\hypertarget{datasummary_8h_source}{}\doxysection{datasummary.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ DATASUMMARY\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ DATASUMMARY\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}communication.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_communication}{Communication}};}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_data_summary}{DataSummary}}\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_data_summary}{DataSummary}}(\mbox{\hyperlink{class_communication}{Communication}}*\ com);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_data_summary_a1b16196dc54f8c0709351613bb884ea8}{getTemperature}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_data_summary_a9dbdea2095a1a84c8af0204b554ddadd}{getMV}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_data_summary_ac83d8023240b79ab2c9b19e34df69884}{getSV}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00045\ \ \ \ \ QString\ \mbox{\hyperlink{class_data_summary_a60aabcef9dbc6f052b205f8663374dc4}{getFileName}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00051\ \ \ \ \ QString\ \mbox{\hyperlink{class_data_summary_a0c637e9d4be829473d85b47b7d0bc6ad}{getFilePath}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_data_summary_aa5b61ecf8eb3ee8e61b9403e736dff09}{setFileName}}(QString\ name);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_data_summary_a721d29528f5aeb7519a92c0d40d44c45}{generateSaveFile}}();}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_data_summary_a61e87c538761c75f34c11b314c940034}{writeData}}();}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_data_summary_af084f99cb72bc2e4b3331f20bdd9b2b7}{logingStart}}();}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_data_summary_a97d2892a28a7e5f80805fda31e88d855}{logingStop}}();}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_data_summary_a48cdd4698f0269fc69ba359b47b73b54}{SetIntervalLog}}(\textcolor{keywordtype}{int}\ interval)\{setIntervalLog(interval);\}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ signals:}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_data_summary_a0664f5a0765c34dd1f1d215fff98bd21}{temperatureChanged}}(\textcolor{keywordtype}{double}\ temperature);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_data_summary_ad939eb587c1452110a8bf2ac0b6c024a}{mvChanged}}(\textcolor{keywordtype}{double}\ mv);}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_data_summary_ab30b9edd27f68ad4a6a3cee53bd38929}{svChanged}}(\textcolor{keywordtype}{double}\ sv);}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_data_summary_aebab52d567efb28866ddd986e58f88fa}{FileSave}}(\textcolor{keywordtype}{bool}\ success);}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{void}\ setTemperature(\textcolor{keywordtype}{double}\ temperature);}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{void}\ setMV(\textcolor{keywordtype}{double}\ mv);}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{void}\ setSV(\textcolor{keywordtype}{double}\ sv);}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{void}\ setSave(\textcolor{keywordtype}{bool}\ save);}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordtype}{void}\ setIntervalLog(\textcolor{keywordtype}{int}\ interval);}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00143\ \ \ \ \ \mbox{\hyperlink{class_communication}{Communication}}\ *com\_\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordtype}{double}\ temperature\_\{\};}
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordtype}{double}\ mv\_\{\};}
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keywordtype}{double}\ sv\_\{\};}
+\DoxyCodeLine{00147\ \ \ \ \ QString\ fileName\_\{\};}
+\DoxyCodeLine{00148\ \ \ \ \ QString\ filePath\_\{\};}
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{bool}\ save\_\{\textcolor{keyword}{true}\};}
+\DoxyCodeLine{00150\ \ \ \ \ QTimer\ *logTimer\_\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordtype}{int}\ intervalLog\_\{10\ *\ 1000\};}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keyword}{const}\ QString\ desktopPath\_\{QStandardPaths::locate(QStandardPaths::DesktopLocation,\ QString(),\ QStandardPaths::LocateDirectory)\};}
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keyword}{const}\ QString\ dataPath2\_\{desktopPath\_\ +\ \textcolor{stringliteral}{"{}Temp\_Record"{}}\};}
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keyword}{const}\ QString\ dataPath\_\{\textcolor{stringliteral}{"{}Z:/triplet/Temp\_Record"{}}\};}
+\DoxyCodeLine{00156\ \};}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DATASUMMARY\_H}}
+
+\end{DoxyCode}

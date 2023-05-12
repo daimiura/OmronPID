@@ -1,0 +1,283 @@
+\hypertarget{class_data_summary}{}\doxysection{Data\+Summary Class Reference}
+\label{class_data_summary}\index{DataSummary@{DataSummary}}
+
+
+Class representing summary information of data.  
+
+
+
+
+{\ttfamily \#include $<$datasummary.\+h$>$}
+
+Inheritance diagram for Data\+Summary\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_data_summary}
+\end{center}
+\end{figure}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_data_summary_a0664f5a0765c34dd1f1d215fff98bd21}{temperature\+Changed}} (double temperature)
+\begin{DoxyCompactList}\small\item\em Signal emitted when the temperature changes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_data_summary_ad939eb587c1452110a8bf2ac0b6c024a}{mv\+Changed}} (double mv)
+\begin{DoxyCompactList}\small\item\em Signal emitted when the MV value changes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_data_summary_ab30b9edd27f68ad4a6a3cee53bd38929}{sv\+Changed}} (double sv)
+\begin{DoxyCompactList}\small\item\em Signal emitted when the SV value changes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_data_summary_aebab52d567efb28866ddd986e58f88fa}{File\+Save}} (bool success)
+\begin{DoxyCompactList}\small\item\em Signal emitted when file is saved. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_data_summary_ac9ad41214f055ba1b1cc94d52cd092f6}{Data\+Summary}} (\mbox{\hyperlink{class_communication}{Communication}} $\ast$com)
+\begin{DoxyCompactList}\small\item\em Constructor for \mbox{\hyperlink{class_data_summary}{Data\+Summary}} class. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_data_summary_a1b16196dc54f8c0709351613bb884ea8}{get\+Temperature}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current temperature. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_data_summary_a9dbdea2095a1a84c8af0204b554ddadd}{get\+MV}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current MV value. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_data_summary_ac83d8023240b79ab2c9b19e34df69884}{get\+SV}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current SV value. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_data_summary_a60aabcef9dbc6f052b205f8663374dc4}{get\+File\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Gets the file name for saving data. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_data_summary_a0c637e9d4be829473d85b47b7d0bc6ad}{get\+File\+Path}} () const
+\begin{DoxyCompactList}\small\item\em Gets the file path for saving data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_data_summary_aa5b61ecf8eb3ee8e61b9403e736dff09}{set\+File\+Name}} (QString name)
+\begin{DoxyCompactList}\small\item\em Sets the file name for saving data. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_data_summary_a721d29528f5aeb7519a92c0d40d44c45}{generate\+Save\+File}} ()
+\begin{DoxyCompactList}\small\item\em Generates and saves the data to file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_data_summary_a61e87c538761c75f34c11b314c940034}{write\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Writes data to file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_data_summary_af084f99cb72bc2e4b3331f20bdd9b2b7}\label{class_data_summary_af084f99cb72bc2e4b3331f20bdd9b2b7}} 
+void {\bfseries loging\+Start} ()
+\begin{DoxyCompactList}\small\item\em Starts logging. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_data_summary_a97d2892a28a7e5f80805fda31e88d855}\label{class_data_summary_a97d2892a28a7e5f80805fda31e88d855}} 
+void {\bfseries loging\+Stop} ()
+\begin{DoxyCompactList}\small\item\em Stops logging. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_data_summary_a48cdd4698f0269fc69ba359b47b73b54}{Set\+Interval\+Log}} (int interval)
+\begin{DoxyCompactList}\small\item\em Sets the interval for logging data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class representing summary information of data. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_data_summary_ac9ad41214f055ba1b1cc94d52cd092f6}\label{class_data_summary_ac9ad41214f055ba1b1cc94d52cd092f6}} 
+\index{DataSummary@{DataSummary}!DataSummary@{DataSummary}}
+\index{DataSummary@{DataSummary}!DataSummary@{DataSummary}}
+\doxysubsubsection{\texorpdfstring{DataSummary()}{DataSummary()}}
+{\footnotesize\ttfamily Data\+Summary\+::\+Data\+Summary (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_communication}{Communication}} $\ast$}]{com }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructor for \mbox{\hyperlink{class_data_summary}{Data\+Summary}} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em com} & Pointer to \mbox{\hyperlink{class_communication}{Communication}} class.\\
+\hline
+\end{DoxyParams}
+
+
+Initializes the object and sets up the file path and name for saving data. Also connects the object to the \mbox{\hyperlink{class_communication}{Communication}} signals to update the stored temperature, setpoint value, and manipulated variable. Starts a timer for logging data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em com} & Pointer to \mbox{\hyperlink{class_communication}{Communication}} class. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_data_summary_aebab52d567efb28866ddd986e58f88fa}\label{class_data_summary_aebab52d567efb28866ddd986e58f88fa}} 
+\index{DataSummary@{DataSummary}!FileSave@{FileSave}}
+\index{FileSave@{FileSave}!DataSummary@{DataSummary}}
+\doxysubsubsection{\texorpdfstring{FileSave}{FileSave}}
+{\footnotesize\ttfamily void Data\+Summary\+::\+File\+Save (\begin{DoxyParamCaption}\item[{bool}]{success }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Signal emitted when file is saved. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em success} & true if the file was saved successfully, false otherwise. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_data_summary_a721d29528f5aeb7519a92c0d40d44c45}\label{class_data_summary_a721d29528f5aeb7519a92c0d40d44c45}} 
+\index{DataSummary@{DataSummary}!generateSaveFile@{generateSaveFile}}
+\index{generateSaveFile@{generateSaveFile}!DataSummary@{DataSummary}}
+\doxysubsubsection{\texorpdfstring{generateSaveFile()}{generateSaveFile()}}
+{\footnotesize\ttfamily bool Data\+Summary\+::generate\+Save\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Generates and saves the data to file. 
+
+Generate a new save file if it does not already exist.
+
+\begin{DoxyReturn}{Returns}
+true if the file was saved successfully, false otherwise.
+
+true if the file is successfully generated, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_summary_a60aabcef9dbc6f052b205f8663374dc4}\label{class_data_summary_a60aabcef9dbc6f052b205f8663374dc4}} 
+\index{DataSummary@{DataSummary}!getFileName@{getFileName}}
+\index{getFileName@{getFileName}!DataSummary@{DataSummary}}
+\doxysubsubsection{\texorpdfstring{getFileName()}{getFileName()}}
+{\footnotesize\ttfamily QString Data\+Summary\+::get\+File\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the file name for saving data. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_the}{The}} file name. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_summary_a0c637e9d4be829473d85b47b7d0bc6ad}\label{class_data_summary_a0c637e9d4be829473d85b47b7d0bc6ad}} 
+\index{DataSummary@{DataSummary}!getFilePath@{getFilePath}}
+\index{getFilePath@{getFilePath}!DataSummary@{DataSummary}}
+\doxysubsubsection{\texorpdfstring{getFilePath()}{getFilePath()}}
+{\footnotesize\ttfamily QString Data\+Summary\+::get\+File\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the file path for saving data. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_the}{The}} file path. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_summary_a9dbdea2095a1a84c8af0204b554ddadd}\label{class_data_summary_a9dbdea2095a1a84c8af0204b554ddadd}} 
+\index{DataSummary@{DataSummary}!getMV@{getMV}}
+\index{getMV@{getMV}!DataSummary@{DataSummary}}
+\doxysubsubsection{\texorpdfstring{getMV()}{getMV()}}
+{\footnotesize\ttfamily double Data\+Summary\+::get\+MV (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the current MV value. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_the}{The}} MV value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_summary_ac83d8023240b79ab2c9b19e34df69884}\label{class_data_summary_ac83d8023240b79ab2c9b19e34df69884}} 
+\index{DataSummary@{DataSummary}!getSV@{getSV}}
+\index{getSV@{getSV}!DataSummary@{DataSummary}}
+\doxysubsubsection{\texorpdfstring{getSV()}{getSV()}}
+{\footnotesize\ttfamily double Data\+Summary\+::get\+SV (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the current SV value. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_the}{The}} SV value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_summary_a1b16196dc54f8c0709351613bb884ea8}\label{class_data_summary_a1b16196dc54f8c0709351613bb884ea8}} 
+\index{DataSummary@{DataSummary}!getTemperature@{getTemperature}}
+\index{getTemperature@{getTemperature}!DataSummary@{DataSummary}}
+\doxysubsubsection{\texorpdfstring{getTemperature()}{getTemperature()}}
+{\footnotesize\ttfamily double Data\+Summary\+::get\+Temperature (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the current temperature. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_the}{The}} temperature value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_summary_ad939eb587c1452110a8bf2ac0b6c024a}\label{class_data_summary_ad939eb587c1452110a8bf2ac0b6c024a}} 
+\index{DataSummary@{DataSummary}!mvChanged@{mvChanged}}
+\index{mvChanged@{mvChanged}!DataSummary@{DataSummary}}
+\doxysubsubsection{\texorpdfstring{mvChanged}{mvChanged}}
+{\footnotesize\ttfamily void Data\+Summary\+::mv\+Changed (\begin{DoxyParamCaption}\item[{double}]{mv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Signal emitted when the MV value changes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mv} & \mbox{\hyperlink{class_the}{The}} new MV value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_data_summary_aa5b61ecf8eb3ee8e61b9403e736dff09}\label{class_data_summary_aa5b61ecf8eb3ee8e61b9403e736dff09}} 
+\index{DataSummary@{DataSummary}!setFileName@{setFileName}}
+\index{setFileName@{setFileName}!DataSummary@{DataSummary}}
+\doxysubsubsection{\texorpdfstring{setFileName()}{setFileName()}}
+{\footnotesize\ttfamily void Data\+Summary\+::set\+File\+Name (\begin{DoxyParamCaption}\item[{QString}]{name }\end{DoxyParamCaption})}
+
+
+
+Sets the file name for saving data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \mbox{\hyperlink{class_the}{The}} file name. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_data_summary_a48cdd4698f0269fc69ba359b47b73b54}\label{class_data_summary_a48cdd4698f0269fc69ba359b47b73b54}} 
+\index{DataSummary@{DataSummary}!SetIntervalLog@{SetIntervalLog}}
+\index{SetIntervalLog@{SetIntervalLog}!DataSummary@{DataSummary}}
+\doxysubsubsection{\texorpdfstring{SetIntervalLog()}{SetIntervalLog()}}
+{\footnotesize\ttfamily void Data\+Summary\+::\+Set\+Interval\+Log (\begin{DoxyParamCaption}\item[{int}]{interval }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the interval for logging data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em interval} & \mbox{\hyperlink{class_the}{The}} interval in milliseconds. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_data_summary_ab30b9edd27f68ad4a6a3cee53bd38929}\label{class_data_summary_ab30b9edd27f68ad4a6a3cee53bd38929}} 
+\index{DataSummary@{DataSummary}!svChanged@{svChanged}}
+\index{svChanged@{svChanged}!DataSummary@{DataSummary}}
+\doxysubsubsection{\texorpdfstring{svChanged}{svChanged}}
+{\footnotesize\ttfamily void Data\+Summary\+::sv\+Changed (\begin{DoxyParamCaption}\item[{double}]{sv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Signal emitted when the SV value changes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sv} & \mbox{\hyperlink{class_the}{The}} new SV value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_data_summary_a0664f5a0765c34dd1f1d215fff98bd21}\label{class_data_summary_a0664f5a0765c34dd1f1d215fff98bd21}} 
+\index{DataSummary@{DataSummary}!temperatureChanged@{temperatureChanged}}
+\index{temperatureChanged@{temperatureChanged}!DataSummary@{DataSummary}}
+\doxysubsubsection{\texorpdfstring{temperatureChanged}{temperatureChanged}}
+{\footnotesize\ttfamily void Data\+Summary\+::temperature\+Changed (\begin{DoxyParamCaption}\item[{double}]{temperature }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Signal emitted when the temperature changes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em temperature} & \mbox{\hyperlink{class_the}{The}} new temperature value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_data_summary_a61e87c538761c75f34c11b314c940034}\label{class_data_summary_a61e87c538761c75f34c11b314c940034}} 
+\index{DataSummary@{DataSummary}!writeData@{writeData}}
+\index{writeData@{writeData}!DataSummary@{DataSummary}}
+\doxysubsubsection{\texorpdfstring{writeData()}{writeData()}}
+{\footnotesize\ttfamily void Data\+Summary\+::write\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Writes data to file. 
+
+Writes temperature, MV and SV values to the data file. \mbox{\hyperlink{class_the}{The}} data is saved in the following format\+: $<$date and time$>$\textbackslash{}t$<$seconds since epoch$>$\textbackslash{}t$<$temperature$>$\textbackslash{}t$<$\+MV$>$\textbackslash{}t$<$\+SV$>$
+
+\mbox{\hyperlink{class_the}{The}} method checks whether the saving of data has been enabled. If not, the method exits. \mbox{\hyperlink{class_the}{The}} data is written to a file specified by file\+Name\+\_\+. If the file does not exist, a new file is created by calling \mbox{\hyperlink{class_data_summary_a721d29528f5aeb7519a92c0d40d44c45}{generate\+Save\+File()}}. \mbox{\hyperlink{class_the}{The}} temperature, MV and SV values are retrieved by calling \mbox{\hyperlink{class_data_summary_a1b16196dc54f8c0709351613bb884ea8}{get\+Temperature()}}, \mbox{\hyperlink{class_data_summary_a9dbdea2095a1a84c8af0204b554ddadd}{get\+MV()}} and \mbox{\hyperlink{class_data_summary_ac83d8023240b79ab2c9b19e34df69884}{get\+SV()}} respectively. \mbox{\hyperlink{class_the}{The}} date and time of writing the data is obtained using QDate\+Time\+::current\+Date\+Time() method. \mbox{\hyperlink{class_the}{The}} data is written in the text format. Once the data is written, the signal \mbox{\hyperlink{class_data_summary_aebab52d567efb28866ddd986e58f88fa}{File\+Save(true)}} is emitted. \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+datasummary.\+h\item 
+datasummary.\+cpp\end{DoxyCompactItemize}

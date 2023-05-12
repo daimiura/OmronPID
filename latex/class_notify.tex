@@ -1,0 +1,85 @@
+\hypertarget{class_notify}{}\doxysection{Notify Class Reference}
+\label{class_notify}\index{Notify@{Notify}}
+
+
+\mbox{\hyperlink{class_the}{The}} \mbox{\hyperlink{class_notify}{Notify}} class provides a way to send notifications to different services.  
+
+
+
+
+{\ttfamily \#include $<$notify.\+h$>$}
+
+Inheritance diagram for Notify\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_notify}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_notify_a8df1d8e7d5a82291a9cc2bcb1a868b4b}{Notify}} (QObject $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{class_notify}{Notify}} object with a parent object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_notify_a621d36ca663f0c8460c82611c708b51e}\label{class_notify_a621d36ca663f0c8460c82611c708b51e}} 
+virtual {\bfseries $\sim$\+Notify} ()
+\begin{DoxyCompactList}\small\item\em Destroys the \mbox{\hyperlink{class_notify}{Notify}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_notify_a5d426d87df52d3061816e070c2e3006a}{set\+LINE}} (const QString \&message, const QString \&token)
+\begin{DoxyCompactList}\small\item\em Sets the message to be sent to the LINE service. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_the}{The}} \mbox{\hyperlink{class_notify}{Notify}} class provides a way to send notifications to different services. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_notify_a8df1d8e7d5a82291a9cc2bcb1a868b4b}\label{class_notify_a8df1d8e7d5a82291a9cc2bcb1a868b4b}} 
+\index{Notify@{Notify}!Notify@{Notify}}
+\index{Notify@{Notify}!Notify@{Notify}}
+\doxysubsubsection{\texorpdfstring{Notify()}{Notify()}}
+{\footnotesize\ttfamily Notify\+::\+Notify (\begin{DoxyParamCaption}\item[{QObject $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{class_notify}{Notify}} object with a parent object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & \mbox{\hyperlink{class_the}{The}} parent object of this object \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_notify_a5d426d87df52d3061816e070c2e3006a}\label{class_notify_a5d426d87df52d3061816e070c2e3006a}} 
+\index{Notify@{Notify}!setLINE@{setLINE}}
+\index{setLINE@{setLINE}!Notify@{Notify}}
+\doxysubsubsection{\texorpdfstring{setLINE()}{setLINE()}}
+{\footnotesize\ttfamily void Notify\+::set\+LINE (\begin{DoxyParamCaption}\item[{const QString \&}]{message,  }\item[{const QString \&}]{token }\end{DoxyParamCaption})}
+
+
+
+Sets the message to be sent to the LINE service. 
+
+Sends a notification to LINE messaging API with the provided message and token.
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & \mbox{\hyperlink{class_the}{The}} message to be sent \\
+\hline
+{\em token} & \mbox{\hyperlink{class_the}{The}} token to be used for authentication\\
+\hline
+\end{DoxyParams}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & \mbox{\hyperlink{class_the}{The}} message to send. \\
+\hline
+{\em token} & \mbox{\hyperlink{class_the}{The}} LINE API token to authenticate with.\\
+\hline
+\end{DoxyParams}
+This method creates a HTTP POST request to the LINE messaging API using the provided message and token. \mbox{\hyperlink{class_the}{The}} request is sent using the QNetwork\+Access\+Manager class. \mbox{\hyperlink{class_the}{The}} method waits for the reply from the server in a non-\/blocking manner by connecting to the QNetwork\+Access\+Manager\+::finished signal. Once the reply is received, the Notify\+::handle\+Network\+Reply() method is called to process the reply. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+notify.\+h\item 
+notify.\+cpp\end{DoxyCompactItemize}

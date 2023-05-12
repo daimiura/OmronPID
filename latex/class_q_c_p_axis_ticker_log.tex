@@ -5,22 +5,10 @@
 Specialized axis ticker suited for logarithmic axes.  
 
 
-
-
-Inheritance diagram for QCPAxis\+Ticker\+Log\+:\nopagebreak
-\begin{figure}[H]
+Inheritance diagram for QCPAxis\+Ticker\+Log\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=179pt]{class_q_c_p_axis_ticker_log__inherit__graph}
-\end{center}
-\end{figure}
-
-
-Collaboration diagram for QCPAxis\+Ticker\+Log\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=179pt]{class_q_c_p_axis_ticker_log__coll__graph}
+\includegraphics[height=2.000000cm]{class_q_c_p_axis_ticker_log}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
@@ -137,13 +125,13 @@ Specialized axis ticker suited for logarithmic axes.
 
 
 
-This \mbox{\hyperlink{class_q_c_p_axis_ticker}{QCPAxis\+Ticker}} subclass generates ticks with unequal tick intervals suited for logarithmic axis scales. The ticks are placed at powers of the specified log base (\mbox{\hyperlink{class_q_c_p_axis_ticker_log_ac6e3b4e03baea3816f898869ab9751ef}{set\+Log\+Base}}).
+This \mbox{\hyperlink{class_q_c_p_axis_ticker}{QCPAxis\+Ticker}} subclass generates ticks with unequal tick intervals suited for logarithmic axis scales. \mbox{\hyperlink{class_the}{The}} ticks are placed at powers of the specified log base (\mbox{\hyperlink{class_q_c_p_axis_ticker_log_ac6e3b4e03baea3816f898869ab9751ef}{set\+Log\+Base}}).
 
 Especially in the case of a log base equal to 10 (the default), it might be desirable to have tick labels in the form of powers of ten without mantissa display. To achieve this, set the number precision (\mbox{\hyperlink{class_q_c_p_axis_a21dc8023ad7500382ad9574b48137e63}{QCPAxis\+::set\+Number\+Precision}}) to zero and the number format (\mbox{\hyperlink{class_q_c_p_axis_ae585a54dc2aac662e90a2ca82f002590}{QCPAxis\+::set\+Number\+Format}}) to scientific (exponential) display with beautifully typeset decimal powers, so a format string of {\ttfamily \char`\"{}eb\char`\"{}}. This will result in the following axis tick labels\+:
 
 
 
-The ticker can be created and assigned to an axis like this\+: 
+\mbox{\hyperlink{class_the}{The}} ticker can be created and assigned to an axis like this\+: 
 \begin{DoxyCodeInclude}{0}
 
 \end{DoxyCodeInclude}
@@ -195,7 +183,7 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_axis_ticker}{QCPAxis\+Ticker}}.
 \doxysubsubsection{\texorpdfstring{setLogBase()}{setLogBase()}}
 {\footnotesize\ttfamily void QCPAxis\+Ticker\+Log\+::set\+Log\+Base (\begin{DoxyParamCaption}\item[{double}]{base }\end{DoxyParamCaption})}
 
-Sets the logarithm base used for tick coordinate generation. The ticks will be placed at integer powers of {\itshape base}. \mbox{\Hypertarget{class_q_c_p_axis_ticker_log_ad51989c798c0cfd50936d77aac57c56a}\label{class_q_c_p_axis_ticker_log_ad51989c798c0cfd50936d77aac57c56a}} 
+Sets the logarithm base used for tick coordinate generation. \mbox{\hyperlink{class_the}{The}} ticks will be placed at integer powers of {\itshape base}. \mbox{\Hypertarget{class_q_c_p_axis_ticker_log_ad51989c798c0cfd50936d77aac57c56a}\label{class_q_c_p_axis_ticker_log_ad51989c798c0cfd50936d77aac57c56a}} 
 \index{QCPAxisTickerLog@{QCPAxisTickerLog}!setSubTickCount@{setSubTickCount}}
 \index{setSubTickCount@{setSubTickCount}!QCPAxisTickerLog@{QCPAxisTickerLog}}
 \doxysubsubsection{\texorpdfstring{setSubTickCount()}{setSubTickCount()}}

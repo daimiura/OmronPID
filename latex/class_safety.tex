@@ -1,0 +1,158 @@
+\hypertarget{class_safety}{}\doxysection{Safety Class Reference}
+\label{class_safety}\index{Safety@{Safety}}
+Inheritance diagram for Safety\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_safety}
+\end{center}
+\end{figure}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_safety_a150494b0f4dbcfc2d59244a380a3a37c}\label{class_safety_a150494b0f4dbcfc2d59244a380a3a37c}} 
+void {\bfseries permited\+Max\+Temp\+Changed} (double maxtemp)
+\item 
+\mbox{\Hypertarget{class_safety_ac2e863d63b98f16f996d5ab80af0f6e7}\label{class_safety_ac2e863d63b98f16f996d5ab80af0f6e7}} 
+void {\bfseries MVUpper\+Changed} (double MVupper)
+\item 
+\mbox{\Hypertarget{class_safety_aeb58b5cedb9863febd41295112667857}\label{class_safety_aeb58b5cedb9863febd41295112667857}} 
+void {\bfseries MVupper\+Reached\+Upper\+Limit} ()
+\item 
+\mbox{\Hypertarget{class_safety_a1fc8b42cfd9f0137daca0b78a7e6a967}\label{class_safety_a1fc8b42cfd9f0137daca0b78a7e6a967}} 
+void {\bfseries Number\+Of\+Check\+Changed} (int number)
+\item 
+\mbox{\Hypertarget{class_safety_a07fc3535d87e388d71daab2c1be34fe1}\label{class_safety_a07fc3535d87e388d71daab2c1be34fe1}} 
+void {\bfseries check\+Number\+Changed} (int number)
+\item 
+\mbox{\Hypertarget{class_safety_afda5edb1254c643ff517d6b12113cadb}\label{class_safety_afda5edb1254c643ff517d6b12113cadb}} 
+void {\bfseries temp\+Change\+Threshold\+Changed} (double temp)
+\item 
+\mbox{\Hypertarget{class_safety_a5f638c6cd7a9622dfe70d6d02670f17f}\label{class_safety_a5f638c6cd7a9622dfe70d6d02670f17f}} 
+void {\bfseries danger\+Signal} (int type)
+\item 
+\mbox{\Hypertarget{class_safety_abe479d597616613bf2a4487c3f19cc49}\label{class_safety_abe479d597616613bf2a4487c3f19cc49}} 
+void {\bfseries interval\+MVCheck\+Changed} (int interval)
+\item 
+\mbox{\Hypertarget{class_safety_ae64e96e13c1aac7847181a2fec2ac7e9}\label{class_safety_ae64e96e13c1aac7847181a2fec2ac7e9}} 
+void {\bfseries interval\+Temp\+Change\+Changed} (int interval)
+\item 
+\mbox{\Hypertarget{class_safety_a964883572fc800b66cb923dd2cb96d04}\label{class_safety_a964883572fc800b66cb923dd2cb96d04}} 
+void {\bfseries escape\+Temp\+Check\+Change} (int sign)
+\item 
+\mbox{\Hypertarget{class_safety_a20e0e101b801021be41c7955f2b996c9}\label{class_safety_a20e0e101b801021be41c7955f2b996c9}} 
+void {\bfseries start\+Temp\+Change\+Check} (int checknumber)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_safety_a88b4480603c98c5b069bdf84565d7230}\label{class_safety_a88b4480603c98c5b069bdf84565d7230}} 
+{\bfseries Safety} (\mbox{\hyperlink{class_communication}{Communication}} $\ast$com)
+\item 
+\mbox{\Hypertarget{class_safety_a4bdcf2894bbf8371976d0aa2fc54eb62}\label{class_safety_a4bdcf2894bbf8371976d0aa2fc54eb62}} 
+double {\bfseries get\+Temperature} () const
+\item 
+\mbox{\Hypertarget{class_safety_a9e0a28a5a469e3969ae66c7da689c989}\label{class_safety_a9e0a28a5a469e3969ae66c7da689c989}} 
+double {\bfseries get\+Permited\+Max\+Temp} () const
+\item 
+\mbox{\Hypertarget{class_safety_af6e3a97192da2fa4aa3c2516db8e45c8}\label{class_safety_af6e3a97192da2fa4aa3c2516db8e45c8}} 
+double {\bfseries get\+MVUpper} () const
+\item 
+\mbox{\Hypertarget{class_safety_ac39567888f0eb955815e47aca1601c4d}\label{class_safety_ac39567888f0eb955815e47aca1601c4d}} 
+double {\bfseries get\+MV} () const
+\item 
+\mbox{\Hypertarget{class_safety_ae86b5061d236a573adce2fc0109550dc}\label{class_safety_ae86b5061d236a573adce2fc0109550dc}} 
+int {\bfseries get\+Number\+Of\+Check} () const
+\item 
+\mbox{\Hypertarget{class_safety_ad90d9be24dca34c44d1eea2ecbdbbf48}\label{class_safety_ad90d9be24dca34c44d1eea2ecbdbbf48}} 
+int {\bfseries get\+Check\+Number} () const
+\item 
+\mbox{\Hypertarget{class_safety_af6a7947989bc693c3cf7f8acc5f67279}\label{class_safety_af6a7947989bc693c3cf7f8acc5f67279}} 
+int {\bfseries get\+Interval\+MVCheck} () const
+\item 
+\mbox{\Hypertarget{class_safety_a8cd49e7eac6813e292b0cd1d4d9cc2e1}\label{class_safety_a8cd49e7eac6813e292b0cd1d4d9cc2e1}} 
+int {\bfseries get\+Interval\+Temp\+Change} () const
+\item 
+\mbox{\Hypertarget{class_safety_ac53494e52725da7aeaba0d5b6fb8cdea}\label{class_safety_ac53494e52725da7aeaba0d5b6fb8cdea}} 
+double {\bfseries get\+Temp\+Change\+Threshold} () const
+\item 
+\mbox{\Hypertarget{class_safety_a172eced92a219b273824b1eee367bfe0}\label{class_safety_a172eced92a219b273824b1eee367bfe0}} 
+double {\bfseries get\+Ignore\+Upper} () const
+\item 
+\mbox{\Hypertarget{class_safety_a1989e307fb76f5984b7c1e44bd98dd17}\label{class_safety_a1989e307fb76f5984b7c1e44bd98dd17}} 
+double {\bfseries get\+Ignore\+Lower} () const
+\item 
+\mbox{\Hypertarget{class_safety_ab37fe3475582146ac4bf2fff55e7ba6e}\label{class_safety_ab37fe3475582146ac4bf2fff55e7ba6e}} 
+void {\bfseries set\+Permited\+Max\+Temp} (double maxtemp)
+\item 
+\mbox{\Hypertarget{class_safety_a3cb80658371044047a231a35dfb90091}\label{class_safety_a3cb80658371044047a231a35dfb90091}} 
+void {\bfseries set\+MVUpper} (double MVupper)
+\item 
+\mbox{\Hypertarget{class_safety_ac2a6bcb91b827b2c12e28459e50e621f}\label{class_safety_ac2a6bcb91b827b2c12e28459e50e621f}} 
+void {\bfseries set\+MV} (double MV)
+\item 
+\mbox{\Hypertarget{class_safety_af4030955eac78938fe9e7079a983b776}\label{class_safety_af4030955eac78938fe9e7079a983b776}} 
+void {\bfseries set\+Number\+Of\+Check} (int number)
+\item 
+\mbox{\Hypertarget{class_safety_a76548edd3324e5b0aed22cadcbae96ba}\label{class_safety_a76548edd3324e5b0aed22cadcbae96ba}} 
+void {\bfseries set\+Check\+Number} (int number)
+\item 
+\mbox{\Hypertarget{class_safety_a8f91ae577d2367c6d774cf008c36a313}\label{class_safety_a8f91ae577d2367c6d774cf008c36a313}} 
+void {\bfseries set\+Temp\+Change\+Threshold} (double temp)
+\item 
+\mbox{\Hypertarget{class_safety_afa5bda2df137f619ebc1bb6f21356cba}\label{class_safety_afa5bda2df137f619ebc1bb6f21356cba}} 
+void {\bfseries set\+Interval\+MVCheck} (int interval)
+\item 
+\mbox{\Hypertarget{class_safety_a575c792b70681d663013841c8d8a932b}\label{class_safety_a575c792b70681d663013841c8d8a932b}} 
+void {\bfseries set\+Interval\+Temp\+Change} (int inteerval)
+\item 
+\mbox{\Hypertarget{class_safety_a1f201f12cdedadc0c3ed9038e2bfe645}\label{class_safety_a1f201f12cdedadc0c3ed9038e2bfe645}} 
+void {\bfseries set\+Ignore\+Upper} (double upper)
+\item 
+\mbox{\Hypertarget{class_safety_a7eb8e1541a047b509b266fafd1e57743}\label{class_safety_a7eb8e1541a047b509b266fafd1e57743}} 
+void {\bfseries set\+Ignore\+Lower} (double lower)
+\item 
+\mbox{\Hypertarget{class_safety_a62caf804c01f46d5523ea13ff51a4369}\label{class_safety_a62caf804c01f46d5523ea13ff51a4369}} 
+void {\bfseries set\+Ignore\+Range} (double lower, double upper)
+\item 
+\mbox{\Hypertarget{class_safety_ac99b54db1735ae9169c56d3b66fbff07}\label{class_safety_ac99b54db1735ae9169c56d3b66fbff07}} 
+void {\bfseries check\+Temp\+Change} ()
+\item 
+\mbox{\Hypertarget{class_safety_a7c11eb70e17108cb34d17015a6727e65}\label{class_safety_a7c11eb70e17108cb34d17015a6727e65}} 
+void {\bfseries set\+Enable\+Temp\+Changee\+Range} (bool enable)
+\item 
+\mbox{\Hypertarget{class_safety_a049753e31587a4eb8bfab9d1bfc518a4}\label{class_safety_a049753e31587a4eb8bfab9d1bfc518a4}} 
+void {\bfseries start} ()
+\item 
+\mbox{\Hypertarget{class_safety_a4d72c7d6a94e6b4772c1e227436de7ff}\label{class_safety_a4d72c7d6a94e6b4772c1e227436de7ff}} 
+void {\bfseries stop} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_safety_acf84d5eab2d978c0e3bf08d1504ccf38}\label{class_safety_acf84d5eab2d978c0e3bf08d1504ccf38}} 
+double {\bfseries permited\+Max\+Temp}
+\item 
+\mbox{\Hypertarget{class_safety_abf5372a5a9d2add14d0eb141aabc2691}\label{class_safety_abf5372a5a9d2add14d0eb141aabc2691}} 
+double {\bfseries MVupper}
+\item 
+\mbox{\Hypertarget{class_safety_ac9ab7a3b914cbecf331b572bbcbd709b}\label{class_safety_ac9ab7a3b914cbecf331b572bbcbd709b}} 
+int {\bfseries Number\+Of\+Check}
+\item 
+\mbox{\Hypertarget{class_safety_ae052cef7611183ca9771dc562bd4edb9}\label{class_safety_ae052cef7611183ca9771dc562bd4edb9}} 
+int {\bfseries check\+Number}
+\item 
+\mbox{\Hypertarget{class_safety_a7e095c4a11ffe4231930785150407bbf}\label{class_safety_a7e095c4a11ffe4231930785150407bbf}} 
+double {\bfseries temp\+Change\+Threshold}
+\item 
+\mbox{\Hypertarget{class_safety_a3373a8012652ba1f973da00d3b25c654}\label{class_safety_a3373a8012652ba1f973da00d3b25c654}} 
+int {\bfseries interval\+MVCheck}
+\item 
+\mbox{\Hypertarget{class_safety_ab43090ff8172cc79efc502fb1d4a9308}\label{class_safety_ab43090ff8172cc79efc502fb1d4a9308}} 
+int {\bfseries interval\+Temp\+Change}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+safety.\+h\item 
+safety.\+cpp\end{DoxyCompactItemize}

@@ -2,16 +2,13 @@
 \label{class_q_c_p_abstract_paint_buffer}\index{QCPAbstractPaintBuffer@{QCPAbstractPaintBuffer}}
 
 
-The abstract base class for paint buffers, which define the rendering backend.  
+\mbox{\hyperlink{class_the}{The}} abstract base class for paint buffers, which define the rendering backend.  
 
 
-
-
-Inheritance diagram for QCPAbstract\+Paint\+Buffer\+:\nopagebreak
-\begin{figure}[H]
+Inheritance diagram for QCPAbstract\+Paint\+Buffer\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=202pt]{class_q_c_p_abstract_paint_buffer__inherit__graph}
+\includegraphics[height=2.000000cm]{class_q_c_p_abstract_paint_buffer}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
@@ -62,13 +59,13 @@ bool {\bfseries m\+Invalidated}
 
 
 \doxysubsection{Detailed Description}
-The abstract base class for paint buffers, which define the rendering backend. 
+\mbox{\hyperlink{class_the}{The}} abstract base class for paint buffers, which define the rendering backend. 
 
 This abstract base class defines the basic interface that a paint buffer needs to provide in order to be usable by \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}.
 
-A paint buffer manages both a surface to draw onto, and the matching paint device. The size of the surface can be changed via \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_a8b68c3cd36533f1a4a23b5ce8cd66f01}{set\+Size}}. External classes (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} and \mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}}) request a painter via \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_a9e9f29b19c033cf02fb96f1a148463f3}{start\+Painting}} and then perform the draw calls. Once the painting is complete, \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_a41b0dc6e7744f19fae09f8532c207dc1}{done\+Painting}} is called, so the paint buffer implementation can do clean up if necessary. Before rendering a frame, each paint buffer is usually filled with a color using \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_a9e253f4541dfc01992b77e8830bd7722}{clear}} (usually the color is {\ttfamily Qt\+::transparent}), to remove the contents of the previous frame.
+A paint buffer manages both a surface to draw onto, and the matching paint device. \mbox{\hyperlink{class_the}{The}} size of the surface can be changed via \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_a8b68c3cd36533f1a4a23b5ce8cd66f01}{set\+Size}}. External classes (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} and \mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}}) request a painter via \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_a9e9f29b19c033cf02fb96f1a148463f3}{start\+Painting}} and then perform the draw calls. Once the painting is complete, \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_a41b0dc6e7744f19fae09f8532c207dc1}{done\+Painting}} is called, so the paint buffer implementation can do clean up if necessary. Before rendering a frame, each paint buffer is usually filled with a color using \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_a9e253f4541dfc01992b77e8830bd7722}{clear}} (usually the color is {\ttfamily Qt\+::transparent}), to remove the contents of the previous frame.
 
-The simplest paint buffer implementation is \mbox{\hyperlink{class_q_c_p_paint_buffer_pixmap}{QCPPaint\+Buffer\+Pixmap}} which allows regular software rendering via the raster engine. Hardware accelerated rendering via pixel buffers and frame buffer objects is provided by QCPPaint\+Buffer\+Gl\+Pbuffer and QCPPaint\+Buffer\+Gl\+Fbo. They are used automatically if \mbox{\hyperlink{class_q_custom_plot_a7db1adc09016329f3aef7c60da935789}{QCustom\+Plot\+::set\+Open\+Gl}} is enabled. 
+\mbox{\hyperlink{class_the}{The}} simplest paint buffer implementation is \mbox{\hyperlink{class_q_c_p_paint_buffer_pixmap}{QCPPaint\+Buffer\+Pixmap}} which allows regular software rendering via the raster engine. Hardware accelerated rendering via pixel buffers and frame buffer objects is provided by QCPPaint\+Buffer\+Gl\+Pbuffer and QCPPaint\+Buffer\+Gl\+Fbo. They are used automatically if \mbox{\hyperlink{class_q_custom_plot_a7db1adc09016329f3aef7c60da935789}{QCustom\+Plot\+::set\+Open\+Gl}} is enabled. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_q_c_p_abstract_paint_buffer_a3ce532c12f10b81697108835755641e2}\label{class_q_c_p_abstract_paint_buffer_a3ce532c12f10b81697108835755641e2}} 
@@ -102,7 +99,7 @@ Implemented in \mbox{\hyperlink{class_q_c_p_paint_buffer_pixmap_a14badbd010a3cde
 
 If you have acquired a \mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} to paint onto this paint buffer via \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_a9e9f29b19c033cf02fb96f1a148463f3}{start\+Painting}}, call this method as soon as you are done with the painting operations and have deleted the painter.
 
-paint buffer subclasses may use this method to perform any type of cleanup that is necessary. The default implementation does nothing. \mbox{\Hypertarget{class_q_c_p_abstract_paint_buffer_afb998c7525e3ae37d9d2d46c7aaf461a}\label{class_q_c_p_abstract_paint_buffer_afb998c7525e3ae37d9d2d46c7aaf461a}} 
+paint buffer subclasses may use this method to perform any type of cleanup that is necessary. \mbox{\hyperlink{class_the}{The}} default implementation does nothing. \mbox{\Hypertarget{class_q_c_p_abstract_paint_buffer_afb998c7525e3ae37d9d2d46c7aaf461a}\label{class_q_c_p_abstract_paint_buffer_afb998c7525e3ae37d9d2d46c7aaf461a}} 
 \index{QCPAbstractPaintBuffer@{QCPAbstractPaintBuffer}!draw@{draw}}
 \index{draw@{draw}!QCPAbstractPaintBuffer@{QCPAbstractPaintBuffer}}
 \doxysubsubsection{\texorpdfstring{draw()}{draw()}}
@@ -133,9 +130,9 @@ Implemented in \mbox{\hyperlink{class_q_c_p_paint_buffer_pixmap_ad49f3205ba3463b
 \doxysubsubsection{\texorpdfstring{setDevicePixelRatio()}{setDevicePixelRatio()}}
 {\footnotesize\ttfamily void QCPAbstract\+Paint\+Buffer\+::set\+Device\+Pixel\+Ratio (\begin{DoxyParamCaption}\item[{double}]{ratio }\end{DoxyParamCaption})}
 
-Sets the the device pixel ratio to {\itshape ratio}. This is useful to render on high-\/\+DPI output devices. The ratio is automatically set to the device pixel ratio used by the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance.
+Sets the the device pixel ratio to {\itshape ratio}. This is useful to render on high-\/\+DPI output devices. \mbox{\hyperlink{class_the}{The}} ratio is automatically set to the device pixel ratio used by the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance.
 
-The buffer is reallocated (by calling \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_aee7506a52bd7e5a07c2af27935eb13e7}{reallocate\+Buffer}}), so any painters that were obtained by \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_a9e9f29b19c033cf02fb96f1a148463f3}{start\+Painting}} are invalidated and must not be used after calling this method.
+\mbox{\hyperlink{class_the}{The}} buffer is reallocated (by calling \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_aee7506a52bd7e5a07c2af27935eb13e7}{reallocate\+Buffer}}), so any painters that were obtained by \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_a9e9f29b19c033cf02fb96f1a148463f3}{start\+Painting}} are invalidated and must not be used after calling this method.
 
 \begin{DoxyNote}{Note}
 This method is only available for Qt versions 5.\+4 and higher. 
@@ -150,7 +147,7 @@ Sets the invalidated flag to {\itshape invalidated}.
 
 This mechanism is used internally in conjunction with isolated replotting of \mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} instances (in \mbox{\hyperlink{class_q_c_p_layer_a67dcfc1590be2a1f2227c5a39bb59c7cab581b9fab3007c4c65f057f4185d7538}{QCPLayer\+::lm\+Buffered}} mode). If \mbox{\hyperlink{class_q_c_p_layer_adefd53b6db02f470151c416f42e37180}{QCPLayer\+::replot}} is called on a buffered layer, i.\+e. an isolated repaint of only that layer (and its dedicated paint buffer) is requested, \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} will decide depending on the invalidated flags of other paint buffers whether it also replots them, instead of only the layer on which the replot was called.
 
-The invalidated flag is set to true when \mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} association has changed, i.\+e. if layers were added or removed from this buffer, or if they were reordered. It is set to false as soon as all associated \mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} instances are drawn onto the buffer.
+\mbox{\hyperlink{class_the}{The}} invalidated flag is set to true when \mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} association has changed, i.\+e. if layers were added or removed from this buffer, or if they were reordered. It is set to false as soon as all associated \mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} instances are drawn onto the buffer.
 
 Under normal circumstances, it is not necessary to manually call this method. \mbox{\Hypertarget{class_q_c_p_abstract_paint_buffer_a8b68c3cd36533f1a4a23b5ce8cd66f01}\label{class_q_c_p_abstract_paint_buffer_a8b68c3cd36533f1a4a23b5ce8cd66f01}} 
 \index{QCPAbstractPaintBuffer@{QCPAbstractPaintBuffer}!setSize@{setSize}}
@@ -160,7 +157,7 @@ Under normal circumstances, it is not necessary to manually call this method. \m
 
 Sets the paint buffer size.
 
-The buffer is reallocated (by calling \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_aee7506a52bd7e5a07c2af27935eb13e7}{reallocate\+Buffer}}), so any painters that were obtained by \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_a9e9f29b19c033cf02fb96f1a148463f3}{start\+Painting}} are invalidated and must not be used after calling this method.
+\mbox{\hyperlink{class_the}{The}} buffer is reallocated (by calling \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_aee7506a52bd7e5a07c2af27935eb13e7}{reallocate\+Buffer}}), so any painters that were obtained by \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_a9e9f29b19c033cf02fb96f1a148463f3}{start\+Painting}} are invalidated and must not be used after calling this method.
 
 If {\itshape size} is already the current buffer size, this method does nothing. \mbox{\Hypertarget{class_q_c_p_abstract_paint_buffer_a9e9f29b19c033cf02fb96f1a148463f3}\label{class_q_c_p_abstract_paint_buffer_a9e9f29b19c033cf02fb96f1a148463f3}} 
 \index{QCPAbstractPaintBuffer@{QCPAbstractPaintBuffer}!startPainting@{startPainting}}
@@ -168,7 +165,7 @@ If {\itshape size} is already the current buffer size, this method does nothing.
 \doxysubsubsection{\texorpdfstring{startPainting()}{startPainting()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$ QCPAbstract\+Paint\+Buffer\+::start\+Painting (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
-Returns a \mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} which is ready to draw to this buffer. The ownership and thus the responsibility to delete the painter after the painting operations are complete is given to the caller of this method.
+Returns a \mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} which is ready to draw to this buffer. \mbox{\hyperlink{class_the}{The}} ownership and thus the responsibility to delete the painter after the painting operations are complete is given to the caller of this method.
 
 Once you are done using the painter, delete the painter and call \mbox{\hyperlink{class_q_c_p_abstract_paint_buffer_a41b0dc6e7744f19fae09f8532c207dc1}{done\+Painting}}.
 

@@ -2,16 +2,13 @@
 \label{class_q_c_p_axis_ticker}\index{QCPAxisTicker@{QCPAxisTicker}}
 
 
-The base class tick generator used by \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} to create tick positions and tick labels.  
+\mbox{\hyperlink{class_the}{The}} base class tick generator used by \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} to create tick positions and tick labels.  
 
 
-
-
-Inheritance diagram for QCPAxis\+Ticker\+:\nopagebreak
-\begin{figure}[H]
+Inheritance diagram for QCPAxis\+Ticker\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=324pt]{class_q_c_p_axis_ticker__inherit__graph}
+\includegraphics[height=1.181435cm]{class_q_c_p_axis_ticker}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Types}
@@ -87,13 +84,13 @@ double {\bfseries m\+Tick\+Origin}
 
 
 \doxysubsection{Detailed Description}
-The base class tick generator used by \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} to create tick positions and tick labels. 
+\mbox{\hyperlink{class_the}{The}} base class tick generator used by \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} to create tick positions and tick labels. 
 
-Each \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} has an internal \mbox{\hyperlink{class_q_c_p_axis_ticker}{QCPAxis\+Ticker}} (or a subclass) in order to generate tick positions and tick labels for the current axis range. The ticker of an axis can be set via \mbox{\hyperlink{class_q_c_p_axis_a4ee03fcd2c74d05cd1a419b9af5cfbdc}{QCPAxis\+::set\+Ticker}}. Since that method takes a {\ttfamily QShared\+Pointer$<$\+QCPAxis\+Ticker$>$}, multiple axes can share the same ticker instance.
+Each \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} has an internal \mbox{\hyperlink{class_q_c_p_axis_ticker}{QCPAxis\+Ticker}} (or a subclass) in order to generate tick positions and tick labels for the current axis range. \mbox{\hyperlink{class_the}{The}} ticker of an axis can be set via \mbox{\hyperlink{class_q_c_p_axis_a4ee03fcd2c74d05cd1a419b9af5cfbdc}{QCPAxis\+::set\+Ticker}}. Since that method takes a {\ttfamily QShared\+Pointer$<$\+QCPAxis\+Ticker$>$}, multiple axes can share the same ticker instance.
 
-This base class generates normal tick coordinates and numeric labels for linear axes. It picks a reasonable tick step (the separation between ticks) which results in readable tick labels. The number of ticks that should be approximately generated can be set via \mbox{\hyperlink{class_q_c_p_axis_ticker_a47752abba8293e6dc18491501ae34008}{set\+Tick\+Count}}. Depending on the current tick step strategy (\mbox{\hyperlink{class_q_c_p_axis_ticker_a73b1d847c1a12159af6bfda4ebebe7d5}{set\+Tick\+Step\+Strategy}}), the algorithm either sacrifices readability to better match the specified tick count (\mbox{\hyperlink{class_q_c_p_axis_ticker_ab6d2f9d9477821623ac9bc4b21ddf49aa770312b6b9b0c64a37ceeba96e0cd7f2}{QCPAxis\+Ticker\+::tss\+Meet\+Tick\+Count}}) or relaxes the tick count in favor of better tick steps (\mbox{\hyperlink{class_q_c_p_axis_ticker_ab6d2f9d9477821623ac9bc4b21ddf49aa9002aa2fd5633ab5556c71a26fed63a8}{QCPAxis\+Ticker\+::tss\+Readability}}), which is the default.
+This base class generates normal tick coordinates and numeric labels for linear axes. It picks a reasonable tick step (the separation between ticks) which results in readable tick labels. \mbox{\hyperlink{class_the}{The}} number of ticks that should be approximately generated can be set via \mbox{\hyperlink{class_q_c_p_axis_ticker_a47752abba8293e6dc18491501ae34008}{set\+Tick\+Count}}. Depending on the current tick step strategy (\mbox{\hyperlink{class_q_c_p_axis_ticker_a73b1d847c1a12159af6bfda4ebebe7d5}{set\+Tick\+Step\+Strategy}}), the algorithm either sacrifices readability to better match the specified tick count (\mbox{\hyperlink{class_q_c_p_axis_ticker_ab6d2f9d9477821623ac9bc4b21ddf49aa770312b6b9b0c64a37ceeba96e0cd7f2}{QCPAxis\+Ticker\+::tss\+Meet\+Tick\+Count}}) or relaxes the tick count in favor of better tick steps (\mbox{\hyperlink{class_q_c_p_axis_ticker_ab6d2f9d9477821623ac9bc4b21ddf49aa9002aa2fd5633ab5556c71a26fed63a8}{QCPAxis\+Ticker\+::tss\+Readability}}), which is the default.
 
-The following more specialized axis ticker subclasses are available, see details in the respective class documentation\+:
+\mbox{\hyperlink{class_the}{The}} following more specialized axis ticker subclasses are available, see details in the respective class documentation\+:
 
 \begin{center} \tabulinesep=1mm
 \begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
@@ -110,9 +107,9 @@ Creating own axis tickers can be achieved very easily by sublassing \mbox{\hyper
 
 In the simplest case you might wish to just generate different tick steps than the other tickers, so you only reimplement the method get\+Tick\+Step. If you additionally want control over the string that will be shown as tick label, reimplement get\+Tick\+Label.
 
-If you wish to have complete control, you can generate the tick vectors and tick label vectors yourself by reimplementing create\+Tick\+Vector and create\+Label\+Vector. The default implementations use the previously mentioned virtual methods get\+Tick\+Step and get\+Tick\+Label, but your reimplementations don\textquotesingle{}t necessarily need to do so. For example in the case of unequal tick steps, the method get\+Tick\+Step loses its usefulness and can be ignored.
+If you wish to have complete control, you can generate the tick vectors and tick label vectors yourself by reimplementing create\+Tick\+Vector and create\+Label\+Vector. \mbox{\hyperlink{class_the}{The}} default implementations use the previously mentioned virtual methods get\+Tick\+Step and get\+Tick\+Label, but your reimplementations don\textquotesingle{}t necessarily need to do so. For example in the case of unequal tick steps, the method get\+Tick\+Step loses its usefulness and can be ignored.
 
-The sub tick count between major ticks can be controlled with get\+Sub\+Tick\+Count. Full sub tick placement control is obtained by reimplementing create\+Sub\+Tick\+Vector.
+\mbox{\hyperlink{class_the}{The}} sub tick count between major ticks can be controlled with get\+Sub\+Tick\+Count. Full sub tick placement control is obtained by reimplementing create\+Sub\+Tick\+Vector.
 
 See the documentation of all these virtual methods in \mbox{\hyperlink{class_q_c_p_axis_ticker}{QCPAxis\+Ticker}} for detailed information about the parameters and expected return values. 
 
@@ -168,9 +165,9 @@ Reimplemented in \mbox{\hyperlink{class_q_c_p_axis_ticker_text_aa195c4fd0364d039
 
 This is the method called by \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} in order to actually generate tick coordinates ({\itshape ticks}), tick label strings ({\itshape tick\+Labels}) and sub tick coordinates ({\itshape sub\+Ticks}).
 
-The ticks are generated for the specified {\itshape range}. The generated labels typically follow the specified {\itshape locale}, {\itshape format\+Char} and number {\itshape precision}, however this might be different (or even irrelevant) for certain \mbox{\hyperlink{class_q_c_p_axis_ticker}{QCPAxis\+Ticker}} subclasses.
+\mbox{\hyperlink{class_the}{The}} ticks are generated for the specified {\itshape range}. \mbox{\hyperlink{class_the}{The}} generated labels typically follow the specified {\itshape locale}, {\itshape format\+Char} and number {\itshape precision}, however this might be different (or even irrelevant) for certain \mbox{\hyperlink{class_q_c_p_axis_ticker}{QCPAxis\+Ticker}} subclasses.
 
-The output parameter {\itshape ticks} is filled with the generated tick positions in axis coordinates. The output parameters {\itshape sub\+Ticks} and {\itshape tick\+Labels} are optional (set them to 0 if not needed) and are respectively filled with sub tick coordinates, and tick label strings belonging to {\itshape ticks} by index. \mbox{\Hypertarget{class_q_c_p_axis_ticker_a4ccc403ced7a1457ce6ba293509933c8}\label{class_q_c_p_axis_ticker_a4ccc403ced7a1457ce6ba293509933c8}} 
+\mbox{\hyperlink{class_the}{The}} output parameter {\itshape ticks} is filled with the generated tick positions in axis coordinates. \mbox{\hyperlink{class_the}{The}} output parameters {\itshape sub\+Ticks} and {\itshape tick\+Labels} are optional (set them to 0 if not needed) and are respectively filled with sub tick coordinates, and tick label strings belonging to {\itshape ticks} by index. \mbox{\Hypertarget{class_q_c_p_axis_ticker_a4ccc403ced7a1457ce6ba293509933c8}\label{class_q_c_p_axis_ticker_a4ccc403ced7a1457ce6ba293509933c8}} 
 \index{QCPAxisTicker@{QCPAxisTicker}!getSubTickCount@{getSubTickCount}}
 \index{getSubTickCount@{getSubTickCount}!QCPAxisTicker@{QCPAxisTicker}}
 \doxysubsubsection{\texorpdfstring{getSubTickCount()}{getSubTickCount()}}

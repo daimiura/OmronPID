@@ -49,5 +49,6 @@ var searchData=
   ['stnone_46',['stNone',['../namespace_q_c_p.html#ac6cb9db26a564b27feda362a438db038aa64628e338a2dd1e6f0dc84dec0b63fe',1,'QCP']]],
   ['stplotcoords_47',['stPlotCoords',['../class_q_c_p_bars_group.html#a4c0521120a97e60bbca37677a37075b6ad369cee6287e0a86e8c2b643a3168c54',1,'QCPBarsGroup']]],
   ['stsingledata_48',['stSingleData',['../namespace_q_c_p.html#ac6cb9db26a564b27feda362a438db038ae5b11259c42962db355e7448f4a8633a',1,'QCP']]],
-  ['stwhole_49',['stWhole',['../namespace_q_c_p.html#ac6cb9db26a564b27feda362a438db038aff7a688d4d520e8e7f01be098a034a2d',1,'QCP']]]
+  ['stwhole_49',['stWhole',['../namespace_q_c_p.html#ac6cb9db26a564b27feda362a438db038aff7a688d4d520e8e7f01be098a034a2d',1,'QCP']]],
+  ['sv_50',['SV',['../class_communication_1_1_e5_c_c___address.html#ae65845c8cd58de1fd62558b229f90dbcad38212a0c0e98f678feaaa5a8b9167f5',1,'Communication::E5CC_Address']]]
 ];

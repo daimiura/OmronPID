@@ -48,15 +48,6 @@ bool \mbox{\hyperlink{class_q_c_p_data_range_a8a1c437f9beffd55621f48f961d7f679}{
 \item 
 bool \mbox{\hyperlink{class_q_c_p_data_range_a13ca398776374a3160aa85433718b812}{contains}} (const \mbox{\hyperlink{class_q_c_p_data_range}{QCPData\+Range}} \&other) const
 \end{DoxyCompactItemize}
-\doxysubsection*{Private Attributes}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\Hypertarget{class_q_c_p_data_range_a849baf613e8ad866a66aaf45682dde53}\label{class_q_c_p_data_range_a849baf613e8ad866a66aaf45682dde53}} 
-int {\bfseries m\+Begin}
-\item 
-\mbox{\Hypertarget{class_q_c_p_data_range_ac22cfcf2795d5e9f617d788be9fb14a0}\label{class_q_c_p_data_range_ac22cfcf2795d5e9f617d788be9fb14a0}} 
-int {\bfseries m\+End}
-\end{DoxyCompactItemize}
 \doxysubsection*{Related Functions}
 (Note that these are not member functions.) \begin{DoxyCompactItemize}
 \item 
@@ -67,7 +58,7 @@ QDebug \mbox{\hyperlink{class_q_c_p_data_range_a486dd7af8a090ed069672e3510e6a082
 \doxysubsection{Detailed Description}
 Describes a data range given by begin and end index. 
 
-\mbox{\hyperlink{class_q_c_p_data_range}{QCPData\+Range}} holds two integers describing the begin (\mbox{\hyperlink{class_q_c_p_data_range_a54ff59048e01e46ac4aefafc844626c6}{set\+Begin}}) and end (\mbox{\hyperlink{class_q_c_p_data_range_a277f1a9eafe70b9184d9c00b641ae5de}{set\+End}}) index of a contiguous set of data points. The end index points to the data point above the last data point that\textquotesingle{}s part of the data range, similarly to the nomenclature used in standard iterators.
+\mbox{\hyperlink{class_q_c_p_data_range}{QCPData\+Range}} holds two integers describing the begin (\mbox{\hyperlink{class_q_c_p_data_range_a54ff59048e01e46ac4aefafc844626c6}{set\+Begin}}) and end (\mbox{\hyperlink{class_q_c_p_data_range_a277f1a9eafe70b9184d9c00b641ae5de}{set\+End}}) index of a contiguous set of data points. \mbox{\hyperlink{class_the}{The}} end index points to the data point above the last data point that\textquotesingle{}s part of the data range, similarly to the nomenclature used in standard iterators.
 
 Data Ranges are not bound to a certain plottable, thus they can be freely exchanged, created and modified. If a non-\/contiguous data set shall be described, the class \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} is used, which holds and manages multiple instances of \mbox{\hyperlink{class_q_c_p_data_range}{QCPData\+Range}}. In most situations, \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} is thus used.
 
@@ -173,7 +164,7 @@ Returns whether this range is empty, i.\+e. whether its begin index equals its e
 Returns whether this range is valid. A valid range has a begin index greater or equal to 0, and an end index greater or equal to the begin index.
 
 \begin{DoxyNote}{Note}
-Invalid ranges should be avoided and are never the result of any of \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}\textquotesingle{}s methods (unless they are themselves fed with invalid ranges). Do not pass invalid ranges to \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}\textquotesingle{}s methods. The invalid range is not inherently prevented in \mbox{\hyperlink{class_q_c_p_data_range}{QCPData\+Range}}, to allow temporary invalid begin/end values while manipulating the range. An invalid range is not necessarily empty (\mbox{\hyperlink{class_q_c_p_data_range_ac32e53fc05d6cd2eac96b96a7265d3b8}{is\+Empty}}), since its \mbox{\hyperlink{class_q_c_p_data_range_a1e7836058f755c6ab9f11996477b7150}{length}} can be negative and thus non-\/zero. 
+Invalid ranges should be avoided and are never the result of any of \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}\textquotesingle{}s methods (unless they are themselves fed with invalid ranges). Do not pass invalid ranges to \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}\textquotesingle{}s methods. \mbox{\hyperlink{class_the}{The}} invalid range is not inherently prevented in \mbox{\hyperlink{class_q_c_p_data_range}{QCPData\+Range}}, to allow temporary invalid begin/end values while manipulating the range. An invalid range is not necessarily empty (\mbox{\hyperlink{class_q_c_p_data_range_ac32e53fc05d6cd2eac96b96a7265d3b8}{is\+Empty}}), since its \mbox{\hyperlink{class_q_c_p_data_range_a1e7836058f755c6ab9f11996477b7150}{length}} can be negative and thus non-\/zero. 
 \end{DoxyNote}
 \mbox{\Hypertarget{class_q_c_p_data_range_a1e7836058f755c6ab9f11996477b7150}\label{class_q_c_p_data_range_a1e7836058f755c6ab9f11996477b7150}} 
 \index{QCPDataRange@{QCPDataRange}!length@{length}}
@@ -187,7 +178,7 @@ Returns the number of data points described by this data range. Equivalent to \m
 \doxysubsubsection{\texorpdfstring{setBegin()}{setBegin()}}
 {\footnotesize\ttfamily void QCPData\+Range\+::set\+Begin (\begin{DoxyParamCaption}\item[{int}]{begin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-Sets the begin of this data range. The {\itshape begin} index points to the first data point that is part of the data range.
+Sets the begin of this data range. \mbox{\hyperlink{class_the}{The}} {\itshape begin} index points to the first data point that is part of the data range.
 
 No checks or corrections are made to ensure the resulting range is valid (\mbox{\hyperlink{class_q_c_p_data_range_aae53a37472212dca0a7939963e20dba0}{is\+Valid}}).
 
@@ -200,7 +191,7 @@ No checks or corrections are made to ensure the resulting range is valid (\mbox{
 \doxysubsubsection{\texorpdfstring{setEnd()}{setEnd()}}
 {\footnotesize\ttfamily void QCPData\+Range\+::set\+End (\begin{DoxyParamCaption}\item[{int}]{end }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-Sets the end of this data range. The {\itshape end} index points to the data point just above the last data point that is part of the data range.
+Sets the end of this data range. \mbox{\hyperlink{class_the}{The}} {\itshape end} index points to the data point just above the last data point that is part of the data range.
 
 No checks or corrections are made to ensure the resulting range is valid (\mbox{\hyperlink{class_q_c_p_data_range_aae53a37472212dca0a7939963e20dba0}{is\+Valid}}).
 

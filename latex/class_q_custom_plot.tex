@@ -2,25 +2,13 @@
 \label{class_q_custom_plot}\index{QCustomPlot@{QCustomPlot}}
 
 
-The central class of the library. This is the QWidget which displays the plot and interacts with the user.  
+\mbox{\hyperlink{class_the}{The}} central class of the library. This is the QWidget which displays the plot and interacts with the user.  
 
 
-
-
-Inheritance diagram for QCustom\+Plot\+:\nopagebreak
-\begin{figure}[H]
+Inheritance diagram for QCustom\+Plot\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=155pt]{class_q_custom_plot__inherit__graph}
-\end{center}
-\end{figure}
-
-
-Collaboration diagram for QCustom\+Plot\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_q_custom_plot__coll__graph}
+\includegraphics[height=2.000000cm]{class_q_custom_plot}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Types}
@@ -510,7 +498,7 @@ class {\bfseries QCPAbstract\+Item}
 
 
 \doxysubsection{Detailed Description}
-The central class of the library. This is the QWidget which displays the plot and interacts with the user. 
+\mbox{\hyperlink{class_the}{The}} central class of the library. This is the QWidget which displays the plot and interacts with the user. 
 
 For tutorials on how to use \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}, see the website~\newline
 \href{http://www.qcustomplot.com/}{\texttt{ http\+://www.\+qcustomplot.\+com/}} 
@@ -562,7 +550,7 @@ rp\+Refresh\+Hint&Whether to use immediate or queued refresh depends on whether 
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{rpQueuedReplot@{rpQueuedReplot}!QCustomPlot@{QCustomPlot}}\index{QCustomPlot@{QCustomPlot}!rpQueuedReplot@{rpQueuedReplot}}}\mbox{\Hypertarget{class_q_custom_plot_a45d61392d13042e712a956d27762aa39a019650c6ddf308f97e811fbfff207a8f}\label{class_q_custom_plot_a45d61392d13042e712a956d27762aa39a019650c6ddf308f97e811fbfff207a8f}} 
-rp\+Queued\+Replot&Queues the entire replot for the next event loop iteration. This way multiple redundant replots can be avoided. The actual replot is then done with \mbox{\hyperlink{class_q_custom_plot_a45d61392d13042e712a956d27762aa39a49666a5854a68dbcca8b277b03331260}{rp\+Refresh\+Hint}} priority. \\
+rp\+Queued\+Replot&Queues the entire replot for the next event loop iteration. This way multiple redundant replots can be avoided. \mbox{\hyperlink{class_the}{The}} actual replot is then done with \mbox{\hyperlink{class_q_custom_plot_a45d61392d13042e712a956d27762aa39a49666a5854a68dbcca8b277b03331260}{rp\+Refresh\+Hint}} priority. \\
 \hline
 
 \end{DoxyEnumFields}
@@ -599,7 +587,7 @@ Returns a pointer to the newly created graph, or 0 if adding the graph failed.
 \doxysubsubsection{\texorpdfstring{addLayer()}{addLayer()}}
 {\footnotesize\ttfamily bool QCustom\+Plot\+::add\+Layer (\begin{DoxyParamCaption}\item[{const QString \&}]{name,  }\item[{\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$}]{other\+Layer = {\ttfamily 0},  }\item[{\mbox{\hyperlink{class_q_custom_plot_a75a8afbe6ef333b1f3d47abb25b9add7}{QCustom\+Plot\+::\+Layer\+Insert\+Mode}}}]{insert\+Mode = {\ttfamily \mbox{\hyperlink{class_q_custom_plot_a75a8afbe6ef333b1f3d47abb25b9add7a062b0b7825650b432a713c0df6742d41}{lim\+Above}}} }\end{DoxyParamCaption})}
 
-Adds a new layer to this \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance. The new layer will have the name {\itshape name}, which must be unique. Depending on {\itshape insert\+Mode}, it is positioned either below or above {\itshape other\+Layer}.
+Adds a new layer to this \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance. \mbox{\hyperlink{class_the}{The}} new layer will have the name {\itshape name}, which must be unique. Depending on {\itshape insert\+Mode}, it is positioned either below or above {\itshape other\+Layer}.
 
 Returns true on success, i.\+e. if there is no other layer named {\itshape name} and {\itshape other\+Layer} is a valid layer inside this \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}.
 
@@ -767,7 +755,7 @@ Returns the layer that is set as current layer (see \mbox{\hyperlink{class_q_cus
 
 Deselects all layerables (plottables, items, axes, legends,...) of the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}.
 
-Since calling this function is not a user interaction, this does not emit the \mbox{\hyperlink{class_q_custom_plot_a500c64a109bc773c973ad274f2fa4190}{selection\+Changed\+By\+User}} signal. The individual selection\+Changed signals are emitted though, if the objects were previously selected.
+Since calling this function is not a user interaction, this does not emit the \mbox{\hyperlink{class_q_custom_plot_a500c64a109bc773c973ad274f2fa4190}{selection\+Changed\+By\+User}} signal. \mbox{\hyperlink{class_the}{The}} individual selection\+Changed signals are emitted though, if the objects were previously selected.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5}{set\+Interactions}}, \mbox{\hyperlink{class_q_custom_plot_a747faaab57c56891e901a1e97fa4359a}{selected\+Plottables}}, \mbox{\hyperlink{class_q_custom_plot_afda487bcf2d6cf1a57173d82495e29ba}{selected\+Items}}, \mbox{\hyperlink{class_q_custom_plot_a7e6b07792b1cb2c31681596582d14dbe}{selected\+Axes}}, \mbox{\hyperlink{class_q_custom_plot_ac87624ddff1cbf4064781a8e8ae321c4}{selected\+Legends}} 
@@ -1104,7 +1092,7 @@ If there is no plottable at {\itshape pos}, the return value is 0.
 
 This signal is emitted when a plottable is clicked.
 
-{\itshape event} is the mouse event that caused the click and {\itshape plottable} is the plottable that received the click. The parameter {\itshape data\+Index} indicates the data point that was closest to the click position.
+{\itshape event} is the mouse event that caused the click and {\itshape plottable} is the plottable that received the click. \mbox{\hyperlink{class_the}{The}} parameter {\itshape data\+Index} indicates the data point that was closest to the click position.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_custom_plot_a86a3ab7263c9c4e008e70d6c5fce9fbd}{plottable\+Double\+Click}} 
@@ -1128,7 +1116,7 @@ Returns the number of currently existing plottables in the plot
 
 This signal is emitted when a plottable is double clicked.
 
-{\itshape event} is the mouse event that caused the click and {\itshape plottable} is the plottable that received the click. The parameter {\itshape data\+Index} indicates the data point that was closest to the click position.
+{\itshape event} is the mouse event that caused the click and {\itshape plottable} is the plottable that received the click. \mbox{\hyperlink{class_the}{The}} parameter {\itshape data\+Index} indicates the data point that was closest to the click position.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_custom_plot_af5fe78b8bc9e4e96df921612837fd4fd}{plottable\+Click}} 
@@ -1221,7 +1209,7 @@ Returns true on success.
 
 Causes a complete replot into the internal paint buffer(s). Finally, the widget surface is refreshed with the new buffer contents. This is the method that must be called to make changes to the plot, e.\+g. on the axis ranges or data points of graphs, visible.
 
-The parameter {\itshape refresh\+Priority} can be used to fine-\/tune the timing of the replot. For example if your application calls \mbox{\hyperlink{class_q_custom_plot_aa4bfe7d70dbe67e81d877819b75ab9af}{replot}} very quickly in succession (e.\+g. multiple independent functions change some aspects of the plot and each wants to make sure the change gets replotted), it is advisable to set {\itshape refresh\+Priority} to \mbox{\hyperlink{class_q_custom_plot_a45d61392d13042e712a956d27762aa39a019650c6ddf308f97e811fbfff207a8f}{QCustom\+Plot\+::rp\+Queued\+Replot}}. This way, the actual replotting is deferred to the next event loop iteration. Multiple successive calls of \mbox{\hyperlink{class_q_custom_plot_aa4bfe7d70dbe67e81d877819b75ab9af}{replot}} with this priority will only cause a single replot, avoiding redundant replots and improving performance.
+\mbox{\hyperlink{class_the}{The}} parameter {\itshape refresh\+Priority} can be used to fine-\/tune the timing of the replot. For example if your application calls \mbox{\hyperlink{class_q_custom_plot_aa4bfe7d70dbe67e81d877819b75ab9af}{replot}} very quickly in succession (e.\+g. multiple independent functions change some aspects of the plot and each wants to make sure the change gets replotted), it is advisable to set {\itshape refresh\+Priority} to \mbox{\hyperlink{class_q_custom_plot_a45d61392d13042e712a956d27762aa39a019650c6ddf308f97e811fbfff207a8f}{QCustom\+Plot\+::rp\+Queued\+Replot}}. This way, the actual replotting is deferred to the next event loop iteration. Multiple successive calls of \mbox{\hyperlink{class_q_custom_plot_aa4bfe7d70dbe67e81d877819b75ab9af}{replot}} with this priority will only cause a single replot, avoiding redundant replots and improving performance.
 
 Under a few circumstances, \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} causes a replot by itself. Those are resize events of the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} widget and user interactions (object selection and range dragging/zooming).
 
@@ -1246,17 +1234,17 @@ if {\itshape only\+Visible\+Plottables} is set to true, only the plottables that
 \doxysubsubsection{\texorpdfstring{saveBmp()}{saveBmp()}}
 {\footnotesize\ttfamily bool QCustom\+Plot\+::save\+Bmp (\begin{DoxyParamCaption}\item[{const QString \&}]{file\+Name,  }\item[{int}]{width = {\ttfamily 0},  }\item[{int}]{height = {\ttfamily 0},  }\item[{double}]{scale = {\ttfamily 1.0},  }\item[{int}]{resolution = {\ttfamily 96},  }\item[{\mbox{\hyperlink{namespace_q_c_p_a715d46153da230990aa887d0f0602452}{QCP\+::\+Resolution\+Unit}}}]{resolution\+Unit = {\ttfamily \mbox{\hyperlink{namespace_q_c_p_a715d46153da230990aa887d0f0602452affb887d8efe79c39a1aca2acd7002afc}{QCP\+::ru\+Dots\+Per\+Inch}}} }\end{DoxyParamCaption})}
 
-Saves a BMP image file to {\itshape file\+Name} on disc. The output plot will have the dimensions {\itshape width} and {\itshape height} in pixels, multiplied by {\itshape scale}. If either {\itshape width} or {\itshape height} is zero, the current width and height of the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} widget is used instead. Line widths and texts etc. are not scaled up when larger widths/heights are used. If you want that effect, use the {\itshape scale} parameter.
+Saves a BMP image file to {\itshape file\+Name} on disc. \mbox{\hyperlink{class_the}{The}} output plot will have the dimensions {\itshape width} and {\itshape height} in pixels, multiplied by {\itshape scale}. If either {\itshape width} or {\itshape height} is zero, the current width and height of the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} widget is used instead. Line widths and texts etc. are not scaled up when larger widths/heights are used. If you want that effect, use the {\itshape scale} parameter.
 
 For example, if you set both {\itshape width} and {\itshape height} to 100 and {\itshape scale} to 2, you will end up with an image file of size 200$\ast$200 in which all graphical elements are scaled up by factor 2 (line widths, texts, etc.). This scaling is not done by stretching a 100$\ast$100 image, the result will have full 200$\ast$200 pixel resolution.
 
 If you use a high scaling factor, it is recommended to enable antialiasing for all elements by temporarily setting \mbox{\hyperlink{class_q_custom_plot_af6f91e5eab1be85f67c556e98c3745e8}{QCustom\+Plot\+::set\+Antialiased\+Elements}} to \mbox{\hyperlink{namespace_q_c_p_ae55dbe315d41fe80f29ba88100843a0caa897c232a0ffc8368e7c100ffc59ef31}{QCP\+::ae\+All}} as this allows \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} to place objects with sub-\/pixel accuracy.
 
-The {\itshape resolution} will be written to the image file header and has no direct consequence for the quality or the pixel size. However, if opening the image with a tool which respects the metadata, it will be able to scale the image to match either a given size in real units of length (inch, centimeters, etc.), or the target display DPI. You can specify in which units {\itshape resolution} is given, by setting {\itshape resolution\+Unit}. The {\itshape resolution} is converted to the format\textquotesingle{}s expected resolution unit internally.
+\mbox{\hyperlink{class_the}{The}} {\itshape resolution} will be written to the image file header and has no direct consequence for the quality or the pixel size. However, if opening the image with a tool which respects the metadata, it will be able to scale the image to match either a given size in real units of length (inch, centimeters, etc.), or the target display DPI. You can specify in which units {\itshape resolution} is given, by setting {\itshape resolution\+Unit}. \mbox{\hyperlink{class_the}{The}} {\itshape resolution} is converted to the format\textquotesingle{}s expected resolution unit internally.
 
 Returns true on success. If this function fails, most likely the BMP format isn\textquotesingle{}t supported by the system, see Qt docs about QImage\+Writer\+::supported\+Image\+Formats().
 
-The objects of the plot will appear in the current selection state. If you don\textquotesingle{}t want any selected objects to be painted in their selected look, deselect everything with \mbox{\hyperlink{class_q_custom_plot_a9d4808ab925b003054085246c92a257c}{deselect\+All}} before calling this function.
+\mbox{\hyperlink{class_the}{The}} objects of the plot will appear in the current selection state. If you don\textquotesingle{}t want any selected objects to be painted in their selected look, deselect everything with \mbox{\hyperlink{class_q_custom_plot_a9d4808ab925b003054085246c92a257c}{deselect\+All}} before calling this function.
 
 \begin{DoxyWarning}{Warning}
 If calling this function inside the constructor of the parent of the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} widget (i.\+e. the \mbox{\hyperlink{class_main_window}{Main\+Window}} constructor, if \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} is inside the \mbox{\hyperlink{class_main_window}{Main\+Window}}), always provide explicit non-\/zero widths and heights. If you leave {\itshape width} or {\itshape height} as 0 (default), this function uses the current width and height of the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} widget. However, in Qt, these aren\textquotesingle{}t defined yet inside the constructor, so you would get an image that has strange widths/heights.
@@ -1270,7 +1258,7 @@ If calling this function inside the constructor of the parent of the \mbox{\hype
 \doxysubsubsection{\texorpdfstring{saveJpg()}{saveJpg()}}
 {\footnotesize\ttfamily bool QCustom\+Plot\+::save\+Jpg (\begin{DoxyParamCaption}\item[{const QString \&}]{file\+Name,  }\item[{int}]{width = {\ttfamily 0},  }\item[{int}]{height = {\ttfamily 0},  }\item[{double}]{scale = {\ttfamily 1.0},  }\item[{int}]{quality = {\ttfamily -\/1},  }\item[{int}]{resolution = {\ttfamily 96},  }\item[{\mbox{\hyperlink{namespace_q_c_p_a715d46153da230990aa887d0f0602452}{QCP\+::\+Resolution\+Unit}}}]{resolution\+Unit = {\ttfamily \mbox{\hyperlink{namespace_q_c_p_a715d46153da230990aa887d0f0602452affb887d8efe79c39a1aca2acd7002afc}{QCP\+::ru\+Dots\+Per\+Inch}}} }\end{DoxyParamCaption})}
 
-Saves a JPEG image file to {\itshape file\+Name} on disc. The output plot will have the dimensions {\itshape width} and {\itshape height} in pixels, multiplied by {\itshape scale}. If either {\itshape width} or {\itshape height} is zero, the current width and height of the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} widget is used instead. Line widths and texts etc. are not scaled up when larger widths/heights are used. If you want that effect, use the {\itshape scale} parameter.
+Saves a JPEG image file to {\itshape file\+Name} on disc. \mbox{\hyperlink{class_the}{The}} output plot will have the dimensions {\itshape width} and {\itshape height} in pixels, multiplied by {\itshape scale}. If either {\itshape width} or {\itshape height} is zero, the current width and height of the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} widget is used instead. Line widths and texts etc. are not scaled up when larger widths/heights are used. If you want that effect, use the {\itshape scale} parameter.
 
 For example, if you set both {\itshape width} and {\itshape height} to 100 and {\itshape scale} to 2, you will end up with an image file of size 200$\ast$200 in which all graphical elements are scaled up by factor 2 (line widths, texts, etc.). This scaling is not done by stretching a 100$\ast$100 image, the result will have full 200$\ast$200 pixel resolution.
 
@@ -1278,11 +1266,11 @@ If you use a high scaling factor, it is recommended to enable antialiasing for a
 
 image compression can be controlled with the {\itshape quality} parameter which must be between 0 and 100 or -\/1 to use the default setting.
 
-The {\itshape resolution} will be written to the image file header and has no direct consequence for the quality or the pixel size. However, if opening the image with a tool which respects the metadata, it will be able to scale the image to match either a given size in real units of length (inch, centimeters, etc.), or the target display DPI. You can specify in which units {\itshape resolution} is given, by setting {\itshape resolution\+Unit}. The {\itshape resolution} is converted to the format\textquotesingle{}s expected resolution unit internally.
+\mbox{\hyperlink{class_the}{The}} {\itshape resolution} will be written to the image file header and has no direct consequence for the quality or the pixel size. However, if opening the image with a tool which respects the metadata, it will be able to scale the image to match either a given size in real units of length (inch, centimeters, etc.), or the target display DPI. You can specify in which units {\itshape resolution} is given, by setting {\itshape resolution\+Unit}. \mbox{\hyperlink{class_the}{The}} {\itshape resolution} is converted to the format\textquotesingle{}s expected resolution unit internally.
 
 Returns true on success. If this function fails, most likely the JPEG format isn\textquotesingle{}t supported by the system, see Qt docs about QImage\+Writer\+::supported\+Image\+Formats().
 
-The objects of the plot will appear in the current selection state. If you don\textquotesingle{}t want any selected objects to be painted in their selected look, deselect everything with \mbox{\hyperlink{class_q_custom_plot_a9d4808ab925b003054085246c92a257c}{deselect\+All}} before calling this function.
+\mbox{\hyperlink{class_the}{The}} objects of the plot will appear in the current selection state. If you don\textquotesingle{}t want any selected objects to be painted in their selected look, deselect everything with \mbox{\hyperlink{class_q_custom_plot_a9d4808ab925b003054085246c92a257c}{deselect\+All}} before calling this function.
 
 \begin{DoxyWarning}{Warning}
 If calling this function inside the constructor of the parent of the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} widget (i.\+e. the \mbox{\hyperlink{class_main_window}{Main\+Window}} constructor, if \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} is inside the \mbox{\hyperlink{class_main_window}{Main\+Window}}), always provide explicit non-\/zero widths and heights. If you leave {\itshape width} or {\itshape height} as 0 (default), this function uses the current width and height of the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} widget. However, in Qt, these aren\textquotesingle{}t defined yet inside the constructor, so you would get an image that has strange widths/heights.
@@ -1296,11 +1284,11 @@ If calling this function inside the constructor of the parent of the \mbox{\hype
 \doxysubsubsection{\texorpdfstring{savePdf()}{savePdf()}}
 {\footnotesize\ttfamily bool QCustom\+Plot\+::save\+Pdf (\begin{DoxyParamCaption}\item[{const QString \&}]{file\+Name,  }\item[{int}]{width = {\ttfamily 0},  }\item[{int}]{height = {\ttfamily 0},  }\item[{\mbox{\hyperlink{namespace_q_c_p_a17844f19e1019693a953e1eb93536d2f}{QCP\+::\+Export\+Pen}}}]{export\+Pen = {\ttfamily \mbox{\hyperlink{namespace_q_c_p_a17844f19e1019693a953e1eb93536d2fa50d3657dba3fb90560b93a823cb0a6e8}{QCP\+::ep\+Allow\+Cosmetic}}},  }\item[{const QString \&}]{pdf\+Creator = {\ttfamily QString()},  }\item[{const QString \&}]{pdf\+Title = {\ttfamily QString()} }\end{DoxyParamCaption})}
 
-Saves a PDF with the vectorized plot to the file {\itshape file\+Name}. The axis ratio as well as the scale of texts and lines will be derived from the specified {\itshape width} and {\itshape height}. This means, the output will look like the normal on-\/screen output of a \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} widget with the corresponding pixel width and height. If either {\itshape width} or {\itshape height} is zero, the exported image will have the same dimensions as the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} widget currently has.
+Saves a PDF with the vectorized plot to the file {\itshape file\+Name}. \mbox{\hyperlink{class_the}{The}} axis ratio as well as the scale of texts and lines will be derived from the specified {\itshape width} and {\itshape height}. This means, the output will look like the normal on-\/screen output of a \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} widget with the corresponding pixel width and height. If either {\itshape width} or {\itshape height} is zero, the exported image will have the same dimensions as the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} widget currently has.
 
 Setting {\itshape export\+Pen} to \mbox{\hyperlink{namespace_q_c_p_a17844f19e1019693a953e1eb93536d2faae8fcfaafee234ce18558afef83f6a78}{QCP\+::ep\+No\+Cosmetic}} allows to disable the use of cosmetic pens when drawing to the PDF file. Cosmetic pens are pens with numerical width 0, which are always drawn as a one pixel wide line, no matter what zoom factor is set in the PDF-\/\+Viewer. For more information about cosmetic pens, see the QPainter and QPen documentation.
 
-The objects of the plot will appear in the current selection state. If you don\textquotesingle{}t want any selected objects to be painted in their selected look, deselect everything with \mbox{\hyperlink{class_q_custom_plot_a9d4808ab925b003054085246c92a257c}{deselect\+All}} before calling this function.
+\mbox{\hyperlink{class_the}{The}} objects of the plot will appear in the current selection state. If you don\textquotesingle{}t want any selected objects to be painted in their selected look, deselect everything with \mbox{\hyperlink{class_q_custom_plot_a9d4808ab925b003054085246c92a257c}{deselect\+All}} before calling this function.
 
 Returns true on success.
 
@@ -1321,7 +1309,7 @@ On Android systems, this method does nothing and issues an according q\+Debug wa
 \doxysubsubsection{\texorpdfstring{savePng()}{savePng()}}
 {\footnotesize\ttfamily bool QCustom\+Plot\+::save\+Png (\begin{DoxyParamCaption}\item[{const QString \&}]{file\+Name,  }\item[{int}]{width = {\ttfamily 0},  }\item[{int}]{height = {\ttfamily 0},  }\item[{double}]{scale = {\ttfamily 1.0},  }\item[{int}]{quality = {\ttfamily -\/1},  }\item[{int}]{resolution = {\ttfamily 96},  }\item[{\mbox{\hyperlink{namespace_q_c_p_a715d46153da230990aa887d0f0602452}{QCP\+::\+Resolution\+Unit}}}]{resolution\+Unit = {\ttfamily \mbox{\hyperlink{namespace_q_c_p_a715d46153da230990aa887d0f0602452affb887d8efe79c39a1aca2acd7002afc}{QCP\+::ru\+Dots\+Per\+Inch}}} }\end{DoxyParamCaption})}
 
-Saves a PNG image file to {\itshape file\+Name} on disc. The output plot will have the dimensions {\itshape width} and {\itshape height} in pixels, multiplied by {\itshape scale}. If either {\itshape width} or {\itshape height} is zero, the current width and height of the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} widget is used instead. Line widths and texts etc. are not scaled up when larger widths/heights are used. If you want that effect, use the {\itshape scale} parameter.
+Saves a PNG image file to {\itshape file\+Name} on disc. \mbox{\hyperlink{class_the}{The}} output plot will have the dimensions {\itshape width} and {\itshape height} in pixels, multiplied by {\itshape scale}. If either {\itshape width} or {\itshape height} is zero, the current width and height of the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} widget is used instead. Line widths and texts etc. are not scaled up when larger widths/heights are used. If you want that effect, use the {\itshape scale} parameter.
 
 For example, if you set both {\itshape width} and {\itshape height} to 100 and {\itshape scale} to 2, you will end up with an image file of size 200$\ast$200 in which all graphical elements are scaled up by factor 2 (line widths, texts, etc.). This scaling is not done by stretching a 100$\ast$100 image, the result will have full 200$\ast$200 pixel resolution.
 
@@ -1329,11 +1317,11 @@ If you use a high scaling factor, it is recommended to enable antialiasing for a
 
 image compression can be controlled with the {\itshape quality} parameter which must be between 0 and 100 or -\/1 to use the default setting.
 
-The {\itshape resolution} will be written to the image file header and has no direct consequence for the quality or the pixel size. However, if opening the image with a tool which respects the metadata, it will be able to scale the image to match either a given size in real units of length (inch, centimeters, etc.), or the target display DPI. You can specify in which units {\itshape resolution} is given, by setting {\itshape resolution\+Unit}. The {\itshape resolution} is converted to the format\textquotesingle{}s expected resolution unit internally.
+\mbox{\hyperlink{class_the}{The}} {\itshape resolution} will be written to the image file header and has no direct consequence for the quality or the pixel size. However, if opening the image with a tool which respects the metadata, it will be able to scale the image to match either a given size in real units of length (inch, centimeters, etc.), or the target display DPI. You can specify in which units {\itshape resolution} is given, by setting {\itshape resolution\+Unit}. \mbox{\hyperlink{class_the}{The}} {\itshape resolution} is converted to the format\textquotesingle{}s expected resolution unit internally.
 
 Returns true on success. If this function fails, most likely the PNG format isn\textquotesingle{}t supported by the system, see Qt docs about QImage\+Writer\+::supported\+Image\+Formats().
 
-The objects of the plot will appear in the current selection state. If you don\textquotesingle{}t want any selected objects to be painted in their selected look, deselect everything with \mbox{\hyperlink{class_q_custom_plot_a9d4808ab925b003054085246c92a257c}{deselect\+All}} before calling this function.
+\mbox{\hyperlink{class_the}{The}} objects of the plot will appear in the current selection state. If you don\textquotesingle{}t want any selected objects to be painted in their selected look, deselect everything with \mbox{\hyperlink{class_q_custom_plot_a9d4808ab925b003054085246c92a257c}{deselect\+All}} before calling this function.
 
 If you want the PNG to have a transparent background, call \mbox{\hyperlink{class_q_custom_plot_a8ed256cf467bfa7ba1f9feaae62c3bd0}{set\+Background(const QBrush \&brush)}} with no brush (Qt\+::\+No\+Brush) or a transparent color (Qt\+::transparent), before saving.
 
@@ -1349,11 +1337,11 @@ If calling this function inside the constructor of the parent of the \mbox{\hype
 \doxysubsubsection{\texorpdfstring{saveRastered()}{saveRastered()}}
 {\footnotesize\ttfamily bool QCustom\+Plot\+::save\+Rastered (\begin{DoxyParamCaption}\item[{const QString \&}]{file\+Name,  }\item[{int}]{width,  }\item[{int}]{height,  }\item[{double}]{scale,  }\item[{const char $\ast$}]{format,  }\item[{int}]{quality = {\ttfamily -\/1},  }\item[{int}]{resolution = {\ttfamily 96},  }\item[{\mbox{\hyperlink{namespace_q_c_p_a715d46153da230990aa887d0f0602452}{QCP\+::\+Resolution\+Unit}}}]{resolution\+Unit = {\ttfamily \mbox{\hyperlink{namespace_q_c_p_a715d46153da230990aa887d0f0602452affb887d8efe79c39a1aca2acd7002afc}{QCP\+::ru\+Dots\+Per\+Inch}}} }\end{DoxyParamCaption})}
 
-Saves the plot to a rastered image file {\itshape file\+Name} in the image format {\itshape format}. The plot is sized to {\itshape width} and {\itshape height} in pixels and scaled with {\itshape scale}. (width 100 and scale 2.\+0 lead to a full resolution file with width 200.) If the {\itshape format} supports compression, {\itshape quality} may be between 0 and 100 to control it.
+Saves the plot to a rastered image file {\itshape file\+Name} in the image format {\itshape format}. \mbox{\hyperlink{class_the}{The}} plot is sized to {\itshape width} and {\itshape height} in pixels and scaled with {\itshape scale}. (width 100 and scale 2.\+0 lead to a full resolution file with width 200.) If the {\itshape format} supports compression, {\itshape quality} may be between 0 and 100 to control it.
 
 Returns true on success. If this function fails, most likely the given {\itshape format} isn\textquotesingle{}t supported by the system, see Qt docs about QImage\+Writer\+::supported\+Image\+Formats().
 
-The {\itshape resolution} will be written to the image file header (if the file format supports this) and has no direct consequence for the quality or the pixel size. However, if opening the image with a tool which respects the metadata, it will be able to scale the image to match either a given size in real units of length (inch, centimeters, etc.), or the target display DPI. You can specify in which units {\itshape resolution} is given, by setting {\itshape resolution\+Unit}. The {\itshape resolution} is converted to the format\textquotesingle{}s expected resolution unit internally.
+\mbox{\hyperlink{class_the}{The}} {\itshape resolution} will be written to the image file header (if the file format supports this) and has no direct consequence for the quality or the pixel size. However, if opening the image with a tool which respects the metadata, it will be able to scale the image to match either a given size in real units of length (inch, centimeters, etc.), or the target display DPI. You can specify in which units {\itshape resolution} is given, by setting {\itshape resolution\+Unit}. \mbox{\hyperlink{class_the}{The}} {\itshape resolution} is converted to the format\textquotesingle{}s expected resolution unit internally.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_custom_plot_ae3a86ed0795670e50afa21759d4fa13d}{save\+Bmp}}, \mbox{\hyperlink{class_q_custom_plot_a76f0d278e630a711fa6f48048cfd83e4}{save\+Jpg}}, \mbox{\hyperlink{class_q_custom_plot_ac92cc9256d12f354b40a4be4600b5fb9}{save\+Png}}, \mbox{\hyperlink{class_q_custom_plot_ad5acd34f6b39c3516887d7e54fec2412}{save\+Pdf}} 
@@ -1505,7 +1493,7 @@ Set {\itshape brush} to Qt\+::\+No\+Brush or Qt\+::\+Transparent to leave backgr
 \doxysubsubsection{\texorpdfstring{setBackground()}{setBackground()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
 {\footnotesize\ttfamily void QCustom\+Plot\+::set\+Background (\begin{DoxyParamCaption}\item[{const QPixmap \&}]{pm }\end{DoxyParamCaption})}
 
-Sets {\itshape pm} as the viewport background pixmap (see \mbox{\hyperlink{class_q_custom_plot_a3f9bc4b939dd8aaba9339fd09f273fc4}{set\+Viewport}}). The pixmap is always drawn below all other objects in the plot.
+Sets {\itshape pm} as the viewport background pixmap (see \mbox{\hyperlink{class_q_custom_plot_a3f9bc4b939dd8aaba9339fd09f273fc4}{set\+Viewport}}). \mbox{\hyperlink{class_the}{The}} pixmap is always drawn below all other objects in the plot.
 
 For cases where the provided pixmap doesn\textquotesingle{}t have the same size as the viewport, scaling can be enabled with \mbox{\hyperlink{class_q_custom_plot_a36f0fa1317325dc7b7efea615ee2de1f}{set\+Background\+Scaled}} and the scaling mode (whether and how the aspect ratio is preserved) can be set with \mbox{\hyperlink{class_q_custom_plot_a4c0eb4865b7949f62e1cb97db04a3de0}{set\+Background\+Scaled\+Mode}}. To set all these options in one call, consider using the overloaded version of this function.
 
@@ -1622,7 +1610,7 @@ Sets the possible interactions of this \mbox{\hyperlink{class_q_custom_plot}{QCu
 
 {\bfseries{Legend selection}} is controlled with \mbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037a269c9af298e257d1108edec0432b5513}{QCP\+::i\+Select\+Legend}}. If this is set, the user may select the legend itself or individual items by clicking on them. What parts exactly are selectable can be controlled via \mbox{\hyperlink{class_q_c_p_legend_a9ce60aa8bbd89f62ae4fa83ac6c60110}{QCPLegend\+::set\+Selectable\+Parts}}. To find out whether the legend or any of its child items are selected, check the value of QCPLegend\+::selected\+Parts. To find out which child items are selected, call \mbox{\hyperlink{class_q_c_p_legend_ac7d9e567d5c551e09cd9bcc4306c5532}{QCPLegend\+::selected\+Items}}.
 
-{\bfseries{All other selectable elements}} The selection of all other selectable objects (e.\+g. \mbox{\hyperlink{class_q_c_p_text_element}{QCPText\+Element}}, or your own layerable subclasses) is controlled with \mbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037af67a50bc26147a13b551b3a625374949}{QCP\+::i\+Select\+Other}}. If set, the user may select those objects by clicking on them. To find out which are currently selected, you need to check their selected state explicitly.
+{\bfseries{All other selectable elements}} \mbox{\hyperlink{class_the}{The}} selection of all other selectable objects (e.\+g. \mbox{\hyperlink{class_q_c_p_text_element}{QCPText\+Element}}, or your own layerable subclasses) is controlled with \mbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037af67a50bc26147a13b551b3a625374949}{QCP\+::i\+Select\+Other}}. If set, the user may select those objects by clicking on them. To find out which are currently selected, you need to check their selected state explicitly.
 
 If the selection state has changed by user interaction, the \mbox{\hyperlink{class_q_custom_plot_a500c64a109bc773c973ad274f2fa4190}{selection\+Changed\+By\+User}} signal is emitted. Each selectable object additionally emits an individual selection\+Changed signal whenever their selection state has changed, i.\+e. not only by user interaction.
 
@@ -1701,11 +1689,11 @@ This is still an experimental feature and its performance depends on the system 
 \end{DoxyWarning}
 This method allows to enable Open\+GL plot rendering, for increased plotting performance of graphically demanding plots (thick lines, translucent fills, etc.).
 
-If {\itshape enabled} is set to true, \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} will try to initialize Open\+GL and, if successful, continue plotting with hardware acceleration. The parameter {\itshape multisampling} controls how many samples will be used per pixel, it essentially controls the antialiasing quality. If {\itshape multisampling} is set too high for the current graphics hardware, the maximum allowed value will be used.
+If {\itshape enabled} is set to true, \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} will try to initialize Open\+GL and, if successful, continue plotting with hardware acceleration. \mbox{\hyperlink{class_the}{The}} parameter {\itshape multisampling} controls how many samples will be used per pixel, it essentially controls the antialiasing quality. If {\itshape multisampling} is set too high for the current graphics hardware, the maximum allowed value will be used.
 
 You can test whether switching to Open\+GL rendering was successful by checking whether the according getter {\itshape QCustom\+Plot\+::open\+Gl()} returns true. If the Open\+GL initialization fails, rendering continues with the regular software rasterizer, and an according q\+Debug output is generated.
 
-If switching to Open\+GL was successful, this method disables label caching (\mbox{\hyperlink{class_q_custom_plot_a3b7c97bb6c16464e9e15190c07abe9a9}{set\+Plotting\+Hint(QCP\+::ph\+Cache\+Labels, false)}}) and turns on \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}\textquotesingle{}s antialiasing override for all elements (\mbox{\hyperlink{class_q_custom_plot_af6f91e5eab1be85f67c556e98c3745e8}{set\+Antialiased\+Elements(QCP\+::ae\+All)}}), leading to a higher quality output. The antialiasing override allows for pixel-\/grid aligned drawing in the Open\+GL paint device. As stated before, in Open\+GL rendering the actual antialiasing of the plot is controlled with {\itshape multisampling}. If {\itshape enabled} is set to false, the antialiasing/label caching settings are restored to what they were before Open\+GL was enabled, if they weren\textquotesingle{}t altered in the meantime.
+If switching to Open\+GL was successful, this method disables label caching (\mbox{\hyperlink{class_q_custom_plot_a3b7c97bb6c16464e9e15190c07abe9a9}{set\+Plotting\+Hint(QCP\+::ph\+Cache\+Labels, false)}}) and turns on \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}\textquotesingle{}s antialiasing override for all elements (\mbox{\hyperlink{class_q_custom_plot_af6f91e5eab1be85f67c556e98c3745e8}{set\+Antialiased\+Elements(QCP\+::ae\+All)}}), leading to a higher quality output. \mbox{\hyperlink{class_the}{The}} antialiasing override allows for pixel-\/grid aligned drawing in the Open\+GL paint device. As stated before, in Open\+GL rendering the actual antialiasing of the plot is controlled with {\itshape multisampling}. If {\itshape enabled} is set to false, the antialiasing/label caching settings are restored to what they were before Open\+GL was enabled, if they weren\textquotesingle{}t altered in the meantime.
 
 \begin{DoxyNote}{Note}
 Open\+GL support is only enabled if \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} is compiled with the macro {\ttfamily QCUSTOMPLOT\+\_\+\+USE\+\_\+\+OPENGL} defined. This define must be set before including the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} header both during compilation of the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} library as well as when compiling your application. It is best to just include the line {\ttfamily DEFINES += QCUSTOMPLOT\+\_\+\+USE\+\_\+\+OPENGL} in the respective qmake project files. 
@@ -1785,9 +1773,9 @@ If the user clicks in the vicinity of the line of e.\+g. a \mbox{\hyperlink{clas
 
 Sets the viewport of this \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}. Usually users of \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} don\textquotesingle{}t need to change the viewport manually.
 
-The viewport is the area in which the plot is drawn. All mechanisms, e.\+g. margin caluclation take the viewport to be the outer border of the plot. The viewport normally is the rect() of the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} widget, i.\+e. a rect with top left (0, 0) and size of the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} widget.
+\mbox{\hyperlink{class_the}{The}} viewport is the area in which the plot is drawn. All mechanisms, e.\+g. margin caluclation take the viewport to be the outer border of the plot. \mbox{\hyperlink{class_the}{The}} viewport normally is the rect() of the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} widget, i.\+e. a rect with top left (0, 0) and size of the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} widget.
 
-Don\textquotesingle{}t confuse the viewport with the axis rect (\mbox{\hyperlink{class_q_custom_plot_ae5eefcb5f6ca26689b1fd4f6e25b42f9}{QCustom\+Plot\+::axis\+Rect}}). An axis rect is typically an area enclosed by four axes, where the graphs/plottables are drawn in. The viewport is larger and contains also the axes themselves, their tick numbers, their labels, or even additional axis rects, color scales and other layout elements.
+Don\textquotesingle{}t confuse the viewport with the axis rect (\mbox{\hyperlink{class_q_custom_plot_ae5eefcb5f6ca26689b1fd4f6e25b42f9}{QCustom\+Plot\+::axis\+Rect}}). An axis rect is typically an area enclosed by four axes, where the graphs/plottables are drawn in. \mbox{\hyperlink{class_the}{The}} viewport is larger and contains also the axes themselves, their tick numbers, their labels, or even additional axis rects, color scales and other layout elements.
 
 This function is used to allow arbitrary size exports with \mbox{\hyperlink{class_q_custom_plot_aabb974d71ce96c137dc04eb6eab844fe}{to\+Pixmap}}, \mbox{\hyperlink{class_q_custom_plot_ac92cc9256d12f354b40a4be4600b5fb9}{save\+Png}}, \mbox{\hyperlink{class_q_custom_plot_ad5acd34f6b39c3516887d7e54fec2412}{save\+Pdf}}, etc. by temporarily changing the viewport size. \mbox{\Hypertarget{class_q_custom_plot_a1be68d5c0f1e086d6374d1340a193fb9}\label{class_q_custom_plot_a1be68d5c0f1e086d6374d1340a193fb9}} 
 \index{QCustomPlot@{QCustomPlot}!toPainter@{toPainter}}
@@ -1797,7 +1785,7 @@ This function is used to allow arbitrary size exports with \mbox{\hyperlink{clas
 
 Renders the plot using the passed {\itshape painter}.
 
-The plot is sized to {\itshape width} and {\itshape height} in pixels. If the {\itshape painter\textquotesingle{}s} scale is not 1.\+0, the resulting plot will appear scaled accordingly.
+\mbox{\hyperlink{class_the}{The}} plot is sized to {\itshape width} and {\itshape height} in pixels. If the {\itshape painter\textquotesingle{}s} scale is not 1.\+0, the resulting plot will appear scaled accordingly.
 
 \begin{DoxyNote}{Note}
 If you are restricted to using a QPainter (instead of \mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}}), create a temporary QPicture and open a \mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} on it. Then call \mbox{\hyperlink{class_q_custom_plot_a1be68d5c0f1e086d6374d1340a193fb9}{to\+Painter}} with this \mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}}. After ending the paint operation on the picture, draw it with the QPainter. This will reproduce the painter actions the \mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} took, with a QPainter.
@@ -1813,7 +1801,7 @@ If you are restricted to using a QPainter (instead of \mbox{\hyperlink{class_q_c
 
 Renders the plot to a pixmap and returns it.
 
-The plot is sized to {\itshape width} and {\itshape height} in pixels and scaled with {\itshape scale}. (width 100 and scale 2.\+0 lead to a full resolution pixmap with width 200.)
+\mbox{\hyperlink{class_the}{The}} plot is sized to {\itshape width} and {\itshape height} in pixels and scaled with {\itshape scale}. (width 100 and scale 2.\+0 lead to a full resolution pixmap with width 200.)
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_custom_plot_a1be68d5c0f1e086d6374d1340a193fb9}{to\+Painter}}, \mbox{\hyperlink{class_q_custom_plot_ad7723ce2edfa270632ef42b03a444352}{save\+Rastered}}, \mbox{\hyperlink{class_q_custom_plot_ae3a86ed0795670e50afa21759d4fa13d}{save\+Bmp}}, \mbox{\hyperlink{class_q_custom_plot_ac92cc9256d12f354b40a4be4600b5fb9}{save\+Png}}, \mbox{\hyperlink{class_q_custom_plot_a76f0d278e630a711fa6f48048cfd83e4}{save\+Jpg}}, \mbox{\hyperlink{class_q_custom_plot_ad5acd34f6b39c3516887d7e54fec2412}{save\+Pdf}} 
@@ -1827,7 +1815,7 @@ The plot is sized to {\itshape width} and {\itshape height} in pixels and scaled
 \doxysubsubsection{\texorpdfstring{legend}{legend}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_legend}{QCPLegend}} $\ast$ QCustom\+Plot\+::legend}
 
-A pointer to the default legend of the main axis rect. The legend is invisible by default. Use \mbox{\hyperlink{class_q_c_p_layerable_a3bed99ddc396b48ce3ebfdc0418744f8}{QCPLegend\+::set\+Visible}} to change this.
+A pointer to the default legend of the main axis rect. \mbox{\hyperlink{class_the}{The}} legend is invisible by default. Use \mbox{\hyperlink{class_q_c_p_layerable_a3bed99ddc396b48ce3ebfdc0418744f8}{QCPLegend\+::set\+Visible}} to change this.
 
 \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} offers convenient pointers to the axes (\mbox{\hyperlink{class_q_custom_plot_a9a79cd0158a4c7f30cbc702f0fd800e4}{x\+Axis}}, \mbox{\hyperlink{class_q_custom_plot_af6fea5679725b152c14facd920b19367}{y\+Axis}}, \mbox{\hyperlink{class_q_custom_plot_ada41599f22cad901c030f3dcbdd82fd9}{x\+Axis2}}, \mbox{\hyperlink{class_q_custom_plot_af13fdc5bce7d0fabd640f13ba805c0b7}{y\+Axis2}}) and the \mbox{\hyperlink{class_q_custom_plot_a4eadcd237dc6a09938b68b16877fa6af}{legend}}. They make it very easy working with plots that only have a single axis rect and at most one axis at each axis rect side. If you use \mbox{\hyperlink{}{the layout system}} to add multiple legends to the plot, use the layout system interface to access the new legend. For example, legends can be placed inside an axis rect\textquotesingle{}s \mbox{\hyperlink{class_q_c_p_axis_rect_a949f803466619924c7018df4b511ae10}{inset layout}}, and must then also be accessed via the inset layout. If the default legend is removed due to manipulation of the layout system (e.\+g. by removing the main axis rect), the corresponding pointer becomes 0.
 

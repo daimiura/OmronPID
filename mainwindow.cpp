@@ -43,13 +43,6 @@ MainWindow::MainWindow(QWidget *parent) :
   connect(com_, &Communication::serialPortRemove, this, &MainWindow::sendLINE);
   addPortName(com_->getSerialPortDevices());
 
-  safety_ = new Safety(com_);
-  safety_->setPermitedMaxTemp(ui->spinBox_TempUpper->value());
-  connect(safety_, &Safety::dangerSignal, this, &MainWindow::catchDanger);
-  connect(safety_, &Safety::checkNumberChanged, this, &MainWindow::updateCheckNumber);
-  connect(safety_, &Safety::escapeTempCheckChange, this, &MainWindow::cathcEscapeTempCheckChange);
-  connect(safety_, &Safety::startTempChangeCheck, this, &MainWindow::catchStartTempChangeCheck);
-
   data_ = new DataSummary(com_);
   //data_->setSave(ui->checkBox_dataSave->isChecked());
   connect(data_, &DataSummary::FileSave, this, &MainWindow::saveFile);
@@ -57,6 +50,7 @@ MainWindow::MainWindow(QWidget *parent) :
   LogMsg(data_->getFileName());
   ui->lineEdit_DirPath->setText(data_->getFilePath());
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     checkTimer_ = new QTimer(this);
     checkTimer_->stop();
@@ -140,6 +134,17 @@ MainWindow::MainWindow(QWidget *parent) :
         LogMsg("Data will be saved in : " + DATA_PATH );
     }
 =======
+=======
+  safety_ = new Safety(data_);
+  safety_->setPermitedMaxTemp(ui->spinBox_TempUpper->value());
+  connect(safety_, &Safety::dangerSignal, this, &MainWindow::catchDanger);
+  connect(safety_, &Safety::checkNumberChanged, this, &MainWindow::updateCheckNumber);
+  connect(safety_, &Safety::escapeTempCheckChange, this, &MainWindow::cathcEscapeTempCheckChange);
+  connect(safety_, &Safety::startTempChangeCheck, this, &MainWindow::catchStartTempChangeCheck);
+
+
+
+>>>>>>> develop_ModBus
   notify_ = new Notify(this);
 
   initializeVariables();
@@ -202,6 +207,7 @@ MainWindow::MainWindow(QWidget *parent) :
   connect(ui->spinBox_TempRecordTime, SIGNAL(valueChanged(int)), this, SLOT(setIntervalPlot(int)));
   connect(ui->checkBox_dataSave, SIGNAL(toggled(bool)), data_, SLOT(setSave(bool)));
   connect(plotTimer_, SIGNAL(timeout()), this, SLOT(makePlot()));
+<<<<<<< HEAD
 
 <<<<<<< HEAD
     ui->comboBox_Mode->setItemData(0, QBrush(Qt::black), Qt::ForegroundRole);
@@ -325,6 +331,8 @@ MainWindow::MainWindow(QWidget *parent) :
     statusAskSetPoint_ = false;
 
     ui->lineEdit_DirPath->setText(filePath_);
+=======
+>>>>>>> develop_ModBus
 =======
 >>>>>>> develop_ModBus
 }
@@ -1414,7 +1422,7 @@ void MainWindow::Run(){
 =======
   countTempCheck_ = 0;
   statusRun_ = true;
-  sendLINE("Running starts.");
+  //sendLINE("Running starts.");
   plotTimer_->start();
   data_->generateSaveFile();
   data_->SetIntervalLog(ui->spinBox_TempRecordTime->value());
@@ -1457,7 +1465,11 @@ void MainWindow::Stop(){
   //data_->setIntervalLog(ui->spinBox_TempRecordTime->value());
   data_->logingStop();
   plotTimer_->stop();
+<<<<<<< HEAD
   sendLINE("Running stop.");
+>>>>>>> develop_ModBus
+=======
+  //sendLINE("Running stop.");
 >>>>>>> develop_ModBus
 }
 
@@ -1567,7 +1579,7 @@ bool MainWindow::isDrop(double diff, int mode){
   return false;
 =======
   safety_->stop();
-  sendLINE("Emergency Stop!");
+  //sendLINE("Emergency Stop!");
   bkgColorChangeable_ = true;
   setColor(3, bkgColorChangeable_);
   bkgColorChangeable_ = false;

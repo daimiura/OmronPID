@@ -1,0 +1,110 @@
+\hypertarget{safety_8h_source}{}\doxysection{safety.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SAFETY\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SAFETY\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QTimer>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QMutex>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}communication.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_safety}{Safety}}\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \ \ Q\_OBJECT}
+\DoxyCodeLine{00012\ \ \ Q\_PROPERTY(\textcolor{keywordtype}{double}\ permitedMaxTemp\ READ\ getPermitedMaxTemp\ WRITE\ setPermitedMaxTemp\ NOTIFY\ permitedMaxTempChanged)}
+\DoxyCodeLine{00013\ \ \ Q\_PROPERTY(\textcolor{keywordtype}{double}\ MVupper\ READ\ getMVUpper\ WRITE\ setMVUpper\ NOTIFY\ MVUpperChanged)}
+\DoxyCodeLine{00014\ \ \ Q\_PROPERTY(\textcolor{keywordtype}{int}\ NumberOfCheck\ READ\ getNumberOfCheck\ WRITE\ setNumberOfCheck\ NOTIFY\ NumberOfCheckChanged)}
+\DoxyCodeLine{00015\ \ \ Q\_PROPERTY(\textcolor{keywordtype}{int}\ checkNumber\ READ\ getCheckNumber\ WRITE\ setCheckNumber\ NOTIFY\ checkNumberChanged)}
+\DoxyCodeLine{00016\ \ \ Q\_PROPERTY(\textcolor{keywordtype}{double}\ tempChangeThreshold\ READ\ getTempChangeThreshold\ WRITE\ setTempChangeThreshold\ NOTIFY\ tempChangeThresholdChanged)}
+\DoxyCodeLine{00017\ \ \ Q\_PROPERTY(\textcolor{keywordtype}{int}\ intervalMVCheck\ READ\ getIntervalMVCheck\ WRITE\ setIntervalMVCheck\ NOTIFY\ intervalMVCheckChanged)}
+\DoxyCodeLine{00018\ \ \ Q\_PROPERTY(\textcolor{keywordtype}{int}\ intervalTempChange\ READ\ getIntervalTempChange\ WRITE\ setIntervalTempChange\ NOTIFY\ intervalTempChangeChanged)}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_safety}{Safety}}(\mbox{\hyperlink{class_communication}{Communication}}*\ com);}
+\DoxyCodeLine{00022\ \ \ \mbox{\hyperlink{class_safety}{\string~Safety}}();}
+\DoxyCodeLine{00023\ \ \ \textcolor{keywordtype}{double}\ getTemperature()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00024\ \ \ \textcolor{keywordtype}{double}\ getPermitedMaxTemp()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00025\ \ \ \textcolor{keywordtype}{double}\ getMVUpper()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00026\ \ \ \textcolor{keywordtype}{double}\ getMV()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00027\ \ \ \textcolor{keywordtype}{int}\ getNumberOfCheck()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00028\ \ \ \textcolor{keywordtype}{int}\ getCheckNumber()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00029\ \ \ \textcolor{keywordtype}{int}\ getIntervalMVCheck()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00030\ \ \ \textcolor{keywordtype}{int}\ getIntervalTempChange()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00031\ \ \ \textcolor{keywordtype}{double}\ getTempChangeThreshold()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00032\ \ \ \textcolor{keywordtype}{double}\ getIgnoreUpper()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00033\ \ \ \textcolor{keywordtype}{double}\ getIgnoreLower()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \textcolor{keywordtype}{void}\ setPermitedMaxTemp(\textcolor{keywordtype}{double}\ maxtemp);}
+\DoxyCodeLine{00036\ \ \ \textcolor{keywordtype}{void}\ setMVUpper(\textcolor{keywordtype}{double}\ MVupper);}
+\DoxyCodeLine{00037\ \ \ \textcolor{keywordtype}{void}\ setMV(\textcolor{keywordtype}{double}\ MV);}
+\DoxyCodeLine{00038\ \ \ \textcolor{keywordtype}{void}\ setNumberOfCheck(\textcolor{keywordtype}{int}\ number);}
+\DoxyCodeLine{00039\ \ \ \textcolor{keywordtype}{void}\ setCheckNumber(\textcolor{keywordtype}{int}\ number);}
+\DoxyCodeLine{00040\ \ \ \textcolor{keywordtype}{void}\ setTempChangeThreshold(\textcolor{keywordtype}{double}\ temp);}
+\DoxyCodeLine{00041\ \ \ \textcolor{keywordtype}{void}\ setIntervalMVCheck(\textcolor{keywordtype}{int}\ interval);}
+\DoxyCodeLine{00042\ \ \ \textcolor{keywordtype}{void}\ setIntervalTempChange(\textcolor{keywordtype}{int}\ inteerval);}
+\DoxyCodeLine{00043\ \ \ \textcolor{keywordtype}{void}\ setIgnoreUpper(\textcolor{keywordtype}{double}\ upper);}
+\DoxyCodeLine{00044\ \ \ \textcolor{keywordtype}{void}\ setIgnoreLower(\textcolor{keywordtype}{double}\ lower);}
+\DoxyCodeLine{00045\ \ \ \textcolor{keywordtype}{void}\ setIgnoreRange(\textcolor{keywordtype}{double}\ lower,\ \textcolor{keywordtype}{double}\ upper);}
+\DoxyCodeLine{00046\ \ \ \textcolor{keywordtype}{void}\ checkTempChange();}
+\DoxyCodeLine{00047\ \ \ \textcolor{keywordtype}{void}\ setEnableTempChangeeRange(\textcolor{keywordtype}{bool}\ enable);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \textcolor{keywordtype}{void}\ start();}
+\DoxyCodeLine{00050\ \ \ \textcolor{keywordtype}{void}\ stop();}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ signals:}
+\DoxyCodeLine{00054\ \ \ \textcolor{keywordtype}{void}\ permitedMaxTempChanged(\textcolor{keywordtype}{double}\ maxtemp);}
+\DoxyCodeLine{00055\ \ \ \textcolor{keywordtype}{void}\ MVUpperChanged(\textcolor{keywordtype}{double}\ MVupper);}
+\DoxyCodeLine{00056\ \ \ \textcolor{keywordtype}{void}\ MVupperReachedUpperLimit();}
+\DoxyCodeLine{00057\ \ \ \textcolor{keywordtype}{void}\ NumberOfCheckChanged(\textcolor{keywordtype}{int}\ number);}
+\DoxyCodeLine{00058\ \ \ \textcolor{keywordtype}{void}\ checkNumberChanged(\textcolor{keywordtype}{int}\ number);}
+\DoxyCodeLine{00059\ \ \ \textcolor{keywordtype}{void}\ tempChangeThresholdChanged(\textcolor{keywordtype}{double}\ temp);}
+\DoxyCodeLine{00060\ \ \ \textcolor{keywordtype}{void}\ dangerSignal(\textcolor{keywordtype}{int}\ type);}
+\DoxyCodeLine{00061\ \ \ \textcolor{keywordtype}{void}\ intervalMVCheckChanged(\textcolor{keywordtype}{int}\ interval);}
+\DoxyCodeLine{00062\ \ \ \textcolor{keywordtype}{void}\ intervalTempChangeChanged(\textcolor{keywordtype}{int}\ interval);}
+\DoxyCodeLine{00063\ \ \ \textcolor{keywordtype}{void}\ escapeTempCheckChange(\textcolor{keywordtype}{int}\ sign);}
+\DoxyCodeLine{00064\ \ \ \textcolor{keywordtype}{void}\ startTempChangeCheck(\textcolor{keywordtype}{int}\ checknumber);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00067\ \ \ \textcolor{keywordtype}{void}\ checkTemperature();}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00070\ \ \ \mbox{\hyperlink{class_communication}{Communication}}\ *com\_\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00071\ \ \ QMutex\ mutex\_;}
+\DoxyCodeLine{00072\ \ \ QTimer\ *timerMVCheck\_\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00073\ \ \ QTimer\ *timerTempChange\_\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00074\ \ \ \textcolor{keywordtype}{int}\ numberOfCheck\_\{10\};}
+\DoxyCodeLine{00075\ \ \ \textcolor{keywordtype}{int}\ checkNumber\_\{0\};}
+\DoxyCodeLine{00076\ \ \ \textcolor{keywordtype}{int}\ intervalMVCheck\_\{10\ *\ 1000\};}
+\DoxyCodeLine{00077\ \ \ \textcolor{keywordtype}{int}\ intervalTempChange\_\{10\ *\ 1000\};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \textcolor{keywordtype}{double}\ temperature\_\{\};}
+\DoxyCodeLine{00080\ \ \ \textcolor{keywordtype}{double}\ permitedMaxTemp\_\{280.0\};}
+\DoxyCodeLine{00081\ \ \ \textcolor{keywordtype}{double}\ diffTemp\_\{\};}
+\DoxyCodeLine{00082\ \ \ \textcolor{keywordtype}{double}\ MV\_\{\};}
+\DoxyCodeLine{00083\ \ \ \textcolor{keywordtype}{double}\ MVUpper\_\{\};}
+\DoxyCodeLine{00084\ \ \ \textcolor{keywordtype}{double}\ ignoreLower\_\{\};}
+\DoxyCodeLine{00085\ \ \ \textcolor{keywordtype}{double}\ ignoreUpper\_\{\};}
+\DoxyCodeLine{00086\ \ \ \textcolor{keywordtype}{double}\ tempChangeThreshold\_\{1.0\};}
+\DoxyCodeLine{00087\ \ \ QVector<double>\ vTempHistory\_\{\};}
+\DoxyCodeLine{00088\ \ \ QVector<double>\ vTempChangeData\_\{\};}
+\DoxyCodeLine{00089\ \ \ \textcolor{keywordtype}{bool}\ isMVupper\_\{\textcolor{keyword}{false}\};}
+\DoxyCodeLine{00090\ \ \ \textcolor{keywordtype}{bool}\ isEnableTempChangeeRange\_\{\textcolor{keyword}{false}\};}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \textcolor{keywordtype}{bool}\ isTemperatureChanged();}
+\DoxyCodeLine{00093\ \ \ \textcolor{keywordtype}{bool}\ isMVupper();}
+\DoxyCodeLine{00094\ \ \ \textcolor{keywordtype}{double}\ diffTemp()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00095\ \ \ \textcolor{keywordtype}{double}\ diffTemp(\textcolor{keywordtype}{double}\ temp1,\ \textcolor{keywordtype}{double}\ temp2)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00096\ \ \ \textcolor{keywordtype}{void}\ addTemperature(\textcolor{keywordtype}{double}\ temp);}
+\DoxyCodeLine{00097\ \ \ \textcolor{keywordtype}{double}\ movingAverage\ (QVector<double>\ data,\ \textcolor{keywordtype}{int}\ wsize)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \};}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SAFETY\_H}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ }
+
+\end{DoxyCode}

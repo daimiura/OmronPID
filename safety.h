@@ -4,21 +4,21 @@
 #include <QObject>
 #include <QTimer>
 #include <QMutex>
-#include "communication.h"
+#include "datasummary.h"
 
 class Safety : public QObject
 {
   Q_OBJECT
-  Q_PROPERTY(double permitedMaxTemp READ getPermitedMaxTemp WRITE setPermitedMaxTemp NOTIFY permitedMaxTempChanged);
-  Q_PROPERTY(double MVupper READ getMVUpper WRITE setMVUpper NOTIFY MVUpperChanged);
-  Q_PROPERTY(int NumberOfCheck READ getNumberOfCheck WRITE setNumberOfCheck NOTIFY NumberOfCheckChanged);
-  Q_PROPERTY(int checkNumber READ getCheckNumber WRITE setCheckNumber NOTIFY checkNumberChanged);
+  Q_PROPERTY(double permitedMaxTemp READ getPermitedMaxTemp WRITE setPermitedMaxTemp NOTIFY permitedMaxTempChanged)
+  Q_PROPERTY(double MVupper READ getMVUpper WRITE setMVUpper NOTIFY MVUpperChanged)
+  Q_PROPERTY(int NumberOfCheck READ getNumberOfCheck WRITE setNumberOfCheck NOTIFY NumberOfCheckChanged)
+  Q_PROPERTY(int checkNumber READ getCheckNumber WRITE setCheckNumber NOTIFY checkNumberChanged)
   Q_PROPERTY(double tempChangeThreshold READ getTempChangeThreshold WRITE setTempChangeThreshold NOTIFY tempChangeThresholdChanged)
-  Q_PROPERTY(int intervalMVCheck READ getIntervalMVCheck WRITE setIntervalMVCheck NOTIFY intervalMVCheckChanged);
-  Q_PROPERTY(int intervalTempChange READ getIntervalTempChange WRITE setIntervalTempChange NOTIFY intervalTempChangeChanged);
+  Q_PROPERTY(int intervalMVCheck READ getIntervalMVCheck WRITE setIntervalMVCheck NOTIFY intervalMVCheckChanged)
+  Q_PROPERTY(int intervalTempChange READ getIntervalTempChange WRITE setIntervalTempChange NOTIFY intervalTempChangeChanged)
 
 public:
-  explicit Safety(Communication* com);
+  explicit Safety(DataSummary* data);
   ~Safety();
   double getTemperature() const;
   double getPermitedMaxTemp() const;
@@ -67,27 +67,27 @@ private slots:
   void checkTemperature();
 
 private:
-  Communication *com_;
+  DataSummary *data_{nullptr};
   QMutex mutex_;
-  QTimer *timerMVCheck_;
-  QTimer *timerTempChange_;
-  int numberOfCheck_;
-  int checkNumber_;
-  int intervalMVCheck_;
-  int intervalTempChange_;
+  QTimer *timerMVCheck_{nullptr};
+  QTimer *timerTempChange_{nullptr};
+  int numberOfCheck_{10};
+  int checkNumber_{0};
+  int intervalMVCheck_{10 * 1000};
+  int intervalTempChange_{10 * 1000};
 
-  double temperature_;
-  double permitedMaxTemp_;
-  double diffTemp_;
-  double MV_;
-  double MVUpper_;
-  double ignoreLower_;
-  double ignoreUpper_;
-  double tempChangeThreshold_;
-  QVector<double> vTempHistory_;
-  QVector<double> vTempChangeData_;
-  bool isMVupper_ = false;
-  bool isEnableTempChangeeRange_ = false;
+  double temperature_{};
+  double permitedMaxTemp_{280.0};
+  double diffTemp_{};
+  double MV_{};
+  double MVUpper_{};
+  double ignoreLower_{};
+  double ignoreUpper_{};
+  double tempChangeThreshold_{1.0};
+  QVector<double> vTempHistory_{};
+  QVector<double> vTempChangeData_{};
+  bool isMVupper_{false};
+  bool isEnableTempChangeeRange_{false};
 
   bool isTemperatureChanged();
   bool isMVupper();

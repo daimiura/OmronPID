@@ -5,22 +5,10 @@
 A layout that arranges child elements in a grid.  
 
 
-
-
-Inheritance diagram for QCPLayout\+Grid\+:\nopagebreak
-\begin{figure}[H]
+Inheritance diagram for QCPLayout\+Grid\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=183pt]{class_q_c_p_layout_grid__inherit__graph}
-\end{center}
-\end{figure}
-
-
-Collaboration diagram for QCPLayout\+Grid\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_q_c_p_layout_grid__coll__graph}
+\includegraphics[height=6.000000cm]{class_q_c_p_layout_grid}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Types}
@@ -426,7 +414,7 @@ A layout that arranges child elements in a grid.
 
 Elements are laid out in a grid with configurable stretch factors (\mbox{\hyperlink{class_q_c_p_layout_grid_ae38f31a71687b9d7ee3104852528fb50}{set\+Column\+Stretch\+Factor}}, \mbox{\hyperlink{class_q_c_p_layout_grid_a7b0273de5369bd93d942edbaf5b166ec}{set\+Row\+Stretch\+Factor}}) and spacing (\mbox{\hyperlink{class_q_c_p_layout_grid_a3a49272aba32bb0fddc3bb2a45a3dba0}{set\+Column\+Spacing}}, \mbox{\hyperlink{class_q_c_p_layout_grid_aaef2cd2d456197ee06a208793678e436}{set\+Row\+Spacing}}).
 
-Elements can be added to cells via \mbox{\hyperlink{class_q_c_p_layout_grid_adff1a2ca691ed83d2d24a4cd1fe17012}{add\+Element}}. The grid is expanded if the specified row or column doesn\textquotesingle{}t exist yet. Whether a cell contains a valid layout element can be checked with \mbox{\hyperlink{class_q_c_p_layout_grid_ab0cf4f7edc9414a3bfaddac0f46dc0a0}{has\+Element}}, that element can be retrieved with \mbox{\hyperlink{class_q_c_p_layout_grid_a602b426609b4411cf6a93c3ddf3a381a}{element}}. If rows and columns that only have empty cells shall be removed, call \mbox{\hyperlink{class_q_c_p_layout_grid_a38621ca7aa633b6a9a88617df7f08672}{simplify}}. Removal of elements is either done by just adding the element to a different layout or by using the \mbox{\hyperlink{class_q_c_p_layout}{QCPLayout}} interface \mbox{\hyperlink{class_q_c_p_layout_grid_aee961c2eb6cf8a85dcbc5a7d7b6c1a00}{take}} or \mbox{\hyperlink{class_q_c_p_layout_a6c58f537d8086f352576ab7c5b15d0bc}{remove}}.
+Elements can be added to cells via \mbox{\hyperlink{class_q_c_p_layout_grid_adff1a2ca691ed83d2d24a4cd1fe17012}{add\+Element}}. \mbox{\hyperlink{class_the}{The}} grid is expanded if the specified row or column doesn\textquotesingle{}t exist yet. Whether a cell contains a valid layout element can be checked with \mbox{\hyperlink{class_q_c_p_layout_grid_ab0cf4f7edc9414a3bfaddac0f46dc0a0}{has\+Element}}, that element can be retrieved with \mbox{\hyperlink{class_q_c_p_layout_grid_a602b426609b4411cf6a93c3ddf3a381a}{element}}. If rows and columns that only have empty cells shall be removed, call \mbox{\hyperlink{class_q_c_p_layout_grid_a38621ca7aa633b6a9a88617df7f08672}{simplify}}. Removal of elements is either done by just adding the element to a different layout or by using the \mbox{\hyperlink{class_q_c_p_layout}{QCPLayout}} interface \mbox{\hyperlink{class_q_c_p_layout_grid_aee961c2eb6cf8a85dcbc5a7d7b6c1a00}{take}} or \mbox{\hyperlink{class_q_c_p_layout_a6c58f537d8086f352576ab7c5b15d0bc}{remove}}.
 
 If you use \mbox{\hyperlink{class_q_c_p_layout_grid_a4c44025dd25acd27e053cadfd448ad7b}{add\+Element(\+QCPLayout\+Element$\ast$)}} without explicit parameters for {\itshape row} and {\itshape column}, the grid layout will choose the position according to the current \mbox{\hyperlink{class_q_c_p_layout_grid_affc2f3cfd22f28698c5b29b960d2a391}{set\+Fill\+Order}} and the wrapping (\mbox{\hyperlink{class_q_c_p_layout_grid_ab36af18d77e4428386d02970382ee598}{set\+Wrap}}).
 
@@ -439,7 +427,7 @@ Row and column insertion can be performed with \mbox{\hyperlink{class_q_c_p_layo
 \doxysubsubsection{\texorpdfstring{FillOrder}{FillOrder}}
 {\footnotesize\ttfamily enum \mbox{\hyperlink{class_q_c_p_layout_grid_a7d49ee08773de6b2fd246edfed353cca}{QCPLayout\+Grid\+::\+Fill\+Order}}}
 
-Defines in which direction the grid is filled when using \mbox{\hyperlink{class_q_c_p_layout_grid_a4c44025dd25acd27e053cadfd448ad7b}{add\+Element(\+QCPLayout\+Element$\ast$)}}. The column/row at which wrapping into the next row/column occurs can be specified with \mbox{\hyperlink{class_q_c_p_layout_grid_ab36af18d77e4428386d02970382ee598}{set\+Wrap}}.
+Defines in which direction the grid is filled when using \mbox{\hyperlink{class_q_c_p_layout_grid_a4c44025dd25acd27e053cadfd448ad7b}{add\+Element(\+QCPLayout\+Element$\ast$)}}. \mbox{\hyperlink{class_the}{The}} column/row at which wrapping into the next row/column occurs can be specified with \mbox{\hyperlink{class_q_c_p_layout_grid_ab36af18d77e4428386d02970382ee598}{set\+Wrap}}.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_layout_grid_affc2f3cfd22f28698c5b29b960d2a391}{set\+Fill\+Order}} 
@@ -605,7 +593,7 @@ Returns whether the cell at {\itshape row} and {\itshape column} exists and cont
 
 Converts the linear index to row and column indices and writes the result to {\itshape row} and {\itshape column}.
 
-The way the cells are indexed depends on \mbox{\hyperlink{class_q_c_p_layout_grid_affc2f3cfd22f28698c5b29b960d2a391}{set\+Fill\+Order}}. If it is \mbox{\hyperlink{class_q_c_p_layout_grid_a7d49ee08773de6b2fd246edfed353ccaa0202730954e26c474cc820164aedce3e}{fo\+Rows\+First}}, the indices increase left to right and then top to bottom. If it is \mbox{\hyperlink{class_q_c_p_layout_grid_a7d49ee08773de6b2fd246edfed353ccaac4cb4b796ec4822d5894b47b51627fb3}{fo\+Columns\+First}}, the indices increase top to bottom and then left to right.
+\mbox{\hyperlink{class_the}{The}} way the cells are indexed depends on \mbox{\hyperlink{class_q_c_p_layout_grid_affc2f3cfd22f28698c5b29b960d2a391}{set\+Fill\+Order}}. If it is \mbox{\hyperlink{class_q_c_p_layout_grid_a7d49ee08773de6b2fd246edfed353ccaa0202730954e26c474cc820164aedce3e}{fo\+Rows\+First}}, the indices increase left to right and then top to bottom. If it is \mbox{\hyperlink{class_q_c_p_layout_grid_a7d49ee08773de6b2fd246edfed353ccaac4cb4b796ec4822d5894b47b51627fb3}{fo\+Columns\+First}}, the indices increase top to bottom and then left to right.
 
 If there are no cells (i.\+e. column or row count is zero), sets {\itshape row} and {\itshape column} to -\/1.
 
@@ -648,7 +636,7 @@ if a maximum size (\mbox{\hyperlink{class_q_c_p_layout_element_a74eb5280a737ab44
 
 A manual maximum size is considered set if it is smaller than Qt\textquotesingle{}s {\ttfamily QWIDGETSIZE\+\_\+\+MAX}.
 
-The default implementation simply returns {\ttfamily QWIDGETSIZE\+\_\+\+MAX} for both width and height, implying no suggested maximum size. Reimplementations may use their detailed knowledge about the layout element\textquotesingle{}s content to provide size hints. 
+\mbox{\hyperlink{class_the}{The}} default implementation simply returns {\ttfamily QWIDGETSIZE\+\_\+\+MAX} for both width and height, implying no suggested maximum size. Reimplementations may use their detailed knowledge about the layout element\textquotesingle{}s content to provide size hints. 
 
 Reimplemented from \mbox{\hyperlink{class_q_c_p_layout_element_ad96efb977a26e360e8a64a4c1e56456d}{QCPLayout\+Element}}.
 
@@ -664,7 +652,7 @@ if a minimum size (\mbox{\hyperlink{class_q_c_p_layout_element_a5dd29a3c8bc88440
 
 A manual minimum size is considered set if it is non-\/zero.
 
-The default implementation simply returns the sum of the horizontal margins for the width and the sum of the vertical margins for the height. Reimplementations may use their detailed knowledge about the layout element\textquotesingle{}s content to provide size hints. 
+\mbox{\hyperlink{class_the}{The}} default implementation simply returns the sum of the horizontal margins for the width and the sum of the vertical margins for the height. Reimplementations may use their detailed knowledge about the layout element\textquotesingle{}s content to provide size hints. 
 
 Reimplemented from \mbox{\hyperlink{class_q_c_p_layout_element_a46789036c4fcb190fa374f91321d7c09}{QCPLayout\+Element}}.
 
@@ -676,7 +664,7 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_layout_element_a46789036c4fcb190
 
 Converts the given {\itshape row} and {\itshape column} to the linear index used by some methods of \mbox{\hyperlink{class_q_c_p_layout_grid}{QCPLayout\+Grid}} and \mbox{\hyperlink{class_q_c_p_layout}{QCPLayout}}.
 
-The way the cells are indexed depends on \mbox{\hyperlink{class_q_c_p_layout_grid_affc2f3cfd22f28698c5b29b960d2a391}{set\+Fill\+Order}}. If it is \mbox{\hyperlink{class_q_c_p_layout_grid_a7d49ee08773de6b2fd246edfed353ccaa0202730954e26c474cc820164aedce3e}{fo\+Rows\+First}}, the indices increase left to right and then top to bottom. If it is \mbox{\hyperlink{class_q_c_p_layout_grid_a7d49ee08773de6b2fd246edfed353ccaac4cb4b796ec4822d5894b47b51627fb3}{fo\+Columns\+First}}, the indices increase top to bottom and then left to right.
+\mbox{\hyperlink{class_the}{The}} way the cells are indexed depends on \mbox{\hyperlink{class_q_c_p_layout_grid_affc2f3cfd22f28698c5b29b960d2a391}{set\+Fill\+Order}}. If it is \mbox{\hyperlink{class_q_c_p_layout_grid_a7d49ee08773de6b2fd246edfed353ccaa0202730954e26c474cc820164aedce3e}{fo\+Rows\+First}}, the indices increase left to right and then top to bottom. If it is \mbox{\hyperlink{class_q_c_p_layout_grid_a7d49ee08773de6b2fd246edfed353ccaac4cb4b796ec4822d5894b47b51627fb3}{fo\+Columns\+First}}, the indices increase top to bottom and then left to right.
 
 For the returned index to be valid, {\itshape row} and {\itshape column} must be valid indices themselves, i.\+e. greater or equal to zero and smaller than the current row\+Count/ column\+Count.
 
@@ -715,7 +703,7 @@ Sets the stretch {\itshape factor} of {\itshape column}.
 
 Stretch factors control the relative sizes of rows and columns. Cells will not be resized beyond their minimum and maximum widths/heights, regardless of the stretch factor. (see \mbox{\hyperlink{class_q_c_p_layout_element_a5dd29a3c8bc88440c97c06b67be7886b}{QCPLayout\+Element\+::set\+Minimum\+Size}}, \mbox{\hyperlink{class_q_c_p_layout_element_a74eb5280a737ab44833d506db65efd95}{QCPLayout\+Element\+::set\+Maximum\+Size}}, \mbox{\hyperlink{class_q_c_p_layout_element_a361666cdcc6fbfd37344cc44be746b0f}{QCPLayout\+Element\+::set\+Size\+Constraint\+Rect}}.)
 
-The default stretch factor of newly created rows/columns is 1.
+\mbox{\hyperlink{class_the}{The}} default stretch factor of newly created rows/columns is 1.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_layout_grid_a6c2591d1a7e2534ce036989543b49e57}{set\+Column\+Stretch\+Factors}}, \mbox{\hyperlink{class_q_c_p_layout_grid_a7b0273de5369bd93d942edbaf5b166ec}{set\+Row\+Stretch\+Factor}} 
@@ -730,7 +718,7 @@ Sets the stretch {\itshape factors} of all columns. {\itshape factors} must have
 
 Stretch factors control the relative sizes of rows and columns. Cells will not be resized beyond their minimum and maximum widths/heights, regardless of the stretch factor. (see \mbox{\hyperlink{class_q_c_p_layout_element_a5dd29a3c8bc88440c97c06b67be7886b}{QCPLayout\+Element\+::set\+Minimum\+Size}}, \mbox{\hyperlink{class_q_c_p_layout_element_a74eb5280a737ab44833d506db65efd95}{QCPLayout\+Element\+::set\+Maximum\+Size}}, \mbox{\hyperlink{class_q_c_p_layout_element_a361666cdcc6fbfd37344cc44be746b0f}{QCPLayout\+Element\+::set\+Size\+Constraint\+Rect}}.)
 
-The default stretch factor of newly created rows/columns is 1.
+\mbox{\hyperlink{class_the}{The}} default stretch factor of newly created rows/columns is 1.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_layout_grid_ae38f31a71687b9d7ee3104852528fb50}{set\+Column\+Stretch\+Factor}}, \mbox{\hyperlink{class_q_c_p_layout_grid_a200b45f9c908f96ebadaa3c8d87a2782}{set\+Row\+Stretch\+Factors}} 
@@ -743,9 +731,9 @@ The default stretch factor of newly created rows/columns is 1.
 
 Sets the filling order and wrapping behaviour that is used when adding new elements with the method \mbox{\hyperlink{class_q_c_p_layout_grid_a4c44025dd25acd27e053cadfd448ad7b}{add\+Element(\+QCPLayout\+Element$\ast$)}}.
 
-The specified {\itshape order} defines whether rows or columns are filled first. Using \mbox{\hyperlink{class_q_c_p_layout_grid_ab36af18d77e4428386d02970382ee598}{set\+Wrap}}, you can control at which row/column count wrapping into the next column/row will occur. If you set it to zero, no wrapping will ever occur. Changing the fill order also changes the meaning of the linear index used e.\+g. in \mbox{\hyperlink{class_q_c_p_layout_grid_a4288f174082555f6bd92021bdedb75dc}{element\+At}} and \mbox{\hyperlink{class_q_c_p_layout_grid_a17dd220234d1bbf8835abcc666384d45}{take\+At}}.
+\mbox{\hyperlink{class_the}{The}} specified {\itshape order} defines whether rows or columns are filled first. Using \mbox{\hyperlink{class_q_c_p_layout_grid_ab36af18d77e4428386d02970382ee598}{set\+Wrap}}, you can control at which row/column count wrapping into the next column/row will occur. If you set it to zero, no wrapping will ever occur. Changing the fill order also changes the meaning of the linear index used e.\+g. in \mbox{\hyperlink{class_q_c_p_layout_grid_a4288f174082555f6bd92021bdedb75dc}{element\+At}} and \mbox{\hyperlink{class_q_c_p_layout_grid_a17dd220234d1bbf8835abcc666384d45}{take\+At}}.
 
-If you want to have all current elements arranged in the new order, set {\itshape rearrange} to true. The elements will be rearranged in a way that tries to preserve their linear index. However, empty cells are skipped during build-\/up of the new cell order, which shifts the succeeding element\textquotesingle{}s index. The rearranging is performed even if the specified {\itshape order} is already the current fill order. Thus this method can be used to re-\/wrap the current elements.
+If you want to have all current elements arranged in the new order, set {\itshape rearrange} to true. \mbox{\hyperlink{class_the}{The}} elements will be rearranged in a way that tries to preserve their linear index. However, empty cells are skipped during build-\/up of the new cell order, which shifts the succeeding element\textquotesingle{}s index. \mbox{\hyperlink{class_the}{The}} rearranging is performed even if the specified {\itshape order} is already the current fill order. Thus this method can be used to re-\/wrap the current elements.
 
 If {\itshape rearrange} is false, the current element arrangement is not changed, which means the linear indexes change (because the linear index is dependent on the fill order).
 
@@ -775,7 +763,7 @@ Sets the stretch {\itshape factor} of {\itshape row}.
 
 Stretch factors control the relative sizes of rows and columns. Cells will not be resized beyond their minimum and maximum widths/heights, regardless of the stretch factor. (see \mbox{\hyperlink{class_q_c_p_layout_element_a5dd29a3c8bc88440c97c06b67be7886b}{QCPLayout\+Element\+::set\+Minimum\+Size}}, \mbox{\hyperlink{class_q_c_p_layout_element_a74eb5280a737ab44833d506db65efd95}{QCPLayout\+Element\+::set\+Maximum\+Size}}, \mbox{\hyperlink{class_q_c_p_layout_element_a361666cdcc6fbfd37344cc44be746b0f}{QCPLayout\+Element\+::set\+Size\+Constraint\+Rect}}.)
 
-The default stretch factor of newly created rows/columns is 1.
+\mbox{\hyperlink{class_the}{The}} default stretch factor of newly created rows/columns is 1.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_layout_grid_a6c2591d1a7e2534ce036989543b49e57}{set\+Column\+Stretch\+Factors}}, \mbox{\hyperlink{class_q_c_p_layout_grid_a7b0273de5369bd93d942edbaf5b166ec}{set\+Row\+Stretch\+Factor}} 
@@ -790,7 +778,7 @@ Sets the stretch {\itshape factors} of all rows. {\itshape factors} must have th
 
 Stretch factors control the relative sizes of rows and columns. Cells will not be resized beyond their minimum and maximum widths/heights, regardless of the stretch factor. (see \mbox{\hyperlink{class_q_c_p_layout_element_a5dd29a3c8bc88440c97c06b67be7886b}{QCPLayout\+Element\+::set\+Minimum\+Size}}, \mbox{\hyperlink{class_q_c_p_layout_element_a74eb5280a737ab44833d506db65efd95}{QCPLayout\+Element\+::set\+Maximum\+Size}}, \mbox{\hyperlink{class_q_c_p_layout_element_a361666cdcc6fbfd37344cc44be746b0f}{QCPLayout\+Element\+::set\+Size\+Constraint\+Rect}}.)
 
-The default stretch factor of newly created rows/columns is 1.
+\mbox{\hyperlink{class_the}{The}} default stretch factor of newly created rows/columns is 1.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_layout_grid_a7b0273de5369bd93d942edbaf5b166ec}{set\+Row\+Stretch\+Factor}}, \mbox{\hyperlink{class_q_c_p_layout_grid_a6c2591d1a7e2534ce036989543b49e57}{set\+Column\+Stretch\+Factors}} 

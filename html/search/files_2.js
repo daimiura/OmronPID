@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['qcustomplot_2ecpp_0',['qcustomplot.cpp',['../qcustomplot_8cpp.html',1,'']]],
-  ['qcustomplot_2eh_1',['qcustomplot.h',['../qcustomplot_8h.html',1,'']]]
+  ['tempdropdialog_2eh_0',['tempdropdialog.h',['../tempdropdialog_8h.html',1,'']]]
 ];

@@ -5,22 +5,10 @@
 A margin group allows synchronization of margin sides if working with multiple layout elements.  
 
 
-
-
-Inheritance diagram for QCPMargin\+Group\+:\nopagebreak
-\begin{figure}[H]
+Inheritance diagram for QCPMargin\+Group\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=173pt]{class_q_c_p_margin_group__inherit__graph}
-\end{center}
-\end{figure}
-
-
-Collaboration diagram for QCPMargin\+Group\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_q_c_p_margin_group__coll__graph}
+\includegraphics[height=2.000000cm]{class_q_c_p_margin_group}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
@@ -70,7 +58,7 @@ A margin group allows synchronization of margin sides if working with multiple l
 
 ~\newline
  ~\newline
- In certain situations it is desirable that margins at specific sides are synchronized across layout elements. For example, if one \mbox{\hyperlink{class_q_c_p_axis_rect}{QCPAxis\+Rect}} is below another one in a grid layout, it will provide a cleaner look to the user if the left and right margins of the two axis rects are of the same size. The left axis of the top axis rect will then be at the same horizontal position as the left axis of the lower axis rect, making them appear aligned. The same applies for the right axes. This is what \mbox{\hyperlink{class_q_c_p_margin_group}{QCPMargin\+Group}} makes possible.
+ In certain situations it is desirable that margins at specific sides are synchronized across layout elements. For example, if one \mbox{\hyperlink{class_q_c_p_axis_rect}{QCPAxis\+Rect}} is below another one in a grid layout, it will provide a cleaner look to the user if the left and right margins of the two axis rects are of the same size. \mbox{\hyperlink{class_the}{The}} left axis of the top axis rect will then be at the same horizontal position as the left axis of the lower axis rect, making them appear aligned. \mbox{\hyperlink{class_the}{The}} same applies for the right axes. This is what \mbox{\hyperlink{class_q_c_p_margin_group}{QCPMargin\+Group}} makes possible.
 
 To add/remove a specific side of a layout element to/from a margin group, use the \mbox{\hyperlink{class_q_c_p_layout_element_a516e56f76b6bc100e8e71d329866847d}{QCPLayout\+Element\+::set\+Margin\+Group}} method. To completely break apart the margin group, either call \mbox{\hyperlink{class_q_c_p_margin_group_a144b67f216e4e86c3a3a309e850285fe}{clear}}, or just delete the margin group.\hypertarget{class_q_c_p_margin_group_QCPMarginGroup-example}{}\doxysubsection{Example}\label{class_q_c_p_margin_group_QCPMarginGroup-example}
 First create a margin group\+: 
@@ -99,7 +87,7 @@ Creates a new \mbox{\hyperlink{class_q_c_p_margin_group}{QCPMargin\+Group}} inst
 \doxysubsubsection{\texorpdfstring{clear()}{clear()}}
 {\footnotesize\ttfamily void QCPMargin\+Group\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Clears this margin group. The synchronization of the margin sides that use this margin group is lifted and they will use their individual margin sizes again. \mbox{\Hypertarget{class_q_c_p_margin_group_ac967a4dc5fe02ae44aeb43511d5e1bd4}\label{class_q_c_p_margin_group_ac967a4dc5fe02ae44aeb43511d5e1bd4}} 
+Clears this margin group. \mbox{\hyperlink{class_the}{The}} synchronization of the margin sides that use this margin group is lifted and they will use their individual margin sizes again. \mbox{\Hypertarget{class_q_c_p_margin_group_ac967a4dc5fe02ae44aeb43511d5e1bd4}\label{class_q_c_p_margin_group_ac967a4dc5fe02ae44aeb43511d5e1bd4}} 
 \index{QCPMarginGroup@{QCPMarginGroup}!elements@{elements}}
 \index{elements@{elements}!QCPMarginGroup@{QCPMarginGroup}}
 \doxysubsubsection{\texorpdfstring{elements()}{elements()}}
