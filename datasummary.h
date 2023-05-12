@@ -33,10 +33,24 @@ public:
     double getMV() const;
 
     /**
+     * @brief Gets the current MV upper value.
+     * @return The MV upper value.
+     */
+    double getMVUpper() const;
+
+    /**
+     * @brief Gets the current MV lower value.
+     * @return The MV lower value.
+     */
+    double getMVLower() const;
+
+
+    /**
      * @brief Gets the current SV value.
      * @return The SV value.
      */
     double getSV() const;
+
 
     /**
      * @brief Gets the file name for saving data.
@@ -122,6 +136,18 @@ private slots:
     void setMV(double mv);
 
     /**
+     * @brief Slot to set the MV upper value.
+     * @param mv The new MV upper value.
+     */
+    void setMVUpper(double mvUpper);
+
+    /**
+     * @brief Slot to set the MV lower value.
+     * @param mv The new MV lower value.
+     */
+    void setMVLower(double mvLower);
+
+    /**
      * @brief Slot to set the SV value.
      * @param sv The new SV value.
      */
@@ -143,6 +169,8 @@ private:
     Communication *com_{nullptr};
     double temperature_{};
     double mv_{};
+    double mvUpper_{};
+    double mvLower_{};
     double sv_{};
     QString fileName_{};
     QString filePath_{};

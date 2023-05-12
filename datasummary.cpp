@@ -23,18 +23,24 @@ DataSummary::DataSummary(Communication* com)
   fileName_ = filePath_ + "/" + startTime.toString("yyyyMMdd_HHmmss") + ".dat";
   connect(com_, &Communication::TemperatureUpdated, this, &DataSummary::setTemperature);
   connect(com_, &Communication::MVUpdated, this, &DataSummary::setMV);
+  connect(com_, &Communication::MVupperUpdated, this, &DataSummary::setMVUpper);
+  connect(com_, &Communication::MVlowerUpdated, this, &DataSummary::setMVLower);
   connect(com_, &Communication::SVUpdated, this, &DataSummary::setSV);
   connect(logTimer_, &QTimer::timeout, this, &DataSummary::writeData);
 }
 
 double DataSummary::getTemperature() const {return temperature_;}
 double DataSummary::getMV() const {return mv_;}
+double DataSummary::getMVUpper() const {return mvUpper_;}
+double DataSummary::getMVLower() const {return mvLower_;}
 double DataSummary::getSV() const {return sv_;}
 QString DataSummary::getFileName() const {return fileName_;}
 QString DataSummary::getFilePath() const {return filePath_;}
 
 void DataSummary::setTemperature(double temperature){temperature_ = temperature;}
 void DataSummary::setMV(double mv){mv_ = mv;}
+void DataSummary::setMVUpper(double mvUpper) {mvUpper_ = mvUpper;}
+void DataSummary::setMVLower(double mvLower) {mvLower_ = mvLower;}
 void DataSummary::setSV(double sv){sv_ = sv;}
 void DataSummary::setFileName(QString name) {fileName_ = name;}
 void DataSummary::setSave(bool save) {save_ = save;}

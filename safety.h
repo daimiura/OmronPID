@@ -4,7 +4,7 @@
 #include <QObject>
 #include <QTimer>
 #include <QMutex>
-#include "communication.h"
+#include "datasummary.h"
 
 class Safety : public QObject
 {
@@ -18,7 +18,7 @@ class Safety : public QObject
   Q_PROPERTY(int intervalTempChange READ getIntervalTempChange WRITE setIntervalTempChange NOTIFY intervalTempChangeChanged)
 
 public:
-  explicit Safety(Communication* com);
+  explicit Safety(DataSummary* data);
   ~Safety();
   double getTemperature() const;
   double getPermitedMaxTemp() const;
@@ -67,7 +67,7 @@ private slots:
   void checkTemperature();
 
 private:
-  Communication *com_{nullptr};
+  DataSummary *data_{nullptr};
   QMutex mutex_;
   QTimer *timerMVCheck_{nullptr};
   QTimer *timerTempChange_{nullptr};

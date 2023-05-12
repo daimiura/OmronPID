@@ -43,19 +43,21 @@ MainWindow::MainWindow(QWidget *parent) :
   connect(com_, &Communication::serialPortRemove, this, &MainWindow::sendLINE);
   addPortName(com_->getSerialPortDevices());
 
-  safety_ = new Safety(com_);
-  safety_->setPermitedMaxTemp(ui->spinBox_TempUpper->value());
-  connect(safety_, &Safety::dangerSignal, this, &MainWindow::catchDanger);
-  connect(safety_, &Safety::checkNumberChanged, this, &MainWindow::updateCheckNumber);
-  connect(safety_, &Safety::escapeTempCheckChange, this, &MainWindow::cathcEscapeTempCheckChange);
-  connect(safety_, &Safety::startTempChangeCheck, this, &MainWindow::catchStartTempChangeCheck);
-
   data_ = new DataSummary(com_);
   //data_->setSave(ui->checkBox_dataSave->isChecked());
   connect(data_, &DataSummary::FileSave, this, &MainWindow::saveFile);
   LogMsg(data_->getFilePath());
   LogMsg(data_->getFileName());
   ui->lineEdit_DirPath->setText(data_->getFilePath());
+
+  safety_ = new Safety(data_);
+  safety_->setPermitedMaxTemp(ui->spinBox_TempUpper->value());
+  connect(safety_, &Safety::dangerSignal, this, &MainWindow::catchDanger);
+  connect(safety_, &Safety::checkNumberChanged, this, &MainWindow::updateCheckNumber);
+  connect(safety_, &Safety::escapeTempCheckChange, this, &MainWindow::cathcEscapeTempCheckChange);
+  connect(safety_, &Safety::startTempChangeCheck, this, &MainWindow::catchStartTempChangeCheck);
+
+
 
   notify_ = new Notify(this);
 
