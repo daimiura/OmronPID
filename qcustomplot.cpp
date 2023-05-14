@@ -6621,7 +6621,9 @@ void QCPAxisTickerText::addTick(double position, QString label)
 */
 void QCPAxisTickerText::addTicks(const QMultiMap<double, QString> &ticks)
 {
-  mTicks.unite(ticks);
+  for (auto it = ticks.constBegin(); it != ticks.constEnd(); ++it) {
+    mTicks.insertMulti(it.key(), it.value());
+  }
 }
 
 /*! \overload
@@ -12880,7 +12882,7 @@ QCustomPlot::QCustomPlot(QWidget *parent) :
   mReplotQueued(false),
   mOpenGlMultisamples(16),
   mOpenGlAntialiasedElementsBackup(QCP::aeNone),
-  mOpenGlCacheLabelsBackup(true)
+  mOpenGlCacheLabelsBackup()
 {
   setAttribute(Qt::WA_NoMousePropagation);
   setAttribute(Qt::WA_OpaquePaintEvent);
@@ -15292,7 +15294,7 @@ void QCustomPlot::processRectSelection(QRect rect, QMouseEvent *event)
           if (!dataSel.isEmpty())
             //potentialSelections.insertMulti(dataSel.dataPointCount(), QPair<QCPAbstractPlottable*, QCPDataSelection>(plottable, dataSel));
             QMultiMap<int, QPair<QCPAbstractPlottable*, QCPDataSelection>> potentialSelections;
-            potentialSelections.insertMulti(dataSel.dataPointCount(), qMakePair(plottable, dataSel));
+            potentialSelections.insert(dataSel.dataPointCount(), qMakePair(plottable, dataSel));
         }
       }
       

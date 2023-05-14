@@ -21,12 +21,14 @@ var searchData=
   ['isnone_18',['isNone',['../class_q_c_p_scatter_style.html#a72db6bcb1e1abd6e53c1315dd3dea7e4',1,'QCPScatterStyle']]],
   ['isnull_19',['isNull',['../class_q_c_p_vector2_d.html#ace99f200b347b14864808213eef16593',1,'QCPVector2D']]],
   ['ispendefined_20',['isPenDefined',['../class_q_c_p_scatter_style.html#a47077eb6450fe9a788f833e4ec1b1d5a',1,'QCPScatterStyle']]],
-  ['isvalid_21',['isValid',['../class_q_c_p_data_range.html#aae53a37472212dca0a7939963e20dba0',1,'QCPDataRange']]],
-  ['item_22',['item',['../class_q_custom_plot.html#ac042f2e78edd228ccf2f26b7fe215239',1,'QCustomPlot::item(int index) const'],['../class_q_custom_plot.html#a12eb2a283cf10a8a9176c01c0443e83e',1,'QCustomPlot::item() const'],['../class_q_c_p_legend.html#acfe9694c45104a3359d3806ed366fcf7',1,'QCPLegend::item()']]],
-  ['itemat_23',['itemAt',['../class_q_custom_plot.html#ac08578e0e6c059c83a8d340ba0038e8e',1,'QCustomPlot']]],
-  ['itemclick_24',['itemClick',['../class_q_custom_plot.html#ae16b51f52d2b7aebbc7e3e74e6ff2e4b',1,'QCustomPlot']]],
-  ['itemcount_25',['itemCount',['../class_q_custom_plot.html#a16025daf0341f9362be3080e404424c2',1,'QCustomPlot::itemCount()'],['../class_q_c_p_legend.html#a57ab86ab8b2a3762d4c1455eb5452c88',1,'QCPLegend::itemCount()']]],
-  ['itemdoubleclick_26',['itemDoubleClick',['../class_q_custom_plot.html#ac83aa9f5a3e9bb3efc9cdc763dcd42a6',1,'QCustomPlot']]],
-  ['items_27',['items',['../class_q_c_p_axis.html#a42761bc68e2f3a9f68549d45b73f705b',1,'QCPAxis::items()'],['../class_q_c_p_axis_rect.html#a03c113a2175448300ee8f944e24776ba',1,'QCPAxisRect::items()']]],
-  ['itemwithplottable_28',['itemWithPlottable',['../class_q_c_p_legend.html#a91e790002d8bf15a20628a8e8841e397',1,'QCPLegend']]]
+  ['istimerlogrunning_21',['isTimerLogRunning',['../class_data_summary.html#a6372ac7970aa9cae29d451b1f7885c37',1,'DataSummary']]],
+  ['istimerupdaterunning_22',['isTimerUpdateRunning',['../class_communication.html#aa9a6d33d0a202796f1e4bcc07db57a99',1,'Communication']]],
+  ['isvalid_23',['isValid',['../class_q_c_p_data_range.html#aae53a37472212dca0a7939963e20dba0',1,'QCPDataRange']]],
+  ['item_24',['item',['../class_q_custom_plot.html#ac042f2e78edd228ccf2f26b7fe215239',1,'QCustomPlot::item(int index) const'],['../class_q_custom_plot.html#a12eb2a283cf10a8a9176c01c0443e83e',1,'QCustomPlot::item() const'],['../class_q_c_p_legend.html#acfe9694c45104a3359d3806ed366fcf7',1,'QCPLegend::item()']]],
+  ['itemat_25',['itemAt',['../class_q_custom_plot.html#ac08578e0e6c059c83a8d340ba0038e8e',1,'QCustomPlot']]],
+  ['itemclick_26',['itemClick',['../class_q_custom_plot.html#ae16b51f52d2b7aebbc7e3e74e6ff2e4b',1,'QCustomPlot']]],
+  ['itemcount_27',['itemCount',['../class_q_custom_plot.html#a16025daf0341f9362be3080e404424c2',1,'QCustomPlot::itemCount()'],['../class_q_c_p_legend.html#a57ab86ab8b2a3762d4c1455eb5452c88',1,'QCPLegend::itemCount()']]],
+  ['itemdoubleclick_28',['itemDoubleClick',['../class_q_custom_plot.html#ac83aa9f5a3e9bb3efc9cdc763dcd42a6',1,'QCustomPlot']]],
+  ['items_29',['items',['../class_q_c_p_axis.html#a42761bc68e2f3a9f68549d45b73f705b',1,'QCPAxis::items()'],['../class_q_c_p_axis_rect.html#a03c113a2175448300ee8f944e24776ba',1,'QCPAxisRect::items()']]],
+  ['itemwithplottable_30',['itemWithPlottable',['../class_q_c_p_legend.html#a91e790002d8bf15a20628a8e8841e397',1,'QCPLegend']]]
 ];

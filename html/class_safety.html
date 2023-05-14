@@ -122,9 +122,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>startTempChangeCheck<
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a88b4480603c98c5b069bdf84565d7230"><td class="memItemLeft" align="right" valign="top"><a id="a88b4480603c98c5b069bdf84565d7230" name="a88b4480603c98c5b069bdf84565d7230"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Safety</b> (<a class="el" href="class_communication.html">Communication</a> *com)</td></tr>
-<tr class="separator:a88b4480603c98c5b069bdf84565d7230"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a791c22257e7aeedc2716512c791a78a7"><td class="memItemLeft" align="right" valign="top"><a id="a791c22257e7aeedc2716512c791a78a7" name="a791c22257e7aeedc2716512c791a78a7"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Safety</b> (<a class="el" href="class_data_summary.html">DataSummary</a> *data)</td></tr>
+<tr class="separator:a791c22257e7aeedc2716512c791a78a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4bdcf2894bbf8371976d0aa2fc54eb62"><td class="memItemLeft" align="right" valign="top"><a id="a4bdcf2894bbf8371976d0aa2fc54eb62" name="a4bdcf2894bbf8371976d0aa2fc54eb62"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>getTemperature</b> () const</td></tr>
 <tr class="separator:a4bdcf2894bbf8371976d0aa2fc54eb62"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -158,6 +158,15 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>getIgnoreUpper</b> 
 <tr class="memitem:a1989e307fb76f5984b7c1e44bd98dd17"><td class="memItemLeft" align="right" valign="top"><a id="a1989e307fb76f5984b7c1e44bd98dd17" name="a1989e307fb76f5984b7c1e44bd98dd17"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>getIgnoreLower</b> () const</td></tr>
 <tr class="separator:a1989e307fb76f5984b7c1e44bd98dd17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8fddc616366b49ab915c491a10c1ffc"><td class="memItemLeft" align="right" valign="top"><a id="aa8fddc616366b49ab915c491a10c1ffc" name="aa8fddc616366b49ab915c491a10c1ffc"></a>
+QPair&lt; double, double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getIgnoreTempRange</b> () const</td></tr>
+<tr class="separator:aa8fddc616366b49ab915c491a10c1ffc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84df553c01a40ffb5e349529c7089cc2"><td class="memItemLeft" align="right" valign="top"><a id="a84df553c01a40ffb5e349529c7089cc2" name="a84df553c01a40ffb5e349529c7089cc2"></a>
+QTimer *&#160;</td><td class="memItemRight" valign="bottom"><b>getTimerMVCheck</b> () const</td></tr>
+<tr class="separator:a84df553c01a40ffb5e349529c7089cc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48ae97417ba6e8f02cd254926cc1b97d"><td class="memItemLeft" align="right" valign="top"><a id="a48ae97417ba6e8f02cd254926cc1b97d" name="a48ae97417ba6e8f02cd254926cc1b97d"></a>
+QTimer *&#160;</td><td class="memItemRight" valign="bottom"><b>getTimerTempChangeCheck</b> () const</td></tr>
+<tr class="separator:a48ae97417ba6e8f02cd254926cc1b97d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab37fe3475582146ac4bf2fff55e7ba6e"><td class="memItemLeft" align="right" valign="top"><a id="ab37fe3475582146ac4bf2fff55e7ba6e" name="ab37fe3475582146ac4bf2fff55e7ba6e"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setPermitedMaxTemp</b> (double maxtemp)</td></tr>
 <tr class="separator:ab37fe3475582146ac4bf2fff55e7ba6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -176,33 +185,39 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setCheckNumber</b> (i
 <tr class="memitem:a8f91ae577d2367c6d774cf008c36a313"><td class="memItemLeft" align="right" valign="top"><a id="a8f91ae577d2367c6d774cf008c36a313" name="a8f91ae577d2367c6d774cf008c36a313"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setTempChangeThreshold</b> (double temp)</td></tr>
 <tr class="separator:a8f91ae577d2367c6d774cf008c36a313"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa5bda2df137f619ebc1bb6f21356cba"><td class="memItemLeft" align="right" valign="top"><a id="afa5bda2df137f619ebc1bb6f21356cba" name="afa5bda2df137f619ebc1bb6f21356cba"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setIntervalMVCheck</b> (int interval)</td></tr>
-<tr class="separator:afa5bda2df137f619ebc1bb6f21356cba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a575c792b70681d663013841c8d8a932b"><td class="memItemLeft" align="right" valign="top"><a id="a575c792b70681d663013841c8d8a932b" name="a575c792b70681d663013841c8d8a932b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setIntervalTempChange</b> (int inteerval)</td></tr>
-<tr class="separator:a575c792b70681d663013841c8d8a932b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1f201f12cdedadc0c3ed9038e2bfe645"><td class="memItemLeft" align="right" valign="top"><a id="a1f201f12cdedadc0c3ed9038e2bfe645" name="a1f201f12cdedadc0c3ed9038e2bfe645"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setIgnoreUpper</b> (double upper)</td></tr>
 <tr class="separator:a1f201f12cdedadc0c3ed9038e2bfe645"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7eb8e1541a047b509b266fafd1e57743"><td class="memItemLeft" align="right" valign="top"><a id="a7eb8e1541a047b509b266fafd1e57743" name="a7eb8e1541a047b509b266fafd1e57743"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setIgnoreLower</b> (double lower)</td></tr>
 <tr class="separator:a7eb8e1541a047b509b266fafd1e57743"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62caf804c01f46d5523ea13ff51a4369"><td class="memItemLeft" align="right" valign="top"><a id="a62caf804c01f46d5523ea13ff51a4369" name="a62caf804c01f46d5523ea13ff51a4369"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setIgnoreRange</b> (double lower, double upper)</td></tr>
-<tr class="separator:a62caf804c01f46d5523ea13ff51a4369"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac99b54db1735ae9169c56d3b66fbff07"><td class="memItemLeft" align="right" valign="top"><a id="ac99b54db1735ae9169c56d3b66fbff07" name="ac99b54db1735ae9169c56d3b66fbff07"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>checkTempChange</b> ()</td></tr>
+<tr class="memitem:aeb2c6ae389531f1dd34cff755fd1d5c6"><td class="memItemLeft" align="right" valign="top"><a id="aeb2c6ae389531f1dd34cff755fd1d5c6" name="aeb2c6ae389531f1dd34cff755fd1d5c6"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setIgnoreTempRange</b> (double temp, double lower, double upper)</td></tr>
+<tr class="separator:aeb2c6ae389531f1dd34cff755fd1d5c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac99b54db1735ae9169c56d3b66fbff07"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_safety.html#ac99b54db1735ae9169c56d3b66fbff07">checkTempChange</a> ()</td></tr>
+<tr class="memdesc:ac99b54db1735ae9169c56d3b66fbff07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the temperature has changed more than the threshold value. This function checks if the temperature has changed more than the threshold value during the specified time interval. If the temperature has changed less than the threshold value, it emits a danger signal and stops the temperature change check timer and MV check timer.  <br /></td></tr>
 <tr class="separator:ac99b54db1735ae9169c56d3b66fbff07"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c11eb70e17108cb34d17015a6727e65"><td class="memItemLeft" align="right" valign="top"><a id="a7c11eb70e17108cb34d17015a6727e65" name="a7c11eb70e17108cb34d17015a6727e65"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setEnableTempChangeeRange</b> (bool enable)</td></tr>
-<tr class="separator:a7c11eb70e17108cb34d17015a6727e65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0a24b93c6d273c08b699c12b90809c6"><td class="memItemLeft" align="right" valign="top"><a id="ae0a24b93c6d273c08b699c12b90809c6" name="ae0a24b93c6d273c08b699c12b90809c6"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setEnableTempChangeRange</b> (bool enable)</td></tr>
+<tr class="separator:ae0a24b93c6d273c08b699c12b90809c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa5bda2df137f619ebc1bb6f21356cba"><td class="memItemLeft" align="right" valign="top"><a id="afa5bda2df137f619ebc1bb6f21356cba" name="afa5bda2df137f619ebc1bb6f21356cba"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setIntervalMVCheck</b> (int interval)</td></tr>
+<tr class="separator:afa5bda2df137f619ebc1bb6f21356cba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a575c792b70681d663013841c8d8a932b"><td class="memItemLeft" align="right" valign="top"><a id="a575c792b70681d663013841c8d8a932b" name="a575c792b70681d663013841c8d8a932b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setIntervalTempChange</b> (int inteerval)</td></tr>
+<tr class="separator:a575c792b70681d663013841c8d8a932b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a049753e31587a4eb8bfab9d1bfc518a4"><td class="memItemLeft" align="right" valign="top"><a id="a049753e31587a4eb8bfab9d1bfc518a4" name="a049753e31587a4eb8bfab9d1bfc518a4"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>start</b> ()</td></tr>
 <tr class="separator:a049753e31587a4eb8bfab9d1bfc518a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d72c7d6a94e6b4772c1e227436de7ff"><td class="memItemLeft" align="right" valign="top"><a id="a4d72c7d6a94e6b4772c1e227436de7ff" name="a4d72c7d6a94e6b4772c1e227436de7ff"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>stop</b> ()</td></tr>
 <tr class="separator:a4d72c7d6a94e6b4772c1e227436de7ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac571e4f2e4881d8c3ee328e06781c9fd"><td class="memItemLeft" align="right" valign="top"><a id="ac571e4f2e4881d8c3ee328e06781c9fd" name="ac571e4f2e4881d8c3ee328e06781c9fd"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>isTimerMVCheckRunning</b> () const</td></tr>
+<tr class="separator:ac571e4f2e4881d8c3ee328e06781c9fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a641189c819e5a7e5767f039a28208628"><td class="memItemLeft" align="right" valign="top"><a id="a641189c819e5a7e5767f039a28208628" name="a641189c819e5a7e5767f039a28208628"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>isTimerTempChangeCheckRunning</b> () const</td></tr>
+<tr class="separator:a641189c819e5a7e5767f039a28208628"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
@@ -228,6 +243,28 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>intervalMVCheck</b></t
 int&#160;</td><td class="memItemRight" valign="bottom"><b>intervalTempChange</b></td></tr>
 <tr class="separator:ab43090ff8172cc79efc502fb1d4a9308"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ac99b54db1735ae9169c56d3b66fbff07" name="ac99b54db1735ae9169c56d3b66fbff07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac99b54db1735ae9169c56d3b66fbff07">&#9670;&#160;</a></span>checkTempChange()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Safety::checkTempChange </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if the temperature has changed more than the threshold value. This function checks if the temperature has changed more than the threshold value during the specified time interval. If the temperature has changed less than the threshold value, it emits a danger signal and stops the temperature change check timer and MV check timer. </p>
+<dl class="section note"><dt>Note</dt><dd>This function must be called periodically by a QTimer object.</dd></dl>
+<p>This function periodically checks if the temperature has changed more than the threshold value during the specified time interval. If the temperature has changed less than the threshold value, it emits a danger signal and stops the temperature change check timer and MV check timer. <a class="el" href="class_the.html">The</a> function starts by acquiring the current temperature and checking if it's within the ignore range. If the temperature is within the ignore range, the function clears variables, stops the timer, and emits the escapeTempCheckChange signal with the argument 1, indicating that the temperature change check has been escaped. If the temperature is outside the ignore range, the function checks if the conditions for stopping the temperature change check have been met. <a class="el" href="class_the.html">The</a> conditions are: if the check number is equal to or greater than the number of checks minus one, or if the MV is not in the upper limit, or if the temperature is within the ignore range. If any of these conditions is true, the function clears variables, stops the timer, and emits the escapeTempCheckChange signal with the argument 0 if the MV is not in the upper limit, or 1 if the MV is in the upper limit. If none of the stopping conditions is met, the function starts the check and pushes temperature data into the vTempChangeData_ vector. <a class="el" href="class_the.html">The</a> function sets the timer and increments the check number. If the check number is less than the number of checks, the function returns. When the check is completed, the function calculates the differences between adjacent temperature values, calculates the moving average, and checks if it's below the threshold. If it's below the threshold, the function emits the dangerSignal with the argument 1, indicating a dangerous situation. <a class="el" href="class_the.html">The</a> function then clears variables, stops the timer, and resets the check number. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="safety_8h_source.html">safety.h</a></li>
 <li>safety.cpp</li>

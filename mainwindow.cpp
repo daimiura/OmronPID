@@ -23,7 +23,14 @@ MainWindow::MainWindow(QWidget *parent) :
   waitTimer(new QTimer),
   LINEToken_("9tYexDQw9KHKyJOAI5gIONbXLZgzolIxungdwos5Dyy")
 {
+  //set up GUI. Reference gui.cpp
   ui->setupUi(this);
+  setupPlot();
+  setupCombBox();
+  setupDialog();
+  initializeVariables();
+
+  //Generate instance to use Communication class.
   com_ = new Communication(this, ui->statusBar);
   com_->setOmronID(ui->spinBox_DeviceAddress->value());
   connect(com_, &Communication::TemperatureUpdated, this, &MainWindow::updateTemperature);
@@ -43,13 +50,12 @@ MainWindow::MainWindow(QWidget *parent) :
   connect(com_, &Communication::serialPortRemove, this, &MainWindow::sendLINE);
   addPortName(com_->getSerialPortDevices());
 
+  //Generate instance to use DataSummary class.
   data_ = new DataSummary(com_);
-  //data_->setSave(ui->checkBox_dataSave->isChecked());
   connect(data_, &DataSummary::FileSave, this, &MainWindow::saveFile);
-  LogMsg(data_->getFilePath());
-  LogMsg(data_->getFileName());
   ui->lineEdit_DirPath->setText(data_->getFilePath());
 
+  //Generate instance to use Safety class.
   safety_ = new Safety(data_);
   safety_->setPermitedMaxTemp(ui->spinBox_TempUpper->value());
   connect(safety_, &Safety::dangerSignal, this, &MainWindow::catchDanger);
@@ -57,63 +63,37 @@ MainWindow::MainWindow(QWidget *parent) :
   connect(safety_, &Safety::escapeTempCheckChange, this, &MainWindow::cathcEscapeTempCheckChange);
   connect(safety_, &Safety::startTempChangeCheck, this, &MainWindow::catchStartTempChangeCheck);
 
-
-
+  //Generate instance to use Notify class.
   notify_ = new Notify(this);
 
-  initializeVariables();
-  timing_ = com_->timing::clockUpdate;
-  setEnabledFalse();
-  //======= clock
-  connect(clock, SIGNAL(timeout()), this, SLOT(showTime()));
-  connect(waitTimer, SIGNAL(timeout()), this, SLOT(allowSetNextSV()));
-
-  //! helpDialog
-  helpDialog = new QDialog(this);
-  HelpLabel = new QLabel();
-  helpDialog->setWindowTitle("Help");
-  picNumber = 1;
-  QPixmap image(":fig1.PNG");
-  HelpLabel->setPixmap(image);
-  QPushButton * next = new QPushButton("Next");
-  connect(next, SIGNAL(pressed()) , this, SLOT(HelpPicNext()));
-  QVBoxLayout *mainLayout = new QVBoxLayout(helpDialog);
-  mainLayout->addWidget(HelpLabel);
-  mainLayout->addWidget(next);
-
-  //! plotDialog
-  plotDialog_ = new PlotDialog(this);
-  plotDialog_->setWindowTitle("Setting for Plot");
-
-
-
-  setupPlot();
-  setupCombBox();
-
-
-  configureDialog_ = new ConfigureDialog(this);
-  configureDialog_->setWindowTitle("Configure");
-  connect(configureDialog_->pushButton_SetParameters_, SIGNAL(clicked(bool)), this, SLOT(setParametersTempCheckChange()) );
-
+  //Set default value to parameters
   setIntervalAskMV();
   setIntervalAskTemp();
   setNumbers();
   setSafeLimit();
   setIgnoreRange();
+  setEnabledFalse();
 
   ui->textEdit_Log->setTextColor(QColor(34,139,34,255));
   LogMsg("The AT and RUN/STOP do not get from the device. Please be careful.");
   ui->textEdit_Log->setTextColor(QColor(0,0,0,255));
-  LogMsgBox_ = new QMessageBox;
 
   plotTimer_ = new QTimer(this);
   plotTimer_->setInterval(intervalPlot_);
+  connect(plotTimer_, SIGNAL(timeout()), this, SLOT(makePlot()));
   connect(ui->spinBox_TempRecordTime, SIGNAL(valueChanged(int)), data_, SLOT(setIntervalLog(int)));
   connect(ui->spinBox_TempRecordTime, SIGNAL(valueChanged(int)), this, SLOT(setIntervalPlot(int)));
   connect(ui->checkBox_dataSave, SIGNAL(toggled(bool)), data_, SLOT(setSave(bool)));
-  connect(plotTimer_, SIGNAL(timeout()), this, SLOT(makePlot()));
   connect(ui->doubleSpinBox_MVupper, SIGNAL(valueChanged(double)), data_, SLOT(setMVUpper(double)));
   connect(ui->doubleSpinBox_MVlower, SIGNAL(valueChanged(double)), data_, SLOT(setMVLower(double)));
+  connect(com_->getTimerUpdate(), &QTimer::timeout, this, &MainWindow::updateStatusBoxes);
+  connect(safety_->getTimerMVCheck(), &QTimer::timeout, this, MainWindow::updateStatusBoxes);
+  connect(safety_->getTimerTempChangeCheck(), &QTimer::timeout, this, MainWindow::updateStatusBoxes);
+  connect(data_->getLogTimer(), &QTimer::timeout, this, &MainWindow::updateStatusBoxes);
+
+  timing_ = com_->timing::clockUpdate;
+  connect(clock, SIGNAL(timeout()), this, SLOT(showTime()));
+  connect(waitTimer, SIGNAL(timeout()), this, SLOT(allowSetNextSV()));
 }
 
 
@@ -405,10 +385,8 @@ void MainWindow::on_pushButton_Control_clicked()
         waitTimer->setSingleShot(true);
         while(tempControlOnOff && mode == 4 && !targetValue_2_Reached){
             getTempTimer.start(tempGetTime);
-            //com_->askTemperature();
-            //com_->askMV();
-            double temperature = com_->getTemperature();
-            double MV = com_->getMV();
+            double temperature = data_->getTemperature();
+            double MV = data_->getMV();
             QDateTime date = QDateTime::currentDateTime();
             fillDataAndPlot(date, temperature, targetValue_2, MV);
             data_->writeData();
@@ -441,8 +419,7 @@ void MainWindow::on_pushButton_Control_clicked()
         muteLog = false;
 
         //Looping ========================
-        //com_->askTemperature();
-        double temperature = com_->getTemperature();
+        double temperature = data_->getTemperature();
         double smallShift = temperature;
         LogMsg("Present Temperature : " + QString::number(temperature) + " C.");
         const int direction = (temperature > targetValue ) ? (-1) : 1;
@@ -494,7 +471,7 @@ void MainWindow::on_pushButton_Control_clicked()
                 //com_->askMV();
 
                 QDateTime date = QDateTime::currentDateTime();
-                double MV = com_->getMV();
+                double MV = data_->getMV();
                 fillDataAndPlot(date, temperature, smallShift, MV);
                 data_->writeData();
                 while(getTempTimer.remainingTime() > 0 ){
@@ -558,8 +535,8 @@ void MainWindow::on_pushButton_Control_clicked()
             qDebug()  << "temp control. do-loop 2 = " << tempControlOnOff;
             //com_->askTemperature();
             //com_->askMV();
-            double temperature = com_->getTemperature();
-            double MV = com_->getMV();
+            double temperature = data_->getTemperature();
+            double MV = data_->getMV();
             QDateTime date = QDateTime::currentDateTime();
             fillDataAndPlot(date, temperature, smallShift, MV);
             data_->writeData();
@@ -599,9 +576,7 @@ void MainWindow::on_doubleSpinBox_MVupper_valueChanged(double arg1){
     plot->replot();
 }
 
-void MainWindow::on_pushButton_GetPID_clicked(){
-  com_->askPID("PID");
-}
+void MainWindow::on_pushButton_GetPID_clicked() {com_->askPID("PID");}
 
 void MainWindow::on_comboBox_Mode_currentIndexChanged(int index){
     if(!comboxEnable) return;
@@ -751,10 +726,8 @@ void MainWindow::fillDataAndPlot(const QDateTime date, const double PV, const do
     plot->graph(2)->data()->add(svData);
 
     int intDate = date.toSecsSinceEpoch();
-    int diff = abs(date.secsTo(dateStart_));
     int setrange = plotDialog_->displayRange_ * 60;
-    if (diff < setrange) plot->xAxis->rescale();
-    else plot->xAxis->setRange(intDate - setrange, intDate);
+    plot->xAxis->setRange(intDate - setrange, intDate);
     plot->yAxis->rescale();
 
     double ymin = plot->yAxis->range().lower - 2;
@@ -865,7 +838,6 @@ void MainWindow::setIgnoreRange(){
   ui->lineEdit_IgnoreLower->setEnabled(true);
   ui->lineEdit_IgnoreUpper->setEnabled(true);
   safety_->stop();
-  safety_->setEnableTempChangeeRange(configureDialog_->ignoreEnable_);
   if(configureDialog_->ignoreEnable_){
     ui->lineEdit_IgnoreLower->setText(QString::number(configureDialog_->ignoreLower_));
     ui->lineEdit_IgnoreUpper->setText(QString::number(configureDialog_->ignoreUpper_));
@@ -883,7 +855,7 @@ void MainWindow::setIgnoreEnable(){
   ui->checkBox_Ignore->setEnabled(true);
   ui->checkBox_Ignore->setChecked(configureDialog_->ignoreEnable_);
   safety_->stop();
-  safety_->setEnableTempChangeeRange(configureDialog_->ignoreEnable_);
+  safety_->setEnableTempChangeRange(configureDialog_->ignoreEnable_);
   ui->checkBox_Ignore->setEnabled(false);
 }
 
@@ -912,7 +884,6 @@ void MainWindow::on_pushButton_RunStop_toggled(bool checked)
     Stop();
   } else {
     LogMsg("Not connected. Please check COM PORT etc.");
-    //if(threadLog_->isRunning()) threadLog_->quit();
     ui->checkBoxStatusRun->setChecked(false);
   }
 }
@@ -921,15 +892,12 @@ void MainWindow::on_pushButton_Log_toggled(bool checked){
   bool connectPID = ui->pushButton_Connect->isChecked();
   if(checked && connectPID){
     ui->pushButton_Log->setText("Logging Stop");
-    ui->checkBoxStatusRecord->setChecked(true);
     data_->logingStart();
   }else if (connectPID) {
     ui->pushButton_Log->setText("Logging Start");
-    ui->checkBoxStatusRecord->setChecked(false);
     data_->logingStop();
   } else {
     LogMsg("Not connected. Please check COM PORT etc.");
-    ui->checkBoxStatusRecord->setChecked(false);
     data_->logingStop();
   }
 }
@@ -943,9 +911,7 @@ void MainWindow::Run(){
   ui->lineEdit_msg->setStyleSheet("");
   ui->pushButton_Log->setChecked(true);
   ui->checkBoxStatusRun->setChecked(true);
-  ui->checkBoxStatusPeriodic->setCheckable(true);
   countTempCheck_ = 0;
-  statusRun_ = true;
   //sendLINE("Running starts.");
   plotTimer_->start();
   data_->generateSaveFile();
@@ -964,16 +930,11 @@ void MainWindow::Stop(){
   bkgColorChangeable_ = true;
   setColor(0, bkgColorChangeable_);
   ui->checkBoxStatusRun->setChecked(false);
-  ui->checkBoxStatusPeriodic->setChecked(false);
-  ui->checkBoxStatusTempDrop->setChecked(false);
-  ui->checkBoxStautsTempCheck->setChecked(false);
   ui->checkBoxStatusSTC->setChecked(false);
   ui->action_Setting_parameters_for_TempCheck->setEnabled(true);
   ui->lineEdit_msg->clear();
   ui->lineEdit_msg->setStyleSheet("");
-  statusRun_ = false;
   safety_->stop();
-  //data_->setIntervalLog(ui->spinBox_TempRecordTime->value());
   data_->logingStop();
   plotTimer_->stop();
   //sendLINE("Running stop.");
@@ -987,12 +948,8 @@ void MainWindow::Quit(){
   countTempCheck_ = 0;
   ui->textEdit_Log->setTextColor(QColor(0,0,0,255));
   ui->checkBoxStatusRun->setChecked(false);
-  ui->checkBoxStatusPeriodic->setChecked(false);
-  ui->checkBoxStatusTempDrop->setChecked(false);
-  ui->checkBoxStautsTempCheck->setChecked(false);
   ui->checkBoxStatusSTC->setChecked(false);
   ui->pushButton_RunStop->setChecked(false);
-  statusRun_ = false;
   safety_->stop();
   //sendLINE("Emergency Stop!");
   bkgColorChangeable_ = true;
@@ -1013,8 +970,6 @@ void MainWindow::makePlot(){
   QDateTime date = QDateTime::currentDateTime();
   valltemp_.push_back(com_->getTemperature());
   fillDataAndPlot(date, com_->getTemperature(), setTemperature, com_->getMV());
-  //if(ui->checkBox_dataSave->isChecked()) writeData();
-  double diff = fillDifference(true);
 }
 
 void MainWindow::on_checkBox_dataSave_toggled(bool checked)
@@ -1085,7 +1040,7 @@ void MainWindow::addPortName(QList<QSerialPortInfo> info){
 
 //signals
 void MainWindow::updateTemperature(double temperature){
-  ui->lineEdit_Temp->setText(QString::number(temperature) + " C");/
+  ui->lineEdit_Temp->setText(QString::number(temperature) + " C");
 }
 
 void MainWindow::updateMV(double MV){
@@ -1250,4 +1205,16 @@ void MainWindow::setIntervalPlot(int interval){
     plotTimer_->stop();
     plotTimer_->setInterval(intervalPlot_);
   }
+}
+
+void MainWindow::updateStatusBoxes(){
+  // Update the state of the QCheckBox widgets based on the activity status of the QTimer objects
+  bool is_mvcheck_running = safety_->isTimerMVCheckRunning();
+  ui->checkBoxStatusPeriodic->setChecked(is_mvcheck_running);
+  bool is_tempchange_running = safety_->isTimerTempChangeCheckRunning();
+  ui->checkBoxStautsTempCheck->setChecked(is_tempchange_running);
+  bool is_log_running = data_->isTimerLogRunning();
+  ui->checkBoxStatusRecord->setChecked(is_log_running);
+  bool is_update_running = com_->isTimerUpdateRunning();
+  ui->checkBoxUpdate->setChecked(is_update_running);
 }

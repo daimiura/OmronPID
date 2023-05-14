@@ -36,6 +36,7 @@ double DataSummary::getMVLower() const {return mvLower_;}
 double DataSummary::getSV() const {return sv_;}
 QString DataSummary::getFileName() const {return fileName_;}
 QString DataSummary::getFilePath() const {return filePath_;}
+QTimer* DataSummary::getLogTimer() const {return logTimer_;}
 
 void DataSummary::setTemperature(double temperature){temperature_ = temperature;}
 void DataSummary::setMV(double mv){mv_ = mv;}
@@ -44,6 +45,7 @@ void DataSummary::setMVLower(double mvLower) {mvLower_ = mvLower;}
 void DataSummary::setSV(double sv){sv_ = sv;}
 void DataSummary::setFileName(QString name) {fileName_ = name;}
 void DataSummary::setSave(bool save) {save_ = save;}
+bool DataSummary::isTimerLogRunning() const {return logTimer_ -> isActive();}
 
 /**
  * @brief Sets the logging interval for the DataSummary class.
@@ -135,3 +137,47 @@ void DataSummary::logingStart(){
 void DataSummary::logingStop(){
   logTimer_->stop();
 }
+
+/*
+void DataSummary::writeHeader(QTextStream& stream, QDateTime startTime, int mode, double targetValue, double targetValue_2, int tempWaitTime, double tempTorr){
+  QString lineout = "###" + startTime.toString("yyyy-MM-dd HH:mm:ss\n");
+  stream << lineout;
+  if (mode == 1) {
+      lineout = "### Control mode          :  Stable Temperature.\n";
+      stream << lineout;
+      lineout = "### Target Temperature    : " + QString::number(targetValue) + " C.\n";
+      stream << lineout;
+      lineout = "### Temperature stable time: " + QString::number(tempWaitTime) + " min.\n";
+      stream << lineout;
+      lineout = "### Temperature tolerance : " + QString::number(tempTorr) + " C.\n";
+      stream << lineout;
+  } else if (mode == 2) {
+      lineout = "### Control mode          :  Fixed Time.\n";
+      stream << lineout;
+      lineout = "### Target Temperature    : " + QString::number(targetValue) + " C.\n";
+      stream << lineout;
+      lineout = "### Set-temp change time  : " + QString::number(tempWaitTime) + " min.\n";
+      stream << lineout;
+  } else if (mode == 3) {
+      lineout = "### Control mode          :  Set-temp Fixed Rate. \n";
+      stream << lineout;
+      lineout = "### Target Temperature    : " + QString::number(targetValue) + " C.\n";
+      stream << lineout;
+      lineout = "### Set-temp change rate  : " + QString::number(tempWaitTime/60./1000.) + " min/C.\n";
+      stream << lineout;
+  } else if (mode == 4) {
+      lineout = "### Control mode          :  Normal + Set-temp Fixed Rate. \n";
+      stream << lineout;
+      lineout = "### Set-temp of normal    : " + QString::number(targetValue_2) + " C.\n";
+      stream << lineout;
+      lineout = "### Set-temp of fixed rate: " + QString::number(targetValue) + " C.\n";
+      stream << lineout;
+      lineout = "### Set-temp change rate  : " + QString::number(tempWaitTime/60./1000.) + " min/C.\n";
+      stream << lineout;
+  }
+
+  lineout = "###" + QString("%1,\t%2,\t%3,\t%4,\t%5\n").arg("Date").arg("Date_t").arg("temp [C]").arg("SV [C]").arg("Output [%]");
+  stream << lineout;
+  }
+}
+*/

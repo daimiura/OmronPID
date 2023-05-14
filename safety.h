@@ -31,6 +31,9 @@ public:
   double getTempChangeThreshold() const;
   double getIgnoreUpper() const;
   double getIgnoreLower() const;
+  QPair<double, double> getIgnoreTempRange() const;
+  QTimer* getTimerMVCheck() const;
+  QTimer* getTimerTempChangeCheck() const;
 
   void setPermitedMaxTemp(double maxtemp);
   void setMVUpper(double MVupper);
@@ -40,14 +43,15 @@ public:
   void setTempChangeThreshold(double temp);
   void setIgnoreUpper(double upper);
   void setIgnoreLower(double lower);
-  void setIgnoreRange(double lower, double upper);
+  void setIgnoreTempRange(double temp, double lower, double upper);
   void checkTempChange();
-  void setEnableTempChangeeRange(bool enable);
+  void setEnableTempChangeRange(bool enable);
   void setIntervalMVCheck(int interval);
   void setIntervalTempChange(int inteerval);
-
   void start();
   void stop();
+  bool isTimerMVCheckRunning() const;
+  bool isTimerTempChangeCheckRunning() const;
 
 
 signals:
@@ -82,13 +86,14 @@ private:
   double diffTemp_{};
   double MV_{};
   double MVUpper_{};
-  double ignoreLower_{};
-  double ignoreUpper_{};
+  double ignoreLower_{-10.0};
+  double ignoreUpper_{10.0};
+  QPair<double, double> ignoreTempRange_{240.0, 260.0};
   double tempChangeThreshold_{1.0};
   QVector<double> vTempHistory_{};
   QVector<double> vTempChangeData_{};
   bool isMVupper_{false};
-  bool isEnableTempChangeeRange_{false};
+  bool isEnableTempChangeRange_{false};
 
   bool isTemperatureChanged();
   bool isMVupper();

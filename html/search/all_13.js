@@ -1,11 +1,22 @@
 var searchData=
 [
-  ['undefinepen_0',['undefinePen',['../class_q_c_p_scatter_style.html#acabc2a8c83d650b946f50c3166b6c35e',1,'QCPScatterStyle']]],
-  ['update_1',['update',['../class_q_c_p_layout_element.html#a929c2ec62e0e0e1d8418eaa802e2af9b',1,'QCPLayoutElement::update()'],['../class_q_c_p_layout.html#a48ecc9c98ea90b547c3e27a931a8f7bd',1,'QCPLayout::update()'],['../class_q_c_p_axis_rect.html#add049d464b9ef2ccdc638adc4ccb4aca',1,'QCPAxisRect::update()'],['../class_q_c_p_color_scale.html#a259dcb6d3053a2cc3c197e9b1191ddbe',1,'QCPColorScale::update()'],['../class_q_c_p_color_scale_axis_rect_private.html#add049d464b9ef2ccdc638adc4ccb4aca',1,'QCPColorScaleAxisRectPrivate::update()']]],
-  ['updatelegendicon_2',['updateLegendIcon',['../class_q_c_p_color_map.html#a5d8158b62d55fcfeaabcb68ce0083e87',1,'QCPColorMap']]],
-  ['updatephase_3',['UpdatePhase',['../class_q_c_p_layout_element.html#a0d83360e05735735aaf6d7983c56374d',1,'QCPLayoutElement']]],
-  ['updateposition_4',['updatePosition',['../class_q_c_p_item_tracer.html#a5b90296109e36384aedbc8908a670413',1,'QCPItemTracer']]],
-  ['uplayout_5',['upLayout',['../class_q_c_p_layout_element.html#a0d83360e05735735aaf6d7983c56374da5d1ccf5d79967c232c3c511796860045',1,'QCPLayoutElement']]],
-  ['upmargins_6',['upMargins',['../class_q_c_p_layout_element.html#a0d83360e05735735aaf6d7983c56374da288cb59a92280e47261a341f2813e676',1,'QCPLayoutElement']]],
-  ['uppreparation_7',['upPreparation',['../class_q_c_p_layout_element.html#a0d83360e05735735aaf6d7983c56374dad6119882eba136357c2f627992e527d3',1,'QCPLayoutElement']]]
+  ['ui_0',['Ui',['../namespace_ui.html',1,'']]],
+  ['undefinepen_1',['undefinePen',['../class_q_c_p_scatter_style.html#acabc2a8c83d650b946f50c3166b6c35e',1,'QCPScatterStyle']]],
+  ['update_2',['update',['../class_q_c_p_layout_element.html#a929c2ec62e0e0e1d8418eaa802e2af9b',1,'QCPLayoutElement::update()'],['../class_q_c_p_layout.html#a48ecc9c98ea90b547c3e27a931a8f7bd',1,'QCPLayout::update()'],['../class_q_c_p_axis_rect.html#add049d464b9ef2ccdc638adc4ccb4aca',1,'QCPAxisRect::update()'],['../class_q_c_p_color_scale.html#a259dcb6d3053a2cc3c197e9b1191ddbe',1,'QCPColorScale::update()'],['../class_q_c_p_color_scale_axis_rect_private.html#add049d464b9ef2ccdc638adc4ccb4aca',1,'QCPColorScaleAxisRectPrivate::update()']]],
+  ['updatechecknumber_3',['updateCheckNumber',['../class_main_window.html#aabefdc4ffd8d485e45d2244a8f4597f3',1,'MainWindow']]],
+  ['updatelegendicon_4',['updateLegendIcon',['../class_q_c_p_color_map.html#a5d8158b62d55fcfeaabcb68ce0083e87',1,'QCPColorMap']]],
+  ['updatemv_5',['updateMV',['../class_main_window.html#ada6923c796a91b939f83c776bc4b9cdb',1,'MainWindow']]],
+  ['updatemvlower_6',['updateMVlower',['../class_main_window.html#aa731129c45459ce999dc0000a37562d8',1,'MainWindow']]],
+  ['updatemvupper_7',['updateMVupper',['../class_main_window.html#a7c34f400b7c0518eda6c621430f54e5d',1,'MainWindow']]],
+  ['updatephase_8',['UpdatePhase',['../class_q_c_p_layout_element.html#a0d83360e05735735aaf6d7983c56374d',1,'QCPLayoutElement']]],
+  ['updatepid_5fd_9',['updatePID_D',['../class_main_window.html#a0e7ddefb2e11dfa68c4d888f16146b20',1,'MainWindow']]],
+  ['updatepid_5fi_10',['updatePID_I',['../class_main_window.html#a798c93fe1e834a0033f6388176eba490',1,'MainWindow']]],
+  ['updatepid_5fp_11',['updatePID_P',['../class_main_window.html#a987299bf3dd0ce8fd2e8ac4e37068be1',1,'MainWindow']]],
+  ['updateposition_12',['updatePosition',['../class_q_c_p_item_tracer.html#a5b90296109e36384aedbc8908a670413',1,'QCPItemTracer']]],
+  ['updatestatus_13',['updateStatus',['../class_main_window.html#a7cc6ae51527e7885199d378e05f15412',1,'MainWindow']]],
+  ['updatesv_14',['updateSV',['../class_main_window.html#a50aa5af928eb4c531dfa58b88e1b7c52',1,'MainWindow']]],
+  ['updatetemperature_15',['updateTemperature',['../class_main_window.html#a1b4b4a8946e42e552dd750017d531fd1',1,'MainWindow']]],
+  ['uplayout_16',['upLayout',['../class_q_c_p_layout_element.html#a0d83360e05735735aaf6d7983c56374da5d1ccf5d79967c232c3c511796860045',1,'QCPLayoutElement']]],
+  ['upmargins_17',['upMargins',['../class_q_c_p_layout_element.html#a0d83360e05735735aaf6d7983c56374da288cb59a92280e47261a341f2813e676',1,'QCPLayoutElement']]],
+  ['uppreparation_18',['upPreparation',['../class_q_c_p_layout_element.html#a0d83360e05735735aaf6d7983c56374dad6119882eba136357c2f627992e527d3',1,'QCPLayoutElement']]]
 ];

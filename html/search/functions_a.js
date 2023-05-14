@@ -14,5 +14,6 @@ var searchData=
   ['loadpreset_11',['loadPreset',['../class_q_c_p_color_gradient.html#aa0aeec1528241728b9671bf8e60b1622',1,'QCPColorGradient']]],
   ['logingstart_12',['logingStart',['../class_data_summary.html#af084f99cb72bc2e4b3331f20bdd9b2b7',1,'DataSummary']]],
   ['logingstop_13',['logingStop',['../class_data_summary.html#a97d2892a28a7e5f80805fda31e88d855',1,'DataSummary']]],
-  ['logmsg_14',['logMsg',['../class_communication.html#a53e0c58bfb65fc88f1f7bc13f48c7b33',1,'Communication']]]
+  ['logmsg_14',['logMsg',['../class_communication.html#a53e0c58bfb65fc88f1f7bc13f48c7b33',1,'Communication']]],
+  ['logmsg_15',['LogMsg',['../class_main_window.html#a44d85ff6240f89bc1aff38ff3dec128e',1,'MainWindow']]]
 ];

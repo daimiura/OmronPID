@@ -37,6 +37,6 @@ var searchData=
   ['tumilliseconds_34',['tuMilliseconds',['../class_q_c_p_axis_ticker_time.html#a5c48ded8c6d3a1aca9b68219469fea3ea809db637d2a7f601287c8790facc25cf',1,'QCPAxisTickerTime']]],
   ['tuminutes_35',['tuMinutes',['../class_q_c_p_axis_ticker_time.html#a5c48ded8c6d3a1aca9b68219469fea3ea682de6640daef46cffd8a080348d7d00',1,'QCPAxisTickerTime']]],
   ['tuseconds_36',['tuSeconds',['../class_q_c_p_axis_ticker_time.html#a5c48ded8c6d3a1aca9b68219469fea3ea22b2c1842215272ae827eea2d1cc037d',1,'QCPAxisTickerTime']]],
-  ['type_37',['Type',['../class_communication_1_1_e5_c_c___address.html#ae65845c8cd58de1fd62558b229f90dbc',1,'Communication::E5CC_Address']]],
-  ['type_38',['type',['../class_q_c_p_item_position.html#abfd74d86bd799306ce0295ffe433bdfc',1,'QCPItemPosition']]]
+  ['type_37',['type',['../class_q_c_p_item_position.html#abfd74d86bd799306ce0295ffe433bdfc',1,'QCPItemPosition']]],
+  ['type_38',['Type',['../class_communication_1_1_e5_c_c___address.html#ae65845c8cd58de1fd62558b229f90dbc',1,'Communication::E5CC_Address']]]
 ];
