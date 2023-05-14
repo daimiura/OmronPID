@@ -127,6 +127,8 @@ void \mbox{\hyperlink{class_communication_a0e76d9bca5fb1eb5c0781f870503e058}{rea
 \begin{DoxyCompactList}\small\item\em Reads data from the specified register type and address of the Mod\+Bus device. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_communication_a6335673fcbdeae311a70a53118f679f8}{set\+Serial\+Port\+Name}} (QString port\+Name)
 \begin{DoxyCompactList}\small\item\em Sets the name of the serial port to use for Modbus communication. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_communication_aa9a6d33d0a202796f1e4bcc07db57a99}{is\+Timer\+Update\+Running}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the update timer is currently running. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_communication_a1d72865effe27d7ac3c2ef13a8adea8f}{set\+Temperature}} (double temperature)
 \begin{DoxyCompactList}\small\item\em Sets the current temperature. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_communication_adf0dbdf2edce36b04c5a383a816910ea}{set\+SV}} (double SV)
@@ -170,7 +172,10 @@ int \mbox{\hyperlink{class_communication_afd435fd35312d895297048f5607e7476}{get\
 int \mbox{\hyperlink{class_communication_aacb8bc64b62f967c94ff913bc9d58af4}{get\+Interval\+Update}} () const
 \begin{DoxyCompactList}\small\item\em Returns the interval time in seconds at which the temperature and control data are updated. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_communication_a9ea9548f8ab7025ec6d3a797a3cd0a03}{get\+Interval\+Conection\+Check}} () const
-\begin{DoxyCompactList}\small\item\em Returns the interval time in seconds at which the connection to the Omron temperature controller is checked. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns the interval time in seconds at which the connection to the Omron temperature controller is checked. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_communication_a342b977837584d66a2c27ed5a8be0e27}\label{class_communication_a342b977837584d66a2c27ed5a8be0e27}} 
+QTimer $\ast$ {\bfseries get\+Timer\+Update} () const
+\end{DoxyCompactItemize}
 \doxysubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
@@ -366,9 +371,13 @@ Emitted when an AT command is sent to the Omron device and the send is finished.
 
 Changes the value of the output lower limit of the E5\+CC temperature controller. 
 
+\mbox{\hyperlink{class_communication_a2e8eb43c3a20aba35b70c5a1d86a008d}{Communication\+::change\+MVlower\+Value}} This method changes the lower value of the manipulated variable (MVlower). If the modbus is not ready, this method will return immediately without any action. After setting the new value, it will convert the value to the register value (sv) and format it as a hexadecimal string. Then, it will create a command string that contains the address, function code, and the formatted value. Finally, it will create a byte array from the hex string and send it as a request to the modbus device using the Write\+Multiple\+Registers function code.
+
 
 \begin{DoxyParams}{Parameters}
-{\em MVlower} & \mbox{\hyperlink{class_the}{The}} new value of the output lower limit. \\
+{\em MVlower} & \mbox{\hyperlink{class_the}{The}} new value of the output lower limit.\\
+\hline
+{\em MVlower} & \mbox{\hyperlink{class_the}{The}} new value of the MVlower in double precision. \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{class_communication_add15ec23dd41794a58564b47fd6ab9ae}\label{class_communication_add15ec23dd41794a58564b47fd6ab9ae}} 
@@ -381,9 +390,13 @@ Changes the value of the output lower limit of the E5\+CC temperature controller
 
 Changes the value of the output upper limit of the E5\+CC temperature controller. 
 
+\mbox{\hyperlink{class_communication_add15ec23dd41794a58564b47fd6ab9ae}{Communication\+::change\+MVupper\+Value}} This method changes the upper value of the manipulated variable (MVupper). If the modbus is not ready, this method will return immediately without any action. After setting the new value, it will convert the value to the register value (sv) and format it as a hexadecimal string. Then, it will create a command string that contains the address, function code, and the formatted value. Finally, it will create a byte array from the hex string and send it as a request to the modbus device using the Write\+Multiple\+Registers function code.
+
 
 \begin{DoxyParams}{Parameters}
-{\em MVupper} & \mbox{\hyperlink{class_the}{The}} new value of the output upper limit. \\
+{\em MVupper} & \mbox{\hyperlink{class_the}{The}} new value of the output upper limit.\\
+\hline
+{\em MVupper} & \mbox{\hyperlink{class_the}{The}} new value of the MVupper in double precision. \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{class_communication_af5f1beb1fa861593614bb4dc6e2e3a9f}\label{class_communication_af5f1beb1fa861593614bb4dc6e2e3a9f}} 
@@ -396,9 +409,13 @@ Changes the value of the output upper limit of the E5\+CC temperature controller
 
 Changes the set value (SV) of the E5\+CC temperature controller. 
 
+Changes the set value (SV) of the E5\+CC temperature controller. This function calculates the integer value to be sent to the temperature controller based on the given set value in degrees Celsius and the temperature decimal factor of the temperature controller. It then creates a Modbus command with the calculated value and sends it to the controller to change the SV.
+
 
 \begin{DoxyParams}{Parameters}
-{\em SV} & \mbox{\hyperlink{class_the}{The}} new value of the set value (SV). \\
+{\em SV} & \mbox{\hyperlink{class_the}{The}} new value of the set value (SV).\\
+\hline
+{\em SV} & \mbox{\hyperlink{class_the}{The}} set value to be set in degrees Celsius. \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{class_communication_a72dd8637a79be79348fc6eaea4356824}\label{class_communication_a72dd8637a79be79348fc6eaea4356824}} 
@@ -441,6 +458,8 @@ Sends a request to set the set value (SV) of the E5\+CC temperature controller.
 
 Formats the specified E5\+CC temperature controller address as a hexadecimal string. 
 
+Formats an E5\+CC register address as a hexadecimal string with the specified width.
+
 
 \begin{DoxyParams}{Parameters}
 {\em address} & \mbox{\hyperlink{class_the}{The}} E5\+CC temperature controller address to format. \\
@@ -449,7 +468,21 @@ Formats the specified E5\+CC temperature controller address as a hexadecimal str
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-\mbox{\hyperlink{class_the}{The}} formatted E5\+CC temperature controller address as a hexadecimal string. 
+\mbox{\hyperlink{class_the}{The}} formatted E5\+CC temperature controller address as a hexadecimal string.
+\end{DoxyReturn}
+
+
+This function takes an E5\+CC register address as an enumeration type and formats it as a hexadecimal string with the specified width. If the resulting string is shorter than the specified width, leading zeroes are added to the beginning of the string.
+
+
+\begin{DoxyParams}{Parameters}
+{\em address} & \mbox{\hyperlink{class_the}{The}} E5\+CC register address to format. \\
+\hline
+{\em width} & \mbox{\hyperlink{class_the}{The}} width of the resulting hexadecimal string. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+QString A QString object containing the formatted hexadecimal string. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_communication_a3c8f92126749c14140090ec400cb5e74}\label{class_communication_a3c8f92126749c14140090ec400cb5e74}} 
 \index{Communication@{Communication}!formatHex@{formatHex}}
@@ -461,6 +494,8 @@ Formats the specified E5\+CC temperature controller address as a hexadecimal str
 
 Formats the specified integer value as a hexadecimal string with the specified number of digits. 
 
+Formats an integer value to a hexadecimal string with the specified number of digits.
+
 
 \begin{DoxyParams}{Parameters}
 {\em value} & \mbox{\hyperlink{class_the}{The}} integer value to format. \\
@@ -469,7 +504,21 @@ Formats the specified integer value as a hexadecimal string with the specified n
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-\mbox{\hyperlink{class_the}{The}} formatted hexadecimal string. 
+\mbox{\hyperlink{class_the}{The}} formatted hexadecimal string.
+\end{DoxyReturn}
+
+
+This function takes an integer value and formats it as a hexadecimal string with the specified number of digits. If the resulting string is shorter than the specified width, leading zeroes are added to the beginning of the string.
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \mbox{\hyperlink{class_the}{The}} integer value to format. \\
+\hline
+{\em digit} & \mbox{\hyperlink{class_the}{The}} number of digits for the resulting hexadecimal string. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+QString A QString object containing the formatted hexadecimal string. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_communication_a9ea9548f8ab7025ec6d3a797a3cd0a03}\label{class_communication_a9ea9548f8ab7025ec6d3a797a3cd0a03}} 
 \index{Communication@{Communication}!getIntervalConectionCheck@{getIntervalConectionCheck}}
@@ -683,6 +732,19 @@ Emitted when the interval for updating values is changed.
 {\em interval} & \mbox{\hyperlink{class_the}{The}} new interval in milliseconds. \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{class_communication_aa9a6d33d0a202796f1e4bcc07db57a99}\label{class_communication_aa9a6d33d0a202796f1e4bcc07db57a99}} 
+\index{Communication@{Communication}!isTimerUpdateRunning@{isTimerUpdateRunning}}
+\index{isTimerUpdateRunning@{isTimerUpdateRunning}!Communication@{Communication}}
+\doxysubsubsection{\texorpdfstring{isTimerUpdateRunning()}{isTimerUpdateRunning()}}
+{\footnotesize\ttfamily bool Communication\+::is\+Timer\+Update\+Running (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Checks if the update timer is currently running. 
+
+\begin{DoxyReturn}{Returns}
+true if the update timer is running, false otherwise. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_communication_a53e0c58bfb65fc88f1f7bc13f48c7b33}\label{class_communication_a53e0c58bfb65fc88f1f7bc13f48c7b33}} 
 \index{Communication@{Communication}!logMsg@{logMsg}}
 \index{logMsg@{logMsg}!Communication@{Communication}}
@@ -800,7 +862,7 @@ Emitted when the proportional (P) gain value of the PID controller is updated.
 
 Reads data from the specified register type and address of the Mod\+Bus device. 
 
-Sends a Modbus request with the specified function code and command data.
+Sends a Modbus request to the Omron device.
 
 
 \begin{DoxyParams}{Parameters}
@@ -810,6 +872,20 @@ Sends a Modbus request with the specified function code and command data.
 \hline
 {\em size} & \mbox{\hyperlink{class_the}{The}} number of registers to read.\\
 \hline
+{\em code} & \mbox{\hyperlink{class_the}{The}} function code to be sent. \\
+\hline
+{\em cmd} & \mbox{\hyperlink{class_the}{The}} command to be sent. This function sends a Modbus request to the Omron device. It first clears the status bar, sets the modbus\+Ready\+\_\+ flag to false, and creates a QModbus\+Pdu object with the provided function code and data. It then creates a QModbus\+Request object with the QModbus\+Pdu, and sends it to the Omron device using the send\+Raw\+Request() function. If successful, it connects a lambda function to the finished() signal of the QModbus\+Reply object returned by the send\+Raw\+Request() function. This lambda function checks for any errors in the reply and displays the appropriate message on the status bar. If the request was a broadcast, the reply is deleted immediately. Finally, the modbus\+Ready\+\_\+ flag is set to true. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This function assumes that the Omron device has already been connected to and configured through the QModbus\+Tcp\+Client object omron\+\_\+.
+\end{DoxyNote}
+void \mbox{\hyperlink{class_communication_a61c96d1875bc1c421590858891169467}{Communication\+::request(\+QModbus\+Pdu\+::\+Function\+Code code, QByte\+Array cmd)}}\{ status\+Bar\+\_\+-\/\texorpdfstring{$>$}{>}clear\+Message(); modbus\+Ready\+\_\+ = false; QModbus\+Pdu pdu; pdu.\+set\+Function\+Code(code); pdu.\+set\+Data(cmd); QModbus\+Request ask(pdu); if (auto $\ast$reply = omron\+\_\+-\/\texorpdfstring{$>$}{>}send\+Raw\+Request(ask, omron\+ID\+\_\+)) \{ if (!reply-\/\texorpdfstring{$>$}{>}is\+Finished()) \{ connect(reply, \&QModbus\+Reply\+::finished, this, \mbox{[}this, reply\mbox{]}() \{ if (reply-\/\texorpdfstring{$>$}{>}error() == QModbus\+Device\+::\+Protocol\+Error) \{ status\+Bar\+\_\+-\/\texorpdfstring{$>$}{>}show\+Message(tr(\char`\"{}\+Write response error\+: \%1 (\+Mobus exception\+: 0x\%2)\char`\"{}) .arg(reply-\/\texorpdfstring{$>$}{>}error\+String()).arg(reply-\/\texorpdfstring{$>$}{>}raw\+Result().exception\+Code(), -\/1, 16), 0); \} else if (reply-\/\texorpdfstring{$>$}{>}error() != QModbus\+Device\+::\+No\+Error) \{ status\+Bar\+\_\+-\/\texorpdfstring{$>$}{>}show\+Message(tr(\char`\"{}\+Write response error\+: \%1 (code\+: 0x\%2)\char`\"{}). arg(reply-\/\texorpdfstring{$>$}{>}error\+String()).arg(reply-\/\texorpdfstring{$>$}{>}error(), -\/1, 16), 0); \} reply-\/\texorpdfstring{$>$}{>}delete\+Later(); modbus\+Ready\+\_\+ = true; \}); \} else \{ broadcast replies return immediately reply-\/\texorpdfstring{$>$}{>}delete\+Later(); \} \} else \{ status\+Bar\+\_\+-\/\texorpdfstring{$>$}{>}show\+Message(tr(\char`\"{}\+Write error\+: \char`\"{}) + omron\+\_\+-\/\texorpdfstring{$>$}{>}error\+String(), 0); \} \}
+
+/$\ast$$\ast$
+
+Sends a Modbus request with the specified function code and command data. 
+\begin{DoxyParams}{Parameters}
 {\em code} & \mbox{\hyperlink{class_the}{The}} Modbus function code. \\
 \hline
 {\em cmd} & \mbox{\hyperlink{class_the}{The}} command data to be sent. This method sends a Modbus request with the specified function code and command data to the Omron device. \mbox{\hyperlink{class_the}{The}} status bar message is cleared and the modbus\+Ready\+\_\+ flag is set to false before the request is sent. If the request is successful, the reply is checked for errors. If there is a protocol error, the error message and exception code are displayed in the status bar. If there is another type of error, the error message and error code are displayed. Once the reply has been handled, the modbus\+Ready\+\_\+ flag is set to true and the reply is deleted. If the request fails, an error message is displayed in the status bar. \\

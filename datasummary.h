@@ -65,6 +65,12 @@ public:
     QString getFilePath() const;
 
     /**
+     * @brief Gets the Qtimer for saving data.
+     * @return The Qtimer pointer.
+     */
+    QTimer* getLogTimer() const;
+
+    /**
      * @brief Sets the file name for saving data.
      * @param name The file name.
      */
@@ -96,6 +102,11 @@ public:
      * @param interval The interval in milliseconds.
      */
     void SetIntervalLog(int interval){setIntervalLog(interval);}
+
+    /**
+     * @brief Check if the timer for logging data is currently running.
+     */
+    bool isTimerLogRunning() const;
 
 signals:
     /**
@@ -165,7 +176,11 @@ private slots:
      */
     void setIntervalLog(int interval);
 
+
 private:
+    const QString desktopPath_{QStandardPaths::locate(QStandardPaths::DesktopLocation, QString(), QStandardPaths::LocateDirectory)};
+    const QString dataPath2_{desktopPath_ + "Temp_Record"};
+    const QString dataPath_{"Z:/triplet/Temp_Record"};
     Communication *com_{nullptr};
     double temperature_{};
     double mv_{};
@@ -177,10 +192,6 @@ private:
     bool save_{true};
     QTimer *logTimer_{nullptr};
     int intervalLog_{10 * 1000};
-
-    const QString desktopPath_{QStandardPaths::locate(QStandardPaths::DesktopLocation, QString(), QStandardPaths::LocateDirectory)};
-    const QString dataPath2_{desktopPath_ + "Temp_Record"};
-    const QString dataPath_{"Z:/triplet/Temp_Record"};
 };
 
 #endif // DATASUMMARY_H

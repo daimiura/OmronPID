@@ -116,9 +116,6 @@ void MainWindow::setEnabledFalse(){
   panalOnOff(false);
   ui->pushButton_Control->setEnabled(false);
   ui-> pushButton_RunStop->setEnabled(false);
-  statusAskMV_ = false;
-  statusAskTemp_ = false;
-  statusAskSetPoint_ = false;
   bkgColorChangeable_ = true;
 }
 
@@ -162,4 +159,29 @@ void MainWindow::panalOnOff(bool IO)
     ui->comboBox_MemAddress->setEnabled(IO);
     ui->lineEdit_SV2->setEnabled(IO);
     ui->doubleSpinBox_SV2WaitTime->setEnabled(IO);
+}
+
+void MainWindow::setupDialog(){
+  //! helpDialog
+  helpDialog = new QDialog(this);
+  HelpLabel = new QLabel();
+  helpDialog->setWindowTitle("Help");
+  picNumber = 1;
+  QPixmap image(":fig1.PNG");
+  HelpLabel->setPixmap(image);
+  QPushButton * next = new QPushButton("Next");
+  connect(next, SIGNAL(pressed()) , this, SLOT(HelpPicNext()));
+  QVBoxLayout *mainLayout = new QVBoxLayout(helpDialog);
+  mainLayout->addWidget(HelpLabel);
+  mainLayout->addWidget(next);
+
+  //! plotDialog
+  plotDialog_ = new PlotDialog(this);
+  plotDialog_->setWindowTitle("Setting for Plot");
+
+  //! configureDialog
+  configureDialog_ = new ConfigureDialog(this);
+  configureDialog_->setWindowTitle("Configure");
+  connect(configureDialog_->pushButton_SetParameters_, SIGNAL(clicked(bool)), this, SLOT(setParametersTempCheckChange()) );
+
 }

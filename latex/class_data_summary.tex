@@ -35,12 +35,18 @@ double \mbox{\hyperlink{class_data_summary_a1b16196dc54f8c0709351613bb884ea8}{ge
 \begin{DoxyCompactList}\small\item\em Gets the current temperature. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_data_summary_a9dbdea2095a1a84c8af0204b554ddadd}{get\+MV}} () const
 \begin{DoxyCompactList}\small\item\em Gets the current MV value. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_data_summary_a2cb36eae723da86cf4f5892285212fb1}{get\+MVUpper}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current MV upper value. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_data_summary_aa090376dd38d6d881421052b347116f8}{get\+MVLower}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current MV lower value. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_data_summary_ac83d8023240b79ab2c9b19e34df69884}{get\+SV}} () const
 \begin{DoxyCompactList}\small\item\em Gets the current SV value. \end{DoxyCompactList}\item 
 QString \mbox{\hyperlink{class_data_summary_a60aabcef9dbc6f052b205f8663374dc4}{get\+File\+Name}} () const
 \begin{DoxyCompactList}\small\item\em Gets the file name for saving data. \end{DoxyCompactList}\item 
 QString \mbox{\hyperlink{class_data_summary_a0c637e9d4be829473d85b47b7d0bc6ad}{get\+File\+Path}} () const
 \begin{DoxyCompactList}\small\item\em Gets the file path for saving data. \end{DoxyCompactList}\item 
+QTimer $\ast$ \mbox{\hyperlink{class_data_summary_ac7425ceb0918e728634099dd4e739fab}{get\+Log\+Timer}} () const
+\begin{DoxyCompactList}\small\item\em Gets the Qtimer for saving data. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_data_summary_aa5b61ecf8eb3ee8e61b9403e736dff09}{set\+File\+Name}} (QString name)
 \begin{DoxyCompactList}\small\item\em Sets the file name for saving data. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_data_summary_a721d29528f5aeb7519a92c0d40d44c45}{generate\+Save\+File}} ()
@@ -54,7 +60,10 @@ void {\bfseries loging\+Start} ()
 void {\bfseries loging\+Stop} ()
 \begin{DoxyCompactList}\small\item\em Stops logging. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_data_summary_a48cdd4698f0269fc69ba359b47b73b54}{Set\+Interval\+Log}} (int interval)
-\begin{DoxyCompactList}\small\item\em Sets the interval for logging data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Sets the interval for logging data. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_data_summary_a6372ac7970aa9cae29d451b1f7885c37}\label{class_data_summary_a6372ac7970aa9cae29d451b1f7885c37}} 
+bool {\bfseries is\+Timer\+Log\+Running} () const
+\begin{DoxyCompactList}\small\item\em Check if the timer for logging data is currently running. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -146,6 +155,19 @@ Gets the file path for saving data.
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{class_the}{The}} file path. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{class_data_summary_ac7425ceb0918e728634099dd4e739fab}\label{class_data_summary_ac7425ceb0918e728634099dd4e739fab}} 
+\index{DataSummary@{DataSummary}!getLogTimer@{getLogTimer}}
+\index{getLogTimer@{getLogTimer}!DataSummary@{DataSummary}}
+\doxysubsubsection{\texorpdfstring{getLogTimer()}{getLogTimer()}}
+{\footnotesize\ttfamily QTimer $\ast$ Data\+Summary\+::get\+Log\+Timer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the Qtimer for saving data. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_the}{The}} Qtimer pointer. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_data_summary_a9dbdea2095a1a84c8af0204b554ddadd}\label{class_data_summary_a9dbdea2095a1a84c8af0204b554ddadd}} 
 \index{DataSummary@{DataSummary}!getMV@{getMV}}
 \index{getMV@{getMV}!DataSummary@{DataSummary}}
@@ -158,6 +180,32 @@ Gets the current MV value.
 
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{class_the}{The}} MV value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_summary_aa090376dd38d6d881421052b347116f8}\label{class_data_summary_aa090376dd38d6d881421052b347116f8}} 
+\index{DataSummary@{DataSummary}!getMVLower@{getMVLower}}
+\index{getMVLower@{getMVLower}!DataSummary@{DataSummary}}
+\doxysubsubsection{\texorpdfstring{getMVLower()}{getMVLower()}}
+{\footnotesize\ttfamily double Data\+Summary\+::get\+MVLower (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the current MV lower value. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_the}{The}} MV lower value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_summary_a2cb36eae723da86cf4f5892285212fb1}\label{class_data_summary_a2cb36eae723da86cf4f5892285212fb1}} 
+\index{DataSummary@{DataSummary}!getMVUpper@{getMVUpper}}
+\index{getMVUpper@{getMVUpper}!DataSummary@{DataSummary}}
+\doxysubsubsection{\texorpdfstring{getMVUpper()}{getMVUpper()}}
+{\footnotesize\ttfamily double Data\+Summary\+::get\+MVUpper (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the current MV upper value. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_the}{The}} MV upper value. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_data_summary_ac83d8023240b79ab2c9b19e34df69884}\label{class_data_summary_ac83d8023240b79ab2c9b19e34df69884}} 
 \index{DataSummary@{DataSummary}!getSV@{getSV}}

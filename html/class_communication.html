@@ -245,6 +245,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>executeStop</b> ()</t
 <tr class="memitem:a6335673fcbdeae311a70a53118f679f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_communication.html#a6335673fcbdeae311a70a53118f679f8">setSerialPortName</a> (QString portName)</td></tr>
 <tr class="memdesc:a6335673fcbdeae311a70a53118f679f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the name of the serial port to use for Modbus communication.  <br /></td></tr>
 <tr class="separator:a6335673fcbdeae311a70a53118f679f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9a6d33d0a202796f1e4bcc07db57a99"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_communication.html#aa9a6d33d0a202796f1e4bcc07db57a99">isTimerUpdateRunning</a> () const</td></tr>
+<tr class="memdesc:aa9a6d33d0a202796f1e4bcc07db57a99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the update timer is currently running.  <br /></td></tr>
+<tr class="separator:aa9a6d33d0a202796f1e4bcc07db57a99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d72865effe27d7ac3c2ef13a8adea8f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_communication.html#a1d72865effe27d7ac3c2ef13a8adea8f">setTemperature</a> (double temperature)</td></tr>
 <tr class="memdesc:a1d72865effe27d7ac3c2ef13a8adea8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the current temperature.  <br /></td></tr>
 <tr class="separator:a1d72865effe27d7ac3c2ef13a8adea8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -311,6 +314,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>executeStop</b> ()</t
 <tr class="memitem:a9ea9548f8ab7025ec6d3a797a3cd0a03"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_communication.html#a9ea9548f8ab7025ec6d3a797a3cd0a03">getIntervalConectionCheck</a> () const</td></tr>
 <tr class="memdesc:a9ea9548f8ab7025ec6d3a797a3cd0a03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the interval time in seconds at which the connection to the Omron temperature controller is checked.  <br /></td></tr>
 <tr class="separator:a9ea9548f8ab7025ec6d3a797a3cd0a03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a342b977837584d66a2c27ed5a8be0e27"><td class="memItemLeft" align="right" valign="top"><a id="a342b977837584d66a2c27ed5a8be0e27" name="a342b977837584d66a2c27ed5a8be0e27"></a>
+QTimer *&#160;</td><td class="memItemRight" valign="bottom"><b>getTimerUpdate</b> () const</td></tr>
+<tr class="separator:a342b977837584d66a2c27ed5a8be0e27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
@@ -597,9 +603,11 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>intervalConectionCheck
 </div><div class="memdoc">
 
 <p>Changes the value of the output lower limit of the E5CC temperature controller. </p>
+<p><a class="el" href="class_communication.html#a2e8eb43c3a20aba35b70c5a1d86a008d" title="Changes the value of the output lower limit of the E5CC temperature controller.">Communication::changeMVlowerValue</a> This method changes the lower value of the manipulated variable (MVlower). If the modbus is not ready, this method will return immediately without any action. After setting the new value, it will convert the value to the register value (sv) and format it as a hexadecimal string. Then, it will create a command string that contains the address, function code, and the formatted value. Finally, it will create a byte array from the hex string and send it as a request to the modbus device using the WriteMultipleRegisters function code.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">MVlower</td><td><a class="el" href="class_the.html">The</a> new value of the output lower limit. </td></tr>
+    <tr><td class="paramname">MVlower</td><td><a class="el" href="class_the.html">The</a> new value of the output lower limit.</td></tr>
+    <tr><td class="paramname">MVlower</td><td><a class="el" href="class_the.html">The</a> new value of the MVlower in double precision. </td></tr>
   </table>
   </dd>
 </dl>
@@ -623,9 +631,11 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>intervalConectionCheck
 </div><div class="memdoc">
 
 <p>Changes the value of the output upper limit of the E5CC temperature controller. </p>
+<p><a class="el" href="class_communication.html#add15ec23dd41794a58564b47fd6ab9ae" title="Changes the value of the output upper limit of the E5CC temperature controller.">Communication::changeMVupperValue</a> This method changes the upper value of the manipulated variable (MVupper). If the modbus is not ready, this method will return immediately without any action. After setting the new value, it will convert the value to the register value (sv) and format it as a hexadecimal string. Then, it will create a command string that contains the address, function code, and the formatted value. Finally, it will create a byte array from the hex string and send it as a request to the modbus device using the WriteMultipleRegisters function code.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">MVupper</td><td><a class="el" href="class_the.html">The</a> new value of the output upper limit. </td></tr>
+    <tr><td class="paramname">MVupper</td><td><a class="el" href="class_the.html">The</a> new value of the output upper limit.</td></tr>
+    <tr><td class="paramname">MVupper</td><td><a class="el" href="class_the.html">The</a> new value of the MVupper in double precision. </td></tr>
   </table>
   </dd>
 </dl>
@@ -649,9 +659,11 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>intervalConectionCheck
 </div><div class="memdoc">
 
 <p>Changes the set value (SV) of the E5CC temperature controller. </p>
+<p>Changes the set value (SV) of the E5CC temperature controller. This function calculates the integer value to be sent to the temperature controller based on the given set value in degrees Celsius and the temperature decimal factor of the temperature controller. It then creates a Modbus command with the calculated value and sends it to the controller to change the SV.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">SV</td><td><a class="el" href="class_the.html">The</a> new value of the set value (SV). </td></tr>
+    <tr><td class="paramname">SV</td><td><a class="el" href="class_the.html">The</a> new value of the set value (SV).</td></tr>
+    <tr><td class="paramname">SV</td><td><a class="el" href="class_the.html">The</a> set value to be set in degrees Celsius. </td></tr>
   </table>
   </dd>
 </dl>
@@ -753,6 +765,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>intervalConectionCheck
 </div><div class="memdoc">
 
 <p>Formats the specified E5CC temperature controller address as a hexadecimal string. </p>
+<p>Formats an E5CC register address as a hexadecimal string with the specified width.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">address</td><td><a class="el" href="class_the.html">The</a> E5CC temperature controller address to format. </td></tr>
@@ -760,7 +773,16 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>intervalConectionCheck
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_the.html">The</a> formatted E5CC temperature controller address as a hexadecimal string. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_the.html">The</a> formatted E5CC temperature controller address as a hexadecimal string.</dd></dl>
+<p>This function takes an E5CC register address as an enumeration type and formats it as a hexadecimal string with the specified width. If the resulting string is shorter than the specified width, leading zeroes are added to the beginning of the string.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">address</td><td><a class="el" href="class_the.html">The</a> E5CC register address to format. </td></tr>
+    <tr><td class="paramname">width</td><td><a class="el" href="class_the.html">The</a> width of the resulting hexadecimal string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>QString A QString object containing the formatted hexadecimal string. </dd></dl>
 
 </div>
 </div>
@@ -791,6 +813,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>intervalConectionCheck
 </div><div class="memdoc">
 
 <p>Formats the specified integer value as a hexadecimal string with the specified number of digits. </p>
+<p>Formats an integer value to a hexadecimal string with the specified number of digits.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">value</td><td><a class="el" href="class_the.html">The</a> integer value to format. </td></tr>
@@ -798,7 +821,16 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>intervalConectionCheck
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_the.html">The</a> formatted hexadecimal string. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_the.html">The</a> formatted hexadecimal string.</dd></dl>
+<p>This function takes an integer value and formats it as a hexadecimal string with the specified number of digits. If the resulting string is shorter than the specified width, leading zeroes are added to the beginning of the string.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td><a class="el" href="class_the.html">The</a> integer value to format. </td></tr>
+    <tr><td class="paramname">digit</td><td><a class="el" href="class_the.html">The</a> number of digits for the resulting hexadecimal string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>QString A QString object containing the formatted hexadecimal string. </dd></dl>
 
 </div>
 </div>
@@ -1150,6 +1182,26 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>intervalConectionCheck
 
 </div>
 </div>
+<a id="aa9a6d33d0a202796f1e4bcc07db57a99" name="aa9a6d33d0a202796f1e4bcc07db57a99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9a6d33d0a202796f1e4bcc07db57a99">&#9670;&#160;</a></span>isTimerUpdateRunning()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Communication::isTimerUpdateRunning </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if the update timer is currently running. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if the update timer is running, false otherwise. </dd></dl>
+
+</div>
+</div>
 <a id="a53e0c58bfb65fc88f1f7bc13f48c7b33" name="a53e0c58bfb65fc88f1f7bc13f48c7b33"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a53e0c58bfb65fc88f1f7bc13f48c7b33">&#9670;&#160;</a></span>logMsg</h2>
 
@@ -1432,12 +1484,22 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>intervalConectionCheck
 </div><div class="memdoc">
 
 <p>Reads data from the specified register type and address of the ModBus device. </p>
-<p>Sends a Modbus request with the specified function code and command data.</p>
+<p>Sends a Modbus request to the Omron device.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">type</td><td><a class="el" href="class_the.html">The</a> type of the register to read. </td></tr>
     <tr><td class="paramname">address</td><td><a class="el" href="class_the.html">The</a> address of the register to read. </td></tr>
     <tr><td class="paramname">size</td><td><a class="el" href="class_the.html">The</a> number of registers to read.</td></tr>
+    <tr><td class="paramname">code</td><td><a class="el" href="class_the.html">The</a> function code to be sent. </td></tr>
+    <tr><td class="paramname">cmd</td><td><a class="el" href="class_the.html">The</a> command to be sent. This function sends a Modbus request to the Omron device. It first clears the status bar, sets the modbusReady_ flag to false, and creates a QModbusPdu object with the provided function code and data. It then creates a QModbusRequest object with the QModbusPdu, and sends it to the Omron device using the sendRawRequest() function. If successful, it connects a lambda function to the finished() signal of the QModbusReply object returned by the sendRawRequest() function. This lambda function checks for any errors in the reply and displays the appropriate message on the status bar. If the request was a broadcast, the reply is deleted immediately. Finally, the modbusReady_ flag is set to true. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>This function assumes that the Omron device has already been connected to and configured through the QModbusTcpClient object omron_.</dd></dl>
+<p>void <a class="el" href="class_communication.html#a61c96d1875bc1c421590858891169467" title="Sends a ModBus request with the specified code and command.">Communication::request(QModbusPdu::FunctionCode code, QByteArray cmd)</a>{ statusBar_-&gt;clearMessage(); modbusReady_ = false; QModbusPdu pdu; pdu.setFunctionCode(code); pdu.setData(cmd); QModbusRequest ask(pdu); if (auto *reply = omron_-&gt;sendRawRequest(ask, omronID_)) { if (!reply-&gt;isFinished()) { connect(reply, &amp;QModbusReply::finished, this, [this, reply]() { if (reply-&gt;error() == QModbusDevice::ProtocolError) { statusBar_-&gt;showMessage(tr("Write response error: %1 (Mobus exception: 0x%2)") .arg(reply-&gt;errorString()).arg(reply-&gt;rawResult().exceptionCode(), -1, 16), 0); } else if (reply-&gt;error() != QModbusDevice::NoError) { statusBar_-&gt;showMessage(tr("Write response error: %1 (code: 0x%2)"). arg(reply-&gt;errorString()).arg(reply-&gt;error(), -1, 16), 0); } reply-&gt;deleteLater(); modbusReady_ = true; }); } else { broadcast replies return immediately reply-&gt;deleteLater(); } } else { statusBar_-&gt;showMessage(tr("Write error: ") + omron_-&gt;errorString(), 0); } }</p>
+<p>/**</p>
+<p>Sends a Modbus request with the specified function code and command data. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
     <tr><td class="paramname">code</td><td><a class="el" href="class_the.html">The</a> Modbus function code. </td></tr>
     <tr><td class="paramname">cmd</td><td><a class="el" href="class_the.html">The</a> command data to be sent. This method sends a Modbus request with the specified function code and command data to the Omron device. <a class="el" href="class_the.html">The</a> status bar message is cleared and the modbusReady_ flag is set to false before the request is sent. If the request is successful, the reply is checked for errors. If there is a protocol error, the error message and exception code are displayed in the status bar. If there is another type of error, the error message and error code are displayed. Once the reply has been handled, the modbusReady_ flag is set to true and the reply is deleted. If the request fails, an error message is displayed in the status bar. </td></tr>
   </table>

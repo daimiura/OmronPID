@@ -1,12 +1,7 @@
-//!
-//! \file mainwindow.h
-//! \brief mainwindow for connection to the E5CC
-//! \author Daisuke Miura (Original source code xxxxx)
-//! \date 2023/3/15
-//! \details The original source code did not include safety measures.
-//! To improve safety, functions were added to check if the temperature was rising and to detect unexpected sudden temperature drops.
-//! The GUI was also modified to set the necessary parameters for these functions.
-//!
+/**
+@file mainwindow.h
+@brief This file contains the declaration of the MainWindow class and its associated methods.
+*/
 
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
@@ -35,16 +30,12 @@
 #include "configuredialog.h"
 #include "plotdialog.h"
 #include "tempdropdialog.h"
-<<<<<<< HEAD
-#include "joindialog.h"
-=======
 #include "notify.h"
 #include "datasummary.h"
->>>>>>> develop_ModBus
 
-//!
-//! \namespace Ui
-//!
+/**
+@brief The MainWindow class represents the main window of the application.
+*/
 namespace Ui {
   class MainWindow;
 }
@@ -53,56 +44,199 @@ class Communication;
 class Safety;
 class DataSummary;
 
-//! \brief The MainWindow class
+/**
+@brief The MainWindow class represents the main window of the application.
+*/
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
+  /**
+  * @brief Constructor for MainWindow class.
+  * @param parent The parent QWidget.
+  */
     explicit MainWindow(QWidget *parent = 0);
+
+  /**
+   * @brief Destructor for MainWindow class.
+   */
     ~MainWindow();
+
+  /**
+   * @brief Logs a message to the GUI log.
+   * @param str The message to be logged.
+   * @param newLine Whether or not to add a new line after the message.
+   */
     void LogMsg(QString str, bool newLine = true);
+
+    /**
+     * @brief Finds all available serial port devices.
+     */
     void findSeriesPortDevices();
 
 signals:
 
 public slots:
+  /**
+   * @brief makePlot Slot function to generate plot
+  */
   void makePlot();
-<<<<<<< HEAD
-  void TempCheck();
-  //void checkThreads();
-  void checkConnection();
-=======
+
+  /**
+  @brief updateTemperature Slot function to update the temperature display
+  @param temperature The new temperature value to display
+  */
   void updateTemperature(double temperature);
+
+  /**
+  @brief updateMV Slot function to update the MV display (MV means output power)
+  @param MV The new measured value to display.
+  */
   void updateMV(double MV);
+
+  /**
+  @brief updateSV Slot function to update the set value (SV) display
+  @param SV The new set value to display
+  */
   void updateSV(double SV);
+
+  /**
+  @brief updateMVupper Slot function to update the upper limit of the MV display
+  @param MVupper The new upper limit to display
+  */
   void updateMVupper(double MVupper);
+
+  /**
+  @brief updateMVlower Slot function to update the lower limit of MV display
+  @param MVlower The new lower limit to display
+  */
   void updateMVlower(double MVlower);
+
+  /**
+  @brief updatePID_I Slot function to update the PID controller's integral (I) gain value display
+  @param PID_I The new I gain value to display
+  */
   void updatePID_P(double PID_P);
+
+  /**
+  @brief updatePID_I Slot function to update the PID controller's integral (I) gain value display
+  @param PID_I The new I gain value to display
+  */
   void updatePID_I(double PID_I);
+
+  /**
+  @brief updatePID_D Slot function to update the PID controller's derivative (D) gain value display
+  @param PID_D The new D gain value to display  void updatePID_D(double PID_D);
+  */
   void updatePID_D(double PID_D);
+
+  /**
+  @brief updateStatus Slot function to update the status display
+  */
   void updateStatus();
+
+  /**
+  @brief finishSendAT Slot function to handle the completion of sending AT command to device
+  @param atFlag The flag indicating whether the command was sent successfully
+  */
   void finishSendAT(int atFlag);
+
+  /**
+  @brief finishSendSV Slot function to handle the completion of sending the set value (SV) to the device
+  @param SV The set value that was sent
+  */
   void finishSendSV(double SV);
+
+  /**
+  @brief catchLogMsg Slot function to catch a log message emitted by a thread and add it to the application log window
+  @param msg The log message to add
+  */
   void catchLogMsg(const QString& msg);
+
+  /**
+  @brief connectDevice Slot function to handle device connection
+  */
   void connectDevice();
+
+  /**
+  @brief connectFailed Slot function to handle device connection failure
+  */
   void connectFailed();
+
+  /**
+  @brief catchDanger Slot function to handle a dangerous situation detected by the Safety class
+  @param type The type of danger detected
+  */
   void catchDanger(int type);
+
+  /**
+  @brief updateCheckNumber Slot function to update the number of temperature checks that have been performed
+  @param checkNumber The number of checks performed
+  */
   void updateCheckNumber(int checkNumber);
+
+  /**
+  @brief cathcEscapeTempCheckChange Slot function to handle changes in the escape temperature check checkbox
+  @param sign The sign of the change (1 for checked, -1 for unchecked)
+  */
   void cathcEscapeTempCheckChange(int sign);
+
+  /**
+  @brief catchStartTempChangeCheck Slot function to handle the start of a temperature change check
+  @param checknumber The number of the check being started
+  */
   void catchStartTempChangeCheck(int checknumber);
 
->>>>>>> develop_ModBus
 
 private slots:
+  /**
+  @brief keyPressEvent handles the key press event. Used for keyboard control of the GUI.
+  @param key The key that was pressed.
+  */
     void keyPressEvent(QKeyEvent *key);
+
+    /**
+    @brief keyReleaseEvent handles the key release event. Used for keyboard control of the GUI.
+    @param key The key that was released.
+    */
     void keyReleaseEvent(QKeyEvent *key);
+
+    /**
+    @brief waitForMSec waits for a specified number of milliseconds.
+    @param msec The number of milliseconds to wait.
+    */
     void waitForMSec(int msec);
+
+    /**
+
+    @brief panalOnOff turns the panel on or off.
+    @param IO True to turn the panel on, false to turn it off.
+    */
     void panalOnOff(bool IO);
 
+    /**
+
+    @brief showTime updates the current time displayed in the GUI.
+    */
     void showTime();
+
+    /**
+
+    @brief allowSetNextSV allows setting the next set value for the temperature controller.
+    */
     void allowSetNextSV();
+
+    /**
+    @brief getSetting retrieves the current setting values from the temperature controller.
+    */
     void getSetting();
+
+    /**
+
+    @brief setTextTempDrop sets the text temperature drop value.
+    @param checked True if the text temperature drop is enabled, false otherwise.
+    */
     void setTextTempDrop(bool);
 
     void on_pushButton_Connect_clicked();
@@ -121,14 +255,8 @@ private slots:
     void on_actionOpen_File_triggered();
     void on_action_Setting_parameters_for_TempCheck_triggered();
     void on_action_Setting_plot_triggered();
-<<<<<<< HEAD
-    void on_action_Join_LINE_talk_triggered();
-    //void on_action_Setting_Temperature_Drop_triggered();
-=======
->>>>>>> develop_ModBus
     void on_actionHelp_Page_triggered();
     void HelpPicNext();
-
     void fillDataAndPlot(const QDateTime date, const double PV, const double SV, const double MV);
     void Run();
     void Stop();
@@ -142,114 +270,65 @@ private slots:
     void setParametersTempCheckChange(bool mute = true);
     void setIgnoreEnable();
     double fillDifference(bool mute = true);
-
-
     void setColor(int colorindex = 0, bool changerable = true);
-
     void sendLINE(const QString& message);
     void saveFile(bool sucess);
 
-<<<<<<< HEAD
-    void sendLineNotify(const QString& message, const QString& token);
-    void sendLine(const QString& message);
-    void sendLineNotifyConnection();
-    void onStateChanged(QModbusDevice::State state);
-    //void onSerialError(QSerialPort::SerialPortError error);
-=======
->>>>>>> develop_ModBus
-
 private:
     Ui::MainWindow *ui;
-    QCustomPlot * plot;
-<<<<<<< HEAD
-    QModbusRtuSerialMaster * omron;
-    QSerialPort *serial;
-    MyThread * threadMVcheck_;
-    MyThread * threadLog_;
-    MyThread * threadTempCheck_;
-=======
-    Communication *com_;
-    Safety *safety_;
-    Notify *notify_;
-    DataSummary *data_;
-
->>>>>>> develop_ModBus
-    QMessageBox * LogMsgBox_;
-
-    QString omronPortName;
-
-    int msgCount;
-    int threadTimerInterval_;
-<<<<<<< HEAD
-    int checkTimerInterval_ = 5000;
-    //int connectionTimerInteral_;
-=======
-    int connectionTimerInteral_;
-    int timing_;
+    QCustomPlot * plot{nullptr};
+    Communication *com_{nullptr};
+    Safety *safety_{nullptr};
+    Notify *notify_{nullptr};
+    DataSummary *data_{nullptr};
+    QString omronPortName{};
+    int msgCount{};
+    int timing_{};
     int intervalPlot_{5000};
->>>>>>> develop_ModBus
-    QDateTime dateStart_;
-    QString dateStartStr_;
-    bool tempControlOnOff;
-    bool tempRecordOnOff;
-    bool comboxEnable;
-    bool spinBoxEnable;
-    bool muteLog;
-    bool statusAskTemp_;
-    bool statusAskMV_;
-    bool statusAskSetPoint_;
-    bool statusRun_;
-    bool isSettParametersTempCheck_;
+    bool tempControlOnOff{false};
+    bool tempRecordOnOff{false};
+    bool comboxEnable{false};
+    bool spinBoxEnable{false};
+    bool muteLog{false};
+    QDateTime dateStart_{};
+    QString filePath_{};
+    QVector<QCPGraphData> pvData{};
+    QVector<QCPGraphData> svData{};
+    QVector<QCPGraphData> mvData{};
+    QVector<double> vtemp_{};
+    QVector<double> valltemp_{};
+    QVector<double> vdifftemp_{};
+    QTimer * clock{nullptr};
+    QTimer * waitTimer{nullptr};
+    QTimer *plotTimer_{nullptr};
 
+    QString LINEToken_{};
+    QUrl LINEurl_{};
+    QElapsedTimer totalElapse{};
+    bool checkDay{false};
+    int dayCounter{};
+    bool nextSV{false};
 
-    QVector<QCPGraphData> pvData;
-    QVector<QCPGraphData> svData;
-    QVector<QCPGraphData> mvData;
-    QVector<double> vtemp_;
-    QVector<double> valltemp_;
-    QVector<double> vdifftemp_;
-
-    QTimer * clock;
-    QTimer * waitTimer;
-<<<<<<< HEAD
-    QTimer * threadTimer_;
-    QTimer * checkTimer_;
-    //QTimer * connectionTimer_;
-=======
-    QTimer *plotTimer_;
->>>>>>> develop_ModBus
-    QString fileName_;
-    QString filePath_;
-
-    QString LINEToken_ ;
-    QUrl LINEurl_;
-
-    QElapsedTimer totalElapse;
-    bool checkDay;
-    int dayCounter;
-    bool nextSV;
-
-
-    QDialog * helpDialog;
-    QLabel * HelpLabel;
-    QGraphicsScene *scene_;
-    QGraphicsView *view;
-    PlotDialog * plotDialog_;
-    ConfigureDialog * configureDialog_;
-    TempDropDialog * tempDropDialog_;
-    JoinDialog * joinDialog_;
-    int picNumber;
-    int countTempCheck_;
-    int countDropCheck_;
-    bool bkgColorChangeable_;
+    QDialog * helpDialog{nullptr};
+    QLabel * HelpLabel{nullptr};
+    QGraphicsScene *scene_{nullptr};
+    QGraphicsView *view{nullptr};
+    PlotDialog * plotDialog_{nullptr};
+    ConfigureDialog * configureDialog_{nullptr};
+    TempDropDialog * tempDropDialog_{nullptr};
+    int picNumber{};
+    int countTempCheck_{};
+    int countDropCheck_{};
+    bool bkgColorChangeable_{true};
 
     void addPortName(QList<QSerialPortInfo> info);
-
     //The following functions are inplemented in gui.cpp
     void setupPlot();
     void setupCombBox();
     void setEnabledFalse();
+    void setupDialog();
     void initializeVariables();
+    void updateStatusBoxes();
 
 };
 

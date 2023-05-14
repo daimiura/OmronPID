@@ -45,8 +45,8 @@ void {\bfseries start\+Temp\+Change\+Check} (int checknumber)
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_safety_a88b4480603c98c5b069bdf84565d7230}\label{class_safety_a88b4480603c98c5b069bdf84565d7230}} 
-{\bfseries Safety} (\mbox{\hyperlink{class_communication}{Communication}} $\ast$com)
+\mbox{\Hypertarget{class_safety_a791c22257e7aeedc2716512c791a78a7}\label{class_safety_a791c22257e7aeedc2716512c791a78a7}} 
+{\bfseries Safety} (\mbox{\hyperlink{class_data_summary}{Data\+Summary}} $\ast$data)
 \item 
 \mbox{\Hypertarget{class_safety_a4bdcf2894bbf8371976d0aa2fc54eb62}\label{class_safety_a4bdcf2894bbf8371976d0aa2fc54eb62}} 
 double {\bfseries get\+Temperature} () const
@@ -81,6 +81,15 @@ double {\bfseries get\+Ignore\+Upper} () const
 \mbox{\Hypertarget{class_safety_a1989e307fb76f5984b7c1e44bd98dd17}\label{class_safety_a1989e307fb76f5984b7c1e44bd98dd17}} 
 double {\bfseries get\+Ignore\+Lower} () const
 \item 
+\mbox{\Hypertarget{class_safety_aa8fddc616366b49ab915c491a10c1ffc}\label{class_safety_aa8fddc616366b49ab915c491a10c1ffc}} 
+QPair$<$ double, double $>$ {\bfseries get\+Ignore\+Temp\+Range} () const
+\item 
+\mbox{\Hypertarget{class_safety_a84df553c01a40ffb5e349529c7089cc2}\label{class_safety_a84df553c01a40ffb5e349529c7089cc2}} 
+QTimer $\ast$ {\bfseries get\+Timer\+MVCheck} () const
+\item 
+\mbox{\Hypertarget{class_safety_a48ae97417ba6e8f02cd254926cc1b97d}\label{class_safety_a48ae97417ba6e8f02cd254926cc1b97d}} 
+QTimer $\ast$ {\bfseries get\+Timer\+Temp\+Change\+Check} () const
+\item 
 \mbox{\Hypertarget{class_safety_ab37fe3475582146ac4bf2fff55e7ba6e}\label{class_safety_ab37fe3475582146ac4bf2fff55e7ba6e}} 
 void {\bfseries set\+Permited\+Max\+Temp} (double maxtemp)
 \item 
@@ -99,32 +108,37 @@ void {\bfseries set\+Check\+Number} (int number)
 \mbox{\Hypertarget{class_safety_a8f91ae577d2367c6d774cf008c36a313}\label{class_safety_a8f91ae577d2367c6d774cf008c36a313}} 
 void {\bfseries set\+Temp\+Change\+Threshold} (double temp)
 \item 
-\mbox{\Hypertarget{class_safety_afa5bda2df137f619ebc1bb6f21356cba}\label{class_safety_afa5bda2df137f619ebc1bb6f21356cba}} 
-void {\bfseries set\+Interval\+MVCheck} (int interval)
-\item 
-\mbox{\Hypertarget{class_safety_a575c792b70681d663013841c8d8a932b}\label{class_safety_a575c792b70681d663013841c8d8a932b}} 
-void {\bfseries set\+Interval\+Temp\+Change} (int inteerval)
-\item 
 \mbox{\Hypertarget{class_safety_a1f201f12cdedadc0c3ed9038e2bfe645}\label{class_safety_a1f201f12cdedadc0c3ed9038e2bfe645}} 
 void {\bfseries set\+Ignore\+Upper} (double upper)
 \item 
 \mbox{\Hypertarget{class_safety_a7eb8e1541a047b509b266fafd1e57743}\label{class_safety_a7eb8e1541a047b509b266fafd1e57743}} 
 void {\bfseries set\+Ignore\+Lower} (double lower)
 \item 
-\mbox{\Hypertarget{class_safety_a62caf804c01f46d5523ea13ff51a4369}\label{class_safety_a62caf804c01f46d5523ea13ff51a4369}} 
-void {\bfseries set\+Ignore\+Range} (double lower, double upper)
+\mbox{\Hypertarget{class_safety_aeb2c6ae389531f1dd34cff755fd1d5c6}\label{class_safety_aeb2c6ae389531f1dd34cff755fd1d5c6}} 
+void {\bfseries set\+Ignore\+Temp\+Range} (double temp, double lower, double upper)
 \item 
-\mbox{\Hypertarget{class_safety_ac99b54db1735ae9169c56d3b66fbff07}\label{class_safety_ac99b54db1735ae9169c56d3b66fbff07}} 
-void {\bfseries check\+Temp\+Change} ()
+void \mbox{\hyperlink{class_safety_ac99b54db1735ae9169c56d3b66fbff07}{check\+Temp\+Change}} ()
+\begin{DoxyCompactList}\small\item\em Check if the temperature has changed more than the threshold value. This function checks if the temperature has changed more than the threshold value during the specified time interval. If the temperature has changed less than the threshold value, it emits a danger signal and stops the temperature change check timer and MV check timer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_safety_ae0a24b93c6d273c08b699c12b90809c6}\label{class_safety_ae0a24b93c6d273c08b699c12b90809c6}} 
+void {\bfseries set\+Enable\+Temp\+Change\+Range} (bool enable)
 \item 
-\mbox{\Hypertarget{class_safety_a7c11eb70e17108cb34d17015a6727e65}\label{class_safety_a7c11eb70e17108cb34d17015a6727e65}} 
-void {\bfseries set\+Enable\+Temp\+Changee\+Range} (bool enable)
+\mbox{\Hypertarget{class_safety_afa5bda2df137f619ebc1bb6f21356cba}\label{class_safety_afa5bda2df137f619ebc1bb6f21356cba}} 
+void {\bfseries set\+Interval\+MVCheck} (int interval)
+\item 
+\mbox{\Hypertarget{class_safety_a575c792b70681d663013841c8d8a932b}\label{class_safety_a575c792b70681d663013841c8d8a932b}} 
+void {\bfseries set\+Interval\+Temp\+Change} (int inteerval)
 \item 
 \mbox{\Hypertarget{class_safety_a049753e31587a4eb8bfab9d1bfc518a4}\label{class_safety_a049753e31587a4eb8bfab9d1bfc518a4}} 
 void {\bfseries start} ()
 \item 
 \mbox{\Hypertarget{class_safety_a4d72c7d6a94e6b4772c1e227436de7ff}\label{class_safety_a4d72c7d6a94e6b4772c1e227436de7ff}} 
 void {\bfseries stop} ()
+\item 
+\mbox{\Hypertarget{class_safety_ac571e4f2e4881d8c3ee328e06781c9fd}\label{class_safety_ac571e4f2e4881d8c3ee328e06781c9fd}} 
+bool {\bfseries is\+Timer\+MVCheck\+Running} () const
+\item 
+\mbox{\Hypertarget{class_safety_a641189c819e5a7e5767f039a28208628}\label{class_safety_a641189c819e5a7e5767f039a28208628}} 
+bool {\bfseries is\+Timer\+Temp\+Change\+Check\+Running} () const
 \end{DoxyCompactItemize}
 \doxysubsection*{Properties}
 \begin{DoxyCompactItemize}
@@ -151,6 +165,22 @@ int {\bfseries interval\+MVCheck}
 int {\bfseries interval\+Temp\+Change}
 \end{DoxyCompactItemize}
 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_safety_ac99b54db1735ae9169c56d3b66fbff07}\label{class_safety_ac99b54db1735ae9169c56d3b66fbff07}} 
+\index{Safety@{Safety}!checkTempChange@{checkTempChange}}
+\index{checkTempChange@{checkTempChange}!Safety@{Safety}}
+\doxysubsubsection{\texorpdfstring{checkTempChange()}{checkTempChange()}}
+{\footnotesize\ttfamily void Safety\+::check\+Temp\+Change (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Check if the temperature has changed more than the threshold value. This function checks if the temperature has changed more than the threshold value during the specified time interval. If the temperature has changed less than the threshold value, it emits a danger signal and stops the temperature change check timer and MV check timer. 
+
+\begin{DoxyNote}{Note}
+This function must be called periodically by a QTimer object.
+\end{DoxyNote}
+This function periodically checks if the temperature has changed more than the threshold value during the specified time interval. If the temperature has changed less than the threshold value, it emits a danger signal and stops the temperature change check timer and MV check timer. \mbox{\hyperlink{class_the}{The}} function starts by acquiring the current temperature and checking if it\textquotesingle{}s within the ignore range. If the temperature is within the ignore range, the function clears variables, stops the timer, and emits the escape\+Temp\+Check\+Change signal with the argument 1, indicating that the temperature change check has been escaped. If the temperature is outside the ignore range, the function checks if the conditions for stopping the temperature change check have been met. \mbox{\hyperlink{class_the}{The}} conditions are\+: if the check number is equal to or greater than the number of checks minus one, or if the MV is not in the upper limit, or if the temperature is within the ignore range. If any of these conditions is true, the function clears variables, stops the timer, and emits the escape\+Temp\+Check\+Change signal with the argument 0 if the MV is not in the upper limit, or 1 if the MV is in the upper limit. If none of the stopping conditions is met, the function starts the check and pushes temperature data into the v\+Temp\+Change\+Data\+\_\+ vector. \mbox{\hyperlink{class_the}{The}} function sets the timer and increments the check number. If the check number is less than the number of checks, the function returns. When the check is completed, the function calculates the differences between adjacent temperature values, calculates the moving average, and checks if it\textquotesingle{}s below the threshold. If it\textquotesingle{}s below the threshold, the function emits the danger\+Signal with the argument 1, indicating a dangerous situation. \mbox{\hyperlink{class_the}{The}} function then clears variables, stops the timer, and resets the check number. 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
