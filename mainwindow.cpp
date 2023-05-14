@@ -931,13 +931,16 @@ void MainWindow::Stop(){
   setColor(0, bkgColorChangeable_);
   ui->checkBoxStatusRun->setChecked(false);
   ui->checkBoxStatusSTC->setChecked(false);
+  ui->checkBoxStatusPeriodic->setChecked(false);
+  ui->checkBoxUpdate->setChecked(false);
+  ui->checkBoxStautsTempCheck->setChecked(false);
   ui->action_Setting_parameters_for_TempCheck->setEnabled(true);
   ui->lineEdit_msg->clear();
   ui->lineEdit_msg->setStyleSheet("");
   safety_->stop();
   data_->logingStop();
   plotTimer_->stop();
-  //sendLINE("Running stop.");
+  sendLINE("Running stop.");
 }
 
 void MainWindow::Quit(){
