@@ -29,6 +29,7 @@
 #include "configuredialog.h"
 #include "plotdialog.h"
 #include "tempdropdialog.h"
+#include "helpdialog.h"
 #include "notify.h"
 #include "datasummary.h"
 
@@ -262,7 +263,7 @@ private slots:
     void on_action_Setting_parameters_for_TempCheck_triggered();
     void on_action_Setting_plot_triggered();
     void on_actionHelp_Page_triggered();
-    void HelpPicNext();
+    //void HelpPicNext();
     void fillDataAndPlot(const QDateTime date, const double PV, const double SV, const double MV);
     void Run();
     void Stop();
@@ -314,8 +315,9 @@ private:
     int dayCounter{};
     bool nextSV{false};
 
-    QDialog * helpDialog{nullptr};
-    QLabel * HelpLabel{nullptr};
+    HelpDialog *helpDialog{nullptr};
+    //QDialog * helpDialog{nullptr};
+    //QLabel * HelpLabel{nullptr};
     QGraphicsScene *scene_{nullptr};
     QGraphicsView *view{nullptr};
     PlotDialog * plotDialog_{nullptr};

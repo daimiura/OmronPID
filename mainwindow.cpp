@@ -765,34 +765,6 @@ void MainWindow::on_actionHelp_Page_triggered(){
     if( helpDialog->isHidden() ) helpDialog->show();
 }
 
-void MainWindow::HelpPicNext()
-{
-  if( picNumber == 4){
-      QPixmap image(":screen_color.PNG");
-      HelpLabel->setPixmap(image);
-      picNumber = 1;
-      return;
-  }
-  if( picNumber == 3){
-      QPixmap image(":/config_screen.png");
-      HelpLabel->setPixmap(image);
-      picNumber++;
-      return;
-  }
-  if( picNumber == 2){
-      QPixmap image(":/safety_screen.PNG");
-      HelpLabel->setPixmap(image);
-      picNumber++;
-      return;
-  }
-  if( picNumber == 1){
-      QPixmap image(":/main_screen.PNG");
-      HelpLabel->setPixmap(image);
-      picNumber++;
-      return;
-  }
-}
-
 void MainWindow::on_action_Setting_plot_triggered(){
   if( plotDialog_->isHidden() ) plotDialog_->show();
 }

@@ -40,18 +40,18 @@ public:
   explicit ConfigureDialog(QWidget *parent = nullptr);
   //~ConfigureDialog();
 
-  bool ignoreEnable_;
-  int intervalAskMV_;
-  int intervalAskTemp_;
-  int numbers_;
-  int etime_;
-  double safeLimit_;
-  double ignoreUpper_;
-  double ignoreLower_;
-  bool warnigcheck_;
-  QString msg_;
-  QMessageBox warningMessageBox_;
-  QPushButton * pushButton_SetParameters_;
+  bool ignoreEnable_{true};
+  int intervalAskMV_{10};
+  int intervalAskTemp_{10};
+  int numbers_{10};
+  int etime_{0};
+  double safeLimit_{0.3};
+  double ignoreUpper_{-10.0};
+  double ignoreLower_{10.0};
+  bool warnigcheck_{false};
+  QString msg_{};
+  QMessageBox warningMessageBox_{nullptr};
+  QPushButton * pushButton_SetParameters_{nullptr};
 
 private slots:
   void setValues();
@@ -59,26 +59,23 @@ private slots:
 
 private:
   Ui::ConfigureDialog *ui;
-  QLabel * labelAskMV_;
-  QLabel * labelAskTemp_;
-  QLabel * labelSize_;
-  QLabel * label_SafeLimit_;
-  QLabel * label_IgnoreEnable_;
-  QLabel * label_IgnoreLower_;
-  QLabel * label_IgnoreUpper_;
-  QLabel * label_ETime_;
+  QLabel * labelAskMV_{nullptr};
+  QLabel * labelAskTemp_{nullptr};
+  QLabel * labelSize_{nullptr};
+  QLabel * label_SafeLimit_{nullptr};
+  QLabel * label_IgnoreEnable_{nullptr};
+  QLabel * label_IgnoreLower_{nullptr};
+  QLabel * label_IgnoreUpper_{nullptr};
+  QLabel * label_ETime_{nullptr};
 
-  QSpinBox * spinBox_IntervalAskMV_;
-  QSpinBox * spinBox_IntervalAskTemp_;
-  QSpinBox * spinBox_Numbers_;
-  QDoubleSpinBox * spinBox_SafeLimit_;
-  QDoubleSpinBox * spinBox_IgnoreLower_;
-  QDoubleSpinBox * spinBox_IgnoreUpper_;
-  QTextBrowser * textBrowser_log_;
-
-  QCheckBox * checkBox_IgnoreEnable_;
-
-  QMutex mutex_;
+  QSpinBox * spinBox_IntervalAskMV_{nullptr};
+  QSpinBox * spinBox_IntervalAskTemp_{nullptr};
+  QSpinBox * spinBox_Numbers_{nullptr};
+  QDoubleSpinBox * spinBox_SafeLimit_{nullptr};
+  QDoubleSpinBox * spinBox_IgnoreLower_{nullptr};
+  QDoubleSpinBox * spinBox_IgnoreUpper_{nullptr};
+  QTextBrowser * textBrowser_log_{nullptr};
+  QCheckBox * checkBox_IgnoreEnable_{nullptr};
 };
 
 #endif // CONFIGUREDIALOG_H

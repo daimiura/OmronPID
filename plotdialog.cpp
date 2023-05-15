@@ -1,5 +1,4 @@
 #include "plotdialog.h"
-//#include "ui_plotdialog.h"
 #include <QtWidgets>
 
 /**

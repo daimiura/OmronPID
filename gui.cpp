@@ -163,10 +163,11 @@ void MainWindow::panalOnOff(bool IO)
 
 void MainWindow::setupDialog(){
   //! helpDialog
+  /*
   helpDialog = new QDialog(this);
   HelpLabel = new QLabel();
   helpDialog->setWindowTitle("Help");
-  picNumber = 1;
+  picNumber = 2;
   QPixmap image(":/main_screen.PNG");
   HelpLabel->setPixmap(image);
   QPushButton * next = new QPushButton("Next");
@@ -174,6 +175,8 @@ void MainWindow::setupDialog(){
   QVBoxLayout *mainLayout = new QVBoxLayout(helpDialog);
   mainLayout->addWidget(HelpLabel);
   mainLayout->addWidget(next);
+  */
+  helpDialog = new HelpDialog(this);
 
   //! plotDialog
   plotDialog_ = new PlotDialog(this);

@@ -10,9 +10,7 @@
  */
 ConfigureDialog::ConfigureDialog(QWidget *parent) :
   QDialog(parent)
-  //ui(new Ui::ConfigureDialog)
 {
-  //QMutexLocker lock(&mutex_);
   labelAskMV_ = new QLabel(tr("Interval time to Ask output power (sec)."));
   labelAskTemp_ = new QLabel(tr("Interval time to Ask Temperature (sec)."));
   labelSize_ = new QLabel(tr("Number of times to monitor temperature during TempCheck mode."));
@@ -57,13 +55,6 @@ ConfigureDialog::ConfigureDialog(QWidget *parent) :
   spinBox_SafeLimit_->setMaximum(1000);
   spinBox_IgnoreLower_->setMaximum(0);
   spinBox_IgnoreLower_->setMinimum(-100);
-  intervalAskMV_ = 30;
-  intervalAskTemp_ = 10;
-  numbers_ = 10;
-  safeLimit_ = 0.5;
-  ignoreLower_ = -10;
-  ignoreUpper_ = +10;
-  ignoreEnable_= true;
   spinBox_IntervalAskMV_->setValue(intervalAskMV_);
   spinBox_IntervalAskTemp_->setValue(intervalAskTemp_);
   spinBox_Numbers_->setValue(numbers_);
@@ -81,7 +72,6 @@ ConfigureDialog::ConfigureDialog(QWidget *parent) :
   warningMessageBox_.setText(tr("Are you sure you want to change the TempCheck parameters?"));
   warningMessageBox_.setWindowTitle(tr("Warning"));
   warningMessageBox_.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
-  warnigcheck_ = false;
 
   connect(spinBox_IntervalAskTemp_, SIGNAL(valueChanged(int)), this, SLOT(setValues()));
   connect(spinBox_IntervalAskTemp_, SIGNAL(valueChanged(int)), this, SLOT(setValues()));
@@ -104,7 +94,6 @@ ConfigureDialog::~ConfigureDialog()
  * @details The member variables in ConfigureDialog class are set to the values of boxes.
  */
 void ConfigureDialog::setValues(){
-  //QMutexLocker lock(&mutex_);
   intervalAskMV_ = spinBox_IntervalAskMV_->value();
   intervalAskTemp_ = spinBox_IntervalAskTemp_->value();
   numbers_ = spinBox_Numbers_->value();
