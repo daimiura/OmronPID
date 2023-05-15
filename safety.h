@@ -102,7 +102,7 @@ private:
   double diffTemp() const;
   double diffTemp(double temp1, double temp2) const;
   void addTemperature(double temp);
-  double movingAverage (QVector<double> data, int wsize) const;
+  double movingAverage (QVector<double> data, int wsize);
 
 };
 

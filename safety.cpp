@@ -80,9 +80,8 @@ void Safety::checkTempChange() {
   }
 
   // Start the check and push temperature data into vTempChangeData_
-  emit startTempChangeCheck(checkNumber_);
   timerTempChange_->start();
-  qDebug() << "checkTempChange at " << checkNumber_;
+  emit logMsgWithColor("checkTempChange at " + QString::number(checkNumber_), QColor(255, 0, 0, 255));
   if (checkNumber_ < numberOfCheck_) {
     vTempChangeData_.push_back(temp);
     checkNumber_++;
@@ -101,7 +100,9 @@ void Safety::checkTempChange() {
     emit dangerSignal(1);
     timerTempChange_->stop();
     timerMVCheck_->stop();
-  }
+  } else {
+      emit logMsgWithColor("The temperature change is enough. Finish TempChangeCheck mode.", QColor(0, 0, 255, 255) );
+    }
   // Clear variables and reset checkNumber_
   vdiff.clear();
   checkNumber_ = 0;
@@ -110,7 +111,7 @@ void Safety::checkTempChange() {
 }
 
 
-double Safety::movingAverage(QVector<double> data, int wsize) const {
+double Safety::movingAverage(QVector<double> data, int wsize) {
   double sum = 0.0;
   for (int i = 0; i < wsize; i++) sum += data[i];
   double avg = sum / wsize;
@@ -118,8 +119,8 @@ double Safety::movingAverage(QVector<double> data, int wsize) const {
       sum += data[i] - data[i-wsize];
       avg = sum / wsize;
   }
-  //QString const msg = "Calculation end/ The average value is " + QString::number(avg);
-  //emit logMsgWithColor(msg, QColor (0, 255, 0, 255) );
+  QString msg = "The average value is " + QString::number(avg);
+  emit logMsgWithColor(msg, QColor (0, 255, 0, 255) );
   return avg;
 }
 
