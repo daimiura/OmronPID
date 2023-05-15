@@ -954,7 +954,7 @@ void MainWindow::Quit(){
   ui->checkBoxStatusSTC->setChecked(false);
   ui->pushButton_RunStop->setChecked(false);
   safety_->stop();
-  //sendLINE("Emergency Stop!");
+  sendLINE("Emergency Stop!");
   bkgColorChangeable_ = true;
   setColor(3, bkgColorChangeable_);
   bkgColorChangeable_ = false;
