@@ -154,6 +154,13 @@ public slots:
   void catchLogMsg(const QString& msg);
 
   /**
+  @brief catchLogMsg Slot function to catch a log message emitted by a thread and add it to the application log window
+  @param msg The log message to add
+  @param color The color of message to display
+  */
+  void catchLogMsgWithColor(const QString& msg, QColor color);
+
+  /**
   @brief connectDevice Slot function to handle device connection
   */
   void connectDevice();

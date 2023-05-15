@@ -66,6 +66,8 @@ signals:
   void intervalTempChangeChanged(int interval);
   void escapeTempCheckChange(int sign);
   void startTempChangeCheck(int checknumber);
+  void logMsg(QString msg);
+  void logMsgWithColor(QString msg, QColor color);
 
 private slots:
   void checkTemperature();

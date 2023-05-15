@@ -111,7 +111,6 @@ void Safety::checkTempChange() {
 
 
 double Safety::movingAverage(QVector<double> data, int wsize) const {
-  qDebug() << "Calculation start";
   double sum = 0.0;
   for (int i = 0; i < wsize; i++) sum += data[i];
   double avg = sum / wsize;
@@ -119,7 +118,8 @@ double Safety::movingAverage(QVector<double> data, int wsize) const {
       sum += data[i] - data[i-wsize];
       avg = sum / wsize;
   }
-  qDebug() << "Calculation end/ The average value is " << avg;
+  //QString const msg = "Calculation end/ The average value is " + QString::number(avg);
+  //emit logMsgWithColor(msg, QColor (0, 255, 0, 255) );
   return avg;
 }
 
@@ -129,11 +129,11 @@ bool Safety::isMVupper(){
   setMV(data_->getMV());
   setMVUpper(data_->getMVUpper());
   if (MV_ >= MVUpper_) {
-      qDebug() << "MV reached MVupper";
+      emit logMsgWithColor("MV reached MVupper", QColor(255, 0, 0, 255));
       isMVupper_ = true;
       emit MVupperReachedUpperLimit();
   } else {
-      qDebug() << "MV < MVupper";
+      emit logMsgWithColor("MV < MVupper", QColor(0, 0, 255, 255));
       isMVupper_ = false;
   }
   return isMVupper_;
@@ -192,9 +192,7 @@ void Safety::setNumberOfCheck(int number) {numberOfCheck_ = number;}
 void Safety::setCheckNumber(int number) {checkNumber_ = number;}
 void Safety::setTempChangeThreshold(double temp){tempChangeThreshold_ = temp;}
 void Safety::setIntervalMVCheck(int interval) {
-  qDebug() << "The arggument is " << interval;
   intervalMVCheck_ = interval*1000;
-  qDebug() << "Current interval MV check is " << intervalMVCheck_;
   timerMVCheck_->setInterval(intervalMVCheck_);
 }
 void Safety::setIntervalTempChange(int interval) {
@@ -208,7 +206,6 @@ void Safety::setIgnoreTempRange(double temp, double lower, double upper){
   if (lower > upper){
       qWarning() << "Error: lower value greater than upper value in setIgnoreTempRange";
   }
-  qDebug() << temp+lower << "  " << temp << "  " << temp +upper ;
   ignoreTempRange_ = qMakePair(temp + lower, temp + upper);
 }
 

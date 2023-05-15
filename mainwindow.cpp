@@ -45,6 +45,7 @@ MainWindow::MainWindow(QWidget *parent) :
   connect(com_, &Communication::failedConnect, this, &MainWindow::connectFailed);
   connect(com_, &Communication::statusUpdate, this, &MainWindow::updateStatus);
   connect(com_, &Communication::logMsg, this, &MainWindow::catchLogMsg);
+  connect(com_, &Communication::logMsg, this, &MainWindow::catchLogMsgWithColor);
   connect(com_, &Communication::ATSendFinish, this, &MainWindow::finishSendAT);
   connect(com_, &Communication::SVSendFinish, this, &MainWindow::finishSendSV);
   connect(com_, &Communication::serialPortRemove, this, &MainWindow::sendLINE);
@@ -62,6 +63,8 @@ MainWindow::MainWindow(QWidget *parent) :
   connect(safety_, &Safety::checkNumberChanged, this, &MainWindow::updateCheckNumber);
   connect(safety_, &Safety::escapeTempCheckChange, this, &MainWindow::cathcEscapeTempCheckChange);
   connect(safety_, &Safety::startTempChangeCheck, this, &MainWindow::catchStartTempChangeCheck);
+  connect(safety_, &Safety::logMsg, this, &MainWindow::catchLogMsg);
+  connect(safety_, &Safety::logMsgWithColor, this, &MainWindow::catchLogMsgWithColor);
 
   //Generate instance to use Notify class.
   notify_ = new Notify(this);
@@ -793,6 +796,15 @@ void MainWindow::on_action_Setting_plot_triggered(){
 }
 
 void MainWindow::on_action_Setting_parameters_for_TempCheck_triggered(){
+  if(ui->pushButton_RunStop->isChecked()){
+    QMessageBox msgbox;
+    msgbox.setIcon(QMessageBox::Warning);
+    msgbox.setText(tr("Cannot be set while E5CC is running.\nPlease set after Stop."));
+    msgbox.setWindowTitle(tr("Warning"));
+    msgbox.setStandardButtons(QMessageBox::Ok);
+    msgbox.exec();
+    return;
+  }
   if(configureDialog_->isHidden()) configureDialog_->show();
 }
 
@@ -940,7 +952,7 @@ void MainWindow::Stop(){
   safety_->stop();
   data_->logingStop();
   plotTimer_->stop();
-  sendLINE("Running stop.");
+  //sendLINE("Running stop.");
 }
 
 void MainWindow::Quit(){
@@ -954,7 +966,7 @@ void MainWindow::Quit(){
   ui->checkBoxStatusSTC->setChecked(false);
   ui->pushButton_RunStop->setChecked(false);
   safety_->stop();
-  sendLINE("Emergency Stop!");
+  //sendLINE("Emergency Stop!");
   bkgColorChangeable_ = true;
   setColor(3, bkgColorChangeable_);
   bkgColorChangeable_ = false;
@@ -1093,7 +1105,13 @@ void MainWindow::updateStatus(){
   ui->lineEdit_msg->setEnabled(false);
 }
 
-void MainWindow::catchLogMsg(const QString& msg){LogMsg(msg);}
+void MainWindow::catchLogMsg(const QString& msg) {LogMsg(msg);}
+
+void MainWindow::catchLogMsgWithColor(const QString &msg, QColor color){
+  ui->textEdit_Log->setTextColor(color);
+  LogMsg(msg);
+  ui->textEdit_Log->setTextColor(QColor(0, 0, 0, 255));
+}
 
 void MainWindow::connectDevice(){
   ui->textEdit_Log->setTextColor(QColor(0,0,255,255));
