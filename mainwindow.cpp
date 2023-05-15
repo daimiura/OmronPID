@@ -227,7 +227,7 @@ void MainWindow::on_pushButton_Control_clicked()
     double iniTemp = 0;
     if(tempControlOnOff){
         on_pushButton_AskStatus_clicked();
-        iniTemp = daat_->getTemperature();
+        iniTemp = data_->getTemperature();
         LogMsg("Current Temperature         : " + QString::number(data_->getTemperature()) + " C.");
 
         const double targetValue = ui->lineEdit_SV->text().toDouble();
@@ -577,7 +577,7 @@ void MainWindow::on_doubleSpinBox_MVupper_valueChanged(double arg1){
     com_->changeMVupperValue(arg1);
     safety_->setMVUpper(arg1);
     LogMsg("Output upper limit is set to be " + QString::number(arg1));
-    plot->yAxis2->setRangeLower(data_->getMVupper() + 2);
+    plot->yAxis2->setRangeLower(com_->getMVupper() + 2);
     plot->replot();
 }
 
@@ -774,7 +774,7 @@ void MainWindow::HelpPicNext()
       return;
   }
   if( picNumber == 3){
-      QPixmap image(":fig2.PNG");
+      QPixmap image(":/LINEQR_RIKEN.PNG");
       HelpLabel->setPixmap(image);
       picNumber++;
       return;
