@@ -2,5 +2,10 @@
     <qresource prefix="/">
         <file>fig1.PNG</file>
         <file>fig2.PNG</file>
+        <file>config_screen.png</file>
+        <file>LINEQR_RIKEN.png</file>
+        <file>main_screen.PNG</file>
+        <file>safety_screen.PNG</file>
+        <file>screen_color.PNG</file>
     </qresource>
 </RCC>

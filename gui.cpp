@@ -167,7 +167,7 @@ void MainWindow::setupDialog(){
   HelpLabel = new QLabel();
   helpDialog->setWindowTitle("Help");
   picNumber = 1;
-  QPixmap image(":fig1.PNG");
+  QPixmap image(":/main_screen.PNG");
   HelpLabel->setPixmap(image);
   QPushButton * next = new QPushButton("Next");
   connect(next, SIGNAL(pressed()) , this, SLOT(HelpPicNext()));

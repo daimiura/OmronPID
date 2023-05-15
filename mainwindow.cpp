@@ -768,25 +768,25 @@ void MainWindow::on_actionHelp_Page_triggered(){
 void MainWindow::HelpPicNext()
 {
   if( picNumber == 4){
-      QPixmap image(":fig1.PNG");
+      QPixmap image(":screen_color.PNG");
       HelpLabel->setPixmap(image);
       picNumber = 1;
       return;
   }
   if( picNumber == 3){
-      QPixmap image(":/LINEQR_RIKEN.PNG");
+      QPixmap image(":/config_screen.png");
       HelpLabel->setPixmap(image);
       picNumber++;
       return;
   }
   if( picNumber == 2){
-      QPixmap image(":fig1.PNG");
+      QPixmap image(":/safety_screen.PNG");
       HelpLabel->setPixmap(image);
       picNumber++;
       return;
   }
   if( picNumber == 1){
-      QPixmap image(":fig2.PNG");
+      QPixmap image(":/main_screen.PNG");
       HelpLabel->setPixmap(image);
       picNumber++;
       return;

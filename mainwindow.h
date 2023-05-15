@@ -321,7 +321,7 @@ private:
     PlotDialog * plotDialog_{nullptr};
     ConfigureDialog * configureDialog_{nullptr};
     TempDropDialog * tempDropDialog_{nullptr};
-    int picNumber{};
+    int picNumber{1};
     int countTempCheck_{};
     int countDropCheck_{};
     bool bkgColorChangeable_{true};
