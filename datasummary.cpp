@@ -101,7 +101,6 @@ If the file does not exist, a new file is created by calling generateSaveFile().
 The temperature, MV and SV values are retrieved by calling getTemperature(), getMV()
 and getSV() respectively. The date and time of writing the data is obtained using
 QDateTime::currentDateTime() method. The data is written in the text format.
-Once the data is written, the signal FileSave(true) is emitted.
 @return void
 */
 void DataSummary::writeData(){
@@ -126,7 +125,6 @@ void DataSummary::writeData(){
          << QString::number(getMV())
          << Qt::endl;
   output.close();
-  emit FileSave(true);
 }
 
 void DataSummary::logingStart(){

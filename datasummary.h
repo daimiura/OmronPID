@@ -127,12 +127,6 @@ signals:
      */
     void svChanged(double sv);
 
-    /**
-     * @brief Signal emitted when file is saved.
-     * @param success true if the file was saved successfully, false otherwise.
-     */
-    void FileSave(bool success);
-
 private slots:
     /**
      * @brief Slot to set the temperature value.

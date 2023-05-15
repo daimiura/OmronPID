@@ -53,7 +53,6 @@ MainWindow::MainWindow(QWidget *parent) :
 
   //Generate instance to use DataSummary class.
   data_ = new DataSummary(com_);
-  connect(data_, &DataSummary::FileSave, this, &MainWindow::saveFile);
   ui->lineEdit_DirPath->setText(data_->getFilePath());
 
   //Generate instance to use Safety class.
@@ -228,8 +227,8 @@ void MainWindow::on_pushButton_Control_clicked()
     double iniTemp = 0;
     if(tempControlOnOff){
         on_pushButton_AskStatus_clicked();
-        iniTemp = com_->getTemperature();
-        LogMsg("Current Temperature         : " + QString::number(com_->getTemperature()) + " C.");
+        iniTemp = daat_->getTemperature();
+        LogMsg("Current Temperature         : " + QString::number(data_->getTemperature()) + " C.");
 
         const double targetValue = ui->lineEdit_SV->text().toDouble();
         const int tempGetTime = ui->spinBox_TempRecordTime->value() * 1000; // msec
@@ -254,7 +253,7 @@ void MainWindow::on_pushButton_Control_clicked()
         double estTransitionTime = 5; //min
         if( mode == 2 || mode == 3 || mode == 4) estTransitionTime = 0;
         double estSlope = (estTransitionTime + tempWaitTime/60/1000) / tempStepSize ;
-        double estTotalTime = estSlope * qAbs(com_->getTemperature()-targetValue);
+        double estTotalTime = estSlope * qAbs(data_->getTemperature()-targetValue);
         if(mode == 4){
             estSlope = ui->spinBox_TempStableTime->value(); // min/C
             estTotalTime = estSlope * qAbs(targetValue_2-targetValue);
@@ -560,8 +559,11 @@ void MainWindow::on_comboBox_AT_currentIndexChanged(int index)
 }
 
 void MainWindow::on_pushButton_Connect_clicked(){
+  LogMsg("Start connecing...");
+  LogMsg("Please do nothing and wait for a moment.");
   com_->setSerialPortName(ui->comboBox_SeriesNumber->currentData().toString());
   com_->executeConnection();
+  LogMsg("Finish connecing.");
 }
 
 void MainWindow::on_doubleSpinBox_MVlower_valueChanged(double arg1){
@@ -575,7 +577,7 @@ void MainWindow::on_doubleSpinBox_MVupper_valueChanged(double arg1){
     com_->changeMVupperValue(arg1);
     safety_->setMVUpper(arg1);
     LogMsg("Output upper limit is set to be " + QString::number(arg1));
-    plot->yAxis2->setRangeLower(com_->getMVupper() + 2);
+    plot->yAxis2->setRangeLower(data_->getMVupper() + 2);
     plot->replot();
 }
 
@@ -983,8 +985,8 @@ void MainWindow::setTextTempDrop(bool enable){
 void MainWindow::makePlot(){
   const double setTemperature = ui->lineEdit_SV->text().toDouble();
   QDateTime date = QDateTime::currentDateTime();
-  valltemp_.push_back(com_->getTemperature());
-  fillDataAndPlot(date, com_->getTemperature(), setTemperature, com_->getMV());
+  valltemp_.push_back(data_->getTemperature());
+  fillDataAndPlot(date, data_->getTemperature(), setTemperature, data_->getMV());
 }
 
 void MainWindow::on_checkBox_dataSave_toggled(bool checked)
@@ -1126,7 +1128,7 @@ void MainWindow::connectDevice(){
   QString title = this->windowTitle();
   this->setWindowTitle(title + " | " + ui->comboBox_SeriesNumber->currentText());
   getSetting();
-  ui->lineEdit_SV->setText(QString::number(com_->getSV()));
+  ui->lineEdit_SV->setText(QString::number(data_->getSV()));
   LogMsg("Set Stop.");
   QColor color = QColor("palegray");
   QPalette pal = palette();
@@ -1205,15 +1207,6 @@ void MainWindow::catchStartTempChangeCheck(int checknumber){
       LogMsg("Temp Change Check mode in " + QString::number(checknumber));
   }
   ui->textEdit_Log->setTextColor(QColor(0, 0, 0, 255));
-}
-
-void MainWindow::saveFile(bool sucess){
-  if (sucess) LogMsg("Sucess to write data log.");
-  else {
-      ui->textEdit_Log->setTextColor(QColor(0, 0, 255, 255));
-      LogMsg("Failed to srite data log.");
-      ui->textEdit_Log->setTextColor(QColor(0, 0, 0, 255));
-    }
 }
 
 void MainWindow::setIntervalPlot(int interval){

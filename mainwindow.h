@@ -278,7 +278,6 @@ private slots:
     double fillDifference(bool mute = true);
     void setColor(int colorindex = 0, bool changerable = true);
     void sendLINE(const QString& message);
-    void saveFile(bool sucess);
 
 private:
     Ui::MainWindow *ui;
