@@ -32,7 +32,6 @@ SOURCES += \
     gui.cpp \
         main.cpp \
         mainwindow.cpp \
-    mythread.cpp \
     notify.cpp \
     plotdialog.cpp \
     qcustomplot.cpp \
@@ -44,7 +43,6 @@ HEADERS += \
     configuredialog.h \
     datasummary.h \
         mainwindow.h \
-    mythread.h \
     notify.h \
     plotdialog.h \
     qcustomplot.h \

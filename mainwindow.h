@@ -26,7 +26,6 @@
 #include <QGraphicsView>
 #include <QTextStream>
 #include <QSslSocket>
-#include "mythread.h"
 #include "configuredialog.h"
 #include "plotdialog.h"
 #include "tempdropdialog.h"
