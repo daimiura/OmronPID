@@ -31,6 +31,7 @@ SOURCES += \
     datasummary.cpp \
     gui.cpp \
     helpdialog.cpp \
+    joinlinedialog.cpp \
         main.cpp \
         mainwindow.cpp \
     notify.cpp \
@@ -44,6 +45,7 @@ HEADERS += \
     configuredialog.h \
     datasummary.h \
     helpdialog.h \
+    joinlinedialog.h \
         mainwindow.h \
     notify.h \
     plotdialog.h \

@@ -30,6 +30,7 @@
 #include "plotdialog.h"
 #include "tempdropdialog.h"
 #include "helpdialog.h"
+#include "joinlinedialog.h"
 #include "notify.h"
 #include "datasummary.h"
 
@@ -263,7 +264,7 @@ private slots:
     void on_action_Setting_parameters_for_TempCheck_triggered();
     void on_action_Setting_plot_triggered();
     void on_actionHelp_Page_triggered();
-    //void HelpPicNext();
+    void on_action_JoinLINE_triggered();
     void fillDataAndPlot(const QDateTime date, const double PV, const double SV, const double MV);
     void Run();
     void Stop();
@@ -287,9 +288,16 @@ private:
     Safety *safety_{nullptr};
     Notify *notify_{nullptr};
     DataSummary *data_{nullptr};
+    HelpDialog *helpDialog_{nullptr};
+    QGraphicsScene *scene_{nullptr};
+    QGraphicsView *view{nullptr};
+    PlotDialog * plotDialog_{nullptr};
+    ConfigureDialog * configureDialog_{nullptr};
+    TempDropDialog * tempDropDialog_{nullptr};
+    JoinLINEDialog *joinDialog_{nullptr};
     QString omronPortName{};
-    int msgCount{};
-    int timing_{};
+    int msgCount{0};
+    int timing_{0};
     int intervalPlot_{5000};
     bool tempControlOnOff{false};
     bool tempRecordOnOff{false};
@@ -314,18 +322,6 @@ private:
     bool checkDay{false};
     int dayCounter{};
     bool nextSV{false};
-
-    HelpDialog *helpDialog{nullptr};
-    //QDialog * helpDialog{nullptr};
-    //QLabel * HelpLabel{nullptr};
-    QGraphicsScene *scene_{nullptr};
-    QGraphicsView *view{nullptr};
-    PlotDialog * plotDialog_{nullptr};
-    ConfigureDialog * configureDialog_{nullptr};
-    TempDropDialog * tempDropDialog_{nullptr};
-    int picNumber{1};
-    int countTempCheck_{};
-    int countDropCheck_{};
     bool bkgColorChangeable_{true};
 
     void addPortName(QList<QSerialPortInfo> info);

@@ -5,7 +5,7 @@
 HelpDialog::HelpDialog(QWidget *parent) : QDialog(parent){
     setWindowTitle("Help");
     picNumber_ = 2;
-    helpLabel_ = new QLabel(this); // create a new QLabel object
+    helpLabel_ = new QLabel(this);
     QPixmap image(":/main_screen.PNG");
     helpLabel_->setPixmap(image);
     next_ = new QPushButton("Next");
@@ -15,9 +15,8 @@ HelpDialog::HelpDialog(QWidget *parent) : QDialog(parent){
     mainLayout->addWidget(next_);
 }
 
-
 void HelpDialog::HelpPicNext(){
-  if(helpLabel_ == nullptr) return; // check if the label is null
+  if(helpLabel_ == nullptr) return;
 
   if( picNumber_ == 4){
       QPixmap image(":screen_color.PNG");

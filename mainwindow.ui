@@ -1056,8 +1056,6 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <x>0</x>
      <y>0</y>
      <width>1302</width>
-     <height>24</height>
-     <height>17</height>
      <height>17</height>
     </rect>
    </property>
@@ -1080,8 +1078,15 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <addaction name="action_Setting_parameters_for_TempCheck"/>
     <addaction name="action_Setting_plot"/>
    </widget>
+   <widget class="QMenu" name="menuJoinLINE">
+    <property name="title">
+     <string>JoinLINE</string>
+    </property>
+    <addaction name="action_JoinLINE"/>
+   </widget>
    <addaction name="menuFile"/>
    <addaction name="menuConfigure"/>
+   <addaction name="menuJoinLINE"/>
    <addaction name="menuHelp"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
@@ -1127,6 +1132,11 @@ li.checked::marker { content: &quot;\2612&quot;; }
   <action name="action_Setting_Temperature_Drop">
    <property name="text">
     <string>&amp;Setting_Temperature_Drop</string>
+   </property>
+  </action>
+  <action name="action_JoinLINE">
+   <property name="text">
+    <string>&amp;JoinLINE</string>
    </property>
   </action>
  </widget>

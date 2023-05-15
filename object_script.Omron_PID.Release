@@ -3,6 +3,7 @@ release/configuredialog.o
 release/datasummary.o
 release/gui.o
 release/helpdialog.o
+release/joinlinedialog.o
 release/main.o
 release/mainwindow.o
 release/notify.o
@@ -15,6 +16,7 @@ release/moc_communication.o
 release/moc_configuredialog.o
 release/moc_datasummary.o
 release/moc_helpdialog.o
+release/moc_joinlinedialog.o
 release/moc_mainwindow.o
 release/moc_notify.o
 release/moc_plotdialog.o

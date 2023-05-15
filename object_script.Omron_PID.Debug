@@ -3,6 +3,7 @@ debug/configuredialog.o
 debug/datasummary.o
 debug/gui.o
 debug/helpdialog.o
+debug/joinlinedialog.o
 debug/main.o
 debug/mainwindow.o
 debug/notify.o
@@ -15,6 +16,7 @@ debug/moc_communication.o
 debug/moc_configuredialog.o
 debug/moc_datasummary.o
 debug/moc_helpdialog.o
+debug/moc_joinlinedialog.o
 debug/moc_mainwindow.o
 debug/moc_notify.o
 debug/moc_plotdialog.o

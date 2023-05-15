@@ -162,21 +162,7 @@ void MainWindow::panalOnOff(bool IO)
 }
 
 void MainWindow::setupDialog(){
-  //! helpDialog
-  /*
-  helpDialog = new QDialog(this);
-  HelpLabel = new QLabel();
-  helpDialog->setWindowTitle("Help");
-  picNumber = 2;
-  QPixmap image(":/main_screen.PNG");
-  HelpLabel->setPixmap(image);
-  QPushButton * next = new QPushButton("Next");
-  connect(next, SIGNAL(pressed()) , this, SLOT(HelpPicNext()));
-  QVBoxLayout *mainLayout = new QVBoxLayout(helpDialog);
-  mainLayout->addWidget(HelpLabel);
-  mainLayout->addWidget(next);
-  */
-  helpDialog = new HelpDialog(this);
+  helpDialog_ = new HelpDialog(this);
 
   //! plotDialog
   plotDialog_ = new PlotDialog(this);
@@ -187,4 +173,5 @@ void MainWindow::setupDialog(){
   configureDialog_->setWindowTitle("Configure");
   connect(configureDialog_->pushButton_SetParameters_, SIGNAL(clicked(bool)), this, SLOT(setParametersTempCheckChange()) );
 
+  joinDialog_ = new JoinLINEDialog(this);
 }

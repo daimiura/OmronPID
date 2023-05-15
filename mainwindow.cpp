@@ -762,7 +762,7 @@ double MainWindow::fillDifference(bool mute){
 }
 
 void MainWindow::on_actionHelp_Page_triggered(){
-    if( helpDialog->isHidden() ) helpDialog->show();
+    if( helpDialog_->isHidden() ) helpDialog_->show();
 }
 
 void MainWindow::on_action_Setting_plot_triggered(){
@@ -780,6 +780,10 @@ void MainWindow::on_action_Setting_parameters_for_TempCheck_triggered(){
     return;
   }
   if(configureDialog_->isHidden()) configureDialog_->show();
+}
+
+void MainWindow::on_action_JoinLINE_triggered(){
+    if( joinDialog_->isHidden() ) joinDialog_->show();
 }
 
 /*
@@ -897,7 +901,6 @@ void MainWindow::Run(){
   ui->lineEdit_msg->setStyleSheet("");
   ui->pushButton_Log->setChecked(true);
   ui->checkBoxStatusRun->setChecked(true);
-  countTempCheck_ = 0;
   //sendLINE("Running starts.");
   plotTimer_->start();
   data_->generateSaveFile();
@@ -909,7 +912,6 @@ void MainWindow::Run(){
 }
 
 void MainWindow::Stop(){
-  countTempCheck_ = 0;
   statusBar()->clearMessage();
   com_->executeStop();
   LogMsg("Set Stop.");
@@ -934,7 +936,6 @@ void MainWindow::Quit(){
   ui->textEdit_Log->setTextColor(QColor(255,0,0,255));
   LogMsg("Emergency Stop. Check the experimental condition.");
   vtemp_.clear();
-  countTempCheck_ = 0;
   ui->textEdit_Log->setTextColor(QColor(0,0,0,255));
   ui->checkBoxStatusRun->setChecked(false);
   ui->checkBoxStatusSTC->setChecked(false);
