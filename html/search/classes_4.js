@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['notify_0',['Notify',['../class_notify.html',1,'']]]
+  ['joindialog_0',['JoinDialog',['../class_join_dialog.html',1,'']]],
+  ['joinlinedialog_1',['JoinLINEDialog',['../class_join_l_i_n_e_dialog.html',1,'']]]
 ];

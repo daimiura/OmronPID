@@ -1204,4 +1204,5 @@ void MainWindow::updateStatusBoxes(){
   ui->checkBoxStatusRecord->setChecked(is_log_running);
   bool is_update_running = com_->isTimerUpdateRunning();
   ui->checkBoxUpdate->setChecked(is_update_running);
+  if(is_tempchange_running) setColor(2);
 }

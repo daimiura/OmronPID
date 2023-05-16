@@ -131,6 +131,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>updateStatus</b> ()</
 <tr class="memitem:a2a084048a56885b7ce963c6853333a87"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a2a084048a56885b7ce963c6853333a87">catchLogMsg</a> (const QString &amp;msg)</td></tr>
 <tr class="memdesc:a2a084048a56885b7ce963c6853333a87"><td class="mdescLeft">&#160;</td><td class="mdescRight">catchLogMsg Slot function to catch a log message emitted by a thread and add it to the application log window  <br /></td></tr>
 <tr class="separator:a2a084048a56885b7ce963c6853333a87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5996c5ae4e0d08be444fa6dc33e5ebb6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a5996c5ae4e0d08be444fa6dc33e5ebb6">catchLogMsgWithColor</a> (const QString &amp;msg, QColor color)</td></tr>
+<tr class="memdesc:a5996c5ae4e0d08be444fa6dc33e5ebb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">catchLogMsg Slot function to catch a log message emitted by a thread and add it to the application log window  <br /></td></tr>
+<tr class="separator:a5996c5ae4e0d08be444fa6dc33e5ebb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae6bfd4c5da606c3979e82ceed20404a"><td class="memItemLeft" align="right" valign="top"><a id="aae6bfd4c5da606c3979e82ceed20404a" name="aae6bfd4c5da606c3979e82ceed20404a"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>connectDevice</b> ()</td></tr>
 <tr class="memdesc:aae6bfd4c5da606c3979e82ceed20404a"><td class="mdescLeft">&#160;</td><td class="mdescRight">connectDevice Slot function to handle device connection <br /></td></tr>
@@ -140,7 +143,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>connectFailed</b> ()<
 <tr class="memdesc:a8176f2135b306a3e7cd412a1746d69bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">connectFailed Slot function to handle device connection failure <br /></td></tr>
 <tr class="separator:a8176f2135b306a3e7cd412a1746d69bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e56f22b93fef927d2db82f3f7c9c7c5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a7e56f22b93fef927d2db82f3f7c9c7c5">catchDanger</a> (int type)</td></tr>
-<tr class="memdesc:a7e56f22b93fef927d2db82f3f7c9c7c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">catchDanger Slot function to handle a dangerous situation detected by the <a class="el" href="class_safety.html">Safety</a> class  <br /></td></tr>
+<tr class="memdesc:a7e56f22b93fef927d2db82f3f7c9c7c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">catchDanger Slot function to handle a dangerous situation detected by the <a class="el" href="class_safety.html" title="The Safety class ensures the safe operation of the system. This class monitors the temperature and ot...">Safety</a> class  <br /></td></tr>
 <tr class="separator:a7e56f22b93fef927d2db82f3f7c9c7c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aabefdc4ffd8d485e45d2244a8f4597f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#aabefdc4ffd8d485e45d2244a8f4597f3">updateCheckNumber</a> (int checkNumber)</td></tr>
 <tr class="memdesc:aabefdc4ffd8d485e45d2244a8f4597f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">updateCheckNumber Slot function to update the number of temperature checks that have been performed  <br /></td></tr>
@@ -231,7 +234,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>findSeriesPortDevices
 </table>
 </div><div class="memdoc">
 
-<p>catchDanger Slot function to handle a dangerous situation detected by the <a class="el" href="class_safety.html">Safety</a> class </p>
+<p>catchDanger Slot function to handle a dangerous situation detected by the <a class="el" href="class_safety.html" title="The Safety class ensures the safe operation of the system. This class monitors the temperature and ot...">Safety</a> class </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">type</td><td><a class="el" href="class_the.html">The</a> type of danger detected </td></tr>
@@ -269,6 +272,51 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>findSeriesPortDevices
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">msg</td><td><a class="el" href="class_the.html">The</a> log message to add </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5996c5ae4e0d08be444fa6dc33e5ebb6" name="a5996c5ae4e0d08be444fa6dc33e5ebb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5996c5ae4e0d08be444fa6dc33e5ebb6">&#9670;&#160;</a></span>catchLogMsgWithColor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::catchLogMsgWithColor </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>msg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QColor&#160;</td>
+          <td class="paramname"><em>color</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>catchLogMsg Slot function to catch a log message emitted by a thread and add it to the application log window </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td><a class="el" href="class_the.html">The</a> log message to add </td></tr>
+    <tr><td class="paramname">color</td><td><a class="el" href="class_the.html">The</a> color of message to display </td></tr>
   </table>
   </dd>
 </dl>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['safety_0',['Safety',['../class_safety.html',1,'']]]
+  ['plotdialog_0',['PlotDialog',['../class_plot_dialog.html',1,'']]]
 ];

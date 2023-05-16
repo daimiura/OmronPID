@@ -23,9 +23,7 @@ void \mbox{\hyperlink{class_data_summary_a0664f5a0765c34dd1f1d215fff98bd21}{temp
 void \mbox{\hyperlink{class_data_summary_ad939eb587c1452110a8bf2ac0b6c024a}{mv\+Changed}} (double mv)
 \begin{DoxyCompactList}\small\item\em Signal emitted when the MV value changes. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_data_summary_ab30b9edd27f68ad4a6a3cee53bd38929}{sv\+Changed}} (double sv)
-\begin{DoxyCompactList}\small\item\em Signal emitted when the SV value changes. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_data_summary_aebab52d567efb28866ddd986e58f88fa}{File\+Save}} (bool success)
-\begin{DoxyCompactList}\small\item\em Signal emitted when file is saved. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Signal emitted when the SV value changes. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -97,21 +95,6 @@ Initializes the object and sets up the file path and name for saving data. Also 
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_data_summary_aebab52d567efb28866ddd986e58f88fa}\label{class_data_summary_aebab52d567efb28866ddd986e58f88fa}} 
-\index{DataSummary@{DataSummary}!FileSave@{FileSave}}
-\index{FileSave@{FileSave}!DataSummary@{DataSummary}}
-\doxysubsubsection{\texorpdfstring{FileSave}{FileSave}}
-{\footnotesize\ttfamily void Data\+Summary\+::\+File\+Save (\begin{DoxyParamCaption}\item[{bool}]{success }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
-
-
-
-Signal emitted when file is saved. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em success} & true if the file was saved successfully, false otherwise. \\
-\hline
-\end{DoxyParams}
 \mbox{\Hypertarget{class_data_summary_a721d29528f5aeb7519a92c0d40d44c45}\label{class_data_summary_a721d29528f5aeb7519a92c0d40d44c45}} 
 \index{DataSummary@{DataSummary}!generateSaveFile@{generateSaveFile}}
 \index{generateSaveFile@{generateSaveFile}!DataSummary@{DataSummary}}
@@ -320,7 +303,7 @@ Writes data to file.
 
 Writes temperature, MV and SV values to the data file. \mbox{\hyperlink{class_the}{The}} data is saved in the following format\+: $<$date and time$>$\textbackslash{}t$<$seconds since epoch$>$\textbackslash{}t$<$temperature$>$\textbackslash{}t$<$\+MV$>$\textbackslash{}t$<$\+SV$>$
 
-\mbox{\hyperlink{class_the}{The}} method checks whether the saving of data has been enabled. If not, the method exits. \mbox{\hyperlink{class_the}{The}} data is written to a file specified by file\+Name\+\_\+. If the file does not exist, a new file is created by calling \mbox{\hyperlink{class_data_summary_a721d29528f5aeb7519a92c0d40d44c45}{generate\+Save\+File()}}. \mbox{\hyperlink{class_the}{The}} temperature, MV and SV values are retrieved by calling \mbox{\hyperlink{class_data_summary_a1b16196dc54f8c0709351613bb884ea8}{get\+Temperature()}}, \mbox{\hyperlink{class_data_summary_a9dbdea2095a1a84c8af0204b554ddadd}{get\+MV()}} and \mbox{\hyperlink{class_data_summary_ac83d8023240b79ab2c9b19e34df69884}{get\+SV()}} respectively. \mbox{\hyperlink{class_the}{The}} date and time of writing the data is obtained using QDate\+Time\+::current\+Date\+Time() method. \mbox{\hyperlink{class_the}{The}} data is written in the text format. Once the data is written, the signal \mbox{\hyperlink{class_data_summary_aebab52d567efb28866ddd986e58f88fa}{File\+Save(true)}} is emitted. \begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_the}{The}} method checks whether the saving of data has been enabled. If not, the method exits. \mbox{\hyperlink{class_the}{The}} data is written to a file specified by file\+Name\+\_\+. If the file does not exist, a new file is created by calling \mbox{\hyperlink{class_data_summary_a721d29528f5aeb7519a92c0d40d44c45}{generate\+Save\+File()}}. \mbox{\hyperlink{class_the}{The}} temperature, MV and SV values are retrieved by calling \mbox{\hyperlink{class_data_summary_a1b16196dc54f8c0709351613bb884ea8}{get\+Temperature()}}, \mbox{\hyperlink{class_data_summary_a9dbdea2095a1a84c8af0204b554ddadd}{get\+MV()}} and \mbox{\hyperlink{class_data_summary_ac83d8023240b79ab2c9b19e34df69884}{get\+SV()}} respectively. \mbox{\hyperlink{class_the}{The}} date and time of writing the data is obtained using QDate\+Time\+::current\+Date\+Time() method. \mbox{\hyperlink{class_the}{The}} data is written in the text format. \begin{DoxyReturn}{Returns}
 void 
 \end{DoxyReturn}
 

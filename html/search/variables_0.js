@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['legend_0',['legend',['../class_q_custom_plot.html#a4eadcd237dc6a09938b68b16877fa6af',1,'QCustomPlot']]]
+  ['etime_5f_0',['etime_',['../class_configure_dialog.html#abcf14b7e91bd14fa244dcfd50d28d42b',1,'ConfigureDialog']]]
 ];

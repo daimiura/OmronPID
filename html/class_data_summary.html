@@ -99,9 +99,6 @@ Signals</h2></td></tr>
 <tr class="memitem:ab30b9edd27f68ad4a6a3cee53bd38929"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_summary.html#ab30b9edd27f68ad4a6a3cee53bd38929">svChanged</a> (double sv)</td></tr>
 <tr class="memdesc:ab30b9edd27f68ad4a6a3cee53bd38929"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal emitted when the SV value changes.  <br /></td></tr>
 <tr class="separator:ab30b9edd27f68ad4a6a3cee53bd38929"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aebab52d567efb28866ddd986e58f88fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_summary.html#aebab52d567efb28866ddd986e58f88fa">FileSave</a> (bool success)</td></tr>
-<tr class="memdesc:aebab52d567efb28866ddd986e58f88fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal emitted when file is saved.  <br /></td></tr>
-<tr class="separator:aebab52d567efb28866ddd986e58f88fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -202,40 +199,6 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>isTimerLogRunning</b>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="aebab52d567efb28866ddd986e58f88fa" name="aebab52d567efb28866ddd986e58f88fa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aebab52d567efb28866ddd986e58f88fa">&#9670;&#160;</a></span>FileSave</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void DataSummary::FileSave </td>
-          <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>success</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Signal emitted when file is saved. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">success</td><td>true if the file was saved successfully, false otherwise. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="a721d29528f5aeb7519a92c0d40d44c45" name="a721d29528f5aeb7519a92c0d40d44c45"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a721d29528f5aeb7519a92c0d40d44c45">&#9670;&#160;</a></span>generateSaveFile()</h2>
 
@@ -598,7 +561,7 @@ true if the file is successfully generated, false otherwise. </dd></dl>
 
 <p>Writes data to file. </p>
 <p>Writes temperature, MV and SV values to the data file. <a class="el" href="class_the.html">The</a> data is saved in the following format: &lt;date and time&gt;\t&lt;seconds since epoch&gt;\t&lt;temperature&gt;\t&lt;MV&gt;\t&lt;SV&gt;</p>
-<p><a class="el" href="class_the.html">The</a> method checks whether the saving of data has been enabled. If not, the method exits. <a class="el" href="class_the.html">The</a> data is written to a file specified by fileName_. If the file does not exist, a new file is created by calling <a class="el" href="class_data_summary.html#a721d29528f5aeb7519a92c0d40d44c45" title="Generates and saves the data to file.">generateSaveFile()</a>. <a class="el" href="class_the.html">The</a> temperature, MV and SV values are retrieved by calling <a class="el" href="class_data_summary.html#a1b16196dc54f8c0709351613bb884ea8" title="Gets the current temperature.">getTemperature()</a>, <a class="el" href="class_data_summary.html#a9dbdea2095a1a84c8af0204b554ddadd" title="Gets the current MV value.">getMV()</a> and <a class="el" href="class_data_summary.html#ac83d8023240b79ab2c9b19e34df69884" title="Gets the current SV value.">getSV()</a> respectively. <a class="el" href="class_the.html">The</a> date and time of writing the data is obtained using QDateTime::currentDateTime() method. <a class="el" href="class_the.html">The</a> data is written in the text format. Once the data is written, the signal <a class="el" href="class_data_summary.html#aebab52d567efb28866ddd986e58f88fa" title="Signal emitted when file is saved.">FileSave(true)</a> is emitted. </p><dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+<p><a class="el" href="class_the.html">The</a> method checks whether the saving of data has been enabled. If not, the method exits. <a class="el" href="class_the.html">The</a> data is written to a file specified by fileName_. If the file does not exist, a new file is created by calling <a class="el" href="class_data_summary.html#a721d29528f5aeb7519a92c0d40d44c45" title="Generates and saves the data to file.">generateSaveFile()</a>. <a class="el" href="class_the.html">The</a> temperature, MV and SV values are retrieved by calling <a class="el" href="class_data_summary.html#a1b16196dc54f8c0709351613bb884ea8" title="Gets the current temperature.">getTemperature()</a>, <a class="el" href="class_data_summary.html#a9dbdea2095a1a84c8af0204b554ddadd" title="Gets the current MV value.">getMV()</a> and <a class="el" href="class_data_summary.html#ac83d8023240b79ab2c9b19e34df69884" title="Gets the current SV value.">getSV()</a> respectively. <a class="el" href="class_the.html">The</a> date and time of writing the data is obtained using QDateTime::currentDateTime() method. <a class="el" href="class_the.html">The</a> data is written in the text format. </p><dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 </div>
 </div>

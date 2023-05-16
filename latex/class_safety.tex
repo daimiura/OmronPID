@@ -1,5 +1,14 @@
 \hypertarget{class_safety}{}\doxysection{Safety Class Reference}
 \label{class_safety}\index{Safety@{Safety}}
+
+
+\mbox{\hyperlink{class_the}{The}} \mbox{\hyperlink{class_safety}{Safety}} class ensures the safe operation of the system. This class monitors the temperature and other parameters of the system to ensure that they remain within safe limits. If any parameter goes outside its safe range, the \mbox{\hyperlink{class_safety}{Safety}} class takes appropriate action to bring it back within range. \mbox{\hyperlink{class_the}{The}} class also provides a number of properties that can be used to configure its behavior.  
+
+
+
+
+{\ttfamily \#include $<$safety.\+h$>$}
+
 Inheritance diagram for Safety\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,137 +18,109 @@ Inheritance diagram for Safety\+:\begin{figure}[H]
 \doxysubsection*{Signals}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_safety_a150494b0f4dbcfc2d59244a380a3a37c}\label{class_safety_a150494b0f4dbcfc2d59244a380a3a37c}} 
-void {\bfseries permited\+Max\+Temp\+Changed} (double maxtemp)
-\item 
-\mbox{\Hypertarget{class_safety_ac2e863d63b98f16f996d5ab80af0f6e7}\label{class_safety_ac2e863d63b98f16f996d5ab80af0f6e7}} 
-void {\bfseries MVUpper\+Changed} (double MVupper)
-\item 
+void \mbox{\hyperlink{class_safety_a150494b0f4dbcfc2d59244a380a3a37c}{permited\+Max\+Temp\+Changed}} (double maxtemp)
+\begin{DoxyCompactList}\small\item\em Signal emitted when the permitted maximum temperature has been changed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_safety_ac2e863d63b98f16f996d5ab80af0f6e7}{MVUpper\+Changed}} (double MVupper)
+\begin{DoxyCompactList}\small\item\em Signal emitted when the MV upper limit has been changed. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_safety_aeb58b5cedb9863febd41295112667857}\label{class_safety_aeb58b5cedb9863febd41295112667857}} 
 void {\bfseries MVupper\+Reached\+Upper\+Limit} ()
-\item 
-\mbox{\Hypertarget{class_safety_a1fc8b42cfd9f0137daca0b78a7e6a967}\label{class_safety_a1fc8b42cfd9f0137daca0b78a7e6a967}} 
-void {\bfseries Number\+Of\+Check\+Changed} (int number)
-\item 
-\mbox{\Hypertarget{class_safety_a07fc3535d87e388d71daab2c1be34fe1}\label{class_safety_a07fc3535d87e388d71daab2c1be34fe1}} 
-void {\bfseries check\+Number\+Changed} (int number)
-\item 
-\mbox{\Hypertarget{class_safety_afda5edb1254c643ff517d6b12113cadb}\label{class_safety_afda5edb1254c643ff517d6b12113cadb}} 
-void {\bfseries temp\+Change\+Threshold\+Changed} (double temp)
-\item 
-\mbox{\Hypertarget{class_safety_a5f638c6cd7a9622dfe70d6d02670f17f}\label{class_safety_a5f638c6cd7a9622dfe70d6d02670f17f}} 
-void {\bfseries danger\+Signal} (int type)
-\item 
-\mbox{\Hypertarget{class_safety_abe479d597616613bf2a4487c3f19cc49}\label{class_safety_abe479d597616613bf2a4487c3f19cc49}} 
-void {\bfseries interval\+MVCheck\+Changed} (int interval)
-\item 
-\mbox{\Hypertarget{class_safety_ae64e96e13c1aac7847181a2fec2ac7e9}\label{class_safety_ae64e96e13c1aac7847181a2fec2ac7e9}} 
-void {\bfseries interval\+Temp\+Change\+Changed} (int interval)
-\item 
-\mbox{\Hypertarget{class_safety_a964883572fc800b66cb923dd2cb96d04}\label{class_safety_a964883572fc800b66cb923dd2cb96d04}} 
-void {\bfseries escape\+Temp\+Check\+Change} (int sign)
-\item 
-\mbox{\Hypertarget{class_safety_a20e0e101b801021be41c7955f2b996c9}\label{class_safety_a20e0e101b801021be41c7955f2b996c9}} 
-void {\bfseries start\+Temp\+Change\+Check} (int checknumber)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Signal emitted when the MV upper limit has reached its upper limit. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_safety_a1fc8b42cfd9f0137daca0b78a7e6a967}{Number\+Of\+Check\+Changed}} (int number)
+\begin{DoxyCompactList}\small\item\em Signal emitted when the number of checks has been changed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_safety_a07fc3535d87e388d71daab2c1be34fe1}{check\+Number\+Changed}} (int number)
+\begin{DoxyCompactList}\small\item\em Signal emitted when the check number has been changed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_safety_afda5edb1254c643ff517d6b12113cadb}{temp\+Change\+Threshold\+Changed}} (double temp)
+\begin{DoxyCompactList}\small\item\em Signal emitted when the temperature change threshold has been changed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_safety_a5f638c6cd7a9622dfe70d6d02670f17f}{danger\+Signal}} (int type)
+\begin{DoxyCompactList}\small\item\em Signal emitted when a danger is detected. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_safety_abe479d597616613bf2a4487c3f19cc49}{interval\+MVCheck\+Changed}} (int interval)
+\begin{DoxyCompactList}\small\item\em Signal emitted when the interval for the MV check has been changed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_safety_ae64e96e13c1aac7847181a2fec2ac7e9}{interval\+Temp\+Change\+Changed}} (int interval)
+\begin{DoxyCompactList}\small\item\em Signal emitted when the interval for the temperature change check has been changed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_safety_a964883572fc800b66cb923dd2cb96d04}{escape\+Temp\+Check\+Change}} (int sign)
+\begin{DoxyCompactList}\small\item\em Signal emitted when the temperature change check is cancelled. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_safety_a20e0e101b801021be41c7955f2b996c9}{start\+Temp\+Change\+Check}} (int checknumber)
+\begin{DoxyCompactList}\small\item\em Signal emitted when the temperature change check is started. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_safety_a8c539e883ac2834e91284928debe8f3f}{log\+Msg}} (QString msg)
+\begin{DoxyCompactList}\small\item\em Signal emitted when a log message is generated. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_safety_a0da0a6d963fc605602da374890f888fe}{log\+Msg\+With\+Color}} (QString msg, QColor color)
+\begin{DoxyCompactList}\small\item\em Signal emitted when a log message with a specific color is generated. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_safety_a791c22257e7aeedc2716512c791a78a7}\label{class_safety_a791c22257e7aeedc2716512c791a78a7}} 
-{\bfseries Safety} (\mbox{\hyperlink{class_data_summary}{Data\+Summary}} $\ast$data)
-\item 
-\mbox{\Hypertarget{class_safety_a4bdcf2894bbf8371976d0aa2fc54eb62}\label{class_safety_a4bdcf2894bbf8371976d0aa2fc54eb62}} 
-double {\bfseries get\+Temperature} () const
-\item 
-\mbox{\Hypertarget{class_safety_a9e0a28a5a469e3969ae66c7da689c989}\label{class_safety_a9e0a28a5a469e3969ae66c7da689c989}} 
-double {\bfseries get\+Permited\+Max\+Temp} () const
-\item 
-\mbox{\Hypertarget{class_safety_af6e3a97192da2fa4aa3c2516db8e45c8}\label{class_safety_af6e3a97192da2fa4aa3c2516db8e45c8}} 
-double {\bfseries get\+MVUpper} () const
-\item 
-\mbox{\Hypertarget{class_safety_ac39567888f0eb955815e47aca1601c4d}\label{class_safety_ac39567888f0eb955815e47aca1601c4d}} 
-double {\bfseries get\+MV} () const
-\item 
-\mbox{\Hypertarget{class_safety_ae86b5061d236a573adce2fc0109550dc}\label{class_safety_ae86b5061d236a573adce2fc0109550dc}} 
-int {\bfseries get\+Number\+Of\+Check} () const
-\item 
-\mbox{\Hypertarget{class_safety_ad90d9be24dca34c44d1eea2ecbdbbf48}\label{class_safety_ad90d9be24dca34c44d1eea2ecbdbbf48}} 
-int {\bfseries get\+Check\+Number} () const
-\item 
-\mbox{\Hypertarget{class_safety_af6a7947989bc693c3cf7f8acc5f67279}\label{class_safety_af6a7947989bc693c3cf7f8acc5f67279}} 
-int {\bfseries get\+Interval\+MVCheck} () const
-\item 
-\mbox{\Hypertarget{class_safety_a8cd49e7eac6813e292b0cd1d4d9cc2e1}\label{class_safety_a8cd49e7eac6813e292b0cd1d4d9cc2e1}} 
-int {\bfseries get\+Interval\+Temp\+Change} () const
-\item 
-\mbox{\Hypertarget{class_safety_ac53494e52725da7aeaba0d5b6fb8cdea}\label{class_safety_ac53494e52725da7aeaba0d5b6fb8cdea}} 
-double {\bfseries get\+Temp\+Change\+Threshold} () const
-\item 
-\mbox{\Hypertarget{class_safety_a172eced92a219b273824b1eee367bfe0}\label{class_safety_a172eced92a219b273824b1eee367bfe0}} 
-double {\bfseries get\+Ignore\+Upper} () const
-\item 
-\mbox{\Hypertarget{class_safety_a1989e307fb76f5984b7c1e44bd98dd17}\label{class_safety_a1989e307fb76f5984b7c1e44bd98dd17}} 
-double {\bfseries get\+Ignore\+Lower} () const
-\item 
-\mbox{\Hypertarget{class_safety_aa8fddc616366b49ab915c491a10c1ffc}\label{class_safety_aa8fddc616366b49ab915c491a10c1ffc}} 
-QPair$<$ double, double $>$ {\bfseries get\+Ignore\+Temp\+Range} () const
-\item 
-\mbox{\Hypertarget{class_safety_a84df553c01a40ffb5e349529c7089cc2}\label{class_safety_a84df553c01a40ffb5e349529c7089cc2}} 
-QTimer $\ast$ {\bfseries get\+Timer\+MVCheck} () const
-\item 
-\mbox{\Hypertarget{class_safety_a48ae97417ba6e8f02cd254926cc1b97d}\label{class_safety_a48ae97417ba6e8f02cd254926cc1b97d}} 
-QTimer $\ast$ {\bfseries get\+Timer\+Temp\+Change\+Check} () const
-\item 
-\mbox{\Hypertarget{class_safety_ab37fe3475582146ac4bf2fff55e7ba6e}\label{class_safety_ab37fe3475582146ac4bf2fff55e7ba6e}} 
-void {\bfseries set\+Permited\+Max\+Temp} (double maxtemp)
-\item 
-\mbox{\Hypertarget{class_safety_a3cb80658371044047a231a35dfb90091}\label{class_safety_a3cb80658371044047a231a35dfb90091}} 
-void {\bfseries set\+MVUpper} (double MVupper)
-\item 
-\mbox{\Hypertarget{class_safety_ac2a6bcb91b827b2c12e28459e50e621f}\label{class_safety_ac2a6bcb91b827b2c12e28459e50e621f}} 
-void {\bfseries set\+MV} (double MV)
-\item 
-\mbox{\Hypertarget{class_safety_af4030955eac78938fe9e7079a983b776}\label{class_safety_af4030955eac78938fe9e7079a983b776}} 
-void {\bfseries set\+Number\+Of\+Check} (int number)
-\item 
-\mbox{\Hypertarget{class_safety_a76548edd3324e5b0aed22cadcbae96ba}\label{class_safety_a76548edd3324e5b0aed22cadcbae96ba}} 
-void {\bfseries set\+Check\+Number} (int number)
-\item 
-\mbox{\Hypertarget{class_safety_a8f91ae577d2367c6d774cf008c36a313}\label{class_safety_a8f91ae577d2367c6d774cf008c36a313}} 
-void {\bfseries set\+Temp\+Change\+Threshold} (double temp)
-\item 
-\mbox{\Hypertarget{class_safety_a1f201f12cdedadc0c3ed9038e2bfe645}\label{class_safety_a1f201f12cdedadc0c3ed9038e2bfe645}} 
-void {\bfseries set\+Ignore\+Upper} (double upper)
-\item 
-\mbox{\Hypertarget{class_safety_a7eb8e1541a047b509b266fafd1e57743}\label{class_safety_a7eb8e1541a047b509b266fafd1e57743}} 
-void {\bfseries set\+Ignore\+Lower} (double lower)
-\item 
-\mbox{\Hypertarget{class_safety_aeb2c6ae389531f1dd34cff755fd1d5c6}\label{class_safety_aeb2c6ae389531f1dd34cff755fd1d5c6}} 
-void {\bfseries set\+Ignore\+Temp\+Range} (double temp, double lower, double upper)
-\item 
+\mbox{\hyperlink{class_safety_a791c22257e7aeedc2716512c791a78a7}{Safety}} (\mbox{\hyperlink{class_data_summary}{Data\+Summary}} $\ast$data)
+\begin{DoxyCompactList}\small\item\em Constructs a new \mbox{\hyperlink{class_safety}{Safety}} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_safety_aebc24a8421a09083fb170f25a0c8aa36}\label{class_safety_aebc24a8421a09083fb170f25a0c8aa36}} 
+{\bfseries $\sim$\+Safety} ()
+\begin{DoxyCompactList}\small\item\em Destroys the \mbox{\hyperlink{class_safety}{Safety}} object. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_safety_a4bdcf2894bbf8371976d0aa2fc54eb62}{get\+Temperature}} () const
+\begin{DoxyCompactList}\small\item\em Getter function for the current temperature. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_safety_a9e0a28a5a469e3969ae66c7da689c989}{get\+Permited\+Max\+Temp}} () const
+\begin{DoxyCompactList}\small\item\em Getter function for the permitted maximum temperature. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_safety_a251ce1abade7a9d37b8794c817d32450}{get\+MVLower}} () const
+\begin{DoxyCompactList}\small\item\em Getter function for the lower bound of the manipulated variable. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_safety_af6e3a97192da2fa4aa3c2516db8e45c8}{get\+MVUpper}} () const
+\begin{DoxyCompactList}\small\item\em Getter function for the upper bound of the manipulated variable. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_safety_ac39567888f0eb955815e47aca1601c4d}{get\+MV}} () const
+\begin{DoxyCompactList}\small\item\em Getter function for the current value of the manipulated variable. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_safety_ae86b5061d236a573adce2fc0109550dc}{get\+Number\+Of\+Check}} () const
+\begin{DoxyCompactList}\small\item\em Getter function for the number of temperature checks. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_safety_ad90d9be24dca34c44d1eea2ecbdbbf48}{get\+Check\+Number}} () const
+\begin{DoxyCompactList}\small\item\em Getter function for the current check number. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_safety_af6a7947989bc693c3cf7f8acc5f67279}{get\+Interval\+MVCheck}} () const
+\begin{DoxyCompactList}\small\item\em Getter function for the interval of the manipulated variable check. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_safety_a8cd49e7eac6813e292b0cd1d4d9cc2e1}{get\+Interval\+Temp\+Change}} () const
+\begin{DoxyCompactList}\small\item\em Getter function for the interval of the temperature change check. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_safety_a8cd49e7eac6813e292b0cd1d4d9cc2e1}{get\+Interval\+Temp\+Change}} () const
+\begin{DoxyCompactList}\small\item\em Getter function for the interval of the temperature change check. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_safety_ac53494e52725da7aeaba0d5b6fb8cdea}{get\+Temp\+Change\+Threshold}} () const
+\begin{DoxyCompactList}\small\item\em Getter function for the threshold of temperature change. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_safety_a172eced92a219b273824b1eee367bfe0}{get\+Ignore\+Upper}} () const
+\begin{DoxyCompactList}\small\item\em Getter function for the upper bound of the ignored temperature range. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_safety_a1989e307fb76f5984b7c1e44bd98dd17}{get\+Ignore\+Lower}} () const
+\begin{DoxyCompactList}\small\item\em Getter function for the lower bound of the ignored temperature range. \end{DoxyCompactList}\item 
+QPair$<$ double, double $>$ \mbox{\hyperlink{class_safety_aa8fddc616366b49ab915c491a10c1ffc}{get\+Ignore\+Temp\+Range}} () const
+\begin{DoxyCompactList}\small\item\em Getter function for the ignored temperature range. \end{DoxyCompactList}\item 
+QTimer $\ast$ \mbox{\hyperlink{class_safety_a84df553c01a40ffb5e349529c7089cc2}{get\+Timer\+MVCheck}} () const
+\begin{DoxyCompactList}\small\item\em Getter function for the timer object used for the manipulated variable check. \end{DoxyCompactList}\item 
+QTimer $\ast$ \mbox{\hyperlink{class_safety_a48ae97417ba6e8f02cd254926cc1b97d}{get\+Timer\+Temp\+Change\+Check}} () const
+\begin{DoxyCompactList}\small\item\em Getter function for the timer object used for the temperature change check. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_safety_ab37fe3475582146ac4bf2fff55e7ba6e}{set\+Permited\+Max\+Temp}} (double maxtemp)
+\begin{DoxyCompactList}\small\item\em Sets the maximum permitted temperature. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_safety_a3cb80658371044047a231a35dfb90091}{set\+MVUpper}} (double MVupper)
+\begin{DoxyCompactList}\small\item\em Sets the upper limit of the manipulated variable (MV). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_safety_ac2a6bcb91b827b2c12e28459e50e621f}{set\+MV}} (double MV)
+\begin{DoxyCompactList}\small\item\em Sets the value of the manipulated variable (MV). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_safety_af4030955eac78938fe9e7079a983b776}{set\+Number\+Of\+Check}} (int number)
+\begin{DoxyCompactList}\small\item\em Sets the number of check for the safety condition. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_safety_a76548edd3324e5b0aed22cadcbae96ba}{set\+Check\+Number}} (int number)
+\begin{DoxyCompactList}\small\item\em Sets the check number. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_safety_a8f91ae577d2367c6d774cf008c36a313}{set\+Temp\+Change\+Threshold}} (double temp)
+\begin{DoxyCompactList}\small\item\em Sets the threshold of temperature change. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_safety_a1f201f12cdedadc0c3ed9038e2bfe645}{set\+Ignore\+Upper}} (double upper)
+\begin{DoxyCompactList}\small\item\em Sets the upper limit for ignoring temperature changes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_safety_a7eb8e1541a047b509b266fafd1e57743}{set\+Ignore\+Lower}} (double lower)
+\begin{DoxyCompactList}\small\item\em Sets the lower limit for ignoring temperature changes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_safety_aeb2c6ae389531f1dd34cff755fd1d5c6}{set\+Ignore\+Temp\+Range}} (double temp, double lower, double upper)
+\begin{DoxyCompactList}\small\item\em Sets the temperature range for ignoring temperature changes. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_safety_ac99b54db1735ae9169c56d3b66fbff07}{check\+Temp\+Change}} ()
-\begin{DoxyCompactList}\small\item\em Check if the temperature has changed more than the threshold value. This function checks if the temperature has changed more than the threshold value during the specified time interval. If the temperature has changed less than the threshold value, it emits a danger signal and stops the temperature change check timer and MV check timer. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_safety_ae0a24b93c6d273c08b699c12b90809c6}\label{class_safety_ae0a24b93c6d273c08b699c12b90809c6}} 
-void {\bfseries set\+Enable\+Temp\+Change\+Range} (bool enable)
-\item 
-\mbox{\Hypertarget{class_safety_afa5bda2df137f619ebc1bb6f21356cba}\label{class_safety_afa5bda2df137f619ebc1bb6f21356cba}} 
-void {\bfseries set\+Interval\+MVCheck} (int interval)
-\item 
-\mbox{\Hypertarget{class_safety_a575c792b70681d663013841c8d8a932b}\label{class_safety_a575c792b70681d663013841c8d8a932b}} 
-void {\bfseries set\+Interval\+Temp\+Change} (int inteerval)
-\item 
+\begin{DoxyCompactList}\small\item\em Checks whether the temperature has changed above the threshold value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_safety_ae0a24b93c6d273c08b699c12b90809c6}{set\+Enable\+Temp\+Change\+Range}} (bool enable)
+\begin{DoxyCompactList}\small\item\em Enables or disables the temperature change range. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_safety_afa5bda2df137f619ebc1bb6f21356cba}{set\+Interval\+MVCheck}} (int interval)
+\begin{DoxyCompactList}\small\item\em Sets the interval for checking the manipulated variable (MV). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_safety_a575c792b70681d663013841c8d8a932b}{set\+Interval\+Temp\+Change}} (int inteerval)
+\begin{DoxyCompactList}\small\item\em Sets the interval for checking the temperature change. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_safety_a049753e31587a4eb8bfab9d1bfc518a4}\label{class_safety_a049753e31587a4eb8bfab9d1bfc518a4}} 
 void {\bfseries start} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Starts the safety monitoring. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_safety_a4d72c7d6a94e6b4772c1e227436de7ff}\label{class_safety_a4d72c7d6a94e6b4772c1e227436de7ff}} 
 void {\bfseries stop} ()
-\item 
-\mbox{\Hypertarget{class_safety_ac571e4f2e4881d8c3ee328e06781c9fd}\label{class_safety_ac571e4f2e4881d8c3ee328e06781c9fd}} 
-bool {\bfseries is\+Timer\+MVCheck\+Running} () const
-\item 
-\mbox{\Hypertarget{class_safety_a641189c819e5a7e5767f039a28208628}\label{class_safety_a641189c819e5a7e5767f039a28208628}} 
-bool {\bfseries is\+Timer\+Temp\+Change\+Check\+Running} () const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Stops the safety monitoring. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_safety_ac571e4f2e4881d8c3ee328e06781c9fd}{is\+Timer\+MVCheck\+Running}} () const
+\begin{DoxyCompactList}\small\item\em Checks whether the timer for checking the manipulated variable (MV) is running. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_safety_a641189c819e5a7e5767f039a28208628}{is\+Timer\+Temp\+Change\+Check\+Running}} () const
+\begin{DoxyCompactList}\small\item\em Checks whether the timer for checking the temperature change is running. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
@@ -166,7 +147,43 @@ int {\bfseries interval\+Temp\+Change}
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_the}{The}} \mbox{\hyperlink{class_safety}{Safety}} class ensures the safe operation of the system. This class monitors the temperature and other parameters of the system to ensure that they remain within safe limits. If any parameter goes outside its safe range, the \mbox{\hyperlink{class_safety}{Safety}} class takes appropriate action to bring it back within range. \mbox{\hyperlink{class_the}{The}} class also provides a number of properties that can be used to configure its behavior. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_safety_a791c22257e7aeedc2716512c791a78a7}\label{class_safety_a791c22257e7aeedc2716512c791a78a7}} 
+\index{Safety@{Safety}!Safety@{Safety}}
+\index{Safety@{Safety}!Safety@{Safety}}
+\doxysubsubsection{\texorpdfstring{Safety()}{Safety()}}
+{\footnotesize\ttfamily Safety\+::\+Safety (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_data_summary}{Data\+Summary}} $\ast$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructs a new \mbox{\hyperlink{class_safety}{Safety}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & A pointer to the \mbox{\hyperlink{class_data_summary}{Data\+Summary}} object that contains the system\textquotesingle{}s data.\\
+\hline
+\end{DoxyParams}
+This constructor initializes a new \mbox{\hyperlink{class_safety}{Safety}} object with the given \mbox{\hyperlink{class_data_summary}{Data\+Summary}} object pointer. It also sets up the internal timers and connects the relevant signals and slots. 
+
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_safety_a07fc3535d87e388d71daab2c1be34fe1}\label{class_safety_a07fc3535d87e388d71daab2c1be34fe1}} 
+\index{Safety@{Safety}!checkNumberChanged@{checkNumberChanged}}
+\index{checkNumberChanged@{checkNumberChanged}!Safety@{Safety}}
+\doxysubsubsection{\texorpdfstring{checkNumberChanged}{checkNumberChanged}}
+{\footnotesize\ttfamily void Safety\+::check\+Number\+Changed (\begin{DoxyParamCaption}\item[{int}]{number }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Signal emitted when the check number has been changed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em number} & \mbox{\hyperlink{class_the}{The}} new check number. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_safety_ac99b54db1735ae9169c56d3b66fbff07}\label{class_safety_ac99b54db1735ae9169c56d3b66fbff07}} 
 \index{Safety@{Safety}!checkTempChange@{checkTempChange}}
 \index{checkTempChange@{checkTempChange}!Safety@{Safety}}
@@ -175,14 +192,601 @@ int {\bfseries interval\+Temp\+Change}
 
 
 
-Check if the temperature has changed more than the threshold value. This function checks if the temperature has changed more than the threshold value during the specified time interval. If the temperature has changed less than the threshold value, it emits a danger signal and stops the temperature change check timer and MV check timer. 
+Checks whether the temperature has changed above the threshold value. 
+
+Check if the temperature has changed more than the threshold value. This function checks if the temperature has changed more than the threshold value during the specified time interval. If the temperature has changed less than the threshold value, it emits a danger signal and stops the temperature change check timer and MV check timer.
 
 \begin{DoxyNote}{Note}
 This function must be called periodically by a QTimer object.
 \end{DoxyNote}
-This function periodically checks if the temperature has changed more than the threshold value during the specified time interval. If the temperature has changed less than the threshold value, it emits a danger signal and stops the temperature change check timer and MV check timer. \mbox{\hyperlink{class_the}{The}} function starts by acquiring the current temperature and checking if it\textquotesingle{}s within the ignore range. If the temperature is within the ignore range, the function clears variables, stops the timer, and emits the escape\+Temp\+Check\+Change signal with the argument 1, indicating that the temperature change check has been escaped. If the temperature is outside the ignore range, the function checks if the conditions for stopping the temperature change check have been met. \mbox{\hyperlink{class_the}{The}} conditions are\+: if the check number is equal to or greater than the number of checks minus one, or if the MV is not in the upper limit, or if the temperature is within the ignore range. If any of these conditions is true, the function clears variables, stops the timer, and emits the escape\+Temp\+Check\+Change signal with the argument 0 if the MV is not in the upper limit, or 1 if the MV is in the upper limit. If none of the stopping conditions is met, the function starts the check and pushes temperature data into the v\+Temp\+Change\+Data\+\_\+ vector. \mbox{\hyperlink{class_the}{The}} function sets the timer and increments the check number. If the check number is less than the number of checks, the function returns. When the check is completed, the function calculates the differences between adjacent temperature values, calculates the moving average, and checks if it\textquotesingle{}s below the threshold. If it\textquotesingle{}s below the threshold, the function emits the danger\+Signal with the argument 1, indicating a dangerous situation. \mbox{\hyperlink{class_the}{The}} function then clears variables, stops the timer, and resets the check number. 
+This function periodically checks if the temperature has changed more than the threshold value during the specified time interval. If the temperature has changed less than the threshold value, it emits a danger signal and stops the temperature change check timer and MV check timer. \mbox{\hyperlink{class_the}{The}} function starts by acquiring the current temperature and checking if it\textquotesingle{}s within the ignore range. If the temperature is within the ignore range, the function clears variables, stops the timer, and emits the escape\+Temp\+Check\+Change signal with the argument 1, indicating that the temperature change check has been escaped. If the temperature is outside the ignore range, the function checks if the conditions for stopping the temperature change check have been met. \mbox{\hyperlink{class_the}{The}} conditions are\+: if the check number is equal to or greater than the number of checks minus one, or if the MV is not in the upper limit, or if the temperature is within the ignore range. If any of these conditions is true, the function clears variables, stops the timer, and emits the escape\+Temp\+Check\+Change signal with the argument 0 if the MV is not in the upper limit, or 1 if the MV is in the upper limit. If none of the stopping conditions is met, the function starts the check and pushes temperature data into the v\+Temp\+Change\+Data\+\_\+ vector. \mbox{\hyperlink{class_the}{The}} function sets the timer and increments the check number. If the check number is less than the number of checks, the function returns. When the check is completed, the function calculates the differences between adjacent temperature values, calculates the moving average, and checks if it\textquotesingle{}s below the threshold. If it\textquotesingle{}s below the threshold, the function emits the danger\+Signal with the argument 1, indicating a dangerous situation. \mbox{\hyperlink{class_the}{The}} function then clears variables, stops the timer, and resets the check number. \mbox{\Hypertarget{class_safety_a5f638c6cd7a9622dfe70d6d02670f17f}\label{class_safety_a5f638c6cd7a9622dfe70d6d02670f17f}} 
+\index{Safety@{Safety}!dangerSignal@{dangerSignal}}
+\index{dangerSignal@{dangerSignal}!Safety@{Safety}}
+\doxysubsubsection{\texorpdfstring{dangerSignal}{dangerSignal}}
+{\footnotesize\ttfamily void Safety\+::danger\+Signal (\begin{DoxyParamCaption}\item[{int}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Signal emitted when a danger is detected. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & \mbox{\hyperlink{class_the}{The}} type of danger detected. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_safety_a964883572fc800b66cb923dd2cb96d04}\label{class_safety_a964883572fc800b66cb923dd2cb96d04}} 
+\index{Safety@{Safety}!escapeTempCheckChange@{escapeTempCheckChange}}
+\index{escapeTempCheckChange@{escapeTempCheckChange}!Safety@{Safety}}
+\doxysubsubsection{\texorpdfstring{escapeTempCheckChange}{escapeTempCheckChange}}
+{\footnotesize\ttfamily void Safety\+::escape\+Temp\+Check\+Change (\begin{DoxyParamCaption}\item[{int}]{sign }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Signal emitted when the temperature change check is cancelled. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sign} & \mbox{\hyperlink{class_the}{The}} signal that cancelled the temperature change check. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_safety_ad90d9be24dca34c44d1eea2ecbdbbf48}\label{class_safety_ad90d9be24dca34c44d1eea2ecbdbbf48}} 
+\index{Safety@{Safety}!getCheckNumber@{getCheckNumber}}
+\index{getCheckNumber@{getCheckNumber}!Safety@{Safety}}
+\doxysubsubsection{\texorpdfstring{getCheckNumber()}{getCheckNumber()}}
+{\footnotesize\ttfamily int Safety\+::get\+Check\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter function for the current check number. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_the}{The}} current check number. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_safety_a1989e307fb76f5984b7c1e44bd98dd17}\label{class_safety_a1989e307fb76f5984b7c1e44bd98dd17}} 
+\index{Safety@{Safety}!getIgnoreLower@{getIgnoreLower}}
+\index{getIgnoreLower@{getIgnoreLower}!Safety@{Safety}}
+\doxysubsubsection{\texorpdfstring{getIgnoreLower()}{getIgnoreLower()}}
+{\footnotesize\ttfamily double Safety\+::get\+Ignore\+Lower (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter function for the lower bound of the ignored temperature range. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_the}{The}} lower bound of the ignored temperature range. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_safety_aa8fddc616366b49ab915c491a10c1ffc}\label{class_safety_aa8fddc616366b49ab915c491a10c1ffc}} 
+\index{Safety@{Safety}!getIgnoreTempRange@{getIgnoreTempRange}}
+\index{getIgnoreTempRange@{getIgnoreTempRange}!Safety@{Safety}}
+\doxysubsubsection{\texorpdfstring{getIgnoreTempRange()}{getIgnoreTempRange()}}
+{\footnotesize\ttfamily QPair$<$ double, double $>$ Safety\+::get\+Ignore\+Temp\+Range (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter function for the ignored temperature range. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_the}{The}} ignored temperature range. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_safety_a172eced92a219b273824b1eee367bfe0}\label{class_safety_a172eced92a219b273824b1eee367bfe0}} 
+\index{Safety@{Safety}!getIgnoreUpper@{getIgnoreUpper}}
+\index{getIgnoreUpper@{getIgnoreUpper}!Safety@{Safety}}
+\doxysubsubsection{\texorpdfstring{getIgnoreUpper()}{getIgnoreUpper()}}
+{\footnotesize\ttfamily double Safety\+::get\+Ignore\+Upper (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter function for the upper bound of the ignored temperature range. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_the}{The}} upper bound of the ignored temperature range. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_safety_af6a7947989bc693c3cf7f8acc5f67279}\label{class_safety_af6a7947989bc693c3cf7f8acc5f67279}} 
+\index{Safety@{Safety}!getIntervalMVCheck@{getIntervalMVCheck}}
+\index{getIntervalMVCheck@{getIntervalMVCheck}!Safety@{Safety}}
+\doxysubsubsection{\texorpdfstring{getIntervalMVCheck()}{getIntervalMVCheck()}}
+{\footnotesize\ttfamily int Safety\+::get\+Interval\+MVCheck (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter function for the interval of the manipulated variable check. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_the}{The}} interval of the manipulated variable check. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_safety_a8cd49e7eac6813e292b0cd1d4d9cc2e1}\label{class_safety_a8cd49e7eac6813e292b0cd1d4d9cc2e1}} 
+\index{Safety@{Safety}!getIntervalTempChange@{getIntervalTempChange}}
+\index{getIntervalTempChange@{getIntervalTempChange}!Safety@{Safety}}
+\doxysubsubsection{\texorpdfstring{getIntervalTempChange()}{getIntervalTempChange()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int Safety\+::get\+Interval\+Temp\+Change (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter function for the interval of the temperature change check. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_the}{The}} interval of the temperature change check. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_safety_a8cd49e7eac6813e292b0cd1d4d9cc2e1}\label{class_safety_a8cd49e7eac6813e292b0cd1d4d9cc2e1}} 
+\index{Safety@{Safety}!getIntervalTempChange@{getIntervalTempChange}}
+\index{getIntervalTempChange@{getIntervalTempChange}!Safety@{Safety}}
+\doxysubsubsection{\texorpdfstring{getIntervalTempChange()}{getIntervalTempChange()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int Safety\+::get\+Interval\+Temp\+Change (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter function for the interval of the temperature change check. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_the}{The}} interval of the temperature change check 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_safety_ac39567888f0eb955815e47aca1601c4d}\label{class_safety_ac39567888f0eb955815e47aca1601c4d}} 
+\index{Safety@{Safety}!getMV@{getMV}}
+\index{getMV@{getMV}!Safety@{Safety}}
+\doxysubsubsection{\texorpdfstring{getMV()}{getMV()}}
+{\footnotesize\ttfamily double Safety\+::get\+MV (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter function for the current value of the manipulated variable. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_the}{The}} current value of the manipulated variable. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_safety_a251ce1abade7a9d37b8794c817d32450}\label{class_safety_a251ce1abade7a9d37b8794c817d32450}} 
+\index{Safety@{Safety}!getMVLower@{getMVLower}}
+\index{getMVLower@{getMVLower}!Safety@{Safety}}
+\doxysubsubsection{\texorpdfstring{getMVLower()}{getMVLower()}}
+{\footnotesize\ttfamily double Safety\+::get\+MVLower (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter function for the lower bound of the manipulated variable. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_the}{The}} upper bound of the manipulated variable. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_safety_af6e3a97192da2fa4aa3c2516db8e45c8}\label{class_safety_af6e3a97192da2fa4aa3c2516db8e45c8}} 
+\index{Safety@{Safety}!getMVUpper@{getMVUpper}}
+\index{getMVUpper@{getMVUpper}!Safety@{Safety}}
+\doxysubsubsection{\texorpdfstring{getMVUpper()}{getMVUpper()}}
+{\footnotesize\ttfamily double Safety\+::get\+MVUpper (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter function for the upper bound of the manipulated variable. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_the}{The}} upper bound of the manipulated variable. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_safety_ae86b5061d236a573adce2fc0109550dc}\label{class_safety_ae86b5061d236a573adce2fc0109550dc}} 
+\index{Safety@{Safety}!getNumberOfCheck@{getNumberOfCheck}}
+\index{getNumberOfCheck@{getNumberOfCheck}!Safety@{Safety}}
+\doxysubsubsection{\texorpdfstring{getNumberOfCheck()}{getNumberOfCheck()}}
+{\footnotesize\ttfamily int Safety\+::get\+Number\+Of\+Check (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter function for the number of temperature checks. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_the}{The}} number of temperature checks. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_safety_a9e0a28a5a469e3969ae66c7da689c989}\label{class_safety_a9e0a28a5a469e3969ae66c7da689c989}} 
+\index{Safety@{Safety}!getPermitedMaxTemp@{getPermitedMaxTemp}}
+\index{getPermitedMaxTemp@{getPermitedMaxTemp}!Safety@{Safety}}
+\doxysubsubsection{\texorpdfstring{getPermitedMaxTemp()}{getPermitedMaxTemp()}}
+{\footnotesize\ttfamily double Safety\+::get\+Permited\+Max\+Temp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter function for the permitted maximum temperature. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_the}{The}} permitted maximum temperature. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_safety_ac53494e52725da7aeaba0d5b6fb8cdea}\label{class_safety_ac53494e52725da7aeaba0d5b6fb8cdea}} 
+\index{Safety@{Safety}!getTempChangeThreshold@{getTempChangeThreshold}}
+\index{getTempChangeThreshold@{getTempChangeThreshold}!Safety@{Safety}}
+\doxysubsubsection{\texorpdfstring{getTempChangeThreshold()}{getTempChangeThreshold()}}
+{\footnotesize\ttfamily double Safety\+::get\+Temp\+Change\+Threshold (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter function for the threshold of temperature change. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_the}{The}} threshold of temperature change. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_safety_a4bdcf2894bbf8371976d0aa2fc54eb62}\label{class_safety_a4bdcf2894bbf8371976d0aa2fc54eb62}} 
+\index{Safety@{Safety}!getTemperature@{getTemperature}}
+\index{getTemperature@{getTemperature}!Safety@{Safety}}
+\doxysubsubsection{\texorpdfstring{getTemperature()}{getTemperature()}}
+{\footnotesize\ttfamily double Safety\+::get\+Temperature (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter function for the current temperature. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_the}{The}} current temperature. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_safety_a84df553c01a40ffb5e349529c7089cc2}\label{class_safety_a84df553c01a40ffb5e349529c7089cc2}} 
+\index{Safety@{Safety}!getTimerMVCheck@{getTimerMVCheck}}
+\index{getTimerMVCheck@{getTimerMVCheck}!Safety@{Safety}}
+\doxysubsubsection{\texorpdfstring{getTimerMVCheck()}{getTimerMVCheck()}}
+{\footnotesize\ttfamily QTimer $\ast$ Safety\+::get\+Timer\+MVCheck (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter function for the timer object used for the manipulated variable check. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_the}{The}} timer object used for the manipulated variable check. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_safety_a48ae97417ba6e8f02cd254926cc1b97d}\label{class_safety_a48ae97417ba6e8f02cd254926cc1b97d}} 
+\index{Safety@{Safety}!getTimerTempChangeCheck@{getTimerTempChangeCheck}}
+\index{getTimerTempChangeCheck@{getTimerTempChangeCheck}!Safety@{Safety}}
+\doxysubsubsection{\texorpdfstring{getTimerTempChangeCheck()}{getTimerTempChangeCheck()}}
+{\footnotesize\ttfamily QTimer $\ast$ Safety\+::get\+Timer\+Temp\+Change\+Check (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter function for the timer object used for the temperature change check. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_the}{The}} timer object used for the temperature change check. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_safety_abe479d597616613bf2a4487c3f19cc49}\label{class_safety_abe479d597616613bf2a4487c3f19cc49}} 
+\index{Safety@{Safety}!intervalMVCheckChanged@{intervalMVCheckChanged}}
+\index{intervalMVCheckChanged@{intervalMVCheckChanged}!Safety@{Safety}}
+\doxysubsubsection{\texorpdfstring{intervalMVCheckChanged}{intervalMVCheckChanged}}
+{\footnotesize\ttfamily void Safety\+::interval\+MVCheck\+Changed (\begin{DoxyParamCaption}\item[{int}]{interval }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Signal emitted when the interval for the MV check has been changed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em interval} & \mbox{\hyperlink{class_the}{The}} new interval for the MV check. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_safety_ae64e96e13c1aac7847181a2fec2ac7e9}\label{class_safety_ae64e96e13c1aac7847181a2fec2ac7e9}} 
+\index{Safety@{Safety}!intervalTempChangeChanged@{intervalTempChangeChanged}}
+\index{intervalTempChangeChanged@{intervalTempChangeChanged}!Safety@{Safety}}
+\doxysubsubsection{\texorpdfstring{intervalTempChangeChanged}{intervalTempChangeChanged}}
+{\footnotesize\ttfamily void Safety\+::interval\+Temp\+Change\+Changed (\begin{DoxyParamCaption}\item[{int}]{interval }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Signal emitted when the interval for the temperature change check has been changed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em interval} & \mbox{\hyperlink{class_the}{The}} new interval for the temperature change check. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_safety_ac571e4f2e4881d8c3ee328e06781c9fd}\label{class_safety_ac571e4f2e4881d8c3ee328e06781c9fd}} 
+\index{Safety@{Safety}!isTimerMVCheckRunning@{isTimerMVCheckRunning}}
+\index{isTimerMVCheckRunning@{isTimerMVCheckRunning}!Safety@{Safety}}
+\doxysubsubsection{\texorpdfstring{isTimerMVCheckRunning()}{isTimerMVCheckRunning()}}
+{\footnotesize\ttfamily bool Safety\+::is\+Timer\+MVCheck\+Running (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Checks whether the timer for checking the manipulated variable (MV) is running. 
+
+\begin{DoxyReturn}{Returns}
+Boolean indicating whether the timer for checking the manipulated variable (MV) is running. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_safety_a641189c819e5a7e5767f039a28208628}\label{class_safety_a641189c819e5a7e5767f039a28208628}} 
+\index{Safety@{Safety}!isTimerTempChangeCheckRunning@{isTimerTempChangeCheckRunning}}
+\index{isTimerTempChangeCheckRunning@{isTimerTempChangeCheckRunning}!Safety@{Safety}}
+\doxysubsubsection{\texorpdfstring{isTimerTempChangeCheckRunning()}{isTimerTempChangeCheckRunning()}}
+{\footnotesize\ttfamily bool Safety\+::is\+Timer\+Temp\+Change\+Check\+Running (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Checks whether the timer for checking the temperature change is running. 
+
+\begin{DoxyReturn}{Returns}
+Boolean indicating whether the timer for checking the temperature change is running. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_safety_a8c539e883ac2834e91284928debe8f3f}\label{class_safety_a8c539e883ac2834e91284928debe8f3f}} 
+\index{Safety@{Safety}!logMsg@{logMsg}}
+\index{logMsg@{logMsg}!Safety@{Safety}}
+\doxysubsubsection{\texorpdfstring{logMsg}{logMsg}}
+{\footnotesize\ttfamily void Safety\+::log\+Msg (\begin{DoxyParamCaption}\item[{QString}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Signal emitted when a log message is generated. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & \mbox{\hyperlink{class_the}{The}} log message. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_safety_a0da0a6d963fc605602da374890f888fe}\label{class_safety_a0da0a6d963fc605602da374890f888fe}} 
+\index{Safety@{Safety}!logMsgWithColor@{logMsgWithColor}}
+\index{logMsgWithColor@{logMsgWithColor}!Safety@{Safety}}
+\doxysubsubsection{\texorpdfstring{logMsgWithColor}{logMsgWithColor}}
+{\footnotesize\ttfamily void Safety\+::log\+Msg\+With\+Color (\begin{DoxyParamCaption}\item[{QString}]{msg,  }\item[{QColor}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Signal emitted when a log message with a specific color is generated. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & \mbox{\hyperlink{class_the}{The}} log message. \\
+\hline
+{\em color} & \mbox{\hyperlink{class_the}{The}} color of the log message. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_safety_ac2e863d63b98f16f996d5ab80af0f6e7}\label{class_safety_ac2e863d63b98f16f996d5ab80af0f6e7}} 
+\index{Safety@{Safety}!MVUpperChanged@{MVUpperChanged}}
+\index{MVUpperChanged@{MVUpperChanged}!Safety@{Safety}}
+\doxysubsubsection{\texorpdfstring{MVUpperChanged}{MVUpperChanged}}
+{\footnotesize\ttfamily void Safety\+::\+MVUpper\+Changed (\begin{DoxyParamCaption}\item[{double}]{MVupper }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Signal emitted when the MV upper limit has been changed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em MVupper} & \mbox{\hyperlink{class_the}{The}} new MV upper limit. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_safety_a1fc8b42cfd9f0137daca0b78a7e6a967}\label{class_safety_a1fc8b42cfd9f0137daca0b78a7e6a967}} 
+\index{Safety@{Safety}!NumberOfCheckChanged@{NumberOfCheckChanged}}
+\index{NumberOfCheckChanged@{NumberOfCheckChanged}!Safety@{Safety}}
+\doxysubsubsection{\texorpdfstring{NumberOfCheckChanged}{NumberOfCheckChanged}}
+{\footnotesize\ttfamily void Safety\+::\+Number\+Of\+Check\+Changed (\begin{DoxyParamCaption}\item[{int}]{number }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Signal emitted when the number of checks has been changed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em number} & \mbox{\hyperlink{class_the}{The}} new number of checks. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_safety_a150494b0f4dbcfc2d59244a380a3a37c}\label{class_safety_a150494b0f4dbcfc2d59244a380a3a37c}} 
+\index{Safety@{Safety}!permitedMaxTempChanged@{permitedMaxTempChanged}}
+\index{permitedMaxTempChanged@{permitedMaxTempChanged}!Safety@{Safety}}
+\doxysubsubsection{\texorpdfstring{permitedMaxTempChanged}{permitedMaxTempChanged}}
+{\footnotesize\ttfamily void Safety\+::permited\+Max\+Temp\+Changed (\begin{DoxyParamCaption}\item[{double}]{maxtemp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Signal emitted when the permitted maximum temperature has been changed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em maxtemp} & \mbox{\hyperlink{class_the}{The}} new permitted maximum temperature. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_safety_a76548edd3324e5b0aed22cadcbae96ba}\label{class_safety_a76548edd3324e5b0aed22cadcbae96ba}} 
+\index{Safety@{Safety}!setCheckNumber@{setCheckNumber}}
+\index{setCheckNumber@{setCheckNumber}!Safety@{Safety}}
+\doxysubsubsection{\texorpdfstring{setCheckNumber()}{setCheckNumber()}}
+{\footnotesize\ttfamily void Safety\+::set\+Check\+Number (\begin{DoxyParamCaption}\item[{int}]{number }\end{DoxyParamCaption})}
+
+
+
+Sets the check number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em number} & Check number. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_safety_ae0a24b93c6d273c08b699c12b90809c6}\label{class_safety_ae0a24b93c6d273c08b699c12b90809c6}} 
+\index{Safety@{Safety}!setEnableTempChangeRange@{setEnableTempChangeRange}}
+\index{setEnableTempChangeRange@{setEnableTempChangeRange}!Safety@{Safety}}
+\doxysubsubsection{\texorpdfstring{setEnableTempChangeRange()}{setEnableTempChangeRange()}}
+{\footnotesize\ttfamily void Safety\+::set\+Enable\+Temp\+Change\+Range (\begin{DoxyParamCaption}\item[{bool}]{enable }\end{DoxyParamCaption})}
+
+
+
+Enables or disables the temperature change range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enable} & Boolean indicating whether the temperature change range is enabled. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_safety_a7eb8e1541a047b509b266fafd1e57743}\label{class_safety_a7eb8e1541a047b509b266fafd1e57743}} 
+\index{Safety@{Safety}!setIgnoreLower@{setIgnoreLower}}
+\index{setIgnoreLower@{setIgnoreLower}!Safety@{Safety}}
+\doxysubsubsection{\texorpdfstring{setIgnoreLower()}{setIgnoreLower()}}
+{\footnotesize\ttfamily void Safety\+::set\+Ignore\+Lower (\begin{DoxyParamCaption}\item[{double}]{lower }\end{DoxyParamCaption})}
+
+
+
+Sets the lower limit for ignoring temperature changes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lower} & Lower limit for ignoring temperature changes. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_safety_aeb2c6ae389531f1dd34cff755fd1d5c6}\label{class_safety_aeb2c6ae389531f1dd34cff755fd1d5c6}} 
+\index{Safety@{Safety}!setIgnoreTempRange@{setIgnoreTempRange}}
+\index{setIgnoreTempRange@{setIgnoreTempRange}!Safety@{Safety}}
+\doxysubsubsection{\texorpdfstring{setIgnoreTempRange()}{setIgnoreTempRange()}}
+{\footnotesize\ttfamily void Safety\+::set\+Ignore\+Temp\+Range (\begin{DoxyParamCaption}\item[{double}]{temp,  }\item[{double}]{lower,  }\item[{double}]{upper }\end{DoxyParamCaption})}
+
+
+
+Sets the temperature range for ignoring temperature changes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em temp} & Temperature value for ignoring temperature changes. \\
+\hline
+{\em lower} & Lower limit of the temperature range for ignoring temperature changes. \\
+\hline
+{\em upper} & Upper limit of the temperature range for ignoring temperature changes. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_safety_a1f201f12cdedadc0c3ed9038e2bfe645}\label{class_safety_a1f201f12cdedadc0c3ed9038e2bfe645}} 
+\index{Safety@{Safety}!setIgnoreUpper@{setIgnoreUpper}}
+\index{setIgnoreUpper@{setIgnoreUpper}!Safety@{Safety}}
+\doxysubsubsection{\texorpdfstring{setIgnoreUpper()}{setIgnoreUpper()}}
+{\footnotesize\ttfamily void Safety\+::set\+Ignore\+Upper (\begin{DoxyParamCaption}\item[{double}]{upper }\end{DoxyParamCaption})}
+
+
+
+Sets the upper limit for ignoring temperature changes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em upper} & Upper limit for ignoring temperature changes. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_safety_afa5bda2df137f619ebc1bb6f21356cba}\label{class_safety_afa5bda2df137f619ebc1bb6f21356cba}} 
+\index{Safety@{Safety}!setIntervalMVCheck@{setIntervalMVCheck}}
+\index{setIntervalMVCheck@{setIntervalMVCheck}!Safety@{Safety}}
+\doxysubsubsection{\texorpdfstring{setIntervalMVCheck()}{setIntervalMVCheck()}}
+{\footnotesize\ttfamily void Safety\+::set\+Interval\+MVCheck (\begin{DoxyParamCaption}\item[{int}]{interval }\end{DoxyParamCaption})}
+
+
+
+Sets the interval for checking the manipulated variable (MV). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em interval} & Interval for checking the manipulated variable (MV). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_safety_a575c792b70681d663013841c8d8a932b}\label{class_safety_a575c792b70681d663013841c8d8a932b}} 
+\index{Safety@{Safety}!setIntervalTempChange@{setIntervalTempChange}}
+\index{setIntervalTempChange@{setIntervalTempChange}!Safety@{Safety}}
+\doxysubsubsection{\texorpdfstring{setIntervalTempChange()}{setIntervalTempChange()}}
+{\footnotesize\ttfamily void Safety\+::set\+Interval\+Temp\+Change (\begin{DoxyParamCaption}\item[{int}]{inteerval }\end{DoxyParamCaption})}
+
+
+
+Sets the interval for checking the temperature change. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inteerval} & Interval for checking the temperature change. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_safety_ac2a6bcb91b827b2c12e28459e50e621f}\label{class_safety_ac2a6bcb91b827b2c12e28459e50e621f}} 
+\index{Safety@{Safety}!setMV@{setMV}}
+\index{setMV@{setMV}!Safety@{Safety}}
+\doxysubsubsection{\texorpdfstring{setMV()}{setMV()}}
+{\footnotesize\ttfamily void Safety\+::set\+MV (\begin{DoxyParamCaption}\item[{double}]{MV }\end{DoxyParamCaption})}
+
+
+
+Sets the value of the manipulated variable (MV). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em MV} & Value of the manipulated variable (MV). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_safety_a3cb80658371044047a231a35dfb90091}\label{class_safety_a3cb80658371044047a231a35dfb90091}} 
+\index{Safety@{Safety}!setMVUpper@{setMVUpper}}
+\index{setMVUpper@{setMVUpper}!Safety@{Safety}}
+\doxysubsubsection{\texorpdfstring{setMVUpper()}{setMVUpper()}}
+{\footnotesize\ttfamily void Safety\+::set\+MVUpper (\begin{DoxyParamCaption}\item[{double}]{MVupper }\end{DoxyParamCaption})}
+
+
+
+Sets the upper limit of the manipulated variable (MV). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em MVupper} & Upper limit of the manipulated variable (MV). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_safety_af4030955eac78938fe9e7079a983b776}\label{class_safety_af4030955eac78938fe9e7079a983b776}} 
+\index{Safety@{Safety}!setNumberOfCheck@{setNumberOfCheck}}
+\index{setNumberOfCheck@{setNumberOfCheck}!Safety@{Safety}}
+\doxysubsubsection{\texorpdfstring{setNumberOfCheck()}{setNumberOfCheck()}}
+{\footnotesize\ttfamily void Safety\+::set\+Number\+Of\+Check (\begin{DoxyParamCaption}\item[{int}]{number }\end{DoxyParamCaption})}
+
+
+
+Sets the number of check for the safety condition. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em number} & Number of check. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_safety_ab37fe3475582146ac4bf2fff55e7ba6e}\label{class_safety_ab37fe3475582146ac4bf2fff55e7ba6e}} 
+\index{Safety@{Safety}!setPermitedMaxTemp@{setPermitedMaxTemp}}
+\index{setPermitedMaxTemp@{setPermitedMaxTemp}!Safety@{Safety}}
+\doxysubsubsection{\texorpdfstring{setPermitedMaxTemp()}{setPermitedMaxTemp()}}
+{\footnotesize\ttfamily void Safety\+::set\+Permited\+Max\+Temp (\begin{DoxyParamCaption}\item[{double}]{maxtemp }\end{DoxyParamCaption})}
+
+
+
+Sets the maximum permitted temperature. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em maxtemp} & Maximum permitted temperature. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_safety_a8f91ae577d2367c6d774cf008c36a313}\label{class_safety_a8f91ae577d2367c6d774cf008c36a313}} 
+\index{Safety@{Safety}!setTempChangeThreshold@{setTempChangeThreshold}}
+\index{setTempChangeThreshold@{setTempChangeThreshold}!Safety@{Safety}}
+\doxysubsubsection{\texorpdfstring{setTempChangeThreshold()}{setTempChangeThreshold()}}
+{\footnotesize\ttfamily void Safety\+::set\+Temp\+Change\+Threshold (\begin{DoxyParamCaption}\item[{double}]{temp }\end{DoxyParamCaption})}
+
+
+
+Sets the threshold of temperature change. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em temp} & Threshold of temperature change. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_safety_a20e0e101b801021be41c7955f2b996c9}\label{class_safety_a20e0e101b801021be41c7955f2b996c9}} 
+\index{Safety@{Safety}!startTempChangeCheck@{startTempChangeCheck}}
+\index{startTempChangeCheck@{startTempChangeCheck}!Safety@{Safety}}
+\doxysubsubsection{\texorpdfstring{startTempChangeCheck}{startTempChangeCheck}}
+{\footnotesize\ttfamily void Safety\+::start\+Temp\+Change\+Check (\begin{DoxyParamCaption}\item[{int}]{checknumber }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Signal emitted when the temperature change check is started. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em checknumber} & \mbox{\hyperlink{class_the}{The}} check number for the temperature change check. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_safety_afda5edb1254c643ff517d6b12113cadb}\label{class_safety_afda5edb1254c643ff517d6b12113cadb}} 
+\index{Safety@{Safety}!tempChangeThresholdChanged@{tempChangeThresholdChanged}}
+\index{tempChangeThresholdChanged@{tempChangeThresholdChanged}!Safety@{Safety}}
+\doxysubsubsection{\texorpdfstring{tempChangeThresholdChanged}{tempChangeThresholdChanged}}
+{\footnotesize\ttfamily void Safety\+::temp\+Change\+Threshold\+Changed (\begin{DoxyParamCaption}\item[{double}]{temp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Signal emitted when the temperature change threshold has been changed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em temp} & \mbox{\hyperlink{class_the}{The}} new temperature change threshold. \\
+\hline
+\end{DoxyParams}
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-safety.\+h\item 
+\mbox{\hyperlink{safety_8h}{safety.\+h}}\item 
 safety.\+cpp\end{DoxyCompactItemize}

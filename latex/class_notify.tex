@@ -24,7 +24,7 @@ Inheritance diagram for Notify\+:\begin{figure}[H]
 virtual {\bfseries $\sim$\+Notify} ()
 \begin{DoxyCompactList}\small\item\em Destroys the \mbox{\hyperlink{class_notify}{Notify}} object. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_notify_a5d426d87df52d3061816e070c2e3006a}{set\+LINE}} (const QString \&message, const QString \&token)
-\begin{DoxyCompactList}\small\item\em Sets the message to be sent to the LINE service. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Sends a notification to LINE messaging API with the provided message and token. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -57,18 +57,7 @@ Constructs a \mbox{\hyperlink{class_notify}{Notify}} object with a parent object
 
 
 
-Sets the message to be sent to the LINE service. 
-
-Sends a notification to LINE messaging API with the provided message and token.
-
-
-\begin{DoxyParams}{Parameters}
-{\em message} & \mbox{\hyperlink{class_the}{The}} message to be sent \\
-\hline
-{\em token} & \mbox{\hyperlink{class_the}{The}} token to be used for authentication\\
-\hline
-\end{DoxyParams}
-
+Sends a notification to LINE messaging API with the provided message and token. 
 
 
 \begin{DoxyParams}{Parameters}

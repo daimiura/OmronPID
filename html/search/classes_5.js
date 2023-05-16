@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['plotdialog_0',['PlotDialog',['../class_plot_dialog.html',1,'']]]
+  ['mainwindow_0',['MainWindow',['../class_main_window.html',1,'']]]
 ];

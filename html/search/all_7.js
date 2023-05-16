@@ -6,5 +6,6 @@ var searchData=
   ['hasitem_3',['hasItem',['../class_q_custom_plot.html#af0b57f35646079f93fa6161a65b36109',1,'QCustomPlot::hasItem()'],['../class_q_c_p_legend.html#ad0f698e33db454a6c103b5206740e599',1,'QCPLegend::hasItem(QCPAbstractLegendItem *item) const']]],
   ['hasitemwithplottable_4',['hasItemWithPlottable',['../class_q_c_p_legend.html#a4b90a442af871582df85c2bc13f91e88',1,'QCPLegend']]],
   ['hasplottable_5',['hasPlottable',['../class_q_custom_plot.html#a72cefbfbb9e699940e37be605bd9c51e',1,'QCustomPlot']]],
-  ['height_6',['height',['../class_q_c_p_axis_rect.html#acc4377809e79d9a089ab790f39429b0d',1,'QCPAxisRect']]]
+  ['height_6',['height',['../class_q_c_p_axis_rect.html#acc4377809e79d9a089ab790f39429b0d',1,'QCPAxisRect']]],
+  ['helpdialog_7',['HelpDialog',['../class_help_dialog.html',1,'HelpDialog'],['../class_help_dialog.html#ab01f3ca964c9983b235b4c88f5a7e10f',1,'HelpDialog::HelpDialog()']]]
 ];

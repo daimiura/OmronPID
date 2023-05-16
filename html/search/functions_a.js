@@ -1,19 +1,5 @@
 var searchData=
 [
-  ['layer_0',['layer',['../class_q_custom_plot.html#a0a96244e7773b242ef23c32b7bdfb159',1,'QCustomPlot::layer(const QString &amp;name) const'],['../class_q_custom_plot.html#acbb570f4c24306e7c2324d40bfe157c2',1,'QCustomPlot::layer(int index) const']]],
-  ['layerchanged_1',['layerChanged',['../class_q_c_p_layerable.html#abbf8657cedea73ac1c3499b521c90eba',1,'QCPLayerable']]],
-  ['layercount_2',['layerCount',['../class_q_custom_plot.html#afa45d61e65292026f4c58c9c88c2cef0',1,'QCustomPlot']]],
-  ['layout_3',['layout',['../class_q_c_p_layout_element.html#a4efdcbde9d28f410e5ef166c9d691deb',1,'QCPLayoutElement']]],
-  ['layoutelementat_4',['layoutElementAt',['../class_q_custom_plot.html#afaa1d304e0287d140fd238e90889ef3c',1,'QCustomPlot']]],
-  ['left_5',['left',['../class_q_c_p_axis_rect.html#afb4a3de02046b20b9310bdb8fca781c3',1,'QCPAxisRect']]],
-  ['legendclick_6',['legendClick',['../class_q_custom_plot.html#a79cff0baafbca10a3aaf694d2d3b9ab3',1,'QCustomPlot']]],
-  ['legenddoubleclick_7',['legendDoubleClick',['../class_q_custom_plot.html#a0250f835c044521df1619b132288bca7',1,'QCustomPlot']]],
-  ['length_8',['length',['../class_q_c_p_vector2_d.html#a10adb5ab031fe94f0b64a3c5aefb552e',1,'QCPVector2D::length()'],['../class_q_c_p_data_range.html#a1e7836058f755c6ab9f11996477b7150',1,'QCPDataRange::length()']]],
-  ['lengthsquared_9',['lengthSquared',['../class_q_c_p_vector2_d.html#a766585459d84cb149334fda1a498b2e5',1,'QCPVector2D']]],
-  ['limititeratorstodatarange_10',['limitIteratorsToDataRange',['../class_q_c_p_data_container.html#aa1b36f5ae86a5a5a0b92141d3a0945c4',1,'QCPDataContainer']]],
-  ['loadpreset_11',['loadPreset',['../class_q_c_p_color_gradient.html#aa0aeec1528241728b9671bf8e60b1622',1,'QCPColorGradient']]],
-  ['logingstart_12',['logingStart',['../class_data_summary.html#af084f99cb72bc2e4b3331f20bdd9b2b7',1,'DataSummary']]],
-  ['logingstop_13',['logingStop',['../class_data_summary.html#a97d2892a28a7e5f80805fda31e88d855',1,'DataSummary']]],
-  ['logmsg_14',['logMsg',['../class_communication.html#a53e0c58bfb65fc88f1f7bc13f48c7b33',1,'Communication']]],
-  ['logmsg_15',['LogMsg',['../class_main_window.html#a44d85ff6240f89bc1aff38ff3dec128e',1,'MainWindow']]]
+  ['keyrange_0',['keyRange',['../class_q_c_p_data_container.html#aba6e1a93c21ccc56a432b4a02c9d0ed2',1,'QCPDataContainer']]],
+  ['keytodatetime_1',['keyToDateTime',['../class_q_c_p_axis_ticker_date_time.html#a4c1761ad057f5564804a53f942629b53',1,'QCPAxisTickerDateTime']]]
 ];

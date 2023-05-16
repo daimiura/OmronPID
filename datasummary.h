@@ -172,19 +172,46 @@ private slots:
 
 
 private:
+    /** The path of the user's desktop. */
     const QString desktopPath_{QStandardPaths::locate(QStandardPaths::DesktopLocation, QString(), QStandardPaths::LocateDirectory)};
+
+    /** The path of the directory where temperature data will be saved on the user's computer. */
     const QString dataPath2_{desktopPath_ + "Temp_Record"};
+
+    /** The path of the directory where temperature data will be saved on the network. */
     const QString dataPath_{"Z:/triplet/Temp_Record"};
+
+    /** The object used for communication with the temperature sensor. */
     Communication *com_{nullptr};
+
+    /** The current temperature read from the temperature sensor. */
     double temperature_{};
+
+    /** The current measurement value (MV) from the temperature controller. */
     double mv_{};
+
+    /** The upper limit of the MV range. */
     double mvUpper_{};
+
+    /** The lower limit of the MV range. */
     double mvLower_{};
+
+    /** The set value (SV) of the temperature controller. */
     double sv_{};
+
+    /** The name of the file where temperature data will be saved. */
     QString fileName_{};
+
+    /** The full path of the file where temperature data will be saved. */
     QString filePath_{};
+
+    /** Whether or not temperature data should be saved to a file. */
     bool save_{true};
+
+    /** The timer used to log temperature data at regular intervals. */
     QTimer *logTimer_{nullptr};
+
+    /** The interval at which temperature data should be logged. */
     int intervalLog_{10 * 1000};
 };
 

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['high_0',['high',['../class_q_c_p_financial_data.html#a299a4b241296fb6cd1baf5ab03f7126a',1,'QCPFinancialData']]]
+  ['pushbutton_5fsetparameters_5f_0',['pushButton_SetParameters_',['../class_configure_dialog.html#a170fe98507666e1333891b790998ded1',1,'ConfigureDialog']]]
 ];

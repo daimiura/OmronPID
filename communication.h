@@ -459,32 +459,32 @@ signals:
   void intervalConectionCheckChanged(int interval);
 
 private:
-  QMainWindow *mainwindow_{nullptr};
-  QStatusBar *statusBar_{nullptr};
-  QModbusRtuSerialMaster* omron_{nullptr};
-  QList<QSerialPortInfo> infos_;
-  QModbusTcpClient* modbusDevice_{nullptr};
-  QModbusReply *modbusReply_{nullptr};
-  QTimer *timerUpdate_{nullptr};
-  QTimer *connectTimer_{nullptr};
-  QMutex mutex_;
-  QString portName_{};
-  QSerialPort *serialPort_{};
-  int respondType_{};
-  int omronID_{};
-  int intervalUpdate_{3000};
-  int intervalConectionCheck_{10000};
-  bool modbusReady_{false};
-  bool isSerialPortRemoved_{false};
-  double temperature_{};
-  double SV_{};
-  double MV_{};
-  double MVupper_{};
-  double MVlower_{};
-  double tempDecimal_{0.1};
-  double pid_P_{};
-  double pid_I_{};
-  double pid_D_{};
+  QMainWindow* mainwindow_{nullptr}; /**< Pointer to the main window */
+  QStatusBar* statusBar_{nullptr}; /**< Pointer to the status bar */
+  QModbusRtuSerialMaster* omron_{nullptr}; /**< Pointer to the Omron device */
+  QList<QSerialPortInfo> infos_; /**< List of serial port information */
+  QModbusTcpClient* modbusDevice_{nullptr}; /**< Pointer to the Modbus device */
+  QModbusReply* modbusReply_{nullptr}; /**< Pointer to the Modbus reply */
+  QTimer* timerUpdate_{nullptr}; /**< Pointer to the timer used for updating data */
+  QTimer* connectTimer_{nullptr}; /**< Pointer to the timer used for connection check */
+  QMutex mutex_; /**< Mutex for thread safety */
+  QString portName_; /**< Name of the serial port */
+  QSerialPort* serialPort_{nullptr}; /**< Pointer to the serial port */
+  int respondType_{}; /**< Type of response */
+  int omronID_{}; /**< Omron device ID */
+  int intervalUpdate_{3000}; /**< Interval for updating data */
+  int intervalConectionCheck_{10000}; /**< Interval for connection check */
+  bool modbusReady_{false}; /**< Flag indicating if Modbus is ready */
+  bool isSerialPortRemoved_{false}; /**< Flag indicating if the serial port is removed */
+  double temperature_{}; /**< Temperature value */
+  double SV_{}; /**< Set value */
+  double MV_{}; /**< Measured value */
+  double MVupper_{}; /**< Upper limit of the measured value */
+  double MVlower_{}; /**< Lower limit of the measured value */
+  double tempDecimal_{0.1}; /**< Decimal point of the temperature value */
+  double pid_P_{}; /**< Proportional term of the PID controller */
+  double pid_I_{}; /**< Integral term of the PID controller */
+  double pid_D_{}; /**< Derivative term of the PID controller */
 
   /**
   @brief Establishes the connection to the serial port and the Omron PLC device

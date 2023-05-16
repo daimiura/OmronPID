@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['maxrange_0',['maxRange',['../class_q_c_p_range.html#a5ca51e7a2dc5dc0d49527ab171fe1f4f',1,'QCPRange']]],
-  ['minrange_1',['minRange',['../class_q_c_p_range.html#ab46d3bc95030ee25efda41b89e2b616b',1,'QCPRange']]]
+  ['ignoreenable_5f_0',['ignoreEnable_',['../class_configure_dialog.html#af87a61b203c06abf1c2a13b43405bd03',1,'ConfigureDialog']]],
+  ['ignorelower_5f_1',['ignoreLower_',['../class_configure_dialog.html#aa26778a97484efc88d2a092ec434c371',1,'ConfigureDialog']]],
+  ['ignoreupper_5f_2',['ignoreUpper_',['../class_configure_dialog.html#a212be23f84c5bdf1e4b6f0042168ce41',1,'ConfigureDialog']]],
+  ['intervalaskmv_5f_3',['intervalAskMV_',['../class_configure_dialog.html#abea8ab436380446d823d4a05aa8c4e63',1,'ConfigureDialog']]],
+  ['intervalasktemp_5f_4',['intervalAskTemp_',['../class_configure_dialog.html#adb7d36fa0b707b6908c9dbff3f55a1fd',1,'ConfigureDialog']]]
 ];

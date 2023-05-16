@@ -46,6 +46,8 @@ void \mbox{\hyperlink{class_main_window_a7b2d87895535666b96675b82499264f4}{finis
 \begin{DoxyCompactList}\small\item\em finish\+Send\+SV Slot function to handle the completion of sending the set value (SV) to the device \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_main_window_a2a084048a56885b7ce963c6853333a87}{catch\+Log\+Msg}} (const QString \&msg)
 \begin{DoxyCompactList}\small\item\em catch\+Log\+Msg Slot function to catch a log message emitted by a thread and add it to the application log window \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a5996c5ae4e0d08be444fa6dc33e5ebb6}{catch\+Log\+Msg\+With\+Color}} (const QString \&msg, QColor color)
+\begin{DoxyCompactList}\small\item\em catch\+Log\+Msg Slot function to catch a log message emitted by a thread and add it to the application log window \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_main_window_aae6bfd4c5da606c3979e82ceed20404a}\label{class_main_window_aae6bfd4c5da606c3979e82ceed20404a}} 
 void {\bfseries connect\+Device} ()
 \begin{DoxyCompactList}\small\item\em connect\+Device Slot function to handle device connection \end{DoxyCompactList}\item 
@@ -125,6 +127,23 @@ catch\+Log\+Msg Slot function to catch a log message emitted by a thread and add
 
 \begin{DoxyParams}{Parameters}
 {\em msg} & \mbox{\hyperlink{class_the}{The}} log message to add \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_main_window_a5996c5ae4e0d08be444fa6dc33e5ebb6}\label{class_main_window_a5996c5ae4e0d08be444fa6dc33e5ebb6}} 
+\index{MainWindow@{MainWindow}!catchLogMsgWithColor@{catchLogMsgWithColor}}
+\index{catchLogMsgWithColor@{catchLogMsgWithColor}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{catchLogMsgWithColor}{catchLogMsgWithColor}}
+{\footnotesize\ttfamily void Main\+Window\+::catch\+Log\+Msg\+With\+Color (\begin{DoxyParamCaption}\item[{const QString \&}]{msg,  }\item[{QColor}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+catch\+Log\+Msg Slot function to catch a log message emitted by a thread and add it to the application log window 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & \mbox{\hyperlink{class_the}{The}} log message to add \\
+\hline
+{\em color} & \mbox{\hyperlink{class_the}{The}} color of message to display \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{class_main_window_a780da7a6fbe4ddb9bdfd3eec0869157e}\label{class_main_window_a780da7a6fbe4ddb9bdfd3eec0869157e}} 

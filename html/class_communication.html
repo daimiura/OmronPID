@@ -179,35 +179,40 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>OmronIDChanged</b> ()
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ae1d7001cdc257e49e6de706f86bf3c22"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_communication.html#ae1d7001cdc257e49e6de706f86bf3c22">Communication</a> (QMainWindow *parent, QStatusBar *statusBar)</td></tr>
-<tr class="memdesc:ae1d7001cdc257e49e6de706f86bf3c22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="class_communication.html" title="The Communication class provides an interface for communicating with he E5CC temperature controller v...">Communication</a> object with a parent object and a status bar.  <br /></td></tr>
+<tr class="memdesc:ae1d7001cdc257e49e6de706f86bf3c22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for <a class="el" href="class_communication.html" title="The Communication class provides an interface for communicating with he E5CC temperature controller v...">Communication</a> class.  <br /></td></tr>
 <tr class="separator:ae1d7001cdc257e49e6de706f86bf3c22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75ba08ce908d45251e28e4c1db94e6f4"><td class="memItemLeft" align="right" valign="top"><a id="a75ba08ce908d45251e28e4c1db94e6f4" name="a75ba08ce908d45251e28e4c1db94e6f4"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>~Communication</b> ()</td></tr>
 <tr class="memdesc:a75ba08ce908d45251e28e4c1db94e6f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructs a <a class="el" href="class_communication.html" title="The Communication class provides an interface for communicating with he E5CC temperature controller v...">Communication</a> object. <br /></td></tr>
 <tr class="separator:a75ba08ce908d45251e28e4c1db94e6f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a61c96d1875bc1c421590858891169467"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_communication.html#a61c96d1875bc1c421590858891169467">request</a> (QModbusPdu::FunctionCode code, QByteArray cmd)</td></tr>
-<tr class="memdesc:a61c96d1875bc1c421590858891169467"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a ModBus request with the specified code and command.  <br /></td></tr>
+<tr class="memdesc:a61c96d1875bc1c421590858891169467"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a Modbus request to the Omron device.  <br /></td></tr>
 <tr class="separator:a61c96d1875bc1c421590858891169467"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c8f92126749c14140090ec400cb5e74"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_communication.html#a3c8f92126749c14140090ec400cb5e74">formatHex</a> (int value, int digit)</td></tr>
-<tr class="memdesc:a3c8f92126749c14140090ec400cb5e74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Formats the specified integer value as a hexadecimal string with the specified number of digits.  <br /></td></tr>
+<tr class="memdesc:a3c8f92126749c14140090ec400cb5e74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Formats an integer value to a hexadecimal string with the specified number of digits.  <br /></td></tr>
 <tr class="separator:a3c8f92126749c14140090ec400cb5e74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b45f0b8f1d9f9b269ff7dd2ffbc9698"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_communication.html#a6b45f0b8f1d9f9b269ff7dd2ffbc9698">formatE5CCAddress</a> (<a class="el" href="class_communication_1_1_e5_c_c___address.html#ae65845c8cd58de1fd62558b229f90dbc">E5CC_Address::Type</a> address, int width=4)</td></tr>
-<tr class="memdesc:a6b45f0b8f1d9f9b269ff7dd2ffbc9698"><td class="mdescLeft">&#160;</td><td class="mdescRight">Formats the specified E5CC temperature controller address as a hexadecimal string.  <br /></td></tr>
+<tr class="memdesc:a6b45f0b8f1d9f9b269ff7dd2ffbc9698"><td class="mdescLeft">&#160;</td><td class="mdescRight">Formats an E5CC register address as a hexadecimal string with the specified width.  <br /></td></tr>
 <tr class="separator:a6b45f0b8f1d9f9b269ff7dd2ffbc9698"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac6d27ab62868a050d8e2b254a2d0d4dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_communication.html#ac6d27ab62868a050d8e2b254a2d0d4dd">askTemperature</a> ()</td></tr>
-<tr class="memdesc:ac6d27ab62868a050d8e2b254a2d0d4dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a request to get the temperature from the E5CC temperature controller.  <br /></td></tr>
+<tr class="memitem:ac6d27ab62868a050d8e2b254a2d0d4dd"><td class="memItemLeft" align="right" valign="top"><a id="ac6d27ab62868a050d8e2b254a2d0d4dd" name="ac6d27ab62868a050d8e2b254a2d0d4dd"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>askTemperature</b> ()</td></tr>
+<tr class="memdesc:ac6d27ab62868a050d8e2b254a2d0d4dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a request to get the temperature from the E5CC temperature controller. <br /></td></tr>
 <tr class="separator:ac6d27ab62868a050d8e2b254a2d0d4dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7af5bef528b7769c72cd69af4eccf782"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_communication.html#a7af5bef528b7769c72cd69af4eccf782">askMV</a> ()</td></tr>
-<tr class="memdesc:a7af5bef528b7769c72cd69af4eccf782"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a request to get the output power from the E5CC temperature controller.  <br /></td></tr>
+<tr class="memitem:a7af5bef528b7769c72cd69af4eccf782"><td class="memItemLeft" align="right" valign="top"><a id="a7af5bef528b7769c72cd69af4eccf782" name="a7af5bef528b7769c72cd69af4eccf782"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>askMV</b> ()</td></tr>
+<tr class="memdesc:a7af5bef528b7769c72cd69af4eccf782"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a request to get the output power from the E5CC temperature controller. <br /></td></tr>
 <tr class="separator:a7af5bef528b7769c72cd69af4eccf782"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa9c871501d03ca6453bac667a26263b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_communication.html#aaa9c871501d03ca6453bac667a26263b">askSV</a> ()</td></tr>
-<tr class="memdesc:aaa9c871501d03ca6453bac667a26263b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a request to get the set value from the E5CC temperature controller.  <br /></td></tr>
+<tr class="memitem:aaa9c871501d03ca6453bac667a26263b"><td class="memItemLeft" align="right" valign="top"><a id="aaa9c871501d03ca6453bac667a26263b" name="aaa9c871501d03ca6453bac667a26263b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>askSV</b> ()</td></tr>
+<tr class="memdesc:aaa9c871501d03ca6453bac667a26263b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a request to get the set value from the E5CC temperature controller. <br /></td></tr>
 <tr class="separator:aaa9c871501d03ca6453bac667a26263b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a78609ae23d99b52e668a220586675c6e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_communication.html#a78609ae23d99b52e668a220586675c6e">askMVupper</a> ()</td></tr>
-<tr class="memdesc:a78609ae23d99b52e668a220586675c6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a request to get the output upper limit from the E5CC temperature controller.  <br /></td></tr>
+<tr class="memitem:a78609ae23d99b52e668a220586675c6e"><td class="memItemLeft" align="right" valign="top"><a id="a78609ae23d99b52e668a220586675c6e" name="a78609ae23d99b52e668a220586675c6e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>askMVupper</b> ()</td></tr>
+<tr class="memdesc:a78609ae23d99b52e668a220586675c6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a request to get the output upper limit from the E5CC temperature controller. <br /></td></tr>
 <tr class="separator:a78609ae23d99b52e668a220586675c6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23299835a8f07f118c0d5d9f68f41d42"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_communication.html#a23299835a8f07f118c0d5d9f68f41d42">askMVlower</a> ()</td></tr>
-<tr class="memdesc:a23299835a8f07f118c0d5d9f68f41d42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a request to get the output lower limit from the E5CC temperature controller.  <br /></td></tr>
+<tr class="memitem:a23299835a8f07f118c0d5d9f68f41d42"><td class="memItemLeft" align="right" valign="top"><a id="a23299835a8f07f118c0d5d9f68f41d42" name="a23299835a8f07f118c0d5d9f68f41d42"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>askMVlower</b> ()</td></tr>
+<tr class="memdesc:a23299835a8f07f118c0d5d9f68f41d42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a request to get the output lower limit from the E5CC temperature controller. <br /></td></tr>
 <tr class="separator:a23299835a8f07f118c0d5d9f68f41d42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1fd79af9afdfac21cb09c6a57c122668"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_communication.html#a1fd79af9afdfac21cb09c6a57c122668">askPID</a> (QString PID)</td></tr>
 <tr class="memdesc:a1fd79af9afdfac21cb09c6a57c122668"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a request to get the specified PID parameter from the E5CC temperature controller.  <br /></td></tr>
@@ -237,10 +242,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>executeStop</b> ()</t
 <tr class="memdesc:add15ec23dd41794a58564b47fd6ab9ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes the value of the output upper limit of the E5CC temperature controller.  <br /></td></tr>
 <tr class="separator:add15ec23dd41794a58564b47fd6ab9ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5f1beb1fa861593614bb4dc6e2e3a9f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_communication.html#af5f1beb1fa861593614bb4dc6e2e3a9f">changeSVValue</a> (double SV)</td></tr>
-<tr class="memdesc:af5f1beb1fa861593614bb4dc6e2e3a9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes the set value (SV) of the E5CC temperature controller.  <br /></td></tr>
+<tr class="memdesc:af5f1beb1fa861593614bb4dc6e2e3a9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes the set value (SV) of the E5CC temperature controller. This function calculates the integer value to be sent to the temperature controller based on the given set value in degrees Celsius and the temperature decimal factor of the temperature controller. It then creates a Modbus command with the calculated value and sends it to the controller to change the SV.  <br /></td></tr>
 <tr class="separator:af5f1beb1fa861593614bb4dc6e2e3a9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e76d9bca5fb1eb5c0781f870503e058"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_communication.html#a0e76d9bca5fb1eb5c0781f870503e058">read</a> (QModbusDataUnit::RegisterType type, quint16 adress, int size)</td></tr>
-<tr class="memdesc:a0e76d9bca5fb1eb5c0781f870503e058"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads data from the specified register type and address of the ModBus device.  <br /></td></tr>
+<tr class="memdesc:a0e76d9bca5fb1eb5c0781f870503e058"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a Modbus request with the specified function code and command data.  <br /></td></tr>
 <tr class="separator:a0e76d9bca5fb1eb5c0781f870503e058"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6335673fcbdeae311a70a53118f679f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_communication.html#a6335673fcbdeae311a70a53118f679f8">setSerialPortName</a> (QString portName)</td></tr>
 <tr class="memdesc:a6335673fcbdeae311a70a53118f679f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the name of the serial port to use for Modbus communication.  <br /></td></tr>
@@ -403,12 +408,9 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>intervalConectionCheck
       </table>
 </div><div class="memdoc">
 
-<p>Constructs a <a class="el" href="class_communication.html" title="The Communication class provides an interface for communicating with he E5CC temperature controller v...">Communication</a> object with a parent object and a status bar. </p>
-<p>Constructor for <a class="el" href="class_communication.html" title="The Communication class provides an interface for communicating with he E5CC temperature controller v...">Communication</a> class.</p>
+<p>Constructor for <a class="el" href="class_communication.html" title="The Communication class provides an interface for communicating with he E5CC temperature controller v...">Communication</a> class. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">parent</td><td><a class="el" href="class_the.html">The</a> parent object of this object </td></tr>
-    <tr><td class="paramname">statusBar</td><td><a class="el" href="class_the.html">The</a> status bar widget to show the communication status</td></tr>
     <tr><td class="paramname">parent</td><td><a class="el" href="class_the.html">The</a> parent window that the <a class="el" href="class_communication.html" title="The Communication class provides an interface for communicating with he E5CC temperature controller v...">Communication</a> object belongs to. </td></tr>
     <tr><td class="paramname">statusBar</td><td><a class="el" href="class_the.html">The</a> status bar of the parent window. </td></tr>
   </table>
@@ -418,66 +420,6 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>intervalConectionCheck
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a7af5bef528b7769c72cd69af4eccf782" name="a7af5bef528b7769c72cd69af4eccf782"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7af5bef528b7769c72cd69af4eccf782">&#9670;&#160;</a></span>askMV()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Communication::askMV </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sends a request to get the output power from the E5CC temperature controller. </p>
-<p>Requests the current measured value (MV) from the temperature controller via Modbus. Once the value has been retrieved, it emits a signal to notify the rest of the application. </p>
-
-</div>
-</div>
-<a id="a23299835a8f07f118c0d5d9f68f41d42" name="a23299835a8f07f118c0d5d9f68f41d42"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a23299835a8f07f118c0d5d9f68f41d42">&#9670;&#160;</a></span>askMVlower()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Communication::askMVlower </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sends a request to get the output lower limit from the E5CC temperature controller. </p>
-<p>Requests the current lower limit of the manipulated value (MV) from the temperature controller via Modbus. Once the value has been retrieved, it emits a signal to notify the rest of the application. </p>
-
-</div>
-</div>
-<a id="a78609ae23d99b52e668a220586675c6e" name="a78609ae23d99b52e668a220586675c6e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a78609ae23d99b52e668a220586675c6e">&#9670;&#160;</a></span>askMVupper()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Communication::askMVupper </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sends a request to get the output upper limit from the E5CC temperature controller. </p>
-<p>Requests the current upper limit of the manipulated value (MV) from the temperature controller via Modbus. Once the value has been retrieved, it emits a signal to notify the rest of the application. </p>
-
-</div>
-</div>
 <a id="a1fd79af9afdfac21cb09c6a57c122668" name="a1fd79af9afdfac21cb09c6a57c122668"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1fd79af9afdfac21cb09c6a57c122668">&#9670;&#160;</a></span>askPID()</h2>
 
@@ -498,57 +440,11 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>intervalConectionCheck
 <p>Asks for the PID value specified by the parameter.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">PID</td><td><a class="el" href="class_the.html">The</a> PID parameter to get.</td></tr>
+    <tr><td class="paramname"><a class="el" href="class_the.html">The</a></td><td>PID term to read. If it is not "P", "I", or "D", all three PID terms are read.</td></tr>
   </table>
   </dd>
 </dl>
-<p>If the input parameter is "P", it reads the value of the PID P term, emits the PID_PUpdated signal and stores the result in the variable pid_P_. If the input parameter is "I", it reads the value of the PID I term, emits the PID_IUpdated signal and stores the result in the variable pid_I_. If the input parameter is "D", it reads the value of the PID D term, emits the PID_DUpdated signal and stores the result in the variable pid_D_. If the input parameter is not "P", "I", or "D", it reads the values of all three PID terms, emits all three corresponding signals and stores the results in the corresponding variables pid_P_, pid_I_, and pid_D_.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">PID</td><td><a class="el" href="class_the.html">The</a> PID term to read. If it is not "P", "I", or "D", all three PID terms are read. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="aaa9c871501d03ca6453bac667a26263b" name="aaa9c871501d03ca6453bac667a26263b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaa9c871501d03ca6453bac667a26263b">&#9670;&#160;</a></span>askSV()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Communication::askSV </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sends a request to get the set value from the E5CC temperature controller. </p>
-<p>Requests the current set value (SV) from the temperature controller via Modbus. Once the value has been retrieved, it emits a signal to notify the rest of the application. </p>
-
-</div>
-</div>
-<a id="ac6d27ab62868a050d8e2b254a2d0d4dd" name="ac6d27ab62868a050d8e2b254a2d0d4dd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac6d27ab62868a050d8e2b254a2d0d4dd">&#9670;&#160;</a></span>askTemperature()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Communication::askTemperature </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sends a request to get the temperature from the E5CC temperature controller. </p>
-<p>Requests the current Temperature from the temperature controller via Modbus. Once the value has been retrieved, it emits a signal to notify the rest of the application. </p>
+<p>If the input parameter is "P", it reads the value of the PID P term, emits the PID_PUpdated signal and stores the result in the variable pid_P_. If the input parameter is "I", it reads the value of the PID I term, emits the PID_IUpdated signal and stores the result in the variable pid_I_. If the input parameter is "D", it reads the value of the PID D term, emits the PID_DUpdated signal and stores the result in the variable pid_D_. If the input parameter is not "P", "I", or "D", it reads the values of all three PID terms, emits all three corresponding signals and stores the results in the corresponding variables pid_P_, pid_I_, and pid_D_. </p>
 
 </div>
 </div>
@@ -603,11 +499,9 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>intervalConectionCheck
 </div><div class="memdoc">
 
 <p>Changes the value of the output lower limit of the E5CC temperature controller. </p>
-<p><a class="el" href="class_communication.html#a2e8eb43c3a20aba35b70c5a1d86a008d" title="Changes the value of the output lower limit of the E5CC temperature controller.">Communication::changeMVlowerValue</a> This method changes the lower value of the manipulated variable (MVlower). If the modbus is not ready, this method will return immediately without any action. After setting the new value, it will convert the value to the register value (sv) and format it as a hexadecimal string. Then, it will create a command string that contains the address, function code, and the formatted value. Finally, it will create a byte array from the hex string and send it as a request to the modbus device using the WriteMultipleRegisters function code.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">MVlower</td><td><a class="el" href="class_the.html">The</a> new value of the output lower limit.</td></tr>
-    <tr><td class="paramname">MVlower</td><td><a class="el" href="class_the.html">The</a> new value of the MVlower in double precision. </td></tr>
+    <tr><td class="paramname">MVlower</td><td><a class="el" href="class_the.html">The</a> new value of the output lower limit. </td></tr>
   </table>
   </dd>
 </dl>
@@ -631,11 +525,9 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>intervalConectionCheck
 </div><div class="memdoc">
 
 <p>Changes the value of the output upper limit of the E5CC temperature controller. </p>
-<p><a class="el" href="class_communication.html#add15ec23dd41794a58564b47fd6ab9ae" title="Changes the value of the output upper limit of the E5CC temperature controller.">Communication::changeMVupperValue</a> This method changes the upper value of the manipulated variable (MVupper). If the modbus is not ready, this method will return immediately without any action. After setting the new value, it will convert the value to the register value (sv) and format it as a hexadecimal string. Then, it will create a command string that contains the address, function code, and the formatted value. Finally, it will create a byte array from the hex string and send it as a request to the modbus device using the WriteMultipleRegisters function code.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">MVupper</td><td><a class="el" href="class_the.html">The</a> new value of the output upper limit.</td></tr>
-    <tr><td class="paramname">MVupper</td><td><a class="el" href="class_the.html">The</a> new value of the MVupper in double precision. </td></tr>
+    <tr><td class="paramname">MVupper</td><td><a class="el" href="class_the.html">The</a> new value of the output upper limit. </td></tr>
   </table>
   </dd>
 </dl>
@@ -658,11 +550,9 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>intervalConectionCheck
       </table>
 </div><div class="memdoc">
 
-<p>Changes the set value (SV) of the E5CC temperature controller. </p>
-<p>Changes the set value (SV) of the E5CC temperature controller. This function calculates the integer value to be sent to the temperature controller based on the given set value in degrees Celsius and the temperature decimal factor of the temperature controller. It then creates a Modbus command with the calculated value and sends it to the controller to change the SV.</p>
+<p>Changes the set value (SV) of the E5CC temperature controller. This function calculates the integer value to be sent to the temperature controller based on the given set value in degrees Celsius and the temperature decimal factor of the temperature controller. It then creates a Modbus command with the calculated value and sends it to the controller to change the SV. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">SV</td><td><a class="el" href="class_the.html">The</a> new value of the set value (SV).</td></tr>
     <tr><td class="paramname">SV</td><td><a class="el" href="class_the.html">The</a> set value to be set in degrees Celsius. </td></tr>
   </table>
   </dd>
@@ -764,16 +654,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>intervalConectionCheck
       </table>
 </div><div class="memdoc">
 
-<p>Formats the specified E5CC temperature controller address as a hexadecimal string. </p>
-<p>Formats an E5CC register address as a hexadecimal string with the specified width.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">address</td><td><a class="el" href="class_the.html">The</a> E5CC temperature controller address to format. </td></tr>
-    <tr><td class="paramname">width</td><td><a class="el" href="class_the.html">The</a> width of the hexadecimal string. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_the.html">The</a> formatted E5CC temperature controller address as a hexadecimal string.</dd></dl>
+<p>Formats an E5CC register address as a hexadecimal string with the specified width. </p>
 <p>This function takes an E5CC register address as an enumeration type and formats it as a hexadecimal string with the specified width. If the resulting string is shorter than the specified width, leading zeroes are added to the beginning of the string.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -812,16 +693,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>intervalConectionCheck
       </table>
 </div><div class="memdoc">
 
-<p>Formats the specified integer value as a hexadecimal string with the specified number of digits. </p>
-<p>Formats an integer value to a hexadecimal string with the specified number of digits.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td><a class="el" href="class_the.html">The</a> integer value to format. </td></tr>
-    <tr><td class="paramname">digit</td><td><a class="el" href="class_the.html">The</a> number of digits to include in the hexadecimal string. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_the.html">The</a> formatted hexadecimal string.</dd></dl>
+<p>Formats an integer value to a hexadecimal string with the specified number of digits. </p>
 <p>This function takes an integer value and formats it as a hexadecimal string with the specified number of digits. If the resulting string is shorter than the specified width, leading zeroes are added to the beginning of the string.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1467,7 +1339,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>intervalConectionCheck
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">quint16&#160;</td>
-          <td class="paramname"><em>address</em>, </td>
+          <td class="paramname"><em>adress</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1483,22 +1355,8 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>intervalConectionCheck
       </table>
 </div><div class="memdoc">
 
-<p>Reads data from the specified register type and address of the ModBus device. </p>
-<p>Sends a Modbus request to the Omron device.</p>
+<p>Sends a Modbus request with the specified function code and command data. </p>
 <dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">type</td><td><a class="el" href="class_the.html">The</a> type of the register to read. </td></tr>
-    <tr><td class="paramname">address</td><td><a class="el" href="class_the.html">The</a> address of the register to read. </td></tr>
-    <tr><td class="paramname">size</td><td><a class="el" href="class_the.html">The</a> number of registers to read.</td></tr>
-    <tr><td class="paramname">code</td><td><a class="el" href="class_the.html">The</a> function code to be sent. </td></tr>
-    <tr><td class="paramname">cmd</td><td><a class="el" href="class_the.html">The</a> command to be sent. This function sends a Modbus request to the Omron device. It first clears the status bar, sets the modbusReady_ flag to false, and creates a QModbusPdu object with the provided function code and data. It then creates a QModbusRequest object with the QModbusPdu, and sends it to the Omron device using the sendRawRequest() function. If successful, it connects a lambda function to the finished() signal of the QModbusReply object returned by the sendRawRequest() function. This lambda function checks for any errors in the reply and displays the appropriate message on the status bar. If the request was a broadcast, the reply is deleted immediately. Finally, the modbusReady_ flag is set to true. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section note"><dt>Note</dt><dd>This function assumes that the Omron device has already been connected to and configured through the QModbusTcpClient object omron_.</dd></dl>
-<p>void <a class="el" href="class_communication.html#a61c96d1875bc1c421590858891169467" title="Sends a ModBus request with the specified code and command.">Communication::request(QModbusPdu::FunctionCode code, QByteArray cmd)</a>{ statusBar_-&gt;clearMessage(); modbusReady_ = false; QModbusPdu pdu; pdu.setFunctionCode(code); pdu.setData(cmd); QModbusRequest ask(pdu); if (auto *reply = omron_-&gt;sendRawRequest(ask, omronID_)) { if (!reply-&gt;isFinished()) { connect(reply, &amp;QModbusReply::finished, this, [this, reply]() { if (reply-&gt;error() == QModbusDevice::ProtocolError) { statusBar_-&gt;showMessage(tr("Write response error: %1 (Mobus exception: 0x%2)") .arg(reply-&gt;errorString()).arg(reply-&gt;rawResult().exceptionCode(), -1, 16), 0); } else if (reply-&gt;error() != QModbusDevice::NoError) { statusBar_-&gt;showMessage(tr("Write response error: %1 (code: 0x%2)"). arg(reply-&gt;errorString()).arg(reply-&gt;error(), -1, 16), 0); } reply-&gt;deleteLater(); modbusReady_ = true; }); } else { broadcast replies return immediately reply-&gt;deleteLater(); } } else { statusBar_-&gt;showMessage(tr("Write error: ") + omron_-&gt;errorString(), 0); } }</p>
-<p>/**</p>
-<p>Sends a Modbus request with the specified function code and command data. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">code</td><td><a class="el" href="class_the.html">The</a> Modbus function code. </td></tr>
     <tr><td class="paramname">cmd</td><td><a class="el" href="class_the.html">The</a> command data to be sent. This method sends a Modbus request with the specified function code and command data to the Omron device. <a class="el" href="class_the.html">The</a> status bar message is cleared and the modbusReady_ flag is set to false before the request is sent. If the request is successful, the reply is checked for errors. If there is a protocol error, the error message and exception code are displayed in the status bar. If there is another type of error, the error message and error code are displayed. Once the reply has been handled, the modbusReady_ flag is set to true and the reply is deleted. If the request fails, an error message is displayed in the status bar. </td></tr>
@@ -1534,14 +1392,15 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>intervalConectionCheck
       </table>
 </div><div class="memdoc">
 
-<p>Sends a ModBus request with the specified code and command. </p>
+<p>Sends a Modbus request to the Omron device. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">code</td><td><a class="el" href="class_the.html">The</a> ModBus function code. </td></tr>
-    <tr><td class="paramname">cmd</td><td><a class="el" href="class_the.html">The</a> command to send. </td></tr>
+    <tr><td class="paramname">code</td><td><a class="el" href="class_the.html">The</a> function code to be sent. </td></tr>
+    <tr><td class="paramname">cmd</td><td><a class="el" href="class_the.html">The</a> command to be sent. This function sends a Modbus request to the Omron device. It first clears the status bar, sets the modbusReady_ flag to false, and creates a QModbusPdu object with the provided function code and data. It then creates a QModbusRequest object with the QModbusPdu, and sends it to the Omron device using the sendRawRequest() function. If successful, it connects a lambda function to the finished() signal of the QModbusReply object returned by the sendRawRequest() function. This lambda function checks for any errors in the reply and displays the appropriate message on the status bar. If the request was a broadcast, the reply is deleted immediately. Finally, the modbusReady_ flag is set to true. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section note"><dt>Note</dt><dd>This function assumes that the Omron device has already been connected to and configured through the QModbusTcpClient object omron_. </dd></dl>
 
 </div>
 </div>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['tempdropdialog_2eh_0',['tempdropdialog.h',['../tempdropdialog_8h.html',1,'']]]
+  ['plotdialog_2eh_0',['plotdialog.h',['../plotdialog_8h.html',1,'']]]
 ];

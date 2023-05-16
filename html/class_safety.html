@@ -77,6 +77,11 @@ $(function() {
   <div class="headertitle"><div class="title">Safety Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><a class="el" href="class_the.html">The</a> <a class="el" href="class_safety.html" title="The Safety class ensures the safe operation of the system. This class monitors the temperature and ot...">Safety</a> class ensures the safe operation of the system. This class monitors the temperature and other parameters of the system to ensure that they remain within safe limits. If any parameter goes outside its safe range, the <a class="el" href="class_safety.html" title="The Safety class ensures the safe operation of the system. This class monitors the temperature and ot...">Safety</a> class takes appropriate action to bring it back within range. <a class="el" href="class_the.html">The</a> class also provides a number of properties that can be used to configure its behavior.  
+ <a href="class_safety.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="safety_8h_source.html">safety.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Safety:</div>
 <div class="dyncontent">
@@ -86,137 +91,156 @@ Inheritance diagram for Safety:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
 Signals</h2></td></tr>
-<tr class="memitem:a150494b0f4dbcfc2d59244a380a3a37c"><td class="memItemLeft" align="right" valign="top"><a id="a150494b0f4dbcfc2d59244a380a3a37c" name="a150494b0f4dbcfc2d59244a380a3a37c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>permitedMaxTempChanged</b> (double maxtemp)</td></tr>
+<tr class="memitem:a150494b0f4dbcfc2d59244a380a3a37c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_safety.html#a150494b0f4dbcfc2d59244a380a3a37c">permitedMaxTempChanged</a> (double maxtemp)</td></tr>
+<tr class="memdesc:a150494b0f4dbcfc2d59244a380a3a37c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal emitted when the permitted maximum temperature has been changed.  <br /></td></tr>
 <tr class="separator:a150494b0f4dbcfc2d59244a380a3a37c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2e863d63b98f16f996d5ab80af0f6e7"><td class="memItemLeft" align="right" valign="top"><a id="ac2e863d63b98f16f996d5ab80af0f6e7" name="ac2e863d63b98f16f996d5ab80af0f6e7"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>MVUpperChanged</b> (double MVupper)</td></tr>
+<tr class="memitem:ac2e863d63b98f16f996d5ab80af0f6e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_safety.html#ac2e863d63b98f16f996d5ab80af0f6e7">MVUpperChanged</a> (double MVupper)</td></tr>
+<tr class="memdesc:ac2e863d63b98f16f996d5ab80af0f6e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal emitted when the MV upper limit has been changed.  <br /></td></tr>
 <tr class="separator:ac2e863d63b98f16f996d5ab80af0f6e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb58b5cedb9863febd41295112667857"><td class="memItemLeft" align="right" valign="top"><a id="aeb58b5cedb9863febd41295112667857" name="aeb58b5cedb9863febd41295112667857"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>MVupperReachedUpperLimit</b> ()</td></tr>
+<tr class="memdesc:aeb58b5cedb9863febd41295112667857"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal emitted when the MV upper limit has reached its upper limit. <br /></td></tr>
 <tr class="separator:aeb58b5cedb9863febd41295112667857"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1fc8b42cfd9f0137daca0b78a7e6a967"><td class="memItemLeft" align="right" valign="top"><a id="a1fc8b42cfd9f0137daca0b78a7e6a967" name="a1fc8b42cfd9f0137daca0b78a7e6a967"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>NumberOfCheckChanged</b> (int number)</td></tr>
+<tr class="memitem:a1fc8b42cfd9f0137daca0b78a7e6a967"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_safety.html#a1fc8b42cfd9f0137daca0b78a7e6a967">NumberOfCheckChanged</a> (int number)</td></tr>
+<tr class="memdesc:a1fc8b42cfd9f0137daca0b78a7e6a967"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal emitted when the number of checks has been changed.  <br /></td></tr>
 <tr class="separator:a1fc8b42cfd9f0137daca0b78a7e6a967"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07fc3535d87e388d71daab2c1be34fe1"><td class="memItemLeft" align="right" valign="top"><a id="a07fc3535d87e388d71daab2c1be34fe1" name="a07fc3535d87e388d71daab2c1be34fe1"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>checkNumberChanged</b> (int number)</td></tr>
+<tr class="memitem:a07fc3535d87e388d71daab2c1be34fe1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_safety.html#a07fc3535d87e388d71daab2c1be34fe1">checkNumberChanged</a> (int number)</td></tr>
+<tr class="memdesc:a07fc3535d87e388d71daab2c1be34fe1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal emitted when the check number has been changed.  <br /></td></tr>
 <tr class="separator:a07fc3535d87e388d71daab2c1be34fe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afda5edb1254c643ff517d6b12113cadb"><td class="memItemLeft" align="right" valign="top"><a id="afda5edb1254c643ff517d6b12113cadb" name="afda5edb1254c643ff517d6b12113cadb"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>tempChangeThresholdChanged</b> (double temp)</td></tr>
+<tr class="memitem:afda5edb1254c643ff517d6b12113cadb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_safety.html#afda5edb1254c643ff517d6b12113cadb">tempChangeThresholdChanged</a> (double temp)</td></tr>
+<tr class="memdesc:afda5edb1254c643ff517d6b12113cadb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal emitted when the temperature change threshold has been changed.  <br /></td></tr>
 <tr class="separator:afda5edb1254c643ff517d6b12113cadb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f638c6cd7a9622dfe70d6d02670f17f"><td class="memItemLeft" align="right" valign="top"><a id="a5f638c6cd7a9622dfe70d6d02670f17f" name="a5f638c6cd7a9622dfe70d6d02670f17f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>dangerSignal</b> (int type)</td></tr>
+<tr class="memitem:a5f638c6cd7a9622dfe70d6d02670f17f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_safety.html#a5f638c6cd7a9622dfe70d6d02670f17f">dangerSignal</a> (int type)</td></tr>
+<tr class="memdesc:a5f638c6cd7a9622dfe70d6d02670f17f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal emitted when a danger is detected.  <br /></td></tr>
 <tr class="separator:a5f638c6cd7a9622dfe70d6d02670f17f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe479d597616613bf2a4487c3f19cc49"><td class="memItemLeft" align="right" valign="top"><a id="abe479d597616613bf2a4487c3f19cc49" name="abe479d597616613bf2a4487c3f19cc49"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>intervalMVCheckChanged</b> (int interval)</td></tr>
+<tr class="memitem:abe479d597616613bf2a4487c3f19cc49"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_safety.html#abe479d597616613bf2a4487c3f19cc49">intervalMVCheckChanged</a> (int interval)</td></tr>
+<tr class="memdesc:abe479d597616613bf2a4487c3f19cc49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal emitted when the interval for the MV check has been changed.  <br /></td></tr>
 <tr class="separator:abe479d597616613bf2a4487c3f19cc49"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae64e96e13c1aac7847181a2fec2ac7e9"><td class="memItemLeft" align="right" valign="top"><a id="ae64e96e13c1aac7847181a2fec2ac7e9" name="ae64e96e13c1aac7847181a2fec2ac7e9"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>intervalTempChangeChanged</b> (int interval)</td></tr>
+<tr class="memitem:ae64e96e13c1aac7847181a2fec2ac7e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_safety.html#ae64e96e13c1aac7847181a2fec2ac7e9">intervalTempChangeChanged</a> (int interval)</td></tr>
+<tr class="memdesc:ae64e96e13c1aac7847181a2fec2ac7e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal emitted when the interval for the temperature change check has been changed.  <br /></td></tr>
 <tr class="separator:ae64e96e13c1aac7847181a2fec2ac7e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a964883572fc800b66cb923dd2cb96d04"><td class="memItemLeft" align="right" valign="top"><a id="a964883572fc800b66cb923dd2cb96d04" name="a964883572fc800b66cb923dd2cb96d04"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>escapeTempCheckChange</b> (int sign)</td></tr>
+<tr class="memitem:a964883572fc800b66cb923dd2cb96d04"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_safety.html#a964883572fc800b66cb923dd2cb96d04">escapeTempCheckChange</a> (int sign)</td></tr>
+<tr class="memdesc:a964883572fc800b66cb923dd2cb96d04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal emitted when the temperature change check is cancelled.  <br /></td></tr>
 <tr class="separator:a964883572fc800b66cb923dd2cb96d04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a20e0e101b801021be41c7955f2b996c9"><td class="memItemLeft" align="right" valign="top"><a id="a20e0e101b801021be41c7955f2b996c9" name="a20e0e101b801021be41c7955f2b996c9"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>startTempChangeCheck</b> (int checknumber)</td></tr>
+<tr class="memitem:a20e0e101b801021be41c7955f2b996c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_safety.html#a20e0e101b801021be41c7955f2b996c9">startTempChangeCheck</a> (int checknumber)</td></tr>
+<tr class="memdesc:a20e0e101b801021be41c7955f2b996c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal emitted when the temperature change check is started.  <br /></td></tr>
 <tr class="separator:a20e0e101b801021be41c7955f2b996c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c539e883ac2834e91284928debe8f3f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_safety.html#a8c539e883ac2834e91284928debe8f3f">logMsg</a> (QString msg)</td></tr>
+<tr class="memdesc:a8c539e883ac2834e91284928debe8f3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal emitted when a log message is generated.  <br /></td></tr>
+<tr class="separator:a8c539e883ac2834e91284928debe8f3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0da0a6d963fc605602da374890f888fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_safety.html#a0da0a6d963fc605602da374890f888fe">logMsgWithColor</a> (QString msg, QColor color)</td></tr>
+<tr class="memdesc:a0da0a6d963fc605602da374890f888fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal emitted when a log message with a specific color is generated.  <br /></td></tr>
+<tr class="separator:a0da0a6d963fc605602da374890f888fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a791c22257e7aeedc2716512c791a78a7"><td class="memItemLeft" align="right" valign="top"><a id="a791c22257e7aeedc2716512c791a78a7" name="a791c22257e7aeedc2716512c791a78a7"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Safety</b> (<a class="el" href="class_data_summary.html">DataSummary</a> *data)</td></tr>
+<tr class="memitem:a791c22257e7aeedc2716512c791a78a7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_safety.html#a791c22257e7aeedc2716512c791a78a7">Safety</a> (<a class="el" href="class_data_summary.html">DataSummary</a> *data)</td></tr>
+<tr class="memdesc:a791c22257e7aeedc2716512c791a78a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new <a class="el" href="class_safety.html" title="The Safety class ensures the safe operation of the system. This class monitors the temperature and ot...">Safety</a> object.  <br /></td></tr>
 <tr class="separator:a791c22257e7aeedc2716512c791a78a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4bdcf2894bbf8371976d0aa2fc54eb62"><td class="memItemLeft" align="right" valign="top"><a id="a4bdcf2894bbf8371976d0aa2fc54eb62" name="a4bdcf2894bbf8371976d0aa2fc54eb62"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>getTemperature</b> () const</td></tr>
+<tr class="memitem:aebc24a8421a09083fb170f25a0c8aa36"><td class="memItemLeft" align="right" valign="top"><a id="aebc24a8421a09083fb170f25a0c8aa36" name="aebc24a8421a09083fb170f25a0c8aa36"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>~Safety</b> ()</td></tr>
+<tr class="memdesc:aebc24a8421a09083fb170f25a0c8aa36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the <a class="el" href="class_safety.html" title="The Safety class ensures the safe operation of the system. This class monitors the temperature and ot...">Safety</a> object. <br /></td></tr>
+<tr class="separator:aebc24a8421a09083fb170f25a0c8aa36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bdcf2894bbf8371976d0aa2fc54eb62"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_safety.html#a4bdcf2894bbf8371976d0aa2fc54eb62">getTemperature</a> () const</td></tr>
+<tr class="memdesc:a4bdcf2894bbf8371976d0aa2fc54eb62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter function for the current temperature.  <br /></td></tr>
 <tr class="separator:a4bdcf2894bbf8371976d0aa2fc54eb62"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e0a28a5a469e3969ae66c7da689c989"><td class="memItemLeft" align="right" valign="top"><a id="a9e0a28a5a469e3969ae66c7da689c989" name="a9e0a28a5a469e3969ae66c7da689c989"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>getPermitedMaxTemp</b> () const</td></tr>
+<tr class="memitem:a9e0a28a5a469e3969ae66c7da689c989"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_safety.html#a9e0a28a5a469e3969ae66c7da689c989">getPermitedMaxTemp</a> () const</td></tr>
+<tr class="memdesc:a9e0a28a5a469e3969ae66c7da689c989"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter function for the permitted maximum temperature.  <br /></td></tr>
 <tr class="separator:a9e0a28a5a469e3969ae66c7da689c989"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6e3a97192da2fa4aa3c2516db8e45c8"><td class="memItemLeft" align="right" valign="top"><a id="af6e3a97192da2fa4aa3c2516db8e45c8" name="af6e3a97192da2fa4aa3c2516db8e45c8"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>getMVUpper</b> () const</td></tr>
+<tr class="memitem:a251ce1abade7a9d37b8794c817d32450"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_safety.html#a251ce1abade7a9d37b8794c817d32450">getMVLower</a> () const</td></tr>
+<tr class="memdesc:a251ce1abade7a9d37b8794c817d32450"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter function for the lower bound of the manipulated variable.  <br /></td></tr>
+<tr class="separator:a251ce1abade7a9d37b8794c817d32450"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6e3a97192da2fa4aa3c2516db8e45c8"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_safety.html#af6e3a97192da2fa4aa3c2516db8e45c8">getMVUpper</a> () const</td></tr>
+<tr class="memdesc:af6e3a97192da2fa4aa3c2516db8e45c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter function for the upper bound of the manipulated variable.  <br /></td></tr>
 <tr class="separator:af6e3a97192da2fa4aa3c2516db8e45c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac39567888f0eb955815e47aca1601c4d"><td class="memItemLeft" align="right" valign="top"><a id="ac39567888f0eb955815e47aca1601c4d" name="ac39567888f0eb955815e47aca1601c4d"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>getMV</b> () const</td></tr>
+<tr class="memitem:ac39567888f0eb955815e47aca1601c4d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_safety.html#ac39567888f0eb955815e47aca1601c4d">getMV</a> () const</td></tr>
+<tr class="memdesc:ac39567888f0eb955815e47aca1601c4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter function for the current value of the manipulated variable.  <br /></td></tr>
 <tr class="separator:ac39567888f0eb955815e47aca1601c4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae86b5061d236a573adce2fc0109550dc"><td class="memItemLeft" align="right" valign="top"><a id="ae86b5061d236a573adce2fc0109550dc" name="ae86b5061d236a573adce2fc0109550dc"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getNumberOfCheck</b> () const</td></tr>
+<tr class="memitem:ae86b5061d236a573adce2fc0109550dc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_safety.html#ae86b5061d236a573adce2fc0109550dc">getNumberOfCheck</a> () const</td></tr>
+<tr class="memdesc:ae86b5061d236a573adce2fc0109550dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter function for the number of temperature checks.  <br /></td></tr>
 <tr class="separator:ae86b5061d236a573adce2fc0109550dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad90d9be24dca34c44d1eea2ecbdbbf48"><td class="memItemLeft" align="right" valign="top"><a id="ad90d9be24dca34c44d1eea2ecbdbbf48" name="ad90d9be24dca34c44d1eea2ecbdbbf48"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getCheckNumber</b> () const</td></tr>
+<tr class="memitem:ad90d9be24dca34c44d1eea2ecbdbbf48"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_safety.html#ad90d9be24dca34c44d1eea2ecbdbbf48">getCheckNumber</a> () const</td></tr>
+<tr class="memdesc:ad90d9be24dca34c44d1eea2ecbdbbf48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter function for the current check number.  <br /></td></tr>
 <tr class="separator:ad90d9be24dca34c44d1eea2ecbdbbf48"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6a7947989bc693c3cf7f8acc5f67279"><td class="memItemLeft" align="right" valign="top"><a id="af6a7947989bc693c3cf7f8acc5f67279" name="af6a7947989bc693c3cf7f8acc5f67279"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getIntervalMVCheck</b> () const</td></tr>
+<tr class="memitem:af6a7947989bc693c3cf7f8acc5f67279"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_safety.html#af6a7947989bc693c3cf7f8acc5f67279">getIntervalMVCheck</a> () const</td></tr>
+<tr class="memdesc:af6a7947989bc693c3cf7f8acc5f67279"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter function for the interval of the manipulated variable check.  <br /></td></tr>
 <tr class="separator:af6a7947989bc693c3cf7f8acc5f67279"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8cd49e7eac6813e292b0cd1d4d9cc2e1"><td class="memItemLeft" align="right" valign="top"><a id="a8cd49e7eac6813e292b0cd1d4d9cc2e1" name="a8cd49e7eac6813e292b0cd1d4d9cc2e1"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getIntervalTempChange</b> () const</td></tr>
+<tr class="memitem:a8cd49e7eac6813e292b0cd1d4d9cc2e1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_safety.html#a8cd49e7eac6813e292b0cd1d4d9cc2e1">getIntervalTempChange</a> () const</td></tr>
+<tr class="memdesc:a8cd49e7eac6813e292b0cd1d4d9cc2e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter function for the interval of the temperature change check.  <br /></td></tr>
 <tr class="separator:a8cd49e7eac6813e292b0cd1d4d9cc2e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac53494e52725da7aeaba0d5b6fb8cdea"><td class="memItemLeft" align="right" valign="top"><a id="ac53494e52725da7aeaba0d5b6fb8cdea" name="ac53494e52725da7aeaba0d5b6fb8cdea"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>getTempChangeThreshold</b> () const</td></tr>
+<tr class="memitem:a8cd49e7eac6813e292b0cd1d4d9cc2e1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_safety.html#a8cd49e7eac6813e292b0cd1d4d9cc2e1">getIntervalTempChange</a> () const</td></tr>
+<tr class="memdesc:a8cd49e7eac6813e292b0cd1d4d9cc2e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter function for the interval of the temperature change check.  <br /></td></tr>
+<tr class="separator:a8cd49e7eac6813e292b0cd1d4d9cc2e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac53494e52725da7aeaba0d5b6fb8cdea"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_safety.html#ac53494e52725da7aeaba0d5b6fb8cdea">getTempChangeThreshold</a> () const</td></tr>
+<tr class="memdesc:ac53494e52725da7aeaba0d5b6fb8cdea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter function for the threshold of temperature change.  <br /></td></tr>
 <tr class="separator:ac53494e52725da7aeaba0d5b6fb8cdea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a172eced92a219b273824b1eee367bfe0"><td class="memItemLeft" align="right" valign="top"><a id="a172eced92a219b273824b1eee367bfe0" name="a172eced92a219b273824b1eee367bfe0"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>getIgnoreUpper</b> () const</td></tr>
+<tr class="memitem:a172eced92a219b273824b1eee367bfe0"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_safety.html#a172eced92a219b273824b1eee367bfe0">getIgnoreUpper</a> () const</td></tr>
+<tr class="memdesc:a172eced92a219b273824b1eee367bfe0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter function for the upper bound of the ignored temperature range.  <br /></td></tr>
 <tr class="separator:a172eced92a219b273824b1eee367bfe0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1989e307fb76f5984b7c1e44bd98dd17"><td class="memItemLeft" align="right" valign="top"><a id="a1989e307fb76f5984b7c1e44bd98dd17" name="a1989e307fb76f5984b7c1e44bd98dd17"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>getIgnoreLower</b> () const</td></tr>
+<tr class="memitem:a1989e307fb76f5984b7c1e44bd98dd17"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_safety.html#a1989e307fb76f5984b7c1e44bd98dd17">getIgnoreLower</a> () const</td></tr>
+<tr class="memdesc:a1989e307fb76f5984b7c1e44bd98dd17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter function for the lower bound of the ignored temperature range.  <br /></td></tr>
 <tr class="separator:a1989e307fb76f5984b7c1e44bd98dd17"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8fddc616366b49ab915c491a10c1ffc"><td class="memItemLeft" align="right" valign="top"><a id="aa8fddc616366b49ab915c491a10c1ffc" name="aa8fddc616366b49ab915c491a10c1ffc"></a>
-QPair&lt; double, double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getIgnoreTempRange</b> () const</td></tr>
+<tr class="memitem:aa8fddc616366b49ab915c491a10c1ffc"><td class="memItemLeft" align="right" valign="top">QPair&lt; double, double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_safety.html#aa8fddc616366b49ab915c491a10c1ffc">getIgnoreTempRange</a> () const</td></tr>
+<tr class="memdesc:aa8fddc616366b49ab915c491a10c1ffc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter function for the ignored temperature range.  <br /></td></tr>
 <tr class="separator:aa8fddc616366b49ab915c491a10c1ffc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84df553c01a40ffb5e349529c7089cc2"><td class="memItemLeft" align="right" valign="top"><a id="a84df553c01a40ffb5e349529c7089cc2" name="a84df553c01a40ffb5e349529c7089cc2"></a>
-QTimer *&#160;</td><td class="memItemRight" valign="bottom"><b>getTimerMVCheck</b> () const</td></tr>
+<tr class="memitem:a84df553c01a40ffb5e349529c7089cc2"><td class="memItemLeft" align="right" valign="top">QTimer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_safety.html#a84df553c01a40ffb5e349529c7089cc2">getTimerMVCheck</a> () const</td></tr>
+<tr class="memdesc:a84df553c01a40ffb5e349529c7089cc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter function for the timer object used for the manipulated variable check.  <br /></td></tr>
 <tr class="separator:a84df553c01a40ffb5e349529c7089cc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48ae97417ba6e8f02cd254926cc1b97d"><td class="memItemLeft" align="right" valign="top"><a id="a48ae97417ba6e8f02cd254926cc1b97d" name="a48ae97417ba6e8f02cd254926cc1b97d"></a>
-QTimer *&#160;</td><td class="memItemRight" valign="bottom"><b>getTimerTempChangeCheck</b> () const</td></tr>
+<tr class="memitem:a48ae97417ba6e8f02cd254926cc1b97d"><td class="memItemLeft" align="right" valign="top">QTimer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_safety.html#a48ae97417ba6e8f02cd254926cc1b97d">getTimerTempChangeCheck</a> () const</td></tr>
+<tr class="memdesc:a48ae97417ba6e8f02cd254926cc1b97d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter function for the timer object used for the temperature change check.  <br /></td></tr>
 <tr class="separator:a48ae97417ba6e8f02cd254926cc1b97d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab37fe3475582146ac4bf2fff55e7ba6e"><td class="memItemLeft" align="right" valign="top"><a id="ab37fe3475582146ac4bf2fff55e7ba6e" name="ab37fe3475582146ac4bf2fff55e7ba6e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setPermitedMaxTemp</b> (double maxtemp)</td></tr>
+<tr class="memitem:ab37fe3475582146ac4bf2fff55e7ba6e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_safety.html#ab37fe3475582146ac4bf2fff55e7ba6e">setPermitedMaxTemp</a> (double maxtemp)</td></tr>
+<tr class="memdesc:ab37fe3475582146ac4bf2fff55e7ba6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the maximum permitted temperature.  <br /></td></tr>
 <tr class="separator:ab37fe3475582146ac4bf2fff55e7ba6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3cb80658371044047a231a35dfb90091"><td class="memItemLeft" align="right" valign="top"><a id="a3cb80658371044047a231a35dfb90091" name="a3cb80658371044047a231a35dfb90091"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setMVUpper</b> (double MVupper)</td></tr>
+<tr class="memitem:a3cb80658371044047a231a35dfb90091"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_safety.html#a3cb80658371044047a231a35dfb90091">setMVUpper</a> (double MVupper)</td></tr>
+<tr class="memdesc:a3cb80658371044047a231a35dfb90091"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the upper limit of the manipulated variable (MV).  <br /></td></tr>
 <tr class="separator:a3cb80658371044047a231a35dfb90091"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2a6bcb91b827b2c12e28459e50e621f"><td class="memItemLeft" align="right" valign="top"><a id="ac2a6bcb91b827b2c12e28459e50e621f" name="ac2a6bcb91b827b2c12e28459e50e621f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setMV</b> (double MV)</td></tr>
+<tr class="memitem:ac2a6bcb91b827b2c12e28459e50e621f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_safety.html#ac2a6bcb91b827b2c12e28459e50e621f">setMV</a> (double MV)</td></tr>
+<tr class="memdesc:ac2a6bcb91b827b2c12e28459e50e621f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the value of the manipulated variable (MV).  <br /></td></tr>
 <tr class="separator:ac2a6bcb91b827b2c12e28459e50e621f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af4030955eac78938fe9e7079a983b776"><td class="memItemLeft" align="right" valign="top"><a id="af4030955eac78938fe9e7079a983b776" name="af4030955eac78938fe9e7079a983b776"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setNumberOfCheck</b> (int number)</td></tr>
+<tr class="memitem:af4030955eac78938fe9e7079a983b776"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_safety.html#af4030955eac78938fe9e7079a983b776">setNumberOfCheck</a> (int number)</td></tr>
+<tr class="memdesc:af4030955eac78938fe9e7079a983b776"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the number of check for the safety condition.  <br /></td></tr>
 <tr class="separator:af4030955eac78938fe9e7079a983b776"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76548edd3324e5b0aed22cadcbae96ba"><td class="memItemLeft" align="right" valign="top"><a id="a76548edd3324e5b0aed22cadcbae96ba" name="a76548edd3324e5b0aed22cadcbae96ba"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setCheckNumber</b> (int number)</td></tr>
+<tr class="memitem:a76548edd3324e5b0aed22cadcbae96ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_safety.html#a76548edd3324e5b0aed22cadcbae96ba">setCheckNumber</a> (int number)</td></tr>
+<tr class="memdesc:a76548edd3324e5b0aed22cadcbae96ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the check number.  <br /></td></tr>
 <tr class="separator:a76548edd3324e5b0aed22cadcbae96ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f91ae577d2367c6d774cf008c36a313"><td class="memItemLeft" align="right" valign="top"><a id="a8f91ae577d2367c6d774cf008c36a313" name="a8f91ae577d2367c6d774cf008c36a313"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setTempChangeThreshold</b> (double temp)</td></tr>
+<tr class="memitem:a8f91ae577d2367c6d774cf008c36a313"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_safety.html#a8f91ae577d2367c6d774cf008c36a313">setTempChangeThreshold</a> (double temp)</td></tr>
+<tr class="memdesc:a8f91ae577d2367c6d774cf008c36a313"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the threshold of temperature change.  <br /></td></tr>
 <tr class="separator:a8f91ae577d2367c6d774cf008c36a313"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f201f12cdedadc0c3ed9038e2bfe645"><td class="memItemLeft" align="right" valign="top"><a id="a1f201f12cdedadc0c3ed9038e2bfe645" name="a1f201f12cdedadc0c3ed9038e2bfe645"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setIgnoreUpper</b> (double upper)</td></tr>
+<tr class="memitem:a1f201f12cdedadc0c3ed9038e2bfe645"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_safety.html#a1f201f12cdedadc0c3ed9038e2bfe645">setIgnoreUpper</a> (double upper)</td></tr>
+<tr class="memdesc:a1f201f12cdedadc0c3ed9038e2bfe645"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the upper limit for ignoring temperature changes.  <br /></td></tr>
 <tr class="separator:a1f201f12cdedadc0c3ed9038e2bfe645"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7eb8e1541a047b509b266fafd1e57743"><td class="memItemLeft" align="right" valign="top"><a id="a7eb8e1541a047b509b266fafd1e57743" name="a7eb8e1541a047b509b266fafd1e57743"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setIgnoreLower</b> (double lower)</td></tr>
+<tr class="memitem:a7eb8e1541a047b509b266fafd1e57743"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_safety.html#a7eb8e1541a047b509b266fafd1e57743">setIgnoreLower</a> (double lower)</td></tr>
+<tr class="memdesc:a7eb8e1541a047b509b266fafd1e57743"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the lower limit for ignoring temperature changes.  <br /></td></tr>
 <tr class="separator:a7eb8e1541a047b509b266fafd1e57743"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb2c6ae389531f1dd34cff755fd1d5c6"><td class="memItemLeft" align="right" valign="top"><a id="aeb2c6ae389531f1dd34cff755fd1d5c6" name="aeb2c6ae389531f1dd34cff755fd1d5c6"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setIgnoreTempRange</b> (double temp, double lower, double upper)</td></tr>
+<tr class="memitem:aeb2c6ae389531f1dd34cff755fd1d5c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_safety.html#aeb2c6ae389531f1dd34cff755fd1d5c6">setIgnoreTempRange</a> (double temp, double lower, double upper)</td></tr>
+<tr class="memdesc:aeb2c6ae389531f1dd34cff755fd1d5c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the temperature range for ignoring temperature changes.  <br /></td></tr>
 <tr class="separator:aeb2c6ae389531f1dd34cff755fd1d5c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac99b54db1735ae9169c56d3b66fbff07"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_safety.html#ac99b54db1735ae9169c56d3b66fbff07">checkTempChange</a> ()</td></tr>
-<tr class="memdesc:ac99b54db1735ae9169c56d3b66fbff07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the temperature has changed more than the threshold value. This function checks if the temperature has changed more than the threshold value during the specified time interval. If the temperature has changed less than the threshold value, it emits a danger signal and stops the temperature change check timer and MV check timer.  <br /></td></tr>
+<tr class="memdesc:ac99b54db1735ae9169c56d3b66fbff07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the temperature has changed above the threshold value.  <br /></td></tr>
 <tr class="separator:ac99b54db1735ae9169c56d3b66fbff07"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0a24b93c6d273c08b699c12b90809c6"><td class="memItemLeft" align="right" valign="top"><a id="ae0a24b93c6d273c08b699c12b90809c6" name="ae0a24b93c6d273c08b699c12b90809c6"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setEnableTempChangeRange</b> (bool enable)</td></tr>
+<tr class="memitem:ae0a24b93c6d273c08b699c12b90809c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_safety.html#ae0a24b93c6d273c08b699c12b90809c6">setEnableTempChangeRange</a> (bool enable)</td></tr>
+<tr class="memdesc:ae0a24b93c6d273c08b699c12b90809c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables or disables the temperature change range.  <br /></td></tr>
 <tr class="separator:ae0a24b93c6d273c08b699c12b90809c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa5bda2df137f619ebc1bb6f21356cba"><td class="memItemLeft" align="right" valign="top"><a id="afa5bda2df137f619ebc1bb6f21356cba" name="afa5bda2df137f619ebc1bb6f21356cba"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setIntervalMVCheck</b> (int interval)</td></tr>
+<tr class="memitem:afa5bda2df137f619ebc1bb6f21356cba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_safety.html#afa5bda2df137f619ebc1bb6f21356cba">setIntervalMVCheck</a> (int interval)</td></tr>
+<tr class="memdesc:afa5bda2df137f619ebc1bb6f21356cba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the interval for checking the manipulated variable (MV).  <br /></td></tr>
 <tr class="separator:afa5bda2df137f619ebc1bb6f21356cba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a575c792b70681d663013841c8d8a932b"><td class="memItemLeft" align="right" valign="top"><a id="a575c792b70681d663013841c8d8a932b" name="a575c792b70681d663013841c8d8a932b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setIntervalTempChange</b> (int inteerval)</td></tr>
+<tr class="memitem:a575c792b70681d663013841c8d8a932b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_safety.html#a575c792b70681d663013841c8d8a932b">setIntervalTempChange</a> (int inteerval)</td></tr>
+<tr class="memdesc:a575c792b70681d663013841c8d8a932b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the interval for checking the temperature change.  <br /></td></tr>
 <tr class="separator:a575c792b70681d663013841c8d8a932b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a049753e31587a4eb8bfab9d1bfc518a4"><td class="memItemLeft" align="right" valign="top"><a id="a049753e31587a4eb8bfab9d1bfc518a4" name="a049753e31587a4eb8bfab9d1bfc518a4"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>start</b> ()</td></tr>
+<tr class="memdesc:a049753e31587a4eb8bfab9d1bfc518a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the safety monitoring. <br /></td></tr>
 <tr class="separator:a049753e31587a4eb8bfab9d1bfc518a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d72c7d6a94e6b4772c1e227436de7ff"><td class="memItemLeft" align="right" valign="top"><a id="a4d72c7d6a94e6b4772c1e227436de7ff" name="a4d72c7d6a94e6b4772c1e227436de7ff"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>stop</b> ()</td></tr>
+<tr class="memdesc:a4d72c7d6a94e6b4772c1e227436de7ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops the safety monitoring. <br /></td></tr>
 <tr class="separator:a4d72c7d6a94e6b4772c1e227436de7ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac571e4f2e4881d8c3ee328e06781c9fd"><td class="memItemLeft" align="right" valign="top"><a id="ac571e4f2e4881d8c3ee328e06781c9fd" name="ac571e4f2e4881d8c3ee328e06781c9fd"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isTimerMVCheckRunning</b> () const</td></tr>
+<tr class="memitem:ac571e4f2e4881d8c3ee328e06781c9fd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_safety.html#ac571e4f2e4881d8c3ee328e06781c9fd">isTimerMVCheckRunning</a> () const</td></tr>
+<tr class="memdesc:ac571e4f2e4881d8c3ee328e06781c9fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the timer for checking the manipulated variable (MV) is running.  <br /></td></tr>
 <tr class="separator:ac571e4f2e4881d8c3ee328e06781c9fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a641189c819e5a7e5767f039a28208628"><td class="memItemLeft" align="right" valign="top"><a id="a641189c819e5a7e5767f039a28208628" name="a641189c819e5a7e5767f039a28208628"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isTimerTempChangeCheckRunning</b> () const</td></tr>
+<tr class="memitem:a641189c819e5a7e5767f039a28208628"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_safety.html#a641189c819e5a7e5767f039a28208628">isTimerTempChangeCheckRunning</a> () const</td></tr>
+<tr class="memdesc:a641189c819e5a7e5767f039a28208628"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the timer for checking the temperature change is running.  <br /></td></tr>
 <tr class="separator:a641189c819e5a7e5767f039a28208628"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
@@ -243,7 +267,79 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>intervalMVCheck</b></t
 int&#160;</td><td class="memItemRight" valign="bottom"><b>intervalTempChange</b></td></tr>
 <tr class="separator:ab43090ff8172cc79efc502fb1d4a9308"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p><a class="el" href="class_the.html">The</a> <a class="el" href="class_safety.html" title="The Safety class ensures the safe operation of the system. This class monitors the temperature and ot...">Safety</a> class ensures the safe operation of the system. This class monitors the temperature and other parameters of the system to ensure that they remain within safe limits. If any parameter goes outside its safe range, the <a class="el" href="class_safety.html" title="The Safety class ensures the safe operation of the system. This class monitors the temperature and ot...">Safety</a> class takes appropriate action to bring it back within range. <a class="el" href="class_the.html">The</a> class also provides a number of properties that can be used to configure its behavior. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a791c22257e7aeedc2716512c791a78a7" name="a791c22257e7aeedc2716512c791a78a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a791c22257e7aeedc2716512c791a78a7">&#9670;&#160;</a></span>Safety()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Safety::Safety </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_data_summary.html">DataSummary</a> *&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructs a new <a class="el" href="class_safety.html" title="The Safety class ensures the safe operation of the system. This class monitors the temperature and ot...">Safety</a> object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>A pointer to the <a class="el" href="class_data_summary.html" title="Class representing summary information of data.">DataSummary</a> object that contains the system's data.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This constructor initializes a new <a class="el" href="class_safety.html" title="The Safety class ensures the safe operation of the system. This class monitors the temperature and ot...">Safety</a> object with the given <a class="el" href="class_data_summary.html" title="Class representing summary information of data.">DataSummary</a> object pointer. It also sets up the internal timers and connects the relevant signals and slots. </p>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a07fc3535d87e388d71daab2c1be34fe1" name="a07fc3535d87e388d71daab2c1be34fe1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07fc3535d87e388d71daab2c1be34fe1">&#9670;&#160;</a></span>checkNumberChanged</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Safety::checkNumberChanged </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>number</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Signal emitted when the check number has been changed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">number</td><td><a class="el" href="class_the.html">The</a> new check number. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ac99b54db1735ae9169c56d3b66fbff07" name="ac99b54db1735ae9169c56d3b66fbff07"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac99b54db1735ae9169c56d3b66fbff07">&#9670;&#160;</a></span>checkTempChange()</h2>
 
@@ -259,9 +355,1085 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>intervalTempChange</b>
       </table>
 </div><div class="memdoc">
 
-<p>Check if the temperature has changed more than the threshold value. This function checks if the temperature has changed more than the threshold value during the specified time interval. If the temperature has changed less than the threshold value, it emits a danger signal and stops the temperature change check timer and MV check timer. </p>
+<p>Checks whether the temperature has changed above the threshold value. </p>
+<p>Check if the temperature has changed more than the threshold value. This function checks if the temperature has changed more than the threshold value during the specified time interval. If the temperature has changed less than the threshold value, it emits a danger signal and stops the temperature change check timer and MV check timer.</p>
 <dl class="section note"><dt>Note</dt><dd>This function must be called periodically by a QTimer object.</dd></dl>
 <p>This function periodically checks if the temperature has changed more than the threshold value during the specified time interval. If the temperature has changed less than the threshold value, it emits a danger signal and stops the temperature change check timer and MV check timer. <a class="el" href="class_the.html">The</a> function starts by acquiring the current temperature and checking if it's within the ignore range. If the temperature is within the ignore range, the function clears variables, stops the timer, and emits the escapeTempCheckChange signal with the argument 1, indicating that the temperature change check has been escaped. If the temperature is outside the ignore range, the function checks if the conditions for stopping the temperature change check have been met. <a class="el" href="class_the.html">The</a> conditions are: if the check number is equal to or greater than the number of checks minus one, or if the MV is not in the upper limit, or if the temperature is within the ignore range. If any of these conditions is true, the function clears variables, stops the timer, and emits the escapeTempCheckChange signal with the argument 0 if the MV is not in the upper limit, or 1 if the MV is in the upper limit. If none of the stopping conditions is met, the function starts the check and pushes temperature data into the vTempChangeData_ vector. <a class="el" href="class_the.html">The</a> function sets the timer and increments the check number. If the check number is less than the number of checks, the function returns. When the check is completed, the function calculates the differences between adjacent temperature values, calculates the moving average, and checks if it's below the threshold. If it's below the threshold, the function emits the dangerSignal with the argument 1, indicating a dangerous situation. <a class="el" href="class_the.html">The</a> function then clears variables, stops the timer, and resets the check number. </p>
+
+</div>
+</div>
+<a id="a5f638c6cd7a9622dfe70d6d02670f17f" name="a5f638c6cd7a9622dfe70d6d02670f17f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f638c6cd7a9622dfe70d6d02670f17f">&#9670;&#160;</a></span>dangerSignal</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Safety::dangerSignal </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>type</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Signal emitted when a danger is detected. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td><a class="el" href="class_the.html">The</a> type of danger detected. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a964883572fc800b66cb923dd2cb96d04" name="a964883572fc800b66cb923dd2cb96d04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a964883572fc800b66cb923dd2cb96d04">&#9670;&#160;</a></span>escapeTempCheckChange</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Safety::escapeTempCheckChange </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sign</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Signal emitted when the temperature change check is cancelled. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sign</td><td><a class="el" href="class_the.html">The</a> signal that cancelled the temperature change check. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad90d9be24dca34c44d1eea2ecbdbbf48" name="ad90d9be24dca34c44d1eea2ecbdbbf48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad90d9be24dca34c44d1eea2ecbdbbf48">&#9670;&#160;</a></span>getCheckNumber()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Safety::getCheckNumber </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Getter function for the current check number. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_the.html">The</a> current check number. </dd></dl>
+
+</div>
+</div>
+<a id="a1989e307fb76f5984b7c1e44bd98dd17" name="a1989e307fb76f5984b7c1e44bd98dd17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1989e307fb76f5984b7c1e44bd98dd17">&#9670;&#160;</a></span>getIgnoreLower()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Safety::getIgnoreLower </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Getter function for the lower bound of the ignored temperature range. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_the.html">The</a> lower bound of the ignored temperature range. </dd></dl>
+
+</div>
+</div>
+<a id="aa8fddc616366b49ab915c491a10c1ffc" name="aa8fddc616366b49ab915c491a10c1ffc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8fddc616366b49ab915c491a10c1ffc">&#9670;&#160;</a></span>getIgnoreTempRange()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPair&lt; double, double &gt; Safety::getIgnoreTempRange </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Getter function for the ignored temperature range. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_the.html">The</a> ignored temperature range. </dd></dl>
+
+</div>
+</div>
+<a id="a172eced92a219b273824b1eee367bfe0" name="a172eced92a219b273824b1eee367bfe0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a172eced92a219b273824b1eee367bfe0">&#9670;&#160;</a></span>getIgnoreUpper()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Safety::getIgnoreUpper </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Getter function for the upper bound of the ignored temperature range. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_the.html">The</a> upper bound of the ignored temperature range. </dd></dl>
+
+</div>
+</div>
+<a id="af6a7947989bc693c3cf7f8acc5f67279" name="af6a7947989bc693c3cf7f8acc5f67279"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6a7947989bc693c3cf7f8acc5f67279">&#9670;&#160;</a></span>getIntervalMVCheck()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Safety::getIntervalMVCheck </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Getter function for the interval of the manipulated variable check. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_the.html">The</a> interval of the manipulated variable check. </dd></dl>
+
+</div>
+</div>
+<a id="a8cd49e7eac6813e292b0cd1d4d9cc2e1" name="a8cd49e7eac6813e292b0cd1d4d9cc2e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cd49e7eac6813e292b0cd1d4d9cc2e1">&#9670;&#160;</a></span>getIntervalTempChange() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Safety::getIntervalTempChange </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Getter function for the interval of the temperature change check. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_the.html">The</a> interval of the temperature change check. </dd></dl>
+
+</div>
+</div>
+<a id="a8cd49e7eac6813e292b0cd1d4d9cc2e1" name="a8cd49e7eac6813e292b0cd1d4d9cc2e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cd49e7eac6813e292b0cd1d4d9cc2e1">&#9670;&#160;</a></span>getIntervalTempChange() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Safety::getIntervalTempChange </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Getter function for the interval of the temperature change check. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_the.html">The</a> interval of the temperature change check </dd></dl>
+
+</div>
+</div>
+<a id="ac39567888f0eb955815e47aca1601c4d" name="ac39567888f0eb955815e47aca1601c4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac39567888f0eb955815e47aca1601c4d">&#9670;&#160;</a></span>getMV()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Safety::getMV </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Getter function for the current value of the manipulated variable. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_the.html">The</a> current value of the manipulated variable. </dd></dl>
+
+</div>
+</div>
+<a id="a251ce1abade7a9d37b8794c817d32450" name="a251ce1abade7a9d37b8794c817d32450"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a251ce1abade7a9d37b8794c817d32450">&#9670;&#160;</a></span>getMVLower()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Safety::getMVLower </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Getter function for the lower bound of the manipulated variable. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_the.html">The</a> upper bound of the manipulated variable. </dd></dl>
+
+</div>
+</div>
+<a id="af6e3a97192da2fa4aa3c2516db8e45c8" name="af6e3a97192da2fa4aa3c2516db8e45c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6e3a97192da2fa4aa3c2516db8e45c8">&#9670;&#160;</a></span>getMVUpper()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Safety::getMVUpper </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Getter function for the upper bound of the manipulated variable. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_the.html">The</a> upper bound of the manipulated variable. </dd></dl>
+
+</div>
+</div>
+<a id="ae86b5061d236a573adce2fc0109550dc" name="ae86b5061d236a573adce2fc0109550dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae86b5061d236a573adce2fc0109550dc">&#9670;&#160;</a></span>getNumberOfCheck()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Safety::getNumberOfCheck </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Getter function for the number of temperature checks. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_the.html">The</a> number of temperature checks. </dd></dl>
+
+</div>
+</div>
+<a id="a9e0a28a5a469e3969ae66c7da689c989" name="a9e0a28a5a469e3969ae66c7da689c989"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e0a28a5a469e3969ae66c7da689c989">&#9670;&#160;</a></span>getPermitedMaxTemp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Safety::getPermitedMaxTemp </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Getter function for the permitted maximum temperature. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_the.html">The</a> permitted maximum temperature. </dd></dl>
+
+</div>
+</div>
+<a id="ac53494e52725da7aeaba0d5b6fb8cdea" name="ac53494e52725da7aeaba0d5b6fb8cdea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac53494e52725da7aeaba0d5b6fb8cdea">&#9670;&#160;</a></span>getTempChangeThreshold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Safety::getTempChangeThreshold </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Getter function for the threshold of temperature change. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_the.html">The</a> threshold of temperature change. </dd></dl>
+
+</div>
+</div>
+<a id="a4bdcf2894bbf8371976d0aa2fc54eb62" name="a4bdcf2894bbf8371976d0aa2fc54eb62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bdcf2894bbf8371976d0aa2fc54eb62">&#9670;&#160;</a></span>getTemperature()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Safety::getTemperature </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Getter function for the current temperature. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_the.html">The</a> current temperature. </dd></dl>
+
+</div>
+</div>
+<a id="a84df553c01a40ffb5e349529c7089cc2" name="a84df553c01a40ffb5e349529c7089cc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84df553c01a40ffb5e349529c7089cc2">&#9670;&#160;</a></span>getTimerMVCheck()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QTimer * Safety::getTimerMVCheck </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Getter function for the timer object used for the manipulated variable check. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_the.html">The</a> timer object used for the manipulated variable check. </dd></dl>
+
+</div>
+</div>
+<a id="a48ae97417ba6e8f02cd254926cc1b97d" name="a48ae97417ba6e8f02cd254926cc1b97d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48ae97417ba6e8f02cd254926cc1b97d">&#9670;&#160;</a></span>getTimerTempChangeCheck()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QTimer * Safety::getTimerTempChangeCheck </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Getter function for the timer object used for the temperature change check. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_the.html">The</a> timer object used for the temperature change check. </dd></dl>
+
+</div>
+</div>
+<a id="abe479d597616613bf2a4487c3f19cc49" name="abe479d597616613bf2a4487c3f19cc49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe479d597616613bf2a4487c3f19cc49">&#9670;&#160;</a></span>intervalMVCheckChanged</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Safety::intervalMVCheckChanged </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>interval</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Signal emitted when the interval for the MV check has been changed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">interval</td><td><a class="el" href="class_the.html">The</a> new interval for the MV check. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae64e96e13c1aac7847181a2fec2ac7e9" name="ae64e96e13c1aac7847181a2fec2ac7e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae64e96e13c1aac7847181a2fec2ac7e9">&#9670;&#160;</a></span>intervalTempChangeChanged</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Safety::intervalTempChangeChanged </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>interval</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Signal emitted when the interval for the temperature change check has been changed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">interval</td><td><a class="el" href="class_the.html">The</a> new interval for the temperature change check. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac571e4f2e4881d8c3ee328e06781c9fd" name="ac571e4f2e4881d8c3ee328e06781c9fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac571e4f2e4881d8c3ee328e06781c9fd">&#9670;&#160;</a></span>isTimerMVCheckRunning()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Safety::isTimerMVCheckRunning </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks whether the timer for checking the manipulated variable (MV) is running. </p>
+<dl class="section return"><dt>Returns</dt><dd>Boolean indicating whether the timer for checking the manipulated variable (MV) is running. </dd></dl>
+
+</div>
+</div>
+<a id="a641189c819e5a7e5767f039a28208628" name="a641189c819e5a7e5767f039a28208628"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a641189c819e5a7e5767f039a28208628">&#9670;&#160;</a></span>isTimerTempChangeCheckRunning()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Safety::isTimerTempChangeCheckRunning </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks whether the timer for checking the temperature change is running. </p>
+<dl class="section return"><dt>Returns</dt><dd>Boolean indicating whether the timer for checking the temperature change is running. </dd></dl>
+
+</div>
+</div>
+<a id="a8c539e883ac2834e91284928debe8f3f" name="a8c539e883ac2834e91284928debe8f3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c539e883ac2834e91284928debe8f3f">&#9670;&#160;</a></span>logMsg</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Safety::logMsg </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>msg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Signal emitted when a log message is generated. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td><a class="el" href="class_the.html">The</a> log message. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0da0a6d963fc605602da374890f888fe" name="a0da0a6d963fc605602da374890f888fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0da0a6d963fc605602da374890f888fe">&#9670;&#160;</a></span>logMsgWithColor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Safety::logMsgWithColor </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>msg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QColor&#160;</td>
+          <td class="paramname"><em>color</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Signal emitted when a log message with a specific color is generated. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td><a class="el" href="class_the.html">The</a> log message. </td></tr>
+    <tr><td class="paramname">color</td><td><a class="el" href="class_the.html">The</a> color of the log message. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac2e863d63b98f16f996d5ab80af0f6e7" name="ac2e863d63b98f16f996d5ab80af0f6e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2e863d63b98f16f996d5ab80af0f6e7">&#9670;&#160;</a></span>MVUpperChanged</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Safety::MVUpperChanged </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>MVupper</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Signal emitted when the MV upper limit has been changed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">MVupper</td><td><a class="el" href="class_the.html">The</a> new MV upper limit. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1fc8b42cfd9f0137daca0b78a7e6a967" name="a1fc8b42cfd9f0137daca0b78a7e6a967"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fc8b42cfd9f0137daca0b78a7e6a967">&#9670;&#160;</a></span>NumberOfCheckChanged</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Safety::NumberOfCheckChanged </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>number</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Signal emitted when the number of checks has been changed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">number</td><td><a class="el" href="class_the.html">The</a> new number of checks. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a150494b0f4dbcfc2d59244a380a3a37c" name="a150494b0f4dbcfc2d59244a380a3a37c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a150494b0f4dbcfc2d59244a380a3a37c">&#9670;&#160;</a></span>permitedMaxTempChanged</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Safety::permitedMaxTempChanged </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>maxtemp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Signal emitted when the permitted maximum temperature has been changed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">maxtemp</td><td><a class="el" href="class_the.html">The</a> new permitted maximum temperature. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a76548edd3324e5b0aed22cadcbae96ba" name="a76548edd3324e5b0aed22cadcbae96ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76548edd3324e5b0aed22cadcbae96ba">&#9670;&#160;</a></span>setCheckNumber()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Safety::setCheckNumber </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>number</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the check number. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">number</td><td>Check number. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae0a24b93c6d273c08b699c12b90809c6" name="ae0a24b93c6d273c08b699c12b90809c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0a24b93c6d273c08b699c12b90809c6">&#9670;&#160;</a></span>setEnableTempChangeRange()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Safety::setEnableTempChangeRange </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>enable</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enables or disables the temperature change range. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">enable</td><td>Boolean indicating whether the temperature change range is enabled. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7eb8e1541a047b509b266fafd1e57743" name="a7eb8e1541a047b509b266fafd1e57743"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7eb8e1541a047b509b266fafd1e57743">&#9670;&#160;</a></span>setIgnoreLower()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Safety::setIgnoreLower </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>lower</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the lower limit for ignoring temperature changes. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lower</td><td>Lower limit for ignoring temperature changes. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aeb2c6ae389531f1dd34cff755fd1d5c6" name="aeb2c6ae389531f1dd34cff755fd1d5c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb2c6ae389531f1dd34cff755fd1d5c6">&#9670;&#160;</a></span>setIgnoreTempRange()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Safety::setIgnoreTempRange </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>temp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>lower</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>upper</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the temperature range for ignoring temperature changes. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">temp</td><td>Temperature value for ignoring temperature changes. </td></tr>
+    <tr><td class="paramname">lower</td><td>Lower limit of the temperature range for ignoring temperature changes. </td></tr>
+    <tr><td class="paramname">upper</td><td>Upper limit of the temperature range for ignoring temperature changes. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1f201f12cdedadc0c3ed9038e2bfe645" name="a1f201f12cdedadc0c3ed9038e2bfe645"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f201f12cdedadc0c3ed9038e2bfe645">&#9670;&#160;</a></span>setIgnoreUpper()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Safety::setIgnoreUpper </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>upper</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the upper limit for ignoring temperature changes. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">upper</td><td>Upper limit for ignoring temperature changes. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="afa5bda2df137f619ebc1bb6f21356cba" name="afa5bda2df137f619ebc1bb6f21356cba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa5bda2df137f619ebc1bb6f21356cba">&#9670;&#160;</a></span>setIntervalMVCheck()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Safety::setIntervalMVCheck </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>interval</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the interval for checking the manipulated variable (MV). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">interval</td><td>Interval for checking the manipulated variable (MV). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a575c792b70681d663013841c8d8a932b" name="a575c792b70681d663013841c8d8a932b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a575c792b70681d663013841c8d8a932b">&#9670;&#160;</a></span>setIntervalTempChange()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Safety::setIntervalTempChange </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>inteerval</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the interval for checking the temperature change. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">inteerval</td><td>Interval for checking the temperature change. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac2a6bcb91b827b2c12e28459e50e621f" name="ac2a6bcb91b827b2c12e28459e50e621f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2a6bcb91b827b2c12e28459e50e621f">&#9670;&#160;</a></span>setMV()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Safety::setMV </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>MV</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the value of the manipulated variable (MV). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">MV</td><td>Value of the manipulated variable (MV). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3cb80658371044047a231a35dfb90091" name="a3cb80658371044047a231a35dfb90091"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cb80658371044047a231a35dfb90091">&#9670;&#160;</a></span>setMVUpper()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Safety::setMVUpper </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>MVupper</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the upper limit of the manipulated variable (MV). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">MVupper</td><td>Upper limit of the manipulated variable (MV). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af4030955eac78938fe9e7079a983b776" name="af4030955eac78938fe9e7079a983b776"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4030955eac78938fe9e7079a983b776">&#9670;&#160;</a></span>setNumberOfCheck()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Safety::setNumberOfCheck </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>number</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the number of check for the safety condition. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">number</td><td>Number of check. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab37fe3475582146ac4bf2fff55e7ba6e" name="ab37fe3475582146ac4bf2fff55e7ba6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab37fe3475582146ac4bf2fff55e7ba6e">&#9670;&#160;</a></span>setPermitedMaxTemp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Safety::setPermitedMaxTemp </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>maxtemp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the maximum permitted temperature. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">maxtemp</td><td>Maximum permitted temperature. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8f91ae577d2367c6d774cf008c36a313" name="a8f91ae577d2367c6d774cf008c36a313"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f91ae577d2367c6d774cf008c36a313">&#9670;&#160;</a></span>setTempChangeThreshold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Safety::setTempChangeThreshold </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>temp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the threshold of temperature change. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">temp</td><td>Threshold of temperature change. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a20e0e101b801021be41c7955f2b996c9" name="a20e0e101b801021be41c7955f2b996c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20e0e101b801021be41c7955f2b996c9">&#9670;&#160;</a></span>startTempChangeCheck</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Safety::startTempChangeCheck </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>checknumber</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Signal emitted when the temperature change check is started. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">checknumber</td><td><a class="el" href="class_the.html">The</a> check number for the temperature change check. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="afda5edb1254c643ff517d6b12113cadb" name="afda5edb1254c643ff517d6b12113cadb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afda5edb1254c643ff517d6b12113cadb">&#9670;&#160;</a></span>tempChangeThresholdChanged</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Safety::tempChangeThresholdChanged </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>temp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Signal emitted when the temperature change threshold has been changed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">temp</td><td><a class="el" href="class_the.html">The</a> new temperature change threshold. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

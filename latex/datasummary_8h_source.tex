@@ -55,41 +55,52 @@
 \DoxyCodeLine{00123\ }
 \DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_data_summary_ab30b9edd27f68ad4a6a3cee53bd38929}{svChanged}}(\textcolor{keywordtype}{double}\ sv);}
 \DoxyCodeLine{00129\ }
-\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_data_summary_aebab52d567efb28866ddd986e58f88fa}{FileSave}}(\textcolor{keywordtype}{bool}\ success);}
-\DoxyCodeLine{00135\ }
-\DoxyCodeLine{00136\ \textcolor{keyword}{private}\ slots:}
-\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordtype}{void}\ setTemperature(\textcolor{keywordtype}{double}\ temperature);}
+\DoxyCodeLine{00130\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordtype}{void}\ setTemperature(\textcolor{keywordtype}{double}\ temperature);}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordtype}{void}\ setMV(\textcolor{keywordtype}{double}\ mv);}
 \DoxyCodeLine{00142\ }
-\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordtype}{void}\ setMV(\textcolor{keywordtype}{double}\ mv);}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordtype}{void}\ setMVUpper(\textcolor{keywordtype}{double}\ mvUpper);}
 \DoxyCodeLine{00148\ }
-\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordtype}{void}\ setMVUpper(\textcolor{keywordtype}{double}\ mvUpper);}
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordtype}{void}\ setMVLower(\textcolor{keywordtype}{double}\ mvLower);}
 \DoxyCodeLine{00154\ }
-\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keywordtype}{void}\ setMVLower(\textcolor{keywordtype}{double}\ mvLower);}
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keywordtype}{void}\ setSV(\textcolor{keywordtype}{double}\ sv);}
 \DoxyCodeLine{00160\ }
-\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keywordtype}{void}\ setSV(\textcolor{keywordtype}{double}\ sv);}
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keywordtype}{void}\ setSave(\textcolor{keywordtype}{bool}\ save);}
 \DoxyCodeLine{00166\ }
-\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keywordtype}{void}\ setSave(\textcolor{keywordtype}{bool}\ save);}
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keywordtype}{void}\ setIntervalLog(\textcolor{keywordtype}{int}\ interval);}
 \DoxyCodeLine{00172\ }
-\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keywordtype}{void}\ setIntervalLog(\textcolor{keywordtype}{int}\ interval);}
-\DoxyCodeLine{00178\ }
-\DoxyCodeLine{00179\ }
-\DoxyCodeLine{00180\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keyword}{const}\ QString\ desktopPath\_\{QStandardPaths::locate(QStandardPaths::DesktopLocation,\ QString(),\ QStandardPaths::LocateDirectory)\};}
-\DoxyCodeLine{00182\ \ \ \ \ \textcolor{keyword}{const}\ QString\ dataPath2\_\{desktopPath\_\ +\ \textcolor{stringliteral}{"{}Temp\_Record"{}}\};}
-\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keyword}{const}\ QString\ dataPath\_\{\textcolor{stringliteral}{"{}Z:/triplet/Temp\_Record"{}}\};}
-\DoxyCodeLine{00184\ \ \ \ \ \mbox{\hyperlink{class_communication}{Communication}}\ *com\_\{\textcolor{keyword}{nullptr}\};}
-\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keywordtype}{double}\ temperature\_\{\};}
-\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keywordtype}{double}\ mv\_\{\};}
-\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keywordtype}{double}\ mvUpper\_\{\};}
-\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keywordtype}{double}\ mvLower\_\{\};}
-\DoxyCodeLine{00189\ \ \ \ \ \textcolor{keywordtype}{double}\ sv\_\{\};}
-\DoxyCodeLine{00190\ \ \ \ \ QString\ fileName\_\{\};}
-\DoxyCodeLine{00191\ \ \ \ \ QString\ filePath\_\{\};}
-\DoxyCodeLine{00192\ \ \ \ \ \textcolor{keywordtype}{bool}\ save\_\{\textcolor{keyword}{true}\};}
-\DoxyCodeLine{00193\ \ \ \ \ QTimer\ *logTimer\_\{\textcolor{keyword}{nullptr}\};}
-\DoxyCodeLine{00194\ \ \ \ \ \textcolor{keywordtype}{int}\ intervalLog\_\{10\ *\ 1000\};}
-\DoxyCodeLine{00195\ \};}
-\DoxyCodeLine{00196\ }
-\DoxyCodeLine{00197\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DATASUMMARY\_H}}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keyword}{const}\ QString\ desktopPath\_\{QStandardPaths::locate(QStandardPaths::DesktopLocation,\ QString(),\ QStandardPaths::LocateDirectory)\};}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keyword}{const}\ QString\ dataPath2\_\{desktopPath\_\ +\ \textcolor{stringliteral}{"{}Temp\_Record"{}}\};}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{keyword}{const}\ QString\ dataPath\_\{\textcolor{stringliteral}{"{}Z:/triplet/Temp\_Record"{}}\};}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00185\ \ \ \ \ \mbox{\hyperlink{class_communication}{Communication}}\ *com\_\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keywordtype}{double}\ temperature\_\{\};}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00191\ \ \ \ \ \textcolor{keywordtype}{double}\ mv\_\{\};}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{keywordtype}{double}\ mvUpper\_\{\};}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00197\ \ \ \ \ \textcolor{keywordtype}{double}\ mvLower\_\{\};}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{keywordtype}{double}\ sv\_\{\};}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00203\ \ \ \ \ QString\ fileName\_\{\};}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00206\ \ \ \ \ QString\ filePath\_\{\};}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00209\ \ \ \ \ \textcolor{keywordtype}{bool}\ save\_\{\textcolor{keyword}{true}\};}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00212\ \ \ \ \ QTimer\ *logTimer\_\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00215\ \ \ \ \ \textcolor{keywordtype}{int}\ intervalLog\_\{10\ *\ 1000\};}
+\DoxyCodeLine{00216\ \};}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00218\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DATASUMMARY\_H}}
 
 \end{DoxyCode}

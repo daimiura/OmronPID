@@ -1,7 +1,11 @@
 #include "safety.h"
 
-Safety::Safety(DataSummary* data)
-{
+/**
+ * @copybrief Safety::Safety(DataSummary*)
+ * @details This constructor initializes a new Safety object with the given DataSummary object pointer.
+ * It also sets up the internal timers and connects the relevant signals and slots.
+ */
+Safety::Safety(DataSummary* data){
   data_ = data;
   timerMVCheck_ = new QTimer(this);
   timerTempChange_ = new QTimer(this);
@@ -15,9 +19,7 @@ Safety::Safety(DataSummary* data)
   connect(this, &Safety::NumberOfCheckChanged, this, &Safety::setNumberOfCheck);
   connect(this, &Safety::tempChangeThresholdChanged, this, &Safety::setTempChangeThreshold);
   connect(this, &Safety::MVupperReachedUpperLimit, this, &Safety::checkTempChange);
-
 }
-
 
 Safety::~Safety(){
   delete timerMVCheck_;
@@ -27,6 +29,17 @@ Safety::~Safety(){
   vTempChangeData_.clear();
 }
 
+/**
+ * @brief Slot that checks the temperature and handles any dangers.
+ *
+ * This function is a slot that is called by the Safety object's internal timer to check the temperature and handle
+ * any potential dangers. It retrieves the current temperature from the DataSummary object and adds it to the list
+ * of temperature data. If the temperature exceeds the permitted maximum temperature, it emits a dangerSignal.
+ * Finally, it calculates the difference between the current temperature and the previous temperature for use in
+ * other calculations.
+ *
+ * Note that this function is thread-safe and acquires a lock before accessing any shared data.
+ */
 void Safety::checkTemperature(){
   QMutexLocker locker(&mutex_);
   temperature_ = data_->getTemperature();
@@ -37,7 +50,6 @@ void Safety::checkTemperature(){
 
 
 /**
-
 @brief Check if the temperature has changed more than the threshold value.
 This function checks if the temperature has changed more than the threshold value during the specified time interval.
 If the temperature has changed less than the threshold value,
@@ -59,6 +71,12 @@ void Safety::checkTempChange() {
   setIgnoreTempRange(sv, getIgnoreLower(), getIgnoreUpper());
   const double lower = ignoreTempRange_.first;
   const double upper = ignoreTempRange_.second;
+  emit logMsg("Safety start ignore range");
+  emit logMsg("Ignore range is enable?");
+  emit logMsg(QString::number(isEnableTempChangeRange_));
+  emit logMsg("1 -> enable, 0 -> unenable");
+  emit logMsg("Ignore Range");
+  emit logMsg(QString::number(lower) + "----" + QString::number(upper));
   if (isEnableTempChangeRange_ && temp > lower && temp < upper){
     checkNumber_ = 0;
     vTempChangeData_.clear();
@@ -67,15 +85,11 @@ void Safety::checkTempChange() {
     return;
   }
 
-  if (checkNumber_ >= numberOfCheck_ - 1 || (!isMVupper_)) {
+  if (!isMVupper_) {
     checkNumber_ = 0;
     vTempChangeData_.clear();
     timerTempChange_->stop();
-    if (!isMVupper_) {
-      emit escapeTempCheckChange(0);
-    } else {
-      emit escapeTempCheckChange(1);
-    }
+    emit escapeTempCheckChange(1);
     return;
   }
 
@@ -111,6 +125,16 @@ void Safety::checkTempChange() {
 }
 
 
+/**
+ * @brief Calculates the moving average of a data vector over a given window size.
+ *
+ * This function calculates the moving average of the provided data vector over a window of the specified size. It first
+ * calculates the average of the first `wsize` elements of the vector. It then iterates through the remaining elements
+ * of the vector, updating the sum by adding the current element and subtracting the element `wsize` positions behind it.
+ * The average is then calculated and returned.
+ *
+ * Additionally, the function emits a log message with the calculated average value and a green color for visual distinction.
+ */
 double Safety::movingAverage(QVector<double> data, int wsize) {
   double sum = 0.0;
   for (int i = 0; i < wsize; i++) sum += data[i];
@@ -120,7 +144,7 @@ double Safety::movingAverage(QVector<double> data, int wsize) {
       avg = sum / wsize;
   }
   QString msg = "The average value is " + QString::number(avg);
-  emit logMsgWithColor(msg, QColor (0, 255, 0, 255) );
+  emit logMsgWithColor(msg, QColor (0, 0, 255, 255) );
   return avg;
 }
 
