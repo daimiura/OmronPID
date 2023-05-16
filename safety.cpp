@@ -78,6 +78,8 @@ void Safety::checkTempChange() {
   emit logMsg("Ignore Range");
   emit logMsg(QString::number(lower) + "----" + QString::number(upper));
   if (isEnableTempChangeRange_ && temp > lower && temp < upper){
+    emit logMsg("Current temperature is " + QString::number(temp));
+    emit logMsg("In program Now temperature is ignorerange.");
     checkNumber_ = 0;
     vTempChangeData_.clear();
     timerTempChange_->stop();
@@ -85,7 +87,9 @@ void Safety::checkTempChange() {
     return;
   }
 
+  emit logMsg("Cuurent temperature is put pff ignore range.");
   if (!isMVupper_) {
+    emit logMsg("Current MV < MV upper. so escape.");
     checkNumber_ = 0;
     vTempChangeData_.clear();
     timerTempChange_->stop();
