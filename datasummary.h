@@ -169,7 +169,7 @@ private slots:
      * @brief Sets the file name for saving data.
      * @param name The file name.
      */
-    void setFileName(QString name);
+    void setFilePath(QString path);
 
 private:
     /** The path of the user's desktop. */

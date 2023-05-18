@@ -88,7 +88,7 @@ MainWindow::MainWindow(QWidget *parent) :
   connect(ui->checkBox_dataSave, SIGNAL(toggled(bool)), data_, SLOT(setSave(bool)));
   connect(ui->doubleSpinBox_MVupper, SIGNAL(valueChanged(double)), data_, SLOT(setMVUpper(double)));
   connect(ui->doubleSpinBox_MVlower, SIGNAL(valueChanged(double)), data_, SLOT(setMVLower(double)));
-  connect(ui->lineEdit_DirPath, SIGNAL(textChanged(QString)), data_, SLOT(setFileName(QString)));
+  connect(ui->lineEdit_DirPath, SIGNAL(textChanged(QString)), data_, SLOT(setFilePath(QString)));
   connect(com_->getTimerUpdate(), &QTimer::timeout, this, &MainWindow::updateStatusBoxes);
   connect(safety_->getTimerMVCheck(), &QTimer::timeout, this, MainWindow::updateStatusBoxes);
   connect(safety_->getTimerTempChangeCheck(), &QTimer::timeout, this, MainWindow::updateStatusBoxes);

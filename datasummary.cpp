@@ -22,7 +22,7 @@ DataSummary::DataSummary(Communication* com)
     qDebug() << "Cannnot connect Z drive : " << filePath_;
   }
   QDateTime startTime = QDateTime::currentDateTime();
-  fileName_ = filePath_ + "/" + startTime.toString("yyyyMMdd_HHmmss") + ".dat";
+  fileName_ = startTime.toString("yyyyMMdd_HHmmss") + ".dat";
   connect(com_, &Communication::TemperatureUpdated, this, &DataSummary::setTemperature);
   connect(com_, &Communication::MVUpdated, this, &DataSummary::setMV);
   connect(com_, &Communication::MVupperUpdated, this, &DataSummary::setMVUpper);
@@ -45,10 +45,10 @@ void DataSummary::setMV(double mv){mv_ = mv;}
 void DataSummary::setMVUpper(double mvUpper) {mvUpper_ = mvUpper;}
 void DataSummary::setMVLower(double mvLower) {mvLower_ = mvLower;}
 void DataSummary::setSV(double sv){sv_ = sv;}
-void DataSummary::setFileName(QString name) {
+void DataSummary::setFilePath(QString path) {
   qDebug() << "File path to save is chanded....";
-  fileName_ = name;
-  qDebug() << "The path to save" << fileName_;
+  filePath_ = path;
+  qDebug() << "The path to save" << filePath_ << "/" << fileName_;
 }
 void DataSummary::setSave(bool save) {save_ = save;}
 bool DataSummary::isTimerLogRunning() const {return logTimer_ -> isActive();}
@@ -83,8 +83,9 @@ void DataSummary::setIntervalLog(int interval) {
 @return true if the file is successfully generated, false otherwise.
 */
 bool DataSummary::generateSaveFile(){
-  QFile output(fileName_);
-  qDebug() << "SAVE to " << fileName_;
+  QString file = filePath_ + "/" + fileName_;
+  QFile output(file);
+  qDebug() << "SAVE to " << file;
   QTextStream stream(&output);
   if (output.exists()) {
     output.close();
@@ -112,8 +113,9 @@ QDateTime::currentDateTime() method. The data is written in the text format.
 */
 void DataSummary::writeData(){
   if (!save_) return;
-  QFile output(fileName_);
-  qDebug () << fileName_;
+  QString file = filePath_ + "/" + fileName_;
+  QFile output(file);
+  qDebug () << file;
   QTextStream stream(&output);
   if (!output.exists()){
     output.open(QIODevice::WriteOnly| QIODevice::Text);
