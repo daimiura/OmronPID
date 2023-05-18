@@ -80,6 +80,7 @@ void DataSummary::setIntervalLog(int interval) {
 */
 bool DataSummary::generateSaveFile(){
   QFile output(fileName_);
+  qDebug() << "SAVE to " << fileName_;
   QTextStream stream(&output);
   if (output.exists()) {
     output.close();
