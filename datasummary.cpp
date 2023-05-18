@@ -45,7 +45,11 @@ void DataSummary::setMV(double mv){mv_ = mv;}
 void DataSummary::setMVUpper(double mvUpper) {mvUpper_ = mvUpper;}
 void DataSummary::setMVLower(double mvLower) {mvLower_ = mvLower;}
 void DataSummary::setSV(double sv){sv_ = sv;}
-void DataSummary::setFileName(QString name) {fileName_ = name;}
+void DataSummary::setFileName(QString name) {
+  qDebug() << "File path to save is chanded....";
+  fileName_ = name;
+  qDebug() << "The path to save" << fileName_;
+}
 void DataSummary::setSave(bool save) {save_ = save;}
 bool DataSummary::isTimerLogRunning() const {return logTimer_ -> isActive();}
 

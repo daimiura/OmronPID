@@ -70,11 +70,6 @@ public:
      */
     QTimer* getLogTimer() const;
 
-    /**
-     * @brief Sets the file name for saving data.
-     * @param name The file name.
-     */
-    void setFileName(QString name);
 
     /**
      * @brief Generates and saves the data to file.
@@ -170,6 +165,11 @@ private slots:
      */
     void setIntervalLog(int interval);
 
+    /**
+     * @brief Sets the file name for saving data.
+     * @param name The file name.
+     */
+    void setFileName(QString name);
 
 private:
     /** The path of the user's desktop. */
