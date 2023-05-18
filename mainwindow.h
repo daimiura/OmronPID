@@ -333,6 +333,9 @@ private:
     void initializeVariables();
     void updateStatusBoxes();
 
+    void controlStableMode();
+    void handleTemperatureMeasurement();
+
 };
 
 #endif // MAINWINDOW_H

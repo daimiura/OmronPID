@@ -88,7 +88,7 @@ MainWindow::MainWindow(QWidget *parent) :
   connect(ui->checkBox_dataSave, SIGNAL(toggled(bool)), data_, SLOT(setSave(bool)));
   connect(ui->doubleSpinBox_MVupper, SIGNAL(valueChanged(double)), data_, SLOT(setMVUpper(double)));
   connect(ui->doubleSpinBox_MVlower, SIGNAL(valueChanged(double)), data_, SLOT(setMVLower(double)));
-  connect(ui->lineEdit_DirPath, SIGNAL(textChanged(QString)), data_, SLOT(setFilePath(QString)));
+  connect(ui->lineEdit_DirPath, SIGNAL(editingFinished()), data_, SLOT(setFilePath(QString)));
   connect(com_->getTimerUpdate(), &QTimer::timeout, this, &MainWindow::updateStatusBoxes);
   connect(safety_->getTimerMVCheck(), &QTimer::timeout, this, MainWindow::updateStatusBoxes);
   connect(safety_->getTimerTempChangeCheck(), &QTimer::timeout, this, MainWindow::updateStatusBoxes);
@@ -199,359 +199,111 @@ void MainWindow::on_pushButton_SetSV_clicked(){
 }
 
 
-//Want to rewrite.....
-void MainWindow::on_pushButton_Control_clicked()
-{
-    tempControlOnOff = !tempControlOnOff;
-    panalOnOff(!tempControlOnOff);
-    ui->actionOpen_File->setEnabled(!tempControlOnOff);
-    if(tempControlOnOff) {
-        LogMsg("================ Temperature control =====");
-        ui->pushButton_Control->setStyleSheet("background-color: rgb(50,137,48)");
-        ui->lineEdit_msg->setText("Slow Temperature controle mode");
-        ui->checkBoxStatusSTC->setChecked(true);
-        ui->checkBoxStatusTempDrop->setChecked(false);
-        ui->checkBoxStatusTempDrop->setEnabled(false);
-    }else{
-        LogMsg("================ Temperature control Off =====");
-        ui->pushButton_Control->setStyleSheet("");
-        on_comboBox_Mode_currentIndexChanged(ui->comboBox_Mode->currentIndex());
-        qDebug()  << "temp control. = " << tempControlOnOff;
-        clock->stop();
-        totalElapse.start();
-        ui->checkBoxStatusSTC->setChecked(false);
-        ui->checkBoxStatusTempDrop->setEnabled(true);
-        ui->lineEdit_msg->clear();
-        return;
-    }
 
-    double iniTemp = 0;
-    if(tempControlOnOff){
-        on_pushButton_AskStatus_clicked();
-        iniTemp = data_->getTemperature();
-        LogMsg("Current Temperature         : " + QString::number(data_->getTemperature()) + " C.");
+void MainWindow::on_pushButton_Control_clicked(){
+  tempControlOnOff = !tempControlOnOff;
+  panalOnOff(!tempControlOnOff);
+  ui->actionOpen_File->setEnabled(!tempControlOnOff);
+  if(tempControlOnOff) {
+      LogMsg("================ Temperature control =====");
+      ui->pushButton_Control->setStyleSheet("background-color: rgb(50,137,48)");
+      ui->lineEdit_msg->setText("Slow Temperature controle mode");
+      ui->checkBoxStatusSTC->setChecked(true);
+      ui->checkBoxStatusTempDrop->setChecked(false);
+      ui->checkBoxStatusTempDrop->setEnabled(false);
+  }else{
+      LogMsg("================ Temperature control Off =====");
+      ui->pushButton_Control->setStyleSheet("");
+      on_comboBox_Mode_currentIndexChanged(ui->comboBox_Mode->currentIndex());
+      qDebug()  << "temp control. = " << tempControlOnOff;
+      clock->stop();
+      totalElapse.start();
+      ui->checkBoxStatusSTC->setChecked(false);
+      ui->checkBoxStatusTempDrop->setEnabled(true);
+      ui->lineEdit_msg->clear();
+      return;
+  }
+  int mode = 1;
+  switch (mode){
+    case 1:
+        controlStableMode();
+        break;
+        /*
+    case 2:
+        controlMode2(targetValue, tempWaitTime, stream, smallShift, temperature);
+        break;
+    case 3:
+        controlMode3(targetValue, tempWaitTime, stream, smallShift, temperature);
+        break;
+    case 4:
+        controlMode4(targetValue, targetValue_2, tempWaitTime, stream, smallShift, temperature);
+        break;
+        */
+    default:
+        qDebug() << "Invalid control mode.";
+        break;
+  }
 
-        const double targetValue = ui->lineEdit_SV->text().toDouble();
-        const int tempGetTime = ui->spinBox_TempRecordTime->value() * 1000; // msec
-        int tempWaitTime = ui->spinBox_TempStableTime->value() * 60 * 1000; // msec
-        const double tempTorr = ui->doubleSpinBox_TempTorr->value();
-        const double tempStepSize = ui->doubleSpinBox_TempStepSize->value();
-        const int mode = ui->comboBox_Mode->currentData().toInt();
-        const double targetValue_2 = ui->lineEdit_SV2->text().toDouble();
-        const double targetValue_2_waitTime = ui->doubleSpinBox_SV2WaitTime->value() * 60.*1000.;
-        if( mode == 4){
-            tempWaitTime = tempWaitTime * tempStepSize;
-        }
-
-        if( mode == 4){
-            LogMsg("First go to : " + QString::number(targetValue_2) + " C. normaly.");
-            LogMsg("Then go to  : " + QString::number(targetValue) + " C. at fixed rate.");
-        }else{
-            LogMsg("Target Temperature          : " + QString::number(targetValue) + " C.");
-        }
-
-        //============= estimate total time
-        double estTransitionTime = 5; //min
-        if( mode == 2 || mode == 3 || mode == 4) estTransitionTime = 0;
-        double estSlope = (estTransitionTime + tempWaitTime/60/1000) / tempStepSize ;
-        double estTotalTime = estSlope * qAbs(data_->getTemperature()-targetValue);
-        if(mode == 4){
-            estSlope = ui->spinBox_TempStableTime->value(); // min/C
-            estTotalTime = estSlope * qAbs(targetValue_2-targetValue);
-        }
-
-        QMessageBox box;
-        QString boxMsg;
-        if( mode == 1){
-            LogMsg("======== Stable Mode ==========");
-            boxMsg.asprintf("======== Stable Mode ========== \n"
-                           "Estimated transition time : %6.1f min. \n"
-                           "Estimated gradience       : %6.1f min/C \n"
-                           "Estimated total time      : %6.1f min = %6.1f hr",
-                           estTransitionTime,
-                           estSlope,
-                           estTotalTime, estTotalTime/60.);
-        }else if(mode == 2){
-            LogMsg("======== Fixed Time Mode ==========");
-            boxMsg.asprintf("======== Fixed Time Mode ========== \n"
-                           "Estimated gradience  : %6.1f min/C \n"
-                           "Estimated total time : %6.1f min = %6.1f hr",
-                           estSlope,
-                           estTotalTime, estTotalTime/60.);
-        }else if(mode == 3){
-            LogMsg("======== Fixed Rate Mode ==========");
-            boxMsg.asprintf("======== Fixed Rate Mode ========== \n"
-                           "Set-temp Gradience   : %6.1f min/C \n"
-                           "Estimated total time : %6.1f min = %6.1f hr",
-                           estSlope,
-                           estTotalTime, estTotalTime/60.);
-        }else if(mode == 4){
-            LogMsg("======== Normal + Fixed Rate Mode ==========");
-            boxMsg.asprintf("======== Normal + Fixed Rate Mode ========== \n"
-                           "1) Go to %5.1f C using normal mode.\n"
-                           "   Time unknown. \n"
-                           "2) Fixed rate to go to %5.1f C\n"
-                           "   Fixed-rate Set-temp Gradience   : %6.1f min/C \n"
-                           "   Estimated fixed-rate time       : %6.1f min = %6.1f hr",
-                           targetValue_2, targetValue,
-                           estSlope,
-                           estTotalTime, estTotalTime/60.);
-        }
-        LogMsg("Estimated transiton Time : " + QString::number(estTransitionTime) + " min.");
-        LogMsg("Estimated gradience      : " + QString::number(estSlope) + " min/C.");
-        LogMsg("Estimated total Time     : " + QString::number(estTotalTime) + " min. = " + QString::number(estTotalTime/60.) + " hr.");
-        box.setText(boxMsg);
-        box.setInformativeText("Do you want to proceed ?");
-        box.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
-        box.setDefaultButton(QMessageBox::Cancel);
-        if(box.exec() == QMessageBox::Cancel) {
-            tempControlOnOff = false;
-            ui->pushButton_Control->setStyleSheet("");
-            panalOnOff(true);
-            ui->actionOpen_File->setEnabled(true);
-            on_comboBox_Mode_currentIndexChanged(ui->comboBox_Mode->currentIndex());
-            LogMsg("=============== Slow Temperature control cancelled.======");
-            return;
-        }
-
-        // set output file =================
-        QDateTime startTime = QDateTime::currentDateTime();
-        QString fileName = startTime.toString("yyyyMMdd_HHmmss")
-                + "_tempControl_mode" + QString::number(mode)
-                + "_"  + ui->comboBox_SeriesNumber->currentText() +".dat";
-        QString filePath = filePath_ + "/" + fileName;
-        LogMsg("data save to : " + filePath);
-        QFile outfile(filePath);
-
-        outfile.open(QIODevice::WriteOnly| QIODevice::Text);
-        QTextStream stream(&outfile);
-        QString lineout;
-
-        lineout.asprintf("###%s", startTime.toString("yyyy-MM-dd HH:mm:ss\n").toStdString().c_str());
-        stream << lineout;
-        if( mode == 1){
-            lineout = "### Control mode          :  Stable Temperature.\n";
-        }else if(mode == 2){
-            lineout = "### Control mode          :  Fixed Time.\n";
-        }else if(mode == 3){
-            lineout = "### Control mode          :  Set-temp Fixed Rate. \n";
-        }else if(mode == 4){
-            lineout = "### Control mode          :  Normal + Set-temp Fixed Rate. \n";
-        }
-        stream << lineout;
-        if( mode == 1){
-            lineout = "### Target Temperature          : " + QString::number(targetValue) + " C.\n";
-            stream << lineout;
-            lineout = "### Temperature  stable time    : " + QString::number(tempWaitTime) + " min.\n";
-            stream << lineout;
-            lineout = "### Temperature tolerance       : " + QString::number(tempTorr) + " C.\n";
-            stream << lineout;
-        }else if(mode == 2){
-            lineout = "### Target Temperature      : " + QString::number(targetValue) + " C.\n";
-            stream << lineout;
-            lineout = "### Set-temp change time    : " + QString::number(tempWaitTime) + " min.\n";
-            stream << lineout;
-        }else if(mode == 3){
-            lineout = "### Target Temperature      : " + QString::number(targetValue) + " C.\n";
-            stream << lineout;
-            lineout = "### Set-temp change rate    : " + QString::number(tempWaitTime/60./1000.) + " min/C.\n";
-            stream << lineout;
-        }else if(mode == 4){
-            lineout = "### Set-temp of normal      : " + QString::number(targetValue_2) + " C.\n";
-            stream << lineout;
-            lineout = "### Set-temp of fixed rate  : " + QString::number(targetValue) + " C.\n";
-            stream << lineout;
-            lineout = "### Set-temp change rate    : " + QString::number(tempWaitTime/60./1000.) + " min/C.\n";
-            stream << lineout;
-        }
-        lineout.asprintf("###%11s,\t%12s,\t%10s,\t%10s,\t%10s\n", "Date", "Date_t", "temp [C]", "SV [C]", "Output [%]");
-        stream << lineout;
-        stream.flush();
-
-        clock->setSingleShot(false);
-        clock->start(timing_);
-        totalElapse.start(); // used for clock
-        QTimer getTempTimer;
-        getTempTimer.setSingleShot(true);
-
-        //########################### mode 4 extra code, go to targetValue_2
-        //----- set SV
-        com_->executeSendRequestSV(targetValue_2);
-
-        //----- wait for temp reach targetValue_2, while recording temperature.
-        pvData.clear();
-        svData.clear();
-        mvData.clear();
-        //muteLog = ui->checkBox_MuteLogMsg->isChecked();
-        bool targetValue_2_Reached = false;
-        bool waitTimerStarted = false;
-        waitTimer->setSingleShot(true);
-        while(tempControlOnOff && mode == 4 && !targetValue_2_Reached){
-            getTempTimer.start(tempGetTime);
-            double temperature = data_->getTemperature();
-            double MV = data_->getMV();
-            QDateTime date = QDateTime::currentDateTime();
-            fillDataAndPlot(date, temperature, targetValue_2, MV);
-            data_->writeData();
-            while(getTempTimer.remainingTime() > 0 ){
-                waitForMSec(com_->timing::getTempTimer);
-                if(waitTimer->remainingTime() <= 0 && waitTimerStarted == true){
-                    targetValue_2_Reached = true; // break the getTemp loop
-                    muteLog = false;
-                    LogMsg("Target Set-temp stable. Start fixed rate. Elapse time : " + QString::number(totalElapse.elapsed()/1000./60) + " mins.");
-                    lineout.asprintf("### fixed-rate start.\n");
-                    stream << lineout;
-                    stream.flush();
-
-                    break; // break this loop
-                }
-            }
-
-            if(temperature == targetValue_2 && waitTimerStarted == false){
-                waitTimer->start(targetValue_2_waitTime);
-                waitTimerStarted = true;
-                muteLog = false;
-                LogMsg("Target Set-temp reached : " + QString::number(targetValue_2) + " C. Elapse time : " + QString::number(totalElapse.elapsed()/1000./60) + " mins.");
-                LogMsg("wait for 10 mins.");
-                lineout.asprintf("### Target Set-temp reached : %5.1f C\n", targetValue_2);
-                stream << lineout;
-                stream.flush();
-            }
-
-        }
-        muteLog = false;
-
-        //Looping ========================
-        double temperature = data_->getTemperature();
-        double smallShift = temperature;
-        LogMsg("Present Temperature : " + QString::number(temperature) + " C.");
-        const int direction = (temperature > targetValue ) ? (-1) : 1;
-        LogMsg("Temperature step            : " + QString::number(direction * tempStepSize) + " C.");
-
-        if( mode == 1){
-            waitTimer->setSingleShot(true);
-        }else{
-            waitTimer->setSingleShot(false);
-            waitTimer->start(tempWaitTime);
-            waitTimerStarted = true;
-        }
-        while(tempControlOnOff){
-            nextSV = false;
-            if( mode == 1) {
-                waitTimer->stop();
-                waitTimerStarted = false;
-            }
-            //----------------Set SV
-            if( mode == 1 || mode == 2 ){
-                if(direction * (targetValue - temperature) >= tempStepSize){
-                    // when direction is +1, when temperature smaller than tempStepSize, incrase smallshift by a step size.
-                    smallShift = temperature + direction * tempStepSize  ;
-                }else{
-                    //else, smallshift = target value.
-                    smallShift = targetValue;
-                }
-            }
-
-            if( mode == 3 || mode == 4){
-                if(direction * (targetValue - smallShift) >= tempStepSize){
-                    smallShift = smallShift + direction * tempStepSize  ;
-                }else{
-                    smallShift = targetValue;
-                }
-            }
-
-            ui->lineEdit_CurrentSV->setText(QString::number(smallShift) + " C");
-            LogMsg("==== Set-temp : " + QString::number(smallShift) + " C. Elapse Time : " + QString::number(totalElapse.elapsed()/1000./60.) + " mins.");
-
-            //setSV(smallShift);
-            com_->executeSendRequestSV(smallShift);
-            do{
-                getTempTimer.start(tempGetTime);
-                qDebug()  << "temp control. do-loop 1 = " << tempControlOnOff;
-                if(!tempControlOnOff) break;
-
-                //com_->askTemperature();
-                //com_->askMV();
-
-                QDateTime date = QDateTime::currentDateTime();
-                double MV = data_->getMV();
-                fillDataAndPlot(date, temperature, smallShift, MV);
-                data_->writeData();
-                while(getTempTimer.remainingTime() > 0 ){
-                    waitForMSec(com_->timing::getTempTimer);
-                    if( nextSV == true){
-                        break;
-                    }
-                }
-                muteLog=false;
-                //TODO under friQt::endly display
-                if(waitTimerStarted){
-                    LogMsg(" x", false);
-                }else{
-                    LogMsg(" /", false);
-                }
-
-                if( mode == 1){ //========== for stable mode
-                    if( qAbs(temperature - smallShift) <= tempTorr){
-                        if( waitTimerStarted == false){
-                            waitTimer->start(tempWaitTime);
-                            waitTimerStarted = true;
-                        }
-                    }else{
-                        waitTimer->stop();
-                        waitTimerStarted = false;
-                        nextSV = false;
-                    }
-                    if( waitTimerStarted == true){
-                        double stableTime = (tempWaitTime - waitTimer->remainingTime())/1000.;
-                        LogMsg( " temperature stable for : " +  QString::number(stableTime) + " sec. |"
-                         + QString::number(smallShift) + " - " + QString::number(temperature) + "| < "  + QString::number(tempTorr) + " C");
-                    }
-                }
-
-            }while( !nextSV  && tempControlOnOff );
-            muteLog = false;
-
-            if (smallShift == targetValue){
-                if( mode == 1 ) {
-                    lineout = "###=========== Target Temperature Reached =============";
-                }else if( mode == 2 || mode == 3 || mode == 4) {
-                    lineout = "###=========== Time Up  =============";
-                }
-                stream << lineout;
-                stream.flush();
-                LogMsg(lineout);
-                break;
-            }
-        }
-
-        double totalTime = totalElapse.elapsed() /1000./60. + dayCounter * 24. * 60.; // min
-        LogMsg("Total time : " + QString::number(totalTime) + " mins = " + QString::number(totalTime/60.) + " hours.");
-        double tempChanged = qAbs(iniTemp - temperature);
-        LogMsg("Average gradience : " + QString::number(totalTime/tempChanged) + " min/C." );
-
-        //=========== now is the E5CC control
-        //only measure temperature
-        muteLog = true;
-        while(tempControlOnOff){
-            getTempTimer.start(tempGetTime);
-            qDebug()  << "temp control. do-loop 2 = " << tempControlOnOff;
-            //com_->askTemperature();
-            //com_->askMV();
-            double temperature = data_->getTemperature();
-            double MV = data_->getMV();
-            QDateTime date = QDateTime::currentDateTime();
-            fillDataAndPlot(date, temperature, smallShift, MV);
-            data_->writeData();
-            while(getTempTimer.remainingTime() != -1 ){
-                waitForMSec(com_->timing::getTempTimer);
-            }
-
-        };
-        muteLog = false;
-    }
-  ui->checkBoxStatusSTC->setChecked(false);
+  // 温度制御終了後の処理
+  //double totalTime = calculateTotalTime(startTime);
+  //double tempChanged = qAbs(iniTemp - temperature);
+  //outputControlSummary(totalTime, tempChanged);
 }
+
+void MainWindow::controlStableMode()
+{
+    if (!tempControlOnOff)
+        return;
+    LogMsg("AAAA");
+    double iniTemp = data_->getTemperature();
+    const double targetValue = ui->lineEdit_SV->text().toDouble();
+    const double tempTorr = ui->doubleSpinBox_TempTorr->value();
+    const double tempStepSize = ui->doubleSpinBox_TempStepSize->value();
+    double temperature = data_->getTemperature();
+    double smallShift = temperature;
+    const int direction = (temperature > targetValue) ? -1 : 1;
+
+    while (qAbs(temperature - targetValue) > tempTorr) {
+        if (direction * (targetValue - temperature) >= tempStepSize) {
+            smallShift = temperature + direction * tempStepSize;
+        } else {
+            smallShift = targetValue;
+        }
+        LogMsg("smallshift" + QString::number(smallShift));
+        ui->lineEdit_CurrentSV->setText(QString::number(smallShift) + " C");
+        com_->executeSendRequestSV(smallShift);
+        LogMsg("send");
+
+        // Wait for temperature measurement
+        QEventLoop loop;
+        QTimer::singleShot(30000, &loop, &QEventLoop::quit); // 1秒間待機
+        loop.exec();
+
+        temperature = data_->getTemperature();
+    }
+
+    ui->checkBoxStatusSTC->setChecked(false);
+}
+
+void MainWindow::handleTemperatureMeasurement()
+{
+    double temperature = data_->getTemperature();
+    const double targetValue = ui->lineEdit_SV->text().toDouble();
+
+    if (temperature != targetValue) {
+        // Target temperature not reached, continue the control loop
+        controlStableMode();
+    } else {
+        // Target temperature reached, perform any other necessary actions
+    }
+
+    ui->checkBoxStatusSTC->setChecked(false);
+}
+
+
+
+
+
 
 void MainWindow::on_comboBox_AT_currentIndexChanged(int index)
 {
