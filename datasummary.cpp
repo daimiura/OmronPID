@@ -15,9 +15,11 @@ DataSummary::DataSummary(Communication* com)
   QDir myDir;
   myDir.setPath(dataPath_);
   filePath_ = dataPath_;
+  qDebug() << "Default DATAPATH : " << filePath_;
   if(!myDir.exists()){
     myDir.mkpath(dataPath2_);
     filePath_ = dataPath2_;
+    qDebug() << "Cannnot connect Z drive : " << filePath_;
   }
   QDateTime startTime = QDateTime::currentDateTime();
   fileName_ = filePath_ + "/" + startTime.toString("yyyyMMdd_HHmmss") + ".dat";
