@@ -926,7 +926,7 @@ void MainWindow::Run(){
   ui->pushButton_Log->setChecked(true);
   ui->checkBoxStatusRun->setChecked(true);
   countTempCheck_ = 0;
-  //sendLINE("Running starts.");
+  sendLINE("Running starts.");
   plotTimer_->start();
   data_->generateSaveFile();
   data_->SetIntervalLog(ui->spinBox_TempRecordTime->value());
@@ -954,7 +954,7 @@ void MainWindow::Stop(){
   safety_->stop();
   data_->logingStop();
   plotTimer_->stop();
-  //sendLINE("Running stop.");
+  sendLINE("Running stop.");
 }
 
 void MainWindow::Quit(){
@@ -968,7 +968,7 @@ void MainWindow::Quit(){
   ui->checkBoxStatusSTC->setChecked(false);
   ui->pushButton_RunStop->setChecked(false);
   safety_->stop();
-  //sendLINE("Emergency Stop!");
+  sendLINE("Emergency Stop!");
   bkgColorChangeable_ = true;
   setColor(3, bkgColorChangeable_);
   bkgColorChangeable_ = false;
