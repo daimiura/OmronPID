@@ -250,55 +250,37 @@ void MainWindow::on_pushButton_Control_clicked(){
   //outputControlSummary(totalTime, tempChanged);
 }
 
-void MainWindow::controlStableMode()
-{
-    if (!tempControlOnOff)
-        return;
-    LogMsg("AAAA");
-    double iniTemp = data_->getTemperature();
-    const double targetValue = ui->lineEdit_SV->text().toDouble();
-    const double tempTorr = ui->doubleSpinBox_TempTorr->value();
-    const double tempStepSize = ui->doubleSpinBox_TempStepSize->value();
-    double temperature = data_->getTemperature();
-    double smallShift = temperature;
-    const int direction = (temperature > targetValue) ? -1 : 1;
+void MainWindow::controlStableMode(){
+  if (!tempControlOnOff) return;
+  const double targetValue = ui->lineEdit_SV->text().toDouble();
+  const double tempTorr = ui->doubleSpinBox_TempTorr->value();
+  const double tempStepSize = ui->doubleSpinBox_TempStepSize->value();
+  double temperature = data_->getTemperature();
+  double smallShift = temperature;
+  const int direction = (temperature > targetValue) ? -1 : 1;
+  LogMsg("SLC in stable mode start.");
+  while (qAbs(temperature - targetValue) > tempTorr) {
+      LogMsg("Current temperature is " + QString::number(temperature));
+      if (direction * (targetValue - temperature) >= tempStepSize) {
+        smallShift = temperature + direction * tempStepSize;
+      } else {
+        smallShift = targetValue;
+      }
+      LogMsg("smallshift is " + QString::number(smallShift));
+      ui->lineEdit_CurrentSV->setText(QString::number(smallShift) + " C");
+      com_->executeSendRequestSV(smallShift);
+      LogMsg("Set SV to smallShift : " + QString::number(smallShift));
+      // Wait for temperature measurement
+      int waitTime = ui->spinBox_TempStableTime->value() * 60 * 1000; //msec to min
+      QEventLoop loop;
+      QTimer::singleShot(waitTime, &loop, &QEventLoop::quit);
+      loop.exec();
+      temperature = data_->getTemperature();
+  }
 
-    while (qAbs(temperature - targetValue) > tempTorr) {
-        if (direction * (targetValue - temperature) >= tempStepSize) {
-            smallShift = temperature + direction * tempStepSize;
-        } else {
-            smallShift = targetValue;
-        }
-        LogMsg("smallshift" + QString::number(smallShift));
-        ui->lineEdit_CurrentSV->setText(QString::number(smallShift) + " C");
-        com_->executeSendRequestSV(smallShift);
-        LogMsg("send");
-
-        // Wait for temperature measurement
-        QEventLoop loop;
-        QTimer::singleShot(30000, &loop, &QEventLoop::quit); // 1秒間待機
-        loop.exec();
-
-        temperature = data_->getTemperature();
-    }
-
-    ui->checkBoxStatusSTC->setChecked(false);
+  ui->checkBoxStatusSTC->setChecked(false);
 }
 
-void MainWindow::handleTemperatureMeasurement()
-{
-    double temperature = data_->getTemperature();
-    const double targetValue = ui->lineEdit_SV->text().toDouble();
-
-    if (temperature != targetValue) {
-        // Target temperature not reached, continue the control loop
-        controlStableMode();
-    } else {
-        // Target temperature reached, perform any other necessary actions
-    }
-
-    ui->checkBoxStatusSTC->setChecked(false);
-}
 
 
 
