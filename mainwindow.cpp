@@ -291,7 +291,7 @@ void MainWindow::controlFixedTimeMode() {
   double temperature = data_->getTemperature();
   double smallShift = temperature;
   const int direction = (temperature > targetValue) ? -1 : 1;
-  int waitTime = 10000;
+  int waitTime = ui->spinBox_TempStableTime->value()*60 * 1000;
   while (qAbs(temperature - targetValue) > tempTorr) {
     if (qAbs(targetValue - temperature) >= tempStepSize) {
       smallShift += direction * tempStepSize;
