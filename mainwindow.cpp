@@ -277,7 +277,6 @@ void MainWindow::controlStableMode(){
       QTimer::singleShot(waitTime, &loop, &QEventLoop::quit);
       loop.exec();
       temperature = data_->getTemperature();
-      waitTimer->stop();
       if (!tempControlOnOff) break;
   }
   ui->checkBoxStatusSTC->setChecked(false);
