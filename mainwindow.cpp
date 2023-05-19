@@ -313,16 +313,14 @@ void MainWindow::controlFixedTimeMode() {
 
 void MainWindow::controlFixedRateMode() {
     if (!tempControlOnOff) return;
-    const double tempTorr = ui->doubleSpinBox_TempTorr->value();
-    const double tempStepSize = ui->doubleSpinBox_TempStepSize->value();
     const double targetValue = ui->lineEdit_SV->text().toDouble(); // 目標温度
-    int waitTime = ui->spinBox_TempStableTime->value() * 1000 * 60; // msec to min
-    double targetRate = tempStepSize / waitTime; // 目標変化率（温度変化 per min）
+    double targetRate = ui->spinBox_TempStableTime->value(); // 目標変化率（温度変化 per min）
     double temperature = data_->getTemperature(); // 初期温度
     double smallShift = temperature; // 変化後の温度
+    const double tempTorr = ui->doubleSpinBox_TempTorr->value();
+    const double tempStepSize = ui->doubleSpinBox_TempStepSize->value();
     const int direction = (temperature > targetValue) ? -1 : 1; // 温度変化の方向
     double currentRate = 0.0; // 現在の温度変化率
-
     while (qAbs(temperature - targetValue) > tempTorr) {
         if (direction * (targetValue - temperature) >= tempStepSize) {
             smallShift = temperature + direction * tempStepSize;
@@ -331,21 +329,19 @@ void MainWindow::controlFixedRateMode() {
         }
         ui->lineEdit_CurrentSV->setText(QString::number(smallShift) + " C");
         com_->executeSendRequestSV(smallShift);
-
+        int waitTime = 60*1000; //msec
         QEventLoop loop;
         QTimer::singleShot(waitTime, &loop, &QEventLoop::quit);
         loop.exec();
-
         double temperatureAfterWait = data_->getTemperature();
-        currentRate = qAbs(temperatureAfterWait - temperature) / waitTime; // 温度変化率を計算
-
+        currentRate = 1.0/qAbs(temperatureAfterWait - temperature); // 温度変化率を計算
         // 目標変化率に達するまで待機
         while (currentRate < targetRate) {
             QEventLoop rateLoop;
             QTimer::singleShot(waitTime, &rateLoop, &QEventLoop::quit);
             rateLoop.exec();
             temperatureAfterWait = data_->getTemperature();
-            currentRate = qAbs(temperatureAfterWait - temperature) / waitTime; // 温度変化率を再計算
+            currentRate = 1.0/qAbs(1.0/temperatureAfterWait - temperature); // 温度変化率を再計算
         }
         temperature = temperatureAfterWait;
     }
