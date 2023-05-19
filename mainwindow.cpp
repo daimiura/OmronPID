@@ -251,8 +251,8 @@ void MainWindow::on_pushButton_Control_clicked(){
 }
 
 void MainWindow::controlStableMode(){
-  LogMsg("Stable Mode start");
   if (!tempControlOnOff) return;
+  LogMsg("Stable Mode start");
   const double targetValue = ui->lineEdit_SV->text().toDouble();
   const double tempTorr = ui->doubleSpinBox_TempTorr->value();
   const double tempStepSize = ui->doubleSpinBox_TempStepSize->value();
@@ -278,13 +278,14 @@ void MainWindow::controlStableMode(){
       loop.exec();
       temperature = data_->getTemperature();
       waitTimer->stop();
+      if (!tempControlOnOff) break;
   }
   ui->checkBoxStatusSTC->setChecked(false);
 }
 
 void MainWindow::controlFixedTimeMode() {
-  LogMsg("Fixed Time mode start");
   if (!tempControlOnOff) return;
+  LogMsg("Fixed Time mode start");
   const double tempTorr = ui->doubleSpinBox_TempTorr->value();
   const double tempStepSize = ui->doubleSpinBox_TempStepSize->value();
   const double targetValue = ui->lineEdit_SV->text().toDouble();
@@ -305,15 +306,13 @@ void MainWindow::controlFixedTimeMode() {
     QTimer::singleShot(waitTime, &loop, &QEventLoop::quit);
     loop.exec();
     temperature = data_->getTemperature();
+    if (!tempControlOnOff) break;
   }
   ui->checkBoxStatusSTC->setChecked(false);
 }
 
-
-
-
 void MainWindow::controlFixedRateMode() {
-    if (!tempControlOnOff) return;
+  if (!tempControlOnOff) return;
     const double targetValue = ui->lineEdit_SV->text().toDouble(); // 目標温度
     double targetRate = ui->spinBox_TempStableTime->value(); // 目標変化率(min per C）
     double temperature = data_->getTemperature(); // 初期温度
@@ -345,6 +344,7 @@ void MainWindow::controlFixedRateMode() {
             currentRate = 1.0/qAbs(1.0/temperatureAfterWait - temperature); // 温度変化率を再計算
         }
         temperature = temperatureAfterWait;
+        if (!tempControlOnOff) break;
     }
     ui->checkBoxStatusSTC->setChecked(false);
 }
