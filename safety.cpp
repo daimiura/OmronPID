@@ -154,7 +154,6 @@ double Safety::movingAverage(QVector<double> data, int wsize) {
 
 
 bool Safety::isMVupper(){
-  qDebug() << "Safey function works every " << intervalMVCheck_ ;
   setMV(data_->getMV());
   setMVUpper(data_->getMVUpper());
   if (MV_ >= MVUpper_) {
@@ -238,3 +237,14 @@ void Safety::setIgnoreTempRange(double temp, double lower, double upper){
   ignoreTempRange_ = qMakePair(temp + lower, temp + upper);
 }
 
+
+void Safety::setIsSTC(bool isSTC){
+  isSTC_ = isSTC;
+  if (isSTC_){
+     emit logMsgWithColor("Slow Temperature Controle on. stop safety", QColor(0, 0, 255, 255));
+     stop();
+  } else {
+     emit logMsgWithColor("Slow Temperature Controle off. start safety", QColor(0, 0, 255, 255));
+     start();
+    }
+}

@@ -336,6 +336,7 @@ private:
     void controlStableMode();
     void controlFixedTimeMode();
     void controlFixedRateMode();
+    void controlNormalAndFixedRateMode();
 
 };
 

@@ -216,6 +216,8 @@ public:
   */
   void setIntervalTempChange(int inteerval);
 
+  void setIsSTC(bool isSTC);
+
   /**
   @brief Starts the safety monitoring.
   */
@@ -346,6 +348,7 @@ private:
     QVector<double> vTempChangeData_{}; /**< The temperature change data. */
     bool isMVupper_{false}; /**< Whether the motor valve is at the upper limit. */
     bool isEnableTempChangeRange_{false}; /**< Whether to enable temperature change range checking. */
+    bool isSTC_{false}; /**< Whether to run Slow Temperature Control mode */
 
     /**
     @brief Check if the current temperature is different from the previous temperature

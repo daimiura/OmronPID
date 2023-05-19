@@ -89,6 +89,8 @@ MainWindow::MainWindow(QWidget *parent) :
   connect(ui->doubleSpinBox_MVupper, SIGNAL(valueChanged(double)), data_, SLOT(setMVUpper(double)));
   connect(ui->doubleSpinBox_MVlower, SIGNAL(valueChanged(double)), data_, SLOT(setMVLower(double)));
   connect(ui->lineEdit_DirPath, SIGNAL(editingFinished()), data_, SLOT(setFilePath(QString)));
+  connect(ui->pushButton_Control, &QPushButton::clicked, safety_, &Safety::setIsSTC);
+
   connect(com_->getTimerUpdate(), &QTimer::timeout, this, &MainWindow::updateStatusBoxes);
   connect(safety_->getTimerMVCheck(), &QTimer::timeout, this, MainWindow::updateStatusBoxes);
   connect(safety_->getTimerTempChangeCheck(), &QTimer::timeout, this, MainWindow::updateStatusBoxes);
@@ -234,11 +236,9 @@ void MainWindow::on_pushButton_Control_clicked(){
     case 3:
         controlFixedRateMode();
         break;
-        /*
     case 4:
-        controlMode4(targetValue, targetValue_2, tempWaitTime, stream, smallShift, temperature);
+        controlNormalAndFixedRateMode();
         break;
-        */
     default:
         qDebug() << "Invalid control mode.";
         break;
@@ -277,8 +277,8 @@ void MainWindow::controlStableMode(){
       QTimer::singleShot(waitTime, &loop, &QEventLoop::quit);
       loop.exec();
       temperature = data_->getTemperature();
+      waitTimer->stop();
   }
-
   ui->checkBoxStatusSTC->setChecked(false);
 }
 
@@ -291,30 +291,31 @@ void MainWindow::controlFixedTimeMode() {
   double temperature = data_->getTemperature();
   double smallShift = temperature;
   const int direction = (temperature > targetValue) ? -1 : 1;
-  QTimer* waitTimer = new QTimer(this);
-  connect(waitTimer, &QTimer::timeout, [this, &smallShift]() {
-    ui->lineEdit_CurrentSV->setText(QString::number(smallShift) + " C");
-    com_->executeSendRequestSV(smallShift);
-  });
+  int waitTime = 10000;
   while (qAbs(temperature - targetValue) > tempTorr) {
-    if (direction * (targetValue - temperature) >= tempStepSize) {
-      smallShift = temperature + direction * tempStepSize;
+    if (qAbs(targetValue - temperature) >= tempStepSize) {
+      smallShift += direction * tempStepSize;
     } else {
       smallShift = targetValue;
     }
-    waitTimer->start(ui->spinBox_TempStableTime->value() * 1000 * 60); //msec to min
+    LogMsg(QString::number(smallShift));
+    ui->lineEdit_CurrentSV->setText(QString::number(smallShift) + " C");
+    com_->executeSendRequestSV(smallShift);
     QEventLoop loop;
-    connect(waitTimer, &QTimer::timeout, &loop, &QEventLoop::quit);
+    QTimer::singleShot(waitTime, &loop, &QEventLoop::quit);
     loop.exec();
     temperature = data_->getTemperature();
   }
   ui->checkBoxStatusSTC->setChecked(false);
 }
 
+
+
+
 void MainWindow::controlFixedRateMode() {
     if (!tempControlOnOff) return;
     const double targetValue = ui->lineEdit_SV->text().toDouble(); // 目標温度
-    double targetRate = ui->spinBox_TempStableTime->value(); // 目標変化率（温度変化 per min）
+    double targetRate = ui->spinBox_TempStableTime->value(); // 目標変化率(min per C）
     double temperature = data_->getTemperature(); // 初期温度
     double smallShift = temperature; // 変化後の温度
     const double tempTorr = ui->doubleSpinBox_TempTorr->value();
@@ -348,7 +349,16 @@ void MainWindow::controlFixedRateMode() {
     ui->checkBoxStatusSTC->setChecked(false);
 }
 
-
+void MainWindow::controlNormalAndFixedRateMode(){
+  const double targetValue = ui->lineEdit_SV->text().toDouble();
+  const int tempGetTime = ui->spinBox_TempRecordTime->value() * 1000; // msec
+  int tempWaitTime = ui->spinBox_TempStableTime->value() * 60 * 1000; // msec
+  const double tempTorr = ui->doubleSpinBox_TempTorr->value();
+  const double tempStepSize = ui->doubleSpinBox_TempStepSize->value();
+  const int mode = ui->comboBox_Mode->currentData().toInt();
+  const double targetValue_2 = ui->lineEdit_SV2->text().toDouble();
+  int targetValue_2_waitTime = ui->doubleSpinBox_SV2WaitTime->value() * 60.*1000.;
+}
 
 
 void MainWindow::on_comboBox_AT_currentIndexChanged(int index)
@@ -700,7 +710,7 @@ void MainWindow::Run(){
   ui->lineEdit_msg->setStyleSheet("");
   ui->pushButton_Log->setChecked(true);
   ui->checkBoxStatusRun->setChecked(true);
-  sendLINE("Running starts.");
+  //sendLINE("Running starts.");
   plotTimer_->start();
   data_->generateSaveFile();
   data_->SetIntervalLog(ui->spinBox_TempRecordTime->value());
@@ -727,7 +737,7 @@ void MainWindow::Stop(){
   safety_->stop();
   data_->logingStop();
   plotTimer_->stop();
-  sendLINE("Running stop.");
+  //sendLINE("Running stop.");
 }
 
 void MainWindow::Quit(){
@@ -740,7 +750,7 @@ void MainWindow::Quit(){
   ui->checkBoxStatusSTC->setChecked(false);
   ui->pushButton_RunStop->setChecked(false);
   safety_->stop();
-  sendLINE("Emergency Stop!");
+  //sendLINE("Emergency Stop!");
   bkgColorChangeable_ = true;
   setColor(3, bkgColorChangeable_);
   bkgColorChangeable_ = false;
