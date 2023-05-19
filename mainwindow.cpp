@@ -223,18 +223,18 @@ void MainWindow::on_pushButton_Control_clicked(){
       ui->lineEdit_msg->clear();
       return;
   }
-  int mode = 1;
+  int mode = ui->comboBox_Mode->currentData().toInt();
   switch (mode){
     case 1:
         controlStableMode();
         break;
-        /*
     case 2:
-        controlMode2(targetValue, tempWaitTime, stream, smallShift, temperature);
+        controlFixedTimeMode();
         break;
     case 3:
-        controlMode3(targetValue, tempWaitTime, stream, smallShift, temperature);
+        controlFixedRateMode();
         break;
+        /*
     case 4:
         controlMode4(targetValue, targetValue_2, tempWaitTime, stream, smallShift, temperature);
         break;
@@ -251,6 +251,7 @@ void MainWindow::on_pushButton_Control_clicked(){
 }
 
 void MainWindow::controlStableMode(){
+  LogMsg("Stable Mode start");
   if (!tempControlOnOff) return;
   const double targetValue = ui->lineEdit_SV->text().toDouble();
   const double tempTorr = ui->doubleSpinBox_TempTorr->value();
@@ -281,8 +282,75 @@ void MainWindow::controlStableMode(){
   ui->checkBoxStatusSTC->setChecked(false);
 }
 
+void MainWindow::controlFixedTimeMode() {
+  LogMsg("Fixed Time mode start");
+  if (!tempControlOnOff) return;
+  const double tempTorr = ui->doubleSpinBox_TempTorr->value();
+  const double tempStepSize = ui->doubleSpinBox_TempStepSize->value();
+  const double targetValue = ui->lineEdit_SV->text().toDouble();
+  double temperature = data_->getTemperature();
+  double smallShift = temperature;
+  const int direction = (temperature > targetValue) ? -1 : 1;
+  QTimer* waitTimer = new QTimer(this);
+  connect(waitTimer, &QTimer::timeout, [this, &smallShift]() {
+    ui->lineEdit_CurrentSV->setText(QString::number(smallShift) + " C");
+    com_->executeSendRequestSV(smallShift);
+  });
+  while (qAbs(temperature - targetValue) > tempTorr) {
+    if (direction * (targetValue - temperature) >= tempStepSize) {
+      smallShift = temperature + direction * tempStepSize;
+    } else {
+      smallShift = targetValue;
+    }
+    waitTimer->start(ui->spinBox_TempStableTime->value() * 1000 * 60); //msec to min
+    QEventLoop loop;
+    connect(waitTimer, &QTimer::timeout, &loop, &QEventLoop::quit);
+    loop.exec();
+    temperature = data_->getTemperature();
+  }
+  ui->checkBoxStatusSTC->setChecked(false);
+}
 
+void MainWindow::controlFixedRateMode() {
+    if (!tempControlOnOff) return;
+    const double tempTorr = ui->doubleSpinBox_TempTorr->value();
+    const double tempStepSize = ui->doubleSpinBox_TempStepSize->value();
+    const double targetValue = ui->lineEdit_SV->text().toDouble(); // 目標温度
+    int waitTime = ui->spinBox_TempStableTime->value() * 1000 * 60; // msec to min
+    double targetRate = tempStepSize / waitTime; // 目標変化率（温度変化 per min）
+    double temperature = data_->getTemperature(); // 初期温度
+    double smallShift = temperature; // 変化後の温度
+    const int direction = (temperature > targetValue) ? -1 : 1; // 温度変化の方向
+    double currentRate = 0.0; // 現在の温度変化率
 
+    while (qAbs(temperature - targetValue) > tempTorr) {
+        if (direction * (targetValue - temperature) >= tempStepSize) {
+            smallShift = temperature + direction * tempStepSize;
+        } else {
+            smallShift = targetValue;
+        }
+        ui->lineEdit_CurrentSV->setText(QString::number(smallShift) + " C");
+        com_->executeSendRequestSV(smallShift);
+
+        QEventLoop loop;
+        QTimer::singleShot(waitTime, &loop, &QEventLoop::quit);
+        loop.exec();
+
+        double temperatureAfterWait = data_->getTemperature();
+        currentRate = qAbs(temperatureAfterWait - temperature) / waitTime; // 温度変化率を計算
+
+        // 目標変化率に達するまで待機
+        while (currentRate < targetRate) {
+            QEventLoop rateLoop;
+            QTimer::singleShot(waitTime, &rateLoop, &QEventLoop::quit);
+            rateLoop.exec();
+            temperatureAfterWait = data_->getTemperature();
+            currentRate = qAbs(temperatureAfterWait - temperature) / waitTime; // 温度変化率を再計算
+        }
+        temperature = temperatureAfterWait;
+    }
+    ui->checkBoxStatusSTC->setChecked(false);
+}
 
 
 

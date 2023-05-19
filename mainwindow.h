@@ -334,7 +334,8 @@ private:
     void updateStatusBoxes();
 
     void controlStableMode();
-    void handleTemperatureMeasurement();
+    void controlFixedTimeMode();
+    void controlFixedRateMode();
 
 };
 
