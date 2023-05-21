@@ -14,7 +14,6 @@
 #include "safety.h"
 #include "datasummary.h"
 
-
 MainWindow::MainWindow(QWidget *parent) :
   QMainWindow(parent),
   ui(new Ui::MainWindow),
@@ -230,20 +229,20 @@ void MainWindow::on_pushButton_Control_clicked(){
   int mode = ui->comboBox_Mode->currentData().toInt();
   switch (mode){
     case 1:
-        controlStableMode(targetValue, tempTorr, tempStepSize);
-        break;
+      controlStableMode(targetValue, tempTorr, tempStepSize);
+      break;
     case 2:
-        controlFixedTimeMode(targetValue, tempTorr, tempStepSize);
-        break;
+      controlFixedTimeMode(targetValue, tempTorr, tempStepSize);
+      break;
     case 3:
-        controlFixedRateMode(targetValue, tempTorr, tempStepSize);
-        break;
+      controlFixedRateMode(targetValue, tempTorr, tempStepSize);
+      break;
     case 4:
-        controlNormalAndFixedRateMode(targetValue, tempTorr, tempStepSize);
-        break;
+      controlNormalAndFixedRateMode(targetValue, tempTorr, tempStepSize);
+      break;
     default:
-        qDebug() << "Invalid control mode.";
-        break;
+      qDebug() << "Invalid control mode.";
+      break;
   }
 }
 
@@ -669,7 +668,7 @@ void MainWindow::Run(){
   ui->lineEdit_msg->setStyleSheet("");
   ui->pushButton_Log->setChecked(true);
   ui->checkBoxStatusRun->setChecked(true);
-  //sendLINE("Running starts.");
+  sendLINE("Running start.");
   plotTimer_->start();
   data_->generateSaveFile();
   data_->SetIntervalLog(ui->spinBox_TempRecordTime->value());
@@ -696,7 +695,7 @@ void MainWindow::Stop(){
   safety_->stop();
   data_->logingStop();
   plotTimer_->stop();
-  //sendLINE("Running stop.");
+  sendLINE("Running stop");
 }
 
 void MainWindow::Quit(){
@@ -709,7 +708,7 @@ void MainWindow::Quit(){
   ui->checkBoxStatusSTC->setChecked(false);
   ui->pushButton_RunStop->setChecked(false);
   safety_->stop();
-  //sendLINE("Emergency Stop!");
+  sendLINE("Emergency Stop!");
   bkgColorChangeable_ = true;
   setColor(3, bkgColorChangeable_);
   bkgColorChangeable_ = false;
