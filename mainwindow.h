@@ -230,12 +230,6 @@ private slots:
     void showTime();
 
     /**
-
-    @brief allowSetNextSV allows setting the next set value for the temperature controller.
-    */
-    void allowSetNextSV();
-
-    /**
     @brief getSetting retrieves the current setting values from the temperature controller.
     */
     void getSetting();
@@ -321,7 +315,6 @@ private:
     QElapsedTimer totalElapse{};
     bool checkDay{false};
     int dayCounter{};
-    bool nextSV{false};
     bool bkgColorChangeable_{true};
 
     void addPortName(QList<QSerialPortInfo> info);
@@ -333,10 +326,11 @@ private:
     void initializeVariables();
     void updateStatusBoxes();
 
-    void controlStableMode();
-    void controlFixedTimeMode();
-    void controlFixedRateMode();
-    void controlNormalAndFixedRateMode();
+    void controlStableMode(double targetValue, double tempTorr, double tempStepSize);
+    void controlFixedTimeMode(double targetValue, double tempTorr, double tempStepSize);
+    void controlFixedRateMode(double targetValue, double tempTorr, double tempStepSize);
+    void controlNormalAndFixedRateMode(double targetValue, double tempTorr, double tempStepSize);
+    double calcRate(double temp, double aftertemp, int min);
 
 };
 

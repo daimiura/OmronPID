@@ -175,3 +175,54 @@ void MainWindow::setupDialog(){
 
   joinDialog_ = new JoinLINEDialog(this);
 }
+
+void MainWindow::on_comboBox_Mode_currentIndexChanged(int index){
+    if(!comboxEnable) return;
+    if(index == 1){
+        ui->doubleSpinBox_TempTorr->setEnabled(false);
+        ui->doubleSpinBox_TempStepSize->setEnabled(true);
+        ui->doubleSpinBox_TempStepSize->setValue(0.5);
+        ui->comboBox_Mode->setStyleSheet("color: #FF0000");
+        ui->label_TimeStable->setStyleSheet("color: #FF0000");
+        ui->label_TimeStable->setText("Set-temp changes [min] :");
+        ui->label_SV_2->setStyleSheet("");
+        ui->lineEdit_SV2->setEnabled(false);
+        ui->doubleSpinBox_SV2WaitTime->setEnabled(false);
+        ui->label_SV2WaitTime->setStyleSheet("");
+    }else if(index == 0){
+        ui->doubleSpinBox_TempTorr->setEnabled(true);
+        ui->doubleSpinBox_TempStepSize->setEnabled(true);
+        ui->doubleSpinBox_TempStepSize->setValue(0.5);
+        ui->comboBox_Mode->setStyleSheet("");
+        ui->label_TimeStable->setStyleSheet("");
+        ui->label_TimeStable->setText("Temp. stable for [min] :");
+        ui->label_SV_2->setStyleSheet("");
+        ui->lineEdit_SV2->setEnabled(false);
+        ui->doubleSpinBox_SV2WaitTime->setEnabled(false);
+        ui->label_SV2WaitTime->setStyleSheet("");
+    }else if(index == 2){
+        ui->doubleSpinBox_TempTorr->setEnabled(false);
+        ui->doubleSpinBox_TempStepSize->setEnabled(false);
+        ui->doubleSpinBox_TempStepSize->setValue(0.6);
+        ui->comboBox_Mode->setStyleSheet("color: #0000FF");
+        ui->label_TimeStable->setStyleSheet("color: #0000FF");
+        ui->label_TimeStable->setText("Set-temp rate [C/min] :");
+        ui->label_SV_2->setStyleSheet("");
+        ui->lineEdit_SV2->setEnabled(false);
+        ui->doubleSpinBox_SV2WaitTime->setEnabled(false);
+        ui->label_SV2WaitTime->setStyleSheet("");
+    }else if( index == 3){
+        ui->doubleSpinBox_TempTorr->setEnabled(false);
+        ui->doubleSpinBox_TempStepSize->setEnabled(false);
+        ui->doubleSpinBox_TempStepSize->setValue(0.5);
+        ui->comboBox_Mode->setStyleSheet("color: #006325");
+        ui->label_TimeStable->setStyleSheet("color: #006325");
+        ui->label_TimeStable->setText("Set-temp rate [C/min] :");
+        ui->lineEdit_SV2->setEnabled(true);
+        ui->label_SV_2->setStyleSheet("color: #006325");
+        ui->lineEdit_SV2->setText("92");
+        ui->doubleSpinBox_SV2WaitTime->setEnabled(true);
+        ui->label_SV2WaitTime->setStyleSheet("color: #006325");
+        ui->doubleSpinBox_SV2WaitTime->setValue(10.);
+    }
+}

@@ -15,11 +15,9 @@ DataSummary::DataSummary(Communication* com)
   QDir myDir;
   myDir.setPath(dataPath_);
   filePath_ = dataPath_;
-  qDebug() << "Default DATAPATH : " << filePath_;
   if(!myDir.exists()){
     myDir.mkpath(dataPath2_);
     filePath_ = dataPath2_;
-    qDebug() << "Cannnot connect Z drive : " << filePath_;
   }
   QDateTime startTime = QDateTime::currentDateTime();
   fileName_ = startTime.toString("yyyyMMdd_HHmmss") + ".dat";
@@ -45,11 +43,7 @@ void DataSummary::setMV(double mv){mv_ = mv;}
 void DataSummary::setMVUpper(double mvUpper) {mvUpper_ = mvUpper;}
 void DataSummary::setMVLower(double mvLower) {mvLower_ = mvLower;}
 void DataSummary::setSV(double sv){sv_ = sv;}
-void DataSummary::setFilePath(QString path) {
-  qDebug() << "File path to save is chanded....";
-  filePath_ = path;
-  qDebug() << "The path to save" << filePath_ << "/" << fileName_;
-}
+void DataSummary::setFilePath(QString path) {filePath_ = path;}
 void DataSummary::setSave(bool save) {save_ = save;}
 bool DataSummary::isTimerLogRunning() const {return logTimer_ -> isActive();}
 
@@ -82,19 +76,22 @@ void DataSummary::setIntervalLog(int interval) {
 @brief Generate a new save file if it does not already exist.
 @return true if the file is successfully generated, false otherwise.
 */
-bool DataSummary::generateSaveFile(){
+bool DataSummary::generateSaveFile() {
   QString file = filePath_ + "/" + fileName_;
   QFile output(file);
-  qDebug() << "SAVE to " << file;
   QTextStream stream(&output);
   if (output.exists()) {
     output.close();
     return false;
-  }else {
-    output.open(QIODevice::WriteOnly| QIODevice::Text);
-    stream <<"Date\t"<<"Date_t\t"<<"temp [C]\t"<<"SV [C]\t"<<"Output [%]" <<Qt::endl;
-    output.close();
-    return true;
+  } else {
+    if (output.open(QIODevice::WriteOnly | QIODevice::Text)) {
+      stream << "Date\t" << "Date_t\t" << "temp [C]\t" << "SV [C]\t" << "Output [%]" << Qt::endl;
+      output.close();
+      return true;
+    } else {
+      emit logMsgWithColor ("Failed to create file", QColor(255, 0, 0, 255));
+      return false;
+    }
   }
 }
 
@@ -115,7 +112,6 @@ void DataSummary::writeData(){
   if (!save_) return;
   QString file = filePath_ + "/" + fileName_;
   QFile output(file);
-  qDebug () << file;
   QTextStream stream(&output);
   if (!output.exists()){
     output.open(QIODevice::WriteOnly| QIODevice::Text);
@@ -144,47 +140,3 @@ void DataSummary::logingStart(){
 void DataSummary::logingStop(){
   logTimer_->stop();
 }
-
-/*
-void DataSummary::writeHeader(QTextStream& stream, QDateTime startTime, int mode, double targetValue, double targetValue_2, int tempWaitTime, double tempTorr){
-  QString lineout = "###" + startTime.toString("yyyy-MM-dd HH:mm:ss\n");
-  stream << lineout;
-  if (mode == 1) {
-      lineout = "### Control mode          :  Stable Temperature.\n";
-      stream << lineout;
-      lineout = "### Target Temperature    : " + QString::number(targetValue) + " C.\n";
-      stream << lineout;
-      lineout = "### Temperature stable time: " + QString::number(tempWaitTime) + " min.\n";
-      stream << lineout;
-      lineout = "### Temperature tolerance : " + QString::number(tempTorr) + " C.\n";
-      stream << lineout;
-  } else if (mode == 2) {
-      lineout = "### Control mode          :  Fixed Time.\n";
-      stream << lineout;
-      lineout = "### Target Temperature    : " + QString::number(targetValue) + " C.\n";
-      stream << lineout;
-      lineout = "### Set-temp change time  : " + QString::number(tempWaitTime) + " min.\n";
-      stream << lineout;
-  } else if (mode == 3) {
-      lineout = "### Control mode          :  Set-temp Fixed Rate. \n";
-      stream << lineout;
-      lineout = "### Target Temperature    : " + QString::number(targetValue) + " C.\n";
-      stream << lineout;
-      lineout = "### Set-temp change rate  : " + QString::number(tempWaitTime/60./1000.) + " min/C.\n";
-      stream << lineout;
-  } else if (mode == 4) {
-      lineout = "### Control mode          :  Normal + Set-temp Fixed Rate. \n";
-      stream << lineout;
-      lineout = "### Set-temp of normal    : " + QString::number(targetValue_2) + " C.\n";
-      stream << lineout;
-      lineout = "### Set-temp of fixed rate: " + QString::number(targetValue) + " C.\n";
-      stream << lineout;
-      lineout = "### Set-temp change rate  : " + QString::number(tempWaitTime/60./1000.) + " min/C.\n";
-      stream << lineout;
-  }
-
-  lineout = "###" + QString("%1,\t%2,\t%3,\t%4,\t%5\n").arg("Date").arg("Date_t").arg("temp [C]").arg("SV [C]").arg("Output [%]");
-  stream << lineout;
-  }
-}
-*/

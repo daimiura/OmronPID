@@ -54,6 +54,7 @@ MainWindow::MainWindow(QWidget *parent) :
   //Generate instance to use DataSummary class.
   data_ = new DataSummary(com_);
   ui->lineEdit_DirPath->setText(data_->getFilePath());
+  connect(data_, &DataSummary::logMsgWithColor, this, &MainWindow::catchLogMsgWithColor);
 
   //Generate instance to use Safety class.
   safety_ = new Safety(data_);
@@ -88,7 +89,7 @@ MainWindow::MainWindow(QWidget *parent) :
   connect(ui->checkBox_dataSave, SIGNAL(toggled(bool)), data_, SLOT(setSave(bool)));
   connect(ui->doubleSpinBox_MVupper, SIGNAL(valueChanged(double)), data_, SLOT(setMVUpper(double)));
   connect(ui->doubleSpinBox_MVlower, SIGNAL(valueChanged(double)), data_, SLOT(setMVLower(double)));
-  connect(ui->lineEdit_DirPath, SIGNAL(editingFinished()), data_, SLOT(setFilePath(QString)));
+  connect(ui->lineEdit_DirPath, SIGNAL(textChanged(QString)), data_, SLOT(setFilePath(QString)));
   connect(ui->pushButton_Control, &QPushButton::clicked, safety_, &Safety::setIsSTC);
 
   connect(com_->getTimerUpdate(), &QTimer::timeout, this, &MainWindow::updateStatusBoxes);
@@ -98,7 +99,6 @@ MainWindow::MainWindow(QWidget *parent) :
 
   timing_ = com_->timing::clockUpdate;
   connect(clock, SIGNAL(timeout()), this, SLOT(showTime()));
-  connect(waitTimer, SIGNAL(timeout()), this, SLOT(allowSetNextSV()));
 }
 
 
@@ -173,9 +173,6 @@ void MainWindow::showTime()
     t = t.addMSecs(totalElapse.elapsed());
 }
 
-void MainWindow::allowSetNextSV(){
-    nextSV = true;
-}
 
 void MainWindow::on_pushButton_AskStatus_clicked(){
   com_->askTemperature();
@@ -225,82 +222,87 @@ void MainWindow::on_pushButton_Control_clicked(){
       ui->lineEdit_msg->clear();
       return;
   }
+
+  //* initialization variables from GUI.
+  double targetValue = ui->lineEdit_SV->text().toDouble();
+  double tempTorr = ui->doubleSpinBox_TempTorr->value();
+  double tempStepSize = ui->doubleSpinBox_TempStepSize->value();
   int mode = ui->comboBox_Mode->currentData().toInt();
   switch (mode){
     case 1:
-        controlStableMode();
+        controlStableMode(targetValue, tempTorr, tempStepSize);
         break;
     case 2:
-        controlFixedTimeMode();
+        controlFixedTimeMode(targetValue, tempTorr, tempStepSize);
         break;
     case 3:
-        controlFixedRateMode();
+        controlFixedRateMode(targetValue, tempTorr, tempStepSize);
         break;
     case 4:
-        controlNormalAndFixedRateMode();
+        controlNormalAndFixedRateMode(targetValue, tempTorr, tempStepSize);
         break;
     default:
         qDebug() << "Invalid control mode.";
         break;
   }
-
-  // 温度制御終了後の処理
-  //double totalTime = calculateTotalTime(startTime);
-  //double tempChanged = qAbs(iniTemp - temperature);
-  //outputControlSummary(totalTime, tempChanged);
 }
 
-void MainWindow::controlStableMode(){
+void MainWindow::controlStableMode(double targetValue, double tempTorr, double tempStepSize){
   if (!tempControlOnOff) return;
   LogMsg("Stable Mode start");
-  const double targetValue = ui->lineEdit_SV->text().toDouble();
-  const double tempTorr = ui->doubleSpinBox_TempTorr->value();
-  const double tempStepSize = ui->doubleSpinBox_TempStepSize->value();
   double temperature = data_->getTemperature();
-  double smallShift = temperature;
+  double nextSV = temperature;
   const int direction = (temperature > targetValue) ? -1 : 1;
-  LogMsg("SLC in stable mode start.");
   while (qAbs(temperature - targetValue) > tempTorr) {
-      LogMsg("Current temperature is " + QString::number(temperature));
-      if (direction * (targetValue - temperature) >= tempStepSize) {
-        smallShift = temperature + direction * tempStepSize;
-      } else {
-        smallShift = targetValue;
-      }
-      LogMsg("smallshift is " + QString::number(smallShift));
-      ui->lineEdit_CurrentSV->setText(QString::number(smallShift) + " C");
-      com_->executeSendRequestSV(smallShift);
-      LogMsg("Set SV to smallShift : " + QString::number(smallShift));
-      // Wait for temperature measurement
-      int waitTime = ui->spinBox_TempStableTime->value() * 60 * 1000; //msec to min
-      QEventLoop loop;
-      QTimer::singleShot(waitTime, &loop, &QEventLoop::quit);
-      loop.exec();
-      temperature = data_->getTemperature();
-      if (!tempControlOnOff) break;
+    LogMsg("Current temperature is " + QString::number(temperature));
+    if (direction * (targetValue - temperature) >= tempStepSize) {
+      nextSV = temperature + direction * tempStepSize;
+    } else {
+      nextSV = targetValue;
+    }
+    ui->lineEdit_CurrentSV->setText(QString::number(nextSV) + " C");
+    com_->executeSendRequestSV(nextSV);
+    int waitTime = ui->spinBox_TempStableTime->value() * 60 * 1000; //msec to min
+    QEventLoop loop;
+    QTimer::singleShot(waitTime, &loop, &QEventLoop::quit);
+    loop.exec();
+    temperature = data_->getTemperature();
+    if (!tempControlOnOff) break;
+    /*
+    LogMsg("Set SV to smallShift : " + QString::number(smallShift));
+    while (qAbs(temperature - smallShift) > tempTorr){
+        int waitTime = ui->spinBox_TempStableTime->value() * 60 * 1000; //msec to min
+        QEventLoop loop;
+        QTimer::singleShot(waitTime, &loop, &QEventLoop::quit);
+        loop.exec();
+        temperature = data_->getTemperature();
+        if (!tempControlOnOff) break;
+    }
+    if (!tempControlOnOff) break;
+    */
   }
   ui->checkBoxStatusSTC->setChecked(false);
 }
 
-void MainWindow::controlFixedTimeMode() {
+void MainWindow::controlFixedTimeMode(double targetValue, double tempTorr, double tempStepSize){
   if (!tempControlOnOff) return;
   LogMsg("Fixed Time mode start");
-  const double tempTorr = ui->doubleSpinBox_TempTorr->value();
-  const double tempStepSize = ui->doubleSpinBox_TempStepSize->value();
-  const double targetValue = ui->lineEdit_SV->text().toDouble();
   double temperature = data_->getTemperature();
-  double smallShift = temperature;
+  double nextSV = temperature;
   const int direction = (temperature > targetValue) ? -1 : 1;
-  int waitTime = ui->spinBox_TempStableTime->value()*60 * 1000;
   while (qAbs(temperature - targetValue) > tempTorr) {
     if (qAbs(targetValue - temperature) >= tempStepSize) {
-      smallShift += direction * tempStepSize;
+      nextSV += direction * tempStepSize; // ver.2023
+      /**
+       * the following nextSV is in case of original code.
+      nextSV += temperature + direction * tempStepSize;
+      **/
     } else {
-      smallShift = targetValue;
+      nextSV = targetValue;
     }
-    LogMsg(QString::number(smallShift));
-    ui->lineEdit_CurrentSV->setText(QString::number(smallShift) + " C");
-    com_->executeSendRequestSV(smallShift);
+    ui->lineEdit_CurrentSV->setText(QString::number(nextSV) + " C");
+    com_->executeSendRequestSV(nextSV);
+    int waitTime = ui->spinBox_TempStableTime->value()*60 * 1000;
     QEventLoop loop;
     QTimer::singleShot(waitTime, &loop, &QEventLoop::quit);
     loop.exec();
@@ -310,55 +312,64 @@ void MainWindow::controlFixedTimeMode() {
   ui->checkBoxStatusSTC->setChecked(false);
 }
 
-void MainWindow::controlFixedRateMode() {
+void MainWindow::controlFixedRateMode(double targetValue, double tempTorr, double tempStepSize){
   if (!tempControlOnOff) return;
-    const double targetValue = ui->lineEdit_SV->text().toDouble(); // 目標温度
-    double targetRate = ui->spinBox_TempStableTime->value(); // 目標変化率(min per C）
-    double temperature = data_->getTemperature(); // 初期温度
-    double smallShift = temperature; // 変化後の温度
-    const double tempTorr = ui->doubleSpinBox_TempTorr->value();
-    const double tempStepSize = ui->doubleSpinBox_TempStepSize->value();
-    const int direction = (temperature > targetValue) ? -1 : 1; // 温度変化の方向
-    double currentRate = 0.0; // 現在の温度変化率
-    while (qAbs(temperature - targetValue) > tempTorr) {
-        if (direction * (targetValue - temperature) >= tempStepSize) {
-            smallShift = temperature + direction * tempStepSize;
-        } else {
-            smallShift = targetValue;
-        }
-        ui->lineEdit_CurrentSV->setText(QString::number(smallShift) + " C");
-        com_->executeSendRequestSV(smallShift);
-        int waitTime = 60*1000; //msec
-        QEventLoop loop;
-        QTimer::singleShot(waitTime, &loop, &QEventLoop::quit);
-        loop.exec();
-        double temperatureAfterWait = data_->getTemperature();
-        currentRate = 1.0/qAbs(temperatureAfterWait - temperature); // 温度変化率を計算
-        // 目標変化率に達するまで待機
-        while (currentRate < targetRate) {
-            QEventLoop rateLoop;
-            QTimer::singleShot(waitTime, &rateLoop, &QEventLoop::quit);
-            rateLoop.exec();
-            temperatureAfterWait = data_->getTemperature();
-            currentRate = 1.0/qAbs(1.0/temperatureAfterWait - temperature); // 温度変化率を再計算
-        }
-        temperature = temperatureAfterWait;
-        if (!tempControlOnOff) break;
+  LogMsg("Fixed Rate mode start");
+  double temperature = data_->getTemperature();
+  double nextSV = temperature - tempStepSize;
+  const int direction = (temperature > targetValue) ? -1 : 1;
+  tempStepSize = ui->spinBox_TempStableTime->value(); //
+  int waitTime = 60 * 1000;//msec
+  while (qAbs(temperature - targetValue) > tempTorr) {
+    if (qAbs(targetValue - temperature) >= tempStepSize) {
+      nextSV += direction * tempStepSize;
+    } else {
+      nextSV = targetValue;
     }
-    ui->checkBoxStatusSTC->setChecked(false);
+    ui->lineEdit_CurrentSV->setText(QString::number(nextSV) + " C");
+    com_->executeSendRequestSV(nextSV);
+    QEventLoop loop;
+    QTimer::singleShot(waitTime, &loop, &QEventLoop::quit);
+    loop.exec();
+    temperature = data_->getTemperature();
+    if (!tempControlOnOff) break;
+  }
+  ui->checkBoxStatusSTC->setChecked(false);
 }
 
-void MainWindow::controlNormalAndFixedRateMode(){
-  const double targetValue = ui->lineEdit_SV->text().toDouble();
-  const int tempGetTime = ui->spinBox_TempRecordTime->value() * 1000; // msec
-  int tempWaitTime = ui->spinBox_TempStableTime->value() * 60 * 1000; // msec
-  const double tempTorr = ui->doubleSpinBox_TempTorr->value();
-  const double tempStepSize = ui->doubleSpinBox_TempStepSize->value();
-  const int mode = ui->comboBox_Mode->currentData().toInt();
+
+
+void MainWindow::controlNormalAndFixedRateMode(double targetValue, double tempTorr, double tempStepSize){
+  double temperature = data_->getTemperature();
   const double targetValue_2 = ui->lineEdit_SV2->text().toDouble();
   int targetValue_2_waitTime = ui->doubleSpinBox_SV2WaitTime->value() * 60.*1000.;
+  ui->lineEdit_CurrentSV->setText(QString::number(targetValue_2) + " C");
+  com_->executeSendRequestSV(targetValue_2);
+  while(temperature > targetValue_2){
+    QEventLoop loop;
+    QTimer::singleShot(targetValue_2_waitTime, &loop, &QEventLoop::quit);
+    loop.exec();
+    temperature = data_->getTemperature();
+  }
+  controlFixedRateMode(targetValue, tempTorr, tempStepSize);
 }
 
+double MainWindow::calcRate(double temp, double aftertemp, int msec){
+  double diff = qAbs(aftertemp - temp);
+  double rate = 0.0;
+  LogMsg("Cuurent temperature is " + QString::number(temp));
+  LogMsg("After temperature is " + QString::number(aftertemp));
+  LogMsg("Difference is " + QString::number(diff));
+  if (diff < 1e-6) {
+      LogMsg("temperature difference is too small to cacurate for the rate. (rate is inf).");
+      LogMsg("So, current rate is set to be 0.0");
+      rate = 0.0;
+  } else{
+      rate = diff/msec/60.0/1000.0; //C /min
+      LogMsg("Rate is " + QString::number(rate));
+  }
+  return rate;
+}
 
 void MainWindow::on_comboBox_AT_currentIndexChanged(int index)
 {
@@ -390,57 +401,6 @@ void MainWindow::on_doubleSpinBox_MVupper_valueChanged(double arg1){
 }
 
 void MainWindow::on_pushButton_GetPID_clicked() {com_->askPID("PID");}
-
-void MainWindow::on_comboBox_Mode_currentIndexChanged(int index){
-    if(!comboxEnable) return;
-    if(index == 1){
-        ui->doubleSpinBox_TempTorr->setEnabled(false);
-        ui->doubleSpinBox_TempStepSize->setEnabled(true);
-        ui->doubleSpinBox_TempStepSize->setValue(0.5);
-        ui->comboBox_Mode->setStyleSheet("color: #FF0000");
-        ui->label_TimeStable->setStyleSheet("color: #FF0000");
-        ui->label_TimeStable->setText("Set-temp changes [min] :");
-        ui->label_SV_2->setStyleSheet("");
-        ui->lineEdit_SV2->setEnabled(false);
-        ui->doubleSpinBox_SV2WaitTime->setEnabled(false);
-        ui->label_SV2WaitTime->setStyleSheet("");
-    }else if(index == 0){
-        ui->doubleSpinBox_TempTorr->setEnabled(true);
-        ui->doubleSpinBox_TempStepSize->setEnabled(true);
-        ui->doubleSpinBox_TempStepSize->setValue(0.5);
-        ui->comboBox_Mode->setStyleSheet("");
-        ui->label_TimeStable->setStyleSheet("");
-        ui->label_TimeStable->setText("Temp. stable for [min] :");
-        ui->label_SV_2->setStyleSheet("");
-        ui->lineEdit_SV2->setEnabled(false);
-        ui->doubleSpinBox_SV2WaitTime->setEnabled(false);
-        ui->label_SV2WaitTime->setStyleSheet("");
-    }else if(index == 2){
-        ui->doubleSpinBox_TempTorr->setEnabled(false);
-        ui->doubleSpinBox_TempStepSize->setEnabled(false);
-        ui->doubleSpinBox_TempStepSize->setValue(0.1);
-        ui->comboBox_Mode->setStyleSheet("color: #0000FF");
-        ui->label_TimeStable->setStyleSheet("color: #0000FF");
-        ui->label_TimeStable->setText("Set-temp rate [min/C] :");
-        ui->label_SV_2->setStyleSheet("");
-        ui->lineEdit_SV2->setEnabled(false);
-        ui->doubleSpinBox_SV2WaitTime->setEnabled(false);
-        ui->label_SV2WaitTime->setStyleSheet("");
-    }else if( index == 3){
-        ui->doubleSpinBox_TempTorr->setEnabled(false);
-        ui->doubleSpinBox_TempStepSize->setEnabled(false);
-        ui->doubleSpinBox_TempStepSize->setValue(0.1);
-        ui->comboBox_Mode->setStyleSheet("color: #006325");
-        ui->label_TimeStable->setStyleSheet("color: #006325");
-        ui->label_TimeStable->setText("Set-temp rate [min/C] :");
-        ui->lineEdit_SV2->setEnabled(true);
-        ui->label_SV_2->setStyleSheet("color: #006325");
-        ui->lineEdit_SV2->setText("92");
-        ui->doubleSpinBox_SV2WaitTime->setEnabled(true);
-        ui->label_SV2WaitTime->setStyleSheet("color: #006325");
-        ui->doubleSpinBox_SV2WaitTime->setValue(10.);
-    }
-}
 
 void MainWindow::on_comboBox_MemAddress_currentTextChanged(const QString &arg1)
 {

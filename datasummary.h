@@ -122,6 +122,13 @@ signals:
      */
     void svChanged(double sv);
 
+    /**
+     * @brief Signal emitted for send log to mainwindow.
+     * @param msg The log.
+     * @param color text color
+     */
+    void logMsgWithColor(QString msg, QColor color);
+
 private slots:
     /**
      * @brief Slot to set the temperature value.

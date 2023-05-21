@@ -65,29 +65,20 @@ If none of the stopping conditions is met, the function starts the check and pus
 When the check is completed, the function calculates the differences between adjacent temperature values, calculates the moving average, and checks if it's below the threshold. If it's below the threshold, the function emits the dangerSignal with the argument 1, indicating a dangerous situation. The function then clears variables, stops the timer, and resets the check number.
 */
 void Safety::checkTempChange() {
+  if (isSTC_) return;
   QMutexLocker locker(&mutex_);
   double sv = data_->getSV();
   double temp = data_->getTemperature();
   setIgnoreTempRange(sv, getIgnoreLower(), getIgnoreUpper());
   const double lower = ignoreTempRange_.first;
   const double upper = ignoreTempRange_.second;
-  emit logMsg("Safety start ignore range");
-  emit logMsg("Ignore range is enable?");
-  emit logMsg(QString::number(isEnableTempChangeRange_));
-  emit logMsg("1 -> enable, 0 -> unenable");
-  emit logMsg("Ignore Range");
-  emit logMsg(QString::number(lower) + "----" + QString::number(upper));
   if (isEnableTempChangeRange_ && temp > lower && temp < upper){
-    emit logMsg("Current temperature is " + QString::number(temp));
-    emit logMsg("In program Now temperature is ignorerange.");
     checkNumber_ = 0;
     vTempChangeData_.clear();
     timerTempChange_->stop();
     emit escapeTempCheckChange(1);
     return;
   }
-
-  emit logMsg("Cuurent temperature is put pff ignore range.");
   if (!isMVupper_) {
     emit logMsg("Current MV < MV upper. so escape.");
     checkNumber_ = 0;
@@ -154,17 +145,20 @@ double Safety::movingAverage(QVector<double> data, int wsize) {
 
 
 bool Safety::isMVupper(){
+  emit logMsg("SAFETY is STC : " + QString::number(isSTC_));
+  if (isSTC_) return false;
   setMV(data_->getMV());
   setMVUpper(data_->getMVUpper());
   if (MV_ >= MVUpper_) {
       emit logMsgWithColor("MV reached MVupper", QColor(255, 0, 0, 255));
       isMVupper_ = true;
       emit MVupperReachedUpperLimit();
+      return true;
   } else {
       emit logMsgWithColor("MV < MVupper", QColor(0, 0, 255, 255));
       isMVupper_ = false;
+      return false;
   }
-  return isMVupper_;
 }
 
 
@@ -242,7 +236,7 @@ void Safety::setIsSTC(bool isSTC){
   isSTC_ = isSTC;
   if (isSTC_){
      emit logMsgWithColor("Slow Temperature Controle on. stop safety", QColor(0, 0, 255, 255));
-     stop();
+     //stop();
   } else {
      emit logMsgWithColor("Slow Temperature Controle off. start safety", QColor(0, 0, 255, 255));
      start();

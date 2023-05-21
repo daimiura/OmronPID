@@ -34,19 +34,6 @@ void Communication::waitForMsec(int msec){
   QTimer::singleShot(msec, &eventLoop, SLOT(quit()));
   eventLoop.exec();
 }
-/*
-void Communication::connectTimeout(){
-  emit logMsg("Connection timeout.");
-}
-
-void Communication::errorOccurred(QModbusDevice::Error error){
-  emit logMsg("Modbus error occurred: " + QString(error));
-}
-
-void Communication::stateChanged(QModbusDevice::State state){
-  emit logMsg("Modbus state changed: " + QString(state));
-}
-*/
 
 void Communication::request(QModbusPdu::FunctionCode code, QByteArray cmd){
 statusBar_->clearMessage();
@@ -306,10 +293,17 @@ if (PID == "P"){
 }
 
 void Communication::askStatus(){
-askTemperature();
-askMV();
-askSV();
-emit statusUpdate();
+  askTemperature();
+  askMV();
+  int i = 0;
+  while (MV_ == temperature_){
+    waitForMsec(200);
+    askMV();
+    i++;
+    if (i > 10) break;
+  }
+  askSV();
+  emit statusUpdate();
 }
 
 void Communication::changeMVlowerValue(double MVlower){
