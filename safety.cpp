@@ -19,6 +19,7 @@ Safety::Safety(DataSummary* data){
   connect(this, &Safety::NumberOfCheckChanged, this, &Safety::setNumberOfCheck);
   connect(this, &Safety::tempChangeThresholdChanged, this, &Safety::setTempChangeThreshold);
   connect(this, &Safety::MVupperReachedUpperLimit, this, &Safety::checkTempChange);
+  //connect(this, &Safety::dropSignal, this, &Safety::checkTempDrop);
 }
 
 Safety::~Safety(){
@@ -46,6 +47,7 @@ void Safety::checkTemperature(){
   addTemperature(temperature_);
   if (temperature_ >= permitedMaxTemp_) emit dangerSignal(0);
   diffTemp_ = diffTemp();
+  if (diffTemp_ < 0) emit dropSignal(diffTemp_);
 }
 
 
@@ -145,7 +147,6 @@ double Safety::movingAverage(QVector<double> data, int wsize) {
 
 
 bool Safety::isMVupper(){
-  emit logMsg("SAFETY is STC : " + QString::number(isSTC_));
   if (isSTC_) return false;
   setMV(data_->getMV());
   setMVUpper(data_->getMVUpper());

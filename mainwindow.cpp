@@ -663,8 +663,7 @@ void MainWindow::Run(){
   statusBar()->clearMessage();
   LogMsg("Set Run.");
   com_->executeRun();
-  bkgColorChangeable_ = true;
-  setColor(1, bkgColorChangeable_);
+  setColor(1);
   ui->lineEdit_msg->setStyleSheet("");
   ui->pushButton_Log->setChecked(true);
   ui->checkBoxStatusRun->setChecked(true);
@@ -676,14 +675,14 @@ void MainWindow::Run(){
   safety_->setIntervalMVCheck(ui->lineEdit_IntervalAskMV->text().toInt());
   safety_->setIntervalTempChange(ui->lineEdit_IntervalAskTemp->text().toInt());
   safety_->start();
+  isQuit_ = false;
 }
 
 void MainWindow::Stop(){
   statusBar()->clearMessage();
   com_->executeStop();
   LogMsg("Set Stop.");
-  bkgColorChangeable_ = true;
-  setColor(0, bkgColorChangeable_);
+  setColor(0);
   ui->checkBoxStatusRun->setChecked(false);
   ui->checkBoxStatusSTC->setChecked(false);
   ui->checkBoxStatusPeriodic->setChecked(false);
@@ -695,6 +694,7 @@ void MainWindow::Stop(){
   safety_->stop();
   data_->logingStop();
   plotTimer_->stop();
+  isQuit_ = false;
   sendLINE("Running stop");
 }
 
@@ -709,9 +709,8 @@ void MainWindow::Quit(){
   ui->pushButton_RunStop->setChecked(false);
   safety_->stop();
   sendLINE("Emergency Stop!");
-  bkgColorChangeable_ = true;
-  setColor(3, bkgColorChangeable_);
-  bkgColorChangeable_ = false;
+  setColor(3);
+  isQuit_ = true;
   data_->logingStart();
   plotTimer_->start();
 }
@@ -972,7 +971,18 @@ void MainWindow::updateStatusBoxes(){
   bool is_update_running = com_->isTimerUpdateRunning();
   ui->checkBoxUpdate->setChecked(is_update_running);
   bool is_run = ui->pushButton_RunStop->isChecked();
-  if (is_run && is_tempchange_running) setColor(2);
-  else if (is_run) setColor(1);
-  else setColor(0);
+  LogMsg(QString::number(isQuit_));
+
+  if (isQuit_) {
+      setColor(3);
+      return;
+  }
+
+  if (is_run && is_tempchange_running) {
+      setColor(2);
+  } else if (is_run) {
+      setColor(1);
+  } else {
+      setColor(0);
+  }
 }

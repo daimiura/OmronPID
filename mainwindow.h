@@ -316,6 +316,7 @@ private:
     bool checkDay{false};
     int dayCounter{};
     bool bkgColorChangeable_{true};
+    bool isQuit_{false};
 
     void addPortName(QList<QSerialPortInfo> info);
     //The following functions are inplemented in gui.cpp

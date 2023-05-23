@@ -199,6 +199,11 @@ public:
   void checkTempChange();
 
   /**
+   * @brief Check whether the temperature has droped the last temperature.
+   */
+  //void checkTempDrop();
+
+  /**
   @brief Enables or disables the temperature change range.
   @param enable Boolean indicating whether the temperature change range is enabled.
   */
@@ -216,6 +221,10 @@ public:
   */
   void setIntervalTempChange(int inteerval);
 
+  /**
+   * @brief Sets the enable to execute tempChangeCheck method in STC mode
+   * @param enable to execute tempChangeCheck method in STC mode
+   */
   void setIsSTC(bool isSTC);
 
   /**
@@ -283,6 +292,13 @@ signals:
    */
     void dangerSignal(int type);
 
+   /**
+   * @brief Signal emitted when temperature is droped.
+   * @param tempDrop
+   */
+    void dropSignal(double tempDrop);
+
+
   /**
    * @brief Signal emitted when the interval for the MV check has been changed.
    * @param interval The new interval for the MV check.
@@ -349,6 +365,8 @@ private:
     bool isMVupper_{false}; /**< Whether the motor valve is at the upper limit. */
     bool isEnableTempChangeRange_{false}; /**< Whether to enable temperature change range checking. */
     bool isSTC_{false}; /**< Whether to run Slow Temperature Control mode */
+    bool idDrop_{false}; /**< Whether the temperature is droped */
+    int dropCount_{0}; /** Counter for temperature drop */
 
     /**
     @brief Check if the current temperature is different from the previous temperature
