@@ -193,6 +193,9 @@ public:
   */
   void setIgnoreTempRange(double temp, double lower, double upper);
 
+
+  void setDropThreshold(int dropThreshold);
+
   /**
   @brief Checks whether the temperature has changed above the threshold value.
   */
@@ -201,7 +204,7 @@ public:
   /**
    * @brief Check whether the temperature has droped the last temperature.
    */
-  //void checkTempDrop();
+  void checkTempDrop();
 
   /**
   @brief Enables or disables the temperature change range.
@@ -296,7 +299,7 @@ signals:
    * @brief Signal emitted when temperature is droped.
    * @param tempDrop
    */
-    void dropSignal(double tempDrop);
+    void dropSignal();
 
 
   /**
@@ -367,7 +370,7 @@ private:
     bool isSTC_{false}; /**< Whether to run Slow Temperature Control mode */
     bool idDrop_{false}; /**< Whether the temperature is droped */
     int dropCount_{0}; /** Counter for temperature drop */
-
+    int dropThreshold_{10}; /**< The temperature drop threshold. */
     /**
     @brief Check if the current temperature is different from the previous temperature
     @return true if the temperature has changed, false otherwise

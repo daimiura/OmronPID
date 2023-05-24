@@ -911,6 +911,12 @@ void MainWindow::catchDanger(int type){
     case 1 :
       LogMsg("Even though the MV output is maximum, the temperature change is less than the threshold");
       break;
+    case 2 :
+      LogMsg("Temperature is Droped over the threshold");
+      break;
+    case 3 :
+      LogMsg("Temperature continued to drop for some intervals.");
+      break;
     default :
       LogMsg("Danger Signal is detectived.");
       break;

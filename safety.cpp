@@ -19,7 +19,7 @@ Safety::Safety(DataSummary* data){
   connect(this, &Safety::NumberOfCheckChanged, this, &Safety::setNumberOfCheck);
   connect(this, &Safety::tempChangeThresholdChanged, this, &Safety::setTempChangeThreshold);
   connect(this, &Safety::MVupperReachedUpperLimit, this, &Safety::checkTempChange);
-  //connect(this, &Safety::dropSignal, this, &Safety::checkTempDrop);
+  connect(this, &Safety::dropSignal, this, &Safety::checkTempDrop);
 }
 
 Safety::~Safety(){
@@ -45,11 +45,34 @@ void Safety::checkTemperature(){
   QMutexLocker locker(&mutex_);
   temperature_ = data_->getTemperature();
   addTemperature(temperature_);
-  if (temperature_ >= permitedMaxTemp_) emit dangerSignal(0);
+  if (temperature_ >= permitedMaxTemp_) {
+      emit dangerSignal(0);
+  }
   diffTemp_ = diffTemp();
-  if (diffTemp_ < 0) emit dropSignal(diffTemp_);
+  if (isSTC_){
+      return;
+  } else if (diffTemp_ < 0) {
+      emit dropSignal();
+      return ;
+  }
+  dropCount_ = 0;
 }
 
+void Safety::checkTempDrop(){
+  if (isSTC_) return;
+  QMutexLocker locker(&mutex_);
+  dropCount_ ++;
+  emit logMsgWithColor("Detective : Temperature drop " + QString::number(diffTemp_), QColor(0, 0, 255, 255));
+  if (qAbs(diffTemp_) >= dropThreshold_){
+      emit dangerSignal(2);
+      dropCount_ = 0;
+      return;
+  }
+  if (dropCount_ > 10){
+      emit dangerSignal(3);
+      dropCount_ = 0;
+  }
+}
 
 /**
 @brief Check if the temperature has changed more than the threshold value.
@@ -231,7 +254,7 @@ void Safety::setIgnoreTempRange(double temp, double lower, double upper){
   }
   ignoreTempRange_ = qMakePair(temp + lower, temp + upper);
 }
-
+void Safety::setDropThreshold(int dropThreshold) {dropThreshold_ = dropThreshold;}
 
 void Safety::setIsSTC(bool isSTC){
   isSTC_ = isSTC;
