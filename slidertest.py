@@ -97,7 +97,7 @@ lines2, labels2 = ax2.get_legend_handles_labels()
 ax2.legend(lines + lines2, labels + labels2, loc='lower right')
 
 # Rotate the x-axis tick labels for better readability
-fig.autofmt_xdate(rotation=90)
+fig.autofmt_xdate(rotation=90, ha="center")
 
 # Display the graph
 st.pyplot(fig)
