@@ -9,6 +9,7 @@ st.title('Omron PID log viewer')
 # Read the data from the 'test.dat' file
 df = pd.read_csv('test.dat', sep='\t', encoding='utf-8')
 
+st.write(df['temperature'])
 
 # Convert start and last dates to Unix timestamps
 start_date = datetime.strptime(df.iloc[0, 0], '%m-%d %H:%M:%S')
