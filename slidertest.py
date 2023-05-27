@@ -1,0 +1,110 @@
+import streamlit as st
+import pandas as pd
+from datetime import datetime
+import matplotlib.pyplot as plt
+import time
+st.title('Omron PID log viewer')
+# Read the data from the 'test.dat' file
+df = pd.read_csv('test.dat', sep='\t')
+# Convert start and last dates to Unix timestamps
+start_date = datetime.strptime(df.iloc[0, 0], '%m-%d %H:%M:%S')
+last_date = datetime.strptime(df.iloc[-1, 0], '%m-%d %H:%M:%S')
+start_timestamp = int(start_date.replace(year=2023).timestamp())
+last_timestamp = int(last_date.replace(year=2023).timestamp())
+# Create a slider for date and time range selection
+selected_timestamp_range = st.slider(
+    'Select unix time range to display',
+    start_timestamp,
+    last_timestamp,
+    (start_timestamp, last_timestamp),
+    key='selected_datetime_slider'
+)
+# Unpack the selected range to get the start and end timestamps
+selected_start_timestamp, selected_end_timestamp = selected_timestamp_range
+# Convert the selected timestamps back to datetime objects
+selected_start_datetime = datetime.fromtimestamp(selected_start_timestamp)
+selected_end_datetime = datetime.fromtimestamp(selected_end_timestamp)
+# Format the selected datetimes separately for date and time
+selected_start_date_str = selected_start_datetime.strftime('%m/%d')
+selected_start_time_str = ' ' + selected_start_datetime.strftime('%H:%M')
+selected_end_date_str = selected_end_datetime.strftime('%m/%d')
+selected_end_time_str = ' ' + selected_end_datetime.strftime('%H:%M')
+# Create a table to display the selected date and time range
+selected_range_table = pd.DataFrame(
+    {'Selected Date': [selected_start_date_str + selected_start_time_str,
+                       selected_end_date_str + selected_end_time_str]},
+    index=['start', 'end']
+)
+
+# Display the selected range table
+st.table(selected_range_table)
+
+# Convert the date column to datetime format
+df['#Date'] = pd.to_datetime(df['#Date'], format='%m-%d %H:%M:%S')
+
+# Filter the DataFrame based on the selected time range
+filtered_df = df[
+    (df['time_t'] >= selected_start_timestamp) &
+    (df['time_t'] <= selected_end_timestamp)
+]
+# Get the last temperature value from the filtered DataFrame
+las_temperature = filtered_df['temperature'].iloc[-1]
+
+# Display the current temperature
+st.header(':blue[Latest Temperature:]' + str(las_temperature))
+
+# Plot the graph
+fig, ax1 = plt.subplots()
+
+# Plot Temperature on the left axis
+ax1.plot(filtered_df['#Date'], filtered_df['temperature'], color='green', label='Temperature')
+ax1.set_ylabel('Temperature', color='green')
+ax1.tick_params(axis='y', labelcolor='green')
+ax1.grid(axis='y', lw=0.5)
+
+# Create a twin axis for MV (Manipulated Variable)
+ax2 = ax1.twinx()
+ax2.plot(filtered_df['#Date'], filtered_df['MV'], color='red', label='MV')
+ax2.set_ylabel('MV', color='red', rotation=270)
+ax2.yaxis.set_label_coords(1.1, 0.5)
+ax2.tick_params(axis='y', labelcolor='red')
+
+# Plot SV (Setpoint Variable) on the left axis
+ax1.plot(filtered_df['#Date'], filtered_df['SV'], color='blue', label='SV')
+
+# Set the x-axis label
+ax1.set_xlabel('Date')
+
+# Rotate the x-axis tick labels for better readability
+plt.xticks(rotation=45)
+# Add legend
+lines, labels = ax1.get_legend_handles_labels()
+lines2, labels2 = ax2.get_legend_handles_labels()
+ax2.legend(lines + lines2, labels + labels2, loc='lower right')
+
+# Display the graph
+st.pyplot(fig)
+
+# Round the values in the filtered DataFrame to one decimal place
+filtered_df = filtered_df.round(1)
+
+# Sort the DataFrame by index in descending order
+filtered_df = filtered_df.sort_index(ascending=False)
+
+# Display the filtered DataFrame
+st.header('Table')
+st.dataframe(filtered_df)
+
+# Add a placeholder to display the current time
+refresh_placeholder = st.empty()
+
+# Run the Streamlit app in a while loop
+while True:
+    # Update the placeholder with the current time
+    refresh_placeholder.text("Current time: " + time.ctime())
+
+    # Wait for 10 seconds
+    time.sleep(10)
+
+    # Rerun the Streamlit app
+    st.experimental_rerun()
