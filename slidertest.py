@@ -7,8 +7,7 @@ import time
 st.title('Omron PID log viewer')
 
 # Read the data from the 'test.dat' file
-file_path = st.secrets["s3_url"] + "/test.dat"  # Assuming the file is in the 'data' folder
-df = pd.read_csv(file_path, sep='\t')
+df = pd.read_csv('test.dat', sep='\t', encoding='utf-8')
 
 
 # Convert start and last dates to Unix timestamps
