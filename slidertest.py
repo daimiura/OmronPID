@@ -3,14 +3,18 @@ import pandas as pd
 from datetime import datetime
 import matplotlib.pyplot as plt
 import time
+
 st.title('Omron PID log viewer')
+
 # Read the data from the 'test.dat' file
 df = pd.read_csv('test.dat', sep='\t')
+
 # Convert start and last dates to Unix timestamps
 start_date = datetime.strptime(df.iloc[0, 0], '%m-%d %H:%M:%S')
 last_date = datetime.strptime(df.iloc[-1, 0], '%m-%d %H:%M:%S')
 start_timestamp = int(start_date.replace(year=2023).timestamp())
 last_timestamp = int(last_date.replace(year=2023).timestamp())
+
 # Create a slider for date and time range selection
 selected_timestamp_range = st.slider(
     'Select unix time range to display',
@@ -19,16 +23,20 @@ selected_timestamp_range = st.slider(
     (start_timestamp, last_timestamp),
     key='selected_datetime_slider'
 )
+
 # Unpack the selected range to get the start and end timestamps
 selected_start_timestamp, selected_end_timestamp = selected_timestamp_range
+
 # Convert the selected timestamps back to datetime objects
 selected_start_datetime = datetime.fromtimestamp(selected_start_timestamp)
 selected_end_datetime = datetime.fromtimestamp(selected_end_timestamp)
+
 # Format the selected datetimes separately for date and time
 selected_start_date_str = selected_start_datetime.strftime('%m/%d')
 selected_start_time_str = ' ' + selected_start_datetime.strftime('%H:%M')
 selected_end_date_str = selected_end_datetime.strftime('%m/%d')
 selected_end_time_str = ' ' + selected_end_datetime.strftime('%H:%M')
+
 # Create a table to display the selected date and time range
 selected_range_table = pd.DataFrame(
     {'Selected Date': [selected_start_date_str + selected_start_time_str,
@@ -47,8 +55,16 @@ filtered_df = df[
     (df['time_t'] >= selected_start_timestamp) &
     (df['time_t'] <= selected_end_timestamp)
 ]
+
 # Get the last temperature value from the filtered DataFrame
-las_temperature = filtered_df['temperature'].iloc[-1]
+if not filtered_df.empty:
+    las_temperature = filtered_df['temperature'].iloc[-1]
+else:
+    las_temperature = None  # or assign a default value
+
+# Display the current temperature
+st.header(':blue[Latest Temperature:]' + str(las_temperature))
+
 
 # Display the current temperature
 st.header(':blue[Latest Temperature:]' + str(las_temperature))
