@@ -9,8 +9,6 @@ st.title('Omron PID log viewer')
 # Read the data from the 'test.dat' file
 df = pd.read_csv('test.dat', sep='\t', encoding='utf-8')
 
-st.table(df)
-
 # Convert start and last dates to Unix timestamps
 start_date = datetime.strptime(df.iloc[0, 0], '%m-%d %H:%M:%S')
 last_date = datetime.strptime(df.iloc[-1, 0], '%m-%d %H:%M:%S')
@@ -107,5 +105,5 @@ html_table = filtered_df.to_html(index=False, justify='center')
 
 # Display the HTML table using st.markdown()
 st.header('Table')
-st.markdown(html_table, unsafe_allow_html=True)
+st.table(filtered_df)
 
