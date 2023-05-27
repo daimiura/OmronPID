@@ -33,10 +33,10 @@ selected_end_timestamp = selected_end_datetime.timestamp()
 
 
 # Format the selected datetimes separately for date and time
-selected_start_date_str = selected_start_datetime.strftime('%m/%d')
-selected_start_time_str = ' ' + selected_start_datetime.strftime('%H:%M')
-selected_end_date_str = selected_end_datetime.strftime('%m/%d')
-selected_end_time_str = ' ' + selected_end_datetime.strftime('%H:%M')
+selected_start_date_str = selected_start_timestamp.strftime('%m/%d-%H:%M')
+#selected_start_time_str = ' ' + selected_start_datetime.strftime('%H:%M')
+selected_end_date_str = selected_end_timestamp.strftime('%m/%d-%H:%M')
+#selected_end_time_str = ' ' + selected_end_datetime.strftime('%H:%M')
 
 # Create a table to display the selected date and time range
 selected_range_table = pd.DataFrame(
