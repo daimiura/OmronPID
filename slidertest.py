@@ -7,7 +7,7 @@ import time
 st.title('Omron PID log viewer')
 
 # Read the data from the 'test.dat' file
-df = pd.read_csv('test.dat', sep='\t', encoding='utf-8')
+df = pd.read_csv('test.dat', sep='\t')
 
 # Convert start and last dates to Unix timestamps
 start_date = datetime.strptime(df.iloc[0, 0], '%m-%d %H:%M:%S')
@@ -25,25 +25,22 @@ selected_timestamp_range = st.slider(
 )
 
 # Unpack the selected range to get the start and end timestamps
-selected_start_datetime, selected_end_datetime = selected_timestamp_range
+selected_start_timestamp, selected_end_timestamp = selected_timestamp_range
 
-# Convert the selected timestamps to Unix timestamps
-selected_start_timestamp = selected_start_datetime.timestamp()
-selected_end_timestamp = selected_end_datetime.timestamp()
-
-st.write(selected_start_timestamp)
-st.write(selected_end_timestamp)
+# Convert the selected timestamps back to datetime objects
+selected_start_datetime = datetime.fromtimestamp(selected_start_timestamp)
+selected_end_datetime = datetime.fromtimestamp(selected_end_timestamp)
 
 # Format the selected datetimes separately for date and time
-selected_start_date_str = selected_start_timestamp.strftime('%m/%d-%H:%M')
-#selected_start_time_str = ' ' + selected_start_datetime.strftime('%H:%M')
-selected_end_date_str = selected_end_timestamp.strftime('%m/%d-%H:%M')
-#selected_end_time_str = ' ' + selected_end_datetime.strftime('%H:%M')
+selected_start_date_str = selected_start_datetime.strftime('%m/%d')
+selected_start_time_str = ' ' + selected_start_datetime.strftime('%H:%M')
+selected_end_date_str = selected_end_datetime.strftime('%m/%d')
+selected_end_time_str = ' ' + selected_end_datetime.strftime('%H:%M')
 
 # Create a table to display the selected date and time range
 selected_range_table = pd.DataFrame(
-    {'Selected Date': [selected_start_date_str,
-                       selected_end_date_str]},
+    {'Selected Date': [selected_start_date_str + selected_start_time_str,
+                       selected_end_date_str + selected_end_time_str]},
     index=['start', 'end']
 )
 
@@ -59,13 +56,15 @@ filtered_df = df[
     (df['time_t'] <= selected_end_timestamp)
 ]
 
-filtered_df = df
-
 # Get the last temperature value from the filtered DataFrame
 if not filtered_df.empty:
     las_temperature = filtered_df['temperature'].iloc[-1]
 else:
-    las_temperature = df['temperature'].iloc[-1]  # or assign a default value
+    las_temperature = None  # or assign a default value
+
+# Display the current temperature
+st.header(':blue[Latest Temperature:]' + str(las_temperature))
+
 
 # Display the current temperature
 st.header(':blue[Latest Temperature:]' + str(las_temperature))
@@ -105,10 +104,10 @@ st.pyplot(fig)
 # Round the values in the filtered DataFrame to one decimal place
 filtered_df = filtered_df.round(1)
 
-# Convert the filtered DataFrame to an HTML table
-html_table = filtered_df.to_html(index=False, justify='center')
+# Sort the DataFrame by index in descending order
+filtered_df = filtered_df.sort_index(ascending=False)
 
-# Display the HTML table using st.markdown()
+# Display the filtered DataFrame
 st.header('Table')
-st.table(filtered_df)
+st.dataframe(filtered_df)
 
