@@ -6,8 +6,17 @@ import time
 
 st.title('Omron PID log viewer')
 
-# Read the data from the 'test.dat' file
-df = pd.read_csv('test.dat', sep='\t')
+# Use st.file_uploader to upload the file
+uploaded_file = st.file_uploader("Upload test.dat", type="dat")
+
+# Check if a file was uploaded
+if uploaded_file is not None:
+    # Read the file
+    df = pd.read_csv(uploaded_file, sep='\t')
+else:
+    # Provide a default DataFrame or handle the case when no file is uploaded
+    df = pd.DataFrame()  # or assign a default DataFrame
+
 
 # Convert start and last dates to Unix timestamps
 start_date = datetime.strptime(df.iloc[0, 0], '%m-%d %H:%M:%S')
@@ -61,10 +70,6 @@ if not filtered_df.empty:
     las_temperature = filtered_df['temperature'].iloc[-1]
 else:
     las_temperature = None  # or assign a default value
-
-# Display the current temperature
-st.header(':blue[Latest Temperature:]' + str(las_temperature))
-
 
 # Display the current temperature
 st.header(':blue[Latest Temperature:]' + str(las_temperature))
