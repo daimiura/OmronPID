@@ -82,7 +82,7 @@ ax1.grid(axis='y', lw=0.5)
 ax2 = ax1.twinx()
 ax2.plot(filtered_df['#Date'], filtered_df['MV'], color='red', label='MV')
 ax2.set_ylabel('MV', color='red', rotation=270)
-ax2.yaxis.set_label_coords(1.1, 0.5)
+ax2.yaxis.set_label_coords(1.15, 0.5)
 ax2.tick_params(axis='y', labelcolor='red')
 
 # Plot SV (Setpoint Variable) on the left axis
