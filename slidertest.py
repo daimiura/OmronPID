@@ -58,12 +58,6 @@ filtered_df = df[
     (df['time_t'] <= selected_end_timestamp)
 ]
 
-# Get the last temperature value from the filtered DataFrame
-if not filtered_df.empty:
-    las_temperature = filtered_df['temperature'].iloc[-1]
-else:
-    las_temperature = None  # or assign a default value
-
 # Display the current temperature
 st.header(':blue[Latest Temperature:]' + str(las_temperature))
 
