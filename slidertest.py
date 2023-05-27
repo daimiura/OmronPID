@@ -108,16 +108,3 @@ filtered_df = filtered_df.sort_index(ascending=False)
 st.header('Table')
 st.dataframe(filtered_df)
 
-# Add a placeholder to display the current time
-refresh_placeholder = st.empty()
-
-# Run the Streamlit app in a while loop
-while True:
-    # Update the placeholder with the current time
-    refresh_placeholder.text("Current time: " + time.ctime())
-
-    # Wait for 10 seconds
-    time.sleep(10)
-
-    # Rerun the Streamlit app
-    st.experimental_rerun()
