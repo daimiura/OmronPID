@@ -25,11 +25,12 @@ selected_timestamp_range = st.slider(
 )
 
 # Unpack the selected range to get the start and end timestamps
-selected_start_timestamp, selected_end_timestamp = selected_timestamp_range
+selected_start_datetime, selected_end_datetime = selected_timestamp_range
 
-# Convert the selected timestamps back to datetime objects
-selected_start_datetime = datetime.fromtimestamp(selected_start_timestamp)
-selected_end_datetime = datetime.fromtimestamp(selected_end_timestamp)
+# Convert the selected timestamps to Unix timestamps
+selected_start_timestamp = selected_start_datetime.timestamp()
+selected_end_timestamp = selected_end_datetime.timestamp()
+
 
 # Format the selected datetimes separately for date and time
 selected_start_date_str = selected_start_datetime.strftime('%m/%d')
