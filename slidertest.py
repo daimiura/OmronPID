@@ -6,16 +6,9 @@ import time
 
 st.title('Omron PID log viewer')
 
-# Use st.file_uploader to upload the file
-uploaded_file = st.file_uploader("Upload test.dat", type="dat")
-
-# Check if a file was uploaded
-if uploaded_file is not None:
-    # Read the file
-    df = pd.read_csv(uploaded_file, sep='\t')
-else:
-    # Provide a default DataFrame or handle the case when no file is uploaded
-    df = pd.DataFrame()  # or assign a default DataFrame
+# Read the data from the 'test.dat' file
+file_path = st.secrets["s3_url"] + "/test.dat"  # Assuming the file is in the 'data' folder
+df = pd.read_csv(file_path, sep='\t')
 
 
 # Convert start and last dates to Unix timestamps
