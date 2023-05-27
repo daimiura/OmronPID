@@ -106,5 +106,5 @@ filtered_df = filtered_df.sort_index(ascending=False)
 
 # Display the filtered DataFrame
 st.header('Table')
-st.dataframe(filtered_df)
+st.table(filtered_df)
 
