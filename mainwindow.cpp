@@ -667,7 +667,7 @@ void MainWindow::Run(){
   ui->lineEdit_msg->setStyleSheet("");
   ui->pushButton_Log->setChecked(true);
   ui->checkBoxStatusRun->setChecked(true);
-  sendLINE("Running start.");
+  //sendLINE("Running start.");
   plotTimer_->start();
   data_->generateSaveFile();
   data_->SetIntervalLog(ui->spinBox_TempRecordTime->value());
@@ -695,7 +695,7 @@ void MainWindow::Stop(){
   data_->logingStop();
   plotTimer_->stop();
   isQuit_ = false;
-  sendLINE("Running stop");
+  //sendLINE("Running stop");
 }
 
 void MainWindow::Quit(){
@@ -708,7 +708,7 @@ void MainWindow::Quit(){
   ui->checkBoxStatusSTC->setChecked(false);
   ui->pushButton_RunStop->setChecked(false);
   safety_->stop();
-  sendLINE("Emergency Stop!");
+  //sendLINE("Emergency Stop!");
   setColor(3);
   isQuit_ = true;
   data_->logingStart();
