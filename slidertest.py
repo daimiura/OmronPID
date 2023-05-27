@@ -56,6 +56,8 @@ filtered_df = df[
     (df['time_t'] <= selected_end_timestamp)
 ]
 
+filtered_df = df
+
 # Get the last temperature value from the filtered DataFrame
 if not filtered_df.empty:
     las_temperature = filtered_df['temperature'].iloc[-1]
