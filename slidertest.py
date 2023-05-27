@@ -82,7 +82,7 @@ ax1.grid(axis='y', lw=0.5)
 ax2 = ax1.twinx()
 ax2.plot(filtered_df['#Date'], filtered_df['MV'], color='red', label='MV')
 ax2.set_ylabel('MV', color='red', rotation=270)
-ax2.yaxis.set_label_coords(1.15, 0.5)
+ax2.yaxis.set_label_coords(1.13, 0.5)
 ax2.tick_params(axis='y', labelcolor='red')
 
 # Plot SV (Setpoint Variable) on the left axis
@@ -91,12 +91,13 @@ ax1.plot(filtered_df['#Date'], filtered_df['SV'], color='blue', label='SV')
 # Set the x-axis label
 ax1.set_xlabel('Date')
 
-# Rotate the x-axis tick labels for better readability
-plt.xticks(rotation=45)
 # Add legend
 lines, labels = ax1.get_legend_handles_labels()
 lines2, labels2 = ax2.get_legend_handles_labels()
 ax2.legend(lines + lines2, labels + labels2, loc='lower right')
+
+# Rotate the x-axis tick labels for better readability
+plt.xticks(rotation=90)
 
 # Display the graph
 st.pyplot(fig)
