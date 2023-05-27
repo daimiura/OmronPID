@@ -25,10 +25,12 @@ selected_timestamp_range = st.slider(
 )
 
 # Unpack the selected range to get the start and end timestamps
-# Unpack the selected range to get the start and end timestamps
 selected_start_timestamp = start_timestamp
 selected_end_timestamp = last_timestamp
 selected_start_timestamp, selected_end_timestamp = selected_timestamp_range
+
+st.write(selected_start_timestamp)
+st.write(selected_end_timestamp)
 
 # Convert the selected timestamps back to datetime objects
 selected_start_datetime = datetime.fromtimestamp(selected_start_timestamp)
@@ -64,10 +66,6 @@ if not filtered_df.empty:
     las_temperature = filtered_df['temperature'].iloc[-1]
 else:
     las_temperature = None  # or assign a default value
-
-# Display the current temperature
-st.header(':blue[Latest Temperature:]' + str(las_temperature))
-
 
 # Display the current temperature
 st.header(':blue[Latest Temperature:]' + str(las_temperature))
