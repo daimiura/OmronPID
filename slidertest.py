@@ -12,8 +12,8 @@ df = pd.read_csv('test.dat', sep='\t')
 # Convert start and last dates to Unix timestamps
 start_date = datetime.strptime(df.iloc[0, 0], '%m-%d %H:%M:%S')
 last_date = datetime.strptime(df.iloc[-1, 0], '%m-%d %H:%M:%S')
-start_timestamp = int(start_date.replace(year=2023).timestamp())
-last_timestamp = int(last_date.replace(year=2023).timestamp())
+start_timestamp = int(start_date.replace(year=2023).timestamp()) - 9 * 60 * 60 #Adjustment between JST and UnixTime
+last_timestamp = int(last_date.replace(year=2023).timestamp()) - 9 * 60 * 60 #Adjustment between JST and UnixTime
 
 # Create a slider for date and time range selection
 selected_timestamp_range = st.slider(
