@@ -29,9 +29,6 @@ selected_start_timestamp = start_timestamp
 selected_end_timestamp = last_timestamp
 selected_start_timestamp, selected_end_timestamp = selected_timestamp_range
 
-st.write(selected_start_timestamp)
-st.write(selected_end_timestamp)
-
 # Convert the selected timestamps back to datetime objects
 selected_start_datetime = datetime.fromtimestamp(selected_start_timestamp)
 selected_end_datetime = datetime.fromtimestamp(selected_end_timestamp)
@@ -49,10 +46,10 @@ selected_range_table = pd.DataFrame(
     index=['start', 'end']
 )
 
+st.header('Selection time range to display log data')
 # Display the selected range table
 st.table(selected_range_table)
 
-st.write(df['time_t'])
 
 # Convert the date column to datetime format
 df['#Date'] = pd.to_datetime(df['#Date'], format='%m-%d %H:%M:%S')
