@@ -15,6 +15,8 @@ last_date = datetime.strptime(df.iloc[-1, 0], '%m-%d %H:%M:%S')
 start_timestamp = int(start_date.replace(year=2023).timestamp()) - 9 * 60 * 60 #Adjustment between JST and UnixTime
 last_timestamp = int(last_date.replace(year=2023).timestamp()) - 9 * 60 * 60 #Adjustment between JST and UnixTime
 
+st.header('Selection time range to display log data')
+
 # Create a slider for date and time range selection
 selected_timestamp_range = st.slider(
     'Select unix time range to display',
@@ -38,8 +40,6 @@ selected_start_date_str = selected_start_datetime.strftime('%m/%d')
 selected_start_time_str = ' ' + selected_start_datetime.strftime('%H:%M')
 selected_end_date_str = selected_end_datetime.strftime('%m/%d')
 selected_end_time_str = ' ' + selected_end_datetime.strftime('%H:%M')
-
-st.header('Selection time range to display log data')
 
 # Create a table to display the selected date and time range
 selected_range_table = pd.DataFrame(
