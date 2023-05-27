@@ -52,13 +52,15 @@ selected_range_table = pd.DataFrame(
 # Display the selected range table
 st.table(selected_range_table)
 
+st.write(df['time_t'])
+
 # Convert the date column to datetime format
 df['#Date'] = pd.to_datetime(df['#Date'], format='%m-%d %H:%M:%S')
 
 # Filter the DataFrame based on the selected time range
 filtered_df = df[
-    (df['time_t'] >= int(selected_start_timestamp)) &
-    (df['time_t'] <= int(selected_end_timestamp))
+    (df['time_t'] >= selected_start_timestamp) &
+    (df['time_t'] <= selected_end_timestamp)
 ]
 
 # Get the last temperature value from the filtered DataFrame
