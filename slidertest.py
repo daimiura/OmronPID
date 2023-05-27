@@ -25,6 +25,9 @@ selected_timestamp_range = st.slider(
 )
 
 # Unpack the selected range to get the start and end timestamps
+# Unpack the selected range to get the start and end timestamps
+selected_start_timestamp = start_timestamp
+selected_end_timestamp = last_timestamp
 selected_start_timestamp, selected_end_timestamp = selected_timestamp_range
 
 # Convert the selected timestamps back to datetime objects
