@@ -101,10 +101,10 @@ st.pyplot(fig)
 # Round the values in the filtered DataFrame to one decimal place
 filtered_df = filtered_df.round(1)
 
-# Sort the DataFrame by index in descending order
-filtered_df = filtered_df.sort_index(ascending=False)
+# Convert the filtered DataFrame to an HTML table
+html_table = filtered_df.to_html(index=False, justify='center')
 
-# Display the filtered DataFrame
+# Display the HTML table using st.markdown()
 st.header('Table')
-st.table(filtered_df)
+st.markdown(html_table, unsafe_allow_html=True)
 
