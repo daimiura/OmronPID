@@ -1,0 +1,33 @@
+\hypertarget{plotdialog_8cpp_source}{}\doxysection{plotdialog.\+cpp}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{plotdialog_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{plotdialog_8h}{plotdialog.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{plotdialog_8cpp_source_l00002}00002\ \textcolor{comment}{//\#include\ "{}ui\_plotdialog.h"{}}}
+\DoxyCodeLine{\Hypertarget{plotdialog_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <QtWidgets>}}
+\DoxyCodeLine{\Hypertarget{plotdialog_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{plotdialog_8cpp_source_l00008}\mbox{\hyperlink{class_plot_dialog_a97901b28742faa51c77c07d46e1c544f}{00008}}\ \mbox{\hyperlink{class_plot_dialog_a97901b28742faa51c77c07d46e1c544f}{PlotDialog::PlotDialog}}(QWidget\ *parent)\ :}
+\DoxyCodeLine{\Hypertarget{plotdialog_8cpp_source_l00009}00009\ \ \ QDialog(parent)}
+\DoxyCodeLine{\Hypertarget{plotdialog_8cpp_source_l00010}00010\ \{}
+\DoxyCodeLine{\Hypertarget{plotdialog_8cpp_source_l00011}00011\ \ \ labelRange\_\ =\ \textcolor{keyword}{new}\ QLabel(tr(\textcolor{stringliteral}{"{}How\ many\ minutes\ ago\ do\ you\ want\ to\ plot\ from?"{}}));}
+\DoxyCodeLine{\Hypertarget{plotdialog_8cpp_source_l00012}00012\ \ \ spinBoxDisplayRange\_\ =\ \textcolor{keyword}{new}\ QSpinBox();}
+\DoxyCodeLine{\Hypertarget{plotdialog_8cpp_source_l00013}00013\ \ \ browser\_\ =\ \textcolor{keyword}{new}\ QTextBrowser();}
+\DoxyCodeLine{\Hypertarget{plotdialog_8cpp_source_l00014}00014\ \ \ QVBoxLayout\ *Layout\ =\ \textcolor{keyword}{new}\ QVBoxLayout(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{plotdialog_8cpp_source_l00015}00015\ \ \ Layout-\/>addWidget(labelRange\_);}
+\DoxyCodeLine{\Hypertarget{plotdialog_8cpp_source_l00016}00016\ \ \ Layout-\/>addWidget(spinBoxDisplayRange\_);}
+\DoxyCodeLine{\Hypertarget{plotdialog_8cpp_source_l00017}00017\ \ \ Layout-\/>addWidget(browser\_);}
+\DoxyCodeLine{\Hypertarget{plotdialog_8cpp_source_l00018}00018\ \ \ spinBoxDisplayRange\_-\/>setMinimum(1);}
+\DoxyCodeLine{\Hypertarget{plotdialog_8cpp_source_l00019}00019\ \ \ spinBoxDisplayRange\_-\/>setMaximum(1440);}
+\DoxyCodeLine{\Hypertarget{plotdialog_8cpp_source_l00020}00020\ \ \ spinBoxDisplayRange\_-\/>setSingleStep(30);}
+\DoxyCodeLine{\Hypertarget{plotdialog_8cpp_source_l00021}00021\ \ \ spinBoxDisplayRange\_-\/>setValue(30);}
+\DoxyCodeLine{\Hypertarget{plotdialog_8cpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{plotdialog_8cpp_source_l00023}00023\ \ \ displayRange\_\ =\ spinBoxDisplayRange\_-\/>value();}
+\DoxyCodeLine{\Hypertarget{plotdialog_8cpp_source_l00024}00024\ \ \ setValues();}
+\DoxyCodeLine{\Hypertarget{plotdialog_8cpp_source_l00025}00025\ \ \ connect(spinBoxDisplayRange\_,\ SIGNAL(valueChanged(\textcolor{keywordtype}{int})),\ \textcolor{keyword}{this},\ SLOT(setValues()));}
+\DoxyCodeLine{\Hypertarget{plotdialog_8cpp_source_l00026}00026\ \}}
+\DoxyCodeLine{\Hypertarget{plotdialog_8cpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{plotdialog_8cpp_source_l00028}00028\ \textcolor{keywordtype}{void}\ PlotDialog::setValues()\{}
+\DoxyCodeLine{\Hypertarget{plotdialog_8cpp_source_l00029}00029\ \ \ displayRange\_\ =\ this-\/>spinBoxDisplayRange\_-\/>value();}
+\DoxyCodeLine{\Hypertarget{plotdialog_8cpp_source_l00030}00030\ \ \ browser\_-\/>setText(tr(\textcolor{stringliteral}{"{}Plot\ data\ from\ "{}})\ +\ QString::number(displayRange\_)\ +\ tr(\textcolor{stringliteral}{"{}\ min\ ago\ to\ the\ present."{}}));}
+\DoxyCodeLine{\Hypertarget{plotdialog_8cpp_source_l00031}00031\ \}}
+
+\end{DoxyCode}

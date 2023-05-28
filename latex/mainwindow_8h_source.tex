@@ -1,0 +1,208 @@
+\hypertarget{mainwindow_8h_source}{}\doxysection{mainwindow.\+h}
+\mbox{\hyperlink{mainwindow_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ MAINWINDOW\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ MAINWINDOW\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <QMainWindow>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <QtSerialPort>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <QModbusClient>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <QModbusDataUnit>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <QModbusRtuSerialMaster>}\ \textcolor{comment}{//Qt5}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//\#include\ <QModbusRtuSerialClient>\ //Qt6}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <QScrollBar>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <QMutex>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <QMutexLocker>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <QImage>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <qcustomplot.h>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <QElapsedTimer>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <QApplication>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <QCoreApplication>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <QVBoxLayout>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <QHBoxLayout>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <QFile>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <QGraphicsView>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <QTextStream>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <QSslSocket>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{configuredialog_8h}{configuredialog.h}}"{}}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{plotdialog_8h}{plotdialog.h}}"{}}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{tempdropdialog_8h}{tempdropdialog.h}}"{}}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}helpdialog.h"{}}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}joinlinedialog.h"{}}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}notify.h"{}}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}datasummary.h"{}}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ui}{Ui}}\ \{}
+\DoxyCodeLine{00041\ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_main_window}{MainWindow}};}
+\DoxyCodeLine{00042\ \}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_communication}{Communication}};}
+\DoxyCodeLine{00045\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_safety}{Safety}};}
+\DoxyCodeLine{00046\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_data_summary}{DataSummary}};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_main_window}{MainWindow}}\ :\ \textcolor{keyword}{public}\ QMainWindow}
+\DoxyCodeLine{00052\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_main_window}{MainWindow}}(QWidget\ *parent\ =\ 0);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}{\string~MainWindow}}();}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a44d85ff6240f89bc1aff38ff3dec128e}{LogMsg}}(QString\ str,\ \textcolor{keywordtype}{bool}\ newLine\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a384e4eb100e8c9af82ad207333d13d87}{findSeriesPortDevices}}();}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ signals:}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00085\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a699115cac96d47fd0f8a2bf359c3203c}{makePlot}}();}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00091\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a1b4b4a8946e42e552dd750017d531fd1}{updateTemperature}}(\textcolor{keywordtype}{double}\ temperature);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00097\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_ada6923c796a91b939f83c776bc4b9cdb}{updateMV}}(\textcolor{keywordtype}{double}\ MV);}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00103\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a50aa5af928eb4c531dfa58b88e1b7c52}{updateSV}}(\textcolor{keywordtype}{double}\ SV);}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00109\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a7c34f400b7c0518eda6c621430f54e5d}{updateMVupper}}(\textcolor{keywordtype}{double}\ MVupper);}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00115\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_aa731129c45459ce999dc0000a37562d8}{updateMVlower}}(\textcolor{keywordtype}{double}\ MVlower);}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00121\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a987299bf3dd0ce8fd2e8ac4e37068be1}{updatePID\_P}}(\textcolor{keywordtype}{double}\ PID\_P);}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00127\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a798c93fe1e834a0033f6388176eba490}{updatePID\_I}}(\textcolor{keywordtype}{double}\ PID\_I);}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00133\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a0e7ddefb2e11dfa68c4d888f16146b20}{updatePID\_D}}(\textcolor{keywordtype}{double}\ PID\_D);}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00138\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a7cc6ae51527e7885199d378e05f15412}{updateStatus}}();}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00144\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a9a42bf78aa230b7ecd19bdc93c57b08f}{finishSendAT}}(\textcolor{keywordtype}{int}\ atFlag);}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00150\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a7b2d87895535666b96675b82499264f4}{finishSendSV}}(\textcolor{keywordtype}{double}\ SV);}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00156\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a2a084048a56885b7ce963c6853333a87}{catchLogMsg}}(\textcolor{keyword}{const}\ QString\&\ msg);}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00163\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a5996c5ae4e0d08be444fa6dc33e5ebb6}{catchLogMsgWithColor}}(\textcolor{keyword}{const}\ QString\&\ msg,\ QColor\ color);}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00168\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_aae6bfd4c5da606c3979e82ceed20404a}{connectDevice}}();}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00173\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a8176f2135b306a3e7cd412a1746d69bc}{connectFailed}}();}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00179\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a7e56f22b93fef927d2db82f3f7c9c7c5}{catchDanger}}(\textcolor{keywordtype}{int}\ type);}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00185\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_aabefdc4ffd8d485e45d2244a8f4597f3}{updateCheckNumber}}(\textcolor{keywordtype}{int}\ checkNumber);}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00191\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_abf24405f8e795acd1a265f4ca204c175}{cathcEscapeTempCheckChange}}(\textcolor{keywordtype}{int}\ sign);}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00197\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a780da7a6fbe4ddb9bdfd3eec0869157e}{catchStartTempChangeCheck}}(\textcolor{keywordtype}{int}\ checknumber);}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00205\ \ \ \ \ \textcolor{keywordtype}{void}\ keyPressEvent(QKeyEvent\ *key);}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00211\ \ \ \ \ \textcolor{keywordtype}{void}\ keyReleaseEvent(QKeyEvent\ *key);}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{keywordtype}{void}\ waitForMSec(\textcolor{keywordtype}{int}\ msec);}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00224\ \ \ \ \ \textcolor{keywordtype}{void}\ panalOnOff(\textcolor{keywordtype}{bool}\ IO);}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00230\ \ \ \ \ \textcolor{keywordtype}{void}\ showTime();}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00236\ \ \ \ \ \textcolor{keywordtype}{void}\ allowSetNextSV();}
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00241\ \ \ \ \ \textcolor{keywordtype}{void}\ getSetting();}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00248\ \ \ \ \ \textcolor{keywordtype}{void}\ setTextTempDrop(\textcolor{keywordtype}{bool});}
+\DoxyCodeLine{00249\ }
+\DoxyCodeLine{00250\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButton\_Connect\_clicked();}
+\DoxyCodeLine{00251\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButton\_AskStatus\_clicked();}
+\DoxyCodeLine{00252\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButton\_SetSV\_clicked();}
+\DoxyCodeLine{00253\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButton\_GetPID\_clicked();}
+\DoxyCodeLine{00254\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButton\_Control\_clicked();}
+\DoxyCodeLine{00255\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_comboBox\_AT\_currentIndexChanged(\textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{00256\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_comboBox\_Mode\_currentIndexChanged(\textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{00257\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_comboBox\_MemAddress\_currentTextChanged(\textcolor{keyword}{const}\ QString\ \&arg1);}
+\DoxyCodeLine{00258\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_doubleSpinBox\_MVlower\_valueChanged(\textcolor{keywordtype}{double}\ arg1);}
+\DoxyCodeLine{00259\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_doubleSpinBox\_MVupper\_valueChanged(\textcolor{keywordtype}{double}\ arg1);}
+\DoxyCodeLine{00260\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_checkBox\_dataSave\_toggled(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00261\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButton\_Log\_toggled(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00262\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButton\_RunStop\_toggled(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00263\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_actionOpen\_File\_triggered();}
+\DoxyCodeLine{00264\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_action\_Setting\_parameters\_for\_TempCheck\_triggered();}
+\DoxyCodeLine{00265\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_action\_Setting\_plot\_triggered();}
+\DoxyCodeLine{00266\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_actionHelp\_Page\_triggered();}
+\DoxyCodeLine{00267\ \ \ \ \ \textcolor{keywordtype}{void}\ on\_action\_JoinLINE\_triggered();}
+\DoxyCodeLine{00268\ \ \ \ \ \textcolor{keywordtype}{void}\ fillDataAndPlot(\textcolor{keyword}{const}\ QDateTime\ date,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ PV,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ SV,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ MV);}
+\DoxyCodeLine{00269\ \ \ \ \ \textcolor{keywordtype}{void}\ Run();}
+\DoxyCodeLine{00270\ \ \ \ \ \textcolor{keywordtype}{void}\ Stop();}
+\DoxyCodeLine{00271\ \ \ \ \ \textcolor{keywordtype}{void}\ Quit();}
+\DoxyCodeLine{00272\ \ \ \ \ \textcolor{keywordtype}{void}\ setIntervalAskMV();}
+\DoxyCodeLine{00273\ \ \ \ \ \textcolor{keywordtype}{void}\ setIntervalAskTemp();}
+\DoxyCodeLine{00274\ \ \ \ \ \textcolor{keywordtype}{void}\ setIntervalPlot(\textcolor{keywordtype}{int}\ interval);}
+\DoxyCodeLine{00275\ \ \ \ \ \textcolor{keywordtype}{void}\ setSafeLimit();}
+\DoxyCodeLine{00276\ \ \ \ \ \textcolor{keywordtype}{void}\ setNumbers();}
+\DoxyCodeLine{00277\ \ \ \ \ \textcolor{keywordtype}{void}\ setIgnoreRange();}
+\DoxyCodeLine{00278\ \ \ \ \ \textcolor{keywordtype}{void}\ setParametersTempCheckChange(\textcolor{keywordtype}{bool}\ mute\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00279\ \ \ \ \ \textcolor{keywordtype}{void}\ setIgnoreEnable();}
+\DoxyCodeLine{00280\ \ \ \ \ \textcolor{keywordtype}{double}\ fillDifference(\textcolor{keywordtype}{bool}\ mute\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00281\ \ \ \ \ \textcolor{keywordtype}{void}\ setColor(\textcolor{keywordtype}{int}\ colorindex\ =\ 0,\ \textcolor{keywordtype}{bool}\ changerable\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00282\ \ \ \ \ \textcolor{keywordtype}{void}\ sendLINE(\textcolor{keyword}{const}\ QString\&\ message);}
+\DoxyCodeLine{00283\ }
+\DoxyCodeLine{00284\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00285\ \ \ \ \ Ui::MainWindow\ *ui;}
+\DoxyCodeLine{00286\ \ \ \ \ \mbox{\hyperlink{class_q_custom_plot}{QCustomPlot}}\ *\ plot\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00287\ \ \ \ \ \mbox{\hyperlink{class_communication}{Communication}}\ *com\_\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00288\ \ \ \ \ \mbox{\hyperlink{class_safety}{Safety}}\ *safety\_\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00289\ \ \ \ \ \mbox{\hyperlink{class_notify}{Notify}}\ *notify\_\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00290\ \ \ \ \ \mbox{\hyperlink{class_data_summary}{DataSummary}}\ *data\_\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00291\ \ \ \ \ \mbox{\hyperlink{class_help_dialog}{HelpDialog}}\ *helpDialog\_\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00292\ \ \ \ \ QGraphicsScene\ *scene\_\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00293\ \ \ \ \ QGraphicsView\ *view\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00294\ \ \ \ \ \mbox{\hyperlink{class_plot_dialog}{PlotDialog}}\ *\ plotDialog\_\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00295\ \ \ \ \ \mbox{\hyperlink{class_configure_dialog}{ConfigureDialog}}\ *\ configureDialog\_\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00296\ \ \ \ \ \mbox{\hyperlink{class_temp_drop_dialog}{TempDropDialog}}\ *\ tempDropDialog\_\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00297\ \ \ \ \ \mbox{\hyperlink{class_join_l_i_n_e_dialog}{JoinLINEDialog}}\ *joinDialog\_\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00298\ \ \ \ \ QString\ omronPortName\{\};}
+\DoxyCodeLine{00299\ \ \ \ \ \textcolor{keywordtype}{int}\ msgCount\{0\};}
+\DoxyCodeLine{00300\ \ \ \ \ \textcolor{keywordtype}{int}\ timing\_\{0\};}
+\DoxyCodeLine{00301\ \ \ \ \ \textcolor{keywordtype}{int}\ intervalPlot\_\{5000\};}
+\DoxyCodeLine{00302\ \ \ \ \ \textcolor{keywordtype}{bool}\ tempControlOnOff\{\textcolor{keyword}{false}\};}
+\DoxyCodeLine{00303\ \ \ \ \ \textcolor{keywordtype}{bool}\ tempRecordOnOff\{\textcolor{keyword}{false}\};}
+\DoxyCodeLine{00304\ \ \ \ \ \textcolor{keywordtype}{bool}\ comboxEnable\{\textcolor{keyword}{false}\};}
+\DoxyCodeLine{00305\ \ \ \ \ \textcolor{keywordtype}{bool}\ spinBoxEnable\{\textcolor{keyword}{false}\};}
+\DoxyCodeLine{00306\ \ \ \ \ \textcolor{keywordtype}{bool}\ muteLog\{\textcolor{keyword}{false}\};}
+\DoxyCodeLine{00307\ \ \ \ \ QDateTime\ dateStart\_\{\};}
+\DoxyCodeLine{00308\ \ \ \ \ QString\ filePath\_\{\};}
+\DoxyCodeLine{00309\ \ \ \ \ QVector<QCPGraphData>\ pvData\{\};}
+\DoxyCodeLine{00310\ \ \ \ \ QVector<QCPGraphData>\ svData\{\};}
+\DoxyCodeLine{00311\ \ \ \ \ QVector<QCPGraphData>\ mvData\{\};}
+\DoxyCodeLine{00312\ \ \ \ \ QVector<double>\ vtemp\_\{\};}
+\DoxyCodeLine{00313\ \ \ \ \ QVector<double>\ valltemp\_\{\};}
+\DoxyCodeLine{00314\ \ \ \ \ QVector<double>\ vdifftemp\_\{\};}
+\DoxyCodeLine{00315\ \ \ \ \ QTimer\ *\ clock\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00316\ \ \ \ \ QTimer\ *\ waitTimer\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00317\ \ \ \ \ QTimer\ *plotTimer\_\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00318\ }
+\DoxyCodeLine{00319\ \ \ \ \ QString\ LINEToken\_\{\};}
+\DoxyCodeLine{00320\ \ \ \ \ QUrl\ LINEurl\_\{\};}
+\DoxyCodeLine{00321\ \ \ \ \ QElapsedTimer\ totalElapse\{\};}
+\DoxyCodeLine{00322\ \ \ \ \ \textcolor{keywordtype}{bool}\ checkDay\{\textcolor{keyword}{false}\};}
+\DoxyCodeLine{00323\ \ \ \ \ \textcolor{keywordtype}{int}\ dayCounter\{\};}
+\DoxyCodeLine{00324\ \ \ \ \ \textcolor{keywordtype}{bool}\ nextSV\{\textcolor{keyword}{false}\};}
+\DoxyCodeLine{00325\ \ \ \ \ \textcolor{keywordtype}{bool}\ bkgColorChangeable\_\{\textcolor{keyword}{true}\};}
+\DoxyCodeLine{00326\ }
+\DoxyCodeLine{00327\ \ \ \ \ \textcolor{keywordtype}{void}\ addPortName(QList<QSerialPortInfo>\ info);}
+\DoxyCodeLine{00328\ \ \ \ \ \textcolor{comment}{//The\ following\ functions\ are\ inplemented\ in\ gui.cpp}}
+\DoxyCodeLine{00329\ \ \ \ \ \textcolor{keywordtype}{void}\ setupPlot();}
+\DoxyCodeLine{00330\ \ \ \ \ \textcolor{keywordtype}{void}\ setupCombBox();}
+\DoxyCodeLine{00331\ \ \ \ \ \textcolor{keywordtype}{void}\ setEnabledFalse();}
+\DoxyCodeLine{00332\ \ \ \ \ \textcolor{keywordtype}{void}\ setupDialog();}
+\DoxyCodeLine{00333\ \ \ \ \ \textcolor{keywordtype}{void}\ initializeVariables();}
+\DoxyCodeLine{00334\ \ \ \ \ \textcolor{keywordtype}{void}\ updateStatusBoxes();}
+\DoxyCodeLine{00335\ }
+\DoxyCodeLine{00336\ \};}
+\DoxyCodeLine{00337\ }
+\DoxyCodeLine{00338\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MAINWINDOW\_H}}
+
+\end{DoxyCode}

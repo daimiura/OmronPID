@@ -1,0 +1,30 @@
+\hypertarget{notify_8h_source}{}\doxysection{notify.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ NOTIFY\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ NOTIFY\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QNetworkAccessManager>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QNetworkReply>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_notify}{Notify}}\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ Q\_OBJECT}
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \mbox{\hyperlink{class_notify}{Notify}}(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00024\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_notify_a621d36ca663f0c8460c82611c708b51e}{\string~Notify}}();}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00037\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_notify_a5d426d87df52d3061816e070c2e3006a}{setLINE}}(\textcolor{keyword}{const}\ QString\&\ message,\ \textcolor{keyword}{const}\ QString\&\ token);}
+\DoxyCodeLine{00038\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00043\ \ \ \textcolor{keywordtype}{void}\ handleNetworkReply(QNetworkReply\ *reply);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00046\ \ \ QNetworkAccessManager\ networkManager\_\{\};}
+\DoxyCodeLine{00047\ \ \ QUrl\ url\_\{\};}
+\DoxyCodeLine{00048\ \};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ NOTIFY\_H}}
+
+\end{DoxyCode}

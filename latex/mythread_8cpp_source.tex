@@ -1,0 +1,25 @@
+\hypertarget{mythread_8cpp_source}{}\doxysection{mythread.\+cpp}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{mythread_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}mythread.h"{}}}
+\DoxyCodeLine{\Hypertarget{mythread_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{mythread_8cpp_source_l00003}00003\ MyThread::MyThread(QObject\ *parent)\ :}
+\DoxyCodeLine{\Hypertarget{mythread_8cpp_source_l00004}00004\ \ \ QThread(parent)}
+\DoxyCodeLine{\Hypertarget{mythread_8cpp_source_l00005}00005\ \{}
+\DoxyCodeLine{\Hypertarget{mythread_8cpp_source_l00006}00006\ \}}
+\DoxyCodeLine{\Hypertarget{mythread_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{mythread_8cpp_source_l00008}00008\ \textcolor{keywordtype}{void}\ MyThread::run()\{}
+\DoxyCodeLine{\Hypertarget{mythread_8cpp_source_l00009}00009\ \ \ QMutexLocker\ lock(\&mutex\_);}
+\DoxyCodeLine{\Hypertarget{mythread_8cpp_source_l00010}00010\ \ \ QTimer\ timer;}
+\DoxyCodeLine{\Hypertarget{mythread_8cpp_source_l00011}00011\ \ \ connect(\&timer,\ SIGNAL(timeout()),\ \textcolor{keyword}{this},\ SLOT(timerHit()),\ Qt::DirectConnection\ );}
+\DoxyCodeLine{\Hypertarget{mythread_8cpp_source_l00012}00012\ \ \ timer.setInterval(interval\_);\ \textcolor{comment}{//ms}}
+\DoxyCodeLine{\Hypertarget{mythread_8cpp_source_l00013}00013\ \ \ timer.start();}
+\DoxyCodeLine{\Hypertarget{mythread_8cpp_source_l00014}00014\ \ \ exec();}
+\DoxyCodeLine{\Hypertarget{mythread_8cpp_source_l00015}00015\ \ \ timer.stop();}
+\DoxyCodeLine{\Hypertarget{mythread_8cpp_source_l00016}00016\ \}}
+\DoxyCodeLine{\Hypertarget{mythread_8cpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{mythread_8cpp_source_l00018}00018\ \textcolor{keywordtype}{void}\ MyThread::timerHit()\{}
+\DoxyCodeLine{\Hypertarget{mythread_8cpp_source_l00019}00019\ \ \ \ \ emit\ data\_update();}
+\DoxyCodeLine{\Hypertarget{mythread_8cpp_source_l00020}00020\ \}}
+
+\end{DoxyCode}

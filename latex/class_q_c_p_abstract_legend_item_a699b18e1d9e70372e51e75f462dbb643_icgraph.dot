@@ -1,0 +1,17 @@
+digraph "QCPAbstractLegendItem::font"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [label="QCPAbstractLegendItem\l::font",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="QCPAbstractLegendItem\l::setFont",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_legend_item.html#a409c53455d8112f71d70c0c43eb10265",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="QCPLegend::setFont",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_legend.html#aa4cda8499e3cb0f3be415edc02984c73",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="steelblue1",style="solid"];
+  Node4 [label="QCPAbstractLegendItem\l::setSelectedFont",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_legend_item.html#a91db5aee48617a9d3206e61376807365",tooltip=" "];
+  Node4 -> Node5 [dir="back",color="steelblue1",style="solid"];
+  Node5 [label="QCPLegend::setSelectedFont",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_legend.html#ab580a01c3c0a239374ed66c29edf5ad2",tooltip=" "];
+}

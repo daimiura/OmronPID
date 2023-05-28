@@ -1,0 +1,16 @@
+digraph "QCPItemBracket::pen"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [label="QCPItemBracket::pen",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="QCPItemBracket::setPen",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_item_bracket.html#ab13001d9cc5d8f9e56ea15bdda682acb",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="QCPItemBracket::QCPItemBracket",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_item_bracket.html#a44ecfa37a76de5e3549e2d61f9d8ee56",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="steelblue1",style="solid"];
+  Node4 [label="QCPItemBracket::setSelectedPen",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_item_bracket.html#a349785c31122778a520c64891fa204c5",tooltip=" "];
+  Node4 -> Node3 [dir="back",color="steelblue1",style="solid"];
+}

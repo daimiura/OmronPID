@@ -1,0 +1,13 @@
+digraph "QCPAbstractItem::setClipAxisRect"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [label="QCPAbstractItem::setClip\lAxisRect",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="steelblue1",style="solid"];
+  Node2 [label="QCPLayerable::setParentLayerable",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_layerable.html#aa23c893671f1f6744ac235cf2204cf3a",tooltip=" "];
+  Node2 -> Node3 [color="steelblue1",style="solid"];
+  Node3 [label="QCPLayerable::parentLayerable",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_layerable.html#aa78b7e644d2c519e1a9a6f2ac5fcd858",tooltip=" "];
+}

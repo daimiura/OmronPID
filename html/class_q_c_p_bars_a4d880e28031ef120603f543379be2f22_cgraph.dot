@@ -1,0 +1,22 @@
+digraph "QCPBars::~QCPBars"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [label="QCPBars::~QCPBars",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="steelblue1",style="solid"];
+  Node2 [label="QCPBars::connectBars",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_bars.html#a6ea37802cd22f97235cab614b14b9f19",tooltip=" "];
+  Node1 -> Node3 [color="steelblue1",style="solid"];
+  Node3 [label="QCPBars::setBarsGroup",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_bars.html#aedd1709061f0b307c47ddb45e172ef9a",tooltip=" "];
+  Node3 -> Node4 [color="steelblue1",style="solid"];
+  Node4 [label="QCPBars::barsGroup",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_bars.html#a5af22a56b1e0898291c8d95d49ad3525",tooltip=" "];
+  Node3 -> Node5 [color="steelblue1",style="solid"];
+  Node5 [label="QCPBarsGroup::registerBars",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_bars_group.html#a7b00514f19ad58d0bb3fd5246a67fae2",tooltip=" "];
+  Node5 -> Node6 [color="steelblue1",style="solid"];
+  Node6 [label="QCPBarsGroup::bars",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_bars_group.html#a6e4f4e86abbec6a9342f204ef82abef8",tooltip=" "];
+  Node3 -> Node7 [color="steelblue1",style="solid"];
+  Node7 [label="QCPBarsGroup::unregisterBars",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_bars_group.html#ac7073cdd7b1a40c6cb4b5f908145f8c4",tooltip=" "];
+  Node7 -> Node6 [color="steelblue1",style="solid"];
+}

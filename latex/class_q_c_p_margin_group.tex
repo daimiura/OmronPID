@@ -1,0 +1,107 @@
+\hypertarget{class_q_c_p_margin_group}{}\doxysection{QCPMargin\+Group Class Reference}
+\label{class_q_c_p_margin_group}\index{QCPMarginGroup@{QCPMarginGroup}}
+
+
+A margin group allows synchronization of margin sides if working with multiple layout elements.  
+
+
+Inheritance diagram for QCPMargin\+Group\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_q_c_p_margin_group}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_q_c_p_margin_group_ac481c20678ec5b305d6df330715f4b7b}{QCPMargin\+Group}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$parent\+Plot)
+\item 
+QList$<$ \mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}} $\ast$ $>$ \mbox{\hyperlink{class_q_c_p_margin_group_ac967a4dc5fe02ae44aeb43511d5e1bd4}{elements}} (\mbox{\hyperlink{namespace_q_c_p_a7e487e3e2ccb62ab7771065bab7cae54}{QCP\+::\+Margin\+Side}} side) const
+\item 
+bool \mbox{\hyperlink{class_q_c_p_margin_group_ae0d32656d8a5fc5690c4e7693f9d0539}{is\+Empty}} () const
+\item 
+void \mbox{\hyperlink{class_q_c_p_margin_group_a144b67f216e4e86c3a3a309e850285fe}{clear}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_q_c_p_margin_group_aea6a00373b3a0305de56c34d2423ea99}\label{class_q_c_p_margin_group_aea6a00373b3a0305de56c34d2423ea99}} 
+virtual int {\bfseries common\+Margin} (\mbox{\hyperlink{namespace_q_c_p_a7e487e3e2ccb62ab7771065bab7cae54}{QCP\+::\+Margin\+Side}} side) const
+\item 
+\mbox{\Hypertarget{class_q_c_p_margin_group_acb9c3a35acec655c2895b7eb95ee0524}\label{class_q_c_p_margin_group_acb9c3a35acec655c2895b7eb95ee0524}} 
+void {\bfseries add\+Child} (\mbox{\hyperlink{namespace_q_c_p_a7e487e3e2ccb62ab7771065bab7cae54}{QCP\+::\+Margin\+Side}} side, \mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}} $\ast$element)
+\item 
+\mbox{\Hypertarget{class_q_c_p_margin_group_a20ab3286062957d99b58db683fe725b0}\label{class_q_c_p_margin_group_a20ab3286062957d99b58db683fe725b0}} 
+void {\bfseries remove\+Child} (\mbox{\hyperlink{namespace_q_c_p_a7e487e3e2ccb62ab7771065bab7cae54}{QCP\+::\+Margin\+Side}} side, \mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}} $\ast$element)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_q_c_p_margin_group_a23cfa29e3cc0f33a59141b77d8c04edf}\label{class_q_c_p_margin_group_a23cfa29e3cc0f33a59141b77d8c04edf}} 
+\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$ {\bfseries m\+Parent\+Plot}
+\item 
+\mbox{\Hypertarget{class_q_c_p_margin_group_a954bc89ff8958b9bb6a4a0d08ed5fc0f}\label{class_q_c_p_margin_group_a954bc89ff8958b9bb6a4a0d08ed5fc0f}} 
+QHash$<$ \mbox{\hyperlink{namespace_q_c_p_a7e487e3e2ccb62ab7771065bab7cae54}{QCP\+::\+Margin\+Side}}, QList$<$ \mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}} $\ast$ $>$ $>$ {\bfseries m\+Children}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_q_c_p_margin_group_a0790750c7e7f14fdbd960d172655b42b}\label{class_q_c_p_margin_group_a0790750c7e7f14fdbd960d172655b42b}} 
+class {\bfseries QCPLayout\+Element}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A margin group allows synchronization of margin sides if working with multiple layout elements. 
+
+\mbox{\hyperlink{class_q_c_p_margin_group}{QCPMargin\+Group}} allows you to tie a margin side of two or more layout elements together, such that they will all have the same size, based on the largest required margin in the group.
+
+~\newline
+ ~\newline
+ In certain situations it is desirable that margins at specific sides are synchronized across layout elements. For example, if one \mbox{\hyperlink{class_q_c_p_axis_rect}{QCPAxis\+Rect}} is below another one in a grid layout, it will provide a cleaner look to the user if the left and right margins of the two axis rects are of the same size. \mbox{\hyperlink{class_the}{The}} left axis of the top axis rect will then be at the same horizontal position as the left axis of the lower axis rect, making them appear aligned. \mbox{\hyperlink{class_the}{The}} same applies for the right axes. This is what \mbox{\hyperlink{class_q_c_p_margin_group}{QCPMargin\+Group}} makes possible.
+
+To add/remove a specific side of a layout element to/from a margin group, use the \mbox{\hyperlink{class_q_c_p_layout_element_a516e56f76b6bc100e8e71d329866847d}{QCPLayout\+Element\+::set\+Margin\+Group}} method. To completely break apart the margin group, either call \mbox{\hyperlink{class_q_c_p_margin_group_a144b67f216e4e86c3a3a309e850285fe}{clear}}, or just delete the margin group.\hypertarget{class_q_c_p_margin_group_QCPMarginGroup-example}{}\doxysubsection{Example}\label{class_q_c_p_margin_group_QCPMarginGroup-example}
+First create a margin group\+: 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+ Then set this group on the layout element sides\+: 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+ Here, we\textquotesingle{}ve used the first two axis rects of the plot and synchronized their left margins with each other and their right margins with each other. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_q_c_p_margin_group_ac481c20678ec5b305d6df330715f4b7b}\label{class_q_c_p_margin_group_ac481c20678ec5b305d6df330715f4b7b}} 
+\index{QCPMarginGroup@{QCPMarginGroup}!QCPMarginGroup@{QCPMarginGroup}}
+\index{QCPMarginGroup@{QCPMarginGroup}!QCPMarginGroup@{QCPMarginGroup}}
+\doxysubsubsection{\texorpdfstring{QCPMarginGroup()}{QCPMarginGroup()}}
+{\footnotesize\ttfamily QCPMargin\+Group\+::\+QCPMargin\+Group (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$}]{parent\+Plot }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Creates a new \mbox{\hyperlink{class_q_c_p_margin_group}{QCPMargin\+Group}} instance in {\itshape parent\+Plot}. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_q_c_p_margin_group_a144b67f216e4e86c3a3a309e850285fe}\label{class_q_c_p_margin_group_a144b67f216e4e86c3a3a309e850285fe}} 
+\index{QCPMarginGroup@{QCPMarginGroup}!clear@{clear}}
+\index{clear@{clear}!QCPMarginGroup@{QCPMarginGroup}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void QCPMargin\+Group\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Clears this margin group. \mbox{\hyperlink{class_the}{The}} synchronization of the margin sides that use this margin group is lifted and they will use their individual margin sizes again. \mbox{\Hypertarget{class_q_c_p_margin_group_ac967a4dc5fe02ae44aeb43511d5e1bd4}\label{class_q_c_p_margin_group_ac967a4dc5fe02ae44aeb43511d5e1bd4}} 
+\index{QCPMarginGroup@{QCPMarginGroup}!elements@{elements}}
+\index{elements@{elements}!QCPMarginGroup@{QCPMarginGroup}}
+\doxysubsubsection{\texorpdfstring{elements()}{elements()}}
+{\footnotesize\ttfamily QList$<$ \mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}} $\ast$ $>$ QCPMargin\+Group\+::elements (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_q_c_p_a7e487e3e2ccb62ab7771065bab7cae54}{QCP\+::\+Margin\+Side}}}]{side }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns a list of all layout elements that have their margin {\itshape side} associated with this margin group. \mbox{\Hypertarget{class_q_c_p_margin_group_ae0d32656d8a5fc5690c4e7693f9d0539}\label{class_q_c_p_margin_group_ae0d32656d8a5fc5690c4e7693f9d0539}} 
+\index{QCPMarginGroup@{QCPMarginGroup}!isEmpty@{isEmpty}}
+\index{isEmpty@{isEmpty}!QCPMarginGroup@{QCPMarginGroup}}
+\doxysubsubsection{\texorpdfstring{isEmpty()}{isEmpty()}}
+{\footnotesize\ttfamily bool QCPMargin\+Group\+::is\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns whether this margin group is empty. If this function returns true, no layout elements use this margin group to synchronize margin sides. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+qcustomplot.\+h\item 
+qcustomplot.\+cpp\end{DoxyCompactItemize}

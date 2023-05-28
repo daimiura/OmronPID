@@ -1,0 +1,994 @@
+\hypertarget{class_communication}{}\doxysection{Communication Class Reference}
+\label{class_communication}\index{Communication@{Communication}}
+
+
+\mbox{\hyperlink{class_the}{The}} \mbox{\hyperlink{class_communication}{Communication}} class provides an interface for communicating with he E5\+CC temperature controller via Modbus protocol.  
+
+
+
+
+{\ttfamily \#include $<$communication.\+h$>$}
+
+Inheritance diagram for Communication\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_communication}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_communication_1_1_e5_c_c___address}{E5\+CC\+\_\+\+Address}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_the}{The}} \mbox{\hyperlink{class_communication_1_1_e5_c_c___address}{E5\+CC\+\_\+\+Address}} nested class defines an enum class Type for Mod\+Bus addresses used for communication with the E5\+CC temperature controller. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_communication_ab1638e2cf124e4c5694578c3d1d5090c}{timing}} \{ \newline
+\mbox{\hyperlink{class_communication_ab1638e2cf124e4c5694578c3d1d5090cae8fc4a2ced973ee81f1c8b2cdd697700}{modbus}} = 300
+, \mbox{\hyperlink{class_communication_ab1638e2cf124e4c5694578c3d1d5090cae394ac1030a5be2d94d9d23ebbf66daf}{get\+Temp\+Timer}} = 500
+, \mbox{\hyperlink{class_communication_ab1638e2cf124e4c5694578c3d1d5090cacfeefcf3319c15c0fe0a802688c3943e}{clock\+Update}} = 50
+, \mbox{\hyperlink{class_communication_ab1638e2cf124e4c5694578c3d1d5090ca65ec9a4d34cd472f68f1294a34a8121a}{time\+Up}} = 1000 $\ast$ 60 $\ast$ 10
+, \newline
+\mbox{\hyperlink{class_communication_ab1638e2cf124e4c5694578c3d1d5090ca67140116da3e6c304a97f49ece3885dc}{time\+Out}} = 700
+ \}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_the}{The}} timing enumeration defines various timing intervals in milliseconds. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_communication_a0feaf16daf26b74c348daf8395d2a780}{Temperature\+Updated}} (double temperature)
+\begin{DoxyCompactList}\small\item\em This signal is emitted when the temperature value is updated. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_communication_a99b3ee7daebd86b82269e558d38b89a7}{MVUpdated}} (double MV)
+\begin{DoxyCompactList}\small\item\em This signal is emitted when the output power value is updated. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_communication_a9ab412f55487d76ce72b3d7b3d9ba281}{SVUpdated}} (double SV)
+\begin{DoxyCompactList}\small\item\em This signal is emitted when the set value is updated. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_communication_ac2fe10e50d7b27a2218f740390427d3d}{MVupper\+Updated}} (double MVupper)
+\begin{DoxyCompactList}\small\item\em This signal is emitted when the output upper value is updated. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_communication_a48071434d4991e27589e83788f4ad0c5}{MVlower\+Updated}} (double MVlower)
+\begin{DoxyCompactList}\small\item\em This signal is emitted when the output lower value is updated. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_communication_a7e960d415df3004947a01c1e77a9694c}{PID\+\_\+\+PUpdated}} (double PID\+\_\+P)
+\begin{DoxyCompactList}\small\item\em Emitted when the proportional (P) gain value of the PID controller is updated. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_communication_ab23d3916e3546afc46f1277611e56b01}{PID\+\_\+\+IUpdated}} (double PID\+\_\+I)
+\begin{DoxyCompactList}\small\item\em Emitted when the integral (I) gain value of the PID controller is updated. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_communication_a2b24ed3da6f02cd85faf33dd33b42864}{PID\+\_\+\+DUpdated}} (double PID\+\_\+D)
+\begin{DoxyCompactList}\small\item\em Emitted when the derivative (D) gain value of the PID controller is updated. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_communication_a2d3eb36896fa65903c35dece6c439ad4}{ATSend\+Finish}} (int at\+Flag)
+\begin{DoxyCompactList}\small\item\em Emitted when an AT command is sent to the Omron device and the send is finished. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_communication_a0596ae71d743bbc479135515faa17cde}{SVSend\+Finish}} (double SV)
+\begin{DoxyCompactList}\small\item\em Emitted when a set value (SV) command is sent to the Omron device and the send is finished. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_communication_a4e5a5e91ee7e514ab83728b60824df4c}\label{class_communication_a4e5a5e91ee7e514ab83728b60824df4c}} 
+void {\bfseries connect\+Timeout} ()
+\begin{DoxyCompactList}\small\item\em Emitted when a connection attempt to the Omron device times out. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_communication_a53e0c58bfb65fc88f1f7bc13f48c7b33}{log\+Msg}} (QString string, bool newline=true)
+\begin{DoxyCompactList}\small\item\em Emitted when a log message is generated. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_communication_aa48209f9bd80b5db54d5a55b5a393b93}\label{class_communication_aa48209f9bd80b5db54d5a55b5a393b93}} 
+void {\bfseries status\+Update} ()
+\begin{DoxyCompactList}\small\item\em Emitted when the status of the controller is updated. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_communication_a43693f08bb5417e496799672fe4b14f9}\label{class_communication_a43693f08bb5417e496799672fe4b14f9}} 
+void {\bfseries device\+Connect} ()
+\begin{DoxyCompactList}\small\item\em Emitted when a connection to the Omron device is established. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_communication_aa779164625ba09bb051d756ab27c2c3f}\label{class_communication_aa779164625ba09bb051d756ab27c2c3f}} 
+void {\bfseries failed\+Connect} ()
+\begin{DoxyCompactList}\small\item\em Emitted when a connection to the Omron device fails. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_communication_a2b7bf2aa777d097bcbff8ac4b162297b}\label{class_communication_a2b7bf2aa777d097bcbff8ac4b162297b}} 
+void {\bfseries Omron\+IDChanged} ()
+\begin{DoxyCompactList}\small\item\em Emitted when the Omron device ID is changed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_communication_abe626b7eae9fd6d16897b635466926c4}{serial\+Port\+Remove}} (QString str)
+\begin{DoxyCompactList}\small\item\em Emitted when a serial port is removed from the system. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_communication_a1b207c9a7d1b917f4074119232c957a7}{interval\+Update\+Changed}} (int interval)
+\begin{DoxyCompactList}\small\item\em Emitted when the interval for updating values is changed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_communication_aec1bbb406a620cb1dc929a8cdeee778b}{interval\+Conection\+Check\+Changed}} (int interval)
+\begin{DoxyCompactList}\small\item\em Emitted when the interval for checking the connection is changed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_communication_ae1d7001cdc257e49e6de706f86bf3c22}{Communication}} (QMain\+Window $\ast$parent, QStatus\+Bar $\ast$status\+Bar)
+\begin{DoxyCompactList}\small\item\em Constructor for \mbox{\hyperlink{class_communication}{Communication}} class. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_communication_a75ba08ce908d45251e28e4c1db94e6f4}\label{class_communication_a75ba08ce908d45251e28e4c1db94e6f4}} 
+{\bfseries $\sim$\+Communication} ()
+\begin{DoxyCompactList}\small\item\em Destructs a \mbox{\hyperlink{class_communication}{Communication}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_communication_a61c96d1875bc1c421590858891169467}{request}} (QModbus\+Pdu\+::\+Function\+Code code, QByte\+Array cmd)
+\begin{DoxyCompactList}\small\item\em Sends a Modbus request to the Omron device. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_communication_a3c8f92126749c14140090ec400cb5e74}{format\+Hex}} (int value, int digit)
+\begin{DoxyCompactList}\small\item\em Formats an integer value to a hexadecimal string with the specified number of digits. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_communication_a6b45f0b8f1d9f9b269ff7dd2ffbc9698}{format\+E5\+CCAddress}} (\mbox{\hyperlink{class_communication_1_1_e5_c_c___address_ae65845c8cd58de1fd62558b229f90dbc}{E5\+CC\+\_\+\+Address\+::\+Type}} address, int width=4)
+\begin{DoxyCompactList}\small\item\em Formats an E5\+CC register address as a hexadecimal string with the specified width. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_communication_ac6d27ab62868a050d8e2b254a2d0d4dd}\label{class_communication_ac6d27ab62868a050d8e2b254a2d0d4dd}} 
+void {\bfseries ask\+Temperature} ()
+\begin{DoxyCompactList}\small\item\em Sends a request to get the temperature from the E5\+CC temperature controller. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_communication_a7af5bef528b7769c72cd69af4eccf782}\label{class_communication_a7af5bef528b7769c72cd69af4eccf782}} 
+void {\bfseries ask\+MV} ()
+\begin{DoxyCompactList}\small\item\em Sends a request to get the output power from the E5\+CC temperature controller. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_communication_aaa9c871501d03ca6453bac667a26263b}\label{class_communication_aaa9c871501d03ca6453bac667a26263b}} 
+void {\bfseries ask\+SV} ()
+\begin{DoxyCompactList}\small\item\em Sends a request to get the set value from the E5\+CC temperature controller. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_communication_a78609ae23d99b52e668a220586675c6e}\label{class_communication_a78609ae23d99b52e668a220586675c6e}} 
+void {\bfseries ask\+MVupper} ()
+\begin{DoxyCompactList}\small\item\em Sends a request to get the output upper limit from the E5\+CC temperature controller. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_communication_a23299835a8f07f118c0d5d9f68f41d42}\label{class_communication_a23299835a8f07f118c0d5d9f68f41d42}} 
+void {\bfseries ask\+MVlower} ()
+\begin{DoxyCompactList}\small\item\em Sends a request to get the output lower limit from the E5\+CC temperature controller. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_communication_a1fd79af9afdfac21cb09c6a57c122668}{ask\+PID}} (QString PID)
+\begin{DoxyCompactList}\small\item\em Sends a request to get the specified PID parameter from the E5\+CC temperature controller. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_communication_abe234ec3b344972d614302035c60055e}\label{class_communication_abe234ec3b344972d614302035c60055e}} 
+void {\bfseries execute\+Connection} ()
+\begin{DoxyCompactList}\small\item\em Executes the connection to the Mod\+Bus device. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_communication_ad1c2b0978dba554db0da18d4589e218c}\label{class_communication_ad1c2b0978dba554db0da18d4589e218c}} 
+void {\bfseries execute\+Run} ()
+\begin{DoxyCompactList}\small\item\em Executes the Run command on the Mod\+Bus device. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_communication_a5e8f719672ffd34035907b52eac72f6e}\label{class_communication_a5e8f719672ffd34035907b52eac72f6e}} 
+void {\bfseries execute\+Stop} ()
+\begin{DoxyCompactList}\small\item\em Executes the Stop command on the Mod\+Bus device. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_communication_a038a4904d1b15df1dcc8ad2d8debc797}{execute\+Send\+Request\+SV}} (double SV)
+\begin{DoxyCompactList}\small\item\em Sends a request to set the set value (SV) of the E5\+CC temperature controller. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_communication_a72dd8637a79be79348fc6eaea4356824}{execute\+Send\+Request\+AT}} (int at\+Flag)
+\begin{DoxyCompactList}\small\item\em Sends a request to set the AT flag of the E5\+CC temperature controller. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_communication_a2e8eb43c3a20aba35b70c5a1d86a008d}{change\+MVlower\+Value}} (double MVlower)
+\begin{DoxyCompactList}\small\item\em Changes the value of the output lower limit of the E5\+CC temperature controller. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_communication_add15ec23dd41794a58564b47fd6ab9ae}{change\+MVupper\+Value}} (double MVupper)
+\begin{DoxyCompactList}\small\item\em Changes the value of the output upper limit of the E5\+CC temperature controller. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_communication_af5f1beb1fa861593614bb4dc6e2e3a9f}{change\+SVValue}} (double SV)
+\begin{DoxyCompactList}\small\item\em Changes the set value (SV) of the E5\+CC temperature controller. This function calculates the integer value to be sent to the temperature controller based on the given set value in degrees Celsius and the temperature decimal factor of the temperature controller. It then creates a Modbus command with the calculated value and sends it to the controller to change the SV. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_communication_a0e76d9bca5fb1eb5c0781f870503e058}{read}} (QModbus\+Data\+Unit\+::\+Register\+Type type, quint16 adress, int size)
+\begin{DoxyCompactList}\small\item\em Sends a Modbus request with the specified function code and command data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_communication_a6335673fcbdeae311a70a53118f679f8}{set\+Serial\+Port\+Name}} (QString port\+Name)
+\begin{DoxyCompactList}\small\item\em Sets the name of the serial port to use for Modbus communication. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_communication_aa9a6d33d0a202796f1e4bcc07db57a99}{is\+Timer\+Update\+Running}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the update timer is currently running. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_communication_a1d72865effe27d7ac3c2ef13a8adea8f}{set\+Temperature}} (double temperature)
+\begin{DoxyCompactList}\small\item\em Sets the current temperature. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_communication_adf0dbdf2edce36b04c5a383a816910ea}{set\+SV}} (double SV)
+\begin{DoxyCompactList}\small\item\em Sets the set value for temperature. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_communication_a2e07593772c80d5541f10afc77a11dea}{set\+MV}} (double MV)
+\begin{DoxyCompactList}\small\item\em Sets the current output power. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_communication_ac0cdf2a7e5f33fc544a24fddd1675c5e}{set\+MVupper}} (double MVupper)
+\begin{DoxyCompactList}\small\item\em Sets the upper limit for the output power. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_communication_ac8c816cb166e0fc0995f7f535fae76e4}{set\+MVlower}} (double MVlower)
+\begin{DoxyCompactList}\small\item\em Sets the lower limit for the output power. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_communication_a6d3ded92e8052c9ecea7076a000780a5}{set\+Omron\+ID}} (int omron\+ID)
+\begin{DoxyCompactList}\small\item\em Sets the Omron ID for Modbus communication. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_communication_a29fab1f8ee87f358da3e026784579690}{set\+Interval\+Update}} (int interval)
+\begin{DoxyCompactList}\small\item\em Sets the interval in milliseconds for updating the temperature and output power values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_communication_a1cb7912f36961fabd2ce61c95088e6db}{set\+Interval\+Conection\+Check}} (int interval)
+\begin{DoxyCompactList}\small\item\em Sets the interval in milliseconds for checking the Modbus connection status. \end{DoxyCompactList}\item 
+QModbus\+Rtu\+Serial\+Master $\ast$ \mbox{\hyperlink{class_communication_a31b66f90c1e0c149ae646dd6ec23f7a9}{get\+Omron}} () const
+\begin{DoxyCompactList}\small\item\em Returns a pointer to the QModbus\+Rtu\+Serial\+Master object used for communication with the Omron PLC. \end{DoxyCompactList}\item 
+QList$<$ QSerial\+Port\+Info $>$ \mbox{\hyperlink{class_communication_a059db4b78b4cce68c6d09b868c2fe785}{get\+Serial\+Port\+Devices}} () const
+\begin{DoxyCompactList}\small\item\em Returns a list of QSerial\+Port\+Info objects containing information about available serial port devices. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_communication_acfe8d3d898502fdf93f06cc82b2e6409}{get\+Port\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Returns the name of the currently set serial port. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_communication_a4787d8dd4fc9b9d4fe9081aaf501169e}{get\+Temperature}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current temperature value. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_communication_a056cfd355f2db3c4dbc6902d4abd8702}{get\+MV}} () const
+\begin{DoxyCompactList}\small\item\em Gets the set value. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_communication_a28ba88fef838dca1ac59a87308dc6f07}{get\+SV}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current output power value. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_communication_a9cdb0feb64d8238615841b322cdb0630}{get\+MVupper}} () const
+\begin{DoxyCompactList}\small\item\em Gets the output upper value. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_communication_a8be32adbb560931be8785467060351d7}{get\+MVlower}} () const
+\begin{DoxyCompactList}\small\item\em Gets the output lower value. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_communication_aae12f547cbd57e7e76d44733b2942fc1}{get\+PID\+\_\+P}} () const
+\begin{DoxyCompactList}\small\item\em Returns the Proportional value of the PID control for the temperature controller. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_communication_a34b6ffcae3b31a13abe99037a234884d}{get\+PID\+\_\+I}} () const
+\begin{DoxyCompactList}\small\item\em Returns the Integration value of the PID control for the temperature controller. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_communication_a13b106aa7b267d95e4b93160feec0b05}{get\+PID\+\_\+D}} () const
+\begin{DoxyCompactList}\small\item\em Returns the Difference value of the PID control for the temperature controller. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_communication_afd435fd35312d895297048f5607e7476}{get\+Omron\+ID}} () const
+\begin{DoxyCompactList}\small\item\em Returns the ID of the Omron temperature controller connected to the system. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_communication_aacb8bc64b62f967c94ff913bc9d58af4}{get\+Interval\+Update}} () const
+\begin{DoxyCompactList}\small\item\em Returns the interval time in seconds at which the temperature and control data are updated. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_communication_a9ea9548f8ab7025ec6d3a797a3cd0a03}{get\+Interval\+Conection\+Check}} () const
+\begin{DoxyCompactList}\small\item\em Returns the interval time in seconds at which the connection to the Omron temperature controller is checked. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_communication_a342b977837584d66a2c27ed5a8be0e27}\label{class_communication_a342b977837584d66a2c27ed5a8be0e27}} 
+QTimer $\ast$ {\bfseries get\+Timer\+Update} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_communication_a7ba69269a5a65453fc4af47cacb04d5b}\label{class_communication_a7ba69269a5a65453fc4af47cacb04d5b}} 
+double {\bfseries Temperature}
+\item 
+\mbox{\Hypertarget{class_communication_aa32d956a213e1ec9806c126be5987454}\label{class_communication_aa32d956a213e1ec9806c126be5987454}} 
+double {\bfseries SV}
+\item 
+\mbox{\Hypertarget{class_communication_a84d45f9a0aa8cab9bc17972a3a976ec2}\label{class_communication_a84d45f9a0aa8cab9bc17972a3a976ec2}} 
+double {\bfseries MV}
+\item 
+\mbox{\Hypertarget{class_communication_ac65da82686caf92c5afbf825cc87d4e6}\label{class_communication_ac65da82686caf92c5afbf825cc87d4e6}} 
+double {\bfseries MVupper}
+\item 
+\mbox{\Hypertarget{class_communication_a9bf2ba511f6787aadfd9eb272c9f7aca}\label{class_communication_a9bf2ba511f6787aadfd9eb272c9f7aca}} 
+double {\bfseries MVlower}
+\item 
+\mbox{\Hypertarget{class_communication_aeb47f6d5957233897fa9479e3005d89c}\label{class_communication_aeb47f6d5957233897fa9479e3005d89c}} 
+int {\bfseries Omron\+ID}
+\item 
+\mbox{\Hypertarget{class_communication_ab37541f17bc6c2496a3224b5c95154ca}\label{class_communication_ab37541f17bc6c2496a3224b5c95154ca}} 
+int {\bfseries interval\+Update}
+\item 
+\mbox{\Hypertarget{class_communication_a1c6dde3d7af1f33943b39a21a616b3ca}\label{class_communication_a1c6dde3d7af1f33943b39a21a616b3ca}} 
+int {\bfseries interval\+Conection\+Check}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_the}{The}} \mbox{\hyperlink{class_communication}{Communication}} class provides an interface for communicating with he E5\+CC temperature controller via Modbus protocol. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_communication_ab1638e2cf124e4c5694578c3d1d5090c}\label{class_communication_ab1638e2cf124e4c5694578c3d1d5090c}} 
+\index{Communication@{Communication}!timing@{timing}}
+\index{timing@{timing}!Communication@{Communication}}
+\doxysubsubsection{\texorpdfstring{timing}{timing}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_communication_ab1638e2cf124e4c5694578c3d1d5090c}{Communication\+::timing}}}
+
+
+
+\mbox{\hyperlink{class_the}{The}} timing enumeration defines various timing intervals in milliseconds. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{modbus@{modbus}!Communication@{Communication}}\index{Communication@{Communication}!modbus@{modbus}}}\mbox{\Hypertarget{class_communication_ab1638e2cf124e4c5694578c3d1d5090cae8fc4a2ced973ee81f1c8b2cdd697700}\label{class_communication_ab1638e2cf124e4c5694578c3d1d5090cae8fc4a2ced973ee81f1c8b2cdd697700}} 
+modbus&\mbox{\hyperlink{class_the}{The}} time in milliseconds between Modbus communication \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{getTempTimer@{getTempTimer}!Communication@{Communication}}\index{Communication@{Communication}!getTempTimer@{getTempTimer}}}\mbox{\Hypertarget{class_communication_ab1638e2cf124e4c5694578c3d1d5090cae394ac1030a5be2d94d9d23ebbf66daf}\label{class_communication_ab1638e2cf124e4c5694578c3d1d5090cae394ac1030a5be2d94d9d23ebbf66daf}} 
+get\+Temp\+Timer&\mbox{\hyperlink{class_the}{The}} time in milliseconds between requests for temperature \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{clockUpdate@{clockUpdate}!Communication@{Communication}}\index{Communication@{Communication}!clockUpdate@{clockUpdate}}}\mbox{\Hypertarget{class_communication_ab1638e2cf124e4c5694578c3d1d5090cacfeefcf3319c15c0fe0a802688c3943e}\label{class_communication_ab1638e2cf124e4c5694578c3d1d5090cacfeefcf3319c15c0fe0a802688c3943e}} 
+clock\+Update&\mbox{\hyperlink{class_the}{The}} time in milliseconds between clock updates \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{timeUp@{timeUp}!Communication@{Communication}}\index{Communication@{Communication}!timeUp@{timeUp}}}\mbox{\Hypertarget{class_communication_ab1638e2cf124e4c5694578c3d1d5090ca65ec9a4d34cd472f68f1294a34a8121a}\label{class_communication_ab1638e2cf124e4c5694578c3d1d5090ca65ec9a4d34cd472f68f1294a34a8121a}} 
+time\+Up&\mbox{\hyperlink{class_the}{The}} maximum time in milliseconds before resetting the clock \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{timeOut@{timeOut}!Communication@{Communication}}\index{Communication@{Communication}!timeOut@{timeOut}}}\mbox{\Hypertarget{class_communication_ab1638e2cf124e4c5694578c3d1d5090ca67140116da3e6c304a97f49ece3885dc}\label{class_communication_ab1638e2cf124e4c5694578c3d1d5090ca67140116da3e6c304a97f49ece3885dc}} 
+time\+Out&\mbox{\hyperlink{class_the}{The}} time in milliseconds before a Modbus communication times out \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_communication_ae1d7001cdc257e49e6de706f86bf3c22}\label{class_communication_ae1d7001cdc257e49e6de706f86bf3c22}} 
+\index{Communication@{Communication}!Communication@{Communication}}
+\index{Communication@{Communication}!Communication@{Communication}}
+\doxysubsubsection{\texorpdfstring{Communication()}{Communication()}}
+{\footnotesize\ttfamily Communication\+::\+Communication (\begin{DoxyParamCaption}\item[{QMain\+Window $\ast$}]{parent,  }\item[{QStatus\+Bar $\ast$}]{status\+Bar }\end{DoxyParamCaption})}
+
+
+
+Constructor for \mbox{\hyperlink{class_communication}{Communication}} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & \mbox{\hyperlink{class_the}{The}} parent window that the \mbox{\hyperlink{class_communication}{Communication}} object belongs to. \\
+\hline
+{\em status\+Bar} & \mbox{\hyperlink{class_the}{The}} status bar of the parent window. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_communication_a1fd79af9afdfac21cb09c6a57c122668}\label{class_communication_a1fd79af9afdfac21cb09c6a57c122668}} 
+\index{Communication@{Communication}!askPID@{askPID}}
+\index{askPID@{askPID}!Communication@{Communication}}
+\doxysubsubsection{\texorpdfstring{askPID()}{askPID()}}
+{\footnotesize\ttfamily void Communication\+::ask\+PID (\begin{DoxyParamCaption}\item[{QString}]{PID }\end{DoxyParamCaption})}
+
+
+
+Sends a request to get the specified PID parameter from the E5\+CC temperature controller. 
+
+Asks for the PID value specified by the parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{\hyperlink{class_the}{The}}} & PID term to read. If it is not \char`\"{}\+P\char`\"{}, \char`\"{}\+I\char`\"{}, or \char`\"{}\+D\char`\"{}, all three PID terms are read.\\
+\hline
+\end{DoxyParams}
+
+
+If the input parameter is \char`\"{}\+P\char`\"{}, it reads the value of the PID P term, emits the PID\+\_\+\+PUpdated signal and stores the result in the variable pid\+\_\+\+P\+\_\+. If the input parameter is \char`\"{}\+I\char`\"{}, it reads the value of the PID I term, emits the PID\+\_\+\+IUpdated signal and stores the result in the variable pid\+\_\+\+I\+\_\+. If the input parameter is \char`\"{}\+D\char`\"{}, it reads the value of the PID D term, emits the PID\+\_\+\+DUpdated signal and stores the result in the variable pid\+\_\+\+D\+\_\+. If the input parameter is not \char`\"{}\+P\char`\"{}, \char`\"{}\+I\char`\"{}, or \char`\"{}\+D\char`\"{}, it reads the values of all three PID terms, emits all three corresponding signals and stores the results in the corresponding variables pid\+\_\+\+P\+\_\+, pid\+\_\+\+I\+\_\+, and pid\+\_\+\+D\+\_\+. \mbox{\Hypertarget{class_communication_a2d3eb36896fa65903c35dece6c439ad4}\label{class_communication_a2d3eb36896fa65903c35dece6c439ad4}} 
+\index{Communication@{Communication}!ATSendFinish@{ATSendFinish}}
+\index{ATSendFinish@{ATSendFinish}!Communication@{Communication}}
+\doxysubsubsection{\texorpdfstring{ATSendFinish}{ATSendFinish}}
+{\footnotesize\ttfamily void Communication\+::\+ATSend\+Finish (\begin{DoxyParamCaption}\item[{int}]{at\+Flag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Emitted when an AT command is sent to the Omron device and the send is finished. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em at\+Flag} & \mbox{\hyperlink{class_the}{The}} flag indicating which AT command was sent. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_communication_a2e8eb43c3a20aba35b70c5a1d86a008d}\label{class_communication_a2e8eb43c3a20aba35b70c5a1d86a008d}} 
+\index{Communication@{Communication}!changeMVlowerValue@{changeMVlowerValue}}
+\index{changeMVlowerValue@{changeMVlowerValue}!Communication@{Communication}}
+\doxysubsubsection{\texorpdfstring{changeMVlowerValue()}{changeMVlowerValue()}}
+{\footnotesize\ttfamily void Communication\+::change\+MVlower\+Value (\begin{DoxyParamCaption}\item[{double}]{MVlower }\end{DoxyParamCaption})}
+
+
+
+Changes the value of the output lower limit of the E5\+CC temperature controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em MVlower} & \mbox{\hyperlink{class_the}{The}} new value of the output lower limit. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_communication_add15ec23dd41794a58564b47fd6ab9ae}\label{class_communication_add15ec23dd41794a58564b47fd6ab9ae}} 
+\index{Communication@{Communication}!changeMVupperValue@{changeMVupperValue}}
+\index{changeMVupperValue@{changeMVupperValue}!Communication@{Communication}}
+\doxysubsubsection{\texorpdfstring{changeMVupperValue()}{changeMVupperValue()}}
+{\footnotesize\ttfamily void Communication\+::change\+MVupper\+Value (\begin{DoxyParamCaption}\item[{double}]{MVupper }\end{DoxyParamCaption})}
+
+
+
+Changes the value of the output upper limit of the E5\+CC temperature controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em MVupper} & \mbox{\hyperlink{class_the}{The}} new value of the output upper limit. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_communication_af5f1beb1fa861593614bb4dc6e2e3a9f}\label{class_communication_af5f1beb1fa861593614bb4dc6e2e3a9f}} 
+\index{Communication@{Communication}!changeSVValue@{changeSVValue}}
+\index{changeSVValue@{changeSVValue}!Communication@{Communication}}
+\doxysubsubsection{\texorpdfstring{changeSVValue()}{changeSVValue()}}
+{\footnotesize\ttfamily void Communication\+::change\+SVValue (\begin{DoxyParamCaption}\item[{double}]{SV }\end{DoxyParamCaption})}
+
+
+
+Changes the set value (SV) of the E5\+CC temperature controller. This function calculates the integer value to be sent to the temperature controller based on the given set value in degrees Celsius and the temperature decimal factor of the temperature controller. It then creates a Modbus command with the calculated value and sends it to the controller to change the SV. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em SV} & \mbox{\hyperlink{class_the}{The}} set value to be set in degrees Celsius. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_communication_a72dd8637a79be79348fc6eaea4356824}\label{class_communication_a72dd8637a79be79348fc6eaea4356824}} 
+\index{Communication@{Communication}!executeSendRequestAT@{executeSendRequestAT}}
+\index{executeSendRequestAT@{executeSendRequestAT}!Communication@{Communication}}
+\doxysubsubsection{\texorpdfstring{executeSendRequestAT()}{executeSendRequestAT()}}
+{\footnotesize\ttfamily void Communication\+::execute\+Send\+Request\+AT (\begin{DoxyParamCaption}\item[{int}]{at\+Flag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sends a request to set the AT flag of the E5\+CC temperature controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em at\+Flag} & \mbox{\hyperlink{class_the}{The}} value of the AT flag to set. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_communication_a038a4904d1b15df1dcc8ad2d8debc797}\label{class_communication_a038a4904d1b15df1dcc8ad2d8debc797}} 
+\index{Communication@{Communication}!executeSendRequestSV@{executeSendRequestSV}}
+\index{executeSendRequestSV@{executeSendRequestSV}!Communication@{Communication}}
+\doxysubsubsection{\texorpdfstring{executeSendRequestSV()}{executeSendRequestSV()}}
+{\footnotesize\ttfamily void Communication\+::execute\+Send\+Request\+SV (\begin{DoxyParamCaption}\item[{double}]{SV }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sends a request to set the set value (SV) of the E5\+CC temperature controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em SV} & \mbox{\hyperlink{class_the}{The}} value to set as the set value (SV). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_communication_a6b45f0b8f1d9f9b269ff7dd2ffbc9698}\label{class_communication_a6b45f0b8f1d9f9b269ff7dd2ffbc9698}} 
+\index{Communication@{Communication}!formatE5CCAddress@{formatE5CCAddress}}
+\index{formatE5CCAddress@{formatE5CCAddress}!Communication@{Communication}}
+\doxysubsubsection{\texorpdfstring{formatE5CCAddress()}{formatE5CCAddress()}}
+{\footnotesize\ttfamily QString Communication\+::format\+E5\+CCAddress (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_communication_1_1_e5_c_c___address_ae65845c8cd58de1fd62558b229f90dbc}{E5\+CC\+\_\+\+Address\+::\+Type}}}]{address,  }\item[{int}]{width = {\ttfamily 4} }\end{DoxyParamCaption})}
+
+
+
+Formats an E5\+CC register address as a hexadecimal string with the specified width. 
+
+This function takes an E5\+CC register address as an enumeration type and formats it as a hexadecimal string with the specified width. If the resulting string is shorter than the specified width, leading zeroes are added to the beginning of the string.
+
+
+\begin{DoxyParams}{Parameters}
+{\em address} & \mbox{\hyperlink{class_the}{The}} E5\+CC register address to format. \\
+\hline
+{\em width} & \mbox{\hyperlink{class_the}{The}} width of the resulting hexadecimal string. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+QString A QString object containing the formatted hexadecimal string. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_communication_a3c8f92126749c14140090ec400cb5e74}\label{class_communication_a3c8f92126749c14140090ec400cb5e74}} 
+\index{Communication@{Communication}!formatHex@{formatHex}}
+\index{formatHex@{formatHex}!Communication@{Communication}}
+\doxysubsubsection{\texorpdfstring{formatHex()}{formatHex()}}
+{\footnotesize\ttfamily QString Communication\+::format\+Hex (\begin{DoxyParamCaption}\item[{int}]{value,  }\item[{int}]{digit }\end{DoxyParamCaption})}
+
+
+
+Formats an integer value to a hexadecimal string with the specified number of digits. 
+
+This function takes an integer value and formats it as a hexadecimal string with the specified number of digits. If the resulting string is shorter than the specified width, leading zeroes are added to the beginning of the string.
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \mbox{\hyperlink{class_the}{The}} integer value to format. \\
+\hline
+{\em digit} & \mbox{\hyperlink{class_the}{The}} number of digits for the resulting hexadecimal string. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+QString A QString object containing the formatted hexadecimal string. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_communication_a9ea9548f8ab7025ec6d3a797a3cd0a03}\label{class_communication_a9ea9548f8ab7025ec6d3a797a3cd0a03}} 
+\index{Communication@{Communication}!getIntervalConectionCheck@{getIntervalConectionCheck}}
+\index{getIntervalConectionCheck@{getIntervalConectionCheck}!Communication@{Communication}}
+\doxysubsubsection{\texorpdfstring{getIntervalConectionCheck()}{getIntervalConectionCheck()}}
+{\footnotesize\ttfamily int Communication\+::get\+Interval\+Conection\+Check (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the interval time in seconds at which the connection to the Omron temperature controller is checked. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_the}{The}} interval time in seconds at which the connection to the Omron temperature controller is checked. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_communication_aacb8bc64b62f967c94ff913bc9d58af4}\label{class_communication_aacb8bc64b62f967c94ff913bc9d58af4}} 
+\index{Communication@{Communication}!getIntervalUpdate@{getIntervalUpdate}}
+\index{getIntervalUpdate@{getIntervalUpdate}!Communication@{Communication}}
+\doxysubsubsection{\texorpdfstring{getIntervalUpdate()}{getIntervalUpdate()}}
+{\footnotesize\ttfamily int Communication\+::get\+Interval\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the interval time in seconds at which the temperature and control data are updated. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_the}{The}} interval time in seconds at which the temperature and control data are updated. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_communication_a056cfd355f2db3c4dbc6902d4abd8702}\label{class_communication_a056cfd355f2db3c4dbc6902d4abd8702}} 
+\index{Communication@{Communication}!getMV@{getMV}}
+\index{getMV@{getMV}!Communication@{Communication}}
+\doxysubsubsection{\texorpdfstring{getMV()}{getMV()}}
+{\footnotesize\ttfamily double Communication\+::get\+MV (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the set value. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_the}{The}} set value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_communication_a8be32adbb560931be8785467060351d7}\label{class_communication_a8be32adbb560931be8785467060351d7}} 
+\index{Communication@{Communication}!getMVlower@{getMVlower}}
+\index{getMVlower@{getMVlower}!Communication@{Communication}}
+\doxysubsubsection{\texorpdfstring{getMVlower()}{getMVlower()}}
+{\footnotesize\ttfamily double Communication\+::get\+MVlower (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the output lower value. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_the}{The}} output lower value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_communication_a9cdb0feb64d8238615841b322cdb0630}\label{class_communication_a9cdb0feb64d8238615841b322cdb0630}} 
+\index{Communication@{Communication}!getMVupper@{getMVupper}}
+\index{getMVupper@{getMVupper}!Communication@{Communication}}
+\doxysubsubsection{\texorpdfstring{getMVupper()}{getMVupper()}}
+{\footnotesize\ttfamily double Communication\+::get\+MVupper (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the output upper value. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_the}{The}} output upper value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_communication_a31b66f90c1e0c149ae646dd6ec23f7a9}\label{class_communication_a31b66f90c1e0c149ae646dd6ec23f7a9}} 
+\index{Communication@{Communication}!getOmron@{getOmron}}
+\index{getOmron@{getOmron}!Communication@{Communication}}
+\doxysubsubsection{\texorpdfstring{getOmron()}{getOmron()}}
+{\footnotesize\ttfamily QModbus\+Rtu\+Serial\+Master $\ast$ Communication\+::get\+Omron (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns a pointer to the QModbus\+Rtu\+Serial\+Master object used for communication with the Omron PLC. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the QModbus\+Rtu\+Serial\+Master object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_communication_afd435fd35312d895297048f5607e7476}\label{class_communication_afd435fd35312d895297048f5607e7476}} 
+\index{Communication@{Communication}!getOmronID@{getOmronID}}
+\index{getOmronID@{getOmronID}!Communication@{Communication}}
+\doxysubsubsection{\texorpdfstring{getOmronID()}{getOmronID()}}
+{\footnotesize\ttfamily int Communication\+::get\+Omron\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the ID of the Omron temperature controller connected to the system. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_the}{The}} ID of the Omron temperature controller connected to the system. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_communication_a13b106aa7b267d95e4b93160feec0b05}\label{class_communication_a13b106aa7b267d95e4b93160feec0b05}} 
+\index{Communication@{Communication}!getPID\_D@{getPID\_D}}
+\index{getPID\_D@{getPID\_D}!Communication@{Communication}}
+\doxysubsubsection{\texorpdfstring{getPID\_D()}{getPID\_D()}}
+{\footnotesize\ttfamily double Communication\+::get\+PID\+\_\+D (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the Difference value of the PID control for the temperature controller. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_the}{The}} Difference value of the PID control. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_communication_a34b6ffcae3b31a13abe99037a234884d}\label{class_communication_a34b6ffcae3b31a13abe99037a234884d}} 
+\index{Communication@{Communication}!getPID\_I@{getPID\_I}}
+\index{getPID\_I@{getPID\_I}!Communication@{Communication}}
+\doxysubsubsection{\texorpdfstring{getPID\_I()}{getPID\_I()}}
+{\footnotesize\ttfamily double Communication\+::get\+PID\+\_\+I (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the Integration value of the PID control for the temperature controller. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_the}{The}} Integration value of the PID control. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_communication_aae12f547cbd57e7e76d44733b2942fc1}\label{class_communication_aae12f547cbd57e7e76d44733b2942fc1}} 
+\index{Communication@{Communication}!getPID\_P@{getPID\_P}}
+\index{getPID\_P@{getPID\_P}!Communication@{Communication}}
+\doxysubsubsection{\texorpdfstring{getPID\_P()}{getPID\_P()}}
+{\footnotesize\ttfamily double Communication\+::get\+PID\+\_\+P (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the Proportional value of the PID control for the temperature controller. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_the}{The}} Proportional value of the PID control. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_communication_acfe8d3d898502fdf93f06cc82b2e6409}\label{class_communication_acfe8d3d898502fdf93f06cc82b2e6409}} 
+\index{Communication@{Communication}!getPortName@{getPortName}}
+\index{getPortName@{getPortName}!Communication@{Communication}}
+\doxysubsubsection{\texorpdfstring{getPortName()}{getPortName()}}
+{\footnotesize\ttfamily QString Communication\+::get\+Port\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the name of the currently set serial port. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_the}{The}} name of the currently set serial port 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_communication_a059db4b78b4cce68c6d09b868c2fe785}\label{class_communication_a059db4b78b4cce68c6d09b868c2fe785}} 
+\index{Communication@{Communication}!getSerialPortDevices@{getSerialPortDevices}}
+\index{getSerialPortDevices@{getSerialPortDevices}!Communication@{Communication}}
+\doxysubsubsection{\texorpdfstring{getSerialPortDevices()}{getSerialPortDevices()}}
+{\footnotesize\ttfamily QList$<$ QSerial\+Port\+Info $>$ Communication\+::get\+Serial\+Port\+Devices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns a list of QSerial\+Port\+Info objects containing information about available serial port devices. 
+
+\begin{DoxyReturn}{Returns}
+A list of QSerial\+Port\+Info objects 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_communication_a28ba88fef838dca1ac59a87308dc6f07}\label{class_communication_a28ba88fef838dca1ac59a87308dc6f07}} 
+\index{Communication@{Communication}!getSV@{getSV}}
+\index{getSV@{getSV}!Communication@{Communication}}
+\doxysubsubsection{\texorpdfstring{getSV()}{getSV()}}
+{\footnotesize\ttfamily double Communication\+::get\+SV (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the current output power value. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_the}{The}} current output power value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_communication_a4787d8dd4fc9b9d4fe9081aaf501169e}\label{class_communication_a4787d8dd4fc9b9d4fe9081aaf501169e}} 
+\index{Communication@{Communication}!getTemperature@{getTemperature}}
+\index{getTemperature@{getTemperature}!Communication@{Communication}}
+\doxysubsubsection{\texorpdfstring{getTemperature()}{getTemperature()}}
+{\footnotesize\ttfamily double Communication\+::get\+Temperature (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the current temperature value. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_the}{The}} current temperature value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_communication_aec1bbb406a620cb1dc929a8cdeee778b}\label{class_communication_aec1bbb406a620cb1dc929a8cdeee778b}} 
+\index{Communication@{Communication}!intervalConectionCheckChanged@{intervalConectionCheckChanged}}
+\index{intervalConectionCheckChanged@{intervalConectionCheckChanged}!Communication@{Communication}}
+\doxysubsubsection{\texorpdfstring{intervalConectionCheckChanged}{intervalConectionCheckChanged}}
+{\footnotesize\ttfamily void Communication\+::interval\+Conection\+Check\+Changed (\begin{DoxyParamCaption}\item[{int}]{interval }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Emitted when the interval for checking the connection is changed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em interval} & \mbox{\hyperlink{class_the}{The}} new interval in milliseconds. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_communication_a1b207c9a7d1b917f4074119232c957a7}\label{class_communication_a1b207c9a7d1b917f4074119232c957a7}} 
+\index{Communication@{Communication}!intervalUpdateChanged@{intervalUpdateChanged}}
+\index{intervalUpdateChanged@{intervalUpdateChanged}!Communication@{Communication}}
+\doxysubsubsection{\texorpdfstring{intervalUpdateChanged}{intervalUpdateChanged}}
+{\footnotesize\ttfamily void Communication\+::interval\+Update\+Changed (\begin{DoxyParamCaption}\item[{int}]{interval }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Emitted when the interval for updating values is changed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em interval} & \mbox{\hyperlink{class_the}{The}} new interval in milliseconds. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_communication_aa9a6d33d0a202796f1e4bcc07db57a99}\label{class_communication_aa9a6d33d0a202796f1e4bcc07db57a99}} 
+\index{Communication@{Communication}!isTimerUpdateRunning@{isTimerUpdateRunning}}
+\index{isTimerUpdateRunning@{isTimerUpdateRunning}!Communication@{Communication}}
+\doxysubsubsection{\texorpdfstring{isTimerUpdateRunning()}{isTimerUpdateRunning()}}
+{\footnotesize\ttfamily bool Communication\+::is\+Timer\+Update\+Running (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Checks if the update timer is currently running. 
+
+\begin{DoxyReturn}{Returns}
+true if the update timer is running, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_communication_a53e0c58bfb65fc88f1f7bc13f48c7b33}\label{class_communication_a53e0c58bfb65fc88f1f7bc13f48c7b33}} 
+\index{Communication@{Communication}!logMsg@{logMsg}}
+\index{logMsg@{logMsg}!Communication@{Communication}}
+\doxysubsubsection{\texorpdfstring{logMsg}{logMsg}}
+{\footnotesize\ttfamily void Communication\+::log\+Msg (\begin{DoxyParamCaption}\item[{QString}]{string,  }\item[{bool}]{newline = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Emitted when a log message is generated. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & \mbox{\hyperlink{class_the}{The}} log message. \\
+\hline
+{\em newline} & True if a new line should be added to the log message, false otherwise. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_communication_a48071434d4991e27589e83788f4ad0c5}\label{class_communication_a48071434d4991e27589e83788f4ad0c5}} 
+\index{Communication@{Communication}!MVlowerUpdated@{MVlowerUpdated}}
+\index{MVlowerUpdated@{MVlowerUpdated}!Communication@{Communication}}
+\doxysubsubsection{\texorpdfstring{MVlowerUpdated}{MVlowerUpdated}}
+{\footnotesize\ttfamily void Communication\+::\+MVlower\+Updated (\begin{DoxyParamCaption}\item[{double}]{MVlower }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+This signal is emitted when the output lower value is updated. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em MVlower} & \mbox{\hyperlink{class_the}{The}} new output lower value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_communication_a99b3ee7daebd86b82269e558d38b89a7}\label{class_communication_a99b3ee7daebd86b82269e558d38b89a7}} 
+\index{Communication@{Communication}!MVUpdated@{MVUpdated}}
+\index{MVUpdated@{MVUpdated}!Communication@{Communication}}
+\doxysubsubsection{\texorpdfstring{MVUpdated}{MVUpdated}}
+{\footnotesize\ttfamily void Communication\+::\+MVUpdated (\begin{DoxyParamCaption}\item[{double}]{MV }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+This signal is emitted when the output power value is updated. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em MV} & \mbox{\hyperlink{class_the}{The}} new output power value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_communication_ac2fe10e50d7b27a2218f740390427d3d}\label{class_communication_ac2fe10e50d7b27a2218f740390427d3d}} 
+\index{Communication@{Communication}!MVupperUpdated@{MVupperUpdated}}
+\index{MVupperUpdated@{MVupperUpdated}!Communication@{Communication}}
+\doxysubsubsection{\texorpdfstring{MVupperUpdated}{MVupperUpdated}}
+{\footnotesize\ttfamily void Communication\+::\+MVupper\+Updated (\begin{DoxyParamCaption}\item[{double}]{MVupper }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+This signal is emitted when the output upper value is updated. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em MVupper} & \mbox{\hyperlink{class_the}{The}} new output upper value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_communication_a2b24ed3da6f02cd85faf33dd33b42864}\label{class_communication_a2b24ed3da6f02cd85faf33dd33b42864}} 
+\index{Communication@{Communication}!PID\_DUpdated@{PID\_DUpdated}}
+\index{PID\_DUpdated@{PID\_DUpdated}!Communication@{Communication}}
+\doxysubsubsection{\texorpdfstring{PID\_DUpdated}{PID\_DUpdated}}
+{\footnotesize\ttfamily void Communication\+::\+PID\+\_\+\+DUpdated (\begin{DoxyParamCaption}\item[{double}]{PID\+\_\+D }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Emitted when the derivative (D) gain value of the PID controller is updated. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em PID\+\_\+D} & \mbox{\hyperlink{class_the}{The}} updated PID D value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_communication_ab23d3916e3546afc46f1277611e56b01}\label{class_communication_ab23d3916e3546afc46f1277611e56b01}} 
+\index{Communication@{Communication}!PID\_IUpdated@{PID\_IUpdated}}
+\index{PID\_IUpdated@{PID\_IUpdated}!Communication@{Communication}}
+\doxysubsubsection{\texorpdfstring{PID\_IUpdated}{PID\_IUpdated}}
+{\footnotesize\ttfamily void Communication\+::\+PID\+\_\+\+IUpdated (\begin{DoxyParamCaption}\item[{double}]{PID\+\_\+I }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Emitted when the integral (I) gain value of the PID controller is updated. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em PID\+\_\+I} & \mbox{\hyperlink{class_the}{The}} updated PID I value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_communication_a7e960d415df3004947a01c1e77a9694c}\label{class_communication_a7e960d415df3004947a01c1e77a9694c}} 
+\index{Communication@{Communication}!PID\_PUpdated@{PID\_PUpdated}}
+\index{PID\_PUpdated@{PID\_PUpdated}!Communication@{Communication}}
+\doxysubsubsection{\texorpdfstring{PID\_PUpdated}{PID\_PUpdated}}
+{\footnotesize\ttfamily void Communication\+::\+PID\+\_\+\+PUpdated (\begin{DoxyParamCaption}\item[{double}]{PID\+\_\+P }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Emitted when the proportional (P) gain value of the PID controller is updated. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em PID\+\_\+P} & \mbox{\hyperlink{class_the}{The}} updated PID P value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_communication_a0e76d9bca5fb1eb5c0781f870503e058}\label{class_communication_a0e76d9bca5fb1eb5c0781f870503e058}} 
+\index{Communication@{Communication}!read@{read}}
+\index{read@{read}!Communication@{Communication}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily void Communication\+::read (\begin{DoxyParamCaption}\item[{QModbus\+Data\+Unit\+::\+Register\+Type}]{type,  }\item[{quint16}]{adress,  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+
+
+Sends a Modbus request with the specified function code and command data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em code} & \mbox{\hyperlink{class_the}{The}} Modbus function code. \\
+\hline
+{\em cmd} & \mbox{\hyperlink{class_the}{The}} command data to be sent. This method sends a Modbus request with the specified function code and command data to the Omron device. \mbox{\hyperlink{class_the}{The}} status bar message is cleared and the modbus\+Ready\+\_\+ flag is set to false before the request is sent. If the request is successful, the reply is checked for errors. If there is a protocol error, the error message and exception code are displayed in the status bar. If there is another type of error, the error message and error code are displayed. Once the reply has been handled, the modbus\+Ready\+\_\+ flag is set to true and the reply is deleted. If the request fails, an error message is displayed in the status bar. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_communication_a61c96d1875bc1c421590858891169467}\label{class_communication_a61c96d1875bc1c421590858891169467}} 
+\index{Communication@{Communication}!request@{request}}
+\index{request@{request}!Communication@{Communication}}
+\doxysubsubsection{\texorpdfstring{request()}{request()}}
+{\footnotesize\ttfamily void Communication\+::request (\begin{DoxyParamCaption}\item[{QModbus\+Pdu\+::\+Function\+Code}]{code,  }\item[{QByte\+Array}]{cmd }\end{DoxyParamCaption})}
+
+
+
+Sends a Modbus request to the Omron device. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em code} & \mbox{\hyperlink{class_the}{The}} function code to be sent. \\
+\hline
+{\em cmd} & \mbox{\hyperlink{class_the}{The}} command to be sent. This function sends a Modbus request to the Omron device. It first clears the status bar, sets the modbus\+Ready\+\_\+ flag to false, and creates a QModbus\+Pdu object with the provided function code and data. It then creates a QModbus\+Request object with the QModbus\+Pdu, and sends it to the Omron device using the send\+Raw\+Request() function. If successful, it connects a lambda function to the finished() signal of the QModbus\+Reply object returned by the send\+Raw\+Request() function. This lambda function checks for any errors in the reply and displays the appropriate message on the status bar. If the request was a broadcast, the reply is deleted immediately. Finally, the modbus\+Ready\+\_\+ flag is set to true. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This function assumes that the Omron device has already been connected to and configured through the QModbus\+Tcp\+Client object omron\+\_\+. 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_communication_abe626b7eae9fd6d16897b635466926c4}\label{class_communication_abe626b7eae9fd6d16897b635466926c4}} 
+\index{Communication@{Communication}!serialPortRemove@{serialPortRemove}}
+\index{serialPortRemove@{serialPortRemove}!Communication@{Communication}}
+\doxysubsubsection{\texorpdfstring{serialPortRemove}{serialPortRemove}}
+{\footnotesize\ttfamily void Communication\+::serial\+Port\+Remove (\begin{DoxyParamCaption}\item[{QString}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Emitted when a serial port is removed from the system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & \mbox{\hyperlink{class_the}{The}} name of the removed serial port. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_communication_a1cb7912f36961fabd2ce61c95088e6db}\label{class_communication_a1cb7912f36961fabd2ce61c95088e6db}} 
+\index{Communication@{Communication}!setIntervalConectionCheck@{setIntervalConectionCheck}}
+\index{setIntervalConectionCheck@{setIntervalConectionCheck}!Communication@{Communication}}
+\doxysubsubsection{\texorpdfstring{setIntervalConectionCheck()}{setIntervalConectionCheck()}}
+{\footnotesize\ttfamily void Communication\+::set\+Interval\+Conection\+Check (\begin{DoxyParamCaption}\item[{int}]{interval }\end{DoxyParamCaption})}
+
+
+
+Sets the interval in milliseconds for checking the Modbus connection status. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em interval} & \mbox{\hyperlink{class_the}{The}} interval in milliseconds to set \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_communication_a29fab1f8ee87f358da3e026784579690}\label{class_communication_a29fab1f8ee87f358da3e026784579690}} 
+\index{Communication@{Communication}!setIntervalUpdate@{setIntervalUpdate}}
+\index{setIntervalUpdate@{setIntervalUpdate}!Communication@{Communication}}
+\doxysubsubsection{\texorpdfstring{setIntervalUpdate()}{setIntervalUpdate()}}
+{\footnotesize\ttfamily void Communication\+::set\+Interval\+Update (\begin{DoxyParamCaption}\item[{int}]{interval }\end{DoxyParamCaption})}
+
+
+
+Sets the interval in milliseconds for updating the temperature and output power values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em interval} & \mbox{\hyperlink{class_the}{The}} interval in milliseconds to set \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_communication_a2e07593772c80d5541f10afc77a11dea}\label{class_communication_a2e07593772c80d5541f10afc77a11dea}} 
+\index{Communication@{Communication}!setMV@{setMV}}
+\index{setMV@{setMV}!Communication@{Communication}}
+\doxysubsubsection{\texorpdfstring{setMV()}{setMV()}}
+{\footnotesize\ttfamily void Communication\+::set\+MV (\begin{DoxyParamCaption}\item[{double}]{MV }\end{DoxyParamCaption})}
+
+
+
+Sets the current output power. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em MV} & \mbox{\hyperlink{class_the}{The}} current output power to set \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_communication_ac8c816cb166e0fc0995f7f535fae76e4}\label{class_communication_ac8c816cb166e0fc0995f7f535fae76e4}} 
+\index{Communication@{Communication}!setMVlower@{setMVlower}}
+\index{setMVlower@{setMVlower}!Communication@{Communication}}
+\doxysubsubsection{\texorpdfstring{setMVlower()}{setMVlower()}}
+{\footnotesize\ttfamily void Communication\+::set\+MVlower (\begin{DoxyParamCaption}\item[{double}]{MVlower }\end{DoxyParamCaption})}
+
+
+
+Sets the lower limit for the output power. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em MVlower} & \mbox{\hyperlink{class_the}{The}} lower limit for the output power to set \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_communication_ac0cdf2a7e5f33fc544a24fddd1675c5e}\label{class_communication_ac0cdf2a7e5f33fc544a24fddd1675c5e}} 
+\index{Communication@{Communication}!setMVupper@{setMVupper}}
+\index{setMVupper@{setMVupper}!Communication@{Communication}}
+\doxysubsubsection{\texorpdfstring{setMVupper()}{setMVupper()}}
+{\footnotesize\ttfamily void Communication\+::set\+MVupper (\begin{DoxyParamCaption}\item[{double}]{MVupper }\end{DoxyParamCaption})}
+
+
+
+Sets the upper limit for the output power. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em MVupper} & \mbox{\hyperlink{class_the}{The}} upper limit for the output power to set \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_communication_a6d3ded92e8052c9ecea7076a000780a5}\label{class_communication_a6d3ded92e8052c9ecea7076a000780a5}} 
+\index{Communication@{Communication}!setOmronID@{setOmronID}}
+\index{setOmronID@{setOmronID}!Communication@{Communication}}
+\doxysubsubsection{\texorpdfstring{setOmronID()}{setOmronID()}}
+{\footnotesize\ttfamily void Communication\+::set\+Omron\+ID (\begin{DoxyParamCaption}\item[{int}]{omron\+ID }\end{DoxyParamCaption})}
+
+
+
+Sets the Omron ID for Modbus communication. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em omron\+ID} & \mbox{\hyperlink{class_the}{The}} Omron ID to set \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_communication_a6335673fcbdeae311a70a53118f679f8}\label{class_communication_a6335673fcbdeae311a70a53118f679f8}} 
+\index{Communication@{Communication}!setSerialPortName@{setSerialPortName}}
+\index{setSerialPortName@{setSerialPortName}!Communication@{Communication}}
+\doxysubsubsection{\texorpdfstring{setSerialPortName()}{setSerialPortName()}}
+{\footnotesize\ttfamily void Communication\+::set\+Serial\+Port\+Name (\begin{DoxyParamCaption}\item[{QString}]{port\+Name }\end{DoxyParamCaption})}
+
+
+
+Sets the name of the serial port to use for Modbus communication. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em port\+Name} & \mbox{\hyperlink{class_the}{The}} name of the serial port to use \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_communication_adf0dbdf2edce36b04c5a383a816910ea}\label{class_communication_adf0dbdf2edce36b04c5a383a816910ea}} 
+\index{Communication@{Communication}!setSV@{setSV}}
+\index{setSV@{setSV}!Communication@{Communication}}
+\doxysubsubsection{\texorpdfstring{setSV()}{setSV()}}
+{\footnotesize\ttfamily void Communication\+::set\+SV (\begin{DoxyParamCaption}\item[{double}]{SV }\end{DoxyParamCaption})}
+
+
+
+Sets the set value for temperature. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em SV} & \mbox{\hyperlink{class_the}{The}} set value to set \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_communication_a1d72865effe27d7ac3c2ef13a8adea8f}\label{class_communication_a1d72865effe27d7ac3c2ef13a8adea8f}} 
+\index{Communication@{Communication}!setTemperature@{setTemperature}}
+\index{setTemperature@{setTemperature}!Communication@{Communication}}
+\doxysubsubsection{\texorpdfstring{setTemperature()}{setTemperature()}}
+{\footnotesize\ttfamily void Communication\+::set\+Temperature (\begin{DoxyParamCaption}\item[{double}]{temperature }\end{DoxyParamCaption})}
+
+
+
+Sets the current temperature. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em temperature} & \mbox{\hyperlink{class_the}{The}} current temperature to set \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_communication_a0596ae71d743bbc479135515faa17cde}\label{class_communication_a0596ae71d743bbc479135515faa17cde}} 
+\index{Communication@{Communication}!SVSendFinish@{SVSendFinish}}
+\index{SVSendFinish@{SVSendFinish}!Communication@{Communication}}
+\doxysubsubsection{\texorpdfstring{SVSendFinish}{SVSendFinish}}
+{\footnotesize\ttfamily void Communication\+::\+SVSend\+Finish (\begin{DoxyParamCaption}\item[{double}]{SV }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Emitted when a set value (SV) command is sent to the Omron device and the send is finished. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em SV} & \mbox{\hyperlink{class_the}{The}} updated SV value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_communication_a9ab412f55487d76ce72b3d7b3d9ba281}\label{class_communication_a9ab412f55487d76ce72b3d7b3d9ba281}} 
+\index{Communication@{Communication}!SVUpdated@{SVUpdated}}
+\index{SVUpdated@{SVUpdated}!Communication@{Communication}}
+\doxysubsubsection{\texorpdfstring{SVUpdated}{SVUpdated}}
+{\footnotesize\ttfamily void Communication\+::\+SVUpdated (\begin{DoxyParamCaption}\item[{double}]{SV }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+This signal is emitted when the set value is updated. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em SV} & \mbox{\hyperlink{class_the}{The}} new set value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_communication_a0feaf16daf26b74c348daf8395d2a780}\label{class_communication_a0feaf16daf26b74c348daf8395d2a780}} 
+\index{Communication@{Communication}!TemperatureUpdated@{TemperatureUpdated}}
+\index{TemperatureUpdated@{TemperatureUpdated}!Communication@{Communication}}
+\doxysubsubsection{\texorpdfstring{TemperatureUpdated}{TemperatureUpdated}}
+{\footnotesize\ttfamily void Communication\+::\+Temperature\+Updated (\begin{DoxyParamCaption}\item[{double}]{temperature }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+This signal is emitted when the temperature value is updated. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em temperature} & \mbox{\hyperlink{class_the}{The}} new temperature value. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+communication.\+h\item 
+communication.\+cpp\end{DoxyCompactItemize}

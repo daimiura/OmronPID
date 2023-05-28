@@ -1,0 +1,31 @@
+digraph "QCPAbstractPlottable::pen"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [label="QCPAbstractPlottable::pen",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="QCPStatisticalBox::\lsetMedianPen",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_statistical_box.html#a7260ac55b669f5d0a74f16d5ca84c52c",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="QCPAbstractPlottable\l::setPen",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_plottable.html#ab74b09ae4c0e7e13142fe4b5bf46cac7",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="steelblue1",style="solid"];
+  Node4 [label="MainWindow::MainWindow",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db",tooltip=" "];
+  Node3 -> Node5 [dir="back",color="steelblue1",style="solid"];
+  Node5 [label="QCPCurve::QCPCurve",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_curve.html#a36de58e2652b3fa47bdf9187d421d3ce",tooltip=" "];
+  Node3 -> Node6 [dir="back",color="steelblue1",style="solid"];
+  Node6 [label="QCPErrorBars::QCPErrorBars",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_error_bars.html#a5cdcc33e5f173780c3d657e96216e5c1",tooltip=" "];
+  Node3 -> Node7 [dir="back",color="steelblue1",style="solid"];
+  Node7 [label="QCPGraph::QCPGraph",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_graph.html#a0393a38cf7183cbf46348eb6cf9a5a6c",tooltip=" "];
+  Node3 -> Node8 [dir="back",color="steelblue1",style="solid"];
+  Node8 [label="QCPStatisticalBox::\lQCPStatisticalBox",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_statistical_box.html#a75c2b3e7fcd0741cc981693a2ba63b27",tooltip=" "];
+  Node1 -> Node9 [dir="back",color="steelblue1",style="solid"];
+  Node9 [label="QCPFinancial::setPenNegative",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_financial.html#afe5c07e94ccea01a75b3a2476993c346",tooltip=" "];
+  Node1 -> Node10 [dir="back",color="steelblue1",style="solid"];
+  Node10 [label="QCPFinancial::setPenPositive",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_financial.html#ac58aa3adc7a35aab0088764b840683e5",tooltip=" "];
+  Node1 -> Node11 [dir="back",color="steelblue1",style="solid"];
+  Node11 [label="QCPStatisticalBox::\lsetWhiskerBarPen",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_statistical_box.html#aa8d3e503897788e1abf68dc74b5f147f",tooltip=" "];
+  Node1 -> Node12 [dir="back",color="steelblue1",style="solid"];
+  Node12 [label="QCPStatisticalBox::\lsetWhiskerPen",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_statistical_box.html#a4a5034cb3b9b040444df05ab1684620b",tooltip=" "];
+}

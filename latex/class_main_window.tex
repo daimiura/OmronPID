@@ -1,0 +1,367 @@
+\hypertarget{class_main_window}{}\doxysection{Main\+Window Class Reference}
+\label{class_main_window}\index{MainWindow@{MainWindow}}
+
+
+\mbox{\hyperlink{class_the}{The}} \mbox{\hyperlink{class_main_window}{Main\+Window}} class represents the main window of the application.  
+
+
+
+
+{\ttfamily \#include $<$mainwindow.\+h$>$}
+
+Inheritance diagram for Main\+Window\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_main_window}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_main_window_a699115cac96d47fd0f8a2bf359c3203c}\label{class_main_window_a699115cac96d47fd0f8a2bf359c3203c}} 
+void {\bfseries make\+Plot} ()
+\begin{DoxyCompactList}\small\item\em make\+Plot Slot function to generate plot \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a1b4b4a8946e42e552dd750017d531fd1}{update\+Temperature}} (double temperature)
+\begin{DoxyCompactList}\small\item\em update\+Temperature Slot function to update the temperature display \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_ada6923c796a91b939f83c776bc4b9cdb}{update\+MV}} (double MV)
+\begin{DoxyCompactList}\small\item\em update\+MV Slot function to update the MV display (MV means output power) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a50aa5af928eb4c531dfa58b88e1b7c52}{update\+SV}} (double SV)
+\begin{DoxyCompactList}\small\item\em update\+SV Slot function to update the set value (SV) display \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a7c34f400b7c0518eda6c621430f54e5d}{update\+MVupper}} (double MVupper)
+\begin{DoxyCompactList}\small\item\em update\+MVupper Slot function to update the upper limit of the MV display \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_aa731129c45459ce999dc0000a37562d8}{update\+MVlower}} (double MVlower)
+\begin{DoxyCompactList}\small\item\em update\+MVlower Slot function to update the lower limit of MV display \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a987299bf3dd0ce8fd2e8ac4e37068be1}{update\+PID\+\_\+P}} (double PID\+\_\+P)
+\begin{DoxyCompactList}\small\item\em update\+PID\+\_\+I Slot function to update the PID controller\textquotesingle{}s integral (I) gain value display \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a798c93fe1e834a0033f6388176eba490}{update\+PID\+\_\+I}} (double PID\+\_\+I)
+\begin{DoxyCompactList}\small\item\em update\+PID\+\_\+I Slot function to update the PID controller\textquotesingle{}s integral (I) gain value display \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a0e7ddefb2e11dfa68c4d888f16146b20}{update\+PID\+\_\+D}} (double PID\+\_\+D)
+\begin{DoxyCompactList}\small\item\em update\+PID\+\_\+D Slot function to update the PID controller\textquotesingle{}s derivative (D) gain value display \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_main_window_a7cc6ae51527e7885199d378e05f15412}\label{class_main_window_a7cc6ae51527e7885199d378e05f15412}} 
+void {\bfseries update\+Status} ()
+\begin{DoxyCompactList}\small\item\em update\+Status Slot function to update the status display \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a9a42bf78aa230b7ecd19bdc93c57b08f}{finish\+Send\+AT}} (int at\+Flag)
+\begin{DoxyCompactList}\small\item\em finish\+Send\+AT Slot function to handle the completion of sending AT command to device \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a7b2d87895535666b96675b82499264f4}{finish\+Send\+SV}} (double SV)
+\begin{DoxyCompactList}\small\item\em finish\+Send\+SV Slot function to handle the completion of sending the set value (SV) to the device \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a2a084048a56885b7ce963c6853333a87}{catch\+Log\+Msg}} (const QString \&msg)
+\begin{DoxyCompactList}\small\item\em catch\+Log\+Msg Slot function to catch a log message emitted by a thread and add it to the application log window \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a5996c5ae4e0d08be444fa6dc33e5ebb6}{catch\+Log\+Msg\+With\+Color}} (const QString \&msg, QColor color)
+\begin{DoxyCompactList}\small\item\em catch\+Log\+Msg Slot function to catch a log message emitted by a thread and add it to the application log window \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_main_window_aae6bfd4c5da606c3979e82ceed20404a}\label{class_main_window_aae6bfd4c5da606c3979e82ceed20404a}} 
+void {\bfseries connect\+Device} ()
+\begin{DoxyCompactList}\small\item\em connect\+Device Slot function to handle device connection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_main_window_a8176f2135b306a3e7cd412a1746d69bc}\label{class_main_window_a8176f2135b306a3e7cd412a1746d69bc}} 
+void {\bfseries connect\+Failed} ()
+\begin{DoxyCompactList}\small\item\em connect\+Failed Slot function to handle device connection failure \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a7e56f22b93fef927d2db82f3f7c9c7c5}{catch\+Danger}} (int type)
+\begin{DoxyCompactList}\small\item\em catch\+Danger Slot function to handle a dangerous situation detected by the \mbox{\hyperlink{class_safety}{Safety}} class \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_aabefdc4ffd8d485e45d2244a8f4597f3}{update\+Check\+Number}} (int check\+Number)
+\begin{DoxyCompactList}\small\item\em update\+Check\+Number Slot function to update the number of temperature checks that have been performed \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_abf24405f8e795acd1a265f4ca204c175}{cathc\+Escape\+Temp\+Check\+Change}} (int sign)
+\begin{DoxyCompactList}\small\item\em cathc\+Escape\+Temp\+Check\+Change Slot function to handle changes in the escape temperature check checkbox \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a780da7a6fbe4ddb9bdfd3eec0869157e}{catch\+Start\+Temp\+Change\+Check}} (int checknumber)
+\begin{DoxyCompactList}\small\item\em catch\+Start\+Temp\+Change\+Check Slot function to handle the start of a temperature change check \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_main_window_a8b244be8b7b7db1b08de2a2acb9409db}{Main\+Window}} (QWidget $\ast$parent=0)
+\begin{DoxyCompactList}\small\item\em Constructor for \mbox{\hyperlink{class_main_window}{Main\+Window}} class. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}\label{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}} 
+{\bfseries $\sim$\+Main\+Window} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{class_main_window}{Main\+Window}} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_window_a44d85ff6240f89bc1aff38ff3dec128e}{Log\+Msg}} (QString str, bool new\+Line=true)
+\begin{DoxyCompactList}\small\item\em Logs a message to the GUI log. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_main_window_a384e4eb100e8c9af82ad207333d13d87}\label{class_main_window_a384e4eb100e8c9af82ad207333d13d87}} 
+void {\bfseries find\+Series\+Port\+Devices} ()
+\begin{DoxyCompactList}\small\item\em Finds all available serial port devices. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_the}{The}} \mbox{\hyperlink{class_main_window}{Main\+Window}} class represents the main window of the application. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_main_window_a8b244be8b7b7db1b08de2a2acb9409db}\label{class_main_window_a8b244be8b7b7db1b08de2a2acb9409db}} 
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{MainWindow()}{MainWindow()}}
+{\footnotesize\ttfamily Main\+Window\+::\+Main\+Window (\begin{DoxyParamCaption}\item[{QWidget $\ast$}]{parent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructor for \mbox{\hyperlink{class_main_window}{Main\+Window}} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & \mbox{\hyperlink{class_the}{The}} parent QWidget. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_main_window_a7e56f22b93fef927d2db82f3f7c9c7c5}\label{class_main_window_a7e56f22b93fef927d2db82f3f7c9c7c5}} 
+\index{MainWindow@{MainWindow}!catchDanger@{catchDanger}}
+\index{catchDanger@{catchDanger}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{catchDanger}{catchDanger}}
+{\footnotesize\ttfamily void Main\+Window\+::catch\+Danger (\begin{DoxyParamCaption}\item[{int}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+catch\+Danger Slot function to handle a dangerous situation detected by the \mbox{\hyperlink{class_safety}{Safety}} class 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & \mbox{\hyperlink{class_the}{The}} type of danger detected \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_main_window_a2a084048a56885b7ce963c6853333a87}\label{class_main_window_a2a084048a56885b7ce963c6853333a87}} 
+\index{MainWindow@{MainWindow}!catchLogMsg@{catchLogMsg}}
+\index{catchLogMsg@{catchLogMsg}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{catchLogMsg}{catchLogMsg}}
+{\footnotesize\ttfamily void Main\+Window\+::catch\+Log\+Msg (\begin{DoxyParamCaption}\item[{const QString \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+catch\+Log\+Msg Slot function to catch a log message emitted by a thread and add it to the application log window 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & \mbox{\hyperlink{class_the}{The}} log message to add \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_main_window_a5996c5ae4e0d08be444fa6dc33e5ebb6}\label{class_main_window_a5996c5ae4e0d08be444fa6dc33e5ebb6}} 
+\index{MainWindow@{MainWindow}!catchLogMsgWithColor@{catchLogMsgWithColor}}
+\index{catchLogMsgWithColor@{catchLogMsgWithColor}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{catchLogMsgWithColor}{catchLogMsgWithColor}}
+{\footnotesize\ttfamily void Main\+Window\+::catch\+Log\+Msg\+With\+Color (\begin{DoxyParamCaption}\item[{const QString \&}]{msg,  }\item[{QColor}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+catch\+Log\+Msg Slot function to catch a log message emitted by a thread and add it to the application log window 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & \mbox{\hyperlink{class_the}{The}} log message to add \\
+\hline
+{\em color} & \mbox{\hyperlink{class_the}{The}} color of message to display \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_main_window_a780da7a6fbe4ddb9bdfd3eec0869157e}\label{class_main_window_a780da7a6fbe4ddb9bdfd3eec0869157e}} 
+\index{MainWindow@{MainWindow}!catchStartTempChangeCheck@{catchStartTempChangeCheck}}
+\index{catchStartTempChangeCheck@{catchStartTempChangeCheck}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{catchStartTempChangeCheck}{catchStartTempChangeCheck}}
+{\footnotesize\ttfamily void Main\+Window\+::catch\+Start\+Temp\+Change\+Check (\begin{DoxyParamCaption}\item[{int}]{checknumber }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+catch\+Start\+Temp\+Change\+Check Slot function to handle the start of a temperature change check 
+
+
+\begin{DoxyParams}{Parameters}
+{\em checknumber} & \mbox{\hyperlink{class_the}{The}} number of the check being started \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_main_window_abf24405f8e795acd1a265f4ca204c175}\label{class_main_window_abf24405f8e795acd1a265f4ca204c175}} 
+\index{MainWindow@{MainWindow}!cathcEscapeTempCheckChange@{cathcEscapeTempCheckChange}}
+\index{cathcEscapeTempCheckChange@{cathcEscapeTempCheckChange}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{cathcEscapeTempCheckChange}{cathcEscapeTempCheckChange}}
+{\footnotesize\ttfamily void Main\+Window\+::cathc\+Escape\+Temp\+Check\+Change (\begin{DoxyParamCaption}\item[{int}]{sign }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+cathc\+Escape\+Temp\+Check\+Change Slot function to handle changes in the escape temperature check checkbox 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sign} & \mbox{\hyperlink{class_the}{The}} sign of the change (1 for checked, -\/1 for unchecked) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_main_window_a9a42bf78aa230b7ecd19bdc93c57b08f}\label{class_main_window_a9a42bf78aa230b7ecd19bdc93c57b08f}} 
+\index{MainWindow@{MainWindow}!finishSendAT@{finishSendAT}}
+\index{finishSendAT@{finishSendAT}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{finishSendAT}{finishSendAT}}
+{\footnotesize\ttfamily void Main\+Window\+::finish\+Send\+AT (\begin{DoxyParamCaption}\item[{int}]{at\+Flag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+finish\+Send\+AT Slot function to handle the completion of sending AT command to device 
+
+
+\begin{DoxyParams}{Parameters}
+{\em at\+Flag} & \mbox{\hyperlink{class_the}{The}} flag indicating whether the command was sent successfully \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_main_window_a7b2d87895535666b96675b82499264f4}\label{class_main_window_a7b2d87895535666b96675b82499264f4}} 
+\index{MainWindow@{MainWindow}!finishSendSV@{finishSendSV}}
+\index{finishSendSV@{finishSendSV}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{finishSendSV}{finishSendSV}}
+{\footnotesize\ttfamily void Main\+Window\+::finish\+Send\+SV (\begin{DoxyParamCaption}\item[{double}]{SV }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+finish\+Send\+SV Slot function to handle the completion of sending the set value (SV) to the device 
+
+
+\begin{DoxyParams}{Parameters}
+{\em SV} & \mbox{\hyperlink{class_the}{The}} set value that was sent \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_main_window_a44d85ff6240f89bc1aff38ff3dec128e}\label{class_main_window_a44d85ff6240f89bc1aff38ff3dec128e}} 
+\index{MainWindow@{MainWindow}!LogMsg@{LogMsg}}
+\index{LogMsg@{LogMsg}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{LogMsg()}{LogMsg()}}
+{\footnotesize\ttfamily void Main\+Window\+::\+Log\+Msg (\begin{DoxyParamCaption}\item[{QString}]{str,  }\item[{bool}]{new\+Line = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Logs a message to the GUI log. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & \mbox{\hyperlink{class_the}{The}} message to be logged. \\
+\hline
+{\em new\+Line} & Whether or not to add a new line after the message. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_main_window_aabefdc4ffd8d485e45d2244a8f4597f3}\label{class_main_window_aabefdc4ffd8d485e45d2244a8f4597f3}} 
+\index{MainWindow@{MainWindow}!updateCheckNumber@{updateCheckNumber}}
+\index{updateCheckNumber@{updateCheckNumber}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{updateCheckNumber}{updateCheckNumber}}
+{\footnotesize\ttfamily void Main\+Window\+::update\+Check\+Number (\begin{DoxyParamCaption}\item[{int}]{check\+Number }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+update\+Check\+Number Slot function to update the number of temperature checks that have been performed 
+
+
+\begin{DoxyParams}{Parameters}
+{\em check\+Number} & \mbox{\hyperlink{class_the}{The}} number of checks performed \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_main_window_ada6923c796a91b939f83c776bc4b9cdb}\label{class_main_window_ada6923c796a91b939f83c776bc4b9cdb}} 
+\index{MainWindow@{MainWindow}!updateMV@{updateMV}}
+\index{updateMV@{updateMV}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{updateMV}{updateMV}}
+{\footnotesize\ttfamily void Main\+Window\+::update\+MV (\begin{DoxyParamCaption}\item[{double}]{MV }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+update\+MV Slot function to update the MV display (MV means output power) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em MV} & \mbox{\hyperlink{class_the}{The}} new measured value to display. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_main_window_aa731129c45459ce999dc0000a37562d8}\label{class_main_window_aa731129c45459ce999dc0000a37562d8}} 
+\index{MainWindow@{MainWindow}!updateMVlower@{updateMVlower}}
+\index{updateMVlower@{updateMVlower}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{updateMVlower}{updateMVlower}}
+{\footnotesize\ttfamily void Main\+Window\+::update\+MVlower (\begin{DoxyParamCaption}\item[{double}]{MVlower }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+update\+MVlower Slot function to update the lower limit of MV display 
+
+
+\begin{DoxyParams}{Parameters}
+{\em MVlower} & \mbox{\hyperlink{class_the}{The}} new lower limit to display \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_main_window_a7c34f400b7c0518eda6c621430f54e5d}\label{class_main_window_a7c34f400b7c0518eda6c621430f54e5d}} 
+\index{MainWindow@{MainWindow}!updateMVupper@{updateMVupper}}
+\index{updateMVupper@{updateMVupper}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{updateMVupper}{updateMVupper}}
+{\footnotesize\ttfamily void Main\+Window\+::update\+MVupper (\begin{DoxyParamCaption}\item[{double}]{MVupper }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+update\+MVupper Slot function to update the upper limit of the MV display 
+
+
+\begin{DoxyParams}{Parameters}
+{\em MVupper} & \mbox{\hyperlink{class_the}{The}} new upper limit to display \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_main_window_a0e7ddefb2e11dfa68c4d888f16146b20}\label{class_main_window_a0e7ddefb2e11dfa68c4d888f16146b20}} 
+\index{MainWindow@{MainWindow}!updatePID\_D@{updatePID\_D}}
+\index{updatePID\_D@{updatePID\_D}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{updatePID\_D}{updatePID\_D}}
+{\footnotesize\ttfamily void Main\+Window\+::update\+PID\+\_\+D (\begin{DoxyParamCaption}\item[{double}]{PID\+\_\+D }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+update\+PID\+\_\+D Slot function to update the PID controller\textquotesingle{}s derivative (D) gain value display 
+
+
+\begin{DoxyParams}{Parameters}
+{\em PID\+\_\+D} & \mbox{\hyperlink{class_the}{The}} new D gain value to display void \mbox{\hyperlink{class_main_window_a0e7ddefb2e11dfa68c4d888f16146b20}{update\+PID\+\_\+\+D(double PID\+\_\+\+D)}}; \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_main_window_a798c93fe1e834a0033f6388176eba490}\label{class_main_window_a798c93fe1e834a0033f6388176eba490}} 
+\index{MainWindow@{MainWindow}!updatePID\_I@{updatePID\_I}}
+\index{updatePID\_I@{updatePID\_I}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{updatePID\_I}{updatePID\_I}}
+{\footnotesize\ttfamily void Main\+Window\+::update\+PID\+\_\+I (\begin{DoxyParamCaption}\item[{double}]{PID\+\_\+I }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+update\+PID\+\_\+I Slot function to update the PID controller\textquotesingle{}s integral (I) gain value display 
+
+
+\begin{DoxyParams}{Parameters}
+{\em PID\+\_\+I} & \mbox{\hyperlink{class_the}{The}} new I gain value to display \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_main_window_a987299bf3dd0ce8fd2e8ac4e37068be1}\label{class_main_window_a987299bf3dd0ce8fd2e8ac4e37068be1}} 
+\index{MainWindow@{MainWindow}!updatePID\_P@{updatePID\_P}}
+\index{updatePID\_P@{updatePID\_P}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{updatePID\_P}{updatePID\_P}}
+{\footnotesize\ttfamily void Main\+Window\+::update\+PID\+\_\+P (\begin{DoxyParamCaption}\item[{double}]{PID\+\_\+P }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+update\+PID\+\_\+I Slot function to update the PID controller\textquotesingle{}s integral (I) gain value display 
+
+
+\begin{DoxyParams}{Parameters}
+{\em PID\+\_\+I} & \mbox{\hyperlink{class_the}{The}} new I gain value to display \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_main_window_a50aa5af928eb4c531dfa58b88e1b7c52}\label{class_main_window_a50aa5af928eb4c531dfa58b88e1b7c52}} 
+\index{MainWindow@{MainWindow}!updateSV@{updateSV}}
+\index{updateSV@{updateSV}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{updateSV}{updateSV}}
+{\footnotesize\ttfamily void Main\+Window\+::update\+SV (\begin{DoxyParamCaption}\item[{double}]{SV }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+update\+SV Slot function to update the set value (SV) display 
+
+
+\begin{DoxyParams}{Parameters}
+{\em SV} & \mbox{\hyperlink{class_the}{The}} new set value to display \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_main_window_a1b4b4a8946e42e552dd750017d531fd1}\label{class_main_window_a1b4b4a8946e42e552dd750017d531fd1}} 
+\index{MainWindow@{MainWindow}!updateTemperature@{updateTemperature}}
+\index{updateTemperature@{updateTemperature}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{updateTemperature}{updateTemperature}}
+{\footnotesize\ttfamily void Main\+Window\+::update\+Temperature (\begin{DoxyParamCaption}\item[{double}]{temperature }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+update\+Temperature Slot function to update the temperature display 
+
+
+\begin{DoxyParams}{Parameters}
+{\em temperature} & \mbox{\hyperlink{class_the}{The}} new temperature value to display \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{mainwindow_8h}{mainwindow.\+h}}\item 
+gui.\+cpp\item 
+\mbox{\hyperlink{mainwindow_8cpp}{mainwindow.\+cpp}}\end{DoxyCompactItemize}

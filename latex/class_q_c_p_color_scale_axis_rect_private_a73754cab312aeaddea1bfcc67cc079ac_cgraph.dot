@@ -1,0 +1,25 @@
+digraph "QCPColorScaleAxisRectPrivate::updateGradientImage"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [label="QCPColorScaleAxisRectPrivate\l::updateGradientImage",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="steelblue1",style="solid"];
+  Node2 [label="QCPColorGradient::color",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_color_gradient.html#a0599545c859268b025d2060dea741cea",tooltip=" "];
+  Node2 -> Node3 [color="steelblue1",style="solid"];
+  Node3 [label="QCPRange::size",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_range.html#a62326e7cc4316b96df6a60813230e63f",tooltip=" "];
+  Node2 -> Node4 [color="steelblue1",style="solid"];
+  Node4 [label="QCPColorGradient::update\lColorBuffer",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_color_gradient.html#a353f15ab3ab586eebf1f6b58c3e2707b",tooltip=" "];
+  Node4 -> Node5 [color="steelblue1",style="solid"];
+  Node5 [label="QCPColorGradient::stopsUse\lAlpha",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_color_gradient.html#a137b368ea8829a871974add6e4883c71",tooltip=" "];
+  Node1 -> Node6 [color="steelblue1",style="solid"];
+  Node6 [label="QCPColorGradient::colorize",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_color_gradient.html#aaf423ceb943e177b0ed2c48c811d83dc",tooltip=" "];
+  Node6 -> Node3 [color="steelblue1",style="solid"];
+  Node6 -> Node4 [color="steelblue1",style="solid"];
+  Node1 -> Node7 [color="steelblue1",style="solid"];
+  Node7 [label="QCPColorGradient::levelCount",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_color_gradient.html#ac4b9d7034fc3b6c76318b05075367090",tooltip=" "];
+  Node1 -> Node8 [color="steelblue1",style="solid"];
+  Node8 [label="QCPLayoutElement::rect",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_layout_element.html#a208effccfe2cca4a0eaf9393e60f2dd4",tooltip=" "];
+}

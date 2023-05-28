@@ -1,0 +1,30 @@
+digraph "QCPItemEllipse::draw"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [label="QCPItemEllipse::draw",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="steelblue1",style="solid"];
+  Node2 [label="QCPAbstractItem::clipRect",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_item.html#a6ad60000f29afe11035e1f791dcbd45a",tooltip=" "];
+  Node2 -> Node3 [color="steelblue1",style="solid"];
+  Node3 [label="QCustomPlot::viewport",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_custom_plot.html#a19842409b18f556b256d05e97fffc670",tooltip=" "];
+  Node1 -> Node4 [color="steelblue1",style="solid"];
+  Node4 [label="QCPItemEllipse::mainBrush",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_item_ellipse.html#a6218bdf5e703f609b934b0bf9c8d0971",tooltip=" "];
+  Node1 -> Node5 [color="steelblue1",style="solid"];
+  Node5 [label="QCPItemEllipse::mainPen",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_item_ellipse.html#a9c11717026dfd685c83a9650666b7181",tooltip=" "];
+  Node1 -> Node6 [color="steelblue1",style="solid"];
+  Node6 [label="QCPItemPosition::pixelPosition",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_item_position.html#a8be9a4787635433edecc75164beb748d",tooltip=" "];
+  Node6 -> Node7 [color="steelblue1",style="solid"];
+  Node7 [label="QCPItemAnchor::pixelPosition",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_item_anchor.html#a06dcfb7220d26eee93eef56ae66582cb",tooltip=" "];
+  Node7 -> Node8 [color="steelblue1",style="solid"];
+  Node8 [label="QCPAbstractItem::anchorPixel\lPosition",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_abstract_item.html#ada5bad4e1196c4fc0d0d12328e24b8f2",tooltip=" "];
+  Node6 -> Node3 [color="steelblue1",style="solid"];
+  Node1 -> Node9 [color="steelblue1",style="solid"];
+  Node9 [label="QCPPainter::setPen",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_painter.html#af9c7a4cd1791403901f8c5b82a150195",tooltip=" "];
+  Node9 -> Node10 [color="steelblue1",style="solid"];
+  Node10 [label="QCPPainter::makeNonCosmetic",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_painter.html#a7e63fbcf47e35c6f2ecd11b8fef7c7d8",tooltip=" "];
+  Node1 -> Node11 [color="steelblue1",style="solid"];
+  Node11 [label="QCPLayerable::setVisible",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_layerable.html#a3bed99ddc396b48ce3ebfdc0418744f8",tooltip=" "];
+}

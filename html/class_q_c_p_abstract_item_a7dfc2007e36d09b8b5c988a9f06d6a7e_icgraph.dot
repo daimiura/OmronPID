@@ -1,0 +1,17 @@
+digraph "QCPAbstractItem::rectDistance"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [label="QCPAbstractItem::rectDistance",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="QCPItemRect::selectTest",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_item_rect.html#a2e68621b75bae4da6ae0ab2cdd0dd733",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="QCPItemText::selectTest",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_item_text.html#a676aaec10ad3cc4d7d0e4847db04c838",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="steelblue1",style="solid"];
+  Node4 [label="QCPItemPixmap::selectTest",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_item_pixmap.html#a65d1ede7bb479b90d40186d083071947",tooltip=" "];
+  Node1 -> Node5 [dir="back",color="steelblue1",style="solid"];
+  Node5 [label="QCPItemTracer::selectTest",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_item_tracer.html#a9fd955fea40e977d66f3a9fd5765aec4",tooltip=" "];
+}

@@ -1,0 +1,19 @@
+digraph "QCPLayoutElement::~QCPLayoutElement"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [label="QCPLayoutElement::\l~QCPLayoutElement",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="steelblue1",style="solid"];
+  Node2 [label="QCPLayoutElement::setMargin\lGroup",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_layout_element.html#a516e56f76b6bc100e8e71d329866847d",tooltip=" "];
+  Node2 -> Node3 [color="steelblue1",style="solid"];
+  Node3 [label="QCPMarginGroup::addChild",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_margin_group.html#acb9c3a35acec655c2895b7eb95ee0524",tooltip=" "];
+  Node2 -> Node4 [color="steelblue1",style="solid"];
+  Node4 [label="QCPLayoutElement::margin\lGroup",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_layout_element.html#aa5513622910f31d9309f87886bee597a",tooltip=" "];
+  Node2 -> Node5 [color="steelblue1",style="solid"];
+  Node5 [label="QCPMarginGroup::removeChild",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_margin_group.html#a20ab3286062957d99b58db683fe725b0",tooltip=" "];
+  Node1 -> Node6 [color="steelblue1",style="solid"];
+  Node6 [label="QCPLayout::take",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_q_c_p_layout.html#ada26cd17e56472b0b4d7fbbc96873e4c",tooltip=" "];
+}
