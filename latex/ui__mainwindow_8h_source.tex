@@ -1,0 +1,968 @@
+\hypertarget{ui__mainwindow_8h_source}{}\doxysection{ui\+\_\+mainwindow.\+h}
+\label{ui__mainwindow_8h_source}\index{release/ui\_mainwindow.h@{release/ui\_mainwindow.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/********************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{**\ Form\ generated\ from\ reading\ UI\ file\ 'mainwindow.ui'}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ Created\ by:\ Qt\ User\ Interface\ Compiler\ version\ 5.15.2}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**}}
+\DoxyCodeLine{00006\ \textcolor{comment}{**\ WARNING!\ All\ changes\ made\ in\ this\ file\ will\ be\ lost\ when\ recompiling\ UI\ file!}}
+\DoxyCodeLine{00007\ \textcolor{comment}{********************************************************************************/}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ UI\_MAINWINDOW\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ UI\_MAINWINDOW\_H}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <QtCore/QVariant>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <QtWidgets/QAction>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <QtWidgets/QApplication>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <QtWidgets/QCheckBox>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <QtWidgets/QComboBox>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <QtWidgets/QDoubleSpinBox>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <QtWidgets/QGridLayout>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <QtWidgets/QGroupBox>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <QtWidgets/QLabel>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <QtWidgets/QLineEdit>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <QtWidgets/QMainWindow>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <QtWidgets/QMenu>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <QtWidgets/QMenuBar>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <QtWidgets/QPushButton>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <QtWidgets/QSpacerItem>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <QtWidgets/QSpinBox>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <QtWidgets/QStatusBar>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <QtWidgets/QTabWidget>}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ <QtWidgets/QTextEdit>}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <QtWidgets/QToolBar>}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <QtWidgets/QWidget>}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}qcustomplot.h"{}}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ QT\_BEGIN\_NAMESPACE}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ui___main_window}{Ui\_MainWindow}}}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00040\ \ \ \ \ QAction\ *actionOpen\_File;}
+\DoxyCodeLine{00041\ \ \ \ \ QAction\ *actionHelp\_Page;}
+\DoxyCodeLine{00042\ \ \ \ \ QAction\ *action\_Setting\_parameters\_for\_TempCheck;}
+\DoxyCodeLine{00043\ \ \ \ \ QAction\ *action\_Plot;}
+\DoxyCodeLine{00044\ \ \ \ \ QAction\ *action\_Setting\_plot;}
+\DoxyCodeLine{00045\ \ \ \ \ QAction\ *action\_Setting\_Temperature\_Drop;}
+\DoxyCodeLine{00046\ \ \ \ \ QWidget\ *centralWidget;}
+\DoxyCodeLine{00047\ \ \ \ \ QGridLayout\ *gridLayout\_5;}
+\DoxyCodeLine{00048\ \ \ \ \ QGroupBox\ *groupBox\_5;}
+\DoxyCodeLine{00049\ \ \ \ \ QGridLayout\ *gridLayout\_2;}
+\DoxyCodeLine{00050\ \ \ \ \ QLabel\ *label\_16;}
+\DoxyCodeLine{00051\ \ \ \ \ QLineEdit\ *lineEdit\_IntervalAskTemp;}
+\DoxyCodeLine{00052\ \ \ \ \ QLabel\ *label\_14;}
+\DoxyCodeLine{00053\ \ \ \ \ QLabel\ *label\_15;}
+\DoxyCodeLine{00054\ \ \ \ \ QLineEdit\ *lineEdit\_Numbers;}
+\DoxyCodeLine{00055\ \ \ \ \ QLineEdit\ *lineEdit\_SafeLimit;}
+\DoxyCodeLine{00056\ \ \ \ \ QLineEdit\ *lineEdit\_IgnoreLower;}
+\DoxyCodeLine{00057\ \ \ \ \ QLineEdit\ *lineEdit\_IgnoreUpper;}
+\DoxyCodeLine{00058\ \ \ \ \ QLabel\ *label\_17;}
+\DoxyCodeLine{00059\ \ \ \ \ QCheckBox\ *checkBox\_Ignore;}
+\DoxyCodeLine{00060\ \ \ \ \ QGroupBox\ *groupBox;}
+\DoxyCodeLine{00061\ \ \ \ \ QGridLayout\ *gridLayout\_3;}
+\DoxyCodeLine{00062\ \ \ \ \ QTextEdit\ *textEdit\_Log;}
+\DoxyCodeLine{00063\ \ \ \ \ QGroupBox\ *groupBox\_3;}
+\DoxyCodeLine{00064\ \ \ \ \ QGridLayout\ *gridLayout\_6;}
+\DoxyCodeLine{00065\ \ \ \ \ QSpinBox\ *spinBox\_TempRecordTime;}
+\DoxyCodeLine{00066\ \ \ \ \ QLabel\ *label\_22;}
+\DoxyCodeLine{00067\ \ \ \ \ QLineEdit\ *lineEdit\_IntervalAskMV;}
+\DoxyCodeLine{00068\ \ \ \ \ QCheckBox\ *checkBox\_dataSave;}
+\DoxyCodeLine{00069\ \ \ \ \ QLabel\ *label\_6;}
+\DoxyCodeLine{00070\ \ \ \ \ QPushButton\ *pushButton\_Log;}
+\DoxyCodeLine{00071\ \ \ \ \ QSpacerItem\ *horizontalSpacer;}
+\DoxyCodeLine{00072\ \ \ \ \ QLabel\ *label\_3;}
+\DoxyCodeLine{00073\ \ \ \ \ QLineEdit\ *lineEdit\_DirPath;}
+\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{class_q_custom_plot}{QCustomPlot}}\ *plot;}
+\DoxyCodeLine{00075\ \ \ \ \ QGroupBox\ *groupBox\_2;}
+\DoxyCodeLine{00076\ \ \ \ \ QGridLayout\ *gridLayout\_4;}
+\DoxyCodeLine{00077\ \ \ \ \ QDoubleSpinBox\ *doubleSpinBox\_MVupper;}
+\DoxyCodeLine{00078\ \ \ \ \ QComboBox\ *comboBox\_SeriesNumber;}
+\DoxyCodeLine{00079\ \ \ \ \ QLabel\ *label\_9;}
+\DoxyCodeLine{00080\ \ \ \ \ QLabel\ *label\_5;}
+\DoxyCodeLine{00081\ \ \ \ \ QSpinBox\ *spinBox\_DeviceAddress;}
+\DoxyCodeLine{00082\ \ \ \ \ QPushButton\ *pushButton\_Connect;}
+\DoxyCodeLine{00083\ \ \ \ \ QComboBox\ *comboBox\_AT;}
+\DoxyCodeLine{00084\ \ \ \ \ QDoubleSpinBox\ *doubleSpinBox\_MVlower;}
+\DoxyCodeLine{00085\ \ \ \ \ QPushButton\ *pushButton\_RunStop;}
+\DoxyCodeLine{00086\ \ \ \ \ QTabWidget\ *tabWidget;}
+\DoxyCodeLine{00087\ \ \ \ \ QWidget\ *tab;}
+\DoxyCodeLine{00088\ \ \ \ \ QGridLayout\ *gridLayout;}
+\DoxyCodeLine{00089\ \ \ \ \ QLabel\ *label;}
+\DoxyCodeLine{00090\ \ \ \ \ QLineEdit\ *lineEdit\_Temp;}
+\DoxyCodeLine{00091\ \ \ \ \ QLabel\ *label\_SV\_2;}
+\DoxyCodeLine{00092\ \ \ \ \ QLineEdit\ *lineEdit\_SV2;}
+\DoxyCodeLine{00093\ \ \ \ \ QLabel\ *label\_4;}
+\DoxyCodeLine{00094\ \ \ \ \ QLineEdit\ *lineEdit\_CurrentSV;}
+\DoxyCodeLine{00095\ \ \ \ \ QLabel\ *label\_7;}
+\DoxyCodeLine{00096\ \ \ \ \ QDoubleSpinBox\ *doubleSpinBox\_TempTorr;}
+\DoxyCodeLine{00097\ \ \ \ \ QLabel\ *label\_10;}
+\DoxyCodeLine{00098\ \ \ \ \ QLineEdit\ *lineEdit\_CurrentMV;}
+\DoxyCodeLine{00099\ \ \ \ \ QLabel\ *label\_8;}
+\DoxyCodeLine{00100\ \ \ \ \ QDoubleSpinBox\ *doubleSpinBox\_TempStepSize;}
+\DoxyCodeLine{00101\ \ \ \ \ QLabel\ *label\_29;}
+\DoxyCodeLine{00102\ \ \ \ \ QLineEdit\ *lineEdit\_CurrentTempDiff;}
+\DoxyCodeLine{00103\ \ \ \ \ QLabel\ *label\_SV2WaitTime;}
+\DoxyCodeLine{00104\ \ \ \ \ QDoubleSpinBox\ *doubleSpinBox\_SV2WaitTime;}
+\DoxyCodeLine{00105\ \ \ \ \ QLabel\ *label\_TimeStable;}
+\DoxyCodeLine{00106\ \ \ \ \ QSpinBox\ *spinBox\_TempStableTime;}
+\DoxyCodeLine{00107\ \ \ \ \ QLabel\ *label\_2;}
+\DoxyCodeLine{00108\ \ \ \ \ QLineEdit\ *lineEdit\_SV;}
+\DoxyCodeLine{00109\ \ \ \ \ QPushButton\ *pushButton\_Control;}
+\DoxyCodeLine{00110\ \ \ \ \ QComboBox\ *comboBox\_Mode;}
+\DoxyCodeLine{00111\ \ \ \ \ QSpacerItem\ *verticalSpacer\_3;}
+\DoxyCodeLine{00112\ \ \ \ \ QPushButton\ *pushButton\_AskStatus;}
+\DoxyCodeLine{00113\ \ \ \ \ QPushButton\ *pushButton\_SetSV;}
+\DoxyCodeLine{00114\ \ \ \ \ QWidget\ *tab\_2;}
+\DoxyCodeLine{00115\ \ \ \ \ QGridLayout\ *gridLayout\_7;}
+\DoxyCodeLine{00116\ \ \ \ \ QLabel\ *label\_11;}
+\DoxyCodeLine{00117\ \ \ \ \ QLineEdit\ *lineEdit\_P;}
+\DoxyCodeLine{00118\ \ \ \ \ QLabel\ *label\_12;}
+\DoxyCodeLine{00119\ \ \ \ \ QLineEdit\ *lineEdit\_I;}
+\DoxyCodeLine{00120\ \ \ \ \ QSpacerItem\ *horizontalSpacer\_2;}
+\DoxyCodeLine{00121\ \ \ \ \ QLabel\ *label\_13;}
+\DoxyCodeLine{00122\ \ \ \ \ QLineEdit\ *lineEdit\_D;}
+\DoxyCodeLine{00123\ \ \ \ \ QPushButton\ *pushButton\_GetPID;}
+\DoxyCodeLine{00124\ \ \ \ \ QLabel\ *label\_19;}
+\DoxyCodeLine{00125\ \ \ \ \ QComboBox\ *comboBox\_MemAddress;}
+\DoxyCodeLine{00126\ \ \ \ \ QSpacerItem\ *verticalSpacer;}
+\DoxyCodeLine{00127\ \ \ \ \ QWidget\ *tab\_3;}
+\DoxyCodeLine{00128\ \ \ \ \ QGridLayout\ *gridLayout\_8;}
+\DoxyCodeLine{00129\ \ \ \ \ QLabel\ *label\_20;}
+\DoxyCodeLine{00130\ \ \ \ \ QSpinBox\ *spinBox\_TempUpper;}
+\DoxyCodeLine{00131\ \ \ \ \ QLabel\ *label\_21;}
+\DoxyCodeLine{00132\ \ \ \ \ QDoubleSpinBox\ *doubleSpinBox\_TempDrop;}
+\DoxyCodeLine{00133\ \ \ \ \ QLabel\ *label\_30;}
+\DoxyCodeLine{00134\ \ \ \ \ QTextEdit\ *textEdit;}
+\DoxyCodeLine{00135\ \ \ \ \ QCheckBox\ *checkBox\_TempDropEnable;}
+\DoxyCodeLine{00136\ \ \ \ \ QGroupBox\ *groupBox\_4;}
+\DoxyCodeLine{00137\ \ \ \ \ QGridLayout\ *gridLayout\_9;}
+\DoxyCodeLine{00138\ \ \ \ \ QCheckBox\ *checkBoxStatusRun;}
+\DoxyCodeLine{00139\ \ \ \ \ QLabel\ *label\_23;}
+\DoxyCodeLine{00140\ \ \ \ \ QCheckBox\ *checkBoxStatusPeriodic;}
+\DoxyCodeLine{00141\ \ \ \ \ QLabel\ *label\_24;}
+\DoxyCodeLine{00142\ \ \ \ \ QCheckBox\ *checkBoxStautsTempCheck;}
+\DoxyCodeLine{00143\ \ \ \ \ QLabel\ *label\_25;}
+\DoxyCodeLine{00144\ \ \ \ \ QCheckBox\ *checkBoxStatusTempDrop;}
+\DoxyCodeLine{00145\ \ \ \ \ QLabel\ *label\_26;}
+\DoxyCodeLine{00146\ \ \ \ \ QCheckBox\ *checkBoxStatusSTC;}
+\DoxyCodeLine{00147\ \ \ \ \ QLabel\ *label\_27;}
+\DoxyCodeLine{00148\ \ \ \ \ QCheckBox\ *checkBoxStatusRecord;}
+\DoxyCodeLine{00149\ \ \ \ \ QLabel\ *label\_28;}
+\DoxyCodeLine{00150\ \ \ \ \ QLabel\ *label\_18;}
+\DoxyCodeLine{00151\ \ \ \ \ QSpacerItem\ *horizontalSpacer\_3;}
+\DoxyCodeLine{00152\ \ \ \ \ QLineEdit\ *lineEdit\_TempCheckCount;}
+\DoxyCodeLine{00153\ \ \ \ \ QSpacerItem\ *verticalSpacer\_2;}
+\DoxyCodeLine{00154\ \ \ \ \ QMenuBar\ *menuBar;}
+\DoxyCodeLine{00155\ \ \ \ \ QMenu\ *menuFile;}
+\DoxyCodeLine{00156\ \ \ \ \ QMenu\ *menuHelp;}
+\DoxyCodeLine{00157\ \ \ \ \ QMenu\ *menuConfigure;}
+\DoxyCodeLine{00158\ \ \ \ \ QToolBar\ *mainToolBar;}
+\DoxyCodeLine{00159\ \ \ \ \ QStatusBar\ *statusBar;}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{void}\ setupUi(QMainWindow\ *\mbox{\hyperlink{class_main_window}{MainWindow}})}
+\DoxyCodeLine{00162\ \ \ \ \ \{}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_main_window}{MainWindow}}-\/>objectName().isEmpty())}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window}{MainWindow}}-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}MainWindow"{}}));}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window}{MainWindow}}-\/>resize(1302,\ 912);}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ actionOpen\_File\ =\ \textcolor{keyword}{new}\ QAction(\mbox{\hyperlink{class_main_window}{MainWindow}});}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ actionOpen\_File-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}actionOpen\_File"{}}));}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ actionHelp\_Page\ =\ \textcolor{keyword}{new}\ QAction(\mbox{\hyperlink{class_main_window}{MainWindow}});}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ actionHelp\_Page-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}actionHelp\_Page"{}}));}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ action\_Setting\_parameters\_for\_TempCheck\ =\ \textcolor{keyword}{new}\ QAction(\mbox{\hyperlink{class_main_window}{MainWindow}});}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ action\_Setting\_parameters\_for\_TempCheck-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}action\_Setting\_parameters\_for\_TempCheck"{}}));}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ action\_Setting\_parameters\_for\_TempCheck-\/>setCheckable(\textcolor{keyword}{false});}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ action\_Setting\_parameters\_for\_TempCheck-\/>setEnabled(\textcolor{keyword}{true});}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ action\_Plot\ =\ \textcolor{keyword}{new}\ QAction(\mbox{\hyperlink{class_main_window}{MainWindow}});}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ action\_Plot-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}action\_Plot"{}}));}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ action\_Setting\_plot\ =\ \textcolor{keyword}{new}\ QAction(\mbox{\hyperlink{class_main_window}{MainWindow}});}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ action\_Setting\_plot-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}action\_Setting\_plot"{}}));}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ action\_Setting\_Temperature\_Drop\ =\ \textcolor{keyword}{new}\ QAction(\mbox{\hyperlink{class_main_window}{MainWindow}});}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ action\_Setting\_Temperature\_Drop-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}action\_Setting\_Temperature\_Drop"{}}));}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ centralWidget\ =\ \textcolor{keyword}{new}\ QWidget(\mbox{\hyperlink{class_main_window}{MainWindow}});}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ centralWidget-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}centralWidget"{}}));}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ gridLayout\_5\ =\ \textcolor{keyword}{new}\ QGridLayout(centralWidget);}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ gridLayout\_5-\/>setSpacing(6);}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ gridLayout\_5-\/>setContentsMargins(11,\ 11,\ 11,\ 11);}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ gridLayout\_5-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}gridLayout\_5"{}}));}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ groupBox\_5\ =\ \textcolor{keyword}{new}\ QGroupBox(centralWidget);}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ groupBox\_5-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}groupBox\_5"{}}));}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ QSizePolicy\ sizePolicy(QSizePolicy::Preferred,\ QSizePolicy::Preferred);}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ sizePolicy.setHorizontalStretch(0);}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ sizePolicy.setVerticalStretch(0);}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ sizePolicy.setHeightForWidth(groupBox\_5-\/>sizePolicy().hasHeightForWidth());}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ groupBox\_5-\/>setSizePolicy(sizePolicy);}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ gridLayout\_2\ =\ \textcolor{keyword}{new}\ QGridLayout(groupBox\_5);}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ gridLayout\_2-\/>setSpacing(6);}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ gridLayout\_2-\/>setContentsMargins(11,\ 11,\ 11,\ 11);}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ gridLayout\_2-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}gridLayout\_2"{}}));}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ label\_16\ =\ \textcolor{keyword}{new}\ QLabel(groupBox\_5);}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ label\_16-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}label\_16"{}}));}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ gridLayout\_2-\/>addWidget(label\_16,\ 1,\ 0,\ 1,\ 1);}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ lineEdit\_IntervalAskTemp\ =\ \textcolor{keyword}{new}\ QLineEdit(groupBox\_5);}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ lineEdit\_IntervalAskTemp-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}lineEdit\_IntervalAskTemp"{}}));}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ lineEdit\_IntervalAskTemp-\/>setEnabled(\textcolor{keyword}{false});}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ gridLayout\_2-\/>addWidget(lineEdit\_IntervalAskTemp,\ 0,\ 2,\ 1,\ 1);}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ label\_14\ =\ \textcolor{keyword}{new}\ QLabel(groupBox\_5);}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ label\_14-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}label\_14"{}}));}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ gridLayout\_2-\/>addWidget(label\_14,\ 0,\ 0,\ 1,\ 1);}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ label\_15\ =\ \textcolor{keyword}{new}\ QLabel(groupBox\_5);}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ label\_15-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}label\_15"{}}));}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ gridLayout\_2-\/>addWidget(label\_15,\ 2,\ 0,\ 1,\ 2);}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ lineEdit\_Numbers\ =\ \textcolor{keyword}{new}\ QLineEdit(groupBox\_5);}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ lineEdit\_Numbers-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}lineEdit\_Numbers"{}}));}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ lineEdit\_Numbers-\/>setEnabled(\textcolor{keyword}{false});}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ gridLayout\_2-\/>addWidget(lineEdit\_Numbers,\ 2,\ 2,\ 1,\ 1);}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ lineEdit\_SafeLimit\ =\ \textcolor{keyword}{new}\ QLineEdit(groupBox\_5);}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ lineEdit\_SafeLimit-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}lineEdit\_SafeLimit"{}}));}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ lineEdit\_SafeLimit-\/>setEnabled(\textcolor{keyword}{false});}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ gridLayout\_2-\/>addWidget(lineEdit\_SafeLimit,\ 1,\ 2,\ 1,\ 1);}
+\DoxyCodeLine{00229\ }
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ lineEdit\_IgnoreLower\ =\ \textcolor{keyword}{new}\ QLineEdit(groupBox\_5);}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ lineEdit\_IgnoreLower-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}lineEdit\_IgnoreLower"{}}));}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ lineEdit\_IgnoreLower-\/>setEnabled(\textcolor{keyword}{false});}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ gridLayout\_2-\/>addWidget(lineEdit\_IgnoreLower,\ 4,\ 2,\ 1,\ 1);}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ lineEdit\_IgnoreUpper\ =\ \textcolor{keyword}{new}\ QLineEdit(groupBox\_5);}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ lineEdit\_IgnoreUpper-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}lineEdit\_IgnoreUpper"{}}));}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ lineEdit\_IgnoreUpper-\/>setEnabled(\textcolor{keyword}{false});}
+\DoxyCodeLine{00239\ }
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ gridLayout\_2-\/>addWidget(lineEdit\_IgnoreUpper,\ 4,\ 3,\ 1,\ 1);}
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ label\_17\ =\ \textcolor{keyword}{new}\ QLabel(groupBox\_5);}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ label\_17-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}label\_17"{}}));}
+\DoxyCodeLine{00244\ }
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ gridLayout\_2-\/>addWidget(label\_17,\ 4,\ 0,\ 1,\ 1);}
+\DoxyCodeLine{00246\ }
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ checkBox\_Ignore\ =\ \textcolor{keyword}{new}\ QCheckBox(groupBox\_5);}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ checkBox\_Ignore-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}checkBox\_Ignore"{}}));}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ checkBox\_Ignore-\/>setEnabled(\textcolor{keyword}{false});}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ checkBox\_Ignore-\/>setCheckable(\textcolor{keyword}{true});}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ checkBox\_Ignore-\/>setChecked(\textcolor{keyword}{true});}
+\DoxyCodeLine{00252\ }
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ gridLayout\_2-\/>addWidget(checkBox\_Ignore,\ 3,\ 0,\ 1,\ 1);}
+\DoxyCodeLine{00254\ }
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ gridLayout\_5-\/>addWidget(groupBox\_5,\ 0,\ 3,\ 1,\ 2);}
+\DoxyCodeLine{00257\ }
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ groupBox\ =\ \textcolor{keyword}{new}\ QGroupBox(centralWidget);}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ groupBox-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}groupBox"{}}));}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ QSizePolicy\ sizePolicy1(QSizePolicy::Ignored,\ QSizePolicy::Ignored);}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ sizePolicy1.setHorizontalStretch(0);}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ sizePolicy1.setVerticalStretch(0);}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ sizePolicy1.setHeightForWidth(groupBox-\/>sizePolicy().hasHeightForWidth());}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ groupBox-\/>setSizePolicy(sizePolicy1);}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ gridLayout\_3\ =\ \textcolor{keyword}{new}\ QGridLayout(groupBox);}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ gridLayout\_3-\/>setSpacing(6);}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ gridLayout\_3-\/>setContentsMargins(11,\ 11,\ 11,\ 11);}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ gridLayout\_3-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}gridLayout\_3"{}}));}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ textEdit\_Log\ =\ \textcolor{keyword}{new}\ QTextEdit(groupBox);}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ textEdit\_Log-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}textEdit\_Log"{}}));}
+\DoxyCodeLine{00271\ }
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ gridLayout\_3-\/>addWidget(textEdit\_Log,\ 0,\ 0,\ 1,\ 1);}
+\DoxyCodeLine{00273\ }
+\DoxyCodeLine{00274\ }
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ gridLayout\_5-\/>addWidget(groupBox,\ 1,\ 4,\ 1,\ 1);}
+\DoxyCodeLine{00276\ }
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ groupBox\_3\ =\ \textcolor{keyword}{new}\ QGroupBox(centralWidget);}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ groupBox\_3-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}groupBox\_3"{}}));}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ gridLayout\_6\ =\ \textcolor{keyword}{new}\ QGridLayout(groupBox\_3);}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ gridLayout\_6-\/>setSpacing(6);}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ gridLayout\_6-\/>setContentsMargins(11,\ 11,\ 11,\ 11);}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ gridLayout\_6-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}gridLayout\_6"{}}));}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ spinBox\_TempRecordTime\ =\ \textcolor{keyword}{new}\ QSpinBox(groupBox\_3);}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ spinBox\_TempRecordTime-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}spinBox\_TempRecordTime"{}}));}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ spinBox\_TempRecordTime-\/>setAlignment(Qt::AlignCenter);}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ spinBox\_TempRecordTime-\/>setMinimum(3);}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ spinBox\_TempRecordTime-\/>setMaximum(500);}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ spinBox\_TempRecordTime-\/>setValue(30);}
+\DoxyCodeLine{00289\ }
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ gridLayout\_6-\/>addWidget(spinBox\_TempRecordTime,\ 3,\ 2,\ 1,\ 1);}
+\DoxyCodeLine{00291\ }
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ label\_22\ =\ \textcolor{keyword}{new}\ QLabel(groupBox\_3);}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ label\_22-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}label\_22"{}}));}
+\DoxyCodeLine{00294\ }
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ gridLayout\_6-\/>addWidget(label\_22,\ 2,\ 0,\ 1,\ 1);}
+\DoxyCodeLine{00296\ }
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ lineEdit\_IntervalAskMV\ =\ \textcolor{keyword}{new}\ QLineEdit(groupBox\_3);}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ lineEdit\_IntervalAskMV-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}lineEdit\_IntervalAskMV"{}}));}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ lineEdit\_IntervalAskMV-\/>setEnabled(\textcolor{keyword}{false});}
+\DoxyCodeLine{00300\ }
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ gridLayout\_6-\/>addWidget(lineEdit\_IntervalAskMV,\ 4,\ 2,\ 1,\ 2);}
+\DoxyCodeLine{00302\ }
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ checkBox\_dataSave\ =\ \textcolor{keyword}{new}\ QCheckBox(groupBox\_3);}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ checkBox\_dataSave-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}checkBox\_dataSave"{}}));}
+\DoxyCodeLine{00305\ }
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ gridLayout\_6-\/>addWidget(checkBox\_dataSave,\ 0,\ 2,\ 1,\ 1);}
+\DoxyCodeLine{00307\ }
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ label\_6\ =\ \textcolor{keyword}{new}\ QLabel(groupBox\_3);}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ label\_6-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}label\_6"{}}));}
+\DoxyCodeLine{00310\ }
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ gridLayout\_6-\/>addWidget(label\_6,\ 4,\ 0,\ 1,\ 2);}
+\DoxyCodeLine{00312\ }
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ pushButton\_Log\ =\ \textcolor{keyword}{new}\ QPushButton(groupBox\_3);}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ pushButton\_Log-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}pushButton\_Log"{}}));}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ pushButton\_Log-\/>setCheckable(\textcolor{keyword}{true});}
+\DoxyCodeLine{00316\ }
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ gridLayout\_6-\/>addWidget(pushButton\_Log,\ 3,\ 3,\ 1,\ 1);}
+\DoxyCodeLine{00318\ }
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ horizontalSpacer\ =\ \textcolor{keyword}{new}\ QSpacerItem(40,\ 20,\ QSizePolicy::Expanding,\ QSizePolicy::Minimum);}
+\DoxyCodeLine{00320\ }
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ gridLayout\_6-\/>addItem(horizontalSpacer,\ 0,\ 0,\ 1,\ 1);}
+\DoxyCodeLine{00322\ }
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ label\_3\ =\ \textcolor{keyword}{new}\ QLabel(groupBox\_3);}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ label\_3-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}label\_3"{}}));}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ label\_3-\/>setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);}
+\DoxyCodeLine{00326\ }
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ gridLayout\_6-\/>addWidget(label\_3,\ 3,\ 0,\ 1,\ 2);}
+\DoxyCodeLine{00328\ }
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ lineEdit\_DirPath\ =\ \textcolor{keyword}{new}\ QLineEdit(groupBox\_3);}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ lineEdit\_DirPath-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}lineEdit\_DirPath"{}}));}
+\DoxyCodeLine{00331\ }
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ gridLayout\_6-\/>addWidget(lineEdit\_DirPath,\ 2,\ 2,\ 1,\ 2);}
+\DoxyCodeLine{00333\ }
+\DoxyCodeLine{00334\ }
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ gridLayout\_5-\/>addWidget(groupBox\_3,\ 0,\ 1,\ 1,\ 2);}
+\DoxyCodeLine{00336\ }
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ plot\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_q_custom_plot}{QCustomPlot}}(centralWidget);}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ plot-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}plot"{}}));}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ QSizePolicy\ sizePolicy2(QSizePolicy::Expanding,\ QSizePolicy::Expanding);}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ sizePolicy2.setHorizontalStretch(0);}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ sizePolicy2.setVerticalStretch(0);}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ sizePolicy2.setHeightForWidth(plot-\/>sizePolicy().hasHeightForWidth());}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ plot-\/>setSizePolicy(sizePolicy2);}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ plot-\/>setMinimumSize(QSize(782,\ 281));}
+\DoxyCodeLine{00345\ }
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ gridLayout\_5-\/>addWidget(plot,\ 2,\ 0,\ 1,\ 5);}
+\DoxyCodeLine{00347\ }
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ groupBox\_2\ =\ \textcolor{keyword}{new}\ QGroupBox(centralWidget);}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ groupBox\_2-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}groupBox\_2"{}}));}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ sizePolicy2.setHeightForWidth(groupBox\_2-\/>sizePolicy().hasHeightForWidth());}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ groupBox\_2-\/>setSizePolicy(sizePolicy2);}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ gridLayout\_4\ =\ \textcolor{keyword}{new}\ QGridLayout(groupBox\_2);}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ gridLayout\_4-\/>setSpacing(6);}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ gridLayout\_4-\/>setContentsMargins(11,\ 11,\ 11,\ 11);}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ gridLayout\_4-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}gridLayout\_4"{}}));}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ doubleSpinBox\_MVupper\ =\ \textcolor{keyword}{new}\ QDoubleSpinBox(groupBox\_2);}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ doubleSpinBox\_MVupper-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}doubleSpinBox\_MVupper"{}}));}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ doubleSpinBox\_MVupper-\/>setAlignment(Qt::AlignCenter);}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ doubleSpinBox\_MVupper-\/>setMaximum(100.000000000000000);}
+\DoxyCodeLine{00360\ }
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ gridLayout\_4-\/>addWidget(doubleSpinBox\_MVupper,\ 4,\ 2,\ 1,\ 1);}
+\DoxyCodeLine{00362\ }
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ comboBox\_SeriesNumber\ =\ \textcolor{keyword}{new}\ QComboBox(groupBox\_2);}
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ comboBox\_SeriesNumber-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}comboBox\_SeriesNumber"{}}));}
+\DoxyCodeLine{00365\ }
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ gridLayout\_4-\/>addWidget(comboBox\_SeriesNumber,\ 0,\ 1,\ 1,\ 2);}
+\DoxyCodeLine{00367\ }
+\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ label\_9\ =\ \textcolor{keyword}{new}\ QLabel(groupBox\_2);}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ label\_9-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}label\_9"{}}));}
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ label\_9-\/>setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);}
+\DoxyCodeLine{00371\ }
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ gridLayout\_4-\/>addWidget(label\_9,\ 4,\ 0,\ 1,\ 1);}
+\DoxyCodeLine{00373\ }
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ label\_5\ =\ \textcolor{keyword}{new}\ QLabel(groupBox\_2);}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ label\_5-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}label\_5"{}}));}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ label\_5-\/>setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);}
+\DoxyCodeLine{00377\ }
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ gridLayout\_4-\/>addWidget(label\_5,\ 1,\ 0,\ 1,\ 1);}
+\DoxyCodeLine{00379\ }
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ spinBox\_DeviceAddress\ =\ \textcolor{keyword}{new}\ QSpinBox(groupBox\_2);}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ spinBox\_DeviceAddress-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}spinBox\_DeviceAddress"{}}));}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ spinBox\_DeviceAddress-\/>setAlignment(Qt::AlignCenter);}
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ spinBox\_DeviceAddress-\/>setMinimum(1);}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ spinBox\_DeviceAddress-\/>setMaximum(247);}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ spinBox\_DeviceAddress-\/>setValue(1);}
+\DoxyCodeLine{00386\ }
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ gridLayout\_4-\/>addWidget(spinBox\_DeviceAddress,\ 1,\ 1,\ 1,\ 1);}
+\DoxyCodeLine{00388\ }
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ pushButton\_Connect\ =\ \textcolor{keyword}{new}\ QPushButton(groupBox\_2);}
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ pushButton\_Connect-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}pushButton\_Connect"{}}));}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ pushButton\_Connect-\/>setCheckable(\textcolor{keyword}{true});}
+\DoxyCodeLine{00392\ }
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ gridLayout\_4-\/>addWidget(pushButton\_Connect,\ 0,\ 0,\ 1,\ 1);}
+\DoxyCodeLine{00394\ }
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ comboBox\_AT\ =\ \textcolor{keyword}{new}\ QComboBox(groupBox\_2);}
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ comboBox\_AT-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}comboBox\_AT"{}}));}
+\DoxyCodeLine{00397\ }
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ gridLayout\_4-\/>addWidget(comboBox\_AT,\ 1,\ 2,\ 1,\ 1);}
+\DoxyCodeLine{00399\ }
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ doubleSpinBox\_MVlower\ =\ \textcolor{keyword}{new}\ QDoubleSpinBox(groupBox\_2);}
+\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ doubleSpinBox\_MVlower-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}doubleSpinBox\_MVlower"{}}));}
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ doubleSpinBox\_MVlower-\/>setAlignment(Qt::AlignCenter);}
+\DoxyCodeLine{00403\ }
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ gridLayout\_4-\/>addWidget(doubleSpinBox\_MVlower,\ 4,\ 1,\ 1,\ 1);}
+\DoxyCodeLine{00405\ }
+\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ pushButton\_RunStop\ =\ \textcolor{keyword}{new}\ QPushButton(groupBox\_2);}
+\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ pushButton\_RunStop-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}pushButton\_RunStop"{}}));}
+\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ pushButton\_RunStop-\/>setCheckable(\textcolor{keyword}{true});}
+\DoxyCodeLine{00409\ }
+\DoxyCodeLine{00410\ \ \ \ \ \ \ \ \ gridLayout\_4-\/>addWidget(pushButton\_RunStop,\ 3,\ 0,\ 1,\ 3);}
+\DoxyCodeLine{00411\ }
+\DoxyCodeLine{00412\ }
+\DoxyCodeLine{00413\ \ \ \ \ \ \ \ \ gridLayout\_5-\/>addWidget(groupBox\_2,\ 0,\ 0,\ 1,\ 1);}
+\DoxyCodeLine{00414\ }
+\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ tabWidget\ =\ \textcolor{keyword}{new}\ QTabWidget(centralWidget);}
+\DoxyCodeLine{00416\ \ \ \ \ \ \ \ \ tabWidget-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}tabWidget"{}}));}
+\DoxyCodeLine{00417\ \ \ \ \ \ \ \ \ sizePolicy.setHeightForWidth(tabWidget-\/>sizePolicy().hasHeightForWidth());}
+\DoxyCodeLine{00418\ \ \ \ \ \ \ \ \ tabWidget-\/>setSizePolicy(sizePolicy);}
+\DoxyCodeLine{00419\ \ \ \ \ \ \ \ \ tab\ =\ \textcolor{keyword}{new}\ QWidget();}
+\DoxyCodeLine{00420\ \ \ \ \ \ \ \ \ tab-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}tab"{}}));}
+\DoxyCodeLine{00421\ \ \ \ \ \ \ \ \ gridLayout\ =\ \textcolor{keyword}{new}\ QGridLayout(tab);}
+\DoxyCodeLine{00422\ \ \ \ \ \ \ \ \ gridLayout-\/>setSpacing(6);}
+\DoxyCodeLine{00423\ \ \ \ \ \ \ \ \ gridLayout-\/>setContentsMargins(11,\ 11,\ 11,\ 11);}
+\DoxyCodeLine{00424\ \ \ \ \ \ \ \ \ gridLayout-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}gridLayout"{}}));}
+\DoxyCodeLine{00425\ \ \ \ \ \ \ \ \ label\ =\ \textcolor{keyword}{new}\ QLabel(tab);}
+\DoxyCodeLine{00426\ \ \ \ \ \ \ \ \ label-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}label"{}}));}
+\DoxyCodeLine{00427\ \ \ \ \ \ \ \ \ label-\/>setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);}
+\DoxyCodeLine{00428\ }
+\DoxyCodeLine{00429\ \ \ \ \ \ \ \ \ gridLayout-\/>addWidget(label,\ 0,\ 0,\ 1,\ 1);}
+\DoxyCodeLine{00430\ }
+\DoxyCodeLine{00431\ \ \ \ \ \ \ \ \ lineEdit\_Temp\ =\ \textcolor{keyword}{new}\ QLineEdit(tab);}
+\DoxyCodeLine{00432\ \ \ \ \ \ \ \ \ lineEdit\_Temp-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}lineEdit\_Temp"{}}));}
+\DoxyCodeLine{00433\ \ \ \ \ \ \ \ \ lineEdit\_Temp-\/>setEnabled(\textcolor{keyword}{false});}
+\DoxyCodeLine{00434\ \ \ \ \ \ \ \ \ lineEdit\_Temp-\/>setAlignment(Qt::AlignCenter);}
+\DoxyCodeLine{00435\ }
+\DoxyCodeLine{00436\ \ \ \ \ \ \ \ \ gridLayout-\/>addWidget(lineEdit\_Temp,\ 0,\ 1,\ 1,\ 1);}
+\DoxyCodeLine{00437\ }
+\DoxyCodeLine{00438\ \ \ \ \ \ \ \ \ label\_SV\_2\ =\ \textcolor{keyword}{new}\ QLabel(tab);}
+\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ label\_SV\_2-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}label\_SV\_2"{}}));}
+\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ label\_SV\_2-\/>setEnabled(\textcolor{keyword}{true});}
+\DoxyCodeLine{00441\ \ \ \ \ \ \ \ \ label\_SV\_2-\/>setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);}
+\DoxyCodeLine{00442\ }
+\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ gridLayout-\/>addWidget(label\_SV\_2,\ 0,\ 2,\ 1,\ 1);}
+\DoxyCodeLine{00444\ }
+\DoxyCodeLine{00445\ \ \ \ \ \ \ \ \ lineEdit\_SV2\ =\ \textcolor{keyword}{new}\ QLineEdit(tab);}
+\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ lineEdit\_SV2-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}lineEdit\_SV2"{}}));}
+\DoxyCodeLine{00447\ \ \ \ \ \ \ \ \ lineEdit\_SV2-\/>setEnabled(\textcolor{keyword}{false});}
+\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ lineEdit\_SV2-\/>setAlignment(Qt::AlignCenter);}
+\DoxyCodeLine{00449\ }
+\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ gridLayout-\/>addWidget(lineEdit\_SV2,\ 0,\ 3,\ 1,\ 1);}
+\DoxyCodeLine{00451\ }
+\DoxyCodeLine{00452\ \ \ \ \ \ \ \ \ label\_4\ =\ \textcolor{keyword}{new}\ QLabel(tab);}
+\DoxyCodeLine{00453\ \ \ \ \ \ \ \ \ label\_4-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}label\_4"{}}));}
+\DoxyCodeLine{00454\ \ \ \ \ \ \ \ \ label\_4-\/>setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);}
+\DoxyCodeLine{00455\ }
+\DoxyCodeLine{00456\ \ \ \ \ \ \ \ \ gridLayout-\/>addWidget(label\_4,\ 1,\ 0,\ 1,\ 1);}
+\DoxyCodeLine{00457\ }
+\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ lineEdit\_CurrentSV\ =\ \textcolor{keyword}{new}\ QLineEdit(tab);}
+\DoxyCodeLine{00459\ \ \ \ \ \ \ \ \ lineEdit\_CurrentSV-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}lineEdit\_CurrentSV"{}}));}
+\DoxyCodeLine{00460\ \ \ \ \ \ \ \ \ lineEdit\_CurrentSV-\/>setEnabled(\textcolor{keyword}{false});}
+\DoxyCodeLine{00461\ \ \ \ \ \ \ \ \ lineEdit\_CurrentSV-\/>setAlignment(Qt::AlignCenter);}
+\DoxyCodeLine{00462\ }
+\DoxyCodeLine{00463\ \ \ \ \ \ \ \ \ gridLayout-\/>addWidget(lineEdit\_CurrentSV,\ 1,\ 1,\ 1,\ 1);}
+\DoxyCodeLine{00464\ }
+\DoxyCodeLine{00465\ \ \ \ \ \ \ \ \ label\_7\ =\ \textcolor{keyword}{new}\ QLabel(tab);}
+\DoxyCodeLine{00466\ \ \ \ \ \ \ \ \ label\_7-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}label\_7"{}}));}
+\DoxyCodeLine{00467\ \ \ \ \ \ \ \ \ label\_7-\/>setAlignment(Qt::AlignCenter);}
+\DoxyCodeLine{00468\ }
+\DoxyCodeLine{00469\ \ \ \ \ \ \ \ \ gridLayout-\/>addWidget(label\_7,\ 1,\ 2,\ 1,\ 1);}
+\DoxyCodeLine{00470\ }
+\DoxyCodeLine{00471\ \ \ \ \ \ \ \ \ doubleSpinBox\_TempTorr\ =\ \textcolor{keyword}{new}\ QDoubleSpinBox(tab);}
+\DoxyCodeLine{00472\ \ \ \ \ \ \ \ \ doubleSpinBox\_TempTorr-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}doubleSpinBox\_TempTorr"{}}));}
+\DoxyCodeLine{00473\ \ \ \ \ \ \ \ \ doubleSpinBox\_TempTorr-\/>setAlignment(Qt::AlignCenter);}
+\DoxyCodeLine{00474\ \ \ \ \ \ \ \ \ doubleSpinBox\_TempTorr-\/>setDecimals(1);}
+\DoxyCodeLine{00475\ \ \ \ \ \ \ \ \ doubleSpinBox\_TempTorr-\/>setMaximum(1.000000000000000);}
+\DoxyCodeLine{00476\ \ \ \ \ \ \ \ \ doubleSpinBox\_TempTorr-\/>setSingleStep(0.100000000000000);}
+\DoxyCodeLine{00477\ \ \ \ \ \ \ \ \ doubleSpinBox\_TempTorr-\/>setValue(0.800000000000000);}
+\DoxyCodeLine{00478\ }
+\DoxyCodeLine{00479\ \ \ \ \ \ \ \ \ gridLayout-\/>addWidget(doubleSpinBox\_TempTorr,\ 1,\ 3,\ 1,\ 1);}
+\DoxyCodeLine{00480\ }
+\DoxyCodeLine{00481\ \ \ \ \ \ \ \ \ label\_10\ =\ \textcolor{keyword}{new}\ QLabel(tab);}
+\DoxyCodeLine{00482\ \ \ \ \ \ \ \ \ label\_10-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}label\_10"{}}));}
+\DoxyCodeLine{00483\ \ \ \ \ \ \ \ \ label\_10-\/>setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);}
+\DoxyCodeLine{00484\ }
+\DoxyCodeLine{00485\ \ \ \ \ \ \ \ \ gridLayout-\/>addWidget(label\_10,\ 2,\ 0,\ 1,\ 1);}
+\DoxyCodeLine{00486\ }
+\DoxyCodeLine{00487\ \ \ \ \ \ \ \ \ lineEdit\_CurrentMV\ =\ \textcolor{keyword}{new}\ QLineEdit(tab);}
+\DoxyCodeLine{00488\ \ \ \ \ \ \ \ \ lineEdit\_CurrentMV-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}lineEdit\_CurrentMV"{}}));}
+\DoxyCodeLine{00489\ \ \ \ \ \ \ \ \ lineEdit\_CurrentMV-\/>setEnabled(\textcolor{keyword}{false});}
+\DoxyCodeLine{00490\ \ \ \ \ \ \ \ \ lineEdit\_CurrentMV-\/>setAlignment(Qt::AlignCenter);}
+\DoxyCodeLine{00491\ }
+\DoxyCodeLine{00492\ \ \ \ \ \ \ \ \ gridLayout-\/>addWidget(lineEdit\_CurrentMV,\ 2,\ 1,\ 1,\ 1);}
+\DoxyCodeLine{00493\ }
+\DoxyCodeLine{00494\ \ \ \ \ \ \ \ \ label\_8\ =\ \textcolor{keyword}{new}\ QLabel(tab);}
+\DoxyCodeLine{00495\ \ \ \ \ \ \ \ \ label\_8-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}label\_8"{}}));}
+\DoxyCodeLine{00496\ \ \ \ \ \ \ \ \ label\_8-\/>setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);}
+\DoxyCodeLine{00497\ }
+\DoxyCodeLine{00498\ \ \ \ \ \ \ \ \ gridLayout-\/>addWidget(label\_8,\ 2,\ 2,\ 1,\ 1);}
+\DoxyCodeLine{00499\ }
+\DoxyCodeLine{00500\ \ \ \ \ \ \ \ \ doubleSpinBox\_TempStepSize\ =\ \textcolor{keyword}{new}\ QDoubleSpinBox(tab);}
+\DoxyCodeLine{00501\ \ \ \ \ \ \ \ \ doubleSpinBox\_TempStepSize-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}doubleSpinBox\_TempStepSize"{}}));}
+\DoxyCodeLine{00502\ \ \ \ \ \ \ \ \ doubleSpinBox\_TempStepSize-\/>setAlignment(Qt::AlignCenter);}
+\DoxyCodeLine{00503\ \ \ \ \ \ \ \ \ doubleSpinBox\_TempStepSize-\/>setDecimals(1);}
+\DoxyCodeLine{00504\ \ \ \ \ \ \ \ \ doubleSpinBox\_TempStepSize-\/>setMinimum(0.100000000000000);}
+\DoxyCodeLine{00505\ \ \ \ \ \ \ \ \ doubleSpinBox\_TempStepSize-\/>setMaximum(2.000000000000000);}
+\DoxyCodeLine{00506\ \ \ \ \ \ \ \ \ doubleSpinBox\_TempStepSize-\/>setSingleStep(0.100000000000000);}
+\DoxyCodeLine{00507\ \ \ \ \ \ \ \ \ doubleSpinBox\_TempStepSize-\/>setValue(0.500000000000000);}
+\DoxyCodeLine{00508\ }
+\DoxyCodeLine{00509\ \ \ \ \ \ \ \ \ gridLayout-\/>addWidget(doubleSpinBox\_TempStepSize,\ 2,\ 3,\ 1,\ 1);}
+\DoxyCodeLine{00510\ }
+\DoxyCodeLine{00511\ \ \ \ \ \ \ \ \ label\_29\ =\ \textcolor{keyword}{new}\ QLabel(tab);}
+\DoxyCodeLine{00512\ \ \ \ \ \ \ \ \ label\_29-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}label\_29"{}}));}
+\DoxyCodeLine{00513\ \ \ \ \ \ \ \ \ label\_29-\/>setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);}
+\DoxyCodeLine{00514\ }
+\DoxyCodeLine{00515\ \ \ \ \ \ \ \ \ gridLayout-\/>addWidget(label\_29,\ 3,\ 0,\ 1,\ 1);}
+\DoxyCodeLine{00516\ }
+\DoxyCodeLine{00517\ \ \ \ \ \ \ \ \ lineEdit\_CurrentTempDiff\ =\ \textcolor{keyword}{new}\ QLineEdit(tab);}
+\DoxyCodeLine{00518\ \ \ \ \ \ \ \ \ lineEdit\_CurrentTempDiff-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}lineEdit\_CurrentTempDiff"{}}));}
+\DoxyCodeLine{00519\ \ \ \ \ \ \ \ \ lineEdit\_CurrentTempDiff-\/>setEnabled(\textcolor{keyword}{false});}
+\DoxyCodeLine{00520\ \ \ \ \ \ \ \ \ lineEdit\_CurrentTempDiff-\/>setAlignment(Qt::AlignCenter);}
+\DoxyCodeLine{00521\ }
+\DoxyCodeLine{00522\ \ \ \ \ \ \ \ \ gridLayout-\/>addWidget(lineEdit\_CurrentTempDiff,\ 3,\ 1,\ 1,\ 1);}
+\DoxyCodeLine{00523\ }
+\DoxyCodeLine{00524\ \ \ \ \ \ \ \ \ label\_SV2WaitTime\ =\ \textcolor{keyword}{new}\ QLabel(tab);}
+\DoxyCodeLine{00525\ \ \ \ \ \ \ \ \ label\_SV2WaitTime-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}label\_SV2WaitTime"{}}));}
+\DoxyCodeLine{00526\ \ \ \ \ \ \ \ \ label\_SV2WaitTime-\/>setAlignment(Qt::AlignCenter);}
+\DoxyCodeLine{00527\ }
+\DoxyCodeLine{00528\ \ \ \ \ \ \ \ \ gridLayout-\/>addWidget(label\_SV2WaitTime,\ 3,\ 2,\ 1,\ 1);}
+\DoxyCodeLine{00529\ }
+\DoxyCodeLine{00530\ \ \ \ \ \ \ \ \ doubleSpinBox\_SV2WaitTime\ =\ \textcolor{keyword}{new}\ QDoubleSpinBox(tab);}
+\DoxyCodeLine{00531\ \ \ \ \ \ \ \ \ doubleSpinBox\_SV2WaitTime-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}doubleSpinBox\_SV2WaitTime"{}}));}
+\DoxyCodeLine{00532\ \ \ \ \ \ \ \ \ doubleSpinBox\_SV2WaitTime-\/>setEnabled(\textcolor{keyword}{false});}
+\DoxyCodeLine{00533\ \ \ \ \ \ \ \ \ QSizePolicy\ sizePolicy3(QSizePolicy::Minimum,\ QSizePolicy::Fixed);}
+\DoxyCodeLine{00534\ \ \ \ \ \ \ \ \ sizePolicy3.setHorizontalStretch(0);}
+\DoxyCodeLine{00535\ \ \ \ \ \ \ \ \ sizePolicy3.setVerticalStretch(0);}
+\DoxyCodeLine{00536\ \ \ \ \ \ \ \ \ sizePolicy3.setHeightForWidth(doubleSpinBox\_SV2WaitTime-\/>sizePolicy().hasHeightForWidth());}
+\DoxyCodeLine{00537\ \ \ \ \ \ \ \ \ doubleSpinBox\_SV2WaitTime-\/>setSizePolicy(sizePolicy3);}
+\DoxyCodeLine{00538\ \ \ \ \ \ \ \ \ doubleSpinBox\_SV2WaitTime-\/>setAlignment(Qt::AlignCenter);}
+\DoxyCodeLine{00539\ \ \ \ \ \ \ \ \ doubleSpinBox\_SV2WaitTime-\/>setMaximum(5000.000000000000000);}
+\DoxyCodeLine{00540\ }
+\DoxyCodeLine{00541\ \ \ \ \ \ \ \ \ gridLayout-\/>addWidget(doubleSpinBox\_SV2WaitTime,\ 3,\ 3,\ 1,\ 1);}
+\DoxyCodeLine{00542\ }
+\DoxyCodeLine{00543\ \ \ \ \ \ \ \ \ label\_TimeStable\ =\ \textcolor{keyword}{new}\ QLabel(tab);}
+\DoxyCodeLine{00544\ \ \ \ \ \ \ \ \ label\_TimeStable-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}label\_TimeStable"{}}));}
+\DoxyCodeLine{00545\ \ \ \ \ \ \ \ \ QSizePolicy\ sizePolicy4(QSizePolicy::Fixed,\ QSizePolicy::Preferred);}
+\DoxyCodeLine{00546\ \ \ \ \ \ \ \ \ sizePolicy4.setHorizontalStretch(0);}
+\DoxyCodeLine{00547\ \ \ \ \ \ \ \ \ sizePolicy4.setVerticalStretch(0);}
+\DoxyCodeLine{00548\ \ \ \ \ \ \ \ \ sizePolicy4.setHeightForWidth(label\_TimeStable-\/>sizePolicy().hasHeightForWidth());}
+\DoxyCodeLine{00549\ \ \ \ \ \ \ \ \ label\_TimeStable-\/>setSizePolicy(sizePolicy4);}
+\DoxyCodeLine{00550\ \ \ \ \ \ \ \ \ label\_TimeStable-\/>setMinimumSize(QSize(160,\ 0));}
+\DoxyCodeLine{00551\ \ \ \ \ \ \ \ \ label\_TimeStable-\/>setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);}
+\DoxyCodeLine{00552\ }
+\DoxyCodeLine{00553\ \ \ \ \ \ \ \ \ gridLayout-\/>addWidget(label\_TimeStable,\ 4,\ 2,\ 1,\ 1);}
+\DoxyCodeLine{00554\ }
+\DoxyCodeLine{00555\ \ \ \ \ \ \ \ \ spinBox\_TempStableTime\ =\ \textcolor{keyword}{new}\ QSpinBox(tab);}
+\DoxyCodeLine{00556\ \ \ \ \ \ \ \ \ spinBox\_TempStableTime-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}spinBox\_TempStableTime"{}}));}
+\DoxyCodeLine{00557\ \ \ \ \ \ \ \ \ spinBox\_TempStableTime-\/>setAlignment(Qt::AlignCenter);}
+\DoxyCodeLine{00558\ \ \ \ \ \ \ \ \ spinBox\_TempStableTime-\/>setMinimum(1);}
+\DoxyCodeLine{00559\ \ \ \ \ \ \ \ \ spinBox\_TempStableTime-\/>setMaximum(120);}
+\DoxyCodeLine{00560\ \ \ \ \ \ \ \ \ spinBox\_TempStableTime-\/>setValue(10);}
+\DoxyCodeLine{00561\ }
+\DoxyCodeLine{00562\ \ \ \ \ \ \ \ \ gridLayout-\/>addWidget(spinBox\_TempStableTime,\ 4,\ 3,\ 1,\ 1);}
+\DoxyCodeLine{00563\ }
+\DoxyCodeLine{00564\ \ \ \ \ \ \ \ \ label\_2\ =\ \textcolor{keyword}{new}\ QLabel(tab);}
+\DoxyCodeLine{00565\ \ \ \ \ \ \ \ \ label\_2-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}label\_2"{}}));}
+\DoxyCodeLine{00566\ \ \ \ \ \ \ \ \ label\_2-\/>setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);}
+\DoxyCodeLine{00567\ }
+\DoxyCodeLine{00568\ \ \ \ \ \ \ \ \ gridLayout-\/>addWidget(label\_2,\ 5,\ 0,\ 1,\ 1);}
+\DoxyCodeLine{00569\ }
+\DoxyCodeLine{00570\ \ \ \ \ \ \ \ \ lineEdit\_SV\ =\ \textcolor{keyword}{new}\ QLineEdit(tab);}
+\DoxyCodeLine{00571\ \ \ \ \ \ \ \ \ lineEdit\_SV-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}lineEdit\_SV"{}}));}
+\DoxyCodeLine{00572\ \ \ \ \ \ \ \ \ lineEdit\_SV-\/>setAlignment(Qt::AlignCenter);}
+\DoxyCodeLine{00573\ }
+\DoxyCodeLine{00574\ \ \ \ \ \ \ \ \ gridLayout-\/>addWidget(lineEdit\_SV,\ 5,\ 1,\ 1,\ 1);}
+\DoxyCodeLine{00575\ }
+\DoxyCodeLine{00576\ \ \ \ \ \ \ \ \ pushButton\_Control\ =\ \textcolor{keyword}{new}\ QPushButton(tab);}
+\DoxyCodeLine{00577\ \ \ \ \ \ \ \ \ pushButton\_Control-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}pushButton\_Control"{}}));}
+\DoxyCodeLine{00578\ \ \ \ \ \ \ \ \ pushButton\_Control-\/>setCheckable(\textcolor{keyword}{true});}
+\DoxyCodeLine{00579\ \ \ \ \ \ \ \ \ pushButton\_Control-\/>setAutoDefault(\textcolor{keyword}{true});}
+\DoxyCodeLine{00580\ }
+\DoxyCodeLine{00581\ \ \ \ \ \ \ \ \ gridLayout-\/>addWidget(pushButton\_Control,\ 5,\ 2,\ 1,\ 1);}
+\DoxyCodeLine{00582\ }
+\DoxyCodeLine{00583\ \ \ \ \ \ \ \ \ comboBox\_Mode\ =\ \textcolor{keyword}{new}\ QComboBox(tab);}
+\DoxyCodeLine{00584\ \ \ \ \ \ \ \ \ comboBox\_Mode-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}comboBox\_Mode"{}}));}
+\DoxyCodeLine{00585\ }
+\DoxyCodeLine{00586\ \ \ \ \ \ \ \ \ gridLayout-\/>addWidget(comboBox\_Mode,\ 5,\ 3,\ 1,\ 1);}
+\DoxyCodeLine{00587\ }
+\DoxyCodeLine{00588\ \ \ \ \ \ \ \ \ verticalSpacer\_3\ =\ \textcolor{keyword}{new}\ QSpacerItem(20,\ 40,\ QSizePolicy::Minimum,\ QSizePolicy::Expanding);}
+\DoxyCodeLine{00589\ }
+\DoxyCodeLine{00590\ \ \ \ \ \ \ \ \ gridLayout-\/>addItem(verticalSpacer\_3,\ 6,\ 2,\ 1,\ 1);}
+\DoxyCodeLine{00591\ }
+\DoxyCodeLine{00592\ \ \ \ \ \ \ \ \ pushButton\_AskStatus\ =\ \textcolor{keyword}{new}\ QPushButton(tab);}
+\DoxyCodeLine{00593\ \ \ \ \ \ \ \ \ pushButton\_AskStatus-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}pushButton\_AskStatus"{}}));}
+\DoxyCodeLine{00594\ \ \ \ \ \ \ \ \ pushButton\_AskStatus-\/>setMouseTracking(\textcolor{keyword}{true});}
+\DoxyCodeLine{00595\ \ \ \ \ \ \ \ \ pushButton\_AskStatus-\/>setAutoDefault(\textcolor{keyword}{false});}
+\DoxyCodeLine{00596\ }
+\DoxyCodeLine{00597\ \ \ \ \ \ \ \ \ gridLayout-\/>addWidget(pushButton\_AskStatus,\ 4,\ 0,\ 1,\ 2);}
+\DoxyCodeLine{00598\ }
+\DoxyCodeLine{00599\ \ \ \ \ \ \ \ \ pushButton\_SetSV\ =\ \textcolor{keyword}{new}\ QPushButton(tab);}
+\DoxyCodeLine{00600\ \ \ \ \ \ \ \ \ pushButton\_SetSV-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}pushButton\_SetSV"{}}));}
+\DoxyCodeLine{00601\ \ \ \ \ \ \ \ \ pushButton\_SetSV-\/>setAutoDefault(\textcolor{keyword}{false});}
+\DoxyCodeLine{00602\ }
+\DoxyCodeLine{00603\ \ \ \ \ \ \ \ \ gridLayout-\/>addWidget(pushButton\_SetSV,\ 6,\ 0,\ 1,\ 2);}
+\DoxyCodeLine{00604\ }
+\DoxyCodeLine{00605\ \ \ \ \ \ \ \ \ tabWidget-\/>addTab(tab,\ QString());}
+\DoxyCodeLine{00606\ \ \ \ \ \ \ \ \ tab\_2\ =\ \textcolor{keyword}{new}\ QWidget();}
+\DoxyCodeLine{00607\ \ \ \ \ \ \ \ \ tab\_2-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}tab\_2"{}}));}
+\DoxyCodeLine{00608\ \ \ \ \ \ \ \ \ gridLayout\_7\ =\ \textcolor{keyword}{new}\ QGridLayout(tab\_2);}
+\DoxyCodeLine{00609\ \ \ \ \ \ \ \ \ gridLayout\_7-\/>setSpacing(6);}
+\DoxyCodeLine{00610\ \ \ \ \ \ \ \ \ gridLayout\_7-\/>setContentsMargins(11,\ 11,\ 11,\ 11);}
+\DoxyCodeLine{00611\ \ \ \ \ \ \ \ \ gridLayout\_7-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}gridLayout\_7"{}}));}
+\DoxyCodeLine{00612\ \ \ \ \ \ \ \ \ label\_11\ =\ \textcolor{keyword}{new}\ QLabel(tab\_2);}
+\DoxyCodeLine{00613\ \ \ \ \ \ \ \ \ label\_11-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}label\_11"{}}));}
+\DoxyCodeLine{00614\ }
+\DoxyCodeLine{00615\ \ \ \ \ \ \ \ \ gridLayout\_7-\/>addWidget(label\_11,\ 0,\ 0,\ 1,\ 1);}
+\DoxyCodeLine{00616\ }
+\DoxyCodeLine{00617\ \ \ \ \ \ \ \ \ lineEdit\_P\ =\ \textcolor{keyword}{new}\ QLineEdit(tab\_2);}
+\DoxyCodeLine{00618\ \ \ \ \ \ \ \ \ lineEdit\_P-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}lineEdit\_P"{}}));}
+\DoxyCodeLine{00619\ \ \ \ \ \ \ \ \ lineEdit\_P-\/>setEnabled(\textcolor{keyword}{false});}
+\DoxyCodeLine{00620\ \ \ \ \ \ \ \ \ lineEdit\_P-\/>setFrame(\textcolor{keyword}{true});}
+\DoxyCodeLine{00621\ \ \ \ \ \ \ \ \ lineEdit\_P-\/>setAlignment(Qt::AlignCenter);}
+\DoxyCodeLine{00622\ \ \ \ \ \ \ \ \ lineEdit\_P-\/>setReadOnly(\textcolor{keyword}{true});}
+\DoxyCodeLine{00623\ }
+\DoxyCodeLine{00624\ \ \ \ \ \ \ \ \ gridLayout\_7-\/>addWidget(lineEdit\_P,\ 0,\ 1,\ 1,\ 2);}
+\DoxyCodeLine{00625\ }
+\DoxyCodeLine{00626\ \ \ \ \ \ \ \ \ label\_12\ =\ \textcolor{keyword}{new}\ QLabel(tab\_2);}
+\DoxyCodeLine{00627\ \ \ \ \ \ \ \ \ label\_12-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}label\_12"{}}));}
+\DoxyCodeLine{00628\ }
+\DoxyCodeLine{00629\ \ \ \ \ \ \ \ \ gridLayout\_7-\/>addWidget(label\_12,\ 1,\ 0,\ 1,\ 1);}
+\DoxyCodeLine{00630\ }
+\DoxyCodeLine{00631\ \ \ \ \ \ \ \ \ lineEdit\_I\ =\ \textcolor{keyword}{new}\ QLineEdit(tab\_2);}
+\DoxyCodeLine{00632\ \ \ \ \ \ \ \ \ lineEdit\_I-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}lineEdit\_I"{}}));}
+\DoxyCodeLine{00633\ \ \ \ \ \ \ \ \ lineEdit\_I-\/>setEnabled(\textcolor{keyword}{false});}
+\DoxyCodeLine{00634\ \ \ \ \ \ \ \ \ lineEdit\_I-\/>setFrame(\textcolor{keyword}{true});}
+\DoxyCodeLine{00635\ \ \ \ \ \ \ \ \ lineEdit\_I-\/>setAlignment(Qt::AlignCenter);}
+\DoxyCodeLine{00636\ \ \ \ \ \ \ \ \ lineEdit\_I-\/>setReadOnly(\textcolor{keyword}{true});}
+\DoxyCodeLine{00637\ }
+\DoxyCodeLine{00638\ \ \ \ \ \ \ \ \ gridLayout\_7-\/>addWidget(lineEdit\_I,\ 1,\ 1,\ 1,\ 2);}
+\DoxyCodeLine{00639\ }
+\DoxyCodeLine{00640\ \ \ \ \ \ \ \ \ horizontalSpacer\_2\ =\ \textcolor{keyword}{new}\ QSpacerItem(338,\ 20,\ QSizePolicy::Expanding,\ QSizePolicy::Minimum);}
+\DoxyCodeLine{00641\ }
+\DoxyCodeLine{00642\ \ \ \ \ \ \ \ \ gridLayout\_7-\/>addItem(horizontalSpacer\_2,\ 1,\ 3,\ 1,\ 1);}
+\DoxyCodeLine{00643\ }
+\DoxyCodeLine{00644\ \ \ \ \ \ \ \ \ label\_13\ =\ \textcolor{keyword}{new}\ QLabel(tab\_2);}
+\DoxyCodeLine{00645\ \ \ \ \ \ \ \ \ label\_13-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}label\_13"{}}));}
+\DoxyCodeLine{00646\ }
+\DoxyCodeLine{00647\ \ \ \ \ \ \ \ \ gridLayout\_7-\/>addWidget(label\_13,\ 2,\ 0,\ 1,\ 1);}
+\DoxyCodeLine{00648\ }
+\DoxyCodeLine{00649\ \ \ \ \ \ \ \ \ lineEdit\_D\ =\ \textcolor{keyword}{new}\ QLineEdit(tab\_2);}
+\DoxyCodeLine{00650\ \ \ \ \ \ \ \ \ lineEdit\_D-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}lineEdit\_D"{}}));}
+\DoxyCodeLine{00651\ \ \ \ \ \ \ \ \ lineEdit\_D-\/>setEnabled(\textcolor{keyword}{false});}
+\DoxyCodeLine{00652\ \ \ \ \ \ \ \ \ lineEdit\_D-\/>setFrame(\textcolor{keyword}{true});}
+\DoxyCodeLine{00653\ \ \ \ \ \ \ \ \ lineEdit\_D-\/>setAlignment(Qt::AlignCenter);}
+\DoxyCodeLine{00654\ \ \ \ \ \ \ \ \ lineEdit\_D-\/>setReadOnly(\textcolor{keyword}{true});}
+\DoxyCodeLine{00655\ }
+\DoxyCodeLine{00656\ \ \ \ \ \ \ \ \ gridLayout\_7-\/>addWidget(lineEdit\_D,\ 2,\ 1,\ 1,\ 2);}
+\DoxyCodeLine{00657\ }
+\DoxyCodeLine{00658\ \ \ \ \ \ \ \ \ pushButton\_GetPID\ =\ \textcolor{keyword}{new}\ QPushButton(tab\_2);}
+\DoxyCodeLine{00659\ \ \ \ \ \ \ \ \ pushButton\_GetPID-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}pushButton\_GetPID"{}}));}
+\DoxyCodeLine{00660\ }
+\DoxyCodeLine{00661\ \ \ \ \ \ \ \ \ gridLayout\_7-\/>addWidget(pushButton\_GetPID,\ 3,\ 0,\ 1,\ 2);}
+\DoxyCodeLine{00662\ }
+\DoxyCodeLine{00663\ \ \ \ \ \ \ \ \ label\_19\ =\ \textcolor{keyword}{new}\ QLabel(tab\_2);}
+\DoxyCodeLine{00664\ \ \ \ \ \ \ \ \ label\_19-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}label\_19"{}}));}
+\DoxyCodeLine{00665\ }
+\DoxyCodeLine{00666\ \ \ \ \ \ \ \ \ gridLayout\_7-\/>addWidget(label\_19,\ 3,\ 2,\ 1,\ 1);}
+\DoxyCodeLine{00667\ }
+\DoxyCodeLine{00668\ \ \ \ \ \ \ \ \ comboBox\_MemAddress\ =\ \textcolor{keyword}{new}\ QComboBox(tab\_2);}
+\DoxyCodeLine{00669\ \ \ \ \ \ \ \ \ comboBox\_MemAddress-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}comboBox\_MemAddress"{}}));}
+\DoxyCodeLine{00670\ \ \ \ \ \ \ \ \ QFont\ font;}
+\DoxyCodeLine{00671\ \ \ \ \ \ \ \ \ font.setFamily(QString::fromUtf8(\textcolor{stringliteral}{"{}Courier\ New"{}}));}
+\DoxyCodeLine{00672\ \ \ \ \ \ \ \ \ comboBox\_MemAddress-\/>setFont(font);}
+\DoxyCodeLine{00673\ \ \ \ \ \ \ \ \ comboBox\_MemAddress-\/>setMaxVisibleItems(20);}
+\DoxyCodeLine{00674\ }
+\DoxyCodeLine{00675\ \ \ \ \ \ \ \ \ gridLayout\_7-\/>addWidget(comboBox\_MemAddress,\ 3,\ 3,\ 1,\ 1);}
+\DoxyCodeLine{00676\ }
+\DoxyCodeLine{00677\ \ \ \ \ \ \ \ \ verticalSpacer\ =\ \textcolor{keyword}{new}\ QSpacerItem(20,\ 122,\ QSizePolicy::Minimum,\ QSizePolicy::Expanding);}
+\DoxyCodeLine{00678\ }
+\DoxyCodeLine{00679\ \ \ \ \ \ \ \ \ gridLayout\_7-\/>addItem(verticalSpacer,\ 4,\ 2,\ 1,\ 1);}
+\DoxyCodeLine{00680\ }
+\DoxyCodeLine{00681\ \ \ \ \ \ \ \ \ tabWidget-\/>addTab(tab\_2,\ QString());}
+\DoxyCodeLine{00682\ \ \ \ \ \ \ \ \ tab\_3\ =\ \textcolor{keyword}{new}\ QWidget();}
+\DoxyCodeLine{00683\ \ \ \ \ \ \ \ \ tab\_3-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}tab\_3"{}}));}
+\DoxyCodeLine{00684\ \ \ \ \ \ \ \ \ gridLayout\_8\ =\ \textcolor{keyword}{new}\ QGridLayout(tab\_3);}
+\DoxyCodeLine{00685\ \ \ \ \ \ \ \ \ gridLayout\_8-\/>setSpacing(6);}
+\DoxyCodeLine{00686\ \ \ \ \ \ \ \ \ gridLayout\_8-\/>setContentsMargins(11,\ 11,\ 11,\ 11);}
+\DoxyCodeLine{00687\ \ \ \ \ \ \ \ \ gridLayout\_8-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}gridLayout\_8"{}}));}
+\DoxyCodeLine{00688\ \ \ \ \ \ \ \ \ label\_20\ =\ \textcolor{keyword}{new}\ QLabel(tab\_3);}
+\DoxyCodeLine{00689\ \ \ \ \ \ \ \ \ label\_20-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}label\_20"{}}));}
+\DoxyCodeLine{00690\ }
+\DoxyCodeLine{00691\ \ \ \ \ \ \ \ \ gridLayout\_8-\/>addWidget(label\_20,\ 0,\ 0,\ 1,\ 1);}
+\DoxyCodeLine{00692\ }
+\DoxyCodeLine{00693\ \ \ \ \ \ \ \ \ spinBox\_TempUpper\ =\ \textcolor{keyword}{new}\ QSpinBox(tab\_3);}
+\DoxyCodeLine{00694\ \ \ \ \ \ \ \ \ spinBox\_TempUpper-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}spinBox\_TempUpper"{}}));}
+\DoxyCodeLine{00695\ \ \ \ \ \ \ \ \ spinBox\_TempUpper-\/>setEnabled(\textcolor{keyword}{false});}
+\DoxyCodeLine{00696\ \ \ \ \ \ \ \ \ spinBox\_TempUpper-\/>setMinimum(200);}
+\DoxyCodeLine{00697\ \ \ \ \ \ \ \ \ spinBox\_TempUpper-\/>setMaximum(290);}
+\DoxyCodeLine{00698\ \ \ \ \ \ \ \ \ spinBox\_TempUpper-\/>setSingleStep(10);}
+\DoxyCodeLine{00699\ \ \ \ \ \ \ \ \ spinBox\_TempUpper-\/>setValue(280);}
+\DoxyCodeLine{00700\ }
+\DoxyCodeLine{00701\ \ \ \ \ \ \ \ \ gridLayout\_8-\/>addWidget(spinBox\_TempUpper,\ 0,\ 1,\ 1,\ 1);}
+\DoxyCodeLine{00702\ }
+\DoxyCodeLine{00703\ \ \ \ \ \ \ \ \ label\_21\ =\ \textcolor{keyword}{new}\ QLabel(tab\_3);}
+\DoxyCodeLine{00704\ \ \ \ \ \ \ \ \ label\_21-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}label\_21"{}}));}
+\DoxyCodeLine{00705\ }
+\DoxyCodeLine{00706\ \ \ \ \ \ \ \ \ gridLayout\_8-\/>addWidget(label\_21,\ 1,\ 0,\ 1,\ 1);}
+\DoxyCodeLine{00707\ }
+\DoxyCodeLine{00708\ \ \ \ \ \ \ \ \ doubleSpinBox\_TempDrop\ =\ \textcolor{keyword}{new}\ QDoubleSpinBox(tab\_3);}
+\DoxyCodeLine{00709\ \ \ \ \ \ \ \ \ doubleSpinBox\_TempDrop-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}doubleSpinBox\_TempDrop"{}}));}
+\DoxyCodeLine{00710\ \ \ \ \ \ \ \ \ doubleSpinBox\_TempDrop-\/>setDecimals(1);}
+\DoxyCodeLine{00711\ \ \ \ \ \ \ \ \ doubleSpinBox\_TempDrop-\/>setMaximum(100.000000000000000);}
+\DoxyCodeLine{00712\ \ \ \ \ \ \ \ \ doubleSpinBox\_TempDrop-\/>setValue(10.000000000000000);}
+\DoxyCodeLine{00713\ }
+\DoxyCodeLine{00714\ \ \ \ \ \ \ \ \ gridLayout\_8-\/>addWidget(doubleSpinBox\_TempDrop,\ 1,\ 1,\ 1,\ 1);}
+\DoxyCodeLine{00715\ }
+\DoxyCodeLine{00716\ \ \ \ \ \ \ \ \ label\_30\ =\ \textcolor{keyword}{new}\ QLabel(tab\_3);}
+\DoxyCodeLine{00717\ \ \ \ \ \ \ \ \ label\_30-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}label\_30"{}}));}
+\DoxyCodeLine{00718\ }
+\DoxyCodeLine{00719\ \ \ \ \ \ \ \ \ gridLayout\_8-\/>addWidget(label\_30,\ 2,\ 0,\ 1,\ 1);}
+\DoxyCodeLine{00720\ }
+\DoxyCodeLine{00721\ \ \ \ \ \ \ \ \ textEdit\ =\ \textcolor{keyword}{new}\ QTextEdit(tab\_3);}
+\DoxyCodeLine{00722\ \ \ \ \ \ \ \ \ textEdit-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}textEdit"{}}));}
+\DoxyCodeLine{00723\ \ \ \ \ \ \ \ \ textEdit-\/>setEnabled(\textcolor{keyword}{false});}
+\DoxyCodeLine{00724\ \ \ \ \ \ \ \ \ textEdit-\/>setReadOnly(\textcolor{keyword}{true});}
+\DoxyCodeLine{00725\ }
+\DoxyCodeLine{00726\ \ \ \ \ \ \ \ \ gridLayout\_8-\/>addWidget(textEdit,\ 3,\ 0,\ 1,\ 2);}
+\DoxyCodeLine{00727\ }
+\DoxyCodeLine{00728\ \ \ \ \ \ \ \ \ checkBox\_TempDropEnable\ =\ \textcolor{keyword}{new}\ QCheckBox(tab\_3);}
+\DoxyCodeLine{00729\ \ \ \ \ \ \ \ \ checkBox\_TempDropEnable-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}checkBox\_TempDropEnable"{}}));}
+\DoxyCodeLine{00730\ \ \ \ \ \ \ \ \ checkBox\_TempDropEnable-\/>setChecked(\textcolor{keyword}{true});}
+\DoxyCodeLine{00731\ }
+\DoxyCodeLine{00732\ \ \ \ \ \ \ \ \ gridLayout\_8-\/>addWidget(checkBox\_TempDropEnable,\ 2,\ 1,\ 1,\ 1);}
+\DoxyCodeLine{00733\ }
+\DoxyCodeLine{00734\ \ \ \ \ \ \ \ \ tabWidget-\/>addTab(tab\_3,\ QString());}
+\DoxyCodeLine{00735\ }
+\DoxyCodeLine{00736\ \ \ \ \ \ \ \ \ gridLayout\_5-\/>addWidget(tabWidget,\ 1,\ 0,\ 1,\ 2);}
+\DoxyCodeLine{00737\ }
+\DoxyCodeLine{00738\ \ \ \ \ \ \ \ \ groupBox\_4\ =\ \textcolor{keyword}{new}\ QGroupBox(centralWidget);}
+\DoxyCodeLine{00739\ \ \ \ \ \ \ \ \ groupBox\_4-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}groupBox\_4"{}}));}
+\DoxyCodeLine{00740\ \ \ \ \ \ \ \ \ gridLayout\_9\ =\ \textcolor{keyword}{new}\ QGridLayout(groupBox\_4);}
+\DoxyCodeLine{00741\ \ \ \ \ \ \ \ \ gridLayout\_9-\/>setSpacing(6);}
+\DoxyCodeLine{00742\ \ \ \ \ \ \ \ \ gridLayout\_9-\/>setContentsMargins(11,\ 11,\ 11,\ 11);}
+\DoxyCodeLine{00743\ \ \ \ \ \ \ \ \ gridLayout\_9-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}gridLayout\_9"{}}));}
+\DoxyCodeLine{00744\ \ \ \ \ \ \ \ \ checkBoxStatusRun\ =\ \textcolor{keyword}{new}\ QCheckBox(groupBox\_4);}
+\DoxyCodeLine{00745\ \ \ \ \ \ \ \ \ checkBoxStatusRun-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}checkBoxStatusRun"{}}));}
+\DoxyCodeLine{00746\ \ \ \ \ \ \ \ \ checkBoxStatusRun-\/>setEnabled(\textcolor{keyword}{true});}
+\DoxyCodeLine{00747\ }
+\DoxyCodeLine{00748\ \ \ \ \ \ \ \ \ gridLayout\_9-\/>addWidget(checkBoxStatusRun,\ 0,\ 0,\ 1,\ 1);}
+\DoxyCodeLine{00749\ }
+\DoxyCodeLine{00750\ \ \ \ \ \ \ \ \ label\_23\ =\ \textcolor{keyword}{new}\ QLabel(groupBox\_4);}
+\DoxyCodeLine{00751\ \ \ \ \ \ \ \ \ label\_23-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}label\_23"{}}));}
+\DoxyCodeLine{00752\ }
+\DoxyCodeLine{00753\ \ \ \ \ \ \ \ \ gridLayout\_9-\/>addWidget(label\_23,\ 0,\ 1,\ 1,\ 1);}
+\DoxyCodeLine{00754\ }
+\DoxyCodeLine{00755\ \ \ \ \ \ \ \ \ checkBoxStatusPeriodic\ =\ \textcolor{keyword}{new}\ QCheckBox(groupBox\_4);}
+\DoxyCodeLine{00756\ \ \ \ \ \ \ \ \ checkBoxStatusPeriodic-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}checkBoxStatusPeriodic"{}}));}
+\DoxyCodeLine{00757\ \ \ \ \ \ \ \ \ checkBoxStatusPeriodic-\/>setEnabled(\textcolor{keyword}{true});}
+\DoxyCodeLine{00758\ }
+\DoxyCodeLine{00759\ \ \ \ \ \ \ \ \ gridLayout\_9-\/>addWidget(checkBoxStatusPeriodic,\ 1,\ 0,\ 1,\ 1);}
+\DoxyCodeLine{00760\ }
+\DoxyCodeLine{00761\ \ \ \ \ \ \ \ \ label\_24\ =\ \textcolor{keyword}{new}\ QLabel(groupBox\_4);}
+\DoxyCodeLine{00762\ \ \ \ \ \ \ \ \ label\_24-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}label\_24"{}}));}
+\DoxyCodeLine{00763\ }
+\DoxyCodeLine{00764\ \ \ \ \ \ \ \ \ gridLayout\_9-\/>addWidget(label\_24,\ 1,\ 1,\ 1,\ 2);}
+\DoxyCodeLine{00765\ }
+\DoxyCodeLine{00766\ \ \ \ \ \ \ \ \ checkBoxStautsTempCheck\ =\ \textcolor{keyword}{new}\ QCheckBox(groupBox\_4);}
+\DoxyCodeLine{00767\ \ \ \ \ \ \ \ \ checkBoxStautsTempCheck-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}checkBoxStautsTempCheck"{}}));}
+\DoxyCodeLine{00768\ \ \ \ \ \ \ \ \ checkBoxStautsTempCheck-\/>setEnabled(\textcolor{keyword}{true});}
+\DoxyCodeLine{00769\ }
+\DoxyCodeLine{00770\ \ \ \ \ \ \ \ \ gridLayout\_9-\/>addWidget(checkBoxStautsTempCheck,\ 2,\ 0,\ 1,\ 1);}
+\DoxyCodeLine{00771\ }
+\DoxyCodeLine{00772\ \ \ \ \ \ \ \ \ label\_25\ =\ \textcolor{keyword}{new}\ QLabel(groupBox\_4);}
+\DoxyCodeLine{00773\ \ \ \ \ \ \ \ \ label\_25-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}label\_25"{}}));}
+\DoxyCodeLine{00774\ }
+\DoxyCodeLine{00775\ \ \ \ \ \ \ \ \ gridLayout\_9-\/>addWidget(label\_25,\ 2,\ 1,\ 1,\ 2);}
+\DoxyCodeLine{00776\ }
+\DoxyCodeLine{00777\ \ \ \ \ \ \ \ \ checkBoxStatusTempDrop\ =\ \textcolor{keyword}{new}\ QCheckBox(groupBox\_4);}
+\DoxyCodeLine{00778\ \ \ \ \ \ \ \ \ checkBoxStatusTempDrop-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}checkBoxStatusTempDrop"{}}));}
+\DoxyCodeLine{00779\ \ \ \ \ \ \ \ \ checkBoxStatusTempDrop-\/>setEnabled(\textcolor{keyword}{true});}
+\DoxyCodeLine{00780\ }
+\DoxyCodeLine{00781\ \ \ \ \ \ \ \ \ gridLayout\_9-\/>addWidget(checkBoxStatusTempDrop,\ 3,\ 0,\ 1,\ 1);}
+\DoxyCodeLine{00782\ }
+\DoxyCodeLine{00783\ \ \ \ \ \ \ \ \ label\_26\ =\ \textcolor{keyword}{new}\ QLabel(groupBox\_4);}
+\DoxyCodeLine{00784\ \ \ \ \ \ \ \ \ label\_26-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}label\_26"{}}));}
+\DoxyCodeLine{00785\ }
+\DoxyCodeLine{00786\ \ \ \ \ \ \ \ \ gridLayout\_9-\/>addWidget(label\_26,\ 3,\ 1,\ 1,\ 2);}
+\DoxyCodeLine{00787\ }
+\DoxyCodeLine{00788\ \ \ \ \ \ \ \ \ checkBoxStatusSTC\ =\ \textcolor{keyword}{new}\ QCheckBox(groupBox\_4);}
+\DoxyCodeLine{00789\ \ \ \ \ \ \ \ \ checkBoxStatusSTC-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}checkBoxStatusSTC"{}}));}
+\DoxyCodeLine{00790\ \ \ \ \ \ \ \ \ checkBoxStatusSTC-\/>setEnabled(\textcolor{keyword}{true});}
+\DoxyCodeLine{00791\ }
+\DoxyCodeLine{00792\ \ \ \ \ \ \ \ \ gridLayout\_9-\/>addWidget(checkBoxStatusSTC,\ 4,\ 0,\ 1,\ 1);}
+\DoxyCodeLine{00793\ }
+\DoxyCodeLine{00794\ \ \ \ \ \ \ \ \ label\_27\ =\ \textcolor{keyword}{new}\ QLabel(groupBox\_4);}
+\DoxyCodeLine{00795\ \ \ \ \ \ \ \ \ label\_27-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}label\_27"{}}));}
+\DoxyCodeLine{00796\ }
+\DoxyCodeLine{00797\ \ \ \ \ \ \ \ \ gridLayout\_9-\/>addWidget(label\_27,\ 4,\ 1,\ 1,\ 2);}
+\DoxyCodeLine{00798\ }
+\DoxyCodeLine{00799\ \ \ \ \ \ \ \ \ checkBoxStatusRecord\ =\ \textcolor{keyword}{new}\ QCheckBox(groupBox\_4);}
+\DoxyCodeLine{00800\ \ \ \ \ \ \ \ \ checkBoxStatusRecord-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}checkBoxStatusRecord"{}}));}
+\DoxyCodeLine{00801\ \ \ \ \ \ \ \ \ checkBoxStatusRecord-\/>setEnabled(\textcolor{keyword}{true});}
+\DoxyCodeLine{00802\ }
+\DoxyCodeLine{00803\ \ \ \ \ \ \ \ \ gridLayout\_9-\/>addWidget(checkBoxStatusRecord,\ 5,\ 0,\ 1,\ 1);}
+\DoxyCodeLine{00804\ }
+\DoxyCodeLine{00805\ \ \ \ \ \ \ \ \ label\_28\ =\ \textcolor{keyword}{new}\ QLabel(groupBox\_4);}
+\DoxyCodeLine{00806\ \ \ \ \ \ \ \ \ label\_28-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}label\_28"{}}));}
+\DoxyCodeLine{00807\ }
+\DoxyCodeLine{00808\ \ \ \ \ \ \ \ \ gridLayout\_9-\/>addWidget(label\_28,\ 5,\ 1,\ 1,\ 1);}
+\DoxyCodeLine{00809\ }
+\DoxyCodeLine{00810\ \ \ \ \ \ \ \ \ label\_18\ =\ \textcolor{keyword}{new}\ QLabel(groupBox\_4);}
+\DoxyCodeLine{00811\ \ \ \ \ \ \ \ \ label\_18-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}label\_18"{}}));}
+\DoxyCodeLine{00812\ \ \ \ \ \ \ \ \ label\_18-\/>setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);}
+\DoxyCodeLine{00813\ }
+\DoxyCodeLine{00814\ \ \ \ \ \ \ \ \ gridLayout\_9-\/>addWidget(label\_18,\ 6,\ 0,\ 1,\ 2);}
+\DoxyCodeLine{00815\ }
+\DoxyCodeLine{00816\ \ \ \ \ \ \ \ \ horizontalSpacer\_3\ =\ \textcolor{keyword}{new}\ QSpacerItem(123,\ 20,\ QSizePolicy::Expanding,\ QSizePolicy::Minimum);}
+\DoxyCodeLine{00817\ }
+\DoxyCodeLine{00818\ \ \ \ \ \ \ \ \ gridLayout\_9-\/>addItem(horizontalSpacer\_3,\ 6,\ 2,\ 1,\ 1);}
+\DoxyCodeLine{00819\ }
+\DoxyCodeLine{00820\ \ \ \ \ \ \ \ \ lineEdit\_TempCheckCount\ =\ \textcolor{keyword}{new}\ QLineEdit(groupBox\_4);}
+\DoxyCodeLine{00821\ \ \ \ \ \ \ \ \ lineEdit\_TempCheckCount-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}lineEdit\_TempCheckCount"{}}));}
+\DoxyCodeLine{00822\ \ \ \ \ \ \ \ \ lineEdit\_TempCheckCount-\/>setEnabled(\textcolor{keyword}{false});}
+\DoxyCodeLine{00823\ \ \ \ \ \ \ \ \ sizePolicy.setHeightForWidth(lineEdit\_TempCheckCount-\/>sizePolicy().hasHeightForWidth());}
+\DoxyCodeLine{00824\ \ \ \ \ \ \ \ \ lineEdit\_TempCheckCount-\/>setSizePolicy(sizePolicy);}
+\DoxyCodeLine{00825\ }
+\DoxyCodeLine{00826\ \ \ \ \ \ \ \ \ gridLayout\_9-\/>addWidget(lineEdit\_TempCheckCount,\ 7,\ 0,\ 1,\ 3);}
+\DoxyCodeLine{00827\ }
+\DoxyCodeLine{00828\ \ \ \ \ \ \ \ \ verticalSpacer\_2\ =\ \textcolor{keyword}{new}\ QSpacerItem(20,\ 41,\ QSizePolicy::Minimum,\ QSizePolicy::Expanding);}
+\DoxyCodeLine{00829\ }
+\DoxyCodeLine{00830\ \ \ \ \ \ \ \ \ gridLayout\_9-\/>addItem(verticalSpacer\_2,\ 8,\ 2,\ 1,\ 1);}
+\DoxyCodeLine{00831\ }
+\DoxyCodeLine{00832\ }
+\DoxyCodeLine{00833\ \ \ \ \ \ \ \ \ gridLayout\_5-\/>addWidget(groupBox\_4,\ 1,\ 2,\ 1,\ 2);}
+\DoxyCodeLine{00834\ }
+\DoxyCodeLine{00835\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window}{MainWindow}}-\/>setCentralWidget(centralWidget);}
+\DoxyCodeLine{00836\ \ \ \ \ \ \ \ \ menuBar\ =\ \textcolor{keyword}{new}\ QMenuBar(\mbox{\hyperlink{class_main_window}{MainWindow}});}
+\DoxyCodeLine{00837\ \ \ \ \ \ \ \ \ menuBar-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}menuBar"{}}));}
+\DoxyCodeLine{00838\ \ \ \ \ \ \ \ \ menuBar-\/>setGeometry(QRect(0,\ 0,\ 1302,\ 26));}
+\DoxyCodeLine{00839\ \ \ \ \ \ \ \ \ menuFile\ =\ \textcolor{keyword}{new}\ QMenu(menuBar);}
+\DoxyCodeLine{00840\ \ \ \ \ \ \ \ \ menuFile-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}menuFile"{}}));}
+\DoxyCodeLine{00841\ \ \ \ \ \ \ \ \ menuHelp\ =\ \textcolor{keyword}{new}\ QMenu(menuBar);}
+\DoxyCodeLine{00842\ \ \ \ \ \ \ \ \ menuHelp-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}menuHelp"{}}));}
+\DoxyCodeLine{00843\ \ \ \ \ \ \ \ \ menuConfigure\ =\ \textcolor{keyword}{new}\ QMenu(menuBar);}
+\DoxyCodeLine{00844\ \ \ \ \ \ \ \ \ menuConfigure-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}menuConfigure"{}}));}
+\DoxyCodeLine{00845\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window}{MainWindow}}-\/>setMenuBar(menuBar);}
+\DoxyCodeLine{00846\ \ \ \ \ \ \ \ \ mainToolBar\ =\ \textcolor{keyword}{new}\ QToolBar(\mbox{\hyperlink{class_main_window}{MainWindow}});}
+\DoxyCodeLine{00847\ \ \ \ \ \ \ \ \ mainToolBar-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}mainToolBar"{}}));}
+\DoxyCodeLine{00848\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window}{MainWindow}}-\/>addToolBar(Qt::TopToolBarArea,\ mainToolBar);}
+\DoxyCodeLine{00849\ \ \ \ \ \ \ \ \ statusBar\ =\ \textcolor{keyword}{new}\ QStatusBar(\mbox{\hyperlink{class_main_window}{MainWindow}});}
+\DoxyCodeLine{00850\ \ \ \ \ \ \ \ \ statusBar-\/>setObjectName(QString::fromUtf8(\textcolor{stringliteral}{"{}statusBar"{}}));}
+\DoxyCodeLine{00851\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window}{MainWindow}}-\/>setStatusBar(statusBar);}
+\DoxyCodeLine{00852\ }
+\DoxyCodeLine{00853\ \ \ \ \ \ \ \ \ menuBar-\/>addAction(menuFile-\/>menuAction());}
+\DoxyCodeLine{00854\ \ \ \ \ \ \ \ \ menuBar-\/>addAction(menuConfigure-\/>menuAction());}
+\DoxyCodeLine{00855\ \ \ \ \ \ \ \ \ menuBar-\/>addAction(menuHelp-\/>menuAction());}
+\DoxyCodeLine{00856\ \ \ \ \ \ \ \ \ menuFile-\/>addAction(actionOpen\_File);}
+\DoxyCodeLine{00857\ \ \ \ \ \ \ \ \ menuHelp-\/>addAction(actionHelp\_Page);}
+\DoxyCodeLine{00858\ \ \ \ \ \ \ \ \ menuConfigure-\/>addAction(action\_Setting\_parameters\_for\_TempCheck);}
+\DoxyCodeLine{00859\ \ \ \ \ \ \ \ \ menuConfigure-\/>addAction(action\_Setting\_plot);}
+\DoxyCodeLine{00860\ }
+\DoxyCodeLine{00861\ \ \ \ \ \ \ \ \ retranslateUi(\mbox{\hyperlink{class_main_window}{MainWindow}});}
+\DoxyCodeLine{00862\ }
+\DoxyCodeLine{00863\ \ \ \ \ \ \ \ \ comboBox\_AT-\/>setCurrentIndex(-\/1);}
+\DoxyCodeLine{00864\ \ \ \ \ \ \ \ \ tabWidget-\/>setCurrentIndex(0);}
+\DoxyCodeLine{00865\ }
+\DoxyCodeLine{00866\ }
+\DoxyCodeLine{00867\ \ \ \ \ \ \ \ \ QMetaObject::connectSlotsByName(\mbox{\hyperlink{class_main_window}{MainWindow}});}
+\DoxyCodeLine{00868\ \ \ \ \ \}\ \textcolor{comment}{//\ setupUi}}
+\DoxyCodeLine{00869\ }
+\DoxyCodeLine{00870\ \ \ \ \ \textcolor{keywordtype}{void}\ retranslateUi(QMainWindow\ *\mbox{\hyperlink{class_main_window}{MainWindow}})}
+\DoxyCodeLine{00871\ \ \ \ \ \{}
+\DoxyCodeLine{00872\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window}{MainWindow}}-\/>setWindowTitle(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Omron\ E5CC\ Temp.\ Control"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00873\ \ \ \ \ \ \ \ \ actionOpen\_File-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Open\ File"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00874\ \ \ \ \ \ \ \ \ actionHelp\_Page-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Help\ Page"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00875\ \ \ \ \ \ \ \ \ action\_Setting\_parameters\_for\_TempCheck-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}\&Setting\_parameters\_for\_TempCheck"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00876\ \ \ \ \ \ \ \ \ action\_Plot-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Setting\_Plot"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00877\ \ \ \ \ \ \ \ \ action\_Setting\_plot-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}\&Setting\_plot"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00878\ \ \ \ \ \ \ \ \ action\_Setting\_Temperature\_Drop-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}\&Setting\_Temperature\_Drop"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00879\ \ \ \ \ \ \ \ \ groupBox\_5-\/>setTitle(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}TempCheck\ (No\ control)"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00880\ \ \ \ \ \ \ \ \ label\_16-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Lower\ limit\ of\ temperature\ change"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00881\ \ \ \ \ \ \ \ \ label\_14-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Ask\ Temperature\ every\ (sec)"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00882\ \ \ \ \ \ \ \ \ label\_15-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Number\ of\ times\ to\ check\ \ temperature"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00883\ \ \ \ \ \ \ \ \ label\_17-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Temperature\ range\ to\ ignore"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00884\ \ \ \ \ \ \ \ \ checkBox\_Ignore-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Enable\ Temperature\ range\ to\ ignor"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00885\ \ \ \ \ \ \ \ \ groupBox-\/>setTitle(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Log\ Massage"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00886\ \ \ \ \ \ \ \ \ groupBox\_3-\/>setTitle(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Periodic\ functions"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00887\ \ \ \ \ \ \ \ \ label\_22-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Dir\ path"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00888\ \ \ \ \ \ \ \ \ checkBox\_dataSave-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Data\ Save"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00889\ \ \ \ \ \ \ \ \ label\_6-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Ask\ output\ power\ every\ (sec)"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00890\ \ \ \ \ \ \ \ \ pushButton\_Log-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Logging\ start"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00891\ \ \ \ \ \ \ \ \ label\_3-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Record\ temp.\ every\ [s]\ :"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00892\ \ \ \ \ \ \ \ \ groupBox\_2-\/>setTitle(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}E5CC\ control"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00893\ \ \ \ \ \ \ \ \ label\_9-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Output\ Limit\ [\%]:"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00894\ \ \ \ \ \ \ \ \ label\_5-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Address\ :"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00895\ \ \ \ \ \ \ \ \ pushButton\_Connect-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Connect"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00896\ \ \ \ \ \ \ \ \ pushButton\_RunStop-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Run"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00897\ \ \ \ \ \ \ \ \ label-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Present\ Temp.\ :"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00898\ \ \ \ \ \ \ \ \ label\_SV\_2-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Set\ Temp.\ (2)\ [C]\ :"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00899\ \ \ \ \ \ \ \ \ label\_4-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Present\ Set\ Temp.\ :"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00900\ \ \ \ \ \ \ \ \ label\_7-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Temp.\ Toler.\ [C]"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00901\ \ \ \ \ \ \ \ \ label\_10-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Present\ output\ :"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00902\ \ \ \ \ \ \ \ \ label\_8-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Temp.\ step\ size\ [C]\ :"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00903\ \ \ \ \ \ \ \ \ label\_29-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Tempe\ diff\ :"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00904\ \ \ \ \ \ \ \ \ label\_SV2WaitTime-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}SV\ (2)\ wait\ time\ [min]"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00905\ \ \ \ \ \ \ \ \ label\_TimeStable-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Temp.\ stable\ for\ [min]\ :"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00906\ \ \ \ \ \ \ \ \ label\_2-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Set\ Temp.\ [C]\ :"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00907\ \ \ \ \ \ \ \ \ lineEdit\_SV-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}30"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00908\ \ \ \ \ \ \ \ \ pushButton\_Control-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Slow\ Temperature\ Control"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00909\ \ \ \ \ \ \ \ \ pushButton\_AskStatus-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Ask\ Status"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00910\ \ \ \ \ \ \ \ \ pushButton\_SetSV-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Apply\ Set-\/temp"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00911\ \ \ \ \ \ \ \ \ tabWidget-\/>setTabText(tabWidget-\/>indexOf(tab),\ QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Temp.\ Control"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00912\ \ \ \ \ \ \ \ \ label\_11-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}P"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00913\ \ \ \ \ \ \ \ \ label\_12-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}I"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00914\ \ \ \ \ \ \ \ \ label\_13-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}D"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00915\ \ \ \ \ \ \ \ \ pushButton\_GetPID-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Get\ PID"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00916\ \ \ \ \ \ \ \ \ label\_19-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Commands"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00917\ \ \ \ \ \ \ \ \ tabWidget-\/>setTabText(tabWidget-\/>indexOf(tab\_2),\ QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Get\ PID\ /\ communication"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00918\ \ \ \ \ \ \ \ \ label\_20-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Upper\ Temperature"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00919\ \ \ \ \ \ \ \ \ label\_21-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Temperature\ Drop\ (C/min)"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00920\ \ \ \ \ \ \ \ \ label\_30-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Enable\ emergency\ stop\ due\ to\ temperature\ drop?"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00921\ \ \ \ \ \ \ \ \ textEdit-\/>setHtml(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}<!DOCTYPE\ HTML\ PUBLIC\ \(\backslash\)"{}-\///W3C//DTD\ HTML\ 4.0//EN\(\backslash\)"{}\ \(\backslash\)"{}http://www.w3.org/TR/REC-\/html40/strict.dtd\(\backslash\)"{}>\(\backslash\)n"{}}}
+\DoxyCodeLine{00922\ \textcolor{stringliteral}{"{}<html><head><meta\ name=\(\backslash\)"{}qrichtext\(\backslash\)"{}\ content=\(\backslash\)"{}1\(\backslash\)"{}\ /><meta\ charset=\(\backslash\)"{}utf-\/8\(\backslash\)"{}\ /><style\ type=\(\backslash\)"{}text/css\(\backslash\)"{}>\(\backslash\)n"{}}}
+\DoxyCodeLine{00923\ \textcolor{stringliteral}{"{}p,\ li\ \{\ white-\/space:\ pre-\/wrap;\ \}\(\backslash\)n"{}}}
+\DoxyCodeLine{00924\ \textcolor{stringliteral}{"{}hr\ \{\ height:\ 1px;\ border-\/width:\ 0;\ \}\(\backslash\)n"{}}}
+\DoxyCodeLine{00925\ \textcolor{stringliteral}{"{}li.unchecked::marker\ \{\ content:\ \(\backslash\)"{}\(\backslash\)\(\backslash\)2610\(\backslash\)"{};\ \}\(\backslash\)n"{}}}
+\DoxyCodeLine{00926\ \textcolor{stringliteral}{"{}li.checked::marker\ \{\ content:\ \(\backslash\)"{}\(\backslash\)\(\backslash\)2612\(\backslash\)"{};\ \}\(\backslash\)n"{}}}
+\DoxyCodeLine{00927\ \textcolor{stringliteral}{"{}</style></head><body\ style=\(\backslash\)"{}\ font-\/family:'Yu\ Gothic\ UI';\ font-\/size:9pt;\ font-\/weight:400;\ font-\/style:normal;\(\backslash\)"{}>\(\backslash\)n"{}}}
+\DoxyCodeLine{00928\ \textcolor{stringliteral}{"{}<p\ style=\(\backslash\)"{}\ margin-\/top:0px;\ margin-\/bottom:0px;\ margin-\/left:0px;\ margin-\/right:0px;\ -\/qt-\/block-\/indent:0;\ text-\/indent:0px;\(\backslash\)"{}><span\ style=\(\backslash\)"{}\ font-\/size:12pt;\ font-\/weight:700;\ color:\#ff0000;\(\backslash\)"{}>Emergency\ stop\ when\ the\ temperature\ exceeds\ Upper\ Temperature.</span></p>\(\backslash\)n"{}}}
+\DoxyCodeLine{00929\ \textcolor{stringliteral}{"{}<p\ style=\(\backslash\)"{}-\/qt-\/paragraph-\/type:empty;\ margin-\/top:0px;\ margin-\/bottom:0px;\ margin-\/left:0px;\ margin-\/right:0px;\ -\/qt-\/block-\/indent:0;\ text-\/indent:0px;\ font-\/size:12pt;\ font-\/weight:700;\ color:\#ff0000;\(\backslash\)"{}><br\ /></p>\(\backslash\)n"{}}}
+\DoxyCodeLine{00930\ \textcolor{stringliteral}{"{}<p\ style=\(\backslash\)"{}\ margin-\/top:0px;\ margin-\/bottom:0px;\ m"{}}}
+\DoxyCodeLine{00931\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}argin-\/left:0px;\ margin-\/right:0px;\ -\/qt-\/block-\/indent:0;\ text-\/indent:0px;\(\backslash\)"{}><span\ style=\(\backslash\)"{}\ font-\/size:12pt;\ font-\/weight:700;\ color:\#ff0000;\(\backslash\)"{}>An\ emergency\ stop\ will\ also\ occur\ if\ the\ temperature\ drops\ beyond\ the\ Temperature\ Drop.</span></p>\(\backslash\)n"{}}}
+\DoxyCodeLine{00932\ \textcolor{stringliteral}{"{}<p\ style=\(\backslash\)"{}\ margin-\/top:0px;\ margin-\/bottom:0px;\ margin-\/left:0px;\ margin-\/right:0px;\ -\/qt-\/block-\/indent:0;\ text-\/indent:0px;\(\backslash\)"{}>This\ temperature\ drop\ safety\ mode\ does\ not\ work\ during\ Slow\ Temperature\ control.</p></body></html>"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00933\ \ \ \ \ \ \ \ \ checkBox\_TempDropEnable-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Yes"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00934\ \ \ \ \ \ \ \ \ tabWidget-\/>setTabText(tabWidget-\/>indexOf(tab\_3),\ QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Safety"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00935\ \ \ \ \ \ \ \ \ groupBox\_4-\/>setTitle(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Status\ (No\ control\ )"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00936\ \ \ \ \ \ \ \ \ checkBoxStatusRun-\/>setText(QString());}
+\DoxyCodeLine{00937\ \ \ \ \ \ \ \ \ label\_23-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Run"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00938\ \ \ \ \ \ \ \ \ checkBoxStatusPeriodic-\/>setText(QString());}
+\DoxyCodeLine{00939\ \ \ \ \ \ \ \ \ label\_24-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Periodic\ functions"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00940\ \ \ \ \ \ \ \ \ checkBoxStautsTempCheck-\/>setText(QString());}
+\DoxyCodeLine{00941\ \ \ \ \ \ \ \ \ label\_25-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}TempCheck"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00942\ \ \ \ \ \ \ \ \ checkBoxStatusTempDrop-\/>setText(QString());}
+\DoxyCodeLine{00943\ \ \ \ \ \ \ \ \ label\_26-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Temperature\ drop"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00944\ \ \ \ \ \ \ \ \ checkBoxStatusSTC-\/>setText(QString());}
+\DoxyCodeLine{00945\ \ \ \ \ \ \ \ \ label\_27-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Slow\ Temperature\ Controle"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00946\ \ \ \ \ \ \ \ \ checkBoxStatusRecord-\/>setText(QString());}
+\DoxyCodeLine{00947\ \ \ \ \ \ \ \ \ label\_28-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Record"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00948\ \ \ \ \ \ \ \ \ label\_18-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Message"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00949\ \ \ \ \ \ \ \ \ menuFile-\/>setTitle(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}File"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00950\ \ \ \ \ \ \ \ \ menuHelp-\/>setTitle(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Help"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00951\ \ \ \ \ \ \ \ \ menuConfigure-\/>setTitle(QCoreApplication::translate(\textcolor{stringliteral}{"{}MainWindow"{}},\ \textcolor{stringliteral}{"{}Configure"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00952\ \ \ \ \ \}\ \textcolor{comment}{//\ retranslateUi}}
+\DoxyCodeLine{00953\ }
+\DoxyCodeLine{00954\ \};}
+\DoxyCodeLine{00955\ }
+\DoxyCodeLine{00956\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ui}{Ui}}\ \{}
+\DoxyCodeLine{00957\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ui_1_1_main_window}{MainWindow}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_ui___main_window}{Ui\_MainWindow}}\ \{\};}
+\DoxyCodeLine{00958\ \}\ \textcolor{comment}{//\ namespace\ Ui}}
+\DoxyCodeLine{00959\ }
+\DoxyCodeLine{00960\ QT\_END\_NAMESPACE}
+\DoxyCodeLine{00961\ }
+\DoxyCodeLine{00962\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ UI\_MAINWINDOW\_H}}
+
+\end{DoxyCode}

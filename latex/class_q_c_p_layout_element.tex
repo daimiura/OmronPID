@@ -18,22 +18,24 @@ enum \mbox{\hyperlink{class_q_c_p_layout_element_a0d83360e05735735aaf6d7983c5637
 , \mbox{\hyperlink{class_q_c_p_layout_element_a0d83360e05735735aaf6d7983c56374da288cb59a92280e47261a341f2813e676}{up\+Margins}}
 , \mbox{\hyperlink{class_q_c_p_layout_element_a0d83360e05735735aaf6d7983c56374da5d1ccf5d79967c232c3c511796860045}{up\+Layout}}
  \}
-\item 
+\begin{DoxyCompactList}\small\item\em Defines the phases of the update process, that happens just before a replot. \end{DoxyCompactList}\item 
 enum \mbox{\hyperlink{class_q_c_p_layout_element_a0afb3e5773529e4bd20e448f81be4d2a}{Size\+Constraint\+Rect}} \{ \mbox{\hyperlink{class_q_c_p_layout_element_a0afb3e5773529e4bd20e448f81be4d2aa7fa7e25cd23758b9915c64ed9f1be26c}{scr\+Inner\+Rect}}
 , \mbox{\hyperlink{class_q_c_p_layout_element_a0afb3e5773529e4bd20e448f81be4d2aabe2745b41a6131ed194e13591b08e04d}{scr\+Outer\+Rect}}
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Defines to which rect of a layout element the size constraints that can be set via \mbox{\hyperlink{class_q_c_p_layout_element_a5dd29a3c8bc88440c97c06b67be7886b}{set\+Minimum\+Size}} and \mbox{\hyperlink{class_q_c_p_layout_element_a74eb5280a737ab44833d506db65efd95}{set\+Maximum\+Size}} apply. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_q_c_p_layout_element_a8947f0ada17e672aaba3d424cbbb67e3}{QCPLayout\+Element}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$parent\+Plot=0)
-\item 
-\mbox{\hyperlink{class_q_c_p_layout}{QCPLayout}} $\ast$ \mbox{\hyperlink{class_q_c_p_layout_element_a4efdcbde9d28f410e5ef166c9d691deb}{layout}} () const
-\item 
+\mbox{\Hypertarget{class_q_c_p_layout_element_a8947f0ada17e672aaba3d424cbbb67e3}\label{class_q_c_p_layout_element_a8947f0ada17e672aaba3d424cbbb67e3}} 
+{\bfseries QCPLayout\+Element} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$parent\+Plot=0)
+\begin{DoxyCompactList}\small\item\em Creates an instance of \mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}} and sets default values. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_q_c_p_layout_element_a4efdcbde9d28f410e5ef166c9d691deb}\label{class_q_c_p_layout_element_a4efdcbde9d28f410e5ef166c9d691deb}} 
+\mbox{\hyperlink{class_q_c_p_layout}{QCPLayout}} $\ast$ {\bfseries layout} () const
+\begin{DoxyCompactList}\small\item\em Returns the parent layout of this layout element. \end{DoxyCompactList}\item 
 QRect \mbox{\hyperlink{class_q_c_p_layout_element_a208effccfe2cca4a0eaf9393e60f2dd4}{rect}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the inner rect of this layout element. \end{DoxyCompactList}\item 
 QRect \mbox{\hyperlink{class_q_c_p_layout_element_a2a32a12a6161c9dffbadeb9cc585510c}{outer\+Rect}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the outer rect of this layout element. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_q_c_p_layout_element_af4ac9450aa2d60863bf3a8ea0c940c9d}\label{class_q_c_p_layout_element_af4ac9450aa2d60863bf3a8ea0c940c9d}} 
 QMargins {\bfseries margins} () const
 \item 
@@ -59,40 +61,44 @@ QSize {\bfseries maximum\+Size} () const
 QHash$<$ \mbox{\hyperlink{namespace_q_c_p_a7e487e3e2ccb62ab7771065bab7cae54}{QCP\+::\+Margin\+Side}}, \mbox{\hyperlink{class_q_c_p_margin_group}{QCPMargin\+Group}} $\ast$ $>$ {\bfseries margin\+Groups} () const
 \item 
 void \mbox{\hyperlink{class_q_c_p_layout_element_a38975ea13e36de8e53391ce41d94bc0f}{set\+Outer\+Rect}} (const QRect \&\mbox{\hyperlink{class_q_c_p_layout_element_a208effccfe2cca4a0eaf9393e60f2dd4}{rect}})
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the outer rect of this layout element. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layout_element_a8f450b1f3f992ad576fce2c63d8b79cf}{set\+Margins}} (const QMargins \&margins)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the margins of this layout element. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layout_element_a0a8a17abc16b7923159fcc7608f94673}{set\+Minimum\+Margins}} (const QMargins \&margins)
-\item 
+\begin{DoxyCompactList}\small\item\em If \mbox{\hyperlink{class_q_c_p_layout_element_accfda49994e3e6d51ed14504abf9d27d}{set\+Auto\+Margins}} is enabled on some or all margins, this function is used to provide minimum values for those margins. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layout_element_accfda49994e3e6d51ed14504abf9d27d}{set\+Auto\+Margins}} (QCP\+::\+Margin\+Sides sides)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets on which sides the margin shall be calculated automatically. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layout_element_a5dd29a3c8bc88440c97c06b67be7886b}{set\+Minimum\+Size}} (const QSize \&size)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the minimum size of this layout element. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layout_element_a8e0447614a0bf92de9a7304588c6b96e}{set\+Minimum\+Size}} (int width, int height)
-\item 
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Sets the minimum size of this layout element. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layout_element_a74eb5280a737ab44833d506db65efd95}{set\+Maximum\+Size}} (const QSize \&size)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the maximum size of this layout element. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layout_element_a03e0e9c48f230217c529b0819f832d84}{set\+Maximum\+Size}} (int width, int height)
-\item 
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Sets the maximum size of this layout element. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layout_element_a361666cdcc6fbfd37344cc44be746b0f}{set\+Size\+Constraint\+Rect}} (\mbox{\hyperlink{class_q_c_p_layout_element_a0afb3e5773529e4bd20e448f81be4d2a}{Size\+Constraint\+Rect}} constraint\+Rect)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets to which rect of a layout element the size constraints apply. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layout_element_a516e56f76b6bc100e8e71d329866847d}{set\+Margin\+Group}} (QCP\+::\+Margin\+Sides sides, \mbox{\hyperlink{class_q_c_p_margin_group}{QCPMargin\+Group}} $\ast$group)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the margin {\itshape group} of the specified margin {\itshape sides}. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_q_c_p_layout_element_a929c2ec62e0e0e1d8418eaa802e2af9b}{update}} (\mbox{\hyperlink{class_q_c_p_layout_element_a0d83360e05735735aaf6d7983c56374d}{Update\+Phase}} phase)
-\item 
+\begin{DoxyCompactList}\small\item\em Updates the layout element and sub-\/elements. \end{DoxyCompactList}\item 
 virtual QSize \mbox{\hyperlink{class_q_c_p_layout_element_a46789036c4fcb190fa374f91321d7c09}{minimum\+Outer\+Size\+Hint}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the suggested minimum size this layout element (the \mbox{\hyperlink{class_q_c_p_layout_element_a2a32a12a6161c9dffbadeb9cc585510c}{outer\+Rect}}) may be compressed to, if no manual minimum size is set. \end{DoxyCompactList}\item 
 virtual QSize \mbox{\hyperlink{class_q_c_p_layout_element_ad96efb977a26e360e8a64a4c1e56456d}{maximum\+Outer\+Size\+Hint}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the suggested maximum size this layout element (the \mbox{\hyperlink{class_q_c_p_layout_element_a2a32a12a6161c9dffbadeb9cc585510c}{outer\+Rect}}) may be expanded to, if no manual maximum size is set. \end{DoxyCompactList}\item 
 virtual QList$<$ \mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}} $\ast$ $>$ \mbox{\hyperlink{class_q_c_p_layout_element_a76dec8cb31e498994a944d7647a43309}{elements}} (bool recursive) const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns a list of all child elements in this layout element. \end{DoxyCompactList}\item 
 virtual double \mbox{\hyperlink{class_q_c_p_layout_element_ae97f483cccedadbf18ea4525ef240ee4}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant $\ast$details=0) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Layout elements are sensitive to events inside their outer rect. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_q_c_p_layerable_a74c0fa237f29bf0e49565013fc5d1ec0}{QCPLayerable}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$plot, QString target\+Layer=QString(), \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}}=0)
-\item 
+\begin{DoxyCompactList}\small\item\em Creates a new \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} instance. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_q_c_p_layerable_af0297b944b6192b6d67d00bff41b6b70}\label{class_q_c_p_layerable_af0297b944b6192b6d67d00bff41b6b70}} 
 bool {\bfseries visible} () const
 \item 
@@ -100,7 +106,7 @@ bool {\bfseries visible} () const
 \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$ {\bfseries parent\+Plot} () const
 \item 
 \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $\ast$ \mbox{\hyperlink{class_q_c_p_layerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the parent layerable of this layerable. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_q_c_p_layerable_a9d4e121a7f1d2314f906fe698209cac9}\label{class_q_c_p_layerable_a9d4e121a7f1d2314f906fe698209cac9}} 
 \mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$ {\bfseries layer} () const
 \item 
@@ -108,17 +114,17 @@ bool {\bfseries visible} () const
 bool {\bfseries antialiased} () const
 \item 
 void \mbox{\hyperlink{class_q_c_p_layerable_a3bed99ddc396b48ce3ebfdc0418744f8}{set\+Visible}} (bool on)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the visibility of this layerable object. \end{DoxyCompactList}\item 
 Q\+\_\+\+SLOT bool \mbox{\hyperlink{class_q_c_p_layerable_ab0d0da6d2de45a118886d2c8e16d5a54}{set\+Layer}} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$layer)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the {\itshape layer} of this layerable object. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_q_c_p_layerable_ab25a0e7b897993b44447caee0f142083}{set\+Layer}} (const QString \&layer\+Name)
-\item 
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Sets the layer of this layerable object by name. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layerable_a4fd43e89be4a553ead41652565ff0581}{set\+Antialiased}} (bool enabled)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets whether this object will be drawn antialiased or not. \end{DoxyCompactList}\item 
 virtual double \mbox{\hyperlink{class_q_c_p_layerable_a04db8351fefd44cfdb77958e75c6288e}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant $\ast$details=0) const
-\item 
+\begin{DoxyCompactList}\small\item\em This function is used to decide whether a click hits a layerable object or not. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_q_c_p_layerable_ab054e88f15d485defcb95e7376f119e7}{real\+Visibility}} () const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns whether this layerable is visible, taking the visibility of the layerable parent and the visibility of this layerable\textquotesingle{}s layer into account. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -159,15 +165,15 @@ virtual void {\bfseries select\+Event} (QMouse\+Event $\ast$event, bool additive
 virtual void {\bfseries deselect\+Event} (bool $\ast$selection\+State\+Changed)
 \item 
 virtual void \mbox{\hyperlink{class_q_c_p_layerable_af6567604818db90f4fd52822f8bc8376}{mouse\+Press\+Event}} (QMouse\+Event $\ast$event, const QVariant \&details)
-\item 
+\begin{DoxyCompactList}\small\item\em This event gets called when the user presses a mouse button while the cursor is over the layerable. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_q_c_p_layerable_a9eee1ba47fd69be111059ca3881933e4}{mouse\+Move\+Event}} (QMouse\+Event $\ast$event, const QPointF \&start\+Pos)
-\item 
+\begin{DoxyCompactList}\small\item\em This event gets called when the user moves the mouse while holding a mouse button, after this layerable has become the mouse grabber by accepting the preceding \mbox{\hyperlink{class_q_c_p_layerable_af6567604818db90f4fd52822f8bc8376}{mouse\+Press\+Event}}. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_q_c_p_layerable_aa0d79b005686f668622bbe66ac03ba2c}{mouse\+Release\+Event}} (QMouse\+Event $\ast$event, const QPointF \&start\+Pos)
-\item 
+\begin{DoxyCompactList}\small\item\em This event gets called when the user releases the mouse button, after this layerable has become the mouse grabber by accepting the preceding \mbox{\hyperlink{class_q_c_p_layerable_af6567604818db90f4fd52822f8bc8376}{mouse\+Press\+Event}}. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_q_c_p_layerable_a4171e2e823aca242dd0279f00ed2de81}{mouse\+Double\+Click\+Event}} (QMouse\+Event $\ast$event, const QVariant \&details)
-\item 
+\begin{DoxyCompactList}\small\item\em This event gets called when the user presses the mouse button a second time in a double-\/click, while the cursor is over the layerable. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_q_c_p_layerable_a47dfd7b8fd99c08ca54e09c362b6f022}{wheel\+Event}} (QWheel\+Event $\ast$event)
-\item 
+\begin{DoxyCompactList}\small\item\em This event gets called when the user turns the mouse scroll wheel while the cursor is over the layerable. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_q_c_p_layerable_a8cbe5a0c9a5674249982f5ca5f8e02bc}\label{class_q_c_p_layerable_a8cbe5a0c9a5674249982f5ca5f8e02bc}} 
 void {\bfseries initialize\+Parent\+Plot} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$parent\+Plot)
 \item 
@@ -248,7 +254,7 @@ class {\bfseries QCPMargin\+Group}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_q_c_p_layerable_abbf8657cedea73ac1c3499b521c90eba}{layer\+Changed}} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$new\+Layer)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This signal is emitted when the layer of this layerable changes, i.\+e. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -269,7 +275,11 @@ Thus in \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} one can divide lay
 \doxysubsubsection{\texorpdfstring{SizeConstraintRect}{SizeConstraintRect}}
 {\footnotesize\ttfamily enum \mbox{\hyperlink{class_q_c_p_layout_element_a0afb3e5773529e4bd20e448f81be4d2a}{QCPLayout\+Element\+::\+Size\+Constraint\+Rect}}}
 
-Defines to which rect of a layout element the size constraints that can be set via \mbox{\hyperlink{class_q_c_p_layout_element_a5dd29a3c8bc88440c97c06b67be7886b}{set\+Minimum\+Size}} and \mbox{\hyperlink{class_q_c_p_layout_element_a74eb5280a737ab44833d506db65efd95}{set\+Maximum\+Size}} apply. \mbox{\hyperlink{class_the}{The}} outer rect (\mbox{\hyperlink{class_q_c_p_layout_element_a2a32a12a6161c9dffbadeb9cc585510c}{outer\+Rect}}) includes the margins (e.\+g. in the case of a \mbox{\hyperlink{class_q_c_p_axis_rect}{QCPAxis\+Rect}} the axis labels), whereas the inner rect (\mbox{\hyperlink{class_q_c_p_layout_element_a208effccfe2cca4a0eaf9393e60f2dd4}{rect}}) does not.
+
+
+Defines to which rect of a layout element the size constraints that can be set via \mbox{\hyperlink{class_q_c_p_layout_element_a5dd29a3c8bc88440c97c06b67be7886b}{set\+Minimum\+Size}} and \mbox{\hyperlink{class_q_c_p_layout_element_a74eb5280a737ab44833d506db65efd95}{set\+Maximum\+Size}} apply. 
+
+\mbox{\hyperlink{class_the}{The}} outer rect (\mbox{\hyperlink{class_q_c_p_layout_element_a2a32a12a6161c9dffbadeb9cc585510c}{outer\+Rect}}) includes the margins (e.\+g. in the case of a \mbox{\hyperlink{class_q_c_p_axis_rect}{QCPAxis\+Rect}} the axis labels), whereas the inner rect (\mbox{\hyperlink{class_q_c_p_layout_element_a208effccfe2cca4a0eaf9393e60f2dd4}{rect}}) does not.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_layout_element_a361666cdcc6fbfd37344cc44be746b0f}{set\+Size\+Constraint\+Rect}} 
@@ -290,7 +300,11 @@ scr\+Outer\+Rect&Minimum/\+Maximum size constraints apply to outer rect, thus in
 \doxysubsubsection{\texorpdfstring{UpdatePhase}{UpdatePhase}}
 {\footnotesize\ttfamily enum \mbox{\hyperlink{class_q_c_p_layout_element_a0d83360e05735735aaf6d7983c56374d}{QCPLayout\+Element\+::\+Update\+Phase}}}
 
-Defines the phases of the update process, that happens just before a replot. At each phase, \mbox{\hyperlink{class_q_c_p_layout_element_a929c2ec62e0e0e1d8418eaa802e2af9b}{update}} is called with the according Update\+Phase value. \begin{DoxyEnumFields}{Enumerator}
+
+
+Defines the phases of the update process, that happens just before a replot. 
+
+At each phase, \mbox{\hyperlink{class_q_c_p_layout_element_a929c2ec62e0e0e1d8418eaa802e2af9b}{update}} is called with the according Update\+Phase value. \begin{DoxyEnumFields}{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{upPreparation@{upPreparation}!QCPLayoutElement@{QCPLayoutElement}}\index{QCPLayoutElement@{QCPLayoutElement}!upPreparation@{upPreparation}}}\mbox{\Hypertarget{class_q_c_p_layout_element_a0d83360e05735735aaf6d7983c56374dad6119882eba136357c2f627992e527d3}\label{class_q_c_p_layout_element_a0d83360e05735735aaf6d7983c56374dad6119882eba136357c2f627992e527d3}} 
 up\+Preparation&Phase used for any type of preparation that needs to be done before margin calculation and layout. \\
 \hline
@@ -305,15 +319,6 @@ up\+Layout&Final phase in which the layout system places the rects of the elemen
 
 \end{DoxyEnumFields}
 
-
-\doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_q_c_p_layout_element_a8947f0ada17e672aaba3d424cbbb67e3}\label{class_q_c_p_layout_element_a8947f0ada17e672aaba3d424cbbb67e3}} 
-\index{QCPLayoutElement@{QCPLayoutElement}!QCPLayoutElement@{QCPLayoutElement}}
-\index{QCPLayoutElement@{QCPLayoutElement}!QCPLayoutElement@{QCPLayoutElement}}
-\doxysubsubsection{\texorpdfstring{QCPLayoutElement()}{QCPLayoutElement()}}
-{\footnotesize\ttfamily QCPLayout\+Element\+::\+QCPLayout\+Element (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$}]{parent\+Plot = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
-
-Creates an instance of \mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}} and sets default values. 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_q_c_p_layout_element_a0a8f18141bcf46cf40ad4c13324ff346}\label{class_q_c_p_layout_element_a0a8f18141bcf46cf40ad4c13324ff346}} 
@@ -342,7 +347,11 @@ Implements \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}.
 \doxysubsubsection{\texorpdfstring{elements()}{elements()}}
 {\footnotesize\ttfamily QList$<$ \mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}} $\ast$ $>$ QCPLayout\+Element\+::elements (\begin{DoxyParamCaption}\item[{bool}]{recursive }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
 
-Returns a list of all child elements in this layout element. If {\itshape recursive} is true, all sub-\/child elements are included in the list, too.
+
+
+Returns a list of all child elements in this layout element. 
+
+If {\itshape recursive} is true, all sub-\/child elements are included in the list, too.
 
 \begin{DoxyWarning}{Warning}
 There may be entries with value 0 in the returned list. (For example, \mbox{\hyperlink{class_q_c_p_layout_grid}{QCPLayout\+Grid}} may have empty cells which yield 0 at the respective index.) 
@@ -351,19 +360,15 @@ There may be entries with value 0 in the returned list. (For example, \mbox{\hyp
 
 Reimplemented in \mbox{\hyperlink{class_q_c_p_layout_aca129722c019f91d3367046f80abfa77}{QCPLayout}}, \mbox{\hyperlink{class_q_c_p_layout_grid_a7d5b968b4cf57393e9e387976d91f8f7}{QCPLayout\+Grid}}, and \mbox{\hyperlink{class_q_c_p_axis_rect_a3aee067fd105f2fa8de9eb8024435ac5}{QCPAxis\+Rect}}.
 
-\mbox{\Hypertarget{class_q_c_p_layout_element_a4efdcbde9d28f410e5ef166c9d691deb}\label{class_q_c_p_layout_element_a4efdcbde9d28f410e5ef166c9d691deb}} 
-\index{QCPLayoutElement@{QCPLayoutElement}!layout@{layout}}
-\index{layout@{layout}!QCPLayoutElement@{QCPLayoutElement}}
-\doxysubsubsection{\texorpdfstring{layout()}{layout()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_layout}{QCPLayout}} $\ast$ QCPLayout\+Element\+::layout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
-
-Returns the parent layout of this layout element. \mbox{\Hypertarget{class_q_c_p_layout_element_ad96efb977a26e360e8a64a4c1e56456d}\label{class_q_c_p_layout_element_ad96efb977a26e360e8a64a4c1e56456d}} 
+\mbox{\Hypertarget{class_q_c_p_layout_element_ad96efb977a26e360e8a64a4c1e56456d}\label{class_q_c_p_layout_element_ad96efb977a26e360e8a64a4c1e56456d}} 
 \index{QCPLayoutElement@{QCPLayoutElement}!maximumOuterSizeHint@{maximumOuterSizeHint}}
 \index{maximumOuterSizeHint@{maximumOuterSizeHint}!QCPLayoutElement@{QCPLayoutElement}}
 \doxysubsubsection{\texorpdfstring{maximumOuterSizeHint()}{maximumOuterSizeHint()}}
 {\footnotesize\ttfamily QSize QCPLayout\+Element\+::maximum\+Outer\+Size\+Hint (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
 
-Returns the suggested maximum size this layout element (the \mbox{\hyperlink{class_q_c_p_layout_element_a2a32a12a6161c9dffbadeb9cc585510c}{outer\+Rect}}) may be expanded to, if no manual maximum size is set.
+
+
+Returns the suggested maximum size this layout element (the \mbox{\hyperlink{class_q_c_p_layout_element_a2a32a12a6161c9dffbadeb9cc585510c}{outer\+Rect}}) may be expanded to, if no manual maximum size is set. 
 
 if a maximum size (\mbox{\hyperlink{class_q_c_p_layout_element_a74eb5280a737ab44833d506db65efd95}{set\+Maximum\+Size}}) was not set manually, parent layouts use the returned size (usually indirectly through QCPLayout\+::get\+Final\+Maximum\+Outer\+Size) to determine the maximum allowed size of this layout element.
 
@@ -379,7 +384,9 @@ Reimplemented in \mbox{\hyperlink{class_q_c_p_layout_grid_a41ce0014c220d77b909e2
 \doxysubsubsection{\texorpdfstring{minimumOuterSizeHint()}{minimumOuterSizeHint()}}
 {\footnotesize\ttfamily QSize QCPLayout\+Element\+::minimum\+Outer\+Size\+Hint (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
 
-Returns the suggested minimum size this layout element (the \mbox{\hyperlink{class_q_c_p_layout_element_a2a32a12a6161c9dffbadeb9cc585510c}{outer\+Rect}}) may be compressed to, if no manual minimum size is set.
+
+
+Returns the suggested minimum size this layout element (the \mbox{\hyperlink{class_q_c_p_layout_element_a2a32a12a6161c9dffbadeb9cc585510c}{outer\+Rect}}) may be compressed to, if no manual minimum size is set. 
 
 if a minimum size (\mbox{\hyperlink{class_q_c_p_layout_element_a5dd29a3c8bc88440c97c06b67be7886b}{set\+Minimum\+Size}}) was not set manually, parent layouts use the returned size (usually indirectly through QCPLayout\+::get\+Final\+Minimum\+Outer\+Size) to determine the minimum allowed size of this layout element.
 
@@ -395,7 +402,11 @@ Reimplemented in \mbox{\hyperlink{class_q_c_p_layout_grid_a0438bc58b4d3894d01db9
 \doxysubsubsection{\texorpdfstring{outerRect()}{outerRect()}}
 {\footnotesize\ttfamily QRect QCPLayout\+Element\+::outer\+Rect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Returns the outer rect of this layout element. \mbox{\hyperlink{class_the}{The}} outer rect is the inner rect expanded by the margins (\mbox{\hyperlink{class_q_c_p_layout_element_a8f450b1f3f992ad576fce2c63d8b79cf}{set\+Margins}}, \mbox{\hyperlink{class_q_c_p_layout_element_accfda49994e3e6d51ed14504abf9d27d}{set\+Auto\+Margins}}). \mbox{\hyperlink{class_the}{The}} outer rect is used (and set via \mbox{\hyperlink{class_q_c_p_layout_element_a38975ea13e36de8e53391ce41d94bc0f}{set\+Outer\+Rect}}) by the parent \mbox{\hyperlink{class_q_c_p_layout}{QCPLayout}} to control the size of this layout element.
+
+
+Returns the outer rect of this layout element. 
+
+\mbox{\hyperlink{class_the}{The}} outer rect is the inner rect expanded by the margins (\mbox{\hyperlink{class_q_c_p_layout_element_a8f450b1f3f992ad576fce2c63d8b79cf}{set\+Margins}}, \mbox{\hyperlink{class_q_c_p_layout_element_accfda49994e3e6d51ed14504abf9d27d}{set\+Auto\+Margins}}). \mbox{\hyperlink{class_the}{The}} outer rect is used (and set via \mbox{\hyperlink{class_q_c_p_layout_element_a38975ea13e36de8e53391ce41d94bc0f}{set\+Outer\+Rect}}) by the parent \mbox{\hyperlink{class_q_c_p_layout}{QCPLayout}} to control the size of this layout element.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_layout_element_a208effccfe2cca4a0eaf9393e60f2dd4}{rect}} 
@@ -416,7 +427,11 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}.
 \doxysubsubsection{\texorpdfstring{rect()}{rect()}}
 {\footnotesize\ttfamily QRect QCPLayout\+Element\+::rect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Returns the inner rect of this layout element. \mbox{\hyperlink{class_the}{The}} inner rect is the outer rect (\mbox{\hyperlink{class_q_c_p_layout_element_a2a32a12a6161c9dffbadeb9cc585510c}{outer\+Rect}}, \mbox{\hyperlink{class_q_c_p_layout_element_a38975ea13e36de8e53391ce41d94bc0f}{set\+Outer\+Rect}}) shrinked by the margins (\mbox{\hyperlink{class_q_c_p_layout_element_a8f450b1f3f992ad576fce2c63d8b79cf}{set\+Margins}}, \mbox{\hyperlink{class_q_c_p_layout_element_accfda49994e3e6d51ed14504abf9d27d}{set\+Auto\+Margins}}).
+
+
+Returns the inner rect of this layout element. 
+
+\mbox{\hyperlink{class_the}{The}} inner rect is the outer rect (\mbox{\hyperlink{class_q_c_p_layout_element_a2a32a12a6161c9dffbadeb9cc585510c}{outer\+Rect}}, \mbox{\hyperlink{class_q_c_p_layout_element_a38975ea13e36de8e53391ce41d94bc0f}{set\+Outer\+Rect}}) shrinked by the margins (\mbox{\hyperlink{class_q_c_p_layout_element_a8f450b1f3f992ad576fce2c63d8b79cf}{set\+Margins}}, \mbox{\hyperlink{class_q_c_p_layout_element_accfda49994e3e6d51ed14504abf9d27d}{set\+Auto\+Margins}}).
 
 In some cases, the area between outer and inner rect is left blank. In other cases the margin area is used to display peripheral graphics while the main content is in the inner rect. This is where automatic margin calculation becomes interesting because it allows the layout element to adapt the margins to the peripheral graphics it wants to draw. For example, \mbox{\hyperlink{class_q_c_p_axis_rect}{QCPAxis\+Rect}} draws the axis labels and tick labels in the margin area, thus needs to adjust the margins (if \mbox{\hyperlink{class_q_c_p_layout_element_accfda49994e3e6d51ed14504abf9d27d}{set\+Auto\+Margins}} is enabled) according to the space required by the labels of the axes.
 
@@ -429,7 +444,11 @@ In some cases, the area between outer and inner rect is left blank. In other cas
 \doxysubsubsection{\texorpdfstring{selectTest()}{selectTest()}}
 {\footnotesize\ttfamily double QCPLayout\+Element\+::select\+Test (\begin{DoxyParamCaption}\item[{const QPointF \&}]{pos,  }\item[{bool}]{only\+Selectable,  }\item[{QVariant $\ast$}]{details = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
 
-Layout elements are sensitive to events inside their outer rect. If {\itshape pos} is within the outer rect, this method returns a value corresponding to 0.\+99 times the parent plot\textquotesingle{}s selection tolerance. However, layout elements are not selectable by default. So if {\itshape only\+Selectable} is true, -\/1.\+0 is returned.
+
+
+Layout elements are sensitive to events inside their outer rect. 
+
+If {\itshape pos} is within the outer rect, this method returns a value corresponding to 0.\+99 times the parent plot\textquotesingle{}s selection tolerance. However, layout elements are not selectable by default. So if {\itshape only\+Selectable} is true, -\/1.\+0 is returned.
 
 See \mbox{\hyperlink{class_q_c_p_layerable_a04db8351fefd44cfdb77958e75c6288e}{QCPLayerable\+::select\+Test}} for a general explanation of this virtual method.
 
@@ -447,7 +466,11 @@ Reimplemented in \mbox{\hyperlink{class_q_c_p_layout_inset_a2eeef7ea1b8340e7c7c2
 \doxysubsubsection{\texorpdfstring{setAutoMargins()}{setAutoMargins()}}
 {\footnotesize\ttfamily void QCPLayout\+Element\+::set\+Auto\+Margins (\begin{DoxyParamCaption}\item[{QCP\+::\+Margin\+Sides}]{sides }\end{DoxyParamCaption})}
 
-Sets on which sides the margin shall be calculated automatically. If a side is calculated automatically, a minimum margin value may be provided with \mbox{\hyperlink{class_q_c_p_layout_element_a0a8a17abc16b7923159fcc7608f94673}{set\+Minimum\+Margins}}. If a side is set to be controlled manually, the value may be specified with \mbox{\hyperlink{class_q_c_p_layout_element_a8f450b1f3f992ad576fce2c63d8b79cf}{set\+Margins}}.
+
+
+Sets on which sides the margin shall be calculated automatically. 
+
+If a side is calculated automatically, a minimum margin value may be provided with \mbox{\hyperlink{class_q_c_p_layout_element_a0a8a17abc16b7923159fcc7608f94673}{set\+Minimum\+Margins}}. If a side is set to be controlled manually, the value may be specified with \mbox{\hyperlink{class_q_c_p_layout_element_a8f450b1f3f992ad576fce2c63d8b79cf}{set\+Margins}}.
 
 Margin sides that are under automatic control may participate in a \mbox{\hyperlink{class_q_c_p_margin_group}{QCPMargin\+Group}} (see \mbox{\hyperlink{class_q_c_p_layout_element_a516e56f76b6bc100e8e71d329866847d}{set\+Margin\+Group}}), to synchronize (align) it with other layout elements in the plot.
 
@@ -460,7 +483,9 @@ Margin sides that are under automatic control may participate in a \mbox{\hyperl
 \doxysubsubsection{\texorpdfstring{setMarginGroup()}{setMarginGroup()}}
 {\footnotesize\ttfamily void QCPLayout\+Element\+::set\+Margin\+Group (\begin{DoxyParamCaption}\item[{QCP\+::\+Margin\+Sides}]{sides,  }\item[{\mbox{\hyperlink{class_q_c_p_margin_group}{QCPMargin\+Group}} $\ast$}]{group }\end{DoxyParamCaption})}
 
-Sets the margin {\itshape group} of the specified margin {\itshape sides}.
+
+
+Sets the margin {\itshape group} of the specified margin {\itshape sides}. 
 
 Margin groups allow synchronizing specified margins across layout elements, see the documentation of \mbox{\hyperlink{class_q_c_p_margin_group}{QCPMargin\+Group}}.
 
@@ -477,7 +502,11 @@ Note that margin groups only work for margin sides that are set to automatic (\m
 \doxysubsubsection{\texorpdfstring{setMargins()}{setMargins()}}
 {\footnotesize\ttfamily void QCPLayout\+Element\+::set\+Margins (\begin{DoxyParamCaption}\item[{const QMargins \&}]{margins }\end{DoxyParamCaption})}
 
-Sets the margins of this layout element. If \mbox{\hyperlink{class_q_c_p_layout_element_accfda49994e3e6d51ed14504abf9d27d}{set\+Auto\+Margins}} is disabled for some or all sides, this function is used to manually set the margin on those sides. Sides that are still set to be handled automatically are ignored and may have any value in {\itshape margins}.
+
+
+Sets the margins of this layout element. 
+
+If \mbox{\hyperlink{class_q_c_p_layout_element_accfda49994e3e6d51ed14504abf9d27d}{set\+Auto\+Margins}} is disabled for some or all sides, this function is used to manually set the margin on those sides. Sides that are still set to be handled automatically are ignored and may have any value in {\itshape margins}.
 
 \mbox{\hyperlink{class_the}{The}} margin is the distance between the outer rect (controlled by the parent layout via \mbox{\hyperlink{class_q_c_p_layout_element_a38975ea13e36de8e53391ce41d94bc0f}{set\+Outer\+Rect}}) and the inner \mbox{\hyperlink{class_q_c_p_layout_element_a208effccfe2cca4a0eaf9393e60f2dd4}{rect}} (which usually contains the main content of this layout element).
 
@@ -490,7 +519,11 @@ Sets the margins of this layout element. If \mbox{\hyperlink{class_q_c_p_layout_
 \doxysubsubsection{\texorpdfstring{setMaximumSize()}{setMaximumSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily void QCPLayout\+Element\+::set\+Maximum\+Size (\begin{DoxyParamCaption}\item[{const QSize \&}]{size }\end{DoxyParamCaption})}
 
-Sets the maximum size of this layout element. A parent layout tries to respect the {\itshape size} here by changing row/column sizes in the layout accordingly.
+
+
+Sets the maximum size of this layout element. 
+
+A parent layout tries to respect the {\itshape size} here by changing row/column sizes in the layout accordingly.
 
 Whether this constraint applies to the inner or the outer rect can be specified with \mbox{\hyperlink{class_q_c_p_layout_element_a361666cdcc6fbfd37344cc44be746b0f}{set\+Size\+Constraint\+Rect}} (see \mbox{\hyperlink{class_q_c_p_layout_element_a208effccfe2cca4a0eaf9393e60f2dd4}{rect}} and \mbox{\hyperlink{class_q_c_p_layout_element_a2a32a12a6161c9dffbadeb9cc585510c}{outer\+Rect}}). \mbox{\Hypertarget{class_q_c_p_layout_element_a03e0e9c48f230217c529b0819f832d84}\label{class_q_c_p_layout_element_a03e0e9c48f230217c529b0819f832d84}} 
 \index{QCPLayoutElement@{QCPLayoutElement}!setMaximumSize@{setMaximumSize}}
@@ -498,9 +531,11 @@ Whether this constraint applies to the inner or the outer rect can be specified 
 \doxysubsubsection{\texorpdfstring{setMaximumSize()}{setMaximumSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily void QCPLayout\+Element\+::set\+Maximum\+Size (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})}
 
+
+
 This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
 
-Sets the maximum size of this layout element.
+Sets the maximum size of this layout element. 
 
 Whether this constraint applies to the inner or the outer rect can be specified with \mbox{\hyperlink{class_q_c_p_layout_element_a361666cdcc6fbfd37344cc44be746b0f}{set\+Size\+Constraint\+Rect}} (see \mbox{\hyperlink{class_q_c_p_layout_element_a208effccfe2cca4a0eaf9393e60f2dd4}{rect}} and \mbox{\hyperlink{class_q_c_p_layout_element_a2a32a12a6161c9dffbadeb9cc585510c}{outer\+Rect}}). \mbox{\Hypertarget{class_q_c_p_layout_element_a0a8a17abc16b7923159fcc7608f94673}\label{class_q_c_p_layout_element_a0a8a17abc16b7923159fcc7608f94673}} 
 \index{QCPLayoutElement@{QCPLayoutElement}!setMinimumMargins@{setMinimumMargins}}
@@ -508,7 +543,9 @@ Whether this constraint applies to the inner or the outer rect can be specified 
 \doxysubsubsection{\texorpdfstring{setMinimumMargins()}{setMinimumMargins()}}
 {\footnotesize\ttfamily void QCPLayout\+Element\+::set\+Minimum\+Margins (\begin{DoxyParamCaption}\item[{const QMargins \&}]{margins }\end{DoxyParamCaption})}
 
-If \mbox{\hyperlink{class_q_c_p_layout_element_accfda49994e3e6d51ed14504abf9d27d}{set\+Auto\+Margins}} is enabled on some or all margins, this function is used to provide minimum values for those margins.
+
+
+If \mbox{\hyperlink{class_q_c_p_layout_element_accfda49994e3e6d51ed14504abf9d27d}{set\+Auto\+Margins}} is enabled on some or all margins, this function is used to provide minimum values for those margins. 
 
 \mbox{\hyperlink{class_the}{The}} minimum values are not enforced on margin sides that were set to be under manual control via \mbox{\hyperlink{class_q_c_p_layout_element_accfda49994e3e6d51ed14504abf9d27d}{set\+Auto\+Margins}}.
 
@@ -521,7 +558,11 @@ If \mbox{\hyperlink{class_q_c_p_layout_element_accfda49994e3e6d51ed14504abf9d27d
 \doxysubsubsection{\texorpdfstring{setMinimumSize()}{setMinimumSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily void QCPLayout\+Element\+::set\+Minimum\+Size (\begin{DoxyParamCaption}\item[{const QSize \&}]{size }\end{DoxyParamCaption})}
 
-Sets the minimum size of this layout element. A parent layout tries to respect the {\itshape size} here by changing row/column sizes in the layout accordingly.
+
+
+Sets the minimum size of this layout element. 
+
+A parent layout tries to respect the {\itshape size} here by changing row/column sizes in the layout accordingly.
 
 If the parent layout size is not sufficient to satisfy all minimum size constraints of its child layout elements, the layout may set a size that is actually smaller than {\itshape size}. \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} propagates the layout\textquotesingle{}s size constraints to the outside by setting its own minimum QWidget size accordingly, so violations of {\itshape size} should be exceptions.
 
@@ -531,9 +572,11 @@ Whether this constraint applies to the inner or the outer rect can be specified 
 \doxysubsubsection{\texorpdfstring{setMinimumSize()}{setMinimumSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily void QCPLayout\+Element\+::set\+Minimum\+Size (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})}
 
+
+
 This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
 
-Sets the minimum size of this layout element.
+Sets the minimum size of this layout element. 
 
 Whether this constraint applies to the inner or the outer rect can be specified with \mbox{\hyperlink{class_q_c_p_layout_element_a361666cdcc6fbfd37344cc44be746b0f}{set\+Size\+Constraint\+Rect}} (see \mbox{\hyperlink{class_q_c_p_layout_element_a208effccfe2cca4a0eaf9393e60f2dd4}{rect}} and \mbox{\hyperlink{class_q_c_p_layout_element_a2a32a12a6161c9dffbadeb9cc585510c}{outer\+Rect}}). \mbox{\Hypertarget{class_q_c_p_layout_element_a38975ea13e36de8e53391ce41d94bc0f}\label{class_q_c_p_layout_element_a38975ea13e36de8e53391ce41d94bc0f}} 
 \index{QCPLayoutElement@{QCPLayoutElement}!setOuterRect@{setOuterRect}}
@@ -541,7 +584,11 @@ Whether this constraint applies to the inner or the outer rect can be specified 
 \doxysubsubsection{\texorpdfstring{setOuterRect()}{setOuterRect()}}
 {\footnotesize\ttfamily void QCPLayout\+Element\+::set\+Outer\+Rect (\begin{DoxyParamCaption}\item[{const QRect \&}]{rect }\end{DoxyParamCaption})}
 
-Sets the outer rect of this layout element. If the layout element is inside a layout, the layout sets the position and size of this layout element using this function.
+
+
+Sets the outer rect of this layout element. 
+
+If the layout element is inside a layout, the layout sets the position and size of this layout element using this function.
 
 Calling this function externally has no effect, since the layout will overwrite any changes to the outer rect upon the next replot.
 
@@ -556,7 +603,11 @@ Calling this function externally has no effect, since the layout will overwrite 
 \doxysubsubsection{\texorpdfstring{setSizeConstraintRect()}{setSizeConstraintRect()}}
 {\footnotesize\ttfamily void QCPLayout\+Element\+::set\+Size\+Constraint\+Rect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_layout_element_a0afb3e5773529e4bd20e448f81be4d2a}{Size\+Constraint\+Rect}}}]{constraint\+Rect }\end{DoxyParamCaption})}
 
-Sets to which rect of a layout element the size constraints apply. Size constraints can be set via \mbox{\hyperlink{class_q_c_p_layout_element_a5dd29a3c8bc88440c97c06b67be7886b}{set\+Minimum\+Size}} and \mbox{\hyperlink{class_q_c_p_layout_element_a74eb5280a737ab44833d506db65efd95}{set\+Maximum\+Size}}.
+
+
+Sets to which rect of a layout element the size constraints apply. 
+
+Size constraints can be set via \mbox{\hyperlink{class_q_c_p_layout_element_a5dd29a3c8bc88440c97c06b67be7886b}{set\+Minimum\+Size}} and \mbox{\hyperlink{class_q_c_p_layout_element_a74eb5280a737ab44833d506db65efd95}{set\+Maximum\+Size}}.
 
 \mbox{\hyperlink{class_the}{The}} outer rect (\mbox{\hyperlink{class_q_c_p_layout_element_a2a32a12a6161c9dffbadeb9cc585510c}{outer\+Rect}}) includes the margins (e.\+g. in the case of a \mbox{\hyperlink{class_q_c_p_axis_rect}{QCPAxis\+Rect}} the axis labels), whereas the inner rect (\mbox{\hyperlink{class_q_c_p_layout_element_a208effccfe2cca4a0eaf9393e60f2dd4}{rect}}) does not.
 
@@ -569,7 +620,11 @@ Sets to which rect of a layout element the size constraints apply. Size constrai
 \doxysubsubsection{\texorpdfstring{update()}{update()}}
 {\footnotesize\ttfamily void QCPLayout\+Element\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_layout_element_a0d83360e05735735aaf6d7983c56374d}{Update\+Phase}}}]{phase }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
-Updates the layout element and sub-\/elements. This function is automatically called before every replot by the parent layout element. It is called multiple times, once for every \mbox{\hyperlink{class_q_c_p_layout_element_a0d83360e05735735aaf6d7983c56374d}{Update\+Phase}}. \mbox{\hyperlink{class_the}{The}} phases are run through in the order of the enum values. For details about what happens at the different phases, see the documentation of \mbox{\hyperlink{class_q_c_p_layout_element_a0d83360e05735735aaf6d7983c56374d}{Update\+Phase}}.
+
+
+Updates the layout element and sub-\/elements. 
+
+This function is automatically called before every replot by the parent layout element. It is called multiple times, once for every \mbox{\hyperlink{class_q_c_p_layout_element_a0d83360e05735735aaf6d7983c56374d}{Update\+Phase}}. \mbox{\hyperlink{class_the}{The}} phases are run through in the order of the enum values. For details about what happens at the different phases, see the documentation of \mbox{\hyperlink{class_q_c_p_layout_element_a0d83360e05735735aaf6d7983c56374d}{Update\+Phase}}.
 
 Layout elements that have child elements should call the \mbox{\hyperlink{class_q_c_p_layout_element_a929c2ec62e0e0e1d8418eaa802e2af9b}{update}} method of their child elements, and pass the current {\itshape phase} unchanged.
 

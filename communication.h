@@ -1,7 +1,7 @@
 
 /**
-@brief The Communication class provides an interface for communicating
-with he E5CC temperature controller via Modbus protocol.
+ * @brief The Communication class provides an interface for communicating
+ * with he E5CC temperature controller via Modbus protocol.
 */
 
 

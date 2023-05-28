@@ -72,9 +72,8 @@ void DataSummary::setIntervalLog(int interval) {
 
 
 /**
-
-@brief Generate a new save file if it does not already exist.
-@return true if the file is successfully generated, false otherwise.
+ * @brief Generate a new save file if it does not already exist.
+ * @return true if the file is successfully generated, false otherwise.
 */
 bool DataSummary::generateSaveFile() {
   QString file = filePath_ + "/" + fileName_;

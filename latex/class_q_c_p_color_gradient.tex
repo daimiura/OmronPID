@@ -2,7 +2,7 @@
 \label{class_q_c_p_color_gradient}\index{QCPColorGradient@{QCPColorGradient}}
 
 
-Defines a color gradient for use with e.\+g. \mbox{\hyperlink{class_q_c_p_color_map}{QCPColor\+Map}}.  
+Defines a color gradient for use with e.\+g.  
 
 
 \doxysubsection*{Public Types}
@@ -11,7 +11,7 @@ Defines a color gradient for use with e.\+g. \mbox{\hyperlink{class_q_c_p_color_
 enum \mbox{\hyperlink{class_q_c_p_color_gradient_ac5dca17cc24336e6ca176610e7f77fc1}{Color\+Interpolation}} \{ \mbox{\hyperlink{class_q_c_p_color_gradient_ac5dca17cc24336e6ca176610e7f77fc1a5e30f725c9cfe93999e268a9f92afbe7}{ci\+RGB}}
 , \mbox{\hyperlink{class_q_c_p_color_gradient_ac5dca17cc24336e6ca176610e7f77fc1af14ae62fcae11ecc07234eeaec5856cb}{ci\+HSV}}
  \}
-\item 
+\begin{DoxyCompactList}\small\item\em Defines the color spaces in which color interpolation between gradient stops can be performed. \end{DoxyCompactList}\item 
 enum \mbox{\hyperlink{class_q_c_p_color_gradient_aed6569828fee337023670272910c9072}{Gradient\+Preset}} \{ \newline
 \mbox{\hyperlink{class_q_c_p_color_gradient_aed6569828fee337023670272910c9072add11ae369a86f3b1b6205ec72e5021fb}{gp\+Grayscale}}
 , \mbox{\hyperlink{class_q_c_p_color_gradient_aed6569828fee337023670272910c9072a4f42e534cf6cff5a29a5388094d099b5}{gp\+Hot}}
@@ -28,14 +28,14 @@ enum \mbox{\hyperlink{class_q_c_p_color_gradient_aed6569828fee337023670272910c90
 , \mbox{\hyperlink{class_q_c_p_color_gradient_aed6569828fee337023670272910c9072a5f8a9e67b64c17ddfe4f069fe2b9fb02}{gp\+Jet}}
 , \mbox{\hyperlink{class_q_c_p_color_gradient_aed6569828fee337023670272910c9072a30efe58407acfb67939032f70213a130}{gp\+Hues}}
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Defines the available presets that can be loaded with \mbox{\hyperlink{class_q_c_p_color_gradient_aa0aeec1528241728b9671bf8e60b1622}{load\+Preset}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_q_c_p_color_gradient_a96bcc490ff9dc32b22941ce00800bce0}{QCPColor\+Gradient}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Constructs a new, empty \mbox{\hyperlink{class_q_c_p_color_gradient}{QCPColor\+Gradient}} with no predefined color stops. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_q_c_p_color_gradient_a4e570b4004fd60bd135e52d685ed2b66}{QCPColor\+Gradient}} (\mbox{\hyperlink{class_q_c_p_color_gradient_aed6569828fee337023670272910c9072}{Gradient\+Preset}} preset)
-\item 
+\begin{DoxyCompactList}\small\item\em Constructs a new \mbox{\hyperlink{class_q_c_p_color_gradient}{QCPColor\+Gradient}} initialized with the colors and color interpolation according to {\itshape preset}. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_q_c_p_color_gradient_a7f3478c33c59aa3c03b9ea1f809877fa}\label{class_q_c_p_color_gradient_a7f3478c33c59aa3c03b9ea1f809877fa}} 
 bool {\bfseries operator==} (const \mbox{\hyperlink{class_q_c_p_color_gradient}{QCPColor\+Gradient}} \&other) const
 \item 
@@ -55,28 +55,32 @@ QMap$<$ double, QColor $>$ {\bfseries color\+Stops} () const
 bool {\bfseries periodic} () const
 \item 
 void \mbox{\hyperlink{class_q_c_p_color_gradient_a18da587eb4f7fc788ea28ba15b6a12de}{set\+Level\+Count}} (int n)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the number of discretization levels of the color gradient to {\itshape n}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_color_gradient_a724e828aa6f0ba5011a9392477c35d3a}{set\+Color\+Stops}} (const QMap$<$ double, QColor $>$ \&color\+Stops)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets at which positions from 0 to 1 which color shall occur. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_color_gradient_a3b48be5e78079db1bb2a1188a4c3390e}{set\+Color\+Stop\+At}} (double position, const QColor \&color)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the {\itshape color} the gradient will have at the specified {\itshape position} (from 0 to 1). \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_color_gradient_aa13fda86406e1d896a465a409ae63b38}{set\+Color\+Interpolation}} (\mbox{\hyperlink{class_q_c_p_color_gradient_ac5dca17cc24336e6ca176610e7f77fc1}{Color\+Interpolation}} interpolation)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets whether the colors in between the configured color stops (see \mbox{\hyperlink{class_q_c_p_color_gradient_a3b48be5e78079db1bb2a1188a4c3390e}{set\+Color\+Stop\+At}}) shall be interpolated linearly in RGB or in HSV color space. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_color_gradient_a39d6448155fc00a219f239220d14bb39}{set\+Periodic}} (bool enabled)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets whether data points that are outside the configured data range (e.\+g. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_color_gradient_aaf423ceb943e177b0ed2c48c811d83dc}{colorize}} (const double $\ast$data, const \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \&range, QRgb $\ast$scan\+Line, int n, int data\+Index\+Factor=1, bool logarithmic=false)
-\item 
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+This method is used to quickly convert a {\itshape data} array to colors. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_color_gradient_acf0cc7fba83ef21f7b8d5d5258519db3}{colorize}} (const double $\ast$data, const unsigned char $\ast$alpha, const \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \&range, QRgb $\ast$scan\+Line, int n, int data\+Index\+Factor=1, bool logarithmic=false)
-\item 
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Additionally to the other overload of \mbox{\hyperlink{class_q_c_p_color_gradient_aaf423ceb943e177b0ed2c48c811d83dc}{colorize}}, this method takes the array {\itshape alpha}, which has the same size and structure as {\itshape data} and encodes the alpha information per data point. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_q_c_p_color_gradient_a0599545c859268b025d2060dea741cea}\label{class_q_c_p_color_gradient_a0599545c859268b025d2060dea741cea}} 
 QRgb {\bfseries color} (double position, const \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \&range, bool logarithmic=false)
 \item 
 void \mbox{\hyperlink{class_q_c_p_color_gradient_aa0aeec1528241728b9671bf8e60b1622}{load\+Preset}} (\mbox{\hyperlink{class_q_c_p_color_gradient_aed6569828fee337023670272910c9072}{Gradient\+Preset}} preset)
-\item 
+\begin{DoxyCompactList}\small\item\em Clears the current color stops and loads the specified {\itshape preset}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_color_gradient_a939213e85f0d1279519d555c5fcfb6ad}{clear\+Color\+Stops}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Clears all color stops. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_q_c_p_color_gradient}{QCPColor\+Gradient}} \mbox{\hyperlink{class_q_c_p_color_gradient_a9f72f501de429829ec446333316decda}{inverted}} () const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns an inverted gradient. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -110,7 +114,9 @@ bool {\bfseries m\+Color\+Buffer\+Invalidated}
 
 
 \doxysubsection{Detailed Description}
-Defines a color gradient for use with e.\+g. \mbox{\hyperlink{class_q_c_p_color_map}{QCPColor\+Map}}. 
+Defines a color gradient for use with e.\+g. 
+
+\mbox{\hyperlink{class_q_c_p_color_map}{QCPColor\+Map}}
 
 This class describes a color gradient which can be used to encode data with color. For example, \mbox{\hyperlink{class_q_c_p_color_map}{QCPColor\+Map}} and \mbox{\hyperlink{class_q_c_p_color_scale}{QCPColor\+Scale}} have \mbox{\hyperlink{class_q_c_p_color_map_a7313c78360471cead3576341a2c50377}{set\+Gradient}} methods which take an instance of this class. Colors are set with \mbox{\hyperlink{class_q_c_p_color_gradient_a3b48be5e78079db1bb2a1188a4c3390e}{set\+Color\+Stop\+At(double position, const QColor \&color)}} with a {\itshape position} from 0 to 1. In between these defined color positions, the color will be interpolated linearly either in RGB or HSV space, see \mbox{\hyperlink{class_q_c_p_color_gradient_aa13fda86406e1d896a465a409ae63b38}{set\+Color\+Interpolation}}.
 
@@ -135,7 +141,9 @@ Apart from red, green and blue components, the gradient also interpolates the al
 \doxysubsubsection{\texorpdfstring{ColorInterpolation}{ColorInterpolation}}
 {\footnotesize\ttfamily enum \mbox{\hyperlink{class_q_c_p_color_gradient_ac5dca17cc24336e6ca176610e7f77fc1}{QCPColor\+Gradient\+::\+Color\+Interpolation}}}
 
-Defines the color spaces in which color interpolation between gradient stops can be performed.
+
+
+Defines the color spaces in which color interpolation between gradient stops can be performed. 
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_color_gradient_aa13fda86406e1d896a465a409ae63b38}{set\+Color\+Interpolation}} 
@@ -156,7 +164,11 @@ ci\+HSV&Color channels hue, saturation and value are linearly interpolated (\mbo
 \doxysubsubsection{\texorpdfstring{GradientPreset}{GradientPreset}}
 {\footnotesize\ttfamily enum \mbox{\hyperlink{class_q_c_p_color_gradient_aed6569828fee337023670272910c9072}{QCPColor\+Gradient\+::\+Gradient\+Preset}}}
 
-Defines the available presets that can be loaded with \mbox{\hyperlink{class_q_c_p_color_gradient_aa0aeec1528241728b9671bf8e60b1622}{load\+Preset}}. See the documentation there for an image of the presets. \begin{DoxyEnumFields}{Enumerator}
+
+
+Defines the available presets that can be loaded with \mbox{\hyperlink{class_q_c_p_color_gradient_aa0aeec1528241728b9671bf8e60b1622}{load\+Preset}}. 
+
+See the documentation there for an image of the presets. \begin{DoxyEnumFields}{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{gpGrayscale@{gpGrayscale}!QCPColorGradient@{QCPColorGradient}}\index{QCPColorGradient@{QCPColorGradient}!gpGrayscale@{gpGrayscale}}}\mbox{\Hypertarget{class_q_c_p_color_gradient_aed6569828fee337023670272910c9072add11ae369a86f3b1b6205ec72e5021fb}\label{class_q_c_p_color_gradient_aed6569828fee337023670272910c9072add11ae369a86f3b1b6205ec72e5021fb}} 
 gp\+Grayscale&Continuous lightness from black to white (suited for non-\/biased data representation) \\
 \hline
@@ -215,7 +227,11 @@ gp\+Hues&Full hue cycle, with highest and lowest color red (suitable for periodi
 \doxysubsubsection{\texorpdfstring{QCPColorGradient()}{QCPColorGradient()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily QCPColor\+Gradient\+::\+QCPColor\+Gradient (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Constructs a new, empty \mbox{\hyperlink{class_q_c_p_color_gradient}{QCPColor\+Gradient}} with no predefined color stops. You can add own color stops with \mbox{\hyperlink{class_q_c_p_color_gradient_a3b48be5e78079db1bb2a1188a4c3390e}{set\+Color\+Stop\+At}}.
+
+
+Constructs a new, empty \mbox{\hyperlink{class_q_c_p_color_gradient}{QCPColor\+Gradient}} with no predefined color stops. 
+
+You can add own color stops with \mbox{\hyperlink{class_q_c_p_color_gradient_a3b48be5e78079db1bb2a1188a4c3390e}{set\+Color\+Stop\+At}}.
 
 \mbox{\hyperlink{class_the}{The}} color level count is initialized to 350. \mbox{\Hypertarget{class_q_c_p_color_gradient_a4e570b4004fd60bd135e52d685ed2b66}\label{class_q_c_p_color_gradient_a4e570b4004fd60bd135e52d685ed2b66}} 
 \index{QCPColorGradient@{QCPColorGradient}!QCPColorGradient@{QCPColorGradient}}
@@ -223,7 +239,9 @@ Constructs a new, empty \mbox{\hyperlink{class_q_c_p_color_gradient}{QCPColor\+G
 \doxysubsubsection{\texorpdfstring{QCPColorGradient()}{QCPColorGradient()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily QCPColor\+Gradient\+::\+QCPColor\+Gradient (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_color_gradient_aed6569828fee337023670272910c9072}{Gradient\+Preset}}}]{preset }\end{DoxyParamCaption})}
 
-Constructs a new \mbox{\hyperlink{class_q_c_p_color_gradient}{QCPColor\+Gradient}} initialized with the colors and color interpolation according to {\itshape preset}.
+
+
+Constructs a new \mbox{\hyperlink{class_q_c_p_color_gradient}{QCPColor\+Gradient}} initialized with the colors and color interpolation according to {\itshape preset}. 
 
 \mbox{\hyperlink{class_the}{The}} color level count is initialized to 350. 
 
@@ -234,7 +252,9 @@ Constructs a new \mbox{\hyperlink{class_q_c_p_color_gradient}{QCPColor\+Gradient
 \doxysubsubsection{\texorpdfstring{clearColorStops()}{clearColorStops()}}
 {\footnotesize\ttfamily void QCPColor\+Gradient\+::clear\+Color\+Stops (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Clears all color stops.
+
+
+Clears all color stops. 
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_color_gradient_a724e828aa6f0ba5011a9392477c35d3a}{set\+Color\+Stops}}, \mbox{\hyperlink{class_q_c_p_color_gradient_a3b48be5e78079db1bb2a1188a4c3390e}{set\+Color\+Stop\+At}} 
@@ -245,9 +265,13 @@ Clears all color stops.
 \doxysubsubsection{\texorpdfstring{colorize()}{colorize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily void QCPColor\+Gradient\+::colorize (\begin{DoxyParamCaption}\item[{const double $\ast$}]{data,  }\item[{const \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \&}]{range,  }\item[{QRgb $\ast$}]{scan\+Line,  }\item[{int}]{n,  }\item[{int}]{data\+Index\+Factor = {\ttfamily 1},  }\item[{bool}]{logarithmic = {\ttfamily false} }\end{DoxyParamCaption})}
 
+
+
 This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
 
-This method is used to quickly convert a {\itshape data} array to colors. \mbox{\hyperlink{class_the}{The}} colors will be output in the array {\itshape scan\+Line}. Both {\itshape data} and {\itshape scan\+Line} must have the length {\itshape n} when passed to this function. \mbox{\hyperlink{class_the}{The}} data range that shall be used for mapping the data value to the gradient is passed in {\itshape range}. {\itshape logarithmic} indicates whether the data values shall be mapped to colors logarithmically.
+This method is used to quickly convert a {\itshape data} array to colors. 
+
+\mbox{\hyperlink{class_the}{The}} colors will be output in the array {\itshape scan\+Line}. Both {\itshape data} and {\itshape scan\+Line} must have the length {\itshape n} when passed to this function. \mbox{\hyperlink{class_the}{The}} data range that shall be used for mapping the data value to the gradient is passed in {\itshape range}. {\itshape logarithmic} indicates whether the data values shall be mapped to colors logarithmically.
 
 if {\itshape data} actually contains 2D-\/data linearized via {\ttfamily \mbox{[}row$\ast$column\+Count + column\mbox{]}}, you can set {\itshape data\+Index\+Factor} to {\ttfamily column\+Count} to convert a column instead of a row of the data array, in {\itshape scan\+Line}. {\itshape scan\+Line} will remain a regular (1D) array. This works because {\itshape data} is addressed {\ttfamily data\mbox{[}i$\ast$data\+Index\+Factor\mbox{]}}.
 
@@ -259,9 +283,11 @@ Use the overloaded method to additionally provide alpha map data.
 \doxysubsubsection{\texorpdfstring{colorize()}{colorize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily void QCPColor\+Gradient\+::colorize (\begin{DoxyParamCaption}\item[{const double $\ast$}]{data,  }\item[{const unsigned char $\ast$}]{alpha,  }\item[{const \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \&}]{range,  }\item[{QRgb $\ast$}]{scan\+Line,  }\item[{int}]{n,  }\item[{int}]{data\+Index\+Factor = {\ttfamily 1},  }\item[{bool}]{logarithmic = {\ttfamily false} }\end{DoxyParamCaption})}
 
+
+
 This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
 
-Additionally to the other overload of \mbox{\hyperlink{class_q_c_p_color_gradient_aaf423ceb943e177b0ed2c48c811d83dc}{colorize}}, this method takes the array {\itshape alpha}, which has the same size and structure as {\itshape data} and encodes the alpha information per data point.
+Additionally to the other overload of \mbox{\hyperlink{class_q_c_p_color_gradient_aaf423ceb943e177b0ed2c48c811d83dc}{colorize}}, this method takes the array {\itshape alpha}, which has the same size and structure as {\itshape data} and encodes the alpha information per data point. 
 
 \mbox{\hyperlink{class_the}{The}} QRgb values that are placed in {\itshape scan\+Line} have their r, g and b components premultiplied with alpha (see QImage\+::\+Format\+\_\+\+ARGB32\+\_\+\+Premultiplied). \mbox{\Hypertarget{class_q_c_p_color_gradient_a9f72f501de429829ec446333316decda}\label{class_q_c_p_color_gradient_a9f72f501de429829ec446333316decda}} 
 \index{QCPColorGradient@{QCPColorGradient}!inverted@{inverted}}
@@ -269,7 +295,11 @@ Additionally to the other overload of \mbox{\hyperlink{class_q_c_p_color_gradien
 \doxysubsubsection{\texorpdfstring{inverted()}{inverted()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_color_gradient}{QCPColor\+Gradient}} QCPColor\+Gradient\+::inverted (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-Returns an inverted gradient. \mbox{\hyperlink{class_the}{The}} inverted gradient has all properties as this \mbox{\hyperlink{class_q_c_p_color_gradient}{QCPColor\+Gradient}}, but the order of the color stops is inverted.
+
+
+Returns an inverted gradient. 
+
+\mbox{\hyperlink{class_the}{The}} inverted gradient has all properties as this \mbox{\hyperlink{class_q_c_p_color_gradient}{QCPColor\+Gradient}}, but the order of the color stops is inverted.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_color_gradient_a724e828aa6f0ba5011a9392477c35d3a}{set\+Color\+Stops}}, \mbox{\hyperlink{class_q_c_p_color_gradient_a3b48be5e78079db1bb2a1188a4c3390e}{set\+Color\+Stop\+At}} 
@@ -280,7 +310,11 @@ Returns an inverted gradient. \mbox{\hyperlink{class_the}{The}} inverted gradien
 \doxysubsubsection{\texorpdfstring{loadPreset()}{loadPreset()}}
 {\footnotesize\ttfamily void QCPColor\+Gradient\+::load\+Preset (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_color_gradient_aed6569828fee337023670272910c9072}{Gradient\+Preset}}}]{preset }\end{DoxyParamCaption})}
 
-Clears the current color stops and loads the specified {\itshape preset}. A preset consists of predefined color stops and the corresponding color interpolation method.
+
+
+Clears the current color stops and loads the specified {\itshape preset}. 
+
+A preset consists of predefined color stops and the corresponding color interpolation method.
 
 \mbox{\hyperlink{class_the}{The}} available presets are\+:  \mbox{\Hypertarget{class_q_c_p_color_gradient_aa13fda86406e1d896a465a409ae63b38}\label{class_q_c_p_color_gradient_aa13fda86406e1d896a465a409ae63b38}} 
 \index{QCPColorGradient@{QCPColorGradient}!setColorInterpolation@{setColorInterpolation}}
@@ -288,7 +322,9 @@ Clears the current color stops and loads the specified {\itshape preset}. A pres
 \doxysubsubsection{\texorpdfstring{setColorInterpolation()}{setColorInterpolation()}}
 {\footnotesize\ttfamily void QCPColor\+Gradient\+::set\+Color\+Interpolation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_color_gradient_ac5dca17cc24336e6ca176610e7f77fc1}{QCPColor\+Gradient\+::\+Color\+Interpolation}}}]{interpolation }\end{DoxyParamCaption})}
 
-Sets whether the colors in between the configured color stops (see \mbox{\hyperlink{class_q_c_p_color_gradient_a3b48be5e78079db1bb2a1188a4c3390e}{set\+Color\+Stop\+At}}) shall be interpolated linearly in RGB or in HSV color space.
+
+
+Sets whether the colors in between the configured color stops (see \mbox{\hyperlink{class_q_c_p_color_gradient_a3b48be5e78079db1bb2a1188a4c3390e}{set\+Color\+Stop\+At}}) shall be interpolated linearly in RGB or in HSV color space. 
 
 For example, a sweep in RGB space from red to green will have a muddy brown intermediate color, whereas in HSV space the intermediate color is yellow. \mbox{\Hypertarget{class_q_c_p_color_gradient_a3b48be5e78079db1bb2a1188a4c3390e}\label{class_q_c_p_color_gradient_a3b48be5e78079db1bb2a1188a4c3390e}} 
 \index{QCPColorGradient@{QCPColorGradient}!setColorStopAt@{setColorStopAt}}
@@ -296,7 +332,11 @@ For example, a sweep in RGB space from red to green will have a muddy brown inte
 \doxysubsubsection{\texorpdfstring{setColorStopAt()}{setColorStopAt()}}
 {\footnotesize\ttfamily void QCPColor\+Gradient\+::set\+Color\+Stop\+At (\begin{DoxyParamCaption}\item[{double}]{position,  }\item[{const QColor \&}]{color }\end{DoxyParamCaption})}
 
-Sets the {\itshape color} the gradient will have at the specified {\itshape position} (from 0 to 1). In between these color stops, the color is interpolated according to \mbox{\hyperlink{class_q_c_p_color_gradient_aa13fda86406e1d896a465a409ae63b38}{set\+Color\+Interpolation}}.
+
+
+Sets the {\itshape color} the gradient will have at the specified {\itshape position} (from 0 to 1). 
+
+In between these color stops, the color is interpolated according to \mbox{\hyperlink{class_q_c_p_color_gradient_aa13fda86406e1d896a465a409ae63b38}{set\+Color\+Interpolation}}.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_color_gradient_a724e828aa6f0ba5011a9392477c35d3a}{set\+Color\+Stops}}, \mbox{\hyperlink{class_q_c_p_color_gradient_a939213e85f0d1279519d555c5fcfb6ad}{clear\+Color\+Stops}} 
@@ -307,7 +347,11 @@ Sets the {\itshape color} the gradient will have at the specified {\itshape posi
 \doxysubsubsection{\texorpdfstring{setColorStops()}{setColorStops()}}
 {\footnotesize\ttfamily void QCPColor\+Gradient\+::set\+Color\+Stops (\begin{DoxyParamCaption}\item[{const QMap$<$ double, QColor $>$ \&}]{color\+Stops }\end{DoxyParamCaption})}
 
-Sets at which positions from 0 to 1 which color shall occur. \mbox{\hyperlink{class_the}{The}} positions are the keys, the colors are the values of the passed QMap {\itshape color\+Stops}. In between these color stops, the color is interpolated according to \mbox{\hyperlink{class_q_c_p_color_gradient_aa13fda86406e1d896a465a409ae63b38}{set\+Color\+Interpolation}}.
+
+
+Sets at which positions from 0 to 1 which color shall occur. 
+
+\mbox{\hyperlink{class_the}{The}} positions are the keys, the colors are the values of the passed QMap {\itshape color\+Stops}. In between these color stops, the color is interpolated according to \mbox{\hyperlink{class_q_c_p_color_gradient_aa13fda86406e1d896a465a409ae63b38}{set\+Color\+Interpolation}}.
 
 A more convenient way to create a custom gradient may be to clear all color stops with \mbox{\hyperlink{class_q_c_p_color_gradient_a939213e85f0d1279519d555c5fcfb6ad}{clear\+Color\+Stops}} (or creating a new, empty \mbox{\hyperlink{class_q_c_p_color_gradient}{QCPColor\+Gradient}}) and then adding them one by one with \mbox{\hyperlink{class_q_c_p_color_gradient_a3b48be5e78079db1bb2a1188a4c3390e}{set\+Color\+Stop\+At}}.
 
@@ -320,7 +364,11 @@ A more convenient way to create a custom gradient may be to clear all color stop
 \doxysubsubsection{\texorpdfstring{setLevelCount()}{setLevelCount()}}
 {\footnotesize\ttfamily void QCPColor\+Gradient\+::set\+Level\+Count (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
 
-Sets the number of discretization levels of the color gradient to {\itshape n}. \mbox{\hyperlink{class_the}{The}} default is 350 which is typically enough to create a smooth appearance. \mbox{\hyperlink{class_the}{The}} minimum number of levels is 2.
+
+
+Sets the number of discretization levels of the color gradient to {\itshape n}. 
+
+\mbox{\hyperlink{class_the}{The}} default is 350 which is typically enough to create a smooth appearance. \mbox{\hyperlink{class_the}{The}} minimum number of levels is 2.
 
  \mbox{\Hypertarget{class_q_c_p_color_gradient_a39d6448155fc00a219f239220d14bb39}\label{class_q_c_p_color_gradient_a39d6448155fc00a219f239220d14bb39}} 
 \index{QCPColorGradient@{QCPColorGradient}!setPeriodic@{setPeriodic}}
@@ -328,7 +376,11 @@ Sets the number of discretization levels of the color gradient to {\itshape n}. 
 \doxysubsubsection{\texorpdfstring{setPeriodic()}{setPeriodic()}}
 {\footnotesize\ttfamily void QCPColor\+Gradient\+::set\+Periodic (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})}
 
-Sets whether data points that are outside the configured data range (e.\+g. \mbox{\hyperlink{class_q_c_p_color_map_a980b42837821159786a85b4b7dcb8774}{QCPColor\+Map\+::set\+Data\+Range}}) are colored by periodically repeating the color gradient or whether they all have the same color, corresponding to the respective gradient boundary color.
+
+
+Sets whether data points that are outside the configured data range (e.\+g. 
+
+\mbox{\hyperlink{class_q_c_p_color_map_a980b42837821159786a85b4b7dcb8774}{QCPColor\+Map\+::set\+Data\+Range}}) are colored by periodically repeating the color gradient or whether they all have the same color, corresponding to the respective gradient boundary color.
 
 
 

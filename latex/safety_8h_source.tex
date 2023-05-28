@@ -8,7 +8,7 @@
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <QObject>}}
 \DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <QTimer>}}
 \DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <QMutex>}}
-\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}datasummary.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{datasummary_8h}{datasummary.h}}"{}}}
 \DoxyCodeLine{00013\ }
 \DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_safety}{Safety}}\ :\ \textcolor{keyword}{public}\ QObject}
 \DoxyCodeLine{00022\ \{}
@@ -22,150 +22,163 @@
 \DoxyCodeLine{00030\ \ \ Q\_PROPERTY(\textcolor{keywordtype}{int}\ intervalTempChange\ READ\ \mbox{\hyperlink{class_safety_a8cd49e7eac6813e292b0cd1d4d9cc2e1}{getIntervalTempChange}}\ WRITE\ \mbox{\hyperlink{class_safety_a575c792b70681d663013841c8d8a932b}{setIntervalTempChange}}\ NOTIFY\ \mbox{\hyperlink{class_safety_ae64e96e13c1aac7847181a2fec2ac7e9}{intervalTempChangeChanged}})}
 \DoxyCodeLine{00031\ }
 \DoxyCodeLine{00032\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00040\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_safety}{Safety}}(\mbox{\hyperlink{class_data_summary}{DataSummary}}*\ data);}
-\DoxyCodeLine{00041\ }
-\DoxyCodeLine{00045\ \ \ \mbox{\hyperlink{class_safety_aebc24a8421a09083fb170f25a0c8aa36}{\string~Safety}}();}
-\DoxyCodeLine{00046\ }
-\DoxyCodeLine{00047\ \ \ \textcolor{comment}{//\ Getter\ functions}}
-\DoxyCodeLine{00052\ \textcolor{comment}{}\ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_safety_a4bdcf2894bbf8371976d0aa2fc54eb62}{getTemperature}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00053\ }
-\DoxyCodeLine{00058\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_safety_a9e0a28a5a469e3969ae66c7da689c989}{getPermitedMaxTemp}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00059\ }
-\DoxyCodeLine{00064\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_safety_a251ce1abade7a9d37b8794c817d32450}{getMVLower}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00065\ }
-\DoxyCodeLine{00070\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_safety_af6e3a97192da2fa4aa3c2516db8e45c8}{getMVUpper}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00071\ }
-\DoxyCodeLine{00076\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_safety_ac39567888f0eb955815e47aca1601c4d}{getMV}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00077\ }
-\DoxyCodeLine{00082\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_safety_ae86b5061d236a573adce2fc0109550dc}{getNumberOfCheck}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00083\ }
-\DoxyCodeLine{00088\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_safety_ad90d9be24dca34c44d1eea2ecbdbbf48}{getCheckNumber}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00089\ }
-\DoxyCodeLine{00094\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_safety_af6a7947989bc693c3cf7f8acc5f67279}{getIntervalMVCheck}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00095\ }
-\DoxyCodeLine{00100\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_safety_a8cd49e7eac6813e292b0cd1d4d9cc2e1}{getIntervalTempChange}}()\ \textcolor{keyword}{const}}
-\DoxyCodeLine{00101\ \ \ ;}
-\DoxyCodeLine{00106\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_safety_a8cd49e7eac6813e292b0cd1d4d9cc2e1}{getIntervalTempChange}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00039\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_safety}{Safety}}(\mbox{\hyperlink{class_data_summary}{DataSummary}}*\ data);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00044\ \ \ \mbox{\hyperlink{class_safety_aebc24a8421a09083fb170f25a0c8aa36}{\string~Safety}}();}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \textcolor{comment}{//\ Getter\ functions}}
+\DoxyCodeLine{00051\ \textcolor{comment}{}\ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_safety_a4bdcf2894bbf8371976d0aa2fc54eb62}{getTemperature}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00057\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_safety_a9e0a28a5a469e3969ae66c7da689c989}{getPermitedMaxTemp}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00063\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_safety_a251ce1abade7a9d37b8794c817d32450}{getMVLower}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00069\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_safety_af6e3a97192da2fa4aa3c2516db8e45c8}{getMVUpper}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00075\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_safety_ac39567888f0eb955815e47aca1601c4d}{getMV}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00081\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_safety_ae86b5061d236a573adce2fc0109550dc}{getNumberOfCheck}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00087\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_safety_ad90d9be24dca34c44d1eea2ecbdbbf48}{getCheckNumber}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00093\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_safety_af6a7947989bc693c3cf7f8acc5f67279}{getIntervalMVCheck}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00099\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_safety_a8cd49e7eac6813e292b0cd1d4d9cc2e1}{getIntervalTempChange}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00106\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_safety_ac53494e52725da7aeaba0d5b6fb8cdea}{getTempChangeThreshold}}()\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00107\ }
-\DoxyCodeLine{00112\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_safety_ac53494e52725da7aeaba0d5b6fb8cdea}{getTempChangeThreshold}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00112\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_safety_a172eced92a219b273824b1eee367bfe0}{getIgnoreUpper}}()\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00113\ }
-\DoxyCodeLine{00118\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_safety_a172eced92a219b273824b1eee367bfe0}{getIgnoreUpper}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00118\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_safety_a1989e307fb76f5984b7c1e44bd98dd17}{getIgnoreLower}}()\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00119\ }
-\DoxyCodeLine{00124\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_safety_a1989e307fb76f5984b7c1e44bd98dd17}{getIgnoreLower}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00124\ \ \ QPair<double,\ double>\ \mbox{\hyperlink{class_safety_aa8fddc616366b49ab915c491a10c1ffc}{getIgnoreTempRange}}()\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00125\ }
-\DoxyCodeLine{00130\ \ \ QPair<double,\ double>\ \mbox{\hyperlink{class_safety_aa8fddc616366b49ab915c491a10c1ffc}{getIgnoreTempRange}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00130\ \ \ QTimer*\ \mbox{\hyperlink{class_safety_a84df553c01a40ffb5e349529c7089cc2}{getTimerMVCheck}}()\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00131\ }
-\DoxyCodeLine{00136\ \ \ QTimer*\ \mbox{\hyperlink{class_safety_a84df553c01a40ffb5e349529c7089cc2}{getTimerMVCheck}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00136\ \ \ QTimer*\ \mbox{\hyperlink{class_safety_a48ae97417ba6e8f02cd254926cc1b97d}{getTimerTempChangeCheck}}()\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00137\ }
-\DoxyCodeLine{00142\ \ \ QTimer*\ \mbox{\hyperlink{class_safety_a48ae97417ba6e8f02cd254926cc1b97d}{getTimerTempChangeCheck}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00143\ }
-\DoxyCodeLine{00144\ \ \ \ \textcolor{comment}{//\ Setter\ functions}}
+\DoxyCodeLine{00138\ \ \ \ \textcolor{comment}{//\ Setter\ functions}}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00144\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_ab37fe3475582146ac4bf2fff55e7ba6e}{setPermitedMaxTemp}}(\textcolor{keywordtype}{double}\ maxtemp);}
 \DoxyCodeLine{00145\ }
-\DoxyCodeLine{00150\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_ab37fe3475582146ac4bf2fff55e7ba6e}{setPermitedMaxTemp}}(\textcolor{keywordtype}{double}\ maxtemp);}
+\DoxyCodeLine{00150\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_a3cb80658371044047a231a35dfb90091}{setMVUpper}}(\textcolor{keywordtype}{double}\ MVupper);}
 \DoxyCodeLine{00151\ }
-\DoxyCodeLine{00156\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_a3cb80658371044047a231a35dfb90091}{setMVUpper}}(\textcolor{keywordtype}{double}\ MVupper);}
+\DoxyCodeLine{00156\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_ac2a6bcb91b827b2c12e28459e50e621f}{setMV}}(\textcolor{keywordtype}{double}\ MV);}
 \DoxyCodeLine{00157\ }
-\DoxyCodeLine{00162\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_ac2a6bcb91b827b2c12e28459e50e621f}{setMV}}(\textcolor{keywordtype}{double}\ MV);}
+\DoxyCodeLine{00162\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_af4030955eac78938fe9e7079a983b776}{setNumberOfCheck}}(\textcolor{keywordtype}{int}\ number);}
 \DoxyCodeLine{00163\ }
-\DoxyCodeLine{00168\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_af4030955eac78938fe9e7079a983b776}{setNumberOfCheck}}(\textcolor{keywordtype}{int}\ number);}
+\DoxyCodeLine{00168\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_a76548edd3324e5b0aed22cadcbae96ba}{setCheckNumber}}(\textcolor{keywordtype}{int}\ number);}
 \DoxyCodeLine{00169\ }
-\DoxyCodeLine{00174\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_a76548edd3324e5b0aed22cadcbae96ba}{setCheckNumber}}(\textcolor{keywordtype}{int}\ number);}
+\DoxyCodeLine{00174\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_a8f91ae577d2367c6d774cf008c36a313}{setTempChangeThreshold}}(\textcolor{keywordtype}{double}\ temp);}
 \DoxyCodeLine{00175\ }
-\DoxyCodeLine{00180\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_a8f91ae577d2367c6d774cf008c36a313}{setTempChangeThreshold}}(\textcolor{keywordtype}{double}\ temp);}
+\DoxyCodeLine{00180\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_a1f201f12cdedadc0c3ed9038e2bfe645}{setIgnoreUpper}}(\textcolor{keywordtype}{double}\ upper);}
 \DoxyCodeLine{00181\ }
-\DoxyCodeLine{00186\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_a1f201f12cdedadc0c3ed9038e2bfe645}{setIgnoreUpper}}(\textcolor{keywordtype}{double}\ upper);}
+\DoxyCodeLine{00186\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_a7eb8e1541a047b509b266fafd1e57743}{setIgnoreLower}}(\textcolor{keywordtype}{double}\ lower);}
 \DoxyCodeLine{00187\ }
-\DoxyCodeLine{00192\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_a7eb8e1541a047b509b266fafd1e57743}{setIgnoreLower}}(\textcolor{keywordtype}{double}\ lower);}
-\DoxyCodeLine{00193\ }
-\DoxyCodeLine{00200\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_aeb2c6ae389531f1dd34cff755fd1d5c6}{setIgnoreTempRange}}(\textcolor{keywordtype}{double}\ temp,\ \textcolor{keywordtype}{double}\ lower,\ \textcolor{keywordtype}{double}\ upper);}
-\DoxyCodeLine{00201\ }
-\DoxyCodeLine{00205\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_ac99b54db1735ae9169c56d3b66fbff07}{checkTempChange}}();}
-\DoxyCodeLine{00206\ }
-\DoxyCodeLine{00211\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_ae0a24b93c6d273c08b699c12b90809c6}{setEnableTempChangeRange}}(\textcolor{keywordtype}{bool}\ enable);}
-\DoxyCodeLine{00212\ }
-\DoxyCodeLine{00217\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_afa5bda2df137f619ebc1bb6f21356cba}{setIntervalMVCheck}}(\textcolor{keywordtype}{int}\ interval);}
-\DoxyCodeLine{00218\ }
-\DoxyCodeLine{00223\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_a575c792b70681d663013841c8d8a932b}{setIntervalTempChange}}(\textcolor{keywordtype}{int}\ inteerval);}
-\DoxyCodeLine{00224\ }
-\DoxyCodeLine{00228\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_a049753e31587a4eb8bfab9d1bfc518a4}{start}}();}
-\DoxyCodeLine{00229\ }
-\DoxyCodeLine{00233\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_a4d72c7d6a94e6b4772c1e227436de7ff}{stop}}();}
-\DoxyCodeLine{00234\ }
-\DoxyCodeLine{00239\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_safety_ac571e4f2e4881d8c3ee328e06781c9fd}{isTimerMVCheckRunning}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00240\ }
-\DoxyCodeLine{00245\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_safety_a641189c819e5a7e5767f039a28208628}{isTimerTempChangeCheckRunning}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00246\ }
-\DoxyCodeLine{00247\ }
-\DoxyCodeLine{00248\ signals:}
-\DoxyCodeLine{00253\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_a150494b0f4dbcfc2d59244a380a3a37c}{permitedMaxTempChanged}}(\textcolor{keywordtype}{double}\ maxtemp);}
+\DoxyCodeLine{00194\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_aeb2c6ae389531f1dd34cff755fd1d5c6}{setIgnoreTempRange}}(\textcolor{keywordtype}{double}\ temp,\ \textcolor{keywordtype}{double}\ lower,\ \textcolor{keywordtype}{double}\ upper);}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00197\ \ \ \textcolor{keywordtype}{void}\ setDropThreshold(\textcolor{keywordtype}{int}\ dropThreshold);}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00202\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_ac99b54db1735ae9169c56d3b66fbff07}{checkTempChange}}();}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00207\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_a9a83ef74f5b460a681aadf9a2a8cdd28}{checkTempDrop}}();}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00213\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_ae0a24b93c6d273c08b699c12b90809c6}{setEnableTempChangeRange}}(\textcolor{keywordtype}{bool}\ enable);}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00219\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_afa5bda2df137f619ebc1bb6f21356cba}{setIntervalMVCheck}}(\textcolor{keywordtype}{int}\ interval);}
+\DoxyCodeLine{00220\ }
+\DoxyCodeLine{00225\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_a575c792b70681d663013841c8d8a932b}{setIntervalTempChange}}(\textcolor{keywordtype}{int}\ inteerval);}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00231\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_aca35814e10779f5ab630341b64bfb25c}{setIsSTC}}(\textcolor{keywordtype}{bool}\ isSTC);}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00236\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_a049753e31587a4eb8bfab9d1bfc518a4}{start}}();}
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00241\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_a4d72c7d6a94e6b4772c1e227436de7ff}{stop}}();}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00247\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_safety_ac571e4f2e4881d8c3ee328e06781c9fd}{isTimerMVCheckRunning}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00253\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_safety_a641189c819e5a7e5767f039a28208628}{isTimerTempChangeCheckRunning}}()\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00254\ }
-\DoxyCodeLine{00259\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_ac2e863d63b98f16f996d5ab80af0f6e7}{MVUpperChanged}}(\textcolor{keywordtype}{double}\ MVupper);}
-\DoxyCodeLine{00260\ }
-\DoxyCodeLine{00264\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_aeb58b5cedb9863febd41295112667857}{MVupperReachedUpperLimit}}();}
-\DoxyCodeLine{00265\ }
-\DoxyCodeLine{00270\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_a1fc8b42cfd9f0137daca0b78a7e6a967}{NumberOfCheckChanged}}(\textcolor{keywordtype}{int}\ number);}
-\DoxyCodeLine{00271\ }
-\DoxyCodeLine{00276\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_a07fc3535d87e388d71daab2c1be34fe1}{checkNumberChanged}}(\textcolor{keywordtype}{int}\ number);}
-\DoxyCodeLine{00277\ }
-\DoxyCodeLine{00282\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_afda5edb1254c643ff517d6b12113cadb}{tempChangeThresholdChanged}}(\textcolor{keywordtype}{double}\ temp);}
-\DoxyCodeLine{00283\ }
-\DoxyCodeLine{00288\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_a5f638c6cd7a9622dfe70d6d02670f17f}{dangerSignal}}(\textcolor{keywordtype}{int}\ type);}
-\DoxyCodeLine{00289\ }
-\DoxyCodeLine{00294\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_abe479d597616613bf2a4487c3f19cc49}{intervalMVCheckChanged}}(\textcolor{keywordtype}{int}\ interval);}
-\DoxyCodeLine{00295\ }
-\DoxyCodeLine{00300\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_ae64e96e13c1aac7847181a2fec2ac7e9}{intervalTempChangeChanged}}(\textcolor{keywordtype}{int}\ interval);}
-\DoxyCodeLine{00301\ }
-\DoxyCodeLine{00306\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_a964883572fc800b66cb923dd2cb96d04}{escapeTempCheckChange}}(\textcolor{keywordtype}{int}\ sign);}
-\DoxyCodeLine{00307\ }
-\DoxyCodeLine{00312\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_a20e0e101b801021be41c7955f2b996c9}{startTempChangeCheck}}(\textcolor{keywordtype}{int}\ checknumber);}
-\DoxyCodeLine{00313\ }
-\DoxyCodeLine{00318\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_a8c539e883ac2834e91284928debe8f3f}{logMsg}}(QString\ msg);}
-\DoxyCodeLine{00319\ }
-\DoxyCodeLine{00325\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_a0da0a6d963fc605602da374890f888fe}{logMsgWithColor}}(QString\ msg,\ QColor\ color);}
-\DoxyCodeLine{00326\ }
-\DoxyCodeLine{00327\ \ \ \textcolor{keyword}{private}\ slots:}
-\DoxyCodeLine{00331\ \ \ \ \ \textcolor{keywordtype}{void}\ checkTemperature();}
-\DoxyCodeLine{00332\ }
-\DoxyCodeLine{00333\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00334\ \ \ \ \ \mbox{\hyperlink{class_data_summary}{DataSummary}}\ *data\_\{\textcolor{keyword}{nullptr}\};\ }
-\DoxyCodeLine{00335\ \ \ \ \ QMutex\ mutex\_;\ }
-\DoxyCodeLine{00336\ \ \ \ \ QTimer\ *timerMVCheck\_\{\textcolor{keyword}{nullptr}\};\ }
-\DoxyCodeLine{00337\ \ \ \ \ QTimer\ *timerTempChange\_\{\textcolor{keyword}{nullptr}\};\ }
-\DoxyCodeLine{00338\ \ \ \ \ \textcolor{keywordtype}{int}\ numberOfCheck\_\{10\};\ }
-\DoxyCodeLine{00339\ \ \ \ \ \textcolor{keywordtype}{int}\ checkNumber\_\{0\};\ }
-\DoxyCodeLine{00340\ \ \ \ \ \textcolor{keywordtype}{int}\ intervalMVCheck\_\{10\ *\ 1000\};\ }
-\DoxyCodeLine{00341\ \ \ \ \ \textcolor{keywordtype}{int}\ intervalTempChange\_\{10\ *\ 1000\};\ }
-\DoxyCodeLine{00342\ \ \ \ \ \textcolor{keywordtype}{double}\ temperature\_\{\};\ }
-\DoxyCodeLine{00343\ \ \ \ \ \textcolor{keywordtype}{double}\ permitedMaxTemp\_\{280.0\};\ }
-\DoxyCodeLine{00344\ \ \ \ \ \textcolor{keywordtype}{double}\ diffTemp\_\{\};\ }
-\DoxyCodeLine{00345\ \ \ \ \ \textcolor{keywordtype}{double}\ MV\_\{\};\ }
-\DoxyCodeLine{00346\ \ \ \ \ \textcolor{keywordtype}{double}\ MVUpper\_\{\};\ }
-\DoxyCodeLine{00347\ \ \ \ \ \textcolor{keywordtype}{double}\ ignoreLower\_\{-\/10.0\};\ }
-\DoxyCodeLine{00348\ \ \ \ \ \textcolor{keywordtype}{double}\ ignoreUpper\_\{10.0\};\ }
-\DoxyCodeLine{00349\ \ \ \ \ QPair<double,\ double>\ ignoreTempRange\_\{240.0,\ 260.0\};\ }
-\DoxyCodeLine{00350\ \ \ \ \ \textcolor{keywordtype}{double}\ tempChangeThreshold\_\{1.0\};\ }
-\DoxyCodeLine{00351\ \ \ \ \ QVector<double>\ vTempHistory\_\{\};\ }
-\DoxyCodeLine{00352\ \ \ \ \ QVector<double>\ vTempChangeData\_\{\};\ }
-\DoxyCodeLine{00353\ \ \ \ \ \textcolor{keywordtype}{bool}\ isMVupper\_\{\textcolor{keyword}{false}\};\ }
-\DoxyCodeLine{00354\ \ \ \ \ \textcolor{keywordtype}{bool}\ isEnableTempChangeRange\_\{\textcolor{keyword}{false}\};\ }
-\DoxyCodeLine{00360\ \ \ \ \ \textcolor{keywordtype}{bool}\ isTemperatureChanged();}
-\DoxyCodeLine{00361\ }
-\DoxyCodeLine{00366\ \ \ \ \ \textcolor{keywordtype}{bool}\ isMVupper();}
-\DoxyCodeLine{00367\ }
-\DoxyCodeLine{00372\ \ \ \ \ \textcolor{keywordtype}{double}\ diffTemp()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00373\ }
-\DoxyCodeLine{00380\ \ \ \ \ \textcolor{keywordtype}{double}\ diffTemp(\textcolor{keywordtype}{double}\ temp1,\ \textcolor{keywordtype}{double}\ temp2)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00381\ }
-\DoxyCodeLine{00386\ \ \ \ \ \textcolor{keywordtype}{void}\ addTemperature(\textcolor{keywordtype}{double}\ temp);}
-\DoxyCodeLine{00387\ }
-\DoxyCodeLine{00394\ \ \ \ \ \textcolor{keywordtype}{double}\ movingAverage\ (QVector<double>\ data,\ \textcolor{keywordtype}{int}\ wsize);}
-\DoxyCodeLine{00395\ }
-\DoxyCodeLine{00396\ \};}
-\DoxyCodeLine{00397\ }
-\DoxyCodeLine{00398\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SAFETY\_H}}
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00256\ signals:}
+\DoxyCodeLine{00261\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_a150494b0f4dbcfc2d59244a380a3a37c}{permitedMaxTempChanged}}(\textcolor{keywordtype}{double}\ maxtemp);}
+\DoxyCodeLine{00262\ }
+\DoxyCodeLine{00267\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_ac2e863d63b98f16f996d5ab80af0f6e7}{MVUpperChanged}}(\textcolor{keywordtype}{double}\ MVupper);}
+\DoxyCodeLine{00268\ }
+\DoxyCodeLine{00272\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_aeb58b5cedb9863febd41295112667857}{MVupperReachedUpperLimit}}();}
+\DoxyCodeLine{00273\ }
+\DoxyCodeLine{00278\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_a1fc8b42cfd9f0137daca0b78a7e6a967}{NumberOfCheckChanged}}(\textcolor{keywordtype}{int}\ number);}
+\DoxyCodeLine{00279\ }
+\DoxyCodeLine{00284\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_a07fc3535d87e388d71daab2c1be34fe1}{checkNumberChanged}}(\textcolor{keywordtype}{int}\ number);}
+\DoxyCodeLine{00285\ }
+\DoxyCodeLine{00290\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_afda5edb1254c643ff517d6b12113cadb}{tempChangeThresholdChanged}}(\textcolor{keywordtype}{double}\ temp);}
+\DoxyCodeLine{00291\ }
+\DoxyCodeLine{00296\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_a5f638c6cd7a9622dfe70d6d02670f17f}{dangerSignal}}(\textcolor{keywordtype}{int}\ type);}
+\DoxyCodeLine{00297\ }
+\DoxyCodeLine{00302\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_a6ec8e2c86026b7ea3891c8a42081140b}{dropSignal}}();}
+\DoxyCodeLine{00303\ }
+\DoxyCodeLine{00304\ }
+\DoxyCodeLine{00309\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_abe479d597616613bf2a4487c3f19cc49}{intervalMVCheckChanged}}(\textcolor{keywordtype}{int}\ interval);}
+\DoxyCodeLine{00310\ }
+\DoxyCodeLine{00315\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_ae64e96e13c1aac7847181a2fec2ac7e9}{intervalTempChangeChanged}}(\textcolor{keywordtype}{int}\ interval);}
+\DoxyCodeLine{00316\ }
+\DoxyCodeLine{00321\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_a964883572fc800b66cb923dd2cb96d04}{escapeTempCheckChange}}(\textcolor{keywordtype}{int}\ sign);}
+\DoxyCodeLine{00322\ }
+\DoxyCodeLine{00327\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_a20e0e101b801021be41c7955f2b996c9}{startTempChangeCheck}}(\textcolor{keywordtype}{int}\ checknumber);}
+\DoxyCodeLine{00328\ }
+\DoxyCodeLine{00333\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_a8c539e883ac2834e91284928debe8f3f}{logMsg}}(QString\ msg);}
+\DoxyCodeLine{00334\ }
+\DoxyCodeLine{00340\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_safety_a0da0a6d963fc605602da374890f888fe}{logMsgWithColor}}(QString\ msg,\ QColor\ color);}
+\DoxyCodeLine{00341\ }
+\DoxyCodeLine{00342\ \ \ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00346\ \ \ \ \ \textcolor{keywordtype}{void}\ checkTemperature();}
+\DoxyCodeLine{00347\ }
+\DoxyCodeLine{00348\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00349\ \ \ \ \ \mbox{\hyperlink{class_data_summary}{DataSummary}}\ *data\_\{\textcolor{keyword}{nullptr}\};\ }
+\DoxyCodeLine{00350\ \ \ \ \ QMutex\ mutex\_;\ }
+\DoxyCodeLine{00351\ \ \ \ \ QTimer\ *timerMVCheck\_\{\textcolor{keyword}{nullptr}\};\ }
+\DoxyCodeLine{00352\ \ \ \ \ QTimer\ *timerTempChange\_\{\textcolor{keyword}{nullptr}\};\ }
+\DoxyCodeLine{00353\ \ \ \ \ \textcolor{keywordtype}{int}\ numberOfCheck\_\{10\};\ }
+\DoxyCodeLine{00354\ \ \ \ \ \textcolor{keywordtype}{int}\ checkNumber\_\{0\};\ }
+\DoxyCodeLine{00355\ \ \ \ \ \textcolor{keywordtype}{int}\ intervalMVCheck\_\{10\ *\ 1000\};\ }
+\DoxyCodeLine{00356\ \ \ \ \ \textcolor{keywordtype}{int}\ intervalTempChange\_\{10\ *\ 1000\};\ }
+\DoxyCodeLine{00357\ \ \ \ \ \textcolor{keywordtype}{double}\ temperature\_\{\};\ }
+\DoxyCodeLine{00358\ \ \ \ \ \textcolor{keywordtype}{double}\ permitedMaxTemp\_\{280.0\};\ }
+\DoxyCodeLine{00359\ \ \ \ \ \textcolor{keywordtype}{double}\ diffTemp\_\{\};\ }
+\DoxyCodeLine{00360\ \ \ \ \ \textcolor{keywordtype}{double}\ MV\_\{\};\ }
+\DoxyCodeLine{00361\ \ \ \ \ \textcolor{keywordtype}{double}\ MVUpper\_\{\};\ }
+\DoxyCodeLine{00362\ \ \ \ \ \textcolor{keywordtype}{double}\ ignoreLower\_\{-\/10.0\};\ }
+\DoxyCodeLine{00363\ \ \ \ \ \textcolor{keywordtype}{double}\ ignoreUpper\_\{10.0\};\ }
+\DoxyCodeLine{00364\ \ \ \ \ QPair<double,\ double>\ ignoreTempRange\_\{240.0,\ 260.0\};\ }
+\DoxyCodeLine{00365\ \ \ \ \ \textcolor{keywordtype}{double}\ tempChangeThreshold\_\{1.0\};\ }
+\DoxyCodeLine{00366\ \ \ \ \ QVector<double>\ vTempHistory\_\{\};\ }
+\DoxyCodeLine{00367\ \ \ \ \ QVector<double>\ vTempChangeData\_\{\};\ }
+\DoxyCodeLine{00368\ \ \ \ \ \textcolor{keywordtype}{bool}\ isMVupper\_\{\textcolor{keyword}{false}\};\ }
+\DoxyCodeLine{00369\ \ \ \ \ \textcolor{keywordtype}{bool}\ isEnableTempChangeRange\_\{\textcolor{keyword}{false}\};\ }
+\DoxyCodeLine{00370\ \ \ \ \ \textcolor{keywordtype}{bool}\ isSTC\_\{\textcolor{keyword}{false}\};\ }
+\DoxyCodeLine{00371\ \ \ \ \ \textcolor{keywordtype}{bool}\ idDrop\_\{\textcolor{keyword}{false}\};\ }
+\DoxyCodeLine{00372\ \ \ \ \ \textcolor{keywordtype}{int}\ dropCount\_\{0\};\ }
+\DoxyCodeLine{00373\ \ \ \ \ \textcolor{keywordtype}{int}\ dropThreshold\_\{10\};\ }
+\DoxyCodeLine{00378\ \ \ \ \ \textcolor{keywordtype}{bool}\ isTemperatureChanged();}
+\DoxyCodeLine{00379\ }
+\DoxyCodeLine{00384\ \ \ \ \ \textcolor{keywordtype}{bool}\ isMVupper();}
+\DoxyCodeLine{00385\ }
+\DoxyCodeLine{00390\ \ \ \ \ \textcolor{keywordtype}{double}\ diffTemp()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00391\ }
+\DoxyCodeLine{00398\ \ \ \ \ \textcolor{keywordtype}{double}\ diffTemp(\textcolor{keywordtype}{double}\ temp1,\ \textcolor{keywordtype}{double}\ temp2)\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00399\ }
-\DoxyCodeLine{00400\ }
-\DoxyCodeLine{00401\ }
-\DoxyCodeLine{00402\ }
+\DoxyCodeLine{00404\ \ \ \ \ \textcolor{keywordtype}{void}\ addTemperature(\textcolor{keywordtype}{double}\ temp);}
+\DoxyCodeLine{00405\ }
+\DoxyCodeLine{00412\ \ \ \ \ \textcolor{keywordtype}{double}\ movingAverage\ (QVector<double>\ data,\ \textcolor{keywordtype}{int}\ wsize);}
+\DoxyCodeLine{00413\ }
+\DoxyCodeLine{00414\ \};}
+\DoxyCodeLine{00415\ }
+\DoxyCodeLine{00416\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SAFETY\_H}}
+\DoxyCodeLine{00417\ }
+\DoxyCodeLine{00418\ }
+\DoxyCodeLine{00419\ }
+\DoxyCodeLine{00420\ }
 
 \end{DoxyCode}

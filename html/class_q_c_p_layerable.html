@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: QCPLayerable Class Reference</title>
+<title>OmronPID: QCPLayerable Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Project
+   <div id="projectname">OmronPID
    </div>
   </td>
  </tr>
@@ -74,8 +74,7 @@ $(function() {
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
-<a href="#friends">Friends</a> &#124;
-<a href="class_q_c_p_layerable-members.html">List of all members</a>  </div>
+<a href="#friends">Friends</a>  </div>
   <div class="headertitle"><div class="title">QCPLayerable Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
@@ -122,11 +121,13 @@ Inheritance diagram for QCPLayerable:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
 Signals</h2></td></tr>
 <tr class="memitem:abbf8657cedea73ac1c3499b521c90eba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layerable.html#abbf8657cedea73ac1c3499b521c90eba">layerChanged</a> (<a class="el" href="class_q_c_p_layer.html">QCPLayer</a> *newLayer)</td></tr>
+<tr class="memdesc:abbf8657cedea73ac1c3499b521c90eba"><td class="mdescLeft">&#160;</td><td class="mdescRight">This signal is emitted when the layer of this layerable changes, i.e.  <br /></td></tr>
 <tr class="separator:abbf8657cedea73ac1c3499b521c90eba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a74c0fa237f29bf0e49565013fc5d1ec0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layerable.html#a74c0fa237f29bf0e49565013fc5d1ec0">QCPLayerable</a> (<a class="el" href="class_q_custom_plot.html">QCustomPlot</a> *plot, QString targetLayer=QString(), <a class="el" href="class_q_c_p_layerable.html">QCPLayerable</a> *<a class="el" href="class_q_c_p_layerable.html#aa78b7e644d2c519e1a9a6f2ac5fcd858">parentLayerable</a>=0)</td></tr>
+<tr class="memdesc:a74c0fa237f29bf0e49565013fc5d1ec0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <a class="el" href="class_q_c_p_layerable.html" title="Base class for all drawable objects.">QCPLayerable</a> instance.  <br /></td></tr>
 <tr class="separator:a74c0fa237f29bf0e49565013fc5d1ec0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0297b944b6192b6d67d00bff41b6b70"><td class="memItemLeft" align="right" valign="top"><a id="af0297b944b6192b6d67d00bff41b6b70" name="af0297b944b6192b6d67d00bff41b6b70"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>visible</b> () const</td></tr>
@@ -135,6 +136,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>visible</b> () const<
 <a class="el" href="class_q_custom_plot.html">QCustomPlot</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>parentPlot</b> () const</td></tr>
 <tr class="separator:a36ed5b292b90934b524a4e5866a3526c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa78b7e644d2c519e1a9a6f2ac5fcd858"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_q_c_p_layerable.html">QCPLayerable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layerable.html#aa78b7e644d2c519e1a9a6f2ac5fcd858">parentLayerable</a> () const</td></tr>
+<tr class="memdesc:aa78b7e644d2c519e1a9a6f2ac5fcd858"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the parent layerable of this layerable.  <br /></td></tr>
 <tr class="separator:aa78b7e644d2c519e1a9a6f2ac5fcd858"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d4e121a7f1d2314f906fe698209cac9"><td class="memItemLeft" align="right" valign="top"><a id="a9d4e121a7f1d2314f906fe698209cac9" name="a9d4e121a7f1d2314f906fe698209cac9"></a>
 <a class="el" href="class_q_c_p_layer.html">QCPLayer</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>layer</b> () const</td></tr>
@@ -143,16 +145,22 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>visible</b> () const<
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>antialiased</b> () const</td></tr>
 <tr class="separator:a71cbd212fde2703cee076e204a475709"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3bed99ddc396b48ce3ebfdc0418744f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layerable.html#a3bed99ddc396b48ce3ebfdc0418744f8">setVisible</a> (bool on)</td></tr>
+<tr class="memdesc:a3bed99ddc396b48ce3ebfdc0418744f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the visibility of this layerable object.  <br /></td></tr>
 <tr class="separator:a3bed99ddc396b48ce3ebfdc0418744f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab0d0da6d2de45a118886d2c8e16d5a54"><td class="memItemLeft" align="right" valign="top">Q_SLOT bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layerable.html#ab0d0da6d2de45a118886d2c8e16d5a54">setLayer</a> (<a class="el" href="class_q_c_p_layer.html">QCPLayer</a> *layer)</td></tr>
+<tr class="memdesc:ab0d0da6d2de45a118886d2c8e16d5a54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the <em>layer</em> of this layerable object.  <br /></td></tr>
 <tr class="separator:ab0d0da6d2de45a118886d2c8e16d5a54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab25a0e7b897993b44447caee0f142083"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layerable.html#ab25a0e7b897993b44447caee0f142083">setLayer</a> (const QString &amp;layerName)</td></tr>
+<tr class="memdesc:ab25a0e7b897993b44447caee0f142083"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Sets the layer of this layerable object by name.  <br /></td></tr>
 <tr class="separator:ab25a0e7b897993b44447caee0f142083"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4fd43e89be4a553ead41652565ff0581"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layerable.html#a4fd43e89be4a553ead41652565ff0581">setAntialiased</a> (bool enabled)</td></tr>
+<tr class="memdesc:a4fd43e89be4a553ead41652565ff0581"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets whether this object will be drawn antialiased or not.  <br /></td></tr>
 <tr class="separator:a4fd43e89be4a553ead41652565ff0581"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04db8351fefd44cfdb77958e75c6288e"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layerable.html#a04db8351fefd44cfdb77958e75c6288e">selectTest</a> (const QPointF &amp;pos, bool onlySelectable, QVariant *details=0) const</td></tr>
+<tr class="memdesc:a04db8351fefd44cfdb77958e75c6288e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is used to decide whether a click hits a layerable object or not.  <br /></td></tr>
 <tr class="separator:a04db8351fefd44cfdb77958e75c6288e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab054e88f15d485defcb95e7376f119e7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layerable.html#ab054e88f15d485defcb95e7376f119e7">realVisibility</a> () const</td></tr>
+<tr class="memdesc:ab054e88f15d485defcb95e7376f119e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether this layerable is visible, taking the visibility of the layerable parent and the visibility of this layerable's layer into account.  <br /></td></tr>
 <tr class="separator:ab054e88f15d485defcb95e7376f119e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
@@ -179,14 +187,19 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>selectEvent</
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>deselectEvent</b> (bool *selectionStateChanged)</td></tr>
 <tr class="separator:ae546370644a5551c76af739afc008bee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6567604818db90f4fd52822f8bc8376"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layerable.html#af6567604818db90f4fd52822f8bc8376">mousePressEvent</a> (QMouseEvent *event, const QVariant &amp;details)</td></tr>
+<tr class="memdesc:af6567604818db90f4fd52822f8bc8376"><td class="mdescLeft">&#160;</td><td class="mdescRight">This event gets called when the user presses a mouse button while the cursor is over the layerable.  <br /></td></tr>
 <tr class="separator:af6567604818db90f4fd52822f8bc8376"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9eee1ba47fd69be111059ca3881933e4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layerable.html#a9eee1ba47fd69be111059ca3881933e4">mouseMoveEvent</a> (QMouseEvent *event, const QPointF &amp;startPos)</td></tr>
+<tr class="memdesc:a9eee1ba47fd69be111059ca3881933e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">This event gets called when the user moves the mouse while holding a mouse button, after this layerable has become the mouse grabber by accepting the preceding <a class="el" href="class_q_c_p_layerable.html#af6567604818db90f4fd52822f8bc8376">mousePressEvent</a>.  <br /></td></tr>
 <tr class="separator:a9eee1ba47fd69be111059ca3881933e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0d79b005686f668622bbe66ac03ba2c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layerable.html#aa0d79b005686f668622bbe66ac03ba2c">mouseReleaseEvent</a> (QMouseEvent *event, const QPointF &amp;startPos)</td></tr>
+<tr class="memdesc:aa0d79b005686f668622bbe66ac03ba2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">This event gets called when the user releases the mouse button, after this layerable has become the mouse grabber by accepting the preceding <a class="el" href="class_q_c_p_layerable.html#af6567604818db90f4fd52822f8bc8376">mousePressEvent</a>.  <br /></td></tr>
 <tr class="separator:aa0d79b005686f668622bbe66ac03ba2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4171e2e823aca242dd0279f00ed2de81"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layerable.html#a4171e2e823aca242dd0279f00ed2de81">mouseDoubleClickEvent</a> (QMouseEvent *event, const QVariant &amp;details)</td></tr>
+<tr class="memdesc:a4171e2e823aca242dd0279f00ed2de81"><td class="mdescLeft">&#160;</td><td class="mdescRight">This event gets called when the user presses the mouse button a second time in a double-click, while the cursor is over the layerable.  <br /></td></tr>
 <tr class="separator:a4171e2e823aca242dd0279f00ed2de81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47dfd7b8fd99c08ca54e09c362b6f022"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layerable.html#a47dfd7b8fd99c08ca54e09c362b6f022">wheelEvent</a> (QWheelEvent *event)</td></tr>
+<tr class="memdesc:a47dfd7b8fd99c08ca54e09c362b6f022"><td class="mdescLeft">&#160;</td><td class="mdescRight">This event gets called when the user turns the mouse scroll wheel while the cursor is over the layerable.  <br /></td></tr>
 <tr class="separator:a47dfd7b8fd99c08ca54e09c362b6f022"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8cbe5a0c9a5674249982f5ca5f8e02bc"><td class="memItemLeft" align="right" valign="top"><a id="a8cbe5a0c9a5674249982f5ca5f8e02bc" name="a8cbe5a0c9a5674249982f5ca5f8e02bc"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>initializeParentPlot</b> (<a class="el" href="class_q_custom_plot.html">QCustomPlot</a> *parentPlot)</td></tr>
@@ -268,7 +281,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>QCPAxisRect</b></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Creates a new <a class="el" href="class_q_c_p_layerable.html" title="Base class for all drawable objects.">QCPLayerable</a> instance.</p>
+
+<p>Creates a new <a class="el" href="class_q_c_p_layerable.html" title="Base class for all drawable objects.">QCPLayerable</a> instance. </p>
 <p>Since <a class="el" href="class_q_c_p_layerable.html" title="Base class for all drawable objects.">QCPLayerable</a> is an abstract base class, it can't be instantiated directly. Use one of the derived classes.</p>
 <p>If <em>plot</em> is provided, it automatically places itself on the layer named <em>targetLayer</em>. If <em>targetLayer</em> is an empty string, it places itself on the current layer of the plot (see <a class="el" href="class_q_custom_plot.html#a73a6dc47c653bb6f8f030abca5a11852">QCustomPlot::setCurrentLayer</a>).</p>
 <p>It is possible to provide 0 as <em>plot</em>. In that case, you should assign a parent plot at a later time with initializeParentPlot.</p>
@@ -300,8 +314,10 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>QCPAxisRect</b></td>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This signal is emitted when the layer of this layerable changes, i.e. this layerable is moved to a different layer.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_layerable.html#ab0d0da6d2de45a118886d2c8e16d5a54">setLayer</a> </dd></dl>
+
+<p>This signal is emitted when the layer of this layerable changes, i.e. </p>
+<p>this layerable is moved to a different layer.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_layerable.html#ab0d0da6d2de45a118886d2c8e16d5a54" title="Sets the layer of this layerable object.">setLayer</a> </dd></dl>
 
 </div>
 </div>
@@ -338,12 +354,14 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>QCPAxisRect</b></td>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This event gets called when the user presses the mouse button a second time in a double-click, while the cursor is over the layerable. Whether a cursor is over the layerable is decided by a preceding call to <a class="el" href="class_q_c_p_layerable.html#a04db8351fefd44cfdb77958e75c6288e">selectTest</a>.</p>
+
+<p>This event gets called when the user presses the mouse button a second time in a double-click, while the cursor is over the layerable. </p>
+<p>Whether a cursor is over the layerable is decided by a preceding call to <a class="el" href="class_q_c_p_layerable.html#a04db8351fefd44cfdb77958e75c6288e">selectTest</a>.</p>
 <p><a class="el" href="class_the.html">The</a> <a class="el" href="class_q_c_p_layerable.html#a4171e2e823aca242dd0279f00ed2de81">mouseDoubleClickEvent</a> is called instead of the second <a class="el" href="class_q_c_p_layerable.html#af6567604818db90f4fd52822f8bc8376">mousePressEvent</a>. So in the case of a double-click, the event succession is <em>pressEvent &ndash; releaseEvent &ndash; doubleClickEvent &ndash; releaseEvent</em>.</p>
-<p><a class="el" href="class_the.html">The</a> current pixel position of the cursor on the <a class="el" href="class_q_custom_plot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a> widget is accessible via <code>event-&gt;pos()</code>. <a class="el" href="class_the.html">The</a> parameter <em>details</em> contains layerable-specific details about the hit, which were generated in the previous call to <a class="el" href="class_q_c_p_layerable.html#a04db8351fefd44cfdb77958e75c6288e">selectTest</a>. For example, One-dimensional plottables like <a class="el" href="class_q_c_p_graph.html">QCPGraph</a> or <a class="el" href="class_q_c_p_bars.html">QCPBars</a> convey the clicked data point in the <em>details</em> parameter, as <a class="el" href="class_q_c_p_data_selection.html">QCPDataSelection</a> packed as QVariant. Multi-part objects convey the specific <code>SelectablePart</code> that was hit (e.g. <a class="el" href="class_q_c_p_axis.html#abee4c7a54c468b1385dfce2c898b115f">QCPAxis::SelectablePart</a> in the case of axes).</p>
+<p><a class="el" href="class_the.html">The</a> current pixel position of the cursor on the <a class="el" href="class_q_custom_plot.html" title="The central class of the library.">QCustomPlot</a> widget is accessible via <code>event-&gt;pos()</code>. <a class="el" href="class_the.html">The</a> parameter <em>details</em> contains layerable-specific details about the hit, which were generated in the previous call to <a class="el" href="class_q_c_p_layerable.html#a04db8351fefd44cfdb77958e75c6288e">selectTest</a>. For example, One-dimensional plottables like <a class="el" href="class_q_c_p_graph.html">QCPGraph</a> or <a class="el" href="class_q_c_p_bars.html">QCPBars</a> convey the clicked data point in the <em>details</em> parameter, as <a class="el" href="class_q_c_p_data_selection.html">QCPDataSelection</a> packed as QVariant. Multi-part objects convey the specific <code>SelectablePart</code> that was hit (e.g. <a class="el" href="class_q_c_p_axis.html#abee4c7a54c468b1385dfce2c898b115f">QCPAxis::SelectablePart</a> in the case of axes).</p>
 <p>Similarly to <a class="el" href="class_q_c_p_layerable.html#af6567604818db90f4fd52822f8bc8376">mousePressEvent</a>, once a layerable has accepted the <a class="el" href="class_q_c_p_layerable.html#a4171e2e823aca242dd0279f00ed2de81">mouseDoubleClickEvent</a>, it is considered the mouse grabber and will receive all following calls to <a class="el" href="class_q_c_p_layerable.html#a9eee1ba47fd69be111059ca3881933e4">mouseMoveEvent</a> and <a class="el" href="class_q_c_p_layerable.html#aa0d79b005686f668622bbe66ac03ba2c">mouseReleaseEvent</a> for this mouse interaction (a "mouse interaction" in this context ends with the release).</p>
 <p><a class="el" href="class_the.html">The</a> default implementation does nothing except explicitly ignoring the event with <code>event-&gt;ignore()</code>.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_layerable.html#af6567604818db90f4fd52822f8bc8376">mousePressEvent</a>, <a class="el" href="class_q_c_p_layerable.html#a9eee1ba47fd69be111059ca3881933e4">mouseMoveEvent</a>, <a class="el" href="class_q_c_p_layerable.html#aa0d79b005686f668622bbe66ac03ba2c">mouseReleaseEvent</a>, <a class="el" href="class_q_c_p_layerable.html#a47dfd7b8fd99c08ca54e09c362b6f022">wheelEvent</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_layerable.html#af6567604818db90f4fd52822f8bc8376" title="This event gets called when the user presses a mouse button while the cursor is over the layerable.">mousePressEvent</a>, <a class="el" href="class_q_c_p_layerable.html#a9eee1ba47fd69be111059ca3881933e4" title="This event gets called when the user moves the mouse while holding a mouse button,...">mouseMoveEvent</a>, <a class="el" href="class_q_c_p_layerable.html#aa0d79b005686f668622bbe66ac03ba2c" title="This event gets called when the user releases the mouse button, after this layerable has become the m...">mouseReleaseEvent</a>, <a class="el" href="class_q_c_p_layerable.html#a47dfd7b8fd99c08ca54e09c362b6f022" title="This event gets called when the user turns the mouse scroll wheel while the cursor is over the layera...">wheelEvent</a> </dd></dl>
 
 <p>Reimplemented in <a class="el" href="class_q_c_p_text_element.html#a2272ff775ab385f612e9fd39773de7c0">QCPTextElement</a>.</p>
 
@@ -382,10 +400,11 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>QCPAxisRect</b></td>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This event gets called when the user moves the mouse while holding a mouse button, after this layerable has become the mouse grabber by accepting the preceding <a class="el" href="class_q_c_p_layerable.html#af6567604818db90f4fd52822f8bc8376">mousePressEvent</a>.</p>
-<p><a class="el" href="class_the.html">The</a> current pixel position of the cursor on the <a class="el" href="class_q_custom_plot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a> widget is accessible via <code>event-&gt;pos()</code>. <a class="el" href="class_the.html">The</a> parameter <em>startPos</em> indicates the position where the initial <a class="el" href="class_q_c_p_layerable.html#af6567604818db90f4fd52822f8bc8376">mousePressEvent</a> occured, that started the mouse interaction.</p>
+
+<p>This event gets called when the user moves the mouse while holding a mouse button, after this layerable has become the mouse grabber by accepting the preceding <a class="el" href="class_q_c_p_layerable.html#af6567604818db90f4fd52822f8bc8376">mousePressEvent</a>. </p>
+<p><a class="el" href="class_the.html">The</a> current pixel position of the cursor on the <a class="el" href="class_q_custom_plot.html" title="The central class of the library.">QCustomPlot</a> widget is accessible via <code>event-&gt;pos()</code>. <a class="el" href="class_the.html">The</a> parameter <em>startPos</em> indicates the position where the initial <a class="el" href="class_q_c_p_layerable.html#af6567604818db90f4fd52822f8bc8376">mousePressEvent</a> occured, that started the mouse interaction.</p>
 <p><a class="el" href="class_the.html">The</a> default implementation does nothing.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_layerable.html#af6567604818db90f4fd52822f8bc8376">mousePressEvent</a>, <a class="el" href="class_q_c_p_layerable.html#aa0d79b005686f668622bbe66ac03ba2c">mouseReleaseEvent</a>, <a class="el" href="class_q_c_p_layerable.html#a4171e2e823aca242dd0279f00ed2de81">mouseDoubleClickEvent</a>, <a class="el" href="class_q_c_p_layerable.html#a47dfd7b8fd99c08ca54e09c362b6f022">wheelEvent</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_layerable.html#af6567604818db90f4fd52822f8bc8376" title="This event gets called when the user presses a mouse button while the cursor is over the layerable.">mousePressEvent</a>, <a class="el" href="class_q_c_p_layerable.html#aa0d79b005686f668622bbe66ac03ba2c" title="This event gets called when the user releases the mouse button, after this layerable has become the m...">mouseReleaseEvent</a>, <a class="el" href="class_q_c_p_layerable.html#a4171e2e823aca242dd0279f00ed2de81" title="This event gets called when the user presses the mouse button a second time in a double-click,...">mouseDoubleClickEvent</a>, <a class="el" href="class_q_c_p_layerable.html#a47dfd7b8fd99c08ca54e09c362b6f022" title="This event gets called when the user turns the mouse scroll wheel while the cursor is over the layera...">wheelEvent</a> </dd></dl>
 
 <p>Reimplemented in <a class="el" href="class_q_c_p_axis.html#a2a89a13440eec099fc2327c2672be0cd">QCPAxis</a>, <a class="el" href="class_q_c_p_axis_rect.html#a9cd27ad8c5cfb49aefd9dbb30def4beb">QCPAxisRect</a>, <a class="el" href="class_q_c_p_color_scale_axis_rect_private.html#a9cd27ad8c5cfb49aefd9dbb30def4beb">QCPColorScaleAxisRectPrivate</a>, and <a class="el" href="class_q_c_p_color_scale.html#a3b2bd79725aefaf2630fc76e90939442">QCPColorScale</a>.</p>
 
@@ -424,12 +443,14 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>QCPAxisRect</b></td>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This event gets called when the user presses a mouse button while the cursor is over the layerable. Whether a cursor is over the layerable is decided by a preceding call to <a class="el" href="class_q_c_p_layerable.html#a04db8351fefd44cfdb77958e75c6288e">selectTest</a>.</p>
-<p><a class="el" href="class_the.html">The</a> current pixel position of the cursor on the <a class="el" href="class_q_custom_plot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a> widget is accessible via <code>event-&gt;pos()</code>. <a class="el" href="class_the.html">The</a> parameter <em>details</em> contains layerable-specific details about the hit, which were generated in the previous call to <a class="el" href="class_q_c_p_layerable.html#a04db8351fefd44cfdb77958e75c6288e">selectTest</a>. For example, One-dimensional plottables like <a class="el" href="class_q_c_p_graph.html">QCPGraph</a> or <a class="el" href="class_q_c_p_bars.html">QCPBars</a> convey the clicked data point in the <em>details</em> parameter, as <a class="el" href="class_q_c_p_data_selection.html">QCPDataSelection</a> packed as QVariant. Multi-part objects convey the specific <code>SelectablePart</code> that was hit (e.g. <a class="el" href="class_q_c_p_axis.html#abee4c7a54c468b1385dfce2c898b115f">QCPAxis::SelectablePart</a> in the case of axes).</p>
-<p><a class="el" href="class_q_custom_plot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a> uses an event propagation system that works the same as Qt's system. If your layerable doesn't reimplement the <a class="el" href="class_q_c_p_layerable.html#af6567604818db90f4fd52822f8bc8376">mousePressEvent</a> or explicitly calls <code>event-&gt;ignore()</code> in its reimplementation, the event will be propagated to the next layerable in the stacking order.</p>
+
+<p>This event gets called when the user presses a mouse button while the cursor is over the layerable. </p>
+<p>Whether a cursor is over the layerable is decided by a preceding call to <a class="el" href="class_q_c_p_layerable.html#a04db8351fefd44cfdb77958e75c6288e">selectTest</a>.</p>
+<p><a class="el" href="class_the.html">The</a> current pixel position of the cursor on the <a class="el" href="class_q_custom_plot.html" title="The central class of the library.">QCustomPlot</a> widget is accessible via <code>event-&gt;pos()</code>. <a class="el" href="class_the.html">The</a> parameter <em>details</em> contains layerable-specific details about the hit, which were generated in the previous call to <a class="el" href="class_q_c_p_layerable.html#a04db8351fefd44cfdb77958e75c6288e">selectTest</a>. For example, One-dimensional plottables like <a class="el" href="class_q_c_p_graph.html">QCPGraph</a> or <a class="el" href="class_q_c_p_bars.html">QCPBars</a> convey the clicked data point in the <em>details</em> parameter, as <a class="el" href="class_q_c_p_data_selection.html">QCPDataSelection</a> packed as QVariant. Multi-part objects convey the specific <code>SelectablePart</code> that was hit (e.g. <a class="el" href="class_q_c_p_axis.html#abee4c7a54c468b1385dfce2c898b115f">QCPAxis::SelectablePart</a> in the case of axes).</p>
+<p><a class="el" href="class_q_custom_plot.html" title="The central class of the library.">QCustomPlot</a> uses an event propagation system that works the same as Qt's system. If your layerable doesn't reimplement the <a class="el" href="class_q_c_p_layerable.html#af6567604818db90f4fd52822f8bc8376">mousePressEvent</a> or explicitly calls <code>event-&gt;ignore()</code> in its reimplementation, the event will be propagated to the next layerable in the stacking order.</p>
 <p>Once a layerable has accepted the <a class="el" href="class_q_c_p_layerable.html#af6567604818db90f4fd52822f8bc8376">mousePressEvent</a>, it is considered the mouse grabber and will receive all following calls to <a class="el" href="class_q_c_p_layerable.html#a9eee1ba47fd69be111059ca3881933e4">mouseMoveEvent</a> or <a class="el" href="class_q_c_p_layerable.html#aa0d79b005686f668622bbe66ac03ba2c">mouseReleaseEvent</a> for this mouse interaction (a "mouse interaction" in this context ends with the release).</p>
 <p><a class="el" href="class_the.html">The</a> default implementation does nothing except explicitly ignoring the event with <code>event-&gt;ignore()</code>.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_layerable.html#a9eee1ba47fd69be111059ca3881933e4">mouseMoveEvent</a>, <a class="el" href="class_q_c_p_layerable.html#aa0d79b005686f668622bbe66ac03ba2c">mouseReleaseEvent</a>, <a class="el" href="class_q_c_p_layerable.html#a4171e2e823aca242dd0279f00ed2de81">mouseDoubleClickEvent</a>, <a class="el" href="class_q_c_p_layerable.html#a47dfd7b8fd99c08ca54e09c362b6f022">wheelEvent</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_layerable.html#a9eee1ba47fd69be111059ca3881933e4" title="This event gets called when the user moves the mouse while holding a mouse button,...">mouseMoveEvent</a>, <a class="el" href="class_q_c_p_layerable.html#aa0d79b005686f668622bbe66ac03ba2c" title="This event gets called when the user releases the mouse button, after this layerable has become the m...">mouseReleaseEvent</a>, <a class="el" href="class_q_c_p_layerable.html#a4171e2e823aca242dd0279f00ed2de81" title="This event gets called when the user presses the mouse button a second time in a double-click,...">mouseDoubleClickEvent</a>, <a class="el" href="class_q_c_p_layerable.html#a47dfd7b8fd99c08ca54e09c362b6f022" title="This event gets called when the user turns the mouse scroll wheel while the cursor is over the layera...">wheelEvent</a> </dd></dl>
 
 <p>Reimplemented in <a class="el" href="class_q_c_p_axis.html#ac89c068873ee9197a5d2af715bdc1105">QCPAxis</a>, <a class="el" href="class_q_c_p_axis_rect.html#aa9a7c807eaa4666870ac94aa6abc4dde">QCPAxisRect</a>, <a class="el" href="class_q_c_p_text_element.html#ad7b2c98355e3d2f912574b74fcee0574">QCPTextElement</a>, <a class="el" href="class_q_c_p_color_scale_axis_rect_private.html#aa9a7c807eaa4666870ac94aa6abc4dde">QCPColorScaleAxisRectPrivate</a>, and <a class="el" href="class_q_c_p_color_scale.html#a91f633b97ffcd57fdf8cd814974c20e6">QCPColorScale</a>.</p>
 
@@ -468,10 +489,11 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>QCPAxisRect</b></td>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This event gets called when the user releases the mouse button, after this layerable has become the mouse grabber by accepting the preceding <a class="el" href="class_q_c_p_layerable.html#af6567604818db90f4fd52822f8bc8376">mousePressEvent</a>.</p>
-<p><a class="el" href="class_the.html">The</a> current pixel position of the cursor on the <a class="el" href="class_q_custom_plot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a> widget is accessible via <code>event-&gt;pos()</code>. <a class="el" href="class_the.html">The</a> parameter <em>startPos</em> indicates the position where the initial <a class="el" href="class_q_c_p_layerable.html#af6567604818db90f4fd52822f8bc8376">mousePressEvent</a> occured, that started the mouse interaction.</p>
+
+<p>This event gets called when the user releases the mouse button, after this layerable has become the mouse grabber by accepting the preceding <a class="el" href="class_q_c_p_layerable.html#af6567604818db90f4fd52822f8bc8376">mousePressEvent</a>. </p>
+<p><a class="el" href="class_the.html">The</a> current pixel position of the cursor on the <a class="el" href="class_q_custom_plot.html" title="The central class of the library.">QCustomPlot</a> widget is accessible via <code>event-&gt;pos()</code>. <a class="el" href="class_the.html">The</a> parameter <em>startPos</em> indicates the position where the initial <a class="el" href="class_q_c_p_layerable.html#af6567604818db90f4fd52822f8bc8376">mousePressEvent</a> occured, that started the mouse interaction.</p>
 <p><a class="el" href="class_the.html">The</a> default implementation does nothing.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_layerable.html#af6567604818db90f4fd52822f8bc8376">mousePressEvent</a>, <a class="el" href="class_q_c_p_layerable.html#a9eee1ba47fd69be111059ca3881933e4">mouseMoveEvent</a>, <a class="el" href="class_q_c_p_layerable.html#a4171e2e823aca242dd0279f00ed2de81">mouseDoubleClickEvent</a>, <a class="el" href="class_q_c_p_layerable.html#a47dfd7b8fd99c08ca54e09c362b6f022">wheelEvent</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_layerable.html#af6567604818db90f4fd52822f8bc8376" title="This event gets called when the user presses a mouse button while the cursor is over the layerable.">mousePressEvent</a>, <a class="el" href="class_q_c_p_layerable.html#a9eee1ba47fd69be111059ca3881933e4" title="This event gets called when the user moves the mouse while holding a mouse button,...">mouseMoveEvent</a>, <a class="el" href="class_q_c_p_layerable.html#a4171e2e823aca242dd0279f00ed2de81" title="This event gets called when the user presses the mouse button a second time in a double-click,...">mouseDoubleClickEvent</a>, <a class="el" href="class_q_c_p_layerable.html#a47dfd7b8fd99c08ca54e09c362b6f022" title="This event gets called when the user turns the mouse scroll wheel while the cursor is over the layera...">wheelEvent</a> </dd></dl>
 
 <p>Reimplemented in <a class="el" href="class_q_c_p_axis.html#a35663b938ad83e91c0b8e59dbc8c6b18">QCPAxis</a>, <a class="el" href="class_q_c_p_axis_rect.html#a6c89b988d3a0b93c0878f0ebdb5037f4">QCPAxisRect</a>, <a class="el" href="class_q_c_p_text_element.html#acfcbaf9b1da18745e72726aafb39c855">QCPTextElement</a>, <a class="el" href="class_q_c_p_color_scale_axis_rect_private.html#a6c89b988d3a0b93c0878f0ebdb5037f4">QCPColorScaleAxisRectPrivate</a>, and <a class="el" href="class_q_c_p_color_scale.html#a6a35dd39ab4e5cb2d7b29ebb4d5b61b0">QCPColorScale</a>.</p>
 
@@ -499,7 +521,9 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>QCPAxisRect</b></td>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Returns the parent layerable of this layerable. <a class="el" href="class_the.html">The</a> parent layerable is used to provide visibility hierarchies in conjunction with the method <a class="el" href="class_q_c_p_layerable.html#ab054e88f15d485defcb95e7376f119e7">realVisibility</a>. This way, layerables only get drawn if their parent layerables are visible, too.</p>
+
+<p>Returns the parent layerable of this layerable. </p>
+<p><a class="el" href="class_the.html">The</a> parent layerable is used to provide visibility hierarchies in conjunction with the method <a class="el" href="class_q_c_p_layerable.html#ab054e88f15d485defcb95e7376f119e7">realVisibility</a>. This way, layerables only get drawn if their parent layerables are visible, too.</p>
 <p>Note that a parent layerable is not necessarily also the QObject parent for memory management. Further, a layerable doesn't always have a parent layerable, so this function may return 0.</p>
 <p>A parent layerable is set implicitly when placed inside layout elements and doesn't need to be set manually by the user. </p>
 
@@ -519,7 +543,9 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>QCPAxisRect</b></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Returns whether this layerable is visible, taking the visibility of the layerable parent and the visibility of this layerable's layer into account. This is the method that is consulted to decide whether a layerable shall be drawn or not.</p>
+
+<p>Returns whether this layerable is visible, taking the visibility of the layerable parent and the visibility of this layerable's layer into account. </p>
+<p>This is the method that is consulted to decide whether a layerable shall be drawn or not.</p>
 <p>If this layerable has a direct layerable parent (usually set via hierarchies implemented in subclasses, like in the case of <a class="el" href="class_q_c_p_layout_element.html">QCPLayoutElement</a>), this function returns true only if this layerable has its visibility set to true and the parent layerable's <a class="el" href="class_q_c_p_layerable.html#ab054e88f15d485defcb95e7376f119e7">realVisibility</a> returns true. </p>
 
 </div>
@@ -563,14 +589,15 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>QCPAxisRect</b></td>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This function is used to decide whether a click hits a layerable object or not.</p>
-<p><em>pos</em> is a point in pixel coordinates on the <a class="el" href="class_q_custom_plot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a> surface. This function returns the shortest pixel distance of this point to the object. If the object is either invisible or the distance couldn't be determined, -1.0 is returned. Further, if <em>onlySelectable</em> is true and the object is not selectable, -1.0 is returned, too.</p>
+
+<p>This function is used to decide whether a click hits a layerable object or not. </p>
+<p><em>pos</em> is a point in pixel coordinates on the <a class="el" href="class_q_custom_plot.html" title="The central class of the library.">QCustomPlot</a> surface. This function returns the shortest pixel distance of this point to the object. If the object is either invisible or the distance couldn't be determined, -1.0 is returned. Further, if <em>onlySelectable</em> is true and the object is not selectable, -1.0 is returned, too.</p>
 <p>If the object is represented not by single lines but by an area like a <a class="el" href="class_q_c_p_item_text.html">QCPItemText</a> or the bars of a <a class="el" href="class_q_c_p_bars.html">QCPBars</a> plottable, a click inside the area should also be considered a hit. In these cases this function thus returns a constant value greater zero but still below the parent plot's selection tolerance. (typically the selectionTolerance multiplied by 0.99).</p>
 <p>Providing a constant value for area objects allows selecting line objects even when they are obscured by such area objects, by clicking close to the lines (i.e. closer than 0.99*selectionTolerance).</p>
-<p><a class="el" href="class_the.html">The</a> actual setting of the selection state is not done by this function. This is handled by the parent <a class="el" href="class_q_custom_plot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a> when the mouseReleaseEvent occurs, and the finally selected object is notified via the selectEvent/ deselectEvent methods.</p>
-<p><em>details</em> is an optional output parameter. Every layerable subclass may place any information in <em>details</em>. This information will be passed to selectEvent when the parent <a class="el" href="class_q_custom_plot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a> decides on the basis of this selectTest call, that the object was successfully selected. <a class="el" href="class_the.html">The</a> subsequent call to selectEvent will carry the <em>details</em>. This is useful for multi-part objects (like <a class="el" href="class_q_c_p_axis.html" title="Manages a single axis inside a QCustomPlot.">QCPAxis</a>). This way, a possibly complex calculation to decide which part was clicked is only done once in <a class="el" href="class_q_c_p_layerable.html#a04db8351fefd44cfdb77958e75c6288e">selectTest</a>. <a class="el" href="class_the.html">The</a> result (i.e. the actually clicked part) can then be placed in <em>details</em>. So in the subsequent selectEvent, the decision which part was selected doesn't have to be done a second time for a single selection operation.</p>
+<p><a class="el" href="class_the.html">The</a> actual setting of the selection state is not done by this function. This is handled by the parent <a class="el" href="class_q_custom_plot.html" title="The central class of the library.">QCustomPlot</a> when the mouseReleaseEvent occurs, and the finally selected object is notified via the selectEvent/ deselectEvent methods.</p>
+<p><em>details</em> is an optional output parameter. Every layerable subclass may place any information in <em>details</em>. This information will be passed to selectEvent when the parent <a class="el" href="class_q_custom_plot.html" title="The central class of the library.">QCustomPlot</a> decides on the basis of this selectTest call, that the object was successfully selected. <a class="el" href="class_the.html">The</a> subsequent call to selectEvent will carry the <em>details</em>. This is useful for multi-part objects (like <a class="el" href="class_q_c_p_axis.html" title="Manages a single axis inside a QCustomPlot.">QCPAxis</a>). This way, a possibly complex calculation to decide which part was clicked is only done once in <a class="el" href="class_q_c_p_layerable.html#a04db8351fefd44cfdb77958e75c6288e">selectTest</a>. <a class="el" href="class_the.html">The</a> result (i.e. the actually clicked part) can then be placed in <em>details</em>. So in the subsequent selectEvent, the decision which part was selected doesn't have to be done a second time for a single selection operation.</p>
 <p>You may pass 0 as <em>details</em> to indicate that you are not interested in those selection details.</p>
-<dl class="section see"><dt>See also</dt><dd>selectEvent, deselectEvent, <a class="el" href="class_q_c_p_layerable.html#af6567604818db90f4fd52822f8bc8376">mousePressEvent</a>, <a class="el" href="class_q_c_p_layerable.html#a47dfd7b8fd99c08ca54e09c362b6f022">wheelEvent</a>, <a class="el" href="class_q_custom_plot.html#a5ee1e2f6ae27419deca53e75907c27e5">QCustomPlot::setInteractions</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd>selectEvent, deselectEvent, <a class="el" href="class_q_c_p_layerable.html#af6567604818db90f4fd52822f8bc8376" title="This event gets called when the user presses a mouse button while the cursor is over the layerable.">mousePressEvent</a>, <a class="el" href="class_q_c_p_layerable.html#a47dfd7b8fd99c08ca54e09c362b6f022" title="This event gets called when the user turns the mouse scroll wheel while the cursor is over the layera...">wheelEvent</a>, <a class="el" href="class_q_custom_plot.html#a5ee1e2f6ae27419deca53e75907c27e5" title="Sets the possible interactions of this QCustomPlot as an or-combination of QCP::Interaction enums.">QCustomPlot::setInteractions</a> </dd></dl>
 
 <p>Reimplemented in <a class="el" href="class_q_c_p_abstract_plottable.html#a38efe9641d972992a3d44204bc80ec1d">QCPAbstractPlottable</a>, <a class="el" href="class_q_c_p_layout_element.html#ae97f483cccedadbf18ea4525ef240ee4">QCPLayoutElement</a>, <a class="el" href="class_q_c_p_layout_inset.html#a2eeef7ea1b8340e7c7c2e2fc229df5ea">QCPLayoutInset</a>, <a class="el" href="class_q_c_p_axis.html#a63b7103c57fe9acfbce164334ea837f8">QCPAxis</a>, <a class="el" href="class_q_c_p_abstract_plottable1_d.html#a4611b43bcb6441b2154eb4f4e0a33db2">QCPAbstractPlottable1D&lt; DataType &gt;</a>, <a class="el" href="class_q_c_p_abstract_plottable1_d.html#a4611b43bcb6441b2154eb4f4e0a33db2">QCPAbstractPlottable1D&lt; QCPBarsData &gt;</a>, <a class="el" href="class_q_c_p_abstract_plottable1_d.html#a4611b43bcb6441b2154eb4f4e0a33db2">QCPAbstractPlottable1D&lt; QCPCurveData &gt;</a>, <a class="el" href="class_q_c_p_abstract_plottable1_d.html#a4611b43bcb6441b2154eb4f4e0a33db2">QCPAbstractPlottable1D&lt; QCPFinancialData &gt;</a>, <a class="el" href="class_q_c_p_abstract_plottable1_d.html#a4611b43bcb6441b2154eb4f4e0a33db2">QCPAbstractPlottable1D&lt; QCPGraphData &gt;</a>, <a class="el" href="class_q_c_p_abstract_plottable1_d.html#a4611b43bcb6441b2154eb4f4e0a33db2">QCPAbstractPlottable1D&lt; QCPStatisticalBoxData &gt;</a>, <a class="el" href="class_q_c_p_abstract_legend_item.html#a80ec112a6608fc39dbed56239849b187">QCPAbstractLegendItem</a>, <a class="el" href="class_q_c_p_legend.html#aa53507624491908fb3d1a514b1fc674e">QCPLegend</a>, <a class="el" href="class_q_c_p_text_element.html#a1e721bc2994a127ef5a8f0a514a5dbac">QCPTextElement</a>, <a class="el" href="class_q_c_p_graph.html#a6d669d04462d272c6aa0e5f85846d673">QCPGraph</a>, <a class="el" href="class_q_c_p_curve.html#a0ed9b7e6b4bc72010d6fcd974af46a8b">QCPCurve</a>, <a class="el" href="class_q_c_p_bars.html#a121f899c27af3186fe93dcd0eb98f49b">QCPBars</a>, <a class="el" href="class_q_c_p_statistical_box.html#a1607fa92f829c631107c20ccb2d70a6d">QCPStatisticalBox</a>, <a class="el" href="class_q_c_p_color_map.html#afb4b843596addf58096082827a9e3450">QCPColorMap</a>, <a class="el" href="class_q_c_p_financial.html#aac8e91622ac58330fa9ce81cc8fd40ee">QCPFinancial</a>, <a class="el" href="class_q_c_p_error_bars.html#ac1b6675ef43e32547a3cbcf7b7ac46ed">QCPErrorBars</a>, <a class="el" href="class_q_c_p_item_straight_line.html#a2e36c9d4dcc3aeda78a5584f790e39e3">QCPItemStraightLine</a>, <a class="el" href="class_q_c_p_item_line.html#a8e02bfbca04fbcf3dbc375a2bf693229">QCPItemLine</a>, <a class="el" href="class_q_c_p_item_curve.html#a718fa40140a43c8afbd41a3d85c92d72">QCPItemCurve</a>, <a class="el" href="class_q_c_p_item_rect.html#a2e68621b75bae4da6ae0ab2cdd0dd733">QCPItemRect</a>, <a class="el" href="class_q_c_p_item_text.html#a676aaec10ad3cc4d7d0e4847db04c838">QCPItemText</a>, <a class="el" href="class_q_c_p_item_ellipse.html#ab6e2b8a29695c606c7731e498297ca29">QCPItemEllipse</a>, <a class="el" href="class_q_c_p_item_pixmap.html#a65d1ede7bb479b90d40186d083071947">QCPItemPixmap</a>, <a class="el" href="class_q_c_p_item_tracer.html#a9fd955fea40e977d66f3a9fd5765aec4">QCPItemTracer</a>, <a class="el" href="class_q_c_p_item_bracket.html#a49a6b2f41e0a8c2a2e3a2836027a8455">QCPItemBracket</a>, and <a class="el" href="class_q_c_p_abstract_item.html#ae41d0349d68bb802c49104afd100ba2a">QCPAbstractItem</a>.</p>
 
@@ -591,8 +618,9 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>QCPAxisRect</b></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Sets whether this object will be drawn antialiased or not.</p>
-<p>Note that antialiasing settings may be overridden by <a class="el" href="class_q_custom_plot.html#af6f91e5eab1be85f67c556e98c3745e8">QCustomPlot::setAntialiasedElements</a> and <a class="el" href="class_q_custom_plot.html#ae10d685b5eabea2999fb8775ca173c24">QCustomPlot::setNotAntialiasedElements</a>. </p>
+
+<p>Sets whether this object will be drawn antialiased or not. </p>
+<p>Note that antialiasing settings may be overridden by <a class="el" href="class_q_custom_plot.html#af6f91e5eab1be85f67c556e98c3745e8" title="Sets which elements are forcibly drawn antialiased as an or combination of QCP::AntialiasedElement.">QCustomPlot::setAntialiasedElements</a> and <a class="el" href="class_q_custom_plot.html#ae10d685b5eabea2999fb8775ca173c24" title="Sets which elements are forcibly drawn not antialiased as an or combination of QCP::AntialiasedElemen...">QCustomPlot::setNotAntialiasedElements</a>. </p>
 
 </div>
 </div>
@@ -611,7 +639,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>QCPAxisRect</b></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Sets the layer of this layerable object by name</p>
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Sets the layer of this layerable object by name. </p>
 <p>Returns true on success, i.e. if <em>layerName</em> is a valid layer name. </p>
 
 </div>
@@ -631,7 +660,9 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>QCPAxisRect</b></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Sets the <em>layer</em> of this layerable object. <a class="el" href="class_the.html">The</a> object will be placed on top of the other objects already on <em>layer</em>.</p>
+
+<p>Sets the <em>layer</em> of this layerable object. </p>
+<p><a class="el" href="class_the.html">The</a> object will be placed on top of the other objects already on <em>layer</em>.</p>
 <p>If <em>layer</em> is 0, this layerable will not be on any layer and thus not appear in the plot (or interact/receive events).</p>
 <p>Returns true if the layer of this layerable was successfully changed to <em>layer</em>. </p>
 
@@ -652,7 +683,9 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>QCPAxisRect</b></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Sets the visibility of this layerable object. If an object is not visible, it will not be drawn on the <a class="el" href="class_q_custom_plot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a> surface, and user interaction with it (e.g. click and selection) is not possible. </p>
+
+<p>Sets the visibility of this layerable object. </p>
+<p>If an object is not visible, it will not be drawn on the <a class="el" href="class_q_custom_plot.html" title="The central class of the library.">QCustomPlot</a> surface, and user interaction with it (e.g. click and selection) is not possible. </p>
 
 </div>
 </div>
@@ -679,11 +712,13 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>QCPAxisRect</b></td>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This event gets called when the user turns the mouse scroll wheel while the cursor is over the layerable. Whether a cursor is over the layerable is decided by a preceding call to <a class="el" href="class_q_c_p_layerable.html#a04db8351fefd44cfdb77958e75c6288e">selectTest</a>.</p>
-<p><a class="el" href="class_the.html">The</a> current pixel position of the cursor on the <a class="el" href="class_q_custom_plot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a> widget is accessible via <code>event-&gt;pos()</code>.</p>
+
+<p>This event gets called when the user turns the mouse scroll wheel while the cursor is over the layerable. </p>
+<p>Whether a cursor is over the layerable is decided by a preceding call to <a class="el" href="class_q_c_p_layerable.html#a04db8351fefd44cfdb77958e75c6288e">selectTest</a>.</p>
+<p><a class="el" href="class_the.html">The</a> current pixel position of the cursor on the <a class="el" href="class_q_custom_plot.html" title="The central class of the library.">QCustomPlot</a> widget is accessible via <code>event-&gt;pos()</code>.</p>
 <p><a class="el" href="class_the.html">The</a> <code>event-&gt;delta()</code> indicates how far the mouse wheel was turned, which is usually +/- 120 for single rotation steps. However, if the mouse wheel is turned rapidly, multiple steps may accumulate to one event, making <code>event-&gt;delta()</code> larger. On the other hand, if the wheel has very smooth steps or none at all, the delta may be smaller.</p>
 <p><a class="el" href="class_the.html">The</a> default implementation does nothing.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_layerable.html#af6567604818db90f4fd52822f8bc8376">mousePressEvent</a>, <a class="el" href="class_q_c_p_layerable.html#a9eee1ba47fd69be111059ca3881933e4">mouseMoveEvent</a>, <a class="el" href="class_q_c_p_layerable.html#aa0d79b005686f668622bbe66ac03ba2c">mouseReleaseEvent</a>, <a class="el" href="class_q_c_p_layerable.html#a4171e2e823aca242dd0279f00ed2de81">mouseDoubleClickEvent</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_layerable.html#af6567604818db90f4fd52822f8bc8376" title="This event gets called when the user presses a mouse button while the cursor is over the layerable.">mousePressEvent</a>, <a class="el" href="class_q_c_p_layerable.html#a9eee1ba47fd69be111059ca3881933e4" title="This event gets called when the user moves the mouse while holding a mouse button,...">mouseMoveEvent</a>, <a class="el" href="class_q_c_p_layerable.html#aa0d79b005686f668622bbe66ac03ba2c" title="This event gets called when the user releases the mouse button, after this layerable has become the m...">mouseReleaseEvent</a>, <a class="el" href="class_q_c_p_layerable.html#a4171e2e823aca242dd0279f00ed2de81" title="This event gets called when the user presses the mouse button a second time in a double-click,...">mouseDoubleClickEvent</a> </dd></dl>
 
 <p>Reimplemented in <a class="el" href="class_q_c_p_axis.html#a71643d27524a843230b5ba68085b3d9b">QCPAxis</a>, <a class="el" href="class_q_c_p_axis_rect.html#a93eeaa0c127d6d6fe8171b2455080262">QCPAxisRect</a>, <a class="el" href="class_q_c_p_color_scale_axis_rect_private.html#a93eeaa0c127d6d6fe8171b2455080262">QCPColorScaleAxisRectPrivate</a>, and <a class="el" href="class_q_c_p_color_scale.html#a63cf19be184f6670c9495ad3a9a1baeb">QCPColorScale</a>.</p>
 

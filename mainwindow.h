@@ -1,6 +1,6 @@
 /**
-@file mainwindow.h
-@brief This file contains the declaration of the MainWindow class and its associated methods.
+ * @file mainwindow.h
+ * @brief This file contains the declaration of the MainWindow class and its associated methods.
 */
 
 #ifndef MAINWINDOW_H
@@ -35,7 +35,7 @@
 #include "datasummary.h"
 
 /**
-@brief The MainWindow class represents the main window of the application.
+ * @brief The MainWindow class represents the main window of the application.
 */
 namespace Ui {
   class MainWindow;
@@ -46,7 +46,7 @@ class Safety;
 class DataSummary;
 
 /**
-@brief The MainWindow class represents the main window of the application.
+ *  @brief The MainWindow class represents the main window of the application.
 */
 class MainWindow : public QMainWindow
 {
@@ -235,7 +235,6 @@ private slots:
     void getSetting();
 
     /**
-
     @brief setTextTempDrop sets the text temperature drop value.
     @param checked True if the text temperature drop is enabled, false otherwise.
     */
@@ -272,65 +271,130 @@ private slots:
     void setParametersTempCheckChange(bool mute = true);
     void setIgnoreEnable();
     double fillDifference(bool mute = true);
-    void setColor(int colorindex = 0, bool changerable = true);
+
+
+    /**
+     * @brief Send a message to LINE.
+     * @param message The message to send.
+     */
+    void setColor(int colorindex = 0);
+
+    /**
+     * @brief Send a message to LINE.
+     * @param message The message to send.
+     */
     void sendLINE(const QString& message);
-
 private:
-    Ui::MainWindow *ui;
-    QCustomPlot * plot{nullptr};
-    Communication *com_{nullptr};
-    Safety *safety_{nullptr};
-    Notify *notify_{nullptr};
-    DataSummary *data_{nullptr};
-    HelpDialog *helpDialog_{nullptr};
-    QGraphicsScene *scene_{nullptr};
-    QGraphicsView *view{nullptr};
-    PlotDialog * plotDialog_{nullptr};
-    ConfigureDialog * configureDialog_{nullptr};
-    TempDropDialog * tempDropDialog_{nullptr};
-    JoinLINEDialog *joinDialog_{nullptr};
-    QString omronPortName{};
-    int msgCount{0};
-    int timing_{0};
-    int intervalPlot_{5000};
-    bool tempControlOnOff{false};
-    bool tempRecordOnOff{false};
-    bool comboxEnable{false};
-    bool spinBoxEnable{false};
-    bool muteLog{false};
-    QDateTime dateStart_{};
-    QString filePath_{};
-    QVector<QCPGraphData> pvData{};
-    QVector<QCPGraphData> svData{};
-    QVector<QCPGraphData> mvData{};
-    QVector<double> vtemp_{};
-    QVector<double> valltemp_{};
-    QVector<double> vdifftemp_{};
-    QTimer * clock{nullptr};
-    QTimer * waitTimer{nullptr};
-    QTimer *plotTimer_{nullptr};
+    Ui::MainWindow *ui;                            ///< Pointer to the MainWindow UI object
+    QCustomPlot *plot{nullptr};                     ///< Pointer to the QCustomPlot object
+    Communication *com_{nullptr};                   ///< Pointer to the Communication object
+    Safety *safety_{nullptr};                       ///< Pointer to the Safety object
+    Notify *notify_{nullptr};                       ///< Pointer to the Notify object
+    DataSummary *data_{nullptr};                    ///< Pointer to the DataSummary object
+    HelpDialog *helpDialog_{nullptr};               ///< Pointer to the HelpDialog object
+    QGraphicsScene *scene_{nullptr};                ///< Pointer to the QGraphicsScene object
+    QGraphicsView *view{nullptr};                   ///< Pointer to the QGraphicsView object
+    PlotDialog *plotDialog_{nullptr};               ///< Pointer to the PlotDialog object
+    ConfigureDialog *configureDialog_{nullptr};     ///< Pointer to the ConfigureDialog object
+    TempDropDialog *tempDropDialog_{nullptr};       ///< Pointer to the TempDropDialog object
+    JoinLINEDialog *joinDialog_{nullptr};            ///< Pointer to the JoinLINEDialog object
+    QString omronPortName{};                        ///< Name of the Omron port
+    int msgCount{0};                                ///< Count of log messages
+    int timing_{0};                                 ///< Timing variable
+    int intervalPlot_{5000};                        ///< Interval for the plot timer in milliseconds
+    bool tempControlOnOff{false};                   ///< Flag indicating temperature control on/off state
+    bool tempRecordOnOff{false};                    ///< Flag indicating temperature recording on/off state
+    bool comboxEnable{false};                       ///< Flag indicating the enabled state of the combobox
+    bool spinBoxEnable{false};                      ///< Flag indicating the enabled state of the spinbox
+    bool muteLog{false};                            ///< Flag indicating the log muting state
+    QDateTime dateStart_{};                         ///< Start date and time
+    QString filePath_{};                            ///< File path
+    QVector<QCPGraphData> pvData{};                  ///< Vector containing PV data for the plot
+    QVector<QCPGraphData> svData{};                  ///< Vector containing SV data for the plot
+    QVector<QCPGraphData> mvData{};                  ///< Vector containing MV data for the plot
+    QVector<double> vtemp_{};                        ///< Vector containing temperature values
+    QVector<double> valltemp_{};                     ///< Vector containing all temperature values
+    QVector<double> vdifftemp_{};                    ///< Vector containing temperature difference values
+    QTimer *clock{nullptr};                          ///< Pointer to the QTimer object for clock
+    QTimer *waitTimer{nullptr};                      ///< Pointer to the QTimer object for wait timer
+    QTimer *plotTimer_{nullptr};                     ///< Pointer to the QTimer object for plot timer
 
-    QString LINEToken_{};
-    QUrl LINEurl_{};
-    QElapsedTimer totalElapse{};
-    bool checkDay{false};
-    int dayCounter{};
-    bool bkgColorChangeable_{true};
-    bool isQuit_{false};
+    QString LINEToken_{};                            ///< LINE token
+    QUrl LINEurl_{};                                 ///< LINE URL
+    QElapsedTimer totalElapse{};                     ///< Elapsed timer for total time
+    bool checkDay{false};                            ///< Flag indicating the check day state
+    int dayCounter{};                                ///< Counter for days
+    bool bkgColorChangeable_{true};                  ///< Flag indicating the changeability of background color
+    bool isQuit_{false};                             ///< Flag indicating the quit state
 
-    void addPortName(QList<QSerialPortInfo> info);
-    //The following functions are inplemented in gui.cpp
-    void setupPlot();
+    // Private functions
+    void addPortName(QList<QSerialPortInfo> info);                          ///< Function to add port names
+    void setupPlot();                                                      ///< Function to setup the plot
+
+    /**
+    * @brief setupCombBox Initializes the combobox setup.
+    */
     void setupCombBox();
+
+    /**
+     * @brief setEnabledFalse Disables certain UI elements.
+     */
     void setEnabledFalse();
+
+    /**
+     * @brief setupDialog Initializes the dialog setup.
+     */
     void setupDialog();
+
+    /**
+     * @brief initializeVariables Initializes the variables.
+     */
     void initializeVariables();
+
+    /**
+     * @brief updateStatusBoxes Updates the state of the checkboxes based on the activity status of the QTimer objects.
+     */
     void updateStatusBoxes();
 
+    /**
+     * @brief controlStableMode Controls the stable mode based on the target value, temperature tolerance, and temperature step size.
+     * @param targetValue The target value.
+     * @param tempTorr The temperature tolerance.
+     * @param tempStepSize The temperature step size.
+     */
     void controlStableMode(double targetValue, double tempTorr, double tempStepSize);
+
+    /**
+     * @brief controlFixedTimeMode Controls the fixed time mode based on the target value, temperature tolerance, and temperature step size.
+     * @param targetValue The target value.
+     * @param tempTorr The temperature tolerance.
+     * @param tempStepSize The temperature step size.
+     */
     void controlFixedTimeMode(double targetValue, double tempTorr, double tempStepSize);
+
+    /**
+     * @brief controlFixedRateMode Controls the fixed rate mode based on the target value, temperature tolerance, and temperature step size.
+     * @param targetValue The target value.
+     * @param tempTorr The temperature tolerance.
+     * @param tempStepSize The temperature step size.
+     */
     void controlFixedRateMode(double targetValue, double tempTorr, double tempStepSize);
+
+    /**
+     * @brief controlNormalAndFixedRateMode Controls the normal and fixed rate mode based on the target value, temperature tolerance, and temperature step size.
+     * @param targetValue The target value.
+     * @param tempTorr The temperature tolerance.
+     * @param tempStepSize The temperature step size.
+     */
     void controlNormalAndFixedRateMode(double targetValue, double tempTorr, double tempStepSize);
+
+    /**
+     * @brief calcRate Calculates the rate of temperature change based on the current temperature, target temperature, and time interval.
+     * @param temp The current temperature.
+     * @param aftertemp The target temperature.
+     * @param min The time interval in minutes.
+     * @return The calculated rate of temperature change.
+     */
     double calcRate(double temp, double aftertemp, int min);
 
 };

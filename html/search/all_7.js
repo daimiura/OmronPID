@@ -7,5 +7,6 @@ var searchData=
   ['hasitemwithplottable_4',['hasItemWithPlottable',['../class_q_c_p_legend.html#a4b90a442af871582df85c2bc13f91e88',1,'QCPLegend']]],
   ['hasplottable_5',['hasPlottable',['../class_q_custom_plot.html#a72cefbfbb9e699940e37be605bd9c51e',1,'QCustomPlot']]],
   ['height_6',['height',['../class_q_c_p_axis_rect.html#acc4377809e79d9a089ab790f39429b0d',1,'QCPAxisRect']]],
-  ['helpdialog_7',['HelpDialog',['../class_help_dialog.html',1,'HelpDialog'],['../class_help_dialog.html#ab01f3ca964c9983b235b4c88f5a7e10f',1,'HelpDialog::HelpDialog()']]]
+  ['helpdialog_7',['HelpDialog',['../class_help_dialog.html',1,'HelpDialog'],['../class_help_dialog.html#ab01f3ca964c9983b235b4c88f5a7e10f',1,'HelpDialog::HelpDialog()']]],
+  ['helpdialog_2eh_8',['helpdialog.h',['../helpdialog_8h.html',1,'']]]
 ];

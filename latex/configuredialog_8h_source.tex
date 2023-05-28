@@ -2,57 +2,57 @@
 \mbox{\hyperlink{configuredialog_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ }
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ CONFIGUREDIALOG\_H}}
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ CONFIGUREDIALOG\_H}}
-\DoxyCodeLine{00008\ }
-\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <QDialog>}}
-\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <QMessageBox>}}
-\DoxyCodeLine{00011\ }
-\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }QSpinBox;}
-\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }QDoubleSpinBox;}
-\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }QTextBrowser;}
-\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }QLabel;}
-\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }QCheckBox;}
-\DoxyCodeLine{00017\ }
-\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_configure_dialog}{ConfigureDialog}}\ :\ \textcolor{keyword}{public}\ QDialog}
-\DoxyCodeLine{00024\ \{}
-\DoxyCodeLine{00025\ \ \ Q\_OBJECT}
-\DoxyCodeLine{00026\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00032\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_configure_dialog}{ConfigureDialog}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
-\DoxyCodeLine{00033\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_configure_dialog_af87a61b203c06abf1c2a13b43405bd03}{ignoreEnable\_}}\{\textcolor{keyword}{true}\};\ }
-\DoxyCodeLine{00034\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_configure_dialog_abea8ab436380446d823d4a05aa8c4e63}{intervalAskMV\_}}\{10\};\ }
-\DoxyCodeLine{00035\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_configure_dialog_adb7d36fa0b707b6908c9dbff3f55a1fd}{intervalAskTemp\_}}\{10\};\ }
-\DoxyCodeLine{00036\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_configure_dialog_a27a70f10b9cf5ccc7de5d2935ff08b90}{numbers\_}}\{10\};\ }
-\DoxyCodeLine{00037\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_configure_dialog_abcf14b7e91bd14fa244dcfd50d28d42b}{etime\_}}\{0\};\ }
-\DoxyCodeLine{00038\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_configure_dialog_a9aa82b9ee55fbbc18d048f9665d51d34}{safeLimit\_}}\{0.3\};\ }
-\DoxyCodeLine{00039\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_configure_dialog_a212be23f84c5bdf1e4b6f0042168ce41}{ignoreUpper\_}}\{-\/10.0\};\ }
-\DoxyCodeLine{00040\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_configure_dialog_aa26778a97484efc88d2a092ec434c371}{ignoreLower\_}}\{10.0\};\ }
-\DoxyCodeLine{00041\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_configure_dialog_ab5721c4d7e4422d89c2a27040e863554}{warnigcheck\_}}\{\textcolor{keyword}{false}\};\ }
-\DoxyCodeLine{00042\ \ \ QString\ \mbox{\hyperlink{class_configure_dialog_adff87c7ab741bd9190483ac84dc769a0}{msg\_}}\{\};\ }
-\DoxyCodeLine{00043\ \ \ QMessageBox\ \mbox{\hyperlink{class_configure_dialog_acdecbd88c33eabd774e64054c00ee8a2}{warningMessageBox\_}}\{\textcolor{keyword}{nullptr}\};\ }
-\DoxyCodeLine{00044\ \ \ QPushButton\ *\mbox{\hyperlink{class_configure_dialog_a170fe98507666e1333891b790998ded1}{pushButton\_SetParameters\_}}\{\textcolor{keyword}{nullptr}\};\ }
-\DoxyCodeLine{00046\ \textcolor{keyword}{private}\ slots:}
-\DoxyCodeLine{00051\ \ \ \textcolor{keywordtype}{void}\ setValues();}
-\DoxyCodeLine{00057\ \ \ \textcolor{keywordtype}{void}\ warningShow(\textcolor{keywordtype}{bool}\ checked);}
-\DoxyCodeLine{00058\ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00059\ \ \ QLabel\ *labelAskMV\_\{\textcolor{keyword}{nullptr}\};\ }
-\DoxyCodeLine{00060\ \ \ QLabel\ *labelAskTemp\_\{\textcolor{keyword}{nullptr}\};\ }
-\DoxyCodeLine{00061\ \ \ QLabel\ *labelSize\_\{\textcolor{keyword}{nullptr}\};\ }
-\DoxyCodeLine{00062\ \ \ QLabel\ *label\_SafeLimit\_\{\textcolor{keyword}{nullptr}\};\ }
-\DoxyCodeLine{00063\ \ \ QLabel\ *label\_IgnoreEnable\_\{\textcolor{keyword}{nullptr}\};\ }
-\DoxyCodeLine{00064\ \ \ QLabel\ *label\_IgnoreLower\_\{\textcolor{keyword}{nullptr}\};\ }
-\DoxyCodeLine{00065\ \ \ QLabel\ *label\_IgnoreUpper\_\{\textcolor{keyword}{nullptr}\};\ }
-\DoxyCodeLine{00066\ \ \ QLabel\ *label\_ETime\_\{\textcolor{keyword}{nullptr}\};\ }
-\DoxyCodeLine{00068\ \ \ QSpinBox\ *spinBox\_IntervalAskMV\_\{\textcolor{keyword}{nullptr}\};\ }
-\DoxyCodeLine{00069\ \ \ QSpinBox\ *spinBox\_IntervalAskTemp\_\{\textcolor{keyword}{nullptr}\};\ }
-\DoxyCodeLine{00070\ \ \ QSpinBox\ *spinBox\_Numbers\_\{\textcolor{keyword}{nullptr}\};\ }
-\DoxyCodeLine{00071\ \ \ QDoubleSpinBox\ *spinBox\_SafeLimit\_\{\textcolor{keyword}{nullptr}\};\ }
-\DoxyCodeLine{00072\ \ \ QDoubleSpinBox\ *spinBox\_IgnoreLower\_\{\textcolor{keyword}{nullptr}\};\ }
-\DoxyCodeLine{00073\ \ \ QDoubleSpinBox\ *spinBox\_IgnoreUpper\_\{\textcolor{keyword}{nullptr}\};\ }
-\DoxyCodeLine{00074\ \ \ QTextBrowser\ *textBrowser\_log\_\{\textcolor{keyword}{nullptr}\};\ }
-\DoxyCodeLine{00075\ \ \ QCheckBox\ *checkBox\_IgnoreEnable\_\{\textcolor{keyword}{nullptr}\};\ }
-\DoxyCodeLine{00076\ \};}
-\DoxyCodeLine{00077\ }
-\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CONFIGUREDIALOG\_H}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ CONFIGUREDIALOG\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ CONFIGUREDIALOG\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QDialog>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <QMessageBox>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }QSpinBox;}
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }QDoubleSpinBox;}
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }QTextBrowser;}
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }QLabel;}
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }QCheckBox;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_configure_dialog}{ConfigureDialog}}\ :\ \textcolor{keyword}{public}\ QDialog}
+\DoxyCodeLine{00023\ \{}
+\DoxyCodeLine{00024\ \ \ Q\_OBJECT}
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_configure_dialog}{ConfigureDialog}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00031\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_configure_dialog_af87a61b203c06abf1c2a13b43405bd03}{ignoreEnable\_}}\{\textcolor{keyword}{true}\};\ }
+\DoxyCodeLine{00032\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_configure_dialog_abea8ab436380446d823d4a05aa8c4e63}{intervalAskMV\_}}\{10\};\ }
+\DoxyCodeLine{00033\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_configure_dialog_adb7d36fa0b707b6908c9dbff3f55a1fd}{intervalAskTemp\_}}\{10\};\ }
+\DoxyCodeLine{00034\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_configure_dialog_a27a70f10b9cf5ccc7de5d2935ff08b90}{numbers\_}}\{10\};\ }
+\DoxyCodeLine{00035\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_configure_dialog_abcf14b7e91bd14fa244dcfd50d28d42b}{etime\_}}\{0\};\ }
+\DoxyCodeLine{00036\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_configure_dialog_a9aa82b9ee55fbbc18d048f9665d51d34}{safeLimit\_}}\{0.3\};\ }
+\DoxyCodeLine{00037\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_configure_dialog_a212be23f84c5bdf1e4b6f0042168ce41}{ignoreUpper\_}}\{-\/10.0\};\ }
+\DoxyCodeLine{00038\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_configure_dialog_aa26778a97484efc88d2a092ec434c371}{ignoreLower\_}}\{10.0\};\ }
+\DoxyCodeLine{00039\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_configure_dialog_ab5721c4d7e4422d89c2a27040e863554}{warnigcheck\_}}\{\textcolor{keyword}{false}\};\ }
+\DoxyCodeLine{00040\ \ \ QString\ \mbox{\hyperlink{class_configure_dialog_adff87c7ab741bd9190483ac84dc769a0}{msg\_}}\{\};\ }
+\DoxyCodeLine{00041\ \ \ QMessageBox\ \mbox{\hyperlink{class_configure_dialog_acdecbd88c33eabd774e64054c00ee8a2}{warningMessageBox\_}}\{\textcolor{keyword}{nullptr}\};\ }
+\DoxyCodeLine{00042\ \ \ QPushButton\ *\mbox{\hyperlink{class_configure_dialog_a170fe98507666e1333891b790998ded1}{pushButton\_SetParameters\_}}\{\textcolor{keyword}{nullptr}\};\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00049\ \ \ \textcolor{keywordtype}{void}\ setValues();}
+\DoxyCodeLine{00055\ \ \ \textcolor{keywordtype}{void}\ warningShow(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00056\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00057\ \ \ QLabel\ *labelAskMV\_\{\textcolor{keyword}{nullptr}\};\ }
+\DoxyCodeLine{00058\ \ \ QLabel\ *labelAskTemp\_\{\textcolor{keyword}{nullptr}\};\ }
+\DoxyCodeLine{00059\ \ \ QLabel\ *labelSize\_\{\textcolor{keyword}{nullptr}\};\ }
+\DoxyCodeLine{00060\ \ \ QLabel\ *label\_SafeLimit\_\{\textcolor{keyword}{nullptr}\};\ }
+\DoxyCodeLine{00061\ \ \ QLabel\ *label\_IgnoreEnable\_\{\textcolor{keyword}{nullptr}\};\ }
+\DoxyCodeLine{00062\ \ \ QLabel\ *label\_IgnoreLower\_\{\textcolor{keyword}{nullptr}\};\ }
+\DoxyCodeLine{00063\ \ \ QLabel\ *label\_IgnoreUpper\_\{\textcolor{keyword}{nullptr}\};\ }
+\DoxyCodeLine{00064\ \ \ QLabel\ *label\_ETime\_\{\textcolor{keyword}{nullptr}\};\ }
+\DoxyCodeLine{00066\ \ \ QSpinBox\ *spinBox\_IntervalAskMV\_\{\textcolor{keyword}{nullptr}\};\ }
+\DoxyCodeLine{00067\ \ \ QSpinBox\ *spinBox\_IntervalAskTemp\_\{\textcolor{keyword}{nullptr}\};\ }
+\DoxyCodeLine{00068\ \ \ QSpinBox\ *spinBox\_Numbers\_\{\textcolor{keyword}{nullptr}\};\ }
+\DoxyCodeLine{00069\ \ \ QDoubleSpinBox\ *spinBox\_SafeLimit\_\{\textcolor{keyword}{nullptr}\};\ }
+\DoxyCodeLine{00070\ \ \ QDoubleSpinBox\ *spinBox\_IgnoreLower\_\{\textcolor{keyword}{nullptr}\};\ }
+\DoxyCodeLine{00071\ \ \ QDoubleSpinBox\ *spinBox\_IgnoreUpper\_\{\textcolor{keyword}{nullptr}\};\ }
+\DoxyCodeLine{00072\ \ \ QTextBrowser\ *textBrowser\_log\_\{\textcolor{keyword}{nullptr}\};\ }
+\DoxyCodeLine{00073\ \ \ QCheckBox\ *checkBox\_IgnoreEnable\_\{\textcolor{keyword}{nullptr}\};\ }
+\DoxyCodeLine{00074\ \};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CONFIGUREDIALOG\_H}}
 
 \end{DoxyCode}

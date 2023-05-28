@@ -8,26 +8,28 @@ Holds the data of one single data point (one bar) for \mbox{\hyperlink{class_q_c
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_q_c_p_bars_data_a800794d4c5fea22eeb8bade20798496b}{QCPBars\+Data}} ()
-\item 
-\mbox{\hyperlink{class_q_c_p_bars_data_a4158816a69e2c675885f48afa2b5acc9}{QCPBars\+Data}} (double key, double value)
-\item 
+\mbox{\Hypertarget{class_q_c_p_bars_data_a800794d4c5fea22eeb8bade20798496b}\label{class_q_c_p_bars_data_a800794d4c5fea22eeb8bade20798496b}} 
+{\bfseries QCPBars\+Data} ()
+\begin{DoxyCompactList}\small\item\em Constructs a bar data point with key and value set to zero. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_q_c_p_bars_data_a4158816a69e2c675885f48afa2b5acc9}\label{class_q_c_p_bars_data_a4158816a69e2c675885f48afa2b5acc9}} 
+{\bfseries QCPBars\+Data} (double key, double value)
+\begin{DoxyCompactList}\small\item\em Constructs a bar data point with the specified {\itshape key} and {\itshape value}. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_q_c_p_bars_data_a107d22d84f336bf6e3c3ad0133a5d2f6}{sort\+Key}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the {\itshape key} member of this data point. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_q_c_p_bars_data_a8c1d09e63b0e90a6c1fba56ddeaa8964}{main\+Key}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the {\itshape key} member of this data point. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_q_c_p_bars_data_a360d975e587f9e84259aaec172efb10b}{main\+Value}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the {\itshape value} member of this data point. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \mbox{\hyperlink{class_q_c_p_bars_data_acf3e6479dacacd6c81eebe7d4cd62185}{value\+Range}} () const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns a \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} with both lower and upper boundary set to {\itshape value} of this data point. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 static \mbox{\hyperlink{class_q_c_p_bars_data}{QCPBars\+Data}} \mbox{\hyperlink{class_q_c_p_bars_data_ad170d4e90498005ec319338910252ba8}{from\+Sort\+Key}} (double \mbox{\hyperlink{class_q_c_p_bars_data_a107d22d84f336bf6e3c3ad0133a5d2f6}{sort\+Key}})
-\item 
+\begin{DoxyCompactList}\small\item\em Returns a data point with the specified {\itshape sort\+Key}. \end{DoxyCompactList}\item 
 static bool \mbox{\hyperlink{class_q_c_p_bars_data_aebaabda335bd4c9f81bd585d16b63aa8}{sort\+Key\+Is\+Main\+Key}} ()
-\end{DoxyCompactItemize}
-\doxysubsection*{Public Attributes}
+\begin{DoxyCompactList}\small\item\em Since the member {\itshape key} is both the data point key coordinate and the data ordering parameter, this method returns true. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Data Fields}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_q_c_p_bars_data_a09b492217dc03ee1c0348a2f2e6e0a04}\label{class_q_c_p_bars_data_a09b492217dc03ee1c0348a2f2e6e0a04}} 
@@ -50,21 +52,6 @@ QCPBars\+Data\+Container
 \end{DoxySeeAlso}
 
 
-\doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_q_c_p_bars_data_a800794d4c5fea22eeb8bade20798496b}\label{class_q_c_p_bars_data_a800794d4c5fea22eeb8bade20798496b}} 
-\index{QCPBarsData@{QCPBarsData}!QCPBarsData@{QCPBarsData}}
-\index{QCPBarsData@{QCPBarsData}!QCPBarsData@{QCPBarsData}}
-\doxysubsubsection{\texorpdfstring{QCPBarsData()}{QCPBarsData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily QCPBars\+Data\+::\+QCPBars\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-Constructs a bar data point with key and value set to zero. \mbox{\Hypertarget{class_q_c_p_bars_data_a4158816a69e2c675885f48afa2b5acc9}\label{class_q_c_p_bars_data_a4158816a69e2c675885f48afa2b5acc9}} 
-\index{QCPBarsData@{QCPBarsData}!QCPBarsData@{QCPBarsData}}
-\index{QCPBarsData@{QCPBarsData}!QCPBarsData@{QCPBarsData}}
-\doxysubsubsection{\texorpdfstring{QCPBarsData()}{QCPBarsData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily QCPBars\+Data\+::\+QCPBars\+Data (\begin{DoxyParamCaption}\item[{double}]{key,  }\item[{double}]{value }\end{DoxyParamCaption})}
-
-Constructs a bar data point with the specified {\itshape key} and {\itshape value}. 
-
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_q_c_p_bars_data_ad170d4e90498005ec319338910252ba8}\label{class_q_c_p_bars_data_ad170d4e90498005ec319338910252ba8}} 
 \index{QCPBarsData@{QCPBarsData}!fromSortKey@{fromSortKey}}
@@ -72,7 +59,11 @@ Constructs a bar data point with the specified {\itshape key} and {\itshape valu
 \doxysubsubsection{\texorpdfstring{fromSortKey()}{fromSortKey()}}
 {\footnotesize\ttfamily static \mbox{\hyperlink{class_q_c_p_bars_data}{QCPBars\+Data}} QCPBars\+Data\+::from\+Sort\+Key (\begin{DoxyParamCaption}\item[{double}]{sort\+Key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
-Returns a data point with the specified {\itshape sort\+Key}. All other members are set to zero.
+
+
+Returns a data point with the specified {\itshape sort\+Key}. 
+
+All other members are set to zero.
 
 For a general explanation of what this method is good for in the context of the data container, see the documentation of \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}. \mbox{\Hypertarget{class_q_c_p_bars_data_a8c1d09e63b0e90a6c1fba56ddeaa8964}\label{class_q_c_p_bars_data_a8c1d09e63b0e90a6c1fba56ddeaa8964}} 
 \index{QCPBarsData@{QCPBarsData}!mainKey@{mainKey}}
@@ -80,7 +71,9 @@ For a general explanation of what this method is good for in the context of the 
 \doxysubsubsection{\texorpdfstring{mainKey()}{mainKey()}}
 {\footnotesize\ttfamily double QCPBars\+Data\+::main\+Key (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Returns the {\itshape key} member of this data point.
+
+
+Returns the {\itshape key} member of this data point. 
 
 For a general explanation of what this method is good for in the context of the data container, see the documentation of \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}. \mbox{\Hypertarget{class_q_c_p_bars_data_a360d975e587f9e84259aaec172efb10b}\label{class_q_c_p_bars_data_a360d975e587f9e84259aaec172efb10b}} 
 \index{QCPBarsData@{QCPBarsData}!mainValue@{mainValue}}
@@ -88,7 +81,9 @@ For a general explanation of what this method is good for in the context of the 
 \doxysubsubsection{\texorpdfstring{mainValue()}{mainValue()}}
 {\footnotesize\ttfamily double QCPBars\+Data\+::main\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Returns the {\itshape value} member of this data point.
+
+
+Returns the {\itshape value} member of this data point. 
 
 For a general explanation of what this method is good for in the context of the data container, see the documentation of \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}. \mbox{\Hypertarget{class_q_c_p_bars_data_a107d22d84f336bf6e3c3ad0133a5d2f6}\label{class_q_c_p_bars_data_a107d22d84f336bf6e3c3ad0133a5d2f6}} 
 \index{QCPBarsData@{QCPBarsData}!sortKey@{sortKey}}
@@ -96,7 +91,9 @@ For a general explanation of what this method is good for in the context of the 
 \doxysubsubsection{\texorpdfstring{sortKey()}{sortKey()}}
 {\footnotesize\ttfamily double QCPBars\+Data\+::sort\+Key (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Returns the {\itshape key} member of this data point.
+
+
+Returns the {\itshape key} member of this data point. 
 
 For a general explanation of what this method is good for in the context of the data container, see the documentation of \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}. \mbox{\Hypertarget{class_q_c_p_bars_data_aebaabda335bd4c9f81bd585d16b63aa8}\label{class_q_c_p_bars_data_aebaabda335bd4c9f81bd585d16b63aa8}} 
 \index{QCPBarsData@{QCPBarsData}!sortKeyIsMainKey@{sortKeyIsMainKey}}
@@ -104,7 +101,9 @@ For a general explanation of what this method is good for in the context of the 
 \doxysubsubsection{\texorpdfstring{sortKeyIsMainKey()}{sortKeyIsMainKey()}}
 {\footnotesize\ttfamily static static bool QCPBars\+Data\+::sort\+Key\+Is\+Main\+Key (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
-Since the member {\itshape key} is both the data point key coordinate and the data ordering parameter, this method returns true.
+
+
+Since the member {\itshape key} is both the data point key coordinate and the data ordering parameter, this method returns true. 
 
 For a general explanation of what this method is good for in the context of the data container, see the documentation of \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}. \mbox{\Hypertarget{class_q_c_p_bars_data_acf3e6479dacacd6c81eebe7d4cd62185}\label{class_q_c_p_bars_data_acf3e6479dacacd6c81eebe7d4cd62185}} 
 \index{QCPBarsData@{QCPBarsData}!valueRange@{valueRange}}
@@ -112,7 +111,9 @@ For a general explanation of what this method is good for in the context of the 
 \doxysubsubsection{\texorpdfstring{valueRange()}{valueRange()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} QCPBars\+Data\+::value\+Range (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Returns a \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} with both lower and upper boundary set to {\itshape value} of this data point.
+
+
+Returns a \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} with both lower and upper boundary set to {\itshape value} of this data point. 
 
 For a general explanation of what this method is good for in the context of the data container, see the documentation of \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}. 
 

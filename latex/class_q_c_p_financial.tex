@@ -18,18 +18,18 @@ enum \mbox{\hyperlink{class_q_c_p_financial_aef1761dda71a53dc5269685e9e492626}{W
 , \mbox{\hyperlink{class_q_c_p_financial_aef1761dda71a53dc5269685e9e492626a806518350ea5814d28c29b0056e33ecd}{wt\+Axis\+Rect\+Ratio}}
 , \mbox{\hyperlink{class_q_c_p_financial_aef1761dda71a53dc5269685e9e492626af676bc8dbe700b96b333329c9dbfc30f}{wt\+Plot\+Coords}}
  \}
-\item 
+\begin{DoxyCompactList}\small\item\em Defines the ways the width of the financial bar can be specified. \end{DoxyCompactList}\item 
 enum \mbox{\hyperlink{class_q_c_p_financial_a0f800e21ee98d646dfc6f8f89d10ebfb}{Chart\+Style}} \{ \mbox{\hyperlink{class_q_c_p_financial_a0f800e21ee98d646dfc6f8f89d10ebfba3a516016c9298d3e95dd82aa203c4390}{cs\+Ohlc}}
 , \mbox{\hyperlink{class_q_c_p_financial_a0f800e21ee98d646dfc6f8f89d10ebfbac803cbd39f26e3f206bcc7028679e62f}{cs\+Candlestick}}
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Defines the possible representations of OHLC data in the plot. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_q_c_p_financial_a4702d5248feeb9d1ec6e3ce725b10b32}{QCPFinancial}} (\mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$key\+Axis, \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$value\+Axis)
-\item 
+\begin{DoxyCompactList}\small\item\em Constructs a financial chart which uses {\itshape key\+Axis} as its key axis (\char`\"{}x\char`\"{}) and {\itshape value\+Axis} as its value axis (\char`\"{}y\char`\"{}). \end{DoxyCompactList}\item 
 QShared\+Pointer$<$ \mbox{\hyperlink{class_q_c_p_data_container}{QCPFinancial\+Data\+Container}} $>$ \mbox{\hyperlink{class_q_c_p_financial_aec3f666271cf48bd7b87d84fe3f8c074}{data}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns a pointer to the internal data storage of type QCPFinancial\+Data\+Container. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_q_c_p_financial_a5243371c1fde30fdae00555d7760ec2d}\label{class_q_c_p_financial_a5243371c1fde30fdae00555d7760ec2d}} 
 \mbox{\hyperlink{class_q_c_p_financial_a0f800e21ee98d646dfc6f8f89d10ebfb}{Chart\+Style}} {\bfseries chart\+Style} () const
 \item 
@@ -55,71 +55,81 @@ QPen {\bfseries pen\+Positive} () const
 QPen {\bfseries pen\+Negative} () const
 \item 
 void \mbox{\hyperlink{class_q_c_p_financial_a72089e75b8a50d18097526c3c79fdb85}{set\+Data}} (QShared\+Pointer$<$ \mbox{\hyperlink{class_q_c_p_data_container}{QCPFinancial\+Data\+Container}} $>$ \mbox{\hyperlink{class_q_c_p_financial_aec3f666271cf48bd7b87d84fe3f8c074}{data}})
-\item 
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Replaces the current data container with the provided {\itshape data} container. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_financial_a12992e669ed19d7bb48dbe601570cc05}{set\+Data}} (const QVector$<$ double $>$ \&keys, const QVector$<$ double $>$ \&open, const QVector$<$ double $>$ \&high, const QVector$<$ double $>$ \&low, const QVector$<$ double $>$ \&close, bool already\+Sorted=false)
-\item 
-void \mbox{\hyperlink{class_q_c_p_financial_a5a59175d36279d71596e64d7bb65596f}{set\+Chart\+Style}} (\mbox{\hyperlink{class_q_c_p_financial_a0f800e21ee98d646dfc6f8f89d10ebfb}{Chart\+Style}} style)
-\item 
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Replaces the current data with the provided points in {\itshape keys}, {\itshape open}, {\itshape high}, {\itshape low} and {\itshape close}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_q_c_p_financial_a5a59175d36279d71596e64d7bb65596f}\label{class_q_c_p_financial_a5a59175d36279d71596e64d7bb65596f}} 
+void {\bfseries set\+Chart\+Style} (\mbox{\hyperlink{class_q_c_p_financial_a0f800e21ee98d646dfc6f8f89d10ebfb}{Chart\+Style}} style)
+\begin{DoxyCompactList}\small\item\em Sets which representation style shall be used to display the OHLC data. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_financial_a99633f8bac86a61d534ae5eeb1a3068f}{set\+Width}} (double width)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the width of the individual bars/candlesticks to {\itshape width} in plot key coordinates. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_financial_a204b7b710352796593a432b723e34089}{set\+Width\+Type}} (\mbox{\hyperlink{class_q_c_p_financial_aef1761dda71a53dc5269685e9e492626}{Width\+Type}} width\+Type)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets how the width of the financial bars is defined. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_financial_a138e44aac160a17a9676652e240c5f08}{set\+Two\+Colored}} (bool two\+Colored)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets whether this chart shall contrast positive from negative trends per data point by using two separate colors to draw the respective bars/candlesticks. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_financial_a5ebff2b1764efd07cc44942e67821829}{set\+Brush\+Positive}} (const QBrush \&brush)
-\item 
+\begin{DoxyCompactList}\small\item\em If \mbox{\hyperlink{class_q_c_p_financial_a138e44aac160a17a9676652e240c5f08}{set\+Two\+Colored}} is set to true, this function controls the brush that is used to draw fills of data points with a positive trend (i.\+e. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_financial_a8bbdd87629f9144b3ef51af660c0961a}{set\+Brush\+Negative}} (const QBrush \&brush)
-\item 
+\begin{DoxyCompactList}\small\item\em If \mbox{\hyperlink{class_q_c_p_financial_a138e44aac160a17a9676652e240c5f08}{set\+Two\+Colored}} is set to true, this function controls the brush that is used to draw fills of data points with a negative trend (i.\+e. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_financial_ac58aa3adc7a35aab0088764b840683e5}{set\+Pen\+Positive}} (const QPen \&pen)
-\item 
+\begin{DoxyCompactList}\small\item\em If \mbox{\hyperlink{class_q_c_p_financial_a138e44aac160a17a9676652e240c5f08}{set\+Two\+Colored}} is set to true, this function controls the pen that is used to draw outlines of data points with a positive trend (i.\+e. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_financial_afe5c07e94ccea01a75b3a2476993c346}{set\+Pen\+Negative}} (const QPen \&pen)
-\item 
+\begin{DoxyCompactList}\small\item\em If \mbox{\hyperlink{class_q_c_p_financial_a138e44aac160a17a9676652e240c5f08}{set\+Two\+Colored}} is set to true, this function controls the pen that is used to draw outlines of data points with a negative trend (i.\+e. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_financial_a372ac031e44a7a6c912d203556af96f7}{add\+Data}} (const QVector$<$ double $>$ \&keys, const QVector$<$ double $>$ \&open, const QVector$<$ double $>$ \&high, const QVector$<$ double $>$ \&low, const QVector$<$ double $>$ \&close, bool already\+Sorted=false)
-\item 
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Adds the provided points in {\itshape keys}, {\itshape open}, {\itshape high}, {\itshape low} and {\itshape close} to the current data. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_financial_a688bbd052e00a02954ddb0068b378170}{add\+Data}} (double key, double open, double high, double low, double close)
-\item 
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Adds the provided data point as {\itshape key}, {\itshape open}, {\itshape high}, {\itshape low} and {\itshape close} to the current data. \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} \mbox{\hyperlink{class_q_c_p_financial_a3c5beb1ab028a1dba845fc9dcffc7cf4}{select\+Test\+Rect}} (const QRectF \&rect, bool only\+Selectable) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
-\item 
+\begin{DoxyCompactList}\small\item\em Returns a data selection containing all the data points of this plottable which are contained (or hit by) {\itshape rect}.   \end{DoxyCompactList}\item 
 virtual double \mbox{\hyperlink{class_q_c_p_financial_aac8e91622ac58330fa9ce81cc8fd40ee}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant $\ast$details=0) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
-\item 
+\begin{DoxyCompactList}\small\item\em Implements a point-\/selection algorithm assuming the data (accessed via the 1D data interface) is point-\/like. \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \mbox{\hyperlink{class_q_c_p_financial_a15d68fb257113fef697356d65fa76559}{get\+Key\+Range}} (bool \&found\+Range, \mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9}{QCP\+::\+Sign\+Domain}} in\+Sign\+Domain=\mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9aa38352ef02d51ddfa4399d9551566e24}{QCP\+::sd\+Both}}) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the coordinate range that all data in this plottable span in the key axis dimension. \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \mbox{\hyperlink{class_q_c_p_financial_a82d862aa134d78853f98f8c57a03415b}{get\+Value\+Range}} (bool \&found\+Range, \mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9}{QCP\+::\+Sign\+Domain}} in\+Sign\+Domain=\mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9aa38352ef02d51ddfa4399d9551566e24}{QCP\+::sd\+Both}}, const \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \&in\+Key\+Range=\mbox{\hyperlink{class_q_c_p_range}{QCPRange}}()) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns the coordinate range that the data points in the specified key range ({\itshape in\+Key\+Range}) span in the value axis dimension. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d}{QCPAbstract\+Plottable1\+D$<$ QCPFinancial\+Data $>$}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a30b2e50ab0afce65f104ea7a95440315}{QCPAbstract\+Plottable1D}} (\mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$key\+Axis, \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$value\+Axis)
-\item 
+\mbox{\Hypertarget{class_q_c_p_abstract_plottable1_d_a30b2e50ab0afce65f104ea7a95440315}\label{class_q_c_p_abstract_plottable1_d_a30b2e50ab0afce65f104ea7a95440315}} 
+{\bfseries QCPAbstract\+Plottable1D} (\mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$key\+Axis, \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$value\+Axis)
+\begin{DoxyCompactList}\small\item\em Forwards {\itshape key\+Axis} and {\itshape value\+Axis} to the \mbox{\hyperlink{class_q_c_p_abstract_plottable_af78a036e40db6f53a31abadc5323715a}{QCPAbstract\+Plottable}} constructor and allocates the {\itshape m\+Data\+Container}. \end{DoxyCompactList}\item 
 virtual int \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_ab5dd99e4f1621e7dbd63438e0b02984e}{data\+Count}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the number of data points of the plottable.   \end{DoxyCompactList}\item 
 virtual double \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_aeb156ebf5d3c8de906b428be30733ad8}{data\+Main\+Key}} (int index) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the main key of the data point at the given {\itshape index}.   \end{DoxyCompactList}\item 
 virtual double \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_aa8277da921b009bce474437d50b4a2d8}{data\+Sort\+Key}} (int index) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the sort key of the data point at the given {\itshape index}.   \end{DoxyCompactList}\item 
 virtual double \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a6be0f657ba85a1688336d76ad649ecf2}{data\+Main\+Value}} (int index) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the main value of the data point at the given {\itshape index}.   \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a55f937ba6a63e56e57f0b1a6e85a333a}{data\+Value\+Range}} (int index) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the value range of the data point at the given {\itshape index}.   \end{DoxyCompactList}\item 
 virtual QPointF \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a6ca0699a6af5f25a7565de7c50ce13b2}{data\+Pixel\+Position}} (int index) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the pixel position on the widget surface at which the data point at the given {\itshape index} appears.   \end{DoxyCompactList}\item 
 virtual bool \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_afe0d56e39cc076032922f059b304c092}{sort\+Key\+Is\+Main\+Key}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
-\item 
+\begin{DoxyCompactList}\small\item\em Returns whether the sort key (\mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_aa8277da921b009bce474437d50b4a2d8}{data\+Sort\+Key}}) is identical to the main key (\mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_aeb156ebf5d3c8de906b428be30733ad8}{data\+Main\+Key}}).   \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a22377bf6e57ab7eedbc9e489250c6ded}{select\+Test\+Rect}} (const QRectF \&rect, bool only\+Selectable) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
-\item 
+\begin{DoxyCompactList}\small\item\em Implements a rect-\/selection algorithm assuming the data (accessed via the 1D data interface) is point-\/like. \end{DoxyCompactList}\item 
 virtual int \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_ad0b46d25cde3d035b180fb8f10c056e6}{find\+Begin}} (double sort\+Key, bool expanded\+Range=true) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the index of the data point with a (sort-\/)key that is equal to, just below, or just above {\itshape sort\+Key}.   \end{DoxyCompactList}\item 
 virtual int \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a6e3ba20c9160d7361e58070390d10b1a}{find\+End}} (double sort\+Key, bool expanded\+Range=true) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the index one after the data point with a (sort-\/)key that is equal to, just above, or just below {\itshape sort\+Key}.   \end{DoxyCompactList}\item 
 virtual double \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a4611b43bcb6441b2154eb4f4e0a33db2}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant $\ast$details=0) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
-\item 
+\begin{DoxyCompactList}\small\item\em Implements a point-\/selection algorithm assuming the data (accessed via the 1D data interface) is point-\/like. \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{class_q_c_p_plottable_interface1_d}{QCPPlottable\+Interface1D}} $\ast$ \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_ac58fb47bfe330f6931ed8e64326387d7}{interface1D}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns a \mbox{\hyperlink{class_q_c_p_plottable_interface1_d}{QCPPlottable\+Interface1D}} pointer to this plottable, providing access to its 1D interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_q_c_p_abstract_plottable}{QCPAbstract\+Plottable}}}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_q_c_p_abstract_plottable_af78a036e40db6f53a31abadc5323715a}{QCPAbstract\+Plottable}} (\mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$key\+Axis, \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$value\+Axis)
-\item 
+\begin{DoxyCompactList}\small\item\em Constructs an abstract plottable which uses {\itshape key\+Axis} as its key axis (\char`\"{}x\char`\"{}) and {\itshape value\+Axis} as its value axis (\char`\"{}y\char`\"{}). \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_q_c_p_abstract_plottable_a52c226eefcb1920240eeabae574d28c0}\label{class_q_c_p_abstract_plottable_a52c226eefcb1920240eeabae574d28c0}} 
 QString {\bfseries name} () const
 \item 
@@ -145,66 +155,80 @@ QBrush {\bfseries brush} () const
 \mbox{\hyperlink{namespace_q_c_p_ac6cb9db26a564b27feda362a438db038}{QCP\+::\+Selection\+Type}} {\bfseries selectable} () const
 \item 
 bool \mbox{\hyperlink{class_q_c_p_abstract_plottable_a0b3b514474fe93354fc74cfc144184b4}{selected}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns true if there are any data points of the plottable currently selected. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} \mbox{\hyperlink{class_q_c_p_abstract_plottable_a040bf09f41d456284cfd39cc37aa068f}{selection}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns a \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} encompassing all the data points that are currently selected on this plottable. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_q_c_p_selection_decorator}{QCPSelection\+Decorator}} $\ast$ \mbox{\hyperlink{class_q_c_p_abstract_plottable_a7861518e47ca0c6a0c386032c2db075e}{selection\+Decorator}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Provides access to the selection decorator of this plottable. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_abstract_plottable_ab79c7ba76bc7fa89a4b3580e12149f1f}{set\+Name}} (const QString \&name)
-\item 
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_the}{The}} name is the textual representation of this plottable as it is displayed in the legend (\mbox{\hyperlink{class_q_c_p_legend}{QCPLegend}}). \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a089d6b5577120239b55c39ed27c39536}{set\+Antialiased\+Fill}} (bool enabled)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets whether fills of this plottable are drawn antialiased or not. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a2f03f067ede2ed4da6f7d0e4777a3f02}{set\+Antialiased\+Scatters}} (bool enabled)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets whether the scatter symbols of this plottable are drawn antialiased or not. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_abstract_plottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}{set\+Pen}} (const QPen \&pen)
-\item 
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_the}{The}} pen is used to draw basic lines that make up the plottable representation in the plot. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a7a4b92144dca6453a1f0f210e27edc74}{set\+Brush}} (const QBrush \&brush)
-\item 
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_the}{The}} brush is used to draw basic fills of the plottable representation in the plot. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a8524fa2994c63c0913ebd9bb2ffa3920}{set\+Key\+Axis}} (\mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$axis)
-\item 
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_the}{The}} key axis of a plottable can be set to any axis of a \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}, as long as it is orthogonal to the plottable\textquotesingle{}s value axis. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a71626a07367e241ec62ad2c34baf21cb}{set\+Value\+Axis}} (\mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$axis)
-\item 
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_the}{The}} value axis of a plottable can be set to any axis of a \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}, as long as it is orthogonal to the plottable\textquotesingle{}s key axis. \end{DoxyCompactList}\item 
 Q\+\_\+\+SLOT void \mbox{\hyperlink{class_q_c_p_abstract_plottable_ac238d6e910f976f1f30d41c2bca44ac3}{set\+Selectable}} (\mbox{\hyperlink{namespace_q_c_p_ac6cb9db26a564b27feda362a438db038}{QCP\+::\+Selection\+Type}} selectable)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets whether and to which granularity this plottable can be selected. \end{DoxyCompactList}\item 
 Q\+\_\+\+SLOT void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a219bc5403a9d85d3129165ec3f5ae436}{set\+Selection}} (\mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} \mbox{\hyperlink{class_q_c_p_abstract_plottable_a040bf09f41d456284cfd39cc37aa068f}{selection}})
-\item 
+\begin{DoxyCompactList}\small\item\em Sets which data ranges of this plottable are selected. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a20e266ad646f8c4a7e4631040510e5d9}{set\+Selection\+Decorator}} (\mbox{\hyperlink{class_q_c_p_selection_decorator}{QCPSelection\+Decorator}} $\ast$decorator)
-\item 
+\begin{DoxyCompactList}\small\item\em Use this method to set an own \mbox{\hyperlink{class_q_c_p_selection_decorator}{QCPSelection\+Decorator}} (subclass) instance. \end{DoxyCompactList}\item 
 virtual double \mbox{\hyperlink{class_q_c_p_abstract_plottable_a38efe9641d972992a3d44204bc80ec1d}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant $\ast$details=0) const =0
-\item 
+\begin{DoxyCompactList}\small\item\em This function is used to decide whether a click hits a layerable object or not. \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{class_q_c_p_plottable_interface1_d}{QCPPlottable\+Interface1D}} $\ast$ \mbox{\hyperlink{class_q_c_p_abstract_plottable_a81fd9fd5c4f429c074785e2eb238a8e7}{interface1D}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em If this plottable is a one-\/dimensional plottable, i.\+e. \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \mbox{\hyperlink{class_q_c_p_abstract_plottable_a4da16d3cd4b509e1104a9b0275623c96}{get\+Key\+Range}} (bool \&found\+Range, \mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9}{QCP\+::\+Sign\+Domain}} in\+Sign\+Domain=\mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9aa38352ef02d51ddfa4399d9551566e24}{QCP\+::sd\+Both}}) const =0
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the coordinate range that all data in this plottable span in the key axis dimension. \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \mbox{\hyperlink{class_q_c_p_abstract_plottable_a4de773988b21ed090fddd27c6a3a3dcb}{get\+Value\+Range}} (bool \&found\+Range, \mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9}{QCP\+::\+Sign\+Domain}} in\+Sign\+Domain=\mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9aa38352ef02d51ddfa4399d9551566e24}{QCP\+::sd\+Both}}, const \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \&in\+Key\+Range=\mbox{\hyperlink{class_q_c_p_range}{QCPRange}}()) const =0
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the coordinate range that the data points in the specified key range ({\itshape in\+Key\+Range}) span in the value axis dimension. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a7ad84a36472441cf1f555c5683d0da93}{coords\+To\+Pixels}} (double key, double value, double \&x, double \&y) const
-\item 
-const QPointF \mbox{\hyperlink{class_q_c_p_abstract_plottable_a5acb50ae984eef09a7ab92315d2ad708}{coords\+To\+Pixels}} (double key, double value) const
-\item 
+\begin{DoxyCompactList}\small\item\em Convenience function for transforming a key/value pair to pixels on the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} surface, taking the orientations of the axes associated with this plottable into account (e.\+g. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_q_c_p_abstract_plottable_a5acb50ae984eef09a7ab92315d2ad708}\label{class_q_c_p_abstract_plottable_a5acb50ae984eef09a7ab92315d2ad708}} 
+const QPointF {\bfseries coords\+To\+Pixels} (double key, double value) const
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Transforms the given {\itshape key} and {\itshape value} to pixel coordinates and returns them in a QPointF. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a3903c1120ab5c27e7fa46b597ef267bd}{pixels\+To\+Coords}} (double x, double y, double \&key, double \&value) const
-\item 
-void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a28d32c0062b9450847851ffdee1c5f69}{pixels\+To\+Coords}} (const QPointF \&pixel\+Pos, double \&key, double \&value) const
-\item 
+\begin{DoxyCompactList}\small\item\em Convenience function for transforming a x/y pixel pair on the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} surface to plot coordinates, taking the orientations of the axes associated with this plottable into account (e.\+g. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_q_c_p_abstract_plottable_a28d32c0062b9450847851ffdee1c5f69}\label{class_q_c_p_abstract_plottable_a28d32c0062b9450847851ffdee1c5f69}} 
+void {\bfseries pixels\+To\+Coords} (const QPointF \&pixel\+Pos, double \&key, double \&value) const
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Returns the pixel input {\itshape pixel\+Pos} as plot coordinates {\itshape key} and {\itshape value}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a1491c4a606bccd2d09e65e11b79eb882}{rescale\+Axes}} (bool only\+Enlarge=false) const
-\item 
+\begin{DoxyCompactList}\small\item\em Rescales the key and value axes associated with this plottable to contain all displayed data, so the whole plottable is visible. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_abstract_plottable_ae96b83c961e257da116c6acf9c7da308}{rescale\+Key\+Axis}} (bool only\+Enlarge=false) const
-\item 
+\begin{DoxyCompactList}\small\item\em Rescales the key axis of the plottable so the whole plottable is visible. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a714eaf36b12434cd71846215504db82e}{rescale\+Value\+Axis}} (bool only\+Enlarge=false, bool in\+Key\+Range=false) const
-\item 
+\begin{DoxyCompactList}\small\item\em Rescales the value axis of the plottable so the whole plottable is visible. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_q_c_p_abstract_plottable_aa64e93cb5b606d8110d2cc0a349bb30f}{add\+To\+Legend}} (\mbox{\hyperlink{class_q_c_p_legend}{QCPLegend}} $\ast$legend)
-\item 
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Adds this plottable to the specified {\itshape legend}. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_q_c_p_abstract_plottable_a70f8cabfd808f7d5204b9f18c45c13f5}{add\+To\+Legend}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Adds this plottable to the legend of the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} (\mbox{\hyperlink{class_q_custom_plot_a4eadcd237dc6a09938b68b16877fa6af}{QCustom\+Plot\+::legend}}). \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_q_c_p_abstract_plottable_a3cc235007e2343a65ad4f463767e0e20}{remove\+From\+Legend}} (\mbox{\hyperlink{class_q_c_p_legend}{QCPLegend}} $\ast$legend) const
-\item 
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Removes the plottable from the specifed {\itshape legend}. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_q_c_p_abstract_plottable_ac95fb2604d9106d0852ad9ceb326fe8c}{remove\+From\+Legend}} () const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Removes the plottable from the legend of the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_q_c_p_layerable_a74c0fa237f29bf0e49565013fc5d1ec0}{QCPLayerable}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$plot, QString target\+Layer=QString(), \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}}=0)
-\item 
+\begin{DoxyCompactList}\small\item\em Creates a new \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} instance. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_q_c_p_layerable_af0297b944b6192b6d67d00bff41b6b70}\label{class_q_c_p_layerable_af0297b944b6192b6d67d00bff41b6b70}} 
 bool {\bfseries visible} () const
 \item 
@@ -212,7 +236,7 @@ bool {\bfseries visible} () const
 \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$ {\bfseries parent\+Plot} () const
 \item 
 \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $\ast$ \mbox{\hyperlink{class_q_c_p_layerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the parent layerable of this layerable. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_q_c_p_layerable_a9d4e121a7f1d2314f906fe698209cac9}\label{class_q_c_p_layerable_a9d4e121a7f1d2314f906fe698209cac9}} 
 \mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$ {\bfseries layer} () const
 \item 
@@ -220,44 +244,44 @@ bool {\bfseries visible} () const
 bool {\bfseries antialiased} () const
 \item 
 void \mbox{\hyperlink{class_q_c_p_layerable_a3bed99ddc396b48ce3ebfdc0418744f8}{set\+Visible}} (bool on)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the visibility of this layerable object. \end{DoxyCompactList}\item 
 Q\+\_\+\+SLOT bool \mbox{\hyperlink{class_q_c_p_layerable_ab0d0da6d2de45a118886d2c8e16d5a54}{set\+Layer}} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$layer)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the {\itshape layer} of this layerable object. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_q_c_p_layerable_ab25a0e7b897993b44447caee0f142083}{set\+Layer}} (const QString \&layer\+Name)
-\item 
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Sets the layer of this layerable object by name. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layerable_a4fd43e89be4a553ead41652565ff0581}{set\+Antialiased}} (bool enabled)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets whether this object will be drawn antialiased or not. \end{DoxyCompactList}\item 
 virtual double \mbox{\hyperlink{class_q_c_p_layerable_a04db8351fefd44cfdb77958e75c6288e}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant $\ast$details=0) const
-\item 
+\begin{DoxyCompactList}\small\item\em This function is used to decide whether a click hits a layerable object or not. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_q_c_p_layerable_ab054e88f15d485defcb95e7376f119e7}{real\+Visibility}} () const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns whether this layerable is visible, taking the visibility of the layerable parent and the visibility of this layerable\textquotesingle{}s layer into account. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \begin{DoxyCompactItemize}
 \item 
 virtual int \mbox{\hyperlink{class_q_c_p_plottable_interface1_d_a058a22c770ef4d5a0e878a7f02183da9}{data\+Count}} () const =0
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the number of data points of the plottable. \end{DoxyCompactList}\item 
 virtual double \mbox{\hyperlink{class_q_c_p_plottable_interface1_d_a2bd60daaac046945fead558cbd83cf73}{data\+Main\+Key}} (int index) const =0
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the main key of the data point at the given {\itshape index}. \end{DoxyCompactList}\item 
 virtual double \mbox{\hyperlink{class_q_c_p_plottable_interface1_d_afdc92f9f01e7e35f2e96b2ea9dc14ae7}{data\+Sort\+Key}} (int index) const =0
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the sort key of the data point at the given {\itshape index}. \end{DoxyCompactList}\item 
 virtual double \mbox{\hyperlink{class_q_c_p_plottable_interface1_d_af6330919e8023277d08c958a6074fc76}{data\+Main\+Value}} (int index) const =0
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the main value of the data point at the given {\itshape index}. \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \mbox{\hyperlink{class_q_c_p_plottable_interface1_d_a9ca7fcf14d885a200879768679b19be9}{data\+Value\+Range}} (int index) const =0
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the value range of the data point at the given {\itshape index}. \end{DoxyCompactList}\item 
 virtual QPointF \mbox{\hyperlink{class_q_c_p_plottable_interface1_d_a78911838cfbcfd2d8df9ad2fdbfb8e93}{data\+Pixel\+Position}} (int index) const =0
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the pixel position on the widget surface at which the data point at the given {\itshape index} appears. \end{DoxyCompactList}\item 
 virtual bool \mbox{\hyperlink{class_q_c_p_plottable_interface1_d_a229e65e7ab968dd6cd0e259fa504b79d}{sort\+Key\+Is\+Main\+Key}} () const =0
-\item 
+\begin{DoxyCompactList}\small\item\em Returns whether the sort key (\mbox{\hyperlink{class_q_c_p_plottable_interface1_d_afdc92f9f01e7e35f2e96b2ea9dc14ae7}{data\+Sort\+Key}}) is identical to the main key (\mbox{\hyperlink{class_q_c_p_plottable_interface1_d_a2bd60daaac046945fead558cbd83cf73}{data\+Main\+Key}}). \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} \mbox{\hyperlink{class_q_c_p_plottable_interface1_d_a67093e4ccf490ff5f7750640941ff34c}{select\+Test\+Rect}} (const QRectF \&rect, bool only\+Selectable) const =0
-\item 
+\begin{DoxyCompactList}\small\item\em Returns a data selection containing all the data points of this plottable which are contained (or hit by) {\itshape rect}. \end{DoxyCompactList}\item 
 virtual int \mbox{\hyperlink{class_q_c_p_plottable_interface1_d_a5b95783271306a4de97be54eac1e7d13}{find\+Begin}} (double sort\+Key, bool expanded\+Range=true) const =0
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the index of the data point with a (sort-\/)key that is equal to, just below, or just above {\itshape sort\+Key}. \end{DoxyCompactList}\item 
 virtual int \mbox{\hyperlink{class_q_c_p_plottable_interface1_d_a5deced1016bc55a41a2339619045b295}{find\+End}} (double sort\+Key, bool expanded\+Range=true) const =0
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns the index one after the data point with a (sort-\/)key that is equal to, just above, or just below {\itshape sort\+Key}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 static \mbox{\hyperlink{class_q_c_p_data_container}{QCPFinancial\+Data\+Container}} \mbox{\hyperlink{class_q_c_p_financial_a9a058c035040d3939b8884f4aaccb1a7}{time\+Series\+To\+Ohlc}} (const QVector$<$ double $>$ \&time, const QVector$<$ double $>$ \&value, double time\+Bin\+Size, double time\+Bin\+Offset=0)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A convenience function that converts time series data ({\itshape value} against {\itshape time}) to OHLC binned data points. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -290,9 +314,9 @@ QRectF {\bfseries selection\+Hit\+Box} (QCPFinancial\+Data\+Container\+::const\+
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_ae890e62ce403c54f575c73b9529f1af8}{get\+Data\+Segments}} (QList$<$ \mbox{\hyperlink{class_q_c_p_data_range}{QCPData\+Range}} $>$ \&selected\+Segments, QList$<$ \mbox{\hyperlink{class_q_c_p_data_range}{QCPData\+Range}} $>$ \&unselected\+Segments) const
-\item 
+\begin{DoxyCompactList}\small\item\em Splits all data into selected and unselected segments and outputs them via {\itshape selected\+Segments} and {\itshape unselected\+Segments}, respectively. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a7adc6c3cccebb5341f11e0c2b7d54206}{draw\+Polyline}} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter, const QVector$<$ QPointF $>$ \&line\+Data) const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A helper method which draws a line with the passed {\itshape painter}, according to the pixel data in {\itshape line\+Data}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_q_c_p_abstract_plottable}{QCPAbstract\+Plottable}}}
 \begin{DoxyCompactItemize}
 \item 
@@ -342,15 +366,15 @@ virtual void {\bfseries select\+Event} (QMouse\+Event $\ast$event, bool additive
 virtual void {\bfseries deselect\+Event} (bool $\ast$selection\+State\+Changed)
 \item 
 virtual void \mbox{\hyperlink{class_q_c_p_layerable_af6567604818db90f4fd52822f8bc8376}{mouse\+Press\+Event}} (QMouse\+Event $\ast$event, const QVariant \&details)
-\item 
+\begin{DoxyCompactList}\small\item\em This event gets called when the user presses a mouse button while the cursor is over the layerable. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_q_c_p_layerable_a9eee1ba47fd69be111059ca3881933e4}{mouse\+Move\+Event}} (QMouse\+Event $\ast$event, const QPointF \&start\+Pos)
-\item 
+\begin{DoxyCompactList}\small\item\em This event gets called when the user moves the mouse while holding a mouse button, after this layerable has become the mouse grabber by accepting the preceding \mbox{\hyperlink{class_q_c_p_layerable_af6567604818db90f4fd52822f8bc8376}{mouse\+Press\+Event}}. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_q_c_p_layerable_aa0d79b005686f668622bbe66ac03ba2c}{mouse\+Release\+Event}} (QMouse\+Event $\ast$event, const QPointF \&start\+Pos)
-\item 
+\begin{DoxyCompactList}\small\item\em This event gets called when the user releases the mouse button, after this layerable has become the mouse grabber by accepting the preceding \mbox{\hyperlink{class_q_c_p_layerable_af6567604818db90f4fd52822f8bc8376}{mouse\+Press\+Event}}. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_q_c_p_layerable_a4171e2e823aca242dd0279f00ed2de81}{mouse\+Double\+Click\+Event}} (QMouse\+Event $\ast$event, const QVariant \&details)
-\item 
+\begin{DoxyCompactList}\small\item\em This event gets called when the user presses the mouse button a second time in a double-\/click, while the cursor is over the layerable. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_q_c_p_layerable_a47dfd7b8fd99c08ca54e09c362b6f022}{wheel\+Event}} (QWheel\+Event $\ast$event)
-\item 
+\begin{DoxyCompactList}\small\item\em This event gets called when the user turns the mouse scroll wheel while the cursor is over the layerable. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_q_c_p_layerable_a8cbe5a0c9a5674249982f5ca5f8e02bc}\label{class_q_c_p_layerable_a8cbe5a0c9a5674249982f5ca5f8e02bc}} 
 void {\bfseries initialize\+Parent\+Plot} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$parent\+Plot)
 \item 
@@ -461,16 +485,16 @@ class {\bfseries QCPLegend}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a3af66432b1dca93b28e00e78a8c7c1d9}{selection\+Changed}} (bool \mbox{\hyperlink{class_q_c_p_abstract_plottable_a0b3b514474fe93354fc74cfc144184b4}{selected}})
-\item 
+\begin{DoxyCompactList}\small\item\em This signal is emitted when the selection state of this plottable has changed, either by user interaction or by a direct call to \mbox{\hyperlink{class_q_c_p_abstract_plottable_a219bc5403a9d85d3129165ec3f5ae436}{set\+Selection}}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a787a9c39421059006891744b731fa473}{selection\+Changed}} (const \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} \&\mbox{\hyperlink{class_q_c_p_abstract_plottable_a040bf09f41d456284cfd39cc37aa068f}{selection}})
-\item 
+\begin{DoxyCompactList}\small\item\em This signal is emitted when the selection state of this plottable has changed, either by user interaction or by a direct call to \mbox{\hyperlink{class_q_c_p_abstract_plottable_a219bc5403a9d85d3129165ec3f5ae436}{set\+Selection}}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_abstract_plottable_a663b1a44123c8340ac041a29d1e2c973}{selectable\+Changed}} (\mbox{\hyperlink{namespace_q_c_p_ac6cb9db26a564b27feda362a438db038}{QCP\+::\+Selection\+Type}} selectable)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This signal is emitted when the selectability of this plottable has changed. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Signals inherited from \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_q_c_p_layerable_abbf8657cedea73ac1c3499b521c90eba}{layer\+Changed}} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$new\+Layer)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This signal is emitted when the layer of this layerable changes, i.\+e. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -509,7 +533,9 @@ Usually, you first create an instance\+:
 \doxysubsubsection{\texorpdfstring{ChartStyle}{ChartStyle}}
 {\footnotesize\ttfamily enum \mbox{\hyperlink{class_q_c_p_financial_a0f800e21ee98d646dfc6f8f89d10ebfb}{QCPFinancial\+::\+Chart\+Style}}}
 
-Defines the possible representations of OHLC data in the plot.
+
+
+Defines the possible representations of OHLC data in the plot. 
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_financial_a5a59175d36279d71596e64d7bb65596f}{set\+Chart\+Style}} 
@@ -530,7 +556,11 @@ cs\+Candlestick&Candlestick representation. \\
 \doxysubsubsection{\texorpdfstring{WidthType}{WidthType}}
 {\footnotesize\ttfamily enum \mbox{\hyperlink{class_q_c_p_financial_aef1761dda71a53dc5269685e9e492626}{QCPFinancial\+::\+Width\+Type}}}
 
-Defines the ways the width of the financial bar can be specified. Thus it defines what the number passed to \mbox{\hyperlink{class_q_c_p_financial_a99633f8bac86a61d534ae5eeb1a3068f}{set\+Width}} actually means.
+
+
+Defines the ways the width of the financial bar can be specified. 
+
+Thus it defines what the number passed to \mbox{\hyperlink{class_q_c_p_financial_a99633f8bac86a61d534ae5eeb1a3068f}{set\+Width}} actually means.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_financial_a204b7b710352796593a432b723e34089}{set\+Width\+Type}}, \mbox{\hyperlink{class_q_c_p_financial_a99633f8bac86a61d534ae5eeb1a3068f}{set\+Width}} 
@@ -558,7 +588,11 @@ wt\+Plot\+Coords&width is in key coordinates and thus scales with the key axis r
 \doxysubsubsection{\texorpdfstring{QCPFinancial()}{QCPFinancial()}}
 {\footnotesize\ttfamily QCPFinancial\+::\+QCPFinancial (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$}]{key\+Axis,  }\item[{\mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$}]{value\+Axis }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
-Constructs a financial chart which uses {\itshape key\+Axis} as its key axis (\char`\"{}x\char`\"{}) and {\itshape value\+Axis} as its value axis (\char`\"{}y\char`\"{}). {\itshape key\+Axis} and {\itshape value\+Axis} must reside in the same \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance and not have the same orientation. If either of these restrictions is violated, a corresponding message is printed to the debug output (q\+Debug), the construction is not aborted, though.
+
+
+Constructs a financial chart which uses {\itshape key\+Axis} as its key axis (\char`\"{}x\char`\"{}) and {\itshape value\+Axis} as its value axis (\char`\"{}y\char`\"{}). 
+
+{\itshape key\+Axis} and {\itshape value\+Axis} must reside in the same \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance and not have the same orientation. If either of these restrictions is violated, a corresponding message is printed to the debug output (q\+Debug), the construction is not aborted, though.
 
 \mbox{\hyperlink{class_the}{The}} created \mbox{\hyperlink{class_q_c_p_financial}{QCPFinancial}} is automatically registered with the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance inferred from {\itshape key\+Axis}. This \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance takes ownership of the \mbox{\hyperlink{class_q_c_p_financial}{QCPFinancial}}, so do not delete it manually but use \mbox{\hyperlink{class_q_custom_plot_af3dafd56884208474f311d6226513ab2}{QCustom\+Plot\+::remove\+Plottable()}} instead. 
 
@@ -569,9 +603,13 @@ Constructs a financial chart which uses {\itshape key\+Axis} as its key axis (\c
 \doxysubsubsection{\texorpdfstring{addData()}{addData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily void QCPFinancial\+::add\+Data (\begin{DoxyParamCaption}\item[{const QVector$<$ double $>$ \&}]{keys,  }\item[{const QVector$<$ double $>$ \&}]{open,  }\item[{const QVector$<$ double $>$ \&}]{high,  }\item[{const QVector$<$ double $>$ \&}]{low,  }\item[{const QVector$<$ double $>$ \&}]{close,  }\item[{bool}]{already\+Sorted = {\ttfamily false} }\end{DoxyParamCaption})}
 
+
+
 This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
 
-Adds the provided points in {\itshape keys}, {\itshape open}, {\itshape high}, {\itshape low} and {\itshape close} to the current data. \mbox{\hyperlink{class_the}{The}} provided vectors should have equal length. Else, the number of added points will be the size of the smallest vector.
+Adds the provided points in {\itshape keys}, {\itshape open}, {\itshape high}, {\itshape low} and {\itshape close} to the current data. 
+
+\mbox{\hyperlink{class_the}{The}} provided vectors should have equal length. Else, the number of added points will be the size of the smallest vector.
 
 If you can guarantee that the passed data points are sorted by {\itshape keys} in ascending order, you can set {\itshape already\+Sorted} to true, to improve performance by saving a sorting run.
 
@@ -586,9 +624,11 @@ Alternatively, you can also access and modify the data directly via the \mbox{\h
 \doxysubsubsection{\texorpdfstring{addData()}{addData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily void QCPFinancial\+::add\+Data (\begin{DoxyParamCaption}\item[{double}]{key,  }\item[{double}]{open,  }\item[{double}]{high,  }\item[{double}]{low,  }\item[{double}]{close }\end{DoxyParamCaption})}
 
+
+
 This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
 
-Adds the provided data point as {\itshape key}, {\itshape open}, {\itshape high}, {\itshape low} and {\itshape close} to the current data.
+Adds the provided data point as {\itshape key}, {\itshape open}, {\itshape high}, {\itshape low} and {\itshape close} to the current data. 
 
 Alternatively, you can also access and modify the data directly via the \mbox{\hyperlink{class_q_c_p_financial_aec3f666271cf48bd7b87d84fe3f8c074}{data}} method, which returns a pointer to the internal data container.
 
@@ -601,7 +641,11 @@ Alternatively, you can also access and modify the data directly via the \mbox{\h
 \doxysubsubsection{\texorpdfstring{data()}{data()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_data_container}{QCPFinancial\+Data\+Container}} $\ast$ QCPFinancial\+::data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Returns a pointer to the internal data storage of type QCPFinancial\+Data\+Container. You may use it to directly manipulate the data, which may be more convenient and faster than using the regular \mbox{\hyperlink{class_q_c_p_financial_a72089e75b8a50d18097526c3c79fdb85}{set\+Data}} or \mbox{\hyperlink{class_q_c_p_financial_a372ac031e44a7a6c912d203556af96f7}{add\+Data}} methods, in certain situations. \mbox{\Hypertarget{class_q_c_p_financial_a4d62b7a618d609321adb5f5f1e31f446}\label{class_q_c_p_financial_a4d62b7a618d609321adb5f5f1e31f446}} 
+
+
+Returns a pointer to the internal data storage of type QCPFinancial\+Data\+Container. 
+
+You may use it to directly manipulate the data, which may be more convenient and faster than using the regular \mbox{\hyperlink{class_q_c_p_financial_a72089e75b8a50d18097526c3c79fdb85}{set\+Data}} or \mbox{\hyperlink{class_q_c_p_financial_a372ac031e44a7a6c912d203556af96f7}{add\+Data}} methods, in certain situations. \mbox{\Hypertarget{class_q_c_p_financial_a4d62b7a618d609321adb5f5f1e31f446}\label{class_q_c_p_financial_a4d62b7a618d609321adb5f5f1e31f446}} 
 \index{QCPFinancial@{QCPFinancial}!draw@{draw}}
 \index{draw@{draw}!QCPFinancial@{QCPFinancial}}
 \doxysubsubsection{\texorpdfstring{draw()}{draw()}}
@@ -627,7 +671,11 @@ Implements \mbox{\hyperlink{class_q_c_p_abstract_plottable}{QCPAbstract\+Plottab
 \doxysubsubsection{\texorpdfstring{getKeyRange()}{getKeyRange()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} QCPFinancial\+::get\+Key\+Range (\begin{DoxyParamCaption}\item[{bool \&}]{found\+Range,  }\item[{\mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9}{QCP\+::\+Sign\+Domain}}}]{in\+Sign\+Domain = {\ttfamily \mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9aa38352ef02d51ddfa4399d9551566e24}{QCP\+::sd\+Both}}} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
 
-Returns the coordinate range that all data in this plottable span in the key axis dimension. For logarithmic plots, one can set {\itshape in\+Sign\+Domain} to either \mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9a2d18af0bc58f6528d1e82ce699fe4829}{QCP\+::sd\+Negative}} or \mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9a584784b75fb816abcc627cf743bb699f}{QCP\+::sd\+Positive}} in order to restrict the returned range to that sign domain. E.\+g. when only negative range is wanted, set {\itshape in\+Sign\+Domain} to \mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9a2d18af0bc58f6528d1e82ce699fe4829}{QCP\+::sd\+Negative}} and all positive points will be ignored for range calculation. For no restriction, just set {\itshape in\+Sign\+Domain} to \mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9aa38352ef02d51ddfa4399d9551566e24}{QCP\+::sd\+Both}} (default). {\itshape found\+Range} is an output parameter that indicates whether a range could be found or not. If this is false, you shouldn\textquotesingle{}t use the returned range (e.\+g. no points in data).
+
+
+Returns the coordinate range that all data in this plottable span in the key axis dimension. 
+
+For logarithmic plots, one can set {\itshape in\+Sign\+Domain} to either \mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9a2d18af0bc58f6528d1e82ce699fe4829}{QCP\+::sd\+Negative}} or \mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9a584784b75fb816abcc627cf743bb699f}{QCP\+::sd\+Positive}} in order to restrict the returned range to that sign domain. E.\+g. when only negative range is wanted, set {\itshape in\+Sign\+Domain} to \mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9a2d18af0bc58f6528d1e82ce699fe4829}{QCP\+::sd\+Negative}} and all positive points will be ignored for range calculation. For no restriction, just set {\itshape in\+Sign\+Domain} to \mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9aa38352ef02d51ddfa4399d9551566e24}{QCP\+::sd\+Both}} (default). {\itshape found\+Range} is an output parameter that indicates whether a range could be found or not. If this is false, you shouldn\textquotesingle{}t use the returned range (e.\+g. no points in data).
 
 Note that {\itshape found\+Range} is not the same as \mbox{\hyperlink{class_q_c_p_range_ab38bd4841c77c7bb86c9eea0f142dcc0}{QCPRange\+::valid\+Range}}, since the range returned by this function may have size zero (e.\+g. when there is only one data point). In this case {\itshape found\+Range} would return true, but the returned range is not a valid range in terms of \mbox{\hyperlink{class_q_c_p_range_ab38bd4841c77c7bb86c9eea0f142dcc0}{QCPRange\+::valid\+Range}}.
 
@@ -644,7 +692,11 @@ Implements \mbox{\hyperlink{class_q_c_p_abstract_plottable_a4da16d3cd4b509e1104a
 \doxysubsubsection{\texorpdfstring{getValueRange()}{getValueRange()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} QCPFinancial\+::get\+Value\+Range (\begin{DoxyParamCaption}\item[{bool \&}]{found\+Range,  }\item[{\mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9}{QCP\+::\+Sign\+Domain}}}]{in\+Sign\+Domain = {\ttfamily \mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9aa38352ef02d51ddfa4399d9551566e24}{QCP\+::sd\+Both}}},  }\item[{const \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \&}]{in\+Key\+Range = {\ttfamily \mbox{\hyperlink{class_q_c_p_range}{QCPRange}}()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
 
-Returns the coordinate range that the data points in the specified key range ({\itshape in\+Key\+Range}) span in the value axis dimension. For logarithmic plots, one can set {\itshape in\+Sign\+Domain} to either \mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9a2d18af0bc58f6528d1e82ce699fe4829}{QCP\+::sd\+Negative}} or \mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9a584784b75fb816abcc627cf743bb699f}{QCP\+::sd\+Positive}} in order to restrict the returned range to that sign domain. E.\+g. when only negative range is wanted, set {\itshape in\+Sign\+Domain} to \mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9a2d18af0bc58f6528d1e82ce699fe4829}{QCP\+::sd\+Negative}} and all positive points will be ignored for range calculation. For no restriction, just set {\itshape in\+Sign\+Domain} to \mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9aa38352ef02d51ddfa4399d9551566e24}{QCP\+::sd\+Both}} (default). {\itshape found\+Range} is an output parameter that indicates whether a range could be found or not. If this is false, you shouldn\textquotesingle{}t use the returned range (e.\+g. no points in data).
+
+
+Returns the coordinate range that the data points in the specified key range ({\itshape in\+Key\+Range}) span in the value axis dimension. 
+
+For logarithmic plots, one can set {\itshape in\+Sign\+Domain} to either \mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9a2d18af0bc58f6528d1e82ce699fe4829}{QCP\+::sd\+Negative}} or \mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9a584784b75fb816abcc627cf743bb699f}{QCP\+::sd\+Positive}} in order to restrict the returned range to that sign domain. E.\+g. when only negative range is wanted, set {\itshape in\+Sign\+Domain} to \mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9a2d18af0bc58f6528d1e82ce699fe4829}{QCP\+::sd\+Negative}} and all positive points will be ignored for range calculation. For no restriction, just set {\itshape in\+Sign\+Domain} to \mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9aa38352ef02d51ddfa4399d9551566e24}{QCP\+::sd\+Both}} (default). {\itshape found\+Range} is an output parameter that indicates whether a range could be found or not. If this is false, you shouldn\textquotesingle{}t use the returned range (e.\+g. no points in data).
 
 If {\itshape in\+Key\+Range} has both lower and upper bound set to zero (is equal to {\ttfamily \mbox{\hyperlink{class_q_c_p_range}{QCPRange()}}}), all data points are considered, without any restriction on the keys.
 
@@ -663,7 +715,11 @@ Implements \mbox{\hyperlink{class_q_c_p_abstract_plottable_a4de773988b21ed090fdd
 \doxysubsubsection{\texorpdfstring{selectTest()}{selectTest()}}
 {\footnotesize\ttfamily double QCPFinancial\+::select\+Test (\begin{DoxyParamCaption}\item[{const QPointF \&}]{pos,  }\item[{bool}]{only\+Selectable,  }\item[{QVariant $\ast$}]{details = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
 
-Implements a point-\/selection algorithm assuming the data (accessed via the 1D data interface) is point-\/like. Most subclasses will want to reimplement this method again, to provide a more accurate hit test based on the true data visualization geometry.
+
+
+Implements a point-\/selection algorithm assuming the data (accessed via the 1D data interface) is point-\/like. 
+
+Most subclasses will want to reimplement this method again, to provide a more accurate hit test based on the true data visualization geometry.
 
 \textbackslash{}seebaseclassmethod 
 
@@ -677,9 +733,9 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a4611b43bc
 
 
 
+Returns a data selection containing all the data points of this plottable which are contained (or hit by) {\itshape rect}.   
 
-
-Returns a data selection containing all the data points of this plottable which are contained (or hit by) {\itshape rect}. This is used mainly in the selection rect interaction for data selection (data selection mechanism).
+This is used mainly in the selection rect interaction for data selection (data selection mechanism).
 
 If {\itshape only\+Selectable} is true, an empty \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} is returned if this plottable is not selectable (i.\+e. if \mbox{\hyperlink{class_q_c_p_abstract_plottable_ac238d6e910f976f1f30d41c2bca44ac3}{QCPAbstract\+Plottable\+::set\+Selectable}} is \mbox{\hyperlink{namespace_q_c_p_ac6cb9db26a564b27feda362a438db038aa64628e338a2dd1e6f0dc84dec0b63fe}{QCP\+::st\+None}}).
 
@@ -696,7 +752,11 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a22377bf6e
 \doxysubsubsection{\texorpdfstring{setBrushNegative()}{setBrushNegative()}}
 {\footnotesize\ttfamily void QCPFinancial\+::set\+Brush\+Negative (\begin{DoxyParamCaption}\item[{const QBrush \&}]{brush }\end{DoxyParamCaption})}
 
-If \mbox{\hyperlink{class_q_c_p_financial_a138e44aac160a17a9676652e240c5f08}{set\+Two\+Colored}} is set to true, this function controls the brush that is used to draw fills of data points with a negative trend (i.\+e. bars/candlesticks with close \texorpdfstring{$<$}{<} open).
+
+
+If \mbox{\hyperlink{class_q_c_p_financial_a138e44aac160a17a9676652e240c5f08}{set\+Two\+Colored}} is set to true, this function controls the brush that is used to draw fills of data points with a negative trend (i.\+e. 
+
+bars/candlesticks with close \texorpdfstring{$<$}{<} open).
 
 If {\itshape two\+Colored} is false, the normal plottable\textquotesingle{}s pen and brush are used (\mbox{\hyperlink{class_q_c_p_abstract_plottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}{set\+Pen}}, \mbox{\hyperlink{class_q_c_p_abstract_plottable_a7a4b92144dca6453a1f0f210e27edc74}{set\+Brush}}).
 
@@ -709,28 +769,30 @@ If {\itshape two\+Colored} is false, the normal plottable\textquotesingle{}s pen
 \doxysubsubsection{\texorpdfstring{setBrushPositive()}{setBrushPositive()}}
 {\footnotesize\ttfamily void QCPFinancial\+::set\+Brush\+Positive (\begin{DoxyParamCaption}\item[{const QBrush \&}]{brush }\end{DoxyParamCaption})}
 
-If \mbox{\hyperlink{class_q_c_p_financial_a138e44aac160a17a9676652e240c5f08}{set\+Two\+Colored}} is set to true, this function controls the brush that is used to draw fills of data points with a positive trend (i.\+e. bars/candlesticks with close \texorpdfstring{$>$}{>}= open).
+
+
+If \mbox{\hyperlink{class_q_c_p_financial_a138e44aac160a17a9676652e240c5f08}{set\+Two\+Colored}} is set to true, this function controls the brush that is used to draw fills of data points with a positive trend (i.\+e. 
+
+bars/candlesticks with close \texorpdfstring{$>$}{>}= open).
 
 If {\itshape two\+Colored} is false, the normal plottable\textquotesingle{}s pen and brush are used (\mbox{\hyperlink{class_q_c_p_abstract_plottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}{set\+Pen}}, \mbox{\hyperlink{class_q_c_p_abstract_plottable_a7a4b92144dca6453a1f0f210e27edc74}{set\+Brush}}).
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_financial_a8bbdd87629f9144b3ef51af660c0961a}{set\+Brush\+Negative}}, \mbox{\hyperlink{class_q_c_p_financial_ac58aa3adc7a35aab0088764b840683e5}{set\+Pen\+Positive}}, \mbox{\hyperlink{class_q_c_p_financial_afe5c07e94ccea01a75b3a2476993c346}{set\+Pen\+Negative}} 
 \end{DoxySeeAlso}
-\mbox{\Hypertarget{class_q_c_p_financial_a5a59175d36279d71596e64d7bb65596f}\label{class_q_c_p_financial_a5a59175d36279d71596e64d7bb65596f}} 
-\index{QCPFinancial@{QCPFinancial}!setChartStyle@{setChartStyle}}
-\index{setChartStyle@{setChartStyle}!QCPFinancial@{QCPFinancial}}
-\doxysubsubsection{\texorpdfstring{setChartStyle()}{setChartStyle()}}
-{\footnotesize\ttfamily void QCPFinancial\+::set\+Chart\+Style (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_financial_a0f800e21ee98d646dfc6f8f89d10ebfb}{QCPFinancial\+::\+Chart\+Style}}}]{style }\end{DoxyParamCaption})}
-
-Sets which representation style shall be used to display the OHLC data. \mbox{\Hypertarget{class_q_c_p_financial_a12992e669ed19d7bb48dbe601570cc05}\label{class_q_c_p_financial_a12992e669ed19d7bb48dbe601570cc05}} 
+\mbox{\Hypertarget{class_q_c_p_financial_a12992e669ed19d7bb48dbe601570cc05}\label{class_q_c_p_financial_a12992e669ed19d7bb48dbe601570cc05}} 
 \index{QCPFinancial@{QCPFinancial}!setData@{setData}}
 \index{setData@{setData}!QCPFinancial@{QCPFinancial}}
 \doxysubsubsection{\texorpdfstring{setData()}{setData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily void QCPFinancial\+::set\+Data (\begin{DoxyParamCaption}\item[{const QVector$<$ double $>$ \&}]{keys,  }\item[{const QVector$<$ double $>$ \&}]{open,  }\item[{const QVector$<$ double $>$ \&}]{high,  }\item[{const QVector$<$ double $>$ \&}]{low,  }\item[{const QVector$<$ double $>$ \&}]{close,  }\item[{bool}]{already\+Sorted = {\ttfamily false} }\end{DoxyParamCaption})}
 
+
+
 This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
 
-Replaces the current data with the provided points in {\itshape keys}, {\itshape open}, {\itshape high}, {\itshape low} and {\itshape close}. \mbox{\hyperlink{class_the}{The}} provided vectors should have equal length. Else, the number of added points will be the size of the smallest vector.
+Replaces the current data with the provided points in {\itshape keys}, {\itshape open}, {\itshape high}, {\itshape low} and {\itshape close}. 
+
+\mbox{\hyperlink{class_the}{The}} provided vectors should have equal length. Else, the number of added points will be the size of the smallest vector.
 
 If you can guarantee that the passed data points are sorted by {\itshape keys} in ascending order, you can set {\itshape already\+Sorted} to true, to improve performance by saving a sorting run.
 
@@ -743,9 +805,11 @@ If you can guarantee that the passed data points are sorted by {\itshape keys} i
 \doxysubsubsection{\texorpdfstring{setData()}{setData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily void QCPFinancial\+::set\+Data (\begin{DoxyParamCaption}\item[{QShared\+Pointer$<$ \mbox{\hyperlink{class_q_c_p_data_container}{QCPFinancial\+Data\+Container}} $>$}]{data }\end{DoxyParamCaption})}
 
+
+
 This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
 
-Replaces the current data container with the provided {\itshape data} container.
+Replaces the current data container with the provided {\itshape data} container. 
 
 Since a QShared\+Pointer is used, multiple QCPFinancials may share the same data container safely. Modifying the data in the container will then affect all financials that share the container. Sharing can be achieved by simply exchanging the data containers wrapped in shared pointers\+: 
 \begin{DoxyCodeInclude}{0}
@@ -768,7 +832,11 @@ If you do not wish to share containers, but create a copy from an existing conta
 \doxysubsubsection{\texorpdfstring{setPenNegative()}{setPenNegative()}}
 {\footnotesize\ttfamily void QCPFinancial\+::set\+Pen\+Negative (\begin{DoxyParamCaption}\item[{const QPen \&}]{pen }\end{DoxyParamCaption})}
 
-If \mbox{\hyperlink{class_q_c_p_financial_a138e44aac160a17a9676652e240c5f08}{set\+Two\+Colored}} is set to true, this function controls the pen that is used to draw outlines of data points with a negative trend (i.\+e. bars/candlesticks with close \texorpdfstring{$<$}{<} open).
+
+
+If \mbox{\hyperlink{class_q_c_p_financial_a138e44aac160a17a9676652e240c5f08}{set\+Two\+Colored}} is set to true, this function controls the pen that is used to draw outlines of data points with a negative trend (i.\+e. 
+
+bars/candlesticks with close \texorpdfstring{$<$}{<} open).
 
 If {\itshape two\+Colored} is false, the normal plottable\textquotesingle{}s pen and brush are used (\mbox{\hyperlink{class_q_c_p_abstract_plottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}{set\+Pen}}, \mbox{\hyperlink{class_q_c_p_abstract_plottable_a7a4b92144dca6453a1f0f210e27edc74}{set\+Brush}}).
 
@@ -781,7 +849,11 @@ If {\itshape two\+Colored} is false, the normal plottable\textquotesingle{}s pen
 \doxysubsubsection{\texorpdfstring{setPenPositive()}{setPenPositive()}}
 {\footnotesize\ttfamily void QCPFinancial\+::set\+Pen\+Positive (\begin{DoxyParamCaption}\item[{const QPen \&}]{pen }\end{DoxyParamCaption})}
 
-If \mbox{\hyperlink{class_q_c_p_financial_a138e44aac160a17a9676652e240c5f08}{set\+Two\+Colored}} is set to true, this function controls the pen that is used to draw outlines of data points with a positive trend (i.\+e. bars/candlesticks with close \texorpdfstring{$>$}{>}= open).
+
+
+If \mbox{\hyperlink{class_q_c_p_financial_a138e44aac160a17a9676652e240c5f08}{set\+Two\+Colored}} is set to true, this function controls the pen that is used to draw outlines of data points with a positive trend (i.\+e. 
+
+bars/candlesticks with close \texorpdfstring{$>$}{>}= open).
 
 If {\itshape two\+Colored} is false, the normal plottable\textquotesingle{}s pen and brush are used (\mbox{\hyperlink{class_q_c_p_abstract_plottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}{set\+Pen}}, \mbox{\hyperlink{class_q_c_p_abstract_plottable_a7a4b92144dca6453a1f0f210e27edc74}{set\+Brush}}).
 
@@ -794,7 +866,9 @@ If {\itshape two\+Colored} is false, the normal plottable\textquotesingle{}s pen
 \doxysubsubsection{\texorpdfstring{setTwoColored()}{setTwoColored()}}
 {\footnotesize\ttfamily void QCPFinancial\+::set\+Two\+Colored (\begin{DoxyParamCaption}\item[{bool}]{two\+Colored }\end{DoxyParamCaption})}
 
-Sets whether this chart shall contrast positive from negative trends per data point by using two separate colors to draw the respective bars/candlesticks.
+
+
+Sets whether this chart shall contrast positive from negative trends per data point by using two separate colors to draw the respective bars/candlesticks. 
 
 If {\itshape two\+Colored} is false, the normal plottable\textquotesingle{}s pen and brush are used (\mbox{\hyperlink{class_q_c_p_abstract_plottable_ab74b09ae4c0e7e13142fe4b5bf46cac7}{set\+Pen}}, \mbox{\hyperlink{class_q_c_p_abstract_plottable_a7a4b92144dca6453a1f0f210e27edc74}{set\+Brush}}).
 
@@ -807,7 +881,9 @@ If {\itshape two\+Colored} is false, the normal plottable\textquotesingle{}s pen
 \doxysubsubsection{\texorpdfstring{setWidth()}{setWidth()}}
 {\footnotesize\ttfamily void QCPFinancial\+::set\+Width (\begin{DoxyParamCaption}\item[{double}]{width }\end{DoxyParamCaption})}
 
-Sets the width of the individual bars/candlesticks to {\itshape width} in plot key coordinates.
+
+
+Sets the width of the individual bars/candlesticks to {\itshape width} in plot key coordinates. 
 
 A typical choice is to set it to (or slightly less than) one bin interval width. \mbox{\Hypertarget{class_q_c_p_financial_a204b7b710352796593a432b723e34089}\label{class_q_c_p_financial_a204b7b710352796593a432b723e34089}} 
 \index{QCPFinancial@{QCPFinancial}!setWidthType@{setWidthType}}
@@ -815,7 +891,11 @@ A typical choice is to set it to (or slightly less than) one bin interval width.
 \doxysubsubsection{\texorpdfstring{setWidthType()}{setWidthType()}}
 {\footnotesize\ttfamily void QCPFinancial\+::set\+Width\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_financial_aef1761dda71a53dc5269685e9e492626}{QCPFinancial\+::\+Width\+Type}}}]{width\+Type }\end{DoxyParamCaption})}
 
-Sets how the width of the financial bars is defined. See the documentation of \mbox{\hyperlink{class_q_c_p_financial_aef1761dda71a53dc5269685e9e492626}{Width\+Type}} for an explanation of the possible values for {\itshape width\+Type}.
+
+
+Sets how the width of the financial bars is defined. 
+
+See the documentation of \mbox{\hyperlink{class_q_c_p_financial_aef1761dda71a53dc5269685e9e492626}{Width\+Type}} for an explanation of the possible values for {\itshape width\+Type}.
 
 \mbox{\hyperlink{class_the}{The}} default value is \mbox{\hyperlink{class_q_c_p_financial_aef1761dda71a53dc5269685e9e492626af676bc8dbe700b96b333329c9dbfc30f}{wt\+Plot\+Coords}}.
 
@@ -828,7 +908,11 @@ Sets how the width of the financial bars is defined. See the documentation of \m
 \doxysubsubsection{\texorpdfstring{timeSeriesToOhlc()}{timeSeriesToOhlc()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_data_container}{QCPFinancial\+Data\+Container}} QCPFinancial\+::time\+Series\+To\+Ohlc (\begin{DoxyParamCaption}\item[{const QVector$<$ double $>$ \&}]{time,  }\item[{const QVector$<$ double $>$ \&}]{value,  }\item[{double}]{time\+Bin\+Size,  }\item[{double}]{time\+Bin\+Offset = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-A convenience function that converts time series data ({\itshape value} against {\itshape time}) to OHLC binned data points. \mbox{\hyperlink{class_the}{The}} return value can then be passed on to QCPFinancial\+Data\+Container\+::set(const \+QCPFinancial\+Data\+Container\&).
+
+
+A convenience function that converts time series data ({\itshape value} against {\itshape time}) to OHLC binned data points. 
+
+\mbox{\hyperlink{class_the}{The}} return value can then be passed on to QCPFinancial\+Data\+Container\+::set(const \+QCPFinancial\+Data\+Container\&).
 
 \mbox{\hyperlink{class_the}{The}} size of the bins can be controlled with {\itshape time\+Bin\+Size} in the same units as {\itshape time} is given. For example, if the unit of {\itshape time} is seconds and single OHLC/\+Candlesticks should span an hour each, set {\itshape time\+Bin\+Size} to 3600.
 

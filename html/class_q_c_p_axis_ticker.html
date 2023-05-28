@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: QCPAxisTicker Class Reference</title>
+<title>OmronPID: QCPAxisTicker Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Project
+   <div id="projectname">OmronPID
    </div>
   </td>
  </tr>
@@ -73,8 +73,7 @@ $(function() {
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a> &#124;
-<a href="class_q_c_p_axis_ticker-members.html">List of all members</a>  </div>
+<a href="#pro-attribs">Protected Attributes</a>  </div>
   <div class="headertitle"><div class="title">QCPAxisTicker Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -101,11 +100,13 @@ Public Types</h2></td></tr>
 <tr class="memitem:ab6d2f9d9477821623ac9bc4b21ddf49a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_axis_ticker.html#ab6d2f9d9477821623ac9bc4b21ddf49a">TickStepStrategy</a> { <a class="el" href="class_q_c_p_axis_ticker.html#ab6d2f9d9477821623ac9bc4b21ddf49aa9002aa2fd5633ab5556c71a26fed63a8">tssReadability</a>
 , <a class="el" href="class_q_c_p_axis_ticker.html#ab6d2f9d9477821623ac9bc4b21ddf49aa770312b6b9b0c64a37ceeba96e0cd7f2">tssMeetTickCount</a>
  }</td></tr>
+<tr class="memdesc:ab6d2f9d9477821623ac9bc4b21ddf49a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the strategies that the axis ticker may follow when choosing the size of the tick step.  <a href="class_q_c_p_axis_ticker.html#ab6d2f9d9477821623ac9bc4b21ddf49a">More...</a><br /></td></tr>
 <tr class="separator:ab6d2f9d9477821623ac9bc4b21ddf49a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a8fcf23c79ebd72202fe79253f9f01ea8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_axis_ticker.html#a8fcf23c79ebd72202fe79253f9f01ea8">QCPAxisTicker</a> ()</td></tr>
+<tr class="memdesc:a8fcf23c79ebd72202fe79253f9f01ea8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the ticker and sets reasonable default values.  <br /></td></tr>
 <tr class="separator:a8fcf23c79ebd72202fe79253f9f01ea8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a58df76f2ec3eb48401bdd314b0e14ba1"><td class="memItemLeft" align="right" valign="top"><a id="a58df76f2ec3eb48401bdd314b0e14ba1" name="a58df76f2ec3eb48401bdd314b0e14ba1"></a>
 <a class="el" href="class_q_c_p_axis_ticker.html#ab6d2f9d9477821623ac9bc4b21ddf49a">TickStepStrategy</a>&#160;</td><td class="memItemRight" valign="bottom"><b>tickStepStrategy</b> () const</td></tr>
@@ -117,12 +118,16 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>tickCount</b> () const
 double&#160;</td><td class="memItemRight" valign="bottom"><b>tickOrigin</b> () const</td></tr>
 <tr class="separator:ac0c6e9587c36fdeefb5518c00fe7ab15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73b1d847c1a12159af6bfda4ebebe7d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_axis_ticker.html#a73b1d847c1a12159af6bfda4ebebe7d5">setTickStepStrategy</a> (<a class="el" href="class_q_c_p_axis_ticker.html#ab6d2f9d9477821623ac9bc4b21ddf49a">TickStepStrategy</a> strategy)</td></tr>
+<tr class="memdesc:a73b1d847c1a12159af6bfda4ebebe7d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets which strategy the axis ticker follows when choosing the size of the tick step.  <br /></td></tr>
 <tr class="separator:a73b1d847c1a12159af6bfda4ebebe7d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47752abba8293e6dc18491501ae34008"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_axis_ticker.html#a47752abba8293e6dc18491501ae34008">setTickCount</a> (int count)</td></tr>
+<tr class="memdesc:a47752abba8293e6dc18491501ae34008"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets how many ticks this ticker shall aim to generate across the axis range.  <br /></td></tr>
 <tr class="separator:a47752abba8293e6dc18491501ae34008"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab509c7e500293bf66a8409f0d7c23943"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_axis_ticker.html#ab509c7e500293bf66a8409f0d7c23943">setTickOrigin</a> (double origin)</td></tr>
+<tr class="memdesc:ab509c7e500293bf66a8409f0d7c23943"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the mathematical coordinate (or "offset") of the zeroth tick.  <br /></td></tr>
 <tr class="separator:ab509c7e500293bf66a8409f0d7c23943"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aefbd11725678ca824add8cf926cbc856"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_axis_ticker.html#aefbd11725678ca824add8cf926cbc856">generate</a> (const <a class="el" href="class_q_c_p_range.html">QCPRange</a> &amp;range, const QLocale &amp;locale, QChar formatChar, int precision, QVector&lt; double &gt; &amp;ticks, QVector&lt; double &gt; *subTicks, QVector&lt; QString &gt; *tickLabels)</td></tr>
+<tr class="memdesc:aefbd11725678ca824add8cf926cbc856"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the method called by <a class="el" href="class_q_c_p_axis.html" title="Manages a single axis inside a QCustomPlot.">QCPAxis</a> in order to actually generate tick coordinates (<em>ticks</em>), tick label strings (<em>tickLabels</em>) and sub tick coordinates (<em>subTicks</em>).  <br /></td></tr>
 <tr class="separator:aefbd11725678ca824add8cf926cbc856"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
@@ -225,8 +230,9 @@ Creating own axis tickers</h1>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Defines the strategies that the axis ticker may follow when choosing the size of the tick step.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_axis_ticker.html#a73b1d847c1a12159af6bfda4ebebe7d5">setTickStepStrategy</a> </dd></dl>
+
+<p>Defines the strategies that the axis ticker may follow when choosing the size of the tick step. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_axis_ticker.html#a73b1d847c1a12159af6bfda4ebebe7d5" title="Sets which strategy the axis ticker follows when choosing the size of the tick step.">setTickStepStrategy</a> </dd></dl>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ab6d2f9d9477821623ac9bc4b21ddf49aa9002aa2fd5633ab5556c71a26fed63a8" name="ab6d2f9d9477821623ac9bc4b21ddf49aa9002aa2fd5633ab5556c71a26fed63a8"></a>tssReadability&#160;</td><td class="fielddoc"><p>A nicely readable tick step is prioritized over matching the requested number of ticks (see <a class="el" href="class_q_c_p_axis_ticker.html#a47752abba8293e6dc18491501ae34008">setTickCount</a>) </p>
 </td></tr>
@@ -251,7 +257,9 @@ Creating own axis tickers</h1>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Constructs the ticker and sets reasonable default values. Axis tickers are commonly created managed by a QSharedPointer, which then can be passed to <a class="el" href="class_q_c_p_axis.html#a4ee03fcd2c74d05cd1a419b9af5cfbdc">QCPAxis::setTicker</a>. </p>
+
+<p>Constructs the ticker and sets reasonable default values. </p>
+<p>Axis tickers are commonly created managed by a QSharedPointer, which then can be passed to <a class="el" href="class_q_c_p_axis.html#a4ee03fcd2c74d05cd1a419b9af5cfbdc" title="The axis ticker is responsible for generating the tick positions and tick labels.">QCPAxis::setTicker</a>. </p>
 
 </div>
 </div>
@@ -357,7 +365,8 @@ Creating own axis tickers</h1>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This is the method called by <a class="el" href="class_q_c_p_axis.html" title="Manages a single axis inside a QCustomPlot.">QCPAxis</a> in order to actually generate tick coordinates (<em>ticks</em>), tick label strings (<em>tickLabels</em>) and sub tick coordinates (<em>subTicks</em>).</p>
+
+<p>This is the method called by <a class="el" href="class_q_c_p_axis.html" title="Manages a single axis inside a QCustomPlot.">QCPAxis</a> in order to actually generate tick coordinates (<em>ticks</em>), tick label strings (<em>tickLabels</em>) and sub tick coordinates (<em>subTicks</em>). </p>
 <p><a class="el" href="class_the.html">The</a> ticks are generated for the specified <em>range</em>. <a class="el" href="class_the.html">The</a> generated labels typically follow the specified <em>locale</em>, <em>formatChar</em> and number <em>precision</em>, however this might be different (or even irrelevant) for certain <a class="el" href="class_q_c_p_axis_ticker.html" title="The base class tick generator used by QCPAxis to create tick positions and tick labels.">QCPAxisTicker</a> subclasses.</p>
 <p><a class="el" href="class_the.html">The</a> output parameter <em>ticks</em> is filled with the generated tick positions in axis coordinates. <a class="el" href="class_the.html">The</a> output parameters <em>subTicks</em> and <em>tickLabels</em> are optional (set them to 0 if not needed) and are respectively filled with sub tick coordinates, and tick label strings belonging to <em>ticks</em> by index. </p>
 
@@ -484,7 +493,9 @@ Creating own axis tickers</h1>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Sets how many ticks this ticker shall aim to generate across the axis range. Note that <em>count</em> is not guaranteed to be matched exactly, as generating readable tick intervals may conflict with the requested number of ticks.</p>
+
+<p>Sets how many ticks this ticker shall aim to generate across the axis range. </p>
+<p>Note that <em>count</em> is not guaranteed to be matched exactly, as generating readable tick intervals may conflict with the requested number of ticks.</p>
 <p>Whether the readability has priority over meeting the requested <em>count</em> can be specified with <a class="el" href="class_q_c_p_axis_ticker.html#a73b1d847c1a12159af6bfda4ebebe7d5">setTickStepStrategy</a>. </p>
 
 </div>
@@ -504,7 +515,9 @@ Creating own axis tickers</h1>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Sets the mathematical coordinate (or "offset") of the zeroth tick. This tick coordinate is just a concept and doesn't need to be inside the currently visible axis range.</p>
+
+<p>Sets the mathematical coordinate (or "offset") of the zeroth tick. </p>
+<p>This tick coordinate is just a concept and doesn't need to be inside the currently visible axis range.</p>
 <p>By default <em>origin</em> is zero, which for example yields ticks {-5, 0, 5, 10, 15,...} when the tick step is five. If <em>origin</em> is now set to 1 instead, the correspondingly generated ticks would be {-4, 1, 6, 11, 16,...}. </p>
 
 </div>
@@ -524,7 +537,9 @@ Creating own axis tickers</h1>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Sets which strategy the axis ticker follows when choosing the size of the tick step. For the available strategies, see <a class="el" href="class_q_c_p_axis_ticker.html#ab6d2f9d9477821623ac9bc4b21ddf49a">TickStepStrategy</a>. </p>
+
+<p>Sets which strategy the axis ticker follows when choosing the size of the tick step. </p>
+<p>For the available strategies, see <a class="el" href="class_q_c_p_axis_ticker.html#ab6d2f9d9477821623ac9bc4b21ddf49a">TickStepStrategy</a>. </p>
 
 </div>
 </div>

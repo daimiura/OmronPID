@@ -1,5 +1,10 @@
 \hypertarget{namespace_q_c_p}{}\doxysection{QCP Namespace Reference}
 \label{namespace_q_c_p}\index{QCP@{QCP}}
+
+
+\mbox{\hyperlink{class_the}{The}} \mbox{\hyperlink{namespace_q_c_p}{QCP}} Namespace contains general enums, QFlags and functions used throughout the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} library.  
+
+
 \doxysubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
@@ -7,16 +12,16 @@ enum \mbox{\hyperlink{namespace_q_c_p_a715d46153da230990aa887d0f0602452}{Resolut
 , \mbox{\hyperlink{namespace_q_c_p_a715d46153da230990aa887d0f0602452a4224e01f49b331489ad8cb12b619b229}{ru\+Dots\+Per\+Centimeter}}
 , \mbox{\hyperlink{namespace_q_c_p_a715d46153da230990aa887d0f0602452affb887d8efe79c39a1aca2acd7002afc}{ru\+Dots\+Per\+Inch}}
  \}
-\item 
+\begin{DoxyCompactList}\small\item\em Defines the different units in which the image resolution can be specified in the export functions. \end{DoxyCompactList}\item 
 enum \mbox{\hyperlink{namespace_q_c_p_a17844f19e1019693a953e1eb93536d2f}{Export\+Pen}} \{ \mbox{\hyperlink{namespace_q_c_p_a17844f19e1019693a953e1eb93536d2faae8fcfaafee234ce18558afef83f6a78}{ep\+No\+Cosmetic}}
 , \mbox{\hyperlink{namespace_q_c_p_a17844f19e1019693a953e1eb93536d2fa50d3657dba3fb90560b93a823cb0a6e8}{ep\+Allow\+Cosmetic}}
  \}
-\item 
+\begin{DoxyCompactList}\small\item\em Defines how cosmetic pens (pens with numerical width 0) are handled during export. \end{DoxyCompactList}\item 
 enum \mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9}{Sign\+Domain}} \{ \mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9a2d18af0bc58f6528d1e82ce699fe4829}{sd\+Negative}}
 , \mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9aa38352ef02d51ddfa4399d9551566e24}{sd\+Both}}
 , \mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9a584784b75fb816abcc627cf743bb699f}{sd\+Positive}}
  \}
-\item 
+\begin{DoxyCompactList}\small\item\em Represents negative and positive sign domain, e.\+g. \end{DoxyCompactList}\item 
 enum \mbox{\hyperlink{namespace_q_c_p_a7e487e3e2ccb62ab7771065bab7cae54}{Margin\+Side}} \{ \newline
 \mbox{\hyperlink{namespace_q_c_p_a7e487e3e2ccb62ab7771065bab7cae54a9500c8bfcc9e80b9dff0a8e00e867f07}{ms\+Left}} = 0x01
 , \mbox{\hyperlink{namespace_q_c_p_a7e487e3e2ccb62ab7771065bab7cae54a93c719593bb2b94ed244d52c86d83b65}{ms\+Right}} = 0x02
@@ -26,7 +31,7 @@ enum \mbox{\hyperlink{namespace_q_c_p_a7e487e3e2ccb62ab7771065bab7cae54}{Margin\
 \mbox{\hyperlink{namespace_q_c_p_a7e487e3e2ccb62ab7771065bab7cae54a43d7361cb0c5244eabdc962021bffebc}{ms\+All}} = 0x\+FF
 , \mbox{\hyperlink{namespace_q_c_p_a7e487e3e2ccb62ab7771065bab7cae54a80aa4149f16dabd538f8b2e3d42c42d5}{ms\+None}} = 0x00
  \}
-\item 
+\begin{DoxyCompactList}\small\item\em Defines the sides of a rectangular entity to which margins can be applied. \end{DoxyCompactList}\item 
 enum \mbox{\hyperlink{namespace_q_c_p_ae55dbe315d41fe80f29ba88100843a0c}{Antialiased\+Element}} \{ \newline
 \mbox{\hyperlink{namespace_q_c_p_ae55dbe315d41fe80f29ba88100843a0caefa92e89cd37f8a081fd2075aa1af73f}{ae\+Axes}} = 0x0001
 , \mbox{\hyperlink{namespace_q_c_p_ae55dbe315d41fe80f29ba88100843a0ca4fbb37118d62288af0ca601ff2b07a2f}{ae\+Grid}} = 0x0002
@@ -45,13 +50,13 @@ enum \mbox{\hyperlink{namespace_q_c_p_ae55dbe315d41fe80f29ba88100843a0c}{Antiali
 , \newline
 \mbox{\hyperlink{namespace_q_c_p_ae55dbe315d41fe80f29ba88100843a0caa9e90d81896358757d94275aeaa58f6a}{ae\+None}} = 0x0000
  \}
-\item 
+\begin{DoxyCompactList}\small\item\em Defines what objects of a plot can be forcibly drawn antialiased/not antialiased. \end{DoxyCompactList}\item 
 enum \mbox{\hyperlink{namespace_q_c_p_a5400e5fcb9528d92002ddb938c1f4ef4}{Plotting\+Hint}} \{ \mbox{\hyperlink{namespace_q_c_p_a5400e5fcb9528d92002ddb938c1f4ef4ab7283c5bfc1ba9e597015389880bda42}{ph\+None}} = 0x000
 , \mbox{\hyperlink{namespace_q_c_p_a5400e5fcb9528d92002ddb938c1f4ef4aa5fd227bc878c56ad2a87ea32c74ee4d}{ph\+Fast\+Polylines}} = 0x001
 , \mbox{\hyperlink{namespace_q_c_p_a5400e5fcb9528d92002ddb938c1f4ef4a30840fba10eebfa519a92cf5c3d32870}{ph\+Immediate\+Refresh}} = 0x002
 , \mbox{\hyperlink{namespace_q_c_p_a5400e5fcb9528d92002ddb938c1f4ef4a8e9cfe5ee0c5cd36dd7accf9739aff65}{ph\+Cache\+Labels}} = 0x004
  \}
-\item 
+\begin{DoxyCompactList}\small\item\em Defines plotting hints that control various aspects of the quality and speed of plotting. \end{DoxyCompactList}\item 
 enum \mbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037}{Interaction}} \{ \newline
 \mbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037a2c4432b9aceafb94000be8d1b589ef18}{i\+Range\+Drag}} = 0x001
 , \mbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037abee1e94353525a636aeaf0ba32b72e14}{i\+Range\+Zoom}} = 0x002
@@ -63,13 +68,13 @@ enum \mbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037}{Interac
 , \mbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037aea2f7c105d674e76d9b187b02ef29260}{i\+Select\+Items}} = 0x040
 , \mbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037af67a50bc26147a13b551b3a625374949}{i\+Select\+Other}} = 0x080
  \}
-\item 
+\begin{DoxyCompactList}\small\item\em Defines the mouse interactions possible with \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}. \end{DoxyCompactList}\item 
 enum \mbox{\hyperlink{namespace_q_c_p_ac9aa4d6d81ac76b094f9af9ad2d3aacf}{Selection\+Rect\+Mode}} \{ \mbox{\hyperlink{namespace_q_c_p_ac9aa4d6d81ac76b094f9af9ad2d3aacfa9032f170490d67240a6c68c2638ffab1}{srm\+None}}
 , \mbox{\hyperlink{namespace_q_c_p_ac9aa4d6d81ac76b094f9af9ad2d3aacfa739c260bf4d9a15f73423c91158b9428}{srm\+Zoom}}
 , \mbox{\hyperlink{namespace_q_c_p_ac9aa4d6d81ac76b094f9af9ad2d3aacfa62c286e8da283a0cbb88ecac2f3f7506}{srm\+Select}}
 , \mbox{\hyperlink{namespace_q_c_p_ac9aa4d6d81ac76b094f9af9ad2d3aacfa15e7a00c8e7e0673c7b31d75266888d4}{srm\+Custom}}
  \}
-\item 
+\begin{DoxyCompactList}\small\item\em Defines the behaviour of the selection rect. \end{DoxyCompactList}\item 
 enum \mbox{\hyperlink{namespace_q_c_p_ac6cb9db26a564b27feda362a438db038}{Selection\+Type}} \{ \newline
 \mbox{\hyperlink{namespace_q_c_p_ac6cb9db26a564b27feda362a438db038aa64628e338a2dd1e6f0dc84dec0b63fe}{st\+None}}
 , \mbox{\hyperlink{namespace_q_c_p_ac6cb9db26a564b27feda362a438db038aff7a688d4d520e8e7f01be098a034a2d}{st\+Whole}}
@@ -78,7 +83,7 @@ enum \mbox{\hyperlink{namespace_q_c_p_ac6cb9db26a564b27feda362a438db038}{Selecti
 , \newline
 \mbox{\hyperlink{namespace_q_c_p_ac6cb9db26a564b27feda362a438db038a7cf82676966ebf79cc371f65278e0e16}{st\+Multiple\+Data\+Ranges}}
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Defines the different ways a plottable can be selected. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -103,7 +108,7 @@ const QMeta\+Object {\bfseries static\+Meta\+Object}
 
 
 \doxysubsection{Detailed Description}
-\mbox{\hyperlink{class_the}{The}} \mbox{\hyperlink{namespace_q_c_p}{QCP}} Namespace contains general enums, QFlags and functions used throughout the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} library.
+\mbox{\hyperlink{class_the}{The}} \mbox{\hyperlink{namespace_q_c_p}{QCP}} Namespace contains general enums, QFlags and functions used throughout the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} library. 
 
 It provides QMeta\+Object-\/based reflection of its enums and flags via {\itshape QCP\+::static\+Meta\+Object}. 
 
@@ -114,7 +119,11 @@ It provides QMeta\+Object-\/based reflection of its enums and flags via {\itshap
 \doxysubsubsection{\texorpdfstring{AntialiasedElement}{AntialiasedElement}}
 {\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_q_c_p_ae55dbe315d41fe80f29ba88100843a0c}{QCP\+::\+Antialiased\+Element}}}
 
-Defines what objects of a plot can be forcibly drawn antialiased/not antialiased. If an object is neither forcibly drawn antialiased nor forcibly drawn not antialiased, it is up to the respective element how it is drawn. Typically it provides a {\itshape set\+Antialiased} function for this.
+
+
+Defines what objects of a plot can be forcibly drawn antialiased/not antialiased. 
+
+If an object is neither forcibly drawn antialiased nor forcibly drawn not antialiased, it is up to the respective element how it is drawn. Typically it provides a {\itshape set\+Antialiased} function for this.
 
 {\ttfamily Antialiased\+Elements} is a flag of or-\/combined elements of this enum type.
 
@@ -181,7 +190,9 @@ ae\+None&{\ttfamily 0x0000} No elements \\
 \doxysubsubsection{\texorpdfstring{ExportPen}{ExportPen}}
 {\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_q_c_p_a17844f19e1019693a953e1eb93536d2f}{QCP\+::\+Export\+Pen}}}
 
-Defines how cosmetic pens (pens with numerical width 0) are handled during export.
+
+
+Defines how cosmetic pens (pens with numerical width 0) are handled during export. 
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_custom_plot_ad5acd34f6b39c3516887d7e54fec2412}{QCustom\+Plot\+::save\+Pdf}} 
@@ -202,7 +213,9 @@ ep\+Allow\+Cosmetic&Cosmetic pens are exported normally (e.\+g. in PDF exports, 
 \doxysubsubsection{\texorpdfstring{Interaction}{Interaction}}
 {\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037}{QCP\+::\+Interaction}}}
 
-Defines the mouse interactions possible with \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}.
+
+
+Defines the mouse interactions possible with \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}. 
 
 {\ttfamily Interactions} is a flag of or-\/combined elements of this enum type.
 
@@ -249,7 +262,9 @@ i\+Select\+Other&{\ttfamily 0x080} All other objects are selectable (e.\+g. your
 \doxysubsubsection{\texorpdfstring{MarginSide}{MarginSide}}
 {\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_q_c_p_a7e487e3e2ccb62ab7771065bab7cae54}{QCP\+::\+Margin\+Side}}}
 
-Defines the sides of a rectangular entity to which margins can be applied.
+
+
+Defines the sides of a rectangular entity to which margins can be applied. 
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_layout_element_accfda49994e3e6d51ed14504abf9d27d}{QCPLayout\+Element\+::set\+Auto\+Margins}}, \mbox{\hyperlink{class_q_c_p_layout_element_accfda49994e3e6d51ed14504abf9d27d}{QCPAxis\+Rect\+::set\+Auto\+Margins}} 
@@ -286,7 +301,9 @@ ms\+None&{\ttfamily 0x00} no margin \\
 \doxysubsubsection{\texorpdfstring{PlottingHint}{PlottingHint}}
 {\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_q_c_p_a5400e5fcb9528d92002ddb938c1f4ef4}{QCP\+::\+Plotting\+Hint}}}
 
-Defines plotting hints that control various aspects of the quality and speed of plotting.
+
+
+Defines plotting hints that control various aspects of the quality and speed of plotting. 
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_custom_plot_a94a33cbdadbbac5934843508bcfc210d}{QCustom\+Plot\+::set\+Plotting\+Hints}} 
@@ -315,7 +332,9 @@ ph\+Cache\+Labels&{\ttfamily 0x004} axis (tick) labels will be cached as pixmaps
 \doxysubsubsection{\texorpdfstring{ResolutionUnit}{ResolutionUnit}}
 {\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_q_c_p_a715d46153da230990aa887d0f0602452}{QCP\+::\+Resolution\+Unit}}}
 
-Defines the different units in which the image resolution can be specified in the export functions.
+
+
+Defines the different units in which the image resolution can be specified in the export functions. 
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_custom_plot_ac92cc9256d12f354b40a4be4600b5fb9}{QCustom\+Plot\+::save\+Png}}, \mbox{\hyperlink{class_q_custom_plot_a76f0d278e630a711fa6f48048cfd83e4}{QCustom\+Plot\+::save\+Jpg}}, \mbox{\hyperlink{class_q_custom_plot_ae3a86ed0795670e50afa21759d4fa13d}{QCustom\+Plot\+::save\+Bmp}}, \mbox{\hyperlink{class_q_custom_plot_ad7723ce2edfa270632ef42b03a444352}{QCustom\+Plot\+::save\+Rastered}} 
@@ -340,7 +359,9 @@ ru\+Dots\+Per\+Inch&Resolution is given in dots per inch (DPI/\+PPI) \\
 \doxysubsubsection{\texorpdfstring{SelectionRectMode}{SelectionRectMode}}
 {\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_q_c_p_ac9aa4d6d81ac76b094f9af9ad2d3aacf}{QCP\+::\+Selection\+Rect\+Mode}}}
 
-Defines the behaviour of the selection rect.
+
+
+Defines the behaviour of the selection rect. 
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_custom_plot_a810ef958ebe84db661c7288b526c0deb}{QCustom\+Plot\+::set\+Selection\+Rect\+Mode}}, \mbox{\hyperlink{class_q_custom_plot_ad7df2bcbba307e644db383b449e31efd}{QCustom\+Plot\+::selection\+Rect}}, \mbox{\hyperlink{class_q_c_p_selection_rect}{QCPSelection\+Rect}} 
@@ -369,7 +390,11 @@ srm\+Custom&When dragging the mouse, a selection rect becomes active. It is the 
 \doxysubsubsection{\texorpdfstring{SelectionType}{SelectionType}}
 {\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_q_c_p_ac6cb9db26a564b27feda362a438db038}{QCP\+::\+Selection\+Type}}}
 
-Defines the different ways a plottable can be selected. These images show the effect of the different selection types, when the indicated selection rect was dragged\+:
+
+
+Defines the different ways a plottable can be selected. 
+
+These images show the effect of the different selection types, when the indicated selection rect was dragged\+:
 
 \begin{center} \tabulinesep=1mm
 \begin{longtabu}spread 0pt [c]{*{5}{|X[-1]}|}
@@ -409,7 +434,11 @@ st\+Multiple\+Data\+Ranges&Any combination of data points/ranges can be selected
 \doxysubsubsection{\texorpdfstring{SignDomain}{SignDomain}}
 {\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9}{QCP\+::\+Sign\+Domain}}}
 
-Represents negative and positive sign domain, e.\+g. for passing to \mbox{\hyperlink{class_q_c_p_abstract_plottable_a4da16d3cd4b509e1104a9b0275623c96}{QCPAbstract\+Plottable\+::get\+Key\+Range}} and \mbox{\hyperlink{class_q_c_p_abstract_plottable_a4de773988b21ed090fddd27c6a3a3dcb}{QCPAbstract\+Plottable\+::get\+Value\+Range}}.
+
+
+Represents negative and positive sign domain, e.\+g. 
+
+for passing to \mbox{\hyperlink{class_q_c_p_abstract_plottable_a4da16d3cd4b509e1104a9b0275623c96}{QCPAbstract\+Plottable\+::get\+Key\+Range}} and \mbox{\hyperlink{class_q_c_p_abstract_plottable_a4de773988b21ed090fddd27c6a3a3dcb}{QCPAbstract\+Plottable\+::get\+Value\+Range}}.
 
 This is primarily needed when working with logarithmic axis scales, since only one of the sign domains can be visible at a time. \begin{DoxyEnumFields}{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{sdNegative@{sdNegative}!QCP@{QCP}}\index{QCP@{QCP}!sdNegative@{sdNegative}}}\mbox{\Hypertarget{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9a2d18af0bc58f6528d1e82ce699fe4829}\label{namespace_q_c_p_afd50e7cf431af385614987d8553ff8a9a2d18af0bc58f6528d1e82ce699fe4829}} 

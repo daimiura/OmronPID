@@ -1,3 +1,8 @@
+/**
+ * @file jpindialog.h
+ * @brief Header file for the JoinDialog class
+*/
+
 #ifndef JOINLINEDIALOG_H
 #define JOINLINEDIALOG_H
 

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: QCPLayout Class Reference</title>
+<title>OmronPID: QCPLayout Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Project
+   <div id="projectname">OmronPID
    </div>
   </td>
  </tr>
@@ -73,8 +73,7 @@ $(function() {
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-static-methods">Static Protected Member Functions</a> &#124;
-<a href="#friends">Friends</a> &#124;
-<a href="class_q_c_p_layout-members.html">List of all members</a>  </div>
+<a href="#friends">Friends</a>  </div>
   <div class="headertitle"><div class="title">QCPLayout Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
@@ -98,35 +97,52 @@ Inheritance diagram for QCPLayout:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a04222e6e1361fd802d48f1a25b7020d4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layout.html#a04222e6e1361fd802d48f1a25b7020d4">QCPLayout</a> ()</td></tr>
+<tr class="memdesc:a04222e6e1361fd802d48f1a25b7020d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an instance of <a class="el" href="class_q_c_p_layout.html" title="The abstract base class for layouts.">QCPLayout</a> and sets default values.  <br /></td></tr>
 <tr class="separator:a04222e6e1361fd802d48f1a25b7020d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a48ecc9c98ea90b547c3e27a931a8f7bd"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layout.html#a48ecc9c98ea90b547c3e27a931a8f7bd">update</a> (<a class="el" href="class_q_c_p_layout_element.html#a0d83360e05735735aaf6d7983c56374d">UpdatePhase</a> phase) Q_DECL_OVERRIDE</td></tr>
+<tr class="memdesc:a48ecc9c98ea90b547c3e27a931a8f7bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">If <em>phase</em> is <a class="el" href="class_q_c_p_layout_element.html#a0d83360e05735735aaf6d7983c56374da5d1ccf5d79967c232c3c511796860045">upLayout</a>, calls updateLayout, which subclasses may reimplement to reposition and resize their cells.  <br /></td></tr>
 <tr class="separator:a48ecc9c98ea90b547c3e27a931a8f7bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca129722c019f91d3367046f80abfa77"><td class="memItemLeft" align="right" valign="top">virtual QList&lt; <a class="el" href="class_q_c_p_layout_element.html">QCPLayoutElement</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layout.html#aca129722c019f91d3367046f80abfa77">elements</a> (bool recursive) const Q_DECL_OVERRIDE</td></tr>
+<tr class="memdesc:aca129722c019f91d3367046f80abfa77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a list of all child elements in this layout element.  <br /></td></tr>
 <tr class="separator:aca129722c019f91d3367046f80abfa77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39d3e9ef5d9b82ab1885ba1cb9597e56"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layout.html#a39d3e9ef5d9b82ab1885ba1cb9597e56">elementCount</a> () const =0</td></tr>
+<tr class="memdesc:a39d3e9ef5d9b82ab1885ba1cb9597e56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of elements/cells in the layout.  <br /></td></tr>
 <tr class="separator:a39d3e9ef5d9b82ab1885ba1cb9597e56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa73ca7d859f8a3ee5c73c9b353d2a56"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_q_c_p_layout_element.html">QCPLayoutElement</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layout.html#afa73ca7d859f8a3ee5c73c9b353d2a56">elementAt</a> (int index) const =0</td></tr>
+<tr class="memdesc:afa73ca7d859f8a3ee5c73c9b353d2a56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the element in the cell with the given <em>index</em>.  <br /></td></tr>
 <tr class="separator:afa73ca7d859f8a3ee5c73c9b353d2a56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a79621fa0a6eabb8b520cfc04fb601a"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_q_c_p_layout_element.html">QCPLayoutElement</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layout.html#a5a79621fa0a6eabb8b520cfc04fb601a">takeAt</a> (int index)=0</td></tr>
+<tr class="memdesc:a5a79621fa0a6eabb8b520cfc04fb601a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the element with the given <em>index</em> from the layout and returns it.  <br /></td></tr>
 <tr class="separator:a5a79621fa0a6eabb8b520cfc04fb601a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada26cd17e56472b0b4d7fbbc96873e4c"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layout.html#ada26cd17e56472b0b4d7fbbc96873e4c">take</a> (<a class="el" href="class_q_c_p_layout_element.html">QCPLayoutElement</a> *element)=0</td></tr>
+<tr class="memdesc:ada26cd17e56472b0b4d7fbbc96873e4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the specified <em>element</em> from the layout and returns true on success.  <br /></td></tr>
 <tr class="separator:ada26cd17e56472b0b4d7fbbc96873e4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41e6ac049143866e8f8b4964efab01b2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layout.html#a41e6ac049143866e8f8b4964efab01b2">simplify</a> ()</td></tr>
+<tr class="memdesc:a41e6ac049143866e8f8b4964efab01b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simplifies the layout by collapsing empty cells.  <br /></td></tr>
 <tr class="separator:a41e6ac049143866e8f8b4964efab01b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2403f684fee3ce47132faaeed00bb066"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layout.html#a2403f684fee3ce47132faaeed00bb066">removeAt</a> (int index)</td></tr>
+<tr class="memdesc:a2403f684fee3ce47132faaeed00bb066"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes and deletes the element at the provided <em>index</em>.  <br /></td></tr>
 <tr class="separator:a2403f684fee3ce47132faaeed00bb066"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c58f537d8086f352576ab7c5b15d0bc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layout.html#a6c58f537d8086f352576ab7c5b15d0bc">remove</a> (<a class="el" href="class_q_c_p_layout_element.html">QCPLayoutElement</a> *element)</td></tr>
+<tr class="memdesc:a6c58f537d8086f352576ab7c5b15d0bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes and deletes the provided <em>element</em>.  <br /></td></tr>
 <tr class="separator:a6c58f537d8086f352576ab7c5b15d0bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a02883bdf2769b5b227f0232dba1ac4ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layout.html#a02883bdf2769b5b227f0232dba1ac4ee">clear</a> ()</td></tr>
+<tr class="memdesc:a02883bdf2769b5b227f0232dba1ac4ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes and deletes all layout elements in this layout.  <br /></td></tr>
 <tr class="separator:a02883bdf2769b5b227f0232dba1ac4ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_q_c_p_layout_element"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_q_c_p_layout_element')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_q_c_p_layout_element.html">QCPLayoutElement</a></td></tr>
-<tr class="memitem:a8947f0ada17e672aaba3d424cbbb67e3 inherit pub_methods_class_q_c_p_layout_element"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layout_element.html#a8947f0ada17e672aaba3d424cbbb67e3">QCPLayoutElement</a> (<a class="el" href="class_q_custom_plot.html">QCustomPlot</a> *parentPlot=0)</td></tr>
+<tr class="memitem:a8947f0ada17e672aaba3d424cbbb67e3 inherit pub_methods_class_q_c_p_layout_element"><td class="memItemLeft" align="right" valign="top"><a id="a8947f0ada17e672aaba3d424cbbb67e3" name="a8947f0ada17e672aaba3d424cbbb67e3"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>QCPLayoutElement</b> (<a class="el" href="class_q_custom_plot.html">QCustomPlot</a> *parentPlot=0)</td></tr>
+<tr class="memdesc:a8947f0ada17e672aaba3d424cbbb67e3 inherit pub_methods_class_q_c_p_layout_element"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an instance of <a class="el" href="class_q_c_p_layout_element.html" title="The abstract base class for all objects that form the layout system.">QCPLayoutElement</a> and sets default values. <br /></td></tr>
 <tr class="separator:a8947f0ada17e672aaba3d424cbbb67e3 inherit pub_methods_class_q_c_p_layout_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4efdcbde9d28f410e5ef166c9d691deb inherit pub_methods_class_q_c_p_layout_element"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_q_c_p_layout.html">QCPLayout</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layout_element.html#a4efdcbde9d28f410e5ef166c9d691deb">layout</a> () const</td></tr>
+<tr class="memitem:a4efdcbde9d28f410e5ef166c9d691deb inherit pub_methods_class_q_c_p_layout_element"><td class="memItemLeft" align="right" valign="top"><a id="a4efdcbde9d28f410e5ef166c9d691deb" name="a4efdcbde9d28f410e5ef166c9d691deb"></a>
+<a class="el" href="class_q_c_p_layout.html">QCPLayout</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>layout</b> () const</td></tr>
+<tr class="memdesc:a4efdcbde9d28f410e5ef166c9d691deb inherit pub_methods_class_q_c_p_layout_element"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the parent layout of this layout element. <br /></td></tr>
 <tr class="separator:a4efdcbde9d28f410e5ef166c9d691deb inherit pub_methods_class_q_c_p_layout_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a208effccfe2cca4a0eaf9393e60f2dd4 inherit pub_methods_class_q_c_p_layout_element"><td class="memItemLeft" align="right" valign="top">QRect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layout_element.html#a208effccfe2cca4a0eaf9393e60f2dd4">rect</a> () const</td></tr>
+<tr class="memdesc:a208effccfe2cca4a0eaf9393e60f2dd4 inherit pub_methods_class_q_c_p_layout_element"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the inner rect of this layout element.  <br /></td></tr>
 <tr class="separator:a208effccfe2cca4a0eaf9393e60f2dd4 inherit pub_methods_class_q_c_p_layout_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a32a12a6161c9dffbadeb9cc585510c inherit pub_methods_class_q_c_p_layout_element"><td class="memItemLeft" align="right" valign="top">QRect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layout_element.html#a2a32a12a6161c9dffbadeb9cc585510c">outerRect</a> () const</td></tr>
+<tr class="memdesc:a2a32a12a6161c9dffbadeb9cc585510c inherit pub_methods_class_q_c_p_layout_element"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the outer rect of this layout element.  <br /></td></tr>
 <tr class="separator:a2a32a12a6161c9dffbadeb9cc585510c inherit pub_methods_class_q_c_p_layout_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4ac9450aa2d60863bf3a8ea0c940c9d inherit pub_methods_class_q_c_p_layout_element"><td class="memItemLeft" align="right" valign="top"><a id="af4ac9450aa2d60863bf3a8ea0c940c9d" name="af4ac9450aa2d60863bf3a8ea0c940c9d"></a>
 QMargins&#160;</td><td class="memItemRight" valign="bottom"><b>margins</b> () const</td></tr>
@@ -153,37 +169,53 @@ QSize&#160;</td><td class="memItemRight" valign="bottom"><b>maximumSize</b> () c
 QHash&lt; <a class="el" href="namespace_q_c_p.html#a7e487e3e2ccb62ab7771065bab7cae54">QCP::MarginSide</a>, <a class="el" href="class_q_c_p_margin_group.html">QCPMarginGroup</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>marginGroups</b> () const</td></tr>
 <tr class="separator:acdd2c6b2ffb1c712e3bb3014fdec2e1b inherit pub_methods_class_q_c_p_layout_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38975ea13e36de8e53391ce41d94bc0f inherit pub_methods_class_q_c_p_layout_element"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layout_element.html#a38975ea13e36de8e53391ce41d94bc0f">setOuterRect</a> (const QRect &amp;<a class="el" href="class_q_c_p_layout_element.html#a208effccfe2cca4a0eaf9393e60f2dd4">rect</a>)</td></tr>
+<tr class="memdesc:a38975ea13e36de8e53391ce41d94bc0f inherit pub_methods_class_q_c_p_layout_element"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the outer rect of this layout element.  <br /></td></tr>
 <tr class="separator:a38975ea13e36de8e53391ce41d94bc0f inherit pub_methods_class_q_c_p_layout_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f450b1f3f992ad576fce2c63d8b79cf inherit pub_methods_class_q_c_p_layout_element"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layout_element.html#a8f450b1f3f992ad576fce2c63d8b79cf">setMargins</a> (const QMargins &amp;margins)</td></tr>
+<tr class="memdesc:a8f450b1f3f992ad576fce2c63d8b79cf inherit pub_methods_class_q_c_p_layout_element"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the margins of this layout element.  <br /></td></tr>
 <tr class="separator:a8f450b1f3f992ad576fce2c63d8b79cf inherit pub_methods_class_q_c_p_layout_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a8a17abc16b7923159fcc7608f94673 inherit pub_methods_class_q_c_p_layout_element"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layout_element.html#a0a8a17abc16b7923159fcc7608f94673">setMinimumMargins</a> (const QMargins &amp;margins)</td></tr>
+<tr class="memdesc:a0a8a17abc16b7923159fcc7608f94673 inherit pub_methods_class_q_c_p_layout_element"><td class="mdescLeft">&#160;</td><td class="mdescRight">If <a class="el" href="class_q_c_p_layout_element.html#accfda49994e3e6d51ed14504abf9d27d">setAutoMargins</a> is enabled on some or all margins, this function is used to provide minimum values for those margins.  <br /></td></tr>
 <tr class="separator:a0a8a17abc16b7923159fcc7608f94673 inherit pub_methods_class_q_c_p_layout_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:accfda49994e3e6d51ed14504abf9d27d inherit pub_methods_class_q_c_p_layout_element"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layout_element.html#accfda49994e3e6d51ed14504abf9d27d">setAutoMargins</a> (QCP::MarginSides sides)</td></tr>
+<tr class="memdesc:accfda49994e3e6d51ed14504abf9d27d inherit pub_methods_class_q_c_p_layout_element"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets on which sides the margin shall be calculated automatically.  <br /></td></tr>
 <tr class="separator:accfda49994e3e6d51ed14504abf9d27d inherit pub_methods_class_q_c_p_layout_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5dd29a3c8bc88440c97c06b67be7886b inherit pub_methods_class_q_c_p_layout_element"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layout_element.html#a5dd29a3c8bc88440c97c06b67be7886b">setMinimumSize</a> (const QSize &amp;size)</td></tr>
+<tr class="memdesc:a5dd29a3c8bc88440c97c06b67be7886b inherit pub_methods_class_q_c_p_layout_element"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the minimum size of this layout element.  <br /></td></tr>
 <tr class="separator:a5dd29a3c8bc88440c97c06b67be7886b inherit pub_methods_class_q_c_p_layout_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e0447614a0bf92de9a7304588c6b96e inherit pub_methods_class_q_c_p_layout_element"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layout_element.html#a8e0447614a0bf92de9a7304588c6b96e">setMinimumSize</a> (int width, int height)</td></tr>
+<tr class="memdesc:a8e0447614a0bf92de9a7304588c6b96e inherit pub_methods_class_q_c_p_layout_element"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.Sets the minimum size of this layout element.  <br /></td></tr>
 <tr class="separator:a8e0447614a0bf92de9a7304588c6b96e inherit pub_methods_class_q_c_p_layout_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a74eb5280a737ab44833d506db65efd95 inherit pub_methods_class_q_c_p_layout_element"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layout_element.html#a74eb5280a737ab44833d506db65efd95">setMaximumSize</a> (const QSize &amp;size)</td></tr>
+<tr class="memdesc:a74eb5280a737ab44833d506db65efd95 inherit pub_methods_class_q_c_p_layout_element"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the maximum size of this layout element.  <br /></td></tr>
 <tr class="separator:a74eb5280a737ab44833d506db65efd95 inherit pub_methods_class_q_c_p_layout_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a03e0e9c48f230217c529b0819f832d84 inherit pub_methods_class_q_c_p_layout_element"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layout_element.html#a03e0e9c48f230217c529b0819f832d84">setMaximumSize</a> (int width, int height)</td></tr>
+<tr class="memdesc:a03e0e9c48f230217c529b0819f832d84 inherit pub_methods_class_q_c_p_layout_element"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.Sets the maximum size of this layout element.  <br /></td></tr>
 <tr class="separator:a03e0e9c48f230217c529b0819f832d84 inherit pub_methods_class_q_c_p_layout_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a361666cdcc6fbfd37344cc44be746b0f inherit pub_methods_class_q_c_p_layout_element"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layout_element.html#a361666cdcc6fbfd37344cc44be746b0f">setSizeConstraintRect</a> (<a class="el" href="class_q_c_p_layout_element.html#a0afb3e5773529e4bd20e448f81be4d2a">SizeConstraintRect</a> constraintRect)</td></tr>
+<tr class="memdesc:a361666cdcc6fbfd37344cc44be746b0f inherit pub_methods_class_q_c_p_layout_element"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets to which rect of a layout element the size constraints apply.  <br /></td></tr>
 <tr class="separator:a361666cdcc6fbfd37344cc44be746b0f inherit pub_methods_class_q_c_p_layout_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a516e56f76b6bc100e8e71d329866847d inherit pub_methods_class_q_c_p_layout_element"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layout_element.html#a516e56f76b6bc100e8e71d329866847d">setMarginGroup</a> (QCP::MarginSides sides, <a class="el" href="class_q_c_p_margin_group.html">QCPMarginGroup</a> *group)</td></tr>
+<tr class="memdesc:a516e56f76b6bc100e8e71d329866847d inherit pub_methods_class_q_c_p_layout_element"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the margin <em>group</em> of the specified margin <em>sides</em>.  <br /></td></tr>
 <tr class="separator:a516e56f76b6bc100e8e71d329866847d inherit pub_methods_class_q_c_p_layout_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a929c2ec62e0e0e1d8418eaa802e2af9b inherit pub_methods_class_q_c_p_layout_element"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layout_element.html#a929c2ec62e0e0e1d8418eaa802e2af9b">update</a> (<a class="el" href="class_q_c_p_layout_element.html#a0d83360e05735735aaf6d7983c56374d">UpdatePhase</a> phase)</td></tr>
+<tr class="memdesc:a929c2ec62e0e0e1d8418eaa802e2af9b inherit pub_methods_class_q_c_p_layout_element"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the layout element and sub-elements.  <br /></td></tr>
 <tr class="separator:a929c2ec62e0e0e1d8418eaa802e2af9b inherit pub_methods_class_q_c_p_layout_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a46789036c4fcb190fa374f91321d7c09 inherit pub_methods_class_q_c_p_layout_element"><td class="memItemLeft" align="right" valign="top">virtual QSize&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layout_element.html#a46789036c4fcb190fa374f91321d7c09">minimumOuterSizeHint</a> () const</td></tr>
+<tr class="memdesc:a46789036c4fcb190fa374f91321d7c09 inherit pub_methods_class_q_c_p_layout_element"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the suggested minimum size this layout element (the <a class="el" href="class_q_c_p_layout_element.html#a2a32a12a6161c9dffbadeb9cc585510c">outerRect</a>) may be compressed to, if no manual minimum size is set.  <br /></td></tr>
 <tr class="separator:a46789036c4fcb190fa374f91321d7c09 inherit pub_methods_class_q_c_p_layout_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad96efb977a26e360e8a64a4c1e56456d inherit pub_methods_class_q_c_p_layout_element"><td class="memItemLeft" align="right" valign="top">virtual QSize&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layout_element.html#ad96efb977a26e360e8a64a4c1e56456d">maximumOuterSizeHint</a> () const</td></tr>
+<tr class="memdesc:ad96efb977a26e360e8a64a4c1e56456d inherit pub_methods_class_q_c_p_layout_element"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the suggested maximum size this layout element (the <a class="el" href="class_q_c_p_layout_element.html#a2a32a12a6161c9dffbadeb9cc585510c">outerRect</a>) may be expanded to, if no manual maximum size is set.  <br /></td></tr>
 <tr class="separator:ad96efb977a26e360e8a64a4c1e56456d inherit pub_methods_class_q_c_p_layout_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76dec8cb31e498994a944d7647a43309 inherit pub_methods_class_q_c_p_layout_element"><td class="memItemLeft" align="right" valign="top">virtual QList&lt; <a class="el" href="class_q_c_p_layout_element.html">QCPLayoutElement</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layout_element.html#a76dec8cb31e498994a944d7647a43309">elements</a> (bool recursive) const</td></tr>
+<tr class="memdesc:a76dec8cb31e498994a944d7647a43309 inherit pub_methods_class_q_c_p_layout_element"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a list of all child elements in this layout element.  <br /></td></tr>
 <tr class="separator:a76dec8cb31e498994a944d7647a43309 inherit pub_methods_class_q_c_p_layout_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae97f483cccedadbf18ea4525ef240ee4 inherit pub_methods_class_q_c_p_layout_element"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layout_element.html#ae97f483cccedadbf18ea4525ef240ee4">selectTest</a> (const QPointF &amp;pos, bool onlySelectable, QVariant *details=0) const Q_DECL_OVERRIDE</td></tr>
+<tr class="memdesc:ae97f483cccedadbf18ea4525ef240ee4 inherit pub_methods_class_q_c_p_layout_element"><td class="mdescLeft">&#160;</td><td class="mdescRight">Layout elements are sensitive to events inside their outer rect.  <br /></td></tr>
 <tr class="separator:ae97f483cccedadbf18ea4525ef240ee4 inherit pub_methods_class_q_c_p_layout_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_q_c_p_layerable"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_q_c_p_layerable')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_q_c_p_layerable.html">QCPLayerable</a></td></tr>
 <tr class="memitem:a74c0fa237f29bf0e49565013fc5d1ec0 inherit pub_methods_class_q_c_p_layerable"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layerable.html#a74c0fa237f29bf0e49565013fc5d1ec0">QCPLayerable</a> (<a class="el" href="class_q_custom_plot.html">QCustomPlot</a> *plot, QString targetLayer=QString(), <a class="el" href="class_q_c_p_layerable.html">QCPLayerable</a> *<a class="el" href="class_q_c_p_layerable.html#aa78b7e644d2c519e1a9a6f2ac5fcd858">parentLayerable</a>=0)</td></tr>
+<tr class="memdesc:a74c0fa237f29bf0e49565013fc5d1ec0 inherit pub_methods_class_q_c_p_layerable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <a class="el" href="class_q_c_p_layerable.html" title="Base class for all drawable objects.">QCPLayerable</a> instance.  <br /></td></tr>
 <tr class="separator:a74c0fa237f29bf0e49565013fc5d1ec0 inherit pub_methods_class_q_c_p_layerable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0297b944b6192b6d67d00bff41b6b70 inherit pub_methods_class_q_c_p_layerable"><td class="memItemLeft" align="right" valign="top"><a id="af0297b944b6192b6d67d00bff41b6b70" name="af0297b944b6192b6d67d00bff41b6b70"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>visible</b> () const</td></tr>
@@ -192,6 +224,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>visible</b> () const<
 <a class="el" href="class_q_custom_plot.html">QCustomPlot</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>parentPlot</b> () const</td></tr>
 <tr class="separator:a36ed5b292b90934b524a4e5866a3526c inherit pub_methods_class_q_c_p_layerable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa78b7e644d2c519e1a9a6f2ac5fcd858 inherit pub_methods_class_q_c_p_layerable"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_q_c_p_layerable.html">QCPLayerable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layerable.html#aa78b7e644d2c519e1a9a6f2ac5fcd858">parentLayerable</a> () const</td></tr>
+<tr class="memdesc:aa78b7e644d2c519e1a9a6f2ac5fcd858 inherit pub_methods_class_q_c_p_layerable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the parent layerable of this layerable.  <br /></td></tr>
 <tr class="separator:aa78b7e644d2c519e1a9a6f2ac5fcd858 inherit pub_methods_class_q_c_p_layerable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d4e121a7f1d2314f906fe698209cac9 inherit pub_methods_class_q_c_p_layerable"><td class="memItemLeft" align="right" valign="top"><a id="a9d4e121a7f1d2314f906fe698209cac9" name="a9d4e121a7f1d2314f906fe698209cac9"></a>
 <a class="el" href="class_q_c_p_layer.html">QCPLayer</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>layer</b> () const</td></tr>
@@ -200,16 +233,22 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>visible</b> () const<
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>antialiased</b> () const</td></tr>
 <tr class="separator:a71cbd212fde2703cee076e204a475709 inherit pub_methods_class_q_c_p_layerable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3bed99ddc396b48ce3ebfdc0418744f8 inherit pub_methods_class_q_c_p_layerable"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layerable.html#a3bed99ddc396b48ce3ebfdc0418744f8">setVisible</a> (bool on)</td></tr>
+<tr class="memdesc:a3bed99ddc396b48ce3ebfdc0418744f8 inherit pub_methods_class_q_c_p_layerable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the visibility of this layerable object.  <br /></td></tr>
 <tr class="separator:a3bed99ddc396b48ce3ebfdc0418744f8 inherit pub_methods_class_q_c_p_layerable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab0d0da6d2de45a118886d2c8e16d5a54 inherit pub_methods_class_q_c_p_layerable"><td class="memItemLeft" align="right" valign="top">Q_SLOT bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layerable.html#ab0d0da6d2de45a118886d2c8e16d5a54">setLayer</a> (<a class="el" href="class_q_c_p_layer.html">QCPLayer</a> *layer)</td></tr>
+<tr class="memdesc:ab0d0da6d2de45a118886d2c8e16d5a54 inherit pub_methods_class_q_c_p_layerable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the <em>layer</em> of this layerable object.  <br /></td></tr>
 <tr class="separator:ab0d0da6d2de45a118886d2c8e16d5a54 inherit pub_methods_class_q_c_p_layerable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab25a0e7b897993b44447caee0f142083 inherit pub_methods_class_q_c_p_layerable"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layerable.html#ab25a0e7b897993b44447caee0f142083">setLayer</a> (const QString &amp;layerName)</td></tr>
+<tr class="memdesc:ab25a0e7b897993b44447caee0f142083 inherit pub_methods_class_q_c_p_layerable"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Sets the layer of this layerable object by name.  <br /></td></tr>
 <tr class="separator:ab25a0e7b897993b44447caee0f142083 inherit pub_methods_class_q_c_p_layerable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4fd43e89be4a553ead41652565ff0581 inherit pub_methods_class_q_c_p_layerable"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layerable.html#a4fd43e89be4a553ead41652565ff0581">setAntialiased</a> (bool enabled)</td></tr>
+<tr class="memdesc:a4fd43e89be4a553ead41652565ff0581 inherit pub_methods_class_q_c_p_layerable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets whether this object will be drawn antialiased or not.  <br /></td></tr>
 <tr class="separator:a4fd43e89be4a553ead41652565ff0581 inherit pub_methods_class_q_c_p_layerable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04db8351fefd44cfdb77958e75c6288e inherit pub_methods_class_q_c_p_layerable"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layerable.html#a04db8351fefd44cfdb77958e75c6288e">selectTest</a> (const QPointF &amp;pos, bool onlySelectable, QVariant *details=0) const</td></tr>
+<tr class="memdesc:a04db8351fefd44cfdb77958e75c6288e inherit pub_methods_class_q_c_p_layerable"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is used to decide whether a click hits a layerable object or not.  <br /></td></tr>
 <tr class="separator:a04db8351fefd44cfdb77958e75c6288e inherit pub_methods_class_q_c_p_layerable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab054e88f15d485defcb95e7376f119e7 inherit pub_methods_class_q_c_p_layerable"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layerable.html#ab054e88f15d485defcb95e7376f119e7">realVisibility</a> () const</td></tr>
+<tr class="memdesc:ab054e88f15d485defcb95e7376f119e7 inherit pub_methods_class_q_c_p_layerable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether this layerable is visible, taking the visibility of the layerable parent and the visibility of this layerable's layer into account.  <br /></td></tr>
 <tr class="separator:ab054e88f15d485defcb95e7376f119e7 inherit pub_methods_class_q_c_p_layerable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
@@ -218,6 +257,7 @@ Protected Member Functions</h2></td></tr>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>updateLayout</b> ()</td></tr>
 <tr class="separator:a165c77f6287ac92e8d03017ad913378b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeac66a292f65cf7f8adf94eb92345b3e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layout.html#aeac66a292f65cf7f8adf94eb92345b3e">sizeConstraintsChanged</a> () const</td></tr>
+<tr class="memdesc:aeac66a292f65cf7f8adf94eb92345b3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subclasses call this method to report changed (minimum/maximum) size constraints.  <br /></td></tr>
 <tr class="separator:aeac66a292f65cf7f8adf94eb92345b3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6dbbc24156a808da29cd1ec031729a3"><td class="memItemLeft" align="right" valign="top"><a id="af6dbbc24156a808da29cd1ec031729a3" name="af6dbbc24156a808da29cd1ec031729a3"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>adoptElement</b> (<a class="el" href="class_q_c_p_layout_element.html">QCPLayoutElement</a> *el)</td></tr>
@@ -264,14 +304,19 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>selectEvent</
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>deselectEvent</b> (bool *selectionStateChanged)</td></tr>
 <tr class="separator:ae546370644a5551c76af739afc008bee inherit pro_methods_class_q_c_p_layerable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6567604818db90f4fd52822f8bc8376 inherit pro_methods_class_q_c_p_layerable"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layerable.html#af6567604818db90f4fd52822f8bc8376">mousePressEvent</a> (QMouseEvent *event, const QVariant &amp;details)</td></tr>
+<tr class="memdesc:af6567604818db90f4fd52822f8bc8376 inherit pro_methods_class_q_c_p_layerable"><td class="mdescLeft">&#160;</td><td class="mdescRight">This event gets called when the user presses a mouse button while the cursor is over the layerable.  <br /></td></tr>
 <tr class="separator:af6567604818db90f4fd52822f8bc8376 inherit pro_methods_class_q_c_p_layerable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9eee1ba47fd69be111059ca3881933e4 inherit pro_methods_class_q_c_p_layerable"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layerable.html#a9eee1ba47fd69be111059ca3881933e4">mouseMoveEvent</a> (QMouseEvent *event, const QPointF &amp;startPos)</td></tr>
+<tr class="memdesc:a9eee1ba47fd69be111059ca3881933e4 inherit pro_methods_class_q_c_p_layerable"><td class="mdescLeft">&#160;</td><td class="mdescRight">This event gets called when the user moves the mouse while holding a mouse button, after this layerable has become the mouse grabber by accepting the preceding <a class="el" href="class_q_c_p_layerable.html#af6567604818db90f4fd52822f8bc8376">mousePressEvent</a>.  <br /></td></tr>
 <tr class="separator:a9eee1ba47fd69be111059ca3881933e4 inherit pro_methods_class_q_c_p_layerable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0d79b005686f668622bbe66ac03ba2c inherit pro_methods_class_q_c_p_layerable"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layerable.html#aa0d79b005686f668622bbe66ac03ba2c">mouseReleaseEvent</a> (QMouseEvent *event, const QPointF &amp;startPos)</td></tr>
+<tr class="memdesc:aa0d79b005686f668622bbe66ac03ba2c inherit pro_methods_class_q_c_p_layerable"><td class="mdescLeft">&#160;</td><td class="mdescRight">This event gets called when the user releases the mouse button, after this layerable has become the mouse grabber by accepting the preceding <a class="el" href="class_q_c_p_layerable.html#af6567604818db90f4fd52822f8bc8376">mousePressEvent</a>.  <br /></td></tr>
 <tr class="separator:aa0d79b005686f668622bbe66ac03ba2c inherit pro_methods_class_q_c_p_layerable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4171e2e823aca242dd0279f00ed2de81 inherit pro_methods_class_q_c_p_layerable"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layerable.html#a4171e2e823aca242dd0279f00ed2de81">mouseDoubleClickEvent</a> (QMouseEvent *event, const QVariant &amp;details)</td></tr>
+<tr class="memdesc:a4171e2e823aca242dd0279f00ed2de81 inherit pro_methods_class_q_c_p_layerable"><td class="mdescLeft">&#160;</td><td class="mdescRight">This event gets called when the user presses the mouse button a second time in a double-click, while the cursor is over the layerable.  <br /></td></tr>
 <tr class="separator:a4171e2e823aca242dd0279f00ed2de81 inherit pro_methods_class_q_c_p_layerable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47dfd7b8fd99c08ca54e09c362b6f022 inherit pro_methods_class_q_c_p_layerable"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layerable.html#a47dfd7b8fd99c08ca54e09c362b6f022">wheelEvent</a> (QWheelEvent *event)</td></tr>
+<tr class="memdesc:a47dfd7b8fd99c08ca54e09c362b6f022 inherit pro_methods_class_q_c_p_layerable"><td class="mdescLeft">&#160;</td><td class="mdescRight">This event gets called when the user turns the mouse scroll wheel while the cursor is over the layerable.  <br /></td></tr>
 <tr class="separator:a47dfd7b8fd99c08ca54e09c362b6f022 inherit pro_methods_class_q_c_p_layerable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8cbe5a0c9a5674249982f5ca5f8e02bc inherit pro_methods_class_q_c_p_layerable"><td class="memItemLeft" align="right" valign="top"><a id="a8cbe5a0c9a5674249982f5ca5f8e02bc" name="a8cbe5a0c9a5674249982f5ca5f8e02bc"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>initializeParentPlot</b> (<a class="el" href="class_q_custom_plot.html">QCustomPlot</a> *parentPlot)</td></tr>
@@ -308,13 +353,16 @@ Additional Inherited Members</h2></td></tr>
 , <a class="el" href="class_q_c_p_layout_element.html#a0d83360e05735735aaf6d7983c56374da288cb59a92280e47261a341f2813e676">upMargins</a>
 , <a class="el" href="class_q_c_p_layout_element.html#a0d83360e05735735aaf6d7983c56374da5d1ccf5d79967c232c3c511796860045">upLayout</a>
  }</td></tr>
+<tr class="memdesc:a0d83360e05735735aaf6d7983c56374d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the phases of the update process, that happens just before a replot.  <a href="class_q_c_p_layout_element.html#a0d83360e05735735aaf6d7983c56374d">More...</a><br /></td></tr>
 <tr class="separator:a0d83360e05735735aaf6d7983c56374d inherit pub_types_class_q_c_p_layout_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0afb3e5773529e4bd20e448f81be4d2a inherit pub_types_class_q_c_p_layout_element"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layout_element.html#a0afb3e5773529e4bd20e448f81be4d2a">SizeConstraintRect</a> { <a class="el" href="class_q_c_p_layout_element.html#a0afb3e5773529e4bd20e448f81be4d2aa7fa7e25cd23758b9915c64ed9f1be26c">scrInnerRect</a>
 , <a class="el" href="class_q_c_p_layout_element.html#a0afb3e5773529e4bd20e448f81be4d2aabe2745b41a6131ed194e13591b08e04d">scrOuterRect</a>
  }</td></tr>
+<tr class="memdesc:a0afb3e5773529e4bd20e448f81be4d2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines to which rect of a layout element the size constraints that can be set via <a class="el" href="class_q_c_p_layout_element.html#a5dd29a3c8bc88440c97c06b67be7886b">setMinimumSize</a> and <a class="el" href="class_q_c_p_layout_element.html#a74eb5280a737ab44833d506db65efd95">setMaximumSize</a> apply.  <a href="class_q_c_p_layout_element.html#a0afb3e5773529e4bd20e448f81be4d2a">More...</a><br /></td></tr>
 <tr class="separator:a0afb3e5773529e4bd20e448f81be4d2a inherit pub_types_class_q_c_p_layout_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header signals_class_q_c_p_layerable"><td colspan="2" onclick="javascript:toggleInherit('signals_class_q_c_p_layerable')"><img src="closed.png" alt="-"/>&#160;Signals inherited from <a class="el" href="class_q_c_p_layerable.html">QCPLayerable</a></td></tr>
 <tr class="memitem:abbf8657cedea73ac1c3499b521c90eba inherit signals_class_q_c_p_layerable"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_layerable.html#abbf8657cedea73ac1c3499b521c90eba">layerChanged</a> (<a class="el" href="class_q_c_p_layer.html">QCPLayer</a> *newLayer)</td></tr>
+<tr class="memdesc:abbf8657cedea73ac1c3499b521c90eba inherit signals_class_q_c_p_layerable"><td class="mdescLeft">&#160;</td><td class="mdescRight">This signal is emitted when the layer of this layerable changes, i.e.  <br /></td></tr>
 <tr class="separator:abbf8657cedea73ac1c3499b521c90eba inherit signals_class_q_c_p_layerable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_q_c_p_layout_element"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_q_c_p_layout_element')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_q_c_p_layout_element.html">QCPLayoutElement</a></td></tr>
 <tr class="memitem:ae7c75c25549608bd688bdb65d4c38066 inherit pro_attribs_class_q_c_p_layout_element"><td class="memItemLeft" align="right" valign="top"><a id="ae7c75c25549608bd688bdb65d4c38066" name="ae7c75c25549608bd688bdb65d4c38066"></a>
@@ -394,7 +442,9 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>mAntialiased</b></td>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Creates an instance of <a class="el" href="class_q_c_p_layout.html" title="The abstract base class for layouts.">QCPLayout</a> and sets default values. Note that since <a class="el" href="class_q_c_p_layout.html" title="The abstract base class for layouts.">QCPLayout</a> is an abstract base class, it can't be instantiated directly. </p>
+
+<p>Creates an instance of <a class="el" href="class_q_c_p_layout.html" title="The abstract base class for layouts.">QCPLayout</a> and sets default values. </p>
+<p>Note that since <a class="el" href="class_q_c_p_layout.html" title="The abstract base class for layouts.">QCPLayout</a> is an abstract base class, it can't be instantiated directly. </p>
 
 </div>
 </div>
@@ -413,8 +463,10 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>mAntialiased</b></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Removes and deletes all layout elements in this layout. Finally calls <a class="el" href="class_q_c_p_layout.html#a41e6ac049143866e8f8b4964efab01b2">simplify</a> to make sure all empty cells are collapsed.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_layout.html#a6c58f537d8086f352576ab7c5b15d0bc">remove</a>, <a class="el" href="class_q_c_p_layout.html#a2403f684fee3ce47132faaeed00bb066">removeAt</a> </dd></dl>
+
+<p>Removes and deletes all layout elements in this layout. </p>
+<p>Finally calls <a class="el" href="class_q_c_p_layout.html#a41e6ac049143866e8f8b4964efab01b2">simplify</a> to make sure all empty cells are collapsed.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_layout.html#a6c58f537d8086f352576ab7c5b15d0bc" title="Removes and deletes the provided element.">remove</a>, <a class="el" href="class_q_c_p_layout.html#a2403f684fee3ce47132faaeed00bb066" title="Removes and deletes the element at the provided index.">removeAt</a> </dd></dl>
 
 </div>
 </div>
@@ -441,9 +493,11 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>mAntialiased</b></td>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Returns the element in the cell with the given <em>index</em>. If <em>index</em> is invalid, returns 0.</p>
+
+<p>Returns the element in the cell with the given <em>index</em>. </p>
+<p>If <em>index</em> is invalid, returns 0.</p>
 <p>Note that even if <em>index</em> is valid, the respective cell may be empty in some layouts (e.g. <a class="el" href="class_q_c_p_layout_grid.html" title="A layout that arranges child elements in a grid.">QCPLayoutGrid</a>), so this function may return 0 in those cases. You may use this function to check whether a cell is empty or not.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_layout.html#aca129722c019f91d3367046f80abfa77">elements</a>, <a class="el" href="class_q_c_p_layout.html#a39d3e9ef5d9b82ab1885ba1cb9597e56">elementCount</a>, <a class="el" href="class_q_c_p_layout.html#a5a79621fa0a6eabb8b520cfc04fb601a">takeAt</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_layout.html#aca129722c019f91d3367046f80abfa77" title="Returns a list of all child elements in this layout element.">elements</a>, <a class="el" href="class_q_c_p_layout.html#a39d3e9ef5d9b82ab1885ba1cb9597e56" title="Returns the number of elements/cells in the layout.">elementCount</a>, <a class="el" href="class_q_c_p_layout.html#a5a79621fa0a6eabb8b520cfc04fb601a" title="Removes the element with the given index from the layout and returns it.">takeAt</a> </dd></dl>
 
 <p>Implemented in <a class="el" href="class_q_c_p_layout_grid.html#a4288f174082555f6bd92021bdedb75dc">QCPLayoutGrid</a>, and <a class="el" href="class_q_c_p_layout_inset.html#a881ca205605bae9c034733b808f93a02">QCPLayoutInset</a>.</p>
 
@@ -471,8 +525,9 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>mAntialiased</b></td>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Returns the number of elements/cells in the layout.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_layout.html#aca129722c019f91d3367046f80abfa77">elements</a>, <a class="el" href="class_q_c_p_layout.html#afa73ca7d859f8a3ee5c73c9b353d2a56">elementAt</a> </dd></dl>
+
+<p>Returns the number of elements/cells in the layout. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_layout.html#aca129722c019f91d3367046f80abfa77" title="Returns a list of all child elements in this layout element.">elements</a>, <a class="el" href="class_q_c_p_layout.html#afa73ca7d859f8a3ee5c73c9b353d2a56" title="Returns the element in the cell with the given index.">elementAt</a> </dd></dl>
 
 <p>Implemented in <a class="el" href="class_q_c_p_layout_grid.html#a9a8942aface780a02445ebcf14c48513">QCPLayoutGrid</a>, and <a class="el" href="class_q_c_p_layout_inset.html#a7f5aa4d48a2e844cfe6dd7ed8f0861df">QCPLayoutInset</a>.</p>
 
@@ -501,7 +556,9 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>mAntialiased</b></td>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Returns a list of all child elements in this layout element. If <em>recursive</em> is true, all sub-child elements are included in the list, too.</p>
+
+<p>Returns a list of all child elements in this layout element. </p>
+<p>If <em>recursive</em> is true, all sub-child elements are included in the list, too.</p>
 <dl class="section warning"><dt>Warning</dt><dd>There may be entries with value 0 in the returned list. (For example, <a class="el" href="class_q_c_p_layout_grid.html" title="A layout that arranges child elements in a grid.">QCPLayoutGrid</a> may have empty cells which yield 0 at the respective index.) </dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_q_c_p_layout_element.html#a76dec8cb31e498994a944d7647a43309">QCPLayoutElement</a>.</p>
@@ -525,9 +582,11 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>mAntialiased</b></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Removes and deletes the provided <em>element</em>. Returns true on success. If <em>element</em> is not in the layout, returns false.</p>
+
+<p>Removes and deletes the provided <em>element</em>. </p>
+<p>Returns true on success. If <em>element</em> is not in the layout, returns false.</p>
 <p>This function internally uses <a class="el" href="class_q_c_p_layout.html#a5a79621fa0a6eabb8b520cfc04fb601a">takeAt</a> to remove the element from the layout and then deletes the element. Note that some layouts don't remove the respective cell right away but leave an empty cell after successful removal of the layout element. To collapse empty cells, use <a class="el" href="class_q_c_p_layout.html#a41e6ac049143866e8f8b4964efab01b2">simplify</a>.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_layout.html#a2403f684fee3ce47132faaeed00bb066">removeAt</a>, <a class="el" href="class_q_c_p_layout.html#ada26cd17e56472b0b4d7fbbc96873e4c">take</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_layout.html#a2403f684fee3ce47132faaeed00bb066" title="Removes and deletes the element at the provided index.">removeAt</a>, <a class="el" href="class_q_c_p_layout.html#ada26cd17e56472b0b4d7fbbc96873e4c" title="Removes the specified element from the layout and returns true on success.">take</a> </dd></dl>
 
 </div>
 </div>
@@ -546,9 +605,11 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>mAntialiased</b></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Removes and deletes the element at the provided <em>index</em>. Returns true on success. If <em>index</em> is invalid or points to an empty cell, returns false.</p>
+
+<p>Removes and deletes the element at the provided <em>index</em>. </p>
+<p>Returns true on success. If <em>index</em> is invalid or points to an empty cell, returns false.</p>
 <p>This function internally uses <a class="el" href="class_q_c_p_layout.html#a5a79621fa0a6eabb8b520cfc04fb601a">takeAt</a> to remove the element from the layout and then deletes the returned element. Note that some layouts don't remove the respective cell right away but leave an empty cell after successful removal of the layout element. To collapse empty cells, use <a class="el" href="class_q_c_p_layout.html#a41e6ac049143866e8f8b4964efab01b2">simplify</a>.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_layout.html#a6c58f537d8086f352576ab7c5b15d0bc">remove</a>, <a class="el" href="class_q_c_p_layout.html#a5a79621fa0a6eabb8b520cfc04fb601a">takeAt</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_layout.html#a6c58f537d8086f352576ab7c5b15d0bc" title="Removes and deletes the provided element.">remove</a>, <a class="el" href="class_q_c_p_layout.html#a5a79621fa0a6eabb8b520cfc04fb601a" title="Removes the element with the given index from the layout and returns it.">takeAt</a> </dd></dl>
 
 </div>
 </div>
@@ -574,7 +635,9 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>mAntialiased</b></td>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Simplifies the layout by collapsing empty cells. <a class="el" href="class_the.html">The</a> exact behavior depends on subclasses, the default implementation does nothing.</p>
+
+<p>Simplifies the layout by collapsing empty cells. </p>
+<p><a class="el" href="class_the.html">The</a> exact behavior depends on subclasses, the default implementation does nothing.</p>
 <p>Not all layouts need simplification. For example, <a class="el" href="class_q_c_p_layout_inset.html" title="A layout that places child elements aligned to the border or arbitrarily positioned.">QCPLayoutInset</a> doesn't use explicit simplification while <a class="el" href="class_q_c_p_layout_grid.html" title="A layout that arranges child elements in a grid.">QCPLayoutGrid</a> does. </p>
 
 <p>Reimplemented in <a class="el" href="class_q_c_p_layout_grid.html#a38621ca7aa633b6a9a88617df7f08672">QCPLayoutGrid</a>, and <a class="el" href="class_q_c_p_layout_inset.html#a18b7d508f0baa60cc5dcb1343cf7f32a">QCPLayoutInset</a>.</p>
@@ -603,8 +666,9 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>mAntialiased</b></td>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Subclasses call this method to report changed (minimum/maximum) size constraints.</p>
-<p>If the parent of this layout is again a <a class="el" href="class_q_c_p_layout.html" title="The abstract base class for layouts.">QCPLayout</a>, forwards the call to the parent's <a class="el" href="class_q_c_p_layout.html#aeac66a292f65cf7f8adf94eb92345b3e">sizeConstraintsChanged</a>. If the parent is a QWidget (i.e. is the <a class="el" href="class_q_custom_plot.html#af1a1f1f571237deb7c2bd34a5e9f018f">QCustomPlot::plotLayout</a> of <a class="el" href="class_q_custom_plot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a>), calls QWidget::updateGeometry, so if the <a class="el" href="class_q_custom_plot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a> widget is inside a Qt QLayout, it may update itself and resize cells accordingly. </p>
+
+<p>Subclasses call this method to report changed (minimum/maximum) size constraints. </p>
+<p>If the parent of this layout is again a <a class="el" href="class_q_c_p_layout.html" title="The abstract base class for layouts.">QCPLayout</a>, forwards the call to the parent's <a class="el" href="class_q_c_p_layout.html#aeac66a292f65cf7f8adf94eb92345b3e">sizeConstraintsChanged</a>. If the parent is a QWidget (i.e. is the <a class="el" href="class_q_custom_plot.html#af1a1f1f571237deb7c2bd34a5e9f018f">QCustomPlot::plotLayout</a> of <a class="el" href="class_q_custom_plot.html" title="The central class of the library.">QCustomPlot</a>), calls QWidget::updateGeometry, so if the <a class="el" href="class_q_custom_plot.html" title="The central class of the library.">QCustomPlot</a> widget is inside a Qt QLayout, it may update itself and resize cells accordingly. </p>
 
 </div>
 </div>
@@ -631,10 +695,11 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>mAntialiased</b></td>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Removes the specified <em>element</em> from the layout and returns true on success.</p>
+
+<p>Removes the specified <em>element</em> from the layout and returns true on success. </p>
 <p>If the <em>element</em> isn't in this layout, returns false.</p>
 <p>Note that some layouts don't remove the respective cell right away but leave an empty cell after successful removal of the layout element. To collapse empty cells, use <a class="el" href="class_q_c_p_layout.html#a41e6ac049143866e8f8b4964efab01b2">simplify</a>.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_layout.html#a5a79621fa0a6eabb8b520cfc04fb601a">takeAt</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_layout.html#a5a79621fa0a6eabb8b520cfc04fb601a" title="Removes the element with the given index from the layout and returns it.">takeAt</a> </dd></dl>
 
 <p>Implemented in <a class="el" href="class_q_c_p_layout_grid.html#aee961c2eb6cf8a85dcbc5a7d7b6c1a00">QCPLayoutGrid</a>, and <a class="el" href="class_q_c_p_layout_inset.html#af7f13cc369f8190b5e7e17d5f39dfe1c">QCPLayoutInset</a>.</p>
 
@@ -663,10 +728,11 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>mAntialiased</b></td>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Removes the element with the given <em>index</em> from the layout and returns it.</p>
+
+<p>Removes the element with the given <em>index</em> from the layout and returns it. </p>
 <p>If the <em>index</em> is invalid or the cell with that index is empty, returns 0.</p>
 <p>Note that some layouts don't remove the respective cell right away but leave an empty cell after successful removal of the layout element. To collapse empty cells, use <a class="el" href="class_q_c_p_layout.html#a41e6ac049143866e8f8b4964efab01b2">simplify</a>.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_layout.html#afa73ca7d859f8a3ee5c73c9b353d2a56">elementAt</a>, <a class="el" href="class_q_c_p_layout.html#ada26cd17e56472b0b4d7fbbc96873e4c">take</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_layout.html#afa73ca7d859f8a3ee5c73c9b353d2a56" title="Returns the element in the cell with the given index.">elementAt</a>, <a class="el" href="class_q_c_p_layout.html#ada26cd17e56472b0b4d7fbbc96873e4c" title="Removes the specified element from the layout and returns true on success.">take</a> </dd></dl>
 
 <p>Implemented in <a class="el" href="class_q_c_p_layout_grid.html#a17dd220234d1bbf8835abcc666384d45">QCPLayoutGrid</a>, and <a class="el" href="class_q_c_p_layout_inset.html#abf2e8233f5b7051220907e62ded490a2">QCPLayoutInset</a>.</p>
 
@@ -695,7 +761,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>mAntialiased</b></td>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>If <em>phase</em> is <a class="el" href="class_q_c_p_layout_element.html#a0d83360e05735735aaf6d7983c56374da5d1ccf5d79967c232c3c511796860045">upLayout</a>, calls updateLayout, which subclasses may reimplement to reposition and resize their cells.</p>
+
+<p>If <em>phase</em> is <a class="el" href="class_q_c_p_layout_element.html#a0d83360e05735735aaf6d7983c56374da5d1ccf5d79967c232c3c511796860045">upLayout</a>, calls updateLayout, which subclasses may reimplement to reposition and resize their cells. </p>
 <p>Finally, the call is propagated down to all child <a class="el" href="class_q_c_p_layout_element.html">QCPLayoutElements</a>.</p>
 <p>For details about this method and the update phases, see the documentation of <a class="el" href="class_q_c_p_layout_element.html#a929c2ec62e0e0e1d8418eaa802e2af9b">QCPLayoutElement::update</a>. </p>
 

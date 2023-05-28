@@ -1,6 +1,6 @@
 \hypertarget{class_q_c_p_axis_painter_private}{}\doxysection{QCPAxis\+Painter\+Private Class Reference}
 \label{class_q_c_p_axis_painter_private}\index{QCPAxisPainterPrivate@{QCPAxisPainterPrivate}}
-\doxysubsection*{Classes}
+\doxysubsection*{Data Structures}
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{struct_q_c_p_axis_painter_private_1_1_cached_label}{Cached\+Label}}
@@ -11,7 +11,7 @@ struct \mbox{\hyperlink{struct_q_c_p_axis_painter_private_1_1_tick_label_data}{T
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_q_c_p_axis_painter_private_a0f14aa5c4aa83dbcd68984a7c73bf94f}{QCPAxis\+Painter\+Private}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$parent\+Plot)
-\item 
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{class_q_c_p_axis_painter_private}{QCPAxis\+Painter\+Private}} instance. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_q_c_p_axis_painter_private_a0207a99bdf9c4f70af20928898ddc2fc}\label{class_q_c_p_axis_painter_private_a0207a99bdf9c4f70af20928898ddc2fc}} 
 virtual void {\bfseries draw} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter)
 \item 
@@ -30,7 +30,7 @@ QRect {\bfseries tick\+Labels\+Selection\+Box} () const
 \mbox{\Hypertarget{class_q_c_p_axis_painter_private_ae7800667d15867040ada5f4bf027f070}\label{class_q_c_p_axis_painter_private_ae7800667d15867040ada5f4bf027f070}} 
 QRect {\bfseries label\+Selection\+Box} () const
 \end{DoxyCompactItemize}
-\doxysubsection*{Public Attributes}
+\doxysubsection*{Data Fields}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_q_c_p_axis_painter_private_ae04594e97417336933d807c86d353098}\label{class_q_c_p_axis_painter_private_ae04594e97417336933d807c86d353098}} 
@@ -171,7 +171,11 @@ QRect {\bfseries m\+Label\+Selection\+Box}
 \doxysubsubsection{\texorpdfstring{QCPAxisPainterPrivate()}{QCPAxisPainterPrivate()}}
 {\footnotesize\ttfamily QCPAxis\+Painter\+Private\+::\+QCPAxis\+Painter\+Private (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$}]{parent\+Plot }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
-Constructs a \mbox{\hyperlink{class_q_c_p_axis_painter_private}{QCPAxis\+Painter\+Private}} instance. Make sure to not create a new instance on every redraw, to utilize the caching mechanisms. 
+
+
+Constructs a \mbox{\hyperlink{class_q_c_p_axis_painter_private}{QCPAxis\+Painter\+Private}} instance. 
+
+Make sure to not create a new instance on every redraw, to utilize the caching mechanisms. 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

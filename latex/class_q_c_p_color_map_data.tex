@@ -9,11 +9,12 @@ Holds the two-\/dimensional data of a \mbox{\hyperlink{class_q_c_p_color_map}{QC
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_q_c_p_color_map_data_aac9d8eb81e18e240d89d56c01933fd23}{QCPColor\+Map\+Data}} (int key\+Size, int value\+Size, const \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \&key\+Range, const \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \&value\+Range)
-\item 
-\mbox{\hyperlink{class_q_c_p_color_map_data_a7f2145d86473263494abb9bf1de20436}{QCPColor\+Map\+Data}} (const \mbox{\hyperlink{class_q_c_p_color_map_data}{QCPColor\+Map\+Data}} \&other)
-\item 
+\begin{DoxyCompactList}\small\item\em Constructs a new \mbox{\hyperlink{class_q_c_p_color_map_data}{QCPColor\+Map\+Data}} instance. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_q_c_p_color_map_data_a7f2145d86473263494abb9bf1de20436}\label{class_q_c_p_color_map_data_a7f2145d86473263494abb9bf1de20436}} 
+{\bfseries QCPColor\+Map\+Data} (const \mbox{\hyperlink{class_q_c_p_color_map_data}{QCPColor\+Map\+Data}} \&other)
+\begin{DoxyCompactList}\small\item\em Constructs a new \mbox{\hyperlink{class_q_c_p_color_map_data}{QCPColor\+Map\+Data}} instance copying the data and range of {\itshape other}. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_q_c_p_color_map_data}{QCPColor\+Map\+Data}} \& \mbox{\hyperlink{class_q_c_p_color_map_data_afdf4dd1b2f5714234fe84709b85c2a8d}{operator=}} (const \mbox{\hyperlink{class_q_c_p_color_map_data}{QCPColor\+Map\+Data}} \&other)
-\item 
+\begin{DoxyCompactList}\small\item\em Overwrites this color map data instance with the data stored in {\itshape other}. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_q_c_p_color_map_data_abbda4d28de97aedce1e6e6f008a0a1f7}\label{class_q_c_p_color_map_data_abbda4d28de97aedce1e6e6f008a0a1f7}} 
 int {\bfseries key\+Size} () const
 \item 
@@ -36,41 +37,42 @@ double {\bfseries data} (double key, double value)
 double {\bfseries cell} (int key\+Index, int value\+Index)
 \item 
 unsigned char \mbox{\hyperlink{class_q_c_p_color_map_data_a4f7e6b7a97017400cbbd46f0660e68ea}{alpha}} (int key\+Index, int value\+Index)
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the alpha map value of the cell with the indices {\itshape key\+Index} and {\itshape value\+Index}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_color_map_data_a0d9ff35c299d0478b682bfbcdd9c097e}{set\+Size}} (int key\+Size, int value\+Size)
-\item 
+\begin{DoxyCompactList}\small\item\em Resizes the data array to have {\itshape key\+Size} cells in the key dimension and {\itshape value\+Size} cells in the value dimension. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_color_map_data_ac7ef70e383aface34b44dbde49234b6b}{set\+Key\+Size}} (int key\+Size)
-\item 
+\begin{DoxyCompactList}\small\item\em Resizes the data array to have {\itshape key\+Size} cells in the key dimension. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_color_map_data_a0893c9e3914513048b45e3429ffd16f2}{set\+Value\+Size}} (int value\+Size)
-\item 
+\begin{DoxyCompactList}\small\item\em Resizes the data array to have {\itshape value\+Size} cells in the value dimension. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_color_map_data_aad9c1c7c703c1339489fc730517c83d4}{set\+Range}} (const \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \&key\+Range, const \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \&value\+Range)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the coordinate ranges the data shall be distributed over. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_color_map_data_a0738c485f3c9df9ea1241b7a8bb6a86e}{set\+Key\+Range}} (const \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \&key\+Range)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the coordinate range the data shall be distributed over in the key dimension. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_color_map_data_ada1b2680ba96a5f4175b6d341cf75d23}{set\+Value\+Range}} (const \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \&value\+Range)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the coordinate range the data shall be distributed over in the value dimension. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_color_map_data_afd2083ccfd6987ec94aa7ef8e91ca39a}{set\+Data}} (double key, double value, double z)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the data of the cell, which lies at the plot coordinates given by {\itshape key} and {\itshape value}, to {\itshape z}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_color_map_data_a8e75eaf8746596319032a93f3d2d0683}{set\+Cell}} (int key\+Index, int value\+Index, double z)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the data of the cell with indices {\itshape key\+Index} and {\itshape value\+Index} to {\itshape z}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_color_map_data_aaf7de5b34c58f38d8f4c1ceb064a876c}{set\+Alpha}} (int key\+Index, int value\+Index, unsigned char \mbox{\hyperlink{class_q_c_p_color_map_data_a4f7e6b7a97017400cbbd46f0660e68ea}{alpha}})
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the alpha of the color map cell given by {\itshape key\+Index} and {\itshape value\+Index} to {\itshape alpha}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_color_map_data_ab235ade8a4d64bd3adb26a99b3dd57ee}{recalculate\+Data\+Bounds}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Goes through the data and updates the buffered minimum and maximum data values. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_color_map_data_a9910ba830e96955bd5c8e5bef1e77ef3}{clear}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Frees the internal data memory. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_color_map_data_a14d08b9c3720cd719400079b86d3906b}{clear\+Alpha}} ()
-\item 
-void \mbox{\hyperlink{class_q_c_p_color_map_data_a350f783260eb9b5de5c7b5e0d5d3e3c2}{fill}} (double z)
-\item 
+\begin{DoxyCompactList}\small\item\em Frees the internal alpha map. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_q_c_p_color_map_data_a350f783260eb9b5de5c7b5e0d5d3e3c2}\label{class_q_c_p_color_map_data_a350f783260eb9b5de5c7b5e0d5d3e3c2}} 
+void {\bfseries fill} (double z)
+\begin{DoxyCompactList}\small\item\em Sets all cells to the value {\itshape z}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_color_map_data_a93e2a549d7702bc849cd48a585294657}{fill\+Alpha}} (unsigned char \mbox{\hyperlink{class_q_c_p_color_map_data_a4f7e6b7a97017400cbbd46f0660e68ea}{alpha}})
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the opacity of all color map cells to {\itshape alpha}. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_q_c_p_color_map_data_aea88cc75a76ca571acf29b2ba8ac970d}{is\+Empty}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns whether this instance carries no data. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_color_map_data_aca5b29e0ca2f299c9060fc6e1f74d0c8}{coord\+To\+Cell}} (double key, double value, int $\ast$key\+Index, int $\ast$value\+Index) const
-\item 
+\begin{DoxyCompactList}\small\item\em Transforms plot coordinates given by {\itshape key} and {\itshape value} to cell indices of this \mbox{\hyperlink{class_q_c_p_color_map_data}{QCPColor\+Map\+Data}} instance. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_color_map_data_af1a36385c78ab624cd617065602408b6}{cell\+To\+Coord}} (int key\+Index, int value\+Index, double $\ast$key, double $\ast$value) const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Transforms cell indices given by {\itshape key\+Index} and {\itshape value\+Index} to cell indices of this \mbox{\hyperlink{class_q_c_p_color_map_data}{QCPColor\+Map\+Data}} instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -132,21 +134,19 @@ This class also buffers the minimum and maximum values that are in the data set,
 \mbox{\Hypertarget{class_q_c_p_color_map_data_aac9d8eb81e18e240d89d56c01933fd23}\label{class_q_c_p_color_map_data_aac9d8eb81e18e240d89d56c01933fd23}} 
 \index{QCPColorMapData@{QCPColorMapData}!QCPColorMapData@{QCPColorMapData}}
 \index{QCPColorMapData@{QCPColorMapData}!QCPColorMapData@{QCPColorMapData}}
-\doxysubsubsection{\texorpdfstring{QCPColorMapData()}{QCPColorMapData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\doxysubsubsection{\texorpdfstring{QCPColorMapData()}{QCPColorMapData()}}
 {\footnotesize\ttfamily QCPColor\+Map\+Data\+::\+QCPColor\+Map\+Data (\begin{DoxyParamCaption}\item[{int}]{key\+Size,  }\item[{int}]{value\+Size,  }\item[{const \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \&}]{key\+Range,  }\item[{const \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \&}]{value\+Range }\end{DoxyParamCaption})}
 
-Constructs a new \mbox{\hyperlink{class_q_c_p_color_map_data}{QCPColor\+Map\+Data}} instance. \mbox{\hyperlink{class_the}{The}} instance has {\itshape key\+Size} cells in the key direction and {\itshape value\+Size} cells in the value direction. These cells will be displayed by the \mbox{\hyperlink{class_q_c_p_color_map}{QCPColor\+Map}} at the coordinates {\itshape key\+Range} and {\itshape value\+Range}.
+
+
+Constructs a new \mbox{\hyperlink{class_q_c_p_color_map_data}{QCPColor\+Map\+Data}} instance. 
+
+\mbox{\hyperlink{class_the}{The}} instance has {\itshape key\+Size} cells in the key direction and {\itshape value\+Size} cells in the value direction. These cells will be displayed by the \mbox{\hyperlink{class_q_c_p_color_map}{QCPColor\+Map}} at the coordinates {\itshape key\+Range} and {\itshape value\+Range}.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_color_map_data_a0d9ff35c299d0478b682bfbcdd9c097e}{set\+Size}}, \mbox{\hyperlink{class_q_c_p_color_map_data_ac7ef70e383aface34b44dbde49234b6b}{set\+Key\+Size}}, \mbox{\hyperlink{class_q_c_p_color_map_data_a0893c9e3914513048b45e3429ffd16f2}{set\+Value\+Size}}, \mbox{\hyperlink{class_q_c_p_color_map_data_aad9c1c7c703c1339489fc730517c83d4}{set\+Range}}, \mbox{\hyperlink{class_q_c_p_color_map_data_a0738c485f3c9df9ea1241b7a8bb6a86e}{set\+Key\+Range}}, \mbox{\hyperlink{class_q_c_p_color_map_data_ada1b2680ba96a5f4175b6d341cf75d23}{set\+Value\+Range}} 
 \end{DoxySeeAlso}
-\mbox{\Hypertarget{class_q_c_p_color_map_data_a7f2145d86473263494abb9bf1de20436}\label{class_q_c_p_color_map_data_a7f2145d86473263494abb9bf1de20436}} 
-\index{QCPColorMapData@{QCPColorMapData}!QCPColorMapData@{QCPColorMapData}}
-\index{QCPColorMapData@{QCPColorMapData}!QCPColorMapData@{QCPColorMapData}}
-\doxysubsubsection{\texorpdfstring{QCPColorMapData()}{QCPColorMapData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily QCPColor\+Map\+Data\+::\+QCPColor\+Map\+Data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_c_p_color_map_data}{QCPColor\+Map\+Data}} \&}]{other }\end{DoxyParamCaption})}
 
-Constructs a new \mbox{\hyperlink{class_q_c_p_color_map_data}{QCPColor\+Map\+Data}} instance copying the data and range of {\itshape other}. 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_q_c_p_color_map_data_a4f7e6b7a97017400cbbd46f0660e68ea}\label{class_q_c_p_color_map_data_a4f7e6b7a97017400cbbd46f0660e68ea}} 
@@ -155,7 +155,9 @@ Constructs a new \mbox{\hyperlink{class_q_c_p_color_map_data}{QCPColor\+Map\+Dat
 \doxysubsubsection{\texorpdfstring{alpha()}{alpha()}}
 {\footnotesize\ttfamily unsigned char QCPColor\+Map\+Data\+::alpha (\begin{DoxyParamCaption}\item[{int}]{key\+Index,  }\item[{int}]{value\+Index }\end{DoxyParamCaption})}
 
-Returns the alpha map value of the cell with the indices {\itshape key\+Index} and {\itshape value\+Index}.
+
+
+Returns the alpha map value of the cell with the indices {\itshape key\+Index} and {\itshape value\+Index}. 
 
 If this color map data doesn\textquotesingle{}t have an alpha map (because \mbox{\hyperlink{class_q_c_p_color_map_data_aaf7de5b34c58f38d8f4c1ceb064a876c}{set\+Alpha}} was never called after creation or after a call to \mbox{\hyperlink{class_q_c_p_color_map_data_a14d08b9c3720cd719400079b86d3906b}{clear\+Alpha}}), returns 255, which corresponds to full opacity.
 
@@ -168,7 +170,11 @@ If this color map data doesn\textquotesingle{}t have an alpha map (because \mbox
 \doxysubsubsection{\texorpdfstring{cellToCoord()}{cellToCoord()}}
 {\footnotesize\ttfamily void QCPColor\+Map\+Data\+::cell\+To\+Coord (\begin{DoxyParamCaption}\item[{int}]{key\+Index,  }\item[{int}]{value\+Index,  }\item[{double $\ast$}]{key,  }\item[{double $\ast$}]{value }\end{DoxyParamCaption}) const}
 
-Transforms cell indices given by {\itshape key\+Index} and {\itshape value\+Index} to cell indices of this \mbox{\hyperlink{class_q_c_p_color_map_data}{QCPColor\+Map\+Data}} instance. \mbox{\hyperlink{class_the}{The}} resulting coordinates are returned via the output parameters {\itshape key} and {\itshape value}.
+
+
+Transforms cell indices given by {\itshape key\+Index} and {\itshape value\+Index} to cell indices of this \mbox{\hyperlink{class_q_c_p_color_map_data}{QCPColor\+Map\+Data}} instance. 
+
+\mbox{\hyperlink{class_the}{The}} resulting coordinates are returned via the output parameters {\itshape key} and {\itshape value}.
 
 If you are only interested in a key or value coordinate, you may pass 0 as {\itshape key} or {\itshape value}.
 
@@ -184,7 +190,9 @@ If you are only interested in a key or value coordinate, you may pass 0 as {\its
 \doxysubsubsection{\texorpdfstring{clear()}{clear()}}
 {\footnotesize\ttfamily void QCPColor\+Map\+Data\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Frees the internal data memory.
+
+
+Frees the internal data memory. 
 
 This is equivalent to calling \mbox{\hyperlink{class_q_c_p_color_map_data_a0d9ff35c299d0478b682bfbcdd9c097e}{set\+Size(0, 0)}}. \mbox{\Hypertarget{class_q_c_p_color_map_data_a14d08b9c3720cd719400079b86d3906b}\label{class_q_c_p_color_map_data_a14d08b9c3720cd719400079b86d3906b}} 
 \index{QCPColorMapData@{QCPColorMapData}!clearAlpha@{clearAlpha}}
@@ -192,13 +200,21 @@ This is equivalent to calling \mbox{\hyperlink{class_q_c_p_color_map_data_a0d9ff
 \doxysubsubsection{\texorpdfstring{clearAlpha()}{clearAlpha()}}
 {\footnotesize\ttfamily void QCPColor\+Map\+Data\+::clear\+Alpha (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Frees the internal alpha map. \mbox{\hyperlink{class_the}{The}} color map will have full opacity again. \mbox{\Hypertarget{class_q_c_p_color_map_data_aca5b29e0ca2f299c9060fc6e1f74d0c8}\label{class_q_c_p_color_map_data_aca5b29e0ca2f299c9060fc6e1f74d0c8}} 
+
+
+Frees the internal alpha map. 
+
+\mbox{\hyperlink{class_the}{The}} color map will have full opacity again. \mbox{\Hypertarget{class_q_c_p_color_map_data_aca5b29e0ca2f299c9060fc6e1f74d0c8}\label{class_q_c_p_color_map_data_aca5b29e0ca2f299c9060fc6e1f74d0c8}} 
 \index{QCPColorMapData@{QCPColorMapData}!coordToCell@{coordToCell}}
 \index{coordToCell@{coordToCell}!QCPColorMapData@{QCPColorMapData}}
 \doxysubsubsection{\texorpdfstring{coordToCell()}{coordToCell()}}
 {\footnotesize\ttfamily void QCPColor\+Map\+Data\+::coord\+To\+Cell (\begin{DoxyParamCaption}\item[{double}]{key,  }\item[{double}]{value,  }\item[{int $\ast$}]{key\+Index,  }\item[{int $\ast$}]{value\+Index }\end{DoxyParamCaption}) const}
 
-Transforms plot coordinates given by {\itshape key} and {\itshape value} to cell indices of this \mbox{\hyperlink{class_q_c_p_color_map_data}{QCPColor\+Map\+Data}} instance. \mbox{\hyperlink{class_the}{The}} resulting cell indices are returned via the output parameters {\itshape key\+Index} and {\itshape value\+Index}.
+
+
+Transforms plot coordinates given by {\itshape key} and {\itshape value} to cell indices of this \mbox{\hyperlink{class_q_c_p_color_map_data}{QCPColor\+Map\+Data}} instance. 
+
+\mbox{\hyperlink{class_the}{The}} resulting cell indices are returned via the output parameters {\itshape key\+Index} and {\itshape value\+Index}.
 
 \mbox{\hyperlink{class_the}{The}} retrieved key/value cell indices can then be used for example with \mbox{\hyperlink{class_q_c_p_color_map_data_a8e75eaf8746596319032a93f3d2d0683}{set\+Cell}}.
 
@@ -210,19 +226,17 @@ If you are only interested in a key or value index, you may pass 0 as {\itshape 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_color_map_data_af1a36385c78ab624cd617065602408b6}{cell\+To\+Coord}}, \mbox{\hyperlink{class_q_c_p_axis_af15d1b3a7f7e9b53d759d3ccff1fe4b4}{QCPAxis\+::coord\+To\+Pixel}} 
 \end{DoxySeeAlso}
-\mbox{\Hypertarget{class_q_c_p_color_map_data_a350f783260eb9b5de5c7b5e0d5d3e3c2}\label{class_q_c_p_color_map_data_a350f783260eb9b5de5c7b5e0d5d3e3c2}} 
-\index{QCPColorMapData@{QCPColorMapData}!fill@{fill}}
-\index{fill@{fill}!QCPColorMapData@{QCPColorMapData}}
-\doxysubsubsection{\texorpdfstring{fill()}{fill()}}
-{\footnotesize\ttfamily void QCPColor\+Map\+Data\+::fill (\begin{DoxyParamCaption}\item[{double}]{z }\end{DoxyParamCaption})}
-
-Sets all cells to the value {\itshape z}. \mbox{\Hypertarget{class_q_c_p_color_map_data_a93e2a549d7702bc849cd48a585294657}\label{class_q_c_p_color_map_data_a93e2a549d7702bc849cd48a585294657}} 
+\mbox{\Hypertarget{class_q_c_p_color_map_data_a93e2a549d7702bc849cd48a585294657}\label{class_q_c_p_color_map_data_a93e2a549d7702bc849cd48a585294657}} 
 \index{QCPColorMapData@{QCPColorMapData}!fillAlpha@{fillAlpha}}
 \index{fillAlpha@{fillAlpha}!QCPColorMapData@{QCPColorMapData}}
 \doxysubsubsection{\texorpdfstring{fillAlpha()}{fillAlpha()}}
 {\footnotesize\ttfamily void QCPColor\+Map\+Data\+::fill\+Alpha (\begin{DoxyParamCaption}\item[{unsigned char}]{alpha }\end{DoxyParamCaption})}
 
-Sets the opacity of all color map cells to {\itshape alpha}. A value of 0 for {\itshape alpha} results in a fully transparent color map, and a value of 255 results in a fully opaque color map.
+
+
+Sets the opacity of all color map cells to {\itshape alpha}. 
+
+A value of 0 for {\itshape alpha} results in a fully transparent color map, and a value of 255 results in a fully opaque color map.
 
 If you wish to restore opacity to 100\% and free any used memory for the alpha map, rather use \mbox{\hyperlink{class_q_c_p_color_map_data_a14d08b9c3720cd719400079b86d3906b}{clear\+Alpha}}.
 
@@ -235,19 +249,29 @@ If you wish to restore opacity to 100\% and free any used memory for the alpha m
 \doxysubsubsection{\texorpdfstring{isEmpty()}{isEmpty()}}
 {\footnotesize\ttfamily bool QCPColor\+Map\+Data\+::is\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Returns whether this instance carries no data. This is equivalent to having a size where at least one of the dimensions is 0 (see \mbox{\hyperlink{class_q_c_p_color_map_data_a0d9ff35c299d0478b682bfbcdd9c097e}{set\+Size}}). \mbox{\Hypertarget{class_q_c_p_color_map_data_afdf4dd1b2f5714234fe84709b85c2a8d}\label{class_q_c_p_color_map_data_afdf4dd1b2f5714234fe84709b85c2a8d}} 
+
+
+Returns whether this instance carries no data. 
+
+This is equivalent to having a size where at least one of the dimensions is 0 (see \mbox{\hyperlink{class_q_c_p_color_map_data_a0d9ff35c299d0478b682bfbcdd9c097e}{set\+Size}}). \mbox{\Hypertarget{class_q_c_p_color_map_data_afdf4dd1b2f5714234fe84709b85c2a8d}\label{class_q_c_p_color_map_data_afdf4dd1b2f5714234fe84709b85c2a8d}} 
 \index{QCPColorMapData@{QCPColorMapData}!operator=@{operator=}}
 \index{operator=@{operator=}!QCPColorMapData@{QCPColorMapData}}
 \doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_color_map_data}{QCPColor\+Map\+Data}} \& QCPColor\+Map\+Data\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_c_p_color_map_data}{QCPColor\+Map\+Data}} \&}]{other }\end{DoxyParamCaption})}
 
-Overwrites this color map data instance with the data stored in {\itshape other}. \mbox{\hyperlink{class_the}{The}} alpha map state is transferred, too. \mbox{\Hypertarget{class_q_c_p_color_map_data_ab235ade8a4d64bd3adb26a99b3dd57ee}\label{class_q_c_p_color_map_data_ab235ade8a4d64bd3adb26a99b3dd57ee}} 
+
+
+Overwrites this color map data instance with the data stored in {\itshape other}. 
+
+\mbox{\hyperlink{class_the}{The}} alpha map state is transferred, too. \mbox{\Hypertarget{class_q_c_p_color_map_data_ab235ade8a4d64bd3adb26a99b3dd57ee}\label{class_q_c_p_color_map_data_ab235ade8a4d64bd3adb26a99b3dd57ee}} 
 \index{QCPColorMapData@{QCPColorMapData}!recalculateDataBounds@{recalculateDataBounds}}
 \index{recalculateDataBounds@{recalculateDataBounds}!QCPColorMapData@{QCPColorMapData}}
 \doxysubsubsection{\texorpdfstring{recalculateDataBounds()}{recalculateDataBounds()}}
 {\footnotesize\ttfamily void QCPColor\+Map\+Data\+::recalculate\+Data\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Goes through the data and updates the buffered minimum and maximum data values.
+
+
+Goes through the data and updates the buffered minimum and maximum data values. 
 
 Calling this method is only advised if you are about to call \mbox{\hyperlink{class_q_c_p_color_map_a856608fa3dd1cc290bcd5f29a5575774}{QCPColor\+Map\+::rescale\+Data\+Range}} and can not guarantee that the cells holding the maximum or minimum data haven\textquotesingle{}t been overwritten with a smaller or larger value respectively, since the buffered maximum/minimum values have been updated the last time. Why this is the case is explained in the class description (\mbox{\hyperlink{class_q_c_p_color_map_data}{QCPColor\+Map\+Data}}).
 
@@ -257,7 +281,11 @@ Note that the method \mbox{\hyperlink{class_q_c_p_color_map_a856608fa3dd1cc290bc
 \doxysubsubsection{\texorpdfstring{setAlpha()}{setAlpha()}}
 {\footnotesize\ttfamily void QCPColor\+Map\+Data\+::set\+Alpha (\begin{DoxyParamCaption}\item[{int}]{key\+Index,  }\item[{int}]{value\+Index,  }\item[{unsigned char}]{alpha }\end{DoxyParamCaption})}
 
-Sets the alpha of the color map cell given by {\itshape key\+Index} and {\itshape value\+Index} to {\itshape alpha}. A value of 0 for {\itshape alpha} results in a fully transparent cell, and a value of 255 results in a fully opaque cell.
+
+
+Sets the alpha of the color map cell given by {\itshape key\+Index} and {\itshape value\+Index} to {\itshape alpha}. 
+
+A value of 0 for {\itshape alpha} results in a fully transparent cell, and a value of 255 results in a fully opaque cell.
 
 If an alpha map doesn\textquotesingle{}t exist yet for this color map data, it will be created here. If you wish to restore full opacity and free any allocated memory of the alpha map, call \mbox{\hyperlink{class_q_c_p_color_map_data_a14d08b9c3720cd719400079b86d3906b}{clear\+Alpha}}.
 
@@ -272,7 +300,11 @@ Note that the cell-\/wise alpha which can be configured here is independent of a
 \doxysubsubsection{\texorpdfstring{setCell()}{setCell()}}
 {\footnotesize\ttfamily void QCPColor\+Map\+Data\+::set\+Cell (\begin{DoxyParamCaption}\item[{int}]{key\+Index,  }\item[{int}]{value\+Index,  }\item[{double}]{z }\end{DoxyParamCaption})}
 
-Sets the data of the cell with indices {\itshape key\+Index} and {\itshape value\+Index} to {\itshape z}. \mbox{\hyperlink{class_the}{The}} indices enumerate the cells starting from zero, up to the map\textquotesingle{}s size-\/1 in the respective dimension (see \mbox{\hyperlink{class_q_c_p_color_map_data_a0d9ff35c299d0478b682bfbcdd9c097e}{set\+Size}}).
+
+
+Sets the data of the cell with indices {\itshape key\+Index} and {\itshape value\+Index} to {\itshape z}. 
+
+\mbox{\hyperlink{class_the}{The}} indices enumerate the cells starting from zero, up to the map\textquotesingle{}s size-\/1 in the respective dimension (see \mbox{\hyperlink{class_q_c_p_color_map_data_a0d9ff35c299d0478b682bfbcdd9c097e}{set\+Size}}).
 
 In the standard plot configuration (horizontal key axis and vertical value axis, both not range-\/reversed), the cell with indices (0, 0) is in the bottom left corner and the cell with indices (key\+Size-\/1, value\+Size-\/1) is in the top right corner of the color map.
 
@@ -285,7 +317,9 @@ In the standard plot configuration (horizontal key axis and vertical value axis,
 \doxysubsubsection{\texorpdfstring{setData()}{setData()}}
 {\footnotesize\ttfamily void QCPColor\+Map\+Data\+::set\+Data (\begin{DoxyParamCaption}\item[{double}]{key,  }\item[{double}]{value,  }\item[{double}]{z }\end{DoxyParamCaption})}
 
-Sets the data of the cell, which lies at the plot coordinates given by {\itshape key} and {\itshape value}, to {\itshape z}.
+
+
+Sets the data of the cell, which lies at the plot coordinates given by {\itshape key} and {\itshape value}, to {\itshape z}. 
 
 \begin{DoxyNote}{Note}
 \mbox{\hyperlink{class_the}{The}} \mbox{\hyperlink{class_q_c_p_color_map}{QCPColor\+Map}} always displays the data at equal key/value intervals, even if the key or value axis is set to a logarithmic scaling. If you want to use \mbox{\hyperlink{class_q_c_p_color_map}{QCPColor\+Map}} with logarithmic axes, you shouldn\textquotesingle{}t use the \mbox{\hyperlink{class_q_c_p_color_map_data_afd2083ccfd6987ec94aa7ef8e91ca39a}{QCPColor\+Map\+Data\+::set\+Data}} method as it uses a linear transformation to determine the cell index. Rather directly access the cell index with \mbox{\hyperlink{class_q_c_p_color_map_data_a8e75eaf8746596319032a93f3d2d0683}{QCPColor\+Map\+Data\+::set\+Cell}}.
@@ -299,7 +333,11 @@ Sets the data of the cell, which lies at the plot coordinates given by {\itshape
 \doxysubsubsection{\texorpdfstring{setKeyRange()}{setKeyRange()}}
 {\footnotesize\ttfamily void QCPColor\+Map\+Data\+::set\+Key\+Range (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \&}]{key\+Range }\end{DoxyParamCaption})}
 
-Sets the coordinate range the data shall be distributed over in the key dimension. Together with the value range, This defines the rectangular area covered by the color map in plot coordinates.
+
+
+Sets the coordinate range the data shall be distributed over in the key dimension. 
+
+Together with the value range, This defines the rectangular area covered by the color map in plot coordinates.
 
 \mbox{\hyperlink{class_the}{The}} outer cells will be centered on the range boundaries given to this function. For example, if the key size (\mbox{\hyperlink{class_q_c_p_color_map_data_ac7ef70e383aface34b44dbde49234b6b}{set\+Key\+Size}}) is 3 and {\itshape key\+Range} is set to {\ttfamily \mbox{\hyperlink{class_q_c_p_range}{QCPRange(2, 3)}}} there will be cells centered on the key coordinates 2, 2.\+5 and 3.
 
@@ -312,7 +350,9 @@ Sets the coordinate range the data shall be distributed over in the key dimensio
 \doxysubsubsection{\texorpdfstring{setKeySize()}{setKeySize()}}
 {\footnotesize\ttfamily void QCPColor\+Map\+Data\+::set\+Key\+Size (\begin{DoxyParamCaption}\item[{int}]{key\+Size }\end{DoxyParamCaption})}
 
-Resizes the data array to have {\itshape key\+Size} cells in the key dimension.
+
+
+Resizes the data array to have {\itshape key\+Size} cells in the key dimension. 
 
 \mbox{\hyperlink{class_the}{The}} current data is discarded and the map cells are set to 0, unless the map had already the requested size.
 
@@ -327,7 +367,11 @@ Setting {\itshape key\+Size} to zero frees the internal data array and \mbox{\hy
 \doxysubsubsection{\texorpdfstring{setRange()}{setRange()}}
 {\footnotesize\ttfamily void QCPColor\+Map\+Data\+::set\+Range (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \&}]{key\+Range,  }\item[{const \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \&}]{value\+Range }\end{DoxyParamCaption})}
 
-Sets the coordinate ranges the data shall be distributed over. This defines the rectangular area covered by the color map in plot coordinates.
+
+
+Sets the coordinate ranges the data shall be distributed over. 
+
+This defines the rectangular area covered by the color map in plot coordinates.
 
 \mbox{\hyperlink{class_the}{The}} outer cells will be centered on the range boundaries given to this function. For example, if the key size (\mbox{\hyperlink{class_q_c_p_color_map_data_ac7ef70e383aface34b44dbde49234b6b}{set\+Key\+Size}}) is 3 and {\itshape key\+Range} is set to {\ttfamily \mbox{\hyperlink{class_q_c_p_range}{QCPRange(2, 3)}}} there will be cells centered on the key coordinates 2, 2.\+5 and 3.
 
@@ -340,7 +384,9 @@ Sets the coordinate ranges the data shall be distributed over. This defines the 
 \doxysubsubsection{\texorpdfstring{setSize()}{setSize()}}
 {\footnotesize\ttfamily void QCPColor\+Map\+Data\+::set\+Size (\begin{DoxyParamCaption}\item[{int}]{key\+Size,  }\item[{int}]{value\+Size }\end{DoxyParamCaption})}
 
-Resizes the data array to have {\itshape key\+Size} cells in the key dimension and {\itshape value\+Size} cells in the value dimension.
+
+
+Resizes the data array to have {\itshape key\+Size} cells in the key dimension and {\itshape value\+Size} cells in the value dimension. 
 
 \mbox{\hyperlink{class_the}{The}} current data is discarded and the map cells are set to 0, unless the map had already the requested size.
 
@@ -355,7 +401,11 @@ Setting at least one of {\itshape key\+Size} or {\itshape value\+Size} to zero f
 \doxysubsubsection{\texorpdfstring{setValueRange()}{setValueRange()}}
 {\footnotesize\ttfamily void QCPColor\+Map\+Data\+::set\+Value\+Range (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \&}]{value\+Range }\end{DoxyParamCaption})}
 
-Sets the coordinate range the data shall be distributed over in the value dimension. Together with the key range, This defines the rectangular area covered by the color map in plot coordinates.
+
+
+Sets the coordinate range the data shall be distributed over in the value dimension. 
+
+Together with the key range, This defines the rectangular area covered by the color map in plot coordinates.
 
 \mbox{\hyperlink{class_the}{The}} outer cells will be centered on the range boundaries given to this function. For example, if the value size (\mbox{\hyperlink{class_q_c_p_color_map_data_a0893c9e3914513048b45e3429ffd16f2}{set\+Value\+Size}}) is 3 and {\itshape value\+Range} is set to {\ttfamily \mbox{\hyperlink{class_q_c_p_range}{QCPRange(2, 3)}}} there will be cells centered on the value coordinates 2, 2.\+5 and 3.
 
@@ -368,7 +418,9 @@ Sets the coordinate range the data shall be distributed over in the value dimens
 \doxysubsubsection{\texorpdfstring{setValueSize()}{setValueSize()}}
 {\footnotesize\ttfamily void QCPColor\+Map\+Data\+::set\+Value\+Size (\begin{DoxyParamCaption}\item[{int}]{value\+Size }\end{DoxyParamCaption})}
 
-Resizes the data array to have {\itshape value\+Size} cells in the value dimension.
+
+
+Resizes the data array to have {\itshape value\+Size} cells in the value dimension. 
 
 \mbox{\hyperlink{class_the}{The}} current data is discarded and the map cells are set to 0, unless the map had already the requested size.
 

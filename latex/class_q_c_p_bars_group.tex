@@ -18,12 +18,13 @@ enum \mbox{\hyperlink{class_q_c_p_bars_group_a4c0521120a97e60bbca37677a37075b6}{
 , \mbox{\hyperlink{class_q_c_p_bars_group_a4c0521120a97e60bbca37677a37075b6ae94b05c27bc985dcdd8b1e1b7f163d26}{st\+Axis\+Rect\+Ratio}}
 , \mbox{\hyperlink{class_q_c_p_bars_group_a4c0521120a97e60bbca37677a37075b6ad369cee6287e0a86e8c2b643a3168c54}{st\+Plot\+Coords}}
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Defines the ways the spacing between bars in the group can be specified. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_q_c_p_bars_group_aa4e043b9a22c6c5ea0f93740aca063e1}{QCPBars\+Group}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$parent\+Plot)
-\item 
+\mbox{\Hypertarget{class_q_c_p_bars_group_aa4e043b9a22c6c5ea0f93740aca063e1}\label{class_q_c_p_bars_group_aa4e043b9a22c6c5ea0f93740aca063e1}} 
+{\bfseries QCPBars\+Group} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$parent\+Plot)
+\begin{DoxyCompactList}\small\item\em Constructs a new bars group for the specified \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_q_c_p_bars_group_a894a77c45325aad2e742d936bc1f8aea}\label{class_q_c_p_bars_group_a894a77c45325aad2e742d936bc1f8aea}} 
 \mbox{\hyperlink{class_q_c_p_bars_group_a4c0521120a97e60bbca37677a37075b6}{Spacing\+Type}} {\bfseries spacing\+Type} () const
 \item 
@@ -31,27 +32,29 @@ enum \mbox{\hyperlink{class_q_c_p_bars_group_a4c0521120a97e60bbca37677a37075b6}{
 double {\bfseries spacing} () const
 \item 
 void \mbox{\hyperlink{class_q_c_p_bars_group_a2c7e2d61b10594a4555b615e1fcaf49e}{set\+Spacing\+Type}} (\mbox{\hyperlink{class_q_c_p_bars_group_a4c0521120a97e60bbca37677a37075b6}{Spacing\+Type}} spacing\+Type)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets how the spacing between adjacent bars is interpreted. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_bars_group_aa553d327479d72a0c3dafcc724a190e2}{set\+Spacing}} (double spacing)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the spacing between adjacent bars. \end{DoxyCompactList}\item 
 QList$<$ \mbox{\hyperlink{class_q_c_p_bars}{QCPBars}} $\ast$ $>$ \mbox{\hyperlink{class_q_c_p_bars_group_a6e4f4e86abbec6a9342f204ef82abef8}{bars}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns all bars currently in this group. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_q_c_p_bars}{QCPBars}} $\ast$ \mbox{\hyperlink{class_q_c_p_bars_group_a0754d659a020aa7fddfe81e657ce2d92}{bars}} (int index) const
-\item 
-int \mbox{\hyperlink{class_q_c_p_bars_group_a3780ec77919cb00840207ec7a0f00dd5}{size}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the \mbox{\hyperlink{class_q_c_p_bars}{QCPBars}} instance with the specified {\itshape index} in this group. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_q_c_p_bars_group_a3780ec77919cb00840207ec7a0f00dd5}\label{class_q_c_p_bars_group_a3780ec77919cb00840207ec7a0f00dd5}} 
+int {\bfseries size} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of \mbox{\hyperlink{class_q_c_p_bars}{QCPBars}} plottables that are part of this group. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_q_c_p_bars_group_aac959e79e852e8ef9aea6e0449ad000a}{is\+Empty}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns whether this bars group is empty. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_bars_group_a3ddf23928c6cd89530bd34ab7ba7b177}{clear}} ()
-\item 
-bool \mbox{\hyperlink{class_q_c_p_bars_group_ae26da07a23553052a178fb3fae90d0dc}{contains}} (\mbox{\hyperlink{class_q_c_p_bars}{QCPBars}} $\ast$\mbox{\hyperlink{class_q_c_p_bars_group_a6e4f4e86abbec6a9342f204ef82abef8}{bars}}) const
-\item 
+\begin{DoxyCompactList}\small\item\em Removes all \mbox{\hyperlink{class_q_c_p_bars}{QCPBars}} plottables from this group. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_q_c_p_bars_group_ae26da07a23553052a178fb3fae90d0dc}\label{class_q_c_p_bars_group_ae26da07a23553052a178fb3fae90d0dc}} 
+bool {\bfseries contains} (\mbox{\hyperlink{class_q_c_p_bars}{QCPBars}} $\ast$\mbox{\hyperlink{class_q_c_p_bars_group_a6e4f4e86abbec6a9342f204ef82abef8}{bars}}) const
+\begin{DoxyCompactList}\small\item\em Returns whether the specified {\itshape bars} plottable is part of this group. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_bars_group_a809ed63cc4ff7cd5b0b8c96b470163d3}{append}} (\mbox{\hyperlink{class_q_c_p_bars}{QCPBars}} $\ast$\mbox{\hyperlink{class_q_c_p_bars_group_a6e4f4e86abbec6a9342f204ef82abef8}{bars}})
-\item 
+\begin{DoxyCompactList}\small\item\em Adds the specified {\itshape bars} plottable to this group. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_bars_group_a309a5f7233db189f3ea9c2d04ece6c13}{insert}} (int i, \mbox{\hyperlink{class_q_c_p_bars}{QCPBars}} $\ast$\mbox{\hyperlink{class_q_c_p_bars_group_a6e4f4e86abbec6a9342f204ef82abef8}{bars}})
-\item 
+\begin{DoxyCompactList}\small\item\em Inserts the specified {\itshape bars} plottable into this group at the specified index position {\itshape i}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_bars_group_a215e28a5944f1159013a0e19169220e7}{remove}} (\mbox{\hyperlink{class_q_c_p_bars}{QCPBars}} $\ast$\mbox{\hyperlink{class_q_c_p_bars_group_a6e4f4e86abbec6a9342f204ef82abef8}{bars}})
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Removes the specified {\itshape bars} plottable from this group. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -120,7 +123,11 @@ To clear the entire group, call \mbox{\hyperlink{class_q_c_p_bars_group_a3ddf239
 \doxysubsubsection{\texorpdfstring{SpacingType}{SpacingType}}
 {\footnotesize\ttfamily enum \mbox{\hyperlink{class_q_c_p_bars_group_a4c0521120a97e60bbca37677a37075b6}{QCPBars\+Group\+::\+Spacing\+Type}}}
 
-Defines the ways the spacing between bars in the group can be specified. Thus it defines what the number passed to \mbox{\hyperlink{class_q_c_p_bars_group_aa553d327479d72a0c3dafcc724a190e2}{set\+Spacing}} actually means.
+
+
+Defines the ways the spacing between bars in the group can be specified. 
+
+Thus it defines what the number passed to \mbox{\hyperlink{class_q_c_p_bars_group_aa553d327479d72a0c3dafcc724a190e2}{set\+Spacing}} actually means.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_bars_group_a2c7e2d61b10594a4555b615e1fcaf49e}{set\+Spacing\+Type}}, \mbox{\hyperlink{class_q_c_p_bars_group_aa553d327479d72a0c3dafcc724a190e2}{set\+Spacing}} 
@@ -141,15 +148,6 @@ st\+Plot\+Coords&Bar spacing is in key coordinates and thus scales with the key 
 \end{DoxyEnumFields}
 
 
-\doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_q_c_p_bars_group_aa4e043b9a22c6c5ea0f93740aca063e1}\label{class_q_c_p_bars_group_aa4e043b9a22c6c5ea0f93740aca063e1}} 
-\index{QCPBarsGroup@{QCPBarsGroup}!QCPBarsGroup@{QCPBarsGroup}}
-\index{QCPBarsGroup@{QCPBarsGroup}!QCPBarsGroup@{QCPBarsGroup}}
-\doxysubsubsection{\texorpdfstring{QCPBarsGroup()}{QCPBarsGroup()}}
-{\footnotesize\ttfamily QCPBars\+Group\+::\+QCPBars\+Group (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$}]{parent\+Plot }\end{DoxyParamCaption})}
-
-Constructs a new bars group for the specified \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance. 
-
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_q_c_p_bars_group_a809ed63cc4ff7cd5b0b8c96b470163d3}\label{class_q_c_p_bars_group_a809ed63cc4ff7cd5b0b8c96b470163d3}} 
 \index{QCPBarsGroup@{QCPBarsGroup}!append@{append}}
@@ -157,7 +155,11 @@ Constructs a new bars group for the specified \mbox{\hyperlink{class_q_custom_pl
 \doxysubsubsection{\texorpdfstring{append()}{append()}}
 {\footnotesize\ttfamily void QCPBars\+Group\+::append (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_bars}{QCPBars}} $\ast$}]{bars }\end{DoxyParamCaption})}
 
-Adds the specified {\itshape bars} plottable to this group. Alternatively, you can also use \mbox{\hyperlink{class_q_c_p_bars_aedd1709061f0b307c47ddb45e172ef9a}{QCPBars\+::set\+Bars\+Group}} on the {\itshape bars} instance.
+
+
+Adds the specified {\itshape bars} plottable to this group. 
+
+Alternatively, you can also use \mbox{\hyperlink{class_q_c_p_bars_aedd1709061f0b307c47ddb45e172ef9a}{QCPBars\+::set\+Bars\+Group}} on the {\itshape bars} instance.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_bars_group_a309a5f7233db189f3ea9c2d04ece6c13}{insert}}, \mbox{\hyperlink{class_q_c_p_bars_group_a215e28a5944f1159013a0e19169220e7}{remove}} 
@@ -168,7 +170,9 @@ Adds the specified {\itshape bars} plottable to this group. Alternatively, you c
 \doxysubsubsection{\texorpdfstring{bars()}{bars()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily QList$<$ \mbox{\hyperlink{class_q_c_p_bars}{QCPBars}} $\ast$ $>$ QCPBars\+Group\+::bars (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Returns all bars currently in this group.
+
+
+Returns all bars currently in this group. 
 
 \begin{DoxySeeAlso}{See also}
 bars(int index) 
@@ -179,7 +183,11 @@ bars(int index)
 \doxysubsubsection{\texorpdfstring{bars()}{bars()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_bars}{QCPBars}} $\ast$ QCPBars\+Group\+::bars (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const}
 
-Returns the \mbox{\hyperlink{class_q_c_p_bars}{QCPBars}} instance with the specified {\itshape index} in this group. If no such \mbox{\hyperlink{class_q_c_p_bars}{QCPBars}} exists, returns 0.
+
+
+Returns the \mbox{\hyperlink{class_q_c_p_bars}{QCPBars}} instance with the specified {\itshape index} in this group. 
+
+If no such \mbox{\hyperlink{class_q_c_p_bars}{QCPBars}} exists, returns 0.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_bars_group_a6e4f4e86abbec6a9342f204ef82abef8}{bars()}}, \mbox{\hyperlink{class_q_c_p_bars_group_a3780ec77919cb00840207ec7a0f00dd5}{size}} 
@@ -190,24 +198,24 @@ Returns the \mbox{\hyperlink{class_q_c_p_bars}{QCPBars}} instance with the speci
 \doxysubsubsection{\texorpdfstring{clear()}{clear()}}
 {\footnotesize\ttfamily void QCPBars\+Group\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Removes all \mbox{\hyperlink{class_q_c_p_bars}{QCPBars}} plottables from this group.
+
+
+Removes all \mbox{\hyperlink{class_q_c_p_bars}{QCPBars}} plottables from this group. 
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_bars_group_aac959e79e852e8ef9aea6e0449ad000a}{is\+Empty}} 
 \end{DoxySeeAlso}
-\mbox{\Hypertarget{class_q_c_p_bars_group_ae26da07a23553052a178fb3fae90d0dc}\label{class_q_c_p_bars_group_ae26da07a23553052a178fb3fae90d0dc}} 
-\index{QCPBarsGroup@{QCPBarsGroup}!contains@{contains}}
-\index{contains@{contains}!QCPBarsGroup@{QCPBarsGroup}}
-\doxysubsubsection{\texorpdfstring{contains()}{contains()}}
-{\footnotesize\ttfamily bool QCPBars\+Group\+::contains (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_bars}{QCPBars}} $\ast$}]{bars }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
-
-Returns whether the specified {\itshape bars} plottable is part of this group. \mbox{\Hypertarget{class_q_c_p_bars_group_a309a5f7233db189f3ea9c2d04ece6c13}\label{class_q_c_p_bars_group_a309a5f7233db189f3ea9c2d04ece6c13}} 
+\mbox{\Hypertarget{class_q_c_p_bars_group_a309a5f7233db189f3ea9c2d04ece6c13}\label{class_q_c_p_bars_group_a309a5f7233db189f3ea9c2d04ece6c13}} 
 \index{QCPBarsGroup@{QCPBarsGroup}!insert@{insert}}
 \index{insert@{insert}!QCPBarsGroup@{QCPBarsGroup}}
 \doxysubsubsection{\texorpdfstring{insert()}{insert()}}
 {\footnotesize\ttfamily void QCPBars\+Group\+::insert (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{\mbox{\hyperlink{class_q_c_p_bars}{QCPBars}} $\ast$}]{bars }\end{DoxyParamCaption})}
 
-Inserts the specified {\itshape bars} plottable into this group at the specified index position {\itshape i}. This gives you full control over the ordering of the bars.
+
+
+Inserts the specified {\itshape bars} plottable into this group at the specified index position {\itshape i}. 
+
+This gives you full control over the ordering of the bars.
 
 {\itshape bars} may already be part of this group. In that case, {\itshape bars} is just moved to the new index position.
 
@@ -220,7 +228,9 @@ Inserts the specified {\itshape bars} plottable into this group at the specified
 \doxysubsubsection{\texorpdfstring{isEmpty()}{isEmpty()}}
 {\footnotesize\ttfamily bool QCPBars\+Group\+::is\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Returns whether this bars group is empty.
+
+
+Returns whether this bars group is empty. 
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_bars_group_a3780ec77919cb00840207ec7a0f00dd5}{size}} 
@@ -231,7 +241,9 @@ Returns whether this bars group is empty.
 \doxysubsubsection{\texorpdfstring{remove()}{remove()}}
 {\footnotesize\ttfamily void QCPBars\+Group\+::remove (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_bars}{QCPBars}} $\ast$}]{bars }\end{DoxyParamCaption})}
 
-Removes the specified {\itshape bars} plottable from this group.
+
+
+Removes the specified {\itshape bars} plottable from this group. 
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_bars_group_ae26da07a23553052a178fb3fae90d0dc}{contains}}, \mbox{\hyperlink{class_q_c_p_bars_group_a3ddf23928c6cd89530bd34ab7ba7b177}{clear}} 
@@ -242,7 +254,11 @@ Removes the specified {\itshape bars} plottable from this group.
 \doxysubsubsection{\texorpdfstring{setSpacing()}{setSpacing()}}
 {\footnotesize\ttfamily void QCPBars\+Group\+::set\+Spacing (\begin{DoxyParamCaption}\item[{double}]{spacing }\end{DoxyParamCaption})}
 
-Sets the spacing between adjacent bars. What the number passed as {\itshape spacing} actually means, is defined by the current \mbox{\hyperlink{class_q_c_p_bars_group_a4c0521120a97e60bbca37677a37075b6}{Spacing\+Type}}, which can be set with \mbox{\hyperlink{class_q_c_p_bars_group_a2c7e2d61b10594a4555b615e1fcaf49e}{set\+Spacing\+Type}}.
+
+
+Sets the spacing between adjacent bars. 
+
+What the number passed as {\itshape spacing} actually means, is defined by the current \mbox{\hyperlink{class_q_c_p_bars_group_a4c0521120a97e60bbca37677a37075b6}{Spacing\+Type}}, which can be set with \mbox{\hyperlink{class_q_c_p_bars_group_a2c7e2d61b10594a4555b615e1fcaf49e}{set\+Spacing\+Type}}.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_bars_group_a2c7e2d61b10594a4555b615e1fcaf49e}{set\+Spacing\+Type}} 
@@ -253,20 +269,18 @@ Sets the spacing between adjacent bars. What the number passed as {\itshape spac
 \doxysubsubsection{\texorpdfstring{setSpacingType()}{setSpacingType()}}
 {\footnotesize\ttfamily void QCPBars\+Group\+::set\+Spacing\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_bars_group_a4c0521120a97e60bbca37677a37075b6}{Spacing\+Type}}}]{spacing\+Type }\end{DoxyParamCaption})}
 
-Sets how the spacing between adjacent bars is interpreted. See \mbox{\hyperlink{class_q_c_p_bars_group_a4c0521120a97e60bbca37677a37075b6}{Spacing\+Type}}.
+
+
+Sets how the spacing between adjacent bars is interpreted. 
+
+See \mbox{\hyperlink{class_q_c_p_bars_group_a4c0521120a97e60bbca37677a37075b6}{Spacing\+Type}}.
 
 \mbox{\hyperlink{class_the}{The}} actual spacing can then be specified with \mbox{\hyperlink{class_q_c_p_bars_group_aa553d327479d72a0c3dafcc724a190e2}{set\+Spacing}}.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_bars_group_aa553d327479d72a0c3dafcc724a190e2}{set\+Spacing}} 
 \end{DoxySeeAlso}
-\mbox{\Hypertarget{class_q_c_p_bars_group_a3780ec77919cb00840207ec7a0f00dd5}\label{class_q_c_p_bars_group_a3780ec77919cb00840207ec7a0f00dd5}} 
-\index{QCPBarsGroup@{QCPBarsGroup}!size@{size}}
-\index{size@{size}!QCPBarsGroup@{QCPBarsGroup}}
-\doxysubsubsection{\texorpdfstring{size()}{size()}}
-{\footnotesize\ttfamily int QCPBars\+Group\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Returns the number of \mbox{\hyperlink{class_q_c_p_bars}{QCPBars}} plottables that are part of this group. 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

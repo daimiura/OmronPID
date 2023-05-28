@@ -33,6 +33,8 @@ void \mbox{\hyperlink{class_safety_afda5edb1254c643ff517d6b12113cadb}{temp\+Chan
 \begin{DoxyCompactList}\small\item\em Signal emitted when the temperature change threshold has been changed. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_safety_a5f638c6cd7a9622dfe70d6d02670f17f}{danger\+Signal}} (int type)
 \begin{DoxyCompactList}\small\item\em Signal emitted when a danger is detected. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_safety_a6ec8e2c86026b7ea3891c8a42081140b}{drop\+Signal}} ()
+\begin{DoxyCompactList}\small\item\em Signal emitted when temperature is droped. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_safety_abe479d597616613bf2a4487c3f19cc49}{interval\+MVCheck\+Changed}} (int interval)
 \begin{DoxyCompactList}\small\item\em Signal emitted when the interval for the MV check has been changed. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_safety_ae64e96e13c1aac7847181a2fec2ac7e9}{interval\+Temp\+Change\+Changed}} (int interval)
@@ -71,8 +73,6 @@ int \mbox{\hyperlink{class_safety_af6a7947989bc693c3cf7f8acc5f67279}{get\+Interv
 \begin{DoxyCompactList}\small\item\em Getter function for the interval of the manipulated variable check. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_safety_a8cd49e7eac6813e292b0cd1d4d9cc2e1}{get\+Interval\+Temp\+Change}} () const
 \begin{DoxyCompactList}\small\item\em Getter function for the interval of the temperature change check. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{class_safety_a8cd49e7eac6813e292b0cd1d4d9cc2e1}{get\+Interval\+Temp\+Change}} () const
-\begin{DoxyCompactList}\small\item\em Getter function for the interval of the temperature change check. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_safety_ac53494e52725da7aeaba0d5b6fb8cdea}{get\+Temp\+Change\+Threshold}} () const
 \begin{DoxyCompactList}\small\item\em Getter function for the threshold of temperature change. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_safety_a172eced92a219b273824b1eee367bfe0}{get\+Ignore\+Upper}} () const
@@ -103,14 +103,22 @@ void \mbox{\hyperlink{class_safety_a7eb8e1541a047b509b266fafd1e57743}{set\+Ignor
 \begin{DoxyCompactList}\small\item\em Sets the lower limit for ignoring temperature changes. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_safety_aeb2c6ae389531f1dd34cff755fd1d5c6}{set\+Ignore\+Temp\+Range}} (double temp, double lower, double upper)
 \begin{DoxyCompactList}\small\item\em Sets the temperature range for ignoring temperature changes. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_safety_afc26168f8f6ff079ce15683a5ed8dca7}\label{class_safety_afc26168f8f6ff079ce15683a5ed8dca7}} 
+void {\bfseries set\+Drop\+Threshold} (int drop\+Threshold)
+\item 
 void \mbox{\hyperlink{class_safety_ac99b54db1735ae9169c56d3b66fbff07}{check\+Temp\+Change}} ()
 \begin{DoxyCompactList}\small\item\em Checks whether the temperature has changed above the threshold value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_safety_a9a83ef74f5b460a681aadf9a2a8cdd28}\label{class_safety_a9a83ef74f5b460a681aadf9a2a8cdd28}} 
+void {\bfseries check\+Temp\+Drop} ()
+\begin{DoxyCompactList}\small\item\em Check whether the temperature has droped the last temperature. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_safety_ae0a24b93c6d273c08b699c12b90809c6}{set\+Enable\+Temp\+Change\+Range}} (bool enable)
 \begin{DoxyCompactList}\small\item\em Enables or disables the temperature change range. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_safety_afa5bda2df137f619ebc1bb6f21356cba}{set\+Interval\+MVCheck}} (int interval)
 \begin{DoxyCompactList}\small\item\em Sets the interval for checking the manipulated variable (MV). \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_safety_a575c792b70681d663013841c8d8a932b}{set\+Interval\+Temp\+Change}} (int inteerval)
 \begin{DoxyCompactList}\small\item\em Sets the interval for checking the temperature change. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_safety_aca35814e10779f5ab630341b64bfb25c}{set\+Is\+STC}} (bool is\+STC)
+\begin{DoxyCompactList}\small\item\em Sets the enable to execute temp\+Change\+Check method in STC mode. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_safety_a049753e31587a4eb8bfab9d1bfc518a4}\label{class_safety_a049753e31587a4eb8bfab9d1bfc518a4}} 
 void {\bfseries start} ()
 \begin{DoxyCompactList}\small\item\em Starts the safety monitoring. \end{DoxyCompactList}\item 
@@ -161,11 +169,15 @@ int {\bfseries interval\+Temp\+Change}
 
 Constructs a new \mbox{\hyperlink{class_safety}{Safety}} object. 
 
+Constructs a new \mbox{\hyperlink{class_safety}{Safety}} object.  
+
 
 \begin{DoxyParams}{Parameters}
 {\em data} & A pointer to the \mbox{\hyperlink{class_data_summary}{Data\+Summary}} object that contains the system\textquotesingle{}s data.\\
 \hline
 \end{DoxyParams}
+This constructor initializes a new \mbox{\hyperlink{class_safety}{Safety}} object with the given \mbox{\hyperlink{class_data_summary}{Data\+Summary}} object pointer.
+
 This constructor initializes a new \mbox{\hyperlink{class_safety}{Safety}} object with the given \mbox{\hyperlink{class_data_summary}{Data\+Summary}} object pointer. It also sets up the internal timers and connects the relevant signals and slots. 
 
 \doxysubsection{Member Function Documentation}
@@ -212,6 +224,21 @@ Signal emitted when a danger is detected.
 
 \begin{DoxyParams}{Parameters}
 {\em type} & \mbox{\hyperlink{class_the}{The}} type of danger detected. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_safety_a6ec8e2c86026b7ea3891c8a42081140b}\label{class_safety_a6ec8e2c86026b7ea3891c8a42081140b}} 
+\index{Safety@{Safety}!dropSignal@{dropSignal}}
+\index{dropSignal@{dropSignal}!Safety@{Safety}}
+\doxysubsubsection{\texorpdfstring{dropSignal}{dropSignal}}
+{\footnotesize\ttfamily void Safety\+::drop\+Signal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Signal emitted when temperature is droped. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em temp\+Drop} & \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{class_safety_a964883572fc800b66cb923dd2cb96d04}\label{class_safety_a964883572fc800b66cb923dd2cb96d04}} 
@@ -297,7 +324,7 @@ Getter function for the interval of the manipulated variable check.
 \mbox{\Hypertarget{class_safety_a8cd49e7eac6813e292b0cd1d4d9cc2e1}\label{class_safety_a8cd49e7eac6813e292b0cd1d4d9cc2e1}} 
 \index{Safety@{Safety}!getIntervalTempChange@{getIntervalTempChange}}
 \index{getIntervalTempChange@{getIntervalTempChange}!Safety@{Safety}}
-\doxysubsubsection{\texorpdfstring{getIntervalTempChange()}{getIntervalTempChange()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\doxysubsubsection{\texorpdfstring{getIntervalTempChange()}{getIntervalTempChange()}}
 {\footnotesize\ttfamily int Safety\+::get\+Interval\+Temp\+Change (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
@@ -306,19 +333,6 @@ Getter function for the interval of the temperature change check.
 
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{class_the}{The}} interval of the temperature change check. 
-\end{DoxyReturn}
-\mbox{\Hypertarget{class_safety_a8cd49e7eac6813e292b0cd1d4d9cc2e1}\label{class_safety_a8cd49e7eac6813e292b0cd1d4d9cc2e1}} 
-\index{Safety@{Safety}!getIntervalTempChange@{getIntervalTempChange}}
-\index{getIntervalTempChange@{getIntervalTempChange}!Safety@{Safety}}
-\doxysubsubsection{\texorpdfstring{getIntervalTempChange()}{getIntervalTempChange()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily int Safety\+::get\+Interval\+Temp\+Change (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
-
-
-
-Getter function for the interval of the temperature change check. 
-
-\begin{DoxyReturn}{Returns}
-\mbox{\hyperlink{class_the}{The}} interval of the temperature change check 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_safety_ac39567888f0eb955815e47aca1601c4d}\label{class_safety_ac39567888f0eb955815e47aca1601c4d}} 
 \index{Safety@{Safety}!getMV@{getMV}}
@@ -677,6 +691,21 @@ Sets the interval for checking the temperature change.
 
 \begin{DoxyParams}{Parameters}
 {\em inteerval} & Interval for checking the temperature change. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_safety_aca35814e10779f5ab630341b64bfb25c}\label{class_safety_aca35814e10779f5ab630341b64bfb25c}} 
+\index{Safety@{Safety}!setIsSTC@{setIsSTC}}
+\index{setIsSTC@{setIsSTC}!Safety@{Safety}}
+\doxysubsubsection{\texorpdfstring{setIsSTC()}{setIsSTC()}}
+{\footnotesize\ttfamily void Safety\+::set\+Is\+STC (\begin{DoxyParamCaption}\item[{bool}]{is\+STC }\end{DoxyParamCaption})}
+
+
+
+Sets the enable to execute temp\+Change\+Check method in STC mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enable} & to execute temp\+Change\+Check method in STC mode \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{class_safety_ac2a6bcb91b827b2c12e28459e50e621f}\label{class_safety_ac2a6bcb91b827b2c12e28459e50e621f}} 

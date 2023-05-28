@@ -8,26 +8,28 @@ Holds the data of one single data point for \mbox{\hyperlink{class_q_c_p_graph}{
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_q_c_p_graph_data_ac43f7499383d2fa2ffb7a4ad43f76c7c}{QCPGraph\+Data}} ()
-\item 
-\mbox{\hyperlink{class_q_c_p_graph_data_a2c32177f12f902f4e05f712837082bd6}{QCPGraph\+Data}} (double key, double value)
-\item 
+\mbox{\Hypertarget{class_q_c_p_graph_data_ac43f7499383d2fa2ffb7a4ad43f76c7c}\label{class_q_c_p_graph_data_ac43f7499383d2fa2ffb7a4ad43f76c7c}} 
+{\bfseries QCPGraph\+Data} ()
+\begin{DoxyCompactList}\small\item\em Constructs a data point with key and value set to zero. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_q_c_p_graph_data_a2c32177f12f902f4e05f712837082bd6}\label{class_q_c_p_graph_data_a2c32177f12f902f4e05f712837082bd6}} 
+{\bfseries QCPGraph\+Data} (double key, double value)
+\begin{DoxyCompactList}\small\item\em Constructs a data point with the specified {\itshape key} and {\itshape value}. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_q_c_p_graph_data_a5e0f37ea101eeec245d8c32a2206b204}{sort\+Key}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the {\itshape key} member of this data point. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_q_c_p_graph_data_a72fdaf738f679ef93bea3d552ba42d1b}{main\+Key}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the {\itshape key} member of this data point. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_q_c_p_graph_data_a1b1e440a430a4a83d9a3f6f247510f27}{main\+Value}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the {\itshape value} member of this data point. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \mbox{\hyperlink{class_q_c_p_graph_data_a2f8dd30360356f66cc418a170a9f3792}{value\+Range}} () const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns a \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} with both lower and upper boundary set to {\itshape value} of this data point. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 static \mbox{\hyperlink{class_q_c_p_graph_data}{QCPGraph\+Data}} \mbox{\hyperlink{class_q_c_p_graph_data_a4646eac7f7a48970ea0fc5153aab0e77}{from\+Sort\+Key}} (double \mbox{\hyperlink{class_q_c_p_graph_data_a5e0f37ea101eeec245d8c32a2206b204}{sort\+Key}})
-\item 
+\begin{DoxyCompactList}\small\item\em Returns a data point with the specified {\itshape sort\+Key}. \end{DoxyCompactList}\item 
 static bool \mbox{\hyperlink{class_q_c_p_graph_data_a1c98dfd21b82321a173db4ff860dfd21}{sort\+Key\+Is\+Main\+Key}} ()
-\end{DoxyCompactItemize}
-\doxysubsection*{Public Attributes}
+\begin{DoxyCompactList}\small\item\em Since the member {\itshape key} is both the data point key coordinate and the data ordering parameter, this method returns true. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Data Fields}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_q_c_p_graph_data_a2fcebdf84af975761c0661237d7e28ec}\label{class_q_c_p_graph_data_a2fcebdf84af975761c0661237d7e28ec}} 
@@ -50,21 +52,6 @@ QCPGraph\+Data\+Container
 \end{DoxySeeAlso}
 
 
-\doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_q_c_p_graph_data_ac43f7499383d2fa2ffb7a4ad43f76c7c}\label{class_q_c_p_graph_data_ac43f7499383d2fa2ffb7a4ad43f76c7c}} 
-\index{QCPGraphData@{QCPGraphData}!QCPGraphData@{QCPGraphData}}
-\index{QCPGraphData@{QCPGraphData}!QCPGraphData@{QCPGraphData}}
-\doxysubsubsection{\texorpdfstring{QCPGraphData()}{QCPGraphData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily QCPGraph\+Data\+::\+QCPGraph\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-Constructs a data point with key and value set to zero. \mbox{\Hypertarget{class_q_c_p_graph_data_a2c32177f12f902f4e05f712837082bd6}\label{class_q_c_p_graph_data_a2c32177f12f902f4e05f712837082bd6}} 
-\index{QCPGraphData@{QCPGraphData}!QCPGraphData@{QCPGraphData}}
-\index{QCPGraphData@{QCPGraphData}!QCPGraphData@{QCPGraphData}}
-\doxysubsubsection{\texorpdfstring{QCPGraphData()}{QCPGraphData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily QCPGraph\+Data\+::\+QCPGraph\+Data (\begin{DoxyParamCaption}\item[{double}]{key,  }\item[{double}]{value }\end{DoxyParamCaption})}
-
-Constructs a data point with the specified {\itshape key} and {\itshape value}. 
-
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_q_c_p_graph_data_a4646eac7f7a48970ea0fc5153aab0e77}\label{class_q_c_p_graph_data_a4646eac7f7a48970ea0fc5153aab0e77}} 
 \index{QCPGraphData@{QCPGraphData}!fromSortKey@{fromSortKey}}
@@ -72,7 +59,11 @@ Constructs a data point with the specified {\itshape key} and {\itshape value}.
 \doxysubsubsection{\texorpdfstring{fromSortKey()}{fromSortKey()}}
 {\footnotesize\ttfamily static \mbox{\hyperlink{class_q_c_p_graph_data}{QCPGraph\+Data}} QCPGraph\+Data\+::from\+Sort\+Key (\begin{DoxyParamCaption}\item[{double}]{sort\+Key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
-Returns a data point with the specified {\itshape sort\+Key}. All other members are set to zero.
+
+
+Returns a data point with the specified {\itshape sort\+Key}. 
+
+All other members are set to zero.
 
 For a general explanation of what this method is good for in the context of the data container, see the documentation of \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}. \mbox{\Hypertarget{class_q_c_p_graph_data_a72fdaf738f679ef93bea3d552ba42d1b}\label{class_q_c_p_graph_data_a72fdaf738f679ef93bea3d552ba42d1b}} 
 \index{QCPGraphData@{QCPGraphData}!mainKey@{mainKey}}
@@ -80,7 +71,9 @@ For a general explanation of what this method is good for in the context of the 
 \doxysubsubsection{\texorpdfstring{mainKey()}{mainKey()}}
 {\footnotesize\ttfamily double QCPGraph\+Data\+::main\+Key (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Returns the {\itshape key} member of this data point.
+
+
+Returns the {\itshape key} member of this data point. 
 
 For a general explanation of what this method is good for in the context of the data container, see the documentation of \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}. \mbox{\Hypertarget{class_q_c_p_graph_data_a1b1e440a430a4a83d9a3f6f247510f27}\label{class_q_c_p_graph_data_a1b1e440a430a4a83d9a3f6f247510f27}} 
 \index{QCPGraphData@{QCPGraphData}!mainValue@{mainValue}}
@@ -88,7 +81,9 @@ For a general explanation of what this method is good for in the context of the 
 \doxysubsubsection{\texorpdfstring{mainValue()}{mainValue()}}
 {\footnotesize\ttfamily double QCPGraph\+Data\+::main\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Returns the {\itshape value} member of this data point.
+
+
+Returns the {\itshape value} member of this data point. 
 
 For a general explanation of what this method is good for in the context of the data container, see the documentation of \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}. \mbox{\Hypertarget{class_q_c_p_graph_data_a5e0f37ea101eeec245d8c32a2206b204}\label{class_q_c_p_graph_data_a5e0f37ea101eeec245d8c32a2206b204}} 
 \index{QCPGraphData@{QCPGraphData}!sortKey@{sortKey}}
@@ -96,7 +91,9 @@ For a general explanation of what this method is good for in the context of the 
 \doxysubsubsection{\texorpdfstring{sortKey()}{sortKey()}}
 {\footnotesize\ttfamily double QCPGraph\+Data\+::sort\+Key (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Returns the {\itshape key} member of this data point.
+
+
+Returns the {\itshape key} member of this data point. 
 
 For a general explanation of what this method is good for in the context of the data container, see the documentation of \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}. \mbox{\Hypertarget{class_q_c_p_graph_data_a1c98dfd21b82321a173db4ff860dfd21}\label{class_q_c_p_graph_data_a1c98dfd21b82321a173db4ff860dfd21}} 
 \index{QCPGraphData@{QCPGraphData}!sortKeyIsMainKey@{sortKeyIsMainKey}}
@@ -104,7 +101,9 @@ For a general explanation of what this method is good for in the context of the 
 \doxysubsubsection{\texorpdfstring{sortKeyIsMainKey()}{sortKeyIsMainKey()}}
 {\footnotesize\ttfamily static static bool QCPGraph\+Data\+::sort\+Key\+Is\+Main\+Key (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
-Since the member {\itshape key} is both the data point key coordinate and the data ordering parameter, this method returns true.
+
+
+Since the member {\itshape key} is both the data point key coordinate and the data ordering parameter, this method returns true. 
 
 For a general explanation of what this method is good for in the context of the data container, see the documentation of \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}. \mbox{\Hypertarget{class_q_c_p_graph_data_a2f8dd30360356f66cc418a170a9f3792}\label{class_q_c_p_graph_data_a2f8dd30360356f66cc418a170a9f3792}} 
 \index{QCPGraphData@{QCPGraphData}!valueRange@{valueRange}}
@@ -112,7 +111,9 @@ For a general explanation of what this method is good for in the context of the 
 \doxysubsubsection{\texorpdfstring{valueRange()}{valueRange()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} QCPGraph\+Data\+::value\+Range (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Returns a \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} with both lower and upper boundary set to {\itshape value} of this data point.
+
+
+Returns a \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} with both lower and upper boundary set to {\itshape value} of this data point. 
 
 For a general explanation of what this method is good for in the context of the data container, see the documentation of \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}. 
 

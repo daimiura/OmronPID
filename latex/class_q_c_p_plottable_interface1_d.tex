@@ -19,25 +19,25 @@ Inheritance diagram for QCPPlottable\+Interface1D\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 virtual int \mbox{\hyperlink{class_q_c_p_plottable_interface1_d_a058a22c770ef4d5a0e878a7f02183da9}{data\+Count}} () const =0
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the number of data points of the plottable. \end{DoxyCompactList}\item 
 virtual double \mbox{\hyperlink{class_q_c_p_plottable_interface1_d_a2bd60daaac046945fead558cbd83cf73}{data\+Main\+Key}} (int index) const =0
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the main key of the data point at the given {\itshape index}. \end{DoxyCompactList}\item 
 virtual double \mbox{\hyperlink{class_q_c_p_plottable_interface1_d_afdc92f9f01e7e35f2e96b2ea9dc14ae7}{data\+Sort\+Key}} (int index) const =0
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the sort key of the data point at the given {\itshape index}. \end{DoxyCompactList}\item 
 virtual double \mbox{\hyperlink{class_q_c_p_plottable_interface1_d_af6330919e8023277d08c958a6074fc76}{data\+Main\+Value}} (int index) const =0
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the main value of the data point at the given {\itshape index}. \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \mbox{\hyperlink{class_q_c_p_plottable_interface1_d_a9ca7fcf14d885a200879768679b19be9}{data\+Value\+Range}} (int index) const =0
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the value range of the data point at the given {\itshape index}. \end{DoxyCompactList}\item 
 virtual QPointF \mbox{\hyperlink{class_q_c_p_plottable_interface1_d_a78911838cfbcfd2d8df9ad2fdbfb8e93}{data\+Pixel\+Position}} (int index) const =0
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the pixel position on the widget surface at which the data point at the given {\itshape index} appears. \end{DoxyCompactList}\item 
 virtual bool \mbox{\hyperlink{class_q_c_p_plottable_interface1_d_a229e65e7ab968dd6cd0e259fa504b79d}{sort\+Key\+Is\+Main\+Key}} () const =0
-\item 
+\begin{DoxyCompactList}\small\item\em Returns whether the sort key (\mbox{\hyperlink{class_q_c_p_plottable_interface1_d_afdc92f9f01e7e35f2e96b2ea9dc14ae7}{data\+Sort\+Key}}) is identical to the main key (\mbox{\hyperlink{class_q_c_p_plottable_interface1_d_a2bd60daaac046945fead558cbd83cf73}{data\+Main\+Key}}). \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} \mbox{\hyperlink{class_q_c_p_plottable_interface1_d_a67093e4ccf490ff5f7750640941ff34c}{select\+Test\+Rect}} (const QRectF \&rect, bool only\+Selectable) const =0
-\item 
+\begin{DoxyCompactList}\small\item\em Returns a data selection containing all the data points of this plottable which are contained (or hit by) {\itshape rect}. \end{DoxyCompactList}\item 
 virtual int \mbox{\hyperlink{class_q_c_p_plottable_interface1_d_a5b95783271306a4de97be54eac1e7d13}{find\+Begin}} (double sort\+Key, bool expanded\+Range=true) const =0
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the index of the data point with a (sort-\/)key that is equal to, just below, or just above {\itshape sort\+Key}. \end{DoxyCompactList}\item 
 virtual int \mbox{\hyperlink{class_q_c_p_plottable_interface1_d_a5deced1016bc55a41a2339619045b295}{find\+End}} (double sort\+Key, bool expanded\+Range=true) const =0
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns the index one after the data point with a (sort-\/)key that is equal to, just above, or just below {\itshape sort\+Key}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -58,7 +58,11 @@ If you have a \mbox{\hyperlink{class_q_c_p_abstract_plottable}{QCPAbstract\+Plot
 \doxysubsubsection{\texorpdfstring{dataCount()}{dataCount()}}
 {\footnotesize\ttfamily int QCPPlottable\+Interface1\+D\+::data\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
+
+
 Returns the number of data points of the plottable. 
+
+
 
 Implemented in \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_ab5dd99e4f1621e7dbd63438e0b02984e}{QCPAbstract\+Plottable1\+D$<$ Data\+Type $>$}}, \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_ab5dd99e4f1621e7dbd63438e0b02984e}{QCPAbstract\+Plottable1\+D$<$ QCPBars\+Data $>$}}, \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_ab5dd99e4f1621e7dbd63438e0b02984e}{QCPAbstract\+Plottable1\+D$<$ QCPCurve\+Data $>$}}, \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_ab5dd99e4f1621e7dbd63438e0b02984e}{QCPAbstract\+Plottable1\+D$<$ QCPFinancial\+Data $>$}}, \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_ab5dd99e4f1621e7dbd63438e0b02984e}{QCPAbstract\+Plottable1\+D$<$ QCPGraph\+Data $>$}}, \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_ab5dd99e4f1621e7dbd63438e0b02984e}{QCPAbstract\+Plottable1\+D$<$ QCPStatistical\+Box\+Data $>$}}, and \mbox{\hyperlink{class_q_c_p_error_bars_a18b797c62f2af000b926e52eb46d97c7}{QCPError\+Bars}}.
 
@@ -68,7 +72,9 @@ Implemented in \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_ab5dd99e4f1621
 \doxysubsubsection{\texorpdfstring{dataMainKey()}{dataMainKey()}}
 {\footnotesize\ttfamily double QCPPlottable\+Interface1\+D\+::data\+Main\+Key (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
-Returns the main key of the data point at the given {\itshape index}.
+
+
+Returns the main key of the data point at the given {\itshape index}. 
 
 What the main key is, is defined by the plottable\textquotesingle{}s data type. See the \mbox{\hyperlink{class_q_c_p_data_container_qcpdatacontainer-datatype}{QCPData\+Container Data\+Type}} documentation for details about this naming convention. 
 
@@ -80,7 +86,9 @@ Implemented in \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_aeb156ebf5d3c8
 \doxysubsubsection{\texorpdfstring{dataMainValue()}{dataMainValue()}}
 {\footnotesize\ttfamily double QCPPlottable\+Interface1\+D\+::data\+Main\+Value (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
-Returns the main value of the data point at the given {\itshape index}.
+
+
+Returns the main value of the data point at the given {\itshape index}. 
 
 What the main value is, is defined by the plottable\textquotesingle{}s data type. See the \mbox{\hyperlink{class_q_c_p_data_container_qcpdatacontainer-datatype}{QCPData\+Container Data\+Type}} documentation for details about this naming convention. 
 
@@ -92,7 +100,9 @@ Implemented in \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a6be0f657ba85a
 \doxysubsubsection{\texorpdfstring{dataPixelPosition()}{dataPixelPosition()}}
 {\footnotesize\ttfamily QPointF QCPPlottable\+Interface1\+D\+::data\+Pixel\+Position (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
-Returns the pixel position on the widget surface at which the data point at the given {\itshape index} appears.
+
+
+Returns the pixel position on the widget surface at which the data point at the given {\itshape index} appears. 
 
 Usually this corresponds to the point of data\+Main\+Key/ data\+Main\+Value, in pixel coordinates. However, depending on the plottable, this might be a different apparent position than just a coord-\/to-\/pixel transform of those values. For example, \mbox{\hyperlink{class_q_c_p_bars}{QCPBars}} apparent data values can be shifted depending on their stacking, bar grouping or configured base value. 
 
@@ -104,7 +114,9 @@ Implemented in \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a6ca0699a6af5f
 \doxysubsubsection{\texorpdfstring{dataSortKey()}{dataSortKey()}}
 {\footnotesize\ttfamily double QCPPlottable\+Interface1\+D\+::data\+Sort\+Key (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
-Returns the sort key of the data point at the given {\itshape index}.
+
+
+Returns the sort key of the data point at the given {\itshape index}. 
 
 What the sort key is, is defined by the plottable\textquotesingle{}s data type. See the \mbox{\hyperlink{class_q_c_p_data_container_qcpdatacontainer-datatype}{QCPData\+Container Data\+Type}} documentation for details about this naming convention. 
 
@@ -116,7 +128,9 @@ Implemented in \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_aa8277da921b00
 \doxysubsubsection{\texorpdfstring{dataValueRange()}{dataValueRange()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} QCPPlottable\+Interface1\+D\+::data\+Value\+Range (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
-Returns the value range of the data point at the given {\itshape index}.
+
+
+Returns the value range of the data point at the given {\itshape index}. 
 
 What the value range is, is defined by the plottable\textquotesingle{}s data type. See the \mbox{\hyperlink{class_q_c_p_data_container_qcpdatacontainer-datatype}{QCPData\+Container Data\+Type}} documentation for details about this naming convention. 
 
@@ -128,7 +142,11 @@ Implemented in \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a55f937ba6a63e
 \doxysubsubsection{\texorpdfstring{findBegin()}{findBegin()}}
 {\footnotesize\ttfamily int QCPPlottable\+Interface1\+D\+::find\+Begin (\begin{DoxyParamCaption}\item[{double}]{sort\+Key,  }\item[{bool}]{expanded\+Range = {\ttfamily true} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
-Returns the index of the data point with a (sort-\/)key that is equal to, just below, or just above {\itshape sort\+Key}. If {\itshape expanded\+Range} is true, the data point just below {\itshape sort\+Key} will be considered, otherwise the one just above.
+
+
+Returns the index of the data point with a (sort-\/)key that is equal to, just below, or just above {\itshape sort\+Key}. 
+
+If {\itshape expanded\+Range} is true, the data point just below {\itshape sort\+Key} will be considered, otherwise the one just above.
 
 This can be used in conjunction with \mbox{\hyperlink{class_q_c_p_plottable_interface1_d_a5deced1016bc55a41a2339619045b295}{find\+End}} to iterate over data points within a given key range, including or excluding the bounding data points that are just beyond the specified range.
 
@@ -149,7 +167,11 @@ Implemented in \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_ad0b46d25cde3d
 \doxysubsubsection{\texorpdfstring{findEnd()}{findEnd()}}
 {\footnotesize\ttfamily int QCPPlottable\+Interface1\+D\+::find\+End (\begin{DoxyParamCaption}\item[{double}]{sort\+Key,  }\item[{bool}]{expanded\+Range = {\ttfamily true} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
-Returns the index one after the data point with a (sort-\/)key that is equal to, just above, or just below {\itshape sort\+Key}. If {\itshape expanded\+Range} is true, the data point just above {\itshape sort\+Key} will be considered, otherwise the one just below.
+
+
+Returns the index one after the data point with a (sort-\/)key that is equal to, just above, or just below {\itshape sort\+Key}. 
+
+If {\itshape expanded\+Range} is true, the data point just above {\itshape sort\+Key} will be considered, otherwise the one just below.
 
 This can be used in conjunction with \mbox{\hyperlink{class_q_c_p_plottable_interface1_d_a5b95783271306a4de97be54eac1e7d13}{find\+Begin}} to iterate over data points within a given key range, including the bounding data points that are just below and above the specified range.
 
@@ -170,7 +192,11 @@ Implemented in \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a6e3ba20c9160d
 \doxysubsubsection{\texorpdfstring{selectTestRect()}{selectTestRect()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} QCPPlottable\+Interface1\+D\+::select\+Test\+Rect (\begin{DoxyParamCaption}\item[{const QRectF \&}]{rect,  }\item[{bool}]{only\+Selectable }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
-Returns a data selection containing all the data points of this plottable which are contained (or hit by) {\itshape rect}. This is used mainly in the selection rect interaction for data selection (data selection mechanism).
+
+
+Returns a data selection containing all the data points of this plottable which are contained (or hit by) {\itshape rect}. 
+
+This is used mainly in the selection rect interaction for data selection (data selection mechanism).
 
 If {\itshape only\+Selectable} is true, an empty \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} is returned if this plottable is not selectable (i.\+e. if \mbox{\hyperlink{class_q_c_p_abstract_plottable_ac238d6e910f976f1f30d41c2bca44ac3}{QCPAbstract\+Plottable\+::set\+Selectable}} is \mbox{\hyperlink{namespace_q_c_p_ac6cb9db26a564b27feda362a438db038aa64628e338a2dd1e6f0dc84dec0b63fe}{QCP\+::st\+None}}).
 
@@ -187,7 +213,9 @@ Implemented in \mbox{\hyperlink{class_q_c_p_abstract_plottable1_d_a22377bf6e57ab
 \doxysubsubsection{\texorpdfstring{sortKeyIsMainKey()}{sortKeyIsMainKey()}}
 {\footnotesize\ttfamily bool QCPPlottable\+Interface1\+D\+::sort\+Key\+Is\+Main\+Key (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
-Returns whether the sort key (\mbox{\hyperlink{class_q_c_p_plottable_interface1_d_afdc92f9f01e7e35f2e96b2ea9dc14ae7}{data\+Sort\+Key}}) is identical to the main key (\mbox{\hyperlink{class_q_c_p_plottable_interface1_d_a2bd60daaac046945fead558cbd83cf73}{data\+Main\+Key}}).
+
+
+Returns whether the sort key (\mbox{\hyperlink{class_q_c_p_plottable_interface1_d_afdc92f9f01e7e35f2e96b2ea9dc14ae7}{data\+Sort\+Key}}) is identical to the main key (\mbox{\hyperlink{class_q_c_p_plottable_interface1_d_a2bd60daaac046945fead558cbd83cf73}{data\+Main\+Key}}). 
 
 What the sort and main keys are, is defined by the plottable\textquotesingle{}s data type. See the \mbox{\hyperlink{class_q_c_p_data_container_qcpdatacontainer-datatype}{QCPData\+Container Data\+Type}} documentation for details about this naming convention. 
 

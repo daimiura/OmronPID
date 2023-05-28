@@ -8,26 +8,28 @@ Holds the data of one single data point for \mbox{\hyperlink{class_q_c_p_statist
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_q_c_p_statistical_box_data_ab96c4b93670a8dcac8a3d4080fd722ee}{QCPStatistical\+Box\+Data}} ()
-\item 
-\mbox{\hyperlink{class_q_c_p_statistical_box_data_a66b0c6d39765d0feb49c286fba4e4ef5}{QCPStatistical\+Box\+Data}} (double key, double minimum, double lower\+Quartile, double median, double upper\+Quartile, double maximum, const QVector$<$ double $>$ \&outliers=QVector$<$ double $>$())
-\item 
+\mbox{\Hypertarget{class_q_c_p_statistical_box_data_ab96c4b93670a8dcac8a3d4080fd722ee}\label{class_q_c_p_statistical_box_data_ab96c4b93670a8dcac8a3d4080fd722ee}} 
+{\bfseries QCPStatistical\+Box\+Data} ()
+\begin{DoxyCompactList}\small\item\em Constructs a data point with key and all values set to zero. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_q_c_p_statistical_box_data_a66b0c6d39765d0feb49c286fba4e4ef5}\label{class_q_c_p_statistical_box_data_a66b0c6d39765d0feb49c286fba4e4ef5}} 
+{\bfseries QCPStatistical\+Box\+Data} (double key, double minimum, double lower\+Quartile, double median, double upper\+Quartile, double maximum, const QVector$<$ double $>$ \&outliers=QVector$<$ double $>$())
+\begin{DoxyCompactList}\small\item\em Constructs a data point with the specified {\itshape key}, {\itshape minimum}, {\itshape lower\+Quartile}, {\itshape median}, {\itshape upper\+Quartile}, {\itshape maximum} and optionally a number of {\itshape outliers}. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_q_c_p_statistical_box_data_a168100275e85935207deec86216abc88}{sort\+Key}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the {\itshape key} member of this data point. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_q_c_p_statistical_box_data_a4bbbf44f60ac5eca73c5f4135741562e}{main\+Key}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the {\itshape key} member of this data point. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_q_c_p_statistical_box_data_a0df3cb31cfd6d48decf6173297b81746}{main\+Value}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the {\itshape median} member of this data point. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \mbox{\hyperlink{class_q_c_p_statistical_box_data_a1a2410fcf3d45fa3a1ad09e265b9bcad}{value\+Range}} () const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns a \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} spanning from the {\itshape minimum} to the {\itshape maximum} member of this statistical box data point, possibly further expanded by outliers. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 static \mbox{\hyperlink{class_q_c_p_statistical_box_data}{QCPStatistical\+Box\+Data}} \mbox{\hyperlink{class_q_c_p_statistical_box_data_a8c391d5a6c7cebc79b664aad9917b499}{from\+Sort\+Key}} (double \mbox{\hyperlink{class_q_c_p_statistical_box_data_a168100275e85935207deec86216abc88}{sort\+Key}})
-\item 
+\begin{DoxyCompactList}\small\item\em Returns a data point with the specified {\itshape sort\+Key}. \end{DoxyCompactList}\item 
 static bool \mbox{\hyperlink{class_q_c_p_statistical_box_data_a4710ae44b85d4b34b13c3f9301f28c01}{sort\+Key\+Is\+Main\+Key}} ()
-\end{DoxyCompactItemize}
-\doxysubsection*{Public Attributes}
+\begin{DoxyCompactList}\small\item\em Since the member {\itshape key} is both the data point key coordinate and the data ordering parameter, this method returns true. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Data Fields}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_q_c_p_statistical_box_data_a2d0b5ca5130e8a73294c46b8b2fd77b8}\label{class_q_c_p_statistical_box_data_a2d0b5ca5130e8a73294c46b8b2fd77b8}} 
@@ -79,21 +81,6 @@ QCPStatistical\+Box\+Data\+Container
 \end{DoxySeeAlso}
 
 
-\doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_q_c_p_statistical_box_data_ab96c4b93670a8dcac8a3d4080fd722ee}\label{class_q_c_p_statistical_box_data_ab96c4b93670a8dcac8a3d4080fd722ee}} 
-\index{QCPStatisticalBoxData@{QCPStatisticalBoxData}!QCPStatisticalBoxData@{QCPStatisticalBoxData}}
-\index{QCPStatisticalBoxData@{QCPStatisticalBoxData}!QCPStatisticalBoxData@{QCPStatisticalBoxData}}
-\doxysubsubsection{\texorpdfstring{QCPStatisticalBoxData()}{QCPStatisticalBoxData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily QCPStatistical\+Box\+Data\+::\+QCPStatistical\+Box\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-Constructs a data point with key and all values set to zero. \mbox{\Hypertarget{class_q_c_p_statistical_box_data_a66b0c6d39765d0feb49c286fba4e4ef5}\label{class_q_c_p_statistical_box_data_a66b0c6d39765d0feb49c286fba4e4ef5}} 
-\index{QCPStatisticalBoxData@{QCPStatisticalBoxData}!QCPStatisticalBoxData@{QCPStatisticalBoxData}}
-\index{QCPStatisticalBoxData@{QCPStatisticalBoxData}!QCPStatisticalBoxData@{QCPStatisticalBoxData}}
-\doxysubsubsection{\texorpdfstring{QCPStatisticalBoxData()}{QCPStatisticalBoxData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily QCPStatistical\+Box\+Data\+::\+QCPStatistical\+Box\+Data (\begin{DoxyParamCaption}\item[{double}]{key,  }\item[{double}]{minimum,  }\item[{double}]{lower\+Quartile,  }\item[{double}]{median,  }\item[{double}]{upper\+Quartile,  }\item[{double}]{maximum,  }\item[{const QVector$<$ double $>$ \&}]{outliers = {\ttfamily QVector$<$double$>$()} }\end{DoxyParamCaption})}
-
-Constructs a data point with the specified {\itshape key}, {\itshape minimum}, {\itshape lower\+Quartile}, {\itshape median}, {\itshape upper\+Quartile}, {\itshape maximum} and optionally a number of {\itshape outliers}. 
-
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_q_c_p_statistical_box_data_a8c391d5a6c7cebc79b664aad9917b499}\label{class_q_c_p_statistical_box_data_a8c391d5a6c7cebc79b664aad9917b499}} 
 \index{QCPStatisticalBoxData@{QCPStatisticalBoxData}!fromSortKey@{fromSortKey}}
@@ -101,7 +88,11 @@ Constructs a data point with the specified {\itshape key}, {\itshape minimum}, {
 \doxysubsubsection{\texorpdfstring{fromSortKey()}{fromSortKey()}}
 {\footnotesize\ttfamily static \mbox{\hyperlink{class_q_c_p_statistical_box_data}{QCPStatistical\+Box\+Data}} QCPStatistical\+Box\+Data\+::from\+Sort\+Key (\begin{DoxyParamCaption}\item[{double}]{sort\+Key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
-Returns a data point with the specified {\itshape sort\+Key}. All other members are set to zero.
+
+
+Returns a data point with the specified {\itshape sort\+Key}. 
+
+All other members are set to zero.
 
 For a general explanation of what this method is good for in the context of the data container, see the documentation of \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}. \mbox{\Hypertarget{class_q_c_p_statistical_box_data_a4bbbf44f60ac5eca73c5f4135741562e}\label{class_q_c_p_statistical_box_data_a4bbbf44f60ac5eca73c5f4135741562e}} 
 \index{QCPStatisticalBoxData@{QCPStatisticalBoxData}!mainKey@{mainKey}}
@@ -109,7 +100,9 @@ For a general explanation of what this method is good for in the context of the 
 \doxysubsubsection{\texorpdfstring{mainKey()}{mainKey()}}
 {\footnotesize\ttfamily double QCPStatistical\+Box\+Data\+::main\+Key (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Returns the {\itshape key} member of this data point.
+
+
+Returns the {\itshape key} member of this data point. 
 
 For a general explanation of what this method is good for in the context of the data container, see the documentation of \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}. \mbox{\Hypertarget{class_q_c_p_statistical_box_data_a0df3cb31cfd6d48decf6173297b81746}\label{class_q_c_p_statistical_box_data_a0df3cb31cfd6d48decf6173297b81746}} 
 \index{QCPStatisticalBoxData@{QCPStatisticalBoxData}!mainValue@{mainValue}}
@@ -117,7 +110,9 @@ For a general explanation of what this method is good for in the context of the 
 \doxysubsubsection{\texorpdfstring{mainValue()}{mainValue()}}
 {\footnotesize\ttfamily double QCPStatistical\+Box\+Data\+::main\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Returns the {\itshape median} member of this data point.
+
+
+Returns the {\itshape median} member of this data point. 
 
 For a general explanation of what this method is good for in the context of the data container, see the documentation of \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}. \mbox{\Hypertarget{class_q_c_p_statistical_box_data_a168100275e85935207deec86216abc88}\label{class_q_c_p_statistical_box_data_a168100275e85935207deec86216abc88}} 
 \index{QCPStatisticalBoxData@{QCPStatisticalBoxData}!sortKey@{sortKey}}
@@ -125,7 +120,9 @@ For a general explanation of what this method is good for in the context of the 
 \doxysubsubsection{\texorpdfstring{sortKey()}{sortKey()}}
 {\footnotesize\ttfamily double QCPStatistical\+Box\+Data\+::sort\+Key (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Returns the {\itshape key} member of this data point.
+
+
+Returns the {\itshape key} member of this data point. 
 
 For a general explanation of what this method is good for in the context of the data container, see the documentation of \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}. \mbox{\Hypertarget{class_q_c_p_statistical_box_data_a4710ae44b85d4b34b13c3f9301f28c01}\label{class_q_c_p_statistical_box_data_a4710ae44b85d4b34b13c3f9301f28c01}} 
 \index{QCPStatisticalBoxData@{QCPStatisticalBoxData}!sortKeyIsMainKey@{sortKeyIsMainKey}}
@@ -133,7 +130,9 @@ For a general explanation of what this method is good for in the context of the 
 \doxysubsubsection{\texorpdfstring{sortKeyIsMainKey()}{sortKeyIsMainKey()}}
 {\footnotesize\ttfamily static static bool QCPStatistical\+Box\+Data\+::sort\+Key\+Is\+Main\+Key (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
-Since the member {\itshape key} is both the data point key coordinate and the data ordering parameter, this method returns true.
+
+
+Since the member {\itshape key} is both the data point key coordinate and the data ordering parameter, this method returns true. 
 
 For a general explanation of what this method is good for in the context of the data container, see the documentation of \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}. \mbox{\Hypertarget{class_q_c_p_statistical_box_data_a1a2410fcf3d45fa3a1ad09e265b9bcad}\label{class_q_c_p_statistical_box_data_a1a2410fcf3d45fa3a1ad09e265b9bcad}} 
 \index{QCPStatisticalBoxData@{QCPStatisticalBoxData}!valueRange@{valueRange}}
@@ -141,7 +140,9 @@ For a general explanation of what this method is good for in the context of the 
 \doxysubsubsection{\texorpdfstring{valueRange()}{valueRange()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} QCPStatistical\+Box\+Data\+::value\+Range (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Returns a \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} spanning from the {\itshape minimum} to the {\itshape maximum} member of this statistical box data point, possibly further expanded by outliers.
+
+
+Returns a \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} spanning from the {\itshape minimum} to the {\itshape maximum} member of this statistical box data point, possibly further expanded by outliers. 
 
 For a general explanation of what this method is good for in the context of the data container, see the documentation of \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}. 
 

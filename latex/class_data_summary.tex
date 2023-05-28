@@ -23,7 +23,9 @@ void \mbox{\hyperlink{class_data_summary_a0664f5a0765c34dd1f1d215fff98bd21}{temp
 void \mbox{\hyperlink{class_data_summary_ad939eb587c1452110a8bf2ac0b6c024a}{mv\+Changed}} (double mv)
 \begin{DoxyCompactList}\small\item\em Signal emitted when the MV value changes. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_data_summary_ab30b9edd27f68ad4a6a3cee53bd38929}{sv\+Changed}} (double sv)
-\begin{DoxyCompactList}\small\item\em Signal emitted when the SV value changes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Signal emitted when the SV value changes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_data_summary_ad81e2940cf2591814f223bb16855f02a}{log\+Msg\+With\+Color}} (QString msg, QColor color)
+\begin{DoxyCompactList}\small\item\em Signal emitted for send log to mainwindow. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -45,8 +47,6 @@ QString \mbox{\hyperlink{class_data_summary_a0c637e9d4be829473d85b47b7d0bc6ad}{g
 \begin{DoxyCompactList}\small\item\em Gets the file path for saving data. \end{DoxyCompactList}\item 
 QTimer $\ast$ \mbox{\hyperlink{class_data_summary_ac7425ceb0918e728634099dd4e739fab}{get\+Log\+Timer}} () const
 \begin{DoxyCompactList}\small\item\em Gets the Qtimer for saving data. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_data_summary_aa5b61ecf8eb3ee8e61b9403e736dff09}{set\+File\+Name}} (QString name)
-\begin{DoxyCompactList}\small\item\em Sets the file name for saving data. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_data_summary_a721d29528f5aeb7519a92c0d40d44c45}{generate\+Save\+File}} ()
 \begin{DoxyCompactList}\small\item\em Generates and saves the data to file. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_data_summary_a61e87c538761c75f34c11b314c940034}{write\+Data}} ()
@@ -216,6 +216,23 @@ Gets the current temperature.
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{class_the}{The}} temperature value. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{class_data_summary_ad81e2940cf2591814f223bb16855f02a}\label{class_data_summary_ad81e2940cf2591814f223bb16855f02a}} 
+\index{DataSummary@{DataSummary}!logMsgWithColor@{logMsgWithColor}}
+\index{logMsgWithColor@{logMsgWithColor}!DataSummary@{DataSummary}}
+\doxysubsubsection{\texorpdfstring{logMsgWithColor}{logMsgWithColor}}
+{\footnotesize\ttfamily void Data\+Summary\+::log\+Msg\+With\+Color (\begin{DoxyParamCaption}\item[{QString}]{msg,  }\item[{QColor}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Signal emitted for send log to mainwindow. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & \mbox{\hyperlink{class_the}{The}} log. \\
+\hline
+{\em color} & text color \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_data_summary_ad939eb587c1452110a8bf2ac0b6c024a}\label{class_data_summary_ad939eb587c1452110a8bf2ac0b6c024a}} 
 \index{DataSummary@{DataSummary}!mvChanged@{mvChanged}}
 \index{mvChanged@{mvChanged}!DataSummary@{DataSummary}}
@@ -229,21 +246,6 @@ Signal emitted when the MV value changes.
 
 \begin{DoxyParams}{Parameters}
 {\em mv} & \mbox{\hyperlink{class_the}{The}} new MV value. \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{class_data_summary_aa5b61ecf8eb3ee8e61b9403e736dff09}\label{class_data_summary_aa5b61ecf8eb3ee8e61b9403e736dff09}} 
-\index{DataSummary@{DataSummary}!setFileName@{setFileName}}
-\index{setFileName@{setFileName}!DataSummary@{DataSummary}}
-\doxysubsubsection{\texorpdfstring{setFileName()}{setFileName()}}
-{\footnotesize\ttfamily void Data\+Summary\+::set\+File\+Name (\begin{DoxyParamCaption}\item[{QString}]{name }\end{DoxyParamCaption})}
-
-
-
-Sets the file name for saving data. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em name} & \mbox{\hyperlink{class_the}{The}} file name. \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{class_data_summary_a48cdd4698f0269fc69ba359b47b73b54}\label{class_data_summary_a48cdd4698f0269fc69ba359b47b73b54}} 
@@ -310,5 +312,5 @@ void
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-datasummary.\+h\item 
+\mbox{\hyperlink{datasummary_8h}{datasummary.\+h}}\item 
 datasummary.\+cpp\end{DoxyCompactItemize}

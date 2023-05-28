@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: QCPAxisTickerDateTime Class Reference</title>
+<title>OmronPID: QCPAxisTickerDateTime Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Project
+   <div id="projectname">OmronPID
    </div>
   </td>
  </tr>
@@ -74,8 +74,7 @@ $(function() {
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pro-types">Protected Types</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a> &#124;
-<a href="class_q_c_p_axis_ticker_date_time-members.html">List of all members</a>  </div>
+<a href="#pro-attribs">Protected Attributes</a>  </div>
   <div class="headertitle"><div class="title">QCPAxisTickerDateTime Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -95,6 +94,7 @@ Inheritance diagram for QCPAxisTickerDateTime:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a84cc5c6bbc7c99c1f9bd4b3a392e1b9d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_axis_ticker_date_time.html#a84cc5c6bbc7c99c1f9bd4b3a392e1b9d">QCPAxisTickerDateTime</a> ()</td></tr>
+<tr class="memdesc:a84cc5c6bbc7c99c1f9bd4b3a392e1b9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the ticker and sets reasonable default values.  <br /></td></tr>
 <tr class="separator:a84cc5c6bbc7c99c1f9bd4b3a392e1b9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac8e2bb32ca8ff1394c42d2d62390718"><td class="memItemLeft" align="right" valign="top"><a id="aac8e2bb32ca8ff1394c42d2d62390718" name="aac8e2bb32ca8ff1394c42d2d62390718"></a>
 QString&#160;</td><td class="memItemRight" valign="bottom"><b>dateTimeFormat</b> () const</td></tr>
@@ -103,15 +103,20 @@ QString&#160;</td><td class="memItemRight" valign="bottom"><b>dateTimeFormat</b>
 Qt::TimeSpec&#160;</td><td class="memItemRight" valign="bottom"><b>dateTimeSpec</b> () const</td></tr>
 <tr class="separator:ae688e69ba55c9247af26b6db85cf9573"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad52660a82f688395468674d555f6a86b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_axis_ticker_date_time.html#ad52660a82f688395468674d555f6a86b">setDateTimeFormat</a> (const QString &amp;format)</td></tr>
+<tr class="memdesc:ad52660a82f688395468674d555f6a86b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the format in which dates and times are displayed as tick labels.  <br /></td></tr>
 <tr class="separator:ad52660a82f688395468674d555f6a86b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afbd987c7197e42ab61e67fb1c38abebc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_axis_ticker_date_time.html#afbd987c7197e42ab61e67fb1c38abebc">setDateTimeSpec</a> (Qt::TimeSpec spec)</td></tr>
+<tr class="memdesc:afbd987c7197e42ab61e67fb1c38abebc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the time spec that is used for creating the tick labels from corresponding dates/times.  <br /></td></tr>
 <tr class="separator:afbd987c7197e42ab61e67fb1c38abebc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5388e048cbd32cf1ba730b9f1859eb5c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_axis_ticker_date_time.html#a5388e048cbd32cf1ba730b9f1859eb5c">setTickOrigin</a> (double origin)</td></tr>
+<tr class="memdesc:a5388e048cbd32cf1ba730b9f1859eb5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the tick origin (see <a class="el" href="class_q_c_p_axis_ticker.html#ab509c7e500293bf66a8409f0d7c23943">QCPAxisTicker::setTickOrigin</a>) in seconds since Epoch (1.  <br /></td></tr>
 <tr class="separator:a5388e048cbd32cf1ba730b9f1859eb5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ea905872b8171847a49a5e093fb0c48"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_axis_ticker_date_time.html#a2ea905872b8171847a49a5e093fb0c48">setTickOrigin</a> (const QDateTime &amp;origin)</td></tr>
+<tr class="memdesc:a2ea905872b8171847a49a5e093fb0c48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the tick origin (see <a class="el" href="class_q_c_p_axis_ticker.html#ab509c7e500293bf66a8409f0d7c23943">QCPAxisTicker::setTickOrigin</a>) as a QDateTime <em>origin</em>.  <br /></td></tr>
 <tr class="separator:a2ea905872b8171847a49a5e093fb0c48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_q_c_p_axis_ticker"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_q_c_p_axis_ticker')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_q_c_p_axis_ticker.html">QCPAxisTicker</a></td></tr>
 <tr class="memitem:a8fcf23c79ebd72202fe79253f9f01ea8 inherit pub_methods_class_q_c_p_axis_ticker"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_axis_ticker.html#a8fcf23c79ebd72202fe79253f9f01ea8">QCPAxisTicker</a> ()</td></tr>
+<tr class="memdesc:a8fcf23c79ebd72202fe79253f9f01ea8 inherit pub_methods_class_q_c_p_axis_ticker"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the ticker and sets reasonable default values.  <br /></td></tr>
 <tr class="separator:a8fcf23c79ebd72202fe79253f9f01ea8 inherit pub_methods_class_q_c_p_axis_ticker"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a58df76f2ec3eb48401bdd314b0e14ba1 inherit pub_methods_class_q_c_p_axis_ticker"><td class="memItemLeft" align="right" valign="top"><a id="a58df76f2ec3eb48401bdd314b0e14ba1" name="a58df76f2ec3eb48401bdd314b0e14ba1"></a>
 <a class="el" href="class_q_c_p_axis_ticker.html#ab6d2f9d9477821623ac9bc4b21ddf49a">TickStepStrategy</a>&#160;</td><td class="memItemRight" valign="bottom"><b>tickStepStrategy</b> () const</td></tr>
@@ -123,21 +128,28 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>tickCount</b> () const
 double&#160;</td><td class="memItemRight" valign="bottom"><b>tickOrigin</b> () const</td></tr>
 <tr class="separator:ac0c6e9587c36fdeefb5518c00fe7ab15 inherit pub_methods_class_q_c_p_axis_ticker"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73b1d847c1a12159af6bfda4ebebe7d5 inherit pub_methods_class_q_c_p_axis_ticker"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_axis_ticker.html#a73b1d847c1a12159af6bfda4ebebe7d5">setTickStepStrategy</a> (<a class="el" href="class_q_c_p_axis_ticker.html#ab6d2f9d9477821623ac9bc4b21ddf49a">TickStepStrategy</a> strategy)</td></tr>
+<tr class="memdesc:a73b1d847c1a12159af6bfda4ebebe7d5 inherit pub_methods_class_q_c_p_axis_ticker"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets which strategy the axis ticker follows when choosing the size of the tick step.  <br /></td></tr>
 <tr class="separator:a73b1d847c1a12159af6bfda4ebebe7d5 inherit pub_methods_class_q_c_p_axis_ticker"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47752abba8293e6dc18491501ae34008 inherit pub_methods_class_q_c_p_axis_ticker"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_axis_ticker.html#a47752abba8293e6dc18491501ae34008">setTickCount</a> (int count)</td></tr>
+<tr class="memdesc:a47752abba8293e6dc18491501ae34008 inherit pub_methods_class_q_c_p_axis_ticker"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets how many ticks this ticker shall aim to generate across the axis range.  <br /></td></tr>
 <tr class="separator:a47752abba8293e6dc18491501ae34008 inherit pub_methods_class_q_c_p_axis_ticker"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab509c7e500293bf66a8409f0d7c23943 inherit pub_methods_class_q_c_p_axis_ticker"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_axis_ticker.html#ab509c7e500293bf66a8409f0d7c23943">setTickOrigin</a> (double origin)</td></tr>
+<tr class="memdesc:ab509c7e500293bf66a8409f0d7c23943 inherit pub_methods_class_q_c_p_axis_ticker"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the mathematical coordinate (or "offset") of the zeroth tick.  <br /></td></tr>
 <tr class="separator:ab509c7e500293bf66a8409f0d7c23943 inherit pub_methods_class_q_c_p_axis_ticker"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aefbd11725678ca824add8cf926cbc856 inherit pub_methods_class_q_c_p_axis_ticker"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_axis_ticker.html#aefbd11725678ca824add8cf926cbc856">generate</a> (const <a class="el" href="class_q_c_p_range.html">QCPRange</a> &amp;range, const QLocale &amp;locale, QChar formatChar, int precision, QVector&lt; double &gt; &amp;ticks, QVector&lt; double &gt; *subTicks, QVector&lt; QString &gt; *tickLabels)</td></tr>
+<tr class="memdesc:aefbd11725678ca824add8cf926cbc856 inherit pub_methods_class_q_c_p_axis_ticker"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the method called by <a class="el" href="class_q_c_p_axis.html" title="Manages a single axis inside a QCustomPlot.">QCPAxis</a> in order to actually generate tick coordinates (<em>ticks</em>), tick label strings (<em>tickLabels</em>) and sub tick coordinates (<em>subTicks</em>).  <br /></td></tr>
 <tr class="separator:aefbd11725678ca824add8cf926cbc856 inherit pub_methods_class_q_c_p_axis_ticker"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a4c1761ad057f5564804a53f942629b53"><td class="memItemLeft" align="right" valign="top">static QDateTime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_axis_ticker_date_time.html#a4c1761ad057f5564804a53f942629b53">keyToDateTime</a> (double key)</td></tr>
+<tr class="memdesc:a4c1761ad057f5564804a53f942629b53"><td class="mdescLeft">&#160;</td><td class="mdescRight">A convenience method which turns <em>key</em> (in seconds since Epoch 1.  <br /></td></tr>
 <tr class="separator:a4c1761ad057f5564804a53f942629b53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa24f293f16fff0f937bf71f4140033f1"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_axis_ticker_date_time.html#aa24f293f16fff0f937bf71f4140033f1">dateTimeToKey</a> (const QDateTime dateTime)</td></tr>
+<tr class="memdesc:aa24f293f16fff0f937bf71f4140033f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.A convenience method which turns a QDateTime object into a double value that corresponds to seconds since Epoch (1.  <br /></td></tr>
 <tr class="separator:aa24f293f16fff0f937bf71f4140033f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad87afc7dba65843f68da5ca88bc004f4"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_axis_ticker_date_time.html#ad87afc7dba65843f68da5ca88bc004f4">dateTimeToKey</a> (const QDate date)</td></tr>
+<tr class="memdesc:ad87afc7dba65843f68da5ca88bc004f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.A convenience method which turns a QDate object into a double value that corresponds to seconds since Epoch (1.  <br /></td></tr>
 <tr class="separator:ad87afc7dba65843f68da5ca88bc004f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-types" name="pro-types"></a>
@@ -214,6 +226,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:ab6d2f9d9477821623ac9bc4b21ddf49a inherit pub_types_class_q_c_p_axis_ticker"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_axis_ticker.html#ab6d2f9d9477821623ac9bc4b21ddf49a">TickStepStrategy</a> { <a class="el" href="class_q_c_p_axis_ticker.html#ab6d2f9d9477821623ac9bc4b21ddf49aa9002aa2fd5633ab5556c71a26fed63a8">tssReadability</a>
 , <a class="el" href="class_q_c_p_axis_ticker.html#ab6d2f9d9477821623ac9bc4b21ddf49aa770312b6b9b0c64a37ceeba96e0cd7f2">tssMeetTickCount</a>
  }</td></tr>
+<tr class="memdesc:ab6d2f9d9477821623ac9bc4b21ddf49a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the strategies that the axis ticker may follow when choosing the size of the tick step.  <a href="class_q_c_p_axis_ticker.html#ab6d2f9d9477821623ac9bc4b21ddf49a">More...</a><br /></td></tr>
 <tr class="separator:ab6d2f9d9477821623ac9bc4b21ddf49a inherit pub_types_class_q_c_p_axis_ticker"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -241,7 +254,9 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Constructs the ticker and sets reasonable default values. Axis tickers are commonly created managed by a QSharedPointer, which then can be passed to <a class="el" href="class_q_c_p_axis.html#a4ee03fcd2c74d05cd1a419b9af5cfbdc">QCPAxis::setTicker</a>. </p>
+
+<p>Constructs the ticker and sets reasonable default values. </p>
+<p>Axis tickers are commonly created managed by a QSharedPointer, which then can be passed to <a class="el" href="class_q_c_p_axis.html#a4ee03fcd2c74d05cd1a419b9af5cfbdc" title="The axis ticker is responsible for generating the tick positions and tick labels.">QCPAxis::setTicker</a>. </p>
 
 </div>
 </div>
@@ -307,9 +322,10 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.</p>
-<p>A convenience method which turns a QDate object into a double value that corresponds to seconds since Epoch (1. Jan 1970, 00:00 UTC). This is the format used as axis coordinates by <a class="el" href="class_q_c_p_axis_ticker_date_time.html" title="Specialized axis ticker for calendar dates and times as axis ticks.">QCPAxisTickerDateTime</a>.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_axis_ticker_date_time.html#a4c1761ad057f5564804a53f942629b53">keyToDateTime</a> </dd></dl>
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.A convenience method which turns a QDate object into a double value that corresponds to seconds since Epoch (1. </p>
+<p>Jan 1970, 00:00 UTC). This is the format used as axis coordinates by <a class="el" href="class_q_c_p_axis_ticker_date_time.html" title="Specialized axis ticker for calendar dates and times as axis ticks.">QCPAxisTickerDateTime</a>.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_axis_ticker_date_time.html#a4c1761ad057f5564804a53f942629b53" title="A convenience method which turns key (in seconds since Epoch 1.">keyToDateTime</a> </dd></dl>
 
 </div>
 </div>
@@ -336,10 +352,11 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.</p>
-<p>A convenience method which turns a QDateTime object into a double value that corresponds to seconds since Epoch (1. Jan 1970, 00:00 UTC). This is the format used as axis coordinates by <a class="el" href="class_q_c_p_axis_ticker_date_time.html" title="Specialized axis ticker for calendar dates and times as axis ticks.">QCPAxisTickerDateTime</a>.</p>
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.A convenience method which turns a QDateTime object into a double value that corresponds to seconds since Epoch (1. </p>
+<p>Jan 1970, 00:00 UTC). This is the format used as axis coordinates by <a class="el" href="class_q_c_p_axis_ticker_date_time.html" title="Specialized axis ticker for calendar dates and times as axis ticks.">QCPAxisTickerDateTime</a>.</p>
 <p><a class="el" href="class_the.html">The</a> accuracy achieved by this method is one millisecond, irrespective of the used Qt version (it works around the lack of a QDateTime::toMSecsSinceEpoch in Qt 4.6)</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_axis_ticker_date_time.html#a4c1761ad057f5564804a53f942629b53">keyToDateTime</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_axis_ticker_date_time.html#a4c1761ad057f5564804a53f942629b53" title="A convenience method which turns key (in seconds since Epoch 1.">keyToDateTime</a> </dd></dl>
 
 </div>
 </div>
@@ -472,9 +489,11 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>A convenience method which turns <em>key</em> (in seconds since Epoch 1. Jan 1970, 00:00 UTC) into a QDateTime object. This can be used to turn axis coordinates to actual QDateTimes.</p>
+
+<p>A convenience method which turns <em>key</em> (in seconds since Epoch 1. </p>
+<p>Jan 1970, 00:00 UTC) into a QDateTime object. This can be used to turn axis coordinates to actual QDateTimes.</p>
 <p><a class="el" href="class_the.html">The</a> accuracy achieved by this method is one millisecond, irrespective of the used Qt version (it works around the lack of a QDateTime::fromMSecsSinceEpoch in Qt 4.6)</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_axis_ticker_date_time.html#aa24f293f16fff0f937bf71f4140033f1">dateTimeToKey</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_axis_ticker_date_time.html#aa24f293f16fff0f937bf71f4140033f1" title="This is an overloaded member function, provided for convenience. It differs from the above function o...">dateTimeToKey</a> </dd></dl>
 
 </div>
 </div>
@@ -493,9 +512,11 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Sets the format in which dates and times are displayed as tick labels. For details about the <em>format</em> string, see the documentation of QDateTime::toString().</p>
+
+<p>Sets the format in which dates and times are displayed as tick labels. </p>
+<p>For details about the <em>format</em> string, see the documentation of QDateTime::toString().</p>
 <p>Newlines can be inserted with "\n".</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_axis_ticker_date_time.html#afbd987c7197e42ab61e67fb1c38abebc">setDateTimeSpec</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_axis_ticker_date_time.html#afbd987c7197e42ab61e67fb1c38abebc" title="Sets the time spec that is used for creating the tick labels from corresponding dates/times.">setDateTimeSpec</a> </dd></dl>
 
 </div>
 </div>
@@ -514,9 +535,10 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Sets the time spec that is used for creating the tick labels from corresponding dates/times.</p>
-<p><a class="el" href="class_the.html">The</a> default value of QDateTime objects (and also <a class="el" href="class_q_c_p_axis_ticker_date_time.html" title="Specialized axis ticker for calendar dates and times as axis ticks.">QCPAxisTickerDateTime</a>) is <code>Qt::LocalTime</code>. However, if the date time values passed to <a class="el" href="class_q_custom_plot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a> (e.g. in the form of axis ranges or keys of a plottable) are given in the UTC spec, set <em>spec</em> to <code>Qt::UTC</code> to get the correct axis labels.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_axis_ticker_date_time.html#ad52660a82f688395468674d555f6a86b">setDateTimeFormat</a> </dd></dl>
+
+<p>Sets the time spec that is used for creating the tick labels from corresponding dates/times. </p>
+<p><a class="el" href="class_the.html">The</a> default value of QDateTime objects (and also <a class="el" href="class_q_c_p_axis_ticker_date_time.html" title="Specialized axis ticker for calendar dates and times as axis ticks.">QCPAxisTickerDateTime</a>) is <code>Qt::LocalTime</code>. However, if the date time values passed to <a class="el" href="class_q_custom_plot.html" title="The central class of the library.">QCustomPlot</a> (e.g. in the form of axis ranges or keys of a plottable) are given in the UTC spec, set <em>spec</em> to <code>Qt::UTC</code> to get the correct axis labels.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_axis_ticker_date_time.html#ad52660a82f688395468674d555f6a86b" title="Sets the format in which dates and times are displayed as tick labels.">setDateTimeFormat</a> </dd></dl>
 
 </div>
 </div>
@@ -535,7 +557,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Sets the tick origin (see <a class="el" href="class_q_c_p_axis_ticker.html#ab509c7e500293bf66a8409f0d7c23943">QCPAxisTicker::setTickOrigin</a>) as a QDateTime <em>origin</em>.</p>
+
+<p>Sets the tick origin (see <a class="el" href="class_q_c_p_axis_ticker.html#ab509c7e500293bf66a8409f0d7c23943">QCPAxisTicker::setTickOrigin</a>) as a QDateTime <em>origin</em>. </p>
 <p>This is useful to define the month/day/time recurring at greater tick interval steps. For example, If you pass 15. July, 9:45 to this method and the tick interval happens to be one tick per year, the ticks will end up on 15. July at 9:45 of every year. </p>
 
 </div>
@@ -555,7 +578,9 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Sets the tick origin (see <a class="el" href="class_q_c_p_axis_ticker.html#ab509c7e500293bf66a8409f0d7c23943">QCPAxisTicker::setTickOrigin</a>) in seconds since Epoch (1. Jan 1970, 00:00 UTC). For the date time ticker it might be more intuitive to use the overload which directly takes a QDateTime, see <a class="el" href="class_q_c_p_axis_ticker_date_time.html#a2ea905872b8171847a49a5e093fb0c48">setTickOrigin(const QDateTime &amp;origin)</a>.</p>
+
+<p>Sets the tick origin (see <a class="el" href="class_q_c_p_axis_ticker.html#ab509c7e500293bf66a8409f0d7c23943">QCPAxisTicker::setTickOrigin</a>) in seconds since Epoch (1. </p>
+<p>Jan 1970, 00:00 UTC). For the date time ticker it might be more intuitive to use the overload which directly takes a QDateTime, see <a class="el" href="class_q_c_p_axis_ticker_date_time.html#a2ea905872b8171847a49a5e093fb0c48">setTickOrigin(const QDateTime &amp;origin)</a>.</p>
 <p>This is useful to define the month/day/time recurring at greater tick interval steps. For example, If you pass 15. July, 9:45 to this method and the tick interval happens to be one tick per year, the ticks will end up on 15. July at 9:45 of every year. </p>
 
 </div>

@@ -22,14 +22,16 @@ enum \mbox{\hyperlink{class_q_c_p_line_ending_a5ef16e6876b4b74959c7261d8d4c2cd5}
 \mbox{\hyperlink{class_q_c_p_line_ending_a5ef16e6876b4b74959c7261d8d4c2cd5a126c390f0c359fcd8df1fc5e38d26d5b}{es\+Half\+Bar}}
 , \mbox{\hyperlink{class_q_c_p_line_ending_a5ef16e6876b4b74959c7261d8d4c2cd5a2b2cc96e757ca9bcd91fb70221ed43ab}{es\+Skewed\+Bar}}
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Defines the type of ending decoration for line-\/like items, e.\+g. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_q_c_p_line_ending_af2eaf8123b000d97fbd11929c669f61b}{QCPLine\+Ending}} ()
-\item 
-\mbox{\hyperlink{class_q_c_p_line_ending_abb2abc7542f0c7a3c081d878248896a4}{QCPLine\+Ending}} (\mbox{\hyperlink{class_q_c_p_line_ending_a5ef16e6876b4b74959c7261d8d4c2cd5}{Ending\+Style}} style, double width=8, double length=10, bool inverted=false)
-\item 
+\mbox{\Hypertarget{class_q_c_p_line_ending_af2eaf8123b000d97fbd11929c669f61b}\label{class_q_c_p_line_ending_af2eaf8123b000d97fbd11929c669f61b}} 
+{\bfseries QCPLine\+Ending} ()
+\begin{DoxyCompactList}\small\item\em Creates a \mbox{\hyperlink{class_q_c_p_line_ending}{QCPLine\+Ending}} instance with default values (style \mbox{\hyperlink{class_q_c_p_line_ending_a5ef16e6876b4b74959c7261d8d4c2cd5aca12d500f50cd6871766801bac30fb03}{es\+None}}). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_q_c_p_line_ending_abb2abc7542f0c7a3c081d878248896a4}\label{class_q_c_p_line_ending_abb2abc7542f0c7a3c081d878248896a4}} 
+{\bfseries QCPLine\+Ending} (\mbox{\hyperlink{class_q_c_p_line_ending_a5ef16e6876b4b74959c7261d8d4c2cd5}{Ending\+Style}} style, double width=8, double length=10, bool inverted=false)
+\begin{DoxyCompactList}\small\item\em Creates a \mbox{\hyperlink{class_q_c_p_line_ending}{QCPLine\+Ending}} instance with the specified values. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_q_c_p_line_ending_a07e75aaac6c61322bf51af237c5778e3}\label{class_q_c_p_line_ending_a07e75aaac6c61322bf51af237c5778e3}} 
 \mbox{\hyperlink{class_q_c_p_line_ending_a5ef16e6876b4b74959c7261d8d4c2cd5}{Ending\+Style}} {\bfseries style} () const
 \item 
@@ -42,19 +44,20 @@ double {\bfseries length} () const
 \mbox{\Hypertarget{class_q_c_p_line_ending_a15a68706d298a0c9f94556f6b4db15ff}\label{class_q_c_p_line_ending_a15a68706d298a0c9f94556f6b4db15ff}} 
 bool {\bfseries inverted} () const
 \item 
-void \mbox{\hyperlink{class_q_c_p_line_ending_a56953b9cb8ed1bed0f025c3935f16910}{set\+Style}} (\mbox{\hyperlink{class_q_c_p_line_ending_a5ef16e6876b4b74959c7261d8d4c2cd5}{Ending\+Style}} style)
-\item 
+\mbox{\Hypertarget{class_q_c_p_line_ending_a56953b9cb8ed1bed0f025c3935f16910}\label{class_q_c_p_line_ending_a56953b9cb8ed1bed0f025c3935f16910}} 
+void {\bfseries set\+Style} (\mbox{\hyperlink{class_q_c_p_line_ending_a5ef16e6876b4b74959c7261d8d4c2cd5}{Ending\+Style}} style)
+\begin{DoxyCompactList}\small\item\em Sets the style of the ending decoration. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_line_ending_a26dc020ea985a72cc25881ce2115e34e}{set\+Width}} (double width)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the width of the ending decoration, if the style supports it. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_line_ending_ae36fa01763751cd64b7f56c3507e935a}{set\+Length}} (double length)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the length of the ending decoration, if the style supports it. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_line_ending_a580e4e2360b35ebb8d68f3494aa2335d}{set\+Inverted}} (bool inverted)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets whether the ending decoration shall be inverted. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_q_c_p_line_ending_a14fe390ddd590864ac66a60ed5278df5}\label{class_q_c_p_line_ending_a14fe390ddd590864ac66a60ed5278df5}} 
 double {\bfseries bounding\+Distance} () const
 \item 
 double \mbox{\hyperlink{class_q_c_p_line_ending_acacd24d386d459b282d3c57f16a5405d}{real\+Length}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Starting from the origin of this line ending (which is style specific), returns the length covered by the line ending symbol, in backward direction. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_q_c_p_line_ending_a4f45db54f2aba03acf055e29aec1e8e7}\label{class_q_c_p_line_ending_a4f45db54f2aba03acf055e29aec1e8e7}} 
 void {\bfseries draw} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter, const \mbox{\hyperlink{class_q_c_p_vector2_d}{QCPVector2D}} \&pos, const \mbox{\hyperlink{class_q_c_p_vector2_d}{QCPVector2D}} \&dir) const
 \item 
@@ -100,7 +103,11 @@ Note that due to the overloaded \mbox{\hyperlink{class_q_c_p_line_ending}{QCPLin
 \doxysubsubsection{\texorpdfstring{EndingStyle}{EndingStyle}}
 {\footnotesize\ttfamily enum \mbox{\hyperlink{class_q_c_p_line_ending_a5ef16e6876b4b74959c7261d8d4c2cd5}{QCPLine\+Ending\+::\+Ending\+Style}}}
 
-Defines the type of ending decoration for line-\/like items, e.\+g. an arrow.
+
+
+Defines the type of ending decoration for line-\/like items, e.\+g. 
+
+an arrow.
 
 
 
@@ -153,21 +160,6 @@ es\+Skewed\+Bar&A bar that is skewed (skew controllable via \mbox{\hyperlink{cla
 \end{DoxyEnumFields}
 
 
-\doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_q_c_p_line_ending_af2eaf8123b000d97fbd11929c669f61b}\label{class_q_c_p_line_ending_af2eaf8123b000d97fbd11929c669f61b}} 
-\index{QCPLineEnding@{QCPLineEnding}!QCPLineEnding@{QCPLineEnding}}
-\index{QCPLineEnding@{QCPLineEnding}!QCPLineEnding@{QCPLineEnding}}
-\doxysubsubsection{\texorpdfstring{QCPLineEnding()}{QCPLineEnding()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily QCPLine\+Ending\+::\+QCPLine\+Ending (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-Creates a \mbox{\hyperlink{class_q_c_p_line_ending}{QCPLine\+Ending}} instance with default values (style \mbox{\hyperlink{class_q_c_p_line_ending_a5ef16e6876b4b74959c7261d8d4c2cd5aca12d500f50cd6871766801bac30fb03}{es\+None}}). \mbox{\Hypertarget{class_q_c_p_line_ending_abb2abc7542f0c7a3c081d878248896a4}\label{class_q_c_p_line_ending_abb2abc7542f0c7a3c081d878248896a4}} 
-\index{QCPLineEnding@{QCPLineEnding}!QCPLineEnding@{QCPLineEnding}}
-\index{QCPLineEnding@{QCPLineEnding}!QCPLineEnding@{QCPLineEnding}}
-\doxysubsubsection{\texorpdfstring{QCPLineEnding()}{QCPLineEnding()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily QCPLine\+Ending\+::\+QCPLine\+Ending (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_line_ending_a5ef16e6876b4b74959c7261d8d4c2cd5}{QCPLine\+Ending\+::\+Ending\+Style}}}]{style,  }\item[{double}]{width = {\ttfamily 8},  }\item[{double}]{length = {\ttfamily 10},  }\item[{bool}]{inverted = {\ttfamily false} }\end{DoxyParamCaption})}
-
-Creates a \mbox{\hyperlink{class_q_c_p_line_ending}{QCPLine\+Ending}} instance with the specified values. 
-
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_q_c_p_line_ending_acacd24d386d459b282d3c57f16a5405d}\label{class_q_c_p_line_ending_acacd24d386d459b282d3c57f16a5405d}} 
 \index{QCPLineEnding@{QCPLineEnding}!realLength@{realLength}}
@@ -175,7 +167,9 @@ Creates a \mbox{\hyperlink{class_q_c_p_line_ending}{QCPLine\+Ending}} instance w
 \doxysubsubsection{\texorpdfstring{realLength()}{realLength()}}
 {\footnotesize\ttfamily double QCPLine\+Ending\+::real\+Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-Starting from the origin of this line ending (which is style specific), returns the length covered by the line ending symbol, in backward direction.
+
+
+Starting from the origin of this line ending (which is style specific), returns the length covered by the line ending symbol, in backward direction. 
 
 For example, the \mbox{\hyperlink{class_q_c_p_line_ending_a5ef16e6876b4b74959c7261d8d4c2cd5ab9964d0d03f812d1e79de15edbeb2cbf}{es\+Spike\+Arrow}} has a shorter real length than a \mbox{\hyperlink{class_q_c_p_line_ending_a5ef16e6876b4b74959c7261d8d4c2cd5a3d7dcea2f100671727c3417142154f8f}{es\+Flat\+Arrow}}, even if both have the same \mbox{\hyperlink{class_q_c_p_line_ending_ae36fa01763751cd64b7f56c3507e935a}{set\+Length}} value, because the spike arrow has an inward curved back, which reduces the length along its center axis (the drawing origin for arrows is at the tip).
 
@@ -185,7 +179,11 @@ This function is used for precise, style specific placement of line endings, for
 \doxysubsubsection{\texorpdfstring{setInverted()}{setInverted()}}
 {\footnotesize\ttfamily void QCPLine\+Ending\+::set\+Inverted (\begin{DoxyParamCaption}\item[{bool}]{inverted }\end{DoxyParamCaption})}
 
-Sets whether the ending decoration shall be inverted. For example, an arrow decoration will point inward when {\itshape inverted} is set to true.
+
+
+Sets whether the ending decoration shall be inverted. 
+
+For example, an arrow decoration will point inward when {\itshape inverted} is set to true.
 
 Note that also the {\itshape width} direction is inverted. For symmetrical ending styles like arrows or discs, this doesn\textquotesingle{}t make a difference. However, asymmetric styles like \mbox{\hyperlink{class_q_c_p_line_ending_a5ef16e6876b4b74959c7261d8d4c2cd5a126c390f0c359fcd8df1fc5e38d26d5b}{es\+Half\+Bar}} are affected by it, which can be used to control to which side the half bar points to. \mbox{\Hypertarget{class_q_c_p_line_ending_ae36fa01763751cd64b7f56c3507e935a}\label{class_q_c_p_line_ending_ae36fa01763751cd64b7f56c3507e935a}} 
 \index{QCPLineEnding@{QCPLineEnding}!setLength@{setLength}}
@@ -193,24 +191,26 @@ Note that also the {\itshape width} direction is inverted. For symmetrical endin
 \doxysubsubsection{\texorpdfstring{setLength()}{setLength()}}
 {\footnotesize\ttfamily void QCPLine\+Ending\+::set\+Length (\begin{DoxyParamCaption}\item[{double}]{length }\end{DoxyParamCaption})}
 
-Sets the length of the ending decoration, if the style supports it. On arrows, for example, the length defines the size in pointing direction.
+
+
+Sets the length of the ending decoration, if the style supports it. 
+
+On arrows, for example, the length defines the size in pointing direction.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_line_ending_a26dc020ea985a72cc25881ce2115e34e}{set\+Width}} 
 \end{DoxySeeAlso}
-\mbox{\Hypertarget{class_q_c_p_line_ending_a56953b9cb8ed1bed0f025c3935f16910}\label{class_q_c_p_line_ending_a56953b9cb8ed1bed0f025c3935f16910}} 
-\index{QCPLineEnding@{QCPLineEnding}!setStyle@{setStyle}}
-\index{setStyle@{setStyle}!QCPLineEnding@{QCPLineEnding}}
-\doxysubsubsection{\texorpdfstring{setStyle()}{setStyle()}}
-{\footnotesize\ttfamily void QCPLine\+Ending\+::set\+Style (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_line_ending_a5ef16e6876b4b74959c7261d8d4c2cd5}{QCPLine\+Ending\+::\+Ending\+Style}}}]{style }\end{DoxyParamCaption})}
-
-Sets the style of the ending decoration. \mbox{\Hypertarget{class_q_c_p_line_ending_a26dc020ea985a72cc25881ce2115e34e}\label{class_q_c_p_line_ending_a26dc020ea985a72cc25881ce2115e34e}} 
+\mbox{\Hypertarget{class_q_c_p_line_ending_a26dc020ea985a72cc25881ce2115e34e}\label{class_q_c_p_line_ending_a26dc020ea985a72cc25881ce2115e34e}} 
 \index{QCPLineEnding@{QCPLineEnding}!setWidth@{setWidth}}
 \index{setWidth@{setWidth}!QCPLineEnding@{QCPLineEnding}}
 \doxysubsubsection{\texorpdfstring{setWidth()}{setWidth()}}
 {\footnotesize\ttfamily void QCPLine\+Ending\+::set\+Width (\begin{DoxyParamCaption}\item[{double}]{width }\end{DoxyParamCaption})}
 
-Sets the width of the ending decoration, if the style supports it. On arrows, for example, the width defines the size perpendicular to the arrow\textquotesingle{}s pointing direction.
+
+
+Sets the width of the ending decoration, if the style supports it. 
+
+On arrows, for example, the width defines the size perpendicular to the arrow\textquotesingle{}s pointing direction.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_line_ending_ae36fa01763751cd64b7f56c3507e935a}{set\+Length}} 

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: QCPDataRange Class Reference</title>
+<title>OmronPID: QCPDataRange Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Project
+   <div id="projectname">OmronPID
    </div>
   </td>
  </tr>
@@ -71,8 +71,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#related">Related Functions</a> &#124;
-<a href="class_q_c_p_data_range-members.html">List of all members</a>  </div>
+<a href="#related">Related Functions</a>  </div>
   <div class="headertitle"><div class="title">QCPDataRange Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -82,9 +81,12 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a49e72fd9bace1da9d875136dcc04c986"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_data_range.html#a49e72fd9bace1da9d875136dcc04c986">QCPDataRange</a> ()</td></tr>
+<tr class="memitem:a49e72fd9bace1da9d875136dcc04c986"><td class="memItemLeft" align="right" valign="top"><a id="a49e72fd9bace1da9d875136dcc04c986" name="a49e72fd9bace1da9d875136dcc04c986"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>QCPDataRange</b> ()</td></tr>
+<tr class="memdesc:a49e72fd9bace1da9d875136dcc04c986"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an empty <a class="el" href="class_q_c_p_data_range.html" title="Describes a data range given by begin and end index.">QCPDataRange</a>, with begin and end set to 0. <br /></td></tr>
 <tr class="separator:a49e72fd9bace1da9d875136dcc04c986"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c7f4a3684210423270515403060e9cf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_data_range.html#a6c7f4a3684210423270515403060e9cf">QCPDataRange</a> (int begin, int end)</td></tr>
+<tr class="memdesc:a6c7f4a3684210423270515403060e9cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="class_q_c_p_data_range.html" title="Describes a data range given by begin and end index.">QCPDataRange</a>, initialized with the specified <em>begin</em> and <em>end</em>.  <br /></td></tr>
 <tr class="separator:a6c7f4a3684210423270515403060e9cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8bfd79a282f6ebd766d60caa683242d3"><td class="memItemLeft" align="right" valign="top"><a id="a8bfd79a282f6ebd766d60caa683242d3" name="a8bfd79a282f6ebd766d60caa683242d3"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (const <a class="el" href="class_q_c_p_data_range.html">QCPDataRange</a> &amp;other) const</td></tr>
@@ -99,35 +101,51 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>begin</b> () const</td
 int&#160;</td><td class="memItemRight" valign="bottom"><b>end</b> () const</td></tr>
 <tr class="separator:aee1b20fb045929c3753ee2ce14af7630"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6af055e509d1b691c244954ff1c5887"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_data_range.html#ac6af055e509d1b691c244954ff1c5887">size</a> () const</td></tr>
+<tr class="memdesc:ac6af055e509d1b691c244954ff1c5887"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of data points described by this data range.  <br /></td></tr>
 <tr class="separator:ac6af055e509d1b691c244954ff1c5887"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e7836058f755c6ab9f11996477b7150"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_data_range.html#a1e7836058f755c6ab9f11996477b7150">length</a> () const</td></tr>
+<tr class="memdesc:a1e7836058f755c6ab9f11996477b7150"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of data points described by this data range.  <br /></td></tr>
 <tr class="separator:a1e7836058f755c6ab9f11996477b7150"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a54ff59048e01e46ac4aefafc844626c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_data_range.html#a54ff59048e01e46ac4aefafc844626c6">setBegin</a> (int begin)</td></tr>
+<tr class="memdesc:a54ff59048e01e46ac4aefafc844626c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the begin of this data range.  <br /></td></tr>
 <tr class="separator:a54ff59048e01e46ac4aefafc844626c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a277f1a9eafe70b9184d9c00b641ae5de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_data_range.html#a277f1a9eafe70b9184d9c00b641ae5de">setEnd</a> (int end)</td></tr>
+<tr class="memdesc:a277f1a9eafe70b9184d9c00b641ae5de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the end of this data range.  <br /></td></tr>
 <tr class="separator:a277f1a9eafe70b9184d9c00b641ae5de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae53a37472212dca0a7939963e20dba0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_data_range.html#aae53a37472212dca0a7939963e20dba0">isValid</a> () const</td></tr>
+<tr class="memdesc:aae53a37472212dca0a7939963e20dba0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether this range is valid.  <br /></td></tr>
 <tr class="separator:aae53a37472212dca0a7939963e20dba0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac32e53fc05d6cd2eac96b96a7265d3b8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_data_range.html#ac32e53fc05d6cd2eac96b96a7265d3b8">isEmpty</a> () const</td></tr>
+<tr class="memdesc:ac32e53fc05d6cd2eac96b96a7265d3b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether this range is empty, i.e.  <br /></td></tr>
 <tr class="separator:ac32e53fc05d6cd2eac96b96a7265d3b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93529421d12fdd3a8bdb2b8061936352"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_q_c_p_data_range.html">QCPDataRange</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_data_range.html#a93529421d12fdd3a8bdb2b8061936352">bounded</a> (const <a class="el" href="class_q_c_p_data_range.html">QCPDataRange</a> &amp;other) const</td></tr>
+<tr class="memdesc:a93529421d12fdd3a8bdb2b8061936352"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a data range that matches this data range, except that parts exceeding <em>other</em> are excluded.  <br /></td></tr>
 <tr class="separator:a93529421d12fdd3a8bdb2b8061936352"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a36c8ad8acf177ffeb0a72c8d73030844"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_q_c_p_data_range.html">QCPDataRange</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_data_range.html#a36c8ad8acf177ffeb0a72c8d73030844">expanded</a> (const <a class="el" href="class_q_c_p_data_range.html">QCPDataRange</a> &amp;other) const</td></tr>
+<tr class="memitem:a36c8ad8acf177ffeb0a72c8d73030844"><td class="memItemLeft" align="right" valign="top"><a id="a36c8ad8acf177ffeb0a72c8d73030844" name="a36c8ad8acf177ffeb0a72c8d73030844"></a>
+<a class="el" href="class_q_c_p_data_range.html">QCPDataRange</a>&#160;</td><td class="memItemRight" valign="bottom"><b>expanded</b> (const <a class="el" href="class_q_c_p_data_range.html">QCPDataRange</a> &amp;other) const</td></tr>
+<tr class="memdesc:a36c8ad8acf177ffeb0a72c8d73030844"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a data range that contains both this data range as well as <em>other</em>. <br /></td></tr>
 <tr class="separator:a36c8ad8acf177ffeb0a72c8d73030844"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84e1e03129dd52528efb4bac18d30183"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_q_c_p_data_range.html">QCPDataRange</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_data_range.html#a84e1e03129dd52528efb4bac18d30183">intersection</a> (const <a class="el" href="class_q_c_p_data_range.html">QCPDataRange</a> &amp;other) const</td></tr>
+<tr class="memdesc:a84e1e03129dd52528efb4bac18d30183"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the data range which is contained in both this data range and <em>other</em>.  <br /></td></tr>
 <tr class="separator:a84e1e03129dd52528efb4bac18d30183"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a279ed36602b39607699dc5652bcaf813"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_q_c_p_data_range.html">QCPDataRange</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_data_range.html#a279ed36602b39607699dc5652bcaf813">adjusted</a> (int changeBegin, int changeEnd) const</td></tr>
+<tr class="memitem:a279ed36602b39607699dc5652bcaf813"><td class="memItemLeft" align="right" valign="top"><a id="a279ed36602b39607699dc5652bcaf813" name="a279ed36602b39607699dc5652bcaf813"></a>
+<a class="el" href="class_q_c_p_data_range.html">QCPDataRange</a>&#160;</td><td class="memItemRight" valign="bottom"><b>adjusted</b> (int changeBegin, int changeEnd) const</td></tr>
+<tr class="memdesc:a279ed36602b39607699dc5652bcaf813"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a data range where <em>changeBegin</em> and <em>changeEnd</em> were added to the begin and end indices, respectively. <br /></td></tr>
 <tr class="separator:a279ed36602b39607699dc5652bcaf813"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a1c437f9beffd55621f48f961d7f679"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_data_range.html#a8a1c437f9beffd55621f48f961d7f679">intersects</a> (const <a class="el" href="class_q_c_p_data_range.html">QCPDataRange</a> &amp;other) const</td></tr>
+<tr class="memdesc:a8a1c437f9beffd55621f48f961d7f679"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether this data range and <em>other</em> share common data points.  <br /></td></tr>
 <tr class="separator:a8a1c437f9beffd55621f48f961d7f679"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13ca398776374a3160aa85433718b812"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_data_range.html#a13ca398776374a3160aa85433718b812">contains</a> (const <a class="el" href="class_q_c_p_data_range.html">QCPDataRange</a> &amp;other) const</td></tr>
+<tr class="memdesc:a13ca398776374a3160aa85433718b812"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether all data points described by this data range are also in <em>other</em>.  <br /></td></tr>
 <tr class="separator:a13ca398776374a3160aa85433718b812"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="related" name="related"></a>
 Related Functions</h2></td></tr>
 <tr><td class="ititle" colspan="2"><p>(Note that these are not member functions.) </p>
 </td></tr>
-<tr class="memitem:a486dd7af8a090ed069672e3510e6a082"><td class="memItemLeft" align="right" valign="top">QDebug&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_data_range.html#a486dd7af8a090ed069672e3510e6a082">operator&lt;&lt;</a> (QDebug d, const <a class="el" href="class_q_c_p_data_range.html">QCPDataRange</a> &amp;dataRange)</td></tr>
+<tr class="memitem:a486dd7af8a090ed069672e3510e6a082"><td class="memItemLeft" align="right" valign="top"><a id="a486dd7af8a090ed069672e3510e6a082" name="a486dd7af8a090ed069672e3510e6a082"></a>
+QDebug&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;&lt;</b> (QDebug d, const <a class="el" href="class_q_c_p_data_range.html">QCPDataRange</a> &amp;dataRange)</td></tr>
+<tr class="memdesc:a486dd7af8a090ed069672e3510e6a082"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints <em>dataRange</em> in a human readable format to the qDebug output. <br /></td></tr>
 <tr class="separator:a486dd7af8a090ed069672e3510e6a082"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -138,26 +156,8 @@ Related Functions</h2></td></tr>
 <p>QCustomPlot's data selection mechanism is based on <a class="el" href="class_q_c_p_data_selection.html">QCPDataSelection</a> and <a class="el" href="class_q_c_p_data_range.html" title="Describes a data range given by begin and end index.">QCPDataRange</a>.</p>
 <dl class="section note"><dt>Note</dt><dd>Do not confuse <a class="el" href="class_q_c_p_data_range.html">QCPDataRange</a> with <a class="el" href="class_q_c_p_range.html">QCPRange</a>. A <a class="el" href="class_q_c_p_range.html">QCPRange</a> describes an interval in floating point plot coordinates, e.g. the current axis range. </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a49e72fd9bace1da9d875136dcc04c986" name="a49e72fd9bace1da9d875136dcc04c986"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a49e72fd9bace1da9d875136dcc04c986">&#9670;&#160;</a></span>QCPDataRange() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">QCPDataRange::QCPDataRange </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Creates an empty <a class="el" href="class_q_c_p_data_range.html" title="Describes a data range given by begin and end index.">QCPDataRange</a>, with begin and end set to 0. </p>
-
-</div>
-</div>
 <a id="a6c7f4a3684210423270515403060e9cf" name="a6c7f4a3684210423270515403060e9cf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6c7f4a3684210423270515403060e9cf">&#9670;&#160;</a></span>QCPDataRange() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c7f4a3684210423270515403060e9cf">&#9670;&#160;</a></span>QCPDataRange()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -181,49 +181,13 @@ Related Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Creates a <a class="el" href="class_q_c_p_data_range.html" title="Describes a data range given by begin and end index.">QCPDataRange</a>, initialized with the specified <em>begin</em> and <em>end</em>.</p>
+
+<p>Creates a <a class="el" href="class_q_c_p_data_range.html" title="Describes a data range given by begin and end index.">QCPDataRange</a>, initialized with the specified <em>begin</em> and <em>end</em>. </p>
 <p>No checks or corrections are made to ensure the resulting range is valid (<a class="el" href="class_q_c_p_data_range.html#aae53a37472212dca0a7939963e20dba0">isValid</a>). </p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a279ed36602b39607699dc5652bcaf813" name="a279ed36602b39607699dc5652bcaf813"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a279ed36602b39607699dc5652bcaf813">&#9670;&#160;</a></span>adjusted()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_q_c_p_data_range.html">QCPDataRange</a> QCPDataRange::adjusted </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>changeBegin</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>changeEnd</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Returns a data range where <em>changeBegin</em> and <em>changeEnd</em> were added to the begin and end indices, respectively. </p>
-
-</div>
-</div>
 <a id="a93529421d12fdd3a8bdb2b8061936352" name="a93529421d12fdd3a8bdb2b8061936352"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a93529421d12fdd3a8bdb2b8061936352">&#9670;&#160;</a></span>bounded()</h2>
 
@@ -239,7 +203,8 @@ Related Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Returns a data range that matches this data range, except that parts exceeding <em>other</em> are excluded.</p>
+
+<p>Returns a data range that matches this data range, except that parts exceeding <em>other</em> are excluded. </p>
 <p>This method is very similar to <a class="el" href="class_q_c_p_data_range.html#a84e1e03129dd52528efb4bac18d30183">intersection</a>, with one distinction: If this range and the <em>other</em> range share no intersection, the returned data range will be empty with begin and end set to the respective boundary side of <em>other</em>, at which this range is residing. (<a class="el" href="class_q_c_p_data_range.html#a84e1e03129dd52528efb4bac18d30183">intersection</a> would just return a range with begin and end set to 0.) </p>
 
 </div>
@@ -259,27 +224,9 @@ Related Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Returns whether all data points described by this data range are also in <em>other</em>.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_data_range.html#a8a1c437f9beffd55621f48f961d7f679">intersects</a> </dd></dl>
 
-</div>
-</div>
-<a id="a36c8ad8acf177ffeb0a72c8d73030844" name="a36c8ad8acf177ffeb0a72c8d73030844"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a36c8ad8acf177ffeb0a72c8d73030844">&#9670;&#160;</a></span>expanded()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_q_c_p_data_range.html">QCPDataRange</a> QCPDataRange::expanded </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="class_q_c_p_data_range.html">QCPDataRange</a> &amp;&#160;</td>
-          <td class="paramname"><em>other</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Returns a data range that contains both this data range as well as <em>other</em>. </p>
+<p>Returns whether all data points described by this data range are also in <em>other</em>. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_data_range.html#a8a1c437f9beffd55621f48f961d7f679" title="Returns whether this data range and other share common data points.">intersects</a> </dd></dl>
 
 </div>
 </div>
@@ -298,9 +245,10 @@ Related Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Returns the data range which is contained in both this data range and <em>other</em>.</p>
+
+<p>Returns the data range which is contained in both this data range and <em>other</em>. </p>
 <p>This method is very similar to <a class="el" href="class_q_c_p_data_range.html#a93529421d12fdd3a8bdb2b8061936352">bounded</a>, with one distinction: If this range and the <em>other</em> range share no intersection, the returned data range will be empty with begin and end set to 0. (<a class="el" href="class_q_c_p_data_range.html#a93529421d12fdd3a8bdb2b8061936352">bounded</a> would return a range with begin and end set to one of the boundaries of <em>other</em>, depending on which side this range is on.)</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_data_selection.html#af5267ced53687561367105ee77b874ab">QCPDataSelection::intersection</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_data_selection.html#af5267ced53687561367105ee77b874ab" title="Returns a data selection containing the points which are both in this data selection and in the data ...">QCPDataSelection::intersection</a> </dd></dl>
 
 </div>
 </div>
@@ -319,8 +267,9 @@ Related Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Returns whether this data range and <em>other</em> share common data points.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_data_range.html#a84e1e03129dd52528efb4bac18d30183">intersection</a>, <a class="el" href="class_q_c_p_data_range.html#a13ca398776374a3160aa85433718b812">contains</a> </dd></dl>
+
+<p>Returns whether this data range and <em>other</em> share common data points. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_data_range.html#a84e1e03129dd52528efb4bac18d30183" title="Returns the data range which is contained in both this data range and other.">intersection</a>, <a class="el" href="class_q_c_p_data_range.html#a13ca398776374a3160aa85433718b812" title="Returns whether all data points described by this data range are also in other.">contains</a> </dd></dl>
 
 </div>
 </div>
@@ -346,8 +295,10 @@ Related Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Returns whether this range is empty, i.e. whether its begin index equals its end index.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_data_range.html#ac6af055e509d1b691c244954ff1c5887">size</a>, <a class="el" href="class_q_c_p_data_range.html#a1e7836058f755c6ab9f11996477b7150">length</a> </dd></dl>
+
+<p>Returns whether this range is empty, i.e. </p>
+<p>whether its begin index equals its end index.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_data_range.html#ac6af055e509d1b691c244954ff1c5887" title="Returns the number of data points described by this data range.">size</a>, <a class="el" href="class_q_c_p_data_range.html#a1e7836058f755c6ab9f11996477b7150" title="Returns the number of data points described by this data range.">length</a> </dd></dl>
 
 </div>
 </div>
@@ -373,8 +324,10 @@ Related Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Returns whether this range is valid. A valid range has a begin index greater or equal to 0, and an end index greater or equal to the begin index.</p>
-<dl class="section note"><dt>Note</dt><dd>Invalid ranges should be avoided and are never the result of any of <a class="el" href="class_q_custom_plot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a>'s methods (unless they are themselves fed with invalid ranges). Do not pass invalid ranges to <a class="el" href="class_q_custom_plot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a>'s methods. <a class="el" href="class_the.html">The</a> invalid range is not inherently prevented in <a class="el" href="class_q_c_p_data_range.html" title="Describes a data range given by begin and end index.">QCPDataRange</a>, to allow temporary invalid begin/end values while manipulating the range. An invalid range is not necessarily empty (<a class="el" href="class_q_c_p_data_range.html#ac32e53fc05d6cd2eac96b96a7265d3b8">isEmpty</a>), since its <a class="el" href="class_q_c_p_data_range.html#a1e7836058f755c6ab9f11996477b7150">length</a> can be negative and thus non-zero. </dd></dl>
+
+<p>Returns whether this range is valid. </p>
+<p>A valid range has a begin index greater or equal to 0, and an end index greater or equal to the begin index.</p>
+<dl class="section note"><dt>Note</dt><dd>Invalid ranges should be avoided and are never the result of any of <a class="el" href="class_q_custom_plot.html" title="The central class of the library.">QCustomPlot</a>'s methods (unless they are themselves fed with invalid ranges). Do not pass invalid ranges to <a class="el" href="class_q_custom_plot.html" title="The central class of the library.">QCustomPlot</a>'s methods. <a class="el" href="class_the.html">The</a> invalid range is not inherently prevented in <a class="el" href="class_q_c_p_data_range.html" title="Describes a data range given by begin and end index.">QCPDataRange</a>, to allow temporary invalid begin/end values while manipulating the range. An invalid range is not necessarily empty (<a class="el" href="class_q_c_p_data_range.html#ac32e53fc05d6cd2eac96b96a7265d3b8">isEmpty</a>), since its <a class="el" href="class_q_c_p_data_range.html#a1e7836058f755c6ab9f11996477b7150">length</a> can be negative and thus non-zero. </dd></dl>
 
 </div>
 </div>
@@ -400,7 +353,9 @@ Related Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Returns the number of data points described by this data range. Equivalent to <a class="el" href="class_q_c_p_data_range.html#ac6af055e509d1b691c244954ff1c5887">size</a>. </p>
+
+<p>Returns the number of data points described by this data range. </p>
+<p>Equivalent to <a class="el" href="class_q_c_p_data_range.html#ac6af055e509d1b691c244954ff1c5887">size</a>. </p>
 
 </div>
 </div>
@@ -427,9 +382,11 @@ Related Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Sets the begin of this data range. <a class="el" href="class_the.html">The</a> <em>begin</em> index points to the first data point that is part of the data range.</p>
+
+<p>Sets the begin of this data range. </p>
+<p><a class="el" href="class_the.html">The</a> <em>begin</em> index points to the first data point that is part of the data range.</p>
 <p>No checks or corrections are made to ensure the resulting range is valid (<a class="el" href="class_q_c_p_data_range.html#aae53a37472212dca0a7939963e20dba0">isValid</a>).</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_data_range.html#a277f1a9eafe70b9184d9c00b641ae5de">setEnd</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_data_range.html#a277f1a9eafe70b9184d9c00b641ae5de" title="Sets the end of this data range.">setEnd</a> </dd></dl>
 
 </div>
 </div>
@@ -456,9 +413,11 @@ Related Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Sets the end of this data range. <a class="el" href="class_the.html">The</a> <em>end</em> index points to the data point just above the last data point that is part of the data range.</p>
+
+<p>Sets the end of this data range. </p>
+<p><a class="el" href="class_the.html">The</a> <em>end</em> index points to the data point just above the last data point that is part of the data range.</p>
 <p>No checks or corrections are made to ensure the resulting range is valid (<a class="el" href="class_q_c_p_data_range.html#aae53a37472212dca0a7939963e20dba0">isValid</a>).</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_data_range.html#a54ff59048e01e46ac4aefafc844626c6">setBegin</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_data_range.html#a54ff59048e01e46ac4aefafc844626c6" title="Sets the begin of this data range.">setBegin</a> </dd></dl>
 
 </div>
 </div>
@@ -484,46 +443,10 @@ Related Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Returns the number of data points described by this data range. This is equal to the end index minus the begin index.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_data_range.html#a1e7836058f755c6ab9f11996477b7150">length</a> </dd></dl>
 
-</div>
-</div>
-<h2 class="groupheader">Friends And Related Function Documentation</h2>
-<a id="a486dd7af8a090ed069672e3510e6a082" name="a486dd7af8a090ed069672e3510e6a082"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a486dd7af8a090ed069672e3510e6a082">&#9670;&#160;</a></span>operator&lt;&lt;()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">QDebug operator&lt;&lt; </td>
-          <td>(</td>
-          <td class="paramtype">QDebug&#160;</td>
-          <td class="paramname"><em>d</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="class_q_c_p_data_range.html">QCPDataRange</a> &amp;&#160;</td>
-          <td class="paramname"><em>dataRange</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">related</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Prints <em>dataRange</em> in a human readable format to the qDebug output. </p>
+<p>Returns the number of data points described by this data range. </p>
+<p>This is equal to the end index minus the begin index.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_data_range.html#a1e7836058f755c6ab9f11996477b7150" title="Returns the number of data points described by this data range.">length</a> </dd></dl>
 
 </div>
 </div>

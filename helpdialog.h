@@ -1,3 +1,8 @@
+/**
+ * @file helpdialog.h
+ * @brief Header file for the HelpDialog class
+*/
+
 #ifndef HELPDIALOG_H
 #define HELPDIALOG_H
 

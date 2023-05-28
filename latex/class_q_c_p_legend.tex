@@ -18,14 +18,14 @@ enum \mbox{\hyperlink{class_q_c_p_legend_a5404de8bc1e4a994ca4ae69e2c7072f1}{Sele
 , \mbox{\hyperlink{class_q_c_p_legend_a5404de8bc1e4a994ca4ae69e2c7072f1a0fa4758962a46fa1dc9da818abae23c4}{sp\+Legend\+Box}} = 0x001
 , \mbox{\hyperlink{class_q_c_p_legend_a5404de8bc1e4a994ca4ae69e2c7072f1a768bfb95f323db4c66473375032c0af7}{sp\+Items}} = 0x002
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Defines the selectable parts of a legend. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Types inherited from \mbox{\hyperlink{class_q_c_p_layout_grid}{QCPLayout\+Grid}}}
 \begin{DoxyCompactItemize}
 \item 
 enum \mbox{\hyperlink{class_q_c_p_layout_grid_a7d49ee08773de6b2fd246edfed353cca}{Fill\+Order}} \{ \mbox{\hyperlink{class_q_c_p_layout_grid_a7d49ee08773de6b2fd246edfed353ccaa0202730954e26c474cc820164aedce3e}{fo\+Rows\+First}}
 , \mbox{\hyperlink{class_q_c_p_layout_grid_a7d49ee08773de6b2fd246edfed353ccaac4cb4b796ec4822d5894b47b51627fb3}{fo\+Columns\+First}}
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Defines in which direction the grid is filled when using \mbox{\hyperlink{class_q_c_p_layout_grid_a4c44025dd25acd27e053cadfd448ad7b}{add\+Element(\+QCPLayout\+Element$\ast$)}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Types inherited from \mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}}}
 \begin{DoxyCompactItemize}
 \item 
@@ -33,16 +33,16 @@ enum \mbox{\hyperlink{class_q_c_p_layout_element_a0d83360e05735735aaf6d7983c5637
 , \mbox{\hyperlink{class_q_c_p_layout_element_a0d83360e05735735aaf6d7983c56374da288cb59a92280e47261a341f2813e676}{up\+Margins}}
 , \mbox{\hyperlink{class_q_c_p_layout_element_a0d83360e05735735aaf6d7983c56374da5d1ccf5d79967c232c3c511796860045}{up\+Layout}}
  \}
-\item 
+\begin{DoxyCompactList}\small\item\em Defines the phases of the update process, that happens just before a replot. \end{DoxyCompactList}\item 
 enum \mbox{\hyperlink{class_q_c_p_layout_element_a0afb3e5773529e4bd20e448f81be4d2a}{Size\+Constraint\+Rect}} \{ \mbox{\hyperlink{class_q_c_p_layout_element_a0afb3e5773529e4bd20e448f81be4d2aa7fa7e25cd23758b9915c64ed9f1be26c}{scr\+Inner\+Rect}}
 , \mbox{\hyperlink{class_q_c_p_layout_element_a0afb3e5773529e4bd20e448f81be4d2aabe2745b41a6131ed194e13591b08e04d}{scr\+Outer\+Rect}}
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Defines to which rect of a layout element the size constraints that can be set via \mbox{\hyperlink{class_q_c_p_layout_element_a5dd29a3c8bc88440c97c06b67be7886b}{set\+Minimum\+Size}} and \mbox{\hyperlink{class_q_c_p_layout_element_a74eb5280a737ab44833d506db65efd95}{set\+Maximum\+Size}} apply. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Signals}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_q_c_p_legend_a82c88464edac07a9eefaf3906268df3b}{selection\+Changed}} (QCPLegend\+::\+Selectable\+Parts parts)
-\item 
+\begin{DoxyCompactList}\small\item\em This signal is emitted when the selection state of this legend has changed. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_q_c_p_legend_a8a77300fd0976d6bdd8000f4e8d114b8}\label{class_q_c_p_legend_a8a77300fd0976d6bdd8000f4e8d114b8}} 
 void {\bfseries selectable\+Changed} (QCPLegend\+::\+Selectable\+Parts parts)
 \end{DoxyCompactItemize}
@@ -50,12 +50,12 @@ void {\bfseries selectable\+Changed} (QCPLegend\+::\+Selectable\+Parts parts)
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_q_c_p_layerable_abbf8657cedea73ac1c3499b521c90eba}{layer\+Changed}} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$new\+Layer)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This signal is emitted when the layer of this layerable changes, i.\+e. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_q_c_p_legend_a0001a456989bd07ea378883651fabd72}{QCPLegend}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Constructs a new \mbox{\hyperlink{class_q_c_p_legend}{QCPLegend}} instance with default values. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_q_c_p_legend_a844b709a5632313416655f931c8e5631}\label{class_q_c_p_legend_a844b709a5632313416655f931c8e5631}} 
 QPen {\bfseries border\+Pen} () const
 \item 
@@ -98,67 +98,76 @@ QFont {\bfseries selected\+Font} () const
 \mbox{\Hypertarget{class_q_c_p_legend_ab9b469b27787bfb2ce6c8978a31821af}\label{class_q_c_p_legend_ab9b469b27787bfb2ce6c8978a31821af}} 
 QColor {\bfseries selected\+Text\+Color} () const
 \item 
-void \mbox{\hyperlink{class_q_c_p_legend_a866a9e3f5267de7430a6c7f26a61db9f}{set\+Border\+Pen}} (const QPen \&pen)
-\item 
-void \mbox{\hyperlink{class_q_c_p_legend_a497bbcd38baa3598c08e2b3f48103f23}{set\+Brush}} (const QBrush \&brush)
-\item 
+\mbox{\Hypertarget{class_q_c_p_legend_a866a9e3f5267de7430a6c7f26a61db9f}\label{class_q_c_p_legend_a866a9e3f5267de7430a6c7f26a61db9f}} 
+void {\bfseries set\+Border\+Pen} (const QPen \&pen)
+\begin{DoxyCompactList}\small\item\em Sets the pen, the border of the entire legend is drawn with. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_q_c_p_legend_a497bbcd38baa3598c08e2b3f48103f23}\label{class_q_c_p_legend_a497bbcd38baa3598c08e2b3f48103f23}} 
+void {\bfseries set\+Brush} (const QBrush \&brush)
+\begin{DoxyCompactList}\small\item\em Sets the brush of the legend background. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_legend_aa4cda8499e3cb0f3be415edc02984c73}{set\+Font}} (const QFont \&font)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the default font of legend text. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_legend_ae1eb239ff4a4632fe1b6c3e668d845c6}{set\+Text\+Color}} (const QColor \&color)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the default color of legend text. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_legend_a8b0740cce488bf7010da6beda6898984}{set\+Icon\+Size}} (const QSize \&size)
-\item 
-void \mbox{\hyperlink{class_q_c_p_legend_a96b1a37fd4ee6a9778e6e54fe56ab6c2}{set\+Icon\+Size}} (int width, int height)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the size of legend icons. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_q_c_p_legend_a96b1a37fd4ee6a9778e6e54fe56ab6c2}\label{class_q_c_p_legend_a96b1a37fd4ee6a9778e6e54fe56ab6c2}} 
+void {\bfseries set\+Icon\+Size} (int width, int height)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_legend_a62973bd69d5155e8ea3141366e8968f6}{set\+Icon\+Text\+Padding}} (int padding)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the horizontal space in pixels between the legend icon and the text next to it. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_legend_a2f2c93d18a651f4ff294bb3f026f49b8}{set\+Icon\+Border\+Pen}} (const QPen \&pen)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the pen used to draw a border around each legend icon. \end{DoxyCompactList}\item 
 Q\+\_\+\+SLOT void \mbox{\hyperlink{class_q_c_p_legend_a9ce60aa8bbd89f62ae4fa83ac6c60110}{set\+Selectable\+Parts}} (const Selectable\+Parts \&selectable\+Parts)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets whether the user can (de-\/)select the parts in {\itshape selectable} by clicking on the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} surface. \end{DoxyCompactList}\item 
 Q\+\_\+\+SLOT void \mbox{\hyperlink{class_q_c_p_legend_a2aee309bb5c2a794b1987f3fc97f8ad8}{set\+Selected\+Parts}} (const Selectable\+Parts \&selected\+Parts)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the selected state of the respective legend parts described by \mbox{\hyperlink{class_q_c_p_legend_a5404de8bc1e4a994ca4ae69e2c7072f1}{Selectable\+Part}}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_legend_a2c35d262953a25d96b6112653fbefc88}{set\+Selected\+Border\+Pen}} (const QPen \&pen)
-\item 
+\begin{DoxyCompactList}\small\item\em When the legend box is selected, this pen is used to draw the border instead of the normal pen set via \mbox{\hyperlink{class_q_c_p_legend_a866a9e3f5267de7430a6c7f26a61db9f}{set\+Border\+Pen}}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_legend_ade93aabe9bcccaf9cf46cec22c658027}{set\+Selected\+Icon\+Border\+Pen}} (const QPen \&pen)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the pen legend items will use to draw their icon borders, when they are selected. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_legend_a875227f3219c9799464631dec5e8f1bd}{set\+Selected\+Brush}} (const QBrush \&brush)
-\item 
+\begin{DoxyCompactList}\small\item\em When the legend box is selected, this brush is used to draw the legend background instead of the normal brush set via \mbox{\hyperlink{class_q_c_p_legend_a497bbcd38baa3598c08e2b3f48103f23}{set\+Brush}}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_legend_ab580a01c3c0a239374ed66c29edf5ad2}{set\+Selected\+Font}} (const QFont \&font)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the default font that is used by legend items when they are selected. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_legend_a7674dfc7a1f30e1abd1018c0ed45e0bc}{set\+Selected\+Text\+Color}} (const QColor \&color)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the default text color that is used by legend items when they are selected. \end{DoxyCompactList}\item 
 virtual double \mbox{\hyperlink{class_q_c_p_legend_aa53507624491908fb3d1a514b1fc674e}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant $\ast$details=0) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
-\item 
+\begin{DoxyCompactList}\small\item\em Layout elements are sensitive to events inside their outer rect. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_q_c_p_abstract_legend_item}{QCPAbstract\+Legend\+Item}} $\ast$ \mbox{\hyperlink{class_q_c_p_legend_acfe9694c45104a3359d3806ed366fcf7}{item}} (int index) const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the item with index {\itshape i}. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_q_c_p_plottable_legend_item}{QCPPlottable\+Legend\+Item}} $\ast$ \mbox{\hyperlink{class_q_c_p_legend_a91e790002d8bf15a20628a8e8841e397}{item\+With\+Plottable}} (const \mbox{\hyperlink{class_q_c_p_abstract_plottable}{QCPAbstract\+Plottable}} $\ast$plottable) const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the \mbox{\hyperlink{class_q_c_p_plottable_legend_item}{QCPPlottable\+Legend\+Item}} which is associated with {\itshape plottable} (e.\+g. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_q_c_p_legend_a57ab86ab8b2a3762d4c1455eb5452c88}{item\+Count}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the number of items currently in the legend. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_q_c_p_legend_ad0f698e33db454a6c103b5206740e599}{has\+Item}} (\mbox{\hyperlink{class_q_c_p_abstract_legend_item}{QCPAbstract\+Legend\+Item}} $\ast$\mbox{\hyperlink{class_q_c_p_legend_acfe9694c45104a3359d3806ed366fcf7}{item}}) const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns whether the legend contains {\itshape item}. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_q_c_p_legend_a4b90a442af871582df85c2bc13f91e88}{has\+Item\+With\+Plottable}} (const \mbox{\hyperlink{class_q_c_p_abstract_plottable}{QCPAbstract\+Plottable}} $\ast$plottable) const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns whether the legend contains a \mbox{\hyperlink{class_q_c_p_plottable_legend_item}{QCPPlottable\+Legend\+Item}} which is associated with {\itshape plottable} (e.\+g. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_q_c_p_legend_a3ab274de52d2951faea45a6d975e6b3f}{add\+Item}} (\mbox{\hyperlink{class_q_c_p_abstract_legend_item}{QCPAbstract\+Legend\+Item}} $\ast$\mbox{\hyperlink{class_q_c_p_legend_acfe9694c45104a3359d3806ed366fcf7}{item}})
-\item 
+\begin{DoxyCompactList}\small\item\em Adds {\itshape item} to the legend, if it\textquotesingle{}s not present already. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_q_c_p_legend_ac91595c3eaa746fe6321d2eb952c63bb}{remove\+Item}} (int index)
-\item 
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Removes the item with the specified {\itshape index} from the legend and deletes it. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_q_c_p_legend_a2aea4ec6da2d454dd0b241a254d65082}{remove\+Item}} (\mbox{\hyperlink{class_q_c_p_abstract_legend_item}{QCPAbstract\+Legend\+Item}} $\ast$\mbox{\hyperlink{class_q_c_p_legend_acfe9694c45104a3359d3806ed366fcf7}{item}})
-\item 
-void \mbox{\hyperlink{class_q_c_p_legend_a24795c7250eb5214fcea16b7217b4dfb}{clear\+Items}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Removes {\itshape item} from the legend and deletes it. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_q_c_p_legend_a24795c7250eb5214fcea16b7217b4dfb}\label{class_q_c_p_legend_a24795c7250eb5214fcea16b7217b4dfb}} 
+void {\bfseries clear\+Items} ()
+\begin{DoxyCompactList}\small\item\em Removes all items from the legend. \end{DoxyCompactList}\item 
 QList$<$ \mbox{\hyperlink{class_q_c_p_abstract_legend_item}{QCPAbstract\+Legend\+Item}} $\ast$ $>$ \mbox{\hyperlink{class_q_c_p_legend_ac7d9e567d5c551e09cd9bcc4306c5532}{selected\+Items}} () const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns the legend items that are currently selected. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_q_c_p_layout_grid}{QCPLayout\+Grid}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_q_c_p_layout_grid_ab2a4c1587dc8aed4c41c509c8d8d2a64}{QCPLayout\+Grid}} ()
-\item 
+\mbox{\Hypertarget{class_q_c_p_layout_grid_ab2a4c1587dc8aed4c41c509c8d8d2a64}\label{class_q_c_p_layout_grid_ab2a4c1587dc8aed4c41c509c8d8d2a64}} 
+{\bfseries QCPLayout\+Grid} ()
+\begin{DoxyCompactList}\small\item\em Creates an instance of \mbox{\hyperlink{class_q_c_p_layout_grid}{QCPLayout\+Grid}} and sets default values. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_q_c_p_layout_grid_a19c66fd76cbce58a8e94f33797e0c0aa}{row\+Count}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the number of rows in the layout. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_q_c_p_layout_grid_a1a2962cbf45011405b64b913afa8e7a2}{column\+Count}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the number of columns in the layout. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_q_c_p_layout_grid_a7c0c87dcd496860d39cb3e193d108113}\label{class_q_c_p_layout_grid_a7c0c87dcd496860d39cb3e193d108113}} 
 QList$<$ double $>$ {\bfseries column\+Stretch\+Factors} () const
 \item 
@@ -178,93 +187,99 @@ int {\bfseries wrap} () const
 \mbox{\hyperlink{class_q_c_p_layout_grid_a7d49ee08773de6b2fd246edfed353cca}{Fill\+Order}} {\bfseries fill\+Order} () const
 \item 
 void \mbox{\hyperlink{class_q_c_p_layout_grid_ae38f31a71687b9d7ee3104852528fb50}{set\+Column\+Stretch\+Factor}} (int column, double factor)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the stretch {\itshape factor} of {\itshape column}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layout_grid_a6c2591d1a7e2534ce036989543b49e57}{set\+Column\+Stretch\+Factors}} (const QList$<$ double $>$ \&factors)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the stretch {\itshape factors} of all columns. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layout_grid_a7b0273de5369bd93d942edbaf5b166ec}{set\+Row\+Stretch\+Factor}} (int row, double factor)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the stretch {\itshape factor} of {\itshape row}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layout_grid_a200b45f9c908f96ebadaa3c8d87a2782}{set\+Row\+Stretch\+Factors}} (const QList$<$ double $>$ \&factors)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the stretch {\itshape factors} of all rows. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layout_grid_a3a49272aba32bb0fddc3bb2a45a3dba0}{set\+Column\+Spacing}} (int pixels)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the gap that is left blank between columns to {\itshape pixels}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layout_grid_aaef2cd2d456197ee06a208793678e436}{set\+Row\+Spacing}} (int pixels)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the gap that is left blank between rows to {\itshape pixels}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layout_grid_ab36af18d77e4428386d02970382ee598}{set\+Wrap}} (int count)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the maximum number of columns or rows that are used, before new elements added with \mbox{\hyperlink{class_q_c_p_layout_grid_a4c44025dd25acd27e053cadfd448ad7b}{add\+Element(\+QCPLayout\+Element$\ast$)}} will start to fill the next row or column, respectively. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layout_grid_affc2f3cfd22f28698c5b29b960d2a391}{set\+Fill\+Order}} (\mbox{\hyperlink{class_q_c_p_layout_grid_a7d49ee08773de6b2fd246edfed353cca}{Fill\+Order}} order, bool rearrange=true)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the filling order and wrapping behaviour that is used when adding new elements with the method \mbox{\hyperlink{class_q_c_p_layout_grid_a4c44025dd25acd27e053cadfd448ad7b}{add\+Element(\+QCPLayout\+Element$\ast$)}}. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_q_c_p_layout_grid_a6cf43f14d3fa335fd8758561ccf1f78c}{update\+Layout}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
 virtual int \mbox{\hyperlink{class_q_c_p_layout_grid_a9a8942aface780a02445ebcf14c48513}{element\+Count}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the number of elements/cells in the layout. \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}} $\ast$ \mbox{\hyperlink{class_q_c_p_layout_grid_a4288f174082555f6bd92021bdedb75dc}{element\+At}} (int index) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
-\item 
+\begin{DoxyCompactList}\small\item\em \textbackslash{}seebaseclassmethod \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}} $\ast$ \mbox{\hyperlink{class_q_c_p_layout_grid_a17dd220234d1bbf8835abcc666384d45}{take\+At}} (int index) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
-\item 
+\begin{DoxyCompactList}\small\item\em \textbackslash{}seebaseclassmethod \end{DoxyCompactList}\item 
 virtual bool \mbox{\hyperlink{class_q_c_p_layout_grid_aee961c2eb6cf8a85dcbc5a7d7b6c1a00}{take}} (\mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}} $\ast$\mbox{\hyperlink{class_q_c_p_layout_grid_a602b426609b4411cf6a93c3ddf3a381a}{element}}) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
-\item 
+\begin{DoxyCompactList}\small\item\em Removes the specified {\itshape element} from the layout and returns true on success. \end{DoxyCompactList}\item 
 virtual QList$<$ \mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}} $\ast$ $>$ \mbox{\hyperlink{class_q_c_p_layout_grid_a7d5b968b4cf57393e9e387976d91f8f7}{elements}} (bool recursive) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
-\item 
+\begin{DoxyCompactList}\small\item\em Returns a list of all child elements in this layout element. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_q_c_p_layout_grid_a38621ca7aa633b6a9a88617df7f08672}{simplify}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
-\item 
+\begin{DoxyCompactList}\small\item\em Simplifies the layout by collapsing rows and columns which only contain empty cells. \end{DoxyCompactList}\item 
 virtual QSize \mbox{\hyperlink{class_q_c_p_layout_grid_a0438bc58b4d3894d01db95b08d4268df}{minimum\+Outer\+Size\+Hint}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the suggested minimum size this layout element (the \mbox{\hyperlink{class_q_c_p_layout_element_a2a32a12a6161c9dffbadeb9cc585510c}{outer\+Rect}}) may be compressed to, if no manual minimum size is set. \end{DoxyCompactList}\item 
 virtual QSize \mbox{\hyperlink{class_q_c_p_layout_grid_a41ce0014c220d77b909e2ca937f0e599}{maximum\+Outer\+Size\+Hint}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the suggested maximum size this layout element (the \mbox{\hyperlink{class_q_c_p_layout_element_a2a32a12a6161c9dffbadeb9cc585510c}{outer\+Rect}}) may be expanded to, if no manual maximum size is set. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}} $\ast$ \mbox{\hyperlink{class_q_c_p_layout_grid_a602b426609b4411cf6a93c3ddf3a381a}{element}} (int row, int column) const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the element in the cell in {\itshape row} and {\itshape column}. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_q_c_p_layout_grid_adff1a2ca691ed83d2d24a4cd1fe17012}{add\+Element}} (int row, int column, \mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}} $\ast$\mbox{\hyperlink{class_q_c_p_layout_grid_a602b426609b4411cf6a93c3ddf3a381a}{element}})
-\item 
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Adds the {\itshape element} to cell with {\itshape row} and {\itshape column}. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_q_c_p_layout_grid_a4c44025dd25acd27e053cadfd448ad7b}{add\+Element}} (\mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}} $\ast$\mbox{\hyperlink{class_q_c_p_layout_grid_a602b426609b4411cf6a93c3ddf3a381a}{element}})
-\item 
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Adds the {\itshape element} to the next empty cell according to the current fill order (\mbox{\hyperlink{class_q_c_p_layout_grid_affc2f3cfd22f28698c5b29b960d2a391}{set\+Fill\+Order}}) and wrapping (\mbox{\hyperlink{class_q_c_p_layout_grid_ab36af18d77e4428386d02970382ee598}{set\+Wrap}}). \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_q_c_p_layout_grid_ab0cf4f7edc9414a3bfaddac0f46dc0a0}{has\+Element}} (int row, int column)
-\item 
+\begin{DoxyCompactList}\small\item\em Returns whether the cell at {\itshape row} and {\itshape column} exists and contains a valid element, i.\+e. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layout_grid_a886c0dcbabd51a45da399e044552b685}{expand\+To}} (int new\+Row\+Count, int new\+Column\+Count)
-\item 
+\begin{DoxyCompactList}\small\item\em Expands the layout to have {\itshape new\+Row\+Count} rows and {\itshape new\+Column\+Count} columns. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layout_grid_a48af3dd7c3a653d9c3d7dd99bd02e838}{insert\+Row}} (int new\+Index)
-\item 
+\begin{DoxyCompactList}\small\item\em Inserts a new row with empty cells at the row index {\itshape new\+Index}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layout_grid_a1e880a321dbe8b43b471ccd764433dc4}{insert\+Column}} (int new\+Index)
-\item 
+\begin{DoxyCompactList}\small\item\em Inserts a new column with empty cells at the column index {\itshape new\+Index}. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_q_c_p_layout_grid_a682ba76f130810ffd294032a1bfbcfcb}{row\+Col\+To\+Index}} (int row, int column) const
-\item 
+\begin{DoxyCompactList}\small\item\em Converts the given {\itshape row} and {\itshape column} to the linear index used by some methods of \mbox{\hyperlink{class_q_c_p_layout_grid}{QCPLayout\+Grid}} and \mbox{\hyperlink{class_q_c_p_layout}{QCPLayout}}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layout_grid_a577223db920e2acb34bc1091080c76d1}{index\+To\+Row\+Col}} (int index, int \&row, int \&column) const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Converts the linear index to row and column indices and writes the result to {\itshape row} and {\itshape column}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_q_c_p_layout}{QCPLayout}}}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_q_c_p_layout_a04222e6e1361fd802d48f1a25b7020d4}{QCPLayout}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Creates an instance of \mbox{\hyperlink{class_q_c_p_layout}{QCPLayout}} and sets default values. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_q_c_p_layout_a48ecc9c98ea90b547c3e27a931a8f7bd}{update}} (\mbox{\hyperlink{class_q_c_p_layout_element_a0d83360e05735735aaf6d7983c56374d}{Update\+Phase}} phase) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
-\item 
+\begin{DoxyCompactList}\small\item\em If {\itshape phase} is \mbox{\hyperlink{class_q_c_p_layout_element_a0d83360e05735735aaf6d7983c56374da5d1ccf5d79967c232c3c511796860045}{up\+Layout}}, calls update\+Layout, which subclasses may reimplement to reposition and resize their cells. \end{DoxyCompactList}\item 
 virtual QList$<$ \mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}} $\ast$ $>$ \mbox{\hyperlink{class_q_c_p_layout_aca129722c019f91d3367046f80abfa77}{elements}} (bool recursive) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
-\item 
+\begin{DoxyCompactList}\small\item\em Returns a list of all child elements in this layout element. \end{DoxyCompactList}\item 
 virtual int \mbox{\hyperlink{class_q_c_p_layout_a39d3e9ef5d9b82ab1885ba1cb9597e56}{element\+Count}} () const =0
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the number of elements/cells in the layout. \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}} $\ast$ \mbox{\hyperlink{class_q_c_p_layout_afa73ca7d859f8a3ee5c73c9b353d2a56}{element\+At}} (int index) const =0
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the element in the cell with the given {\itshape index}. \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}} $\ast$ \mbox{\hyperlink{class_q_c_p_layout_a5a79621fa0a6eabb8b520cfc04fb601a}{take\+At}} (int index)=0
-\item 
+\begin{DoxyCompactList}\small\item\em Removes the element with the given {\itshape index} from the layout and returns it. \end{DoxyCompactList}\item 
 virtual bool \mbox{\hyperlink{class_q_c_p_layout_ada26cd17e56472b0b4d7fbbc96873e4c}{take}} (\mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}} $\ast$element)=0
-\item 
+\begin{DoxyCompactList}\small\item\em Removes the specified {\itshape element} from the layout and returns true on success. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_q_c_p_layout_a41e6ac049143866e8f8b4964efab01b2}{simplify}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Simplifies the layout by collapsing empty cells. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_q_c_p_layout_a2403f684fee3ce47132faaeed00bb066}{remove\+At}} (int index)
-\item 
+\begin{DoxyCompactList}\small\item\em Removes and deletes the element at the provided {\itshape index}. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_q_c_p_layout_a6c58f537d8086f352576ab7c5b15d0bc}{remove}} (\mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}} $\ast$element)
-\item 
+\begin{DoxyCompactList}\small\item\em Removes and deletes the provided {\itshape element}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layout_a02883bdf2769b5b227f0232dba1ac4ee}{clear}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Removes and deletes all layout elements in this layout. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_q_c_p_layout_element_a8947f0ada17e672aaba3d424cbbb67e3}{QCPLayout\+Element}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$parent\+Plot=0)
-\item 
-\mbox{\hyperlink{class_q_c_p_layout}{QCPLayout}} $\ast$ \mbox{\hyperlink{class_q_c_p_layout_element_a4efdcbde9d28f410e5ef166c9d691deb}{layout}} () const
-\item 
+\mbox{\Hypertarget{class_q_c_p_layout_element_a8947f0ada17e672aaba3d424cbbb67e3}\label{class_q_c_p_layout_element_a8947f0ada17e672aaba3d424cbbb67e3}} 
+{\bfseries QCPLayout\+Element} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$parent\+Plot=0)
+\begin{DoxyCompactList}\small\item\em Creates an instance of \mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}} and sets default values. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_q_c_p_layout_element_a4efdcbde9d28f410e5ef166c9d691deb}\label{class_q_c_p_layout_element_a4efdcbde9d28f410e5ef166c9d691deb}} 
+\mbox{\hyperlink{class_q_c_p_layout}{QCPLayout}} $\ast$ {\bfseries layout} () const
+\begin{DoxyCompactList}\small\item\em Returns the parent layout of this layout element. \end{DoxyCompactList}\item 
 QRect \mbox{\hyperlink{class_q_c_p_layout_element_a208effccfe2cca4a0eaf9393e60f2dd4}{rect}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the inner rect of this layout element. \end{DoxyCompactList}\item 
 QRect \mbox{\hyperlink{class_q_c_p_layout_element_a2a32a12a6161c9dffbadeb9cc585510c}{outer\+Rect}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the outer rect of this layout element. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_q_c_p_layout_element_af4ac9450aa2d60863bf3a8ea0c940c9d}\label{class_q_c_p_layout_element_af4ac9450aa2d60863bf3a8ea0c940c9d}} 
 QMargins {\bfseries margins} () const
 \item 
@@ -290,40 +305,44 @@ QSize {\bfseries maximum\+Size} () const
 QHash$<$ \mbox{\hyperlink{namespace_q_c_p_a7e487e3e2ccb62ab7771065bab7cae54}{QCP\+::\+Margin\+Side}}, \mbox{\hyperlink{class_q_c_p_margin_group}{QCPMargin\+Group}} $\ast$ $>$ {\bfseries margin\+Groups} () const
 \item 
 void \mbox{\hyperlink{class_q_c_p_layout_element_a38975ea13e36de8e53391ce41d94bc0f}{set\+Outer\+Rect}} (const QRect \&\mbox{\hyperlink{class_q_c_p_layout_element_a208effccfe2cca4a0eaf9393e60f2dd4}{rect}})
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the outer rect of this layout element. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layout_element_a8f450b1f3f992ad576fce2c63d8b79cf}{set\+Margins}} (const QMargins \&margins)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the margins of this layout element. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layout_element_a0a8a17abc16b7923159fcc7608f94673}{set\+Minimum\+Margins}} (const QMargins \&margins)
-\item 
+\begin{DoxyCompactList}\small\item\em If \mbox{\hyperlink{class_q_c_p_layout_element_accfda49994e3e6d51ed14504abf9d27d}{set\+Auto\+Margins}} is enabled on some or all margins, this function is used to provide minimum values for those margins. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layout_element_accfda49994e3e6d51ed14504abf9d27d}{set\+Auto\+Margins}} (QCP\+::\+Margin\+Sides sides)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets on which sides the margin shall be calculated automatically. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layout_element_a5dd29a3c8bc88440c97c06b67be7886b}{set\+Minimum\+Size}} (const QSize \&size)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the minimum size of this layout element. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layout_element_a8e0447614a0bf92de9a7304588c6b96e}{set\+Minimum\+Size}} (int width, int height)
-\item 
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Sets the minimum size of this layout element. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layout_element_a74eb5280a737ab44833d506db65efd95}{set\+Maximum\+Size}} (const QSize \&size)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the maximum size of this layout element. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layout_element_a03e0e9c48f230217c529b0819f832d84}{set\+Maximum\+Size}} (int width, int height)
-\item 
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Sets the maximum size of this layout element. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layout_element_a361666cdcc6fbfd37344cc44be746b0f}{set\+Size\+Constraint\+Rect}} (\mbox{\hyperlink{class_q_c_p_layout_element_a0afb3e5773529e4bd20e448f81be4d2a}{Size\+Constraint\+Rect}} constraint\+Rect)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets to which rect of a layout element the size constraints apply. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layout_element_a516e56f76b6bc100e8e71d329866847d}{set\+Margin\+Group}} (QCP\+::\+Margin\+Sides sides, \mbox{\hyperlink{class_q_c_p_margin_group}{QCPMargin\+Group}} $\ast$group)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the margin {\itshape group} of the specified margin {\itshape sides}. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_q_c_p_layout_element_a929c2ec62e0e0e1d8418eaa802e2af9b}{update}} (\mbox{\hyperlink{class_q_c_p_layout_element_a0d83360e05735735aaf6d7983c56374d}{Update\+Phase}} phase)
-\item 
+\begin{DoxyCompactList}\small\item\em Updates the layout element and sub-\/elements. \end{DoxyCompactList}\item 
 virtual QSize \mbox{\hyperlink{class_q_c_p_layout_element_a46789036c4fcb190fa374f91321d7c09}{minimum\+Outer\+Size\+Hint}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the suggested minimum size this layout element (the \mbox{\hyperlink{class_q_c_p_layout_element_a2a32a12a6161c9dffbadeb9cc585510c}{outer\+Rect}}) may be compressed to, if no manual minimum size is set. \end{DoxyCompactList}\item 
 virtual QSize \mbox{\hyperlink{class_q_c_p_layout_element_ad96efb977a26e360e8a64a4c1e56456d}{maximum\+Outer\+Size\+Hint}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the suggested maximum size this layout element (the \mbox{\hyperlink{class_q_c_p_layout_element_a2a32a12a6161c9dffbadeb9cc585510c}{outer\+Rect}}) may be expanded to, if no manual maximum size is set. \end{DoxyCompactList}\item 
 virtual QList$<$ \mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}} $\ast$ $>$ \mbox{\hyperlink{class_q_c_p_layout_element_a76dec8cb31e498994a944d7647a43309}{elements}} (bool recursive) const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns a list of all child elements in this layout element. \end{DoxyCompactList}\item 
 virtual double \mbox{\hyperlink{class_q_c_p_layout_element_ae97f483cccedadbf18ea4525ef240ee4}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant $\ast$details=0) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Layout elements are sensitive to events inside their outer rect. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_q_c_p_layerable_a74c0fa237f29bf0e49565013fc5d1ec0}{QCPLayerable}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$plot, QString target\+Layer=QString(), \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}}=0)
-\item 
+\begin{DoxyCompactList}\small\item\em Creates a new \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} instance. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_q_c_p_layerable_af0297b944b6192b6d67d00bff41b6b70}\label{class_q_c_p_layerable_af0297b944b6192b6d67d00bff41b6b70}} 
 bool {\bfseries visible} () const
 \item 
@@ -331,7 +350,7 @@ bool {\bfseries visible} () const
 \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$ {\bfseries parent\+Plot} () const
 \item 
 \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $\ast$ \mbox{\hyperlink{class_q_c_p_layerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the parent layerable of this layerable. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_q_c_p_layerable_a9d4e121a7f1d2314f906fe698209cac9}\label{class_q_c_p_layerable_a9d4e121a7f1d2314f906fe698209cac9}} 
 \mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$ {\bfseries layer} () const
 \item 
@@ -339,17 +358,17 @@ bool {\bfseries visible} () const
 bool {\bfseries antialiased} () const
 \item 
 void \mbox{\hyperlink{class_q_c_p_layerable_a3bed99ddc396b48ce3ebfdc0418744f8}{set\+Visible}} (bool on)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the visibility of this layerable object. \end{DoxyCompactList}\item 
 Q\+\_\+\+SLOT bool \mbox{\hyperlink{class_q_c_p_layerable_ab0d0da6d2de45a118886d2c8e16d5a54}{set\+Layer}} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$layer)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the {\itshape layer} of this layerable object. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_q_c_p_layerable_ab25a0e7b897993b44447caee0f142083}{set\+Layer}} (const QString \&layer\+Name)
-\item 
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Sets the layer of this layerable object by name. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layerable_a4fd43e89be4a553ead41652565ff0581}{set\+Antialiased}} (bool enabled)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets whether this object will be drawn antialiased or not. \end{DoxyCompactList}\item 
 virtual double \mbox{\hyperlink{class_q_c_p_layerable_a04db8351fefd44cfdb77958e75c6288e}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant $\ast$details=0) const
-\item 
+\begin{DoxyCompactList}\small\item\em This function is used to decide whether a click hits a layerable object or not. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_q_c_p_layerable_ab054e88f15d485defcb95e7376f119e7}{real\+Visibility}} () const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns whether this layerable is visible, taking the visibility of the layerable parent and the visibility of this layerable\textquotesingle{}s layer into account. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -387,7 +406,7 @@ void {\bfseries get\+Maximum\+Row\+Col\+Sizes} (QVector$<$ int $>$ $\ast$max\+Co
 virtual void {\bfseries update\+Layout} ()
 \item 
 void \mbox{\hyperlink{class_q_c_p_layout_aeac66a292f65cf7f8adf94eb92345b3e}{size\+Constraints\+Changed}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Subclasses call this method to report changed (minimum/maximum) size constraints. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_q_c_p_layout_af6dbbc24156a808da29cd1ec031729a3}\label{class_q_c_p_layout_af6dbbc24156a808da29cd1ec031729a3}} 
 void {\bfseries adopt\+Element} (\mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}} $\ast$el)
 \item 
@@ -437,15 +456,15 @@ virtual void {\bfseries select\+Event} (QMouse\+Event $\ast$event, bool additive
 virtual void {\bfseries deselect\+Event} (bool $\ast$selection\+State\+Changed)
 \item 
 virtual void \mbox{\hyperlink{class_q_c_p_layerable_af6567604818db90f4fd52822f8bc8376}{mouse\+Press\+Event}} (QMouse\+Event $\ast$event, const QVariant \&details)
-\item 
+\begin{DoxyCompactList}\small\item\em This event gets called when the user presses a mouse button while the cursor is over the layerable. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_q_c_p_layerable_a9eee1ba47fd69be111059ca3881933e4}{mouse\+Move\+Event}} (QMouse\+Event $\ast$event, const QPointF \&start\+Pos)
-\item 
+\begin{DoxyCompactList}\small\item\em This event gets called when the user moves the mouse while holding a mouse button, after this layerable has become the mouse grabber by accepting the preceding \mbox{\hyperlink{class_q_c_p_layerable_af6567604818db90f4fd52822f8bc8376}{mouse\+Press\+Event}}. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_q_c_p_layerable_aa0d79b005686f668622bbe66ac03ba2c}{mouse\+Release\+Event}} (QMouse\+Event $\ast$event, const QPointF \&start\+Pos)
-\item 
+\begin{DoxyCompactList}\small\item\em This event gets called when the user releases the mouse button, after this layerable has become the mouse grabber by accepting the preceding \mbox{\hyperlink{class_q_c_p_layerable_af6567604818db90f4fd52822f8bc8376}{mouse\+Press\+Event}}. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_q_c_p_layerable_a4171e2e823aca242dd0279f00ed2de81}{mouse\+Double\+Click\+Event}} (QMouse\+Event $\ast$event, const QVariant \&details)
-\item 
+\begin{DoxyCompactList}\small\item\em This event gets called when the user presses the mouse button a second time in a double-\/click, while the cursor is over the layerable. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_q_c_p_layerable_a47dfd7b8fd99c08ca54e09c362b6f022}{wheel\+Event}} (QWheel\+Event $\ast$event)
-\item 
+\begin{DoxyCompactList}\small\item\em This event gets called when the user turns the mouse scroll wheel while the cursor is over the layerable. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_q_c_p_layerable_a8cbe5a0c9a5674249982f5ca5f8e02bc}\label{class_q_c_p_layerable_a8cbe5a0c9a5674249982f5ca5f8e02bc}} 
 void {\bfseries initialize\+Parent\+Plot} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$parent\+Plot)
 \item 
@@ -619,7 +638,9 @@ By default, every \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} has one 
 \doxysubsubsection{\texorpdfstring{SelectablePart}{SelectablePart}}
 {\footnotesize\ttfamily enum \mbox{\hyperlink{class_q_c_p_legend_a5404de8bc1e4a994ca4ae69e2c7072f1}{QCPLegend\+::\+Selectable\+Part}}}
 
-Defines the selectable parts of a legend
+
+
+Defines the selectable parts of a legend. 
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_legend_a2aee309bb5c2a794b1987f3fc97f8ad8}{set\+Selected\+Parts}}, \mbox{\hyperlink{class_q_c_p_legend_a9ce60aa8bbd89f62ae4fa83ac6c60110}{set\+Selectable\+Parts}} 
@@ -647,7 +668,9 @@ sp\+Items&{\ttfamily 0x002} Legend items individually (see \mbox{\hyperlink{clas
 \doxysubsubsection{\texorpdfstring{QCPLegend()}{QCPLegend()}}
 {\footnotesize\ttfamily QCPLegend\+::\+QCPLegend (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
-Constructs a new \mbox{\hyperlink{class_q_c_p_legend}{QCPLegend}} instance with default values.
+
+
+Constructs a new \mbox{\hyperlink{class_q_c_p_legend}{QCPLegend}} instance with default values. 
 
 Note that by default, \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} already contains a legend ready to be used as \mbox{\hyperlink{class_q_custom_plot_a4eadcd237dc6a09938b68b16877fa6af}{QCustom\+Plot\+::legend}} 
 
@@ -658,7 +681,11 @@ Note that by default, \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} alre
 \doxysubsubsection{\texorpdfstring{addItem()}{addItem()}}
 {\footnotesize\ttfamily bool QCPLegend\+::add\+Item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_abstract_legend_item}{QCPAbstract\+Legend\+Item}} $\ast$}]{item }\end{DoxyParamCaption})}
 
-Adds {\itshape item} to the legend, if it\textquotesingle{}s not present already. \mbox{\hyperlink{class_the}{The}} element is arranged according to the current fill order (\mbox{\hyperlink{class_q_c_p_layout_grid_affc2f3cfd22f28698c5b29b960d2a391}{set\+Fill\+Order}}) and wrapping (\mbox{\hyperlink{class_q_c_p_layout_grid_ab36af18d77e4428386d02970382ee598}{set\+Wrap}}).
+
+
+Adds {\itshape item} to the legend, if it\textquotesingle{}s not present already. 
+
+\mbox{\hyperlink{class_the}{The}} element is arranged according to the current fill order (\mbox{\hyperlink{class_q_c_p_layout_grid_affc2f3cfd22f28698c5b29b960d2a391}{set\+Fill\+Order}}) and wrapping (\mbox{\hyperlink{class_q_c_p_layout_grid_ab36af18d77e4428386d02970382ee598}{set\+Wrap}}).
 
 Returns true on sucess, i.\+e. if the item wasn\textquotesingle{}t in the list already and has been successfuly added.
 
@@ -677,13 +704,7 @@ Returns true on sucess, i.\+e. if the item wasn\textquotesingle{}t in the list a
 
 Reimplemented from \mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}}.
 
-\mbox{\Hypertarget{class_q_c_p_legend_a24795c7250eb5214fcea16b7217b4dfb}\label{class_q_c_p_legend_a24795c7250eb5214fcea16b7217b4dfb}} 
-\index{QCPLegend@{QCPLegend}!clearItems@{clearItems}}
-\index{clearItems@{clearItems}!QCPLegend@{QCPLegend}}
-\doxysubsubsection{\texorpdfstring{clearItems()}{clearItems()}}
-{\footnotesize\ttfamily void QCPLegend\+::clear\+Items (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-Removes all items from the legend. \mbox{\Hypertarget{class_q_c_p_legend_ac2066837f7ebc32a5b15434cdca5b176}\label{class_q_c_p_legend_ac2066837f7ebc32a5b15434cdca5b176}} 
+\mbox{\Hypertarget{class_q_c_p_legend_ac2066837f7ebc32a5b15434cdca5b176}\label{class_q_c_p_legend_ac2066837f7ebc32a5b15434cdca5b176}} 
 \index{QCPLegend@{QCPLegend}!deselectEvent@{deselectEvent}}
 \index{deselectEvent@{deselectEvent}!QCPLegend@{QCPLegend}}
 \doxysubsubsection{\texorpdfstring{deselectEvent()}{deselectEvent()}}
@@ -709,7 +730,9 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Eleme
 \doxysubsubsection{\texorpdfstring{hasItem()}{hasItem()}}
 {\footnotesize\ttfamily bool QCPLegend\+::has\+Item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_abstract_legend_item}{QCPAbstract\+Legend\+Item}} $\ast$}]{item }\end{DoxyParamCaption}) const}
 
-Returns whether the legend contains {\itshape item}.
+
+
+Returns whether the legend contains {\itshape item}. 
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_legend_a4b90a442af871582df85c2bc13f91e88}{has\+Item\+With\+Plottable}} 
@@ -720,7 +743,11 @@ Returns whether the legend contains {\itshape item}.
 \doxysubsubsection{\texorpdfstring{hasItemWithPlottable()}{hasItemWithPlottable()}}
 {\footnotesize\ttfamily bool QCPLegend\+::has\+Item\+With\+Plottable (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_c_p_abstract_plottable}{QCPAbstract\+Plottable}} $\ast$}]{plottable }\end{DoxyParamCaption}) const}
 
-Returns whether the legend contains a \mbox{\hyperlink{class_q_c_p_plottable_legend_item}{QCPPlottable\+Legend\+Item}} which is associated with {\itshape plottable} (e.\+g. a \mbox{\hyperlink{class_q_c_p_graph}{QCPGraph}}$\ast$). If such an item isn\textquotesingle{}t in the legend, returns false.
+
+
+Returns whether the legend contains a \mbox{\hyperlink{class_q_c_p_plottable_legend_item}{QCPPlottable\+Legend\+Item}} which is associated with {\itshape plottable} (e.\+g. 
+
+a \mbox{\hyperlink{class_q_c_p_graph}{QCPGraph}}$\ast$). If such an item isn\textquotesingle{}t in the legend, returns false.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_legend_a91e790002d8bf15a20628a8e8841e397}{item\+With\+Plottable}} 
@@ -731,7 +758,9 @@ Returns whether the legend contains a \mbox{\hyperlink{class_q_c_p_plottable_leg
 \doxysubsubsection{\texorpdfstring{item()}{item()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_abstract_legend_item}{QCPAbstract\+Legend\+Item}} $\ast$ QCPLegend\+::item (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const}
 
-Returns the item with index {\itshape i}.
+
+
+Returns the item with index {\itshape i}. 
 
 Note that the linear index depends on the current fill order (\mbox{\hyperlink{class_q_c_p_layout_grid_affc2f3cfd22f28698c5b29b960d2a391}{set\+Fill\+Order}}).
 
@@ -744,7 +773,9 @@ Note that the linear index depends on the current fill order (\mbox{\hyperlink{c
 \doxysubsubsection{\texorpdfstring{itemCount()}{itemCount()}}
 {\footnotesize\ttfamily int QCPLegend\+::item\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-Returns the number of items currently in the legend.
+
+
+Returns the number of items currently in the legend. 
 
 Note that if empty cells are in the legend (e.\+g. by calling methods of the \mbox{\hyperlink{class_q_c_p_layout_grid}{QCPLayout\+Grid}} base class which allows creating empty cells), they are included in the returned count.
 
@@ -757,7 +788,11 @@ Note that if empty cells are in the legend (e.\+g. by calling methods of the \mb
 \doxysubsubsection{\texorpdfstring{itemWithPlottable()}{itemWithPlottable()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_plottable_legend_item}{QCPPlottable\+Legend\+Item}} $\ast$ QCPLegend\+::item\+With\+Plottable (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_c_p_abstract_plottable}{QCPAbstract\+Plottable}} $\ast$}]{plottable }\end{DoxyParamCaption}) const}
 
-Returns the \mbox{\hyperlink{class_q_c_p_plottable_legend_item}{QCPPlottable\+Legend\+Item}} which is associated with {\itshape plottable} (e.\+g. a \mbox{\hyperlink{class_q_c_p_graph}{QCPGraph}}$\ast$). If such an item isn\textquotesingle{}t in the legend, returns 0.
+
+
+Returns the \mbox{\hyperlink{class_q_c_p_plottable_legend_item}{QCPPlottable\+Legend\+Item}} which is associated with {\itshape plottable} (e.\+g. 
+
+a \mbox{\hyperlink{class_q_c_p_graph}{QCPGraph}}$\ast$). If such an item isn\textquotesingle{}t in the legend, returns 0.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_legend_a4b90a442af871582df85c2bc13f91e88}{has\+Item\+With\+Plottable}} 
@@ -778,9 +813,11 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Eleme
 \doxysubsubsection{\texorpdfstring{removeItem()}{removeItem()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily bool QCPLegend\+::remove\+Item (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
 
+
+
 This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
 
-Removes the item with the specified {\itshape index} from the legend and deletes it.
+Removes the item with the specified {\itshape index} from the legend and deletes it. 
 
 After successful removal, the legend is reordered according to the current fill order (\mbox{\hyperlink{class_q_c_p_layout_grid_affc2f3cfd22f28698c5b29b960d2a391}{set\+Fill\+Order}}) and wrapping (\mbox{\hyperlink{class_q_c_p_layout_grid_ab36af18d77e4428386d02970382ee598}{set\+Wrap}}), so no empty cell remains where the removed {\itshape item} was. If you don\textquotesingle{}t want this, rather use the raw element interface of \mbox{\hyperlink{class_q_c_p_layout_grid}{QCPLayout\+Grid}}.
 
@@ -795,9 +832,11 @@ Returns true, if successful. Unlike \mbox{\hyperlink{class_q_c_p_layout_a2403f68
 \doxysubsubsection{\texorpdfstring{removeItem()}{removeItem()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily bool QCPLegend\+::remove\+Item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_abstract_legend_item}{QCPAbstract\+Legend\+Item}} $\ast$}]{item }\end{DoxyParamCaption})}
 
+
+
 This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
 
-Removes {\itshape item} from the legend and deletes it.
+Removes {\itshape item} from the legend and deletes it. 
 
 After successful removal, the legend is reordered according to the current fill order (\mbox{\hyperlink{class_q_c_p_layout_grid_affc2f3cfd22f28698c5b29b960d2a391}{set\+Fill\+Order}}) and wrapping (\mbox{\hyperlink{class_q_c_p_layout_grid_ab36af18d77e4428386d02970382ee598}{set\+Wrap}}), so no empty cell remains where the removed {\itshape item} was. If you don\textquotesingle{}t want this, rather use the raw element interface of \mbox{\hyperlink{class_q_c_p_layout_grid}{QCPLayout\+Grid}}.
 
@@ -812,7 +851,11 @@ Returns true, if successful.
 \doxysubsubsection{\texorpdfstring{selectedItems()}{selectedItems()}}
 {\footnotesize\ttfamily QList$<$ \mbox{\hyperlink{class_q_c_p_abstract_legend_item}{QCPAbstract\+Legend\+Item}} $\ast$ $>$ QCPLegend\+::selected\+Items (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-Returns the legend items that are currently selected. If no items are selected, the list is empty.
+
+
+Returns the legend items that are currently selected. 
+
+If no items are selected, the list is empty.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a6eed93b0ab99cb3eabb043fb08179c2b}{QCPAbstract\+Legend\+Item\+::set\+Selected}}, set\+Selectable 
@@ -843,7 +886,9 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}.
 \doxysubsubsection{\texorpdfstring{selectionChanged}{selectionChanged}}
 {\footnotesize\ttfamily void QCPLegend\+::selection\+Changed (\begin{DoxyParamCaption}\item[{QCPLegend\+::\+Selectable\+Parts}]{selection }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
 
-This signal is emitted when the selection state of this legend has changed.
+
+
+This signal is emitted when the selection state of this legend has changed. 
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_legend_a2aee309bb5c2a794b1987f3fc97f8ad8}{set\+Selected\+Parts}}, \mbox{\hyperlink{class_q_c_p_legend_a9ce60aa8bbd89f62ae4fa83ac6c60110}{set\+Selectable\+Parts}} 
@@ -854,7 +899,11 @@ This signal is emitted when the selection state of this legend has changed.
 \doxysubsubsection{\texorpdfstring{selectTest()}{selectTest()}}
 {\footnotesize\ttfamily double QCPLegend\+::select\+Test (\begin{DoxyParamCaption}\item[{const QPointF \&}]{pos,  }\item[{bool}]{only\+Selectable,  }\item[{QVariant $\ast$}]{details = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
 
-Layout elements are sensitive to events inside their outer rect. If {\itshape pos} is within the outer rect, this method returns a value corresponding to 0.\+99 times the parent plot\textquotesingle{}s selection tolerance. However, layout elements are not selectable by default. So if {\itshape only\+Selectable} is true, -\/1.\+0 is returned.
+
+
+Layout elements are sensitive to events inside their outer rect. 
+
+If {\itshape pos} is within the outer rect, this method returns a value corresponding to 0.\+99 times the parent plot\textquotesingle{}s selection tolerance. However, layout elements are not selectable by default. So if {\itshape only\+Selectable} is true, -\/1.\+0 is returned.
 
 See \mbox{\hyperlink{class_q_c_p_layerable_a04db8351fefd44cfdb77958e75c6288e}{QCPLayerable\+::select\+Test}} for a general explanation of this virtual method.
 
@@ -862,25 +911,17 @@ See \mbox{\hyperlink{class_q_c_p_layerable_a04db8351fefd44cfdb77958e75c6288e}{QC
 
 Reimplemented from \mbox{\hyperlink{class_q_c_p_layout_element_ae97f483cccedadbf18ea4525ef240ee4}{QCPLayout\+Element}}.
 
-\mbox{\Hypertarget{class_q_c_p_legend_a866a9e3f5267de7430a6c7f26a61db9f}\label{class_q_c_p_legend_a866a9e3f5267de7430a6c7f26a61db9f}} 
-\index{QCPLegend@{QCPLegend}!setBorderPen@{setBorderPen}}
-\index{setBorderPen@{setBorderPen}!QCPLegend@{QCPLegend}}
-\doxysubsubsection{\texorpdfstring{setBorderPen()}{setBorderPen()}}
-{\footnotesize\ttfamily void QCPLegend\+::set\+Border\+Pen (\begin{DoxyParamCaption}\item[{const QPen \&}]{pen }\end{DoxyParamCaption})}
-
-Sets the pen, the border of the entire legend is drawn with. \mbox{\Hypertarget{class_q_c_p_legend_a497bbcd38baa3598c08e2b3f48103f23}\label{class_q_c_p_legend_a497bbcd38baa3598c08e2b3f48103f23}} 
-\index{QCPLegend@{QCPLegend}!setBrush@{setBrush}}
-\index{setBrush@{setBrush}!QCPLegend@{QCPLegend}}
-\doxysubsubsection{\texorpdfstring{setBrush()}{setBrush()}}
-{\footnotesize\ttfamily void QCPLegend\+::set\+Brush (\begin{DoxyParamCaption}\item[{const QBrush \&}]{brush }\end{DoxyParamCaption})}
-
-Sets the brush of the legend background. \mbox{\Hypertarget{class_q_c_p_legend_aa4cda8499e3cb0f3be415edc02984c73}\label{class_q_c_p_legend_aa4cda8499e3cb0f3be415edc02984c73}} 
+\mbox{\Hypertarget{class_q_c_p_legend_aa4cda8499e3cb0f3be415edc02984c73}\label{class_q_c_p_legend_aa4cda8499e3cb0f3be415edc02984c73}} 
 \index{QCPLegend@{QCPLegend}!setFont@{setFont}}
 \index{setFont@{setFont}!QCPLegend@{QCPLegend}}
 \doxysubsubsection{\texorpdfstring{setFont()}{setFont()}}
 {\footnotesize\ttfamily void QCPLegend\+::set\+Font (\begin{DoxyParamCaption}\item[{const QFont \&}]{font }\end{DoxyParamCaption})}
 
-Sets the default font of legend text. Legend items that draw text (e.\+g. the name of a graph) will use this font by default. However, a different font can be specified on a per-\/item-\/basis by accessing the specific legend item.
+
+
+Sets the default font of legend text. 
+
+Legend items that draw text (e.\+g. the name of a graph) will use this font by default. However, a different font can be specified on a per-\/item-\/basis by accessing the specific legend item.
 
 This function will also set {\itshape font} on all already existing legend items.
 
@@ -893,33 +934,43 @@ This function will also set {\itshape font} on all already existing legend items
 \doxysubsubsection{\texorpdfstring{setIconBorderPen()}{setIconBorderPen()}}
 {\footnotesize\ttfamily void QCPLegend\+::set\+Icon\+Border\+Pen (\begin{DoxyParamCaption}\item[{const QPen \&}]{pen }\end{DoxyParamCaption})}
 
-Sets the pen used to draw a border around each legend icon. Legend items that draw an icon (e.\+g. a visual representation of the graph) will use this pen by default.
+
+
+Sets the pen used to draw a border around each legend icon. 
+
+Legend items that draw an icon (e.\+g. a visual representation of the graph) will use this pen by default.
 
 If no border is wanted, set this to {\itshape Qt\+::\+No\+Pen}. \mbox{\Hypertarget{class_q_c_p_legend_a8b0740cce488bf7010da6beda6898984}\label{class_q_c_p_legend_a8b0740cce488bf7010da6beda6898984}} 
 \index{QCPLegend@{QCPLegend}!setIconSize@{setIconSize}}
 \index{setIconSize@{setIconSize}!QCPLegend@{QCPLegend}}
-\doxysubsubsection{\texorpdfstring{setIconSize()}{setIconSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\doxysubsubsection{\texorpdfstring{setIconSize()}{setIconSize()}}
 {\footnotesize\ttfamily void QCPLegend\+::set\+Icon\+Size (\begin{DoxyParamCaption}\item[{const QSize \&}]{size }\end{DoxyParamCaption})}
 
-Sets the size of legend icons. Legend items that draw an icon (e.\+g. a visual representation of the graph) will use this size by default. \mbox{\Hypertarget{class_q_c_p_legend_a96b1a37fd4ee6a9778e6e54fe56ab6c2}\label{class_q_c_p_legend_a96b1a37fd4ee6a9778e6e54fe56ab6c2}} 
-\index{QCPLegend@{QCPLegend}!setIconSize@{setIconSize}}
-\index{setIconSize@{setIconSize}!QCPLegend@{QCPLegend}}
-\doxysubsubsection{\texorpdfstring{setIconSize()}{setIconSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily void QCPLegend\+::set\+Icon\+Size (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})}
 
-This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \mbox{\Hypertarget{class_q_c_p_legend_a62973bd69d5155e8ea3141366e8968f6}\label{class_q_c_p_legend_a62973bd69d5155e8ea3141366e8968f6}} 
+
+Sets the size of legend icons. 
+
+Legend items that draw an icon (e.\+g. a visual representation of the graph) will use this size by default. \mbox{\Hypertarget{class_q_c_p_legend_a62973bd69d5155e8ea3141366e8968f6}\label{class_q_c_p_legend_a62973bd69d5155e8ea3141366e8968f6}} 
 \index{QCPLegend@{QCPLegend}!setIconTextPadding@{setIconTextPadding}}
 \index{setIconTextPadding@{setIconTextPadding}!QCPLegend@{QCPLegend}}
 \doxysubsubsection{\texorpdfstring{setIconTextPadding()}{setIconTextPadding()}}
 {\footnotesize\ttfamily void QCPLegend\+::set\+Icon\+Text\+Padding (\begin{DoxyParamCaption}\item[{int}]{padding }\end{DoxyParamCaption})}
 
-Sets the horizontal space in pixels between the legend icon and the text next to it. Legend items that draw an icon (e.\+g. a visual representation of the graph) and text (e.\+g. the name of the graph) will use this space by default. \mbox{\Hypertarget{class_q_c_p_legend_a9ce60aa8bbd89f62ae4fa83ac6c60110}\label{class_q_c_p_legend_a9ce60aa8bbd89f62ae4fa83ac6c60110}} 
+
+
+Sets the horizontal space in pixels between the legend icon and the text next to it. 
+
+Legend items that draw an icon (e.\+g. a visual representation of the graph) and text (e.\+g. the name of the graph) will use this space by default. \mbox{\Hypertarget{class_q_c_p_legend_a9ce60aa8bbd89f62ae4fa83ac6c60110}\label{class_q_c_p_legend_a9ce60aa8bbd89f62ae4fa83ac6c60110}} 
 \index{QCPLegend@{QCPLegend}!setSelectableParts@{setSelectableParts}}
 \index{setSelectableParts@{setSelectableParts}!QCPLegend@{QCPLegend}}
 \doxysubsubsection{\texorpdfstring{setSelectableParts()}{setSelectableParts()}}
 {\footnotesize\ttfamily void QCPLegend\+::set\+Selectable\+Parts (\begin{DoxyParamCaption}\item[{const Selectable\+Parts \&}]{selectable }\end{DoxyParamCaption})}
 
-Sets whether the user can (de-\/)select the parts in {\itshape selectable} by clicking on the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} surface. (When \mbox{\hyperlink{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5}{QCustom\+Plot\+::set\+Interactions}} contains \mbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037a269c9af298e257d1108edec0432b5513}{QCP\+::i\+Select\+Legend}}.)
+
+
+Sets whether the user can (de-\/)select the parts in {\itshape selectable} by clicking on the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} surface. 
+
+(When \mbox{\hyperlink{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5}{QCustom\+Plot\+::set\+Interactions}} contains \mbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037a269c9af298e257d1108edec0432b5513}{QCP\+::i\+Select\+Legend}}.)
 
 However, even when {\itshape selectable} is set to a value not allowing the selection of a specific part, it is still possible to set the selection of this part manually, by calling \mbox{\hyperlink{class_q_c_p_legend_a2aee309bb5c2a794b1987f3fc97f8ad8}{set\+Selected\+Parts}} directly.
 
@@ -932,7 +983,9 @@ However, even when {\itshape selectable} is set to a value not allowing the sele
 \doxysubsubsection{\texorpdfstring{setSelectedBorderPen()}{setSelectedBorderPen()}}
 {\footnotesize\ttfamily void QCPLegend\+::set\+Selected\+Border\+Pen (\begin{DoxyParamCaption}\item[{const QPen \&}]{pen }\end{DoxyParamCaption})}
 
-When the legend box is selected, this pen is used to draw the border instead of the normal pen set via \mbox{\hyperlink{class_q_c_p_legend_a866a9e3f5267de7430a6c7f26a61db9f}{set\+Border\+Pen}}.
+
+
+When the legend box is selected, this pen is used to draw the border instead of the normal pen set via \mbox{\hyperlink{class_q_c_p_legend_a866a9e3f5267de7430a6c7f26a61db9f}{set\+Border\+Pen}}. 
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_legend_a2aee309bb5c2a794b1987f3fc97f8ad8}{set\+Selected\+Parts}}, \mbox{\hyperlink{class_q_c_p_legend_a9ce60aa8bbd89f62ae4fa83ac6c60110}{set\+Selectable\+Parts}}, \mbox{\hyperlink{class_q_c_p_legend_a875227f3219c9799464631dec5e8f1bd}{set\+Selected\+Brush}} 
@@ -943,7 +996,9 @@ When the legend box is selected, this pen is used to draw the border instead of 
 \doxysubsubsection{\texorpdfstring{setSelectedBrush()}{setSelectedBrush()}}
 {\footnotesize\ttfamily void QCPLegend\+::set\+Selected\+Brush (\begin{DoxyParamCaption}\item[{const QBrush \&}]{brush }\end{DoxyParamCaption})}
 
-When the legend box is selected, this brush is used to draw the legend background instead of the normal brush set via \mbox{\hyperlink{class_q_c_p_legend_a497bbcd38baa3598c08e2b3f48103f23}{set\+Brush}}.
+
+
+When the legend box is selected, this brush is used to draw the legend background instead of the normal brush set via \mbox{\hyperlink{class_q_c_p_legend_a497bbcd38baa3598c08e2b3f48103f23}{set\+Brush}}. 
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_legend_a2aee309bb5c2a794b1987f3fc97f8ad8}{set\+Selected\+Parts}}, \mbox{\hyperlink{class_q_c_p_legend_a9ce60aa8bbd89f62ae4fa83ac6c60110}{set\+Selectable\+Parts}}, \mbox{\hyperlink{class_q_c_p_legend_a2c35d262953a25d96b6112653fbefc88}{set\+Selected\+Border\+Pen}} 
@@ -954,7 +1009,9 @@ When the legend box is selected, this brush is used to draw the legend backgroun
 \doxysubsubsection{\texorpdfstring{setSelectedFont()}{setSelectedFont()}}
 {\footnotesize\ttfamily void QCPLegend\+::set\+Selected\+Font (\begin{DoxyParamCaption}\item[{const QFont \&}]{font }\end{DoxyParamCaption})}
 
-Sets the default font that is used by legend items when they are selected.
+
+
+Sets the default font that is used by legend items when they are selected. 
 
 This function will also set {\itshape font} on all already existing legend items.
 
@@ -967,7 +1024,9 @@ This function will also set {\itshape font} on all already existing legend items
 \doxysubsubsection{\texorpdfstring{setSelectedIconBorderPen()}{setSelectedIconBorderPen()}}
 {\footnotesize\ttfamily void QCPLegend\+::set\+Selected\+Icon\+Border\+Pen (\begin{DoxyParamCaption}\item[{const QPen \&}]{pen }\end{DoxyParamCaption})}
 
-Sets the pen legend items will use to draw their icon borders, when they are selected.
+
+
+Sets the pen legend items will use to draw their icon borders, when they are selected. 
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_legend_a2aee309bb5c2a794b1987f3fc97f8ad8}{set\+Selected\+Parts}}, \mbox{\hyperlink{class_q_c_p_legend_a9ce60aa8bbd89f62ae4fa83ac6c60110}{set\+Selectable\+Parts}}, \mbox{\hyperlink{class_q_c_p_legend_ab580a01c3c0a239374ed66c29edf5ad2}{set\+Selected\+Font}} 
@@ -978,7 +1037,11 @@ Sets the pen legend items will use to draw their icon borders, when they are sel
 \doxysubsubsection{\texorpdfstring{setSelectedParts()}{setSelectedParts()}}
 {\footnotesize\ttfamily void QCPLegend\+::set\+Selected\+Parts (\begin{DoxyParamCaption}\item[{const Selectable\+Parts \&}]{selected }\end{DoxyParamCaption})}
 
-Sets the selected state of the respective legend parts described by \mbox{\hyperlink{class_q_c_p_legend_a5404de8bc1e4a994ca4ae69e2c7072f1}{Selectable\+Part}}. When a part is selected, it uses a different pen/font and brush. If some legend items are selected and {\itshape selected} doesn\textquotesingle{}t contain \mbox{\hyperlink{class_q_c_p_legend_a5404de8bc1e4a994ca4ae69e2c7072f1a768bfb95f323db4c66473375032c0af7}{sp\+Items}}, those items become deselected.
+
+
+Sets the selected state of the respective legend parts described by \mbox{\hyperlink{class_q_c_p_legend_a5404de8bc1e4a994ca4ae69e2c7072f1}{Selectable\+Part}}. 
+
+When a part is selected, it uses a different pen/font and brush. If some legend items are selected and {\itshape selected} doesn\textquotesingle{}t contain \mbox{\hyperlink{class_q_c_p_legend_a5404de8bc1e4a994ca4ae69e2c7072f1a768bfb95f323db4c66473375032c0af7}{sp\+Items}}, those items become deselected.
 
 \mbox{\hyperlink{class_the}{The}} entire selection mechanism is handled automatically when \mbox{\hyperlink{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5}{QCustom\+Plot\+::set\+Interactions}} contains i\+Select\+Legend. You only need to call this function when you wish to change the selection state manually.
 
@@ -997,7 +1060,9 @@ Note that it doesn\textquotesingle{}t make sense to set the selected state \mbox
 \doxysubsubsection{\texorpdfstring{setSelectedTextColor()}{setSelectedTextColor()}}
 {\footnotesize\ttfamily void QCPLegend\+::set\+Selected\+Text\+Color (\begin{DoxyParamCaption}\item[{const QColor \&}]{color }\end{DoxyParamCaption})}
 
-Sets the default text color that is used by legend items when they are selected.
+
+
+Sets the default text color that is used by legend items when they are selected. 
 
 This function will also set {\itshape color} on all already existing legend items.
 
@@ -1010,7 +1075,11 @@ This function will also set {\itshape color} on all already existing legend item
 \doxysubsubsection{\texorpdfstring{setTextColor()}{setTextColor()}}
 {\footnotesize\ttfamily void QCPLegend\+::set\+Text\+Color (\begin{DoxyParamCaption}\item[{const QColor \&}]{color }\end{DoxyParamCaption})}
 
-Sets the default color of legend text. Legend items that draw text (e.\+g. the name of a graph) will use this color by default. However, a different colors can be specified on a per-\/item-\/basis by accessing the specific legend item.
+
+
+Sets the default color of legend text. 
+
+Legend items that draw text (e.\+g. the name of a graph) will use this color by default. However, a different colors can be specified on a per-\/item-\/basis by accessing the specific legend item.
 
 This function will also set {\itshape color} on all already existing legend items.
 

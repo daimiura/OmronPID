@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: DataSummary Class Reference</title>
+<title>OmronPID: DataSummary Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Project
+   <div id="projectname">OmronPID
    </div>
   </td>
  </tr>
@@ -71,8 +71,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#signals">Signals</a> &#124;
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="class_data_summary-members.html">List of all members</a>  </div>
+<a href="#pub-methods">Public Member Functions</a>  </div>
   <div class="headertitle"><div class="title">DataSummary Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -99,6 +98,9 @@ Signals</h2></td></tr>
 <tr class="memitem:ab30b9edd27f68ad4a6a3cee53bd38929"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_summary.html#ab30b9edd27f68ad4a6a3cee53bd38929">svChanged</a> (double sv)</td></tr>
 <tr class="memdesc:ab30b9edd27f68ad4a6a3cee53bd38929"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal emitted when the SV value changes.  <br /></td></tr>
 <tr class="separator:ab30b9edd27f68ad4a6a3cee53bd38929"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad81e2940cf2591814f223bb16855f02a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_summary.html#ad81e2940cf2591814f223bb16855f02a">logMsgWithColor</a> (QString msg, QColor color)</td></tr>
+<tr class="memdesc:ad81e2940cf2591814f223bb16855f02a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal emitted for send log to mainwindow.  <br /></td></tr>
+<tr class="separator:ad81e2940cf2591814f223bb16855f02a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -129,9 +131,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac7425ceb0918e728634099dd4e739fab"><td class="memItemLeft" align="right" valign="top">QTimer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_summary.html#ac7425ceb0918e728634099dd4e739fab">getLogTimer</a> () const</td></tr>
 <tr class="memdesc:ac7425ceb0918e728634099dd4e739fab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the Qtimer for saving data.  <br /></td></tr>
 <tr class="separator:ac7425ceb0918e728634099dd4e739fab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa5b61ecf8eb3ee8e61b9403e736dff09"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_summary.html#aa5b61ecf8eb3ee8e61b9403e736dff09">setFileName</a> (QString name)</td></tr>
-<tr class="memdesc:aa5b61ecf8eb3ee8e61b9403e736dff09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the file name for saving data.  <br /></td></tr>
-<tr class="separator:aa5b61ecf8eb3ee8e61b9403e736dff09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a721d29528f5aeb7519a92c0d40d44c45"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_summary.html#a721d29528f5aeb7519a92c0d40d44c45">generateSaveFile</a> ()</td></tr>
 <tr class="memdesc:a721d29528f5aeb7519a92c0d40d44c45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates and saves the data to file.  <br /></td></tr>
 <tr class="separator:a721d29528f5aeb7519a92c0d40d44c45"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -382,6 +381,51 @@ true if the file is successfully generated, false otherwise. </dd></dl>
 
 </div>
 </div>
+<a id="ad81e2940cf2591814f223bb16855f02a" name="ad81e2940cf2591814f223bb16855f02a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad81e2940cf2591814f223bb16855f02a">&#9670;&#160;</a></span>logMsgWithColor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DataSummary::logMsgWithColor </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>msg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QColor&#160;</td>
+          <td class="paramname"><em>color</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Signal emitted for send log to mainwindow. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td><a class="el" href="class_the.html">The</a> log. </td></tr>
+    <tr><td class="paramname">color</td><td>text color </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ad939eb587c1452110a8bf2ac0b6c024a" name="ad939eb587c1452110a8bf2ac0b6c024a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad939eb587c1452110a8bf2ac0b6c024a">&#9670;&#160;</a></span>mvChanged</h2>
 
@@ -410,32 +454,6 @@ true if the file is successfully generated, false otherwise. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">mv</td><td><a class="el" href="class_the.html">The</a> new MV value. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="aa5b61ecf8eb3ee8e61b9403e736dff09" name="aa5b61ecf8eb3ee8e61b9403e736dff09"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa5b61ecf8eb3ee8e61b9403e736dff09">&#9670;&#160;</a></span>setFileName()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void DataSummary::setFileName </td>
-          <td>(</td>
-          <td class="paramtype">QString&#160;</td>
-          <td class="paramname"><em>name</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the file name for saving data. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">name</td><td><a class="el" href="class_the.html">The</a> file name. </td></tr>
   </table>
   </dd>
 </dl>

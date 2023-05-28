@@ -29,5 +29,6 @@ var searchData=
   ['drawline_26',['drawLine',['../class_q_c_p_painter.html#a0b4b1b9bd495e182c731774dc800e6e0',1,'QCPPainter']]],
   ['drawpolyline_27',['drawPolyline',['../class_q_c_p_abstract_plottable1_d.html#a7adc6c3cccebb5341f11e0c2b7d54206',1,'QCPAbstractPlottable1D']]],
   ['drawshape_28',['drawShape',['../class_q_c_p_scatter_style.html#a89b5105e6027bfcbfeefed9d201b607c',1,'QCPScatterStyle::drawShape(QCPPainter *painter, const QPointF &amp;pos) const'],['../class_q_c_p_scatter_style.html#a95c297b114c77c22428ef40f54620ddf',1,'QCPScatterStyle::drawShape(QCPPainter *painter, double x, double y) const']]],
-  ['drawstatisticalbox_29',['drawStatisticalBox',['../class_q_c_p_statistical_box.html#a02dc6b561be8203d460d7263da74b8a9',1,'QCPStatisticalBox']]]
+  ['drawstatisticalbox_29',['drawStatisticalBox',['../class_q_c_p_statistical_box.html#a02dc6b561be8203d460d7263da74b8a9',1,'QCPStatisticalBox']]],
+  ['dropsignal_30',['dropSignal',['../class_safety.html#a6ec8e2c86026b7ea3891c8a42081140b',1,'Safety']]]
 ];

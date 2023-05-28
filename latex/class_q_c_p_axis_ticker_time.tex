@@ -22,19 +22,19 @@ enum \mbox{\hyperlink{class_q_c_p_axis_ticker_time_a5c48ded8c6d3a1aca9b68219469f
 , \newline
 \mbox{\hyperlink{class_q_c_p_axis_ticker_time_a5c48ded8c6d3a1aca9b68219469fea3eaf9729e64545307a80a0e3527d6da6556}{tu\+Days}}
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Defines the logical units in which fractions of time spans can be expressed. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Types inherited from \mbox{\hyperlink{class_q_c_p_axis_ticker}{QCPAxis\+Ticker}}}
 \begin{DoxyCompactItemize}
 \item 
 enum \mbox{\hyperlink{class_q_c_p_axis_ticker_ab6d2f9d9477821623ac9bc4b21ddf49a}{Tick\+Step\+Strategy}} \{ \mbox{\hyperlink{class_q_c_p_axis_ticker_ab6d2f9d9477821623ac9bc4b21ddf49aa9002aa2fd5633ab5556c71a26fed63a8}{tss\+Readability}}
 , \mbox{\hyperlink{class_q_c_p_axis_ticker_ab6d2f9d9477821623ac9bc4b21ddf49aa770312b6b9b0c64a37ceeba96e0cd7f2}{tss\+Meet\+Tick\+Count}}
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Defines the strategies that the axis ticker may follow when choosing the size of the tick step. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_q_c_p_axis_ticker_time_a5145aac1d2117fdac411d9e8552cc41b}{QCPAxis\+Ticker\+Time}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Constructs the ticker and sets reasonable default values. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_q_c_p_axis_ticker_time_a99ad61dc7434a7fed1850e96bf748834}\label{class_q_c_p_axis_ticker_time_a99ad61dc7434a7fed1850e96bf748834}} 
 QString {\bfseries time\+Format} () const
 \item 
@@ -42,14 +42,14 @@ QString {\bfseries time\+Format} () const
 int {\bfseries field\+Width} (\mbox{\hyperlink{class_q_c_p_axis_ticker_time_a5c48ded8c6d3a1aca9b68219469fea3e}{Time\+Unit}} unit) const
 \item 
 void \mbox{\hyperlink{class_q_c_p_axis_ticker_time_a2f30b6e5125bce4256be9ce3177088ea}{set\+Time\+Format}} (const QString \&format)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the format that will be used to display time in the tick labels. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_axis_ticker_time_adc13e54fc969be98a5c0e3fa0dbaa293}{set\+Field\+Width}} (\mbox{\hyperlink{class_q_c_p_axis_ticker_time_a5c48ded8c6d3a1aca9b68219469fea3e}{Time\+Unit}} unit, int width)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Sets the field widh of the specified {\itshape unit} to be {\itshape width} digits, when displayed in the tick label. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_q_c_p_axis_ticker}{QCPAxis\+Ticker}}}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_q_c_p_axis_ticker_a8fcf23c79ebd72202fe79253f9f01ea8}{QCPAxis\+Ticker}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Constructs the ticker and sets reasonable default values. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_q_c_p_axis_ticker_a58df76f2ec3eb48401bdd314b0e14ba1}\label{class_q_c_p_axis_ticker_a58df76f2ec3eb48401bdd314b0e14ba1}} 
 \mbox{\hyperlink{class_q_c_p_axis_ticker_ab6d2f9d9477821623ac9bc4b21ddf49a}{Tick\+Step\+Strategy}} {\bfseries tick\+Step\+Strategy} () const
 \item 
@@ -60,13 +60,13 @@ int {\bfseries tick\+Count} () const
 double {\bfseries tick\+Origin} () const
 \item 
 void \mbox{\hyperlink{class_q_c_p_axis_ticker_a73b1d847c1a12159af6bfda4ebebe7d5}{set\+Tick\+Step\+Strategy}} (\mbox{\hyperlink{class_q_c_p_axis_ticker_ab6d2f9d9477821623ac9bc4b21ddf49a}{Tick\+Step\+Strategy}} strategy)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets which strategy the axis ticker follows when choosing the size of the tick step. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_axis_ticker_a47752abba8293e6dc18491501ae34008}{set\+Tick\+Count}} (int count)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets how many ticks this ticker shall aim to generate across the axis range. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_axis_ticker_ab509c7e500293bf66a8409f0d7c23943}{set\+Tick\+Origin}} (double origin)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the mathematical coordinate (or \char`\"{}offset\char`\"{}) of the zeroth tick. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_q_c_p_axis_ticker_aefbd11725678ca824add8cf926cbc856}{generate}} (const \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \&range, const QLocale \&locale, QChar format\+Char, int precision, QVector$<$ double $>$ \&ticks, QVector$<$ double $>$ $\ast$sub\+Ticks, QVector$<$ QString $>$ $\ast$tick\+Labels)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This is the method called by \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} in order to actually generate tick coordinates ({\itshape ticks}), tick label strings ({\itshape tick\+Labels}) and sub tick coordinates ({\itshape sub\+Ticks}). \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -179,7 +179,9 @@ If you rather wish to display calendar dates and times, have a look at \mbox{\hy
 \doxysubsubsection{\texorpdfstring{TimeUnit}{TimeUnit}}
 {\footnotesize\ttfamily enum \mbox{\hyperlink{class_q_c_p_axis_ticker_time_a5c48ded8c6d3a1aca9b68219469fea3e}{QCPAxis\+Ticker\+Time\+::\+Time\+Unit}}}
 
-Defines the logical units in which fractions of time spans can be expressed.
+
+
+Defines the logical units in which fractions of time spans can be expressed. 
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_axis_ticker_time_adc13e54fc969be98a5c0e3fa0dbaa293}{set\+Field\+Width}}, \mbox{\hyperlink{class_q_c_p_axis_ticker_time_a2f30b6e5125bce4256be9ce3177088ea}{set\+Time\+Format}} 
@@ -215,7 +217,11 @@ tu\+Days&Days (\%d in \mbox{\hyperlink{class_q_c_p_axis_ticker_time_a2f30b6e5125
 \doxysubsubsection{\texorpdfstring{QCPAxisTickerTime()}{QCPAxisTickerTime()}}
 {\footnotesize\ttfamily QCPAxis\+Ticker\+Time\+::\+QCPAxis\+Ticker\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Constructs the ticker and sets reasonable default values. Axis tickers are commonly created managed by a QShared\+Pointer, which then can be passed to \mbox{\hyperlink{class_q_c_p_axis_a4ee03fcd2c74d05cd1a419b9af5cfbdc}{QCPAxis\+::set\+Ticker}}. 
+
+
+Constructs the ticker and sets reasonable default values. 
+
+Axis tickers are commonly created managed by a QShared\+Pointer, which then can be passed to \mbox{\hyperlink{class_q_c_p_axis_a4ee03fcd2c74d05cd1a419b9af5cfbdc}{QCPAxis\+::set\+Ticker}}. 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_q_c_p_axis_ticker_time_acace84c46598176aa53837e147595471}\label{class_q_c_p_axis_ticker_time_acace84c46598176aa53837e147595471}} 
@@ -254,7 +260,11 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_axis_ticker}{QCPAxis\+Ticker}}.
 \doxysubsubsection{\texorpdfstring{setFieldWidth()}{setFieldWidth()}}
 {\footnotesize\ttfamily void QCPAxis\+Ticker\+Time\+::set\+Field\+Width (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_axis_ticker_time_a5c48ded8c6d3a1aca9b68219469fea3e}{QCPAxis\+Ticker\+Time\+::\+Time\+Unit}}}]{unit,  }\item[{int}]{width }\end{DoxyParamCaption})}
 
-Sets the field widh of the specified {\itshape unit} to be {\itshape width} digits, when displayed in the tick label. If the number for the specific unit is shorter than {\itshape width}, it will be padded with an according number of zeros to the left in order to reach the field width.
+
+
+Sets the field widh of the specified {\itshape unit} to be {\itshape width} digits, when displayed in the tick label. 
+
+If the number for the specific unit is shorter than {\itshape width}, it will be padded with an according number of zeros to the left in order to reach the field width.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_axis_ticker_time_a2f30b6e5125bce4256be9ce3177088ea}{set\+Time\+Format}} 
@@ -265,7 +275,9 @@ Sets the field widh of the specified {\itshape unit} to be {\itshape width} digi
 \doxysubsubsection{\texorpdfstring{setTimeFormat()}{setTimeFormat()}}
 {\footnotesize\ttfamily void QCPAxis\+Ticker\+Time\+::set\+Time\+Format (\begin{DoxyParamCaption}\item[{const QString \&}]{format }\end{DoxyParamCaption})}
 
-Sets the format that will be used to display time in the tick labels.
+
+
+Sets the format that will be used to display time in the tick labels. 
 
 \mbox{\hyperlink{class_the}{The}} available patterns are\+:
 \begin{DoxyItemize}

@@ -14,8 +14,9 @@ Inheritance diagram for QCPAbstract\+Item\+:\begin{figure}[H]
 \doxysubsection*{Signals}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{class_q_c_p_abstract_item_aa5cffb034fc65dbb91c77e02c1c14251}{selection\+Changed}} (bool selected)
-\item 
+\mbox{\Hypertarget{class_q_c_p_abstract_item_aa5cffb034fc65dbb91c77e02c1c14251}\label{class_q_c_p_abstract_item_aa5cffb034fc65dbb91c77e02c1c14251}} 
+void {\bfseries selection\+Changed} (bool selected)
+\begin{DoxyCompactList}\small\item\em This signal is emitted when the selection state of this item has changed, either by user interaction or by a direct call to \mbox{\hyperlink{class_q_c_p_abstract_item_a203de94ad586cc44d16c9565f49d3378}{set\+Selected}}. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_q_c_p_abstract_item_a5b266c11aac61cb511901f3911dac2a3}\label{class_q_c_p_abstract_item_a5b266c11aac61cb511901f3911dac2a3}} 
 void {\bfseries selectable\+Changed} (bool selectable)
 \end{DoxyCompactItemize}
@@ -23,12 +24,13 @@ void {\bfseries selectable\+Changed} (bool selectable)
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_q_c_p_layerable_abbf8657cedea73ac1c3499b521c90eba}{layer\+Changed}} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$new\+Layer)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This signal is emitted when the layer of this layerable changes, i.\+e. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_q_c_p_abstract_item_a9922507d8b4503a1fe1ed0b1030e23b6}{QCPAbstract\+Item}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$parent\+Plot)
-\item 
+\mbox{\Hypertarget{class_q_c_p_abstract_item_a9922507d8b4503a1fe1ed0b1030e23b6}\label{class_q_c_p_abstract_item_a9922507d8b4503a1fe1ed0b1030e23b6}} 
+{\bfseries QCPAbstract\+Item} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$parent\+Plot)
+\begin{DoxyCompactList}\small\item\em Base class constructor which initializes base class members. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_q_c_p_abstract_item_a42715ad5f3d7fca6854025fa5636f436}\label{class_q_c_p_abstract_item_a42715ad5f3d7fca6854025fa5636f436}} 
 bool {\bfseries clip\+To\+Axis\+Rect} () const
 \item 
@@ -42,30 +44,30 @@ bool {\bfseries selectable} () const
 bool {\bfseries selected} () const
 \item 
 void \mbox{\hyperlink{class_q_c_p_abstract_item_a39e05b9d4176b9accafc746d16ca6a06}{set\+Clip\+To\+Axis\+Rect}} (bool clip)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets whether the item shall be clipped to an axis rect or whether it shall be visible on the entire \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_abstract_item_a7dc75fcbcd10206fe0b75d757ea7a347}{set\+Clip\+Axis\+Rect}} (\mbox{\hyperlink{class_q_c_p_axis_rect}{QCPAxis\+Rect}} $\ast$rect)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the clip axis rect. \end{DoxyCompactList}\item 
 Q\+\_\+\+SLOT void \mbox{\hyperlink{class_q_c_p_abstract_item_a8a8e32a55bc478b849756a78c2d87fd2}{set\+Selectable}} (bool selectable)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets whether the user can (de-\/)select this item by clicking on the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} surface. \end{DoxyCompactList}\item 
 Q\+\_\+\+SLOT void \mbox{\hyperlink{class_q_c_p_abstract_item_a203de94ad586cc44d16c9565f49d3378}{set\+Selected}} (bool selected)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets whether this item is selected or not. \end{DoxyCompactList}\item 
 virtual double \mbox{\hyperlink{class_q_c_p_abstract_item_ae41d0349d68bb802c49104afd100ba2a}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant $\ast$details=0) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE=0
-\item 
+\begin{DoxyCompactList}\small\item\em This function is used to decide whether a click hits a layerable object or not. \end{DoxyCompactList}\item 
 QList$<$ \mbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}} $\ast$ $>$ \mbox{\hyperlink{class_q_c_p_abstract_item_a709f655ac3f7f22d452714134662b454}{positions}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns all positions of the item in a list. \end{DoxyCompactList}\item 
 QList$<$ \mbox{\hyperlink{class_q_c_p_item_anchor}{QCPItem\+Anchor}} $\ast$ $>$ \mbox{\hyperlink{class_q_c_p_abstract_item_a81d1ecfea3368b836cf9675a0045e659}{anchors}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns all anchors of the item in a list. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}} $\ast$ \mbox{\hyperlink{class_q_c_p_abstract_item_a2589c3d298f9a576d77d9addb440a18d}{position}} (const QString \&name) const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the \mbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}} with the specified {\itshape name}. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_q_c_p_item_anchor}{QCPItem\+Anchor}} $\ast$ \mbox{\hyperlink{class_q_c_p_abstract_item_a139c255ea8831642fac91748e29a5adb}{anchor}} (const QString \&name) const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the \mbox{\hyperlink{class_q_c_p_item_anchor}{QCPItem\+Anchor}} with the specified {\itshape name}. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_q_c_p_abstract_item_a84914f4516f9b38ef0bd89eafe3dbda7}{has\+Anchor}} (const QString \&name) const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns whether this item has an anchor with the specified {\itshape name}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_q_c_p_layerable_a74c0fa237f29bf0e49565013fc5d1ec0}{QCPLayerable}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$plot, QString target\+Layer=QString(), \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}}=0)
-\item 
+\begin{DoxyCompactList}\small\item\em Creates a new \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} instance. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_q_c_p_layerable_af0297b944b6192b6d67d00bff41b6b70}\label{class_q_c_p_layerable_af0297b944b6192b6d67d00bff41b6b70}} 
 bool {\bfseries visible} () const
 \item 
@@ -73,7 +75,7 @@ bool {\bfseries visible} () const
 \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$ {\bfseries parent\+Plot} () const
 \item 
 \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $\ast$ \mbox{\hyperlink{class_q_c_p_layerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the parent layerable of this layerable. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_q_c_p_layerable_a9d4e121a7f1d2314f906fe698209cac9}\label{class_q_c_p_layerable_a9d4e121a7f1d2314f906fe698209cac9}} 
 \mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$ {\bfseries layer} () const
 \item 
@@ -81,17 +83,17 @@ bool {\bfseries visible} () const
 bool {\bfseries antialiased} () const
 \item 
 void \mbox{\hyperlink{class_q_c_p_layerable_a3bed99ddc396b48ce3ebfdc0418744f8}{set\+Visible}} (bool on)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the visibility of this layerable object. \end{DoxyCompactList}\item 
 Q\+\_\+\+SLOT bool \mbox{\hyperlink{class_q_c_p_layerable_ab0d0da6d2de45a118886d2c8e16d5a54}{set\+Layer}} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$layer)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the {\itshape layer} of this layerable object. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_q_c_p_layerable_ab25a0e7b897993b44447caee0f142083}{set\+Layer}} (const QString \&layer\+Name)
-\item 
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Sets the layer of this layerable object by name. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layerable_a4fd43e89be4a553ead41652565ff0581}{set\+Antialiased}} (bool enabled)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets whether this object will be drawn antialiased or not. \end{DoxyCompactList}\item 
 virtual double \mbox{\hyperlink{class_q_c_p_layerable_a04db8351fefd44cfdb77958e75c6288e}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant $\ast$details=0) const
-\item 
+\begin{DoxyCompactList}\small\item\em This function is used to decide whether a click hits a layerable object or not. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_q_c_p_layerable_ab054e88f15d485defcb95e7376f119e7}{real\+Visibility}} () const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns whether this layerable is visible, taking the visibility of the layerable parent and the visibility of this layerable\textquotesingle{}s layer into account. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -144,15 +146,15 @@ virtual void {\bfseries select\+Event} (QMouse\+Event $\ast$event, bool additive
 virtual void {\bfseries deselect\+Event} (bool $\ast$selection\+State\+Changed)
 \item 
 virtual void \mbox{\hyperlink{class_q_c_p_layerable_af6567604818db90f4fd52822f8bc8376}{mouse\+Press\+Event}} (QMouse\+Event $\ast$event, const QVariant \&details)
-\item 
+\begin{DoxyCompactList}\small\item\em This event gets called when the user presses a mouse button while the cursor is over the layerable. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_q_c_p_layerable_a9eee1ba47fd69be111059ca3881933e4}{mouse\+Move\+Event}} (QMouse\+Event $\ast$event, const QPointF \&start\+Pos)
-\item 
+\begin{DoxyCompactList}\small\item\em This event gets called when the user moves the mouse while holding a mouse button, after this layerable has become the mouse grabber by accepting the preceding \mbox{\hyperlink{class_q_c_p_layerable_af6567604818db90f4fd52822f8bc8376}{mouse\+Press\+Event}}. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_q_c_p_layerable_aa0d79b005686f668622bbe66ac03ba2c}{mouse\+Release\+Event}} (QMouse\+Event $\ast$event, const QPointF \&start\+Pos)
-\item 
+\begin{DoxyCompactList}\small\item\em This event gets called when the user releases the mouse button, after this layerable has become the mouse grabber by accepting the preceding \mbox{\hyperlink{class_q_c_p_layerable_af6567604818db90f4fd52822f8bc8376}{mouse\+Press\+Event}}. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_q_c_p_layerable_a4171e2e823aca242dd0279f00ed2de81}{mouse\+Double\+Click\+Event}} (QMouse\+Event $\ast$event, const QVariant \&details)
-\item 
+\begin{DoxyCompactList}\small\item\em This event gets called when the user presses the mouse button a second time in a double-\/click, while the cursor is over the layerable. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_q_c_p_layerable_a47dfd7b8fd99c08ca54e09c362b6f022}{wheel\+Event}} (QWheel\+Event $\ast$event)
-\item 
+\begin{DoxyCompactList}\small\item\em This event gets called when the user turns the mouse scroll wheel while the cursor is over the layerable. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_q_c_p_layerable_a8cbe5a0c9a5674249982f5ca5f8e02bc}\label{class_q_c_p_layerable_a8cbe5a0c9a5674249982f5ca5f8e02bc}} 
 void {\bfseries initialize\+Parent\+Plot} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$parent\+Plot)
 \item 
@@ -304,15 +306,6 @@ and create it in the constructor with the create\+Anchor function, assigning it 
 
 In essence the \mbox{\hyperlink{class_q_c_p_item_anchor}{QCPItem\+Anchor}} is merely an intermediary that itself asks your item for the pixel position when anything attached to the anchor needs to know the coordinates. 
 
-\doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_q_c_p_abstract_item_a9922507d8b4503a1fe1ed0b1030e23b6}\label{class_q_c_p_abstract_item_a9922507d8b4503a1fe1ed0b1030e23b6}} 
-\index{QCPAbstractItem@{QCPAbstractItem}!QCPAbstractItem@{QCPAbstractItem}}
-\index{QCPAbstractItem@{QCPAbstractItem}!QCPAbstractItem@{QCPAbstractItem}}
-\doxysubsubsection{\texorpdfstring{QCPAbstractItem()}{QCPAbstractItem()}}
-{\footnotesize\ttfamily QCPAbstract\+Item\+::\+QCPAbstract\+Item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$}]{parent\+Plot }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
-
-Base class constructor which initializes base class members. 
-
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_q_c_p_abstract_item_a139c255ea8831642fac91748e29a5adb}\label{class_q_c_p_abstract_item_a139c255ea8831642fac91748e29a5adb}} 
 \index{QCPAbstractItem@{QCPAbstractItem}!anchor@{anchor}}
@@ -320,7 +313,11 @@ Base class constructor which initializes base class members.
 \doxysubsubsection{\texorpdfstring{anchor()}{anchor()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_item_anchor}{QCPItem\+Anchor}} $\ast$ QCPAbstract\+Item\+::anchor (\begin{DoxyParamCaption}\item[{const QString \&}]{name }\end{DoxyParamCaption}) const}
 
-Returns the \mbox{\hyperlink{class_q_c_p_item_anchor}{QCPItem\+Anchor}} with the specified {\itshape name}. If this item doesn\textquotesingle{}t have an anchor by that name, returns 0.
+
+
+Returns the \mbox{\hyperlink{class_q_c_p_item_anchor}{QCPItem\+Anchor}} with the specified {\itshape name}. 
+
+If this item doesn\textquotesingle{}t have an anchor by that name, returns 0.
 
 This function provides an alternative way to access item anchors. Normally, you access anchors direcly by their member pointers (which typically have the same variable name as {\itshape name}).
 
@@ -333,7 +330,11 @@ This function provides an alternative way to access item anchors. Normally, you 
 \doxysubsubsection{\texorpdfstring{anchors()}{anchors()}}
 {\footnotesize\ttfamily QList$<$ \mbox{\hyperlink{class_q_c_p_item_anchor}{QCPItem\+Anchor}} $\ast$ $>$ QCPAbstract\+Item\+::anchors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Returns all anchors of the item in a list. Note that since a position (\mbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}}) is always also an anchor, the list will also contain the positions of this item.
+
+
+Returns all anchors of the item in a list. 
+
+Note that since a position (\mbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}}) is always also an anchor, the list will also contain the positions of this item.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_abstract_item_a709f655ac3f7f22d452714134662b454}{positions}}, \mbox{\hyperlink{class_q_c_p_abstract_item_a139c255ea8831642fac91748e29a5adb}{anchor}} 
@@ -384,7 +385,9 @@ Implements \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}.
 \doxysubsubsection{\texorpdfstring{hasAnchor()}{hasAnchor()}}
 {\footnotesize\ttfamily bool QCPAbstract\+Item\+::has\+Anchor (\begin{DoxyParamCaption}\item[{const QString \&}]{name }\end{DoxyParamCaption}) const}
 
-Returns whether this item has an anchor with the specified {\itshape name}.
+
+
+Returns whether this item has an anchor with the specified {\itshape name}. 
 
 Note that you can check for positions with this function, too. This is because every position is also an anchor (\mbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}} inherits from \mbox{\hyperlink{class_q_c_p_item_anchor}{QCPItem\+Anchor}}).
 
@@ -397,7 +400,11 @@ Note that you can check for positions with this function, too. This is because e
 \doxysubsubsection{\texorpdfstring{position()}{position()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}} $\ast$ QCPAbstract\+Item\+::position (\begin{DoxyParamCaption}\item[{const QString \&}]{name }\end{DoxyParamCaption}) const}
 
-Returns the \mbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}} with the specified {\itshape name}. If this item doesn\textquotesingle{}t have a position by that name, returns 0.
+
+
+Returns the \mbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}} with the specified {\itshape name}. 
+
+If this item doesn\textquotesingle{}t have a position by that name, returns 0.
 
 This function provides an alternative way to access item positions. Normally, you access positions direcly by their member pointers (which typically have the same variable name as {\itshape name}).
 
@@ -410,7 +417,9 @@ This function provides an alternative way to access item positions. Normally, yo
 \doxysubsubsection{\texorpdfstring{positions()}{positions()}}
 {\footnotesize\ttfamily QList$<$ \mbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}} $\ast$ $>$ QCPAbstract\+Item\+::positions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Returns all positions of the item in a list.
+
+
+Returns all positions of the item in a list. 
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_abstract_item_a81d1ecfea3368b836cf9675a0045e659}{anchors}}, \mbox{\hyperlink{class_q_c_p_abstract_item_a2589c3d298f9a576d77d9addb440a18d}{position}} 
@@ -435,19 +444,15 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}.
 
 Reimplemented from \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}.
 
-\mbox{\Hypertarget{class_q_c_p_abstract_item_aa5cffb034fc65dbb91c77e02c1c14251}\label{class_q_c_p_abstract_item_aa5cffb034fc65dbb91c77e02c1c14251}} 
-\index{QCPAbstractItem@{QCPAbstractItem}!selectionChanged@{selectionChanged}}
-\index{selectionChanged@{selectionChanged}!QCPAbstractItem@{QCPAbstractItem}}
-\doxysubsubsection{\texorpdfstring{selectionChanged}{selectionChanged}}
-{\footnotesize\ttfamily void QCPAbstract\+Item\+::selection\+Changed (\begin{DoxyParamCaption}\item[{bool}]{selected }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
-
-This signal is emitted when the selection state of this item has changed, either by user interaction or by a direct call to \mbox{\hyperlink{class_q_c_p_abstract_item_a203de94ad586cc44d16c9565f49d3378}{set\+Selected}}. \mbox{\Hypertarget{class_q_c_p_abstract_item_ae41d0349d68bb802c49104afd100ba2a}\label{class_q_c_p_abstract_item_ae41d0349d68bb802c49104afd100ba2a}} 
+\mbox{\Hypertarget{class_q_c_p_abstract_item_ae41d0349d68bb802c49104afd100ba2a}\label{class_q_c_p_abstract_item_ae41d0349d68bb802c49104afd100ba2a}} 
 \index{QCPAbstractItem@{QCPAbstractItem}!selectTest@{selectTest}}
 \index{selectTest@{selectTest}!QCPAbstractItem@{QCPAbstractItem}}
 \doxysubsubsection{\texorpdfstring{selectTest()}{selectTest()}}
 {\footnotesize\ttfamily virtual double QCPAbstract\+Item\+::select\+Test (\begin{DoxyParamCaption}\item[{const QPointF \&}]{pos,  }\item[{bool}]{only\+Selectable,  }\item[{QVariant $\ast$}]{details = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
-This function is used to decide whether a click hits a layerable object or not.
+
+
+This function is used to decide whether a click hits a layerable object or not. 
 
 {\itshape pos} is a point in pixel coordinates on the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} surface. This function returns the shortest pixel distance of this point to the object. If the object is either invisible or the distance couldn\textquotesingle{}t be determined, -\/1.\+0 is returned. Further, if {\itshape only\+Selectable} is true and the object is not selectable, -\/1.\+0 is returned, too.
 
@@ -478,7 +483,11 @@ Implemented in \mbox{\hyperlink{class_q_c_p_item_straight_line_a2e36c9d4dcc3aeda
 \doxysubsubsection{\texorpdfstring{setClipAxisRect()}{setClipAxisRect()}}
 {\footnotesize\ttfamily void QCPAbstract\+Item\+::set\+Clip\+Axis\+Rect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_axis_rect}{QCPAxis\+Rect}} $\ast$}]{rect }\end{DoxyParamCaption})}
 
-Sets the clip axis rect. It defines the rect that will be used to clip the item when \mbox{\hyperlink{class_q_c_p_abstract_item_a39e05b9d4176b9accafc746d16ca6a06}{set\+Clip\+To\+Axis\+Rect}} is set to true.
+
+
+Sets the clip axis rect. 
+
+It defines the rect that will be used to clip the item when \mbox{\hyperlink{class_q_c_p_abstract_item_a39e05b9d4176b9accafc746d16ca6a06}{set\+Clip\+To\+Axis\+Rect}} is set to true.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_abstract_item_a39e05b9d4176b9accafc746d16ca6a06}{set\+Clip\+To\+Axis\+Rect}} 
@@ -489,7 +498,11 @@ Sets the clip axis rect. It defines the rect that will be used to clip the item 
 \doxysubsubsection{\texorpdfstring{setClipToAxisRect()}{setClipToAxisRect()}}
 {\footnotesize\ttfamily void QCPAbstract\+Item\+::set\+Clip\+To\+Axis\+Rect (\begin{DoxyParamCaption}\item[{bool}]{clip }\end{DoxyParamCaption})}
 
-Sets whether the item shall be clipped to an axis rect or whether it shall be visible on the entire \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}. \mbox{\hyperlink{class_the}{The}} axis rect can be set with \mbox{\hyperlink{class_q_c_p_abstract_item_a7dc75fcbcd10206fe0b75d757ea7a347}{set\+Clip\+Axis\+Rect}}.
+
+
+Sets whether the item shall be clipped to an axis rect or whether it shall be visible on the entire \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}. 
+
+\mbox{\hyperlink{class_the}{The}} axis rect can be set with \mbox{\hyperlink{class_q_c_p_abstract_item_a7dc75fcbcd10206fe0b75d757ea7a347}{set\+Clip\+Axis\+Rect}}.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_abstract_item_a7dc75fcbcd10206fe0b75d757ea7a347}{set\+Clip\+Axis\+Rect}} 
@@ -500,7 +513,11 @@ Sets whether the item shall be clipped to an axis rect or whether it shall be vi
 \doxysubsubsection{\texorpdfstring{setSelectable()}{setSelectable()}}
 {\footnotesize\ttfamily void QCPAbstract\+Item\+::set\+Selectable (\begin{DoxyParamCaption}\item[{bool}]{selectable }\end{DoxyParamCaption})}
 
-Sets whether the user can (de-\/)select this item by clicking on the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} surface. (When \mbox{\hyperlink{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5}{QCustom\+Plot\+::set\+Interactions}} contains QCustom\+Plot\+::i\+Select\+Items.)
+
+
+Sets whether the user can (de-\/)select this item by clicking on the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} surface. 
+
+(When \mbox{\hyperlink{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5}{QCustom\+Plot\+::set\+Interactions}} contains QCustom\+Plot\+::i\+Select\+Items.)
 
 However, even when {\itshape selectable} was set to false, it is possible to set the selection manually, by calling \mbox{\hyperlink{class_q_c_p_abstract_item_a203de94ad586cc44d16c9565f49d3378}{set\+Selected}}.
 
@@ -513,7 +530,11 @@ However, even when {\itshape selectable} was set to false, it is possible to set
 \doxysubsubsection{\texorpdfstring{setSelected()}{setSelected()}}
 {\footnotesize\ttfamily void QCPAbstract\+Item\+::set\+Selected (\begin{DoxyParamCaption}\item[{bool}]{selected }\end{DoxyParamCaption})}
 
-Sets whether this item is selected or not. When selected, it might use a different visual appearance (e.\+g. pen and brush), this depends on the specific item though.
+
+
+Sets whether this item is selected or not. 
+
+When selected, it might use a different visual appearance (e.\+g. pen and brush), this depends on the specific item though.
 
 \mbox{\hyperlink{class_the}{The}} entire selection mechanism for items is handled automatically when \mbox{\hyperlink{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5}{QCustom\+Plot\+::set\+Interactions}} contains QCustom\+Plot\+::i\+Select\+Items. You only need to call this function when you wish to change the selection state manually.
 

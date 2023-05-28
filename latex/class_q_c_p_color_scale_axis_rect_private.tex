@@ -9,13 +9,14 @@ Inheritance diagram for QCPColor\+Scale\+Axis\+Rect\+Private\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_q_c_p_color_scale_axis_rect_private_ad3b242f75dd2b33581364a4e668a80db}{QCPColor\+Scale\+Axis\+Rect\+Private}} (\mbox{\hyperlink{class_q_c_p_color_scale}{QCPColor\+Scale}} $\ast$parent\+Color\+Scale)
-\end{DoxyCompactItemize}
+\mbox{\Hypertarget{class_q_c_p_color_scale_axis_rect_private_ad3b242f75dd2b33581364a4e668a80db}\label{class_q_c_p_color_scale_axis_rect_private_ad3b242f75dd2b33581364a4e668a80db}} 
+{\bfseries QCPColor\+Scale\+Axis\+Rect\+Private} (\mbox{\hyperlink{class_q_c_p_color_scale}{QCPColor\+Scale}} $\ast$parent\+Color\+Scale)
+\begin{DoxyCompactList}\small\item\em Creates a new instance, as a child of {\itshape parent\+Color\+Scale}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_q_c_p_axis_rect}{QCPAxis\+Rect}}}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_q_c_p_axis_rect_a60b31dece805462c1b82eea2e69ba042}{QCPAxis\+Rect}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$parent\+Plot, bool setup\+Default\+Axes=true)
-\item 
+\begin{DoxyCompactList}\small\item\em Creates a \mbox{\hyperlink{class_q_c_p_axis_rect}{QCPAxis\+Rect}} instance and sets default values. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_q_c_p_axis_rect_a572deec9c9a4d5987d5c5f78521991e6}\label{class_q_c_p_axis_rect_a572deec9c9a4d5987d5c5f78521991e6}} 
 QPixmap {\bfseries background} () const
 \item 
@@ -35,112 +36,138 @@ Qt\+::\+Orientations {\bfseries range\+Drag} () const
 Qt\+::\+Orientations {\bfseries range\+Zoom} () const
 \item 
 \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$ \mbox{\hyperlink{class_q_c_p_axis_rect_a6d7c22cfc54fac7a3d6ef80b133a8574}{range\+Drag\+Axis}} (Qt\+::\+Orientation orientation)
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the range drag axis of the {\itshape orientation} provided. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$ \mbox{\hyperlink{class_q_c_p_axis_rect_a679c63f2b8daccfe6ec5110dce3dd3b6}{range\+Zoom\+Axis}} (Qt\+::\+Orientation orientation)
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the range zoom axis of the {\itshape orientation} provided. \end{DoxyCompactList}\item 
 QList$<$ \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$ $>$ \mbox{\hyperlink{class_q_c_p_axis_rect_aae5f99a044ca911685a306f01b7ff941}{range\+Drag\+Axes}} (Qt\+::\+Orientation orientation)
-\item 
+\begin{DoxyCompactList}\small\item\em Returns all range drag axes of the {\itshape orientation} provided. \end{DoxyCompactList}\item 
 QList$<$ \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$ $>$ \mbox{\hyperlink{class_q_c_p_axis_rect_a86aac0f435f209d60dacd22cda10c104}{range\+Zoom\+Axes}} (Qt\+::\+Orientation orientation)
-\item 
+\begin{DoxyCompactList}\small\item\em Returns all range zoom axes of the {\itshape orientation} provided. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_q_c_p_axis_rect_ae4e6c4d143aacc88d2d3c56f117c2fe1}{range\+Zoom\+Factor}} (Qt\+::\+Orientation orientation)
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the range zoom factor of the {\itshape orientation} provided. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_axis_rect_af615ab5e52b8e0a9a0eff415b6559db5}{set\+Background}} (const QPixmap \&pm)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets {\itshape pm} as the axis background pixmap. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_axis_rect_ac48a2d5d9b7732e73b86605c69c5e4c1}{set\+Background}} (const QPixmap \&pm, bool scaled, Qt\+::\+Aspect\+Ratio\+Mode mode=Qt\+::\+Keep\+Aspect\+Ratio\+By\+Expanding)
-\item 
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Allows setting the background pixmap of the axis rect, whether it shall be scaled and how it shall be scaled in one call. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_axis_rect_a22a22b8668735438dc06f9a55fe46b33}{set\+Background}} (const QBrush \&brush)
-\item 
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Sets {\itshape brush} as the background brush. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_axis_rect_ae6d36c3e0e968ffb991170a018e7b503}{set\+Background\+Scaled}} (bool scaled)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets whether the axis background pixmap shall be scaled to fit the axis rect or not. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_axis_rect_a5ef77ea829c9de7ba248e473f48f7305}{set\+Background\+Scaled\+Mode}} (Qt\+::\+Aspect\+Ratio\+Mode mode)
-\item 
+\begin{DoxyCompactList}\small\item\em If scaling of the axis background pixmap is enabled (\mbox{\hyperlink{class_q_c_p_axis_rect_ae6d36c3e0e968ffb991170a018e7b503}{set\+Background\+Scaled}}), use this function to define whether and how the aspect ratio of the original pixmap passed to \mbox{\hyperlink{class_q_c_p_axis_rect_af615ab5e52b8e0a9a0eff415b6559db5}{set\+Background}} is preserved. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_axis_rect_ae6aef2f7211ba6097c925dcd26008418}{set\+Range\+Drag}} (Qt\+::\+Orientations orientations)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets which axis orientation may be range dragged by the user with mouse interaction. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_axis_rect_a7960a9d222f1c31d558b064b60f86a31}{set\+Range\+Zoom}} (Qt\+::\+Orientations orientations)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets which axis orientation may be zoomed by the user with the mouse wheel. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_axis_rect_a648cce336bd99daac4a5ca3e5743775d}{set\+Range\+Drag\+Axes}} (\mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$horizontal, \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$vertical)
-\item 
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Sets the axes whose range will be dragged when \mbox{\hyperlink{class_q_c_p_axis_rect_ae6aef2f7211ba6097c925dcd26008418}{set\+Range\+Drag}} enables mouse range dragging on the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} widget. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_axis_rect_af0fbc510147a2a54b9c8cd296e6df8ac}{set\+Range\+Drag\+Axes}} (QList$<$ \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$ $>$ \mbox{\hyperlink{class_q_c_p_axis_rect_a8db4722cb93e9c4a6f0d91150c200867}{axes}})
-\item 
-void \mbox{\hyperlink{class_q_c_p_axis_rect_a8366903edcb3bb703a8b0be783a85746}{set\+Range\+Drag\+Axes}} (QList$<$ \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$ $>$ horizontal, QList$<$ \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$ $>$ vertical)
-\item 
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+This method allows to set up multiple axes to react to horizontal and vertical dragging. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_q_c_p_axis_rect_a8366903edcb3bb703a8b0be783a85746}\label{class_q_c_p_axis_rect_a8366903edcb3bb703a8b0be783a85746}} 
+void {\bfseries set\+Range\+Drag\+Axes} (QList$<$ \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$ $>$ horizontal, QList$<$ \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$ $>$ vertical)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+This method allows to set multiple axes up to react to horizontal and vertical dragging, and define specifically which axis reacts to which drag orientation (irrespective of the axis orientation). \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_axis_rect_a9442cca2aa358405f39a64d51eca13d2}{set\+Range\+Zoom\+Axes}} (\mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$horizontal, \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$vertical)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the axes whose range will be zoomed when \mbox{\hyperlink{class_q_c_p_axis_rect_a7960a9d222f1c31d558b064b60f86a31}{set\+Range\+Zoom}} enables mouse wheel zooming on the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} widget. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_axis_rect_a89c1ab7ee6d2a14b56c57c9a796ba623}{set\+Range\+Zoom\+Axes}} (QList$<$ \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$ $>$ \mbox{\hyperlink{class_q_c_p_axis_rect_a8db4722cb93e9c4a6f0d91150c200867}{axes}})
-\item 
-void \mbox{\hyperlink{class_q_c_p_axis_rect_ae29d6e9e54ebd981769c986e498ae118}{set\+Range\+Zoom\+Axes}} (QList$<$ \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$ $>$ horizontal, QList$<$ \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$ $>$ vertical)
-\item 
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+This method allows to set up multiple axes to react to horizontal and vertical range zooming. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_q_c_p_axis_rect_ae29d6e9e54ebd981769c986e498ae118}\label{class_q_c_p_axis_rect_ae29d6e9e54ebd981769c986e498ae118}} 
+void {\bfseries set\+Range\+Zoom\+Axes} (QList$<$ \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$ $>$ horizontal, QList$<$ \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$ $>$ vertical)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+This method allows to set multiple axes up to react to horizontal and vertical zooming, and define specifically which axis reacts to which zoom orientation (irrespective of the axis orientation). \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_axis_rect_a895d7ac745ea614e04056244b3c138ac}{set\+Range\+Zoom\+Factor}} (double horizontal\+Factor, double vertical\+Factor)
-\item 
-void \mbox{\hyperlink{class_q_c_p_axis_rect_ae83d187b03fc6fa4f00765ad50cd3fc3}{set\+Range\+Zoom\+Factor}} (double factor)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets how strong one rotation step of the mouse wheel zooms, when range zoom was activated with \mbox{\hyperlink{class_q_c_p_axis_rect_a7960a9d222f1c31d558b064b60f86a31}{set\+Range\+Zoom}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_q_c_p_axis_rect_ae83d187b03fc6fa4f00765ad50cd3fc3}\label{class_q_c_p_axis_rect_ae83d187b03fc6fa4f00765ad50cd3fc3}} 
+void {\bfseries set\+Range\+Zoom\+Factor} (double factor)
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Sets both the horizontal and vertical zoom {\itshape factor}. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_q_c_p_axis_rect_a85b321acec0f694d8b5fdeafdbff3133}{axis\+Count}} (\mbox{\hyperlink{class_q_c_p_axis_ae2bcc1728b382f10f064612b368bc18a}{QCPAxis\+::\+Axis\+Type}} type) const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the number of axes on the axis rect side specified with {\itshape type}. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$ \mbox{\hyperlink{class_q_c_p_axis_rect_a583ae4f6d78b601b732183f6cabecbe1}{axis}} (\mbox{\hyperlink{class_q_c_p_axis_ae2bcc1728b382f10f064612b368bc18a}{QCPAxis\+::\+Axis\+Type}} type, int index=0) const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the axis with the given {\itshape index} on the axis rect side specified with {\itshape type}. \end{DoxyCompactList}\item 
 QList$<$ \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$ $>$ \mbox{\hyperlink{class_q_c_p_axis_rect_a8db4722cb93e9c4a6f0d91150c200867}{axes}} (QCPAxis\+::\+Axis\+Types types) const
-\item 
-QList$<$ \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$ $>$ \mbox{\hyperlink{class_q_c_p_axis_rect_a11657b8faebe9677180860e8057ede26}{axes}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns all axes on the axis rect sides specified with {\itshape types}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_q_c_p_axis_rect_a11657b8faebe9677180860e8057ede26}\label{class_q_c_p_axis_rect_a11657b8faebe9677180860e8057ede26}} 
+QList$<$ \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$ $>$ {\bfseries axes} () const
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Returns all axes of this axis rect. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$ \mbox{\hyperlink{class_q_c_p_axis_rect_a2dc336092ccc57d44a46194c8a23e4f4}{add\+Axis}} (\mbox{\hyperlink{class_q_c_p_axis_ae2bcc1728b382f10f064612b368bc18a}{QCPAxis\+::\+Axis\+Type}} type, \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$\mbox{\hyperlink{class_q_c_p_axis_rect_a583ae4f6d78b601b732183f6cabecbe1}{axis}}=0)
-\item 
+\begin{DoxyCompactList}\small\item\em Adds a new axis to the axis rect side specified with {\itshape type}, and returns it. \end{DoxyCompactList}\item 
 QList$<$ \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$ $>$ \mbox{\hyperlink{class_q_c_p_axis_rect_a792e1f3d9cb1591fca135bb0de9b81fc}{add\+Axes}} (QCPAxis\+::\+Axis\+Types types)
-\item 
+\begin{DoxyCompactList}\small\item\em Adds a new axis with \mbox{\hyperlink{class_q_c_p_axis_rect_a2dc336092ccc57d44a46194c8a23e4f4}{add\+Axis}} to each axis rect side specified in {\itshape types}. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_q_c_p_axis_rect_a03c39cd9704f0d36fb6cf980cdddcbaa}{remove\+Axis}} (\mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$\mbox{\hyperlink{class_q_c_p_axis_rect_a583ae4f6d78b601b732183f6cabecbe1}{axis}})
-\item 
+\begin{DoxyCompactList}\small\item\em Removes the specified {\itshape axis} from the axis rect and deletes it. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_q_c_p_layout_inset}{QCPLayout\+Inset}} $\ast$ \mbox{\hyperlink{class_q_c_p_axis_rect_a949f803466619924c7018df4b511ae10}{inset\+Layout}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the inset layout of this axis rect. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_axis_rect_a5fc8460564e81dcc2a9343dc8bc1fe67}{zoom}} (const QRectF \&pixel\+Rect)
-\item 
+\begin{DoxyCompactList}\small\item\em Zooms in (or out) to the passed rectangular region {\itshape pixel\+Rect}, given in pixel coordinates. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_axis_rect_ae481c28b50e10cfbbec59fde45e77367}{zoom}} (const QRectF \&pixel\+Rect, const QList$<$ \mbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} $\ast$ $>$ \&affected\+Axes)
-\item 
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Zooms in (or out) to the passed rectangular region {\itshape pixel\+Rect}, given in pixel coordinates. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_axis_rect_a5fa906175447b14206954f77fc7f1ef4}{setup\+Full\+Axes\+Box}} (bool connect\+Ranges=false)
-\item 
+\begin{DoxyCompactList}\small\item\em Convenience function to create an axis on each side that doesn\textquotesingle{}t have any axes yet and set their visibility to true. \end{DoxyCompactList}\item 
 QList$<$ \mbox{\hyperlink{class_q_c_p_abstract_plottable}{QCPAbstract\+Plottable}} $\ast$ $>$ \mbox{\hyperlink{class_q_c_p_axis_rect_a587d073a97b27bc7293fab4b2774ad59}{plottables}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns a list of all the plottables that are associated with this axis rect. \end{DoxyCompactList}\item 
 QList$<$ \mbox{\hyperlink{class_q_c_p_graph}{QCPGraph}} $\ast$ $>$ \mbox{\hyperlink{class_q_c_p_axis_rect_a2d9ded3eca97be1fcb5867949391bb88}{graphs}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns a list of all the graphs that are associated with this axis rect. \end{DoxyCompactList}\item 
 QList$<$ \mbox{\hyperlink{class_q_c_p_abstract_item}{QCPAbstract\+Item}} $\ast$ $>$ \mbox{\hyperlink{class_q_c_p_axis_rect_a03c113a2175448300ee8f944e24776ba}{items}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns a list of all the items that are associated with this axis rect. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_q_c_p_axis_rect_afb4a3de02046b20b9310bdb8fca781c3}{left}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the pixel position of the left border of this axis rect. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_q_c_p_axis_rect_a3f819d4a1b2193723d1fdafc573eea10}{right}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the pixel position of the right border of this axis rect. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_q_c_p_axis_rect_a45dbad181cbb9f09d068dbb76c817c95}{top}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the pixel position of the top border of this axis rect. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_q_c_p_axis_rect_acefdf1abaa8a8ab681e906cc2be9581e}{bottom}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the pixel position of the bottom border of this axis rect. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_q_c_p_axis_rect_a204645398a4f9d0b0189385c7c2cfb91}{width}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the pixel width of this axis rect. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_q_c_p_axis_rect_acc4377809e79d9a089ab790f39429b0d}{height}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the pixel height of this axis rect. \end{DoxyCompactList}\item 
 QSize \mbox{\hyperlink{class_q_c_p_axis_rect_a7a8289346eb612f422c704f8b75cf479}{size}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the pixel size of this axis rect. \end{DoxyCompactList}\item 
 QPoint \mbox{\hyperlink{class_q_c_p_axis_rect_a5a847b3ddeca3abec38d3838fefb0dbd}{top\+Left}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the top left corner of this axis rect in pixels. \end{DoxyCompactList}\item 
 QPoint \mbox{\hyperlink{class_q_c_p_axis_rect_a7aa221967549ba71b98c465bf8234758}{top\+Right}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the top right corner of this axis rect in pixels. \end{DoxyCompactList}\item 
 QPoint \mbox{\hyperlink{class_q_c_p_axis_rect_ab15d4311d6535ccd7af504dc0e2b98c6}{bottom\+Left}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the bottom left corner of this axis rect in pixels. \end{DoxyCompactList}\item 
 QPoint \mbox{\hyperlink{class_q_c_p_axis_rect_a36dac884ec8fa3a3a2f3842ca7b7d32d}{bottom\+Right}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the bottom right corner of this axis rect in pixels. \end{DoxyCompactList}\item 
 QPoint \mbox{\hyperlink{class_q_c_p_axis_rect_ade3aef874bafcec6dd16174fba44c0b1}{center}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the center of this axis rect in pixels. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_q_c_p_axis_rect_add049d464b9ef2ccdc638adc4ccb4aca}{update}} (\mbox{\hyperlink{class_q_c_p_layout_element_a0d83360e05735735aaf6d7983c56374d}{Update\+Phase}} phase) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
-\item 
+\begin{DoxyCompactList}\small\item\em This method is called automatically upon replot and doesn\textquotesingle{}t need to be called by users of \mbox{\hyperlink{class_q_c_p_axis_rect}{QCPAxis\+Rect}}. \end{DoxyCompactList}\item 
 virtual QList$<$ \mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}} $\ast$ $>$ \mbox{\hyperlink{class_q_c_p_axis_rect_a3aee067fd105f2fa8de9eb8024435ac5}{elements}} (bool recursive) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns a list of all child elements in this layout element. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_q_c_p_layout_element_a8947f0ada17e672aaba3d424cbbb67e3}{QCPLayout\+Element}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$parent\+Plot=0)
-\item 
-\mbox{\hyperlink{class_q_c_p_layout}{QCPLayout}} $\ast$ \mbox{\hyperlink{class_q_c_p_layout_element_a4efdcbde9d28f410e5ef166c9d691deb}{layout}} () const
-\item 
+\mbox{\Hypertarget{class_q_c_p_layout_element_a8947f0ada17e672aaba3d424cbbb67e3}\label{class_q_c_p_layout_element_a8947f0ada17e672aaba3d424cbbb67e3}} 
+{\bfseries QCPLayout\+Element} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$parent\+Plot=0)
+\begin{DoxyCompactList}\small\item\em Creates an instance of \mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}} and sets default values. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_q_c_p_layout_element_a4efdcbde9d28f410e5ef166c9d691deb}\label{class_q_c_p_layout_element_a4efdcbde9d28f410e5ef166c9d691deb}} 
+\mbox{\hyperlink{class_q_c_p_layout}{QCPLayout}} $\ast$ {\bfseries layout} () const
+\begin{DoxyCompactList}\small\item\em Returns the parent layout of this layout element. \end{DoxyCompactList}\item 
 QRect \mbox{\hyperlink{class_q_c_p_layout_element_a208effccfe2cca4a0eaf9393e60f2dd4}{rect}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the inner rect of this layout element. \end{DoxyCompactList}\item 
 QRect \mbox{\hyperlink{class_q_c_p_layout_element_a2a32a12a6161c9dffbadeb9cc585510c}{outer\+Rect}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the outer rect of this layout element. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_q_c_p_layout_element_af4ac9450aa2d60863bf3a8ea0c940c9d}\label{class_q_c_p_layout_element_af4ac9450aa2d60863bf3a8ea0c940c9d}} 
 QMargins {\bfseries margins} () const
 \item 
@@ -166,40 +193,44 @@ QSize {\bfseries maximum\+Size} () const
 QHash$<$ \mbox{\hyperlink{namespace_q_c_p_a7e487e3e2ccb62ab7771065bab7cae54}{QCP\+::\+Margin\+Side}}, \mbox{\hyperlink{class_q_c_p_margin_group}{QCPMargin\+Group}} $\ast$ $>$ {\bfseries margin\+Groups} () const
 \item 
 void \mbox{\hyperlink{class_q_c_p_layout_element_a38975ea13e36de8e53391ce41d94bc0f}{set\+Outer\+Rect}} (const QRect \&\mbox{\hyperlink{class_q_c_p_layout_element_a208effccfe2cca4a0eaf9393e60f2dd4}{rect}})
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the outer rect of this layout element. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layout_element_a8f450b1f3f992ad576fce2c63d8b79cf}{set\+Margins}} (const QMargins \&margins)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the margins of this layout element. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layout_element_a0a8a17abc16b7923159fcc7608f94673}{set\+Minimum\+Margins}} (const QMargins \&margins)
-\item 
+\begin{DoxyCompactList}\small\item\em If \mbox{\hyperlink{class_q_c_p_layout_element_accfda49994e3e6d51ed14504abf9d27d}{set\+Auto\+Margins}} is enabled on some or all margins, this function is used to provide minimum values for those margins. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layout_element_accfda49994e3e6d51ed14504abf9d27d}{set\+Auto\+Margins}} (QCP\+::\+Margin\+Sides sides)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets on which sides the margin shall be calculated automatically. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layout_element_a5dd29a3c8bc88440c97c06b67be7886b}{set\+Minimum\+Size}} (const QSize \&size)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the minimum size of this layout element. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layout_element_a8e0447614a0bf92de9a7304588c6b96e}{set\+Minimum\+Size}} (int width, int height)
-\item 
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Sets the minimum size of this layout element. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layout_element_a74eb5280a737ab44833d506db65efd95}{set\+Maximum\+Size}} (const QSize \&size)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the maximum size of this layout element. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layout_element_a03e0e9c48f230217c529b0819f832d84}{set\+Maximum\+Size}} (int width, int height)
-\item 
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Sets the maximum size of this layout element. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layout_element_a361666cdcc6fbfd37344cc44be746b0f}{set\+Size\+Constraint\+Rect}} (\mbox{\hyperlink{class_q_c_p_layout_element_a0afb3e5773529e4bd20e448f81be4d2a}{Size\+Constraint\+Rect}} constraint\+Rect)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets to which rect of a layout element the size constraints apply. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layout_element_a516e56f76b6bc100e8e71d329866847d}{set\+Margin\+Group}} (QCP\+::\+Margin\+Sides sides, \mbox{\hyperlink{class_q_c_p_margin_group}{QCPMargin\+Group}} $\ast$group)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the margin {\itshape group} of the specified margin {\itshape sides}. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_q_c_p_layout_element_a929c2ec62e0e0e1d8418eaa802e2af9b}{update}} (\mbox{\hyperlink{class_q_c_p_layout_element_a0d83360e05735735aaf6d7983c56374d}{Update\+Phase}} phase)
-\item 
+\begin{DoxyCompactList}\small\item\em Updates the layout element and sub-\/elements. \end{DoxyCompactList}\item 
 virtual QSize \mbox{\hyperlink{class_q_c_p_layout_element_a46789036c4fcb190fa374f91321d7c09}{minimum\+Outer\+Size\+Hint}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the suggested minimum size this layout element (the \mbox{\hyperlink{class_q_c_p_layout_element_a2a32a12a6161c9dffbadeb9cc585510c}{outer\+Rect}}) may be compressed to, if no manual minimum size is set. \end{DoxyCompactList}\item 
 virtual QSize \mbox{\hyperlink{class_q_c_p_layout_element_ad96efb977a26e360e8a64a4c1e56456d}{maximum\+Outer\+Size\+Hint}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the suggested maximum size this layout element (the \mbox{\hyperlink{class_q_c_p_layout_element_a2a32a12a6161c9dffbadeb9cc585510c}{outer\+Rect}}) may be expanded to, if no manual maximum size is set. \end{DoxyCompactList}\item 
 virtual QList$<$ \mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}} $\ast$ $>$ \mbox{\hyperlink{class_q_c_p_layout_element_a76dec8cb31e498994a944d7647a43309}{elements}} (bool recursive) const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns a list of all child elements in this layout element. \end{DoxyCompactList}\item 
 virtual double \mbox{\hyperlink{class_q_c_p_layout_element_ae97f483cccedadbf18ea4525ef240ee4}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant $\ast$details=0) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Layout elements are sensitive to events inside their outer rect. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_q_c_p_layerable_a74c0fa237f29bf0e49565013fc5d1ec0}{QCPLayerable}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$plot, QString target\+Layer=QString(), \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}}=0)
-\item 
+\begin{DoxyCompactList}\small\item\em Creates a new \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} instance. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_q_c_p_layerable_af0297b944b6192b6d67d00bff41b6b70}\label{class_q_c_p_layerable_af0297b944b6192b6d67d00bff41b6b70}} 
 bool {\bfseries visible} () const
 \item 
@@ -207,7 +238,7 @@ bool {\bfseries visible} () const
 \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$ {\bfseries parent\+Plot} () const
 \item 
 \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $\ast$ \mbox{\hyperlink{class_q_c_p_layerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the parent layerable of this layerable. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_q_c_p_layerable_a9d4e121a7f1d2314f906fe698209cac9}\label{class_q_c_p_layerable_a9d4e121a7f1d2314f906fe698209cac9}} 
 \mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$ {\bfseries layer} () const
 \item 
@@ -215,17 +246,17 @@ bool {\bfseries visible} () const
 bool {\bfseries antialiased} () const
 \item 
 void \mbox{\hyperlink{class_q_c_p_layerable_a3bed99ddc396b48ce3ebfdc0418744f8}{set\+Visible}} (bool on)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the visibility of this layerable object. \end{DoxyCompactList}\item 
 Q\+\_\+\+SLOT bool \mbox{\hyperlink{class_q_c_p_layerable_ab0d0da6d2de45a118886d2c8e16d5a54}{set\+Layer}} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$layer)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the {\itshape layer} of this layerable object. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_q_c_p_layerable_ab25a0e7b897993b44447caee0f142083}{set\+Layer}} (const QString \&layer\+Name)
-\item 
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Sets the layer of this layerable object by name. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layerable_a4fd43e89be4a553ead41652565ff0581}{set\+Antialiased}} (bool enabled)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets whether this object will be drawn antialiased or not. \end{DoxyCompactList}\item 
 virtual double \mbox{\hyperlink{class_q_c_p_layerable_a04db8351fefd44cfdb77958e75c6288e}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant $\ast$details=0) const
-\item 
+\begin{DoxyCompactList}\small\item\em This function is used to decide whether a click hits a layerable object or not. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_q_c_p_layerable_ab054e88f15d485defcb95e7376f119e7}{real\+Visibility}} () const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns whether this layerable is visible, taking the visibility of the layerable parent and the visibility of this layerable\textquotesingle{}s layer into account. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -243,15 +274,15 @@ Q\+\_\+\+SLOT void {\bfseries axis\+Selectable\+Changed} (QCPAxis\+::\+Selectabl
 virtual int \mbox{\hyperlink{class_q_c_p_color_scale_axis_rect_private_ac51055d83f5f414b6d013d3a24b0a941}{calculate\+Auto\+Margin}} (\mbox{\hyperlink{namespace_q_c_p_a7e487e3e2ccb62ab7771065bab7cae54}{QCP\+::\+Margin\+Side}} side) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
 virtual void \mbox{\hyperlink{class_q_c_p_color_scale_axis_rect_private_aa9a7c807eaa4666870ac94aa6abc4dde}{mouse\+Press\+Event}} (QMouse\+Event $\ast$event, const QVariant \&details) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
-\item 
+\begin{DoxyCompactList}\small\item\em This event gets called when the user presses a mouse button while the cursor is over the layerable. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_q_c_p_color_scale_axis_rect_private_a9cd27ad8c5cfb49aefd9dbb30def4beb}{mouse\+Move\+Event}} (QMouse\+Event $\ast$event, const QPointF \&start\+Pos) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
-\item 
+\begin{DoxyCompactList}\small\item\em This event gets called when the user moves the mouse while holding a mouse button, after this layerable has become the mouse grabber by accepting the preceding \mbox{\hyperlink{class_q_c_p_color_scale_axis_rect_private_aa9a7c807eaa4666870ac94aa6abc4dde}{mouse\+Press\+Event}}. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_q_c_p_color_scale_axis_rect_private_a6c89b988d3a0b93c0878f0ebdb5037f4}{mouse\+Release\+Event}} (QMouse\+Event $\ast$event, const QPointF \&start\+Pos) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
-\item 
+\begin{DoxyCompactList}\small\item\em This event gets called when the user releases the mouse button, after this layerable has become the mouse grabber by accepting the preceding \mbox{\hyperlink{class_q_c_p_color_scale_axis_rect_private_aa9a7c807eaa4666870ac94aa6abc4dde}{mouse\+Press\+Event}}. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_q_c_p_color_scale_axis_rect_private_a93eeaa0c127d6d6fe8171b2455080262}{wheel\+Event}} (QWheel\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
-\item 
+\begin{DoxyCompactList}\small\item\em This event gets called when the user turns the mouse scroll wheel while the cursor is over the layerable. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_q_c_p_color_scale_axis_rect_private_add049d464b9ef2ccdc638adc4ccb4aca}{update}} (\mbox{\hyperlink{class_q_c_p_layout_element_a0d83360e05735735aaf6d7983c56374d}{Update\+Phase}} phase) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This method is called automatically upon replot and doesn\textquotesingle{}t need to be called by users of \mbox{\hyperlink{class_q_c_p_axis_rect}{QCPAxis\+Rect}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_q_c_p_axis_rect}{QCPAxis\+Rect}}}
 \begin{DoxyCompactItemize}
 \item 
@@ -264,13 +295,13 @@ virtual int \mbox{\hyperlink{class_q_c_p_axis_rect_ac51055d83f5f414b6d013d3a24b0
 virtual void \mbox{\hyperlink{class_q_c_p_axis_rect_a575e38ac71a21906dc2d7b3364db2d62}{layout\+Changed}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
 virtual void \mbox{\hyperlink{class_q_c_p_axis_rect_aa9a7c807eaa4666870ac94aa6abc4dde}{mouse\+Press\+Event}} (QMouse\+Event $\ast$event, const QVariant \&details) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
-\item 
+\begin{DoxyCompactList}\small\item\em This event gets called when the user presses a mouse button while the cursor is over the layerable. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_q_c_p_axis_rect_a9cd27ad8c5cfb49aefd9dbb30def4beb}{mouse\+Move\+Event}} (QMouse\+Event $\ast$event, const QPointF \&start\+Pos) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
-\item 
+\begin{DoxyCompactList}\small\item\em This event gets called when the user moves the mouse while holding a mouse button, after this layerable has become the mouse grabber by accepting the preceding \mbox{\hyperlink{class_q_c_p_axis_rect_aa9a7c807eaa4666870ac94aa6abc4dde}{mouse\+Press\+Event}}. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_q_c_p_axis_rect_a6c89b988d3a0b93c0878f0ebdb5037f4}{mouse\+Release\+Event}} (QMouse\+Event $\ast$event, const QPointF \&start\+Pos) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
-\item 
+\begin{DoxyCompactList}\small\item\em This event gets called when the user releases the mouse button, after this layerable has become the mouse grabber by accepting the preceding \mbox{\hyperlink{class_q_c_p_axis_rect_aa9a7c807eaa4666870ac94aa6abc4dde}{mouse\+Press\+Event}}. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_q_c_p_axis_rect_a93eeaa0c127d6d6fe8171b2455080262}{wheel\+Event}} (QWheel\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
-\item 
+\begin{DoxyCompactList}\small\item\em This event gets called when the user turns the mouse scroll wheel while the cursor is over the layerable. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_q_c_p_axis_rect_ab49d338d1ce74b476fcead5b32cf06dc}\label{class_q_c_p_axis_rect_ab49d338d1ce74b476fcead5b32cf06dc}} 
 void {\bfseries draw\+Background} (\mbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} $\ast$painter)
 \item 
@@ -317,15 +348,15 @@ virtual void {\bfseries select\+Event} (QMouse\+Event $\ast$event, bool additive
 virtual void {\bfseries deselect\+Event} (bool $\ast$selection\+State\+Changed)
 \item 
 virtual void \mbox{\hyperlink{class_q_c_p_layerable_af6567604818db90f4fd52822f8bc8376}{mouse\+Press\+Event}} (QMouse\+Event $\ast$event, const QVariant \&details)
-\item 
+\begin{DoxyCompactList}\small\item\em This event gets called when the user presses a mouse button while the cursor is over the layerable. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_q_c_p_layerable_a9eee1ba47fd69be111059ca3881933e4}{mouse\+Move\+Event}} (QMouse\+Event $\ast$event, const QPointF \&start\+Pos)
-\item 
+\begin{DoxyCompactList}\small\item\em This event gets called when the user moves the mouse while holding a mouse button, after this layerable has become the mouse grabber by accepting the preceding \mbox{\hyperlink{class_q_c_p_layerable_af6567604818db90f4fd52822f8bc8376}{mouse\+Press\+Event}}. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_q_c_p_layerable_aa0d79b005686f668622bbe66ac03ba2c}{mouse\+Release\+Event}} (QMouse\+Event $\ast$event, const QPointF \&start\+Pos)
-\item 
+\begin{DoxyCompactList}\small\item\em This event gets called when the user releases the mouse button, after this layerable has become the mouse grabber by accepting the preceding \mbox{\hyperlink{class_q_c_p_layerable_af6567604818db90f4fd52822f8bc8376}{mouse\+Press\+Event}}. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_q_c_p_layerable_a4171e2e823aca242dd0279f00ed2de81}{mouse\+Double\+Click\+Event}} (QMouse\+Event $\ast$event, const QVariant \&details)
-\item 
+\begin{DoxyCompactList}\small\item\em This event gets called when the user presses the mouse button a second time in a double-\/click, while the cursor is over the layerable. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_q_c_p_layerable_a47dfd7b8fd99c08ca54e09c362b6f022}{wheel\+Event}} (QWheel\+Event $\ast$event)
-\item 
+\begin{DoxyCompactList}\small\item\em This event gets called when the user turns the mouse scroll wheel while the cursor is over the layerable. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_q_c_p_layerable_a8cbe5a0c9a5674249982f5ca5f8e02bc}\label{class_q_c_p_layerable_a8cbe5a0c9a5674249982f5ca5f8e02bc}} 
 void {\bfseries initialize\+Parent\+Plot} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$parent\+Plot)
 \item 
@@ -478,26 +509,17 @@ enum \mbox{\hyperlink{class_q_c_p_layout_element_a0d83360e05735735aaf6d7983c5637
 , \mbox{\hyperlink{class_q_c_p_layout_element_a0d83360e05735735aaf6d7983c56374da288cb59a92280e47261a341f2813e676}{up\+Margins}}
 , \mbox{\hyperlink{class_q_c_p_layout_element_a0d83360e05735735aaf6d7983c56374da5d1ccf5d79967c232c3c511796860045}{up\+Layout}}
  \}
-\item 
+\begin{DoxyCompactList}\small\item\em Defines the phases of the update process, that happens just before a replot. \end{DoxyCompactList}\item 
 enum \mbox{\hyperlink{class_q_c_p_layout_element_a0afb3e5773529e4bd20e448f81be4d2a}{Size\+Constraint\+Rect}} \{ \mbox{\hyperlink{class_q_c_p_layout_element_a0afb3e5773529e4bd20e448f81be4d2aa7fa7e25cd23758b9915c64ed9f1be26c}{scr\+Inner\+Rect}}
 , \mbox{\hyperlink{class_q_c_p_layout_element_a0afb3e5773529e4bd20e448f81be4d2aabe2745b41a6131ed194e13591b08e04d}{scr\+Outer\+Rect}}
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Defines to which rect of a layout element the size constraints that can be set via \mbox{\hyperlink{class_q_c_p_layout_element_a5dd29a3c8bc88440c97c06b67be7886b}{set\+Minimum\+Size}} and \mbox{\hyperlink{class_q_c_p_layout_element_a74eb5280a737ab44833d506db65efd95}{set\+Maximum\+Size}} apply. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Signals inherited from \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_q_c_p_layerable_abbf8657cedea73ac1c3499b521c90eba}{layer\+Changed}} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$new\+Layer)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This signal is emitted when the layer of this layerable changes, i.\+e. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
-
-\doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_q_c_p_color_scale_axis_rect_private_ad3b242f75dd2b33581364a4e668a80db}\label{class_q_c_p_color_scale_axis_rect_private_ad3b242f75dd2b33581364a4e668a80db}} 
-\index{QCPColorScaleAxisRectPrivate@{QCPColorScaleAxisRectPrivate}!QCPColorScaleAxisRectPrivate@{QCPColorScaleAxisRectPrivate}}
-\index{QCPColorScaleAxisRectPrivate@{QCPColorScaleAxisRectPrivate}!QCPColorScaleAxisRectPrivate@{QCPColorScaleAxisRectPrivate}}
-\doxysubsubsection{\texorpdfstring{QCPColorScaleAxisRectPrivate()}{QCPColorScaleAxisRectPrivate()}}
-{\footnotesize\ttfamily QCPColor\+Scale\+Axis\+Rect\+Private\+::\+QCPColor\+Scale\+Axis\+Rect\+Private (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_color_scale}{QCPColor\+Scale}} $\ast$}]{parent\+Color\+Scale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
-
-Creates a new instance, as a child of {\itshape parent\+Color\+Scale}. 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_q_c_p_color_scale_axis_rect_private_ac51055d83f5f414b6d013d3a24b0a941}\label{class_q_c_p_color_scale_axis_rect_private_ac51055d83f5f414b6d013d3a24b0a941}} 
@@ -526,7 +548,9 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_axis_rect}{QCPAxis\+Rect}}.
 \doxysubsubsection{\texorpdfstring{mouseMoveEvent()}{mouseMoveEvent()}}
 {\footnotesize\ttfamily void QCPAxis\+Rect\+::mouse\+Move\+Event (\begin{DoxyParamCaption}\item[{QMouse\+Event $\ast$}]{event,  }\item[{const QPointF \&}]{start\+Pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
 
-This event gets called when the user moves the mouse while holding a mouse button, after this layerable has become the mouse grabber by accepting the preceding \mbox{\hyperlink{class_q_c_p_color_scale_axis_rect_private_aa9a7c807eaa4666870ac94aa6abc4dde}{mouse\+Press\+Event}}.
+
+
+This event gets called when the user moves the mouse while holding a mouse button, after this layerable has become the mouse grabber by accepting the preceding \mbox{\hyperlink{class_q_c_p_color_scale_axis_rect_private_aa9a7c807eaa4666870ac94aa6abc4dde}{mouse\+Press\+Event}}. 
 
 \mbox{\hyperlink{class_the}{The}} current pixel position of the cursor on the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} widget is accessible via {\ttfamily event-\/\texorpdfstring{$>$}{>}pos()}. \mbox{\hyperlink{class_the}{The}} parameter {\itshape start\+Pos} indicates the position where the initial \mbox{\hyperlink{class_q_c_p_color_scale_axis_rect_private_aa9a7c807eaa4666870ac94aa6abc4dde}{mouse\+Press\+Event}} occured, that started the mouse interaction.
 
@@ -545,7 +569,11 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_axis_rect_a9cd27ad8c5cfb49aefd9d
 \doxysubsubsection{\texorpdfstring{mousePressEvent()}{mousePressEvent()}}
 {\footnotesize\ttfamily void QCPAxis\+Rect\+::mouse\+Press\+Event (\begin{DoxyParamCaption}\item[{QMouse\+Event $\ast$}]{event,  }\item[{const QVariant \&}]{details }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
 
-This event gets called when the user presses a mouse button while the cursor is over the layerable. Whether a cursor is over the layerable is decided by a preceding call to \mbox{\hyperlink{class_q_c_p_layout_element_ae97f483cccedadbf18ea4525ef240ee4}{select\+Test}}.
+
+
+This event gets called when the user presses a mouse button while the cursor is over the layerable. 
+
+Whether a cursor is over the layerable is decided by a preceding call to \mbox{\hyperlink{class_q_c_p_layout_element_ae97f483cccedadbf18ea4525ef240ee4}{select\+Test}}.
 
 \mbox{\hyperlink{class_the}{The}} current pixel position of the cursor on the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} widget is accessible via {\ttfamily event-\/\texorpdfstring{$>$}{>}pos()}. \mbox{\hyperlink{class_the}{The}} parameter {\itshape details} contains layerable-\/specific details about the hit, which were generated in the previous call to \mbox{\hyperlink{class_q_c_p_layout_element_ae97f483cccedadbf18ea4525ef240ee4}{select\+Test}}. For example, One-\/dimensional plottables like \mbox{\hyperlink{class_q_c_p_graph}{QCPGraph}} or \mbox{\hyperlink{class_q_c_p_bars}{QCPBars}} convey the clicked data point in the {\itshape details} parameter, as \mbox{\hyperlink{class_q_c_p_data_selection}{QCPData\+Selection}} packed as QVariant. Multi-\/part objects convey the specific {\ttfamily Selectable\+Part} that was hit (e.\+g. \mbox{\hyperlink{class_q_c_p_axis_abee4c7a54c468b1385dfce2c898b115f}{QCPAxis\+::\+Selectable\+Part}} in the case of axes).
 
@@ -568,7 +596,9 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_axis_rect_aa9a7c807eaa4666870ac9
 \doxysubsubsection{\texorpdfstring{mouseReleaseEvent()}{mouseReleaseEvent()}}
 {\footnotesize\ttfamily void QCPAxis\+Rect\+::mouse\+Release\+Event (\begin{DoxyParamCaption}\item[{QMouse\+Event $\ast$}]{event,  }\item[{const QPointF \&}]{start\+Pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
 
-This event gets called when the user releases the mouse button, after this layerable has become the mouse grabber by accepting the preceding \mbox{\hyperlink{class_q_c_p_color_scale_axis_rect_private_aa9a7c807eaa4666870ac94aa6abc4dde}{mouse\+Press\+Event}}.
+
+
+This event gets called when the user releases the mouse button, after this layerable has become the mouse grabber by accepting the preceding \mbox{\hyperlink{class_q_c_p_color_scale_axis_rect_private_aa9a7c807eaa4666870ac94aa6abc4dde}{mouse\+Press\+Event}}. 
 
 \mbox{\hyperlink{class_the}{The}} current pixel position of the cursor on the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} widget is accessible via {\ttfamily event-\/\texorpdfstring{$>$}{>}pos()}. \mbox{\hyperlink{class_the}{The}} parameter {\itshape start\+Pos} indicates the position where the initial \mbox{\hyperlink{class_q_c_p_color_scale_axis_rect_private_aa9a7c807eaa4666870ac94aa6abc4dde}{mouse\+Press\+Event}} occured, that started the mouse interaction.
 
@@ -587,7 +617,9 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_axis_rect_a6c89b988d3a0b93c0878f
 \doxysubsubsection{\texorpdfstring{update()}{update()}}
 {\footnotesize\ttfamily void QCPAxis\+Rect\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_layout_element_a0d83360e05735735aaf6d7983c56374d}{Update\+Phase}}}]{phase }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
 
-This method is called automatically upon replot and doesn\textquotesingle{}t need to be called by users of \mbox{\hyperlink{class_q_c_p_axis_rect}{QCPAxis\+Rect}}.
+
+
+This method is called automatically upon replot and doesn\textquotesingle{}t need to be called by users of \mbox{\hyperlink{class_q_c_p_axis_rect}{QCPAxis\+Rect}}. 
 
 Calls the base class implementation to update the margins (see \mbox{\hyperlink{class_q_c_p_layout_element_a929c2ec62e0e0e1d8418eaa802e2af9b}{QCPLayout\+Element\+::update}}), and finally passes the \mbox{\hyperlink{class_q_c_p_layout_element_a208effccfe2cca4a0eaf9393e60f2dd4}{rect}} to the inset layout (\mbox{\hyperlink{class_q_c_p_axis_rect_a949f803466619924c7018df4b511ae10}{inset\+Layout}}) and calls its QCPInset\+Layout\+::update function.
 
@@ -601,7 +633,11 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_axis_rect_add049d464b9ef2ccdc638
 \doxysubsubsection{\texorpdfstring{wheelEvent()}{wheelEvent()}}
 {\footnotesize\ttfamily void QCPAxis\+Rect\+::wheel\+Event (\begin{DoxyParamCaption}\item[{QWheel\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
 
-This event gets called when the user turns the mouse scroll wheel while the cursor is over the layerable. Whether a cursor is over the layerable is decided by a preceding call to \mbox{\hyperlink{class_q_c_p_layout_element_ae97f483cccedadbf18ea4525ef240ee4}{select\+Test}}.
+
+
+This event gets called when the user turns the mouse scroll wheel while the cursor is over the layerable. 
+
+Whether a cursor is over the layerable is decided by a preceding call to \mbox{\hyperlink{class_q_c_p_layout_element_ae97f483cccedadbf18ea4525ef240ee4}{select\+Test}}.
 
 \mbox{\hyperlink{class_the}{The}} current pixel position of the cursor on the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} widget is accessible via {\ttfamily event-\/\texorpdfstring{$>$}{>}pos()}.
 

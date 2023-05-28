@@ -17,12 +17,12 @@ Inheritance diagram for QCPLayer\+:\begin{figure}[H]
 enum \mbox{\hyperlink{class_q_c_p_layer_a67dcfc1590be2a1f2227c5a39bb59c7c}{Layer\+Mode}} \{ \mbox{\hyperlink{class_q_c_p_layer_a67dcfc1590be2a1f2227c5a39bb59c7ca02eb5e9a4cb7f1baf1e2b6b99e3b87ce}{lm\+Logical}}
 , \mbox{\hyperlink{class_q_c_p_layer_a67dcfc1590be2a1f2227c5a39bb59c7cab581b9fab3007c4c65f057f4185d7538}{lm\+Buffered}}
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Defines the different rendering modes of a layer. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_q_c_p_layer_a5d0657fc86d624e5efbe930ef21af718}{QCPLayer}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$parent\+Plot, const QString \&layer\+Name)
-\item 
+\begin{DoxyCompactList}\small\item\em Creates a new \mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} instance. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_q_c_p_layer_a923cb87bb467eeb17d649ba2b2fe4f5f}\label{class_q_c_p_layer_a923cb87bb467eeb17d649ba2b2fe4f5f}} 
 \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$ {\bfseries parent\+Plot} () const
 \item 
@@ -30,9 +30,9 @@ enum \mbox{\hyperlink{class_q_c_p_layer_a67dcfc1590be2a1f2227c5a39bb59c7c}{Layer
 QString {\bfseries name} () const
 \item 
 int \mbox{\hyperlink{class_q_c_p_layer_ad322905c4700dcc7ceba63e011c730d2}{index}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the index this layer has in the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}. \end{DoxyCompactList}\item 
 QList$<$ \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $\ast$ $>$ \mbox{\hyperlink{class_q_c_p_layer_a183b90941fc78f0b136edd77c5fb6966}{children}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns a list of all layerables on this layer. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_q_c_p_layer_ad1cc2d6b32d2abb33c7f449b964e068c}\label{class_q_c_p_layer_ad1cc2d6b32d2abb33c7f449b964e068c}} 
 bool {\bfseries visible} () const
 \item 
@@ -40,11 +40,11 @@ bool {\bfseries visible} () const
 \mbox{\hyperlink{class_q_c_p_layer_a67dcfc1590be2a1f2227c5a39bb59c7c}{Layer\+Mode}} {\bfseries mode} () const
 \item 
 void \mbox{\hyperlink{class_q_c_p_layer_ac07671f74edf6884b51a82afb2c19516}{set\+Visible}} (bool visible)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets whether this layer is visible or not. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layer_a938d57b04f4e4c23cedf1711f983919b}{set\+Mode}} (\mbox{\hyperlink{class_q_c_p_layer_a67dcfc1590be2a1f2227c5a39bb59c7c}{Layer\+Mode}} mode)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the rendering mode of this layer. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layer_adefd53b6db02f470151c416f42e37180}{replot}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em If the layer mode (\mbox{\hyperlink{class_q_c_p_layer_a938d57b04f4e4c23cedf1711f983919b}{set\+Mode}}) is set to \mbox{\hyperlink{class_q_c_p_layer_a67dcfc1590be2a1f2227c5a39bb59c7cab581b9fab3007c4c65f057f4185d7538}{lm\+Buffered}}, this method allows replotting only the layerables on this specific layer, without the need to replot all other layers (as a call to \mbox{\hyperlink{class_q_custom_plot_aa4bfe7d70dbe67e81d877819b75ab9af}{QCustom\+Plot\+::replot}} would do). \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -120,7 +120,11 @@ If the layer mode (\mbox{\hyperlink{class_q_c_p_layer_a938d57b04f4e4c23cedf1711f
 \doxysubsubsection{\texorpdfstring{LayerMode}{LayerMode}}
 {\footnotesize\ttfamily enum \mbox{\hyperlink{class_q_c_p_layer_a67dcfc1590be2a1f2227c5a39bb59c7c}{QCPLayer\+::\+Layer\+Mode}}}
 
-Defines the different rendering modes of a layer. Depending on the mode, certain layers can be replotted individually, without the need to replot (possibly complex) layerables on other layers.
+
+
+Defines the different rendering modes of a layer. 
+
+Depending on the mode, certain layers can be replotted individually, without the need to replot (possibly complex) layerables on other layers.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_layer_a938d57b04f4e4c23cedf1711f983919b}{set\+Mode}} 
@@ -144,7 +148,9 @@ lm\+Buffered&Layer has its own paint buffer and may be replotted individually (s
 \doxysubsubsection{\texorpdfstring{QCPLayer()}{QCPLayer()}}
 {\footnotesize\ttfamily QCPLayer\+::\+QCPLayer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$}]{parent\+Plot,  }\item[{const QString \&}]{layer\+Name }\end{DoxyParamCaption})}
 
-Creates a new \mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} instance.
+
+
+Creates a new \mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} instance. 
 
 Normally you shouldn\textquotesingle{}t directly instantiate layers, use \mbox{\hyperlink{class_q_custom_plot_ad5255393df078448bb6ac83fa5db5f52}{QCustom\+Plot\+::add\+Layer}} instead.
 
@@ -160,13 +166,21 @@ It is not checked that {\itshape layer\+Name} is actually a unique layer name in
 \doxysubsubsection{\texorpdfstring{children()}{children()}}
 {\footnotesize\ttfamily QList$<$ \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $\ast$ $>$ QCPLayer\+::children (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Returns a list of all layerables on this layer. \mbox{\hyperlink{class_the}{The}} order corresponds to the rendering order\+: layerables with higher indices are drawn above layerables with lower indices. \mbox{\Hypertarget{class_q_c_p_layer_ad322905c4700dcc7ceba63e011c730d2}\label{class_q_c_p_layer_ad322905c4700dcc7ceba63e011c730d2}} 
+
+
+Returns a list of all layerables on this layer. 
+
+\mbox{\hyperlink{class_the}{The}} order corresponds to the rendering order\+: layerables with higher indices are drawn above layerables with lower indices. \mbox{\Hypertarget{class_q_c_p_layer_ad322905c4700dcc7ceba63e011c730d2}\label{class_q_c_p_layer_ad322905c4700dcc7ceba63e011c730d2}} 
 \index{QCPLayer@{QCPLayer}!index@{index}}
 \index{index@{index}!QCPLayer@{QCPLayer}}
 \doxysubsubsection{\texorpdfstring{index()}{index()}}
 {\footnotesize\ttfamily int QCPLayer\+::index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Returns the index this layer has in the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}. \mbox{\hyperlink{class_the}{The}} index is the integer number by which this layer can be accessed via \mbox{\hyperlink{class_q_custom_plot_a0a96244e7773b242ef23c32b7bdfb159}{QCustom\+Plot\+::layer}}.
+
+
+Returns the index this layer has in the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}. 
+
+\mbox{\hyperlink{class_the}{The}} index is the integer number by which this layer can be accessed via \mbox{\hyperlink{class_q_custom_plot_a0a96244e7773b242ef23c32b7bdfb159}{QCustom\+Plot\+::layer}}.
 
 Layers with higher indices will be drawn above layers with lower indices. \mbox{\Hypertarget{class_q_c_p_layer_adefd53b6db02f470151c416f42e37180}\label{class_q_c_p_layer_adefd53b6db02f470151c416f42e37180}} 
 \index{QCPLayer@{QCPLayer}!replot@{replot}}
@@ -174,7 +188,9 @@ Layers with higher indices will be drawn above layers with lower indices. \mbox{
 \doxysubsubsection{\texorpdfstring{replot()}{replot()}}
 {\footnotesize\ttfamily void QCPLayer\+::replot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-If the layer mode (\mbox{\hyperlink{class_q_c_p_layer_a938d57b04f4e4c23cedf1711f983919b}{set\+Mode}}) is set to \mbox{\hyperlink{class_q_c_p_layer_a67dcfc1590be2a1f2227c5a39bb59c7cab581b9fab3007c4c65f057f4185d7538}{lm\+Buffered}}, this method allows replotting only the layerables on this specific layer, without the need to replot all other layers (as a call to \mbox{\hyperlink{class_q_custom_plot_aa4bfe7d70dbe67e81d877819b75ab9af}{QCustom\+Plot\+::replot}} would do).
+
+
+If the layer mode (\mbox{\hyperlink{class_q_c_p_layer_a938d57b04f4e4c23cedf1711f983919b}{set\+Mode}}) is set to \mbox{\hyperlink{class_q_c_p_layer_a67dcfc1590be2a1f2227c5a39bb59c7cab581b9fab3007c4c65f057f4185d7538}{lm\+Buffered}}, this method allows replotting only the layerables on this specific layer, without the need to replot all other layers (as a call to \mbox{\hyperlink{class_q_custom_plot_aa4bfe7d70dbe67e81d877819b75ab9af}{QCustom\+Plot\+::replot}} would do). 
 
 If the layer mode is \mbox{\hyperlink{class_q_c_p_layer_a67dcfc1590be2a1f2227c5a39bb59c7ca02eb5e9a4cb7f1baf1e2b6b99e3b87ce}{lm\+Logical}} however, this method simply calls \mbox{\hyperlink{class_q_custom_plot_aa4bfe7d70dbe67e81d877819b75ab9af}{QCustom\+Plot\+::replot}} on the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance.
 
@@ -189,7 +205,9 @@ draw
 \doxysubsubsection{\texorpdfstring{setMode()}{setMode()}}
 {\footnotesize\ttfamily void QCPLayer\+::set\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_layer_a67dcfc1590be2a1f2227c5a39bb59c7c}{QCPLayer\+::\+Layer\+Mode}}}]{mode }\end{DoxyParamCaption})}
 
-Sets the rendering mode of this layer.
+
+
+Sets the rendering mode of this layer. 
 
 If {\itshape mode} is set to \mbox{\hyperlink{class_q_c_p_layer_a67dcfc1590be2a1f2227c5a39bb59c7cab581b9fab3007c4c65f057f4185d7538}{lm\+Buffered}} for a layer, it will be given a dedicated paint buffer by the parent \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} instance. This means it may be replotted individually by calling \mbox{\hyperlink{class_q_c_p_layer_adefd53b6db02f470151c416f42e37180}{QCPLayer\+::replot}}, without needing to replot all other layers.
 
@@ -206,7 +224,11 @@ Note that each layer which is set to \mbox{\hyperlink{class_q_c_p_layer_a67dcfc1
 \doxysubsubsection{\texorpdfstring{setVisible()}{setVisible()}}
 {\footnotesize\ttfamily void QCPLayer\+::set\+Visible (\begin{DoxyParamCaption}\item[{bool}]{visible }\end{DoxyParamCaption})}
 
-Sets whether this layer is visible or not. If {\itshape visible} is set to false, all layerables on this layer will be invisible.
+
+
+Sets whether this layer is visible or not. 
+
+If {\itshape visible} is set to false, all layerables on this layer will be invisible.
 
 This function doesn\textquotesingle{}t change the visibility property of the layerables (\mbox{\hyperlink{class_q_c_p_layerable_a3bed99ddc396b48ce3ebfdc0418744f8}{QCPLayerable\+::set\+Visible}}), but the \mbox{\hyperlink{class_q_c_p_layerable_ab054e88f15d485defcb95e7376f119e7}{QCPLayerable\+::real\+Visibility}} of each layerable takes the visibility of the parent layer into account. 
 

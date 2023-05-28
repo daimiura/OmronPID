@@ -15,17 +15,17 @@ Inheritance diagram for QCPItem\+Anchor\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_q_c_p_item_anchor_a32573023c6fa65b4496f1f995e5bfa5f}{QCPItem\+Anchor}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$parent\+Plot, \mbox{\hyperlink{class_q_c_p_abstract_item}{QCPAbstract\+Item}} $\ast$parent\+Item, const QString \&name, int anchor\+Id=-\/1)
-\item 
+\begin{DoxyCompactList}\small\item\em Creates a new \mbox{\hyperlink{class_q_c_p_item_anchor}{QCPItem\+Anchor}}. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_q_c_p_item_anchor_aad37cdf5a3f63428f61be739014e212e}\label{class_q_c_p_item_anchor_aad37cdf5a3f63428f61be739014e212e}} 
 QString {\bfseries name} () const
 \item 
 virtual QPointF \mbox{\hyperlink{class_q_c_p_item_anchor_a06dcfb7220d26eee93eef56ae66582cb}{pixel\+Position}} () const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns the final absolute pixel position of the \mbox{\hyperlink{class_q_c_p_item_anchor}{QCPItem\+Anchor}} on the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} surface. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 virtual \mbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}} $\ast$ \mbox{\hyperlink{class_q_c_p_item_anchor_ac54b20120669950255a63587193dbb86}{to\+QCPItem\+Position}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Returns 0 if this instance is merely a \mbox{\hyperlink{class_q_c_p_item_anchor}{QCPItem\+Anchor}}, and a valid pointer of type QCPItem\+Position$\ast$ if it actually is a \mbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}} (which is a subclass of \mbox{\hyperlink{class_q_c_p_item_anchor}{QCPItem\+Anchor}}). \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_q_c_p_item_anchor_aef15daa640debfb11b0aeaa2116c6fbc}\label{class_q_c_p_item_anchor_aef15daa640debfb11b0aeaa2116c6fbc}} 
 void {\bfseries add\+ChildX} (\mbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}} $\ast$pos)
 \item 
@@ -85,7 +85,11 @@ To learn how to provide anchors in your own item subclasses, see the subclassing
 \doxysubsubsection{\texorpdfstring{QCPItemAnchor()}{QCPItemAnchor()}}
 {\footnotesize\ttfamily QCPItem\+Anchor\+::\+QCPItem\+Anchor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$}]{parent\+Plot,  }\item[{\mbox{\hyperlink{class_q_c_p_abstract_item}{QCPAbstract\+Item}} $\ast$}]{parent\+Item,  }\item[{const QString \&}]{name,  }\item[{int}]{anchor\+Id = {\ttfamily -\/1} }\end{DoxyParamCaption})}
 
-Creates a new \mbox{\hyperlink{class_q_c_p_item_anchor}{QCPItem\+Anchor}}. You shouldn\textquotesingle{}t create \mbox{\hyperlink{class_q_c_p_item_anchor}{QCPItem\+Anchor}} instances directly, even if you want to make a new item subclass. Use QCPAbstract\+Item\+::create\+Anchor instead, as explained in the subclassing section of the \mbox{\hyperlink{class_q_c_p_abstract_item}{QCPAbstract\+Item}} documentation. 
+
+
+Creates a new \mbox{\hyperlink{class_q_c_p_item_anchor}{QCPItem\+Anchor}}. 
+
+You shouldn\textquotesingle{}t create \mbox{\hyperlink{class_q_c_p_item_anchor}{QCPItem\+Anchor}} instances directly, even if you want to make a new item subclass. Use QCPAbstract\+Item\+::create\+Anchor instead, as explained in the subclassing section of the \mbox{\hyperlink{class_q_c_p_abstract_item}{QCPAbstract\+Item}} documentation. 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_q_c_p_item_anchor_a06dcfb7220d26eee93eef56ae66582cb}\label{class_q_c_p_item_anchor_a06dcfb7220d26eee93eef56ae66582cb}} 
@@ -94,7 +98,9 @@ Creates a new \mbox{\hyperlink{class_q_c_p_item_anchor}{QCPItem\+Anchor}}. You s
 \doxysubsubsection{\texorpdfstring{pixelPosition()}{pixelPosition()}}
 {\footnotesize\ttfamily QPointF QCPItem\+Anchor\+::pixel\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
 
-Returns the final absolute pixel position of the \mbox{\hyperlink{class_q_c_p_item_anchor}{QCPItem\+Anchor}} on the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} surface.
+
+
+Returns the final absolute pixel position of the \mbox{\hyperlink{class_q_c_p_item_anchor}{QCPItem\+Anchor}} on the \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} surface. 
 
 \mbox{\hyperlink{class_the}{The}} pixel information is internally retrieved via QCPAbstract\+Item\+::anchor\+Pixel\+Position of the parent item, \mbox{\hyperlink{class_q_c_p_item_anchor}{QCPItem\+Anchor}} is just an intermediary. 
 
@@ -106,7 +112,9 @@ Reimplemented in \mbox{\hyperlink{class_q_c_p_item_position_a8be9a4787635433edec
 \doxysubsubsection{\texorpdfstring{toQCPItemPosition()}{toQCPItemPosition()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}} $\ast$ QCPItem\+Anchor\+::to\+QCPItem\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
 
-Returns 0 if this instance is merely a \mbox{\hyperlink{class_q_c_p_item_anchor}{QCPItem\+Anchor}}, and a valid pointer of type QCPItem\+Position$\ast$ if it actually is a \mbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}} (which is a subclass of \mbox{\hyperlink{class_q_c_p_item_anchor}{QCPItem\+Anchor}}).
+
+
+Returns 0 if this instance is merely a \mbox{\hyperlink{class_q_c_p_item_anchor}{QCPItem\+Anchor}}, and a valid pointer of type QCPItem\+Position$\ast$ if it actually is a \mbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}} (which is a subclass of \mbox{\hyperlink{class_q_c_p_item_anchor}{QCPItem\+Anchor}}). 
 
 This safe downcast functionality could also be achieved with a dynamic\+\_\+cast. However, \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} avoids dynamic\+\_\+cast to work with projects that don\textquotesingle{}t have RTTI support enabled (e.\+g. -\/fno-\/rtti flag with gcc compiler). 
 

@@ -14,8 +14,9 @@ Inheritance diagram for QCPAbstract\+Legend\+Item\+:\begin{figure}[H]
 \doxysubsection*{Signals}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a7cb61fdfbaf69c590bacb8f9e7099d9e}{selection\+Changed}} (bool selected)
-\item 
+\mbox{\Hypertarget{class_q_c_p_abstract_legend_item_a7cb61fdfbaf69c590bacb8f9e7099d9e}\label{class_q_c_p_abstract_legend_item_a7cb61fdfbaf69c590bacb8f9e7099d9e}} 
+void {\bfseries selection\+Changed} (bool selected)
+\begin{DoxyCompactList}\small\item\em This signal is emitted when the selection state of this legend item has changed, either by user interaction or by a direct call to \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a6eed93b0ab99cb3eabb043fb08179c2b}{set\+Selected}}. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_q_c_p_abstract_legend_item_abc4d779b938cc9235f9196737dbaa6bd}\label{class_q_c_p_abstract_legend_item_abc4d779b938cc9235f9196737dbaa6bd}} 
 void {\bfseries selectable\+Changed} (bool selectable)
 \end{DoxyCompactItemize}
@@ -23,12 +24,12 @@ void {\bfseries selectable\+Changed} (bool selectable)
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_q_c_p_layerable_abbf8657cedea73ac1c3499b521c90eba}{layer\+Changed}} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$new\+Layer)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This signal is emitted when the layer of this layerable changes, i.\+e. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_q_c_p_abstract_legend_item_afaff87610e8da0fa238ecf552872d774}{QCPAbstract\+Legend\+Item}} (\mbox{\hyperlink{class_q_c_p_legend}{QCPLegend}} $\ast$parent)
-\item 
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{class_q_c_p_abstract_legend_item}{QCPAbstract\+Legend\+Item}} and associates it with the \mbox{\hyperlink{class_q_c_p_legend}{QCPLegend}} {\itshape parent}. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_q_c_p_abstract_legend_item_a062a244753e1e23387cbe5b294a780f2}\label{class_q_c_p_abstract_legend_item_a062a244753e1e23387cbe5b294a780f2}} 
 \mbox{\hyperlink{class_q_c_p_legend}{QCPLegend}} $\ast$ {\bfseries parent\+Legend} () const
 \item 
@@ -51,30 +52,32 @@ bool {\bfseries selectable} () const
 bool {\bfseries selected} () const
 \item 
 void \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a409c53455d8112f71d70c0c43eb10265}{set\+Font}} (const QFont \&font)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the default font of this specific legend item to {\itshape font}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a6ebace6aaffaedcdab2d74e88acc2d1e}{set\+Text\+Color}} (const QColor \&color)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the default text color of this specific legend item to {\itshape color}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a91db5aee48617a9d3206e61376807365}{set\+Selected\+Font}} (const QFont \&font)
-\item 
+\begin{DoxyCompactList}\small\item\em When this legend item is selected, {\itshape font} is used to draw generic text, instead of the normal font set with \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a409c53455d8112f71d70c0c43eb10265}{set\+Font}}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a4d01d008ee1a5bfe9905b0397a421936}{set\+Selected\+Text\+Color}} (const QColor \&color)
-\item 
+\begin{DoxyCompactList}\small\item\em When this legend item is selected, {\itshape color} is used to draw generic text, instead of the normal color set with \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a6ebace6aaffaedcdab2d74e88acc2d1e}{set\+Text\+Color}}. \end{DoxyCompactList}\item 
 Q\+\_\+\+SLOT void \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a9913ef48730551b696e7f98a2391c599}{set\+Selectable}} (bool selectable)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets whether this specific legend item is selectable. \end{DoxyCompactList}\item 
 Q\+\_\+\+SLOT void \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a6eed93b0ab99cb3eabb043fb08179c2b}{set\+Selected}} (bool selected)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets whether this specific legend item is selected. \end{DoxyCompactList}\item 
 virtual double \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a80ec112a6608fc39dbed56239849b187}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant $\ast$details=0) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Layout elements are sensitive to events inside their outer rect. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_q_c_p_layout_element_a8947f0ada17e672aaba3d424cbbb67e3}{QCPLayout\+Element}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$parent\+Plot=0)
-\item 
-\mbox{\hyperlink{class_q_c_p_layout}{QCPLayout}} $\ast$ \mbox{\hyperlink{class_q_c_p_layout_element_a4efdcbde9d28f410e5ef166c9d691deb}{layout}} () const
-\item 
+\mbox{\Hypertarget{class_q_c_p_layout_element_a8947f0ada17e672aaba3d424cbbb67e3}\label{class_q_c_p_layout_element_a8947f0ada17e672aaba3d424cbbb67e3}} 
+{\bfseries QCPLayout\+Element} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$parent\+Plot=0)
+\begin{DoxyCompactList}\small\item\em Creates an instance of \mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}} and sets default values. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_q_c_p_layout_element_a4efdcbde9d28f410e5ef166c9d691deb}\label{class_q_c_p_layout_element_a4efdcbde9d28f410e5ef166c9d691deb}} 
+\mbox{\hyperlink{class_q_c_p_layout}{QCPLayout}} $\ast$ {\bfseries layout} () const
+\begin{DoxyCompactList}\small\item\em Returns the parent layout of this layout element. \end{DoxyCompactList}\item 
 QRect \mbox{\hyperlink{class_q_c_p_layout_element_a208effccfe2cca4a0eaf9393e60f2dd4}{rect}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the inner rect of this layout element. \end{DoxyCompactList}\item 
 QRect \mbox{\hyperlink{class_q_c_p_layout_element_a2a32a12a6161c9dffbadeb9cc585510c}{outer\+Rect}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the outer rect of this layout element. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_q_c_p_layout_element_af4ac9450aa2d60863bf3a8ea0c940c9d}\label{class_q_c_p_layout_element_af4ac9450aa2d60863bf3a8ea0c940c9d}} 
 QMargins {\bfseries margins} () const
 \item 
@@ -100,40 +103,44 @@ QSize {\bfseries maximum\+Size} () const
 QHash$<$ \mbox{\hyperlink{namespace_q_c_p_a7e487e3e2ccb62ab7771065bab7cae54}{QCP\+::\+Margin\+Side}}, \mbox{\hyperlink{class_q_c_p_margin_group}{QCPMargin\+Group}} $\ast$ $>$ {\bfseries margin\+Groups} () const
 \item 
 void \mbox{\hyperlink{class_q_c_p_layout_element_a38975ea13e36de8e53391ce41d94bc0f}{set\+Outer\+Rect}} (const QRect \&\mbox{\hyperlink{class_q_c_p_layout_element_a208effccfe2cca4a0eaf9393e60f2dd4}{rect}})
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the outer rect of this layout element. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layout_element_a8f450b1f3f992ad576fce2c63d8b79cf}{set\+Margins}} (const QMargins \&margins)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the margins of this layout element. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layout_element_a0a8a17abc16b7923159fcc7608f94673}{set\+Minimum\+Margins}} (const QMargins \&margins)
-\item 
+\begin{DoxyCompactList}\small\item\em If \mbox{\hyperlink{class_q_c_p_layout_element_accfda49994e3e6d51ed14504abf9d27d}{set\+Auto\+Margins}} is enabled on some or all margins, this function is used to provide minimum values for those margins. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layout_element_accfda49994e3e6d51ed14504abf9d27d}{set\+Auto\+Margins}} (QCP\+::\+Margin\+Sides sides)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets on which sides the margin shall be calculated automatically. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layout_element_a5dd29a3c8bc88440c97c06b67be7886b}{set\+Minimum\+Size}} (const QSize \&size)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the minimum size of this layout element. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layout_element_a8e0447614a0bf92de9a7304588c6b96e}{set\+Minimum\+Size}} (int width, int height)
-\item 
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Sets the minimum size of this layout element. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layout_element_a74eb5280a737ab44833d506db65efd95}{set\+Maximum\+Size}} (const QSize \&size)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the maximum size of this layout element. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layout_element_a03e0e9c48f230217c529b0819f832d84}{set\+Maximum\+Size}} (int width, int height)
-\item 
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Sets the maximum size of this layout element. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layout_element_a361666cdcc6fbfd37344cc44be746b0f}{set\+Size\+Constraint\+Rect}} (\mbox{\hyperlink{class_q_c_p_layout_element_a0afb3e5773529e4bd20e448f81be4d2a}{Size\+Constraint\+Rect}} constraint\+Rect)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets to which rect of a layout element the size constraints apply. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layout_element_a516e56f76b6bc100e8e71d329866847d}{set\+Margin\+Group}} (QCP\+::\+Margin\+Sides sides, \mbox{\hyperlink{class_q_c_p_margin_group}{QCPMargin\+Group}} $\ast$group)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the margin {\itshape group} of the specified margin {\itshape sides}. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_q_c_p_layout_element_a929c2ec62e0e0e1d8418eaa802e2af9b}{update}} (\mbox{\hyperlink{class_q_c_p_layout_element_a0d83360e05735735aaf6d7983c56374d}{Update\+Phase}} phase)
-\item 
+\begin{DoxyCompactList}\small\item\em Updates the layout element and sub-\/elements. \end{DoxyCompactList}\item 
 virtual QSize \mbox{\hyperlink{class_q_c_p_layout_element_a46789036c4fcb190fa374f91321d7c09}{minimum\+Outer\+Size\+Hint}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the suggested minimum size this layout element (the \mbox{\hyperlink{class_q_c_p_layout_element_a2a32a12a6161c9dffbadeb9cc585510c}{outer\+Rect}}) may be compressed to, if no manual minimum size is set. \end{DoxyCompactList}\item 
 virtual QSize \mbox{\hyperlink{class_q_c_p_layout_element_ad96efb977a26e360e8a64a4c1e56456d}{maximum\+Outer\+Size\+Hint}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the suggested maximum size this layout element (the \mbox{\hyperlink{class_q_c_p_layout_element_a2a32a12a6161c9dffbadeb9cc585510c}{outer\+Rect}}) may be expanded to, if no manual maximum size is set. \end{DoxyCompactList}\item 
 virtual QList$<$ \mbox{\hyperlink{class_q_c_p_layout_element}{QCPLayout\+Element}} $\ast$ $>$ \mbox{\hyperlink{class_q_c_p_layout_element_a76dec8cb31e498994a944d7647a43309}{elements}} (bool recursive) const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns a list of all child elements in this layout element. \end{DoxyCompactList}\item 
 virtual double \mbox{\hyperlink{class_q_c_p_layout_element_ae97f483cccedadbf18ea4525ef240ee4}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant $\ast$details=0) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Layout elements are sensitive to events inside their outer rect. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_q_c_p_layerable_a74c0fa237f29bf0e49565013fc5d1ec0}{QCPLayerable}} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$plot, QString target\+Layer=QString(), \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $\ast$\mbox{\hyperlink{class_q_c_p_layerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}}=0)
-\item 
+\begin{DoxyCompactList}\small\item\em Creates a new \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} instance. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_q_c_p_layerable_af0297b944b6192b6d67d00bff41b6b70}\label{class_q_c_p_layerable_af0297b944b6192b6d67d00bff41b6b70}} 
 bool {\bfseries visible} () const
 \item 
@@ -141,7 +148,7 @@ bool {\bfseries visible} () const
 \mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$ {\bfseries parent\+Plot} () const
 \item 
 \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $\ast$ \mbox{\hyperlink{class_q_c_p_layerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the parent layerable of this layerable. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_q_c_p_layerable_a9d4e121a7f1d2314f906fe698209cac9}\label{class_q_c_p_layerable_a9d4e121a7f1d2314f906fe698209cac9}} 
 \mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$ {\bfseries layer} () const
 \item 
@@ -149,17 +156,17 @@ bool {\bfseries visible} () const
 bool {\bfseries antialiased} () const
 \item 
 void \mbox{\hyperlink{class_q_c_p_layerable_a3bed99ddc396b48ce3ebfdc0418744f8}{set\+Visible}} (bool on)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the visibility of this layerable object. \end{DoxyCompactList}\item 
 Q\+\_\+\+SLOT bool \mbox{\hyperlink{class_q_c_p_layerable_ab0d0da6d2de45a118886d2c8e16d5a54}{set\+Layer}} (\mbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} $\ast$layer)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the {\itshape layer} of this layerable object. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_q_c_p_layerable_ab25a0e7b897993b44447caee0f142083}{set\+Layer}} (const QString \&layer\+Name)
-\item 
+\begin{DoxyCompactList}\small\item\em This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Sets the layer of this layerable object by name. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_q_c_p_layerable_a4fd43e89be4a553ead41652565ff0581}{set\+Antialiased}} (bool enabled)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets whether this object will be drawn antialiased or not. \end{DoxyCompactList}\item 
 virtual double \mbox{\hyperlink{class_q_c_p_layerable_a04db8351fefd44cfdb77958e75c6288e}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant $\ast$details=0) const
-\item 
+\begin{DoxyCompactList}\small\item\em This function is used to decide whether a click hits a layerable object or not. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_q_c_p_layerable_ab054e88f15d485defcb95e7376f119e7}{real\+Visibility}} () const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns whether this layerable is visible, taking the visibility of the layerable parent and the visibility of this layerable\textquotesingle{}s layer into account. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -215,15 +222,15 @@ virtual void {\bfseries select\+Event} (QMouse\+Event $\ast$event, bool additive
 virtual void {\bfseries deselect\+Event} (bool $\ast$selection\+State\+Changed)
 \item 
 virtual void \mbox{\hyperlink{class_q_c_p_layerable_af6567604818db90f4fd52822f8bc8376}{mouse\+Press\+Event}} (QMouse\+Event $\ast$event, const QVariant \&details)
-\item 
+\begin{DoxyCompactList}\small\item\em This event gets called when the user presses a mouse button while the cursor is over the layerable. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_q_c_p_layerable_a9eee1ba47fd69be111059ca3881933e4}{mouse\+Move\+Event}} (QMouse\+Event $\ast$event, const QPointF \&start\+Pos)
-\item 
+\begin{DoxyCompactList}\small\item\em This event gets called when the user moves the mouse while holding a mouse button, after this layerable has become the mouse grabber by accepting the preceding \mbox{\hyperlink{class_q_c_p_layerable_af6567604818db90f4fd52822f8bc8376}{mouse\+Press\+Event}}. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_q_c_p_layerable_aa0d79b005686f668622bbe66ac03ba2c}{mouse\+Release\+Event}} (QMouse\+Event $\ast$event, const QPointF \&start\+Pos)
-\item 
+\begin{DoxyCompactList}\small\item\em This event gets called when the user releases the mouse button, after this layerable has become the mouse grabber by accepting the preceding \mbox{\hyperlink{class_q_c_p_layerable_af6567604818db90f4fd52822f8bc8376}{mouse\+Press\+Event}}. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_q_c_p_layerable_a4171e2e823aca242dd0279f00ed2de81}{mouse\+Double\+Click\+Event}} (QMouse\+Event $\ast$event, const QVariant \&details)
-\item 
+\begin{DoxyCompactList}\small\item\em This event gets called when the user presses the mouse button a second time in a double-\/click, while the cursor is over the layerable. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_q_c_p_layerable_a47dfd7b8fd99c08ca54e09c362b6f022}{wheel\+Event}} (QWheel\+Event $\ast$event)
-\item 
+\begin{DoxyCompactList}\small\item\em This event gets called when the user turns the mouse scroll wheel while the cursor is over the layerable. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_q_c_p_layerable_a8cbe5a0c9a5674249982f5ca5f8e02bc}\label{class_q_c_p_layerable_a8cbe5a0c9a5674249982f5ca5f8e02bc}} 
 void {\bfseries initialize\+Parent\+Plot} (\mbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} $\ast$parent\+Plot)
 \item 
@@ -325,11 +332,11 @@ enum \mbox{\hyperlink{class_q_c_p_layout_element_a0d83360e05735735aaf6d7983c5637
 , \mbox{\hyperlink{class_q_c_p_layout_element_a0d83360e05735735aaf6d7983c56374da288cb59a92280e47261a341f2813e676}{up\+Margins}}
 , \mbox{\hyperlink{class_q_c_p_layout_element_a0d83360e05735735aaf6d7983c56374da5d1ccf5d79967c232c3c511796860045}{up\+Layout}}
  \}
-\item 
+\begin{DoxyCompactList}\small\item\em Defines the phases of the update process, that happens just before a replot. \end{DoxyCompactList}\item 
 enum \mbox{\hyperlink{class_q_c_p_layout_element_a0afb3e5773529e4bd20e448f81be4d2a}{Size\+Constraint\+Rect}} \{ \mbox{\hyperlink{class_q_c_p_layout_element_a0afb3e5773529e4bd20e448f81be4d2aa7fa7e25cd23758b9915c64ed9f1be26c}{scr\+Inner\+Rect}}
 , \mbox{\hyperlink{class_q_c_p_layout_element_a0afb3e5773529e4bd20e448f81be4d2aabe2745b41a6131ed194e13591b08e04d}{scr\+Outer\+Rect}}
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Defines to which rect of a layout element the size constraints that can be set via \mbox{\hyperlink{class_q_c_p_layout_element_a5dd29a3c8bc88440c97c06b67be7886b}{set\+Minimum\+Size}} and \mbox{\hyperlink{class_q_c_p_layout_element_a74eb5280a737ab44833d506db65efd95}{set\+Maximum\+Size}} apply. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -356,7 +363,11 @@ QFont {\bfseries{m\+Font}}  &\mbox{\hyperlink{class_the}{The}} generic font of t
 \doxysubsubsection{\texorpdfstring{QCPAbstractLegendItem()}{QCPAbstractLegendItem()}}
 {\footnotesize\ttfamily QCPAbstract\+Legend\+Item\+::\+QCPAbstract\+Legend\+Item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_c_p_legend}{QCPLegend}} $\ast$}]{parent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
-Constructs a \mbox{\hyperlink{class_q_c_p_abstract_legend_item}{QCPAbstract\+Legend\+Item}} and associates it with the \mbox{\hyperlink{class_q_c_p_legend}{QCPLegend}} {\itshape parent}. This does not cause the item to be added to {\itshape parent}, so \mbox{\hyperlink{class_q_c_p_legend_a3ab274de52d2951faea45a6d975e6b3f}{QCPLegend\+::add\+Item}} must be called separately. 
+
+
+Constructs a \mbox{\hyperlink{class_q_c_p_abstract_legend_item}{QCPAbstract\+Legend\+Item}} and associates it with the \mbox{\hyperlink{class_q_c_p_legend}{QCPLegend}} {\itshape parent}. 
+
+This does not cause the item to be added to {\itshape parent}, so \mbox{\hyperlink{class_q_c_p_legend_a3ab274de52d2951faea45a6d975e6b3f}{QCPLegend\+::add\+Item}} must be called separately. 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_q_c_p_abstract_legend_item_a6bfbcb9ace779f4f6fe22241c32a67c9}\label{class_q_c_p_abstract_legend_item_a6bfbcb9ace779f4f6fe22241c32a67c9}} 
@@ -419,19 +430,17 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}.
 
 Reimplemented from \mbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}.
 
-\mbox{\Hypertarget{class_q_c_p_abstract_legend_item_a7cb61fdfbaf69c590bacb8f9e7099d9e}\label{class_q_c_p_abstract_legend_item_a7cb61fdfbaf69c590bacb8f9e7099d9e}} 
-\index{QCPAbstractLegendItem@{QCPAbstractLegendItem}!selectionChanged@{selectionChanged}}
-\index{selectionChanged@{selectionChanged}!QCPAbstractLegendItem@{QCPAbstractLegendItem}}
-\doxysubsubsection{\texorpdfstring{selectionChanged}{selectionChanged}}
-{\footnotesize\ttfamily void QCPAbstract\+Legend\+Item\+::selection\+Changed (\begin{DoxyParamCaption}\item[{bool}]{selected }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
-
-This signal is emitted when the selection state of this legend item has changed, either by user interaction or by a direct call to \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a6eed93b0ab99cb3eabb043fb08179c2b}{set\+Selected}}. \mbox{\Hypertarget{class_q_c_p_abstract_legend_item_a80ec112a6608fc39dbed56239849b187}\label{class_q_c_p_abstract_legend_item_a80ec112a6608fc39dbed56239849b187}} 
+\mbox{\Hypertarget{class_q_c_p_abstract_legend_item_a80ec112a6608fc39dbed56239849b187}\label{class_q_c_p_abstract_legend_item_a80ec112a6608fc39dbed56239849b187}} 
 \index{QCPAbstractLegendItem@{QCPAbstractLegendItem}!selectTest@{selectTest}}
 \index{selectTest@{selectTest}!QCPAbstractLegendItem@{QCPAbstractLegendItem}}
 \doxysubsubsection{\texorpdfstring{selectTest()}{selectTest()}}
 {\footnotesize\ttfamily double QCPAbstract\+Legend\+Item\+::select\+Test (\begin{DoxyParamCaption}\item[{const QPointF \&}]{pos,  }\item[{bool}]{only\+Selectable,  }\item[{QVariant $\ast$}]{details = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
 
-Layout elements are sensitive to events inside their outer rect. If {\itshape pos} is within the outer rect, this method returns a value corresponding to 0.\+99 times the parent plot\textquotesingle{}s selection tolerance. However, layout elements are not selectable by default. So if {\itshape only\+Selectable} is true, -\/1.\+0 is returned.
+
+
+Layout elements are sensitive to events inside their outer rect. 
+
+If {\itshape pos} is within the outer rect, this method returns a value corresponding to 0.\+99 times the parent plot\textquotesingle{}s selection tolerance. However, layout elements are not selectable by default. So if {\itshape only\+Selectable} is true, -\/1.\+0 is returned.
 
 See \mbox{\hyperlink{class_q_c_p_layerable_a04db8351fefd44cfdb77958e75c6288e}{QCPLayerable\+::select\+Test}} for a general explanation of this virtual method.
 
@@ -445,7 +454,9 @@ Reimplemented from \mbox{\hyperlink{class_q_c_p_layout_element_ae97f483cccedadbf
 \doxysubsubsection{\texorpdfstring{setFont()}{setFont()}}
 {\footnotesize\ttfamily void QCPAbstract\+Legend\+Item\+::set\+Font (\begin{DoxyParamCaption}\item[{const QFont \&}]{font }\end{DoxyParamCaption})}
 
-Sets the default font of this specific legend item to {\itshape font}.
+
+
+Sets the default font of this specific legend item to {\itshape font}. 
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a6ebace6aaffaedcdab2d74e88acc2d1e}{set\+Text\+Color}}, \mbox{\hyperlink{class_q_c_p_legend_aa4cda8499e3cb0f3be415edc02984c73}{QCPLegend\+::set\+Font}} 
@@ -456,7 +467,9 @@ Sets the default font of this specific legend item to {\itshape font}.
 \doxysubsubsection{\texorpdfstring{setSelectable()}{setSelectable()}}
 {\footnotesize\ttfamily void QCPAbstract\+Legend\+Item\+::set\+Selectable (\begin{DoxyParamCaption}\item[{bool}]{selectable }\end{DoxyParamCaption})}
 
-Sets whether this specific legend item is selectable.
+
+
+Sets whether this specific legend item is selectable. 
 
 \begin{DoxySeeAlso}{See also}
 set\+Selected\+Parts, \mbox{\hyperlink{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5}{QCustom\+Plot\+::set\+Interactions}} 
@@ -467,7 +480,9 @@ set\+Selected\+Parts, \mbox{\hyperlink{class_q_custom_plot_a5ee1e2f6ae27419deca5
 \doxysubsubsection{\texorpdfstring{setSelected()}{setSelected()}}
 {\footnotesize\ttfamily void QCPAbstract\+Legend\+Item\+::set\+Selected (\begin{DoxyParamCaption}\item[{bool}]{selected }\end{DoxyParamCaption})}
 
-Sets whether this specific legend item is selected.
+
+
+Sets whether this specific legend item is selected. 
 
 It is possible to set the selection state of this item by calling this function directly, even if set\+Selectable is set to false.
 
@@ -480,7 +495,9 @@ set\+Selectable\+Parts, \mbox{\hyperlink{class_q_custom_plot_a5ee1e2f6ae27419dec
 \doxysubsubsection{\texorpdfstring{setSelectedFont()}{setSelectedFont()}}
 {\footnotesize\ttfamily void QCPAbstract\+Legend\+Item\+::set\+Selected\+Font (\begin{DoxyParamCaption}\item[{const QFont \&}]{font }\end{DoxyParamCaption})}
 
-When this legend item is selected, {\itshape font} is used to draw generic text, instead of the normal font set with \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a409c53455d8112f71d70c0c43eb10265}{set\+Font}}.
+
+
+When this legend item is selected, {\itshape font} is used to draw generic text, instead of the normal font set with \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a409c53455d8112f71d70c0c43eb10265}{set\+Font}}. 
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a409c53455d8112f71d70c0c43eb10265}{set\+Font}}, \mbox{\hyperlink{class_q_c_p_legend_ab580a01c3c0a239374ed66c29edf5ad2}{QCPLegend\+::set\+Selected\+Font}} 
@@ -491,7 +508,9 @@ When this legend item is selected, {\itshape font} is used to draw generic text,
 \doxysubsubsection{\texorpdfstring{setSelectedTextColor()}{setSelectedTextColor()}}
 {\footnotesize\ttfamily void QCPAbstract\+Legend\+Item\+::set\+Selected\+Text\+Color (\begin{DoxyParamCaption}\item[{const QColor \&}]{color }\end{DoxyParamCaption})}
 
-When this legend item is selected, {\itshape color} is used to draw generic text, instead of the normal color set with \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a6ebace6aaffaedcdab2d74e88acc2d1e}{set\+Text\+Color}}.
+
+
+When this legend item is selected, {\itshape color} is used to draw generic text, instead of the normal color set with \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a6ebace6aaffaedcdab2d74e88acc2d1e}{set\+Text\+Color}}. 
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a6ebace6aaffaedcdab2d74e88acc2d1e}{set\+Text\+Color}}, \mbox{\hyperlink{class_q_c_p_legend_a7674dfc7a1f30e1abd1018c0ed45e0bc}{QCPLegend\+::set\+Selected\+Text\+Color}} 
@@ -502,7 +521,9 @@ When this legend item is selected, {\itshape color} is used to draw generic text
 \doxysubsubsection{\texorpdfstring{setTextColor()}{setTextColor()}}
 {\footnotesize\ttfamily void QCPAbstract\+Legend\+Item\+::set\+Text\+Color (\begin{DoxyParamCaption}\item[{const QColor \&}]{color }\end{DoxyParamCaption})}
 
-Sets the default text color of this specific legend item to {\itshape color}.
+
+
+Sets the default text color of this specific legend item to {\itshape color}. 
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_q_c_p_abstract_legend_item_a409c53455d8112f71d70c0c43eb10265}{set\+Font}}, \mbox{\hyperlink{class_q_c_p_legend_ae1eb239ff4a4632fe1b6c3e668d845c6}{QCPLegend\+::set\+Text\+Color}} 

@@ -1,3 +1,7 @@
+/**
+ * @file datasummary.h
+ * @brief Header file for the DataSummary class
+*/
 #ifndef DATASUMMARY_H
 #define DATASUMMARY_H
 

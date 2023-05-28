@@ -8,26 +8,28 @@ Holds the data of one single data point for \mbox{\hyperlink{class_q_c_p_curve}{
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_q_c_p_curve_data_a48252779b5198a509d99c69ae223fbf8}{QCPCurve\+Data}} ()
-\item 
-\mbox{\hyperlink{class_q_c_p_curve_data_a3586be0cc6f8db15bcdd0c0d03b0c173}{QCPCurve\+Data}} (double t, double key, double value)
-\item 
+\mbox{\Hypertarget{class_q_c_p_curve_data_a48252779b5198a509d99c69ae223fbf8}\label{class_q_c_p_curve_data_a48252779b5198a509d99c69ae223fbf8}} 
+{\bfseries QCPCurve\+Data} ()
+\begin{DoxyCompactList}\small\item\em Constructs a curve data point with t, key and value set to zero. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_q_c_p_curve_data_a3586be0cc6f8db15bcdd0c0d03b0c173}\label{class_q_c_p_curve_data_a3586be0cc6f8db15bcdd0c0d03b0c173}} 
+{\bfseries QCPCurve\+Data} (double t, double key, double value)
+\begin{DoxyCompactList}\small\item\em Constructs a curve data point with the specified {\itshape t}, {\itshape key} and {\itshape value}. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_q_c_p_curve_data_a583174f2b68e01b4d545f04571f58bd0}{sort\+Key}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the {\itshape t} member of this data point. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_q_c_p_curve_data_ac805ffc8b4207652efb9fcc6a2cdd3e8}{main\+Key}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the {\itshape key} member of this data point. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_q_c_p_curve_data_a39a94131e5f62f16b256bcf8c47a3205}{main\+Value}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the {\itshape value} member of this data point. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} \mbox{\hyperlink{class_q_c_p_curve_data_acf15deffd18d400651f8384a95dad9f8}{value\+Range}} () const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns a \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} with both lower and upper boundary set to {\itshape value} of this data point. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 static \mbox{\hyperlink{class_q_c_p_curve_data}{QCPCurve\+Data}} \mbox{\hyperlink{class_q_c_p_curve_data_a40adf1a6ba93051c415a65298b49aa6e}{from\+Sort\+Key}} (double \mbox{\hyperlink{class_q_c_p_curve_data_a583174f2b68e01b4d545f04571f58bd0}{sort\+Key}})
-\item 
+\begin{DoxyCompactList}\small\item\em Returns a data point with the specified {\itshape sort\+Key} (assigned to the data point\textquotesingle{}s {\itshape t} member). \end{DoxyCompactList}\item 
 static bool \mbox{\hyperlink{class_q_c_p_curve_data_a1b78f228e31ca40a1e69add44537918c}{sort\+Key\+Is\+Main\+Key}} ()
-\end{DoxyCompactItemize}
-\doxysubsection*{Public Attributes}
+\begin{DoxyCompactList}\small\item\em Since the member {\itshape key} is the data point key coordinate and the member {\itshape t} is the data ordering parameter, this method returns false. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Data Fields}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_q_c_p_curve_data_aecc395525be28e9178a088793beb3ff3}\label{class_q_c_p_curve_data_aecc395525be28e9178a088793beb3ff3}} 
@@ -53,21 +55,6 @@ QCPCurve\+Data\+Container
 \end{DoxySeeAlso}
 
 
-\doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_q_c_p_curve_data_a48252779b5198a509d99c69ae223fbf8}\label{class_q_c_p_curve_data_a48252779b5198a509d99c69ae223fbf8}} 
-\index{QCPCurveData@{QCPCurveData}!QCPCurveData@{QCPCurveData}}
-\index{QCPCurveData@{QCPCurveData}!QCPCurveData@{QCPCurveData}}
-\doxysubsubsection{\texorpdfstring{QCPCurveData()}{QCPCurveData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily QCPCurve\+Data\+::\+QCPCurve\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-Constructs a curve data point with t, key and value set to zero. \mbox{\Hypertarget{class_q_c_p_curve_data_a3586be0cc6f8db15bcdd0c0d03b0c173}\label{class_q_c_p_curve_data_a3586be0cc6f8db15bcdd0c0d03b0c173}} 
-\index{QCPCurveData@{QCPCurveData}!QCPCurveData@{QCPCurveData}}
-\index{QCPCurveData@{QCPCurveData}!QCPCurveData@{QCPCurveData}}
-\doxysubsubsection{\texorpdfstring{QCPCurveData()}{QCPCurveData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily QCPCurve\+Data\+::\+QCPCurve\+Data (\begin{DoxyParamCaption}\item[{double}]{t,  }\item[{double}]{key,  }\item[{double}]{value }\end{DoxyParamCaption})}
-
-Constructs a curve data point with the specified {\itshape t}, {\itshape key} and {\itshape value}. 
-
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_q_c_p_curve_data_a40adf1a6ba93051c415a65298b49aa6e}\label{class_q_c_p_curve_data_a40adf1a6ba93051c415a65298b49aa6e}} 
 \index{QCPCurveData@{QCPCurveData}!fromSortKey@{fromSortKey}}
@@ -75,7 +62,11 @@ Constructs a curve data point with the specified {\itshape t}, {\itshape key} an
 \doxysubsubsection{\texorpdfstring{fromSortKey()}{fromSortKey()}}
 {\footnotesize\ttfamily static \mbox{\hyperlink{class_q_c_p_curve_data}{QCPCurve\+Data}} QCPCurve\+Data\+::from\+Sort\+Key (\begin{DoxyParamCaption}\item[{double}]{sort\+Key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
-Returns a data point with the specified {\itshape sort\+Key} (assigned to the data point\textquotesingle{}s {\itshape t} member). All other members are set to zero.
+
+
+Returns a data point with the specified {\itshape sort\+Key} (assigned to the data point\textquotesingle{}s {\itshape t} member). 
+
+All other members are set to zero.
 
 For a general explanation of what this method is good for in the context of the data container, see the documentation of \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}. \mbox{\Hypertarget{class_q_c_p_curve_data_ac805ffc8b4207652efb9fcc6a2cdd3e8}\label{class_q_c_p_curve_data_ac805ffc8b4207652efb9fcc6a2cdd3e8}} 
 \index{QCPCurveData@{QCPCurveData}!mainKey@{mainKey}}
@@ -83,7 +74,9 @@ For a general explanation of what this method is good for in the context of the 
 \doxysubsubsection{\texorpdfstring{mainKey()}{mainKey()}}
 {\footnotesize\ttfamily double QCPCurve\+Data\+::main\+Key (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Returns the {\itshape key} member of this data point.
+
+
+Returns the {\itshape key} member of this data point. 
 
 For a general explanation of what this method is good for in the context of the data container, see the documentation of \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}. \mbox{\Hypertarget{class_q_c_p_curve_data_a39a94131e5f62f16b256bcf8c47a3205}\label{class_q_c_p_curve_data_a39a94131e5f62f16b256bcf8c47a3205}} 
 \index{QCPCurveData@{QCPCurveData}!mainValue@{mainValue}}
@@ -91,7 +84,9 @@ For a general explanation of what this method is good for in the context of the 
 \doxysubsubsection{\texorpdfstring{mainValue()}{mainValue()}}
 {\footnotesize\ttfamily double QCPCurve\+Data\+::main\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Returns the {\itshape value} member of this data point.
+
+
+Returns the {\itshape value} member of this data point. 
 
 For a general explanation of what this method is good for in the context of the data container, see the documentation of \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}. \mbox{\Hypertarget{class_q_c_p_curve_data_a583174f2b68e01b4d545f04571f58bd0}\label{class_q_c_p_curve_data_a583174f2b68e01b4d545f04571f58bd0}} 
 \index{QCPCurveData@{QCPCurveData}!sortKey@{sortKey}}
@@ -99,7 +94,9 @@ For a general explanation of what this method is good for in the context of the 
 \doxysubsubsection{\texorpdfstring{sortKey()}{sortKey()}}
 {\footnotesize\ttfamily double QCPCurve\+Data\+::sort\+Key (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Returns the {\itshape t} member of this data point.
+
+
+Returns the {\itshape t} member of this data point. 
 
 For a general explanation of what this method is good for in the context of the data container, see the documentation of \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}. \mbox{\Hypertarget{class_q_c_p_curve_data_a1b78f228e31ca40a1e69add44537918c}\label{class_q_c_p_curve_data_a1b78f228e31ca40a1e69add44537918c}} 
 \index{QCPCurveData@{QCPCurveData}!sortKeyIsMainKey@{sortKeyIsMainKey}}
@@ -107,7 +104,9 @@ For a general explanation of what this method is good for in the context of the 
 \doxysubsubsection{\texorpdfstring{sortKeyIsMainKey()}{sortKeyIsMainKey()}}
 {\footnotesize\ttfamily static static bool QCPCurve\+Data\+::sort\+Key\+Is\+Main\+Key (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
-Since the member {\itshape key} is the data point key coordinate and the member {\itshape t} is the data ordering parameter, this method returns false.
+
+
+Since the member {\itshape key} is the data point key coordinate and the member {\itshape t} is the data ordering parameter, this method returns false. 
 
 For a general explanation of what this method is good for in the context of the data container, see the documentation of \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}. \mbox{\Hypertarget{class_q_c_p_curve_data_acf15deffd18d400651f8384a95dad9f8}\label{class_q_c_p_curve_data_acf15deffd18d400651f8384a95dad9f8}} 
 \index{QCPCurveData@{QCPCurveData}!valueRange@{valueRange}}
@@ -115,7 +114,9 @@ For a general explanation of what this method is good for in the context of the 
 \doxysubsubsection{\texorpdfstring{valueRange()}{valueRange()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} QCPCurve\+Data\+::value\+Range (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Returns a \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} with both lower and upper boundary set to {\itshape value} of this data point.
+
+
+Returns a \mbox{\hyperlink{class_q_c_p_range}{QCPRange}} with both lower and upper boundary set to {\itshape value} of this data point. 
 
 For a general explanation of what this method is good for in the context of the data container, see the documentation of \mbox{\hyperlink{class_q_c_p_data_container}{QCPData\+Container}}. 
 

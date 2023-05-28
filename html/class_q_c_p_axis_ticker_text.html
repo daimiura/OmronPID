@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: QCPAxisTickerText Class Reference</title>
+<title>OmronPID: QCPAxisTickerText Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Project
+   <div id="projectname">OmronPID
    </div>
   </td>
  </tr>
@@ -72,8 +72,7 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a> &#124;
-<a href="class_q_c_p_axis_ticker_text-members.html">List of all members</a>  </div>
+<a href="#pro-attribs">Protected Attributes</a>  </div>
   <div class="headertitle"><div class="title">QCPAxisTickerText Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -93,28 +92,38 @@ Inheritance diagram for QCPAxisTickerText:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a1d7243b1256c1aa9d1d5b99b2e84e648"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_axis_ticker_text.html#a1d7243b1256c1aa9d1d5b99b2e84e648">QCPAxisTickerText</a> ()</td></tr>
+<tr class="memdesc:a1d7243b1256c1aa9d1d5b99b2e84e648"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the ticker and sets reasonable default values.  <br /></td></tr>
 <tr class="separator:a1d7243b1256c1aa9d1d5b99b2e84e648"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac84622a6bb4f2a98474e185ecaf3189a"><td class="memItemLeft" align="right" valign="top">QMap&lt; double, QString &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_axis_ticker_text.html#ac84622a6bb4f2a98474e185ecaf3189a">ticks</a> ()</td></tr>
+<tr class="memdesc:ac84622a6bb4f2a98474e185ecaf3189a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a non-const reference to the internal map which stores the tick coordinates and their labels.  <br /></td></tr>
 <tr class="separator:ac84622a6bb4f2a98474e185ecaf3189a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c3c59e8fdf4c96568dd50d4a653e791"><td class="memItemLeft" align="right" valign="top"><a id="a5c3c59e8fdf4c96568dd50d4a653e791" name="a5c3c59e8fdf4c96568dd50d4a653e791"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>subTickCount</b> () const</td></tr>
 <tr class="separator:a5c3c59e8fdf4c96568dd50d4a653e791"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8cdf1f21940f1f53f5e3d30b2c74f5cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_axis_ticker_text.html#a8cdf1f21940f1f53f5e3d30b2c74f5cf">setTicks</a> (const QMap&lt; double, QString &gt; &amp;<a class="el" href="class_q_c_p_axis_ticker_text.html#ac84622a6bb4f2a98474e185ecaf3189a">ticks</a>)</td></tr>
+<tr class="memdesc:a8cdf1f21940f1f53f5e3d30b2c74f5cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.Sets the ticks that shall appear on the axis.  <br /></td></tr>
 <tr class="separator:a8cdf1f21940f1f53f5e3d30b2c74f5cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69f3898cc1cf11d2437851f959faa1e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_axis_ticker_text.html#a69f3898cc1cf11d2437851f959faa1e8">setTicks</a> (const QVector&lt; double &gt; &amp;positions, const QVector&lt; QString &gt; labels)</td></tr>
+<tr class="memdesc:a69f3898cc1cf11d2437851f959faa1e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.Sets the ticks that shall appear on the axis.  <br /></td></tr>
 <tr class="separator:a69f3898cc1cf11d2437851f959faa1e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8cfa50c51183c90186892eeef978d571"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_axis_ticker_text.html#a8cfa50c51183c90186892eeef978d571">setSubTickCount</a> (int subTicks)</td></tr>
+<tr class="memdesc:a8cfa50c51183c90186892eeef978d571"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the number of sub ticks that shall appear between ticks.  <br /></td></tr>
 <tr class="separator:a8cfa50c51183c90186892eeef978d571"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a21826d2fcd9a25c194d34d4f67aa1460"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_axis_ticker_text.html#a21826d2fcd9a25c194d34d4f67aa1460">clear</a> ()</td></tr>
+<tr class="memdesc:a21826d2fcd9a25c194d34d4f67aa1460"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears all ticks.  <br /></td></tr>
 <tr class="separator:a21826d2fcd9a25c194d34d4f67aa1460"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aada3db69e5fc6585aaa4ea5d89552eb0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_axis_ticker_text.html#aada3db69e5fc6585aaa4ea5d89552eb0">addTick</a> (double position, QString label)</td></tr>
+<tr class="memdesc:aada3db69e5fc6585aaa4ea5d89552eb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a single tick to the axis at the given axis coordinate <em>position</em>, with the provided tick <em>label</em>.  <br /></td></tr>
 <tr class="separator:aada3db69e5fc6585aaa4ea5d89552eb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea0819f861bf268a37bd13d5487e3162"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_axis_ticker_text.html#aea0819f861bf268a37bd13d5487e3162">addTicks</a> (const QMultiMap&lt; double, QString &gt; &amp;<a class="el" href="class_q_c_p_axis_ticker_text.html#ac84622a6bb4f2a98474e185ecaf3189a">ticks</a>)</td></tr>
+<tr class="memdesc:aea0819f861bf268a37bd13d5487e3162"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.Adds the provided <em>ticks</em> to the ones already existing.  <br /></td></tr>
 <tr class="separator:aea0819f861bf268a37bd13d5487e3162"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8140c730e20b0050e1b702af3db00b2e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_axis_ticker_text.html#a8140c730e20b0050e1b702af3db00b2e">addTicks</a> (const QVector&lt; double &gt; &amp;positions, const QVector&lt; QString &gt; &amp;labels)</td></tr>
+<tr class="memdesc:a8140c730e20b0050e1b702af3db00b2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.Adds the provided ticks to the ones already existing.  <br /></td></tr>
 <tr class="separator:a8140c730e20b0050e1b702af3db00b2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_q_c_p_axis_ticker"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_q_c_p_axis_ticker')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_q_c_p_axis_ticker.html">QCPAxisTicker</a></td></tr>
 <tr class="memitem:a8fcf23c79ebd72202fe79253f9f01ea8 inherit pub_methods_class_q_c_p_axis_ticker"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_axis_ticker.html#a8fcf23c79ebd72202fe79253f9f01ea8">QCPAxisTicker</a> ()</td></tr>
+<tr class="memdesc:a8fcf23c79ebd72202fe79253f9f01ea8 inherit pub_methods_class_q_c_p_axis_ticker"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the ticker and sets reasonable default values.  <br /></td></tr>
 <tr class="separator:a8fcf23c79ebd72202fe79253f9f01ea8 inherit pub_methods_class_q_c_p_axis_ticker"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a58df76f2ec3eb48401bdd314b0e14ba1 inherit pub_methods_class_q_c_p_axis_ticker"><td class="memItemLeft" align="right" valign="top"><a id="a58df76f2ec3eb48401bdd314b0e14ba1" name="a58df76f2ec3eb48401bdd314b0e14ba1"></a>
 <a class="el" href="class_q_c_p_axis_ticker.html#ab6d2f9d9477821623ac9bc4b21ddf49a">TickStepStrategy</a>&#160;</td><td class="memItemRight" valign="bottom"><b>tickStepStrategy</b> () const</td></tr>
@@ -126,23 +135,31 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>tickCount</b> () const
 double&#160;</td><td class="memItemRight" valign="bottom"><b>tickOrigin</b> () const</td></tr>
 <tr class="separator:ac0c6e9587c36fdeefb5518c00fe7ab15 inherit pub_methods_class_q_c_p_axis_ticker"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73b1d847c1a12159af6bfda4ebebe7d5 inherit pub_methods_class_q_c_p_axis_ticker"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_axis_ticker.html#a73b1d847c1a12159af6bfda4ebebe7d5">setTickStepStrategy</a> (<a class="el" href="class_q_c_p_axis_ticker.html#ab6d2f9d9477821623ac9bc4b21ddf49a">TickStepStrategy</a> strategy)</td></tr>
+<tr class="memdesc:a73b1d847c1a12159af6bfda4ebebe7d5 inherit pub_methods_class_q_c_p_axis_ticker"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets which strategy the axis ticker follows when choosing the size of the tick step.  <br /></td></tr>
 <tr class="separator:a73b1d847c1a12159af6bfda4ebebe7d5 inherit pub_methods_class_q_c_p_axis_ticker"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47752abba8293e6dc18491501ae34008 inherit pub_methods_class_q_c_p_axis_ticker"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_axis_ticker.html#a47752abba8293e6dc18491501ae34008">setTickCount</a> (int count)</td></tr>
+<tr class="memdesc:a47752abba8293e6dc18491501ae34008 inherit pub_methods_class_q_c_p_axis_ticker"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets how many ticks this ticker shall aim to generate across the axis range.  <br /></td></tr>
 <tr class="separator:a47752abba8293e6dc18491501ae34008 inherit pub_methods_class_q_c_p_axis_ticker"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab509c7e500293bf66a8409f0d7c23943 inherit pub_methods_class_q_c_p_axis_ticker"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_axis_ticker.html#ab509c7e500293bf66a8409f0d7c23943">setTickOrigin</a> (double origin)</td></tr>
+<tr class="memdesc:ab509c7e500293bf66a8409f0d7c23943 inherit pub_methods_class_q_c_p_axis_ticker"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the mathematical coordinate (or "offset") of the zeroth tick.  <br /></td></tr>
 <tr class="separator:ab509c7e500293bf66a8409f0d7c23943 inherit pub_methods_class_q_c_p_axis_ticker"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aefbd11725678ca824add8cf926cbc856 inherit pub_methods_class_q_c_p_axis_ticker"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_axis_ticker.html#aefbd11725678ca824add8cf926cbc856">generate</a> (const <a class="el" href="class_q_c_p_range.html">QCPRange</a> &amp;range, const QLocale &amp;locale, QChar formatChar, int precision, QVector&lt; double &gt; &amp;ticks, QVector&lt; double &gt; *subTicks, QVector&lt; QString &gt; *tickLabels)</td></tr>
+<tr class="memdesc:aefbd11725678ca824add8cf926cbc856 inherit pub_methods_class_q_c_p_axis_ticker"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the method called by <a class="el" href="class_q_c_p_axis.html" title="Manages a single axis inside a QCustomPlot.">QCPAxis</a> in order to actually generate tick coordinates (<em>ticks</em>), tick label strings (<em>tickLabels</em>) and sub tick coordinates (<em>subTicks</em>).  <br /></td></tr>
 <tr class="separator:aefbd11725678ca824add8cf926cbc856 inherit pub_methods_class_q_c_p_axis_ticker"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a628f16c41905e8c95c6622d6757a38c4"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_axis_ticker_text.html#a628f16c41905e8c95c6622d6757a38c4">getTickStep</a> (const <a class="el" href="class_q_c_p_range.html">QCPRange</a> &amp;range) Q_DECL_OVERRIDE</td></tr>
+<tr class="memdesc:a628f16c41905e8c95c6622d6757a38c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Since the tick coordinates are provided externally, this method implementation does nothing.  <br /></td></tr>
 <tr class="separator:a628f16c41905e8c95c6622d6757a38c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c2488b877776870239abda4c8106052"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_axis_ticker_text.html#a9c2488b877776870239abda4c8106052">getSubTickCount</a> (double tickStep) Q_DECL_OVERRIDE</td></tr>
+<tr class="memdesc:a9c2488b877776870239abda4c8106052"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the sub tick count that was configured with <a class="el" href="class_q_c_p_axis_ticker_text.html#a8cfa50c51183c90186892eeef978d571">setSubTickCount</a>.  <br /></td></tr>
 <tr class="separator:a9c2488b877776870239abda4c8106052"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99247779a9c20bea1f50911117540a71"><td class="memItemLeft" align="right" valign="top">virtual QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_axis_ticker_text.html#a99247779a9c20bea1f50911117540a71">getTickLabel</a> (double tick, const QLocale &amp;locale, QChar formatChar, int precision) Q_DECL_OVERRIDE</td></tr>
+<tr class="memdesc:a99247779a9c20bea1f50911117540a71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the tick label which corresponds to the key <em>tick</em> in the internal tick storage.  <br /></td></tr>
 <tr class="separator:a99247779a9c20bea1f50911117540a71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa195c4fd0364d0393f1798fb495d6a60"><td class="memItemLeft" align="right" valign="top">virtual QVector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_axis_ticker_text.html#aa195c4fd0364d0393f1798fb495d6a60">createTickVector</a> (double tickStep, const <a class="el" href="class_q_c_p_range.html">QCPRange</a> &amp;range) Q_DECL_OVERRIDE</td></tr>
+<tr class="memdesc:aa195c4fd0364d0393f1798fb495d6a60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the externally provided tick coordinates which are in the specified <em>range</em>.  <br /></td></tr>
 <tr class="separator:aa195c4fd0364d0393f1798fb495d6a60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_class_q_c_p_axis_ticker"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_q_c_p_axis_ticker')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_q_c_p_axis_ticker.html">QCPAxisTicker</a></td></tr>
 <tr class="memitem:a910d69bcec2de37e92d8d4e1ecf201e2 inherit pro_methods_class_q_c_p_axis_ticker"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_axis_ticker.html#a910d69bcec2de37e92d8d4e1ecf201e2">getTickStep</a> (const <a class="el" href="class_q_c_p_range.html">QCPRange</a> &amp;range)</td></tr>
@@ -197,6 +214,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:ab6d2f9d9477821623ac9bc4b21ddf49a inherit pub_types_class_q_c_p_axis_ticker"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_c_p_axis_ticker.html#ab6d2f9d9477821623ac9bc4b21ddf49a">TickStepStrategy</a> { <a class="el" href="class_q_c_p_axis_ticker.html#ab6d2f9d9477821623ac9bc4b21ddf49aa9002aa2fd5633ab5556c71a26fed63a8">tssReadability</a>
 , <a class="el" href="class_q_c_p_axis_ticker.html#ab6d2f9d9477821623ac9bc4b21ddf49aa770312b6b9b0c64a37ceeba96e0cd7f2">tssMeetTickCount</a>
  }</td></tr>
+<tr class="memdesc:ab6d2f9d9477821623ac9bc4b21ddf49a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the strategies that the axis ticker may follow when choosing the size of the tick step.  <a href="class_q_c_p_axis_ticker.html#ab6d2f9d9477821623ac9bc4b21ddf49a">More...</a><br /></td></tr>
 <tr class="separator:ab6d2f9d9477821623ac9bc4b21ddf49a inherit pub_types_class_q_c_p_axis_ticker"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -222,7 +240,9 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Constructs the ticker and sets reasonable default values. Axis tickers are commonly created managed by a QSharedPointer, which then can be passed to <a class="el" href="class_q_c_p_axis.html#a4ee03fcd2c74d05cd1a419b9af5cfbdc">QCPAxis::setTicker</a>. </p>
+
+<p>Constructs the ticker and sets reasonable default values. </p>
+<p>Axis tickers are commonly created managed by a QSharedPointer, which then can be passed to <a class="el" href="class_q_c_p_axis.html#a4ee03fcd2c74d05cd1a419b9af5cfbdc" title="The axis ticker is responsible for generating the tick positions and tick labels.">QCPAxis::setTicker</a>. </p>
 
 </div>
 </div>
@@ -252,8 +272,9 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Adds a single tick to the axis at the given axis coordinate <em>position</em>, with the provided tick <em>label</em>.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_axis_ticker_text.html#aea0819f861bf268a37bd13d5487e3162">addTicks</a>, <a class="el" href="class_q_c_p_axis_ticker_text.html#a8cdf1f21940f1f53f5e3d30b2c74f5cf">setTicks</a>, <a class="el" href="class_q_c_p_axis_ticker_text.html#a21826d2fcd9a25c194d34d4f67aa1460">clear</a> </dd></dl>
+
+<p>Adds a single tick to the axis at the given axis coordinate <em>position</em>, with the provided tick <em>label</em>. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_axis_ticker_text.html#aea0819f861bf268a37bd13d5487e3162" title="This is an overloaded member function, provided for convenience. It differs from the above function o...">addTicks</a>, <a class="el" href="class_q_c_p_axis_ticker_text.html#a8cdf1f21940f1f53f5e3d30b2c74f5cf" title="This is an overloaded member function, provided for convenience. It differs from the above function o...">setTicks</a>, <a class="el" href="class_q_c_p_axis_ticker_text.html#a21826d2fcd9a25c194d34d4f67aa1460" title="Clears all ticks.">clear</a> </dd></dl>
 
 </div>
 </div>
@@ -272,10 +293,11 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.</p>
-<p>Adds the provided <em>ticks</em> to the ones already existing. <a class="el" href="class_the.html">The</a> map key of <em>ticks</em> corresponds to the axis coordinate, and the map value is the string that will appear as tick label.</p>
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.Adds the provided <em>ticks</em> to the ones already existing. </p>
+<p><a class="el" href="class_the.html">The</a> map key of <em>ticks</em> corresponds to the axis coordinate, and the map value is the string that will appear as tick label.</p>
 <p>An alternative to manipulate ticks is to directly access the internal storage with the <a class="el" href="class_q_c_p_axis_ticker_text.html#ac84622a6bb4f2a98474e185ecaf3189a">ticks</a> getter.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_axis_ticker_text.html#aada3db69e5fc6585aaa4ea5d89552eb0">addTick</a>, <a class="el" href="class_q_c_p_axis_ticker_text.html#a8cdf1f21940f1f53f5e3d30b2c74f5cf">setTicks</a>, <a class="el" href="class_q_c_p_axis_ticker_text.html#a21826d2fcd9a25c194d34d4f67aa1460">clear</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_axis_ticker_text.html#aada3db69e5fc6585aaa4ea5d89552eb0" title="Adds a single tick to the axis at the given axis coordinate position, with the provided tick label.">addTick</a>, <a class="el" href="class_q_c_p_axis_ticker_text.html#a8cdf1f21940f1f53f5e3d30b2c74f5cf" title="This is an overloaded member function, provided for convenience. It differs from the above function o...">setTicks</a>, <a class="el" href="class_q_c_p_axis_ticker_text.html#a21826d2fcd9a25c194d34d4f67aa1460" title="Clears all ticks.">clear</a> </dd></dl>
 
 </div>
 </div>
@@ -304,10 +326,11 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.</p>
-<p>Adds the provided ticks to the ones already existing. <a class="el" href="class_the.html">The</a> entries of <em>positions</em> correspond to the axis coordinates, and the entries of <em>labels</em> are the respective strings that will appear as tick labels.</p>
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.Adds the provided ticks to the ones already existing. </p>
+<p><a class="el" href="class_the.html">The</a> entries of <em>positions</em> correspond to the axis coordinates, and the entries of <em>labels</em> are the respective strings that will appear as tick labels.</p>
 <p>An alternative to manipulate ticks is to directly access the internal storage with the <a class="el" href="class_q_c_p_axis_ticker_text.html#ac84622a6bb4f2a98474e185ecaf3189a">ticks</a> getter.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_axis_ticker_text.html#aada3db69e5fc6585aaa4ea5d89552eb0">addTick</a>, <a class="el" href="class_q_c_p_axis_ticker_text.html#a8cdf1f21940f1f53f5e3d30b2c74f5cf">setTicks</a>, <a class="el" href="class_q_c_p_axis_ticker_text.html#a21826d2fcd9a25c194d34d4f67aa1460">clear</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_axis_ticker_text.html#aada3db69e5fc6585aaa4ea5d89552eb0" title="Adds a single tick to the axis at the given axis coordinate position, with the provided tick label.">addTick</a>, <a class="el" href="class_q_c_p_axis_ticker_text.html#a8cdf1f21940f1f53f5e3d30b2c74f5cf" title="This is an overloaded member function, provided for convenience. It differs from the above function o...">setTicks</a>, <a class="el" href="class_q_c_p_axis_ticker_text.html#a21826d2fcd9a25c194d34d4f67aa1460" title="Clears all ticks.">clear</a> </dd></dl>
 
 </div>
 </div>
@@ -325,9 +348,10 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Clears all ticks.</p>
+
+<p>Clears all ticks. </p>
 <p>An alternative to manipulate ticks is to directly access the internal storage with the <a class="el" href="class_q_c_p_axis_ticker_text.html#ac84622a6bb4f2a98474e185ecaf3189a">ticks</a> getter.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_axis_ticker_text.html#a8cdf1f21940f1f53f5e3d30b2c74f5cf">setTicks</a>, <a class="el" href="class_q_c_p_axis_ticker_text.html#aea0819f861bf268a37bd13d5487e3162">addTicks</a>, <a class="el" href="class_q_c_p_axis_ticker_text.html#aada3db69e5fc6585aaa4ea5d89552eb0">addTick</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_axis_ticker_text.html#a8cdf1f21940f1f53f5e3d30b2c74f5cf" title="This is an overloaded member function, provided for convenience. It differs from the above function o...">setTicks</a>, <a class="el" href="class_q_c_p_axis_ticker_text.html#aea0819f861bf268a37bd13d5487e3162" title="This is an overloaded member function, provided for convenience. It differs from the above function o...">addTicks</a>, <a class="el" href="class_q_c_p_axis_ticker_text.html#aada3db69e5fc6585aaa4ea5d89552eb0" title="Adds a single tick to the axis at the given axis coordinate position, with the provided tick label.">addTick</a> </dd></dl>
 
 </div>
 </div>
@@ -364,7 +388,9 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Returns the externally provided tick coordinates which are in the specified <em>range</em>. If available, one tick above and below the range is provided in addition, to allow possible sub tick calculation. <a class="el" href="class_the.html">The</a> parameter <em>tickStep</em> is ignored.</p>
+
+<p>Returns the externally provided tick coordinates which are in the specified <em>range</em>. </p>
+<p>If available, one tick above and below the range is provided in addition, to allow possible sub tick calculation. <a class="el" href="class_the.html">The</a> parameter <em>tickStep</em> is ignored.</p>
 <p>\seebaseclassmethod </p>
 
 <p>Reimplemented from <a class="el" href="class_q_c_p_axis_ticker.html">QCPAxisTicker</a>.</p>
@@ -394,7 +420,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Returns the sub tick count that was configured with <a class="el" href="class_q_c_p_axis_ticker_text.html#a8cfa50c51183c90186892eeef978d571">setSubTickCount</a>.</p>
+
+<p>Returns the sub tick count that was configured with <a class="el" href="class_q_c_p_axis_ticker_text.html#a8cfa50c51183c90186892eeef978d571">setSubTickCount</a>. </p>
 <p>\seebaseclassmethod </p>
 
 <p>Reimplemented from <a class="el" href="class_q_c_p_axis_ticker.html">QCPAxisTicker</a>.</p>
@@ -446,7 +473,9 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Returns the tick label which corresponds to the key <em>tick</em> in the internal tick storage. Since the labels are provided externally, <em>locale</em>, <em>formatChar</em>, and <em>precision</em> are ignored.</p>
+
+<p>Returns the tick label which corresponds to the key <em>tick</em> in the internal tick storage. </p>
+<p>Since the labels are provided externally, <em>locale</em>, <em>formatChar</em>, and <em>precision</em> are ignored.</p>
 <p>\seebaseclassmethod </p>
 
 <p>Reimplemented from <a class="el" href="class_q_c_p_axis_ticker.html">QCPAxisTicker</a>.</p>
@@ -476,7 +505,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Since the tick coordinates are provided externally, this method implementation does nothing.</p>
+
+<p>Since the tick coordinates are provided externally, this method implementation does nothing. </p>
 <p>\seebaseclassmethod </p>
 
 <p>Reimplemented from <a class="el" href="class_q_c_p_axis_ticker.html">QCPAxisTicker</a>.</p>
@@ -498,7 +528,9 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Sets the number of sub ticks that shall appear between ticks. For <a class="el" href="class_q_c_p_axis_ticker_text.html" title="Specialized axis ticker which allows arbitrary labels at specified coordinates.">QCPAxisTickerText</a>, there is no automatic sub tick count calculation. So if sub ticks are needed, they must be configured with this method. </p>
+
+<p>Sets the number of sub ticks that shall appear between ticks. </p>
+<p>For <a class="el" href="class_q_c_p_axis_ticker_text.html" title="Specialized axis ticker which allows arbitrary labels at specified coordinates.">QCPAxisTickerText</a>, there is no automatic sub tick count calculation. So if sub ticks are needed, they must be configured with this method. </p>
 
 </div>
 </div>
@@ -517,10 +549,11 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.</p>
-<p>Sets the ticks that shall appear on the axis. <a class="el" href="class_the.html">The</a> map key of <em>ticks</em> corresponds to the axis coordinate, and the map value is the string that will appear as tick label.</p>
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.Sets the ticks that shall appear on the axis. </p>
+<p><a class="el" href="class_the.html">The</a> map key of <em>ticks</em> corresponds to the axis coordinate, and the map value is the string that will appear as tick label.</p>
 <p>An alternative to manipulate ticks is to directly access the internal storage with the <a class="el" href="class_q_c_p_axis_ticker_text.html#ac84622a6bb4f2a98474e185ecaf3189a">ticks</a> getter.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_axis_ticker_text.html#aea0819f861bf268a37bd13d5487e3162">addTicks</a>, <a class="el" href="class_q_c_p_axis_ticker_text.html#aada3db69e5fc6585aaa4ea5d89552eb0">addTick</a>, <a class="el" href="class_q_c_p_axis_ticker_text.html#a21826d2fcd9a25c194d34d4f67aa1460">clear</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_axis_ticker_text.html#aea0819f861bf268a37bd13d5487e3162" title="This is an overloaded member function, provided for convenience. It differs from the above function o...">addTicks</a>, <a class="el" href="class_q_c_p_axis_ticker_text.html#aada3db69e5fc6585aaa4ea5d89552eb0" title="Adds a single tick to the axis at the given axis coordinate position, with the provided tick label.">addTick</a>, <a class="el" href="class_q_c_p_axis_ticker_text.html#a21826d2fcd9a25c194d34d4f67aa1460" title="Clears all ticks.">clear</a> </dd></dl>
 
 </div>
 </div>
@@ -549,9 +582,10 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.</p>
-<p>Sets the ticks that shall appear on the axis. <a class="el" href="class_the.html">The</a> entries of <em>positions</em> correspond to the axis coordinates, and the entries of <em>labels</em> are the respective strings that will appear as tick labels.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_axis_ticker_text.html#aea0819f861bf268a37bd13d5487e3162">addTicks</a>, <a class="el" href="class_q_c_p_axis_ticker_text.html#aada3db69e5fc6585aaa4ea5d89552eb0">addTick</a>, <a class="el" href="class_q_c_p_axis_ticker_text.html#a21826d2fcd9a25c194d34d4f67aa1460">clear</a> </dd></dl>
+
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.Sets the ticks that shall appear on the axis. </p>
+<p><a class="el" href="class_the.html">The</a> entries of <em>positions</em> correspond to the axis coordinates, and the entries of <em>labels</em> are the respective strings that will appear as tick labels.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_c_p_axis_ticker_text.html#aea0819f861bf268a37bd13d5487e3162" title="This is an overloaded member function, provided for convenience. It differs from the above function o...">addTicks</a>, <a class="el" href="class_q_c_p_axis_ticker_text.html#aada3db69e5fc6585aaa4ea5d89552eb0" title="Adds a single tick to the axis at the given axis coordinate position, with the provided tick label.">addTick</a>, <a class="el" href="class_q_c_p_axis_ticker_text.html#a21826d2fcd9a25c194d34d4f67aa1460" title="Clears all ticks.">clear</a> </dd></dl>
 
 </div>
 </div>
@@ -577,7 +611,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Returns a non-const reference to the internal map which stores the tick coordinates and their labels.</p>
+
+<p>Returns a non-const reference to the internal map which stores the tick coordinates and their labels. </p>
 <p>You can access the map directly in order to add, remove or manipulate ticks, as an alternative to using the methods provided by <a class="el" href="class_q_c_p_axis_ticker_text.html" title="Specialized axis ticker which allows arbitrary labels at specified coordinates.">QCPAxisTickerText</a>, such as <a class="el" href="class_q_c_p_axis_ticker_text.html#a8cdf1f21940f1f53f5e3d30b2c74f5cf">setTicks</a> and <a class="el" href="class_q_c_p_axis_ticker_text.html#aada3db69e5fc6585aaa4ea5d89552eb0">addTick</a>. </p>
 
 </div>
