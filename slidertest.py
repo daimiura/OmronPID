@@ -51,7 +51,6 @@ selected_range_table = pd.DataFrame(
 # Display the selected range table
 st.table(selected_range_table)
 
-
 # Convert the date column to datetime format
 df['#Date'] = pd.to_datetime(df['#Date'], format='%m-%d %H:%M:%S')
 
@@ -74,20 +73,20 @@ st.header(':blue[Latest Temperature:]' + str(las_temperature))
 fig, ax1 = plt.subplots()
 
 # Plot Temperature on the left axis
-ax1.plot(filtered_df['#Date'], filtered_df['temperature'], color='green', label='Temperature')
-ax1.set_ylabel('Temperature', color='green')
-ax1.tick_params(axis='y', labelcolor='green')
+ax1.plot(filtered_df['#Date'], filtered_df['temperature'], color='blue', label='Temperature')
+ax1.set_ylabel('Temperature', color='blue')
+ax1.tick_params(axis='y', labelcolor='blue')
 ax1.grid(axis='y', lw=0.5)
 
 # Create a twin axis for MV (Manipulated Variable)
 ax2 = ax1.twinx()
-ax2.plot(filtered_df['#Date'], filtered_df['MV'], color='red', label='MV')
-ax2.set_ylabel('MV', color='red', rotation=270)
+ax2.plot(filtered_df['#Date'], filtered_df['MV'], color='green', label='MV')
+ax2.set_ylabel('MV', color='green', rotation=270)
 ax2.yaxis.set_label_coords(1.13, 0.5)
-ax2.tick_params(axis='y', labelcolor='red')
+ax2.tick_params(axis='y', labelcolor='green')
 
 # Plot SV (Setpoint Variable) on the left axis
-ax1.plot(filtered_df['#Date'], filtered_df['SV'], color='blue', label='SV')
+ax1.plot(filtered_df['#Date'], filtered_df['SV'], color='red', label='SV')
 
 # Set the x-axis label
 ax1.set_xlabel('Date')

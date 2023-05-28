@@ -267,18 +267,6 @@ void MainWindow::controlStableMode(double targetValue, double tempTorr, double t
     loop.exec();
     temperature = data_->getTemperature();
     if (!tempControlOnOff) break;
-    /*
-    LogMsg("Set SV to smallShift : " + QString::number(smallShift));
-    while (qAbs(temperature - smallShift) > tempTorr){
-        int waitTime = ui->spinBox_TempStableTime->value() * 60 * 1000; //msec to min
-        QEventLoop loop;
-        QTimer::singleShot(waitTime, &loop, &QEventLoop::quit);
-        loop.exec();
-        temperature = data_->getTemperature();
-        if (!tempControlOnOff) break;
-    }
-    if (!tempControlOnOff) break;
-    */
   }
   ui->checkBoxStatusSTC->setChecked(false);
 }
