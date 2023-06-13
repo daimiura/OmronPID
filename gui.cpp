@@ -173,7 +173,8 @@ void MainWindow::setupDialog(){
   configureDialog_->setWindowTitle("Configure");
   connect(configureDialog_->pushButton_SetParameters_, SIGNAL(clicked(bool)), this, SLOT(setParametersTempCheckChange()) );
 
-  joinDialog_ = new JoinLINEDialog(this);
+  joinDialog_ = new JoinLINEDialog(this, ":/LINEQR_RIKEN.png");
+  joinDialogK_ = new JoinLINEDialog(this, ":/LINEQR_Kyushu.jpg");
 }
 
 void MainWindow::on_comboBox_Mode_currentIndexChanged(int index){

@@ -21,7 +21,7 @@ public:
    * @brief Constructs a new JoinLINEGroup dialog with the specified parent widget.
    * @param parent The parent widget of the dialog.
    */
-    explicit JoinLINEDialog(QWidget *parent = nullptr);
+    explicit JoinLINEDialog(QWidget *parent = nullptr, QString file = nullptr);
 
 private:
     QLabel *qrLabel_; /**< The label displaying the QR code image.*/

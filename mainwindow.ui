@@ -1056,7 +1056,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <x>0</x>
      <y>0</y>
      <width>1302</width>
-     <height>17</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -1082,7 +1082,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <property name="title">
      <string>JoinLINE</string>
     </property>
-    <addaction name="action_JoinLINE"/>
+    <addaction name="action_JoinLINE_RIKEN"/>
+    <addaction name="action_JoinLINE_Kyushu"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuConfigure"/>
@@ -1134,9 +1135,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <string>&amp;Setting_Temperature_Drop</string>
    </property>
   </action>
-  <action name="action_JoinLINE">
+  <action name="action_JoinLINE_RIKEN">
    <property name="text">
-    <string>&amp;JoinLINE</string>
+    <string>&amp;RIKEN</string>
+   </property>
+  </action>
+  <action name="action_JoinLINE_Kyushu">
+   <property name="text">
+    <string>&amp;Kyushu</string>
    </property>
   </action>
  </widget>

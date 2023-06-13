@@ -257,7 +257,8 @@ private slots:
     void on_action_Setting_parameters_for_TempCheck_triggered();
     void on_action_Setting_plot_triggered();
     void on_actionHelp_Page_triggered();
-    void on_action_JoinLINE_triggered();
+    void on_action_JoinLINE_RIKEN_triggered();
+    void on_action_JoinLINE_Kyushu_triggered();
     void fillDataAndPlot(const QDateTime date, const double PV, const double SV, const double MV);
     void Run();
     void Stop();
@@ -298,6 +299,7 @@ private:
     ConfigureDialog *configureDialog_{nullptr};     ///< Pointer to the ConfigureDialog object
     TempDropDialog *tempDropDialog_{nullptr};       ///< Pointer to the TempDropDialog object
     JoinLINEDialog *joinDialog_{nullptr};            ///< Pointer to the JoinLINEDialog object
+    JoinLINEDialog *joinDialogK_{nullptr};            ///< Pointer to the JoinLINEDialog object
     QString omronPortName{};                        ///< Name of the Omron port
     int msgCount{0};                                ///< Count of log messages
     int timing_{0};                                 ///< Timing variable

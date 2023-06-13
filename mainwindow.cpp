@@ -19,7 +19,8 @@ MainWindow::MainWindow(QWidget *parent) :
   plot(new QCustomPlot),
   clock(new QTimer),
   waitTimer(new QTimer),
-  LINEToken_("9tYexDQw9KHKyJOAI5gIONbXLZgzolIxungdwos5Dyy")
+  LINEToken_("9tYexDQw9KHKyJOAI5gIONbXLZgzolIxungdwos5Dyy") //for RIKEN
+  //LINEToken_("bhWUyinEDdIJkDf3jznzeHwrf1NrRzqSzuzTHEfyINd") // for Kyushu
 {
   //set up GUI. Reference gui.cpp
   ui->setupUi(this);
@@ -750,8 +751,15 @@ void MainWindow::on_action_Setting_parameters_for_TempCheck_triggered(){
 /**
  * @brief Shows the join dialog for joining LINE if it is hidden.
  */
-void MainWindow::on_action_JoinLINE_triggered(){
+void MainWindow::on_action_JoinLINE_RIKEN_triggered(){
     if( joinDialog_->isHidden() ) joinDialog_->show();
+}
+
+/**
+ * @brief Shows the join dialog for joining LINE if it is hidden.
+ */
+void MainWindow::on_action_JoinLINE_Kyushu_triggered(){
+    if( joinDialogK_->isHidden() ) joinDialogK_->show();
 }
 
 /*
